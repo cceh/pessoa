@@ -20,8 +20,9 @@
                <exclude name="build/"/>
                <exclude name="modules/admin.xqm"/>
                <exclude name="**/*.properties"/>
+               <exclude name="**/*.tmpl"/>
                <exclude name="**/*.md"/>
-               <exclude name=".gitignore"/>
+               <exclude name="**/.gitignore"/>
            </fileset>
        </xdb:store>
    </target>
@@ -36,10 +37,12 @@
        <xdb:store uri="${uri}" createcollection="true" createsubcollections="true" user="${user}" password="${password}">
            <fileset dir=".">
                <include name="**/*.*"/>
+               <exclude name="build/"/>
                <exclude name="modules/admin.xqm"/>
                <exclude name="**/*.properties"/>
+               <exclude name="**/*.tmpl"/>
                <exclude name="**/*.md"/>
-               <exclude name=".gitignore"/>
+               <exclude name="**/.gitignore"/>
            </fileset>
        </xdb:store>
    </target>
