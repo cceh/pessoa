@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Title</title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <institution>Biblioteca Nacional de Portugal</institution>
+                        <idno>BNP/E3 5-83r</idno>
+                    </msIdentifier>
+                    <msContents>
+                        <msItemStruct>
+                            <author>Fernando Pessoa</author>
+                            <respStmt>
+                                <resp>Transcrição, Edição</resp>
+                                <name>Pedro Sepúlveda</name>
+                            </respStmt>
+                            <note type="genre">
+                                <rs type="genre" key="lista_editorial">Lista
+                                    editorial</rs> e <rs type="genre" key="plano_editorial">Plano editorial</rs>
+                            </note>
+                            <textLang mainLang="pt"/>
+                        </msItemStruct>
+                    </msContents>
+                    <physDesc>
+                        <objectDesc>
+                            <supportDesc>
+                                <support>
+                                    <objectType/>
+                                    <material/>
+                                </support>
+                            </supportDesc>
+                        </objectDesc>
+                    </physDesc>
+                    <history>
+                        <origin>
+                            <p>
+                                <origDate when="1918" cert="medium">c. 1918</origDate>
+                                <origPlace/>
+                            </p>
+                        </origin>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="bn-acpc-e-e3-5-1-85_JPG_24-C-R0150/bn-acpc-e-e3-5-1-85_0166_83_t24-C-R0150.jpg"/>
+    </facsimile>
+    <text xml:id="pessoa00028">
+        <body>
+            <div> </div>
+        </body>
+    </text>
+</TEI>

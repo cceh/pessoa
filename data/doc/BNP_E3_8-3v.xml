@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Title</title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <institution>Biblioteca Nacional de Portugal</institution>
+                        <idno>BNP/E3 8-3v</idno>
+                    </msIdentifier>
+                    <msContents>
+                        <msItemStruct>
+                            <author>Fernando Pessoa</author>
+                            <respStmt>
+                                <resp>Transcrição, Edição</resp>
+                                <name>Pedro Sepúlveda</name>
+                            </respStmt>
+                            <respStmt>
+                                <resp>Codificação</resp>
+                                <name>Ulrike Henny</name>
+                            </respStmt>
+                            <respStmt>
+                                <resp>Codificação</resp>
+                                <name>Franz Fischer</name>
+                            </respStmt>
+                            <note type="genre">
+                                <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                            </note>
+                            <textLang mainLang="pt" otherLangs="en fr"/>
+                        </msItemStruct>
+                    </msContents>
+                    <history>
+                        <origin>
+                            <p>
+                                <origDate when="1914" cert="medium">c. 1914</origDate>
+                                <origPlace/>
+                            </p>
+                        </origin>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="bn-acpc-e-e3-8-1-13_JPG_24-C-R0150/bn-acpc-e-e3-8-1-13_0006_3v_t24-C-R0150.jpg"/>
+    </facsimile>
+    <text xml:id="pessoa00005">
+        <body>
+            <div>
+                <list>
+                    <item>
+                        <label>1.</label>
+                        <hi rend="underline">Alberto Caeiro</hi> – “O Guardador de Rebanhos.”</item>
+                    <item>
+                        <label>2.</label> Entrevista com <choice>
+                            <abbr>A.</abbr>
+                            <expan>Alberto</expan>
+                        </choice> Caeiro, talvez no <hi rend="underline">Theatro</hi>.</item>
+                    <item>
+                        <label>3.</label>Artigo sobre <choice>
+                            <abbr>A.</abbr>
+                            <expan>Alberto</expan>
+                        </choice> Caeiro, n’ <hi rend="underline">A Aguia</hi>.</item>
+                    <item>
+                        <label>4.</label>Artigo sobre Caeiro no “<choice>
+                            <abbr>T.</abbr>
+                            <expan>Thomas</expan>
+                        </choice>
+                        <choice>
+                            <abbr>P.</abbr>
+                            <expan>Power</expan>
+                        </choice>’s Weekly.” – ?.</item>
+                    <item>
+                        <label>5.</label>
+                        <choice>
+                            <abbr>Trad.</abbr>
+                            <expan>Tradução</expan>
+                        </choice> de <choice>
+                            <abbr>A.</abbr>
+                            <expan>Alberto</expan>
+                        </choice>
+                        <choice>
+                            <abbr>C.</abbr>
+                            <expan>Caeiro</expan>
+                        </choice> – <hi rend="underline">The Keeper of Sheep</hi>.</item>
+                    <item>
+                        <label>6.</label>
+                        <choice>
+                            <abbr>
+                                <metamark rend="line" function="ditto"/>
+                            </abbr>
+                            <expan>Tradução de Alberto Caeiro </expan>
+                        </choice> - <hi rend="underline">Le Gardien des<hi rend="superscript">e</hi>
+                            Troupeaux</hi>.</item>
+                    <item>
+                        <label>7.</label> Tentar artigo no <hi rend="underline">Mercure de
+                            France</hi>, sobre<lb/> Alberto Caeiro.</item>
+                </list>
+            </div>
+        </body>
+    </text>
+</TEI>

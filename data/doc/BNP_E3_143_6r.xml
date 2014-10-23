@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Title</title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <institution>Biblioteca Nacional de Portugal</institution>
+                        <idno>BNP/E3 143-6r</idno>
+                    </msIdentifier>
+                    <msContents>
+                        <msItemStruct>
+                            <author>Fernando Pessoa</author>
+                            <respStmt>
+                                <resp>Transcrição, Edição</resp>
+                                <name>Pedro Sepúlveda</name>
+                            </respStmt>
+                            <respStmt>
+                                <resp>Codificação</resp>
+                                <name>Ulrike Henny</name>
+                            </respStmt>
+                            <respStmt>
+                                <resp>Codificação</resp>
+                                <name>Isabel Figueiredo-Iken</name>
+                            </respStmt>
+                            <note type="genre">Lista editorial</note>
+                            <textLang mainLang="en" otherLangs="pt fr"/>
+                        </msItemStruct>
+                    </msContents>
+                    <history>
+                        <origin>
+                            <p>
+                                <origDate when="1919" cert="medium">c. 1919</origDate>
+                                <origPlace/>
+                            </p>
+                        </origin>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="bn-acpc-e-e3-143-1-14_JPG_24-C-R0150/bn-acpc-e-e3-143-1-14_0011_6_t24-C-R0150.jpg"/>
+    </facsimile>
+    <text>
+        <body>
+            <div>
+                <list>
+                    <item>
+                        <hi rend="underline">Possible articles by Thomas Crosse (or some such):
+                        </hi>
+                    </item>
+                    <item>A conspectus of the Columbus theories (see what<lb/> the recent Italian re
+                        Genoa one says).</item>
+                    <item>Diogo Pires, otherwise Solomon Molcho. </item>
+                    <item>The Myth of King Sebastian. </item>
+                    <item>Biomancy (fairly <subst>
+                            <del rend="overtyped">large</del>
+                            <add place="above">big</add>
+                        </subst> article) </item>
+                    <item> Sophistry, or Curios Proofs and Arguments: from<lb/> the Greek Sophists (<choice>
+                            <abbr>v.</abbr>
+                            <expan>?</expan>
+                        </choice> Funck Brentano, Les<lb/> Sophistes Grecs) through medieval
+                        sophists<lb/> and schoolmen, to modern sophists, includ-<lb/>ing such theses
+                        as Comme Quoi Napoléon <add resp="PS">n’a Jamais Existé</add>) <del rend="overtyped">
+                            <gap reason="illegible" quantity="4" unit="character"/>
+                        </del>
+                        <lb/> (See whether some idea can be obtained of<lb/> Whately’s Historic
+                        Doubts). </item>
+                    <item> (This article <lb/>can be divided into two – one on Sophistry
+                        <lb/>Proper, the other on Curious Proofs and Ar-<lb/>guments). </item>
+                    <item> Singularities of Language. </item>
+                    <item>(Historia tragico Maritima) (or translate perhaps). </item>
+                    <item>Tobacco / Tobacco in Portugal (special) ??? </item>
+                    <item>Freemansonry in Portugal (special) ? </item>
+                    <item>Kings that will Return. (the general myth of which<lb/> the one of King
+                        Sebastian is a particular<lb/> case). </item>
+                    <item>The Epigram. (or a little book choosing them). </item>
+                </list>
+            </div>
+        </body>
+    </text>
+</TEI>

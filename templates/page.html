@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title class="config:app-title">App Title</title>
+        <meta class="config:app-meta"/>
+        <link class="helpers:app-root" rel="shortcut icon" href="resources/images/favicon.ico"/>
+        <link class="helpers:app-root" rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css"/>
+        <link class="helpers:app-root" rel="stylesheet" type="text/css" href="resources/css/style.css"/>
+        <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery-1.7.1.min.js"/>
+        <script class="helpers:app-root" type="text/javascript" src="resources/js/bootstrap.min.js"/>
+        <script class="helpers:app-root" type="text/javascript" src="resources/js/loadsource.js"/>
+        <!-- Add mousewheel plugin (this is optional) -->
+        <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery.mousewheel-3.0.6.pack.js"/>
+        <!-- Add fancyBox -->
+        <link class="helpers:app-root" rel="stylesheet" href="resources/css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen"/>
+        <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery.fancybox.pack.js?v=2.1.5"/>
+        <script class="helpers:app-root" type="text/javascript">
+           	$(document).ready(function() {
+           		$(".fancybox").fancybox();
+           	});
+       </script>
+    </head>
+    <body id="body">
+        <div class="container">
+            <div class="page-header">
+                <h1>
+                    <a class="helpers:app-root" href="index.html">
+                        <span class="config:app-title">Generated page</span>
+                    </a>
+                </h1>
+            </div>
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <!--<a class="config:app-title brand" href="./index.html">App Title</a>-->
+                        <ul class="nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentos</a>
+                                <ul class="dropdown-menu app:list?type=doc"/>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Publicações</a>
+                                <ul class="dropdown-menu app:list?type=pub"/>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Acessos</a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-submenu">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Géneros</a>
+                                        <ul class="dropdown-menu app:list?type=genres"/>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cronologia</a>
+                                        <ul class="dropdown-menu app:list?type=years"/>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Autores</a>
+                                        <ul class="dropdown-menu app:list?type=authors"/>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="vl">
+                                <a href="#">Projeção (?)</a>
+                            </li>
+                            <li class="vl">
+                                <a href="#">(Bibliografia)</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projeto</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="#">Equipa</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Documentação</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Contacto</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="content" class="container"/>
+        </div>
+    </body>
+</html>

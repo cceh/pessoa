@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Title</title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Information about the source</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listPerson type="authors">
+                <person xml:id="FP">
+                    <persName>Fernando Pessoa</persName>
+                </person>
+                <person xml:id="AC">
+                    <persName>Alberto Caeiro</persName>
+                </person>
+                <person xml:id="AdC">
+                    <persName>Álvaro de Campos</persName>
+                </person>
+                <person xml:id="BS">
+                    <persName>Bernardo Soares</persName>
+                </person>
+                <person xml:id="RR">
+                    <persName>Ricardo Reis</persName>
+                </person>
+            </listPerson>
+         <!-- person roles -->
+            <list type="roles">
+                <item>author</item>
+                <item>editor</item>
+                <item>translator</item>
+                <item>interviewee</item>
+                <item>topic</item>
+            </list>
+         <!-- work roles -->
+            <list type="roles">
+                <item>chapter</item>
+                <item>volume</item>
+                <item>work</item>
+            </list>
+            <listPlace>
+                <place>
+                    <placeName>...</placeName>
+                </place>
+            </listPlace>
+         <!-- géneros mencionados -->
+            <list type="genres" n="1">
+                <item xml:id="artigo">Artigo</item>
+                <item xml:id="entrevista">Entrevista</item>
+                <item xml:id="nota">Nota</item>
+                <item xml:id="prefacio">prefacio</item>
+            </list>
+            <list type="genres" n="2">
+         <!-- géneros de documentos e publicaçoes -->
+                <item xml:id="carta">Carta</item>
+                <item xml:id="diario">Diário</item>
+                <item xml:id="ensaio">Ensaio</item>
+                <item xml:id="lista_editorial">Lista editorial</item>
+                <item xml:id="nota_editorial">Nota editorial</item>
+                <item xml:id="plano_editorial">Plano editorial</item>
+                <item xml:id="poesia">Poesia</item>
+            </list>
+            <!-- obras mencionadas -->
+            <list type="works" n="1">
+                <item xml:id="OM-1">
+                    <title>Arco de Triumpho</title>
+                </item>
+                <item xml:id="OM-2">
+                    <title>Athena</title>
+                </item>
+                <item xml:id="OM-3">
+                    <title>O Guardador de Rebanhos</title>
+                </item>
+                <item xml:id="OM-4">
+                    <title>O Regresso dos Deuses</title>
+                </item>
+                <item xml:id="OM-5">
+                    <title>Poemas Completos de Alberto Caeiro</title>
+                </item>
+                <item xml:id="OM-6">
+                    <title>Theatro Estático</title>
+                </item>
+                <item xml:id="OM-7">
+                    <desc>Entrevista com Alberto Caeiro</desc>
+                </item>
+                <item xml:id="OM-8">
+                    <desc>Artigo sobre Alberto Caeiro</desc>
+                </item>
+                <item xml:id="OM-9">
+                    <desc>Artigo sobre Alberto Caeiro</desc>
+                </item>
+                <item xml:id="OM-10">
+                    <desc>Artigo sobre Alberto Caeiro</desc>
+                </item>
+                <item xml:id="OM-11">
+                    <title>Nota dos Editores</title>
+                </item>
+                <item xml:id="OM-12">
+                    <title>Prefacio do Dr. Ricardo Reis</title>
+                </item>
+            </list>
+            <!-- obras publicadas -->
+            <list type="works" n="2">
+                <!-- Poemas Vida -->
+                <item xml:id="OP-1">
+                    <!-- im arquivo nicht gefunden -->
+                    <title>Impressões do Crepúsculo</title>
+                </item>
+                <item xml:id="OP-2">
+                    <title>Opiário</title>
+                </item>
+                <item xml:id="OP-3">
+                    <title>Ode Triunfal</title>
+                </item>
+                <item xml:id="OP-4">
+                    <title>Ode Marítima</title>
+                </item>
+                <item xml:id="OP-5">
+                    <title>Chuva Oblíqua. Poemas Interseccionistas</title>
+                </item>
+                <item xml:id="OP-6">
+                    <title>Hora Absurda</title>
+                </item>
+                <item xml:id="OP-7">
+                    <title>Passos da Cruz</title>
+                </item>
+                <item xml:id="OP-8">
+                    <!-- im arquivo noch nicht gefunden -->
+                    <title>A Casa Branca Nau Preta</title>
+                </item>
+                <item xml:id="OP-9">
+                    <!-- im arquivo noch nicht gefunden -->
+                    <title>Além-Deus</title>
+                </item>
+                <item xml:id="OP-10">
+                    <title>Episódios</title>
+                </item>
+                <item xml:id="OP-11">
+                    <title>Abdicação</title>
+                </item>
+                <item xml:id="OP-12">
+                    <title>À Memória do Presidente-Rei Sidónio Pais</title>
+                </item>
+                <item xml:id="OP-13">
+                    <title>Natal</title>
+                </item>
+                <item xml:id="OP-14">
+                    <title>Soneto Já Antigo</title>
+                </item>
+                <item xml:id="OP-15">
+                    <title>Lisbon Revisited (1923)</title>
+                </item>
+                <item xml:id="OP-16">
+                    <title>Canção</title>
+                </item>
+                <item xml:id="OP-17">
+                    <title>Odes, Livro Primeiro</title>
+                </item>
+                <item xml:id="OP-18">
+                    <title>Alguns Poemas</title>
+                </item>
+                <item xml:id="OP-19">
+                    <title>De «O Guardador de Rebanhos»</title>
+                </item>
+                <item xml:id="OP-20">
+                    <title>Dos «Poemas Inconjuntos»</title>
+                </item>
+                <item xml:id="OP-21">
+                    <title>Lisbon Revisited (1926)</title>
+                </item>
+                <item xml:id="OP-22">
+                    <title>Rubaiyat</title>
+                </item>
+                <item xml:id="OP-23">
+                    <title>Anti-Gazetilha</title>
+                </item>
+                <item xml:id="OP-24">
+                    <title>O Avô e o Neto</title>
+                </item>
+                <item xml:id="OP-25">
+                    <title>Marinha</title>
+                </item>
+                <item xml:id="OP-26">
+                    <title>Três Odes</title>
+                </item>
+                <item xml:id="OP-27">
+                    <title>Qualquer Música...</title>
+                </item>
+                <item xml:id="OP-28">
+                    <title>Ode</title>
+                </item>
+                <item xml:id="OP-29">
+                    <title>Ode</title>
+                </item>
+                <item xml:id="OP-30">
+                    <title>Escrito num Livro Abandonado em Viagem</title>
+                </item>
+                <item xml:id="OP-31">
+                    <title>Apostila</title>
+                </item>
+                <item xml:id="OP-32">
+                    <title>Depos da Feira</title>
+                </item>
+                <item xml:id="OP-33">
+                    <title>Gazetilha</title>
+                </item>
+                <item xml:id="OP-34">
+                    <title>Apontamento</title>
+                </item>
+                <item xml:id="OP-35">
+                    <title>Tomámos a Vila Depois de um Intenso Bombardeamento</title>
+                </item>
+                <item xml:id="OP-36">
+                    <title>A Fernando Pessoa</title>
+                </item>
+                <item xml:id="OP-37">
+                    <title>Quasi</title>
+                </item>
+                <item xml:id="OP-38">
+                    <title>Canção</title>
+                </item>
+                <item xml:id="OP-39">
+                    <title>O Menino da Sua Mãe</title>
+                </item>
+                <item xml:id="OP-40">
+                    <title>Gomes Leal</title>
+                </item>
+                <item xml:id="OP-41">
+                    <title>Adiamento</title>
+                </item>
+                <item xml:id="OP-42">
+                    <title>Aniversário</title>
+                </item>
+                <item xml:id="OP-43">
+                    <title>O Último Sortilégio</title>
+                </item>
+                <item xml:id="OP-44">
+                    <title>O Oitavo Poema de «O Guardador de Rebanhos»</title>
+                </item>
+                <item xml:id="OP-45">
+                    <title>Trapo</title>
+                </item>
+                <item xml:id="OP-46">
+                    <title>O Andaime</title>
+                </item>
+                <item xml:id="OP-47">
+                    <title>Duas Odes</title>
+                </item>
+                <item xml:id="OP-48">
+                    <title>O Penúltimo Poema</title>
+                </item>
+                <item xml:id="OP-49">
+                    <title>«Guia-me a só razão»</title>
+                </item>
+                <item xml:id="OP-50">
+                    <title>«Quero acabar entre rosas, porque as amei na infância»</title>
+                </item>
+                <item xml:id="OP-51">
+                    <title>Ah, um Soneto</title>
+                </item>
+                <item xml:id="OP-52">
+                    <title>Iniciação</title>
+                </item>
+                <item xml:id="OP-53">
+                    <title>Autopsicografia</title>
+                </item>
+                <item xml:id="OP-54">
+                    <title>Ode</title>
+                </item>
+                <item xml:id="OP-55">
+                    <title>Isto</title>
+                </item>
+                <item xml:id="OP-56">
+                    <title>Tabacaria</title>
+                </item>
+                <item xml:id="OP-57">
+                    <title>Fresta</title>
+                </item>
+                <item xml:id="OP-58">
+                    <title>Eros e Psique</title>
+                </item>
+                <item xml:id="OP-59">
+                    <title>Natal</title>
+                </item>
+                <item xml:id="OP-60">
+                    <title>Intervalo</title>
+                </item>
+                <item xml:id="OP-61">
+                    <title>Conselho</title>
+                </item>
+                <!-- Prosa Vida -->
+            </list>
+            <list type="publication">
+                <item xml:id="Aguia">A Aguia</item>
+                <item xml:id="Mercure_France" xml:lang="fr">Mercure de France</item>
+                <item xml:id="Teatro">Teatro</item>
+                <item xml:id="TPs_Weekly" xml:lang="en">T.P.'s Weekly</item>
+            </list>
+            <list type="years">
+                <item>1904</item>
+                <item>1905</item>
+                <item>1906</item>
+                <item>1914</item>
+                <item>1915</item>
+                <item>1916</item>
+                <item>1917</item>
+                <item>1920</item>
+                <item>1922</item>
+                <item>1923</item>
+                <item>1924</item>
+                <item>1925</item>
+                <item>1926</item>
+                <item>1927</item>
+                <item>1928</item>
+                <item>1929</item>
+                <item>1930</item>
+                <item>1931</item>
+                <item>1932</item>
+                <item>1933</item>
+                <item>1934</item>
+                <item>1935</item>
+            </list>
+        </body>
+    </text>
+</TEI>
