@@ -1,10 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project default="xar" name="pessoa">
-    <property name="project.version" value="0.1"/>
-    <property name="project.app" value="pessoa"/>
-    <property name="build.dir" value="build"/>
-    <target name="xar">
-        <mkdir dir="${build.dir}"/>
-        <zip basedir="." destfile="${build.dir}/${project.app}-${project.version}.xar" excludes="${build.dir}/*"/>
+<project xmlns:xdb="http://exist-db.org/ant" default="deploy-local" name="magica-levantina">
+    <property file="local.properties"/>
+    <path id="classpath.core">
+        <fileset dir="${exist-home}/lib/core">
+            <include name="*.jar"/>
+        </fileset>
+        <pathelement path="${exist-home}/exist.jar"/>
+        <pathelement path="${exist-home}/exist-optional.jar"/>
+    </path>
+    <typedef resource="org/exist/ant/antlib.xml" uri="http://exist-db.org/ant">
+        <classpath refid="classpath.core"/>
+    </typedef>
+    <target name="deploy-local">
+        <echo message="Deploying app to local eXist-db."/>
+        <property file="deploy-local.properties"/>
+        <xdb:store uri="${uri}" createcollection="true" createsubcollections="true" user="${user}" password="${password}">
+            <fileset dir=".">
+                <include name="**/*.*"/>
+                <exclude name="build/"/>
+                <exclude name="modules/admin.xqm"/>
+                <exclude name="**/*.properties"/>
+                <exclude name="**/*.tmpl"/>
+                <exclude name="**/*.md"/>
+                <exclude name="**/.gitignore"/>
+            </fileset>
+        </xdb:store>
+    </target>
+    <target name="deploy-remote">
+        <echo message="Deploying app to remote eXist-db:"/>
+        <input message="Do you really want to deploy the application (y/n)?" validargs="y,n" addproperty="do.delete"/>
+        <condition property="do.abort">
+            <equals arg1="n" arg2="${do.delete}"/>
+        </condition>
+        <fail if="do.abort">Deployment aborted by user.</fail>
+        <property file="deploy-remote.properties"/>
+        <xdb:store uri="${uri}" createcollection="true" createsubcollections="true" user="${user}" password="${password}">
+            <fileset dir=".">
+                <include name="**/*.*"/>
+                <exclude name="build/"/>
+                <exclude name="modules/admin.xqm"/>
+                <exclude name="**/*.properties"/>
+                <exclude name="**/*.tmpl"/>
+                <exclude name="**/*.md"/>
+                <exclude name="**/.gitignore"/>
+            </fileset>
+        </xdb:store>
     </target>
 </project>
