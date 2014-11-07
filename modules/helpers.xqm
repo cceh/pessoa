@@ -5,10 +5,10 @@ xquery version "3.0";
  : speziell zur Erzeugung komplexerer und oft verwendeter HTML-Elemente
  :)
 
-module namespace helpers="http://projects.uni-koeln.de:8080/apps/pessoa/helpers";
+module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers";
 
 import module namespace templates="http://exist-db.org/xquery/templates";
-import module namespace config="http://projects.cceh.uni-koeln.de:8080/apps/pessoa/config" at "config.xqm";
+import module namespace config="http://localhost:8080/exist/apps/pessoa/config" at "config.xqm";
 
 (: web-root of the app :)
 declare variable $helpers:app-root := $config:webapp-root;

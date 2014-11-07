@@ -4,22 +4,23 @@ xquery version "3.0";
  : A set of helper functions to access the application context from
  : within a module.
  :)
-module namespace config="http://projects.cceh.uni-koeln.de:8080/apps/pessoa/config";
-
-import module namespace admin="http://projects.cceh.uni-koeln.de:8080/apps/pessoa/admin" at "admin.xqm";
+module namespace config="http://localhost:8080/exist/apps/pessoa/config";
 
 declare namespace templates="http://exist-db.org/xquery/templates";
 
 declare namespace repo="http://exist-db.org/xquery/repo";
 declare namespace expath="http://expath.org/ns/pkg";
-declare variable $config:admin-id := $admin:admin-id;
-declare variable $config:admin-pass := $admin:admin-pass;
+declare variable $config:admin-id := "admin";
+declare variable $config:admin-pass := "knight";
+(:declare variable $config:webapp-root :="http://projects.cceh.uni-koeln.de/pessoa";:)
 declare variable $config:webapp-root :="http://localhost:8080/exist/apps/pessoa";
 (: declare variable $config:file-path := "" :)
+(:declare variable $config:request-path := concat($config:webapp-root, "/", substring-after(request:get-uri(), '/apps/pessoa'));:)
 declare variable $config:request-path := concat($config:webapp-root, "/", substring-after(request:get-uri(), '/exist/apps/pessoa'));
 declare variable $config:webfile-path := "http://projects.cceh.uni-koeln.de/pessoa-images";
 
-(: 
+(: [16:23:28] Ulrike Henny:  declare variable $config:webapp-root :="http://localhost:8080/exist/apps/pessoa";
+[16:24:01] Ulrike Henny: declare variable $config:request-path := concat($config:webapp-root, "/", substring-after(request:get-uri(), '/exist/apps/pessoa'));
     Determine the application root collection from the current module load path.
 :)
 declare variable $config:app-root := 

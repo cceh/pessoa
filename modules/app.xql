@@ -1,14 +1,27 @@
 xquery version "3.0";
 
-module namespace app="http://projects.cceh.uni-koeln.de:8080/apps/pessoa/templates";
-
+(:module namespace app="http://projects.cceh.uni-koeln.de:8080/apps/pessoa/templates";:)
+module namespace app="http://localhost:8080/exist/apps/pessoa/templates";
 import module namespace templates="http://exist-db.org/xquery/templates" at "templates.xql";
+(:
 import module namespace config="http://projects.cceh.uni-koeln.de:8080/apps/pessoa/config" at "config.xqm";
 import module namespace lists="http://projects.cceh.uni-koeln.de:8080/apps/pessoa/lists" at "lists.xqm";
 import module namespace doc="http://projects.cceh.uni-koeln.de:8080/apps/pessoa/doc" at "doc.xqm";
 import module namespace helpers="http://projects.uni-koeln.de:8080/apps/pessoa/helpers" at "helpers.xqm";
 
+:)
+import module namespace config="http://localhost:8080/exist/apps/pessoa/config" at "config.xqm";
+import module namespace lists="http://localhost:8080/exist/apps/pessoa/lists" at "lists.xqm";
+import module namespace doc="http://localhost:8080/exist/apps/pessoa/doc" at "doc.xqm";
+import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
+import module namespace kwic="http://exist-db.org/xquery/kwic";
+
+declare namespace text="http://exist-db.org/xquery/text";
+
+declare namespace request="http://exist-db.org/xquery/request";
+
 declare namespace tei="http://www.tei-c.org/ns/1.0";
+(:declare namespace range="http://exist-db.org/xquery/range";:)
 
 (:~
  : This is a sample templating function. It will be called by the templating module if
@@ -45,3 +58,164 @@ declare function app:submenu($node as node(), $model as map(*), $item as node())
         </ul>
      </li>
 };
+
+(: Such Funktion :)
+
+declare %templates:wrap function app:search( $node as node(), $model as map(*), $term as xs:string?) as map(*) {
+   
+   (:
+   for $m in collection("/db/apps/pessoa/data/doc")//tei:origDate[ft:query(.,$q)]
+order by ft:score($m) descending
+:)
+    if(exists($term) and $term !=" ")
+    then
+        let $result-text := collection("/db/apps/pessoa/data/doc")//tei:text[ft:query(.,$term)]
+        let $result-head := collection("/db/apps/pessoa/data/doc")//tei:msItemStruct[ft:query(.,$term)]
+        let $result := ($result-text, $result-head)
+        return map{
+        "result" := $result,
+        "result-text" := $result-text,
+        "result-head" := $result-head,
+        "query" := $term
+        }
+        else map{
+        "resilt-text":=(),
+        "result-head":=(),
+        "query" := '"..."'
+        }
+};
+(:Profi Suche:)
+declare  %templates:wrap function app:search-profi( $node as node(), $model as map(*), $term as xs:string?) as map(*) {
+
+   (:
+   for $m in collection("/db/apps/pessoa/data/doc")//tei:origDate[ft:query(.,$q)]
+order by ft:score($m) descending
+:)
+    if(exists($term) and $term !="")
+    then
+        let $parameters := request:get-parameter-names()
+        let $lang := if($parameters ="language") then app:search-value($parameters,"language") else ""
+        let $date := if($parameters ="date") then app:search-value($parameters,"date") else ""
+        let $query:= <query><bool><term occur="must">{$term}</term></bool></query>
+         
+        let $result-text := collection("/db/apps/pessoa/data/doc")//tei:text[ft:query(.,$query)] 
+        let $result-head := collection("/db/apps/pessoa/data/doc")//tei:msItemStruct[ft:query(.,$query)] 
+       
+       
+       
+       (: let $result-lang := collection("/db/apps/pessoa/data/doc")//tei:msItemStruct/tei:textLang[ft:query(@mainLang,'pt')]/@mainLang/data(.) :)
+        let $collect := collection("/db/apps/pessoa/data/doc")
+        let $filter-lang := if($lang !="") then $collect//range:field-eq(("mainLang"),$lang)  else if($collect//range:field-eq(("mainLang"),$lang)= "") then $collect//range:field-eq(("otherLang"),$lang)  else $collect
+        let $filter-date := if($date != "") then $collect//range:field-eq(("date_when"),"1915") else $collect
+        let $result-filter := $filter-date
+        (:collection("/db/apps/pessoa/data/doc")//tei:msItemStruct/tei:textLang/range:field-eq(("mainLang"),$lang):)
+        
+        let $result := ($result-text, $result-head, $result-filter)
+            
+        return map{
+        "result" := $result,
+        "result-text" := $result-text,
+        "result-head" := $result-head,
+    
+        "result-filter" := $result-filter,
+        "query" := $term
+        }
+        else map{
+        "result-text":=(),
+        "result-head":=(),
+        "result-lang" := (),
+        "query" := '"..."'
+        }
+        
+};
+
+declare function app:search-value ($parameters as xs:string+, $key as xs:string) as xs:string* {
+   if(exists($parameters))
+   then
+   for $hit in $parameters 
+    return if($hit=$key) then request:get-parameter($hit,'')
+    else ()
+    else()
+};
+
+declare function app:result-list ($node as node(), $model as map(*), $sel as xs:string) as node()+ {
+    if (exists($sel) and $sel = ("text", "head","lang"))
+    then
+        if (exists($model(concat("result-",$sel))))
+        then
+        let $term := $model("query") 
+            for $hit in $model(concat("result-", $sel))
+            let $file-name := root($hit)/util:document-name(.)
+            let $title := 
+            if(doc(concat("/db/apps/pessoa/data/doc/",$file-name))//tei:sourceDesc/tei:msDesc) 
+                then doc(concat("/db/apps/pessoa/data/doc/",$file-name))//tei:msDesc/tei:msIdentifier/tei:idno[1]/data(.)
+                else doc(concat("/db/apps/pessoa/data/doc/",$file-name))//tei:biblStruct/tei:analytic/tei:title[1]/data(.)
+            let $expanded := kwic:expand($hit)
+        return if($sel != "head")
+            then 
+            <li>
+            
+            <a href="data/doc/{concat(substring-before($file-name, ".xml"),'?term=',$model("query"), '&amp;file=', $file-name)}">{$title}</a>
+            {kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="40"/>)}
+            
+            <!--{kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="40"/>)}-->
+            </li>
+            else 
+            <li> 
+            <a href="data/doc/{concat(substring-before($file-name, ".xml"),'?term=',$model("query"), '&amp;file=', $file-name)}">{$title}</a>
+
+            {kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="0" />)}</li>
+        else <p> Keine Treffer </p>
+        else $sel
+};
+declare  function app:filter ($node as node(), $model as map(*), $sel as xs:string) as node()+ {
+    if(exists($sel) and $sel = ("filter"))
+    then
+        if(exists($model("result-filter")))  
+        then 
+            for $hit in $model("result-filter")
+            let $file-name := root($hit)/util:document-name(.)            
+            return <p>Exist,{$sel,$model("result-lang"),$file-name}</p>
+        else <p> Dos Not exist,{$sel,$model("result-lang")}</p>
+    else $sel
+};
+
+declare function app:highlight-matches($node as node(), $model as map(*), $term as xs:string?, $sel as xs:string, $file as xs:string?) as node() {
+if($term and $file and $sel and $sel="text","head","lang") 
+    then
+        let $result := if ($sel = "text")
+        then doc(concat("/db/apps/pessoa/data/doc/",$file))//tei:text[ft:query(.,$term)]
+        else ()
+        let $css := doc("/db/apps/pessoa/highlight-matches.xsl")
+        let $exp := if (exists($result)) then kwic:expand($result[1]) else ()
+        let $exptrans := if (exists($exp))
+                         then transform:transform($exp, $css, ())
+                         else ()
+        return
+            if (exists($exptrans))
+            then $exptrans
+            else $node
+    else $node
+};
+
+(:
+declare function app:highlight-matches($node as node(), $model as map(*), $q as xs:string?, $f as xs:string?, $c as xs:string) as node(){
+    if($q and $f and $c and $c = ("tcrit", "tp1", "tca", "mss", "aux"))
+    then
+        let $result := if ($c = "tcrit" or $c = "tp1")
+                        then doc(concat("/db/apps/guillelmus/data/", $c ,"/", $f))//xhtml:div[@id='content'][ft:query(., $q)]
+                        else if ($c = "tca")
+                        then doc(concat("/db/apps/guillelmus/data/", $c ,"/", $f))//xhtml:table[contains(@class, 'MsoTableGrid')][ft:query(., $q)]
+                        else doc(concat("/db/apps/guillelmus/data/", $c ,"/", $f))//xhtml:div[@id='staticcontent'][ft:query(., $q)]
+        let $exp := if (exists($result)) then kwic:expand($result[1]) else ()
+        let $stylesheet := doc("/db/apps/guillelmus/highlight-matches.xsl") 
+        let $exptrans := if (exists($exp))
+                         then transform:transform($exp, $stylesheet, ())
+                         else ()
+        return
+            if (exists($exptrans))
+            then $exptrans
+            else $node
+    else $node
+};
+:)

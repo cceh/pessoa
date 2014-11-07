@@ -1,9 +1,9 @@
 xquery version "3.0";
 
-module namespace doc="http://projects.cceh.uni-koeln.de:8080/apps/pessoa/doc";
+module namespace doc="http://localhost:8080/exist/apps/pessoa/doc";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 
-import module namespace helpers="http://projects.uni-koeln.de:8080/apps/pessoa/helpers" at "helpers.xqm";
+import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
 
 (: declare variable $ms:id := request:get-parameter("id", ()); :)
 
