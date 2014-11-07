@@ -1,9 +1,9 @@
 xquery version "3.0";
 
-module namespace lists="http://projects.cceh.uni-koeln.de:8080/apps/pessoa/lists";
+module namespace lists="http://localhost:8080/exist/apps/pessoa/lists";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 
-import module namespace helpers="http://projects.uni-koeln.de:8080/apps/pessoa/helpers" at "helpers.xqm";
+import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
 
 declare function lists:get-navi-list($node as node(), $model as map(*), $type as text()) as item()*{
     if ($type = "authors")

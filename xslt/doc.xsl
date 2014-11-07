@@ -72,7 +72,7 @@
         </li>
     </xsl:template>
     <xsl:template match="lg">
-        <div class="lg">
+        <div class="lg app:highlight-matches?sel=text">
             <xsl:apply-templates/>
         </div>
     </xsl:template>

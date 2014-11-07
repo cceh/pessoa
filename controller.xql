@@ -43,6 +43,18 @@ else if (contains($exist:path, "/$shared/")) then
             <set-header name="Cache-Control" value="max-age=3600, must-revalidate"/>
         </forward>
     </dispatch>
+    (:Suche:)
+    else if (contains($exist:path, "search")) then
+    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <forward url="{$exist:controller}/search.html" />
+        <view>
+            <forward url="{$exist:controller}/modules/view.xql"/>
+        </view>
+        <error-handler>
+            <forward url="{$exist:controller}/error-page.html" method="get"/>
+            <forward url="{$exist:controller}/modules/view.xql"/>
+        </error-handler>
+    </dispatch>
 else
     (: everything else is passed through :)
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
