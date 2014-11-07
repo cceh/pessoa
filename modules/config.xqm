@@ -6,12 +6,13 @@ xquery version "3.0";
  :)
 module namespace config="http://localhost:8080/exist/apps/pessoa/config";
 
+import module namespace admin="http://projects.cceh.uni-koeln.de:8080/apps/pessoa/admin" at "admin.xqm";
+
 declare namespace templates="http://exist-db.org/xquery/templates";
 
 declare namespace repo="http://exist-db.org/xquery/repo";
 declare namespace expath="http://expath.org/ns/pkg";
-declare variable $config:admin-id := "admin";
-declare variable $config:admin-pass := "knight";
+
 (:declare variable $config:webapp-root :="http://projects.cceh.uni-koeln.de/pessoa";:)
 declare variable $config:webapp-root :="http://localhost:8080/exist/apps/pessoa";
 (: declare variable $config:file-path := "" :)
