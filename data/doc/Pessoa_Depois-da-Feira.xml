@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Depois da Feira</title>
+                <respStmt>
+                    <resp>Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Sviatoslav Drach</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Depois da Feira</title>
+                        <author>
+                            <rs type="person" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j">Presença</title>
+                        <imprint>
+                            <pubPlace>Coimbra</pubPlace>
+                            <date when="1928-11">Nov. 1928</date>
+                        </imprint>
+                        <biblScope unit="issue">16</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="poesia">Poesia</rs>
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+   <!-- s. d.
+Poesias. Fernando Pessoa. (Nota explicativa de João Gaspar Simões e Luiz de Montalvor.) Lisboa: Ática, 1942 (15ª ed. 1995).  - 221. -->
+    <text xml:id="depois-da-feira">
+        <body>
+            <div>
+                <head>DEPOIS DA FEIRA</head>
+                <lg>
+                    <l>Vão vagos pela estrada,</l>
+                    <l>Cantando sem razão</l>
+                    <l>À última esperança dada</l>
+                    <l>À última ilusão.</l>
+                    <l>Não significam nada.</l>
+                    <l>Mimos e bobos são.</l>
+                </lg>
+                <lg>
+                    <l>Vão juntos e diversos</l>
+                    <l>Sob um luar de ver,</l>
+                    <l>Em que sonhos imersos</l>
+                    <l>Nem saberão dizer,</l>
+                    <l>E cantam aqueles versos</l>
+                    <l>Que lembram sem querer.</l>
+                </lg>
+                <lg>
+                    <l>Pajens de um morto mito,</l>
+                    <l>Tão líricos!, tão sós!,</l>
+                    <l>Não têm na voz um grito,</l>
+                    <l>Mal têm a própria voz;</l>
+                    <l>E ignora-os o infinito</l>
+                    <l>Que nos ignora a nós.</l>
+                </lg>
+            </div>
+        </body>
+    </text>
+</TEI>

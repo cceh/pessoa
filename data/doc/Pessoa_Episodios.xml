@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<teiCorpus xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Episódios</title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Sviatoslav Drach</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">EPISÓDIOS</title>
+                        <author>
+                            <rs type="person" key="FP">Fernando Pessoa</rs>
+                        </author>
+                    </analytic>
+                    <monogr>
+                        <imprint>
+                            <publisher>Arquivo Pessoa</publisher>
+                        </imprint>
+                    </monogr>
+                    <relatedItem type="first-publication" target="episodios-fp"/>
+                </biblStruct>
+                <biblStruct xml:id="episodios-fp">
+                    <analytic>
+                        <title level="a">Episódios</title>
+                        <author>
+                            <rs type="person" key="FP">Fernando Pessoa</rs>
+                        </author>
+                    </analytic>
+                    <monogr>
+                        <title level="j">Portugal Futurista</title>
+                        <imprint>
+                            <pubPlace>Lisboa</pubPlace>
+                            <date when="1917">1917</date>
+                        </imprint>
+                        <biblScope unit="issue">1</biblScope>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <langUsage>
+                <language ident="pt">português</language>
+            </langUsage>
+            <textClass>
+                <keywords>
+                    <term type="genre">
+                        <rs type="genre" key="poesia">Poesia</rs>
+                    </term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+    </teiHeader>
+    <TEI>
+        <teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title>I - Andei léguas de sombra</title>
+                </titleStmt>
+                <publicationStmt>
+                    <ab/>
+                </publicationStmt>
+                <sourceDesc>
+                    <biblStruct>
+                        <analytic>
+                            <title level="a">I - Andei léguas de sombra</title>
+                        </analytic>
+                        <monogr>
+                            <imprint>
+                                <publisher>Arquivo Pessoa</publisher>
+                                <pubPlace>http://arquivopessoa.net/textos/258</pubPlace>
+                            </imprint>
+                        </monogr>
+                    </biblStruct>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+        <text xml:id="andei-leguas-de-sombra">
+            <body>
+                <div>
+                    <head>EPISÓDIOS</head>
+                    <head>A MÚMIA</head>
+                    <head rend="indent">I</head>
+                    <lg>
+                        <l>Andei léguas de sombra</l>
+                        <l>Dentro em meu pensamento.</l>
+                        <l>Floresceu às avessas</l>
+                        <l>Meu ócio com sem-nexo,</l>
+                        <l>E apagaram-me as lâmpadas</l>
+                        <l>Na alcova cambaleante.</l>
+                    </lg>
+                    <lg>
+                        <l>Tudo prestes se volve</l>
+                        <l>Um deserto macio</l>
+                        <l>Visto pelo meu tacto</l>
+                        <l>Dos veludos da alcova,</l>
+                        <l>Não pela minha vista.</l>
+                    </lg>
+                    <lg>
+                        <l>Há um oásis no Incerto</l>
+                        <l>E, como uma suspeita</l>
+                        <l>De luz por não-há-frinchas,</l>
+                        <l>Passa uma caravana.</l>
+                    </lg>
+                    <lg>
+                        <l>Esquece-me de súbito</l>
+                        <l>Como é o espaço, e o tempo</l>
+                        <l>Em vez de horizontal</l>
+                        <l>É vertical.</l>
+                    </lg>
+                    <lg>
+                        <l rend="indent">A alcova</l>
+                        <l>Desce não sei por onde</l>
+                        <l>Até não me encontrar</l>
+                        <l>Ascende um leve fumo</l>
+                        <l>Das minhas sensações.</l>
+                        <l>Deixo de me incluir</l>
+                        <l>Dentro de mim. Não há</l>
+                        <l>Cá-dentro nem lá-fora.</l>
+                    </lg>
+                    <lg>
+                        <l>E o deserto está agora</l>
+                        <l>Virado para baixo.</l>
+                    </lg>
+                    <lg>
+                        <l>A noção de mover-me</l>
+                        <l>Esqueceu-se do meu nome.</l>
+                    </lg>
+                    <lg>
+                        <l>Na alma meu corpo pesa-me.</l>
+                        <l>Sinto-me um reposteiro</l>
+                        <l>Pendurado na sala</l>
+                        <l>Onde jaz alguém morto.</l>
+                    </lg>
+                    <lg>
+                        <l>Qualquer coisa caiu</l>
+                        <l>E tiniu no infinito.</l>
+                    </lg>
+                </div>
+            </body>
+        </text>
+    </TEI>
+    <TEI>
+        <teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title>II - Na sombra Cleópatra jaz morta.</title>
+                </titleStmt>
+                <publicationStmt>
+                    <ab/>
+                </publicationStmt>
+                <sourceDesc>
+                    <biblStruct>
+                        <analytic>
+                            <title level="a">II - Na sombra Cleópatra jaz morta.</title>
+                        </analytic>
+                        <monogr>
+                            <imprint>
+                                <publisher>Arquivo Pessoa</publisher>
+                                <pubPlace>http://arquivopessoa.net/textos/261</pubPlace>
+                            </imprint>
+                        </monogr>
+                    </biblStruct>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+        <text xml:id="na-sombra-celopatra-jaz-morta">
+            <body>
+                <div>
+                    <head rend="indent">II</head>
+                    <lg>
+                        <l>Na sombra Cleópatra jaz morta.</l>
+                        <l>Chove.</l>
+                    </lg>
+                    <lg>
+                        <l>Embandeiraram o barco de maneira errada.</l>
+                        <l>Chove sempre.</l>
+                    </lg>
+                    <lg>
+                        <l>Para que olhas tu a cidade longínqua?</l>
+                        <l>Tua alma é a cidade longínqua.</l>
+                        <l>Chove friamente.</l>
+                    </lg>
+                    <lg>
+                        <l>E quanto à mãe que embala ao colo um filho morto —</l>
+                        <l>Todos nós embalamos ao colo um filho morto.</l>
+                        <l>Chove, chove.</l>
+                    </lg>
+                    <lg>
+                        <l>O sorriso triste que sobra a teus lábios cansados,</l>
+                        <l>Vejo-o no gesto com que os teus dedos não deixam os teus anéis.</l>
+                        <l>Porque é que chove?</l>
+                    </lg>
+                </div>
+            </body>
+        </text>
+    </TEI>
+    <TEI>
+        <teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title>III - De quem é o olhar</title>
+                </titleStmt>
+                <publicationStmt>
+                    <ab/>
+                </publicationStmt>
+                <sourceDesc>
+                    <biblStruct>
+                        <analytic>
+                            <title level="a">III - De quem é o olhar</title>
+                        </analytic>
+                        <monogr>
+                            <imprint>
+                                <publisher>Arquivo Pessoa</publisher>
+                                <pubPlace>http://arquivopessoa.net/textos/264</pubPlace>
+                            </imprint>
+                        </monogr>
+                    </biblStruct>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+        <text xml:id="de-quem-e-o-olhar">
+            <body>
+                <div>
+                    <head rend="indent">III</head>
+                    <lg>
+                        <l>De quem é o olhar</l>
+                        <l>Que espreita por meus olhos?</l>
+                        <l>Quando penso que vejo,</l>
+                        <l>Quem continua vendo</l>
+                        <l>Enquanto estou pensando?</l>
+                        <l>Por que caminhos seguem,</l>
+                        <l>Não os meus tristes passos,</l>
+                        <l>Mas a realidade</l>
+                        <l>De eu ter passos comigo?</l>
+                    </lg>
+                    <lg>
+                        <l>Às vezes, na penumbra</l>
+                        <l>Do meu quarto, quando eu</l>
+                        <l>Para mim próprio mesmo</l>
+                        <l>Em alma mal existo,</l>
+                        <l>Toma um outro sentido</l>
+                    </lg>
+                    <lg>
+                        <l>Em mim o Universo —</l>
+                        <l>É uma nódoa esbatida</l>
+                        <l>De eu ser consciente sobre</l>
+                        <l>Minha ideia das coisas.</l>
+                    </lg>
+                    <lg>
+                        <l>Se acenderem as velas</l>
+                        <l>E não houver apenas</l>
+                        <l>A vaga luz de fora —</l>
+                        <l>Não sei que candeeiro</l>
+                        <l>Aceso onde na rua —</l>
+                        <l>Terei foscos desejos</l>
+                        <l>De nunca haver mais nada</l>
+                        <l>No Universo e na Vida</l>
+                        <l>De que o obscuro momento</l>
+                        <l>Que é minha vida agora.</l>
+                    </lg>
+                    <lg>
+                        <l>Um momento afluente</l>
+                        <l>Dum rio sempre a ir</l>
+                        <l>Esquecer-se de ser,</l>
+                        <l>Espaço misterioso</l>
+                        <l>Entre espaços desertos</l>
+                        <l>Cujo sentido é nulo</l>
+                        <l>E sem ser nada a nada.</l>
+                    </lg>
+                    <lg>
+                        <l>E assim a hora passa</l>
+                        <l>Metafisicamente.</l>
+                    </lg>
+                </div>
+            </body>
+        </text>
+    </TEI>
+    <TEI>
+        <teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title>IV - As minhas ansiedades caema</title>
+                </titleStmt>
+                <publicationStmt>
+                    <ab/>
+                </publicationStmt>
+                <sourceDesc>
+                    <biblStruct>
+                        <analytic>
+                            <title level="a">IV - As minhas ansiedades caema</title>
+                        </analytic>
+                        <monogr>
+                            <imprint>
+                                <publisher>Arquivo Pessoa</publisher>
+                                <pubPlace>http://arquivopessoa.net/textos/267</pubPlace>
+                            </imprint>
+                        </monogr>
+                    </biblStruct>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+        <text xml:id="as-minhas-ansiedades-caem">
+            <body>
+                <div>
+                    <head rend="indent">IV</head>
+                    <lg>
+                        <l>As minhas ansiedades caem</l>
+                        <l>Por uma escada abaixo</l>
+                        <l>Os meus desejos balouçam-se</l>
+                        <l>Em meio de um jardim vertical.</l>
+                    </lg>
+                    <lg>
+                        <l>Na Múmia a posição é absolutamente exacta.</l>
+                    </lg>
+                    <lg>
+                        <l>Música longínqua,</l>
+                        <l>Música excessivamente longínqua,</l>
+                        <l>Para que a Vida passe</l>
+                        <l>E colher esqueça aos gestos.</l>
+                    </lg>
+                </div>
+            </body>
+        </text>
+    </TEI>
+    <TEI>
+        <teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title>V - Porque abrem as coisas alas para eu passar?</title>
+                </titleStmt>
+                <publicationStmt>
+                    <ab/>
+                </publicationStmt>
+                <sourceDesc>
+                    <biblStruct>
+                        <analytic>
+                            <title level="a">V - Porque abrem as coisas alas para eu passar?</title>
+                        </analytic>
+                        <monogr>
+                            <imprint>
+                                <publisher>Arquivo Pessoa</publisher>
+                                <pubPlace>http://arquivopessoa.net/textos/270</pubPlace>
+                            </imprint>
+                        </monogr>
+                    </biblStruct>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+        <text xml:id="porque-abrem-as-coisas-alas-para-eu-passar">
+            <body>
+                <div>
+                    <head rend="indent">V</head>
+                    <lg>
+                        <l>Porque abrem as coisas alas para eu passar?</l>
+                        <l>Tenho medo de passar entre elas, tão paradas conscientes.</l>
+                        <l>Tenho medo de as deixar atrás de mim a tirarem a Máscara.</l>
+                    </lg>
+                    <lg>
+                        <l>Mas há sempre coisas atrás de mim.</l>
+                        <l>Sinto a sua ausência de olhos fitar-me, e estremeço.</l>
+                        <l>Sem se mexerem, as paredes vibram-me sentido.</l>
+                        <l>Falam comigo sem voz de dizerem-me as cadeiras.</l>
+                        <l>Os desenhos do pano da mesa têm vida, cada um é um abismo.</l>
+                    </lg>
+                    <lg>
+                        <l>Luze a sorrir com visíveis lábios invisíveis</l>
+                        <l>A porta abrindo-se conscientemente</l>
+                        <l>Sem que a mão seja mais que o caminho para abrir-se.</l>
+                        <l>De onde é que estão olhando para mim?</l>
+                        <l>Que coisas incapazes de olhar estão olhando para mim?</l>
+                        <l>Quem espreita de tudo?</l>
+                    </lg>
+                    <lg>
+                        <l>As arestas fitam-me.</l>
+                        <l>Sorriem realmente as paredes lisas.</l>
+                    </lg>
+                    <lg>
+                        <l>Sensação de ser só a minha espinha.</l>
+                    </lg>
+                    <lg>
+                        <l>As espadas.</l>
+                    </lg>
+                </div>
+            </body>
+        </text>
+    </TEI>
+</teiCorpus>

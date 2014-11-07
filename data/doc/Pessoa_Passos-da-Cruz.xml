@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<teiCorpus xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Passos da Cruz</title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Sviatoslav Drach</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">PASSOS DA CRUZ</title>
+                        <author>
+                            <rs type="person" key="FP">Fernando Pessoa</rs>
+                        </author>
+                    </analytic>
+                    <monogr>
+                        <imprint>
+                            <publisher>Arquivo Pessoa</publisher>
+                        </imprint>
+                    </monogr>
+                    <relatedItem type="first-publication" target="passos-da-cruz-fp"/>
+                </biblStruct>
+                <biblStruct xml:id="passos-da-cruz-fp">
+                    <analytic>
+                        <title level="a">Passos da Cruz</title>
+                        <author>
+                            <rs type="person" key="FP">Fernando Pessoa</rs>
+                        </author>
+                    </analytic>
+                    <monogr>
+                        <title level="j">Centauro</title>
+                        <imprint>
+                            <pubPlace>Lisboa</pubPlace>
+                            <date from="1916-10" to="1916-12">Out.-Dez. 1916</date>
+                        </imprint>
+                        <biblScope unit="issue">1</biblScope>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <langUsage>
+                <language ident="pt">português</language>
+            </langUsage>
+            <textClass>
+                <keywords>
+                    <term type="genre">
+                        <rs type="genre" key="poesia">Poesia</rs>
+                    </term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+    </teiHeader>
+    <TEI>
+        <teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title>I - Esqueço-me das horas transviadas...</title>
+                </titleStmt>
+                <publicationStmt>
+                    <ab/>
+                </publicationStmt>
+                <sourceDesc>
+                    <biblStruct>
+                        <analytic>
+                            <title level="a">I - Esqueço-me das horas transviadas...</title>
+                        </analytic>
+                        <monogr>
+                            <imprint>
+                                <publisher>Arquivo Pessoa</publisher>
+                                <pubPlace>http://arquivopessoa.net/textos/879</pubPlace>
+                            </imprint>
+                        </monogr>
+                    </biblStruct>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+        <text xml:id="esqueco-me-das-horas-transviadas">
+            <body>
+                <div>
+                    <head>PASSOS DA CRUZ</head>
+                    <head rend="indent">I</head>
+                    <lg>
+                        <l>Esqueço-me das horas transviadas...</l>
+                        <l>O Outono mora mágoas nos outeiros</l>
+                        <l>E põe um roxo vago nos ribeiros...</l>
+                        <l>Hóstia de assombro a alma, e toda estradas...</l>
+                    </lg>
+                    <lg>
+                        <l>Aconteceu-me esta paisagem, fadas</l>
+                        <l>De sepulcros a orgíaco... Trigueiros</l>
+                        <l>Os céus da tua face, e os derradeiros</l>
+                        <l>Tons do poente segredam nas arcadas...</l>
+                    </lg>
+                    <lg>
+                        <l>No claustro sequestrando a lucidez</l>
+                        <l>Um espasmo apagado em ódio à ânsia</l>
+                        <l>Põe dias de ilhas vistas do convés</l>
+                    </lg>
+                    <lg>
+                        <l>No meu cansaço perdido entre os gelos,</l>
+                        <l>E a cor do Outono é um funeral de apelos</l>
+                        <l>Pela estrada da minha dissonância...</l>
+                    </lg>
+                </div>
+            </body>
+        </text>
+    </TEI>
+    <TEI>
+        <teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title>II - Há um poeta em mim que Deus me disse...</title>
+                </titleStmt>
+                <publicationStmt>
+                    <ab/>
+                </publicationStmt>
+                <sourceDesc>
+                    <biblStruct>
+                        <analytic>
+                            <title level="a">II - Há um poeta em mim que Deus me disse...</title>
+                        </analytic>
+                        <monogr>
+                            <imprint>
+                                <publisher>Arquivo Pessoa</publisher>
+                                <pubPlace>http://arquivopessoa.net/textos/886</pubPlace>
+                            </imprint>
+                        </monogr>
+                    </biblStruct>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+        <text xml:id="ha-um-poeta-em-mim-que-deus-me-disse">
+            <body>
+                <div>
+                    <head rend="indent">II</head>
+                    <lg>
+                        <l>Há um poeta em mim que Deus me disse...</l>
+                        <l>A Primavera esquece nos barrancos</l>
+                        <l>As grinaldas que trouxe dos arrancos</l>
+                        <l>Da sua efémera e espectral ledice...</l>
+                    </lg>
+                    <lg>
+                        <l>Pelo prado orvalhado a meninice</l>
+                        <l>Faz soar a alegria os seus tamancos...</l>
+                        <l>Pobre de anseios teu ficar nos bancos</l>
+                        <l>Olhando a hora como quem sorrisse...</l>
+                    </lg>
+                    <lg>
+                        <l>Florir do dia a capitéis de Luz...</l>
+                        <l>Violinos do silêncio enternecidos...</l>
+                        <l>Tédio onde o só ter tédio nos seduz...</l>
+                    </lg>
+                    <lg>
+                        <l>Minha alma beija o quadro que pintou...</l>
+                        <l>Sento-me ao pé dos séculos perdidos</l>
+                        <l>E cismo o seu perfil de inércia e voo...</l>
+                    </lg>
+                </div>
+            </body>
+        </text>
+    </TEI>
+    <TEI>
+        <teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title>III - Adagas cujas jóias velhas galas...</title>
+                </titleStmt>
+                <publicationStmt>
+                    <ab/>
+                </publicationStmt>
+                <sourceDesc>
+                    <biblStruct>
+                        <analytic>
+                            <title level="a">III - Adagas cujas jóias velhas galas...</title>
+                        </analytic>
+                        <monogr>
+                            <imprint>
+                                <publisher>Arquivo Pessoa</publisher>
+                                <pubPlace>http://arquivopessoa.net/textos/2544</pubPlace>
+                            </imprint>
+                        </monogr>
+                    </biblStruct>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+        <text xml:id="adagas-cujas-joias-velhas-galas">
+            <body>
+                <div>
+                    <head rend="indent">III</head>
+                    <lg>
+                        <l>Adagas cujas jóias velhas galas...</l>
+                        <l>Opalesci amar-me entre mãos raras,</l>
+                        <l>E, fluido a febres entre um lembrar de aras,</l>
+                        <l>O convés sem ninguém cheio de malas...</l>
+                    </lg>
+                    <lg>
+                        <l>O íntimo silêncio das opalas</l>
+                        <l>Conduz orientes até jóias caras,</l>
+                        <l>E o meu anseio vai nas rotas claras</l>
+                        <l>De um grande sonho cheio de ócio e salas...</l>
+                    </lg>
+                    <lg>
+                        <l>Passa o cortejo imperial, e ao longe</l>
+                        <l>O povo só pelo cessar das lanças</l>
+                        <l>Sabe que passa o seu tirano, e estruge</l>
+                    </lg>
+                    <lg>
+                        <l>Sua ovação, e erguem as crianças...</l>
+                        <l>Mas no teclado as tuas mãos pararam</l>
+                        <l>E indefinidamente repousaram...</l>
+                    </lg>
+                </div>
+            </body>
+        </text>
+    </TEI>
+    <TEI>
+        <teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title>IV - Ó tocadora de harpa, se eu beijasse</title>
+                </titleStmt>
+                <publicationStmt>
+                    <ab/>
+                </publicationStmt>
+                <sourceDesc>
+                    <biblStruct>
+                        <analytic>
+                            <title level="a">IV - Ó tocadora de harpa, se eu beijasse</title>
+                        </analytic>
+                        <monogr>
+                            <imprint>
+                                <publisher>Arquivo Pessoa</publisher>
+                                <pubPlace>http://arquivopessoa.net/textos/2548</pubPlace>
+                            </imprint>
+                        </monogr>
+                    </biblStruct>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+        <text xml:id="o-tacadora-de-harpa-se-eu-beijasse">
+            <body>
+                <div>
+                    <head rend="indent">IV</head>
+                    <lg>
+                        <l>Ó tocadora de harpa, se eu beijasse</l>
+                        <l>Teu gesto, sem beijar as tuas mãos!,</l>
+                        <l>E, beijando-o, descesse pelos desvãos</l>
+                        <l>Do sonho, até que enfim eu o encontrasse</l>
+                    </lg>
+                    <lg>
+                        <l>Tornado Puro Gesto, gesto-face</l>
+                        <l>Da medalha sinistra — reis cristãos</l>
+                        <l>Ajoelhando, inimigos e irmãos,</l>
+                        <l>Quando processional o andor passasse!...</l>
+                    </lg>
+                    <lg>
+                        <l>Teu gesto que arrepanha e se extasia...</l>
+                        <l>O teu gesto completo, lua fria</l>
+                        <l>Subindo, e em baixo, negros, os juncais...</l>
+                    </lg>
+                    <lg>
+                        <l>Caverna em estalactites o teu gesto...</l>
+                        <l>Não poder eu prendê-lo, fazer mais</l>
+                        <l>Que vê-lo e que perdê-lo!... E o sonho é o resto...</l>
+                    </lg>
+                </div>
+            </body>
+        </text>
+    </TEI>
+    <TEI>
+        <teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title>IX - Meu coração é um pórtico partido</title>
+                </titleStmt>
+                <publicationStmt>
+                    <ab/>
+                </publicationStmt>
+                <sourceDesc>
+                    <biblStruct>
+                        <analytic>
+                            <title level="a">IX - Meu coração é um pórtico partido</title>
+                        </analytic>
+                        <monogr>
+                            <imprint>
+                                <publisher>Arquivo Pessoa</publisher>
+                                <pubPlace>http://arquivopessoa.net/textos/2568</pubPlace>
+                            </imprint>
+                        </monogr>
+                    </biblStruct>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+        <text xml:id="meu-coracao-e-um-portico-partido">
+            <body>
+                <div>
+                    <head rend="indent">IX</head>
+                    <lg>
+                        <l>Meu coração é um pórtico partido</l>
+                        <l>Dando excessivamente sobre o mar</l>
+                        <l>Vejo em minha alma as velas vãs passar</l>
+                        <l>E cada vela passa num sentido.</l>
+                    </lg>
+                    <lg>
+                        <l>Um soslaio de sombras e ruído</l>
+                        <l>Na transparente solidão do ar</l>
+                        <l>Evoca estrelas sobre a noite estar</l>
+                        <l>Em afastados céus o pórtico ido...</l>
+                    </lg>
+                    <lg>
+                        <l>E em palmares de Antilhas entrevistas</l>
+                        <l>Através de, com mãos eis apartados</l>
+                        <l>Os sonhos, cortinados de ametistas,</l>
+                    </lg>
+                    <lg>
+                        <l>Imperfeito o sabor de compensando</l>
+                        <l>O grande espaço entre os troféus alçados</l>
+                        <l>Ao centro do triunfo em ruído e bando...</l>
+                    </lg>
+                </div>
+            </body>
+        </text>
+    </TEI>
+    <TEI>
+        <teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title>Ténue, roçando sedas pelas horas,</title>
+                </titleStmt>
+                <publicationStmt>
+                    <ab/>
+                </publicationStmt>
+                <sourceDesc>
+                    <biblStruct>
+                        <analytic>
+                            <title level="a">Ténue, roçando sedas pelas horas,</title>
+                        </analytic>
+                        <monogr>
+                            <imprint>
+                                <publisher>Arquivo Pessoa</publisher>
+                                <pubPlace>http://arquivopessoa.net/textos/2553</pubPlace>
+                            </imprint>
+                        </monogr>
+                    </biblStruct>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+        <text xml:id="tenue-rocando-sedas-pelas-horas">
+            <body>
+                <div>
+                    <head rend="indent">V</head>
+                    <lg>
+                        <l>Ténue, roçando sedas pelas horas,</l>
+                        <l>Teu vulto ciciante passa e esquece,</l>
+                        <l>E dia a dia adias para prece</l>
+                        <l>O rito cujo ritmo só decoras...</l>
+                    </lg>
+                    <lg>
+                        <l>Um mar longínquo e próximo humedece</l>
+                        <l>Teus lábios onde, mais que em ti, descoras...</l>
+                        <l>E, alada, leve, sobre a dor que choras,</l>
+                        <l>Sem querer saber de ti a tarde desce...</l>
+                    </lg>
+                    <lg>
+                        <l>Erra no anteluar a voz dos tanques...</l>
+                        <l>Na quinta imensa gorgolejam águas,</l>
+                        <l>Na treva vaga ao meu ter dor estanques...</l>
+                    </lg>
+                    <lg>
+                        <l>Meu império é das horas desiguais,</l>
+                        <l>E dei meu gesto lasso às algas mágoas</l>
+                        <l>Que há para além de sermos outonais...</l>
+                    </lg>
+                </div>
+            </body>
+        </text>
+    </TEI>
+    <TEI>
+        <teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title>VI - Venho de longe e trago no perfil,</title>
+                </titleStmt>
+                <publicationStmt>
+                    <ab/>
+                </publicationStmt>
+                <sourceDesc>
+                    <biblStruct>
+                        <analytic>
+                            <title level="a">VI - Venho de longe e trago no perfil,</title>
+                        </analytic>
+                        <monogr>
+                            <imprint>
+                                <publisher>Arquivo Pessoa</publisher>
+                                <pubPlace>http://arquivopessoa.net/textos/2557</pubPlace>
+                            </imprint>
+                        </monogr>
+                    </biblStruct>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+        <text xml:id="venho-de-longe-e-trago-no-perfil">
+            <body>
+                <div>
+                    <head rend="indent">VI</head>
+                    <lg>
+                        <l>Venho de longe e trago no perfil,</l>
+                        <l>Em forma nevoenta e afastada,</l>
+                        <l>O perfil de outro ser que desagrada</l>
+                        <l>Ao meu actual recorte humano e vil.</l>
+                    </lg>
+                    <lg>
+                        <l>Outrora fui talvez, não Boabdil,</l>
+                        <l>Mas o seu mero último olhar, da estrada</l>
+                        <l>Dado ao deixado vulto de Granada,</l>
+                        <l>Recorte frio sob o unido anil...</l>
+                    </lg>
+                    <lg>
+                        <l>Hoje sou a saudade imperial</l>
+                        <l>Do que já na distância de mim vi...</l>
+                        <l>Eu próprio sou aquilo que perdi...</l>
+                    </lg>
+                    <lg>
+                        <l>E nesta estrada para Desigual</l>
+                        <l>Florem em esguia glória marginal</l>
+                        <l>Os girassóis do império que morri...</l>
+                    </lg>
+                </div>
+            </body>
+        </text>
+    </TEI>
+    <TEI>
+        <teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title>VII - Fosse eu apenas, não sei onde ou como,</title>
+                </titleStmt>
+                <publicationStmt>
+                    <ab/>
+                </publicationStmt>
+                <sourceDesc>
+                    <biblStruct>
+                        <analytic>
+                            <title level="a">VII - Fosse eu apenas, não sei onde ou como,</title>
+                        </analytic>
+                        <monogr>
+                            <imprint>
+                                <publisher>Arquivo Pessoa</publisher>
+                                <pubPlace>http://arquivopessoa.net/textos/2561</pubPlace>
+                            </imprint>
+                        </monogr>
+                    </biblStruct>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+        <text xml:id="fosse-eu-apenas-nao-sei-onde-ou-como">
+            <body>
+                <div>
+                    <head rend="indent">VII</head>
+                    <lg>
+                        <l>Fosse eu apenas, não sei onde ou como,</l>
+                        <l>Uma coisa existente sem viver,</l>
+                        <l>Noite de Vida sem amanhecer</l>
+                        <l>Entre as sirtes do meu doirado assomo...</l>
+                    </lg>
+                    <lg>
+                        <l>Fada maliciosa ou incerto gnomo</l>
+                        <l>Fadado houvesse de não pertencer</l>
+                        <l>Meu intuito gloriola com ter</l>
+                        <l>A árvore do meu uso o único pomo...</l>
+                    </lg>
+                    <lg>
+                        <l>Fosse eu uma metáfora somente</l>
+                        <l>Escrita nalgum livro insubsistente</l>
+                        <l>Dum poeta antigo, de alma em outras gamas,</l>
+                    </lg>
+                    <lg>
+                        <l>Mas doente, e, num crepúsculo de espadas,</l>
+                        <l>Morrendo entre bandeiras desfraldadas</l>
+                        <l>Na última tarde de um império em chamas...</l>
+                    </lg>
+                </div>
+            </body>
+        </text>
+    </TEI>
+    <TEI>
+        <teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title>VIII - Ignorado ficasse o meu destino</title>
+                </titleStmt>
+                <publicationStmt>
+                    <ab/>
+                </publicationStmt>
+                <sourceDesc>
+                    <biblStruct>
+                        <analytic>
+                            <title level="a">VIII - Ignorado ficasse o meu destino</title>
+                        </analytic>
+                        <monogr>
+                            <imprint>
+                                <publisher>Arquivo Pessoa</publisher>
+                                <pubPlace>http://arquivopessoa.net/textos/2564</pubPlace>
+                            </imprint>
+                        </monogr>
+                    </biblStruct>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+        <text xml:id="ignorado-ficasse-o-meu-destino">
+            <body>
+                <div>
+                    <head rend="indent">VIII</head>
+                    <lg>
+                        <l>Ignorado ficasse o meu destino</l>
+                        <l>Entre pálios (e a ponte sempre à vista),</l>
+                        <l>E anel concluso a chispas de ametista</l>
+                        <l>A frase falha do meu póstumo hino...</l>
+                    </lg>
+                    <lg>
+                        <l>Florescesse em meu glabro desatino</l>
+                        <l>O himeneu das escadas da conquista</l>
+                        <l>Cuja preguiça, arrecadada, dista</l>
+                        <l>Almas do meu impulso cristalino...</l>
+                    </lg>
+                    <lg>
+                        <l>Meus ócios ricos assim fossem, vilas</l>
+                        <l>Pelo campo romano, e a toga traça</l>
+                        <l>No meu soslaio anónimas (desgraça</l>
+                    </lg>
+                    <lg>
+                        <l>A vida) curvas sob mãos intranquilas...</l>
+                        <l>E tudo sem Cleópatra teria</l>
+                        <l>Findado perto de onde raia o dia...</l>
+                    </lg>
+                </div>
+            </body>
+        </text>
+    </TEI>
+    <TEI>
+        <teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title>X - Aconteceu-me do alto do infinito</title>
+                </titleStmt>
+                <publicationStmt>
+                    <ab/>
+                </publicationStmt>
+                <sourceDesc>
+                    <biblStruct>
+                        <analytic>
+                            <title level="a">X - Aconteceu-me do alto do infinito</title>
+                        </analytic>
+                        <monogr>
+                            <imprint>
+                                <publisher>Arquivo Pessoa</publisher>
+                                <pubPlace>http://arquivopessoa.net/textos/2572</pubPlace>
+                            </imprint>
+                        </monogr>
+                    </biblStruct>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+        <text xml:id="aconteceu-me-do-alto-do-infinito">
+            <body>
+                <div>
+                    <head rend="indent">X</head>
+                    <lg>
+                        <l>Aconteceu-me do alto do infinito</l>
+                        <l>Esta vida. Através de nevoeiros,</l>
+                        <l>Do meu próprio ermo ser fumos primeiros,</l>
+                        <l>Vim ganhando, e através estranhos ritos</l>
+                    </lg>
+                    <lg>
+                        <l>De sombra e luz ocasional, e gritos</l>
+                        <l>Vagos ao longe, e assomos passageiros</l>
+                        <l>De saudade incógnita, luzeiros</l>
+                        <l>De divino, este ser fosco e proscrito...</l>
+                    </lg>
+                    <lg>
+                        <l>Caiu chuva em passados que fui eu.</l>
+                        <l>Houve planícies de céu baixo e neve</l>
+                        <l>Nalguma coisa de alma do que é meu.</l>
+                    </lg>
+                    <lg>
+                        <l>Narrei-me a sombra e não me achei sentido</l>
+                        <l>Hoje sei-me o deserto onde Deus teve</l>
+                        <l>Outrora a sua capital de olvido...</l>
+                    </lg>
+                </div>
+            </body>
+        </text>
+    </TEI>
+    <TEI>
+        <teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title>XI - Não sou eu quem descrevo. Eu sou a tela</title>
+                </titleStmt>
+                <publicationStmt>
+                    <ab/>
+                </publicationStmt>
+                <sourceDesc>
+                    <biblStruct>
+                        <analytic>
+                            <title level="a">XI - Não sou eu quem descrevo. Eu sou a tela.</title>
+                        </analytic>
+                        <monogr>
+                            <imprint>
+                                <publisher>Arquivo Pessoa</publisher>
+                                <pubPlace>http://arquivopessoa.net/textos/2576</pubPlace>
+                            </imprint>
+                        </monogr>
+                    </biblStruct>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+        <text xml:id="nao-sou-eu-quem-descrevo-eu-sou-a-tela">
+            <body>
+                <div>
+                    <head rend="indent">XI</head>
+                    <lg>
+                        <l>Não sou eu quem descrevo. Eu sou a tela</l>
+                        <l>E oculta mão colora alguém em mim.</l>
+                        <l>Pus a alma no nexo de perdê-la</l>
+                        <l>E o meu princípio floresceu em Fim.</l>
+                    </lg>
+                    <lg>
+                        <l>Que importa o tédio que dentro em mim gela,</l>
+                        <l>E o leve Outono, e as galas, e o marfim,</l>
+                        <l>E a congruência da alma que se vela</l>
+                        <l>Com os sonhados pálios de cetim?</l>
+                    </lg>
+                    <lg>
+                        <l>Disperso... E a hora como um leque fecha-se...</l>
+                        <l>Minha alma é um arco tendo ao fundo o mar...</l>
+                        <l>O tédio? A mágoa? A vida? O sonho? Deixa-se...</l>
+                    </lg>
+                    <lg>
+                        <l>E, abrindo as asas sobre Renovar,</l>
+                        <l>A erma sombra do voo começado</l>
+                        <l>Pestaneja no campo abandonado...</l>
+                    </lg>
+                </div>
+            </body>
+        </text>
+    </TEI>
+    <TEI>
+        <teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title>XII - Ela ia, tranquila pastorinha,</title>
+                </titleStmt>
+                <publicationStmt>
+                    <ab/>
+                </publicationStmt>
+                <sourceDesc>
+                    <biblStruct>
+                        <analytic>
+                            <title level="a">XII - Ela ia, tranquila pastorinha,</title>
+                        </analytic>
+                        <monogr>
+                            <imprint>
+                                <publisher>Arquivo Pessoa</publisher>
+                                <pubPlace>http://arquivopessoa.net/textos/2580</pubPlace>
+                            </imprint>
+                        </monogr>
+                    </biblStruct>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+        <text xml:id="ela-ia-tranquila-pastorinha">
+            <body>
+                <div>
+                    <head rend="indent">XII</head>
+                    <lg>
+                        <l>Ela ia, tranquila pastorinha,</l>
+                        <l>Pela estrada da minha imperfeição.</l>
+                        <l>Seguia-a, como um gesto de perdão,</l>
+                        <l>O seu rebanho, a saudade minha...</l>
+                    </lg>
+                    <lg>
+                        <l>«Em longes terras hás-de ser rainha»</l>
+                        <l>Um dia lhe disseram, mas em vão...</l>
+                        <l>Seu vulto perde-se na escuridão...</l>
+                        <l>Só sua sombra ante meus pés caminha...</l>
+                    </lg>
+                    <lg>
+                        <l>Deus te dê lírios em vez desta hora,</l>
+                        <l>E em terras longe do que eu hoje sinto</l>
+                        <l>Serás, rainha não, mas só pastora —</l>
+                    </lg>
+                    <lg>
+                        <l>Só sempre a mesma pastorinha a ir,</l>
+                        <l>E eu serei teu regresso, esse indistinto</l>
+                        <l>Abismo entre o meu sonho e o meu porvir...</l>
+                    </lg>
+                </div>
+            </body>
+        </text>
+    </TEI>
+    <TEI>
+        <teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title>XIII - Emissário de um rei desconhecido.</title>
+                </titleStmt>
+                <publicationStmt>
+                    <ab/>
+                </publicationStmt>
+                <sourceDesc>
+                    <biblStruct>
+                        <analytic>
+                            <title level="a">XIII - Emissário de um rei desconhecido</title>
+                        </analytic>
+                        <monogr>
+                            <imprint>
+                                <publisher>Arquivo Pessoa</publisher>
+                                <pubPlace>http://arquivopessoa.net/textos/253</pubPlace>
+                            </imprint>
+                        </monogr>
+                    </biblStruct>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+        <text xml:id="emissario-de-um-rei-desconhecido">
+            <body>
+                <div>
+                    <head rend="indent">XIII</head>
+                    <lg>
+                        <l>Emissário de um rei desconhecido</l>
+                        <l>Eu cumpro informes instruções de além,</l>
+                        <l>E as bruscas frases que aos meus lábios vêm</l>
+                        <l>Soam-me a um outro e anómalo sentido...</l>
+                    </lg>
+                    <lg>
+                        <l>Inconscientemente me divido</l>
+                        <l>Entre mim e a missão que o meu ser tem,</l>
+                        <l>E a glória do meu Rei dá-me o desdém</l>
+                        <l>Por este humano povo entre quem lido...</l>
+                    </lg>
+                    <lg>
+                        <l>Não sei se existe o Rei que me mandou</l>
+                        <l>Minha missão será eu a esquecer,</l>
+                        <l>Meu orgulho o deserto em que em mim estou...</l>
+                    </lg>
+                    <lg>
+                        <l>Mas há! Eu sinto-me altas tradições</l>
+                        <l>De antes de tempo e espaço e vida e ser...</l>
+                        <l>Já viram Deus as minhas sensações...</l>
+                    </lg>
+                </div>
+            </body>
+        </text>
+    </TEI>
+    <TEI>
+        <teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title>XIV - Como uma voz de fonte que cessasse</title>
+                </titleStmt>
+                <publicationStmt>
+                    <ab/>
+                </publicationStmt>
+                <sourceDesc>
+                    <biblStruct>
+                        <analytic>
+                            <title level="a">XIV - Como uma voz de fonte que cessasse</title>
+                        </analytic>
+                        <monogr>
+                            <imprint>
+                                <publisher>Arquivo Pessoa</publisher>
+                                <pubPlace>http://arquivopessoa.net/textos/255</pubPlace>
+                            </imprint>
+                        </monogr>
+                    </biblStruct>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+        <text xml:id="como-uma-voz-de-fonte-que-cessasse">
+            <body>
+                <div>
+                    <head rend="indent">XIV</head>
+                    <lg>
+                        <l>Como uma voz de fonte que cessasse</l>
+                        <l>(E uns para os outros nossos vãos olhares</l>
+                        <l>Se admiraram), para além dos meus palmares</l>
+                        <l>De sonho, a voz que do meu tédio nasce</l>
+                    </lg>
+                    <lg>
+                        <l>Parou... Apareceu já sem disfarce</l>
+                        <l>De música longínqua, asas nos ares,</l>
+                        <l>O mistério silente como os mares,</l>
+                        <l>Quando morreu o vento e a calma pasce...</l>
+                    </lg>
+                    <lg>
+                        <l>A paisagem longínqua só existe</l>
+                        <l>Para haver nela um silêncio em descida</l>
+                        <l>Para o mistério, silêncio a que a hora assiste...</l>
+                    </lg>
+                    <lg>
+                        <l>E, perto ou longe, grande lago mudo,</l>
+                        <l>O mundo, o informe mundo onde há a vida...</l>
+                        <l>E Deus, a Grande Ogiva ao fim de tudo...</l>
+                    </lg>
+                </div>
+            </body>
+        </text>
+    </TEI>
+</teiCorpus>
