@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml" class="templates:surround?with=templates/page.html&amp;at=content">
+    <div class="row-fluid">
+        <div id="content" class="span12 main">
+            <h2>Suche</h2>
+            <div class="span6">
+               <!-- <p class="app:search?term=aberta">result</p>
+                <p class="app:result-list?sel=text">list</p>
+                -->
+                <div class="app:search-profi" id="suche">
+                    <form action="/exist/apps/pessoa/search" method="post" id="search">
+                        <h3>Free text</h3>
+                        <textarea rows="1" cols="50" name="term"/>
+                        <div id="datum">
+                            <h3>Date</h3>
+                            <input type="date"/>
+                            <label>to</label>
+                            <input type="date"/>
+                        </div>
+                        <h3>Language</h3>
+                        <input type="checkbox" name="language" value="pt" checked="checked"/>Portuguese
+                        <input type="checkbox" name="language" value="en" checked="checked"/>English 
+                        <input type="checkbox" name="language" value="fr" checked="checked"/>French 
+                        <input type="checkbox" name="language" value="sp" checked="checked"/>Spanish 
+                                        <h3>Author</h3>
+                        <select name="top5" size="5" multiple="multiple">
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                            <option>E</option>
+                        </select>
+                        <p class="small_text">Hold the Ctrl/CMD key to select multiple entries.</p>
+                        <h3>Genre</h3>
+                        <select name="top5" size="5" multiple="multiple">
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                            <option>E</option>
+                        </select>
+                        <p class="small_text">Hold the Ctrl/CMD key to select multiple entries.</p>
+                        <input type="radio" name="release" value="public"/>published
+                                            <input type="radio" name="release" value="non_public"/>unpublished
+                                                <br/>
+                        <button>Search</button>
+                    </form>
+                    <h2>Filter</h2>
+                    <div class="app:filter?sel=filter"/>
+                    <h2>Text</h2>
+                    <div class="app:result-list?sel=text"/>
+                    <h2>Header</h2>
+                    <div class="app:result-list?sel=head"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

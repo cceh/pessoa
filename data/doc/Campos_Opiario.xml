@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Opiário</title>
+                <author>
+                    <rs type="person" key="AdC">Álvaro de Campos</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Sviatoslav Drach</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">OPIÁRIO</title>
+                        <author>
+                            <rs type="person" key="AdC">Álvaro de Campos</rs>
+                        </author>
+                    </analytic>
+                    <monogr>
+                        <imprint>
+                            <publisher>Arquivo Pessoa</publisher>
+                            <pubPlace>http://arquivopessoa.net/textos/2456</pubPlace>
+                        </imprint>
+                    </monogr>
+                    <relatedItem type="first-publication" target="opiario-fp"/>
+                </biblStruct>
+                <biblStruct xml:id="opiario-fp">
+                    <analytic>
+                        <title level="a">Opiário</title>
+                        <author>
+                            <rs type="person" key="AdC">Álvaro de Campos</rs>
+                        </author>
+                    </analytic>
+                    <monogr>
+                        <title level="j">Orpheu</title>
+                        <imprint>
+                            <pubPlace>Lisboa</pubPlace>
+                            <date from="1915-01" to="1915-03">Jan.-Mar. 1915</date>
+                        </imprint>
+                        <biblScope unit="issue">1</biblScope>
+                    </monogr>
+                    <note>Lapso corrigido segundo o original.</note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <langUsage>
+                <language ident="pt">português</language>
+                <language ident="en">inglês</language>
+                <language ident="fr">francês</language>
+            </langUsage>
+            <creation>
+                <date when="1914-03">3-1914</date>
+            </creation>
+            <textClass>
+                <keywords>
+                    <term type="genre">
+                        <rs type="genre" key="poesia">Poesia</rs>
+                    </term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+    </teiHeader>
+    <text xml:id="opiario">
+        <body>
+            <div>
+                <head>OPIÁRIO</head>
+                <ab type="dedication" rend="right italic">Ao Senhor Mário de Sá-Carneiro</ab>
+                <lg>
+                    <l>É antes do ópio que a minh’alma é doente.</l>
+                    <l>Sentir a vida convalesce e estiola</l>
+                    <l>E eu vou buscar ao ópio que consola</l>
+                    <l>Um Oriente ao oriente do Oriente.</l>
+                </lg>
+                <lg>
+                    <l>Esta vida de bordo há-de matar-me.</l>
+                    <l>São dias só de febre na cabeça</l>
+                    <l>E, por mais que procure até que adoeça,</l>
+                    <l>Já não encontro a mola pra adaptar-me.</l>
+                </lg>
+                <lg>
+                    <l>Em paradoxo e incompetência astral</l>
+                    <l>Eu vivo a vincos de ouro a minha vida,</l>
+                    <l>Onda onde o pundonor é uma descida</l>
+                    <l>E os próprios gozos gânglios do meu mal.</l>
+                </lg>
+                <lg>
+                    <l>É por um mecanismo de desastres,</l>
+                    <l>Uma engrenagem com volantes falsos,</l>
+                    <l>Que passo entre visões de cadafalsos</l>
+                    <l>Num jardim onde há flores no ar, sem hastes.</l>
+                </lg>
+                <lg>
+                    <l>Vou cambaleando através do lavor </l>
+                    <l>Duma vida-interior de renda e laca.</l>
+                    <l>Tenho a impressão de ter em casa a faca</l>
+                    <l>Com que foi degolado o Precursor.</l>
+                </lg>
+                <lg>
+                    <l>Ando expiando um crime numa mala,</l>
+                    <l>Que um avô meu cometeu por requinte.</l>
+                    <l>Tenho os nervos na forca, vinte a vinte,</l>
+                    <l>E caí no ópio como numa vala.</l>
+                </lg>
+                <lg>
+                    <l>Ao toque adormecido da morfina</l>
+                    <l>Perco-me em transparências latejantes</l>
+                    <l>E numa noite cheia de brilhantes</l>
+                    <l>Ergue-se a lua como a minha Sina.</l>
+                </lg>
+                <lg>
+                    <l>Eu, que fui sempre um mau estudante, agora</l>
+                    <l>Não faço mais que ver o navio ir</l>
+                    <l>Pelo canal de Suez a conduzir</l>
+                    <l>A minha vida, cânfora na aurora.</l>
+                </lg>
+                <lg>
+                    <l>Perdi os dias que já aproveitara.</l>
+                    <l>Trabalhei para ter só o cansaço</l>
+                    <l>Que é hoje em mim uma espécie de braço</l>
+                    <l>Que ao meu pescoço me sufoca e ampara.</l>
+                </lg>
+                <lg>
+                    <l>E fui criança como toda a gente.</l>
+                    <l>Nasci numa província portuguesa</l>
+                    <l>E tenho conhecido gente inglesa</l>
+                    <l>Que diz que eu sei inglês perfeitamente.</l>
+                </lg>
+                <lg>
+                    <l>Gostava de ter poemas e novelas</l>
+                    <l>Publicados por Plon e no <hi rend="italic">Mercure,</hi>
+                    </l>
+                    <l>Mas é impossível que esta vida dure,</l>
+                    <l>Se nesta viagem nem houve procelas!</l>
+                </lg>
+                <lg>
+                    <l>A vida a bordo é uma coisa triste,</l>
+                    <l>Embora a gente se divirta às vezes.</l>
+                    <l>Falo com alemães, suecos e ingleses</l>
+                    <l>E a minha mágoa de viver persiste.</l>
+                </lg>
+                <lg>
+                    <l>Eu acho que não vale a pena ter</l>
+                    <l>Ido ao Oriente e visto a Índia e a China.</l>
+                    <l>A terra é semelhante e pequenina</l>
+                    <l>E há só uma maneira de viver.</l>
+                </lg>
+                <lg>
+                    <l>Por isso eu tomo ópio. É um remédio.</l>
+                    <l>Sou um convalescente do Momento.</l>
+                    <l>Moro no rés-do-chão do pensamento</l>
+                    <l>E ver passar a Vida faz-me tédio.</l>
+                </lg>
+                <lg>
+                    <l>Fumo. Canso. Ah uma terra aonde, enfim,</l>
+                    <l>Muito a leste não fosse o oeste já!</l>
+                    <l>Pra que fui visitar a Índia que há</l>
+                    <l>Se não há Índia senão a alma em mim?</l>
+                </lg>
+                <lg>
+                    <l>Sou desgraçado por meu morgadio.</l>
+                    <l>Os ciganos roubaram minha Sorte.</l>
+                    <l>Talvez nem mesmo encontre ao pé da morte</l>
+                    <l>Um lugar que me abrigue do meu frio.</l>
+                </lg>
+                <lg>
+                    <l>Eu fingi que estudei engenharia.</l>
+                    <l>Vivi na Escócia. Visitei a Irlanda.</l>
+                    <l>Meu coração é uma avozinha que anda</l>
+                    <l>Pedindo esmola às portas da Alegria.</l>
+                </lg>
+                <lg>
+                    <l>Não chegues a Port-Said, navio de ferro!</l>
+                    <l>Volta à direita, nem eu sei para onde.</l>
+                    <l>Passo os dias no <hi rend="italic" xml:lang="en">smoking-room</hi> com o conde — </l>
+                    <l>Um <hi rend="italic" xml:lang="fr">escroc</hi> francês, conde de fim de enterro.</l>
+                </lg>
+                <lg>
+                    <l>Volto à Europa descontente, e em sortes</l>
+                    <l>De vir a ser um poeta sonambólico.</l>
+                    <l>Eu sou monárquico mas não católico</l>
+                    <l>E gostava de ser as coisas fortes.</l>
+                </lg>
+                <lg>
+                    <l>Gostava de ter crenças e dinheiro,</l>
+                    <l>Ser vária gente insípida que vi.</l>
+                    <l>Hoje, afinal, não sou senão, aqui,</l>
+                    <l>Num navio qualquer um passageiro.</l>
+                </lg>
+                <lg>
+                    <l>Não tenho personalidade alguma.</l>
+                    <l>É mais notado que eu esse criado</l>
+                    <l>De bordo que tem um belo modo alçado</l>
+                    <l>De <hi rend="italic" xml:lang="en">laird</hi> escocês há dias em jejum.</l>
+                </lg>
+                <lg>
+                    <l>Não posso estar em parte alguma. A minha</l>
+                    <l>Pátria é onde não estou. Sou doente e fraco.</l>
+                    <l>O comissário de bordo é velhaco.</l>
+                    <l>Viu-me co’a sueca... e o resto ele adivinha.</l>
+                </lg>
+                <lg>
+                    <l>Um dia faço escândalo cá a bordo,</l>
+                    <l>Só para dar que falar de mim aos mais.</l>
+                    <l>Não posso com a vida, e acho fatais</l>
+                    <l>As iras com que às vezes me debordo.</l>
+                </lg>
+                <lg>
+                    <l>Levo o dia a fumar, a beber coisas,</l>
+                    <l>Drogas americanas que entontecem,</l>
+                    <l>E eu já tão bêbado sem nada! Dessem</l>
+                    <l>Melhor cérebro aos meus nervos como rosas.</l>
+                </lg>
+                <lg>
+                    <l>Escrevo estas linhas. Parece impossível</l>
+                    <l>Que mesmo ao ter talento eu mal o sinta!</l>
+                    <l>O facto é que esta vida é uma quinta</l>
+                    <l>Onde se aborrece uma alma sensível.</l>
+                </lg>
+                <lg>
+                    <l>Os ingleses são feitos pra existir.</l>
+                    <l>Não há gente como esta pra estar feita</l>
+                    <l>Com a Tranquilidade. A gente deita</l>
+                    <l>Um vintém e sai um deles a sorrir.</l>
+                </lg>
+                <lg>
+                    <l>Pertenço a um género de portugueses</l>
+                    <l>Que depois de estar a Índia descoberta</l>
+                    <l>Ficaram sem trabalho. A morte é certa.</l>
+                    <l>Tenho pensado nisto muitas vezes.</l>
+                </lg>
+                <lg>
+                    <l>Leve o diabo a vida e a gente tê-la!</l>
+                    <l>Nem leio o livro à minha cabeceira.</l>
+                    <l>Enoja-me o Oriente. É uma esteira</l>
+                    <l>Que a gente enrola e deixa de ser bela.</l>
+                </lg>
+                <lg>
+                    <l>Caio no ópio por força. Lá querer</l>
+                    <l>Que eu leve a limpo uma vida destas</l>
+                    <l>Não se pode exigir. Almas honestas</l>
+                    <l>Com horas pra dormir e pra comer,</l>
+                </lg>
+                <lg>
+                    <l>Que um raio as parta! E isto afinal é inveja.</l>
+                    <l>Porque estes nervos são a minha morte.</l>
+                    <l>Não haver um navio que me transporte</l>
+                    <l>Para onde eu nada queira que o não veja!</l>
+                </lg>
+                <lg>
+                    <l>Ora! Eu cansava-me do mesmo modo.</l>
+                    <l>Queria outro ópio mais forte pra ir de ali</l>
+                    <l>Para sonhos que dessem cabo de mim</l>
+                    <l>E pregassem comigo nalgum lodo.</l>
+                </lg>
+                <lg>
+                    <l>Febre! Se isto que tenho não é febre,</l>
+                    <l>Não sei como é que se tem febre e sente.</l>
+                    <l>O facto essencial é que estou doente.</l>
+                    <l>Está corrida, amigos, esta lebre.</l>
+                </lg>
+                <lg>
+                    <l>Veio a noite. Tocou já a primeira</l>
+                    <l>Corneta, pra vestir para o jantar.</l>
+                    <l>Vida social por cima! Isso! E marchar</l>
+                    <l>Até que a gente saia pla coleira!</l>
+                </lg>
+                <lg>
+                    <l>Porque isto acaba mal e há-de haver</l>
+                    <l>(Olá!) sangue e um revólver lá prò fim</l>
+                    <l>Deste desassossego que há em mim </l>
+                    <l>E não há forma de se resolver.</l>
+                </lg>
+                <lg>
+                    <l>E quem me olhar, há-de-me achar banal,</l>
+                    <l>A mim e à minha vida... Ora! um rapaz...</l>
+                    <l>O meu próprio monóculo me faz</l>
+                    <l>Pertencer a um tipo universal.</l>
+                </lg>
+                <lg>
+                    <l>Ah quanta alma haverá, que ande metida</l>
+                    <l>Assim como eu na Linha, e como eu mística!</l>
+                    <l>Quantos sob a casaca característica</l>
+                    <l>Não terão como eu o horror à vida?</l>
+                </lg>
+                <lg>
+                    <l>Se ao menos eu por fora fosse tão</l>
+                    <l>Interessante como sou por dentro!</l>
+                    <l>Vou no Maelstrom, cada vez mais prò centro.</l>
+                    <l>Não fazer nada é a minha perdição.</l>
+                    <l>Um inútil. Mas é tão justo sê-lo!</l>
+                    <l>Pudesse a gente desprezar os outros</l>
+                    <l>E, ainda que co’os cotovelos rotos,</l>
+                    <l>Ser herói, doido, amaldiçoado ou belo!</l>
+                    <l>Tenho vontade de levar as mãos</l>
+                    <l>À boca e morder nelas fundo e a mal.</l>
+                    <l>Era uma ocupação original</l>
+                    <l>E distraía os outros, os tais sãos.</l>
+                </lg>
+                <lg>
+                    <l>O absurdo, como uma flor da tal Índia</l>
+                    <l>Que não vim encontrar na Índia, nasce</l>
+                    <l>No meu cérebro farto de cansar-se.</l>
+                    <l>A minha vida mude-a Deus ou finde-a...</l>
+                </lg>
+                <lg>
+                    <l>Deixe-me estar aqui, nesta cadeira,</l>
+                    <l>Até virem meter-me no caixão.</l>
+                    <l>Nasci pra mandarim de condição,</l>
+                    <l>Mas falta-me o sossego, o chá e a esteira.</l>
+                </lg>
+                <lg>
+                    <l>Ah que bom que era ir daqui de caída</l>
+                    <l>Prà cova por um alçapão de estouro!</l>
+                    <l>A vida sabe-me a tabaco louro.</l>
+                    <l>Nunca fiz mais do que fumar a vida.</l>
+                </lg>
+                <lg>
+                    <l>E afinal o que quero é fé, é calma,</l>
+                    <l>E não ter estas sensações confusas.</l>
+                    <l>Deus que acabe com isto! Abra as eclusas —</l>
+                    <l>E basta de comédias na minh’alma!</l>
+                </lg>
+                <trailer rend="right italic">No Canal de Suez, a bordo.</trailer>
+            </div>
+        </body>
+    </text>
+</TEI>

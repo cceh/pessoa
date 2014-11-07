@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Qualquer Música...</title>
+                <respStmt>
+                    <resp>Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Sviatoslav Drach</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Qualquer Música</title>
+                        <author>
+                            <rs type="person" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j">Presença</title>
+                        <imprint>
+                            <pubPlace>Coimbra</pubPlace>
+                            <date when="1928-03">Mar. 1928</date>
+                        </imprint>
+                        <biblScope unit="issue">10</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="poesia">Poesia</rs>
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+   <!-- s. d.
+Poesias. Fernando Pessoa. (Nota explicativa de João Gaspar Simões e Luiz de Montalvor.) Lisboa: Ática, 1942 (15ª ed. 1995).  - 220. -->
+    <text xml:id="qualquer-musica">
+        <body>
+            <div>
+                <head>QUALQUER MÚSICA</head>
+                <lg>
+                    <l>Qualquer música, ah, qualquer,</l>
+                    <l>Logo que me tire da alma</l>
+                    <l>Esta incerteza que quer</l>
+                    <l>Qualquer impossível calma!</l>
+                </lg>
+                <lg>
+                    <l>Qualquer música — guitarra,</l>
+                    <l>Viola, harmónio, realejo...</l>
+                    <l>Um canto que se desgarra...</l>
+                    <l>Um sonho em que nada vejo...</l>
+                </lg>
+                <lg>
+                    <l>Qualquer coisa que não vida!</l>
+                    <l>Jota, fado, a confusão</l>
+                    <l>Da última dança vivida...</l>
+                    <l>Que eu não sinta o coração!</l>
+                </lg>
+            </div>
+        </body>
+    </text>
+</TEI>

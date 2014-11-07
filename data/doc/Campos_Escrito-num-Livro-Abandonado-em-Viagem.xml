@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Escrito num Livro Abandonado em Viagem</title>
+                <respStmt>
+                    <resp>Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Sviatoslav Drach</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Escrito num Livro Abandonado em Viagem</title>
+                        <author>
+                            <rs type="person" key="AdC">Álvaro de Campos</rs>
+                        </author>
+                        <textLang mainLang="pt"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j">Presença</title>
+                        <imprint>
+                            <pubPlace>Coimbra</pubPlace>
+                            <date when="1928">Mar. 1928</date>
+                        </imprint>
+                        <biblScope unit="issue">10</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="poesia">Poesia</rs>
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+   <!-- s.d.
+Poesias de Álvaro de Campos. Fernando Pessoa. Lisboa: Ática, 1944 (imp. 1993).  - 260. -->
+    <text xml:id="escrito-num-livro-abandonado-em-viagem">
+        <body>
+            <div>
+                <lg>
+                    <l>Venho dos lados de Beja. </l>
+                    <l>Vou para o meio de Lisboa. </l>
+                    <l>Não trago nada e não acharei nada. </l>
+                    <l>Tenho o cansaço antecipado do que não acharei, </l>
+                    <l>E a saudade que sinto não é nem no passado nem no futuro. </l>
+                    <l>Deixo escrita neste livro a imagem do meu desígnio morto: </l>
+                    <l>
+                        <hi rend="italic">Fui como ervas, e não me arrancaram.</hi>
+                    </l>
+                </lg>
+            </div>
+        </body>
+    </text>
+</TEI>
