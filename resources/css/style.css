@@ -3,16 +3,22 @@
 body {
     font-family: "Trebuchet MS", sans-serif;
     font-size: 15px;
+     background-color: #B7B7B7;
+
 }
 body > div.container {
     max-width: 70%;
 }
 #content.container {
-    width: 100%;
-    margin-bottom: 50px;
+    width: 750px;
+    margin: 0 auto 50px auto;
 }
 h1 {
-    font-size: 18pt;
+    text-align: center; 
+    border: 1px solid #000; 
+    margin: 115px auto 0 auto;
+    width: 600px;
+    font-size : 26px;
 }
 h2 {
     font-size: 12pt;
@@ -23,10 +29,27 @@ h2 {
 p {
     font-size: 15px;
 }
-.page-header {
-    border-bottom: 1px solid #999999;
+.clear {
+    clear:both;
 }
-.page-header a {
+#page-header {
+    border-bottom: 1px solid #999999;
+    width : 800px;
+    height:200px;
+    margin : 0 auto;
+    border: 1px solid #000;
+}
+
+.flagge {
+    display : inline-block;
+    border: 1px solid #000;
+    border-radius: 99px;
+    width: 40px;
+    height: 40px;
+    float:right;
+    margin: 3px 8px;
+}
+#page-header a {
     text-decoration: none;
     color: black;
 }
@@ -71,4 +94,210 @@ p {
 .hi {
     background-color: #bbbbbb;
     display: inline-block;
+}
+
+/* Extended Style*/
+#side
+{
+ background-color: #fff;
+ width: 1070px; 
+ margin: 0 auto;
+}
+
+th, td {
+    padding: 5px;
+}
+
+header
+{
+ width: 800px;
+ height: 200px; 
+ margin: 0 auto; 
+ border: 1px solid #000; 
+}
+
+.q 
+{
+ border-bottom: 2px solid #000;
+}
+
+.a, .b, .c, .d, .e, .f 
+{
+ border-bottom: 1px solid #000;
+}
+
+.a:hover, .b:hover, .c:hover, .d:hover, .e:hover, .f:hover 
+{
+ background-color: #33CCFF;
+}
+#navi
+{
+ width: 824px; 
+ margin: 0 auto;
+ font-size: 18px;
+}
+
+#navi2
+{
+ width: 700px; 
+ margin: 2px auto;
+}
+
+#content
+{
+ width: 750px;
+ margin: 0 auto; 
+}
+
+#rdf
+{
+ width: 750px;
+ height: 200px;
+ margin: 0 auto; 
+ border: 1px solid #000;
+}
+
+.nav-cont
+{
+list-style: none; 
+display: inline-block;
+}
+
+.nav-cont li
+{
+ display: inline-block;
+ padding: 0 10px;
+ font-size: 15px;
+}
+
+table
+{
+ border: 1px solid #000;
+ border-top: none;
+}
+
+.small_text
+{
+ font-size: 10px;
+}
+
+textarea
+{
+ margin: 0 auto;
+}
+
+#suche
+{
+ margin: 0 auto; 
+ width: 500px;
+}
+
+#inhalt
+{
+display: inline-block;
+max-width: 310px;
+min-height: 400px;
+border: 1px solid #000;
+float: left;
+}
+
+#bild
+{
+display: inline-block;
+min-width: 320px;
+min-height: 400px;
+border: 1px solid #000;
+background: url('../img/Fernando-pessoa1.jpg') center no-repeat;
+float: left;
+margin: 0 0 0 10px;
+}
+
+#pfeil
+{
+ display: inline-block;
+ margin: 10px;
+ float: left; 
+}
+
+#pfeil2
+{
+ display: inline-block;
+ margin: 10px;
+ float: right;
+}
+
+#weitere_infos
+{
+ width: 640px; 
+ height: 100px; 
+ margin: 10px auto;
+}
+
+#weitere_infos_div
+{
+ width: 640px; 
+ height: 100px; 
+ border: 1px solid #000;
+ margin: 10px auto;
+}
+
+#zusatz
+{
+ width: 400px; 
+ border: 1px solid #000;
+ margin: 10px auto;
+ font-size: 15px;
+ text-align: center; 
+ padding: 20px 0;
+}
+
+#b-inhalt
+{
+ margin: 10px 0 0 50px;
+}
+
+.filtergruppe
+{
+display: inline-block;
+border-right: 1px solid #000;
+padding: 0 5px; 
+}
+
+.bolt
+  {
+    font-weight: bold;
+	padding: 0 5px;
+  }
+
+#wInfo
+  {
+   padding: 5px;
+  }
+
+#footer
+{
+ width: 800px; 
+ height: 100px;
+ margin: 0 auto; 
+ border: 1px solid #000;
+ text-align: center; 
+}
+
+#filter-nav
+{
+ border: 1px solid #9B9B9B;
+ height: 35px;
+}
+
+.filter
+{
+ width: 80px;
+ padding: 2px 3px; 
+ margin: 2px 3px; 
+}
+
+#filter-nav-a
+{
+ float: right; 
+ font-size: 15px;
 }

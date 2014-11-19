@@ -5,7 +5,7 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
 
-declare function lists:get-navi-list($node as node(), $model as map(*), $type as text()) as item()*{
+declare function lists:get-navi-list($node as node(), $model as map(*), $type as text(), $indikator as xs:string?) as item()*{
     if ($type = "authors")
     then for $pers in doc("/db/apps/pessoa/data/lists.xml")//tei:listPerson[@type="authors"]/tei:person/tei:persName/data(.)
          order by $pers collation "?lang=pt"
@@ -34,7 +34,9 @@ declare function lists:get-navi-list($node as node(), $model as map(*), $type as
     else if($type ="years")
     then for $years in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="years"]/tei:item 
          order by $years collation "?lang=pt"
-        return <item label="{$years}" ref="{$helpers:app-root}/page/year_{$years}.html" />
+        return if ( substring-after($years,concat("19",$indikator))!="" )
+            then <item label="{$years}" ref="{$helpers:app-root}/page/year_{$years}.html"/>              
+         else ()
     else for $item in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type=$type]/tei:item/data(.)
          order by $item collation "?lang=pt"
          return <item label="{$item}" ref="#" />

@@ -33,15 +33,15 @@
     </xsl:template>
     <!-- Gruppen -->
     <xsl:template name="group">
-        <ul>
-            <xsl:for-each select="//teiCorpus/TEI/text/group/text | //teiCorpus/TEI/text[not(group)]">
-                <li>
-                    <a href="#{@xml:id}">
-                        <xsl:value-of select=".//head"/>
-                    </a>
-                </li>
-            </xsl:for-each>
-        </ul>
+        <!--<ul>-->
+        <xsl:for-each select="//teiCorpus/TEI/text/group/text | //teiCorpus/TEI/text[not(group)]">
+                <!--<li>-->
+            <a href="#{@xml:id}">
+                <xsl:value-of select=".//head"/>
+            </a>
+                <!--</li>-->
+        </xsl:for-each>
+        <!--</ul>-->
     </xsl:template>
     <xsl:template match="text">
         <div>
@@ -60,16 +60,18 @@
         </h2>
     </xsl:template>
     <xsl:template match="list">
-        <ol style="list-style-type: none;">
-            <xsl:apply-templates/>
-        </ol>
+       <!-- <ol style="list-style-type: none;">-->
+        <xsl:apply-templates/>
+        <!--     </ol>-->
     </xsl:template>
     <xsl:template match="item">
-        <li>
+        <!--<li>-->
+        <div>
             <xsl:value-of select="label"/>
             <xsl:text> </xsl:text>
             <xsl:apply-templates/>
-        </li>
+        </div>
+            <!--</li>-->
     </xsl:template>
     <xsl:template match="lg">
         <div class="lg app:highlight-matches?sel=text">
