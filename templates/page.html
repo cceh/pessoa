@@ -21,22 +21,111 @@
        </script>
     </head>
     <body id="body">
-        <div class="container">
-            <div class="page-header">
+        <div id="side">
+            <div id="page-header">
+                <div class="flagge"/>
+                <div class="flagge"/>
+                <div class="clear"/>
                 <h1>
                     <a class="helpers:app-root" href="index.html">
                         <span class="config:app-title">Generated page</span>
                     </a>
                 </h1>
             </div>
-            <div class="navbar">
-                <div class="navbar-inner">
-                    <div class="container">
+            <ul id="navi" class="nav nav-tabs" role="tablist">
+                <li class="active">
+                    <a href="#home" role="tab" data-toggle="tab">Género</a>
+                </li>
+                <li>
+                    <a href="#chronologie" role="tab" data-toggle="tab">Cronologia</a>
+                </li>
+                <li>
+                    <a href="#author" role="tab" data-toggle="tab">Autor</a>
+                </li>
+                <li>
+                    <a href="#documente" role="tab" data-toggle="tab">Documento</a>
+                </li>
+                <li>
+                    <a href="#bibliografie" role="tab" data-toggle="tab">Bibliografia</a>
+                </li>
+                <li>
+                    <a href="#project" role="tab" data-toggle="tab">Projeto</a>
+                </li>
+                <li>
+                    <a href="#publicationen" role="tab" data-toggle="tab">Publicações</a>
+                </li>
+                <li>
+                    <a href="#search" role="tab" data-toggle="tab">Pesquisa</a>
+                </li>
+            </ul>
+            <div id="navi2" class="tab-content">
+                <div class="tab-pane active" id="home">
+                    <ul class="nav-cont app:list?type=genres"/>
+                </div>
+                <div class="tab-pane" id="chronologie">
+                    <table style="width=100%">
+                        <tr>
+                            <td class="q">
+                                <b>1900-1909</b>
+                            </td>
+                            <td class="q">
+                                <b>1910-1919</b>
+                            </td>
+                            <td class="q">
+                                <b>1920-1929</b>
+                            </td>
+                            <td class="q">
+                                <b>1930-1935</b>
+                            </td>
+                            <td class="q">
+                                <b>Linha do tempo</b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="a">
+                                <div class="app:list?type=years&amp;indikator=0"/>
+                            </td>
+                            <td class="a">
+                                <div class=" app:list?type=years&amp;indikator=1"/>
+                            </td>
+                            <td class="a">
+                                <div class=" app:list?type=years&amp;indikator=2"/>
+                            </td>
+                            <td class="a">
+                                <div class=" app:list?type=years&amp;indikator=3"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+                        
+                        
+                        
+                        
+                        <!-- Ab Hier-->
                         <!--<a class="config:app-title brand" href="./index.html">App Title</a>-->
-                        <ul class="nav">
+                       <!-- <ul class="nav">                    
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Géneros</a>
+                                <ul class="dropdown-menu app:list?type=genres"/>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cronologia</a>
+                                <ul class="dropdown-menu app:list?type=years"/>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Autores</a>
+                                <ul class="dropdown-menu app:list?type=authors"/>
+                            </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentos</a>
                                 <ul class="dropdown-menu app:list?type=doc"/>
+                            </li>
+                            <li class="vl">
+                                <a href="#">(Bibliografia)</a>
+                            </li>
+                            <li class="vl">
+                                <a href="#">Projeção (?)</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Publicações</a>
@@ -44,27 +133,9 @@
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Acessos</a>
-                                <ul class="dropdown-menu">
-                                    <li class="dropdown-submenu">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Géneros</a>
-                                        <ul class="dropdown-menu app:list?type=genres"/>
-                                    </li>
-                                    <li class="dropdown-submenu">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cronologia</a>
-                                        <ul class="dropdown-menu app:list?type=years"/>
-                                    </li>
-                                    <li class="dropdown-submenu">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Autores</a>
-                                        <ul class="dropdown-menu app:list?type=authors"/>
-                                    </li>
+                                <ul class="dropdown-menu">                                 
                                 </ul>
-                            </li>
-                            <li class="vl">
-                                <a href="#">Projeção (?)</a>
-                            </li>
-                            <li class="vl">
-                                <a href="#">(Bibliografia)</a>
-                            </li>
+                            </li>                    
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projeto</a>
                                 <ul class="dropdown-menu">
@@ -79,11 +150,13 @@
                                     </li>
                                 </ul>
                             </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+                            
+                        </ul>-->
+                        <!--Bis Hier-->
             <div id="content" class="container"/>
+            <div id="footer">
+                <a href="#">informação legal</a>
+            </div>
         </div>
     </body>
 </html>
