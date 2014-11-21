@@ -45,7 +45,9 @@ declare %templates:wrap function app:list($node as node(), $model as map(*), $ty
             then <div><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></div>
         else <li><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></li>
 };
-(:</li>(:<li>:):)
+
+
+
 declare function app:submenu($node as node(), $model as map(*), $item as node()){
     <li class="dropdown-submenu">
         <a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a>
@@ -59,6 +61,29 @@ declare function app:submenu($node as node(), $model as map(*), $item as node())
                     </li>}
         </ul>
      </li>
+};
+
+
+declare %templates:wrap function app:table ($node as node(), $model as map(*), $type as text()) as node()*{
+    for $indikator in (1 to 9)    
+          return <td> 
+            {if(exists(app:content($node, $model, $type, $indikator))) 
+            then app:content($node, $model, $type, $indikator) 
+            else ()}
+        </td>
+};
+
+declare %templates:wrap function app:table2($node as node(), $model as map(*), $type as text(), $indikator as xs:string?) as node()*{
+    <td>{
+    for $item in lists:get-navi-list($node, $model, $type, $indikator)
+    }</td>
+};
+
+
+
+declare %templates:wrap function app:content ($node as node(), $model as map(*), $type as text(), $indikator as xs:string) as node()*{
+for $item in lists:get-navi-list($node, $model, $type, $indikator)        
+      return <div><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></div>
 };
 
 (: Such Funktion :)
@@ -104,10 +129,6 @@ order by ft:score($m) descending
         let $filter-date := if($date != "") then $collect//range:field-eq(("date_when"),"1915") else $collect
         :)      
         
-        
-        
-        
-        
         let $query:= <query><bool><term occur="must">{$term}</term></bool></query>
         let $result-text := $collect//tei:text[ft:query(.,$query)] 
         let $result-head := $collect//tei:msItemStruct[ft:query(.,$query)] 
@@ -115,15 +136,16 @@ order by ft:score($m) descending
        
        
        (: let $result-lang := collection("/db/apps/pessoa/data/doc")//tei:msItemStruct/tei:textLang[ft:query(@mainLang,'pt')]/@mainLang/data(.) :)
-        
-        
-        
-        
-        
+
         (:collection("/db/apps/pessoa/data/doc")//tei:msItemStruct/tei:textLang/range:field-eq(("mainLang"),$lang):)
         
-        let $result := ($result-text, $result-head)
-         let $result-filter := app:filter()   
+        
+         let $filter-att := app:filter-att()
+         let $filter-para := app:filter-para()
+         
+        let $result-filter := collection("/db/apps/pessoa/data/doc")//range:field-eq($filter-att,$filter-para) 
+       let $result := ($result-text, $result-head, $result-filter)
+       (:let $result-filter := ($filter-para ,$filter-att) :)
         return map{
         "result" := $result,
         "result-text" := $result-text,
@@ -143,130 +165,40 @@ order by ft:score($m) descending
 
 
 
-declare function app:filter () as node()* {
-              
+
+declare function app:filter-para_build() as xs:string* {
+    let $parameters := app:filter-para()
+ (:
+ let $parameters := string-join($parameters, ",")
+    let $parameters := replace($parameters, "lang", "mainLang")
+   :)
+   return $parameters
+};
+
+
+declare function app:filter-att_build() as xs:string* {
+    let $filter-att := app:filter-att()    
+   (: let $filter-att := string-join($filter-att, ","):)
+    (:let $filter-att := concat(concat('"',replace($filter-att, "/",'","')),'"')          :)
+    return $filter-att
+};
+
+declare function app:filter-att () as xs:string* {              
             let $parameters := request:get-parameter-names()
-            let $collect := collection("/db/apps/pessoa/data/doc")
-            let $mainLang := ()
-            let $otherLang := ()
-            let $genre := ()
-            let $filter-att := ()
-            let $filter-para := ()
-            let $filter := ()
-           
-           for $para in $parameters
-                let $filter-att := 
-                if( app:search-value($parameters,$para) != "" )
-                    then
-                   app:filter-attr($para)
-                else ()(:concat($filter-att,",",app:filter-attr($para)):)
-            for $para in $parameters 
-            let $filter-para := 
-                if(app:search-value($parameters,$para) != "")
-                then
-                app:search-value($parameters,$para)
-                else ()(:concat($filter-para,",",app:search-value($parameters,$para)):)
-            (:
             for $para in $parameters
-                let $filter-build :=
-                    if($filter-att = "" and $filter-para = "") 
-                    then
-                        if($para ="lang")
-                        then
-                            let $filter-att := "mainLang"
-                            let $filter-para := app:search-value($parameters,"mainLang")
-                            return "Error"
-                        else if($para ="genre")
-                        then 
-                            let $filter-att := "genre"
-                            let $filter-para := app:search-value($parameters,"genre")
-                            return "Error"
-                        else ()
-                    else if($filter-att !="" and $filter-para != "")
-                    then 
-                        if($para ="lang")
-                            then 
-                                let $att :="mainLang"
-                                let $filter-att := concat($filter-att,",",$att)
-                                let $filter-para := concat($filter-para,",",$parameters,$att)
-                                return "Error"
-                            else if($para ="genre")
-                            then
-                                let $att :="genre"
-                                let $filter-att := concat($filter-att,",",$att)
-                                let $filter-para := concat($filter-para,",",$parameters,$att)
-                                return "Error"
-                            else ()      
-                    else()
-                    let $result := $collect//range:field-eq(concat("(",$filter-att,")",$filter-para))
-            return $result
-                    :)
-                    (:
-                    if($para = "lang")
-                        then 
-                            if($filter-att = "" and $filter-para = "") 
-                                then
-                                let $filter-att := "mainLang"
-                                let $filter-para := app:search-value($parameters,"mainLang")
-                               return ()
-                           else if ($filter-att !="" and $filter-para != "")
-                                then
-                                let $filter-att := concat($filter-att,",","mainLang")
-                                let $filter-para := concat($filter-para,",",$parameters,"mainLang")
-                               return ()
-                   else ()
-              else()          
-              return ()
-                      :)      
-                   (:
-                let $lang := if($part = "lang")
-                    then
-                    if($filter-att = "" and $filter-par = "") 
-                        then
-                        let $filter-att := "mainLang"
-                        let $filter-par := app:search-value($parameters,"mainLang")
-                    if ($filter-att != "") 
-                  :)      
-                                            
-            
-           (: for $hit in $search-result
-                let $file-name := root($hit)/util:document-name(.)
-                let $doc := doc(concat("/db/apps/pessoa/data/doc/",$file-name))
-                for $par in $parameters
-                    let $r-lang := if ($r-lang = "") then $doc//range:field-eq(("mainLang"),app:search-value($filter,"lang")) else $r-lang
-                    return $r-lang
-            :)
-      (:  let $lang := $collect//range:field-eq(("mainLang"),"en") :)    
-      (: for $filter in $parameters                    
-         let $result :=                 
-                if($filter = "lang") 
-                then $result//range:field-eq(("mainLang"),app:search-value($filter,"lang"))
-                else if ($filter ="genre") 
-                then $result//range:field-eq(("genre"),app:search-value($filter,"genre"))
-                else ()
-        
-        return $result
-        :)        
-        let $filter := concat("(",$filter-att,")",$filter-para)
-        return $collect//range:field-eq($filter)
-        
+                let $filter-att := if($para != "term" and app:search-value($parameters,$para)!= "") then app:search-value($parameters,$para) else ()
+            return $filter-att         
 };
 
-declare function app:filter-attr($parameter as xs:string+) as xs:string? {
-    if(exists($parameter))
-    then     
-        if ($parameter = "lang")
-        then let $result := "mainLang"
-         return $result
-         else if($parameter = "genre")
-         then let $result := "genre"
-        return $result            
-        else ()
+declare function app:filter-para() as xs:string* {
+    let $parameters := request:get-parameter-names()
+    for $para in $parameters
+    let $filter-para := if(app:search-value($parameters,$para)!= "" and $para != "term") then
+        for $hit in app:search-value($parameters,$para)
+       return replace($para, "lang", "mainLang") 
     else ()
-        
+    return $filter-para        
 };
-
-
 
 declare  function app:search-value ($parameters as xs:string+, $key as xs:string) as xs:string* {
    if(exists($parameters))
@@ -282,10 +214,16 @@ declare  function app:result-filter ($node as node(), $model as map(*), $sel as 
     then
         if(exists($model("result-filter")))  
         then 
+        (:
             for $hit in $model("result-filter")
+            return <p>Exist, {$model("result-filter")}</p>
+            else <p>Dos Not exist</p>
+            :)
+        for $hit in $model("result-filter")
             let $file-name := root($hit)/util:document-name(.)            
-            return <p>Exist,{$sel,$model("result-filter"),$file-name}</p>
+            return <p>Exist,{$sel,$model("result-filter"),$file-name}</p>            
         else <p> Dos Not exist,{$sel,$model("result-filter")}</p>
+        
     else $sel
 };
 

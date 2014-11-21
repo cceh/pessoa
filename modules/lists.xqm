@@ -19,9 +19,11 @@ declare function lists:get-navi-list($node as node(), $model as map(*), $type as
     else if ($type = "doc")
     then for $res in xmldb:get-child-resources("/db/apps/pessoa/data/doc")
          let $label := substring-after(replace(substring-before($res, ".xml"), "_", " "), "BNP E3 ")
-         let $ref := concat($helpers:app-root, "/doc/", substring-before($res, ".xml"))
+         
+         let $ref := concat($helpers:app-root, "/doc/", substring-before($res, ".xml"))         
          order by $res collation "?lang=pt" 
-         return if(doc(concat("/db/apps/pessoa/data/doc/",$res))//tei:sourceDesc/tei:msDesc) then (<item label="{$label}" ref="{$ref}" />) else()
+         return if(doc(concat("/db/apps/pessoa/data/doc/",$res))//tei:sourceDesc/tei:msDesc and substring-after($res,concat("E3_",$indikator))!="" )
+                then (<item label="{$label}" ref="{$ref}"  />) else()
     else if ($type = "pub")
     then for $item in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="works"][@n="2"]/tei:item
          let $ref := concat($helpers:app-root, "/doc/", lists:get-doc-uri($item))
@@ -36,7 +38,7 @@ declare function lists:get-navi-list($node as node(), $model as map(*), $type as
          order by $years collation "?lang=pt"
         return if ( substring-after($years,concat("19",$indikator))!="" )
             then <item label="{$years}" ref="{$helpers:app-root}/page/year_{$years}.html"/>              
-         else ()
+         else ()   
     else for $item in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type=$type]/tei:item/data(.)
          order by $item collation "?lang=pt"
          return <item label="{$item}" ref="#" />
