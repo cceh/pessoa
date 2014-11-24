@@ -17,7 +17,7 @@
         <script class="helpers:app-root" type="text/javascript">
            	$(document).ready(function() {
            		$(".fancybox").fancybox();
-           	});
+            });
        </script>
     </head>
     <body id="body">
@@ -34,7 +34,7 @@
             </div>
             <ul id="navi" class="nav nav-tabs" role="tablist">
                 <li class="active">
-                    <a href="#home" role="tab" data-toggle="tab">Género</a>
+                    <a href="#genre" role="tab" data-toggle="tab">Género</a>
                 </li>
                 <li>
                     <a href="#chronologie" role="tab" data-toggle="tab">Cronologia</a>
@@ -43,7 +43,7 @@
                     <a href="#author" role="tab" data-toggle="tab">Autor</a>
                 </li>
                 <li>
-                    <a href="#documente" role="tab" data-toggle="tab">Documento</a>
+                    <a href="#document" role="tab" data-toggle="tab">Documento</a>
                 </li>
                 <li>
                     <a href="#bibliografie" role="tab" data-toggle="tab">Bibliografia</a>
@@ -55,11 +55,11 @@
                     <a href="#publicationen" role="tab" data-toggle="tab">Publicações</a>
                 </li>
                 <li>
-                    <a href="#search" role="tab" data-toggle="tab">Pesquisa</a>
+                    <a href="search.html" role="tab">Pesquisa</a>
                 </li>
             </ul>
             <div id="navi2" class="tab-content">
-                <div class="tab-pane active" id="home">
+                <div class="tab-pane active" id="genre">
                     <ul class="nav-cont app:list?type=genres"/>
                 </div>
                 <div class="tab-pane" id="chronologie">
@@ -97,6 +97,28 @@
                         </tr>
                     </table>
                 </div>
+                <div class="tab-pane" id="author">
+                    <ul class="nav-cont app:list?type=authors"/>
+                </div>
+                <div class="tab-pane " id="document">
+                    <table style="width=100%">
+                        <tr class="app:table?type=doc"/>
+                    </table>
+                </div>
+                <div class="tab-pane" id="bibliografie">              
+                    <!-- Verlinkung zur Seite-->
+                </div>
+                <div class="tab-pane" id="project">
+                    <!-- Verlinkung zur Seite-->
+                </div>
+                <div class="tab-pane" id="publicationen">
+                    <table style="width=100%">
+                        <tr class="app:table2?type=pub"/>
+                    </table>
+                </div>
+                <div class="tab-pane" id="search">
+                    <!-- Verlinkung zur Seite-->
+                </div>
             </div>
                         
                         
@@ -119,9 +141,9 @@
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentos</a>
-                                <ul class="dropdown-menu app:list?type=doc"/>
-                            </li>
-                            <li class="vl">
+                                <ul class="dropdown-menu app:list?type=doc"/> 
+                            </li>-->
+                       <!--     <li class="vl">
                                 <a href="#">(Bibliografia)</a>
                             </li>
                             <li class="vl">
@@ -150,8 +172,8 @@
                                     </li>
                                 </ul>
                             </li>
-                            
-                        </ul>-->
+                            -->
+                        <!--</ul>-->
                         <!--Bis Hier-->
             <div id="content" class="container"/>
             <div id="footer">
