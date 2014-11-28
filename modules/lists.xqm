@@ -4,6 +4,7 @@ module namespace lists="http://localhost:8080/exist/apps/pessoa/lists";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
+declare namespace ngram ="http://exist-db.org/xquery/ngram";
 
 declare function lists:get-navi-list($node as node(), $model as map(*), $type as text(), $indikator as xs:string?) as item()*{
     if ($type = "authors")
@@ -36,11 +37,12 @@ declare function lists:get-navi-list($node as node(), $model as map(*), $type as
     else if($type ="years")
     then for $years in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="years"]/tei:item 
          order by $years collation "?lang=pt"
-        return if ( substring-after($years,concat("19",$indikator))!="" )
-            then <item label="{$years}" ref="{$helpers:app-root}/page/year_{$years}.html"/>              
-         else ()   
+        return if ( ends-with($years, $indikator)
+        (:substring-before($years,concat("0",$indikator))!="" or substring-before($years,concat("1",$indikator))!="" or substring-before($years,concat("2",$indikator))!="" or substring-before($years,concat("3",$indikator))!="" :) )
+            then <item label="{$years}" ref="{$helpers:app-root}/page/year_{$years}.html" id="{$years}"/>              
+         else ()
     else for $item in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type=$type]/tei:item/data(.)
-         order by $item collation "?lang=pt"
+         order by $item collation "?lang=pt"         
          return <item label="{$item}" ref="#" />
 };
 

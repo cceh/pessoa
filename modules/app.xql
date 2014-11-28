@@ -15,7 +15,7 @@ import module namespace lists="http://localhost:8080/exist/apps/pessoa/lists" at
 import module namespace doc="http://localhost:8080/exist/apps/pessoa/doc" at "doc.xqm";
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
 import module namespace kwic="http://exist-db.org/xquery/kwic";
-
+declare namespace util="http://exist-db.org/xquery/util";
 declare namespace text="http://exist-db.org/xquery/text";
 
 declare namespace request="http://exist-db.org/xquery/request";
@@ -42,7 +42,11 @@ declare %templates:wrap function app:list($node as node(), $model as map(*), $ty
         if ($item/item)
         then app:submenu($node, $model, $item)
         else if($type = "years")
-            then <div><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></div>
+            then 
+            if( lists:get-navi-list($node, $model, $type, concat("0",$indikator))!="") then <div class="divCell"><a href="{$item/@ref/data(.)}">{$item/@label/data(.), $indikator}</a></div>
+            else if( lists:get-navi-list($node, $model, $type, concat("1",$indikator))!="") then <div class="divCell"><a href="{$item/@ref/data(.)}">{$item/@label/data(.), $indikator}</a></div>
+            else <div class="divCell">Nothin, {$indikator}</div>
+            (:<div id="{$item/@id}"><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></div>:)
         else <li><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></li>
 };
 
@@ -63,6 +67,18 @@ declare function app:submenu($node as node(), $model as map(*), $item as node())
      </li>
 };
 
+declare %templates:wrap function app:sort-years($node as node(), $model as map(*), $type as text(), $indikator as xs:string?) as node()* {
+    (: if (exists(lists:get-navi-list($node, $model, $type, $indikator)))
+    then      
+        <div class="divCell"><a href="{$item/@ref/data(.)}">{$item/@label/data(.), $indikator}</a></div>
+        else <div class="divCell" >Nothin {$indikator}</div> :)
+        for $sp in (0 to 3)
+        let $sort := concat($sp, $indikator)
+        let $item := lists:get-navi-list($node, $model, $type, $sort)
+        return if($item) then
+        <div class="divCell"><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></div>
+        else <div class='divCell'>&#x00A0; </div>
+};
 
 declare %templates:wrap function app:table ($node as node(), $model as map(*), $type as text()) as node()*{
     for $indikator in (1 to 9)    
@@ -76,6 +92,7 @@ declare %templates:wrap function app:table ($node as node(), $model as map(*), $
 declare %templates:wrap function app:table2($node as node(), $model as map(*), $type as text(), $indikator as xs:string?) as node()*{
     <td>{
     for $item in lists:get-navi-list($node, $model, $type, $indikator)
+    return <div><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></div>
     }</td>
 };
 
@@ -83,7 +100,7 @@ declare %templates:wrap function app:table2($node as node(), $model as map(*), $
 
 declare %templates:wrap function app:content ($node as node(), $model as map(*), $type as text(), $indikator as xs:string) as node()*{
 for $item in lists:get-navi-list($node, $model, $type, $indikator)        
-      return <div><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></div>
+      return <div ><a href="{$item/@ref/data(.)}" id="{$item/@label/data(.)}">{$item/@label/data(.)}</a></div>
 };
 
 (: Such Funktion :)
@@ -139,13 +156,20 @@ order by ft:score($m) descending
 
         (:collection("/db/apps/pessoa/data/doc")//tei:msItemStruct/tei:textLang/range:field-eq(("mainLang"),$lang):)
         
+        (: //range:field-eq( ( %para1%, %para2%),%search1%,%search2%) :)
+        let $db := "/db/apps/pessoa/data/doc"
+        let $filter-att := app:filter-att_build()
+        let $filter-para := app:filter-para_build()
+        let $filter-connect := concat('("',$filter-para,'"),"',$filter-att,'"')
+        let $filter-search := concat("//range:field-eq(",$filter-connect,")")
+        let $filter-build := concat("collection($db)",$filter-search)
+       
+       let $result-filter := $filter-build(:util:eval($filter-build):)
+       
+        (:       let $result-filter := ($filter-para ,$filter-att) :)
+
         
-         let $filter-att := app:filter-att()
-         let $filter-para := app:filter-para()
-         
-        let $result-filter := collection("/db/apps/pessoa/data/doc")//range:field-eq($filter-att,$filter-para) 
        let $result := ($result-text, $result-head, $result-filter)
-       (:let $result-filter := ($filter-para ,$filter-att) :)
         return map{
         "result" := $result,
         "result-text" := $result-text,
@@ -166,38 +190,48 @@ order by ft:score($m) descending
 
 
 
-declare function app:filter-para_build() as xs:string* {
-    let $parameters := app:filter-para()
- (:
- let $parameters := string-join($parameters, ",")
-    let $parameters := replace($parameters, "lang", "mainLang")
-   :)
-   return $parameters
-};
 
 
-declare function app:filter-att_build() as xs:string* {
-    let $filter-att := app:filter-att()    
-   (: let $filter-att := string-join($filter-att, ","):)
-    (:let $filter-att := concat(concat('"',replace($filter-att, "/",'","')),'"')          :)
-    return $filter-att
-};
+
+
 
 declare function app:filter-att () as xs:string* {              
             let $parameters := request:get-parameter-names()
             for $para in $parameters
-                let $filter-att := if($para != "term" and app:search-value($parameters,$para)!= "") then app:search-value($parameters,$para) else ()
-            return $filter-att         
+                let $filter-att := if($para != "term" and app:search-value($parameters,$para)!= "") then app:search-value($parameters,$para) else ()                
+            return $filter-att
+};
+
+declare function app:filter-att_build() as xs:string {
+    let $filter-att := app:filter-att()    
+    let $result := string-join($filter-att, '","')
+   (: let $filter-att := string-join($filter-att, ","):)
+    (:let $filter-att := concat(concat('"',replace($filter-att, "/",'","')),'"')          :)
+    return $result
 };
 
 declare function app:filter-para() as xs:string* {
     let $parameters := request:get-parameter-names()
     for $para in $parameters
-    let $filter-para := if(app:search-value($parameters,$para)!= "" and $para != "term") then
-        for $hit in app:search-value($parameters,$para)
-       return replace($para, "lang", "mainLang") 
-    else ()
-    return $filter-para        
+    let $filter-para := 
+        if(app:search-value($parameters,$para)!= "" and $para != "term") then
+            for $hit in app:search-value($parameters,$para)
+            return 
+            if($para = "lang") then replace($para, "lang", "mainLang")
+            else $para
+            (:replace($para, "lang", "mainLang") :)
+            else ()    
+    return $filter-para
+    };
+    
+declare function app:filter-para_build() as xs:string {
+    let $filter-para := app:filter-para()
+    let $result := string-join($filter-para, '","')
+ (:
+ let $parameters := string-join($parameters, ",")
+    let $parameters := replace($parameters, "lang", "mainLang")
+   :)
+   return $result
 };
 
 declare  function app:search-value ($parameters as xs:string+, $key as xs:string) as xs:string* {
@@ -214,16 +248,17 @@ declare  function app:result-filter ($node as node(), $model as map(*), $sel as 
     then
         if(exists($model("result-filter")))  
         then 
-        (:
+        
             for $hit in $model("result-filter")
             return <p>Exist, {$model("result-filter")}</p>
             else <p>Dos Not exist</p>
-            :)
+            
+            (:
         for $hit in $model("result-filter")
             let $file-name := root($hit)/util:document-name(.)            
             return <p>Exist,{$sel,$model("result-filter"),$file-name}</p>            
         else <p> Dos Not exist,{$sel,$model("result-filter")}</p>
-        
+        :)
     else $sel
 };
 

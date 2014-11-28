@@ -17,6 +17,7 @@
         <script class="helpers:app-root" type="text/javascript">
            	$(document).ready(function() {
            		$(".fancybox").fancybox();
+           		
             });
        </script>
     </head>
@@ -33,26 +34,26 @@
                 </h1>
             </div>
             <ul id="navi" class="nav nav-tabs" role="tablist">
-                <li class="active">
+                <li>
+                    <a href="#author" role="tab" data-toggle="tab">Autor</a>
+                </li>
+                <li>
+                    <a href="#document" role="tab" data-toggle="tab">Documentos</a>
+                </li>
+                <li>
+                    <a href="#publicationen" role="tab" data-toggle="tab">Publicações</a>
+                </li>
+                <li>
                     <a href="#genre" role="tab" data-toggle="tab">Género</a>
                 </li>
                 <li>
                     <a href="#chronologie" role="tab" data-toggle="tab">Cronologia</a>
                 </li>
                 <li>
-                    <a href="#author" role="tab" data-toggle="tab">Autor</a>
-                </li>
-                <li>
-                    <a href="#document" role="tab" data-toggle="tab">Documento</a>
-                </li>
-                <li>
                     <a href="#bibliografie" role="tab" data-toggle="tab">Bibliografia</a>
                 </li>
                 <li>
                     <a href="#project" role="tab" data-toggle="tab">Projeto</a>
-                </li>
-                <li>
-                    <a href="#publicationen" role="tab" data-toggle="tab">Publicações</a>
                 </li>
                 <li>
                     <a href="search.html" role="tab">Pesquisa</a>
@@ -63,6 +64,37 @@
                     <ul class="nav-cont app:list?type=genres"/>
                 </div>
                 <div class="tab-pane" id="chronologie">
+                    <div class="divTable">
+                        <div class="divRow">
+                            <div class="divCell">
+                                <b>1900-1909</b>
+                            </div>
+                            <div class="divCell">
+                                <b>1910-1919</b>
+                            </div>
+                            <div class="divCell">
+                                <b>1920-1929</b>
+                            </div>
+                            <div class="divCell">
+                                <b>1930-1935</b>
+                            </div>
+                            <div class="divCell">
+                                <b>Linha do tempo</b>
+                            </div>
+                        </div>
+                        <div class="divRow app:sort-years?type=years&amp;indikator=0"/>
+                        <div class="divRow app:sort-years?type=years&amp;indikator=1"/>
+                        <div class="divRow app:sort-years?type=years&amp;indikator=2"/>
+                        <div class="divRow app:sort-years?type=years&amp;indikator=3"/>
+                        <div class="divRow app:sort-years?type=years&amp;indikator=4"/>
+                        <div class="divRow app:sort-years?type=years&amp;indikator=5"/>
+                        <div class="divRow app:sort-years?type=years&amp;indikator=6"/>
+                        <div class="divRow app:sort-years?type=years&amp;indikator=7"/>
+                        <div class="divRow app:sort-years?type=years&amp;indikator=8"/>
+                        <div class="divRow app:sort-years?type=years&amp;indikator=9"/>
+                    </div>
+                    
+                    <!--
                     <table style="width=100%">
                         <tr>
                             <td class="q">
@@ -81,21 +113,27 @@
                                 <b>Linha do tempo</b>
                             </td>
                         </tr>
+                        <tr class="app:list?type=years&indikator=0"/>
+                        <tr class="app:list?type=years&indikator=1"/>
                         <tr>
+                         </tr>-->
+                    <!--
                             <td class="a">
-                                <div class="app:list?type=years&amp;indikator=0"/>
+                                <div class="app:list?type=years&indikator=0"/>
                             </td>
-                            <td class="a">
-                                <div class=" app:list?type=years&amp;indikator=1"/>
+                            <td class="b">
+                                <div class=" app:list?type=years&indikator=1"/>
                             </td>
-                            <td class="a">
-                                <div class=" app:list?type=years&amp;indikator=2"/>
+                            <td class="c">
+                                <div class=" app:list?type=years&indikator=2"/>
                             </td>
-                            <td class="a">
-                                <div class=" app:list?type=years&amp;indikator=3"/>
+                            <td class="d">
+                                <div class=" app:list?type=years&indikator=3"/>
                             </td>
-                        </tr>
-                    </table>
+                            <td class="e"></td>-->
+                    
+                    <!-- </table>
+                    -->
                 </div>
                 <div class="tab-pane" id="author">
                     <ul class="nav-cont app:list?type=authors"/>
@@ -120,13 +158,13 @@
                     <!-- Verlinkung zur Seite-->
                 </div>
             </div>
-                        
-                        
-                        
-                        
-                        <!-- Ab Hier-->
-                        <!--<a class="config:app-title brand" href="./index.html">App Title</a>-->
-                       <!-- <ul class="nav">                    
+            
+            
+            
+            
+            <!-- Ab Hier-->
+            <!--<a class="config:app-title brand" href="./index.html">App Title</a>-->
+            <!-- <ul class="nav">                    
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Géneros</a>
                                 <ul class="dropdown-menu app:list?type=genres"/>
@@ -143,7 +181,7 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentos</a>
                                 <ul class="dropdown-menu app:list?type=doc"/> 
                             </li>-->
-                       <!--     <li class="vl">
+            <!--     <li class="vl">
                                 <a href="#">(Bibliografia)</a>
                             </li>
                             <li class="vl">
@@ -173,8 +211,8 @@
                                 </ul>
                             </li>
                             -->
-                        <!--</ul>-->
-                        <!--Bis Hier-->
+            <!--</ul>-->
+            <!--Bis Hier-->
             <div id="content" class="container"/>
             <div id="footer">
                 <a href="#">informação legal</a>
