@@ -1,0 +1,122 @@
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>BNP/E3 143-5<hi rend="superscript">r</hi>
+                </title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <institution>Biblioteca Nacional de Portugal</institution>
+                        <idno>BNP/E3 143-5r</idno>
+                    </msIdentifier>
+                    <msContents>
+                        <msItemStruct>
+                            <author>Fernando Pessoa</author>
+                            <respStmt>
+                                <resp>Transcrição, Edição</resp>
+                                <name>Pedro Sepúlveda</name>
+                            </respStmt>
+                            <respStmt>
+                                <resp>Codificação</resp>
+                                <name>Ulrike Henny</name>
+                            </respStmt>
+                            <respStmt>
+                                <resp>Codificação</resp>
+                                <name>Isabel Figueiredo-Iken</name>
+                            </respStmt>
+                            <note type="genre">Lista editorial</note>
+                            <textLang mainLang="en" otherLangs="pt"/>
+                        </msItemStruct>
+                    </msContents>
+                    <history>
+                        <origin>
+                            <p>
+                                <origDate from="1915" to="1916" cert="medium">c.1915-1916</origDate>
+                                <origPlace/>
+                            </p>
+                        </origin>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="bn-acpc-e-e3-143-1-14_JPG_24-C-R0150/bn-acpc-e-e3-143-1-14_0009_5_t24-C-R0150.jpg"/>
+    </facsimile>
+    <text xml:id="bnp-e3-143-5r">
+        <body>
+            <div>
+                <head>
+                    <hi rend="underline">
+                        <rs type="person">Thomas Crosse</rs>:</hi>
+                    <seg xml:space="preserve"> </seg>
+                    <rs type="work">Some Portuguese <choice>
+                            <seg n="1">Poets</seg>
+                            <seg n="2">
+                                <add place="below">Writers</add>
+                            </seg>
+                        </choice>
+                    </rs>
+                </head>
+                <p>I have chosen rather lesser known, <choice>
+                        <abbr>
+                            <gap reason="illegible" quantity="1" unit="character"/>
+                        </abbr>
+                        <expan resp="PS">and</expan>
+                    </choice> unjustly<lb/>unknown, poets:</p>
+                <list>
+                    <item>
+                        <label>1.</label>
+                        <seg xml:space="preserve"> </seg>
+                        <rs type="work-part">The Poetry of the Song Books</rs>.</item>
+                    <item>
+                        <label>2.</label>
+                        <seg xml:space="preserve"> </seg>
+                        <rs type="work-part">
+                            <rs type="person">Christovam Falcão</rs> e <rs type="person">Bernardino<lb/> Ribeiro</rs>
+                        </rs>.</item>
+                    <item>
+                        <label>3.</label>
+                        <seg xml:space="preserve"> </seg>
+                        <rs type="work-part">
+                            <rs type="person">José Anastacio da Cunha</rs>
+                        </rs>.</item>
+                    <item>
+                        <label>4.</label>
+                        <seg xml:space="preserve"> </seg>
+                        <rs type="work-part">
+                            <rs type="person">Anthero de Quental</rs>
+                        </rs>.</item>
+                    <item>
+                        <label>5.</label>
+                        <seg xml:space="preserve"> </seg>
+                        <rs type="work-part">
+                            <rs type="person">Guerra Junqueiro</rs>
+                        </rs>.</item>
+                    <item>
+                        <label>6.</label>
+                        <seg xml:space="preserve"> </seg>
+                        <rs type="work-part">
+                            <rs type="person">Cesario Verde</rs>
+                        </rs>.</item>
+                    <item>
+                        <label>7.</label>
+                        <seg xml:space="preserve"> </seg>
+                        <rs type="work-part">Decadent, and Pessimist</rs>.</item>
+                    <item>
+                        <label>8.</label>
+                        <seg xml:space="preserve"> </seg>
+                        <rs type="work-part">The “Sensationist”</rs>.</item>
+                    <metamark rend="line" function="end"/>
+                </list>
+            </div>
+        </body>
+    </text>
+</TEI>
