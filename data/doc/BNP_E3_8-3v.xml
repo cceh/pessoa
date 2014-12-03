@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Title</title>
+                <title>8-3<hi rend="superscript">v</hi>
+                </title>
             </titleStmt>
             <publicationStmt>
                 <p>Publication Information</p>
@@ -57,39 +57,53 @@
                     <item>
                         <label>1.</label>
                         <seg xml:space="preserve"> </seg>
-                        <rs type="person" key="AC">
+                        <rs type="person" key="AC" role="author">
                             <hi rend="underline">Alberto Caeiro</hi>
-                        </rs> – “O Guardador de Rebanhos.”</item>
+                        </rs> – “<rs type="work">O Guardador de Rebanhos.</rs>”</item>
                     <item>
-                        <label>2.</label> Entrevista com <rs type="person" key="AC">
-                            <choice>
-                                <abbr>A.</abbr>
-                                <expan resp="UH">Alberto</expan>
-                            </choice> Caeiro</rs>, talvez no <hi rend="underline">Theatro</hi>.</item>
+                        <label>2.</label>
+                        <seg xml:space="preserve"> </seg>
+                        <rs type="work">Entrevista com <rs type="person" key="AC" role="topic">
+                                <choice>
+                                    <abbr>A.</abbr>
+                                    <expan resp="UH">Alberto</expan>
+                                </choice> Caeiro</rs>
+                        </rs>, talvez no <rs type="journal">
+                            <hi rend="underline">Theatro</hi>
+                        </rs>.</item>
                     <item>
-                        <label>3.</label> Artigo sobre - <rs type="person" key="AC">
-                            <choice>
-                                <abbr>A.</abbr>
-                                <expan resp="UH">Alberto</expan>
-                            </choice> Caeiro</rs>, n’ <hi rend="underline">A Aguia</hi>
+                        <label>3.</label>
+                        <seg xml:space="preserve"> </seg>
+                        <rs type="work">Artigo sobre <rs type="person" key="AC" role="topic">
+                                <choice>
+                                    <abbr>A.</abbr>
+                                    <expan resp="UH">Alberto</expan>
+                                </choice> Caeiro</rs>
+                        </rs>, n’ <rs type="journal">
+                            <hi rend="underline">A Aguia</hi>
+                        </rs>
                     </item>
                     <item>
-                        <label>4.</label> Artigo sobre <rs type="person" key="AC">Caeiro</rs> no “<choice>
-                            <abbr>T.</abbr>
-                            <expan resp="UH">Thomas</expan>
-                        </choice>
+                        <label>4.</label>
                         <seg xml:space="preserve"> </seg>
-                        <choice>
-                            <abbr>P.</abbr>
-                            <expan resp="UH">Power</expan>
-                        </choice>’s Weekly.” – ?.</item>
+                        <rs type="work">Artigo sobre <rs type="person" key="AC" role="topic">Caeiro</rs>
+                        </rs> no “<rs type="journal">
+                            <choice>
+                                <abbr>T.</abbr>
+                                <expan resp="UH">Thomas</expan>
+                            </choice>
+                            <seg xml:space="preserve"> </seg>
+                            <choice>
+                                <abbr>P.</abbr>
+                                <expan resp="UH">Power</expan>
+                            </choice>’s Weekly.</rs>” – ?.</item>
                     <item>
                         <label>5.</label>
                         <seg xml:space="preserve"> </seg>
                         <choice>
                             <abbr>Trad.</abbr>
-                            <expan resp="UH">Tradução</expan>
-                        </choice> de <rs type="person" key="AC">
+                            <expan resp="UH">Traducção</expan>
+                        </choice> de <rs type="person" key="AC" role="author">
                             <choice>
                                 <abbr>A.</abbr>
                                 <expan resp="UH">Alberto</expan>
@@ -99,7 +113,9 @@
                                 <abbr>C.</abbr>
                                 <expan resp="UH">Caeiro</expan>
                             </choice>
-                        </rs> - <hi rend="underline">The Keeper of Sheep</hi>
+                        </rs> – <rs type="work">
+                            <hi rend="underline">The Keeper of Sheep</hi>
+                        </rs>
                     </item>
                     <item>
                         <label>6.</label>
@@ -108,14 +124,24 @@
                             <abbr>
                                 <metamark rend="line" function="ditto"/>
                             </abbr>
-                            <expan>Tradução de <rs type="person" key="AC">Alberto Caeiro</rs>
+                            <expan>Traducção de <rs type="person" key="AC" role="author">Alberto Caeiro</rs>
                             </expan>
-                        </choice> - 
-                        <hi rend="underline">Le Gardien des<hi rend="superscript">e</hi> Troupeaux</hi>
+                        </choice> – 
+                        <rs type="work">
+                            <hi rend="underline">Le Gardien d<choice>
+                                    <seg n="1">es</seg>
+                                    <seg n="2">
+                                        <add place="above">e</add>
+                                    </seg>
+                                </choice> Troupeaux</hi>
+                        </rs>
                     </item>
                     <item>
-                        <label>7.</label> Tentar artigo no <hi rend="underline">Mercure de France</hi>, sobre <lb/>
-                        <rs type="person" key="AC">Alberto Caeiro</rs>.</item>
+                        <label>7.</label> Tentar <rs type="work" xml:id="w1" next="#w2">artigo</rs> no <rs type="journal">
+                            <hi rend="underline">Mercure de France</hi>
+                        </rs>, <rs type="work" xml:id="w2" prev="#w1">sobre <lb/>
+                            <rs type="person" key="AC" role="topic">Alberto Caeiro</rs>
+                        </rs>.</item>
                 </list>
                 <gap reason="selection" unit="lines" extent="3"/>
             </div>

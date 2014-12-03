@@ -1,0 +1,74 @@
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title/>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <institution>Biblioteca Nacional de Portugal</institution>
+                        <idno>BNP/E3 51-89r</idno>
+                    </msIdentifier>
+                    <msContents>
+                        <msItemStruct>
+                            <author>Fernando Pessoa</author>
+                            <respStmt>
+                                <resp>Transcrição, Edição</resp>
+                                <name>Pedro Sepúlveda</name>
+                            </respStmt>
+                            <respStmt>
+                                <resp>Codificação</resp>
+                                <name>Ulrike Henny</name>
+                            </respStmt>
+                            <respStmt>
+                                <resp>Codificação</resp>
+                                <name>Isabel Figueiredo-Iken</name>
+                            </respStmt>
+                            <note type="genre">Lista editorial</note>
+                            <textLang mainLang="pt"/>
+                        </msItemStruct>
+                    </msContents>
+                    <history>
+                        <origin>
+                            <p>
+                                <origDate when="1933">1933</origDate>
+                                <origPlace/>
+                            </p>
+                        </origin>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="bn-acpc-e-e3-51-1-106_0183_89_t24-C-R0150.jpg"/>
+    </facsimile>
+    <text>
+        <body>
+            <div>
+                <gap unit="words" extent="2"/>
+                <delSpan spanTo="#a1" rend="overstrike"/>
+                <list>
+                    <item>
+                        <label>1.</label>1.Portugal</item>
+                    <item>
+                        <label>2.</label>2.Cancioneiro, Liv. I (100 poemas). </item>
+                    <item>
+                        <label>3.</label> Caeiro (só?).</item>
+                </list>
+                <ab rend="right">(para 1933).</ab>
+                <metamark rend="line" function="distinct"/>
+                <p> a não ser que a revisão de Caeiro dê<lb/>muito que fazer. </p>
+                <metamark rend="line" function="distinct"/>
+                <anchor xml:id="a1"/>
+                <gap reason="selection" unit="lines" extent="16"/>
+            </div>
+        </body>
+    </text>
+</TEI>

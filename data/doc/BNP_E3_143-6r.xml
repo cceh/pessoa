@@ -1,0 +1,122 @@
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>BNP/E3 143-6<hi rend="superscript">r</hi>
+                </title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <institution>Biblioteca Nacional de Portugal</institution>
+                        <idno>BNP/E3 143-6r</idno>
+                    </msIdentifier>
+                    <msContents>
+                        <msItemStruct>
+                            <author>Fernando Pessoa</author>
+                            <respStmt>
+                                <resp>Transcrição, Edição</resp>
+                                <name>Pedro Sepúlveda</name>
+                            </respStmt>
+                            <respStmt>
+                                <resp>Codificação</resp>
+                                <name>Ulrike Henny</name>
+                            </respStmt>
+                            <respStmt>
+                                <resp>Codificação</resp>
+                                <name>Isabel Figueiredo-Iken</name>
+                            </respStmt>
+                            <note type="genre">Lista editorial</note>
+                            <textLang mainLang="en" otherLangs="pt fr"/>
+                        </msItemStruct>
+                    </msContents>
+                    <history>
+                        <origin>
+                            <p>
+                                <origDate when="1919" cert="medium">c. 1919</origDate>
+                                <origPlace/>
+                            </p>
+                        </origin>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="bn-acpc-e-e3-143-1-14_JPG_24-C-R0150/bn-acpc-e-e3-143-1-14_0011_6_t24-C-R0150.jpg"/>
+    </facsimile>
+    <text xml:id="bnp-e3-143-6r">
+        <body>
+            <div>
+                <list>
+                    <head>
+                        <hi rend="underline">Possible articles by <rs type="person">Thomas Crosse</rs> (or some such):</hi>
+                    </head>
+                    <item>
+                        <rs type="work">A conspectus of the <rs type="person">Columbus</rs> theories</rs> (see what<lb/>
+                        <ab rend="indent">the recent Italian re-Genoa one says).</ab>
+                    </item>
+                    <item>
+                        <rs type="work">
+                            <rs type="person">Diogo Pires</rs>
+                        </rs>, otherwise <rs type="work">
+                            <rs type="person">Solomon Molcho</rs>
+                        </rs>.</item>
+                    <item>
+                        <rs type="work">The Myth of <rs type="person">King Sebastian</rs>
+                        </rs>.</item>
+                    <item>
+                        <rs type="work">Biomancy</rs> (fairly <subst>
+                            <del rend="overtyped" n="1">large</del>
+                            <add place="above" n="2">big</add>
+                        </subst> article)</item>
+                    <item>
+                        <rs type="work" next="#w2" xml:id="w1">Sophistry, or Curios Proofs and Arguments: from</rs>
+                        <lb/>
+                        <ab rend="indent">
+                            <rs type="work" xml:id="w2" prev="#w1">the Greek Sophists</rs> (<choice>
+                                <abbr>v.</abbr>
+                                <expan>ver / vide</expan>
+                            </choice>
+                            <seg xml:space="preserve"> </seg>
+                            <rs type="person">Funck-Brentano</rs>, <rs type="work">Les<lb/> Sophistes Grecs</rs>) through medieval
+                        sophists<lb/> and schoolmen, to modern sophists, includ<pc>-</pc>
+                            <lb/>ing such theses
+                        as <rs type="work">Comme Quoi <rs type="person" key="NB">Napoléon</rs>
+                                <supplied resp="PS" reason="omitted-in-original"> n’a Jamais Existé</supplied>
+                            </rs>) <del rend="overtyped">5see</del>
+                            <lb/> (See whether some idea can be obta<choice/>i<subst>
+                                <del rend="overtyped">j</del>
+                                <add>n</add>
+                            </subst>ed of<lb/>
+                            <rs type="work">Whately’s Historic
+                        Doubts</rs>). (This article<lb/>can be divided into two – one on Sophistry
+                        <lb/>Proper, the other on Curious Proofs and Ar<pc>-</pc>
+                            <lb/>guments).</ab>
+                    </item>
+                    <item>
+                        <rs type="work">Singularities of Language</rs>.</item>
+                    <item>(<rs type="work">Historia tragico-Maritima</rs>) (or translate perhaps).</item>
+                    <item>
+                        <rs type="work">Tobacco / Tobacco in <rs type="place">Portugal</rs>
+                        </rs> (special) ???</item>
+                    <item>
+                        <rs type="work">Freemansonry in <rs type="place">Portugal</rs>
+                        </rs> (special) ?</item>
+                    <item>
+                        <rs type="work">Kings that will Return</rs>. (the general myth of which<lb/>
+                        <ab rend="indent">the one of <rs type="person">King
+                        Sebastian</rs> is a particular<lb/> case).</ab>
+                    </item>
+                    <item>
+                        <rs type="work">The Epigram</rs>. (or a little book choosing them).</item>
+                </list>
+            </div>
+        </body>
+    </text>
+</TEI>

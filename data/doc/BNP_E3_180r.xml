@@ -1,0 +1,183 @@
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>BNP/E3 143-6<hi rend="superscript">r</hi>
+                </title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <institution>Biblioteca Nacional de Portugal</institution>
+                        <idno>BNP/E3 143-6r</idno>
+                    </msIdentifier>
+                    <msContents>
+                        <msItemStruct>
+                            <author>Fernando Pessoa</author>
+                            <respStmt>
+                                <resp>Transcrição, Edição</resp>
+                                <name>Pedro Sepúlveda</name>
+                            </respStmt>
+                            <respStmt>
+                                <resp>Codificação</resp>
+                                <name>Ulrike Henny</name>
+                            </respStmt>
+                            <respStmt>
+                                <resp>Codificação</resp>
+                                <name>Franz Fischer</name>
+                            </respStmt>
+                            <respStmt>
+                                <resp>Codificação</resp>
+                                <name>Isabel Figueiredo-Iken</name>
+                            </respStmt>
+                            <note type="genre">Lista editorial</note>
+                            <textLang mainLang="en" otherLangs="pt fr"/>
+                        </msItemStruct>
+                    </msContents>
+                    <history>
+                        <origin>
+                            <p>
+                                <origDate when="1919" cert="medium">c. 1919</origDate>
+                                <origPlace/>
+                            </p>
+                        </origin>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="bn-acpc-e-e3-167-186_JPG_24-C-R0150/bn-acpc-e-e3-167-186_0029_180_t24-C-R0150.jpg"/>
+    </facsimile>
+    <text xml:id="bnp-e3-180r">
+        <body>
+            <div>
+                <list>
+                    <head>
+                        <rs type="work">Ficções do Interludio</rs>
+                    </head>
+                    <item xml:id="i1">
+                        <label>1.</label>
+                        <seg xml:space="preserve"> </seg>
+                        <rs type="work-part">Poemas Completos de<lb/>
+                            <rs type="person" key="AC" role="author">Alberto Caeiro</rs>
+                        </rs> (com<lb/>
+                        <rs type="work-part">
+                            <choice>
+                                <abbr>pref.</abbr>
+                                <expan>prefacio</expan>
+                            </choice> de <rs type="person" key="RR" role="author">
+                                <choice>
+                                    <abbr>R</abbr>
+                                    <expan>Ricardo</expan>
+                                </choice> Reis</rs>
+                        </rs>)</item>
+                    <item xml:id="i2">
+                        <label>2.</label>
+                        <seg xml:space="preserve"> </seg>
+                        <rs type="work-part">Notas para a <choice>
+                                <abbr>rec.</abbr>
+                                <expan>recordação</expan>
+                            </choice>
+                            <lb/> do meu mestre<lb/>
+                            <rs type="person" key="AC" role="topic">Caeiro</rs>
+                        </rs>
+                        <lb/>
+               (<rs type="person" key="AdC" role="author">
+                            <choice>
+                                <abbr>Alv.</abbr>
+                                <expan>Alvaro</expan>
+                            </choice> de Campos</rs>)</item>
+                    <item xml:id="i3">
+                        <label>3.</label>
+                        <seg xml:space="preserve"> </seg>
+                        <rs type="work-part">Chuva Obliqua</rs> (<rs type="person" key="FP" role="author">
+                            <choice>
+                                <abbr>F.</abbr>
+                                <expan>Fernando</expan>
+                            </choice>
+                            <lb/> Pessoa</rs>)</item>
+                    <item xml:id="i4">
+                        <label>4.</label>
+                        <seg xml:space="preserve"> </seg>
+                        <rs type="work-part">Poemas antes de<lb/>
+                            <rs type="person" key="AC" role="topic">Caeiro</rs>
+                        </rs> (<rs type="person" key="AdC" role="author">
+                            <choice>
+                                <abbr>Alv.</abbr>
+                                <expan>Alvaro</expan>
+                            </choice> de<lb/> Campos</rs>)</item>
+                    <item xml:id="i5">
+                        <label>5.</label>
+                        <seg xml:space="preserve"> </seg>
+                        <rs type="work-part">Odes, <choice>
+                                <abbr>Liv</abbr>
+                                <expan>Livros</expan>
+                            </choice> I-<choice>
+                                <seg n="1">III</seg>
+                                <seg n="2">
+                                    <add place="above">II</add>
+                                </seg>
+                            </choice>
+                        </rs> (<rs type="person" key="RR" role="author">
+                            <choice>
+                                <abbr>R</abbr>
+                                <expan>Ricardo</expan>
+                            </choice> Reis</rs>)</item>
+                    <item xml:id="i6">
+                        <label>6.</label>
+                        <seg xml:space="preserve"> </seg>
+                        <seg>
+                            <rs type="work-part">Trez Odes</rs>
+                            <seg xml:space="preserve"> </seg>
+                            <add place="above" n="2">Arco de Triumpho</add>
+                        </seg>
+               (<rs type="person" key="AdC" role="author">
+                            <choice>
+                                <abbr>Alv.</abbr>
+                                <expan>Alvaro</expan>
+                            </choice> de<lb/> Campos</rs>) — [<rs type="work-part">Triumphal</rs>,<lb/>
+                        <rs type="work-part">Maritima</rs> — <supplied resp="PS" reason="omitted-in-original"/>]</item>
+                </list>
+                <ab n="a">
+                    <note target="range(i1,i3)" place="margin left" type="addition">
+                        <label>1 vol. (I-III)</label>
+                        <metamark rend="curly bracket" function="grouping"/>
+                    </note>
+                    <note target="range(i4,i6)" place="margin left" type="addition">
+                        <supplied resp="UH" reason="omitted-in-original">
+                            <label>1 vol. (IV-VI)</label>
+                        </supplied>
+                        <metamark rend="curly bracket" function="grouping"/>
+                    </note>
+                </ab>
+                <ab n="b">
+                    <note target="i1" place="margin right" type="addition">
+                        <label>Vol. I</label>
+                    </note>
+                    <note target="range(i2,i3)" place="margin right" type="addition">
+                        <metamark rend="curly bracket" function="grouping"/>
+                        <label>Vol. II</label>
+                    </note>
+                    <note target="range(i4,i5)" place="margin right" type="addition">
+                        <metamark rend="curly bracket" function="grouping"/>
+                        <label>Vol. III</label>
+                    </note>
+                    <note target="i6" place="margin right" type="addition">
+                        <metamark rend="bracket" function="grouping"/>
+                        <label>Vol. IV</label>
+                    </note>
+                </ab>
+                <ab n="c">
+                    <note target="range(i1,i5)" place="margin top right" type="addition">ou 1 a 5<lb/>
+                  num volume</note>
+                </ab>
+            </div>
+        </body>
+    </text>
+</TEI>

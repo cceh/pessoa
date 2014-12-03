@@ -4,7 +4,7 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>BNP/E3 48I-10<hi rend="superscript">r</hi>
+                <title>BNP/E3 48B-8<hi rend="superscript">r</hi>
                 </title>
             </titleStmt>
             <publicationStmt>
@@ -14,7 +14,7 @@
                 <msDesc>
                     <msIdentifier>
                         <institution>Biblioteca Nacional de Portugal</institution>
-                        <idno>BNP/E3 48I-10r</idno>
+                        <idno>BNP/E3 48B-8r</idno>
                     </msIdentifier>
                     <msContents>
                         <msItemStruct>
@@ -31,16 +31,14 @@
                                 <resp>Codificação</resp>
                                 <name>Isabel Figueiredo-Iken</name>
                             </respStmt>
-                            <note type="genre">
-                                <rs type="genre" key="lista_editorial">Lista editorial</rs>
-                            </note>
-                            <textLang mainLang="en" otherLangs="fr pt"/>
+                            <note type="genre">Lista editorial</note>
+                            <textLang mainLang="pt"/>
                         </msItemStruct>
                     </msContents>
                     <history>
                         <origin>
                             <p>
-                                <origDate when="1914" cert="medium">c. 1914</origDate>
+                                <origDate notBefore="1925">post 1925</origDate>
                                 <origPlace/>
                             </p>
                         </origin>
@@ -50,45 +48,46 @@
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic url="bn-acpc-e-e3-48i-1-30_JPG_24-C-R0150/bn-acpc-e-e3-48i-1-30_0019_10_t24-C-R0150"/>
+        <graphic url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0015_8_t24-C-R0150.jpq"/>
     </facsimile>
-    <text xml:id="bnp-e3-48i-10r">
+    <text xml:id="bnp-e3-48b-8r">
         <body>
             <div>
                 <list>
-                    <head>
-                        <hi rend="underline">Translations:</hi>
-                    </head>
                     <item>
-                        <rs type="work">Estudiante de <rs type="place">Salamanca</rs>
-                        </rs>.</item>
-                    <item>
-                        <rs type="work">Sonnets of <rs type="person">Camoens</rs>
-                        </rs>.</item>
-                    <item>
-                        <rs type="work">Songs from the old Portuguese Song Books</rs>.</item>
-                    <item>
-                        <rs type="work">Spanish and Portuguese Sonnets</rs>. <ab rend="offset">(Brazilian ?)</ab>
+                        <rs type="person" key="FP" role="editor">Fernando Pessoa</rs> – <lb/>
+                        <ab rend="indent">
+                            <rs type="work">Os Poemas Completos de <rs type="person" key="AC" role="author">Alberto <lb/>
+                Caeiro</rs>
+                            </rs>
+                            <lb/>
+            Com um <rs type="work-part">prefacio do <rs type="person" key="RR" role="author">Dr. Ricardo<lb/> Reis</rs>
+                            </rs>, <seg>e 
+              <add place="above" n="2">alguns</add> outros</seg> apontamentos</ab>
                     </item>
-                    <item>
-                        <rs type="work">Portuguese Proverbs</rs>.</item>
-                    <item>
-                        <rs type="work">Portuguese Folk Verse</rs>.</item>
                 </list>
+                <metamark rend="line" function="distinct"/>
                 <list>
-                    <head>
-                        <hi rend="underline">Articles (<rs type="person">Thomas Crosse</rs>):</hi>
-                    </head>
                     <item>
-                        <rs type="work">The Birthplace of <rs type="person">Columbus</rs>
-                        </rs>.</item>
+                        <rs type="person" key="FP" role="editor">Fernando Pessoa</rs> – <lb/>
+                        <ab rend="indent">
+                            <rs type="work-part">Accessorios</rs>
+                            <lb/>
+                            <rs type="work-part">Versos de <rs type="person" key="AC" role="author">Alvaro de Campos</rs>
+                            </rs>
+                        </ab>
+                    </item>
+                </list>
+                <metamark rend="line" function="distinct"/>
+                <list>
                     <item>
-                        <rs type="work">The Origin of the Discoveries</rs>.</item>
+                        <label>1.</label>
+                        <seg xml:space="preserve"> </seg>
+                        <rs type="work">Theoria do Suffragio Politico</rs>.</item>
                     <item>
-                        <rs type="work">A Pre Romantic (<rs type="person">José Anastacio da Cunha</rs>)</rs>.</item>
-                    <item>
-                        <rs type="work">The Myth of <rs type="person">King Sebastian</rs>
-                        </rs>.</item>
+                        <label>2.</label>
+                        <seg xml:space="preserve"> </seg>
+                        <rs type="work">A Opinião Publica</rs>.</item>
                 </list>
             </div>
         </body>
