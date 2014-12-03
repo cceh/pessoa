@@ -309,3 +309,30 @@ display: inline-block;
 float:left;
 border : 1px solid black;
 }
+
+
+/*Table Style*/ 
+
+.divTable
+    {
+        display:  table;
+        width:auto;
+        background-color:#eee;
+        border:1px solid  #666666;
+        border-spacing:5px;/*cellspacing:poor IE support for  this*/
+       /* border-collapse:separate;*/
+    }
+
+    .divRow
+    {
+       display:table-row;
+       width:auto;
+    }
+
+    .divCell
+    {
+        float:left;/*fix for  buggy browsers*/
+        display:table-column;
+        width:100px;
+        background-color:#ccc;
+    }

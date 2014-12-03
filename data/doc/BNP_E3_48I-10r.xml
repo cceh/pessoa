@@ -14,7 +14,7 @@
                 <msDesc>
                     <msIdentifier>
                         <institution>Biblioteca Nacional de Portugal</institution>
-                        <idno>BNP/E3 48I-10r</idno>
+                        <idno>BNP/E3 48I 10r</idno>
                     </msIdentifier>
                     <msContents>
                         <msItemStruct>
@@ -25,18 +25,24 @@
                             </respStmt>
                             <respStmt>
                                 <resp>Codificação</resp>
-                                <name>Ulrike Henny</name>
-                            </respStmt>
-                            <respStmt>
-                                <resp>Codificação</resp>
                                 <name>Isabel Figueiredo-Iken</name>
                             </respStmt>
                             <note type="genre">
                                 <rs type="genre" key="lista_editorial">Lista editorial</rs>
                             </note>
-                            <textLang mainLang="en" otherLangs="es"/>
+                            <textLang mainLang="en" otherLangs="fr pt"/>
                         </msItemStruct>
                     </msContents>
+                    <physDesc>
+                        <objectDesc>
+                            <supportDesc>
+                                <support>
+                                    <objectType/>
+                                    <material/>
+                                </support>
+                            </supportDesc>
+                        </objectDesc>
+                    </physDesc>
                     <history>
                         <origin>
                             <p>
@@ -50,32 +56,30 @@
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic url="bn-acpc-e-e3-48i-1-30_JPG_24-C-R0150/bn-acpc-e-e3-48i-1-30_0019_10_t24-C-R0150.jpg"/>
+        <graphic url="bn-acpc-e-e3-48i-1-30_JPG_24-C-R0150/bn-acpc-e-e3-48i-1-30_0019_10_t24-C-R0150"/>
     </facsimile>
-    <text>
+    <text xml:id="bnp-e3-48i-10r">
         <body>
             <div>
-                <head>
-                    <hi rend="underline">Translations:</hi>
-                </head>
                 <list>
+                    <head>
+                        <hi rend="underline">Translations:</hi>
+                    </head>
                     <item>Estudiante de Salamanca.</item>
-                    <item>Sonnets of Camoens.</item>
+                    <item>Sonnets of <rs type="person" key="LC">Camoens</rs>.</item>
                     <item>Songs from the old Portuguese Song Books.</item>
-                    <item>Spanish and Portuguese Sonnets. (Brazilian ?)</item>
+                    <item>Spanish and Portuguese Sonnets. 	(Brazilian ?)</item>
                     <item>Portuguese Proverbs.</item>
                     <item>Portuguese Folk Verse.</item>
                 </list>
-            </div>
-            <div>
-                <head>
-                    <hi rend="underline">Articles (Thomas Crosse):</hi>
-                </head>
                 <list>
-                    <item>The Birthplace of Columbus.</item>
+                    <head>
+                        <hi rend="underline">Articles (<rs type="person" key="TC">Thomas Crosse</rs>):</hi>
+                    </head>
+                    <item>The Birthplace of <rs type="person" key="CC">Columbus</rs>.</item>
                     <item>The Origin of the Discoveries.</item>
-                    <item>A Pre Romantic (José Anastacio da Cunha).</item>
-                    <item>The Myth of King Sebastian.</item>
+                    <item>A Pre Romantic (<rs type="person" key="JAC">José Anastacio da Cunha</rs>).</item>
+                    <item>The Myth of <rs type="person" key="KS">King Sebastian</rs>.</item>
                 </list>
             </div>
         </body>

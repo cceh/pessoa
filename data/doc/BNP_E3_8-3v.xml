@@ -29,11 +29,9 @@
                             </respStmt>
                             <respStmt>
                                 <resp>Codificação</resp>
-                                <name>Franz Fischer</name>
+                                <name>Isabel Figueiredo-Iken</name>
                             </respStmt>
-                            <note type="genre">
-                                <rs type="genre" key="lista_editorial">Lista editorial</rs>
-                            </note>
+                            <note type="genre">Lista editorial</note>
                             <textLang mainLang="pt" otherLangs="en fr"/>
                         </msItemStruct>
                     </msContents>
@@ -52,58 +50,74 @@
     <facsimile>
         <graphic url="bn-acpc-e-e3-8-1-13_JPG_24-C-R0150/bn-acpc-e-e3-8-1-13_0006_3v_t24-C-R0150.jpg"/>
     </facsimile>
-    <text xml:id="pessoa00005">
+    <text xml:id="bnp-e3-8-3v">
         <body>
             <div>
                 <list>
                     <item>
                         <label>1.</label>
-                        <hi rend="underline">Alberto Caeiro</hi> – “O Guardador de Rebanhos.”</item>
+                        <seg xml:space="preserve"> </seg>
+                        <rs type="person" key="AC">
+                            <hi rend="underline">Alberto Caeiro</hi>
+                        </rs> – “O Guardador de Rebanhos.”</item>
                     <item>
-                        <label>2.</label> Entrevista com <choice>
-                            <abbr>A.</abbr>
-                            <expan>Alberto</expan>
-                        </choice> Caeiro, talvez no <hi rend="underline">Theatro</hi>.</item>
+                        <label>2.</label> Entrevista com <rs type="person" key="AC">
+                            <choice>
+                                <abbr>A.</abbr>
+                                <expan resp="UH">Alberto</expan>
+                            </choice> Caeiro</rs>, talvez no <hi rend="underline">Theatro</hi>.</item>
                     <item>
-                        <label>3.</label>Artigo sobre <choice>
-                            <abbr>A.</abbr>
-                            <expan>Alberto</expan>
-                        </choice> Caeiro, n’ <hi rend="underline">A Aguia</hi>.</item>
+                        <label>3.</label> Artigo sobre - <rs type="person" key="AC">
+                            <choice>
+                                <abbr>A.</abbr>
+                                <expan resp="UH">Alberto</expan>
+                            </choice> Caeiro</rs>, n’ <hi rend="underline">A Aguia</hi>
+                    </item>
                     <item>
-                        <label>4.</label>Artigo sobre Caeiro no “<choice>
+                        <label>4.</label> Artigo sobre <rs type="person" key="AC">Caeiro</rs> no “<choice>
                             <abbr>T.</abbr>
-                            <expan>Thomas</expan>
+                            <expan resp="UH">Thomas</expan>
                         </choice>
+                        <seg xml:space="preserve"> </seg>
                         <choice>
                             <abbr>P.</abbr>
-                            <expan>Power</expan>
+                            <expan resp="UH">Power</expan>
                         </choice>’s Weekly.” – ?.</item>
                     <item>
                         <label>5.</label>
+                        <seg xml:space="preserve"> </seg>
                         <choice>
                             <abbr>Trad.</abbr>
-                            <expan>Tradução</expan>
-                        </choice> de <choice>
-                            <abbr>A.</abbr>
-                            <expan>Alberto</expan>
-                        </choice>
-                        <choice>
-                            <abbr>C.</abbr>
-                            <expan>Caeiro</expan>
-                        </choice> – <hi rend="underline">The Keeper of Sheep</hi>.</item>
+                            <expan resp="UH">Tradução</expan>
+                        </choice> de <rs type="person" key="AC">
+                            <choice>
+                                <abbr>A.</abbr>
+                                <expan resp="UH">Alberto</expan>
+                            </choice>
+                            <seg xml:space="preserve"> </seg>
+                            <choice>
+                                <abbr>C.</abbr>
+                                <expan resp="UH">Caeiro</expan>
+                            </choice>
+                        </rs> - <hi rend="underline">The Keeper of Sheep</hi>
+                    </item>
                     <item>
                         <label>6.</label>
+                        <seg xml:space="preserve"> </seg>
                         <choice>
                             <abbr>
                                 <metamark rend="line" function="ditto"/>
                             </abbr>
-                            <expan>Tradução de Alberto Caeiro </expan>
-                        </choice> - <hi rend="underline">Le Gardien des<hi rend="superscript">e</hi>
-                            Troupeaux</hi>.</item>
+                            <expan>Tradução de <rs type="person" key="AC">Alberto Caeiro</rs>
+                            </expan>
+                        </choice> - 
+                        <hi rend="underline">Le Gardien des<hi rend="superscript">e</hi> Troupeaux</hi>
+                    </item>
                     <item>
-                        <label>7.</label> Tentar artigo no <hi rend="underline">Mercure de
-                            France</hi>, sobre<lb/> Alberto Caeiro.</item>
+                        <label>7.</label> Tentar artigo no <hi rend="underline">Mercure de France</hi>, sobre <lb/>
+                        <rs type="person" key="AC">Alberto Caeiro</rs>.</item>
                 </list>
+                <gap reason="selection" unit="lines" extent="3"/>
             </div>
         </body>
     </text>
