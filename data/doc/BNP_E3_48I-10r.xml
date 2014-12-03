@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Title</title>
+                <title>BNP/E3 48I-10<hi rend="superscript">r</hi>
+                </title>
             </titleStmt>
             <publicationStmt>
                 <p>Publication Information</p>
@@ -14,7 +14,7 @@
                 <msDesc>
                     <msIdentifier>
                         <institution>Biblioteca Nacional de Portugal</institution>
-                        <idno>BNP/E3 48I 10r</idno>
+                        <idno>BNP/E3 48I-10r</idno>
                     </msIdentifier>
                     <msContents>
                         <msItemStruct>
@@ -22,6 +22,10 @@
                             <respStmt>
                                 <resp>Transcrição, Edição</resp>
                                 <name>Pedro Sepúlveda</name>
+                            </respStmt>
+                            <respStmt>
+                                <resp>Codificação</resp>
+                                <name>Ulrike Henny</name>
                             </respStmt>
                             <respStmt>
                                 <resp>Codificação</resp>
@@ -33,16 +37,6 @@
                             <textLang mainLang="en" otherLangs="fr pt"/>
                         </msItemStruct>
                     </msContents>
-                    <physDesc>
-                        <objectDesc>
-                            <supportDesc>
-                                <support>
-                                    <objectType/>
-                                    <material/>
-                                </support>
-                            </supportDesc>
-                        </objectDesc>
-                    </physDesc>
                     <history>
                         <origin>
                             <p>
@@ -65,21 +59,36 @@
                     <head>
                         <hi rend="underline">Translations:</hi>
                     </head>
-                    <item>Estudiante de Salamanca.</item>
-                    <item>Sonnets of <rs type="person" key="LC">Camoens</rs>.</item>
-                    <item>Songs from the old Portuguese Song Books.</item>
-                    <item>Spanish and Portuguese Sonnets. 	(Brazilian ?)</item>
-                    <item>Portuguese Proverbs.</item>
-                    <item>Portuguese Folk Verse.</item>
+                    <item>
+                        <rs type="work">Estudiante de <rs type="place">Salamanca</rs>
+                        </rs>.</item>
+                    <item>
+                        <rs type="work">Sonnets of <rs type="person">Camoens</rs>
+                        </rs>.</item>
+                    <item>
+                        <rs type="work">Songs from the old Portuguese Song Books</rs>.</item>
+                    <item>
+                        <rs type="work">Spanish and Portuguese Sonnets</rs>. <ab rend="offset">(Brazilian ?)</ab>
+                    </item>
+                    <item>
+                        <rs type="work">Portuguese Proverbs</rs>.</item>
+                    <item>
+                        <rs type="work">Portuguese Folk Verse</rs>.</item>
                 </list>
                 <list>
                     <head>
-                        <hi rend="underline">Articles (<rs type="person" key="TC">Thomas Crosse</rs>):</hi>
+                        <hi rend="underline">Articles (<rs type="person">Thomas Crosse</rs>):</hi>
                     </head>
-                    <item>The Birthplace of <rs type="person" key="CC">Columbus</rs>.</item>
-                    <item>The Origin of the Discoveries.</item>
-                    <item>A Pre Romantic (<rs type="person" key="JAC">José Anastacio da Cunha</rs>).</item>
-                    <item>The Myth of <rs type="person" key="KS">King Sebastian</rs>.</item>
+                    <item>
+                        <rs type="work">The Birthplace of <rs type="person">Columbus</rs>
+                        </rs>.</item>
+                    <item>
+                        <rs type="work">The Origin of the Discoveries</rs>.</item>
+                    <item>
+                        <rs type="work">A Pre Romantic (<rs type="person">José Anastacio da Cunha</rs>)</rs>.</item>
+                    <item>
+                        <rs type="work">The Myth of <rs type="person">King Sebastian</rs>
+                        </rs>.</item>
                 </list>
             </div>
         </body>
