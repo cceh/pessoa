@@ -9,19 +9,8 @@
                 -->
                 <div class="app:search-profi" id="suche">
                     <form action="/exist/apps/pessoa/search" method="post" id="search">
-                        <h3>Free text</h3>
-                        <textarea rows="1" cols="50" name="term"/>
-                        <div id="datum">
-                            <h3>Date</h3>
-                            <input type="date" name="after"/>
-                            <label>to</label>
-                            <input type="date" name="before"/>
-                        </div>
-                        <h3>Language</h3>
-                        <input type="checkbox" name="lang" value="pt" checked="checked"/>Portuguese
-                        <input type="checkbox" name="lang" value="en" checked="checked"/>English 
-                        <input type="checkbox" name="lang" value="fr" checked="checked"/>French 
-                                        <h3>Author</h3>
+                    <!-- AUTHORS -->
+                        <h3>Author</h3>
                         <select name="author" size="5" multiple="multiple">
                             <option value="FP">Fernando Pessoa</option>
                             <option value="AC">Alberto Caeiro</option>
@@ -29,20 +18,99 @@
                             <option value="RR">Ricardo Reis</option>
                         </select>
                         <p class="small_text">Hold the Ctrl/CMD key to select multiple entries.</p>
+                        <input type="checkbox" name="role" value="author"/>Author
+                        <input type="checkbox" name="role" value="translator"/>Translator 
+                        <input type="checkbox" name="role" value="topic"/>Topic 
+                      <!-- AUTHORS END-->
+                        
+                        
+                        <!-- Idee -->
+                        <br/>
+                        <br/>
+                        <input type="checkbox" name="person1" value="FP" id="FP"/>
+                        <label for="FP">Fernando Pessoa</label>
+                        <input type="radio" name="person1" value="author" id="a1"/>
+                        <label for="a1">Author</label>
+                        <input type="radio" name="person1" value="translator" id="a2"/>
+                        <label for="a2">Translator</label>
+                        <input type="radio" name="person1" value="topic" id="a3"/>
+                        <label for="a3">Topic</label>
+                        <br/>
+                        <input type="checkbox" name="person2" value="AC" id="AC"/>
+                        <label for="AC">Alberto Caeiro</label>
+                        <input type="radio" name="person2" value="author" id="b1"/>
+                        <label for="b1">Author</label>
+                        <input type="radio" name="person2" value="translator" id="b2"/>
+                        <label for="b2">Translator</label>
+                        <input type="radio" name="person2" value="topic" id="b3"/>
+                        <label for="b3">Topic</label>
+                        <br/>
+                        <input type="checkbox" name="person3" value="AC" id="AdC"/>
+                        <label for="AdC">Álvaro de Campos</label>
+                        <input type="radio" name="person3" value="author" id="c1"/>
+                        <label for="c1">Author</label>
+                        <input type="radio" name="person3" value="translator" id="c2"/>
+                        <label for="c2">Translator</label>
+                        <input type="radio" name="person3" value="topic" id="c3"/>
+                        <label for="c3">Topic</label>
+                        <br/>
+                        <input type="checkbox" name="person4" value="RR" id="RR"/>
+                        <label for="RR">Ricardo Reis</label>
+                        <input type="radio" name="person4" value="author" id="d1"/>
+                        <label for="d1">Author</label>
+                        <input type="radio" name="person4" value="translator" id="d2"/>
+                        <label for="d2">Translator</label>
+                        <input type="radio" name="person4" value="topic" id="d3"/>
+                        <label for="d3">Topic</label>
+                        <br/>
+                        <!-- IDEE END-->
+                        
+                        <!-- TYPE -->
+                        <h3>Published / Unpublished</h3>
+                        <input type="radio" name="release" value="public"/>published
+                        <input type="radio" name="release" value="non_public"/>unpublished
+                       <!-- TYPE END-->
+                        
+                        <!-- GENRE-->
                         <h3>Genre</h3>
                         <select name="genre" size="7" multiple="multiple">
-                            <option value="carta">Carta (nicht)</option>
-                            <option value="diario">Diario (nicht)</option>
-                            <option value="ensaio">Ensaio (nicht)</option>
+                            <option value="carta">Carta (not included)</option>
+                            <option value="diario">Diario (not included)</option>
+                            <option value="ensaio">Ensaio (not included)</option>
                             <option value="lista_editorial">Lista Editorial</option>
                             <option value="nota_editorial">Nota Editorial</option>
                             <option value="plano_editorial">Plano Editorial</option>
                             <option value="poesia">Poesia</option>
                         </select>
                         <p class="small_text">Hold the Ctrl/CMD key to select multiple entries.</p>
-                        <input type="radio" name="release" value="public"/>published
-                                            <input type="radio" name="release" value="non_public"/>unpublished
-                                                <br/>
+                       <!--GENRE END-->
+                        
+                        <!--DATE-->
+                        <div id="datum">
+                            <h3>Date</h3>
+                            <input type="date" name="after"/>
+                            <label>to</label>
+                            <input type="date" name="before"/>
+                        </div>
+                        <!--DATE END-->
+                        
+                        <!--LANGUAGE-->
+                        <h3>Language</h3>
+                        <input type="checkbox" name="lang" value="pt" checked="checked"/>Portuguese
+                        <input type="checkbox" name="lang" value="en" checked="checked"/>English 
+                        <input type="checkbox" name="lang" value="fr" checked="checked"/>French 
+                        <br/>
+                        <input type="radio" name="andor" value="and"/>and
+                        <input type="radio" name="andor" value="or"/>or
+                        <!--LANGUAGE END-->    
+                        
+                        
+                        
+                        <!-- FREE TEXT-->
+                        <h3>Free text</h3>
+                        <textarea rows="1" cols="50" name="term"/>
+                        <br/>
+                        <!-- FREE TEXT END-->
                         <button>Search</button>
                     </form>
                     <h2>Filter</h2>
