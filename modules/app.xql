@@ -145,7 +145,7 @@ order by ft:score($m) descending
         let $filter-lang := if($lang !="") then $collect//range:field-eq(("mainLang"),$lang)  else if($collect//range:field-eq(("mainLang"),$lang)= "") then $collect//range:field-eq(("otherLang"),$lang)  else $collect
         let $filter-date := if($date != "") then $collect//range:field-eq(("date_when"),"1915") else $collect
         :)      
-        
+             
         let $query:= <query><bool><term occur="must">{$term}</term></bool></query>
         let $result-text := $collect//tei:text[ft:query(.,$query)] 
         let $result-head := $collect//tei:msItemStruct[ft:query(.,$query)] 
@@ -157,19 +157,20 @@ order by ft:score($m) descending
         (:collection("/db/apps/pessoa/data/doc")//tei:msItemStruct/tei:textLang/range:field-eq(("mainLang"),$lang):)
         
         (: //range:field-eq( ( %para1%, %para2%),%search1%,%search2%) :)
-        let $db := "/db/apps/pessoa/data/doc"
+     (:   let $db := "/db/apps/pessoa/data/doc"
         let $filter-att := app:filter-att_build()
         let $filter-para := app:filter-para_build()
         let $filter-connect := concat('("',$filter-para,'"),"',$filter-att,'"')
         let $filter-search := concat("//range:field-eq(",$filter-connect,")")
         let $filter-build := concat("collection($db)",$filter-search)
        
-       let $result-filter := $filter-build(:util:eval($filter-build):)
+       let $result-filter := $filter-build  :) (:util:eval($filter-build):)
        
         (:       let $result-filter := ($filter-para ,$filter-att) :)
 
+        let $result-filter := "Nothin"
         
-       let $result := ($result-text, $result-head, $result-filter)
+        let $result := ($result-text, $result-head, $result-filter)
         return map{
         "result" := $result,
         "result-text" := $result-text,
@@ -187,61 +188,33 @@ order by ft:score($m) descending
         
 };
 
+(: Neu Entstehung der Profi Suche :)
+(: Alten Funtkionen rausgelöscht, gespeichert im Drive :)
 
+declare %templates:wrap function app:profisearch($node as node(), $model as map(*), $term as xs:string?) as map(*) {
+    if(exists($term) and $term != "")
+    then
+        (: Erstellung der Kollektion, soriert ob "Publiziert" oder "Nicht Publiziert" :)
+        let $collection := if(app:get-parameters("release") = "non_public") then collection("/db/apps/pessoa/data/doc")
+                            else collection("/db/apps/pessoa/data/pub")
+        
+        (: Unterscheidung nach den Sprachen, ob "Und" oder "ODER" :)
+        
+        if(app:get-parameters("lang_ao") = "or") 
+            then ()
+        else ()
+        
+        
 
-
-
-
-
-
-
-declare function app:filter-att () as xs:string* {              
-            let $parameters := request:get-parameter-names()
-            for $para in $parameters
-                let $filter-att := if($para != "term" and app:search-value($parameters,$para)!= "") then app:search-value($parameters,$para) else ()                
-            return $filter-att
 };
 
-declare function app:filter-att_build() as xs:string {
-    let $filter-att := app:filter-att()    
-    let $result := string-join($filter-att, '","')
-   (: let $filter-att := string-join($filter-att, ","):)
-    (:let $filter-att := concat(concat('"',replace($filter-att, "/",'","')),'"')          :)
-    return $result
+declare function app:get-parameters($key as xs:string) as xs:string* {
+    for $hit in request:get-parameter-names()
+        return if($hit=$key) then request:get-parameter($hit,'')
+                else ()
 };
 
-declare function app:filter-para() as xs:string* {
-    let $parameters := request:get-parameter-names()
-    for $para in $parameters
-    let $filter-para := 
-        if(app:search-value($parameters,$para)!= "" and $para != "term") then
-            for $hit in app:search-value($parameters,$para)
-            return 
-            if($para = "lang") then replace($para, "lang", "mainLang")
-            else $para
-            (:replace($para, "lang", "mainLang") :)
-            else ()    
-    return $filter-para
-    };
-    
-declare function app:filter-para_build() as xs:string {
-    let $filter-para := app:filter-para()
-    let $result := string-join($filter-para, '","')
- (:
- let $parameters := string-join($parameters, ",")
-    let $parameters := replace($parameters, "lang", "mainLang")
-   :)
-   return $result
-};
-
-declare  function app:search-value ($parameters as xs:string+, $key as xs:string) as xs:string* {
-   if(exists($parameters))
-   then
-   for $hit in $parameters 
-    return if($hit=$key) then request:get-parameter($hit,'')
-    else ()
-    else()
-};
+(: Ende der Neuen Funktionen :)
 
 declare  function app:result-filter ($node as node(), $model as map(*), $sel as xs:string) as node()+ {
     if(exists($sel) and $sel = ("filter"))
@@ -333,3 +306,8 @@ declare function app:highlight-matches($node as node(), $model as map(*), $q as 
     else $node
 };
 :)
+
+
+
+
+

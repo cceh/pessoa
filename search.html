@@ -18,57 +18,17 @@
                             <option value="RR">Ricardo Reis</option>
                         </select>
                         <p class="small_text">Hold the Ctrl/CMD key to select multiple entries.</p>
-                        <input type="checkbox" name="role" value="author"/>Author
-                        <input type="checkbox" name="role" value="translator"/>Translator 
-                        <input type="checkbox" name="role" value="topic"/>Topic 
-                      <!-- AUTHORS END-->
+                        <input type="checkbox" name="role" value="author" id="author"/><label for="author">Author</label>
+                        <input type="checkbox" name="role" value="translator" id="translator"/><label for="translator">Translator </label>
+                        <input type="checkbox" name="role" value="topic" id="topic"/><label for="topic">Topic</label> 
+                        <input type="checkbox" name="role" value="editor" id="editor"/><label for="editor">Editor</label> 
                         
-                        
-                        <!-- Idee -->
-                        <br/>
-                        <br/>
-                        <input type="checkbox" name="person1" value="FP" id="FP"/>
-                        <label for="FP">Fernando Pessoa</label>
-                        <input type="radio" name="person1" value="author" id="a1"/>
-                        <label for="a1">Author</label>
-                        <input type="radio" name="person1" value="translator" id="a2"/>
-                        <label for="a2">Translator</label>
-                        <input type="radio" name="person1" value="topic" id="a3"/>
-                        <label for="a3">Topic</label>
-                        <br/>
-                        <input type="checkbox" name="person2" value="AC" id="AC"/>
-                        <label for="AC">Alberto Caeiro</label>
-                        <input type="radio" name="person2" value="author" id="b1"/>
-                        <label for="b1">Author</label>
-                        <input type="radio" name="person2" value="translator" id="b2"/>
-                        <label for="b2">Translator</label>
-                        <input type="radio" name="person2" value="topic" id="b3"/>
-                        <label for="b3">Topic</label>
-                        <br/>
-                        <input type="checkbox" name="person3" value="AC" id="AdC"/>
-                        <label for="AdC">Álvaro de Campos</label>
-                        <input type="radio" name="person3" value="author" id="c1"/>
-                        <label for="c1">Author</label>
-                        <input type="radio" name="person3" value="translator" id="c2"/>
-                        <label for="c2">Translator</label>
-                        <input type="radio" name="person3" value="topic" id="c3"/>
-                        <label for="c3">Topic</label>
-                        <br/>
-                        <input type="checkbox" name="person4" value="RR" id="RR"/>
-                        <label for="RR">Ricardo Reis</label>
-                        <input type="radio" name="person4" value="author" id="d1"/>
-                        <label for="d1">Author</label>
-                        <input type="radio" name="person4" value="translator" id="d2"/>
-                        <label for="d2">Translator</label>
-                        <input type="radio" name="person4" value="topic" id="d3"/>
-                        <label for="d3">Topic</label>
-                        <br/>
-                        <!-- IDEE END-->
+                      <!-- AUTHORS END-->      
                         
                         <!-- TYPE -->
                         <h3>Published / Unpublished</h3>
-                        <input type="radio" name="release" value="public"/>published
-                        <input type="radio" name="release" value="non_public"/>unpublished
+                        <input type="radio" name="release" value="public" id="public" /><label for="public">published</label>
+                        <input type="radio" name="release" value="non_public" id="non_public" checked="checked"/><label for="non_public">unpublished</label>
                        <!-- TYPE END-->
                         
                         <!-- GENRE-->
@@ -96,15 +56,13 @@
                         
                         <!--LANGUAGE-->
                         <h3>Language</h3>
-                        <input type="checkbox" name="lang" value="pt" checked="checked"/>Portuguese
-                        <input type="checkbox" name="lang" value="en" checked="checked"/>English 
-                        <input type="checkbox" name="lang" value="fr" checked="checked"/>French 
+                        <input type="checkbox" name="lang" value="pt" checked="checked" id="pt"/><label for="pt">Portuguese</label>
+                        <input type="checkbox" name="lang" value="en" checked="checked" id="en"/><label for="en">English </label>
+                        <input type="checkbox" name="lang" value="fr" checked="checked" id="fr"/><label for="fr">French</label> 
                         <br/>
-                        <input type="radio" name="andor" value="and"/>and
-                        <input type="radio" name="andor" value="or"/>or
+                        <input type="radio" name="lang_ao" value="and" id="and" /><label for="and">and</label>
+                        <input type="radio" name="lang_ao" value="or" id="or" checked="checked"/><label for="or">or</label>
                         <!--LANGUAGE END-->    
-                        
-                        
                         
                         <!-- FREE TEXT-->
                         <h3>Free text</h3>
