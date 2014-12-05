@@ -7,10 +7,13 @@
                <!-- <p class="app:search?term=aberta">result</p>
                 <p class="app:result-list?sel=text">list</p>
                 -->
-                <div class="app:search-profi" id="suche">
+                <div class="app:profisearch" id="suche">
                     <form action="/exist/apps/pessoa/search" method="post" id="search">
                     <!-- AUTHORS -->
                         <h3>Author</h3>
+                        <input type="checkbox" name="notional" value="real" id="real" checked="checked"/><label for="real">"Real"</label>
+                        <input type="checkbox" name="notional" value="mentioned" id="mentioned" checked="checked"/><label for="mentioned">mentioned</label>
+                        <br />
                         <select name="author" size="5" multiple="multiple">
                             <option value="FP">Fernando Pessoa</option>
                             <option value="AC">Alberto Caeiro</option>
@@ -18,6 +21,7 @@
                             <option value="RR">Ricardo Reis</option>
                         </select>
                         <p class="small_text">Hold the Ctrl/CMD key to select multiple entries.</p>
+                        Role : 
                         <input type="checkbox" name="role" value="author" id="author"/><label for="author">Author</label>
                         <input type="checkbox" name="role" value="translator" id="translator"/><label for="translator">Translator </label>
                         <input type="checkbox" name="role" value="topic" id="topic"/><label for="topic">Topic</label> 
@@ -28,7 +32,8 @@
                         <!-- TYPE -->
                         <h3>Published / Unpublished</h3>
                         <input type="radio" name="release" value="public" id="public" /><label for="public">published</label>
-                        <input type="radio" name="release" value="non_public" id="non_public" checked="checked"/><label for="non_public">unpublished</label>
+                        <input type="radio" name="release" value="non_public" id="non_public" /><label for="non_public">unpublished</label>
+                        <input type="radio" name="release" value="either" id="either" checked="checked"/><label for="either">published AND unpublished</label>
                        <!-- TYPE END-->
                         
                         <!-- GENRE-->
@@ -71,6 +76,9 @@
                         <!-- FREE TEXT END-->
                         <button>Search</button>
                     </form>
+                    
+                    <h2> Profi Result</h2>
+                    <div class="app:profiresult"/>
                     <h2>Filter</h2>
                    <!-- <div class="app:result-filter?sel=filter"/>-->
                     <div class="app:result-filter?sel=filter"/>
