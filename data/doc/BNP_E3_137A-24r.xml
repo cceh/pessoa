@@ -1,0 +1,135 @@
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>BNP/E3 137A-24<hi rend="superscript">r</hi></title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <institution>Biblioteca Nacional de Portugal</institution>
+                        <idno>BNP/E3 137A-24r</idno>
+                    </msIdentifier>
+                    <msContents>
+                        <msItemStruct>
+                            <author><rs type="person" key="FP">Fernando Pessoa</rs></author>
+                            <respStmt>
+                                <resp>Transcrição, Edição</resp>
+                                <name>Pedro Sepúlveda</name>
+                            </respStmt>
+                            <respStmt>
+                                <resp>Codificação</resp>
+                                <name>Ulrike Henny</name>
+                            </respStmt>
+                            <respStmt>
+                                <resp>Codificação</resp>
+                                <name>Isabel Figueiredo-Iken</name>
+                            </respStmt>
+                            <note type="genre"><rs type="genre" key="lista_editorial">Lista editorial</rs></note>
+                            <textLang mainLang="en" otherLangs="pt"/>
+                        </msItemStruct>
+                    </msContents>
+                    <history>
+                        <origin>
+                            <p>
+                                <origDate when="1921" cert="medium">c. 1921</origDate>
+                                <origPlace/>
+                            </p>
+                        </origin>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="bn-acpc-e-e3-137a-1-100_JPG_24-C-R0150/bn-acpc-e-e3-137a-1-100_0041_21_t24-C-R0150.jpg"/>
+    </facsimile>
+    <text xml:id="bnp-e3-137a-24r">
+        <body>
+            <p>
+                <list>
+                    <item><rs type="work">“English Poems, I &amp; II” (Antinous, Inscriptions)</rs>. <rs type="person" key="FP" role="author">Fernando
+                  <lb/><seg rend="indent">Pessoa</seg></rs>.</item>
+                    <item><rs type="work">“English Poems, III &amp; IV” (Epithalamium, Five Songs)</rs>. <rs type="person" key="FP" role="author">Fer<pc>-</pc>
+                        <lb/><seg rend="indent">nando
+                  Pessoa</seg></rs>. </item>
+                    <item><rs type="work">“English Poems, V.” (Elegy)</rs>. <rs type="person" key="FP" role="author">Fernando Pessoa</rs>.</item>
+                    <item><rs type="work">“English Sonnets, Book I”</rs>. <rs type="person" key="FP" role="author">Fernando Pessoa</rs>.</item>
+                    <item><rs type="work">“English Sonnets, Book II”</rs>. <rs type="person" key="FP" role="author">Fernando Pessoa</rs>.</item>
+                    <item><rs type="work">“Theory of Political Suffrage”</rs>. <rs type="person" key="FP" role="author">Fernando Pessoa</rs>.</item>
+                    <item><rs type="work">“Prometheus Revinctus – A Dramatic Poem<del rend="overtyped">s</del>
+                        <add resp="PS">”</add></rs>
+                        <seg xml:space="preserve"> </seg>
+                        <rs type="person" key="FP" role="author">Fernando Pessoa</rs>.</item>
+                    <item><rs type="work">“How <rs type="person">Napoleon</rs> Never Exi<subst>
+                            <del rend="overtyped">x</del>
+                            <add place="superimposed">s</add>
+                        </subst>ted”</rs>. (<rs type="person">Pérès</rs>).
+                  <choice>
+                            <abbr>Trad<am>.</am></abbr>
+                            <expan resp="PS">Trad<ex>ucção</ex></expan>
+                        </choice>
+                        <seg xml:space="preserve"> </seg>
+                        <supplied resp="PS" reason="omitted-in-original">
+                            <note resp="IFI">o nome do tradutor não foi citado pelo autor</note>
+                        </supplied>
+                    </item>
+                    <item><rs type="work">“The Student of <rs type="place" key="salamanca">Salamanca</rs>”</rs>. (<rs type="person">Espronceda</rs>). <choice>
+                            <abbr>Trad<am>.</am></abbr>
+                            <expan resp="PS">Trad<ex>ucção</ex></expan>
+                        </choice>
+                        <seg xml:space="preserve"> </seg>
+                        <rs type="person" key="FP" role="translator">Fernando<lb /><seg rend="indent">Pessoa</seg></rs>.</item>
+                    <item><rs type="work">“Sonnets of <rs type="person">Camoens</rs>”</rs>. <choice>
+                            <abbr>Trad<am>.</am></abbr>
+                            <expan resp="PS">Trad<ex>ucção</ex></expan>
+                        </choice>
+                        <seg xml:space="preserve"> </seg>
+                        <rs type="person" key="FP" role="translator">Fernando Pessoa</rs>.</item>
+                    <item><rs type="work">«Sonnets of Quental”</rs>. <choice>
+                            <abbr>Trad<am>.</am></abbr>
+                            <expan resp="PS">Trad<ex>ucção</ex></expan>
+                        </choice>
+                        <seg xml:space="preserve"> </seg>
+                        <rs type="person" key="FP" role="translator">Fernando Pessoa</rs>.</item>
+                    <item><rs type="work">“Complete Poems of <rs type="person" key="AC" role="author">Alberto Caeiro</rs>”</rs>. <choice>
+                            <abbr>Trad<am>.</am></abbr>
+                            <expan resp="PS">Trad<ex>ucção</ex></expan>
+                        </choice>
+                        <seg xml:space="preserve"> </seg>
+                        <rs type="person">Thomas Crosse</rs>.</item>
+                    <item><rs type="work">“Songs”</rs> (<rs type="person">Antonio Botto</rs>).
+                  <choice>
+                            <abbr>Trad<am>.</am></abbr>
+                            <expan resp="PS">Trad<ex>ucção</ex></expan>
+                        </choice>
+                        <seg xml:space="preserve"> </seg>
+                        <supplied resp="PS" reason="omitted-in-original">
+                            <note resp="IFI">o nome do tradutor não foi citado pelo autor</note>
+                        </supplied>
+                    </item>
+                    <item><rs type="work">“Songs from the Old Portuguese Song-Books”</rs>. <choice>
+                            <abbr>Trad<am>.</am></abbr>
+                            <expan resp="PS">Trad<ex>ucção</ex></expan>
+                        </choice>
+                        <seg xml:space="preserve"> </seg>
+                        <rs type="person" key="FP" role="translator">Fernando<lb /><seg rend="indent">Pessoa</seg></rs>.</item>
+                    <item><rs type="work">“The Duke of Parma – A Tragedy”</rs>. <rs type="person" key="FP" role="author">Fernando Pessoa</rs>.</item>
+                    <item><rs type="work">“All About <rs type="place" key="portugal">Portugal</rs>”</rs>. <choice>
+                            <abbr>Ed<am>.</am></abbr>
+                            <expan resp="PS">Ed<ex>ição</ex></expan>
+                        </choice>
+                        <seg xml:space="preserve"> </seg>
+                        <rs type="person" key="FP" role="editor">Fernando Pessoa</rs>
+                  (special).</item>
+                    <item><rs type="journal">“The Southern Review”</rs> (quarterly or half-yearly).</item>
+                </list>
+            </p>
+        </body>
+    </text>
+</TEI>

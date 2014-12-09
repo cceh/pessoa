@@ -1,14 +1,15 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" xpath-default-namespace="http://www.tei-c.org/ns/1.0" version="2.0">
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
     <xsl:preserve-space elements="*"/>
-    <xsl:include href="http://papyri.uni-koeln.de:8080/rest/db/apps/pessoa/xslt/common.xsl"/>
     <xsl:template match="/">
         <style type="text/css">
             h3 {margin-bottom: 5px;}
-            div.text {display: inline-block; position: relative; margin: 10px 130px;}
+            div.text {display: inline-block; position: relative;}
+            div.text.bnp-e3-180r {margin: 10px 130px;}
             .item {margin: 10px 0; position: relative;}
             .list .item .list .item {margin-left: 2em;}
             .ab {display: inline-block;}
+            .ab.right {float: right;}
             .seg {position: relative;}
             
             .choice {position: relative;}
@@ -52,6 +53,7 @@
             
             .offset {margin-left: 2em;}
             .indent {margin-left: 2em;}
+            .right {text-align: right;}
         </style>
         <xsl:apply-templates/>
     </xsl:template>
@@ -107,8 +109,21 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
+    <xsl:template match="ab[@rend='right']">
+        <span class="ab right">
+            <xsl:apply-templates />
+        </span>
+    </xsl:template>
     <xsl:template match="seg">
-        <span class="seg">
+        <span>
+            <xsl:choose>
+                <xsl:when test="@rend='indent'">
+                    <xsl:attribute name="class">seg indent</xsl:attribute>    
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:attribute name="class">seg</xsl:attribute>
+                </xsl:otherwise>
+            </xsl:choose>
             <xsl:apply-templates/>
         </span>
     </xsl:template>

@@ -18,7 +18,7 @@
                     </msIdentifier>
                     <msContents>
                         <msItemStruct>
-                            <author>Fernando Pessoa</author>
+                            <author><rs type="person" key="FP">Fernando Pessoa</rs></author>
                             <respStmt>
                                 <resp>Transcrição, Edição</resp>
                                 <name>Pedro Sepúlveda</name>
@@ -31,7 +31,7 @@
                                 <resp>Codificação</resp>
                                 <name>Isabel Figueiredo-Iken</name>
                             </respStmt>
-                            <note type="genre">Lista editorial</note>
+                            <note type="genre"><rs type="genre" key="lista_editorial">Lista editorial</rs></note>
                             <textLang mainLang="pt" otherLangs="en fr"/>
                         </msItemStruct>
                     </msContents>
@@ -65,8 +65,8 @@
                         <seg xml:space="preserve"> </seg>
                         <rs type="work">Entrevista com <rs type="person" key="AC" role="topic">
                                 <choice>
-                                    <abbr>A.</abbr>
-                                    <expan resp="UH">Alberto</expan>
+                                    <abbr>A<am>.</am></abbr>
+                                    <expan resp="UH">A<ex>lberto</ex></expan>
                                 </choice> Caeiro</rs>
                         </rs>, talvez no <rs type="journal">
                             <hi rend="underline">Theatro</hi>
@@ -76,8 +76,8 @@
                         <seg xml:space="preserve"> </seg>
                         <rs type="work">Artigo sobre <rs type="person" key="AC" role="topic">
                                 <choice>
-                                    <abbr>A.</abbr>
-                                    <expan resp="UH">Alberto</expan>
+                                    <abbr>A<am>.</am></abbr>
+                                    <expan resp="UH">A<ex>lberto</ex></expan>
                                 </choice> Caeiro</rs>
                         </rs>, n’ <rs type="journal">
                             <hi rend="underline">A Aguia</hi>
@@ -89,29 +89,29 @@
                         <rs type="work">Artigo sobre <rs type="person" key="AC" role="topic">Caeiro</rs>
                         </rs> no “<rs type="journal">
                             <choice>
-                                <abbr>T.</abbr>
-                                <expan resp="UH">Thomas</expan>
+                                <abbr>T<am>.</am></abbr>
+                                <expan resp="UH">T<ex>homas</ex></expan>
                             </choice>
                             <seg xml:space="preserve"> </seg>
                             <choice>
-                                <abbr>P.</abbr>
-                                <expan resp="UH">Power</expan>
+                                <abbr>P<am>.</am></abbr>
+                                <expan resp="UH">P<ex>ower</ex></expan>
                             </choice>’s Weekly.</rs>” – ?.</item>
                     <item>
                         <label>5.</label>
                         <seg xml:space="preserve"> </seg>
                         <choice>
-                            <abbr>Trad.</abbr>
-                            <expan resp="UH">Traducção</expan>
+                            <abbr>Trad<am>.</am></abbr>
+                            <expan resp="UH">Trad<ex>ucção</ex></expan>
                         </choice> de <rs type="person" key="AC" role="author">
                             <choice>
-                                <abbr>A.</abbr>
-                                <expan resp="UH">Alberto</expan>
+                                <abbr>A<am>.</am></abbr>
+                                <expan resp="UH">A<ex>lberto</ex></expan>
                             </choice>
                             <seg xml:space="preserve"> </seg>
                             <choice>
-                                <abbr>C.</abbr>
-                                <expan resp="UH">Caeiro</expan>
+                                <abbr>C<am>.</am></abbr>
+                                <expan resp="UH">C<ex>aeiro</ex></expan>
                             </choice>
                         </rs> – <rs type="work">
                             <hi rend="underline">The Keeper of Sheep</hi>

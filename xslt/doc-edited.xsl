@@ -1,26 +1,24 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" xpath-default-namespace="http://www.tei-c.org/ns/1.0" version="2.0">
-    <xsl:import href="http://papyri.uni-koeln.de:8080/rest/db/apps/pessoa/xslt/doc.xsl"/>
+    <xsl:import href="http://localhost:8080/exist/rest/db/apps/pessoa/xslt/doc.xsl"/>
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
     <xsl:template match="text">
         <div class="text edited">
             <xsl:apply-templates/>
         </div>
     </xsl:template>
-    <xsl:template match="ab[@rend='indent'] | ab[@rend='offset']">
+    <xsl:template match="ab[@rend='indent'] | ab[@rend='offset'] | seg[@rend='indent']">
         <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="abbr"/>
-    <xsl:template match="expan">
-        <span class="expan">
-            <xsl:apply-templates/>
-        </span>
+    <xsl:template match="ex">
+        <xsl:apply-templates />
     </xsl:template>
     <xsl:template match="supplied">
         <span class="supplied" title="{@reason}">
             <xsl:choose>
-                <xsl:when test="not(node())">□</xsl:when>
+                <xsl:when test="not(node()) or note">□</xsl:when>
                 <xsl:otherwise>
-                    &lt;<xsl:apply-templates/>&gt;
+                    &lt;<xsl:apply-templates />&gt;
                 </xsl:otherwise>
             </xsl:choose>
         </span>
@@ -42,7 +40,7 @@
         </span>
     </xsl:template>
     <xsl:template match="choice[abbr and expan]">
-        <xsl:apply-templates select="expan/text()"/>
+        <xsl:apply-templates select="expan/text() | expan/ex/text()"/>
     </xsl:template>
     <xsl:template match="seg/add[@n='2']">
         <xsl:apply-templates/>
@@ -74,7 +72,7 @@
             </xsl:for-each>
         </div>
     </xsl:template>
-    <xsl:template match="lb">
+    <xsl:template match="lb[not(preceding-sibling::*[1][local-name()='pc'])]">
         <xsl:text xml:space="preserve"> </xsl:text>
     </xsl:template>
     <xsl:template match="lb[preceding-sibling::*[1][local-name()='pc']]"/>

@@ -18,7 +18,7 @@
                     </msIdentifier>
                     <msContents>
                         <msItemStruct>
-                            <author>Fernando Pessoa</author>
+                            <author><rs type="person" key="FP">Fernando Pessoa</rs></author>
                             <respStmt>
                                 <resp>Transcrição, Edição</resp>
                                 <name>Pedro Sepúlveda</name>
@@ -31,7 +31,8 @@
                                 <resp>Codificação</resp>
                                 <name>Isabel Figueiredo-Iken</name>
                             </respStmt>
-                            <note type="genre">Lista editorial</note>
+                            <note type="genre"><rs type="genre" key="lista_editorial">Lista
+                                    editorial</rs></note>
                             <textLang mainLang="pt"/>
                         </msItemStruct>
                     </msContents>
@@ -48,7 +49,9 @@
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0015_8_t24-C-R0150.jpq"/>
+        <graphic
+            url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0015_8_t24-C-R0150.jpq"
+        />
     </facsimile>
     <text xml:id="bnp-e3-48b-8r">
         <body>
@@ -57,13 +60,13 @@
                     <item>
                         <rs type="person" key="FP" role="editor">Fernando Pessoa</rs> – <lb/>
                         <ab rend="indent">
-                            <rs type="work">Os Poemas Completos de <rs type="person" key="AC" role="author">Alberto <lb/>
-                Caeiro</rs>
+                            <rs type="work">Os Poemas Completos de <rs type="person" key="AC"
+                                    role="author">Alberto <lb/> Caeiro</rs>
                             </rs>
-                            <lb/>
-            Com um <rs type="work-part">prefacio do <rs type="person" key="RR" role="author">Dr. Ricardo<lb/> Reis</rs>
-                            </rs>, <seg>e 
-              <add place="above" n="2">alguns</add> outros</seg> apontamentos</ab>
+                            <lb/> Com um <rs type="work-part">prefacio do <rs type="person" key="RR"
+                                    role="author">Dr. Ricardo<lb/> Reis</rs>
+                            </rs>, <seg>e <add place="above" n="2">alguns</add> outros</seg>
+                            apontamentos</ab>
                     </item>
                 </list>
                 <metamark rend="line" function="distinct"/>
@@ -73,7 +76,8 @@
                         <ab rend="indent">
                             <rs type="work-part">Accessorios</rs>
                             <lb/>
-                            <rs type="work-part">Versos de <rs type="person" key="AC" role="author">Alvaro de Campos</rs>
+                            <rs type="work-part">Versos de <rs type="person" key="AC" role="author"
+                                    >Alvaro de Campos</rs>
                             </rs>
                         </ab>
                     </item>
