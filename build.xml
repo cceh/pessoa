@@ -28,11 +28,11 @@
     </target>
     <target name="deploy-remote">
         <echo message="Deploying app to remote eXist-db:"/>
-        <input message="Do you really want to deploy the application (y/n)?" validargs="y,n" addproperty="do.delete"/>
+        <!--<input message="Do you really want to deploy the application (y/n)?" validargs="y,n" addproperty="do.delete"/>
         <condition property="do.abort">
             <equals arg1="n" arg2="${do.delete}"/>
         </condition>
-        <fail if="do.abort">Deployment aborted by user.</fail>
+        <fail if="do.abort">Deployment aborted by user.</fail>-->
         <property file="deploy-remote.properties"/>
         <xdb:store uri="${uri}" createcollection="true" createsubcollections="true" user="${user}" password="${password}">
             <fileset dir=".">
