@@ -1,41 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<div xmlns="http://www.w3.org/1999/xhtml" class="templates:surround?with=templates/page.html&amp;at=content">
+<div xmlns="http://www.w3.org/1999/xhtml"
+    class="templates:surround?with=templates/page.html&amp;at=content">
     <div class="row-fluid">
         <div id="content" class="span12 main">
             <h2>Suche</h2>
             <div class="span6">
-               <!-- <p class="app:search?term=aberta">result</p>
+                <!-- <p class="app:search?term=aberta">result</p>
                 <p class="app:result-list?sel=text">list</p>
                 -->
                 <div class="app:profisearch" id="suche">
                     <form action="/exist/apps/pessoa/search" method="post" id="search">
-                    <!-- AUTHORS -->
+                        <!-- AUTHORS -->
                         <h3>Author</h3>
-                        <input type="checkbox" name="notional" value="real" id="real" checked="checked"/><label for="real">"Real"</label>
-                        <input type="checkbox" name="notional" value="mentioned" id="mentioned" checked="checked"/><label for="mentioned">mentioned</label>
-                        <br />
-                        <select name="author" size="5" multiple="multiple">
+                        <input type="checkbox" name="notional" value="real" id="real"
+                            checked="checked"/><label for="real">"Real"</label>
+                        <input type="checkbox" name="notional" value="mentioned" id="mentioned"
+                            checked="checked"/><label for="mentioned">mentioned</label>
+                        <br/>
+                        <select name="person" size="5" multiple="multiple">
                             <option value="FP">Fernando Pessoa</option>
                             <option value="AC">Alberto Caeiro</option>
                             <option value="AdC">Álvaro de Campos</option>
                             <option value="RR">Ricardo Reis</option>
                         </select>
                         <p class="small_text">Hold the Ctrl/CMD key to select multiple entries.</p>
-                        Role : 
-                        <input type="checkbox" name="role" value="author" id="author"/><label for="author">Author</label>
-                        <input type="checkbox" name="role" value="translator" id="translator"/><label for="translator">Translator </label>
-                        <input type="checkbox" name="role" value="topic" id="topic"/><label for="topic">Topic</label> 
-                        <input type="checkbox" name="role" value="editor" id="editor"/><label for="editor">Editor</label> 
-                        
-                      <!-- AUTHORS END-->      
-                        
+                        Role : <input type="checkbox" name="role" value="author" id="author"/><label
+                            for="author">Author</label>
+                        <input type="checkbox" name="role" value="translator" id="translator"
+                            /><label for="translator">Translator </label>
+                        <input type="checkbox" name="role" value="topic" id="topic"/><label
+                            for="topic">Topic</label>
+                        <input type="checkbox" name="role" value="editor" id="editor"/><label
+                            for="editor">Editor</label>
+                        <!-- AUTHORS END-->
                         <!-- TYPE -->
                         <h3>Published / Unpublished</h3>
-                        <input type="radio" name="release" value="public" id="public" /><label for="public">published</label>
-                        <input type="radio" name="release" value="non_public" id="non_public" /><label for="non_public">unpublished</label>
-                        <input type="radio" name="release" value="either" id="either" checked="checked"/><label for="either">published AND unpublished</label>
-                       <!-- TYPE END-->
-                        
+                        <input type="radio" name="release" value="public" id="public"/><label
+                            for="public">published</label>
+                        <input type="radio" name="release" value="non_public" id="non_public"
+                            /><label for="non_public">unpublished</label>
+                        <input type="radio" name="release" value="either" id="either"
+                            checked="checked"/><label for="either">published AND unpublished</label>
+                        <!-- TYPE END-->
                         <!-- GENRE-->
                         <h3>Genre</h3>
                         <select name="genre" size="7" multiple="multiple">
@@ -48,8 +54,7 @@
                             <option value="poesia">Poesia</option>
                         </select>
                         <p class="small_text">Hold the Ctrl/CMD key to select multiple entries.</p>
-                       <!--GENRE END-->
-                        
+                        <!--GENRE END-->
                         <!--DATE-->
                         <div id="datum">
                             <h3>Date</h3>
@@ -58,17 +63,20 @@
                             <input type="date" name="before"/>
                         </div>
                         <!--DATE END-->
-                        
                         <!--LANGUAGE-->
                         <h3>Language</h3>
-                        <input type="checkbox" name="lang" value="pt" checked="checked" id="pt"/><label for="pt">Portuguese</label>
-                        <input type="checkbox" name="lang" value="en" checked="checked" id="en"/><label for="en">English </label>
-                        <input type="checkbox" name="lang" value="fr" checked="checked" id="fr"/><label for="fr">French</label> 
+                        <input type="checkbox" name="lang" value="pt" checked="checked" id="pt"
+                            /><label for="pt">Portuguese</label>
+                        <input type="checkbox" name="lang" value="en" checked="checked" id="en"
+                            /><label for="en">English </label>
+                        <input type="checkbox" name="lang" value="fr" checked="checked" id="fr"
+                            /><label for="fr">French</label>
                         <br/>
-                        <input type="radio" name="lang_ao" value="and" id="and" /><label for="and">and</label>
-                        <input type="radio" name="lang_ao" value="or" id="or" checked="checked"/><label for="or">or</label>
-                        <!--LANGUAGE END-->    
-                        
+                        <input type="radio" name="lang_ao" value="and" id="and"/><label for="and"
+                            >and</label>
+                        <input type="radio" name="lang_ao" value="or" id="or" checked="checked"
+                            /><label for="or">or</label>
+                        <!--LANGUAGE END-->
                         <!-- FREE TEXT-->
                         <h3>Free text</h3>
                         <textarea rows="1" cols="50" name="term"/>
@@ -76,11 +84,17 @@
                         <!-- FREE TEXT END-->
                         <button>Search</button>
                     </form>
-                    
                     <h2> Profi Result</h2>
-                    <div class="app:profiresult"/>
+                    <h3>Sprachen</h3>
+                    <div class="app:profiresult?sel=lang"/>
+                    <h3>Autoren</h3>
+                    <div class="app:profiresult?sel=mention"/>
+                    <h3>Genre</h3>
+                    <div class="app:profiresult?sel=genre"/>
+                    <h3>All</h3>
+                    <div class="app:profiresult?sel=all"/>
                     <h2>Filter</h2>
-                   <!-- <div class="app:result-filter?sel=filter"/>-->
+                    <!-- <div class="app:result-filter?sel=filter"/>-->
                     <div class="app:result-filter?sel=filter"/>
                     <h2>Text</h2>
                     <div class="app:result-list?sel=text"/>
