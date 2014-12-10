@@ -195,9 +195,8 @@ declare %templates:wrap function app:profisearch($node as node(), $model as map(
     if(exists($term) and $term != "")
     then
         (: Erstellung der Kollektion, soriert ob "Publiziert" oder "Nicht Publiziert" :)
-        let $db := if(app:get-parameters("release") = "non_public")  then "/db/apps/pessoa/data/doc"
-                   else if(app:get-parameters("release") = "public") then "/db/apps/pessoa/data/pub"
-                   else ()
+        for $match in app:set_db()
+            let $db := $match
         
         (: Unterscheidung nach den Sprachen, ob "Und" oder "ODER" :)
         
@@ -207,25 +206,31 @@ declare %templates:wrap function app:profisearch($node as node(), $model as map(
         (: Sortierung nach Genre :)
         let $r_genre := if(app:get-parameters("genre")!="") then app:filter-query("genre",$r_lang)
                         else ()
-        let $r_mention_1 := if(app:get-parameters("notional")="mentioned") then app:get-result("role", $r_lang)
+        let $r_mention := if(app:get-parameters("notional")="mentioned") then app:author_build($r_lang)
                         else ()
-        let $r_mention := app:get-result("author",$r_mention_1)
         
-        let $r_all := ($r_mention)
+        let $r_all := ($r_lang,$r_genre,$r_mention)
         return map{
-        "profi_result" := $r_all,
-        "r_lang" := $r_lang,
-        "r_genre":= $r_genre,
-        "r_mention":=$r_mention
+            "r_all" := $r_all,
+            "r_lang" := $r_lang,
+            "r_genre":= $r_genre,
+            "r_mention":=$r_mention
         
         }
         else map {
-            "profi_result" := (),
+            "r_all" := (),
             "r_lang" := (),
             "r_genre":= (),
-             "r_mention":=()
+            "r_mention":=()
         }
 
+};
+
+declare function app:set_db() as xs:string+ {
+        let $result :=    if(app:get-parameters("release") = "non_public")  then "/db/apps/pessoa/data/doc"
+                   else if(app:get-parameters("release") = "public" ) then "/db/apps/pessoa/data/pub"
+                   else ("/db/apps/pessoa/data/doc","/db/apps/pessoa/data/pub")
+                   return $result
 };
 
 (: Funtkion um die Parameter rauszufiltern:)
@@ -267,28 +272,44 @@ declare function app:get-result($para as xs:string, $db as node()*) as node()* {
             else $para
         let $search_terms := concat('("',$para,'"),"',$hit,'"')
         let $search_funk := concat("//range:field-eq(",$search_terms,")")
-        let $search_build := concat("collection($db)",$search_funk)
+        let $search_build := concat("$db",$search_funk)
         let $r_search :=  util:eval($search_build)
-        let $result := root($r_search)/util:document-name(.)
+        let $result := $r_search
         return $result
 };
 
-declare function app:profiresult($node as node(), $model as map(*)) as node()+ {
-    if(exists($model("profi_result")))
+
+declare function app:author_build($db as node()*) as node()* {
+        for $person in app:get-parameters("person")
+           for $term in app:get-parameters("role")
+                let $merge := concat('("key","role"),','"',$person,'","',$term,'"')
+                let $build_range :=concat("//range:field-eq(",$merge,")")
+                let $build_search := concat("collection($db)",$build_range)
+                let $result := util:eval($build_search)
+            return $result
+           
+};
+
+
+declare function app:profiresult($node as node(), $model as map(*), $sel as xs:string) as node()+ {
+   if(exists($sel) and $sel=("lang","genre","mention","all"))
+   then
+   if(exists($model(concat("r_",$sel)))) 
     then 
-        for $hit in $model("profi_result")
+        for $hit in $model(concat("r_",$sel))
         (:
         return <p> Exist, {$model("profi_result")}</p>
         else <p>Dos Not Exist </p>
         :)
         let $file-name := root($hit)/util:document-name(.)            
         return <p>Exist,{$file-name}</p>            
-        else <p> Dos Not exist,{$model("profi_result")}</p>
+        else <p> Dos Not exist,{$model("r_all")}</p>
         
         (:
         return <p>Exist,{$model("profi_result"),$file-name}</p>            
         else <p> Dos Not exist,{$model("profi_result")}</p>
         :)
+        else <p>Error</p>
 };      
 
 (: Ende der Neuen Funktionen :)
@@ -296,7 +317,7 @@ declare function app:profiresult($node as node(), $model as map(*)) as node()+ {
 declare  function app:result-filter ($node as node(), $model as map(*), $sel as xs:string) as node()+ {
     if(exists($sel) and $sel = ("filter"))
     then
-        if(exists($model("result-filter")))  
+        if(exists($model(concat("r_",$sel))))  
         then 
         
             for $hit in $model("result-filter")
