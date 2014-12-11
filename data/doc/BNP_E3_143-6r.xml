@@ -18,7 +18,9 @@
                     </msIdentifier>
                     <msContents>
                         <msItemStruct>
-                            <author><rs type="person" key="FP">Fernando Pessoa</rs></author>
+                            <author>
+                                <rs type="person" key="FP">Fernando Pessoa</rs>
+                            </author>
                             <respStmt>
                                 <resp>Transcrição, Edição</resp>
                                 <name>Pedro Sepúlveda</name>
@@ -31,7 +33,10 @@
                                 <resp>Codificação</resp>
                                 <name>Isabel Figueiredo-Iken</name>
                             </respStmt>
-                            <note type="genre"><rs type="genre" key="lista_editorial">Lista editorial</rs></note>
+                            <note type="genre">
+                                <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                                <rs type="genre" key="nota_editorial">Nota editorial</rs>
+                            </note>
                             <textLang mainLang="en" otherLangs="pt fr"/>
                         </msItemStruct>
                     </msContents>
@@ -80,8 +85,10 @@
                         <lb/>
                         <ab rend="indent">
                             <rs type="work" xml:id="w2" prev="#w1">the Greek Sophists</rs> (<choice>
-                                <abbr>v<am>.</am></abbr>
-                                <expan>v<ex>er</ex> / v<ex>ide</ex></expan>
+                                <abbr>v<am>.</am>
+                                </abbr>
+                                <expan>v<ex>er</ex> / v<ex>ide</ex>
+                                </expan>
                             </choice>
                             <seg xml:space="preserve"> </seg>
                             <rs type="person">Funck-Brentano</rs>, <rs type="work">Les<lb/> Sophistes Grecs</rs>) through medieval
