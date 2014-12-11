@@ -1,0 +1,160 @@
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>E3/48B 23<hi rend="superscript">r</hi>
+                </title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <institution>Biblioteca Nacional de Portugal</institution>
+                        <idno>E3/48B 23r</idno>
+                    </msIdentifier>
+                    <msContents>
+                        <msItemStruct>
+                            <author>Fernando Pessoa</author>
+                            <respStmt>
+                                <resp>Transcrição, Edição</resp>
+                                <name>Pedro Sepúlveda</name>
+                            </respStmt>
+                            <respStmt>
+                                <resp>Codificação</resp>
+                                <name>Ulrike Henny</name>
+                            </respStmt>
+                            <respStmt>
+                                <resp>Codificação</resp>
+                                <name>Isabel Figueiredo-Iken</name>
+                            </respStmt>
+                            <note type="genre">Lista editorial</note>
+                            <textLang mainLang="en" otherLangs="pt la"/>
+                        </msItemStruct>
+                    </msContents>
+                    <history>
+                        <origin>
+                            <p>
+                                <origDate when="1921" cert="medium">c. 1921</origDate>
+                                <origPlace/>
+                            </p>
+                        </origin>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0046_23_t24-C-R0150.jpg"/>
+    </facsimile>
+    <text xml:id="bnp-e3-48b-23r">
+        <body>
+            <list>
+                <head>
+                    <hi rend="underline"/>Editions:</head>
+                <item>
+                    <label>1.</label>
+                    <rs type="person">Shakespeare</rs>: <rs type="work">“A Tormenta”</rs>. – <choice>
+                        <abbr>Trad<am>.</am>
+                        </abbr>
+                        <expan>Trad<ex>ucção</ex>
+                        </expan>
+                    </choice>
+                    <rs type="person" key="FP" role="translator">Fernando Pessoa</rs>.</item>
+                <item>
+                    <label>2.</label>
+                    <rs type="person">Antonio Botto</rs>: <rs type="work">“Canções”</rs>. – 2ª edição.</item>
+                <item>
+                    <label>3.</label>
+                    <rs type="work">“English Poems – I <choice>
+                            <abbr>+</abbr>
+                            <expan>and</expan>
+                        </choice> II (Antinous, Inscriptions)”</rs> – <rs type="person" key="FP" role="author">
+                        <choice>
+                            <abbr>F<am>.</am>
+                            </abbr>
+                            <expan>F<ex>ernando</ex>
+                            </expan>
+                        </choice> Pessoa</rs>.</item>
+                <item>
+                    <label>4.</label>
+                    <rs type="work">“How Napoleon never Existed”</rs> – <choice>
+                        <abbr>transl<am>.</am>
+                        </abbr>
+                        <expan>transl<ex>ation</ex>
+                        </expan>
+                    </choice>
+                    <rs type="person">
+                        <choice>
+                            <abbr>T<am>.</am>
+                            </abbr>
+                            <expan>T<ex>homas</ex>
+                            </expan>
+                        </choice> Crosse</rs>.</item>
+                <item>
+                    <label>5.</label>
+                    <rs type="work">“Essay on Political Suffrage”</rs> – <rs type="person" key="FP" role="author">Fernando Pessoa</rs>.</item>
+                <item>
+                    <label>6.</label>
+                    <rs type="publisher">Williams <choice>
+                            <abbr>x</abbr>
+                            <expan>and</expan>
+                        </choice> Norgate</rs> – <rs type="institution">Home University Library</rs>.</item>
+                <item>
+                    <label>7.</label>
+                    <rs type="work">“Protocols of the Learned Elders of Zion”</rs> – with commentaries. <metamark function="addition-anchor">x</metamark>
+                    <metamark rend="line" function="addition" target="#a1"/>
+                </item>
+                <item>
+                    <label>8.</label>
+                    <rs type="work">Epigrammas Portuguese</rs>.</item>
+                <item>
+                    <label>9.</label>
+                    <rs type="work">“Introdução ao Problema Portuguez”</rs>.</item>
+                <item>
+                    <label>10.</label>
+                    <rs type="work">“Epithalamium, Five Songs”</rs>.</item>
+            </list>
+            <p rend="indent" xml:id="a1">
+                <metamark function="addition-anchor">x</metamark> Reclames por annuncios, placards, circulares<lb/>
+                (a padres e entidades analogas) — <metamark rend="line" function="addition" target="#a2"/>
+            </p>
+            <p>
+                <rs type="person">
+                    <hi rend="underline">Homem Christo</hi>
+                </rs> (his printing office).</p>
+            <p rend="indent" xml:id="a2">Israel infandum <choice>
+                    <abbr>n<am>.</am>
+                    </abbr>
+                    <expan>n<ex>efas</ex>
+                    </expan>
+                </choice>.<lb/>
+           Prophecia de <rs type="person">Lehnin</rs>
+            </p>
+            <p>
+                <rs type="work">“Protocolos dos Sabios de Sião”</rs>, traduzidos e commentados<lb/>
+                <seg rend="indent">por <rs type="person">
+                        <choice>
+                            <abbr>A<am>.</am>
+                            </abbr>
+                            <expan>?</expan>
+                        </choice>
+                        <choice>
+                            <abbr>L<am>.</am>
+                            </abbr>
+                            <expan>?</expan>
+                        </choice>
+                        <choice>
+                            <abbr>R<am>.</am>
+                            </abbr>
+                            <expan>?</expan>
+                        </choice>
+                    </rs>
+                </seg>
+            </p>
+        </body>
+    </text>
+</TEI>

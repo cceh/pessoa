@@ -1,0 +1,239 @@
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>BNP/E3 14B-16 e 16a<hi rend="superscript">v</hi>
+                </title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <institution>Biblioteca Nacional de Portugal</institution>
+                        <idno>BNP/E3 14B-16 e 16av</idno>
+                    </msIdentifier>
+                    <msContents>
+                        <msItemStruct>
+                            <author>
+                                <rs type="person" key="FP">Fernando Pessoa</rs>
+                            </author>
+                            <respStmt>
+                                <resp>Transcrição, Edição</resp>
+                                <name>Pedro Sepúlveda</name>
+                            </respStmt>
+                            <respStmt>
+                                <resp>Codificação</resp>
+                                <name>Ulrike Henny</name>
+                            </respStmt>
+                            <respStmt>
+                                <resp>Codificação</resp>
+                                <name>Isabel Figueiredo-Iken</name>
+                            </respStmt>
+                            <note type="genre">
+                                <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                                <rs type="genre" key="nota_editorial">Nota editorial</rs>
+                            </note>
+                            <textLang mainLang="pt" otherLangs="en fr"/>
+                        </msItemStruct>
+                    </msContents>
+                    <history>
+                        <origin>
+                            <p>
+                                <origDate when="1914" cert="medium">c. 1914</origDate>
+                                <origPlace/>
+                            </p>
+                        </origin>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="bn-acpc-e-e3-14b-1-73_JPG_24-C-R0150/bn-acpc-e-e3-14b-1-73_0033_16-16a_t24-C-R0150.jpg"/>
+        <graphic url="bn-acpc-e-e3-14b-1-73_JPG_24-C-R0150/bn-acpc-e-e3-14b-1-73_0034_16v-16av_t24-C-R0150.jpg"/>
+    </facsimile>
+    <text xml:id="bnp-e3-14b-16-e-16av">
+        <body>
+            <head>
+                <hi rend="underline center"/>Um grande poeta materialista<lb/>
+            (<rs type="person" key="AC" role="topic">Alberto Caeiro</rs>)</head>
+            <p>
+                <del rend="overstrike">A enthusiasthica all</del>
+                <supplied resp="PS" reason="omitted-in-original"/>
+            </p>
+            <p>Entre o grande numero de casos<lb/> curiosos que existem na literatura,<lb/>
+               o caso de <rs type="person" key="AC" role="topic">Alberto Caeiro</rs> é dos <lb/>mais curiosos.</p>
+            <metamark rend="line" function="distinct"/>
+            <list>
+                <head>
+                    <rs type="person" key="AC" role="topic">Alberto Caeiro</rs>:</head>
+                <item>
+                    <rs type="journal">
+                        <hi rend="underline">Seculo</hi>
+                    </rs> – <choice>
+                        <abbr>art<am>.</am>
+                        </abbr>
+                        <expan>art<ex>igo</ex>
+                        </expan>
+                    </choice>do <rs type="person">Sá-Carneiro</rs>.</item>
+                <item>
+                    <rs type="journal">
+                        <hi rend="underline">Montanha</hi>
+                    </rs> – <choice>
+                        <abbr>art<am>.</am>
+                        </abbr>
+                        <expan>art<ex>igo</ex>
+                        </expan>
+                    </choice>do <rs type="person">Ribeiro Lopes</rs> (?)</item>
+                <item>
+                    <rs type="journal">
+                        <hi rend="underline">El Tea</hi>
+                    </rs> - artigo do <choice>
+                        <abbr>A<am>.</am>
+                        </abbr>
+                        <expan resp="UH">A<ex>lfredo</ex>
+                        </expan>
+                    </choice>
+                    <choice>
+                        <abbr>P<am>.</am>
+                        </abbr>
+                        <expan resp="UH">P<ex>edro</ex>
+                        </expan>
+                    </choice> Guisado.</item>
+                <item>(<rs type="journal">
+                        <choice>
+                            <abbr>S.</abbr>
+                            <expan resp="IFI">São</expan>
+                        </choice> Miguel</rs>) – <choice>
+                        <abbr>art<am>.</am>
+                        </abbr>
+                        <expan>art<ex>igo</ex>
+                        </expan>
+                    </choice>do <rs type="person">Côrtes-Rodrigues</rs>.</item>
+                <item>
+                    <rs type="journal">
+                        <hi rend="underline">Economia</hi>
+                    </rs> – <choice>
+                        <abbr>art<am>.</am>
+                        </abbr>
+                        <expan>art<ex>igo</ex>
+                        </expan>
+                    </choice>do <rs type="person">Carvalho Mourão</rs> (?)</item>
+                <item>
+                    <rs type="journal">
+                        <hi rend="underline">A Aguia</hi>
+                    </rs> – <choice>
+                        <abbr>art<am>.</am>
+                        </abbr>
+                        <expan>art<ex>igo</ex>
+                        </expan>
+                    </choice>de 
+               <rs type="person" key="FP" role="author">
+                        <choice>
+                            <abbr>F<am>.</am>
+                            </abbr>
+                            <expan>F<ex>ernando</ex>
+                            </expan>
+                        </choice> Pessoa</rs>.</item>
+                <item>
+                    <rs type="journal">
+                        <hi rend="underline">O Mundo</hi>
+                    </rs> - <seg>ver se se obtem <rs type="person">Santos-Vieira</rs>.
+                        <add place="below">(pelo lado anti-clerical <lb/>
+                            <supplied resp="PS" reason="omitted-in-original"/> )</add>
+                    </seg>
+                </item>
+                <item>
+                    <rs type="journal">
+                        <hi rend="underline">A Republica</hi>
+                    </rs> - pelo <rs type="person">Boavida Portugal</rs>
+                </item>
+            </list>
+            <p>(<rs type="person">
+                    <hi rend="underline">Torres de Abreu</hi>
+                </rs> talvez consiga<lb/> qualquér cousa. Se <rs type="person">Albertino da <lb/>Silva</rs> pudesse<lb/>
+               fallar, mesmo que <lb/>atacasse!)</p>
+            <pb n="3"/>
+            <list>
+                <head>
+                    <hi rend="underline">German:</hi>
+                </head>
+                <item/>
+            </list>
+            <metamark rend="line" function="end"/>
+            <pb n="2"/>
+            <list>
+                <head>In England:</head>
+                <item>
+                    <rs type="journal">
+                        <hi rend="underline">
+                            <choice>
+                                <abbr>T</abbr>
+                                <expan resp="UH">T<ex>homas</ex>
+                                </expan>
+                            </choice>-<choice>
+                                <abbr>P</abbr>
+                                <expan resp="UH">P<ex>ower</ex>
+                                </expan>
+                            </choice>’s Weekly</hi>
+                    </rs> – paper article</item>
+                <item>
+                    <rs type="journal">
+                        <hi rend="underline">English</hi> (or another) <hi rend="underline">Review</hi>
+                    </rs> – big article</item>
+                <item>Preface to translation</item>
+                <metamark rend="underline" function="distinct"/>
+            </list>
+            <list>
+                <head>
+                    <hi rend="underline">France:</hi>
+                </head>
+                <item>
+                    <choice>
+                        <abbr>art<am>.</am>
+                        </abbr>
+                        <expan resp="IFI">art<ex>icle</ex>
+                        </expan>
+                    </choice> in <rs type="journal">
+                        <hi rend="underline">Mercure de France</hi>
+                    </rs>.
+                </item>
+                <item>
+                    <choice>
+                        <abbr>Pref<am>.</am>
+                        </abbr>
+                        <expan resp="IFI">Pref<ex>ace</ex>
+                        </expan>
+                    </choice> to translation.
+                </item>
+            </list>
+            <metamark rend="underline" function="distinct"/>
+            <list>
+                <head>
+                    <hi rend="underline">Spanish:</hi>
+                </head>
+                <item>(through <rs type="person">
+                        <hi rend="underline">Guisado</hi>
+                    </rs>)<lb/>
+                    <choice>
+                        <abbr>&amp;</abbr>
+                        <expan resp="PS">and</expan>
+                    </choice> perhaps <rs type="journal">
+                        <hi rend="underline">Renacimento</hi>
+                    </rs>.
+                </item>
+            </list>
+            <metamark rend="underline" function="distinct"/>
+            <list>
+                <head>
+                    <hi rend="underline">Italian:</hi>
+                </head>
+                <item/>
+            </list>
+        </body>
+    </text>
+</TEI>

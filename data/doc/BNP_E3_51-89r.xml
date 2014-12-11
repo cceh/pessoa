@@ -4,7 +4,8 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>BNP/E3 51-89<hi rend="superscript">r</hi></title>
+                <title>BNP/E3 51-89<hi rend="superscript">r</hi>
+                </title>
             </titleStmt>
             <publicationStmt>
                 <p>Publication Information</p>
@@ -17,7 +18,9 @@
                     </msIdentifier>
                     <msContents>
                         <msItemStruct>
-                            <author><rs type="person" key="FP">Fernando Pessoa</rs></author>
+                            <author>
+                                <rs type="person" key="FP">Fernando Pessoa</rs>
+                            </author>
                             <respStmt>
                                 <resp>Transcrição, Edição</resp>
                                 <name>Pedro Sepúlveda</name>
@@ -30,7 +33,10 @@
                                 <resp>Codificação</resp>
                                 <name>Isabel Figueiredo-Iken</name>
                             </respStmt>
-                            <note type="genre"><rs type="genre" key="lista_editorial">Lista editorial</rs></note>
+                            <note type="genre">
+                                <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                                <rs type="genre" key="nota_editorial">Nota editorial</rs>
+                            </note>
                             <textLang mainLang="pt"/>
                         </msItemStruct>
                     </msContents>
@@ -56,15 +62,26 @@
                 <delSpan spanTo="#a1" rend="overstrike"/>
                 <list>
                     <item>
-                        <label>1.</label><seg xml:space="preserve"> </seg><rs type="place">Portugal</rs></item>
+                        <label>1.</label>
+                        <seg xml:space="preserve"> </seg>
+                        <rs type="place">Portugal</rs>
+                    </item>
                     <item>
-                        <label>2.</label> Cancioneiro, <choice><abbr>Liv<am>.</am></abbr><expan resp="UH">Liv<ex>ro</ex></expan></choice> I (100 poemas).</item>
+                        <label>2.</label> Cancioneiro, <choice>
+                            <abbr>Liv<am>.</am>
+                            </abbr>
+                            <expan resp="UH">Liv<ex>ro</ex>
+                            </expan>
+                        </choice> I (100 poemas).</item>
                     <item xml:id="i3">
-                        <label>3.</label><seg xml:space="preserve"> </seg><rs type="person" key="AC" role="x">Caeiro</rs> (só?).</item>
+                        <label>3.</label>
+                        <seg xml:space="preserve"> </seg>
+                        <rs type="person" key="AC" role="x">Caeiro</rs> (só?).</item>
                 </list>
                 <ab rend="right">(para 1933).</ab>
                 <metamark rend="line" function="distinct"/>
-                <p><metamark rend="arrow" function="note" target="#i3" />a não ser que a revisão de <rs type="person" key="AC" role="x">Caeiro</rs> dê<lb/>muito que fazer. </p>
+                <p>
+                    <metamark rend="arrow" function="note" target="#i3"/>a não ser que a revisão de <rs type="person" key="AC" role="x">Caeiro</rs> dê<lb/>muito que fazer. </p>
                 <metamark rend="line" function="distinct"/>
                 <anchor xml:id="a1"/>
                 <gap reason="selection" unit="lines" extent="16"/>
