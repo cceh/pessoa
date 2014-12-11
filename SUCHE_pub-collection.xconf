@@ -1,0 +1,34 @@
+<!-- Save to : /system/config/db/apps/pessoa/data/pub --> 
+<collection xmlns="http://exist-db.org/collection-config/1.0">
+  <index xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- xmlns:cmd="http://www.clarin.eu/cmd/" 
+        xmlns:oai="http://www.openarchives.org/OAI/2.0/" -->
+    
+    <!-- Disable the old full text index -->
+    <fulltext default="none" attributes="no"/>
+    <!-- Lucene index is configured below -->
+    
+    <lucene>
+      <analyzer class="org.apache.lucene.analysis.standard.StandardAnalyzer"/>
+      <analyzer id="ws" class="org.apache.lucene.analysis.WhitespaceAnalyzer"/>
+      <text qname="tei:teiHeader"/>       
+      <text qname="tei:text"/>
+    </lucene>
+    <range>            
+      <create qname="tei:sourceDesc">
+        <field name="genre_type" match="tei:p/tei:note/tei:rs/@type" type="xs:string"/>
+        <field name="genre_name" match="tei:p/tei:note/tei:rs/@key" type="xs:string"/>
+      </create>
+      <create qname="tei:analytic">
+        <field name="title" match="tei:title" type="xs:string"/>
+        <field name="author_key" match="tei:author/tei:rs/@key" type="xs:string"/>
+        <field name="lang" match="tei:textLang/@mainLang" type="xs:string"/>
+      </create>
+      <create qname="tei:monogr">
+        <field name="title" match="tei:title" type="xs:string" />
+        <field name="pubPlace" match="tei:imprint/tei:pubPlace" type="xs:string"/>
+        <field name="date" match="tei:imprint/tei:date/@when"/>
+      </create>
+    </range>
+  </index>
+</collection>

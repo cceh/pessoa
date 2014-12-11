@@ -199,29 +199,31 @@ declare %templates:wrap function app:profisearch($node as node(), $model as map(
             let $db := $match
         
         (: Unterscheidung nach den Sprachen, ob "Und" oder "ODER" :)
-        
         let $r_lang := if(app:get-parameters("lang_ao") = "or") 
-                       then app:get-lang("lang",$db)
+                       then app:get_lang($db)
                        else ()
         (: Sortierung nach Genre :)
         let $r_genre := if(app:get-parameters("genre")!="") then app:filter-query("genre",$r_lang)
                         else ()
+                        
+        (:Suche nach "Erwähnten" Rollen:)
         let $r_mention := if(app:get-parameters("notional")="mentioned") then app:author_build($r_lang)
                         else ()
         
         let $r_all := ($r_lang,$r_genre,$r_mention)
+        
         return map{
-            "r_all" := $r_all,
-            "r_lang" := $r_lang,
-            "r_genre":= $r_genre,
-            "r_mention":=$r_mention
+            "r_all"     := $r_all,
+            "r_lang"    := $r_lang,
+            "r_genre"   := $r_genre,
+            "r_mention" := $r_mention
         
         }
         else map {
-            "r_all" := (),
-            "r_lang" := (),
-            "r_genre":= (),
-            "r_mention":=()
+            "r_all"     := (),
+            "r_lang"    := (),
+            "r_genre"   := (),
+            "r_mention" := ()
         }
 
 };
@@ -239,18 +241,18 @@ declare function app:get-parameters($key as xs:string) as xs:string* {
         return if($hit=$key) then request:get-parameter($hit,'')
                 else ()
 };
-
-declare function app:get-lang($para as xs:string, $db as xs:string) as node()* {
-    for $hit in app:get-parameters($para)
-        let $para := if($para = "lang") then replace($para, "lang","mainLang")
-            else $para
-
-        let $search_terms := concat('("',$para,'"),"',$hit,'"')
+(: ODER FUNTKION : Filter die Sprache :) 
+declare function app:get_lang($db as xs:string) as node()* {
+    for $hit in app:get-parameters("lang")
+        let $para := ("mainLang","otherLang")
+        for $match in $para
+        let $search_terms := concat('("',$match,'"),"',$hit,'"')
         let $search_funk := concat("//range:field-eq(",$search_terms,")")
         let $search_build := concat("collection($db)",$search_funk)
         let $result :=  util:eval($search_build)
         return $result
 };
+
 
 
 
