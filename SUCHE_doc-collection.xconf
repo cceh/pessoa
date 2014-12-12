@@ -20,11 +20,13 @@
       <text qname="tei:text"/>
     </lucene>
     <range>
-      <create qname="tei:textLang">
-        <field name="mainLang" match="@mainLang" type="xs:string"/>
-        <field name="otherLang" match="@otherLangs" type="xs:string"/>
+      <create qname="tei:msItemStruct">
+        <field name="author" match="tei:author/tei:rs/@key" type="xs:string" />
+        <field name="genre" match="tei:note/tei:rs/@key" type="xs:string"/>
+        <field name="mainLang" match="tei:textLang/@mainLang" type="xs:string"/>
+        <field name="otherLang" match="tei:textLang/@otherLangs" type="xs:string" />
       </create>
-      <create qname="tei:origDate">
+      <create qname="tei:origDate"> 
         <!-- @when, @notBefore, @notAfter, @from, @to-->
         <field name="date_when" match="@when" type="xs:string"/>
         <field name="date_notBefore" match="@notBefore" type="xs:string"/>
@@ -34,8 +36,8 @@
       </create>
       <create qname="tei:rs">
         <field name="role" match="@role" type="xs:string"/>
-        <field name="key" match="@key" type="xs:string" />
-      </create>
+        <field name="person" match="@key" type="xs:string" />
+      </create>      
     </range>
   </index>
 </collection>

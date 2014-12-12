@@ -15,19 +15,13 @@
       <text qname="tei:text"/>
     </lucene>
     <range>            
-      <create qname="tei:sourceDesc">
-        <field name="genre_type" match="tei:p/tei:note/tei:rs/@type" type="xs:string"/>
-        <field name="genre_name" match="tei:p/tei:note/tei:rs/@key" type="xs:string"/>
-      </create>
-      <create qname="tei:analytic">
-        <field name="title" match="tei:title" type="xs:string"/>
-        <field name="author_key" match="tei:author/tei:rs/@key" type="xs:string"/>
-        <field name="lang" match="tei:textLang/@mainLang" type="xs:string"/>
-      </create>
-      <create qname="tei:monogr">
+      <create qname="tei:titleStmt">
         <field name="title" match="tei:title" type="xs:string" />
-        <field name="pubPlace" match="tei:imprint/tei:pubPlace" type="xs:string"/>
-        <field name="date" match="tei:imprint/tei:date/@when"/>
+        <field name="author" match="tei:author/tei:rs/@key" type="xs:string" />
+      </create>
+      <create qname="tei:profileDesc">
+        <field name="lang" match="tei:langUsage/tei:language/@ident" type="xs:string"/>
+        <field name="genre" match="tei:textClass/tei:keywords/tei:term/tei:rs/@key" type="xs:string"/>
       </create>
     </range>
   </index>
