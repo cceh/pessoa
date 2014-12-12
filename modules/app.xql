@@ -194,42 +194,46 @@ order by ft:score($m) descending
 declare %templates:wrap function app:profisearch($node as node(), $model as map(*), $term as xs:string?) as map(*) {
     if(exists($term) and $term != "")
     then
-        (: Erstellung der Kollektion, soriert ob "Publiziert" oder "Nicht Publiziert" :)
-        for $match in app:set_db()
-            let $db := $match
+        (: Erstellung der Kollektion, sortiert ob "Publiziert" oder "Nicht Publiziert" :)
+        
+            let $db := app:set_db()
         
         (: Unterscheidung nach den Sprachen, ob "Und" oder "ODER" :)
-        
         let $r_lang := if(app:get-parameters("lang_ao") = "or") 
-                       then app:get-lang("lang",$db)
+                       then app:get_lang($db)
                        else ()
         (: Sortierung nach Genre :)
-        let $r_genre := if(app:get-parameters("genre")!="") then app:filter-query("genre",$r_lang)
-                        else ()
+        let $r_genre := if(app:get-parameters("genre")!="") then app:search_range("genre",$r_lang)
+                        else()                        
+                        
+        (:Suche nach "Erwähnten" Rollen:)
         let $r_mention := if(app:get-parameters("notional")="mentioned") then app:author_build($r_lang)
                         else ()
         
         let $r_all := ($r_lang,$r_genre,$r_mention)
-        return map{
-            "r_all" := $r_all,
-            "r_lang" := $r_lang,
-            "r_genre":= $r_genre,
-            "r_mention":=$r_mention
         
+        return map{
+            "r_all"     := $r_all,
+            "r_lang"    := $r_lang,
+            "r_genre"   := $r_genre,
+            "r_mention" := $r_mention        
         }
         else map {
-            "r_all" := (),
-            "r_lang" := (),
-            "r_genre":= (),
-            "r_mention":=()
+            "r_all"     := (),
+            "r_lang"    := (),
+            "r_genre"   := (),
+            "r_mention" := ()
         }
 
 };
 
+
+
+
 declare function app:set_db() as xs:string+ {
         let $result :=    if(app:get-parameters("release") = "non_public")  then "/db/apps/pessoa/data/doc"
-                   else if(app:get-parameters("release") = "public" ) then "/db/apps/pessoa/data/pub"
-                   else ("/db/apps/pessoa/data/doc","/db/apps/pessoa/data/pub")
+                             else if(app:get-parameters("release") = "public" ) then "/db/apps/pessoa/data/pub"
+                             else ("/db/apps/pessoa/data/doc","/db/apps/pessoa/data/pub")
                    return $result
 };
 
@@ -239,22 +243,38 @@ declare function app:get-parameters($key as xs:string) as xs:string* {
         return if($hit=$key) then request:get-parameter($hit,'')
                 else ()
 };
-
-declare function app:get-lang($para as xs:string, $db as xs:string) as node()* {
-    for $hit in app:get-parameters($para)
-        let $para := if($para = "lang") then replace($para, "lang","mainLang")
-            else $para
-
-        let $search_terms := concat('("',$para,'"),"',$hit,'"')
-        let $search_funk := concat("//range:field-eq(",$search_terms,")")
-        let $search_build := concat("collection($db)",$search_funk)
-        let $result :=  util:eval($search_build)
+(: ODER FUNTKION : Filtert die Sprache :) 
+declare function app:get_lang($db as xs:string+) as node()*{
+    for $match in $db
+        let $result := if(app:get-parameters("release") != "either") then  app:lang_filter($match,"")
+        else (app:lang_filter($match,"non_public"),app:lang_filter($match, "public"))
         return $result
+};
+
+declare function app:lang_filter($db as xs:string, $step as xs:string?) as node()* {
+    if(app:get-parameters("release")="non_public" or $step = "non_public") then
+        for $hit in app:get-parameters("lang")
+            let $para := ("mainLang","otherLang")
+            for $match in $para
+                let $search_terms := concat('("',$match,'"),"',$hit,'"')
+                let $search_funk := concat("//range:field-eq(",$search_terms,")")
+                let $search_build := concat("collection($db)",$search_funk)
+                let $result :=  util:eval($search_build)
+            return $result
+        else if (app:get-parameters("release")="public" or $step = "public") then 
+            for $hit in app:get-parameters("lang")
+                let $search_terms := concat('("lang"),"',$hit,'"')
+                let $search_funk := concat("//range:field-eq(",$search_terms,")")
+                let $search_build := concat("collection($db)",$search_funk)
+                let $result :=  util:eval($search_build)
+            return $result
+        else ()
 };
 
 
 
-declare function app:filter-query($para as xs:string, $db as node()*) as node()* {
+(: Query Suche :)
+declare function app:search_query($para as xs:string, $db as node()*) as node()* {
     for $hit in app:get-parameters($para)
         let $hit := if($para = "genre") then replace($hit, "_", " ")
                     else $hit
@@ -265,29 +285,25 @@ declare function app:filter-query($para as xs:string, $db as node()*) as node()*
             let $result := util:eval($search_build)
             return $result
 };
-
-declare function app:get-result($para as xs:string, $db as node()*) as node()* {
+(: Range Suche :)
+declare function app:search_range($para as xs:string, $db as node()*) as node()* {
     for $hit in app:get-parameters($para)    
-        let $para := if($para = "author") then replace($para, "author","key")
-            else $para
         let $search_terms := concat('("',$para,'"),"',$hit,'"')
         let $search_funk := concat("//range:field-eq(",$search_terms,")")
         let $search_build := concat("$db",$search_funk)
-        let $r_search :=  util:eval($search_build)
-        let $result := $r_search
+        let $result :=  util:eval($search_build)
         return $result
 };
 
 
 declare function app:author_build($db as node()*) as node()* {
         for $person in app:get-parameters("person")
-           for $term in app:get-parameters("role")
-                let $merge := concat('("key","role"),','"',$person,'","',$term,'"')
+           for $role in app:get-parameters("role")
+                let $merge := concat('("person","role"),','"',$person,'","',$role,'"')
                 let $build_range :=concat("//range:field-eq(",$merge,")")
-                let $build_search := concat("collection($db)",$build_range)
+                let $build_search := concat("$db",$build_range)
                 let $result := util:eval($build_search)
-            return $result
-           
+           return $result
 };
 
 
@@ -303,7 +319,7 @@ declare function app:profiresult($node as node(), $model as map(*), $sel as xs:s
         :)
         let $file-name := root($hit)/util:document-name(.)            
         return <p>Exist,{$file-name}</p>            
-        else <p> Dos Not exist,{$model("r_all")}</p>
+        else <p> Dos Not exist,{$model(concat("r_",$sel))}</p>
         
         (:
         return <p>Exist,{$model("profi_result"),$file-name}</p>            
