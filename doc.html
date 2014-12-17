@@ -26,7 +26,8 @@
                     <option value="c1">R1</option>
                     <option value="c2">R2</option>
                     <option value="c3">R3</option>
-                </select>
+                </select> 
+            
                 <div id="filter-nav-a">
                     <a href="">Drucken</a>
                     <a href="">XML</a>
@@ -35,8 +36,38 @@
                 <div class="clear"/>
             </div>
             <div class="row-fluid">
-                <div class="span6 ">
-                    <p class="doc:get-text">texto</p>
+                <div>
+                    <ul id="tabs">
+                        <li class="active"><a href="#tabs-1">transcrição diplomática</a></li>
+                        <li><a href="#tabs-2">versão para ler</a></li>
+                        <li><a href="#tabs-3">primeira versão</a></li>
+                        <li><a href="#tabs-4">versão final</a></li>
+                    </ul>
+                </div>
+                <div class="span6">
+                    <ul id="tab">
+                        <li class="active">
+                            <div id="tabs-1">
+                                <p class="doc:get-text">texto</p>
+                            </div>
+                            
+                        </li>
+                        <li>
+                            <div id="tabs-2">
+                                <p class="doc:get-text-edited">texto</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div id="tabs-3">
+                                <p class="doc:get-text-var1">texto</p>
+                            </div> 
+                        </li>
+                        <li>
+                            <div id="tabs-4">
+                                <p class="doc:get-text-var2">texto</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
                 <div class="span6">
                     <p class="doc:get-image">facsimile</p>

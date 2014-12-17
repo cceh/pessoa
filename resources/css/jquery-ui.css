@@ -1,0 +1,34 @@
+ul#tabs {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+ul#tabs li {
+    display: inline-block;
+    background-color: #EDF8FA;
+    border-bottom: 1px solid #d4d4d1;
+    border-top: 1px solid #d4d4d1;
+    border-right: 1px solid #d4d4d1;
+    border-left: 1px solid #d4d4d1;
+    padding: 5px 20px;
+    margin-bottom: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+ul#tabs li:hover {
+    background-color: #BFD0CA;
+}
+ul#tabs li.active {
+    background-color: #BFD0CA;
+}
+ul#tab {
+    list-style-type: none;
+    padding: 5px;
+    border: 1px solid #d4d4d1;  
+}
+ul#tab li {
+    display: none;
+}
+ul#tab li.active {
+    display: block;
+}
