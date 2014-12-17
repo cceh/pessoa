@@ -12,6 +12,26 @@ declare function doc:get-text($node as node(), $model as map(*), $id as xs:strin
     let $stylesheet := doc("/db/apps/pessoa/xslt/doc.xsl")
     return transform:transform($xml, $stylesheet, ())
 };
+
+declare function doc:get-text-edited($node as node(), $model as map(*), $id as xs:string) as item()+{
+    let $xml := doc:get-xml($id)
+    let $stylesheet := doc("/db/apps/pessoa/xslt/doc-edited.xsl")
+    return transform:transform($xml, $stylesheet, ())
+};
+
+declare function doc:get-text-var1($node as node(), $model as map(*), $id as xs:string) as item()+{
+    let $xml := doc:get-xml($id)
+    let $stylesheet := doc("/db/apps/pessoa/xslt/doc-var1.xsl")
+    return transform:transform($xml, $stylesheet, ())
+};
+
+declare function doc:get-text-var2($node as node(), $model as map(*), $id as xs:string) as item()+{
+    let $xml := doc:get-xml($id)
+    let $stylesheet := doc("/db/apps/pessoa/xslt/doc-var2.xsl")
+    return transform:transform($xml, $stylesheet, ())
+};
+
+
 declare function doc:get-genre($node as node(), $model as map(*), $type as xs:string) as item()*{    
     let $docs := collection("/db/apps/pessoa/data")    
     return for $doc in $docs

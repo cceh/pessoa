@@ -10,16 +10,41 @@
         <script class="helpers:app-root" type="text/javascript" src="resources/js/bootstrap.min.js"/>
         <script class="helpers:app-root" type="text/javascript" src="resources/js/loadsource.js"/>
         <!-- Add mousewheel plugin (this is optional) -->
-        <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery.mousewheel-3.0.6.pack.js"/>
+       <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery.mousewheel-3.0.6.pack.js"/>
         <!-- Add fancyBox -->
         <link class="helpers:app-root" rel="stylesheet" href="resources/css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen"/>
-        <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery.fancybox.pack.js?v=2.1.5"/>
-        <script class="helpers:app-root" type="text/javascript">
+        <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery.fancybox.pack.js?v=2.1.5"/> 
+        
+        <link class="helpers:app-root" rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css"/>
+            <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery.js"></script>
+            <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery-ui.js"></script>
+
+       <!-- <script type="text/javascript">
+         $(function() {
+      $( "#tabs" ).tabs();
+  });
+  </script> -->
+        <script type="text/javascript">
+        $(document).ready(function(){
+        $("ul#tabs li").click(function(e){
+        if (!$(this).hasClass("active")) {
+        var tabNum = $(this).index();
+        var nthChild = tabNum+1;
+        $("ul#tabs li.active").removeClass("active");
+        $(this).addClass("active");
+        $("ul#tab li.active").removeClass("active");
+        $("ul#tab li:nth-child("+nthChild+")").addClass("active");
+        }
+        });
+        });
+        </script>
+        <script type="text/javascript">
            	$(document).ready(function() {
            		$(".fancybox").fancybox();
            		
             });
-       </script>
+            
+    </script> 
     </head>
     <body id="body">
         <div id="side">
