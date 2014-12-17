@@ -192,8 +192,7 @@ order by ft:score($m) descending
 (: Alten Funtkionen rausgelöscht, gespeichert im Drive :)
 
 declare %templates:wrap function app:profisearch($node as node(), $model as map(*), $term as xs:string?) as map(*) {
-    if(exists($term) and $term != "")
-    then
+    
         (: Erstellung der Kollektion, sortiert ob "Publiziert" oder "Nicht Publiziert" :)
         
             let $db := app:set_db()
@@ -208,7 +207,10 @@ declare %templates:wrap function app:profisearch($node as node(), $model as map(
                         
         (:Suche nach "Erwähnten" Rollen:)
         let $r_mention := if(app:get-parameters("notional")="mentioned") then app:author_build($r_lang)
-                        else ()
+                        else () (:
+        let $r_mention := if(app:get-parameters("notional")="mentioned") then app:search_range("person",$r_lang)
+                        else ():)
+        
         
         let $r_all := ($r_lang,$r_genre,$r_mention)
         
@@ -218,12 +220,7 @@ declare %templates:wrap function app:profisearch($node as node(), $model as map(
             "r_genre"   := $r_genre,
             "r_mention" := $r_mention        
         }
-        else map {
-            "r_all"     := (),
-            "r_lang"    := (),
-            "r_genre"   := (),
-            "r_mention" := ()
-        }
+        
 
 };
 
@@ -247,7 +244,7 @@ declare function app:get-parameters($key as xs:string) as xs:string* {
 declare function app:get_lang($db as xs:string+) as node()*{
     for $match in $db
         let $result := if(app:get-parameters("release") != "either") then  app:lang_filter($match,"")
-        else (app:lang_filter($match,"non_public"),app:lang_filter($match, "public"))
+                       else (app:lang_filter($match,"non_public"),app:lang_filter($match, "public"))
         return $result
 };
 
@@ -291,7 +288,7 @@ declare function app:search_range($para as xs:string, $db as node()*) as node()*
         let $search_terms := concat('("',$para,'"),"',$hit,'"')
         let $search_funk := concat("//range:field-eq(",$search_terms,")")
         let $search_build := concat("$db",$search_funk)
-        let $result :=  util:eval($search_build)
+        let $result := util:eval($search_build)
         return $result
 };
 
@@ -314,7 +311,7 @@ declare function app:profiresult($node as node(), $model as map(*), $sel as xs:s
     then 
         for $hit in $model(concat("r_",$sel))
         (:
-        return <p> Exist, {$model("profi_result")}</p>
+        return <p> Exist, {$model(concat("r_",$sel))}</p>
         else <p>Dos Not Exist </p>
         :)
         let $file-name := root($hit)/util:document-name(.)            
