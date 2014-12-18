@@ -19,9 +19,12 @@
         <field name="title" match="tei:title" type="xs:string" />
         <field name="author" match="tei:author/tei:rs/@key" type="xs:string" />
       </create>
-      <create qname="tei:profileDesc">
-        <field name="lang" match="tei:langUsage/tei:language/@ident" type="xs:string"/>
-        <field name="genre" match="tei:textClass/tei:keywords/tei:term/tei:rs/@key" type="xs:string"/>
+      <create qname="tei:monogr">
+        <field name="date" match="tei:imprint/tei:date/@when" type="xs:string"/>
+      </create>
+      <create qname="tei:TEI">
+        <field name="lang" match="tei:teiHeader/tei:profileDesc/tei:langUsage/tei:language/@ident" type="xs:string"/>
+        <field name="genre" match="tei:teiHeader/tei:profileDesc/tei:textClass/tei:keywords/tei:term/tei:rs/@key" type="xs:string"/>
       </create>
     </range>
   </index>

@@ -14,6 +14,8 @@ import module namespace templates="http://exist-db.org/xquery/templates" at "tem
 import module namespace config="http://localhost:8080/exist/apps/pessoa/config" at "config.xqm";
 import module namespace app="http://localhost:8080/exist/apps/pessoa/templates" at "app.xql";
 import module namespace doc="http://localhost:8080/exist/apps/pessoa/doc" at "doc.xqm";
+import module namespace search="http://localhost:8080/exist/apps/pessoa/search" at "search.xqm";
+
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers";
 
 declare option exist:serialize "method=html5 media-type=text/html enforce-xhtml=yes";
