@@ -8,7 +8,8 @@
                 <!-- <p class="app:search?term=aberta">result</p>
                 <p class="app:result-list?sel=text">list</p>
                 -->
-                <div class="app:profisearch" id="suche">
+                <div class="search:profisearch" id="suche">
+                    <a href="#date">Date</a>
                     <form action="/exist/apps/pessoa/search" method="post" id="search">
                         <!-- AUTHORS -->
                         <h3>Author</h3>
@@ -85,23 +86,25 @@
                         <button>Search</button>
                     </form>
                     <h2> Profi Result</h2>
-                    <h3>Sprachen</h3>
-                    <div class="app:profiresult?sel=lang"/>
+                    <h3><a id="lang">Sprachen</a></h3>
+                      <div class="search:profiresult?sel=lang"/>
                     <h3>Autoren</h3>
-                    <div class="app:profiresult?sel=mention"/>
+                    <div class="search:profiresult?sel=mention"/>
                     <h3>Genre</h3>
-                    <div class="app:profiresult?sel=genre"/>
+                    <div class="search:profiresult?sel=genre"/>
+                    <h3><a id="date">Date</a></h3>
+                    <div class="search:profiresult?sel=date"/>
                     <h3>All</h3>
-                    <div class="app:profiresult?sel=all"/>
+                    <div class="search:profiresult?sel=all"/>
                     <h3>Term</h3>
-                    <div class="app:profiresult?sel=term"/>
+                    <div class="search:profiresult?sel=term"/>
                     <h2>Filter</h2>
                     <!-- <div class="app:result-filter?sel=filter"/>-->
-                    <div class="app:result-filter?sel=filter"/>
+                    <div class="search:result-filter?sel=filter"/>
                     <h2>Text</h2>
-                    <div class="app:result-list?sel=text"/>
+                    <div class="search:result-list?sel=text"/>
                     <h2>Header</h2>
-                    <div class="app:result-list?sel=head"/>
+                    <div class="search:result-list?sel=head"/>
                 </div>
             </div>
         </div>
