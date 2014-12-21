@@ -9,7 +9,12 @@
                 <p class="app:result-list?sel=text">list</p>
                 -->
                 <div class="search:profisearch" id="suche">
+                    <!-- Anker -->
                     <a href="#date">Date</a>
+                    <a href="#autor">Author</a>
+                    
+                    <!-- Anker Ende -->
+                    
                     <form action="/exist/apps/pessoa/search" method="post" id="search">
                         <!-- AUTHORS -->
                         <h3>Author</h3>
@@ -88,8 +93,11 @@
                     <h2> Profi Result</h2>
                     <h3><a id="lang">Sprachen</a></h3>
                       <div class="search:profiresult?sel=lang"/>
-                    <h3>Autoren</h3>
+                    <h3><a id="autor">Autoren</a></h3>
+                    <h2>Mentioned</h2>
                     <div class="search:profiresult?sel=mention"/>
+                    <h2>Real</h2>
+                    <div class="search:profiresult?sel=real"/>
                     <h3>Genre</h3>
                     <div class="search:profiresult?sel=genre"/>
                     <h3><a id="date">Date</a></h3>

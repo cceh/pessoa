@@ -34,9 +34,9 @@
         <field name="date_from" match="@from" type="xs:string"/>
         <field name="date_to" match="@to" type="xs:string"/>
       </create>
-      <create qname="tei:rs">
-        <field name="role" match="@role" type="xs:string"/>
-        <field name="person" match="@key" type="xs:string" />
+      <create qname="tei:text">
+        <field name="role" match="//tei:rs/@role" type="xs:string"/>
+        <field name="person" match="//tei:rs/@key" type="xs:string" />
       </create>      
     </range>
   </index>
