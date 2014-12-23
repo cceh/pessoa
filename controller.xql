@@ -17,7 +17,7 @@ else if (contains($exist:path, "doc/versao-pessoal")) then
     let $lb := request:get-parameter("lb", "yes")
     let $abbr := request:get-parameter("abbr", "yes")
     let $id := request:get-parameter("id", ())
-    return doc:get-text-pessoal($id, $lb, $abbr)
+    return doc:get-text-pessoal(<node />, map {"test" := "test"}, $id, $lb, $abbr)
 else if (contains($exist:path, "doc")) then
     (session:set-attribute("id", $exist:resource), 
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
