@@ -6,11 +6,18 @@ declare variable $exist:controller external;
 declare variable $exist:prefix external;
 declare variable $exist:root external;
 
+import module namespace doc="http://localhost:8080/exist/apps/pessoa/doc" at "modules/doc.xqm";
+
 if ($exist:path eq "/") then
     (: forward root path to index.xql :)
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <redirect url="index.html"/>
     </dispatch>
+else if (contains($exist:path, "doc/versao-pessoal")) then
+    let $lb := request:get-parameter("lb", "yes")
+    let $abbr := request:get-parameter("abbr", "yes")
+    let $id := request:get-parameter("id", ())
+    return doc:get-text-pessoal($id, $lb, $abbr)
 else if (contains($exist:path, "doc")) then
     (session:set-attribute("id", $exist:resource), 
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
