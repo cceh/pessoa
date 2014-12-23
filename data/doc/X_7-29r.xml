@@ -5,6 +5,21 @@
         <fileDesc>
             <titleStmt>
                 <title>X [7-29<hi rend="superscript">r</hi>]</title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Transcrição, Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Isabel Figueiredo-Iken</name>
+                </respStmt>
             </titleStmt>
             <publicationStmt>
                 <p>Publication Information</p>
@@ -20,18 +35,6 @@
                             <author>
                                 <rs type="person" key="FP">Fernando Pessoa</rs>
                             </author>
-                            <respStmt>
-                                <resp>Transcrição, Edição</resp>
-                                <name>Pedro Sepúlveda</name>
-                            </respStmt>
-                            <respStmt>
-                                <resp>Codificação</resp>
-                                <name>Ulrike Henny</name>
-                            </respStmt>
-                            <respStmt>
-                                <resp>Codificação</resp>
-                                <name>Isabel Figueiredo-Iken</name>
-                            </respStmt>
                             <note type="genre">
                                 <rs type="genre" key="lista_editorial">Lista editorial</rs>
                             </note>
@@ -42,7 +45,6 @@
                         <origin>
                             <p>
                                 <origDate when="1913" cert="medium">c. 1913</origDate>
-                                <origPlace/>
                             </p>
                         </origin>
                     </history>
@@ -56,7 +58,7 @@
     <text xml:id="x-7-29r">
         <body>
             <list>
-                <item> — 2 idéas para o <rs type="work">
+                <item> — 2 idéas para o <rs type="work" key="O1"><rs type="title">
                         <choice>
                             <abbr>L<am>.</am>
                             </abbr>
@@ -68,7 +70,7 @@
                             <expan>Des<ex>asocego</ex>
                             </expan>
                         </choice>
-                    </rs>
+                    </rs></rs>
                 </item>
                 <metamark rend="line" function="distinct"/>
                 <item>— Voto – Democracia – <seg>
@@ -83,7 +85,7 @@
                 <metamark rend="line" function="distinct"/>
                 <item>— Patriotismo: deveres dos estadistas</item>
                 <item>
-                    <choice>
+                    <rs type="person"><choice>
                         <abbr>J<am>.</am>
                         </abbr>
                         <expan>J<ex>esus</ex>
@@ -94,7 +96,7 @@
                         </abbr>
                         <expan>C<ex>hristo</ex>
                         </expan>
-                    </choice>– um blagueur – as provas...<lb/>
+                    </choice></rs> – um blagueur – as provas...<lb/>
                     <seg rend="indent">
                         <choice>
                             <abbr>Cf<am>.</am>
