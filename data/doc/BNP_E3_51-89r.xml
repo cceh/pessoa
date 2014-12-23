@@ -4,8 +4,22 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>BNP/E3 51-89<hi rend="superscript">r</hi>
-                </title>
+                <title>BNP/E3 51-89<hi rend="superscript">r</hi></title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Transcrição, Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Isabel Figueiredo-Iken</name>
+                </respStmt>
             </titleStmt>
             <publicationStmt>
                 <p>Publication Information</p>
@@ -21,18 +35,6 @@
                             <author>
                                 <rs type="person" key="FP">Fernando Pessoa</rs>
                             </author>
-                            <respStmt>
-                                <resp>Transcrição, Edição</resp>
-                                <name>Pedro Sepúlveda</name>
-                            </respStmt>
-                            <respStmt>
-                                <resp>Codificação</resp>
-                                <name>Ulrike Henny</name>
-                            </respStmt>
-                            <respStmt>
-                                <resp>Codificação</resp>
-                                <name>Isabel Figueiredo-Iken</name>
-                            </respStmt>
                             <note type="genre">
                                 <rs type="genre" key="lista_editorial">Lista editorial</rs>
                                 <rs type="genre" key="nota_editorial">Nota editorial</rs>
@@ -44,7 +46,6 @@
                         <origin>
                             <p>
                                 <origDate when="1933-02-14" cert="medium">c. 14-2-1933</origDate>
-                                <origPlace/>
                             </p>
                         </origin>
                     </history>
@@ -53,37 +54,41 @@
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic url="bn-acpc-e-e3-51-1-106_JPG_24-C-R0150/bn-acpc-e-e3-51-1-106_0183_89_t24-C-R0150.jpg"/>
+        <graphic
+            url="bn-acpc-e-e3-51-1-106_JPG_24-C-R0150/bn-acpc-e-e3-51-1-106_0183_89_t24-C-R0150.jpg"
+        />
     </facsimile>
-    <text>
+    <text xml:id="bnp-e3-51-89r">
         <body>
             <div>
                 <gap unit="words" extent="2" reason="selection"/>
-                <delSpan spanTo="#a1" rend="overstrike"/>
+                <delSpan spanTo="#A1" rend="overstrike"/>
                 <list>
                     <item>
                         <label>1.</label>
-                        <seg xml:space="preserve"> </seg>
-                        <rs type="place">Portugal</rs>
+                        <rs type="title"><rs type="place">Portugal</rs></rs>
                     </item>
                     <item>
-                        <label>2.</label> Cancioneiro, <choice>
+                        <label>2.</label>
+                        <rs type="title">Cancioneiro</rs>, <choice>
                             <abbr>Liv<am>.</am>
                             </abbr>
                             <expan resp="UH">Liv<ex>ro</ex>
                             </expan>
-                        </choice> I (100 poemas).</item>
-                    <item xml:id="i3">
+                        </choice> I (100 poemas). </item>
+                    <item xml:id="I3">
                         <label>3.</label>
-                        <seg xml:space="preserve"> </seg>
-                        <rs type="person" key="AC" role="x">Caeiro</rs> (só?).</item>
+                        <rs type="title"><rs type="person" key="AC" role="author">Caeiro</rs></rs>
+                        (só?).</item>
                 </list>
                 <ab rend="right">(para 1933).</ab>
                 <metamark rend="line" function="distinct"/>
                 <p>
-                    <metamark rend="arrow" function="note" target="#i3"/>a não ser que a revisão de <rs type="person" key="AC" role="x">Caeiro</rs> dê<lb/>muito que fazer. </p>
+                    <metamark rend="arrow" function="note" target="#I3"/>a não ser que a revisão de
+                        <rs type="title"><rs type="person" key="AC" role="author">Caeiro</rs></rs>
+                    dê<lb/>muito que fazer.</p>
                 <metamark rend="line" function="distinct"/>
-                <anchor xml:id="a1"/>
+                <anchor xml:id="A1"/>
                 <gap reason="selection" unit="lines" extent="16"/>
             </div>
         </body>

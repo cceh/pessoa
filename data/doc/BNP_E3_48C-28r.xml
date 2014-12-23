@@ -6,6 +6,21 @@
             <titleStmt>
                 <title>48C-28<hi rend="superscript">r</hi>
                 </title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Transcrição, Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Isabel Figueiredo-Iken</name>
+                </respStmt>
             </titleStmt>
             <publicationStmt>
                 <p>Publication Information</p>
@@ -21,18 +36,6 @@
                             <author>
                                 <rs type="person" key="FP">Fernando Pessoa</rs>
                             </author>
-                            <respStmt>
-                                <resp>Transcrição, Edição</resp>
-                                <name>Pedro Sepúlveda</name>
-                            </respStmt>
-                            <respStmt>
-                                <resp>Codificação</resp>
-                                <name>Ulrike Henny</name>
-                            </respStmt>
-                            <respStmt>
-                                <resp>Codificação</resp>
-                                <name>Isabel Figueiredo-Iken</name>
-                            </respStmt>
                             <note type="genre">
                                 <rs type="genre" key="lista_editorial">Lista editorial</rs>
                                 <rs type="genre" key="plano_editorial">Plano editorial</rs>
@@ -44,7 +47,6 @@
                         <origin>
                             <p>
                                 <origDate notAfter="1933-02">ant. Fev. 1933</origDate>
-                                <origPlace/>
                             </p>
                         </origin>
                     </history>
@@ -62,50 +64,48 @@
                     <item>
                         <list>
                             <head>
-                                <rs type="work">O REGRESSO DOS DEUSES</rs> — I. <rs type="work-part">POEMAS COMPLETOS DE <rs type="person" key="AC" role="author">ALBERTO<lb/> CAEIRO</rs> (1889-1915)</rs>.</head>
+                                <rs type="title">O REGRESSO DOS DEUSES</rs> — I. <rs type="title">POEMAS COMPLETOS DE <rs type="person" key="AC" role="author">ALBERTO<lb/> CAEIRO</rs> (1889-1915)</rs>.</head>
                             <metamark rend="line" function="distinct"/>
                             <item>
                                 <label>1.</label>
-                                <seg xml:space="preserve"> </seg>
-                                <rs type="work-part">Nota dos Editores</rs>.</item>
+                                <rs type="text">Nota dos Editores</rs>.</item>
                             <item>
                                 <label>2.</label>
-                                <seg xml:space="preserve"> </seg>
-                                <rs type="work-part">Prefacio do <rs type="person" key="RR" role="author">Dr. Ricardo Reis</rs>
+                                <rs type="text">Prefacio do <rs type="person" key="RR" role="author">Dr. Ricardo Reis</rs>
                                 </rs>.</item>
                             <item>
                                 <label>3.</label>
-                                <seg xml:space="preserve"> </seg>
-                                <rs type="work">Poemas Completos de <rs type="person" key="AC" role="author">Alberto Caeiro</rs>
+                                <rs type="title">Poemas Completos de <rs type="person" key="AC" role="author">Alberto Caeiro</rs>
                                 </rs>:
                                 <list>
                                     <item>
                                         <label>I.</label>
-                                        <seg xml:space="preserve"> </seg>
-                                        <rs type="work-part">O Guardador de Rebanhos</rs>
+                                        <rs type="title">O Guardador de Rebanhos</rs>
                                     </item>
                                     <item>
                                         <label>II.</label>
-                                        <seg xml:space="preserve"> </seg>
-                                        <rs type="work-part">O Pastor Amoroso</rs>
+                                        <rs type="title">O Pastor Amoroso</rs>
                                     </item>
                                     <item>
                                         <label>III.</label>
-                                        <seg xml:space="preserve"> </seg>
-                                        <rs type="work-part">Poemas Inconjunctos</rs>
+                                        <rs type="title">Poemas Inconjunctos</rs>
                                     </item>
                                 </list>
                             </item>
                             <item>
                                 <label>4.</label>
-                                <seg xml:space="preserve"> </seg>
-                                <rs type="work">Natividade de <rs type="person" key="AC" role="topic">Alberto Caeiro</rs>
-                                </rs>, por <rs type="person" key="FP" role="author">Fernando Pessoa</rs>.</item>
+                                <anchor xml:id="A1"/>
+                                <rs type="title">Natividade de <rs type="person" key="AC" role="topic">Alberto Caeiro</rs>
+                                </rs>, por <rs type="person" key="FP" role="author">Fernando Pessoa</rs>.
+                                <anchor xml:id="A2"/>
+                            </item>
                             <item>
                                 <label>5.</label>
-                                <seg xml:space="preserve"> </seg>
-                                <rs type="work-part">Notas para a recordação do meu mestre <rs type="person" key="AC" role="topic">Caeiro</rs>
-                                </rs>,<lb/> por <rs type="person" key="AdC" role="author">Alvaro de Campos</rs>.</item>
+                                <anchor xml:id="A3"/>
+                                <rs type="title">Notas para a recordação do meu mestre <rs type="person" key="AC" role="topic">Caeiro</rs>
+                                </rs>,<lb/> por <rs type="person" key="AdC" role="author">Alvaro de Campos</rs>.
+                                <anchor xml:id="A4"/>
+                            </item>
                         </list>
                     </item>
                     <metamark rend="line" function="distinct"/>
@@ -130,6 +130,11 @@
                     </item>
                     <metamark rend="line" function="distinct"/>
                 </list>
+                <spanGrp>
+                    <span type="correlation" from="#A1" to="#A2"/>
+                    <span type="correlation" from="#A3" to="#A4"/>
+                    <span type="correlation" target="#A1 #A2" />
+                </spanGrp>
             </div>
         </body>
     </text>

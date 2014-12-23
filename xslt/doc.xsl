@@ -19,6 +19,7 @@
             .subst {position: relative;}
             .subst .add.above {position: absolute; top: -0.5em; left: 0; font-size: smaller;}
             .seg .add.above {position: absolute; top: -0.5em; left: 0; font-size: smaller; white-space: nowrap;}
+            .seg .add.below {position: absolute; top: 1.5em; left: 0; font-size: smaller; white-space: nowrap; line-height: 0.9em;}
             .add {top: 0;}
             
             .note.addition {position: absolute;}
@@ -46,6 +47,7 @@
             .gap {cursor: pointer;}
             .supplied {cursor: pointer;}
             .metamark {cursor: pointer;}
+            .ex, .supplied {color: purple;}
             
             /* special case 180r */
             .bnp-e3-180r.metamark.curly-bracket.left, .metamark.bracket.left {margin-left: 5px; text-align: right;}
@@ -99,6 +101,12 @@
             <xsl:apply-templates/>
         </div>
     </xsl:template>
+    <xsl:template match="label">
+        <span class="label">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+    <!-- Einrückungen / Ausrichtungen berücksichtigen -->
     <xsl:template match="ab[@rend='offset']">
         <span class="ab offset">
             <xsl:apply-templates/>
@@ -127,6 +135,9 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
+    
+    
+    <!-- zusätzliche Bemerkungen am Rand -->
     <xsl:template match="note[@type='addition'][@place='margin top right']">
         <span class="note addition margin top right">
             <xsl:apply-templates/>
@@ -156,6 +167,8 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
+    
+    <!-- Zeilenumbrüche anzeigen -->
     <xsl:template match="lb">
         <br/>
     </xsl:template>
@@ -171,15 +184,9 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    <xsl:template match="label">
-        <span class="label">
-            <xsl:apply-templates/>
-        </span>
-    </xsl:template>
     
-    <!-- hier nicht weiter zu berücksichtigen -->
-    <xsl:template match="expan"/>
-    <xsl:template match="add[@resp]"/>
+    
+    <!-- editorische Ergänzungen nicht anzeigen -->
     <xsl:template match="supplied"/>
     
     
@@ -239,6 +246,9 @@
         </span>
     </xsl:template>
     
+    <!-- Auflösungen von Abkürzungen nicht anzeigen -->
+    <xsl:template match="expan" />
+    
     <!-- gaps -->
     <xsl:template match="gap[@reason='selection']">
         <span class="gap" title="selection">[...]</span>
@@ -271,6 +281,11 @@
     <!-- add -->
     <xsl:template match="add[@place='above']">
         <span class="add above">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+    <xsl:template match="add[@place='below']">
+        <span class="add below">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
