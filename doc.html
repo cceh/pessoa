@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <div xmlns="http://www.w3.org/1999/xhtml" class="templates:surround?with=templates/page.html&amp;at=content">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function test(){
+        
+        $("#tabs-4-p").hide();
+      
+        
+        } 
+        
+    </script>
     <div class="row-fluid">
         <div id="content" class="span12 main">
             <div id="filter-nav">
@@ -27,7 +37,6 @@
                     <option value="c2">R2</option>
                     <option value="c3">R3</option>
                 </select> 
-            
                 <div id="filter-nav-a">
                     <a href="">Drucken</a>
                     <a href="">XML</a>
@@ -39,11 +48,12 @@
                 <div>
                     <ul id="tabs">
                         <li class="active"><a href="#tabs-1">transcrição diplomática</a></li>
-                        <li><a href="#tabs-2">versão para ler</a></li>
-                        <li><a href="#tabs-3">primeira versão</a></li>
-                        <li><a href="#tabs-4">versão final</a></li>
+                        <li><a href="#tabs-2"></a>primeira versão</li>
+                        <li><a href="#tabs-3">versão final</a></li>
+                        <li><a href="#tabs-4">test</a></li>
                     </ul>
                 </div>
+                <div>
                 <div class="span6">
                     <ul id="tab">
                         <li class="active">
@@ -54,17 +64,21 @@
                         </li>
                         <li>
                             <div id="tabs-2">
-                                <p class="doc:get-text-edited">texto</p>
+                                <p class="doc:get-text-var1">texto</p>
                             </div>
                         </li>
                         <li>
                             <div id="tabs-3">
-                                <p class="doc:get-text-var1">texto</p>
+                                <p class="doc:get-text-var2">texto</p>
                             </div> 
                         </li>
                         <li>
                             <div id="tabs-4">
-                                <p class="doc:get-text-var2">texto</p>
+                                <form method="get">
+                                    <input name="lb" type="checkbox" value="yes" onchange="test();"></input> lb<br/>
+                                    <input name="abbr" type="checkbox" value="yes" onchange="test();"></input> abbr <br/>  
+                                </form>
+                                <p id ="tabs-4-p" class="doc:get-text-pessoal?lb=yes&amp;abbr=yes">texto</p>
                             </div>
                         </li>
                     </ul>
@@ -72,6 +86,7 @@
                 <div class="span6">
                     <p class="doc:get-image">facsimile</p>
                 </div>
+            </div>
             </div>
         </div>
     </div>

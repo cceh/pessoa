@@ -31,6 +31,22 @@ declare function doc:get-text-var2($node as node(), $model as map(*), $id as xs:
     return transform:transform($xml, $stylesheet, ())
 };
 
+declare function doc:get-text-pessoal($node as node(), $model as map(*), $id as xs:string, $lb as xs:string, $abbr as xs:string) as item()+{
+    let $xml := doc:get-xml($id)
+    let $stylesheet := doc("/db/apps/pessoa/xslt/doc-pessoal.xsl")
+    return
+    if($lb="yes") then
+        if($abbr ="yes") then
+            transform:transform($xml, $stylesheet, (<parameters><param name="lb" value="yes"/><param name="abbr" value="yes"/></parameters>))
+        else
+            transform:transform($xml, $stylesheet, (<parameters><param name="lb" value="yes"/><param name="abbr" value="no"/></parameters>))
+    else
+        if($abbr="yes") then
+            transform:transform($xml, $stylesheet, (<parameters><param name="lb" value="no"/><param name="abbr" value="yes"/></parameters>))
+        else
+            transform:transform($xml, $stylesheet, (<parameters><param name="lb" value="no"/><param name="abbr" value="no"/></parameters>))
+};
+
 
 declare function doc:get-genre($node as node(), $model as map(*), $type as xs:string) as item()*{    
     let $docs := collection("/db/apps/pessoa/data")    
