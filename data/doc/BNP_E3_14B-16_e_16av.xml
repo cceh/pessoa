@@ -6,6 +6,21 @@
             <titleStmt>
                 <title>BNP/E3 14B-16 e 16a<hi rend="superscript">v</hi>
                 </title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Transcrição, Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Isabel Figueiredo-Iken</name>
+                </respStmt>
             </titleStmt>
             <publicationStmt>
                 <p>Publication Information</p>
@@ -21,18 +36,6 @@
                             <author>
                                 <rs type="person" key="FP">Fernando Pessoa</rs>
                             </author>
-                            <respStmt>
-                                <resp>Transcrição, Edição</resp>
-                                <name>Pedro Sepúlveda</name>
-                            </respStmt>
-                            <respStmt>
-                                <resp>Codificação</resp>
-                                <name>Ulrike Henny</name>
-                            </respStmt>
-                            <respStmt>
-                                <resp>Codificação</resp>
-                                <name>Isabel Figueiredo-Iken</name>
-                            </respStmt>
                             <note type="genre">
                                 <rs type="genre" key="lista_editorial">Lista editorial</rs>
                                 <rs type="genre" key="nota_editorial">Nota editorial</rs>
@@ -44,7 +47,6 @@
                         <origin>
                             <p>
                                 <origDate when="1914" cert="medium">c. 1914</origDate>
-                                <origPlace/>
                             </p>
                         </origin>
                     </history>
@@ -58,6 +60,7 @@
     </facsimile>
     <text xml:id="bnp-e3-14b-16-e-16av">
         <body>
+            <div>
             <head>
                 <hi rend="underline center"/>Um grande poeta materialista<lb/>
             (<rs type="person" key="AC" role="topic">Alberto Caeiro</rs>)</head>
@@ -74,25 +77,25 @@
                 <item>
                     <rs type="journal">
                         <hi rend="underline">Seculo</hi>
-                    </rs> – <choice>
+                    </rs> – <rs type="text"><choice>
                         <abbr>art<am>.</am>
                         </abbr>
                         <expan>art<ex>igo</ex>
                         </expan>
-                    </choice>do <rs type="person">Sá-Carneiro</rs>.</item>
+                    </choice>do <rs type="person">Sá-Carneiro</rs></rs>.</item>
                 <item>
                     <rs type="journal">
                         <hi rend="underline">Montanha</hi>
-                    </rs> – <choice>
+                    </rs> – <rs type="text"><choice>
                         <abbr>art<am>.</am>
                         </abbr>
                         <expan>art<ex>igo</ex>
                         </expan>
-                    </choice>do <rs type="person">Ribeiro Lopes</rs> (?)</item>
+                    </choice>do <rs type="person">Ribeiro Lopes</rs></rs> (?)</item>
                 <item>
                     <rs type="journal">
                         <hi rend="underline">El Tea</hi>
-                    </rs> - artigo do <choice>
+                    </rs> - <rs type="text">artigo do <rs type="person"><choice>
                         <abbr>A<am>.</am>
                         </abbr>
                         <expan resp="UH">A<ex>lfredo</ex>
@@ -103,30 +106,33 @@
                         </abbr>
                         <expan resp="UH">P<ex>edro</ex>
                         </expan>
-                    </choice> Guisado.</item>
+                    </choice> Guisado</rs></rs>.
+                </item>
                 <item>(<rs type="journal">
                         <choice>
                             <abbr>S.</abbr>
                             <expan resp="IFI">São</expan>
-                        </choice> Miguel</rs>) – <choice>
-                        <abbr>art<am>.</am>
+                        </choice> Miguel</rs>) – 
+                        <rs type="text"><choice><abbr>art<am>.</am>
                         </abbr>
                         <expan>art<ex>igo</ex>
                         </expan>
-                    </choice>do <rs type="person">Côrtes-Rodrigues</rs>.</item>
+                    </choice>do <rs type="person">Côrtes-Rodrigues</rs></rs>.
+                </item>
                 <item>
                     <rs type="journal">
                         <hi rend="underline">Economia</hi>
-                    </rs> – <choice>
+                    </rs> – <rs type="text"><choice>
                         <abbr>art<am>.</am>
                         </abbr>
                         <expan>art<ex>igo</ex>
                         </expan>
-                    </choice>do <rs type="person">Carvalho Mourão</rs> (?)</item>
+                    </choice>do <rs type="person">Carvalho Mourão</rs></rs> (?)</item>
                 <item>
+                    <anchor xml:id="A1"/>
                     <rs type="journal">
                         <hi rend="underline">A Aguia</hi>
-                    </rs> – <choice>
+                    </rs> – <rs type="text"><choice>
                         <abbr>art<am>.</am>
                         </abbr>
                         <expan>art<ex>igo</ex>
@@ -138,7 +144,9 @@
                             </abbr>
                             <expan>F<ex>ernando</ex>
                             </expan>
-                        </choice> Pessoa</rs>.</item>
+                        </choice> Pessoa</rs></rs>.
+                    <anchor xml:id="A2"/>
+                </item>
                 <item>
                     <rs type="journal">
                         <hi rend="underline">O Mundo</hi>
@@ -180,12 +188,12 @@
                                 <expan resp="UH">P<ex>ower</ex>
                                 </expan>
                             </choice>’s Weekly</hi>
-                    </rs> – paper article</item>
+                    </rs> – <rs type="text">paper article</rs></item>
                 <item>
                     <rs type="journal">
                         <hi rend="underline">English</hi> (or another) <hi rend="underline">Review</hi>
-                    </rs> – big article</item>
-                <item>Preface to translation</item>
+                    </rs> – <rs type="text">big article</rs></item>
+                <item><rs type="text">Preface to translation</rs></item>
                 <metamark rend="underline" function="distinct"/>
             </list>
             <list>
@@ -193,22 +201,22 @@
                     <hi rend="underline">France:</hi>
                 </head>
                 <item>
-                    <choice>
+                    <rs type="text"><choice>
                         <abbr>art<am>.</am>
                         </abbr>
                         <expan resp="IFI">art<ex>icle</ex>
                         </expan>
                     </choice> in <rs type="journal">
                         <hi rend="underline">Mercure de France</hi>
-                    </rs>.
+                    </rs></rs>.
                 </item>
                 <item>
-                    <choice>
+                    <rs type="text"><choice>
                         <abbr>Pref<am>.</am>
                         </abbr>
                         <expan resp="IFI">Pref<ex>ace</ex>
                         </expan>
-                    </choice> to translation.
+                    </choice> to translation.</rs>
                 </item>
             </list>
             <metamark rend="underline" function="distinct"/>
@@ -234,6 +242,10 @@
                 </head>
                 <item/>
             </list>
+                <spanGrp>
+                    <span type="correlation" from="#A1" to="#A2"/>
+                </spanGrp>
+            </div>
         </body>
     </text>
 </TEI>
