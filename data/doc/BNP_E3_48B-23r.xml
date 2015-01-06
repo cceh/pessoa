@@ -6,6 +6,21 @@
             <titleStmt>
                 <title>E3/48B 23<hi rend="superscript">r</hi>
                 </title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Transcrição, Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Isabel Figueiredo-Iken</name>
+                </respStmt>
             </titleStmt>
             <publicationStmt>
                 <p>Publication Information</p>
@@ -18,20 +33,11 @@
                     </msIdentifier>
                     <msContents>
                         <msItemStruct>
-                            <author>Fernando Pessoa</author>
-                            <respStmt>
-                                <resp>Transcrição, Edição</resp>
-                                <name>Pedro Sepúlveda</name>
-                            </respStmt>
-                            <respStmt>
-                                <resp>Codificação</resp>
-                                <name>Ulrike Henny</name>
-                            </respStmt>
-                            <respStmt>
-                                <resp>Codificação</resp>
-                                <name>Isabel Figueiredo-Iken</name>
-                            </respStmt>
-                            <note type="genre">Lista editorial</note>
+                            <author>
+                                <rs type="person" key="FP">Fernando Pessoa</rs>
+                            </author>
+                            <note type="genre"><rs type="genre" key="lista_editorial">Lista
+                                editorial</rs></note>
                             <textLang mainLang="en" otherLangs="pt la"/>
                         </msItemStruct>
                     </msContents>
@@ -39,7 +45,6 @@
                         <origin>
                             <p>
                                 <origDate when="1921" cert="medium">c. 1921</origDate>
-                                <origPlace/>
                             </p>
                         </origin>
                     </history>
@@ -52,24 +57,29 @@
     </facsimile>
     <text xml:id="bnp-e3-48b-23r">
         <body>
+            <div>
             <list>
                 <head>
                     <hi rend="underline"/>Editions:</head>
                 <item>
                     <label>1.</label>
-                    <rs type="person">Shakespeare</rs>: <rs type="work">“A Tormenta”</rs>. – <choice>
+                    <anchor xml:id="A1"/>
+                    <rs type="person">Shakespeare</rs>: <rs type="text">“A Tormenta”</rs>. – <choice>
                         <abbr>Trad<am>.</am>
                         </abbr>
                         <expan>Trad<ex>ucção</ex>
                         </expan>
                     </choice>
-                    <rs type="person" key="FP" role="translator">Fernando Pessoa</rs>.</item>
+                    <rs type="person" key="FP" role="translator">Fernando Pessoa</rs>.
+                    <anchor xml:id="A2"/>
+                </item>
                 <item>
                     <label>2.</label>
-                    <rs type="person">Antonio Botto</rs>: <rs type="work">“Canções”</rs>. – 2ª edição.</item>
+                    <rs type="person">Antonio Botto</rs>: <rs type="text">“Canções”</rs>. – 2ª edição.</item>
                 <item>
                     <label>3.</label>
-                    <rs type="work">“English Poems – I <choice>
+                    <anchor xml:id="A3"/>
+                    <rs type="text">“English Poems – I <choice>
                             <abbr>+</abbr>
                             <expan>and</expan>
                         </choice> II (Antinous, Inscriptions)”</rs> – <rs type="person" key="FP" role="author">
@@ -78,10 +88,12 @@
                             </abbr>
                             <expan>F<ex>ernando</ex>
                             </expan>
-                        </choice> Pessoa</rs>.</item>
+                        </choice> Pessoa</rs>.
+                    <anchor xml:id="A4"/>
+                </item>
                 <item>
                     <label>4.</label>
-                    <rs type="work">“How Napoleon never Existed”</rs> – <choice>
+                    <rs type="text">“How Napoleon never Existed”</rs> – <choice>
                         <abbr>transl<am>.</am>
                         </abbr>
                         <expan>transl<ex>ation</ex>
@@ -93,10 +105,14 @@
                             </abbr>
                             <expan>T<ex>homas</ex>
                             </expan>
-                        </choice> Crosse</rs>.</item>
+                        </choice> Crosse</rs>.
+                </item>
                 <item>
                     <label>5.</label>
-                    <rs type="work">“Essay on Political Suffrage”</rs> – <rs type="person" key="FP" role="author">Fernando Pessoa</rs>.</item>
+                    <anchor xml:id="A5"/>
+                    <rs type="text">“Essay on Political Suffrage”</rs> – <rs type="person" key="FP" role="author">Fernando Pessoa</rs>.
+                    <anchor xml:id="A6"/>
+                </item>
                 <item>
                     <label>6.</label>
                     <rs type="publisher">Williams <choice>
@@ -105,20 +121,20 @@
                         </choice> Norgate</rs> – <rs type="institution">Home University Library</rs>.</item>
                 <item>
                     <label>7.</label>
-                    <rs type="work">“Protocols of the Learned Elders of Zion”</rs> – with commentaries. <metamark function="addition-anchor">x</metamark>
-                    <metamark rend="line" function="addition" target="#a1"/>
+                    <rs type="text">“Protocols of the Learned Elders of Zion”</rs> – with commentaries. <metamark function="addition-anchor">x</metamark>
+                    <metamark rend="line" function="addition" target="#A7"/>
                 </item>
                 <item>
                     <label>8.</label>
-                    <rs type="work">Epigrammas Portuguese</rs>.</item>
+                    <rs type="text">Epigrammas Portuguese</rs>.</item>
                 <item>
                     <label>9.</label>
-                    <rs type="work">“Introdução ao Problema Portuguez”</rs>.</item>
+                    <rs type="text">“Introdução ao Problema Portuguez”</rs>.</item>
                 <item>
                     <label>10.</label>
-                    <rs type="work">“Epithalamium, Five Songs”</rs>.</item>
+                    <rs type="text">“Epithalamium, Five Songs”</rs>.</item>
             </list>
-            <p rend="indent" xml:id="a1">
+            <p rend="indent" xml:id="A7">
                 <metamark function="addition-anchor">x</metamark> Reclames por annuncios, placards, circulares<lb/>
                 (a padres e entidades analogas) — <metamark rend="line" function="addition" target="#a2"/>
             </p>
@@ -126,7 +142,7 @@
                 <rs type="person">
                     <hi rend="underline">Homem Christo</hi>
                 </rs> (his printing office).</p>
-            <p rend="indent" xml:id="a2">Israel infandum <choice>
+            <p rend="indent" xml:id="A8">Israel infandum <choice>
                     <abbr>n<am>.</am>
                     </abbr>
                     <expan>n<ex>efas</ex>
@@ -135,26 +151,16 @@
            Prophecia de <rs type="person">Lehnin</rs>
             </p>
             <p>
-                <rs type="work">“Protocolos dos Sabios de Sião”</rs>, traduzidos e commentados<lb/>
-                <seg rend="indent">por <rs type="person">
-                        <choice>
-                            <abbr>A<am>.</am>
-                            </abbr>
-                            <expan>?</expan>
-                        </choice>
-                        <choice>
-                            <abbr>L<am>.</am>
-                            </abbr>
-                            <expan>?</expan>
-                        </choice>
-                        <choice>
-                            <abbr>R<am>.</am>
-                            </abbr>
-                            <expan>?</expan>
-                        </choice>
-                    </rs>
+                <rs type="text">“Protocolos dos Sabios de Sião”</rs>, traduzidos e commentados<lb/>
+                <seg rend="indent">por <rs type="person">A.L.R.</rs>
                 </seg>
             </p>
+                <spanGrp>
+                    <span type="correlation" from="#A1" to="#A2"/>
+                    <span type="correlation" from="#A3" to="#A4"/>
+                    <span type="correlation" from="#A5" to="#A6"/>
+                </spanGrp>
+            </div>
         </body>
     </text>
 </TEI>

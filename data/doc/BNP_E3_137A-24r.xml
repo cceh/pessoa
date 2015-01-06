@@ -6,6 +6,21 @@
             <titleStmt>
                 <title>BNP/E3 137A-24<hi rend="superscript">r</hi>
                 </title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Transcrição, Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Isabel Figueiredo-Iken</name>
+                </respStmt>
             </titleStmt>
             <publicationStmt>
                 <p>Publication Information</p>
@@ -21,18 +36,6 @@
                             <author>
                                 <rs type="person" key="FP">Fernando Pessoa</rs>
                             </author>
-                            <respStmt>
-                                <resp>Transcrição, Edição</resp>
-                                <name>Pedro Sepúlveda</name>
-                            </respStmt>
-                            <respStmt>
-                                <resp>Codificação</resp>
-                                <name>Ulrike Henny</name>
-                            </respStmt>
-                            <respStmt>
-                                <resp>Codificação</resp>
-                                <name>Isabel Figueiredo-Iken</name>
-                            </respStmt>
                             <note type="genre">
                                 <rs type="genre" key="lista_editorial">Lista editorial</rs>
                             </note>
@@ -43,7 +46,6 @@
                         <origin>
                             <p>
                                 <origDate when="1921" cert="medium">c. 1921</origDate>
-                                <origPlace/>
                             </p>
                         </origin>
                     </history>
@@ -56,127 +58,174 @@
     </facsimile>
     <text xml:id="bnp-e3-137a-24r">
         <body>
-            <p>
+            <div>
                 <list>
                     <item>
-                        <rs type="work">“English Poems, I &amp; II” (Antinous, Inscriptions)</rs>. <rs type="person" key="FP" role="author">Fernando
+                        <anchor xml:id="A1"/>
+                        <rs type="text">“English Poems, I &amp; II” (Antinous, Inscriptions)</rs>. <rs type="person" key="FP" role="author">Fernando
                   <lb/>
                             <seg rend="indent">Pessoa</seg>
-                        </rs>.</item>
+                        </rs>.
+                        <anchor xml:id="A2"/>
+                    </item>
                     <item>
-                        <rs type="work">“English Poems, III &amp; IV” (Epithalamium, Five Songs)</rs>. <rs type="person" key="FP" role="author">Fer<pc>-</pc>
+                        <anchor xml:id="A3"/>
+                        <rs type="text">“English Poems, III &amp; IV” (Epithalamium, Five Songs)</rs>. <rs type="person" key="FP" role="author">Fer<pc>-</pc>
                             <lb/>
                             <seg rend="indent">nando
                   Pessoa</seg>
-                        </rs>. </item>
+                        </rs>. 
+                        <anchor xml:id="A4"/>
+                    </item>
                     <item>
-                        <rs type="work">“English Poems, V.” (Elegy)</rs>. <rs type="person" key="FP" role="author">Fernando Pessoa</rs>.</item>
+                        <anchor xml:id="A5"/>
+                        <rs type="text">“English Poems, V.” (Elegy)</rs>. <rs type="person" key="FP" role="author">Fernando Pessoa</rs>.
+                        <anchor xml:id="A6"/>
+                    </item>
                     <item>
-                        <rs type="work">“English Sonnets, Book I”</rs>. <rs type="person" key="FP" role="author">Fernando Pessoa</rs>.</item>
+                        <anchor xml:id="A7"/>
+                        <rs type="text">“English Sonnets, Book I”</rs>. <rs type="person" key="FP" role="author">Fernando Pessoa</rs>.
+                        <anchor xml:id="A8"/>
+                    </item>
                     <item>
-                        <rs type="work">“English Sonnets, Book II”</rs>. <rs type="person" key="FP" role="author">Fernando Pessoa</rs>.</item>
+                        <anchor xml:id="A9"/>
+                        <rs type="text">“English Sonnets, Book II”</rs>. <rs type="person" key="FP" role="author">Fernando Pessoa</rs>.
+                        <anchor xml:id="A10"/>
+                    </item>
                     <item>
-                        <rs type="work">“Theory of Political Suffrage”</rs>. <rs type="person" key="FP" role="author">Fernando Pessoa</rs>.</item>
+                        <anchor xml:id="A11"/>
+                        <rs type="text">“Theory of Political Suffrage”</rs>. <rs type="person" key="FP" role="author">Fernando Pessoa</rs>.
+                        <anchor xml:id="A12"/>
+                    </item>
                     <item>
-                        <rs type="work">“Prometheus Revinctus – A Dramatic Poem<del rend="overtyped">s</del>
+                        <anchor xml:id="A13"/>
+                        <rs type="text">“Prometheus Revinctus – A Dramatic Poem<del rend="overtyped">s</del>
                             <add resp="PS">”</add>
                         </rs>
-                        <seg xml:space="preserve"> </seg>
-                        <rs type="person" key="FP" role="author">Fernando Pessoa</rs>.</item>
+                        <rs type="person" key="FP" role="author">Fernando Pessoa</rs>.
+                        <anchor xml:id="A14"/>
+                    </item>
                     <item>
-                        <rs type="work">“How <rs type="person">Napoleon</rs> Never Exi<subst>
+                        <rs type="text">“How <rs type="person">Napoleon</rs> Never Exi<subst>
                                 <del rend="overtyped">x</del>
                                 <add place="superimposed">s</add>
                             </subst>ted”</rs>. (<rs type="person">Pérès</rs>).
+                        <choice>
+                            <abbr>Trad<am>.</am>
+                            </abbr>
+                            <expan resp="PS">Trad<ex>ucção</ex>
+                            </expan>
+                        </choice>
+                        <supplied resp="PS" reason="omitted-in-original">
+                            <note resp="IFI">o nome do tradutor não foi citado pelo autor</note>
+                        </supplied>
+                    </item>
+                    <item>
+                        <anchor xml:id="A15"/>
+                        <rs type="text">“The Student of <rs type="place" key="salamanca">Salamanca</rs>”</rs>. (<rs type="person">Espronceda</rs>). <choice>
+                            <abbr>Trad<am>.</am>
+                            </abbr>
+                            <expan resp="PS">Trad<ex>ucção</ex>
+                            </expan>
+                        </choice>
+                        <rs type="person" key="FP" role="translator">Fernando<lb/>
+                            <seg rend="indent">Pessoa</seg>
+                        </rs>.
+                        <anchor xml:id="A16"/>
+                    </item>
+                    <item>
+                        <anchor xml:id="A17"/>
+                        <rs type="text">“Sonnets of <rs type="person">Camoens</rs>”</rs>. <choice>
+                            <abbr>Trad<am>.</am>
+                            </abbr>
+                            <expan resp="PS">Trad<ex>ucção</ex>
+                            </expan>
+                        </choice>
+                        <rs type="person" key="FP" role="translator">Fernando Pessoa</rs>.
+                        <anchor xml:id="A18"/>
+                    </item>
+                    <item>
+                        <anchor xml:id="A19"/>
+                        <rs type="text">«Sonnets of Quental”</rs>. <choice>
+                            <abbr>Trad<am>.</am>
+                            </abbr>
+                            <expan resp="PS">Trad<ex>ucção</ex>
+                            </expan>
+                        </choice>
+                        <rs type="person" key="FP" role="translator">Fernando Pessoa</rs>.
+                        <anchor xml:id="A20"/>
+                    </item>
+                    <item>
+                        <rs type="work" key="O4"><rs type="text">“Complete Poems of <rs type="person" key="AC" role="author">Alberto Caeiro</rs>”</rs></rs>. <choice>
+                            <abbr>Trad<am>.</am>
+                            </abbr>
+                            <expan resp="PS">Trad<ex>ucção</ex>
+                            </expan>
+                        </choice>
+                        <rs type="person">Thomas Crosse</rs>.
+                    </item>
+                    <item>
+                        <rs type="text">“Songs”</rs> (<rs type="person">Antonio Botto</rs>).
                   <choice>
                             <abbr>Trad<am>.</am>
                             </abbr>
                             <expan resp="PS">Trad<ex>ucção</ex>
                             </expan>
                         </choice>
-                        <seg xml:space="preserve"> </seg>
                         <supplied resp="PS" reason="omitted-in-original">
                             <note resp="IFI">o nome do tradutor não foi citado pelo autor</note>
                         </supplied>
                     </item>
                     <item>
-                        <rs type="work">“The Student of <rs type="place" key="salamanca">Salamanca</rs>”</rs>. (<rs type="person">Espronceda</rs>). <choice>
+                        <anchor xml:id="A21"/>
+                        <rs type="text">“Songs from the Old Portuguese Song-Books”</rs>. <choice>
                             <abbr>Trad<am>.</am>
                             </abbr>
                             <expan resp="PS">Trad<ex>ucção</ex>
                             </expan>
                         </choice>
-                        <seg xml:space="preserve"> </seg>
                         <rs type="person" key="FP" role="translator">Fernando<lb/>
                             <seg rend="indent">Pessoa</seg>
-                        </rs>.</item>
-                    <item>
-                        <rs type="work">“Sonnets of <rs type="person">Camoens</rs>”</rs>. <choice>
-                            <abbr>Trad<am>.</am>
-                            </abbr>
-                            <expan resp="PS">Trad<ex>ucção</ex>
-                            </expan>
-                        </choice>
-                        <seg xml:space="preserve"> </seg>
-                        <rs type="person" key="FP" role="translator">Fernando Pessoa</rs>.</item>
-                    <item>
-                        <rs type="work">«Sonnets of Quental”</rs>. <choice>
-                            <abbr>Trad<am>.</am>
-                            </abbr>
-                            <expan resp="PS">Trad<ex>ucção</ex>
-                            </expan>
-                        </choice>
-                        <seg xml:space="preserve"> </seg>
-                        <rs type="person" key="FP" role="translator">Fernando Pessoa</rs>.</item>
-                    <item>
-                        <rs type="work">“Complete Poems of <rs type="person" key="AC" role="author">Alberto Caeiro</rs>”</rs>. <choice>
-                            <abbr>Trad<am>.</am>
-                            </abbr>
-                            <expan resp="PS">Trad<ex>ucção</ex>
-                            </expan>
-                        </choice>
-                        <seg xml:space="preserve"> </seg>
-                        <rs type="person">Thomas Crosse</rs>.</item>
-                    <item>
-                        <rs type="work">“Songs”</rs> (<rs type="person">Antonio Botto</rs>).
-                  <choice>
-                            <abbr>Trad<am>.</am>
-                            </abbr>
-                            <expan resp="PS">Trad<ex>ucção</ex>
-                            </expan>
-                        </choice>
-                        <seg xml:space="preserve"> </seg>
-                        <supplied resp="PS" reason="omitted-in-original">
-                            <note resp="IFI">o nome do tradutor não foi citado pelo autor</note>
-                        </supplied>
+                        </rs>.
+                        <anchor xml:id="A22"/>
                     </item>
                     <item>
-                        <rs type="work">“Songs from the Old Portuguese Song-Books”</rs>. <choice>
-                            <abbr>Trad<am>.</am>
-                            </abbr>
-                            <expan resp="PS">Trad<ex>ucção</ex>
-                            </expan>
-                        </choice>
-                        <seg xml:space="preserve"> </seg>
-                        <rs type="person" key="FP" role="translator">Fernando<lb/>
-                            <seg rend="indent">Pessoa</seg>
-                        </rs>.</item>
+                        <anchor xml:id="A23"/>
+                        <rs type="text">“The Duke of Parma – A Tragedy”</rs>. <rs type="person" key="FP" role="author">Fernando Pessoa</rs>.
+                        <anchor xml:id="A24"/>
+                    </item>
                     <item>
-                        <rs type="work">“The Duke of Parma – A Tragedy”</rs>. <rs type="person" key="FP" role="author">Fernando Pessoa</rs>.</item>
-                    <item>
-                        <rs type="work">“All About <rs type="place" key="portugal">Portugal</rs>”</rs>. <choice>
+                        <anchor xml:id="A25"/>
+                        <rs type="text">“All About <rs type="place" key="portugal">Portugal</rs>”</rs>. <choice>
                             <abbr>Ed<am>.</am>
                             </abbr>
                             <expan resp="PS">Ed<ex>ição</ex>
                             </expan>
                         </choice>
-                        <seg xml:space="preserve"> </seg>
                         <rs type="person" key="FP" role="editor">Fernando Pessoa</rs>
-                  (special).</item>
+                  (special).
+                        <anchor xml:id="A26"/>
+                    </item>
                     <item>
-                        <rs type="journal">“The Southern Review”</rs> (quarterly or half-yearly).</item>
+                        <rs type="journal">“The Southern Review”</rs> (quarterly or half-yearly).
+                    </item>
                 </list>
-            </p>
+                <spanGrp>
+                    <span type="correlation" from="#A1" to="#A2"/>
+                    <span type="correlation" from="#A3" to="#A4"/>
+                    <span type="correlation" from="#A5" to="#A6"/>
+                    <span type="correlation" from="#A7" to="#A8"/>
+                    <span type="correlation" from="#A9" to="#A10"/>
+                    <span type="correlation" from="#A11" to="#A12"/>
+                    <span type="correlation" from="#A13" to="#A14"/>
+                    <span type="correlation" from="#A15" to="#A16"/>
+                    <span type="correlation" from="#A17" to="#A18"/>
+                    <span type="correlation" from="#A19" to="#A20"/>
+                    <span type="correlation" from="#A21" to="#A22"/>
+                    <span type="correlation" from="#A23" to="#A24"/>
+                    <span type="correlation" from="#A25" to="#A26"/>
+                </spanGrp>
+            </div>
         </body>
     </text>
 </TEI>

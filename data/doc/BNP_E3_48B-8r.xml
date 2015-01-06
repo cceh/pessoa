@@ -6,6 +6,21 @@
             <titleStmt>
                 <title>BNP/E3 48B-8<hi rend="superscript">r</hi>
                 </title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Transcrição, Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Isabel Figueiredo-Iken</name>
+                </respStmt>
             </titleStmt>
             <publicationStmt>
                 <p>Publication Information</p>
@@ -21,18 +36,6 @@
                             <author>
                                 <rs type="person" key="FP">Fernando Pessoa</rs>
                             </author>
-                            <respStmt>
-                                <resp>Transcrição, Edição</resp>
-                                <name>Pedro Sepúlveda</name>
-                            </respStmt>
-                            <respStmt>
-                                <resp>Codificação</resp>
-                                <name>Ulrike Henny</name>
-                            </respStmt>
-                            <respStmt>
-                                <resp>Codificação</resp>
-                                <name>Isabel Figueiredo-Iken</name>
-                            </respStmt>
                             <note type="genre">
                                 <rs type="genre" key="lista_editorial">Lista
                                     editorial</rs>
@@ -43,8 +46,7 @@
                     <history>
                         <origin>
                             <p>
-                                <origDate notBefore="1925">post 1925</origDate>
-                                <origPlace/>
+                                <origDate notBefore="1925"><hi rend="italic">post</hi> 1925</origDate>
                             </p>
                         </origin>
                     </history>
@@ -53,45 +55,53 @@
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0015_8_t24-C-R0150.jpq"/>
+        <graphic url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0015_8_t24-C-R0150.jpg"/>
     </facsimile>
     <text xml:id="bnp-e3-48b-8r">
         <body>
             <div>
                 <list>
                     <item>
+                        <anchor xml:id="A1"/>
                         <rs type="person" key="FP" role="editor">Fernando Pessoa</rs> – <lb/>
                         <ab rend="indent">
-                            <rs type="work">Os Poemas Completos de <rs type="person" key="AC" role="author">Alberto <lb/> Caeiro</rs>
-                            </rs>
-                            <lb/> Com um <rs type="work-part">prefacio do <rs type="person" key="RR" role="author">Dr. Ricardo<lb/> Reis</rs>
+                            <rs type="work" key="O4"><rs type="text" xml:id="T1">Os Poemas Completos de <rs type="person" key="AC" role="author">Alberto <lb/> Caeiro</rs>
+                            </rs></rs>
+                            <lb/> Com um <rs type="text" xml:id="T2">prefacio do <rs type="person" key="RR" role="author">Dr. Ricardo<lb/> Reis</rs>
                             </rs>, <seg>e <add place="above" n="2">alguns</add> outros</seg>
-                            apontamentos</ab>
+                            apontamentos
+                        </ab>
+                        <anchor xml:id="A2"/>
                     </item>
                 </list>
                 <metamark rend="line" function="distinct"/>
                 <list>
                     <item>
+                        <anchor xml:id="A3"/>
                         <rs type="person" key="FP" role="editor">Fernando Pessoa</rs> – <lb/>
                         <ab rend="indent">
-                            <rs type="work-part">Accessorios</rs>
+                            <rs type="title">Accessorios</rs>
                             <lb/>
-                            <rs type="work-part">Versos de <rs type="person" key="AC" role="author">Alvaro de Campos</rs>
+                            <rs type="title">Versos de <rs type="person" key="AC" role="author">Alvaro de Campos</rs>
                             </rs>
                         </ab>
+                        <anchor xml:id="A4"/>
                     </item>
                 </list>
                 <metamark rend="line" function="distinct"/>
                 <list>
                     <item>
                         <label>1.</label>
-                        <seg xml:space="preserve"> </seg>
-                        <rs type="work">Theoria do Suffragio Politico</rs>.</item>
+                        <rs type="text">Theoria do Suffragio Politico</rs>.</item>
                     <item>
                         <label>2.</label>
-                        <seg xml:space="preserve"> </seg>
-                        <rs type="work">A Opinião Publica</rs>.</item>
+                        <rs type="text">A Opinião Publica</rs>.</item>
                 </list>
+                <spanGrp>
+                    <span type="partOf" target="#T2 #T1" />
+                    <span type="correlation" from="#A1" to="#A2"/>
+                    <span type="correlation" from="#A3" to="#A4"/>
+                </spanGrp>
             </div>
         </body>
     </text>
