@@ -7,6 +7,7 @@ declare variable $exist:prefix external;
 declare variable $exist:root external;
 
 import module namespace doc="http://localhost:8080/exist/apps/pessoa/doc" at "modules/doc.xqm";
+import module namespace author="http://localhost:8080/exist/apps/pessoa/author" at "modules/author.xqm";
 
 if ($exist:path eq "/") then
     (: forward root path to index.xql :)
@@ -32,6 +33,20 @@ else if (contains($exist:path, "doc")) then
 			<forward url="{$exist:controller}/modules/view.xql"/>
 		</error-handler>
     </dispatch>)
+else if (contains($exist:path, "author")) then
+    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <forward url="{$exist:controller}/author.html">
+            <add-parameter name="author" value="{substring-before(substring-after($exist:path, 'author/'), '/')}" />
+            <add-parameter name="text-type" value="{$exist:resource}" />
+        </forward>
+        <view>
+            <forward url="{$exist:controller}/modules/view.xql"/>
+        </view>
+		<error-handler>
+			<forward url="{$exist:controller}/error-page.html" method="get"/>
+			<forward url="{$exist:controller}/modules/view.xql"/>
+		</error-handler>
+    </dispatch>
 else if (ends-with($exist:resource, ".html")) then
     (: the html page is run through view.xql to expand templates :)
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">

@@ -62,15 +62,15 @@
                 <list>
                     <item>
                         <label>1.</label>
-                        <anchor xml:id="A1"/>
+                        <rs type="work" key="O2">
                         <rs type="person" key="AC" role="author">
                             <hi rend="underline">Alberto Caeiro</hi>
-                        </rs> – “<rs type="title">O Guardador de Rebanhos.</rs>”
-                        <anchor xml:id="A2"/>
+                        </rs> – “<rs type="text">O Guardador de Rebanhos.</rs>”
+                        </rs>
                     </item>
                     <item>
                         <label>2.</label>
-                        <anchor xml:id="A3"/>
+                        <anchor xml:id="A1"/>
                         <rs type="text">Entrevista com <rs type="person" key="AC" role="topic">
                                 <choice>
                                     <abbr>A<am>.</am>
@@ -81,11 +81,11 @@
                         </rs>, talvez no <rs type="journal">
                             <hi rend="underline">Theatro</hi>
                         </rs>.
-                        <anchor xml:id="A4"/>
+                        <anchor xml:id="A2"/>
                     </item>
                     <item>
                         <label>3.</label>
-                        <anchor xml:id="A5"/>
+                        <anchor xml:id="A3"/>
                         <rs type="text">Artigo sobre <rs type="person" key="AC" role="topic">
                                 <choice>
                                     <abbr>A<am>.</am>
@@ -96,11 +96,11 @@
                         </rs>, n’ <rs type="journal">
                             <hi rend="underline">A Aguia</hi>
                         </rs>
-                        <anchor xml:id="A6"/>
+                        <anchor xml:id="A4"/>
                     </item>
                     <item>
                         <label>4.</label>
-                        <anchor xml:id="A7"/>
+                        <anchor xml:id="A5"/>
                         <rs type="text">Artigo sobre <rs type="person" key="AC" role="topic">Caeiro</rs>
                         </rs> no “<rs type="journal">
                             <choice>
@@ -115,11 +115,11 @@
                                 <expan resp="UH">P<ex>ower</ex>
                                 </expan>
                             </choice>’s Weekly.</rs>” – ?.
-                        <anchor xml:id="A8"/>
+                        <anchor xml:id="A6"/>
                     </item>
                     <item>
                         <label>5.</label>
-                        <anchor xml:id="A9"/>
+                        <rs type="work" key="O2">
                         <choice>
                             <abbr>Trad<am>.</am>
                             </abbr>
@@ -138,14 +138,14 @@
                                 <expan resp="UH">C<ex>aeiro</ex>
                                 </expan>
                             </choice>
-                        </rs> – <rs type="title">
+                        </rs> – <rs type="text">
                             <hi rend="underline">The Keeper of Sheep</hi>
                         </rs>
-                        <anchor xml:id="A10"/>
+                        </rs>
                     </item>
                     <item>
                         <label>6.</label>
-                        <anchor xml:id="A11"/>
+                        <rs type="work" key="O2">
                         <choice>
                             <abbr>
                                 <metamark rend="line" function="ditto"/>
@@ -153,7 +153,7 @@
                             <expan>Traducção de <rs type="person" key="AC" role="author">Alberto Caeiro</rs>
                             </expan>
                         </choice> – 
-                        <rs type="title">
+                        <rs type="text">
                             <hi rend="underline">Le Gardien d<choice>
                                     <seg n="1">es</seg>
                                     <seg n="2">
@@ -161,28 +161,25 @@
                                     </seg>
                                 </choice> Troupeaux</hi>
                         </rs>
-                        <anchor xml:id="A12"/>
+                        </rs>
                     </item>
                     <item>
                         <label>7.</label> Tentar 
-                        <anchor xml:id="A13"/>
+                        <anchor xml:id="A7"/>
                         <rs type="text" xml:id="T1" next="#T2">artigo</rs> no <rs type="journal">
                             <hi rend="underline">Mercure de France</hi>
                         </rs>, <rs type="text" xml:id="T2" prev="#T1">sobre<lb/>
                             <rs type="person" key="AC" role="topic">Alberto Caeiro</rs>
                         </rs>.
-                        <anchor xml:id="A14"/>
+                        <anchor xml:id="A8"/>
                     </item>
                 </list>
                 <gap reason="selection" unit="lines" extent="3"/>
                 <spanGrp>
                     <span type="correlation" from="#A1" to="#A2"/>
                     <span type="correlation" from="#A3" to="#A4"/>
-                    <span type="correlation" from="#A5" to="#A6"/>
-                    <span type="correlation" from="#A7" to="#A8" cert="medium"/>
-                    <span type="correlation" from="#A9" to="#A10"/>
-                    <span type="correlation" from="#A11" to="#A12"/>
-                    <span type="correlation" from="#A13" to="#A14"/>
+                    <span type="correlation" from="#A5" to="#A6" cert="medium"/>
+                    <span type="correlation" from="#A7" to="#A8"/>
                 </spanGrp>
             </div>
         </body>
