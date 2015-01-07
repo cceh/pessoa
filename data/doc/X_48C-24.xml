@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>X [48C-24]</title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Transcrição, Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Isabel Figueiredo-Iken</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <institution>Biblioteca Nacional de Portugal</institution>
+                        <idno>X [48C-24]</idno>
+                    </msIdentifier>
+                    <msContents>
+                        <msItemStruct>
+                            <author>
+                                <rs type="person" key="FP">Fernando Pessoa</rs>
+                            </author>
+                            <note type="genre">
+                                <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                            </note>
+                            <textLang mainLang="pt"/>
+                        </msItemStruct>
+                    </msContents>
+                    <history>
+                        <origin>
+                            <p>
+                                <origDate when="1915" cert="medium">c. 1915</origDate>
+                            </p>
+                        </origin>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="bn-acpc-e-e3-48c-1-50_JPG_24-C-R0150/bn-acpc-e-e3-48c-1-50_0059_24_t24-C-R0150.jpg"/>
+    </facsimile>
+    <text xml:id="x-48c-24">
+        <body>
+            <div>
+                <list>
+                    <head><hi rend="underline">Bibliotheca de Cultura Cosmopolita.</hi></head>
+                    <item>
+                        <rs type="work" key="O2"><rs type="person" key="AC" role="author">Alberto Caeiro</rs>: <rs type="text">“O Guardador de Rebanhos”</rs></rs>.
+                    </item>
+                    <item>
+                        <anchor xml:id="A1"/>
+                        <rs type="person" key="RR" role="author">Ricardo Reis</rs>: <rs type="text">“Odes — <choice>
+                            <abbr>Liv<am>.</am></abbr>
+                            <expan>Liv<ex>ros</ex></expan>
+                        </choice> I e II”</rs>.
+                        <anchor xml:id="A2"/>
+                    </item>
+                    <item>
+                        <anchor xml:id="A3"/>
+                        <choice>
+                            <abbr><metamark rend="line" function="ditto"/></abbr>
+                            <expan><rs type="person" key="RR" role="author">Ricardo Reis</rs></expan>
+                        </choice> <rs type="text">“Odes — <choice>
+                            <abbr>Liv<am>.</am></abbr>
+                            <expan>Liv<ex>ros</ex></expan>
+                        </choice>III e IV.”</rs>
+                        <anchor xml:id="A4"/>
+                    </item>
+                    <item>
+                        <choice>
+                            <abbr><metamark rend="line" function="ditto"/></abbr>
+                            <expan><rs type="person" key="RR" role="author">Ricardo Reis</rs></expan>
+                        </choice>
+                        <rs type="title">“O Regresso dos Deuses”</rs>.
+                    </item>
+                    <item>
+                        <anchor xml:id="A5"/>
+                        <rs type="person" key="AdC" role="author">Alvaro de Campos</rs>: <rs type="text">“Cinco Odes Triumphaes”</rs>.
+                        <anchor xml:id="A6"/>
+                    </item>
+                    <item>
+                        <anchor xml:id="A7"/>
+                        <choice>
+                            <abbr><metamark rend="line" function="ditto"/></abbr>
+                            <expan><rs type="person" key="AdC" role="author">Alvaro de Campos</rs></expan>
+                        </choice>: <rs type="text">“O Sensacionismo”</rs>.
+                        <anchor xml:id="A8"/>
+                    </item>
+                    <item>
+                        <anchor xml:id="A9"/>
+                        <choice>
+                            <abbr><metamark rend="line" function="ditto"/></abbr>
+                            <expan><rs type="person" key="AdC" role="author">Alvaro de Campos</rs></expan>
+                        </choice>: <rs type="text">“Modernas Correntes na Literatura<lb/>Portugueza”</rs>.
+                        <anchor xml:id="A10"/>
+                    </item>
+                </list>
+                <spanGrp>
+                    <span type="correlation" from="#A1" to="#A2"/>
+                    <span type="correlation" from="#A3" to="#A4"/>
+                    <span type="correlation" from="#A5" to="#A6"/>
+                    <span type="correlation" from="#A7" to="#A8"/>
+                    <span type="correlation" from="#A9" to="#A10"/>
+                </spanGrp>
+            </div>
+        </body>
+    </text>
+</TEI>
