@@ -22,6 +22,7 @@
                 <exclude name="**/*.properties"/>
                 <exclude name="**/*.tmpl"/>
                 <exclude name="**/*.md"/>
+                <exclude name="*.xpr"/>
                 <exclude name="**/.gitignore"/>
             </fileset>
         </xdb:store>
@@ -42,8 +43,10 @@
                 <exclude name="**/*.properties"/>
                 <exclude name="**/*.tmpl"/>
                 <exclude name="**/*.md"/>
+                <exclude name="*.xpr"/>
                 <exclude name="**/.gitignore"/>
             </fileset>
         </xdb:store>
+        <xdb:xquery uri="${uri}" queryfile="post-install.xql" user="${user}" password="${password}"/>
     </target>
 </project>

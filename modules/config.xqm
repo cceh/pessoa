@@ -13,17 +13,13 @@ declare namespace templates="http://exist-db.org/xquery/templates";
 declare namespace repo="http://exist-db.org/xquery/repo";
 declare namespace expath="http://expath.org/ns/pkg";
 
-(:declare variable $config:webapp-root :="http://projects.cceh.uni-koeln.de/pessoa";:)
-declare variable $config:webapp-root :="http://localhost:8080/exist/apps/pessoa";
+declare variable $config:conf-file := doc("/db/apps/pessoa/conf.xml");
+declare variable $config:webapp-root := $config:conf-file//webapp-root/data(.);
 (: declare variable $config:file-path := "" :)
-(:declare variable $config:request-path := concat($config:webapp-root, "/", substring-after(request:get-uri(), '/apps/pessoa'));:)
-declare variable $config:request-path := concat($config:webapp-root, "/", substring-after(request:get-uri(), '/exist/apps/pessoa'));
-declare variable $config:webfile-path := "http://projects.cceh.uni-koeln.de/pessoa-images";
+declare variable $config:request-path := concat($config:webapp-root, "/", substring-after(request:get-uri(), $config:conf-file//request-path/data(.)));
+declare variable $config:webfile-path := $config:conf-file//webfile-path/data(.);
 
-(: [16:23:28] Ulrike Henny:  declare variable $config:webapp-root :="http://localhost:8080/exist/apps/pessoa";
-[16:24:01] Ulrike Henny: declare variable $config:request-path := concat($config:webapp-root, "/", substring-after(request:get-uri(), '/exist/apps/pessoa'));
-    Determine the application root collection from the current module load path.
-:)
+(: Determine the application root collection from the current module load path. :)
 declare variable $config:app-root := 
     let $rawPath := system:get-module-load-path()
     let $modulePath :=
