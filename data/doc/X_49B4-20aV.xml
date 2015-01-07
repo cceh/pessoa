@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>X [49B<hi rend="superscript">4</hi>-20a<hi rend="superscript">V</hi>]</title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Transcrição, Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Isabel Figueiredo-Iken</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <institution>Biblioteca Nacional de Portugal</institution>
+                        <idno>X [49B4-20aV]</idno>
+                    </msIdentifier>
+                    <msContents>
+                        <msItemStruct>
+                            <author>
+                                <rs type="person" key="FP">Fernando Pessoa</rs>
+                            </author>
+                            <note type="genre">
+                                <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                            </note>
+                            <textLang mainLang="pt"/>
+                        </msItemStruct>
+                    </msContents>
+                    <history>
+                        <origin>
+                            <p>
+                                <origDate when="1915" cert="medium">c. 1915</origDate>
+                            </p>
+                        </origin>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic
+            url="bn-acpc-e-e3-49b-4-1-101_JPG_24-C-R0150/bn-acpc-e-e3-49b-4-1-101_0042_20av_t24-C-R0150.jpg"
+        />
+    </facsimile>
+    <text xml:id="x-49b4-20av">
+        <body>
+            <div>
+                <gap reason="selection" unit="lines" extent="13"/>
+                <list>
+                    <head><hi rend="underline">PAGINAS NECESSARIAS.</hi></head>
+                    <item>
+                        <label>1.</label>
+                        <rs type="person"><hi rend="underline">Antonio Móra</hi></rs> — <rs type="text">Dissertação 
+                            <subst>
+                                <del rend="overtyped" n="1">em</del>
+                                <add n="2">a</add>
+                            </subst> favôr da <rs type="place">Allemanha</rs> <lb/> e do seu procedimento na guerra
+                            pre<pc>-</pc><lb/>sente</rs>.</item>
+                    <item>
+                        <label>2.</label>
+                        <anchor xml:id="A1"/>
+                        <rs type="person" key="FP" role="author"><hi rend="underline">Fernando Pessôa</hi></rs> — <rs type="text">A Guerra, Estudo
+                        Sociologico</rs>.
+                        <anchor xml:id="A2"/>
+                    </item>
+                    <item>
+                        <label>3.</label>
+                        <rs type="person"><hi rend="underline">Antonio Móra</hi></rs> — <rs type="text">Proleg<subst><del rend="overtyped">e</del><add>ó</add></subst>menos a uma
+                        reformação do <lb/> paganismo</rs>.
+                    </item>
+                    <item>
+                        <label>4.</label>
+                        <anchor xml:id="A3"/>
+                        <rs type="person" key="FP" role="author"><hi rend="underline">Fernando Pessôa</hi></rs> — <rs type="text">O caso de “Orpheu”</rs>.
+                        <anchor xml:id="A4"/>
+                    </item>
+                    <item>
+                        <label>5.</label>
+                        <supplied resp="PS" reason="omitted-in-original"/>
+                    </item>
+                </list>
+                <spanGrp>
+                    <span type="correlation" from="#A1" to="#A2" />
+                    <span type="correlation" from="#A3" to="#A4" />
+                </spanGrp>
+            </div>
+        </body>
+    </text>
+</TEI>
