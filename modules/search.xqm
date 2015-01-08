@@ -132,40 +132,53 @@ order by ft:score($m) descending
 declare %templates:wrap function search:profisearch($node as node(), $model as map(*), $term as xs:string?) as map(*) {
     
         (: Erstellung der Kollektion, sortiert ob "Publiziert" oder "Nicht Publiziert" :)
-        
+        if(exists($term)) then
         let $db := search:set_db()
         
         (: Unterscheidung nach den Sprachen, ob "Und" oder "ODER" :)
         let $r_lang := if(search:get-parameters("lang_ao") = "or") 
                        then search:lang_or($db)
                        else search:lang_and($db)
+                       
         (: Sortierung nach Genre :)
-        let $r_genre := if(search:get-parameters("genre")!="") then search:search_range("genre",$r_lang)
+    (:    let $r_genre := if(search:get-parameters("genre")!="") then search:search_range("genre",$r_lang)
                         else()                        
-                        
+      :)                  
         (:Suche nach "Erwähnten" Rollen:)
-        let $r_mention := if(search:get-parameters("notional")="mentioned") then search:author_build($r_lang)
+     (:   let $r_mention := if(search:get-parameters("notional")="mentioned") then search:author_build($r_lang)
                         else ()
         let $r_real := if(search:get-parameters("notional") ="real") then search:search_range("person",$r_lang)
                         else ()
-                        (:
+     :)                 (:
         let $r_mention := if(search:get-parameters("notional")="mentioned") then search:search_range("person",$r_lang)
                         else ():)
         
         (: Datumssuche :)
-        let $r_date := if(search:get-parameters("before") != "" or search:get-parameters("after") != "") then search:date_build($r_lang)
+     (:   let $r_date := if(search:get-parameters("before") != "" or search:get-parameters("after") != "") then search:date_build($r_lang)
                         else ()
         
         let $r_all := ($r_lang,$r_genre,$r_mention,$r_real,$r_date)
-        
+       :)
+       let $r_all := $r_lang
         return map{
             "r_all"     := $r_all,
-            "r_lang"    := $r_lang,
+            "r_lang"    := $r_lang (: , :)
+          (:  
             "r_genre"   := $r_genre,
             "r_mention" := $r_mention,
             "r_date"    := $r_date,
             "r_real"    := $r_real
+            :)
         }
+        else map{
+            "r_all"     := (),
+            "r_lang"    := () (: , :)
+         (:   "r_genre"   := (),
+            "r_mention" := (),
+            "r_date"    := (),
+            "r_real"    := ()
+           :)
+           }
         
 
 };
@@ -190,7 +203,9 @@ declare function search:get-parameters($key as xs:string) as xs:string* {
 declare function search:lang_or($db as xs:string+) as node()*{
     for $match in $db
         let $result := if(search:get-parameters("release") != "either") then  search:lang_filter_or($match,"")
-                       else (search:lang_filter_or($match,"non_public"),search:lang_filter_or($match, "public"))
+                       else  if($match = "/db/apps/pessoa/data/doc") then search:lang_filter_and($match,"non_public")
+                       else if ($match = "/db/apps/pessoa/data/pub") then search:lang_filter_and($match, "public")
+                       else ()
         return $result
 };
 
@@ -200,14 +215,14 @@ declare function search:lang_filter_or($db as xs:string, $step as xs:string?) as
             let $para := ("mainLang","otherLang")
             for $match in $para
                 let $search_terms := concat('("',$match,'"),"',$hit,'"')
-                let $search_funk := concat("//range:field-eq(",$search_terms,")")
+                let $search_funk := concat("//range:field-contains(",$search_terms,")")
                 let $search_build := concat("collection($db)",$search_funk)
                 let $result :=  util:eval($search_build)
             return $result
         else if (search:get-parameters("release")="public" or $step = "public") then 
             for $hit in search:get-parameters("lang")
                 let $search_terms := concat('("lang"),"',$hit,'"')
-                let $search_funk := concat("//range:field-eq(",$search_terms,")")
+                let $search_funk := concat("//range:field-contains(",$search_terms,")")
                 let $search_build := concat("collection($db)",$search_funk)
                 let $result :=  util:eval($search_build)
             return $result
@@ -219,34 +234,54 @@ declare function search:lang_filter_or($db as xs:string, $step as xs:string?) as
 declare function search:lang_and($db as xs:string+) as xs:string* {
     for $match in $db 
         let $result := if(search:get-parameters("release") != "either") then  search:lang_filter_and($match,"")
-                       else (search:lang_filter_and($match,"non_public"),search:lang_filter_and($match, "public"))
+                       else  if($match = "/db/apps/pessoa/data/doc") then search:lang_filter_and($match,"non_public")
+                       else if ($match = "/db/apps/pessoa/data/pub") then search:lang_filter_and($match, "public")
+                       else ()
+                       (:(search:lang_filter_and($match,"non_public"),search:lang_filter_and($match, "public")):)
         return $result
 };
 
-declare function search:lang_filter_and($db as xs:string, $step as xs:string?) as xs:string* {
+declare function search:lang_filter_and($db as xs:string, $step as xs:string?) as node()* {
         if(search:get-parameters("release")="non_public" or $step = "non_public") then
-        let $build_para := search:build_lang_para("lang")
-        let $build_term := string-join(search:get-parameters("lang"),",")
-        let $result := $build_para
-        return $result
+        
+  (:     let $build_para := search:lang_build_para("lang") :)
+   (:     let $create_db := search:lang_db() :)
+        (: DELETE ???       
+        let $build_term := string-join(search:get-parameters("lang"),",") :)
+      (:  
+        let $build_funk := concat("//range:field-eq(",$build_para,")")
+        let $build_search := concat("collection($db)",$build_funk)
+        :)
+        for $match in search:lang_build_para("lang")
+        let $build_funk := concat("//range:field-contains(",$match,")")
+        let $build_search := concat("collection($db)",$build_funk) 
+        let $result := util:eval($build_search)
+        return util:eval($build_search)
         else if (search:get-parameters("release")="public" or $step = "public") then 
-        ()
+        let $result := ()
+        return $result
         else ()
 };
 
-declare function search:build_lang_para ($para as xs:string) as xs:string* {
-    for $hit in search:get-parameters($para)
-       (: let $parameters :=  search:get-parameters($para):)
-        let $result := concat(
-                    '("',
-                        string-join(search:build_lang_para_ex(search:get-parameters($para),$hit),'","')
-                        ,'"),"',
-                        string-join(search:get-parameters("lang"),'","')
-                        ,'"')
+declare function search:lang_db() as xs:string* {
+    for $search in search:lang_build_para("lang")
+        let $build_funk := concat("//range:field-contains(",$search,")")
+        let $build_search := concat("collection($db)",$build_funk) 
+        let $result := $build_search
         return $result
 };
 
-declare function search:build_lang_para_ex($para as xs:string+, $hit as xs:string) as xs:string* {
+declare function search:lang_build_para ($para as xs:string) as xs:string* {
+    for $hit in search:get-parameters($para)
+     (: let $parameters :=  search:get-parameters($para):)
+        let $result := concat('("',
+        string-join(search:lang_build_para_ex(search:get-parameters($para),$hit),
+        '","'),'"),"',
+        string-join(search:get-parameters("lang"),'","'),'"')
+        return $result
+};
+
+declare function search:lang_build_para_ex($para as xs:string+, $hit as xs:string) as xs:string* {
         for $other in $para
             let $result := if($other = $hit) then "mainLang" else "otherLang"
             return $result
@@ -317,14 +352,14 @@ declare function search:profiresult($node as node(), $model as map(*), $sel as x
    if(exists($model(concat("r_",$sel)))) 
     then 
         for $hit in $model(concat("r_",$sel))
-        
+        (:
         return <p> Exist, {$model(concat("r_",$sel))}</p>
         else <p>Dos Not Exist </p>
-        (:)
+        :)
         let $file-name := root($hit)/util:document-name(.)            
         return <p>Exist,{$file-name}</p>            
         else <p> Dos Not exist,{$model(concat("r_",$sel))}</p>
-        :)
+        
         (:
         return <p>Exist,{$model("profi_result"),$file-name}</p>            
         else <p> Dos Not exist,{$model("profi_result")}</p>
