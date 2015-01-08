@@ -2,24 +2,28 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title class="config:app-title">App Title</title>
-        <meta class="config:app-meta"/>
-        <link class="helpers:app-root" rel="shortcut icon" href="resources/images/favicon.ico"/>
-        <link class="helpers:app-root" rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css"/>
-        <link class="helpers:app-root" rel="stylesheet" type="text/css" href="resources/css/style.css"/>
-        <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery-1.7.1.min.js"/>
-        <script class="helpers:app-root" type="text/javascript" src="resources/js/bootstrap.min.js"/>
-        <script class="helpers:app-root" type="text/javascript" src="resources/js/loadsource.js"/>
+        <meta class="config:app-meta" />
+        <link class="helpers:app-root" rel="shortcut icon" href="resources/images/favicon.ico" />
+        <link class="helpers:app-root" rel="stylesheet" type="text/css"
+            href="resources/css/bootstrap.min.css" />
+        <link class="helpers:app-root" rel="stylesheet" type="text/css"
+            href="resources/css/style.css" />
+        <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery-1.7.1.min.js"></script>
+        <script class="helpers:app-root" type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+        <script class="helpers:app-root" type="text/javascript" src="resources/js/loadsource.js"></script>
         <!-- Add mousewheel plugin (this is optional) -->
-       <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery.mousewheel-3.0.6.pack.js"/>
+        <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery.mousewheel-3.0.6.pack.js"></script>
         <!-- Add fancyBox -->
-        <link class="helpers:app-root" rel="stylesheet" href="resources/css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen"/>
-        <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery.fancybox.pack.js?v=2.1.5"/> 
-        
-        <link class="helpers:app-root" rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css"/>
-            <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery.js"></script>
-            <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery-ui.js"></script>
+        <link class="helpers:app-root" rel="stylesheet"
+            href="resources/css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+        <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery.fancybox.pack.js?v=2.1.5"></script>
 
-       <!-- <script type="text/javascript">
+        <link class="helpers:app-root" rel="stylesheet" href="resources/css/jquery-ui.css"
+            type="text/css" />
+        <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery.js"></script>
+        <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery-ui.js"></script>
+
+        <!-- <script type="text/javascript">
          $(function() {
       $( "#tabs" ).tabs();
   });
@@ -37,6 +41,9 @@
         }
         });
         });
+        
+       
+         
         </script>
         <!--<script type="text/javascript">
            	$(document).ready(function() {
@@ -45,13 +52,85 @@
             });
             
     </script> -->
+        
+        <style  type="text/css">
+
+            .container-4{
+            overflow: hidden;
+            width: 300px;
+            vertical-align: middle;
+            white-space: nowrap;
+            }
+            
+            .container-4 input#search{
+                width: 300px;
+                height: 50px;
+                background: #2b303b;
+                border: none;
+                font-size: 10pt;
+                float: left;
+                color: #fff;
+                padding-left: 15px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+              }
+
+            .container-4 input#search::-webkit-input-placeholder {
+               color: #65737e;
+            }
+            
+            .container-4 input#search:-moz-placeholder { /* Firefox 18- */
+               color: #65737e; 
+            }
+ 
+            .container-4 input#search::-moz-placeholder {  /* Firefox 19+ */
+               color: #65737e; 
+            }
+ 
+            .container-4 input#search:-ms-input-placeholder { 
+               color: #65737e; 
+            }
+
+        .container-4 button.icon{
+          -webkit-border-top-right-radius: 5px;
+          -webkit-border-bottom-right-radius: 5px;
+          -moz-border-radius-topright: 5px;
+          -moz-border-radius-bottomright: 5px;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+         
+          border: none;
+          background: #232833;
+          height: 50px;
+          width: 50px;
+          color: #4f5b66;
+          opacity: 0;
+          font-size: 10pt;
+         
+          -webkit-transition: all .55s ease;
+          -moz-transition: all .55s ease;
+          -ms-transition: all .55s ease;
+          -o-transition: all .55s ease;
+          transition: all .55s ease;
+        }
+        .container-4:hover button.icon, .container-4:active button.icon, .container-4:focus button.icon{
+            outline: none;
+            opacity: 1;
+            margin-left: -50px;
+          }
+         
+          .container-4:hover button.icon:hover{
+            background: white;
+          }
+        </style>
     </head>
     <body id="body">
         <div id="side">
             <div id="page-header">
-                <div class="flagge"/>
-                <div class="flagge"/>
-                <div class="clear"/>
+                <div class="flagge"></div>
+                <div class="flagge"></div>
+                <div class="clear"></div>
                 <h1>
                     <a class="helpers:app-root" href="index.html">
                         <span class="config:app-title">Generated page</span>
@@ -80,13 +159,37 @@
                 <li>
                     <a href="#project" role="tab" data-toggle="tab">Projeto</a>
                 </li>
-                <li>
-                    <a href="search.html" role="tab">Pesquisa</a>
+                <li>                    
+                    <!--<form action="search.hmtl" method="post" id="search2">
+                        <input name="search" type="text" size="30" maxlength="30" />
+                    </form>-->
+                    <div class="box">
+                        <div class="container-4 search:search">
+                            <input type="search" id="search" placeholder="Search..." />
+                            <button class="icon" id="button"><i class="fa fa-search" ></i></button>
+                        </div>
+                    </div>
+                    <div id="target">Click</div>
+                    <!--
+                    <div class="box">
+                        <div class="container-2">
+                            <span class="icon"><i class="fa fa-search"></i></span>
+                            <input type="search" id="search" placeholder="Search..." />
+                        </div>
+                    </div>
+                    -->
                 </li>
             </ul>
+            
+            <script>
+                $("#target").click(function() {
+                //$("#search").load("http://localhost:8080/exist/apps/pessoa/doc/search?term="+value);
+                alert("Cklicked");
+                });
+            </script>
             <div id="navi2" class="tab-content">
-                <div class="tab-pane active" id="genre">
-                    <ul class="nav-cont app:list?type=genres"/>
+                <div class="tab-pane" id="genre">
+                    <ul class="nav-cont app:list?type=genres"></ul>
                 </div>
                 <div class="tab-pane" id="chronologie">
                     <div class="divTable">
@@ -107,18 +210,17 @@
                                 <b>Linha do tempo</b>
                             </div>
                         </div>
-                        <div class="divRow app:sort-years?type=years&amp;indikator=0"/>
-                        <div class="divRow app:sort-years?type=years&amp;indikator=1"/>
-                        <div class="divRow app:sort-years?type=years&amp;indikator=2"/>
-                        <div class="divRow app:sort-years?type=years&amp;indikator=3"/>
-                        <div class="divRow app:sort-years?type=years&amp;indikator=4"/>
-                        <div class="divRow app:sort-years?type=years&amp;indikator=5"/>
-                        <div class="divRow app:sort-years?type=years&amp;indikator=6"/>
-                        <div class="divRow app:sort-years?type=years&amp;indikator=7"/>
-                        <div class="divRow app:sort-years?type=years&amp;indikator=8"/>
-                        <div class="divRow app:sort-years?type=years&amp;indikator=9"/>
+                        <div class="divRow app:sort-years?type=years&amp;indikator=0"></div>
+                        <div class="divRow app:sort-years?type=years&amp;indikator=1"></div>
+                        <div class="divRow app:sort-years?type=years&amp;indikator=2"></div>
+                        <div class="divRow app:sort-years?type=years&amp;indikator=3"></div>
+                        <div class="divRow app:sort-years?type=years&amp;indikator=4"></div>
+                        <div class="divRow app:sort-years?type=years&amp;indikator=5"></div>
+                        <div class="divRow app:sort-years?type=years&amp;indikator=6"></div>
+                        <div class="divRow app:sort-years?type=years&amp;indikator=7"></div>
+                        <div class="divRow app:sort-years?type=years&amp;indikator=8"></div>
+                        <div class="divRow app:sort-years?type=years&amp;indikator=9"></div>
                     </div>
-                    
                     <!--
                     <table style="width=100%">
                         <tr>
@@ -156,19 +258,18 @@
                                 <div class=" app:list?type=years&indikator=3"/>
                             </td>
                             <td class="e"></td>-->
-                    
                     <!-- </table>
                     -->
                 </div>
                 <div class="tab-pane" id="author">
-                    <ul class="nav-cont app:list?type=authors"/>
+                    <ul class="nav-cont app:list?type=authors"></ul>
                 </div>
                 <div class="tab-pane " id="document">
                     <table style="width=100%">
-                        <tr class="app:table?type=doc"/>
+                        <tr class="app:table?type=doc"></tr>
                     </table>
                 </div>
-                <div class="tab-pane" id="bibliografie">              
+                <div class="tab-pane" id="bibliografie">
                     <!-- Verlinkung zur Seite-->
                 </div>
                 <div class="tab-pane" id="project">
@@ -176,17 +277,13 @@
                 </div>
                 <div class="tab-pane" id="publicationen">
                     <table style="width=100%">
-                        <tr class="app:table2?type=pub"/>
+                        <tr class="app:table2?type=pub"></tr>
                     </table>
                 </div>
-                <div class="tab-pane" id="search">
+                <div class="tab-pane" id="search2">
                     <!-- Verlinkung zur Seite-->
                 </div>
             </div>
-            
-            
-            
-            
             <!-- Ab Hier-->
             <!--<a class="config:app-title brand" href="./index.html">App Title</a>-->
             <!-- <ul class="nav">                    
@@ -238,7 +335,7 @@
                             -->
             <!--</ul>-->
             <!--Bis Hier-->
-            <div id="content" class="container"/>
+            <div id="content" class="container"></div>
             <div id="footer">
                 <a href="#">informação legal</a>
             </div>

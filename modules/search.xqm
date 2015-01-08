@@ -141,43 +141,39 @@ declare %templates:wrap function search:profisearch($node as node(), $model as m
                        else search:lang_and($db)
                        
         (: Sortierung nach Genre :)
-    (:    let $r_genre := if(search:get-parameters("genre")!="") then search:search_range("genre",$r_lang)
-                        else()                        
-      :)                  
+       let $r_genre := if(search:get-parameters("genre")!="") then search:search_range("genre",$r_lang)
+                        else()                      
         (:Suche nach "Erwähnten" Rollen:)
-     (:   let $r_mention := if(search:get-parameters("notional")="mentioned") then search:author_build($r_lang)
+        let $r_mention := if(search:get-parameters("notional")="mentioned") then search:author_build($r_lang)
                         else ()
         let $r_real := if(search:get-parameters("notional") ="real") then search:search_range("person",$r_lang)
                         else ()
-     :)                 (:
+                     (:
         let $r_mention := if(search:get-parameters("notional")="mentioned") then search:search_range("person",$r_lang)
                         else ():)
         
         (: Datumssuche :)
-     (:   let $r_date := if(search:get-parameters("before") != "" or search:get-parameters("after") != "") then search:date_build($r_lang)
+        let $r_date := if(search:get-parameters("before") != "" or search:get-parameters("after") != "") then search:date_build($r_lang)
                         else ()
         
         let $r_all := ($r_lang,$r_genre,$r_mention,$r_real,$r_date)
-       :)
+       
        let $r_all := $r_lang
         return map{
             "r_all"     := $r_all,
-            "r_lang"    := $r_lang (: , :)
-          (:  
+            "r_lang"    := $r_lang, 
             "r_genre"   := $r_genre,
             "r_mention" := $r_mention,
             "r_date"    := $r_date,
             "r_real"    := $r_real
-            :)
         }
         else map{
             "r_all"     := (),
-            "r_lang"    := () (: , :)
-         (:   "r_genre"   := (),
+            "r_lang"    := (), 
+            "r_genre"   := (),
             "r_mention" := (),
             "r_date"    := (),
             "r_real"    := ()
-           :)
            }
         
 
@@ -203,8 +199,10 @@ declare function search:get-parameters($key as xs:string) as xs:string* {
 declare function search:lang_or($db as xs:string+) as node()*{
     for $match in $db
         let $result := if(search:get-parameters("release") != "either") then  search:lang_filter_or($match,"")
-                       else  if($match = "/db/apps/pessoa/data/doc") then search:lang_filter_and($match,"non_public")
-                       else if ($match = "/db/apps/pessoa/data/pub") then search:lang_filter_and($match, "public")
+                      else if(search:get-parameters("release") = "either") then 
+                            if($match = "/db/apps/pessoa/data/doc") then search:lang_filter_or($match,"non_public")
+                            else if ($match = "/db/apps/pessoa/data/pub") then search:lang_filter_or($match, "public")
+                            else()
                        else ()
         return $result
 };
@@ -217,25 +215,27 @@ declare function search:lang_filter_or($db as xs:string, $step as xs:string?) as
                 let $search_terms := concat('("',$match,'"),"',$hit,'"')
                 let $search_funk := concat("//range:field-contains(",$search_terms,")")
                 let $search_build := concat("collection($db)",$search_funk)
-                let $result :=  util:eval($search_build)
+                let $result :=  util:eval($search_build) 
             return $result
         else if (search:get-parameters("release")="public" or $step = "public") then 
             for $hit in search:get-parameters("lang")
                 let $search_terms := concat('("lang"),"',$hit,'"')
                 let $search_funk := concat("//range:field-contains(",$search_terms,")")
                 let $search_build := concat("collection($db)",$search_funk)
-                let $result :=  util:eval($search_build)
+                let $result :=  util:eval($search_build) 
             return $result
         else ()
 };
 
 (: START UND FUNKTION : Filtert die Sprache :)
 
-declare function search:lang_and($db as xs:string+) as xs:string* {
+declare function search:lang_and($db as xs:string+) as node()* {
     for $match in $db 
         let $result := if(search:get-parameters("release") != "either") then  search:lang_filter_and($match,"")
-                       else  if($match = "/db/apps/pessoa/data/doc") then search:lang_filter_and($match,"non_public")
-                       else if ($match = "/db/apps/pessoa/data/pub") then search:lang_filter_and($match, "public")
+                      else if(search:get-parameters("release") = "either") then 
+                            if($match = "/db/apps/pessoa/data/doc") then search:lang_filter_and($match,"non_public")
+                            else if ($match = "/db/apps/pessoa/data/pub") then search:lang_filter_and($match, "public")
+                            else()
                        else ()
                        (:(search:lang_filter_and($match,"non_public"),search:lang_filter_and($match, "public")):)
         return $result
@@ -243,20 +243,11 @@ declare function search:lang_and($db as xs:string+) as xs:string* {
 
 declare function search:lang_filter_and($db as xs:string, $step as xs:string?) as node()* {
         if(search:get-parameters("release")="non_public" or $step = "non_public") then
-        
-  (:     let $build_para := search:lang_build_para("lang") :)
-   (:     let $create_db := search:lang_db() :)
-        (: DELETE ???       
-        let $build_term := string-join(search:get-parameters("lang"),",") :)
-      (:  
-        let $build_funk := concat("//range:field-eq(",$build_para,")")
-        let $build_search := concat("collection($db)",$build_funk)
-        :)
         for $match in search:lang_build_para("lang")
         let $build_funk := concat("//range:field-contains(",$match,")")
         let $build_search := concat("collection($db)",$build_funk) 
-        let $result := util:eval($build_search)
-        return util:eval($build_search)
+        let $result := util:eval($build_search)   
+        return $result
         else if (search:get-parameters("release")="public" or $step = "public") then 
         let $result := ()
         return $result

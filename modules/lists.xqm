@@ -19,11 +19,13 @@ declare function lists:get-navi-list($node as node(), $model as map(*), $type as
          return <item label="{$label}"  ref="{$helpers:app-root}/page/genre_{$ref}.html" />      
     else if ($type = "doc")
     then for $res in xmldb:get-child-resources("/db/apps/pessoa/data/doc")
-         let $label := substring-after(replace(substring-before($res, ".xml"), "_", " "), "BNP E3 ")
+         let $label := if(substring-after($res, "BNP") != "") then substring-after(replace(substring-before($res, ".xml"), "_", " "), "BNP E3 ")
+                        else if(substring-after($res,"X") != "") then substring-after(replace(substring-before($res, ".xml"), "_", " "), "X")
+                        else ()
          
          let $ref := concat($helpers:app-root, "/doc/", substring-before($res, ".xml"))         
          order by $res collation "?lang=pt" 
-         return if(doc(concat("/db/apps/pessoa/data/doc/",$res))//tei:sourceDesc/tei:msDesc and substring-after($res,concat("E3_",$indikator))!="" )
+         return if(doc(concat("/db/apps/pessoa/data/doc/",$res))//tei:sourceDesc/tei:msDesc and (substring-after($res,concat("E3_",$indikator))!="" ) or (substring-after($res,concat("X_",$indikator))!="" ))
                 then (<item label="{$label}" ref="{$ref}"  />) else()
     else if ($type = "pub")
     then for $item in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="works"][@n="2"]/tei:item
