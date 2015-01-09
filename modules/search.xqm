@@ -19,9 +19,12 @@ declare %templates:wrap function search:search( $node as node(), $model as map(*
    (:
    for $m in collection("/db/apps/pessoa/data/doc")//tei:origDate[ft:query(.,$q)]
 order by ft:score($m) descending
-:)
+:)  
+   (: let $term := request:get-parameter('term', "") :)
     if(exists($term) and $term !=" ")
     then
+        
+        let $term := search:get-parameters("term")
         let $result-text := collection("/db/apps/pessoa/data/doc")//tei:text[ft:query(.,$term)]
         let $result-head := collection("/db/apps/pessoa/data/doc")//tei:msItemStruct[ft:query(.,$term)]
         let $result := ($result-text, $result-head)
@@ -155,8 +158,12 @@ declare %templates:wrap function search:profisearch($node as node(), $model as m
         (: Datumssuche :)
         let $r_date := if(search:get-parameters("before") != "" or search:get-parameters("after") != "") then search:date_build($r_lang)
                         else ()
+        let $r_head := if($r_lang = "") then (collection("/db/apps/pessoa/data/doc")//tei:msItemStruct[ft:query(.,$term)] , collection("/db/apps/pessoa/data/pub")//tei:teiHeader[ft:query(.,$term)])
+                        else (search:full_text($r_lang,"tei:msItemStruct") , search:full_text($r_lang,"tei:teiHeader"))
+        let $r_text := if($r_lang = "") then ( collection("/db/apps/pessoa/data/doc")//tei:text[ft:query(.,$term)] , collection("/db/apps/pessoa/data/pub")//tei:text[ft:query(.,$term)] )
+                        else search:full_text($r_lang,"tei:text")
         
-        let $r_all := ($r_lang,$r_genre,$r_mention,$r_real,$r_date)
+        let $r_all := ($r_lang,$r_genre,$r_mention,$r_real,$r_date,$r_head,$r_text)
        
        let $r_all := $r_lang
         return map{
@@ -165,7 +172,9 @@ declare %templates:wrap function search:profisearch($node as node(), $model as m
             "r_genre"   := $r_genre,
             "r_mention" := $r_mention,
             "r_date"    := $r_date,
-            "r_real"    := $r_real
+            "r_real"    := $r_real,
+            "r_head"    := $r_head,
+            "r_text"    := $r_text
         }
         else map{
             "r_all"     := (),
@@ -173,7 +182,9 @@ declare %templates:wrap function search:profisearch($node as node(), $model as m
             "r_genre"   := (),
             "r_mention" := (),
             "r_date"    := (),
-            "r_real"    := ()
+            "r_real"    := (),
+            "r_head"    := (),
+            "r_text"    := ()
            }
         
 
@@ -194,6 +205,15 @@ declare function search:get-parameters($key as xs:string) as xs:string* {
     for $hit in request:get-parameter-names()
         return if($hit=$key) then request:get-parameter($hit,'')
                 else ()
+};
+
+(: Volltext Suche Erweitert :)
+declare function search:full_text($db as node()*, $struct as xs:string) as node()* {
+    let $query := <query><bool><term>(search:get-parameters("term"))</term></bool></query>
+    let $search_func :=  concat("//",$struct,"[ft:query(.,",$query,")]")
+    let $search_build := concat("$db",$search_func)
+    let $result := util:eval($search_build)
+    return $result
 };
 (: ODER FUNTKION : Filtert die Sprache :) 
 declare function search:lang_or($db as xs:string+) as node()*{
@@ -297,7 +317,7 @@ declare function search:search_query($para as xs:string, $db as node()*) as node
 (: Range Suche :)
 declare function search:search_range($para as xs:string, $db as node()*) as node()* {
     for $hit in search:get-parameters($para)    
-        let $para := if($para = "person")then  "author" else ()
+     (:   let $para := if($para = "person")then  "author" else () :)
         let $search_terms := concat('("',$para,'"),"',$hit,'"')
         let $search_funk := concat("//range:field-eq(",$search_terms,")")
         let $search_build := concat("$db",$search_funk)
@@ -338,7 +358,7 @@ declare function search:date_search($db as node()*,$para as xs:string,$date as x
 
 (: Profi Result :)
 declare function search:profiresult($node as node(), $model as map(*), $sel as xs:string) as node()+ {
-   if(exists($sel) and $sel=("lang","genre","mention","date","real","all"))
+   if(exists($sel) and $sel=("lang","genre","mention","date","real","all","head","text"))
    then
    if(exists($model(concat("r_",$sel)))) 
     then 
