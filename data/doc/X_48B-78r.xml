@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>X [48B-78<hi rend="superscript">r</hi>]</title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Transcrição, Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Isabel Figueiredo-Iken</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <institution>Biblioteca Nacional de Portugal</institution>
+                        <idno>X [48B-78r]</idno>
+                    </msIdentifier>
+                    <msContents>
+                        <msItemStruct>
+                            <author>
+                                <rs type="person" key="FP">Fernando Pessoa</rs>
+                            </author>
+                            <note type="genre">
+                                <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                            </note>
+                            <textLang mainLang="pt"/>
+                        </msItemStruct>
+                    </msContents>
+                    <history>
+                        <origin>
+                            <p>
+                                <origDate when="1917" cert="medium">c. 1917</origDate>
+                            </p>
+                        </origin>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic
+            url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0160_78_t24-C-R0150.jpg"
+        />
+    </facsimile>
+    <text xml:id="x-48b-78r">
+        <body>
+            <div>
+                <list>
+                    <head>Opiniões da Nova Geração:</head>
+                    <item>
+                        <label>1.</label> <rs type="text">O Saudosismo</rs>. (<rs type="person">Leonardo Coimbra ou
+                            Pascoaes</rs>).
+                    </item>
+                    <item>
+                        <label>2.</label> <rs type="text">O Integralismo Lusitano</rs>. (<rs type="person">João do
+                            Amaral</rs>).
+                    </item>
+                    <item>
+                        <label>3.</label> <rs type="text">O Byzantinismo</rs>. (<rs type="person">Luiz de
+                            Montalvor</rs>).
+                    </item>
+                    <item>
+                        <label>4.</label> <rs type="text">O Vertiginismo</rs>. (<rs type="person">Raul
+                        Leal</rs>).
+                    </item>
+                    <item>
+                        <label>5.</label> <rs type="text">O Futurismo</rs>. (<rs type="person">José de
+                            Almada-Negreiros</rs>).
+                    </item>
+                    <item>
+                        <label>6.</label> 
+                        <anchor xml:id="A1"/>
+                        <rs type="text">O Sensacionismo</rs>. (<rs type="person" key="FP" role="author"
+                            >Fernando Pessoa</rs>).
+                        <anchor xml:id="A2"/>
+                    </item>
+                    <item>
+                        <label>7.</label> <rs type="text">O Neo-Paganismo</rs>. (<rs type="person">Antonio
+                        Móra</rs>).
+                    </item>
+                    <item>
+                        <label>8.</label> <rs type="text">O Classicismo</rs> ..... (<rs type="person">algum poeta ou
+                            critico a des<pc>-</pc><lb/>cobrir</rs>).
+                    </item>
+                </list>
+                <spanGrp>
+                    <span type="correlation" from="#A1" to="#A2"/>
+                </spanGrp>
+            </div>
+        </body>
+    </text>
+</TEI>

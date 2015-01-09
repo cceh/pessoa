@@ -1,0 +1,122 @@
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>X [48B-27<hi rend="superscript">r</hi>]</title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Transcrição, Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Isabel Figueiredo-Iken</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <institution>Biblioteca Nacional de Portugal</institution>
+                        <idno>X [48B-27r]</idno>
+                    </msIdentifier>
+                    <msContents>
+                        <msItemStruct>
+                            <author>
+                                <rs type="person" key="FP">Fernando Pessoa</rs>
+                            </author>
+                            <note type="genre">
+                                <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                            </note>
+                            <textLang mainLang="pt"/>
+                        </msItemStruct>
+                    </msContents>
+                    <history>
+                        <origin>
+                            <p>
+                                <origDate when="1915" cert="medium">c. 1915</origDate>
+                            </p>
+                        </origin>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic
+            url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0054_27_t24-C-R0150.jpg"
+        />
+    </facsimile>
+    <text xml:id="x-48b-27r">
+        <body>
+            <div>
+                <list>
+                    <item>
+                        <label>1.</label>
+                        <anchor xml:id="A1"/>
+                        <rs type="text"><hi rend="underline">O neo-romantismo reaccionario</hi></rs> —<lb/> Analyse e
+                        refutação do inte<pc>-</pc><lb/>gralismo monarchico. — <rs type="person" key="FP" role="author"><choice>
+                            <abbr>F<am>.</am></abbr>
+                            <expan>F<ex>ernando</ex></expan>
+                        </choice> Pessôa</rs>.
+                        <anchor xml:id="A2"/>
+                    </item>
+                    <item>
+                        <label>2.</label>
+                        <anchor xml:id="A3"/>
+                        <rs type="text"><hi rend="underline">Introducção ao estudo do pro<pc>-</pc><lb/>blema
+                            nacional</hi>.</rs> — <rs type="person" key="FP" role="author"><choice>
+                            <abbr>F<am>.</am></abbr>
+                            <expan>F<ex>ernando</ex></expan>
+                        </choice> Pessôa</rs>.
+                        <anchor xml:id="A4"/>
+                    </item>
+                    <item>
+                        <label>3.</label>
+                        <rs type="text"><hi rend="underline">A Allemanha na guerra</hi></rs>— Defeza <lb/> e
+                        justificação da sua attitude. — <lb/>
+                        <rs type="person">Antonio Móra</rs>.
+                    </item>
+                    <item>
+                        <label>4.</label>
+                        <anchor xml:id="A5"/>
+                        <rs type="text"><hi rend="underline">A Guerra</hi></rs> — Estudo Sociologico — <lb/> 
+                        <rs type="person" key="FP" role="author">Fernando Pessôa</rs>.
+                        <anchor xml:id="A6"/>
+                    </item>
+                    <item><label>5.</label>
+                        <anchor xml:id="A7"/>
+                        <rs type="text"><hi rend="underline">O caso de <rs type="journal">“Orpheu”</rs></hi></rs>. — <rs type="person" key="FP" role="author"><choice>
+                            <abbr>F<am>.</am></abbr>
+                            <expan>F<ex>ernando</ex></expan>
+                        </choice> Pessôa</rs>.
+                        <anchor xml:id="A8"/>
+                    </item>
+                    <item><label>6.</label>
+                        <rs type="text"><hi rend="underline">Prolegómenos a uma reconstruc<pc>-</pc><lb/>ção do
+                            paganismo</hi></rs> — <rs type="person"><choice>
+                            <abbr>A<am>.</am></abbr>
+                            <expan>A<ex>ntonio</ex></expan>
+                        </choice> Móra.</rs>
+                    </item>
+                </list>
+                <spanGrp>
+                    <span type="correlation" from="#A1" to="#A2"/>
+                    <span type="correlation" from="#A3" to="#A4"/>
+                    <span type="correlation" from="#A5" to="#A6"/>
+                    <span type="correlation" from="#A7" to="#A8"/>
+                </spanGrp>
+            </div>
+        </body>
+    </text>
+</TEI>

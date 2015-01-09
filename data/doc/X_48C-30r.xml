@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>X [48C-30<hi rend="superscript">r</hi>]</title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Transcrição, Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Isabel Figueiredo-Iken</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <institution>Biblioteca Nacional de Portugal</institution>
+                        <idno>X [48C-30r]</idno>
+                    </msIdentifier>
+                    <msContents>
+                        <msItemStruct>
+                            <author>
+                                <rs type="person" key="FP">Fernando Pessoa</rs>
+                            </author>
+                            <note type="genre">
+                                <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                            </note>
+                            <textLang mainLang="pt" otherLangs="en"/>
+                        </msItemStruct>
+                    </msContents>
+                    <history>
+                        <origin>
+                            <p>
+                                <origDate when="1916" cert="medium">c. 1916</origDate>
+                            </p>
+                        </origin>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic
+            url="bn-acpc-e-e3-48c-1-50_JPG_24-C-R0150/bn-acpc-e-e3-48c-1-50_0071_30_t24-C-R0150.jpg"
+        />
+    </facsimile>
+    <text xml:id="x-48c-30r">
+        <body>
+            <div>
+                <list>
+                    <item>
+                        <label>1.</label>
+                        <rs type="person"><hi rend="underline">Antonio Móra</hi></rs> — <rs type="text">O Regresso dos Deuses</rs> — Introducção<lb/>
+                        <seg rend="indent">Geral ao Neo-Paganismo Portuguez.</seg> 
+                    </item>
+                    <item>
+                        <label>2.</label>
+                        <anchor xml:id="A1"/>
+                        <rs type="person" key="AC" role="author"><hi rend="underline">Alberto Caeiro</hi></rs> — 1889-1915 — <rs type="work" key="O2"><rs type="text">O Guardador de
+                        Reba<pc>-</pc><lb/>nhos, e outros poemas e fragmentos</rs></rs>.
+                        <anchor xml:id="A2"/>
+                    </item>
+                    <item>
+                        <label>3.</label>
+                        <anchor xml:id="A3"/>
+                        <rs type="person" key="RR" role="author"><hi rend="underline">Ricardo Reis</hi></rs> — <rs type="text">Odes</rs>.
+                        <anchor xml:id="A4"/>
+                    </item>
+                </list>
+                <metamark rend="line" function="distinct"/>
+                <p>English Translation (in one volume):</p>
+                <p><rs type="text"><hi rend="underline">The Portuguese Neo-Pagans</hi></rs>.</p>
+                <p><del rend="overtyped">The three works</del></p>
+                <spanGrp>
+                    <span type="correlation" from="#A1" to="#A2"/>
+                </spanGrp>
+            </div>
+        </body>
+    </text>
+</TEI>

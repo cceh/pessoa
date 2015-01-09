@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>X [48B-22]</title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Transcrição, Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Isabel Figueiredo-Iken</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <institution>Biblioteca Nacional de Portugal</institution>
+                        <idno>X [48B-22]</idno>
+                    </msIdentifier>
+                    <msContents>
+                        <msItemStruct>
+                            <author>
+                                <rs type="person" key="FP">Fernando Pessoa</rs>
+                            </author>
+                            <note type="genre">
+                                <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                            </note>
+                            <textLang mainLang="pt" otherLangs="la"/>
+                        </msItemStruct>
+                    </msContents>
+                    <history>
+                    <origin>
+                        <p>
+                            <origDate when="1915" cert="medium">
+                                <hi rend="italic">c</hi>. 1915</origDate>
+                        </p>
+                    </origin>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+    <graphic url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0044_22_t24-C-R0150.jpg" />
+    </facsimile>
+    <text xml:id="x-48b-22">
+        <body>
+            <div>
+            <list>
+                <item>
+                    <label>1.</label>
+                    <rs type="person">Antonio Móra</rs>: <rs type="text">Prolegomenos a uma reconstrucção do paganismo</rs>.
+                </item>  
+                <item>
+                    <label>2.</label>
+                    <anchor xml:id="A1"/>
+                    <rs type="person" key="FP" role="author">Fernando Pessôa</rs>: <rs type="text">O mytho de <rs type="person">William Shakespeare</rs></rs>.
+                    <anchor xml:id="A2"/>
+                </item>
+                <item>
+                    <label>3.</label> 
+                    <rs type="person"><subst><del rend="overstrike" n="1">Antonio</del><add place="above" n="2">Francisco</add></subst> Sanches</rs>: 
+                    <rs type="text">Quod nihil scitur</rs> — texto e traducção.
+                </item>
+                <item>
+                    <label>4.</label>
+                    <anchor xml:id="A3"/>
+                    <rs type="person" key="FP" role="author">Fernando Pessôa</rs>: <rs type="text">Introducção ao problema nacional</rs>.
+                    <anchor xml:id="A4"/>
+                </item>
+                <item>
+                    <label>5.</label>
+                    <anchor xml:id="A5"/>
+                    <rs type="person" key="FP" role="author">Fernando Pessôa</rs>: <rs type="text">Theoria da republica aristocratica</rs>.
+                    <anchor xml:id="A6"/>
+                </item>
+                <item>
+                    <label>6.</label>
+                    <rs type="person">Antonio Móra</rs>: <rs type="text">Os fundamentos do paganismo</rs>.
+                </item>
+                <item>
+                    <label>7.</label>
+                    <rs type="person">Antonio Móra:</rs> <rs type="text">Origens do christianismo</rs>.
+                </item>
+                <item>
+                    <label>8.</label>
+                    <anchor xml:id="A7"/>
+                    <rs type="person" key="FP" role="author">Fernando Pessôa</rs>: <rs type="text">A Guerra — estudo sociologico</rs>.
+                    <anchor xml:id="A8"/>
+                </item>
+              <item>
+                  <label>9.</label>
+                  <supplied resp="PS" reason="omitted-in-original" />
+              </item>
+              <item>
+                  <label>10.</label>
+                  <supplied resp="PS" reason="omitted-in-original" />
+              </item>
+           </list>
+            <spanGrp>
+                <span type="correlation" from="#A1" to="#A2"/>
+                <span type="correlation" from="#A3" to="#A4"/>
+                <span type="correlation" from="#A5" to="#A6"/>
+                <span type="correlation" from="#A7" to="#A8"/>
+            </spanGrp>
+            </div>
+        </body>
+    </text>
+</TEI>
