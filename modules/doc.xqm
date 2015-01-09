@@ -59,9 +59,34 @@ declare function doc:get-genre($node as node(), $model as map(*), $type as xs:st
                   else ( )
 };
 declare function doc:get-image($node as node(), $model as map(*), $id as xs:string) as item()+{
+    (: Imageviewer :)
     let $file-names := doc:get-xml($id)//tei:graphic/@url/data(.)
-    return for $file-name in $file-names
-           return <a class="fancybox" rel="group" href="{$helpers:webfile-path}/{$file-name}"><img src="{$helpers:webfile-path}/{$file-name}" alt="img" width="350" height="auto" /></a>
+    let $num-files := count($file-names)
+    return
+    (<div id="openseadragon1" style="width: 400px; height: 380px;"></div>,
+    <script src="{$helpers:app-root}/resources/js/openseadragon.js"></script>,
+    <script type="text/javascript">
+        var viewer = OpenSeadragon({{
+            id: "openseadragon1",
+            prefixUrl: "{$helpers:app-root}/resources/images/",
+    	    showNavigator:  true,
+            tileSources: {if ($num-files gt 1)
+                         then ("[",
+                                for $file-name at $pos in $file-names
+                                let $file-name := doc:get-image-xml-file($file-name)
+                                return (concat('"',$helpers:webfile-path,"/","imageinzoom","/",$file-name,'"'), if ($pos lt $num-files) then "," else ())
+                           ,"]")
+                         else let $file-name := doc:get-image-xml-file($file-names)
+                              return concat('"',$helpers:webfile-path,"/","imageinzoom","/",$file-name, '",')
+                         }
+    		
+        }});
+    </script>)
+    (: Imageviewer :)
+};
+
+declare function doc:get-image-xml-file($file-name){
+    lower-case(substring-after(concat(substring-before($file-name, ".jpg"), ".xml"), "/"))
 };
 
 
