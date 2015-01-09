@@ -22,7 +22,9 @@
             type="text/css" />
         <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery.js"></script>
         <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery-ui.js"></script>
-
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+       
         <!-- <script type="text/javascript">
          $(function() {
       $( "#tabs" ).tabs();
@@ -163,14 +165,15 @@
                     <!--<form action="search.hmtl" method="post" id="search2">
                         <input name="search" type="text" size="30" maxlength="30" />
                     </form>-->
-                    <div class="box">
-                        <div class="container-4 search:search">
+                  <div class="box">
+                        <div class="container-4">
                             <input type="search" id="search" placeholder="Search..." />
-                            <button class="icon" id="button"><i class="fa fa-search" ></i></button>
+                            <button class="icon" id="button" onclick="search()"><i class="fa fa-search" ></i></button>
                         </div>
                     </div>
                     <div id="target">Click</div>
-                    <!--
+                    
+                      <!--
                     <div class="box">
                         <div class="container-2">
                             <span class="icon"><i class="fa fa-search"></i></span>
@@ -178,14 +181,43 @@
                         </div>
                     </div>
                     -->
+                    <!--
+                    <form action="exist/apps/pessoa/search" id="searchForm" >
+                        <input type="text" name="term" placeholder="Search..." />
+                        <input type="submit" value="Search" />
+                    </form>
+                    -->
                 </li>
             </ul>
             
             <script>
-                $("#target").click(function() {
+               
+               function search() {
+               var value = $("#search").val();
                 //$("#search").load("http://localhost:8080/exist/apps/pessoa/doc/search?term="+value);
-                alert("Cklicked");
-                });
+               // alert("Cklicked http://localhost:8080/exist/apps/pessoa/doc/search?term="+value);
+                location.href= "http://localhost:8080/exist/apps/pessoa/search?term="+value;
+                };
+                
+             /*   $( "#searchForm" ).submit(function( event ) {
+                          // Stop form from submitting normally
+                                 event.preventDefault();
+                                 // Get some values from elements on the page:
+                                 var $form = $( this ),
+                                 term = $form.find( "input[name='term']" ).val(),
+                                 url = $form.attr( "action" );
+                                 // Send the data using post
+                                 var posting = $.post( url+"/search", { term: term } );
+                                 // Put the results in a div
+                              /*   posting.done(function( data ) {
+                                 var content = $( data ).find( "#content" );
+                                $( "#result" ).empty().append( content );
+                              */
+                               //  location.href= "http://localhost:8080/exist/apps/pessoa/search";
+                             //    location.load= "http://localhost:8080/exist/apps/pessoa/search";
+                          
+                         // });
+                        
             </script>
             <div id="navi2" class="tab-content">
                 <div class="tab-pane" id="genre">
@@ -334,8 +366,10 @@
                             </li>
                             -->
             <!--</ul>-->
-            <!--Bis Hier-->
-            <div id="content" class="container"></div>
+            <!--Bis Hier--><div id="result"></div>
+            <div id="content" class="container">
+                
+            </div>
             <div id="footer">
                 <a href="#">informação legal</a>
             </div>

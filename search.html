@@ -9,110 +9,113 @@
                 <p class="app:result-list?sel=text">list</p>
                 -->
                 <div class="search:profisearch" id="suche">
-                    <!-- Anker -->
-                    <a href="#date">Date</a>
-                    <a href="#autor">Author</a>
-                    
-                    <!-- Anker Ende -->
-                    
-                    <form action="/exist/apps/pessoa/search" method="post" id="search">
-                        <!-- AUTHORS -->
-                        <h3>Author</h3>
-                        <input type="checkbox" name="notional" value="real" id="real"
-                            checked="checked"/><label for="real">"Real"</label>
-                        <input type="checkbox" name="notional" value="mentioned" id="mentioned"
-                            checked="checked"/><label for="mentioned">mentioned</label>
-                        <br/>
-                        <select name="person" size="5" multiple="multiple">
-                            <option value="FP">Fernando Pessoa</option>
-                            <option value="AC">Alberto Caeiro</option>
-                            <option value="AdC">Álvaro de Campos</option>
-                            <option value="RR">Ricardo Reis</option>
-                        </select>
-                        <p class="small_text">Hold the Ctrl/CMD key to select multiple entries.</p>
-                        Role : <input type="checkbox" name="role" value="author" id="author"/><label
-                            for="author">Author</label>
-                        <input type="checkbox" name="role" value="translator" id="translator"
-                            /><label for="translator">Translator </label>
-                        <input type="checkbox" name="role" value="topic" id="topic"/><label
-                            for="topic">Topic</label>
-                        <input type="checkbox" name="role" value="editor" id="editor"/><label
-                            for="editor">Editor</label>
-                        <!-- AUTHORS END-->
-                        <!-- TYPE -->
-                        <h3>Published / Unpublished</h3>
-                        <input type="radio" name="release" value="public" id="public"/><label
-                            for="public">published</label>
-                        <input type="radio" name="release" value="non_public" id="non_public"
-                            /><label for="non_public">unpublished</label>
-                        <input type="radio" name="release" value="either" id="either"
-                            checked="checked"/><label for="either">published AND unpublished</label>
-                        <!-- TYPE END-->
-                        <!-- GENRE-->
+                    <div class="fitler">
+                        <form action="/exist/apps/pessoa/search" method="post" id="search">
+                            <!-- AUTHORS -->
+                            <h3>Author</h3>
+                            <input type="checkbox" name="notional" value="real" id="real" checked="checked"/>
+                                <label for="real">"Real"</label>
+                            <input type="checkbox" name="notional" value="mentioned" id="mentioned" checked="checked"/>
+                                <label for="mentioned">mentioned</label>
+                            <br/>
+                            <select name="person" size="5" multiple="multiple">
+                                <option value="FP">Fernando Pessoa</option>
+                                <option value="AC">Alberto Caeiro</option>
+                                <option value="AdC">Álvaro de Campos</option>
+                                <option value="RR">Ricardo Reis</option>
+                            </select>
+                            <p class="small_text">Hold the Ctrl/CMD key to select multiple entries.</p>
+                            Role :  <input type="checkbox" name="role" value="author" id="author"/>
+                                        <label for="author">Author</label>
+                                    <input type="checkbox" name="role" value="translator" id="translator"/>
+                                        <label for="translator">Translator </label>
+                                    <input type="checkbox" name="role" value="topic" id="topic"/>
+                                        <label for="topic">Topic</label>
+                                    <input type="checkbox" name="role" value="editor" id="editor"/>
+                                        <label for="editor">Editor</label>
+                            <!-- AUTHORS END-->
+                            <!-- TYPE -->
+                            <h3>Published / Unpublished</h3>
+                            <input type="radio" name="release" value="public" id="public"/>
+                                <label for="public">published</label>
+                            <input type="radio" name="release" value="non_public" id="non_public"/>
+                                <label for="non_public">unpublished</label>
+                            <input type="radio" name="release" value="either" id="either" checked="checked"/>
+                                <label for="either">published AND unpublished</label>
+                            <!-- TYPE END-->
+                            <!-- GENRE-->
+                            <h3>Genre</h3>
+                            <select name="genre" size="7" multiple="multiple">
+                                <option value="carta">Carta (not included)</option>
+                                <option value="diario">Diario (not included)</option>
+                                <option value="ensaio">Ensaio (not included)</option>
+                                <option value="lista_editorial">Lista Editorial</option>
+                                <option value="nota_editorial">Nota Editorial</option>
+                                <option value="plano_editorial">Plano Editorial</option>
+                                <option value="poesia">Poesia</option>
+                            </select>
+                            <p class="small_text">Hold the Ctrl/CMD key to select multiple entries.</p>
+                            <!--GENRE END-->
+                            <!--DATE-->
+                            <div id="datum">
+                                <h3>Date</h3>
+                                <input type="date" name="after"/>
+                                <label>to</label>
+                                <input type="date" name="before"/>
+                            </div>
+                            <!--DATE END-->
+                            <!--LANGUAGE-->
+                            <h3>Language</h3>
+                            <input type="checkbox" name="lang" value="pt" checked="checked" id="pt"/>
+                                <label for="pt">Portuguese</label>
+                            <input type="checkbox" name="lang" value="en" checked="checked" id="en"/>
+                                <label for="en">English </label>
+                            <input type="checkbox" name="lang" value="fr" checked="checked" id="fr"/>
+                                <label for="fr">French</label>
+                            <br/>
+                            <input type="radio" name="lang_ao" value="and" id="and"/>
+                                <label for="and">and</label>
+                            <input type="radio" name="lang_ao" value="or" id="or" checked="checked"/>
+                                <label for="or">or</label>
+                            <!--LANGUAGE END-->
+                            <!-- FREE TEXT-->
+                            <h3>Free text</h3>
+                            <textarea rows="1" cols="50" name="term"/>
+                            <br/>
+                            <!-- FREE TEXT END-->
+                            <button>Search</button>
+                        </form>
+                    </div>
+                    <div class="resultList">
+                        <h2>Result</h2>
+                        <h3>HEad</h3>
+                        <div class="search:profiresult?sel=head"/>
+                        <h3>Text</h3>
+                        <div class="search:profiresult?sel=text"/>
+                        <h2> Profi Result</h2>
+                        <h3>Sprachen</h3>
+                        <div class="search:profiresult?sel=lang"/>
+                        <h3>Autoren</h3>
+                        <h2>Mentioned</h2>
+                        <div class="search:profiresult?sel=mention"/>
+                        <h2>Real</h2>
+                        <div class="search:profiresult?sel=real"/>
                         <h3>Genre</h3>
-                        <select name="genre" size="7" multiple="multiple">
-                            <option value="carta">Carta (not included)</option>
-                            <option value="diario">Diario (not included)</option>
-                            <option value="ensaio">Ensaio (not included)</option>
-                            <option value="lista_editorial">Lista Editorial</option>
-                            <option value="nota_editorial">Nota Editorial</option>
-                            <option value="plano_editorial">Plano Editorial</option>
-                            <option value="poesia">Poesia</option>
-                        </select>
-                        <p class="small_text">Hold the Ctrl/CMD key to select multiple entries.</p>
-                        <!--GENRE END-->
-                        <!--DATE-->
-                        <div id="datum">
-                            <h3>Date</h3>
-                            <input type="date" name="after"/>
-                            <label>to</label>
-                            <input type="date" name="before"/>
-                        </div>
-                        <!--DATE END-->
-                        <!--LANGUAGE-->
-                        <h3>Language</h3>
-                        <input type="checkbox" name="lang" value="pt" checked="checked" id="pt"
-                            /><label for="pt">Portuguese</label>
-                        <input type="checkbox" name="lang" value="en" checked="checked" id="en"
-                            /><label for="en">English </label>
-                        <input type="checkbox" name="lang" value="fr" checked="checked" id="fr"
-                            /><label for="fr">French</label>
-                        <br/>
-                        <input type="radio" name="lang_ao" value="and" id="and"/><label for="and"
-                            >and</label>
-                        <input type="radio" name="lang_ao" value="or" id="or" checked="checked"
-                            /><label for="or">or</label>
-                        <!--LANGUAGE END-->
-                        <!-- FREE TEXT-->
-                        <h3>Free text</h3>
-                        <textarea rows="1" cols="50" name="term"/>
-                        <br/>
-                        <!-- FREE TEXT END-->
-                        <button>Search</button>
-                    </form>
-                    <h2> Profi Result</h2>
-                    <h3><a id="lang">Sprachen</a></h3>
-                      <div class="search:profiresult?sel=lang"/>
-                    <h3><a id="autor">Autoren</a></h3>
-                    <h2>Mentioned</h2>
-                    <div class="search:profiresult?sel=mention"/>
-                    <h2>Real</h2>
-                    <div class="search:profiresult?sel=real"/>
-                    <h3>Genre</h3>
-                    <div class="search:profiresult?sel=genre"/>
-                    <h3><a id="date">Date</a></h3>
-                    <div class="search:profiresult?sel=date"/>
-                    <h3>All</h3>
-                    <div class="search:profiresult?sel=all"/>
-                    <h3>Term</h3>
-                    <div class="search:profiresult?sel=term"/>
-                    <h2>Filter</h2>
-                    <!-- <div class="app:result-filter?sel=filter"/>-->
-                    <div class="search:result-filter?sel=filter"/>
-                    <h2>Text</h2>
-                    <div class="search:result-list?sel=text"/>
-                    <h2>Header</h2>
-                    <div class="search:result-list?sel=head"/>
+                        <div class="search:profiresult?sel=genre"/>
+                        <h3>Date</h3>
+                        <div class="search:profiresult?sel=date"/>
+                        <h3>All</h3>
+                        <div class="search:profiresult?sel=all"/>
+                        <h3>Term</h3>
+                        <div class="search:profiresult?sel=term"/>
+                        <h2>Filter</h2>
+                        <!-- <div class="app:result-filter?sel=filter"/>-->
+                        <div class="search:result-filter?sel=filter"/>
+                        <h2>Text</h2>
+                        <div class="search:result-list?sel=text"/>
+                        <h2>Header</h2>
+                        <div class="search:result-list?sel=head"/>
+                    </div>
                 </div>
             </div>
         </div>
