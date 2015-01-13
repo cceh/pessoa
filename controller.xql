@@ -33,11 +33,13 @@ else if (contains($exist:path, "doc")) then
 			<forward url="{$exist:controller}/modules/view.xql"/>
 		</error-handler>
     </dispatch>)
+    
 else if (contains($exist:path, "author")) then
+     
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <forward url="{$exist:controller}/author.html">
             <add-parameter name="author" value="{substring-before(substring-after($exist:path, 'author/'), '/')}" />
-            <add-parameter name="text-type" value="{$exist:resource}" />
+            <add-parameter name ="textType" value ="{$exist:resource}"/>
         </forward>
         <view>
             <forward url="{$exist:controller}/modules/view.xql"/>
