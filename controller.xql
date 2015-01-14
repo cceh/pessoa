@@ -33,14 +33,17 @@ else if (contains($exist:path, "doc")) then
 			<forward url="{$exist:controller}/modules/view.xql"/>
 		</error-handler>
     </dispatch>)
-    
-else if (contains($exist:path, "author")) then
-     
+(:else if (contains($exist:path, "orderBy")) then
+    let $orderBy := request:get-parameter("orderBy", "date")
+    return author:getOrder(<node />, map {"test" := "test"}, $orderBy):)
+else if (contains($exist:path, "/author/")) then
+    let $author := substring-before(substring-after($exist:path, '/author/'), '/')
+    let $textType := $exist:resource
+    return
+    (session:set-attribute("textType", $textType),
+    session:set-attribute("author", $author),
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-        <forward url="{$exist:controller}/author.html">
-            <add-parameter name="author" value="{substring-before(substring-after($exist:path, 'author/'), '/')}" />
-            <add-parameter name ="textType" value ="{$exist:resource}"/>
-        </forward>
+        <forward url="{$exist:controller}/author.html" />
         <view>
             <forward url="{$exist:controller}/modules/view.xql"/>
         </view>
@@ -48,7 +51,7 @@ else if (contains($exist:path, "author")) then
 			<forward url="{$exist:controller}/error-page.html" method="get"/>
 			<forward url="{$exist:controller}/modules/view.xql"/>
 		</error-handler>
-    </dispatch>
+    </dispatch>)
 else if (ends-with($exist:resource, ".html")) then
     (: the html page is run through view.xql to expand templates :)
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">

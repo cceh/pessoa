@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <div xmlns="http://www.w3.org/1999/xhtml" class="templates:surround?with=templates/page.html&amp;at=content">
+ <!--  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        
+        function reorder(){
+            var url = window.location.href;
+            if ($("#date").is(":checked"))
+            {
+                $("#test").load("http://localhost:8080/exist/apps/pessoa/author/pessoa/all?orderBy=date");  
+            }
+            else{
+                $("#test").load("http://localhost:8080/exist/apps/pessoa/author/pessoa/all?orderBy=alphab"); 
+            }
+        }
+    </script> -->
     <div class="row-fluid">
-        <div id="content" class="span12 main">
-            <div class="author:getTabs?textType=documents"/>
-                <div class="span6">
-                   <div id="tabs" class="author:list-texts?textType=documents&amp;author=caeiro&amp;orderBy=alphab"/>          
-        </div>
+        <div id="content" class="span12 main">      
+           <div class="author:getTabs"/>          
+           <div class="span6">
+               <form method="get">
+                   <input id ="date" name="date" type="checkbox" value="no" onchange="reorder();"></input> date <br/>
+                   <input id="alphab" name="alphab" type="checkbox" value="yes" onchange="reorder();"></input> alphab <br/>  
+               </form>
+              <div id="order" class="author:getOrder?orderBy=alphab">    
+              <div id="tabs" class="author:list-texts"/>   
+              </div>
+               
+        </div> 
     </div>
 </div>
 </div>
