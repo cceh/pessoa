@@ -5,14 +5,17 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
 
+declare function author:getOrder($node as node(), $model as map(*),$orderBy){
+        map { "orderBy" := $orderBy }
+ 
+};
 
-declare function author:getTabs($node as node(), $model as map(*), $textType){
-    let $textType := $textType
-    return if ($textType = "all") then (
-                   <ul id="tabs"><li class="active"><a href="#all">Publicações e Documentos</a> </li>
+declare function author:getTabs($node as node(), $model as map(*), $textType as xs:string?){
+            if ($textType = "all") then
+                    <ul id="tabs"><li class="active"><a href="#all">Publicações e Documentos</a> </li>
                     <li><a href="#documents">Documentos</a></li>
                     <li><a href="#publications">Publicações</a></li></ul> 
-                )
+                
            else if($textType = "documents") then (
                     <ul id="tabs"><li><a href="#all">Publicações e Documentos</a> </li>
                     <li class="active"><a href="#documents">Documentos</a></li>
@@ -23,13 +26,12 @@ declare function author:getTabs($node as node(), $model as map(*), $textType){
                     <li><a href="#documents">Documentos</a></li>
                     <li class ="active"><a href="#publications">Publicações</a></li></ul>    
                 )
-                else()
-                    
+                else()                   
 };
 
-declare function author:list-texts($node as node(), $model as map(*), $textType, $author, $orderBy){
-    let $textType := $textType
-    return if ($textType = "all") then
+declare function author:list-texts($node as node(), $model as map(*), $textType, $author){
+  
+    if ($textType = "all") then
                     <ul id="tab">
                         <li class ="active">
                             <div id="all">
@@ -39,12 +41,12 @@ declare function author:list-texts($node as node(), $model as map(*), $textType,
                         </li>
                         <li>
                             <div id="documents">
-                                <div>{ author:list-documents($node, $model, $author, $orderBy)}</div>
+                                <div>{ author:list-documents($node, $model, $author, $model("orderBy"))}</div>
                             </div>
                         </li>
                         <li>
                             <div id="publications">
-                                <div>{author:list-publications($node, $model, $author,$orderBy)}</div>  
+                                <div>{author:list-publications($node, $model, $author,$model("orderBy"))}</div>  
                             </div>
                         </li>
                     </ul>
@@ -58,12 +60,12 @@ declare function author:list-texts($node as node(), $model as map(*), $textType,
                         </li>
                         <li class="active">
                             <div id="documents">
-                                <div>{ author:list-documents($node, $model, $author, $orderBy)}</div>
+                                <div>{ author:list-documents($node, $model, $author, $model("orderBy"))}</div>
                             </div>
                         </li>
                         <li>
                             <div id="publications">
-                                <div>{author:list-publications($node, $model, $author, $orderBy)}</div>  
+                                <div>{author:list-publications($node, $model, $author, $model("orderBy"))}</div>  
                             </div>
                         </li>
                     </ul>
@@ -77,17 +79,50 @@ declare function author:list-texts($node as node(), $model as map(*), $textType,
                         </li>
                         <li>
                             <div id="documents">
-                                <div>{ author:list-documents($node, $model, $author, $orderBy)}</div>
+                                <div>{ author:list-documents($node, $model, $author, $model("orderBy"))}</div>
                             </div>
                         </li>
                         <li class="active">
                             <div id="publications">
-                                <div>{author:list-publications($node, $model, $author, $orderBy)}</div>  
+                                <div>{author:list-publications($node, $model, $author, $model("orderBy"))}</div>  
                             </div>
                         </li>
                     </ul>
                     else()
                     
+};
+
+declare function author:list-all($node as node(), $model as map(*), $author){
+    let $texts := collection("/db/apps/pessoa/data") 
+    let $docs := collection("/db/apps/pessoa/data/doc")
+    let $pubs := collection("/db/apps/pessoa/data/pub") 
+    for $text in $texts
+    let $d := fn:index-of($docs,$text)
+    let $p := fn:index-of($pubs,$text)
+    order by (author:orderText($text))
+    return  
+    
+    if(count($p) >= 1) then 
+        if($author="pessoa") then
+        author:list-publication($text,"FP")
+        else if ($author ="campos") then
+        author:list-publication($text,"AdC")
+        else if ($author ="reis") then
+        author:list-publication($text,"RR")
+        else if ($author ="caeiro") then
+        author:list-publication($text,"AC")
+        else()
+    else if(count($d) >= 1) then 
+        if($author="pessoa") then
+        author:list-document($text,"FP")
+        else if ($author ="campos") then
+        author:list-document($text,"AdC")
+        else if ($author ="reis") then
+        author:list-document($text,"RR")
+        else if ($author ="caeiro") then
+        author:list-document($text,"AC")
+        else()
+    else()
 };
 
 
@@ -135,37 +170,13 @@ declare function author:list-documents-byRole($docs, $key, $role){
     else()
 };
 
-declare function author:list-all($node as node(), $model as map(*), $author){
-    let $texts := collection("/db/apps/pessoa/data/")
-    for $text in $texts
-    order by (author:orderText($text))
-    return 
-    if($author = "pessoa") then
-            if(author:list-document($text,"FP")) then
-                author:list-document($text,"FP")
-            else if(author:list-publication($text,"FP")) then
-                author:list-publication($text,"FP")
-            else ()
-     else if( $author ="caeiro") then  
-            if(author:list-document($text,"AC")) then
-                author:list-document($text,"AC")
-            else if(author:list-publication($text,"AC")) then
-                author:list-publication($text,"AC")
-            else ()
-     else if($author = "campos") then
-            if(author:list-document($text,"AdC")) then
-                author:list-document($text,"AdC")
-            else if(author:list-publication($text,"AdC")) then
-                author:list-publication($text,"AdC")
-            else ()
-     else if ($author = "reis") then
-            if(author:list-document($text,"RR")) then
-                author:list-document($text,"RR")
-            else if(author:list-publication($text,"RR")) then
-                author:list-publication($text,"RR")
-            else ()
-     else()
-    
+
+declare function author:list-document($doc, $key){
+    let $roles := author:getRoles($doc,$key)
+return 
+if(count($roles) > 0) then
+       (<div><a href="{$helpers:app-root}/doc/{replace(replace($doc//tei:idno/data(.), "/","_")," ", "_")}">{ $doc//tei:idno/data(.)} </a>  ({$roles})</div>, <br />)
+       else () 
 };
 
 declare function author:orderDocument($doc, $orderBy){
@@ -186,14 +197,6 @@ declare function author:orderDocument($doc, $orderBy){
     
 };
 
-declare function author:list-document($doc, $key){
-    let $doc := $doc
-    let $roles := author:getRoles($doc,$key)
-return 
-if($doc//tei:text//tei:rs[@type ='person' and @key=$key]) then
-       (<div><a href="{$helpers:app-root}/doc/{replace(replace($doc//tei:idno/data(.), "/","_")," ", "_")}">{ $doc//tei:idno/data(.)} </a>  ({$roles})</div>, <br />)
-       else () 
-};
 
 
 
@@ -213,6 +216,7 @@ declare function author:orderText($text){
     else if($pubDate) then $pubDate/data(.)
     else ()
 };
+
 
 declare function author:list-publication($pub, $key){
     let $title := ($pub//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title)[1]/data(.)
