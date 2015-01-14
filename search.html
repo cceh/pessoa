@@ -3,13 +3,38 @@
     class="templates:surround?with=templates/page.html&amp;at=content">
     <div class="row-fluid">
         <div id="content" class="span12 main">
+            
             <h2>Suche</h2>
-            <div class="span6">
+            <style  type="text/css">
+                .search_filter {
+                
+                background-color:green;
+                border: solid 1px;
+                }
+                
+                .search_resultList {
+                
+                background-color:red;
+                border: soild 1px;
+                }
+                .search_filter,  .search_resultList {
+                width:45%;
+                float:left;
+                margin: 5px;
+                
+                }
+                .clear
+                {
+                clear = both;
+                }
+                
+            </style>
+          <!--  <div class="span6">-->
                 <!-- <p class="app:search?term=aberta">result</p>
                 <p class="app:result-list?sel=text">list</p>
                 -->
                 <div class="search:profisearch" id="suche">
-                    <div class="fitler">
+                    <div class="search_filter">
                         <form action="/exist/apps/pessoa/search" method="post" id="search">
                             <!-- AUTHORS -->
                             <h3>Author</h3>
@@ -86,7 +111,7 @@
                             <button>Search</button>
                         </form>
                     </div>
-                    <div class="resultList">
+                    <div class="search_resultList">
                         <h2>Result</h2>
                         <h3>HEad</h3>
                         <div class="search:profiresult?sel=head"/>
@@ -104,20 +129,14 @@
                         <div class="search:profiresult?sel=genre"/>
                         <h3>Date</h3>
                         <div class="search:profiresult?sel=date"/>
+                        <h3>Term</h3>
+                        <div class="search:profiresult?sel=term"/>   
                         <h3>All</h3>
                         <div class="search:profiresult?sel=all"/>
-                        <h3>Term</h3>
-                        <div class="search:profiresult?sel=term"/>
-                        <h2>Filter</h2>
-                        <!-- <div class="app:result-filter?sel=filter"/>-->
-                        <div class="search:result-filter?sel=filter"/>
-                        <h2>Text</h2>
-                        <div class="search:result-list?sel=text"/>
-                        <h2>Header</h2>
-                        <div class="search:result-list?sel=head"/>
+                                             
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    <!--</div>-->
 </div>
