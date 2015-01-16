@@ -43,9 +43,8 @@ declare function search:result-list ($node as node(), $model as map(*), $sel as 
 (:  Profi Suche :)
 
 declare %templates:wrap function search:profisearch($node as node(), $model as map(*), $term as xs:string?) as map(*) {
-    
         (: Erstellung der Kollektion, sortiert ob "Publiziert" oder "Nicht Publiziert" :)
-    (:    if(exists($term)) then :)
+     (:   if(exists($term)) then :)
         let $db := search:set_db()
         
         (: Unterscheidung nach den Sprachen, ob "Und" oder "ODER" :)
@@ -61,21 +60,18 @@ declare %templates:wrap function search:profisearch($node as node(), $model as m
                         else ()
         let $r_real := if(search:get-parameters("notional") ="real") then search:search_range("person",$r_lang)
                         else ()
-                     (:
-        let $r_mention := if(search:get-parameters("notional")="mentioned") then search:search_range("person",$r_lang)
-                        else ():)
-        
+     
         (: Datumssuche :)
         let $r_date := if(search:get-parameters("before") != "" or search:get-parameters("after") != "") then search:date_build($r_lang)
                         else ()
-        let $r_head := if($r_lang = "") then (collection("/db/apps/pessoa/data/doc")//tei:msItemStruct[ft:query(.,$term)] , collection("/db/apps/pessoa/data/pub")//tei:teiHeader[ft:query(.,$term)])
+        (: Volltext Suche :)                
+        let $r_head := if(search:get-parameters("search")="simple") then (collection("/db/apps/pessoa/data/doc")//tei:msItemStruct[ft:query(.,search:get-parameters("term"))] , collection("/db/apps/pessoa/data/pub")//tei:teiHeader[ft:query(.,$term)])
                         else (search:full_text($r_lang,"tei:msItemStruct") , search:full_text($r_lang,"tei:teiHeader"))
-        let $r_text := if($r_lang = "") then ( collection("/db/apps/pessoa/data/doc")//tei:text[ft:query(.,$term)] , collection("/db/apps/pessoa/data/pub")//tei:text[ft:query(.,$term)] )
+        let $r_text := if(search:get-parameters("search")="simple") then ( collection("/db/apps/pessoa/data/doc")//tei:text[ft:query(.,search:get-parameters("term"))] , collection("/db/apps/pessoa/data/pub")//tei:text[ft:query(.,$term)] )
                         else search:full_text($r_lang,"tei:text")
         
         let $r_all := ($r_lang,$r_genre,$r_mention,$r_real,$r_date,$r_head,$r_text)
        
-       let $r_all := $r_lang
         return map{
             "r_all"     := $r_all,
             "r_lang"    := $r_lang, 
@@ -86,7 +82,7 @@ declare %templates:wrap function search:profisearch($node as node(), $model as m
             "r_head"    := $r_head,
             "r_text"    := $r_text
         }
-       (: else map{
+      (:  else map{
             "r_all"     := (),
             "r_lang"    := (), 
             "r_genre"   := (),
@@ -286,38 +282,60 @@ declare function search:profiresult($node as node(), $model as map(*), $sel as x
 };      
 
 declare function search:new_profiresult($node as node(), $model as map(*), $sel as xs:string) as node()+ {
-if(exists($sel) and $sel = "all")
+let $para := ("lang","genre","mention","date","real","head","text")
+for $name in $para
+    for $hit in $model(concat("r_",$name))
+        
+        let $file_name := root($hit)/util:document-name(.)
+        let $expanded := kwic:expand($hit)
+                    
+        order by $file_name
+        return if(substring-after($file_name,"BNP") != "" or substring-after($file_name,"X"))
+                    then <li><a href="data/doc/{concat(substring-before($file_name, ".xml"),'?file=', $file_name)}"></a>
+                        {kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="40"/>)}</li>
+                        else <p>Nothin, {$file_name}</p>
+        
+(: if(exists($sel) and $sel = "all")
 then
     if(exists($model(concat("r_",$sel))))
     then
-        for $hit in $model($mname)
+        for $hit in $model(concat("r_",$sel))
             let $file_name := root($hit)/util:document-name(.)
-            return ()
-        else ()
-        else ()
+           let $result :=  if($file_name != $hit) then <p> Ebene 3 Ich lebe </p>(:search:filter_result($model(concat("r_",$sel)),$file_name,concat("r_",$sel)):)
+                            else <p>3 Ebene</p>
+            return $result
+            else <p>2 Ebene</p>
+        else <p>1 Ebene</p>
+        :)
 
 };
 
-declare function search:filter_result($model as map(*), $hit_name as xs:string, $mname as xs:string) as node()+ {
-    for $hit in $model($mname)
+declare function search:filter_result($hit as element(), $term as xs:string*) as node()+ {
         let $file_name := root($hit)/util:document-name(.)
      (:   let $title := if(substring-before($fíle_name,"BNP") or substring-before($file_name,"X"))
                       then doc(concat("/db/apps/pessoa/data/doc/",$file-name))//tei:msDesc/tei:msIdentifier/tei:idno[1]/data(.)
                       else doc(concat("/db/apps/pessoa/data/doc/",$file-name))//tei:biblStruct/tei:analytic/tei:title[1]/data(.)
                       :)
          let $expanded := kwic:expand($hit)
-         return if($file_name = $hit_name)
-                then if(substring-before($fíle_name,"BNP") or substring-before($file_name,"X"))
-                then <li><a href="data/doc/{concat(substring-before($file-name, ".xml"),'?term=',$model("query"), '&amp;file=', $file-name)}"></a>
-                      {kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="40"/>)}</li>
-                      else ()
-                      else ()
+         return  if(substring-after($file_name,"BNP") != "" or substring-after($file_name,"X"))
+                    then <li><a href="data/doc/{concat(substring-before($file_name, ".xml"),'?file=', $file_name)}"></a>
+                        {kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="40"/>)}</li>
+                        else <p>Nothin, {$file_name}</p>
+                      
         
 };
 
 (: Ende der Neuen Funktionen :)
 
 (: Nur zum abgleichen
+
+////
+then <li><a href="data/doc/{concat(substring-before($file_name, ".xml"),'?term=',$term, '&amp;file=', $file_name)}"></a>
+                        {kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="40"/>)}</li>
+                        else <p>Nothin, {$file_name}</p>
+                        
+////
+
 
 declare %templates:wrap function search:search( $node as node(), $model as map(*), $term as xs:string?) as map(*) {
 (:
