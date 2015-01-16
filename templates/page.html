@@ -68,7 +68,7 @@
                 width: 150px;
                 height: 20px;
                 
-                background: yellow;
+                background: white;
                 border: solid 1px;
                 font-size: 10pt;
                 float: left;
@@ -103,7 +103,7 @@
           border-top-right-radius: 5px;
           border-bottom-right-radius: 5px;
 
-          border: none;
+          border: solid 0,5px;
           background: #232833;
           height: 32px;
           width: 25px;
@@ -193,31 +193,9 @@
             <script>
                
                function search() {
-               var value = $("#search").val();
-                //$("#search").load("http://localhost:8080/exist/apps/pessoa/doc/search?term="+value);
-               // alert("Cklicked http://localhost:8080/exist/apps/pessoa/doc/search?term="+value);
-                location.href= "http://localhost:8080/exist/apps/pessoa/search?term="+value;
-                };
-                
-             /*   $( "#searchForm" ).submit(function( event ) {
-                          // Stop form from submitting normally
-                                 event.preventDefault();
-                                 // Get some values from elements on the page:
-                                 var $form = $( this ),
-                                 term = $form.find( "input[name='term']" ).val(),
-                                 url = $form.attr( "action" );
-                                 // Send the data using post
-                                 var posting = $.post( url+"/search", { term: term } );
-                                 // Put the results in a div
-                              /*   posting.done(function( data ) {
-                                 var content = $( data ).find( "#content" );
-                                $( "#result" ).empty().append( content );
-                              */
-                               //  location.href= "http://localhost:8080/exist/apps/pessoa/search";
-                             //    location.load= "http://localhost:8080/exist/apps/pessoa/search";
-                          
-                         // });
-                        
+                var value = $("#search").val();    
+                location.href= "http://localhost:8080/exist/apps/pessoa/search?term="+value+"&amp;search=simple";
+                };              
             </script>
             <div id="navi2" class="tab-content">
                 <div class="tab-pane" id="genre">
