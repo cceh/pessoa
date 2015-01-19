@@ -65,10 +65,12 @@ declare %templates:wrap function search:profisearch($node as node(), $model as m
         let $r_date := if(search:get-parameters("before") != "" or search:get-parameters("after") != "") then search:date_build($r_lang)
                         else ()
         (: Volltext Suche :)                
-        let $r_head := if(search:get-parameters("search")="simple") then (collection("/db/apps/pessoa/data/doc")//tei:msItemStruct[ft:query(.,search:get-parameters("term"))] , collection("/db/apps/pessoa/data/pub")//tei:teiHeader[ft:query(.,$term)])
-                        else (search:full_text($r_lang,"tei:msItemStruct") , search:full_text($r_lang,"tei:teiHeader"))
-        let $r_text := if(search:get-parameters("search")="simple") then ( collection("/db/apps/pessoa/data/doc")//tei:text[ft:query(.,search:get-parameters("term"))] , collection("/db/apps/pessoa/data/pub")//tei:text[ft:query(.,$term)] )
-                        else search:full_text($r_lang,"tei:text")
+        let $r_head := if(search:get-parameters("search")="simple" and $term != "") then (collection("/db/apps/pessoa/data/doc")//tei:msItemStruct[ft:query(.,search:get-parameters("term"))] , collection("/db/apps/pessoa/data/pub")//tei:teiHeader[ft:query(.,$term)])
+                        else if($term != "") then (search:full_text($r_lang,"tei:msItemStruct") , search:full_text($r_lang,"tei:teiHeader"))
+                        else()
+        let $r_text := if(search:get-parameters("search")="simple" and $term != "") then ( collection("/db/apps/pessoa/data/doc")//tei:text[ft:query(.,search:get-parameters("term"))] , collection("/db/apps/pessoa/data/pub")//tei:text[ft:query(.,$term)] )
+                        else if ($term != "")then search:full_text($r_lang,"tei:text")
+                        else()
         
         let $r_all := ($r_lang,$r_genre,$r_mention,$r_real,$r_date,$r_head,$r_text)
        

@@ -7,18 +7,15 @@
             <h2>Suche</h2>
             <style  type="text/css">
                 .search_filter {
-                
-                background-color:green;
-                border: solid 1px;
+                width:30%;
+                /*background-color:green; */
                 }
                 
                 .search_resultList {
-                
-                background-color:red;
-                border: soild 1px;
+                width:60%;
+              /*  background-color:red; */
                 }
                 .search_filter,  .search_resultList {
-                width:45%;
                 float:left;
                 margin: 5px;
                 
@@ -28,7 +25,38 @@
                 clear = both;
                 }
                 
+                .tab {
+                background-color:#6699CC; 
+                border:solid 0.5px;
+                width: 120px;
+                }                
+                .tab:hover {
+                background-color:#0066CC; 
+                }
+                .selection {
+                background-color:#6699CC;
+                border:solid 0.5px;
+                visibility:hidden;
+                display:none;
+                }
+                h6 {
+                font-size:16px;
+                }
+                
+                
             </style>
+            <script type="text/javascript">
+                function hide(id) {
+                    if(document.getElementById(id).style.display == 'none') {
+                        document.getElementById(id).style.visibility ="visible"
+                        document.getElementById(id).style.display ="block";
+                    }
+                    else {
+                        document.getElementById(id).style.visibility ="hidden"
+                        document.getElementById(id).style.display ="none";
+                    }
+                }
+            </script>
           <!--  <div class="span6">-->
                 <!-- <p class="app:search?term=aberta">result</p>
                 <p class="app:result-list?sel=text">list</p>
@@ -37,75 +65,88 @@
                     <div class="search_filter">
                         <form action="/exist/apps/pessoa/search" method="post" id="search">
                             <!-- AUTHORS -->
-                            <h3>Author</h3>
-                            <input type="checkbox" name="notional" value="real" id="real" checked="checked"/>
-                                <label for="real">"Real"</label>
-                            <input type="checkbox" name="notional" value="mentioned" id="mentioned" checked="checked"/>
-                                <label for="mentioned">mentioned</label>
-                            <br/>
-                            <select name="person" size="5" multiple="multiple">
-                                <option value="FP">Fernando Pessoa</option>
-                                <option value="AC">Alberto Caeiro</option>
-                                <option value="AdC">Álvaro de Campos</option>
-                                <option value="RR">Ricardo Reis</option>
-                            </select>
-                            <p class="small_text">Hold the Ctrl/CMD key to select multiple entries.</p>
-                            Role :  <input type="checkbox" name="role" value="author" id="author"/>
-                                        <label for="author">Author</label>
-                                    <input type="checkbox" name="role" value="translator" id="translator"/>
-                                        <label for="translator">Translator </label>
-                                    <input type="checkbox" name="role" value="topic" id="topic"/>
-                                        <label for="topic">Topic</label>
-                                    <input type="checkbox" name="role" value="editor" id="editor"/>
-                                        <label for="editor">Editor</label>
+                            <div class="tab" id="ta_author" onclick="hide('se_author')"><h6>Author</h6></div>
+                            <div class="selection" id="se_author"> <input type="checkbox" name="notional" value="real" id="real" checked="checked"/>
+                                    <label for="real">"Real"</label>
+                                        <input type="checkbox" name="notional" value="mentioned" id="mentioned" checked="checked"/>
+                                    <label for="mentioned">mentioned</label>
+                                <br/>
+                                <select name="person" size="5" multiple="multiple">
+                                    <option value="FP">Fernando Pessoa</option>
+                                    <option value="AC">Alberto Caeiro</option>
+                                    <option value="AdC">Álvaro de Campos</option>
+                                    <option value="RR">Ricardo Reis</option>
+                                </select>
+                                <p class="small_text">Hold the Ctrl/CMD key to select multiple entries.</p>
+                                Role :  <input type="checkbox" name="role" value="author" id="author"/>
+                                            <label for="author">Author</label>
+                                        <input type="checkbox" name="role" value="translator" id="translator"/>
+                                            <label for="translator">Translator </label>
+                                        <input type="checkbox" name="role" value="topic" id="topic"/>
+                                            <label for="topic">Topic</label>
+                                        <input type="checkbox" name="role" value="editor" id="editor"/>
+                                            <label for="editor">Editor</label>
+                            </div>
                             <!-- AUTHORS END-->
                             <!-- TYPE -->
-                            <h3>Published / Unpublished</h3>
-                            <input type="radio" name="release" value="public" id="public"/>
-                                <label for="public">published</label>
-                            <input type="radio" name="release" value="non_public" id="non_public"/>
-                                <label for="non_public">unpublished</label>
-                            <input type="radio" name="release" value="either" id="either" checked="checked"/>
-                                <label for="either">published AND unpublished</label>
-                            <!-- TYPE END-->
-                            <!-- GENRE-->
-                            <h3>Genre</h3>
-                            <select name="genre" size="7" multiple="multiple">
-                                <option value="carta">Carta (not included)</option>
-                                <option value="diario">Diario (not included)</option>
-                                <option value="ensaio">Ensaio (not included)</option>
-                                <option value="lista_editorial">Lista Editorial</option>
-                                <option value="nota_editorial">Nota Editorial</option>
-                                <option value="plano_editorial">Plano Editorial</option>
-                                <option value="poesia">Poesia</option>
-                            </select>
-                            <p class="small_text">Hold the Ctrl/CMD key to select multiple entries.</p>
+                            <div class="tab" id="ta_release" onclick="hide('se_release')"><h6>Published / Unpublished</h6></div>
+                            <div class="selection" id="se_release">
+                                <input type="radio" name="release" value="public" id="public"/>
+                                    <label for="public">published</label>
+                                <input type="radio" name="release" value="non_public" id="non_public"/>
+                                    <label for="non_public">unpublished</label>
+                                <br />
+                                <input type="radio" name="release" value="either" id="either" checked="checked"/>
+                                    <label for="either">published AND unpublished</label>
+                            </div>
+                                <!-- TYPE END-->
+                                <!-- GENRE-->
+                            <div class="tab" id="ta_genre" onclick="hide('se_genre')"><h6>Genre</h6></div>
+                            <div class="selection" id="se_genre">
+                                <select name="genre" size="7" multiple="multiple">
+                                    <option value="carta">Carta (not included)</option>
+                                    <option value="diario">Diario (not included)</option>
+                                    <option value="ensaio">Ensaio (not included)</option>
+                                    <option value="lista_editorial">Lista Editorial</option>
+                                    <option value="nota_editorial">Nota Editorial</option>
+                                    <option value="plano_editorial">Plano Editorial</option>
+                                    <option value="poesia">Poesia</option>
+                                </select>
+                                <p class="small_text">Hold the Ctrl/CMD key to select multiple entries.</p>
+                            </div>
                             <!--GENRE END-->
                             <!--DATE-->
-                            <div id="datum">
-                                <h3>Date</h3>
-                                <input type="date" name="after"/>
-                                <label>to</label>
-                                <input type="date" name="before"/>
+                            
+                            
+                            <div class="tab" id="ta_date" onclick="hide('se_date')"><h6>Date</h6></div>
+                            <div class="selection" id="se_date">    
+                                <div id="datum">
+                                    <input type="date" name="after"/>
+                                    <label>to</label>
+                                    <input type="date" name="before"/>
+                                </div>
                             </div>
                             <!--DATE END-->
                             <!--LANGUAGE-->
-                            <h3>Language</h3>
-                            <input type="checkbox" name="lang" value="pt" checked="checked" id="pt"/>
-                                <label for="pt">Portuguese</label>
-                            <input type="checkbox" name="lang" value="en" checked="checked" id="en"/>
-                                <label for="en">English </label>
-                            <input type="checkbox" name="lang" value="fr" checked="checked" id="fr"/>
-                                <label for="fr">French</label>
-                            <br/>
-                            <input type="radio" name="lang_ao" value="and" id="and"/>
-                                <label for="and">and</label>
-                            <input type="radio" name="lang_ao" value="or" id="or" checked="checked"/>
-                                <label for="or">or</label>
+                            <div class="tab" id="ta_lang" onclick="hide('se_lang')"><h6>Language</h6></div>
+                            <div class="selection" id="se_lang">
+                                <input type="checkbox" name="lang" value="pt" checked="checked" id="pt"/>
+                                    <label for="pt">Portuguese</label>
+                                <input type="checkbox" name="lang" value="en" checked="checked" id="en"/>
+                                    <label for="en">English </label>
+                                <input type="checkbox" name="lang" value="fr" checked="checked" id="fr"/>
+                                    <label for="fr">French</label>
+                                <br/>
+                                <input type="radio" name="lang_ao" value="and" id="and"/>
+                                    <label for="and">and</label>
+                                <input type="radio" name="lang_ao" value="or" id="or" checked="checked"/>
+                                    <label for="or">or</label>
+                            </div>
                             <!--LANGUAGE END-->
                             <!-- FREE TEXT-->
-                            <h3>Free text</h3>
-                            <textarea rows="1" cols="50" name="term"/>
+                            <h6>Free text</h6>
+                            <input name="term" placeholder="Free Text..." />
+                           <!-- <textarea rows="1" cols="50" name="term"/>-->
                             <br/>
                             <!-- FREE TEXT END-->
                             <button>Search</button>
@@ -113,7 +154,7 @@
                     </div>
                     <div class="search_resultList">
                         <h2>Result</h2>
-                        <h3>HEad</h3>
+                        <h3>Head</h3>
                         <div class="search:profiresult?sel=head"/>
                         <h3>Text</h3>
                         <div class="search:profiresult?sel=text"/>
@@ -132,7 +173,7 @@
                         <h3>All</h3>
                         <div class="search:profiresult?sel=all"/>
                         <h3> New Result</h3>
-                        <div class="search:new_profiresult?sel=all"/>                                             
+                  <!--      <div class="search:new_profiresult?sel=all"/>                   -->                          
                     </div>
                 </div>
             </div>
