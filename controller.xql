@@ -19,7 +19,7 @@ else if (contains($exist:path, "doc/versao-pessoal")) then
     let $abbr := request:get-parameter("abbr", "yes")
     let $id := request:get-parameter("id", ())
     return doc:get-text-pessoal(<node />, map {"test" := "test"}, $id, $lb, $abbr)
-else if (contains($exist:path, "doc")) then
+else if (contains($exist:path, "/doc/")) then
     (session:set-attribute("id", $exist:resource), 
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <forward url="{$exist:controller}/doc.html">
@@ -33,9 +33,9 @@ else if (contains($exist:path, "doc")) then
 			<forward url="{$exist:controller}/modules/view.xql"/>
 		</error-handler>
     </dispatch>)
-(:else if (contains($exist:path, "orderBy")) then
+else if (contains($exist:path, "orderBy")) then
     let $orderBy := request:get-parameter("orderBy", "date")
-    return author:getOrder(<node />, map {"test" := "test"}, $orderBy):)
+    return author:getOrder(<node />, map {"test" := "test"}, $orderBy)
 else if (contains($exist:path, "/author/")) then
     let $author := substring-before(substring-after($exist:path, '/author/'), '/')
     let $textType := $exist:resource

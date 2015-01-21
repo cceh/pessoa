@@ -35,7 +35,7 @@ declare function author:list-texts($node as node(), $model as map(*), $textType,
                     <ul id="tab">
                         <li class ="active">
                             <div id="all">
-                                <div>{author:list-all($node, $model, $author)}</div>
+                                <div>{author:list-all($node, $model, $author, $model("orderBy"))}</div>
                             </div>
                             
                         </li>
@@ -54,7 +54,7 @@ declare function author:list-texts($node as node(), $model as map(*), $textType,
                     <ul id="tab">
                         <li>
                             <div id="all">
-                                <div>{author:list-all($node, $model, $author)}</div>
+                                <div>{author:list-all($node, $model, $author, $model("orderBy"))}</div>
                             </div>
                             
                         </li>
@@ -73,7 +73,7 @@ declare function author:list-texts($node as node(), $model as map(*), $textType,
                      <ul id="tab">
                         <li>
                             <div id="all">
-                                <div>{author:list-all($node, $model, $author)}</div>
+                                <div>{author:list-all($node, $model, $author, $model("orderBy"))}</div>
                             </div>
                             
                         </li>
@@ -92,16 +92,15 @@ declare function author:list-texts($node as node(), $model as map(*), $textType,
                     
 };
 
-declare function author:list-all($node as node(), $model as map(*), $author){
-    let $texts := collection("/db/apps/pessoa/data") 
+declare function author:list-all($node as node(), $model as map(*), $author, $orderBy){
+    let $texts := collection("/db/apps/pessoa/data/") 
     let $docs := collection("/db/apps/pessoa/data/doc")
     let $pubs := collection("/db/apps/pessoa/data/pub") 
-    for $text in $texts
+    for $text at $i in $docs 
     let $d := fn:index-of($docs,$text)
     let $p := fn:index-of($pubs,$text)
-    order by (author:orderText($text))
+    order by (author:orderText($text, $orderBy))
     return  
-    
     if(count($p) >= 1) then 
         if($author="pessoa") then
         author:list-publication($text,"FP")
@@ -113,6 +112,7 @@ declare function author:list-all($node as node(), $model as map(*), $author){
         author:list-publication($text,"AC")
         else()
     else if(count($d) >= 1) then 
+   
         if($author="pessoa") then
         author:list-document($text,"FP")
         else if ($author ="campos") then
@@ -123,6 +123,7 @@ declare function author:list-all($node as node(), $model as map(*), $author){
         author:list-document($text,"AC")
         else()
     else()
+
 };
 
 
@@ -145,7 +146,7 @@ declare function author:list-publications($node as node(), $model as map(*), $au
 
 declare function author:list-documents($node as node(), $model as map(*), $author, $orderBy){
     let $docs := collection("/db/apps/pessoa/data/doc/")
-    let $key := if($author ="pessoa") then "FP" else if($author ="caeiro") then "AC" else if($author = "reis") then "RR" else if($author = "campo") then "AdC" else ()
+    let $key := if($author ="pessoa") then "FP" else if($author ="caeiro") then "AC" else if($author = "reis") then "RR" else if($author = "campos") then "AdC" else ()
     let $allRoles := fn:distinct-values($docs//tei:text//tei:rs[@type = 'person' and @key=$key]/@role/data(.))
         return if($orderBy="date") then
             for $doc in $docs
@@ -209,9 +210,9 @@ declare function author:getRoles($doc, $key){
 
 
 
-declare function author:orderText($text){
-    let $docDate := author:orderDocument($text, "date")
-    let $pubDate := author:orderPublication($text,"date")
+declare function author:orderText($text, $orderBy){
+    let $docDate := author:orderDocument($text, $orderBy)
+    let $pubDate := author:orderPublication($text,$orderBy)
     return if($docDate) then $docDate/data(.)
     else if($pubDate) then $pubDate/data(.)
     else ()
@@ -240,7 +241,7 @@ declare function author:orderPublication($pub, $orderBy){
         else if($notAfter) then $notAfter
         else ()
     else if($orderBy ="alphab") then
-        ($pub//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title)[1]/data(.)
+        ($pub//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title)[1]
     else()  
 };
 
