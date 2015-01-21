@@ -1,31 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <div xmlns="http://www.w3.org/1999/xhtml" class="templates:surround?with=templates/page.html&amp;at=content">
- <!--  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript">
         
         function reorder(){
             var url = window.location.href;
+            var i = url.lastIndexOf("/");
+            var substr = url.substring(0,i);
+            i = substr.lastIndexOf("/");
+            var author = substr.substring(i+1,substr.length);
+            var textType = url.substring(url.lastIndexOf("#")+1,url.length);
             if ($("#date").is(":checked"))
             {
-                $("#test").load("http://localhost:8080/exist/apps/pessoa/author/pessoa/all?orderBy=date");  
+               
+                $("#tab").load("http://localhost:8080/exist/apps/pessoa/author/"+author+"/"+textType+"?orderBy=date");
             }
             else{
-                $("#test").load("http://localhost:8080/exist/apps/pessoa/author/pessoa/all?orderBy=alphab"); 
+                
+                $("#tab").load("http://localhost:8080/exist/apps/pessoa/author/"+author+"/"+textType+"?orderBy=alphab"); 
             }
         }
-    </script> -->
+    </script> 
     <div class="row-fluid">
         <div id="content" class="span12 main">      
            <div class="author:getTabs"/>          
            <div class="span6">
                <form method="get">
-                   <input id ="date" name="date" type="checkbox" value="no" onchange="reorder();"></input> date <br/>
-                   <input id="alphab" name="alphab" type="checkbox" value="yes" onchange="reorder();"></input> alphab <br/>  
+                   <input id ="date" name="date" type="radio" value="no" onchange="reorder();"></input> date <br/>
+                   <input id="alphab" name="alphab" type="radio" value="yes" onchange="reorder();"></input> alphab <br/>  
                </form>
-              <div id="order" class="author:getOrder?orderBy=alphab">    
+               <div id ="tab">
+              <div class="author:getOrder?orderBy=alphab">    
               <div id="tabs" class="author:list-texts"/>   
               </div>
-               
+                   </div>
+                
         </div> 
     </div>
 </div>
