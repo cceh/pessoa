@@ -11,13 +11,11 @@
     <lucene>
       <analyzer class="org.apache.lucene.analysis.standard.StandardAnalyzer"/>
       <analyzer id="ws" class="org.apache.lucene.analysis.WhitespaceAnalyzer"/>
-      <text qname="tei:teiHeader"/>
-      <text qname="tei:msItemStruct">
-        <inline qname="tei:author"/>
-        <inline qname="tei:note"/>
-        <ignore qname="tei:respStmt"/>
+      <text qname="tei:TEI">
+        <inline qname="tei:text"/>
+        <inline qname="tei:teiHeader"/>
       </text>
-      <text qname="tei:text"/>
+      
     </lucene>
     <range>
       <create qname="tei:TEI">
@@ -25,19 +23,19 @@
         <field name="genre" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msContents/tei:msItemStruct/tei:note/tei:rs/@key" type="xs:string"/>
         <field name="mainLang" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msContents/tei:msItemStruct/tei:textLang/@mainLang" type="xs:string"/>
         <field name="otherLang" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msContents/tei:msItemStruct/tei:textLang/@otherLangs" type="xs:string" />
-      </create>
-      <create qname="tei:origDate"> 
+        
+        
         <!-- @when, @notBefore, @notAfter, @from, @to-->
-        <field name="date_when" match="@when" type="xs:string"/>
-        <field name="date_notBefore" match="@notBefore" type="xs:string"/>
-        <field name="date_notAfter" match="@notAfter" type="xs:string"/>
-        <field name="date_from" match="@from" type="xs:string"/>
-        <field name="date_to" match="@to" type="xs:string"/>
-      </create>
-      <create qname="tei:text">
-        <field name="role" match="//tei:rs/@role" type="xs:string"/>
+        <field name="date_when" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:history/tei:origin/tei:p/tei:origDate/@when" type="xs:string"/>
+        <field name="date_notBefore" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:history/tei:origin/tei:p/tei:origDate/@notBefore" type="xs:string"/>
+        <field name="date_notAfter" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:history/tei:origin/tei:p/tei:origDate/@notAfter" type="xs:string"/>
+        <field name="date_from" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:history/tei:origin/tei:p/tei:origDate/@from" type="xs:string"/>
+        <field name="date_to" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:history/tei:origin/tei:p/tei:origDate/@to" type="xs:string"/>
+        
+        
+        <field name="role" match="tei:text/tei:body/tei:div//tei:rs/@role" type="xs:string"/>
         <field name="person" match="//tei:rs/@key" type="xs:string" />
-      </create>      
+      </create>
     </range>
   </index>
 </collection>

@@ -82,7 +82,8 @@ declare %templates:wrap function search:profisearch($node as node(), $model as m
             "r_date"    := $r_date,
             "r_real"    := $r_real,
             "r_head"    := $r_head,
-            "r_text"    := $r_text
+            "r_text"    := $r_text,
+            "r_union" := search:result_union($r_all)
         }
       (:  else map{
             "r_all"     := (),
@@ -284,6 +285,18 @@ declare function search:profiresult($node as node(), $model as map(*), $sel as x
 };      
 
 declare function search:new_profiresult($node as node(), $model as map(*), $sel as xs:string) as node()+ {
+if(exists($sel) and $sel = "union") 
+    then
+    if(exists($model(concat("r_",$sel))))
+    then for $hit in $model(concat("r_",$sel))
+            let $file_name := root($hit)/util:document-name(.)
+            order by $file_name
+            return <p> {$file_name }</p>
+            
+            
+    else <p>Ebene 2 </p>
+    else <p>Ebene 1</p>
+(:
 let $para := ("lang","genre","mention","date","real","head","text")
 for $name in $para
     for $hit in $model(concat("r_",$name))
@@ -296,7 +309,7 @@ for $name in $para
                     then <li><a href="data/doc/{concat(substring-before($file_name, ".xml"),'?file=', $file_name)}"></a>
                         {kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="40"/>)}</li>
                         else <p>Nothin, {$file_name}</p>
-        
+  :)      
 (: if(exists($sel) and $sel = "all")
 then
     if(exists($model(concat("r_",$sel))))
@@ -312,6 +325,14 @@ then
 
 };
 
+declare function search:result_union($model as node()*) as node()* {
+ if (exists($model))
+ then let $union := $model
+  
+return  
+ $union | $union
+else ()
+};
 declare function search:filter_result($hit as element(), $term as xs:string*) as node()+ {
         let $file_name := root($hit)/util:document-name(.)
      (:   let $title := if(substring-before($fíle_name,"BNP") or substring-before($file_name,"X"))
@@ -408,4 +429,11 @@ if($term and $file and $sel and $sel="text","head","lang")
             then $exptrans
             else $node
     else $node
+};
+
+declare function search:search-page($node as node(), $model as map(*)) as node() {
+    let $func := "function search()"
+    return <script> {$func} {{var value = $("#search").val();
+                location.href="{$helpers:app-root}/pessoa/search?term="+value+"&amp;search=simple";
+                }};</script>
 };

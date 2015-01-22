@@ -38,7 +38,7 @@ declare function helpers:app-root($node as node(), $model as map(*)){
                     {templates:process($node/node(), $model)}
                   </a>
         else if (xs:string($elname) = "form")
-             then <form action="{$helpers:app-root}/{$node/@action}" class="helpers:app-root">
+             then <form action="{$helpers:app-root}/{$node/@action}">
                     {$node/@*[not(xs:string(node-name(.)) = "action") and not(xs:string(node-name(.)) = "class")]}
                     {helpers:copy-class-attr($node)}
                     {templates:process($node/node(), $model)}

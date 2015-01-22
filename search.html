@@ -63,7 +63,7 @@
                 -->
                 <div class="search:profisearch" id="suche">
                     <div class="search_filter">
-                        <form action="/exist/apps/pessoa/search" method="post" id="search">
+                        <form class="helpers:app-root" action="pessoa/search" method="post" id="search">
                             <!-- AUTHORS -->
                             <div class="tab" id="ta_author" onclick="hide('se_author')"><h6>Author</h6></div>
                             <div class="selection" id="se_author"> <input type="checkbox" name="notional" value="real" id="real" checked="checked"/>
@@ -173,7 +173,7 @@
                         <h3>All</h3>
                         <div class="search:profiresult?sel=all"/>
                         <h3> New Result</h3>
-                  <!--      <div class="search:new_profiresult?sel=all"/>                   -->                          
+                        <div class="search:new_profiresult?sel=union"/>                                             
                     </div>
                 </div>
             </div>
