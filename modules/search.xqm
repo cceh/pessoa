@@ -65,14 +65,11 @@ declare %templates:wrap function search:profisearch($node as node(), $model as m
         let $r_date := if(search:get-parameters("before") != "" or search:get-parameters("after") != "") then search:date_build($r_lang)
                         else ()
         (: Volltext Suche :)                
-        let $r_head := if(search:get-parameters("search")="simple" and $term != "") then (collection("/db/apps/pessoa/data/doc")//tei:msItemStruct[ft:query(.,search:get-parameters("term"))] , collection("/db/apps/pessoa/data/pub")//tei:teiHeader[ft:query(.,$term)])
-                        else if($term != "") then (search:full_text($r_lang,"tei:msItemStruct") , search:full_text($r_lang,"tei:teiHeader"))
-                        else()
-        let $r_text := if(search:get-parameters("search")="simple" and $term != "") then ( collection("/db/apps/pessoa/data/doc")//tei:text[ft:query(.,search:get-parameters("term"))] , collection("/db/apps/pessoa/data/pub")//tei:text[ft:query(.,$term)] )
-                        else if ($term != "")then search:full_text($r_lang,"tei:text")
-                        else()
+        let $r_full := if(search:get-parameters("search")="simple" and $term!="") then ( collection("/db/apps/pessoa/data/doc")//tei:TEI[ft:query(.,search:get-parameters("term"))] , collection("/db/apps/pessoa/data/pub")//tei:TEI[ft:query(.,$term)] )
+                       else if($term != "") then search:full_text($r_lang)
+                       else()
         
-        let $r_all := ($r_lang,$r_genre,$r_mention,$r_real,$r_date,$r_head,$r_text)
+        let $r_all := ($r_lang,$r_genre,$r_mention,$r_real,$r_date,$r_full)
        
         return map{
             "r_all"     := $r_all,
@@ -81,8 +78,7 @@ declare %templates:wrap function search:profisearch($node as node(), $model as m
             "r_mention" := $r_mention,
             "r_date"    := $r_date,
             "r_real"    := $r_real,
-            "r_head"    := $r_head,
-            "r_text"    := $r_text,
+            "r_full"    := $r_full,
             "r_union" := search:result_union($r_all)
         }
       (:  else map{
@@ -116,9 +112,9 @@ declare function search:get-parameters($key as xs:string) as xs:string* {
 };
 
 (: Volltext Suche Erweitert :)
-declare function search:full_text($db as node()*, $struct as xs:string) as node()* {
-    let $query := <query><bool><term>(search:get-parameters("term"))</term></bool></query>
-    let $search_func :=  concat("//",$struct,"[ft:query(.,",$query,")]")
+declare function search:full_text($db as node()*) as node()* {
+    let $query := <query><bool><term>{search:get-parameters("term")}</term></bool></query>
+    let $search_func :=  ("//tei:TEI[ft:query(.,'Pessoa')]")
     let $search_build := concat("$db",$search_func)
     let $result := util:eval($search_build)
     return $result
@@ -263,7 +259,7 @@ declare function search:date_search($db as node()*,$para as xs:string,$date as x
 
 (: Profi Result :)
 declare function search:profiresult($node as node(), $model as map(*), $sel as xs:string) as node()+ {
-   if(exists($sel) and $sel=("lang","genre","mention","date","real","all","head","text"))
+   if(exists($sel) and $sel=("lang","genre","mention","date","real","all","full"))
    then
    if(exists($model(concat("r_",$sel)))) 
     then 

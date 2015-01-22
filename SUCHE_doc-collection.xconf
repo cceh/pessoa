@@ -14,8 +14,7 @@
       <text qname="tei:TEI">
         <inline qname="tei:text"/>
         <inline qname="tei:teiHeader"/>
-      </text>
-      
+      </text>            
     </lucene>
     <range>
       <create qname="tei:TEI">
@@ -34,7 +33,7 @@
         
         
         <field name="role" match="tei:text/tei:body/tei:div//tei:rs/@role" type="xs:string"/>
-        <field name="person" match="//tei:rs/@key" type="xs:string" />
+        <field name="person" match="tei:text/tei:body/tei:div//tei:rs/@key" type="xs:string" />
       </create>
     </range>
   </index>
