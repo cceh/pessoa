@@ -18,13 +18,14 @@
     </lucene>
     <range>           
       <create qname="tei:TEI">
+        <field name="text" match="//tei:title" type="xs:string"/>
+        
         <field name="lang" match="tei:teiHeader/tei:profileDesc/tei:langUsage/tei:language/@ident" type="xs:string"/>
         <field name="genre" match="tei:teiHeader/tei:profileDesc/tei:textClass/tei:keywords/tei:term/tei:rs/@key" type="xs:string"/>
-       
-        <field name="title" match="tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:tei:title" type="xs:string" />
+        
+        <field name="title" match="tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title" type="xs:string" />
         <field name="person" match="tei:teiHeader/tei:fileDesc//tei:titleStmt/tei:author/tei:rs/@key" type="xs:string" />
         <field name="date" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct/tei:monogr/tei:imprint/tei:date/@when" type="xs:string"/>
-        
       </create>
     </range>
   </index>
