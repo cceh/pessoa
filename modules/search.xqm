@@ -13,94 +13,57 @@ declare namespace text="http://exist-db.org/xquery/text";
 declare namespace request="http://exist-db.org/xquery/request";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 
-(: Ergebniss Volltext Suche - inaktiv :)
-declare function search:result-list ($node as node(), $model as map(*), $sel as xs:string) as node()+ {
-    if (exists($sel) and $sel = ("text", "head"))
-    then
-        if (exists($model(concat("result-",$sel))))
-        then
-        let $term := $model("query") 
-            for $hit in $model(concat("result-", $sel))
-            let $file-name := root($hit)/util:document-name(.)
-            let $title := 
-            if(doc(concat("/db/apps/pessoa/data/doc/",$file-name))//tei:sourceDesc/tei:msDesc) 
-                then doc(concat("/db/apps/pessoa/data/doc/",$file-name))//tei:msDesc/tei:msIdentifier/tei:idno[1]/data(.)
-                else doc(concat("/db/apps/pessoa/data/doc/",$file-name))//tei:biblStruct/tei:analytic/tei:title[1]/data(.)
-            let $expanded := kwic:expand($hit)
-        return if($sel != "head")
-            then 
-            <li>
-            <a href="data/doc/{concat(substring-before($file-name, ".xml"),'?term=',$model("query"), '&amp;file=', $file-name)}">{$title}</a>
-            {kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="40"/>)}
-            </li>
-            else 
-            <li> 
-            <a href="data/doc/{concat(substring-before($file-name, ".xml"),'?term=',$model("query"), '&amp;file=', $file-name)}">{$title}</a>
-            {kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="0" />)}</li>
-        else <p> Keine Treffer </p>
-        else $sel
-};
 (:  Profi Suche :)
-
 declare %templates:wrap function search:profisearch($node as node(), $model as map(*), $term as xs:string?) as map(*) {
         (: Erstellung der Kollektion, sortiert ob "Publiziert" oder "Nicht Publiziert" :)
-     (:   if(exists($term)) then :)
         let $db := search:set_db()
-        
-        (: Unterscheidung nach den Sprachen, ob "Und" oder "ODER" :)
-        let $r_lang := if(search:get-parameters("lang_ao") = "or") 
+        let $dbase :=  if($term != "" ) then collection($db)//tei:TEI[ft:query(.,$term)]
+                       else if(search:get-parameters("lang_ao") = "or") 
                        then search:lang_or($db)
                        else search:lang_and($db)
-                       
+        (: Unterscheidung nach den Sprachen, ob "Und" oder "ODER" :)
+       let $r_lang := if($term != "" and search:get-parameters("search")!= "simple") then 
+                      if (search:get-parameters("lang_ao") ="or")
+                        then search:lang_or_term($dbase)
+                        else (search:lang_and_term($dbase,"non_public"),search:lang_and_term($dbase,"public"))
+                      else $dbase
+        let $dbase := $r_lang
         (: Sortierung nach Genre :)
-       let $r_genre := if(search:get-parameters("genre")!="") then search:search_range("genre",$r_lang)
-                        else()                      
+        let $r_genre := if(search:get-parameters("genre")!="") then search:search_range("genre",$dbase)
+                        else $dbase                   
+        let $dbase := $r_genre
         (:Suche nach "Erwähnten" Rollen:)
-        let $r_mention := if(search:get-parameters("notional")="mentioned") then search:author_build($r_lang)
-                        else ()
-        let $r_real := if(search:get-parameters("notional") ="real") then search:search_range("person",$r_lang)
-                        else ()
+        let $r_mention := if(search:get-parameters("notional")="mentioned" and search:get-parameters("person")!="") then search:author_build($dbase)
+                        else $dbase
+        let $dbase := $r_mention
+        let $r_real := if(search:get-parameters("notional") ="real" and search:get-parameters("person")!="") then search:search_range("person",$dbase)
+                        else $dbase
+        let $dbase := $r_real                
      
         (: Datumssuche :)
-        let $r_date := if(search:get-parameters("before") != "" or search:get-parameters("after") != "") then search:date_build($r_lang)
-                        else ()
+        let $r_date := if(search:get-parameters("before") != "" or search:get-parameters("after") != "") then search:date_build($dbase)
+                        else $dbase
+        let $dbase := $r_date
         (: Volltext Suche :)                
-        let $r_full := if(search:get-parameters("search")="simple" and $term!="") then ( collection("/db/apps/pessoa/data/doc")//tei:TEI[ft:query(.,search:get-parameters("term"))] , collection("/db/apps/pessoa/data/pub")//tei:TEI[ft:query(.,$term)] )
-                       else if($term != "") then search:full_text($r_lang)
-                       else()
-        
-        let $r_all := ($r_lang,$r_genre,$r_mention,$r_real,$r_date,$r_full)
+
+        let $r_all := ($r_genre,$r_mention,$r_real,$r_date)
        
         return map{
-            "r_all"     := $r_all,
-            "r_lang"    := $r_lang, 
-            "r_genre"   := $r_genre,
-            "r_mention" := $r_mention,
-            "r_date"    := $r_date,
-            "r_real"    := $r_real,
-            "r_full"    := $r_full,
-            "r_union" := search:result_union($r_all)
+            "r_union"   := search:result_union($dbase),
+            "r_dbase"   := $dbase,
+            "query"     := $term
         }
-      (:  else map{
-            "r_all"     := (),
-            "r_lang"    := (), 
-            "r_genre"   := (),
-            "r_mention" := (),
-            "r_date"    := (),
-            "r_real"    := (),
-            "r_head"    := (),
-            "r_text"    := ()
-           }
-           :)
+        
 };
 
 
 
 
 declare function search:set_db() as xs:string+ {
-        let $result :=    if(search:get-parameters("release") = "non_public")  then "/db/apps/pessoa/data/doc"
-                             else if(search:get-parameters("release") = "public" ) then "/db/apps/pessoa/data/pub"
+        let $result :=       if(search:get-parameters("release") = "non_public")    then "/db/apps/pessoa/data/doc"
+                             else if(search:get-parameters("release") = "public" )  then "/db/apps/pessoa/data/pub"
                              else ("/db/apps/pessoa/data/doc","/db/apps/pessoa/data/pub")
+                            
                    return $result
 };
 
@@ -111,16 +74,34 @@ declare function search:get-parameters($key as xs:string) as xs:string* {
                 else ()
 };
 
-(: Volltext Suche Erweitert :)
-declare function search:full_text($db as node()*) as node()* {
-    let $query := <query><bool><term>{search:get-parameters("term")}</term></bool></query>
-    let $search_func :=  ("//tei:TEI[ft:query(.,'Pessoa')]")
-    let $search_build := concat("$db",$search_func)
-    let $result := util:eval($search_build)
-    return $result
+(: ODER FUNKTION : FIltert die Sprache, TERM :)
+declare function search:lang_or_term($db as node()*) as node()* {
+    for $hit in search:get-parameters("lang")
+        let $para := ("mainLang","otherLang","Lang")
+        for $match in $para
+                let $search_terms := concat('("',$match,'"),"',$hit,'"')
+                let $search_funk := concat("//range:field-contains(",$search_terms,")")
+                let $search_build := concat("$db",$search_funk)
+            return util:eval($search_build)
+};
+
+(: UND FUNKTION : Filtert die Sprache, TERM:)
+
+declare function search:lang_and_term($db as node()*, $step as xs:string) as node()* {
+        if(search:get-parameters("release")="non_public" and $step = "non_public") then
+            for $match in search:lang_build_para_doc("lang")
+                let $build_funk := concat("//range:field-contains(",$match,")")
+                let $build_search := concat("$db",$build_funk) 
+                return util:eval($build_search) 
+        else if (search:get-parameters("release")="public" and $step = "public") then 
+            for $match in search:get-parameters("lang")
+            let $build_funk := concat("//range:field-contains('lang','",$match,"')")
+            let $build_search := concat("$db",$build_funk)
+            return util:eval($build_search)  
+        else ()
 };
 (: ODER FUNTKION : Filtert die Sprache :) 
-declare function search:lang_or($db as xs:string+) as node()*{
+declare function search:lang_or ($db as xs:string+) as node()*{
     for $match in $db
         let $result := if(search:get-parameters("release") != "either") then  search:lang_filter_or($match,"")
                       else if(search:get-parameters("release") = "either") then 
@@ -139,15 +120,13 @@ declare function search:lang_filter_or($db as xs:string, $step as xs:string?) as
                 let $search_terms := concat('("',$match,'"),"',$hit,'"')
                 let $search_funk := concat("//range:field-contains(",$search_terms,")")
                 let $search_build := concat("collection($db)",$search_funk)
-                let $result :=  util:eval($search_build) 
-            return $result
+            return util:eval($search_build) 
         else if (search:get-parameters("release")="public" or $step = "public") then 
             for $hit in search:get-parameters("lang")
                 let $search_terms := concat('("lang"),"',$hit,'"')
                 let $search_funk := concat("//range:field-contains(",$search_terms,")")
                 let $search_build := concat("collection($db)",$search_funk)
-                let $result :=  util:eval($search_build) 
-            return $result
+            return util:eval($search_build) 
         else ()
 };
 
@@ -167,36 +146,28 @@ declare function search:lang_and($db as xs:string+) as node()* {
 
 declare function search:lang_filter_and($db as xs:string, $step as xs:string?) as node()* {
         if(search:get-parameters("release")="non_public" or $step = "non_public") then
-        for $match in search:lang_build_para("lang")
-        let $build_funk := concat("//range:field-contains(",$match,")")
-        let $build_search := concat("collection($db)",$build_funk) 
-        let $result := util:eval($build_search)   
-        return $result
+            for $match in search:lang_build_para_doc("lang")
+                let $build_funk := concat("//range:field-contains(",$match,")")
+                let $build_search := concat("collection($db)",$build_funk) 
+                return util:eval($build_search) 
         else if (search:get-parameters("release")="public" or $step = "public") then 
-        let $result := ()
-        return $result
+            for $match in search:get-parameters("lang")
+            let $build_funk := concat("//range:field-contains('lang','",$match,"')")
+            let $build_search := concat("collection($db)",$build_funk)
+            return util:eval($build_search)  
         else ()
 };
-
-declare function search:lang_db() as xs:string* {
-    for $search in search:lang_build_para("lang")
-        let $build_funk := concat("//range:field-contains(",$search,")")
-        let $build_search := concat("collection($db)",$build_funk) 
-        let $result := $build_search
-        return $result
-};
-
-declare function search:lang_build_para ($para as xs:string) as xs:string* {
+declare function search:lang_build_para_doc ($para as xs:string) as xs:string* {
     for $hit in search:get-parameters($para)
      (: let $parameters :=  search:get-parameters($para):)
         let $result := concat('("',
-        string-join(search:lang_build_para_ex(search:get-parameters($para),$hit),
+        string-join(search:lang_build_para_doc_ex(search:get-parameters($para),$hit),
         '","'),'"),"',
         string-join(search:get-parameters("lang"),'","'),'"')
         return $result
 };
 
-declare function search:lang_build_para_ex($para as xs:string+, $hit as xs:string) as xs:string* {
+declare function search:lang_build_para_doc_ex($para as xs:string+, $hit as xs:string) as xs:string* {
         for $other in $para
             let $result := if($other = $hit) then "mainLang" else "otherLang"
             return $result
@@ -212,8 +183,7 @@ declare function search:search_query($para as xs:string, $db as node()*) as node
             let $query := <query><bool><term occur="must">{$hit}</term></bool></query>
             let $search_funk := "[ft:query(.,$query)]"
             let $search_build := concat("collection($db)//tei:msItemStruct",$search_funk) 
-            let $result := util:eval($search_build)
-            return $result
+            return util:eval($search_build)
 };
 (: Range Suche :)
 declare function search:search_range($para as xs:string, $db as node()*) as node()* {
@@ -222,8 +192,7 @@ declare function search:search_range($para as xs:string, $db as node()*) as node
         let $search_terms := concat('("',$para,'"),"',$hit,'"')
         let $search_funk := concat("//range:field-eq(",$search_terms,")")
         let $search_build := concat("$db",$search_funk)
-        let $result := util:eval($search_build)
-        return $result
+        return util:eval($search_build)
 };
 
 (: Suche nach den Autoren und der Rollen :)
@@ -233,8 +202,7 @@ declare function search:author_build($db as node()*) as node()* {
                 let $merge := concat('("person","role"),','"',$person,'","',$role,'"')
                 let $build_range :=concat("//range:field-eq(",$merge,")")
                 let $build_search := concat("$db",$build_range)
-                let $result := util:eval($build_search)
-           return $result
+           return util:eval($build_search)
 };
 
 (: Suche nach Datumsbereich :)
@@ -253,162 +221,49 @@ declare function search:date_search($db as node()*,$para as xs:string,$date as x
         let $search_terms := concat('("',$para,'"),"',$date,'"')
         let $search_funk := concat("//range:field-contains(",$search_terms,")")
         let $search_build := concat("$db",$search_funk)
-        let $result := util:eval($search_build)
-        return $result
+        return util:eval($search_build)
 };
 
 (: Profi Result :)
 declare function search:profiresult($node as node(), $model as map(*), $sel as xs:string) as node()+ {
-   if(exists($sel) and $sel=("lang","genre","mention","date","real","all","full"))
-   then
-   if(exists($model(concat("r_",$sel)))) 
-    then 
-        for $hit in $model(concat("r_",$sel))
-        (:
-        return <p> Exist, {$model(concat("r_",$sel))}</p>
-        else <p>Dos Not Exist </p>
-        :)
-        let $file-name := root($hit)/util:document-name(.)            
-        order by $file-name
-        return <p>Exist,{$file-name}</p>            
-        else <p> Dos Not exist,{$model(concat("r_",$sel))}</p>
-        
-        (:
-        return <p>Exist,{$model("profi_result"),$file-name}</p>            
-        else <p> Dos Not exist,{$model("profi_result")}</p>
-        :)
-        else <p>Error</p>
-};      
-
-declare function search:new_profiresult($node as node(), $model as map(*), $sel as xs:string) as node()+ {
 if(exists($sel) and $sel = "union") 
     then
     if(exists($model(concat("r_",$sel))))
-    then for $hit in $model(concat("r_",$sel))
-            let $file_name := root($hit)/util:document-name(.)
-            order by $file_name
-            return <p> {$file_name }</p>
-            
-            
-    else <p>Ebene 2 </p>
-    else <p>Ebene 1</p>
-(:
-let $para := ("lang","genre","mention","date","real","head","text")
-for $name in $para
-    for $hit in $model(concat("r_",$name))
-        
-        let $file_name := root($hit)/util:document-name(.)
-        let $expanded := kwic:expand($hit)
-                    
-        order by $file_name
-        return if(substring-after($file_name,"BNP") != "" or substring-after($file_name,"X"))
-                    then <li><a href="data/doc/{concat(substring-before($file_name, ".xml"),'?file=', $file_name)}"></a>
-                        {kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="40"/>)}</li>
-                        else <p>Nothin, {$file_name}</p>
-  :)      
-(: if(exists($sel) and $sel = "all")
-then
-    if(exists($model(concat("r_",$sel))))
-    then
+    then if ($model("query")!="") then 
         for $hit in $model(concat("r_",$sel))
             let $file_name := root($hit)/util:document-name(.)
-           let $result :=  if($file_name != $hit) then <p> Ebene 3 Ich lebe </p>(:search:filter_result($model(concat("r_",$sel)),$file_name,concat("r_",$sel)):)
-                            else <p>3 Ebene</p>
-            return $result
-            else <p>2 Ebene</p>
-        else <p>1 Ebene</p>
-        :)
-
+            let $expanded := kwic:expand($hit)
+            let $title := 
+            if(doc(concat("/db/apps/pessoa/data/doc/",$file_name))//tei:sourceDesc/tei:msDesc) 
+                then doc(concat("/db/apps/pessoa/data/doc/",$file_name))//tei:msDesc/tei:msIdentifier/tei:idno[1]/data(.)
+                else doc(concat("/db/apps/pessoa/data/pub/",$file_name))//tei:biblStruct/tei:analytic/tei:title[1]/data(.)
+            order by $file_name
+            return if(substring-after($file_name,"BNP") != "" or substring-after($file_name,"X"))
+                    then <li><a href="{$helpers:app-root}/data/doc/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"), '&amp;file=', $file_name)}">{$title}</a>
+                        {kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="40"/>)}</li>
+                    else <li><a href="{$helpers:app-root}/data/pub/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"), '&amp;file=', $file_name)}">{$title}</a>
+                        {kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="40"/>)}</li>
+            
+        else for $hit in $model(concat("r_",$sel))
+            let $file_name := root($hit)/util:document-name(.)
+            let $title := 
+            if(doc(concat("/db/apps/pessoa/data/doc/",$file_name))//tei:sourceDesc/tei:msDesc) 
+                then doc(concat("/db/apps/pessoa/data/doc/",$file_name))//tei:msDesc/tei:msIdentifier/tei:idno[1]/data(.)
+                else doc(concat("/db/apps/pessoa/data/pub/",$file_name))//tei:biblStruct/tei:analytic/tei:title[1]/data(.)
+                order by $file_name
+                return if(substring-after($file_name,"BNP") != "" or substring-after($file_name,"X"))
+                        then <li><a href="{$helpers:app-root}/data/doc/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"), '&amp;file=', $file_name)}">{$title}</a></li>
+                        else <li><a href="{$helpers:app-root}/data/pub/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"), '&amp;file=', $file_name)}">{$title}</a></li>
+    else <p>Ebene 2 </p>
+    else <p>Ebene 1</p>
 };
 
 declare function search:result_union($model as node()*) as node()* {
  if (exists($model))
  then let $union := $model
-  
-return  
- $union | $union
+  return   $union | $union
 else ()
 };
-declare function search:filter_result($hit as element(), $term as xs:string*) as node()+ {
-        let $file_name := root($hit)/util:document-name(.)
-     (:   let $title := if(substring-before($fíle_name,"BNP") or substring-before($file_name,"X"))
-                      then doc(concat("/db/apps/pessoa/data/doc/",$file-name))//tei:msDesc/tei:msIdentifier/tei:idno[1]/data(.)
-                      else doc(concat("/db/apps/pessoa/data/doc/",$file-name))//tei:biblStruct/tei:analytic/tei:title[1]/data(.)
-                      :)
-         let $expanded := kwic:expand($hit)
-         return  if(substring-after($file_name,"BNP") != "" or substring-after($file_name,"X"))
-                    then <li><a href="data/doc/{concat(substring-before($file_name, ".xml"),'?file=', $file_name)}"></a>
-                        {kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="40"/>)}</li>
-                        else <p>Nothin, {$file_name}</p>
-                      
-        
-};
-
-(: Ende der Neuen Funktionen :)
-
-(: Nur zum abgleichen
-
-////
-then <li><a href="data/doc/{concat(substring-before($file_name, ".xml"),'?term=',$term, '&amp;file=', $file_name)}"></a>
-                        {kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="40"/>)}</li>
-                        else <p>Nothin, {$file_name}</p>
-                        
-////
-
-
-declare %templates:wrap function search:search( $node as node(), $model as map(*), $term as xs:string?) as map(*) {
-(:
-for $m in collection("/db/apps/pessoa/data/doc")//tei:origDate[ft:query(.,$q)]
-order by ft:score($m) descending
-:)
-(: let $term := request:get-parameter('term', "") :)
-if(exists($term) and $term !=" ")
-then
-let $term := search:get-parameters("term")
-let $result-text := collection("/db/apps/pessoa/data/doc")//tei:text[ft:query(.,$term)]
-let $result-head := collection("/db/apps/pessoa/data/doc")//tei:msItemStruct[ft:query(.,$term)]
-let $result := ($result-text, $result-head)
-return map{
-"result" := $result,
-"result-text" := $result-text,
-"result-head" := $result-head,
-"query" := $term
-}
-else map{
-"resilt-text":=(),
-"result-head":=(),
-"query" := '"..."'
-}
-};
-
-declare function search:result-list ($node as node(), $model as map(*), $sel as xs:string) as node()+ {
-    if (exists($sel) and $sel = ("text", "head"))
-    then
-        if (exists($model(concat("result-",$sel))))
-        then
-        let $term := $model("query") 
-            for $hit in $model(concat("result-", $sel))
-            let $file-name := root($hit)/util:document-name(.)
-            let $title := 
-            if(doc(concat("/db/apps/pessoa/data/doc/",$file-name))//tei:sourceDesc/tei:msDesc) 
-                then doc(concat("/db/apps/pessoa/data/doc/",$file-name))//tei:msDesc/tei:msIdentifier/tei:idno[1]/data(.)
-                else doc(concat("/db/apps/pessoa/data/doc/",$file-name))//tei:biblStruct/tei:analytic/tei:title[1]/data(.)
-            let $expanded := kwic:expand($hit)
-        return if($sel != "head")
-            then 
-            <li>
-            <a href="data/doc/{concat(substring-before($file-name, ".xml"),'?term=',$model("query"), '&amp;file=', $file-name)}">{$title}</a>
-            {kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="40"/>)}
-            </li>
-            else 
-            <li> 
-            <a href="data/doc/{concat(substring-before($file-name, ".xml"),'?term=',$model("query"), '&amp;file=', $file-name)}">{$title}</a>
-            {kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="0" />)}</li>
-        else <p> Keine Treffer </p>
-        else $sel
-};
-
-:)
 declare function search:highlight-matches($node as node(), $model as map(*), $term as xs:string?, $sel as xs:string, $file as xs:string?) as node() {
 if($term and $file and $sel and $sel="text","head","lang") 
     then
@@ -430,6 +285,6 @@ if($term and $file and $sel and $sel="text","head","lang")
 declare function search:search-page($node as node(), $model as map(*)) as node() {
     let $func := "function search()"
     return <script> {$func} {{var value = $("#search").val();
-                location.href="{$helpers:app-root}/pessoa/search?term="+value+"&amp;search=simple";
+                location.href="{$helpers:app-root}/search?term="+value+"&amp;search=simple";
                 }};</script>
 };
