@@ -40,8 +40,7 @@ declare function author:list-texts($node as node(), $model as map(*), $textType,
                         <li class ="active">
                             <div id="all">
                                 <div>{author:list-all($node, $model, $author, $orderBy)}</div>
-                            </div>
-                            
+                            </div>                           
                         </li>
                         <li>
                             <div id="documents">
@@ -106,8 +105,10 @@ declare function author:list-all($node as node(), $model as map(*), $author, $or
     let $d := fn:index-of($docs,$text)
     let $p := fn:index-of($pubs,$text)
     order by (author:orderText($text, $orderBy))
-    return  
-    if(count($p) >= 1) then 
+    return
+   
+  (:   <div>{author:orderText($text,$orderBy)}</div> :)
+   if(count($p) >= 1) then 
         if($author="pessoa") then
         author:list-publication($text,"FP")
        (:<div>{author:orderText($text,$orderBy)}</div>:)
@@ -200,7 +201,7 @@ declare function author:orderDocument($doc, $orderBy){
     let $from := $doc//tei:origDate/@from
     let $notBefore := $doc//tei:origDate/@notBefore
     let $notAfter := $doc//tei:origDate/@notAfter
-    let $signature :=  $doc//tei:idno/data(.)
+    let $signature :=  $doc//tei:idno
     return if($orderBy = "date") then
     if($when) then $when
      else if($from) then $from
@@ -225,10 +226,10 @@ declare function author:getRoles($doc, $key){
 
 
 declare function author:orderText($text, $orderBy){
-    let $pubDate := author:orderPublication($text,$orderBy)
-    let $docDate := author:orderDocument($text, $orderBy)
-    return if($pubDate) then $pubDate/data(.)
-    else if($docDate) then $docDate/data(.)
+    let $pub := author:orderPublication($text,$orderBy)
+    let $doc := author:orderDocument($text, $orderBy)
+    return if($doc) then $doc/data(.)
+    else if($pub) then $pub/data(.)
     else ()
 };
 
@@ -246,7 +247,7 @@ declare function author:orderPublication($pub, $orderBy){
     let $from := ($pub//tei:date)[1]/@from
     let $notBefore := ($pub//tei:date)[1]/@notBefore
     let $notAfter := ($pub//tei:date)[1]/@notAfter
-    let $title :=  $pub//tei:teiHeader/tei:fileDesc/tei:titleStmt/(tei:title)[not(@*)]/data(.)
+    let $title :=  $pub//tei:teiHeader/tei:fileDesc/tei:titleStmt/(tei:title)[not(@*)]
     return
     if($orderBy="date") then
         if($when) then $when
@@ -255,7 +256,7 @@ declare function author:orderPublication($pub, $orderBy){
         else if($notAfter) then $notAfter
         else ()
     else if($orderBy ="alphab") then
-        ($pub//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title)[1]
+      $title[1]
     else()  
 };
 
