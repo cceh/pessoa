@@ -1,3 +1,4 @@
+
 xquery version "3.0";
 
 module namespace author="http://localhost:8080/exist/apps/pessoa/author";
@@ -5,10 +6,13 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
 
-declare function author:getOrder($node as node(), $model as map(*),$orderBy){
-        map { "orderBy" := $orderBy }
- 
+declare function author:test($node as node(), $model as map(*),$orderBy, $textType, $author){
+    author:list-texts($node,$model,$textType,$author, $orderBy)
 };
+
+(:declare function author:getOrder($node as node(), $model as map(*),$orderBy){
+    map { "orderBy" := $orderBy }
+};:)
 
 declare function author:getTabs($node as node(), $model as map(*), $textType as xs:string?){
             if ($textType = "all") then
@@ -29,62 +33,64 @@ declare function author:getTabs($node as node(), $model as map(*), $textType as 
                 else()                   
 };
 
-declare function author:list-texts($node as node(), $model as map(*), $textType, $author){
+declare function author:list-texts($node as node(), $model as map(*), $textType, $author, $orderBy){
   
     if ($textType = "all") then
                     <ul id="tab">
                         <li class ="active">
                             <div id="all">
-                                <div>{author:list-all($node, $model, $author, $model("orderBy"))}</div>
+                                <div>{author:list-all($node, $model, $author, $orderBy)}</div>
                             </div>
                             
                         </li>
                         <li>
                             <div id="documents">
-                                <div>{ author:list-documents($node, $model, $author, $model("orderBy"))}</div>
+                                <div>{ author:list-documents($node, $model, $author,$orderBy)}</div>
                             </div>
                         </li>
                         <li>
                             <div id="publications">
-                                <div>{author:list-publications($node, $model, $author,$model("orderBy"))}</div>  
+                                <div>{author:list-publications($node, $model, $author,$orderBy)}</div>  
                             </div>
                         </li>
                     </ul>
                     else if ($textType="documents") then
-                    <ul id="tab">
+                  
+                   <ul id="tab">
                         <li>
                             <div id="all">
-                                <div>{author:list-all($node, $model, $author, $model("orderBy"))}</div>
+                                <div>{author:list-all($node, $model, $author, $orderBy)}</div>
                             </div>
                             
                         </li>
-                        <li class="active">
+                        <li class ="active">
                             <div id="documents">
-                                <div>{ author:list-documents($node, $model, $author, $model("orderBy"))}</div>
+                                <div>{ author:list-documents($node, $model, $author, $orderBy)}</div>
                             </div>
                         </li>
                         <li>
                             <div id="publications">
-                                <div>{author:list-publications($node, $model, $author, $model("orderBy"))}</div>  
+                                <div>{author:list-publications($node, $model, $author,$orderBy)}</div>  
                             </div>
                         </li>
                     </ul>
+                   
                     else if($textType = "publications") then
                      <ul id="tab">
                         <li>
                             <div id="all">
-                                <div>{author:list-all($node, $model, $author, $model("orderBy"))}</div>
+                                <div>{author:list-all($node, $model, $author, $orderBy)}</div>
                             </div>
                             
                         </li>
                         <li>
                             <div id="documents">
-                                <div>{ author:list-documents($node, $model, $author, $model("orderBy"))}</div>
+                                <div>{ author:list-documents($node, $model, $author, $orderBy)}</div>
                             </div>
                         </li>
                         <li class="active">
                             <div id="publications">
-                                <div>{author:list-publications($node, $model, $author, $model("orderBy"))}</div>  
+                                <div>{author:list-publications($node, $model, $author, $orderBy)}</div>  
                             </div>
                         </li>
                     </ul>
@@ -104,23 +110,31 @@ declare function author:list-all($node as node(), $model as map(*), $author, $or
     if(count($p) >= 1) then 
         if($author="pessoa") then
         author:list-publication($text,"FP")
+       (:<div>{author:orderText($text,$orderBy)}</div>:)
         else if ($author ="campos") then
         author:list-publication($text,"AdC")
+       (:   <div>{author:orderText($text,$orderBy)}</div>:)
         else if ($author ="reis") then
         author:list-publication($text,"RR")
+        (: <div>{author:orderText($text,$orderBy)}</div>:)
         else if ($author ="caeiro") then
         author:list-publication($text,"AC")
+        (:  <div>{author:orderText($text,$orderBy)}</div>:)
         else()
     else if(count($d) >= 1) then 
    
         if($author="pessoa") then
         author:list-document($text,"FP")
+        (: <div>{author:orderText($text,$orderBy)}</div>:)
         else if ($author ="campos") then
         author:list-document($text,"AdC")
-        else if ($author ="reis") then
-        author:list-document($text,"RR")
+       (:  <div>{author:orderText($text,$orderBy)}</div>:)
+       else if ($author ="reis") then
+         author:list-document($text,"RR")
+       (: <div>{author:orderText($text,$orderBy)}</div>:)
         else if ($author ="caeiro") then
         author:list-document($text,"AC")
+         (: <div>{author:orderText($text,$orderBy)}</div>:)
         else()
     else()
 
@@ -147,21 +161,22 @@ declare function author:list-publications($node as node(), $model as map(*), $au
 declare function author:list-documents($node as node(), $model as map(*), $author, $orderBy){
     let $docs := collection("/db/apps/pessoa/data/doc/")
     let $key := if($author ="pessoa") then "FP" else if($author ="caeiro") then "AC" else if($author = "reis") then "RR" else if($author = "campos") then "AdC" else ()
-    let $allRoles := fn:distinct-values($docs//tei:text//tei:rs[@type = 'person' and @key=$key]/@role/data(.))
-        return if($orderBy="date") then
+    let $allRoles := fn:distinct-values($docs//tei:text//tei:rs[@type = 'person' and @key=$key]/@role/data(.))     
+    return if($orderBy="date") then
             for $doc in $docs
             order by (author:orderDocument($doc, $orderBy))
-            return author:list-document($doc,$key)
-            
-        else if($orderBy ="alphab") then
-        for $role in $allRoles return 
-            <p>{$role}{author:list-documents-byRole($docs, $key, $role)}</p>
+            return author:list-document($doc,$key)    
+   else if($orderBy ="alphab") then
+        for $role in $allRoles 
+        return
+            <p>{$role}{author:list-documents-byRole($docs, $key, $role, $orderBy)}</p>          
         else()
-
 };
 
-declare function author:list-documents-byRole($docs, $key, $role){
-    for $doc in $docs return 
+declare function author:list-documents-byRole($docs, $key, $role, $orderBy){
+    for $doc in $docs
+    order by(author:orderDocument($doc,$orderBy))
+    return 
     let $roles := fn:distinct-values($doc//tei:text//tei:rs[@type = 'person' and @key=$key]/@role/data(.))
     return
     if ($doc//tei:text//tei:rs[@type ='person' and @key=$key]) then
@@ -193,9 +208,8 @@ declare function author:orderDocument($doc, $orderBy){
         else if($notAfter) then $notAfter
         else ()
     else if($orderBy = "alphab") then
-     ()
-    else()
-    
+     $signature
+    else() 
 };
 
 
@@ -211,10 +225,10 @@ declare function author:getRoles($doc, $key){
 
 
 declare function author:orderText($text, $orderBy){
-    let $docDate := author:orderDocument($text, $orderBy)
     let $pubDate := author:orderPublication($text,$orderBy)
-    return if($docDate) then $docDate/data(.)
-    else if($pubDate) then $pubDate/data(.)
+    let $docDate := author:orderDocument($text, $orderBy)
+    return if($pubDate) then $pubDate/data(.)
+    else if($docDate) then $docDate/data(.)
     else ()
 };
 

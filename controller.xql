@@ -33,9 +33,13 @@ else if (contains($exist:path, "/doc/")) then
 			<forward url="{$exist:controller}/modules/view.xql"/>
 		</error-handler>
     </dispatch>)
-else if (contains($exist:path, "orderBy")) then
+ 
+else if (request:get-parameter("orderBy","")!="") then
     let $orderBy := request:get-parameter("orderBy", "date")
-    return author:getOrder(<node />, map {"test" := "test"}, $orderBy)
+    let $author := substring-before(substring-after($exist:path, '/author/'), '/')
+    let $textType := $exist:resource
+    return 
+    author:test(<node />, map {"test" := "test"},$orderBy, $textType, $author)
 else if (contains($exist:path, "/author/")) then
     let $author := substring-before(substring-after($exist:path, '/author/'), '/')
     let $textType := $exist:resource
