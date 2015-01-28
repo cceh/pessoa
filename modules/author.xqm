@@ -5,7 +5,17 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
 
-
+declare function author:getTitle($node as node(), $model as map(*), $author){
+    if($author = "pessoa") then
+        <h1>Fernando Pessoa</h1>
+    else if($author="reis") then
+        <h1>Ricardo Reis</h1>
+    else if($author="caeiro") then
+        <h1>Alberto Caeiro</h1>
+    else if($author="campos") then
+        <h1>Álvaro de Campos</h1>
+    else ()
+        };
 
 declare function author:reorder($node as node(), $model as map(*),$orderBy, $textType, $author){
     author:getTabContent($node,$model,$textType,$author, $orderBy)
@@ -177,7 +187,7 @@ declare function author:listDocuments($node as node(), $model as map(*), $author
         return author:listDocument($doc,$key)    
     else if($orderBy ="alphab") then
         for $role in $allRoles 
-        return <p>{$role}{author:listDocumentsByRole($docs, $key, $role, $orderBy)}</p>          
+        return <p>mencionado como {$role}:{author:listDocumentsByRole($docs, $key, $role, $orderBy)}</p>          
     else()
 };
 
@@ -189,16 +199,19 @@ declare function author:listDocumentsByRole($docs, $key, $role, $orderBy){
     return
     if ($doc//tei:text//tei:rs[@type ='person' and @key=$key]) then
         if(fn:index-of($roles, $role)) then
-            author:listDocument($doc,$key)
+           ( <div><a href="{$helpers:app-root}/doc/{replace(replace($doc//tei:idno/data(.), "/","_")," ", "_")}">{$doc//tei:idno/data(.)} </a></div>,<br/>)
         else()
     else()
 };
 
 declare function author:listDocument($doc, $key){
     let $roles := author:getRoles($doc,$key)
+    let $text := "mencionado como: "
+    for $role in $roles
+    let $text := fn:concat($text,$role)
     return 
     if(count($roles) > 0) then
-       (<div><a href="{$helpers:app-root}/doc/{replace(replace($doc//tei:idno/data(.), "/","_")," ", "_")}">{$doc//tei:idno/data(.)} </a>  ({$roles})</div>, <br />)
+       (<div><a href="{$helpers:app-root}/doc/{replace(replace($doc//tei:idno/data(.), "/","_")," ", "_")}">{$doc//tei:idno/data(.)} </a>  ({$text})</div>, <br />)
     else () 
 };
 
