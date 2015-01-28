@@ -187,7 +187,7 @@ declare function author:listDocuments($node as node(), $model as map(*), $author
         return author:listDocument($doc,$key)    
     else if($orderBy ="alphab") then
         for $role in $allRoles 
-        return <p>mencionado como {$role}:{author:listDocumentsByRole($docs, $key, $role, $orderBy)}</p>          
+        return <p>mencionado como {if($role="author") then "autor" else if($role ="translator") then "traductor" else if($role ="topic") then "tema" else $role}:{author:listDocumentsByRole($docs, $key, $role, $orderBy)}</p>          
     else()
 };
 
@@ -208,7 +208,7 @@ declare function author:listDocument($doc, $key){
     let $roles := author:getRoles($doc,$key)
     let $text := "mencionado como: "
     for $role in $roles
-    let $text := fn:concat($text,$role)
+    let $text := fn:concat($text,if($role="author") then "autor" else if($role ="translator") then "traductor" else if($role ="topic") then "tema" else $role)
     return 
     if(count($roles) > 0) then
        (<div><a href="{$helpers:app-root}/doc/{replace(replace($doc//tei:idno/data(.), "/","_")," ", "_")}">{$doc//tei:idno/data(.)} </a>  ({$text})</div>, <br />)
