@@ -39,7 +39,7 @@ else if (contains($exist:path, "/author/")) then
     let $author := substring-before(substring-after($exist:path, '/author/'), '/')
     let $textType := $exist:resource
     return 
-    author:test(<node />, map {"test" := "test"},$orderBy, $textType, $author)
+   author:reorder(<node />, map {"test" := "test"},$orderBy, $textType, $author)
     else
     let $author := substring-before(substring-after($exist:path, '/author/'), '/')
     let $textType := $exist:resource
