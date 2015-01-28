@@ -16,6 +16,7 @@
     </teiHeader>
     <text>
         <body>
+            <!-- ########### AUTHORS #################### -->
             <listPerson type="authors">
                 <person xml:id="FP">
                     <persName>Fernando Pessoa</persName>
@@ -30,41 +31,160 @@
                     <persName>Ricardo Reis</persName>
                 </person>
             </listPerson>
-         <!-- person roles -->
-            <list type="roles">
-                <item>author</item>
-                <item>editor</item>
-                <item>translator</item>
-                <item>topic</item>
+         <!-- ################## ROLES #################
+             person roles (bitte auch in dieser Reihenfolge in der Suchmaske) -->
+            <list type="roles" xml:lang="pt">
+                <item xml:id="autor">autor</item>
+                <item xml:id="editor">editor</item>
+                <item xml:id="tradutor">tradutor</item>
+                <item xml:id="tema">tema</item>
             </list>
-         <!-- work roles -->
-            <list type="roles">
-                <item>chapter</item>
-                <item>volume</item>
-                <item>work</item>
+            <list type="roles" xml:lang="en">
+                <item corresp="#autor">author</item>
+                <item corresp="#editor">editor</item>
+                <item corresp="#tradutor">translator</item>
+                <item corresp="#tema">topic</item>
             </list>
-            <listPlace>
-                <place>
-                    <placeName>...</placeName>
-                </place>
-            </listPlace>
-         <!-- géneros mencionados -->
-            <list type="genres" n="1">
-                <item xml:id="artigo">Artigo</item>
-                <item xml:id="entrevista">Entrevista</item>
-                <item xml:id="nota">Nota</item>
-                <item xml:id="prefacio">prefacio</item>
-            </list>
-            <list type="genres" n="2">
+            <!-- ############## GENRES ###################### -->
+            <list type="genres" xml:lang="pt">
          <!-- géneros de documentos e publicaçoes -->
                 <!-- <item xml:id="carta">Carta</item>
                 <item xml:id="diario">Diário</item>
-                <item xml:id="ensaio">Ensaio</item> -->
+                <item xml:id="ensaio">Ensaio</item> Diese bitte erstmal ganz rausnehmen! -->
                 <item xml:id="lista_editorial">Lista editorial</item>
                 <item xml:id="nota_editorial">Nota editorial</item>
                 <item xml:id="plano_editorial">Plano editorial</item>
                 <item xml:id="poesia">Poesia</item>
             </list>
+            <list type="genres" xml:lang="en">
+                <item corresp="#lista_editorial">Editorial list</item>
+                <item corresp="#nota_editorial">Editorial note</item>
+                <item corresp="#plano_editorial">Editorial plan</item>
+                <item corresp="#poesia">Poetry</item>
+            </list>
+            <list type="language" xml:lang="pt">
+                <item xml:id="pt">Português</item>
+                <item xml:id="en">Inglês</item>
+                <item xml:id="fr">Francês</item>
+            </list>
+            <list type="language" xml:lang="en">
+                <item corresp="#pt">Portuguese</item>
+                <item corresp="#en">English</item>
+                <item corresp="#fr">French</item>
+            </list>
+      <!-- ################# NAVIGATION ######################## -->   
+            <list type="navigation">
+                <item>
+                    <term xml:lang="pt" xml:id="autores">Autores</term>
+                    <term xml:lang="en" corresp="#autores">Authors</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="documentos">Documentos</term>
+                    <term xml:lang="en" corresp="#documentos">Documents</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="publicacoes">Publicações</term>
+                    <term xml:lang="en" corresp="#publicacoes">Publications</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="genero">Género</term>
+                    <term xml:lang="en" corresp="#genero">Genre</term>
+                    <!-- einzelne Genres siehe oben list type genres -->
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="cronologia">Cronologia</term>
+                    <term xml:lang="en" corresp="#cronologia">Chronology</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="bibliografia">Bibliografia</term>
+                    <term xml:lang="en" corresp="#bibliografia">Bibliography</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="projeto">Projeto</term>
+                    <term xml:lang="en" corresp="#projeto">Project</term>
+                </item>
+            </list>
+      <!-- ################# SEARCH ############################ -->
+            <list type="search">
+                <item>
+                    <term xml:lang="pt" xml:id="search_noun">Pesquisa</term>
+                    <term xml:lang="en" corresp="#search_noun">Search</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="search_verb">Pesquisar</term>
+                    <term xml:lang="en" corresp="#search_verb">Search</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="results">Resultados</term>
+                    <term xml:lang="en" corresp="#results">Results</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="search_term">Termo de pesquisa</term>
+                    <term xml:lang="en" corresp="#search_term">Search term</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="free_search">Pesquisa aberta</term>
+                    <term xml:lang="en" corresp="#free_search">Free search</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="multiple_entries">Prima a tecla Ctrl/CMD para seleccionar várias entradas</term>
+                    <term xml:lang="en" corresp="#multiple_entries">Hold the Ctrl/CMD key to select multiple entries</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="real">real</term>
+                    <term xml:lang="en" corresp="#real">real</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="mentioned">mencionado</term>
+                    <term xml:lang="en" corresp="#mentioned">mentioned</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="mentioned_as">mencionado como</term>
+                    <term xml:lang="en" corresp="#mentioned_as">mentioned as</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="published">publicado</term>
+                    <term xml:lang="en" corresp="#published">published</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="unpublished">não publicado</term>
+                    <term xml:lang="en" corresp="#unpublished">unpublished</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="genre">género</term>
+                    <term xml:lang="en" corresp="#genre">genre</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="date">data</term>
+                    <term xml:lang="en" corresp="#date">date</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="language">língua</term>
+                    <term xml:lang="en" corresp="#language">language</term>
+                </item>
+            </list>
+      <!-- ####################### TABS ############################# -->
+            <list type="tabs">
+                <item>
+                    <term xml:lang="pt" xml:id="transcricao-diplomatica">transcrição diplomática</term>
+                    <term xml:lang="en" corresp="#transcricao-diplomatica">diplomatic transcription</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="primeira-versao">primeira versão</term>
+                    <term xml:lang="en" corresp="#primeira-versao">first version</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="versao-final">versão final</term>
+                    <term xml:lang="en" corresp="#versao-final">last version</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="versao-pessoal">versão pessoal</term>
+                    <term xml:lang="en" corresp="#versao-pessoal">customized version</term>
+                </item>
+            </list>
+      <!-- ####################### WORKS ############################
+      (im Moment noch nicht gebraucht)
+      -->      
             <!-- obras mencionadas -->
             <list type="works" n="1">
                 <item xml:id="O1">
@@ -276,40 +396,6 @@
                 <item xml:id="Mercure_France" xml:lang="fr">Mercure de France</item>
                 <item xml:id="Teatro">Teatro</item>
                 <item xml:id="TPs_Weekly" xml:lang="en">T.P.'s Weekly</item>
-            </list>
-            <list type="years">
-                <item>1904</item>
-                <item>1905</item>
-                <item>1906</item>
-                <item>1914</item>
-                <item>1915</item>
-                <item>1916</item>
-                <item>1917</item>
-                <item>1920</item>
-                <item>1922</item>
-                <item>1923</item>
-                <item>1924</item>
-                <item>1925</item>
-                <item>1926</item>
-                <item>1927</item>
-                <item>1928</item>
-                <item>1929</item>
-                <item>1930</item>
-                <item>1931</item>
-                <item>1932</item>
-                <item>1933</item>
-                <item>1934</item>
-                <item>1935</item>
-            </list>
-            <list type="language_en">
-                <item xml:id="en_pt">Portuguese</item>
-                <item xml:id="en_en">English</item>
-                <item xml:id="en_fr">French</item>
-            </list>
-            <list type="language_pt">
-                <item xml:id="pt_pt">Português</item>
-                <item xml:id="pt_en">Inglês</item>
-                <item xml:id="pt_fr">Francês</item>
             </list>
         </body>
     </text>
