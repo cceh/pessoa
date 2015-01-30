@@ -8,15 +8,14 @@ import module namespace lists="http://localhost:8080/exist/apps/pessoa/lists" at
 import module namespace doc="http://localhost:8080/exist/apps/pessoa/doc" at "doc.xqm";
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
+declare namespace request="http://exist-db.org/xquery/request";
+
 
 declare %templates:wrap function page:construct($node as node(), $model as map(*)) as node()* {
-    let $lang := request:get-parameter("lang",'')
-    let $doc := doc("/db/apps/pessoa/data/lists.xml")
     let $nav := page:createNav()
-    let $lists :=            
-    
+    let $lists :=                
             <ul id="navi" class="nav nav-tabs" role="tablist">
-                {$nav}
+                {page:createNav()}
                 <li>                    
                   <div class="box">
                         <div class="container-4">
@@ -27,8 +26,11 @@ declare %templates:wrap function page:construct($node as node(), $model as map(*
                     </div>                  
                 </li>
             </ul>
-            
-    let $switchlang := <script>function switchlang(value){{location.href="{$helpers:app-root}/?lang="+value;}}</script>
+   (: let $content :=
+        <div id="navi2" class="tab-content">
+            {page:createContent()}
+        </div>:)
+    let $switchlang := <script>function switchlang(value){{location.href="{$helpers:app-root}/index.html?plang="+value;}}</script>
     let $return := ($lists, $switchlang)
     return $return
 };
@@ -37,9 +39,21 @@ declare %templates:wrap function page:construct($node as node(), $model as map(*
 declare function page:createNav() as node()* {
 let $type := ("autores","documentos","publicacoes","genero","cronologia","bibliografia","projeto")
 let $doc := doc("/db/apps/pessoa/data/lists.xml")
-let $lang := if(request:get-parameter("lang",'')!="") then request:get-parameter("lang",'') else "pt"
+let $lang := if(request:get-parameter("plang",'')!="") then request:get-parameter("lang",'') else "pt"
 for $target in $type 
     let $name := if($lang = "pt") then $doc//tei:term[@xml:lang = $lang and @xml:id= $target]
                                   else $doc//tei:term[@xml:lang = $lang and @corresp= concat("#",$target)]
-   return <li><a href="{$target}" role="tab" data-toggle="tab">{$name}</a></li>
+  return <li><a href="#{$target}" role="tab" data-toggle="tab">{$name}</a></li>
+};
+
+declare function page:createContent() as node()* {
+let $type := ("autores","documentos","publicacoes","genero","cronologia","bibliografia","projeto")
+for $target in $type 
+    let $function := if($target != "bibliografia" and $target !="cronologia" and $target != "projeto") then 
+                    <ul class="nav-cont app:list?type={$target}"></ul>
+                    else ()
+    let $window :=     <div class="tab-pane" id="{$target}">
+                       {$function}
+                       </div>
+    return $window
 };

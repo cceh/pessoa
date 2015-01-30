@@ -56,82 +56,14 @@
         
         <style  type="text/css">
 
-            .container-4{
-            overflow: hidden;
-            width: 150px;
-            vertical-align: middle;
-            white-space: nowrap;
-            }
             
-            .container-4 input#search{
-                width: 120px;
-                height: 20px;
-                
-                background: white;
-                border: solid 1px;
-                font-size: 10pt;
-                float: left;
-                color: black;
-               /* padding-left: 15px;*/
-                -webkit-border-radius: 15px;
-                -moz-border-radius: 15px;
-                border-radius: 15px;
-              }
-
-            .container-4 input#search::-webkit-input-placeholder {
-               color: black;
-            }
-            
-            .container-4 input#search:-moz-placeholder { /* Firefox 18- */
-               color: #65737e; 
-            }
- 
-            .container-4 input#search::-moz-placeholder {  /* Firefox 19+ */
-               color: #65737e; 
-            }
- 
-            .container-4 input#search:-ms-input-placeholder { 
-               color: black; 
-            }
-
-        .container-4 button.icon{
-          -webkit-border-top-right-radius: 5px;
-          -webkit-border-bottom-right-radius: 5px;
-          -moz-border-radius-topright: 5px;
-          -moz-border-radius-bottomright: 5px;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-
-          border: solid 0,5px;
-          background: #232833;
-          height: 32px;
-          width: 25px;
-          color: #4f5b66;
-          opacity: 0;
-          font-size: 10pt;
-         
-          -webkit-transition: all .55s ease;
-          -moz-transition: all .55s ease;
-          -ms-transition: all .55s ease;
-          -o-transition: all .55s ease;
-          transition: all .55s ease;
-        }
-        .container-4:hover button.icon, .container-4:active button.icon, .container-4:focus button.icon{
-            outline: none;
-            opacity: 1;
-           margin-left: -20px; 
-          }
-         
-          .container-4:hover button.icon:hover{
-            background: white;
-          }
         </style>
     </head>
     <body id="body">
         <div id="side">
             <div id="page-header">
-                <div class="flagge"></div>
-                <div class="flagge"></div>
+                <button id="en" class="flagge" onclick="switchlang('en')">EN</button>
+                <button id="pt" class="flagge" onclick="switchlang('pt')">PT</button>
                 <div class="clear"></div>
                 <h1>
                     <a class="helpers:app-root" href="index.html">
@@ -140,45 +72,14 @@
                 </h1>
             </div>
             <span class="page:construct"><!-- Print list--></span>
-           <!-- <ul id="navi" class="nav nav-tabs" role="tablist">
-                <li>
-                    <a href="#author" role="tab" data-toggle="tab">Autor</a>
-                </li>
-                <li>
-                    <a href="#document" role="tab" data-toggle="tab">Documentos</a>
-                </li>
-                <li>
-                    <a href="#publicationen" role="tab" data-toggle="tab">Publicações</a>
-                </li>
-                <li>
-                    <a href="#genre" role="tab" data-toggle="tab">Género</a>
-                </li>
-                <li>
-                    <a href="#chronologie" role="tab" data-toggle="tab">Cronologia</a>
-                </li>
-                <li>
-                    <a href="#bibliografie" role="tab" data-toggle="tab">Bibliografia</a>
-                </li>
-                <li>
-                    <a href="#project" role="tab" data-toggle="tab">Projeto</a>
-                </li>
-                <li>                    
-                  <div class="box">
-                        <div class="container-4">
-                            <input type="search" id="search" placeholder="Search..." />
-                            <button class="icon" id="button" onclick="search()"><i class="fa fa-search" ></i>
-                                </button>
-                        </div>
-                    </div>                  
-                </li>
-            </ul>-->
-            <span class="search:search-page"><!-- Funktions Aufruf für das Skript --></span>  
+           
+            <span class="search:search-function"><!-- Funktions Aufruf für das Skript --></span>  
             
             <div id="navi2" class="tab-content">
-                <div class="tab-pane" id="genre">
-                    <ul class="nav-cont app:list?type=genres"></ul>
+                <div class="tab-pane" id="genero">
+                    <ul class="nav-cont app:list?type=genero"></ul>
                 </div>
-                <div class="tab-pane" id="chronologie">
+                <div class="tab-pane" id="cronologia">
                     <div class="divTable">
                         <div class="divRow">
                             <div class="divCell">
@@ -197,131 +98,40 @@
                                 <b>Linha do tempo</b>
                             </div>
                         </div>
-                        <div class="divRow app:sort-years?type=years&amp;indikator=0"></div>
-                        <div class="divRow app:sort-years?type=years&amp;indikator=1"></div>
-                        <div class="divRow app:sort-years?type=years&amp;indikator=2"></div>
-                        <div class="divRow app:sort-years?type=years&amp;indikator=3"></div>
-                        <div class="divRow app:sort-years?type=years&amp;indikator=4"></div>
-                        <div class="divRow app:sort-years?type=years&amp;indikator=5"></div>
-                        <div class="divRow app:sort-years?type=years&amp;indikator=6"></div>
-                        <div class="divRow app:sort-years?type=years&amp;indikator=7"></div>
-                        <div class="divRow app:sort-years?type=years&amp;indikator=8"></div>
-                        <div class="divRow app:sort-years?type=years&amp;indikator=9"></div>
+                        <div class="divRow app:sort-years?type=cronologia&amp;indikator=0"></div>
+                        <div class="divRow app:sort-years?type=cronologia&amp;indikator=1"></div>
+                        <div class="divRow app:sort-years?type=cronologia&amp;indikator=2"></div>
+                        <div class="divRow app:sort-years?type=cronologia&amp;indikator=3"></div>
+                        <div class="divRow app:sort-years?type=cronologia&amp;indikator=4"></div>
+                        <div class="divRow app:sort-years?type=cronologia&amp;indikator=5"></div>
+                        <div class="divRow app:sort-years?type=cronologia&amp;indikator=6"></div>
+                        <div class="divRow app:sort-years?type=cronologia&amp;indikator=7"></div>
+                        <div class="divRow app:sort-years?type=cronologia&amp;indikator=8"></div>
+                        <div class="divRow app:sort-years?type=cronologia&amp;indikator=9"></div>
                     </div>
-                    <!--
-                    <table style="width=100%">
-                        <tr>
-                            <td class="q">
-                                <b>1900-1909</b>
-                            </td>
-                            <td class="q">
-                                <b>1910-1919</b>
-                            </td>
-                            <td class="q">
-                                <b>1920-1929</b>
-                            </td>
-                            <td class="q">
-                                <b>1930-1935</b>
-                            </td>
-                            <td class="q">
-                                <b>Linha do tempo</b>
-                            </td>
-                        </tr>
-                        <tr class="app:list?type=years&indikator=0"/>
-                        <tr class="app:list?type=years&indikator=1"/>
-                        <tr>
-                         </tr>-->
-                    <!--
-                            <td class="a">
-                                <div class="app:list?type=years&indikator=0"/>
-                            </td>
-                            <td class="b">
-                                <div class=" app:list?type=years&indikator=1"/>
-                            </td>
-                            <td class="c">
-                                <div class=" app:list?type=years&indikator=2"/>
-                            </td>
-                            <td class="d">
-                                <div class=" app:list?type=years&indikator=3"/>
-                            </td>
-                            <td class="e"></td>-->
-                    <!-- </table>
-                    -->
                 </div>
-                <div class="tab-pane" id="author">
-                    <ul class="nav-cont app:list?type=authors"></ul>
+                   
+                <div class="tab-pane" id="autores">
+                    <ul class="nav-cont app:list?type=autores"></ul>
                 </div>
-                <div class="tab-pane " id="document">
+                <div class="tab-pane " id="documentos">
                     <table style="width=100%">
-                        <tr class="app:table?type=doc"></tr>
+                        <tr class="app:table?type=documentos"></tr>
                     </table>
                 </div>
-                <div class="tab-pane" id="bibliografie">
+                <div class="tab-pane" id="bibliografia">-->
                     <!-- Verlinkung zur Seite-->
                 </div>
-                <div class="tab-pane" id="project">
+                <div class="tab-pane" id="projeto">
                     <!-- Verlinkung zur Seite-->
                 </div>
-                <div class="tab-pane" id="publicationen">
+                <div class="tab-pane" id="publicacoes">
                     <table style="width=100%">
-                        <tr class="app:table2?type=pub"></tr>
+                        <tr class="app:table2?type=publicacoes"></tr>
                     </table>
-                </div>
-                <div class="tab-pane" id="search2">
-                    <!-- Verlinkung zur Seite-->
                 </div>
             </div>
-            <!-- Ab Hier-->
-            <!--<a class="config:app-title brand" href="./index.html">App Title</a>-->
-            <!-- <ul class="nav">                    
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Géneros</a>
-                                <ul class="dropdown-menu app:list?type=genres"/>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cronologia</a>
-                                <ul class="dropdown-menu app:list?type=years"/>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Autores</a>
-                                <ul class="dropdown-menu app:list?type=authors"/>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentos</a>
-                                <ul class="dropdown-menu app:list?type=doc"/> 
-                            </li>-->
-            <!--     <li class="vl">
-                                <a href="#">(Bibliografia)</a>
-                            </li>
-                            <li class="vl">
-                                <a href="#">Projeção (?)</a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Publicações</a>
-                                <ul class="dropdown-menu app:list?type=pub"/>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Acessos</a>
-                                <ul class="dropdown-menu">                                 
-                                </ul>
-                            </li>                    
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projeto</a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="#">Equipa</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Documentação</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Contacto</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            -->
-            <!--</ul>-->
-            <!--Bis Hier--><div id="result"></div>
+             <div id="result"></div>
             <div id="content" class="container">
                 
             </div>
