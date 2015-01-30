@@ -25,7 +25,7 @@ declare %templates:wrap function search:profisearch($node as node(), $model as m
        let $r_lang := if($term != "" and search:get-parameters("search")!= "simple") then 
                       if (search:get-parameters("lang_ao") ="or")
                         then search:lang_or_term($dbase)
-                        else (search:lang_and_term($dbase,"non_public"),search:lang_and_term($dbase,"public"))
+                        else (search:lang_and_term($dbase,"unpublished"),search:lang_and_term($dbase,"published"))
                       else $dbase
         let $dbase := $r_lang
         (: Sortierung nach Genre :)
@@ -60,8 +60,8 @@ declare %templates:wrap function search:profisearch($node as node(), $model as m
 
 
 declare function search:set_db() as xs:string+ {
-        let $result :=       if(search:get-parameters("release") = "non_public")    then "/db/apps/pessoa/data/doc"
-                             else if(search:get-parameters("release") = "public" )  then "/db/apps/pessoa/data/pub"
+        let $result :=       if(search:get-parameters("release") = "unpublished")    then "/db/apps/pessoa/data/doc"
+                             else if(search:get-parameters("release") = "published" )  then "/db/apps/pessoa/data/pub"
                              else ("/db/apps/pessoa/data/doc","/db/apps/pessoa/data/pub")
                             
                    return $result
@@ -88,12 +88,12 @@ declare function search:lang_or_term($db as node()*) as node()* {
 (: UND FUNKTION : Filtert die Sprache, TERM:)
 
 declare function search:lang_and_term($db as node()*, $step as xs:string) as node()* {
-        if(search:get-parameters("release")="non_public" and $step = "non_public") then
+        if(search:get-parameters("release")="unpublished" and $step = "unpublished") then
             for $match in search:lang_build_para_doc("lang")
                 let $build_funk := concat("//range:field-contains(",$match,")")
                 let $build_search := concat("$db",$build_funk) 
                 return util:eval($build_search) 
-        else if (search:get-parameters("release")="public" and $step = "public") then 
+        else if (search:get-parameters("release")="published" and $step = "published") then 
             for $match in search:get-parameters("lang")
             let $build_funk := concat("//range:field-contains('lang','",$match,"')")
             let $build_search := concat("$db",$build_funk)
@@ -105,15 +105,15 @@ declare function search:lang_or ($db as xs:string+) as node()*{
     for $match in $db
         let $result := if(search:get-parameters("release") != "either") then  search:lang_filter_or($match,"")
                       else if(search:get-parameters("release") = "either") then 
-                            if($match = "/db/apps/pessoa/data/doc") then search:lang_filter_or($match,"non_public")
-                            else if ($match = "/db/apps/pessoa/data/pub") then search:lang_filter_or($match, "public")
+                            if($match = "/db/apps/pessoa/data/doc") then search:lang_filter_or($match,"unpublished")
+                            else if ($match = "/db/apps/pessoa/data/pub") then search:lang_filter_or($match, "published")
                             else()
                        else ()
         return $result
 };
 
 declare function search:lang_filter_or($db as xs:string, $step as xs:string?) as node()* {
-    if(search:get-parameters("release")="non_public" or $step = "non_public") then
+    if(search:get-parameters("release")="unpublished" or $step = "unpublished") then
         for $hit in search:get-parameters("lang")
             let $para := ("mainLang","otherLang")
             for $match in $para
@@ -121,7 +121,7 @@ declare function search:lang_filter_or($db as xs:string, $step as xs:string?) as
                 let $search_funk := concat("//range:field-contains(",$search_terms,")")
                 let $search_build := concat("collection($db)",$search_funk)
             return util:eval($search_build) 
-        else if (search:get-parameters("release")="public" or $step = "public") then 
+        else if (search:get-parameters("release")="published" or $step = "published") then 
             for $hit in search:get-parameters("lang")
                 let $search_terms := concat('("lang"),"',$hit,'"')
                 let $search_funk := concat("//range:field-contains(",$search_terms,")")
@@ -136,8 +136,8 @@ declare function search:lang_and($db as xs:string+) as node()* {
     for $match in $db 
         let $result := if(search:get-parameters("release") != "either") then  search:lang_filter_and($match,"")
                       else if(search:get-parameters("release") = "either") then 
-                            if($match = "/db/apps/pessoa/data/doc") then search:lang_filter_and($match,"non_public")
-                            else if ($match = "/db/apps/pessoa/data/pub") then search:lang_filter_and($match, "public")
+                            if($match = "/db/apps/pessoa/data/doc") then search:lang_filter_and($match,"unpublished")
+                            else if ($match = "/db/apps/pessoa/data/pub") then search:lang_filter_and($match, "published")
                             else()
                        else ()
                        (:(search:lang_filter_and($match,"non_public"),search:lang_filter_and($match, "public")):)
@@ -145,12 +145,12 @@ declare function search:lang_and($db as xs:string+) as node()* {
 };
 
 declare function search:lang_filter_and($db as xs:string, $step as xs:string?) as node()* {
-        if(search:get-parameters("release")="non_public" or $step = "non_public") then
+        if(search:get-parameters("release")="unpublished" or $step = "unpublished") then
             for $match in search:lang_build_para_doc("lang")
                 let $build_funk := concat("//range:field-contains(",$match,")")
                 let $build_search := concat("collection($db)",$build_funk) 
                 return util:eval($build_search) 
-        else if (search:get-parameters("release")="public" or $step = "public") then 
+        else if (search:get-parameters("release")="published" or $step = "published") then 
             for $match in search:get-parameters("lang")
             let $build_funk := concat("//range:field-contains('lang','",$match,"')")
             let $build_search := concat("collection($db)",$build_funk)
@@ -282,9 +282,95 @@ if($term and $file and $sel and $sel="text","head","lang")
     else $node
 };
 
-declare function search:search-page($node as node(), $model as map(*)) as node() {
+declare function search:search-function($node as node(), $model as map(*)) as node() {
     let $func := "function search()"
     return <script> {$func} {{var value = $("#search").val();
                 location.href="{$helpers:app-root}/search?term="+value+"&amp;search=simple";
                 }};</script>
+};
+
+
+declare function search:search-page($node as node(), $model as map(*)) as node()* {
+    let $doc := doc('/db/apps/pessoa/data/lists.xml')
+    let $lang := if(request:get-parameter("plang",'')!="") then request:get-parameter("lang",'') else "pt"
+    let $construction := 
+    <div> <!-- Nachher mit class="search:profisearch austauschen -->
+            <div class="tab" id="ta_author" onclick="hide('se_author')"><h6>{search:page_singeAttribute($doc,"navigation","autores",$lang)}</h6>
+            </div>
+            <div class="selection" id="se_author">
+                {search:page_createInput_term("search","checkbox","notional",("real","mentioned"),$doc,$lang)}
+                
+                <br/>
+                <select name="person" size="5" multiple="multiple">
+                    {search:page_createOption_authors("authors",("FP","AC","AdC","RR"),$doc)}
+                </select>
+                <p class="small_text">{search:page_singeAttribute($doc,"search","multiple_entries",$lang)}</p>
+                <br/>
+                {search:page_singeAttribute($doc,"search","mentioned_as",$lang)}
+                {search:page_createInput_item("roles","checkbox","role",("autor","editor","tradutor","tema"),$doc,$lang)}
+                </div>
+                <div class="tab" id="ta_release" onclick="hide('se_release')"><h6>{search:page_singeAttribute($doc,"search","published",$lang)}&amp;{search:page_singeAttribute($doc,"search","unpublished",$lang)}</h6>
+                </div>
+                <div class="selection" id="se_release">
+                {search:page_createInput_term("search","radio","release",("published","unpublished"),$doc,$lang)}
+                <input type="radio" name="release" value="either" id="either" checked="checked"/>
+                <label for="either">{search:page_singeAttribute($doc,"search","published",$lang)}&amp;{search:page_singeAttribute($doc,"search","unpublished",$lang)}</label>
+                </div>
+      </div>
+      
+    return $construction
+};
+
+declare function search:page_singeAttribute($doc as node(),$type as xs:string,$id as xs:string, $lang as xs:string) as node()? {
+    let $entry := if($lang = "pt") 
+                  then $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$lang and @xml:id=$id]
+                  else $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$lang and @corresp=concat("#",$id)]
+     return $entry
+};
+(:
+declare function search:page_singeAttribute_term($doc as node(),$type as xs:string,$id as xs:string, $lang as xs:string) as node()? {
+    let $entry := if($lang = "pt") 
+                  then $doc//tei:list[@type=$type]/tei:term[@xml:lang=$lang and @xml:id=$id]
+                  else $doc//tei:list[@type=$type]/tei:term[@xml:lang=$lang and @corresp=concat("#",$id)]
+     return $entry
+};
+:)
+declare function search:page_createInput_item($xmltype as xs:string,$btype as xs:string, $name as xs:string, $value as xs:string*,$doc as node(), $lang as xs:string) as node()* {
+    for $id in $value
+        let $entry := if($lang = "pt")
+                      then $doc//tei:list[@type=$xmltype and @xml:lang=$lang]/tei:item[@xml:id=$id]
+                      else $doc//tei:list[@type=$xmltype and @xml:lang=$lang]/tei:item[@corresp=concat("#",$id)]
+        let $input := <input type="{$btype}" name="{$name}" value="{$id}" id="{$id}"/>
+        let $label := <label for="{$id}">{$entry}</label>
+        return ($input,$label)
+};
+
+declare function search:page_createInput_term($xmltype as xs:string, $btype as xs:string, $name as xs:string, $value as xs:string*,$doc as node(), $lang as xs:string) as node()* {
+    for $id in $value
+        let $entry := if($lang = "pt")
+                      then $doc//tei:list[@type=$xmltype]/tei:item/tei:term[@xml:lang=$lang and @xml:id=$id]
+                      else $doc//tei:list[@type=$xmltype]/tei:item/tei:term[@xml:lang=$lang and @corresp=concat("#",$id)]
+        let $input := <input type="{$btype}" name="{$name}" value="{$id}" id="{$id}"/>
+        let $label := <label for="{$id}">{$entry}</label>
+        return ($input,$label)
+};
+
+declare function search:page_createOption($xmltype as xs:string, $value as xs:string*,$doc as node(),$lang as xs:string) as node()* {
+    for $id in $value
+         let $entry := if($lang = "pt")
+                      then $doc//tei:list[@type=$xmltype and @xml:lang=$lang]/tei:item[@xml:id=$id]
+                      else $doc//tei:list[@type=$xmltype and @xml:lang=$lang]/tei:item[@corresp=concat("#",$id)]
+        return <option value="{$id}">{$entry}</option>
+
+};
+
+declare function search:page_createOption_authors($xmltype as xs:string, $value as xs:string*, $doc as node()) as node()* {
+    for $id in $value
+        let $entry := $doc//tei:listPerson[@type=$xmltype]/tei:person[@xml:id=$id]/tei:persName
+        return <option value="{$id}">{$entry}</option>
+};
+
+declare function search:page_author($doc as node()) as node()* {
+    let $tab := ()
+    return $tab
 };
