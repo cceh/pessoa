@@ -5,6 +5,10 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
 
+
+
+
+
 declare function author:getTitle($node as node(), $model as map(*), $author){
     if($author = "pessoa") then
         <h1>Fernando Pessoa</h1>
@@ -21,21 +25,21 @@ declare function author:reorder($node as node(), $model as map(*),$orderBy, $tex
     author:getTabContent($node,$model,$textType,$author, $orderBy)
 };
 
-declare function author:getTabs($node as node(), $model as map(*), $textType as xs:string?){
+declare function author:getTabs($node as node(), $model as map(*), $textType as xs:string?, $author as xs:string?){
             if ($textType = "all") then
-                    <ul id="tabs"><li class="active">Publicações e Documentos</li>
-                    <li>Documentos</li>
-                    <li>Publicações</li></ul> 
+                    <ul id="tabs"><li class="active"><a href="{$helpers:app-root}/author/{$author}/all">Publicações e Documentos</a></li>
+                    <li><a href="{$helpers:app-root}/author/{$author}/documents">Documentos</a></li>
+                    <li><a href="{$helpers:app-root}/author/{$author}/publications">Publicações</a></li></ul> 
                 
            else if($textType = "documents") then (
-                    <ul id="tabs"><li>Publicações e Documentos</li>
-                    <li class="active">Documetos</li>
-                    <li>Publicações</li></ul> 
+                    <ul id="tabs"><li><a href="{$helpers:app-root}/author/{$author}/all">Publicações e Documentos</a></li>
+                    <li class="active"><a href="{$helpers:app-root}/author/{$author}/documents">Documentos</a></li>
+                     <li><a href="{$helpers:app-root}/author/{$author}/publications">Publicações</a></li></ul> 
                 ) 
            else if($textType ="publications") then(
-                  <ul id="tabs"><li>Publicações e Documentos</li>
-                    <li>Documentos</li>
-                    <li class ="active">Publicações</li></ul>    
+                  <ul id="tabs"><li><a href="{$helpers:app-root}/author/{$author}/all">Publicações e Documentos</a></li>
+                     <li><a href="{$helpers:app-root}/author/{$author}/documents">Documentos</a></li>
+                    <li class ="active"><a href="{$helpers:app-root}/author/{$author}/publications">Publicações</a></li></ul>     
                 )
                 else()                   
 };
