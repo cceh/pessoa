@@ -4,6 +4,7 @@ module namespace doc="http://localhost:8080/exist/apps/pessoa/doc";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
+import module namespace author="http://localhost:8080/exist/apps/pessoa/author" at "author.xqm";
 
 (: declare variable $ms:id := request:get-parameter("id", ()); :)
 
@@ -47,17 +48,19 @@ declare function doc:get-text-pessoal($node as node(), $model as map(*), $id as 
             transform:transform($xml, $stylesheet, (<parameters><param name="lb" value="no"/><param name="abbr" value="no"/></parameters>))
 };
 
-
-declare function doc:get-genre($node as node(), $model as map(*), $type as xs:string) as item()*{    
+declare function doc:get-genre($node as node(), $model as map(*), $type as xs:string, $orderBy as xs:string) as item()*{    
     let $docs := collection("/db/apps/pessoa/data")    
     return for $doc in $docs
+        order by author:orderText($doc, $orderBy)
            return if($doc//tei:rs[@key=$type]) 
                   then
                     if ($doc//tei:sourceDesc/tei:msDesc)
-                    then ( <a href="{$helpers:app-root}/doc/{replace(replace($doc//tei:idno/data(.), "/","_")," ", "_")}">{ $doc//tei:idno/data(.)}</a>,<br />)                              
-                    else (<a href="{$helpers:app-root}/{substring-before(substring-after(document-uri($doc),"/db/apps/pessoa/data"),".xml")}">{$doc//tei:sourceDesc/tei:biblStruct[1]/tei:analytic/tei:title[1]/data(.)}</a>,<br />)
+                    then  ( <div><a href="{$helpers:app-root}/doc/{replace(replace($doc//tei:idno/data(.), "/","_")," ", "_")}">{ $doc//tei:idno/data(.)}</a></div>,<br />)                              
+                    else (<div><a href="{$helpers:app-root}/{substring-before(substring-after(document-uri($doc),"/db/apps/pessoa/data"),".xml")}">{($doc//tei:sourceDesc[1]/tei:biblStruct[1]/tei:analytic/tei:title)[1]/data(.)}</a></div>,<br />)
                   else ( )
 };
+
+
 declare function doc:get-image($node as node(), $model as map(*), $id as xs:string) as item()+{
     (: Imageviewer :)
     let $file-names := doc:get-xml($id)//tei:graphic/@url/data(.)

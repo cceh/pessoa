@@ -9,11 +9,11 @@
         var substr = url.substring(0,i);
         i = substr.lastIndexOf("/");
         var author = substr.substring(i+1,substr.length);
-        var textType = url.substring(url.lastIndexOf("#")+1,url.length);
+        var textType = url.substring(url.lastIndexOf("/")+1,url.length);
         if ($("#date").is(":checked"))
         {
         $("#tab").load("http://localhost:8080/exist/apps/pessoa/author/"+author+"/"+textType+"?orderBy=date");
-       
+        
         }
         else{
         $("#tab").load("http://localhost:8080/exist/apps/pessoa/author/"+author+"/"+textType+"?orderBy=alphab"); 
@@ -30,7 +30,7 @@
                 <input id="alphab" checked="checked" name="order" type="radio" value="yes" onchange="reorder();"></input> alfabético   
             </form>
             <div class="span6">
-             
+                
                 <div id ="tab">                        
                     <div class="author:getTabContent?orderBy=alphab"/>      
                 </div>

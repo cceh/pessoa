@@ -7,16 +7,16 @@ import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers
 declare namespace ngram ="http://exist-db.org/xquery/ngram";
 
 declare function lists:get-navi-list($node as node(), $model as map(*), $type as text(), $indikator as xs:string?) as item()*{
-    if ($type = "autores")
+    if ($type = "autores") 
     then for $pers in doc("/db/apps/pessoa/data/lists.xml")//tei:listPerson[@type="authors"]/tei:person/tei:persName/data(.)
          order by $pers collation "?lang=pt"
-         return <item label="{$pers}" ref="{$helpers:app-root}/author/{tokenize(lower-case($pers), '\s')[last()]}/all" />
-    else if ($type = "genero")
-    then for $genre in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="genres"][@n="2"]/tei:item   
+         return <item label="{$pers}" ref="{$helpers:app-root}/author/{tokenize(lower-case($pers), '\s')[last()]}/all" /> 
+    else if ($type = "genero") then
+     for $genre in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="genres"][@xml:lang="pt"]/tei:item   
         let $label :=$genre/data(.)
         let $ref := $genre/attribute() 
          order by $genre collation "?lang=pt" 
-         return <item label="{$label}"  ref="{$helpers:app-root}/page/genre_{$ref}.html" />      
+         return <item label="{$label}"  ref="{$helpers:app-root}/page/genre_{$ref}.html" />     
     else if ($type = "documentos")
     then for $res in xmldb:get-child-resources("/db/apps/pessoa/data/doc")
          let $label := if(substring-after($res, "BNP") != "") then substring-after(replace(substring-before($res, ".xml"), "_", " "), "BNP E3 ")
