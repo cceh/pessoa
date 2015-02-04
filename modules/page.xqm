@@ -30,7 +30,7 @@ declare %templates:wrap function page:construct($node as node(), $model as map(*
         <div id="navi2" class="tab-content">
             {page:createContent()}
         </div>:)
-    let $switchlang := <script>function switchlang(value){{location.href="{$helpers:app-root}/index.html?plang="+value;}}</script>
+    let $switchlang := <script>function switchlang(value){{location.href="{concat($helpers:app-root,substring-after($helpers:request-path,"pessoa/"))}?plang="+value;}}</script>
     let $return := ($lists, $switchlang)
     return $return
 };
@@ -39,7 +39,7 @@ declare %templates:wrap function page:construct($node as node(), $model as map(*
 declare function page:createNav() as node()* {
 let $type := ("autores","documentos","publicacoes","genero","cronologia","bibliografia","projeto")
 let $doc := doc("/db/apps/pessoa/data/lists.xml")
-let $lang := if(request:get-parameter("plang",'')!="") then request:get-parameter("lang",'') else "pt"
+let $lang := $helpers:web-language
 for $target in $type 
     let $name := if($lang = "pt") then $doc//tei:term[@xml:lang = $lang and @xml:id= $target]
                                   else $doc//tei:term[@xml:lang = $lang and @corresp= concat("#",$target)]
@@ -57,3 +57,58 @@ for $target in $type
                        </div>
     return $window
 };
+
+
+
+(: SEARCH PAGE :)
+
+declare function page:singleElement($node as node(), $model as map(*),$xmltype as xs:string,$xmlid as xs:string) as node()* {
+    let $doc := doc('/db/apps/pessoa/data/lists.xml')
+    let $lang :=  if(request:get-parameter("plang",'')!="") then request:get-parameter("plang",'') else "pt"
+    return page:singleAttribute($doc,$xmltype,$xmlid,$lang)
+     
+};
+declare function page:singleAttribute($doc as node(),$type as xs:string,$id as xs:string, $lang as xs:string) as node()? {
+    let $entry := if($lang = "pt") 
+                  then $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$lang and @xml:id=$id]
+                  else $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$lang and @corresp=concat("#",$id)]
+     return $entry
+};
+(:
+declare function page:page_singeAttribute_term($doc as node(),$type as xs:string,$id as xs:string, $lang as xs:string) as node()? {
+    let $entry := if($lang = "pt") 
+                  then $doc//tei:list[@type=$type]/tei:term[@xml:lang=$lang and @xml:id=$id]
+                  else $doc//tei:list[@type=$type]/tei:term[@xml:lang=$lang and @corresp=concat("#",$id)]
+     return $entry
+};
+:)
+declare function page:createInput_item($xmltype as xs:string,$btype as xs:string, $name as xs:string, $value as xs:string*,$doc as node(), $lang as xs:string) as node()* {
+    for $id in $value
+        let $entry := if($lang = "pt")
+                      then $doc//tei:list[@type=$xmltype and @xml:lang=$lang]/tei:item[@xml:id=$id]
+                      else $doc//tei:list[@type=$xmltype and @xml:lang=$lang]/tei:item[@corresp=concat("#",$id)]
+        let $input := <input type="{$btype}" name="{$name}" value="{$id}" id="{$id}"/>
+        let $label := <label for="{$id}">{$entry}</label>
+        return ($input,$label)
+};
+
+declare function page:createInput_term($xmltype as xs:string, $btype as xs:string, $name as xs:string, $value as xs:string*,$doc as node(), $lang as xs:string) as node()* {
+    for $id in $value
+        let $entry := if($lang = "pt")
+                      then $doc//tei:list[@type=$xmltype]/tei:item/tei:term[@xml:lang=$lang and @xml:id=$id]
+                      else $doc//tei:list[@type=$xmltype]/tei:item/tei:term[@xml:lang=$lang and @corresp=concat("#",$id)]
+        let $input := <input type="{$btype}" name="{$name}" value="{$id}" id="{$id}"/>
+        let $label := <label for="{$id}">{$entry}</label>
+        return ($input,$label)
+};
+
+declare function page:createOption($xmltype as xs:string, $value as xs:string*,$doc as node(),$lang as xs:string) as node()* {
+    for $id in $value
+         let $entry := if($lang = "pt")
+                      then $doc//tei:list[@type=$xmltype and @xml:lang=$lang]/tei:item[@xml:id=$id]
+                      else $doc//tei:list[@type=$xmltype and @xml:lang=$lang]/tei:item[@corresp=concat("#",$id)]
+        return <option value="{$id}">{$entry}</option>
+
+};
+
+
