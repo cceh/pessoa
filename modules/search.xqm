@@ -7,6 +7,8 @@ import module namespace config="http://localhost:8080/exist/apps/pessoa/config" 
 import module namespace lists="http://localhost:8080/exist/apps/pessoa/lists" at "lists.xqm";
 import module namespace doc="http://localhost:8080/exist/apps/pessoa/doc" at "doc.xqm";
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
+import module namespace page="http://localhost:8080/exist/apps/pessoa/page" at "page.xqm";
+
 import module namespace kwic="http://exist-db.org/xquery/kwic";
 declare namespace util="http://exist-db.org/xquery/util";
 declare namespace text="http://exist-db.org/xquery/text";
@@ -254,8 +256,8 @@ if(exists($sel) and $sel = "union")
                 return if(substring-after($file_name,"BNP") != "" or substring-after($file_name,"X"))
                         then <li><a href="{$helpers:app-root}/data/doc/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"), '&amp;file=', $file_name)}">{$title}</a></li>
                         else <li><a href="{$helpers:app-root}/data/pub/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"), '&amp;file=', $file_name)}">{$title}</a></li>
-    else <p>Ebene 2 </p>
-    else <p>Ebene 1</p>
+    else <p>Nothing found</p>
+    else <p>Error</p>
 };
 
 declare function search:result_union($model as node()*) as node()* {
@@ -284,93 +286,87 @@ if($term and $file and $sel and $sel="text","head","lang")
 
 declare function search:search-function($node as node(), $model as map(*)) as node() {
     let $func := "function search()"
+        let $lang := if(request:get-parameter("plang",'')!="") then request:get-parameter("plang",'') else "pt"
+
     return <script> {$func} {{var value = $("#search").val();
-                location.href="{$helpers:app-root}/search?term="+value+"&amp;search=simple";
+                location.href="{$helpers:app-root}/search?term="+value+"&amp;search=simple&amp;plang={$lang}";
                 }};</script>
 };
 
-
 declare function search:search-page($node as node(), $model as map(*)) as node()* {
     let $doc := doc('/db/apps/pessoa/data/lists.xml')
-    let $lang := if(request:get-parameter("plang",'')!="") then request:get-parameter("lang",'') else "pt"
-    let $construction := 
-    <div> <!-- Nachher mit class="search:profisearch austauschen -->
-            <div class="tab" id="ta_author" onclick="hide('se_author')"><h6>{search:page_singeAttribute($doc,"navigation","autores",$lang)}</h6>
+    let $lang := $helpers:web-language (:if(request:get-parameter("plang",'')!="") then request:get-parameter("plang",'') else "pt":)
+    let $filter := 
+     <div class="search_filter">
+                       <form class="/helpers:app-root" action="search?plang={$lang}" method="post" id="search">
+                            <!-- Nachher mit class="search:profisearch austauschen -->
+            <div class="tab" id="ta_author" onclick="hide('se_author')"><h6>{page:singleAttribute($doc,"navigation","autores",$lang)}</h6>
             </div>
             <div class="selection" id="se_author">
-                {search:page_createInput_term("search","checkbox","notional",("real","mentioned"),$doc,$lang)}
+                {page:createInput_term("search","checkbox","notional",("real","mentioned"),$doc,$lang)}
                 
                 <br/>
                 <select name="person" size="5" multiple="multiple">
                     {search:page_createOption_authors("authors",("FP","AC","AdC","RR"),$doc)}
                 </select>
-                <p class="small_text">{search:page_singeAttribute($doc,"search","multiple_entries",$lang)}</p>
+                <p class="small_text">{page:singleAttribute($doc,"search","multiple_entries",$lang)}</p>
                 <br/>
-                {search:page_singeAttribute($doc,"search","mentioned_as",$lang)}
-                {search:page_createInput_item("roles","checkbox","role",("autor","editor","tradutor","tema"),$doc,$lang)}
+                {page:singleAttribute($doc,"search","mentioned_as",$lang)}
+                {page:createInput_item("roles","checkbox","role",("autor","editor","tradutor","tema"),$doc,$lang)}
                 </div>
-                <div class="tab" id="ta_release" onclick="hide('se_release')"><h6>{search:page_singeAttribute($doc,"search","published",$lang)}&amp;{search:page_singeAttribute($doc,"search","unpublished",$lang)}</h6>
+                <div class="tab" id="ta_release" onclick="hide('se_release')"><h6>{page:singleAttribute($doc,"search","published",$lang)}&amp;{page:singleAttribute($doc,"search","unpublished",$lang)}</h6>
                 </div>
                 <div class="selection" id="se_release">
-                {search:page_createInput_term("search","radio","release",("published","unpublished"),$doc,$lang)}
+                {page:createInput_term("search","radio","release",("published","unpublished"),$doc,$lang)}
                 <input type="radio" name="release" value="either" id="either" checked="checked"/>
-                <label for="either">{search:page_singeAttribute($doc,"search","published",$lang)}&amp;{search:page_singeAttribute($doc,"search","unpublished",$lang)}</label>
+                <label for="either">{page:singleAttribute($doc,"search","published",$lang)}&amp;{page:singleAttribute($doc,"search","unpublished",$lang)}</label>
                 </div>
-      </div>
+                <div class="tab" id="ta_genre" onclick="hide('se_genre')"><h6>{page:singleAttribute($doc,"search","genre",$lang)}</h6>
+                </div>
+                    <div class="selection" id="se_genre">
+                        <select name="genre" size="7" multiple="multiple">
+                        {page:createOption("genres",("lista_editorial","nota_editorial","plano_editorial","poesia"),$doc,$lang)}
+                        </select>
+                        <p class="small_text">{page:singleAttribute($doc,"search","multiple_entries",$lang)}</p>
+                    </div>
+                  <div class="tab" id="ta_date" onclick="hide('se_date')"><h6>{page:singleAttribute($doc,"search","date",$lang)}</h6></div>
+                            <div class="selection" id="se_date">    
+                                <div id="datum">
+                                    <input type="date" name="after"/>
+                                    <label>to</label>
+                                    <input type="date" name="before"/>
+                                </div>
+                    </div>  
+                    <div class="tab" id="ta_lang" onclick="hide('se_lang')"><h6>{page:singleAttribute($doc,"search","language",$lang)}</h6></div>
+                            <div class="selection" id="se_lang">
+                                {search:page_createInput_item_lang("language","checkbox","lang",("pt","en","fr"),$doc,$lang)}
+                                <br/>
+                                <input type="radio" name="lang_ao" value="and" id="and"/>
+                                    <label for="and">and</label>
+                                <input type="radio" name="lang_ao" value="or" id="or" checked="checked"/>
+                                    <label for="or">or</label>
+                            </div>
+                     <h6>{page:singleAttribute($doc,"search","free_search",$lang)}</h6>
+                     <input name="term" placeholder="{page:singleAttribute($doc,"search","search_term",$lang)}..." />
+             <br/>
+           <button>{page:singleAttribute($doc,"search","search_verb",$lang)}</button>
       
-    return $construction
+</form>
+</div>
+    return $filter
 };
 
-declare function search:page_singeAttribute($doc as node(),$type as xs:string,$id as xs:string, $lang as xs:string) as node()? {
-    let $entry := if($lang = "pt") 
-                  then $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$lang and @xml:id=$id]
-                  else $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$lang and @corresp=concat("#",$id)]
-     return $entry
-};
-(:
-declare function search:page_singeAttribute_term($doc as node(),$type as xs:string,$id as xs:string, $lang as xs:string) as node()? {
-    let $entry := if($lang = "pt") 
-                  then $doc//tei:list[@type=$type]/tei:term[@xml:lang=$lang and @xml:id=$id]
-                  else $doc//tei:list[@type=$type]/tei:term[@xml:lang=$lang and @corresp=concat("#",$id)]
-     return $entry
-};
-:)
-declare function search:page_createInput_item($xmltype as xs:string,$btype as xs:string, $name as xs:string, $value as xs:string*,$doc as node(), $lang as xs:string) as node()* {
+declare function search:page_createInput_item_lang($xmltype as xs:string,$btype as xs:string, $name as xs:string, $value as xs:string*,$doc as node(), $lang as xs:string) as node()* {
     for $id in $value
         let $entry := if($lang = "pt")
                       then $doc//tei:list[@type=$xmltype and @xml:lang=$lang]/tei:item[@xml:id=$id]
                       else $doc//tei:list[@type=$xmltype and @xml:lang=$lang]/tei:item[@corresp=concat("#",$id)]
-        let $input := <input type="{$btype}" name="{$name}" value="{$id}" id="{$id}"/>
+        let $input := <input type="{$btype}" name="{$name}" value="{$id}" id="{$id}" checked="checked"/>
         let $label := <label for="{$id}">{$entry}</label>
         return ($input,$label)
 };
-
-declare function search:page_createInput_term($xmltype as xs:string, $btype as xs:string, $name as xs:string, $value as xs:string*,$doc as node(), $lang as xs:string) as node()* {
-    for $id in $value
-        let $entry := if($lang = "pt")
-                      then $doc//tei:list[@type=$xmltype]/tei:item/tei:term[@xml:lang=$lang and @xml:id=$id]
-                      else $doc//tei:list[@type=$xmltype]/tei:item/tei:term[@xml:lang=$lang and @corresp=concat("#",$id)]
-        let $input := <input type="{$btype}" name="{$name}" value="{$id}" id="{$id}"/>
-        let $label := <label for="{$id}">{$entry}</label>
-        return ($input,$label)
-};
-
-declare function search:page_createOption($xmltype as xs:string, $value as xs:string*,$doc as node(),$lang as xs:string) as node()* {
-    for $id in $value
-         let $entry := if($lang = "pt")
-                      then $doc//tei:list[@type=$xmltype and @xml:lang=$lang]/tei:item[@xml:id=$id]
-                      else $doc//tei:list[@type=$xmltype and @xml:lang=$lang]/tei:item[@corresp=concat("#",$id)]
-        return <option value="{$id}">{$entry}</option>
-
-};
-
 declare function search:page_createOption_authors($xmltype as xs:string, $value as xs:string*, $doc as node()) as node()* {
     for $id in $value
         let $entry := $doc//tei:listPerson[@type=$xmltype]/tei:person[@xml:id=$id]/tei:persName
         return <option value="{$id}">{$entry}</option>
-};
-
-declare function search:page_author($doc as node()) as node()* {
-    let $tab := ()
-    return $tab
 };

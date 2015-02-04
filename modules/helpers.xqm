@@ -16,6 +16,10 @@ declare variable $helpers:app-root := $config:webapp-root;
 declare variable $helpers:request-path := $config:request-path;
 declare variable $helpers:webfile-path := $config:webfile-path;
 
+declare variable $helpers:web-language := 
+    let $lang :=  if(request:get-parameter("plang",'')!="") then request:get-parameter("plang",'') else "pt"
+    return $lang
+    ;
 declare function helpers:app-root($node as node(), $model as map(*)){
  let $elname := $node/node-name(.)
  
