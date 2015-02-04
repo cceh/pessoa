@@ -35,7 +35,7 @@ else if (contains($exist:path, "/doc/")) then
     </dispatch>)
 else if (contains($exist:path, "/author/")) then
     if (request:get-parameter("orderBy","")!="") then
-    let $orderBy := request:get-parameter("orderBy", "date")
+    let $orderBy := request:get-parameter("orderBy", "alphab")
     let $author := substring-before(substring-after($exist:path, '/author/'), '/')
     let $textType := $exist:resource
     return 
@@ -56,6 +56,10 @@ else if (contains($exist:path, "/author/")) then
 			<forward url="{$exist:controller}/modules/view.xql"/>
 		</error-handler>
     </dispatch>)
+else if(contains($exist:path, "page/genre_") and request:get-parameter("orderBy","")!="") then
+        let $orderBy := request:get-parameter("orderBy", "alphab")
+        let $type := substring-after($exist:path, '/genre_')
+        return doc:get-genre(<node />, map {"test" := "test"}, $type, $orderBy)
 else if (ends-with($exist:resource, ".html")) then
     (: the html page is run through view.xql to expand templates :)
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
@@ -75,7 +79,7 @@ else if (contains($exist:path, "/$shared/")) then
         </forward>
     </dispatch>
     (:Suche:)
-    else if (contains($exist:path, "search")) then
+else if (contains($exist:path, "search")) then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <forward url="{$exist:controller}/search.html" />
         <view>
