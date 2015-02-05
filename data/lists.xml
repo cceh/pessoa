@@ -42,6 +42,24 @@
                 <item>
                     <term xml:lang="pt" xml:id="bibliografia">Bibliografia</term>
                     <term xml:lang="en" corresp="#bibliografia">Bibliography</term>
+                    <list>
+                        <item>
+                            <term xml:lang="pt" xml:id="bib1">Obras de Fernando Pessoa</term>
+                            <term xml:lang="en" corresp="#bib1">Works of Fernando Pessoa</term>
+                        </item>
+                        <item>
+                            <term xml:lang="pt" xml:id="bib2">Outras fontes da obra de Fernando Pessoa</term>
+                            <term xml:lang="en" corresp="#bib2">Other sources of the work of Fernando Pessoa</term>
+                        </item>
+                        <item>
+                            <term xml:lang="pt" xml:id="bib3">Livros da biblioteca particular de Fernando Pessoa</term>
+                            <term xml:lang="en" corresp="#bib3">Books of Fernando Pessoa's personal library</term>
+                        </item>
+                        <item>
+                            <term xml:lang="pt" xml:id="bib4">Sobre a obra de Fernando Pessoa</term>
+                            <term xml:lang="en" corresp="#bib4">About the work of Fernando Pessoa</term>
+                        </item>
+                    </list>
                 </item>
                 <item>
                     <term xml:lang="pt" xml:id="projeto">Projeto</term>
@@ -119,6 +137,10 @@
                     <term xml:lang="en" corresp="#results">Results</term>
                 </item>
                 <item>
+                    <term xml:lang="pt" xml:id="no_results">A sua pesquisa não obteve nenhums resultados.</term>
+                    <term xml:lang="en" corresp="#no_results">No results</term>
+                </item>
+                <item>
                     <term xml:lang="pt" xml:id="search_term">Termo de pesquisa</term>
                     <term xml:lang="en" corresp="#search_term">Search term</term>
                 </item>
@@ -129,6 +151,10 @@
                 <item>
                     <term xml:lang="pt" xml:id="multiple_entries">Prima a tecla Ctrl/CMD para seleccionar várias entradas</term>
                     <term xml:lang="en" corresp="#multiple_entries">Hold the Ctrl/CMD key to select multiple entries</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="authors">autores</term>
+                    <term xml:lang="en" corresp="#authors">authors</term>
                 </item>
                 <item>
                     <term xml:lang="pt" xml:id="real">real</term>
@@ -162,6 +188,22 @@
                     <term xml:lang="pt" xml:id="language">língua</term>
                     <term xml:lang="en" corresp="#language">language</term>
                 </item>
+                <item>
+                    <term xml:lang="pt" xml:id="and">e</term>
+                    <term xml:lang="en" corresp="#and">and</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="or">ou</term>
+                    <term xml:lang="en" corresp="#or">or</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="from">de</term>
+                    <term xml:lang="en" corresp="#from">from</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="to">até</term>
+                    <term xml:lang="en" corresp="#to">to</term>
+                </item>
             </list>
       <!-- ####################### TABS ############################# -->
             <list type="tabs">
@@ -182,22 +224,56 @@
                     <term xml:lang="en" corresp="#versao-pessoal">customized version</term>
                 </item>
             </list>
+      <!-- ####################### ORDER ################################### -->
+            <list type="order">
+                <item>
+                    <term xml:lang="pt" xml:id="chronological">cronológico</term>
+                    <term xml:lang="en" corresp="#chronological">chronological</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="alphabetical">alfabético</term>
+                    <term xml:lang="en" corresp="#alphabetical">alphabetical</term>
+                </item>
+            </list>
       <!-- ####################### WORKS ############################
       (im Moment noch nicht gebraucht)
       -->      
             <!-- obras mencionadas -->
             <list type="works" n="1">
                 <item xml:id="O1">
-                    <title>Livro do Desassocego</title>
+                    <title>Poemas de Fernando Pessoa</title>
+                    <title type="alt">Cancioneiro</title>
+                    <title type="alt">Itinerario</title>
                 </item>
                 <item xml:id="O2">
-                    <title>O Guardador de Rebanhos</title>
+                    <title>Poemas de Alberto Caeiro</title>
+                    <title type="alt">O Guardador de Rebanhos</title>
+                    <title type="alt">O Pastor Amoroso</title>
+                    <title type="alt">Poemas Inconjunctos</title>
                 </item>
                 <item xml:id="O3">
-                    <title>Poemas Inconjunctos</title>
+                    <title>Poemas de Ricardo Reis</title>
+                    <title type="alt">Odes</title>
+                    <title type="alt">Livro de Odes</title>
                 </item>
                 <item xml:id="O4">
-                    <title>Os Poemas Completos de Alberto Caeiro</title>
+                    <title>Poemas de Álvaro de Campos</title>
+                    <title type="alt">Arco de Triumpho</title>
+                    <title type="alt">Accessorios</title>
+                    <title type="alt">5 Odes</title>
+                </item>
+                <item xml:id="O5">
+                    <title>Poemas patriotas</title>
+                    <title type="alt">Mensagem</title>
+                    <title type="alt">Gladio</title>
+                    <title type="alt">Portugal</title>
+                </item>
+                <item xml:id="O6">
+                    <title>Poemas ingleses</title>
+                    <title type="alt">English Poems</title>
+                    <title type="alt">Antinous</title>
+                    <title type="alt">Epithalamium</title>
+                    <!-- Herausgegeben wurden EP I und II: Ant. & Inscriptions; EP III Epith. -->
                 </item>
             </list>
           <!--  <!-\- obras publicadas -\->
