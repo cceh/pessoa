@@ -12,7 +12,7 @@ declare function lists:get-navi-list($node as node(), $model as map(*), $type as
          order by $pers collation "?lang=pt"
          return <item label="{$pers}" ref="{$helpers:app-root}/author/{tokenize(lower-case($pers), '\s')[last()]}/all" /> 
     else if ($type = "genero") then
-     for $genre in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="genres"][@xml:lang="pt"]/tei:item   
+     for $genre in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="genres"][@xml:lang=$helpers:web-language]/tei:item   
         let $label :=$genre/data(.)
         let $ref := $genre/attribute() 
          order by $genre collation "?lang=pt" 

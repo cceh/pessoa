@@ -11,10 +11,7 @@
     <lucene>
       <analyzer class="org.apache.lucene.analysis.standard.StandardAnalyzer"/>
       <analyzer id="ws" class="org.apache.lucene.analysis.WhitespaceAnalyzer"/>
-      <text qname="tei:TEI">
-        <inline qname="tei:text"/>
-        <inline qname="tei:teiHeader"/>
-      </text>            
+      <text qname="tei:TEI"/>          
     </lucene>
     <range>
       <create qname="tei:TEI">

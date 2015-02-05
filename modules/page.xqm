@@ -17,21 +17,34 @@ declare %templates:wrap function page:construct($node as node(), $model as map(*
             <ul id="navi" class="nav nav-tabs" role="tablist">
                 {page:createNav()}
                 <li>                    
-                  <div class="box">
-                        <div class="container-4">
-                            <input type="search" id="search" placeholder="Search..." />
-                            <button class="icon" id="button" onclick="search()"><i class="fa fa-search" ></i>
-                                </button>
-                        </div>
-                    </div>                  
+                  
+                 <span class="glyphicon glyphicon-search" onclick="hide('searchbox')"></span>                     
+                           
+                                  
                 </li>
             </ul>
    (: let $content :=
         <div id="navi2" class="tab-content">
             {page:createContent()}
         </div>:)
-    let $switchlang := <script>function switchlang(value){{location.href="{concat($helpers:app-root,substring-after($helpers:request-path,"pessoa/"))}?plang="+value;}}</script>
-    let $return := ($lists, $switchlang)
+    let $search := <div class="box" ><div class="container-4" id="searchbox">
+                            <input type="search" id="search" placeholder="Search..." />
+                            <button class="icon" id="button" onclick="search()"><i class="fa fa-search" ></i>
+                                </button>
+                        </div>      </div>  
+    let $switchlang := <script>
+    function switchlang(value){{location.href="{concat($helpers:app-root,substring-after($helpers:request-path,"pessoa/"))}?plang="+value;}}
+   function hide(id) {{
+                    if(document.getElementById(id).style.display == 'none') {{
+                        document.getElementById(id).style.display ="block";
+                        
+                    }}
+                    else {{
+                        document.getElementById(id).style.display ="none";
+                    }}
+                }}
+    </script>
+    let $return := ($lists,$search, $switchlang)
     return $return
 };
 
