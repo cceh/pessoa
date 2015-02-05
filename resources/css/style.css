@@ -195,16 +195,17 @@ textarea
 #inhalt
 {
 display: inline-block;
-max-width: 310px;
+max-width: 440px;
 min-height: 400px;
 border: 1px solid #000;
 float: left;
+width:  459px;
 }
 
 #bild
 {
 display: inline-block;
-min-width: 320px;
+min-width: 28px;
 min-height: 400px;
 border: 1px solid #000;
 background: url('../img/Fernando-pessoa1.jpg') center no-repeat;
@@ -390,11 +391,14 @@ ul#tab li.active {
 }
 
 /* Search Button*/
+
+
 .container-4{
             overflow: hidden;
             width: 150px;
             vertical-align: middle;
             white-space: nowrap;
+            display:none;
             }
             
             .container-4 input#search{
@@ -404,7 +408,7 @@ ul#tab li.active {
                 background: white;
                 border: solid 1px;
                 font-size: 10pt;
-                float: left;
+                /*float: left;*/
                 color: black;
                /* padding-left: 15px;*/
                 -webkit-border-radius: 15px;
@@ -460,3 +464,40 @@ ul#tab li.active {
             background: white;
           }
 /* Search Button End*/
+ .search_filter {
+                width:30%;
+                /*background-color:green; */
+                }
+                
+                .search_resultList {
+                width:60%;
+              /*  background-color:red; */
+                }
+                .search_filter,  .search_resultList {
+                float:left;
+                margin: 5px;
+                
+                }
+                .clear
+                {
+                clear = both;
+                }
+                
+                .tab {
+                background-color:#6699CC; 
+                border:solid 0.5px;
+                width: 120px;
+                }                
+                .tab:hover {
+                background-color:#0066CC; 
+                }
+                .selection {
+                background-color:#6699CC;
+                border:solid 0.5px;
+                visibility:hidden;
+                display:none;
+                }
+                h6 {
+                font-size:16px;
+                }
+                
