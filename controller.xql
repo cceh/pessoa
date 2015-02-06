@@ -20,6 +20,13 @@ else if (contains($exist:path, "doc/versao-pessoal")) then
     let $id := request:get-parameter("id", ())
     return doc:get-text-pessoal(<node />, map {"test" := "test"}, $id, $lb, $abbr)
 else if (contains($exist:path, "/doc/")) then
+    if ($exist:resource = "xml") then
+    let $id := substring-before(substring-after($exist:path, "/doc/"), "/xml")
+    return
+    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <forward url="{$exist:controller}/data/doc/{$id}.xml"/>
+    </dispatch>
+    else
     (session:set-attribute("id", $exist:resource), 
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <forward url="{$exist:controller}/doc.html">
