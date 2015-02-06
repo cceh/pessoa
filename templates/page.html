@@ -68,8 +68,8 @@
         <div id="side">
             <div id="page-header">
                 <img class="helpers:app-root" src="resources/images/baustellenschild.png"/>
-                <button id="en" class="flagge" onclick="switchlang('en')">EN</button>
-                <button id="pt" class="flagge" onclick="switchlang('pt')">PT</button>
+                <a id="en" class="flagge" onclick="switchlang('en')">EN</a>
+                <a id="pt" class="flagge" onclick="switchlang('pt')">PT</a>
                 <div class="clear"></div>
                 <h1>
                     <a class="helpers:app-root" href="index.html">
@@ -77,10 +77,13 @@
                     </a>
                 </h1>
             </div>
-            <span class="page:construct"><!-- Print list--></span>
-           
-            <span class="search:search-function"><!-- Funktions Aufruf für das Skript --></span>  
+            <span class="page:construct"><!-- Print list--></span>           
             
+            <span class="search:search-function"><!-- Funktions Aufruf für das Skript --></span>  
+            <div id="navi2" class="tab-content app:list">
+                
+            </div>
+            <!--
             <div id="navi2" class="tab-content">
                 <div class="tab-pane" id="genero">
                     <ul class="nav-cont app:list?type=genero"></ul>
@@ -125,18 +128,16 @@
                         <tr class="app:table?type=documentos"></tr>
                     </table>
                 </div>
-                <div class="tab-pane" id="bibliografia">-->
-                    <!-- Verlinkung zur Seite-->
+                <div class="tab-pane" id="bibliografia">
                 </div>
                 <div class="tab-pane" id="projeto">
-                    <!-- Verlinkung zur Seite-->
                 </div>
                 <div class="tab-pane" id="publicacoes">
                     <table style="width=100%">
                         <tr class="app:table2?type=publicacoes"></tr>
                     </table>
                 </div>
-            </div>
+            </div>-->
              <div id="result"></div>
             <div id="content" class="container">
                 

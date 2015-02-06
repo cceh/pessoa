@@ -40,7 +40,7 @@ declare function app:test($node as node(), $model as map(*)) {
         function was triggered by the class attribute <code>class="app:test"</code>.</p>
 };
 
-declare %templates:wrap function app:list($node as node(), $model as map(*), $type as text(), $indikator as xs:string?) as node()*{
+declare %templates:wrap function app:listold($node as node(), $model as map(*), $type as text(), $indikator as xs:string?) as node()*{
     for $item in lists:get-navi-list($node, $model, $type, $indikator)
     return
         if ($item/item)
@@ -54,6 +54,40 @@ declare %templates:wrap function app:list($node as node(), $model as map(*), $ty
         else <li><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></li>
 };
 
+declare %templates:wrap function app:list($node as node(), $model as map(*)) as node()* {
+    let $lists := doc("/db/apps/pessoa/data/lists.xml")
+    let $collection := collection("/db/apps/pessoa/data/doc","/db/apps/pessoa/data/pub")
+    for $type in $lists//tei:list[@type="navigation"]/tei:item/tei:term[@xml:lang="pt"]/attribute()[2]
+    let $result := 
+            <div class="tab-pane" id="{$type}">
+                <ul class="nav-cont">
+                {app:construct($type)}
+                </ul>
+            </div>    
+    return <p>{$result}</p>
+    
+};
+declare function app:construct($type as xs:string) as node()* {
+    if ($type != "autores" and $type != "genero") then 
+    let $bla := <li><a href="#">bla</a></li>
+    return $bla
+    else for $item in app:content($type) 
+    return <li><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></li>
+};
+
+declare function app:content($type as xs:string) as node()* {
+    if($type ="autores")
+    then for $pers in doc("/db/apps/pessoa/data/lists.xml")//tei:listPerson[@type="authors"]/tei:person/tei:persName/data(.)
+         order by $pers collation "?lang=pt"
+         return <item label="{$pers}" ref="{$helpers:app-root}/author/{tokenize(lower-case($pers), '\s')[last()]}/all" /> 
+   else if($type = "genero") then 
+        for $genre in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="genres"][@xml:lang=$helpers:web-language]/tei:item   
+        let $label :=$genre/data(.)
+        let $ref := $genre/attribute() 
+        order by $genre collation "?lang=pt" 
+        return <item label="{$label}"  ref="{$helpers:app-root}/page/genre_{$ref}.html" /> 
+   else for $a in "10" return <item label="nothin" ref="#"/>
+};
 
 
 declare function app:submenu($node as node(), $model as map(*), $item as node()){
