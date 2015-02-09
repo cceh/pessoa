@@ -1,5 +1,5 @@
 xquery version "3.0";
-
+declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare variable $exist:path external;
 declare variable $exist:resource external;
 declare variable $exist:controller external;
@@ -97,6 +97,12 @@ else if (contains($exist:path, "search")) then
             <forward url="{$exist:controller}/modules/view.xql"/>
         </error-handler>
     </dispatch>
+    
+    else if (contains($exist:path, "events")) then
+    let $language := request:get-parameter("lang", "pt")
+    return 
+transform:transform(collection("/db/apps/pessoa/data")//tei:TEI, doc("/db/apps/pessoa/xslt/events.xsl"), <parameters><param name="language" value="{$language}"/></parameters>)
+
 else
     (: everything else is passed through :)
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
