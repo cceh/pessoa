@@ -7,6 +7,7 @@ import module namespace config="http://localhost:8080/exist/apps/pessoa/config" 
 import module namespace lists="http://localhost:8080/exist/apps/pessoa/lists" at "lists.xqm";
 import module namespace doc="http://localhost:8080/exist/apps/pessoa/doc" at "doc.xqm";
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
+import module namespace app="http://localhost:8080/exist/apps/pessoa/templates" at "app.xql";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare namespace request="http://exist-db.org/xquery/request";
 
@@ -17,16 +18,14 @@ declare %templates:wrap function page:construct($node as node(), $model as map(*
             <ul id="navi" class="nav nav-tabs" role="tablist">
                 {page:createNav()}
                 <li>                    
-                  
                  <span class="glyphicon glyphicon-search" onclick="hide('searchbox')"></span>                     
-                           
-                                  
                 </li>
             </ul>
    (: let $content :=
         <div id="navi2" class="tab-content">
             {page:createContent()}
-        </div>:)
+        </div>
+    :)
     let $search := <div class="box" ><div class="container-4" id="searchbox">
                             <input type="search" id="search" placeholder="Search..." />
                             <button class="icon" id="button" onclick="search()"><i class="fa fa-search" ></i>
@@ -34,15 +33,14 @@ declare %templates:wrap function page:construct($node as node(), $model as map(*
                         </div>      </div>  
     let $switchlang := <script>
     function switchlang(value){{location.href="{concat($helpers:app-root,substring-after($helpers:request-path,"pessoa/"))}?plang="+value;}}
-   function hide(id) {{
+    function hide(id) {{
                     if(document.getElementById(id).style.display == 'none') {{
                         document.getElementById(id).style.display ="block";
-                        
-                    }}
+                        }}
                     else {{
                         document.getElementById(id).style.display ="none";
+                        }}
                     }}
-                }}
     </script>
     let $return := ($lists,$search, $switchlang)
     return $return
@@ -52,15 +50,15 @@ declare %templates:wrap function page:construct($node as node(), $model as map(*
 declare function page:createNav() as node()* {
 let $type := ("autores","documentos","publicacoes","genero","cronologia","bibliografia","projeto")
 let $doc := doc("/db/apps/pessoa/data/lists.xml")
-let $lang := $helpers:web-language
 for $target in $type 
-    let $name := if($lang = "pt") then $doc//tei:term[@xml:lang = $lang and @xml:id= $target]
-                                  else $doc//tei:term[@xml:lang = $lang and @corresp= concat("#",$target)]
+    let $name := if($helpers:web-language = "pt") then $doc//tei:term[@xml:lang = $helpers:web-language and @xml:id= $target]
+                                  else $doc//tei:term[@xml:lang = $helpers:web-language and @corresp= concat("#",$target)]
   return <li><a href="#{$target}" role="tab" data-toggle="tab">{$name}</a></li>
 };
 
 declare function page:createContent() as node()* {
 let $type := ("autores","documentos","publicacoes","genero","cronologia","bibliografia","projeto")
+let $nothin := ()
 for $target in $type 
     let $function := if($target != "bibliografia" and $target !="cronologia" and $target != "projeto") then 
                     <ul class="nav-cont app:list?type={$target}"></ul>
@@ -77,14 +75,14 @@ for $target in $type
 
 declare function page:singleElement($node as node(), $model as map(*),$xmltype as xs:string,$xmlid as xs:string) as node()* {
     let $doc := doc('/db/apps/pessoa/data/lists.xml')
-    let $lang :=  if(request:get-parameter("plang",'')!="") then request:get-parameter("plang",'') else "pt"
-    return page:singleAttribute($doc,$xmltype,$xmlid,$lang)
+    
+    return page:singleAttribute($doc,$xmltype,$xmlid)
      
 };
-declare function page:singleAttribute($doc as node(),$type as xs:string,$id as xs:string, $lang as xs:string) as node()? {
-    let $entry := if($lang = "pt") 
-                  then $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$lang and @xml:id=$id]
-                  else $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$lang and @corresp=concat("#",$id)]
+declare function page:singleAttribute($doc as node(),$type as xs:string,$id as xs:string) as node()? {
+    let $entry := if($helpers:web-language = "pt") 
+                  then $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @xml:id=$id]
+                  else $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @corresp=concat("#",$id)]
      return $entry
 };
 (:
@@ -95,31 +93,31 @@ declare function page:page_singeAttribute_term($doc as node(),$type as xs:string
      return $entry
 };
 :)
-declare function page:createInput_item($xmltype as xs:string,$btype as xs:string, $name as xs:string, $value as xs:string*,$doc as node(), $lang as xs:string) as node()* {
+declare function page:createInput_item($xmltype as xs:string,$btype as xs:string, $name as xs:string, $value as xs:string*,$doc as node()) as node()* {
     for $id in $value
-        let $entry := if($lang = "pt")
-                      then $doc//tei:list[@type=$xmltype and @xml:lang=$lang]/tei:item[@xml:id=$id]
-                      else $doc//tei:list[@type=$xmltype and @xml:lang=$lang]/tei:item[@corresp=concat("#",$id)]
+        let $entry := if($helpers:web-language = "pt")
+                      then $doc//tei:list[@type=$xmltype and @xml:lang=$helpers:web-language]/tei:item[@xml:id=$id]
+                      else $doc//tei:list[@type=$xmltype and @xml:lang=$helpers:web-language]/tei:item[@corresp=concat("#",$id)]
         let $input := <input type="{$btype}" name="{$name}" value="{$id}" id="{$id}"/>
         let $label := <label for="{$id}">{$entry}</label>
         return ($input,$label)
 };
 
-declare function page:createInput_term($xmltype as xs:string, $btype as xs:string, $name as xs:string, $value as xs:string*,$doc as node(), $lang as xs:string) as node()* {
+declare function page:createInput_term($xmltype as xs:string, $btype as xs:string, $name as xs:string, $value as xs:string*,$doc as node()) as node()* {
     for $id in $value
-        let $entry := if($lang = "pt")
-                      then $doc//tei:list[@type=$xmltype]/tei:item/tei:term[@xml:lang=$lang and @xml:id=$id]
-                      else $doc//tei:list[@type=$xmltype]/tei:item/tei:term[@xml:lang=$lang and @corresp=concat("#",$id)]
+        let $entry := if($helpers:web-language = "pt")
+                      then $doc//tei:list[@type=$xmltype]/tei:item/tei:term[@xml:lang=$helpers:web-language and @xml:id=$id]
+                      else $doc//tei:list[@type=$xmltype]/tei:item/tei:term[@xml:lang=$helpers:web-language and @corresp=concat("#",$id)]
         let $input := <input type="{$btype}" name="{$name}" value="{$id}" id="{$id}"/>
         let $label := <label for="{$id}">{$entry}</label>
         return ($input,$label)
 };
 
-declare function page:createOption($xmltype as xs:string, $value as xs:string*,$doc as node(),$lang as xs:string) as node()* {
+declare function page:createOption($xmltype as xs:string, $value as xs:string*,$doc as node()) as node()* {
     for $id in $value
-         let $entry := if($lang = "pt")
-                      then $doc//tei:list[@type=$xmltype and @xml:lang=$lang]/tei:item[@xml:id=$id]
-                      else $doc//tei:list[@type=$xmltype and @xml:lang=$lang]/tei:item[@corresp=concat("#",$id)]
+         let $entry := if($helpers:web-language = "pt")
+                      then $doc//tei:list[@type=$xmltype and @xml:lang=$helpers:web-language]/tei:item[@xml:id=$id]
+                      else $doc//tei:list[@type=$xmltype and @xml:lang=$helpers:web-language]/tei:item[@corresp=concat("#",$id)]
         return <option value="{$id}">{$entry}</option>
 
 };
