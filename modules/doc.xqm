@@ -48,16 +48,27 @@ declare function doc:get-text-pessoal($node as node(), $model as map(*), $id as 
             transform:transform($xml, $stylesheet, (<parameters><param name="lb" value="no"/><param name="abbr" value="no"/></parameters>))
 };
 
-declare function doc:get-genre($node as node(), $model as map(*), $type as xs:string, $orderBy as xs:string) as item()*{    
-    let $docs := collection("/db/apps/pessoa/data")    
-    return for $doc in $docs
-        order by author:orderText($doc, $orderBy)
-           return if($doc//tei:rs[@key=$type]) 
-                  then
-                    if ($doc//tei:sourceDesc/tei:msDesc)
+declare function doc:get-genre($node as node(), $model as map(*), $type as xs:string, $orderBy as xs:string) as item()*{  
+    let $i := if($orderBy = "alphab") then 2 else 5
+    let $docs := 
+        for $doc in collection("/db/apps/pessoa/data") where ($doc//tei:rs[@type ="genre" and @key =$type])
+        return $doc
+    let $years :=
+        for $doc in $docs 
+        return fn:substring(author:orderText($doc,$orderBy),0,$i) 
+    let $years := fn:distinct-values($years)
+    for $year in $years 
+        let $docsInYear :=  
+            for $doc in $docs where(fn:substring(author:orderText($doc,$orderBy),0,$i) = $year) return $doc
+    order by $year       
+    return (<div>{$year}</div>,
+     for $doc in $docsInYear 
+     order by (author:orderText($doc,$orderBy))
+     return
+        if ($doc//tei:sourceDesc/tei:msDesc)
                     then  ( <div><a href="{$helpers:app-root}/doc/{replace(replace($doc//tei:idno/data(.), "/","_")," ", "_")}">{ $doc//tei:idno/data(.)}</a></div>,<br />)                              
-                    else (<div><a href="{$helpers:app-root}/{substring-before(substring-after(document-uri($doc),"/db/apps/pessoa/data"),".xml")}">{($doc//tei:sourceDesc[1]/tei:biblStruct[1]/tei:analytic/tei:title)[1]/data(.)}</a></div>,<br />)
-                  else ( )
+                    else (<div><a href="{$helpers:app-root}/{substring-before(substring-after(document-uri($doc),"/db/apps/pessoa/data"),".xml")}">{($doc//tei:sourceDesc[1]/tei:biblStruct[1]/tei:analytic/tei:title)[1]/data(.)}</a></div>,<br />)           
+    )      
 };
 
 

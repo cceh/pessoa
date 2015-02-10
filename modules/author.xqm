@@ -68,7 +68,7 @@ declare function author:getTabContent($node as node(), $model as map(*), $textTy
             </li>
             <li class ="active">
                 <div id="documents">
-                    <div>{ author:listDocuments($node, $model, $author, $orderBy)}</div>
+                    <div>{author:listDocuments($node, $model, $author, $orderBy)}</div>
                 </div>
             </li>
             <li>
@@ -98,59 +98,53 @@ declare function author:getTabContent($node as node(), $model as map(*), $textTy
     else()             
 };
 
+
+
 declare function author:listAll($node as node(), $model as map(*), $author, $orderBy){
-    let $texts := collection("/db/apps/pessoa/data/")
-    let $docs := collection("/db/apps/pessoa/data/doc")
-    let $pubs := collection("/db/apps/pessoa/data/pub")
+    let $i := if($orderBy ="alphab") then 2 else 5
+    let $texts := collection("/db/apps/pessoa/data/")  
     let $key := if($author = "pessoa") then "FP" else if($author ="reis") then "RR" else if($author ="caeiro") then "AC" else if($author="campos") then "AdC" else ()
-    let $years :=  
-        for $text in $docs where (($text//tei:text//tei:rs[@type="person" and @key = $key]/@role) or ($text//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:author/tei:rs/@key = $key ))
-            return 
-            if($orderBy = "date") then fn:substring(author:orderText($text, $orderBy),0,5) else fn:substring(author:orderText($text, $orderBy),0,2)
+    let $texts := 
+        for $text in $texts where(($text//tei:author/tei:rs/@key =$key)or ($text//tei:text//tei:rs[@type="person" and @key = $key]/@role)) return $text
+    let $years := for $text in $texts return fn:substring(author:orderText($text,$orderBy),0,$i)
     let $years := fn:distinct-values($years)
-    for $year in $years order by $year return 
+    for $year in $years
+        let $textsInYear :=
+            for $text in $texts where (fn:substring(author:orderText($text,$orderBy),0,$i) = $year) return $text
+    order by $year
+    return
         (<div>{$year}</div>,
-        (: ?????? :)
-        for $text at $i in $docs 
-            let $isDoc := fn:starts-with($text//(tei:teiHeader)[1]//(tei:titleStmt)[1]//(tei:title)[1]/data(.),"BNP")
-            let $p := fn:index-of($pubs,$text)
-            order by (author:orderText($text, $orderBy))
-            return
-            if(count($p) >= 1) then 
-                let $order := author:orderPublication($text,$orderBy)
-                let $currentYear := if($orderBy = "date") then fn:substring($order,0,5) else fn:substring($order,0,2)
-                return  
-                if($currentYear = $year) then       
-                    author:listPublication($text,$key)
-                else ()
-            else if($isDoc) then 
-                let $order := author:orderDocument($text,$orderBy)
-                let $currentYear := if($orderBy = "date") then fn:substring($order,0,5) else fn:substring($order,0,2)
-                return 
-                if($currentYear = $year) then
-                    author:listDocument($text,$key)
-                    else ()
-            else())
+        
+         for $text in $textsInYear return
+        
+            if(fn:starts-with($text//(tei:teiHeader)[1]//(tei:titleStmt)[1]//(tei:title)[1]/data(.),"BNP")) then
+              
+                <div>{author:listDocument($text,$key)}</div>
+                
+            else (<div>{author:listPublication($text,$key)}</div>)
             
+        )
+        
 };
 
 declare function author:listPublications($node as node(), $model as map(*), $author, $orderBy){
-    let $pubs := collection("/db/apps/pessoa/data/pub/")
+    let $i := if($orderBy ="alphab") then 2 else 5
+    let $pubs := collection("/db/apps/pessoa/data/pub")
     let $key := if($author = "pessoa") then "FP" else if($author ="reis") then "RR" else if($author ="caeiro") then "AC" else if($author="campos") then "AdC" else ()
+    let $pubs :=
+        for $pub in $pubs where ($pub//tei:author/tei:rs/@key =$key)
+        return $pub
     let $years := 
-    for $pub in $pubs where $pub//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:author/tei:rs/@key = $key 
-    return if($orderBy = "date") then fn:substring(author:orderPublication($pub, $orderBy)/data(.),0,5) else fn:substring(author:orderPublication($pub, $orderBy)/data(.),0,2)
+        for $pub in $pubs return fn:substring(author:orderPublication($pub,$orderBy),0,$i)
     let $years := fn:distinct-values($years)
-    for $year in $years order by $year return
-    (<div>{$year}</div>,
-    for $pub in $pubs 
-    let $order := author:orderPublication($pub, $orderBy)/data(.)
-    let $currentYear := if($orderBy = "date") then fn:substring($order,0,5) else fn:substring($order,0,2)
-    order by (author:orderPublication($pub, $orderBy))
-    return 
-        if($currentYear = $year) then   
-            author:listPublication($pub,$key)
-        else () )
+    for $year in $years 
+        let $pubsInYear :=
+            for $pub in $pubs where (fn:substring(author:orderPublication($pub,$orderBy),0,$i) = $year) return $pub
+    order by $year
+    return (<div>{$year}</div>,
+            for $pub in $pubsInYear order by (author:orderPublication($pub,$orderBy))return
+            author:listPublication($pub,$key))
+    
 };
 
 declare function author:listPublication($pub, $key){
@@ -162,10 +156,10 @@ declare function author:listPublication($pub, $key){
 };
 
 declare function author:orderPublication($pub, $orderBy){
-    let $when := ($pub//tei:date)[1]/@when
-    let $from := ($pub//tei:date)[1]/@from
-    let $notBefore := ($pub//tei:date)[1]/@notBefore
-    let $notAfter := ($pub//tei:date)[1]/@notAfter
+    let $when := ($pub//tei:date)[1]/@when/data(.)
+    let $from := ($pub//tei:date)[1]/@from/data(.)
+    let $notBefore := ($pub//tei:date)[1]/@notBefore/data(.)
+    let $notAfter := ($pub//tei:date)[1]/@notAfter/data(.)
     let $title :=  $pub//tei:teiHeader/tei:fileDesc/tei:titleStmt/(tei:title)[not(@*)]
     return
     if($orderBy="date") then
@@ -175,35 +169,34 @@ declare function author:orderPublication($pub, $orderBy){
             else if($notAfter) then $notAfter
             else ()
         else if($orderBy ="alphab") then
-      $title[1]
+      $title[1]/data(.)
     else()  
 };
 
 declare function author:listDocuments($node as node(), $model as map(*), $author, $orderBy){
-    let $docs := collection("/db/apps/pessoa/data/doc/")
-    let $key := if($author ="pessoa") then "FP" else if($author ="caeiro") then "AC" else if($author = "reis") then "RR" else if($author = "campos") then "AdC" else ()
-    let $allRoles := fn:distinct-values($docs//tei:text//tei:rs[@type = 'person' and @key=$key]/@role/data(.))   
-    return 
-    if($orderBy="date") then
+        let $i := if($orderBy ="alphab") then 2 else 5
+        let $docs := collection("/db/apps/pessoa/data/doc")
+        
+        let $key := if($author ="pessoa") then "FP" else if($author ="caeiro") then "AC" else if($author = "reis") then "RR" else if($author = "campos") then "AdC" else ()
+        let $docs :=
+            for $doc in $docs where ($doc//tei:text//tei:rs[@type="person" and @key = $key]/@role) return $doc
         let $years := 
-        for $doc in $docs where $doc//tei:text//tei:rs[@type="person" and @key = $key]
-        return if($orderBy = "date") then fn:substring(author:orderDocument($doc, $orderBy)/data(.),0,5) else fn:substring(author:orderDocument($doc, $orderBy)/data(.),0,2)
+            for $doc in $docs return fn:substring(author:orderDocument($doc,$orderBy),0, $i)
         let $years := fn:distinct-values($years)
-        for $year in $years return
-        (<div>{$year}</div>,
-        for $doc in $docs
-        let $order := author:orderDocument($doc, $orderBy)
-        let $currentYear := if($orderBy = "date") then fn:substring($order,0,5) else fn:substring($order,0,2)
-        order by (author:orderDocument($doc, $orderBy))
         return 
-        if($currentYear = $year) then
-            author:listDocument($doc, $key)
-        else () )
-    else if($orderBy ="alphab") then
-        for $role in $allRoles 
-        return <p>mencionado como {if($role="author") then "autor" else if($role ="translator") then "traductor" else if($role ="topic") then "tema" else $role}:{author:listDocumentsByRole($docs, $key, $role, $orderBy)}</p>          
-    else()
+            if($orderBy ="date") then
+                for $year in $years
+                let $docsInYear := 
+                    for $doc in $docs where (fn:substring(author:orderDocument($doc,$orderBy),0,$i) = $year) return $doc
+                order by $year
+                return (<div>{$year}</div>,
+                    for $doc in $docsInYear order by author:orderDocument($doc,"date") return author:listDocument($doc,$key))
+            else 
+            let $roles := fn:distinct-values($docs//tei:text//tei:rs[@type = 'person' and @key=$key]/@role/data(.)) 
+            for $role in $roles return
+                <p>mencionado como {if($role="author") then "autor" else if($role ="translator") then "traductor" else if($role ="topic") then "tema" else $role}:{author:listDocumentsByRole($docs, $key, $role, $orderBy)}</p>       
 };
+
 
 declare function author:listDocumentsByRole($docs, $key, $role, $orderBy){
     for $doc in $docs
@@ -218,25 +211,25 @@ declare function author:listDocumentsByRole($docs, $key, $role, $orderBy){
     else()
 };
 
-declare function author:listDocument($doc, $key){   
+declare function author:listDocument($doc, $key){  
     let $roles := author:getRoles($doc,$key)
     return 
+   
     let $text := "mencionado como: "
     for $role in $roles
     let $text := fn:concat($text,if($role="author") then "autor" else if($role ="translator") then "traductor" else if($role ="topic") then "tema" else $role)
     return  
-    if(count($roles) > 0) then
-       
-       (<div><a href="{$helpers:app-root}/doc/{replace(replace($doc//tei:idno/data(.), "/","_")," ", "_")}">{$doc//tei:idno/data(.)} </a>  ({$text})</div>, <br />)
-      
-    else () 
+    if(count($roles) > 0) then    
+       (<div><a href="{$helpers:app-root}/doc/{replace(replace($doc//tei:idno/data(.), "/","_")," ", "_")}">{$doc//tei:idno/data(.)} </a>  ({$text})</div>, <br />)    
+    else ()
+    
 };
 
 declare function author:orderDocument($doc, $orderBy){
-    let $when := $doc//tei:origDate/@when
-    let $from := $doc//tei:origDate/@from
-    let $notBefore := $doc//tei:origDate/@notBefore
-    let $notAfter := $doc//tei:origDate/@notAfter
+    let $when := $doc//tei:origDate/@when/data(.)
+    let $from := $doc//tei:origDate/@from/data(.)
+    let $notBefore := $doc//tei:origDate/@notBefore/data(.)
+    let $notAfter := $doc//tei:origDate/@notAfter/data(.)
     let $signature :=  author:formatDocID($doc//tei:idno/data(.))
     return 
     if($orderBy = "date") then
