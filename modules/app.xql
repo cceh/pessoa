@@ -58,21 +58,17 @@ declare %templates:wrap function app:list($node as node(), $model as map(*)) as 
     let $lists := doc("/db/apps/pessoa/data/lists.xml")
     let $collection := collection("/db/apps/pessoa/data/doc","/db/apps/pessoa/data/pub")
     for $type in $lists//tei:list[@type="navigation"]/tei:item/tei:term[@xml:lang="pt"]/attribute()[2]
-    let $result := 
-            <div class="tab-pane" id="{$type}">
-                <ul class="nav-cont">
-                {app:construct($type)}
-                </ul>
-            </div>    
-    return <p>{$result}</p>
     
+    let $result := 
+           "Error" 
+    return $result
 };
+
+
+
 declare function app:construct($type as xs:string) as node()* {
-    if ($type != "autores" and $type != "genero") then 
-    let $bla := <li><a href="#">bla</a></li>
-    return $bla
-    else for $item in app:content($type) 
-    return <li><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></li>
+    for $item in app:content($type) 
+        return <li><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></li>
 };
 
 declare function app:content($type as xs:string) as node()* {
@@ -83,11 +79,14 @@ declare function app:content($type as xs:string) as node()* {
    else if($type = "genero") then 
         for $genre in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="genres"][@xml:lang=$helpers:web-language]/tei:item   
         let $label :=$genre/data(.)
-        let $ref := $genre/attribute() 
+        let $ref := if($helpers:web-language = "pt") then $genre/attribute()
+                    else substring-after($genre/attribute(), "#")
         order by $genre collation "?lang=pt" 
         return <item label="{$label}"  ref="{$helpers:app-root}/page/genre_{$ref}.html" /> 
    else for $a in "10" return <item label="nothin" ref="#"/>
 };
+
+
 
 
 declare function app:submenu($node as node(), $model as map(*), $item as node()){
@@ -104,6 +103,9 @@ declare function app:submenu($node as node(), $model as map(*), $item as node())
         </ul>
      </li>
 };
+(: Neue Funktionen :) 
+
+(: Ende Neue Funktionen :)
 
 declare %templates:wrap function app:sort-years($node as node(), $model as map(*), $type as text(), $indikator as xs:string?) as node()* {
     (: if (exists(lists:get-navi-list($node, $model, $type, $indikator)))
@@ -121,8 +123,8 @@ declare %templates:wrap function app:sort-years($node as node(), $model as map(*
 declare %templates:wrap function app:table ($node as node(), $model as map(*), $type as text()) as node()*{
     for $indikator in (1 to 9)    
           return <td> 
-            {if(exists(app:content($node, $model, $type, $indikator))) 
-            then app:content($node, $model, $type, $indikator) 
+            {if(exists(app:content2($node, $model, $type, $indikator))) 
+            then app:content2($node, $model, $type, $indikator) 
             else ()}
         </td>
 };
@@ -136,7 +138,7 @@ declare %templates:wrap function app:table2($node as node(), $model as map(*), $
 
 
 
-declare %templates:wrap function app:content ($node as node(), $model as map(*), $type as text(), $indikator as xs:string) as node()*{
+declare %templates:wrap function app:content2 ($node as node(), $model as map(*), $type as text(), $indikator as xs:string) as node()*{
 for $item in lists:get-navi-list($node, $model, $type, $indikator)        
       return <div ><a href="{$item/@ref/data(.)}" id="{$item/@label/data(.)}">{$item/@label/data(.)}</a></div>
 };
