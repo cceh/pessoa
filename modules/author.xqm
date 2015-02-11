@@ -102,29 +102,28 @@ declare function author:getTabContent($node as node(), $model as map(*), $textTy
 
 declare function author:listAll($node as node(), $model as map(*), $author, $orderBy){
     let $i := if($orderBy ="alphab") then 2 else 5
-    let $texts := collection("/db/apps/pessoa/data/")  
+    let $docs := collection("/db/apps/pessoa/data/doc/")  
+    let $pubs := collection("/db/apps/pessoa/data/pub/")  
+    let $texts := fn:insert-before($docs,0,$pubs)  
     let $key := if($author = "pessoa") then "FP" else if($author ="reis") then "RR" else if($author ="caeiro") then "AC" else if($author="campos") then "AdC" else ()
     let $texts := 
-        for $text in $texts where(($text//tei:author/tei:rs/@key =$key)or ($text//tei:text//tei:rs[@type="person" and @key = $key]/@role)) return $text
+        for $text in $docs where((fn:index-of($pubs,$text) > 0) and ($text//tei:author/tei:rs/@key =$key)or ($text//tei:text//tei:rs[@type="person" and @key = $key]/@role)) return $text
     let $years := for $text in $texts return fn:substring(author:orderText($text,$orderBy),0,$i)
     let $years := fn:distinct-values($years)
+    
     for $year in $years
         let $textsInYear :=
             for $text in $texts where (fn:substring(author:orderText($text,$orderBy),0,$i) = $year) return $text
+        
     order by $year
     return
-        (<div>{$year}</div>,
-        
-         for $text in $textsInYear return
-        
-            if(fn:starts-with($text//(tei:teiHeader)[1]//(tei:titleStmt)[1]//(tei:title)[1]/data(.),"BNP")) then
-              
-                <div>{author:listDocument($text,$key)}</div>
-                
+        (<div>{$year}</div>,       
+         for $text in $textsInYear order by (author:orderText($text,$orderBy))return           
+            if((fn:starts-with($text//(tei:teiHeader)[1]//(tei:titleStmt)[1]//(tei:title)[1]/data(.),"BNP")) or (fn:starts-with($text//(tei:teiHeader)[1]//(tei:titleStmt)[1]//(tei:title)[1]/data(.),"MN") )) then          
+                <div>{author:listDocument($text,$key)}</div>    
             else (<div>{author:listPublication($text,$key)}</div>)
             
         )
-        
 };
 
 declare function author:listPublications($node as node(), $model as map(*), $author, $orderBy){
@@ -206,7 +205,7 @@ declare function author:listDocumentsByRole($docs, $key, $role, $orderBy){
     return
     if ($doc//tei:text//tei:rs[@type ='person' and @key=$key]) then
         if(fn:index-of($roles, $role)) then
-            (<div><a href="{$helpers:app-root}/doc/{replace(replace($doc//tei:idno/data(.), "/","_")," ", "_")}">{$doc//tei:idno/data(.)} </a></div>,<br/>)
+            (<div><a href="{$helpers:app-root}/doc/{replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_")}">{($doc//tei:idno)[1]/data(.)} </a></div>,<br/>)
         else()
     else()
 };
@@ -220,7 +219,7 @@ declare function author:listDocument($doc, $key){
     let $text := fn:concat($text,if($role="author") then "autor" else if($role ="translator") then "traductor" else if($role ="topic") then "tema" else $role)
     return  
     if(count($roles) > 0) then    
-       (<div><a href="{$helpers:app-root}/doc/{replace(replace($doc//tei:idno/data(.), "/","_")," ", "_")}">{$doc//tei:idno/data(.)} </a>  ({$text})</div>, <br />)    
+       (<div><a href="{$helpers:app-root}/doc/{replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_")}">{($doc//tei:title)[1]/data(.)} </a>  ({$text})</div>, <br />)    
     else ()
     
 };
@@ -230,7 +229,7 @@ declare function author:orderDocument($doc, $orderBy){
     let $from := $doc//tei:origDate/@from/data(.)
     let $notBefore := $doc//tei:origDate/@notBefore/data(.)
     let $notAfter := $doc//tei:origDate/@notAfter/data(.)
-    let $signature :=  author:formatDocID($doc//tei:idno/data(.))
+    let $signature :=  author:formatDocID(($doc//tei:idno)[1]/data(.))
     return 
     if($orderBy = "date") then
         if($when) then $when
@@ -252,6 +251,12 @@ declare function author:formatDocID($id){
         let $diff := 4-$length
         let $newNumber := fn:concat(fn:substring("0000",0,$diff),$num)
         return fn:concat("BNP/E3 ",$newNumber, fn:substring-after($id,$num))
+    else if(fn:starts-with($id,"MN")) then
+        let $num := if (fn:contains($id,"-")) then fn:substring-after(fn:substring-before($id,"-"),"MN") else fn:substring-after(fn:substring-before($id,".xml"),"MN")
+        let $length := fn:string-length($num)
+        let $diff := 4-$length
+        let $newNumber := fn:concat(fn:substring("0000",0,$diff),$num)
+        return fn:concat("MN",$newNumber, fn:substring-after($id,$num))
     else $id 
 };
 
