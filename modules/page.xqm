@@ -16,27 +16,22 @@ declare %templates:wrap function page:construct($node as node(), $model as map(*
             <ul id="navi" class="nav nav-tabs" role="tablist">
                 {page:createMainNav()}
                 <li>                    
-                 <a class="glyphicon glyphicon-search" onclick="hide('searchbox')"></a>                     
+                 <a href="#" class="glyphicon glyphicon-search" onclick="hide('searchbox')" role="tab" data-toggle="tab"></a>                     
                 </li>
             </ul>
     let $SubNav := page:createSubNav()
-    let $search := <div class="box" ><div class="container-4" id="searchbox">
+
+    let $search := <div class="container-4" id="searchbox">
                             <input type="search" id="search" placeholder="Search..." />
                             <button class="icon" id="button" onclick="search()"><i class="fa fa-search" ></i>
                                 </button>
-                        </div>      </div>  
+                        </div>      
     let $switchlang := <script>
         function switchlang(value){{location.href="{concat($helpers:app-root,substring-after($helpers:request-path,"pessoa/"))}?plang="+value;}}
-        function hide(id) {{
-                        if(document.getElementById(id).style.display == 'none') {{
-                            document.getElementById(id).style.display ="block";
-                            }}
-                        else {{
-                            document.getElementById(id).style.display ="none";
-                            }}
-                        }}
+        
     </script>
-    let $return := ($MainNav,$search, $switchlang, $SubNav)
+    let $script := <script class="helpers:app-root" type="text/javascript" src="resources/js/code.js"></script>
+    let $return := ($MainNav,$search, $switchlang, $SubNav,$script)
     return $return
 };
 
@@ -47,8 +42,11 @@ let $doc := doc("/db/apps/pessoa/data/lists.xml")
 for $target in $type 
     let $name := if($helpers:web-language = "pt") then $doc//tei:term[@xml:lang = $helpers:web-language and @xml:id= $target]
                                   else $doc//tei:term[@xml:lang = $helpers:web-language and @corresp= concat("#",$target)]
-  return <li><a href="#{$target}" role="tab" data-toggle="tab" onclick="hide({concat("'","nav_",$target,"'")})">{$name}</a></li>
+    
+  return <li><a href="#{$target}" role="tab" data-toggle="tab" onclick="u_nav({concat("'","nav_",$target,"'")})">{$name}</a></li>
 };
+
+
 
 declare function page:createSubNav() as node()* {
     let $lists := doc("/db/apps/pessoa/data/lists.xml")
@@ -57,32 +55,87 @@ declare function page:createSubNav() as node()* {
 };
 
 declare function page:createSubNavTabs($tab as xs:string) as node()* {
-    let $result := 
+    let $SubNav := 
         <div class="navbar" id="{concat("nav_",$tab)}" style="display:none" > 
-            <ul>
+            <ul style="text-decoration:none">
             {page:createContent($tab)}
             </ul>
         </div>
-        return $result
+    let $ThirdNav := if($tab = "documentos" or $tab = "cronologia") then
+            <div class="navbar" id="{concat("nav_",$tab,"_sub")}" style="display:none" > 
+                {page:createThirdNavTab($tab)}
+            </div>
+            else ()
+        return ($SubNav,$ThirdNav)
 };
 declare function page:createContent($type as xs:string) as node()* {
-    for $item in page:createItem($type)
-    return <li><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></li>
+    if($type != "documentos" and $type != "cronologia") then
+        for $item in page:createItem($type,"")
+        return <li style="display:inline-block;paddinhg: 0 10px"><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></li>
+    else  let $result := page:createThirdNav($type)
+    return $result
 };
 
-declare function page:createItem($type as xs:string) as node()* {
+declare function page:createItem($type as xs:string, $indikator as xs:string?) as item()* {
     if($type ="autores")
-    then for $pers in doc("/db/apps/pessoa/data/lists.xml")//tei:listPerson[@type="authors"]/tei:person/tei:persName/data(.)
-         order by $pers collation "?lang=pt"
-         return <item label="{$pers}" ref="{$helpers:app-root}/author/{tokenize(lower-case($pers), '\s')[last()]}/all" /> 
-   else if($type = "genero") then 
-        for $genre in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="genres"][@xml:lang=$helpers:web-language]/tei:item   
-        let $label :=$genre/data(.)
-        let $ref := if($helpers:web-language = "pt") then $genre/attribute()
-                    else substring-after($genre/attribute(), "#")
-        order by $genre collation "?lang=pt" 
-        return <item label="{$label}"  ref="{$helpers:app-root}/page/genre_{$ref}.html" /> 
+        then for $pers in doc("/db/apps/pessoa/data/lists.xml")//tei:listPerson[@type="authors"]/tei:person/tei:persName/data(.)
+             order by $pers collation "?lang=pt"
+             return <item label="{$pers}" ref="{$helpers:app-root}/author/{tokenize(lower-case($pers), '\s')[last()]}/all" /> 
+   else if($type = "genero") 
+        then for $genre in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="genres"][@xml:lang=$helpers:web-language]/tei:item   
+            let $label :=$genre/data(.)
+            let $ref := if($helpers:web-language = "pt") then $genre/attribute()
+                        else substring-after($genre/attribute(), "#")
+            order by $genre collation "?lang=pt" 
+            return <item label="{$label}"  ref="{$helpers:app-root}/page/genre_{$ref}.html" /> 
+   else if($type = "documentos") 
+        then for $hit in xmldb:get-child-resources("/db/apps/pessoa/data/doc")
+            let $label :=   if(substring-after($hit, "BNP_E3_") != "") then substring-after(replace(substring-before($hit, ".xml"), "_", " "), "BNP E3 ")
+                            else if(substring-after($hit,"MN") != "") then substring-after(replace(substring-before($hit, ".xml"), "_", " "), "MN")
+                            else ()
+   let $ref := concat($helpers:app-root, "/doc/", substring-before($hit, ".xml"))         
+         order by $hit collation "?lang=pt" 
+         return if(substring-after(replace(substring-before($hit, ".xml"), "_", " "), concat("BNP E3 ",$indikator)) 
+         or 
+         substring-after(replace(substring-before($hit, ".xml"), "_", " "), concat("MN",$indikator))) then
+         <item label="{$label}" ref="{$ref}?plang={$helpers:web-language}"  />
+         else ()
    else for $a in "10" return <item label="nothin" ref="#"/>
+};
+
+declare function page:createThirdNav($type as xs:string) as node()* {
+    if($type ="documentos") then
+        for $nr in (1 to 9)
+        return <li style="display:inline-block;paddinhg: 0 10px">
+            <a href="#" role="tab" data-toggle="tab" 
+            onclick="u_nav({concat("'nav_",$type,"_sub_",$nr,"'")})">
+            {concat($nr,"0")}
+            </a></li>
+        else if ($type = "cronologia") then for $date in ("1900 - 1909","1910 - 1919","1920 - 1929","1930 - 1935")
+        return <li style="display:inline-block;paddinhg: 0 10px">
+            <a href="#" role="tab" data-toggle="tab" 
+            onclick="u_nav({concat("'nav_",$type,"_sub_",index-of(("1900 - 1909","1910 - 1919","1920 - 1929","1930 - 1935"),$date),"'")})">
+            {$date}
+            </a></li>
+        else ()
+};
+
+declare function page:createThirdNavTab($type as xs:string) as node()* {
+   if ($type = "documentos") then for $indikator in (1 to 9) return
+    <div class="navbar" id="{concat("nav_",$type,"_sub_",$indikator)}" style="display:none"> <ul style="text-decoration:none">
+    {page:createThirdNavContent($type,$indikator)}
+         </ul>   </div>
+    else if ($type = "cronologia") then for $indikator in (1 to 4) return 
+         <div class="navbar" id="{concat("nav_",$type,"_sub_",$indikator)}" style="display:none"> <ul style="text-decoration:none">
+        <li>bla</li>
+        </ul></div>
+     else ()
+};
+
+declare function page:createThirdNavContent($type as xs:string, $indikator) as node()* {
+        if ($type = "documentos") then for $item in page:createItem($type, $indikator) 
+        return <li style="display:inline-block;paddinhg: 0 10px"><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></li>
+           else ()
 };
 
 (:

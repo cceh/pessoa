@@ -103,9 +103,6 @@ declare function app:submenu($node as node(), $model as map(*), $item as node())
         </ul>
      </li>
 };
-(: Neue Funktionen :) 
-
-(: Ende Neue Funktionen :)
 
 declare %templates:wrap function app:sort-years($node as node(), $model as map(*), $type as text(), $indikator as xs:string?) as node()* {
     (: if (exists(lists:get-navi-list($node, $model, $type, $indikator)))
