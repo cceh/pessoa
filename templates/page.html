@@ -66,16 +66,22 @@
     </head>
     <body id="body">
         <div id="side">
-            <div id="page-header">                
+            <div id="abc" style="z-index:2; position:absolute;">
+                 <h1>
+                     <a style="color=white;" id="title-tool2" class="helpers:app-root " href="index.html">
+                        <span id="title-tool" class="config:app-title">Generated page</span>
+                    </a>
+                 </h1>   
+            </div>
+            <div id="lang" style="position:absolute; top: 45px; left: 980px; z-index:1; margin-left: 210px;">Englisch | Portuguese</div>
+            <div id="page-header" style="z-index:1; position:absolute;"></div>  
+            <div style="position:absolute; top: 336px; margin-left:50px; z-index:1; border:1px solid #888;left: 376px;" id="navi"><ul><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li></ul></div>
+            <div  style="position:absolute; top:490px; margin-left:425px; z-index:1;" id="article">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore <br /> magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,<br /> no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam<br /> nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo<br /> duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
+            <div style="position:absolute; top:860px; margin-left:50px; z-index:1; border:1px solid #888;" id="footer">           
                 <a id="en" class="flagge" onclick="switchlang('en')">EN</a>
                 <a id="pt" class="flagge" onclick="switchlang('pt')">PT</a>
                 <div class="clear"></div>
-                <h1>
-                    <a class="helpers:app-root" href="index.html">
-                        <span class="config:app-title">Generated page</span>
-                    </a>
-                </h1>
-            </div>
+
             <span class="navbar page:construct" id="mainNav"><!-- Print list--></span>           
             
             <span class="search:search-function"><!-- Funktions Aufruf für das Skript --></span>  
@@ -141,9 +147,10 @@
             <div id="content" class="container">
                 
             </div>
-            <div id="footer">
+            <div id="footer2">
                 <a href="#">informação legal</a>
             </div>
+        </div>
         </div>
     </body>
 </html>
