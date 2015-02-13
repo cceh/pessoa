@@ -4,11 +4,11 @@
     
     version="2.0">
    
-
+<xsl:output method="xml"></xsl:output>
     
     <xsl:template match="/">
 
-
+        <data>
         <xsl:for-each select="//TEI">
             <!--<xsl:result-document href="events.xml">-->
            
@@ -27,25 +27,25 @@
                     
                     <xsl:for-each select=".//origDate">
                      <xsl:attribute name="start">
-                        <xsl:value-of select=".//@from|@when|@notAfter|@notBefore"/>
+                        <xsl:value-of select="@from|@when|@notAfter|@notBefore"/>
                     </xsl:attribute>
                     </xsl:for-each>
                    
                    
-                    <xsl:if test=".//@to">
+                    <xsl:if test=".//origDate/@to">
                         <xsl:attribute name="end">
-                            <xsl:value-of select=".//@to"/>
+                            <xsl:value-of select=".//origDate/@to"/>
                         </xsl:attribute>
                     </xsl:if>
                    
                    
-                    <xsl:if test=".//@from and .//@to">
+                    <xsl:if test=".//origDate/@from and .//origDate/@to">
                         <xsl:attribute name="durationEvent">
                             <xsl:text>true</xsl:text>
                         </xsl:attribute>
                     </xsl:if>
                     
-                    <xsl:if test=".//@from and .//@to">
+                    <xsl:if test=".//origDate/@from and .//origDate/@to">
                         <xsl:attribute name="classname">
                             <xsl:text>special_event</xsl:text>
                         </xsl:attribute>
@@ -91,12 +91,18 @@
                             <xsl:value-of select=".//idno"/>
                         </xsl:attribute>
                     
-                    Fernando Pessoa,<xsl:value-of select=".//origDate"/>,<xsl:value-of select=".//rs"/>
+                    Fernando Pessoa,<xsl:value-of select=".//origDate"/>,<xsl:value-of select="/note[@type='genre']/rs"/>
                 </events>
 
             <!--</xsl:result-document>-->
         </xsl:for-each>
+        </data>
     </xsl:template>
+   
+   <xsl:template match="text()">       
+   </xsl:template>
+    
+    
 </xsl:stylesheet>
 
 <!--<event start="1683-03-20" title="Stockholm" color="#CC0000" textColor="#000000">
