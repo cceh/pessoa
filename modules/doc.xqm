@@ -55,15 +55,15 @@ declare function doc:get-genre($node as node(), $model as map(*), $type as xs:st
         return $doc
     let $years :=
         for $doc in $docs 
-        return fn:substring(author:orderText($doc,$orderBy),0,$i) 
+        return fn:substring(author:getYearOrTitle($doc,$orderBy),0,$i) 
     let $years := fn:distinct-values($years)
     for $year in $years 
         let $docsInYear :=  
-            for $doc in $docs where(fn:substring(author:orderText($doc,$orderBy),0,$i) = $year) return $doc
+            for $doc in $docs where(fn:substring(author:getYearOrTitle($doc,$orderBy),0,$i) = $year) return $doc
     order by $year       
     return (<div>{$year}</div>,
      for $doc in $docsInYear 
-     order by (author:orderText($doc,$orderBy))
+     order by (author:getYearOrTitle($doc,$orderBy))
      return
         if ($doc//tei:sourceDesc/tei:msDesc)
                     then  ( <div><a href="{$helpers:app-root}/doc/{replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_")}">{ ($doc//tei:idno)[1]/data(.)}</a></div>,<br />)                              
