@@ -40,106 +40,15 @@ declare function app:test($node as node(), $model as map(*)) {
         function was triggered by the class attribute <code>class="app:test"</code>.</p>
 };
 
-declare %templates:wrap function app:listold($node as node(), $model as map(*), $type as text(), $indikator as xs:string?) as node()*{
-    for $item in lists:get-navi-list($node, $model, $type, $indikator)
-    return
-        if ($item/item)
-        then app:submenu($node, $model, $item)
-        else if($type = "years")
-            then 
-            if( lists:get-navi-list($node, $model, $type, concat("0",$indikator))!="") then <div class="divCell"><a href="{$item/@ref/data(.)}">{$item/@label/data(.), $indikator}</a></div>
-            else if( lists:get-navi-list($node, $model, $type, concat("1",$indikator))!="") then <div class="divCell"><a href="{$item/@ref/data(.)}">{$item/@label/data(.), $indikator}</a></div>
-            else <div class="divCell">Nothin, {$indikator}</div>
-            (:<div id="{$item/@id}"><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></div>:)
-        else <li><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></li>
+
+
+declare function app:get-bibl($node as node(), $model as map(*))as item()* {
+    let $xml := doc("/db/apps/pessoa/data/bibl.xml")
+    let $stylesheet := doc("/db/apps/pessoa/xslt/bibl.xsl")
+    let $type := substring-after(request:get-parameter("type",''),"bib")
+    return  transform:transform($xml, $stylesheet,(<parameters><param name="listNo_string" value="{$type}"/></parameters>))
+
 };
-
-declare %templates:wrap function app:list($node as node(), $model as map(*)) as node()* {
-    let $lists := doc("/db/apps/pessoa/data/lists.xml")
-    let $collection := collection("/db/apps/pessoa/data/doc","/db/apps/pessoa/data/pub")
-    for $type in $lists//tei:list[@type="navigation"]/tei:item/tei:term[@xml:lang="pt"]/attribute()[2]
-    
-    let $result := 
-           "Error" 
-    return $result
-};
-
-
-
-declare function app:construct($type as xs:string) as node()* {
-    for $item in app:content($type) 
-        return <li><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></li>
-};
-
-declare function app:content($type as xs:string) as node()* {
-    if($type ="autores")
-    then for $pers in doc("/db/apps/pessoa/data/lists.xml")//tei:listPerson[@type="authors"]/tei:person/tei:persName/data(.)
-         order by $pers collation "?lang=pt"
-         return <item label="{$pers}" ref="{$helpers:app-root}/author/{tokenize(lower-case($pers), '\s')[last()]}/all" /> 
-   else if($type = "genero") then 
-        for $genre in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="genres"][@xml:lang=$helpers:web-language]/tei:item   
-        let $label :=$genre/data(.)
-        let $ref := if($helpers:web-language = "pt") then $genre/attribute()
-                    else substring-after($genre/attribute(), "#")
-        order by $genre collation "?lang=pt" 
-        return <item label="{$label}"  ref="{$helpers:app-root}/page/genre_{$ref}.html" /> 
-   else for $a in "10" return <item label="nothin" ref="#"/>
-};
-
-
-
-
-declare function app:submenu($node as node(), $model as map(*), $item as node()){
-    <li class="dropdown-submenu">
-        <a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a>
-        <ul class="dropdown-menu">
-            {for $subitem in $item/item
-            return if ($subitem/item)
-                   then app:submenu($node, $model, $subitem)
-                   else
-                    <li>
-                        <a href="{$subitem/@ref/data(.)}">{$subitem/@label/data(.)}</a>
-                    </li>}
-        </ul>
-     </li>
-};
-
-declare %templates:wrap function app:sort-years($node as node(), $model as map(*), $type as text(), $indikator as xs:string?) as node()* {
-    (: if (exists(lists:get-navi-list($node, $model, $type, $indikator)))
-    then      
-        <div class="divCell"><a href="{$item/@ref/data(.)}">{$item/@label/data(.), $indikator}</a></div>
-        else <div class="divCell" >Nothin {$indikator}</div> :)
-        for $sp in (0 to 3)
-        let $sort := concat($sp, $indikator)
-        let $item := lists:get-navi-list($node, $model, $type, $sort)
-        return if($item) then
-        <div class="divCell"><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></div>
-        else <div class='divCell'>&#x00A0; </div>
-};
-
-declare %templates:wrap function app:table ($node as node(), $model as map(*), $type as text()) as node()*{
-    for $indikator in (1 to 9)    
-          return <td> 
-            {if(exists(app:content2($node, $model, $type, $indikator))) 
-            then app:content2($node, $model, $type, $indikator) 
-            else ()}
-        </td>
-};
-
-declare %templates:wrap function app:table2($node as node(), $model as map(*), $type as text(), $indikator as xs:string?) as node()*{
-    <td>{
-    for $item in lists:get-navi-list($node, $model, $type, $indikator)
-    return <div><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></div>
-    }</td>
-};
-
-
-
-declare %templates:wrap function app:content2 ($node as node(), $model as map(*), $type as text(), $indikator as xs:string) as node()*{
-for $item in lists:get-navi-list($node, $model, $type, $indikator)        
-      return <div ><a href="{$item/@ref/data(.)}" id="{$item/@label/data(.)}">{$item/@label/data(.)}</a></div>
-};
-
 
 
 
