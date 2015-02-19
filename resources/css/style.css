@@ -69,24 +69,7 @@ p {
     text-decoration: none;
     color: black;
 }
-.navbar-inner {
-    background-color: #FFFFFF;
-    background-image: none;
-    border-bottom: 1px solid #999999;
-    box-shadow: none;
-    border-radius: 0px;
-}
-.navbar .nav {
-    margin-left: 0;
-}
-.navbar .nav > li > a {
-    text-shadow: none;
-    font-size: 15px;
-    color: #666666;
-}
-.navbar .nav > li > a:hover {
-    color: #336633;
-}
+
 .dropdown.open .dropdown-toggle {
     color: #666666;
 }
@@ -521,7 +504,6 @@ ul#tab li.active {
  margin: 0; 
  width: 490px; 
  height: 95px; 
- border: 1px solid #f00;
  background: #990000; 
  margin-left: 10px;
  padding: 5px 10px; 
@@ -531,7 +513,7 @@ ul#tab li.active {
 {
     color: #fff; 
     display: inline-block;
-    padding: 10px 36px 0 29px; 
+    padding: 16px 20px 6px 0px; 
 }
 
 #re-footer
@@ -544,5 +526,92 @@ ul#tab li.active {
 
 .link
 {
- color: #f00 !important;    
+ color: #990000 !important;    
+ font-weight: normal !important; 
+}
+
+.navbar-inner {
+    
+}
+.navbar .nav {
+}
+.navbar .nav > li > a {
+
+}
+.navbar .nav > li > a:hover {
+}
+
+.nav_tabs {
+    background-color: #222;
+    text-decoration:none;
+}
+
+.nav_sub_tabs {
+    list-style:none;
+}
+
+#nav_autores, #nav_documentos, #nav_publicacoes, #nav_genero, #nav_cronologia, #nav_bibliografia, #nav_projeto {
+     display:none;
+     margin:0 auto;
+    }
+.nav_autores_tab, .nav_documentos_tab, .nav_publicacoes_tab, .nav_genero_tab, .nav_cronologia_tab, .nav_bibliografia_tab {
+    display:inline-block;
+    
+}
+
+#nav_autores {
+    
+    }
+.nav_autores_tab {
+    padding: 3px 25px;
+    
+}
+#nav_documentos {
+}
+.nav_documentos_tab {
+   padding: 3px 25px;
+}  
+
+.nav_documentos_sub_tab {
+}
+#nav_publicacoes {
+    
+    }
+.nav_publicacoes_tab {
+    
+}
+#nav_genero {
+    }
+.nav_genero_tab {
+    padding: 3px 35px;
+}    
+#nav_cronologia {
+    
+    }
+.nav_cronologia_tab {
+       padding: 3px 30px;
+
+}    
+.nav_cronologia_sub_tab {
+}
+#nav_bibliografia {
+    
+    }
+.nav_bibliografia_tab {
+    padding: 8px 18px;
+}    
+#nav_projeto {
+    
+    }
+.nav_documentos_sub_tab, .nav_cronologia_sub_tab {
+        text-decoration:none;
+        display:inline-block;
+        margin: 3px 5px; 
+        padding: 5px; 
+        background: #222; 
+        width: 95px;
+        text-align: center;
+}
+.nav_documentos_sub_tab:hover , .nav_cronologia_sub_tab:hover {
+        background-color: #4E4E4E;
 }
