@@ -1,5 +1,5 @@
 function hide(id) {
-                        if(document.getElementById(id).style.display == 'none') {
+                        if (document.getElementById(id).style.display == 'none') {
                             document.getElementById(id).style.display ="block";
                             }
                         else {
@@ -33,16 +33,25 @@ function u_nav(navID) {
         "nav_cronologia_sub_3",        
         "nav_projeto"]
        
-       for (i = 0; i<=IDs.length; i++) {
-        if(document.getElementById(navID).style.display = "none" && IDs[i].contains(navID)) {
-            document.getElementById(navID).style.display = "inline-block"; 
-             if(navID.contains("nav_documentos")) {
-                        document.getElementById("nav_documentos").style.display = "inline-block";
-                        document.getElementById("nav_documentos_sub").style.display = "inline-block";
+       for (var i = 0; i<=IDs.length; i++) {
+        if (document.getElementById(navID).style.display = "none" && IDs[i].contains(navID)) {
+            if (navID.contains("nav_documentos_sub_") || navID.contains("nav_cronologia_sub_")) {
+                document.getElementById(navID).style.display = "inline-block";
+            }
+            else {
+                document.getElementById(navID).style.display = "block"; 
+             }
+             if (navID.contains("nav_documentos")) {
+                        document.getElementById("nav_documentos").style.display = "block";
+                        if(navID.contains("nav_documentos_sub")) {
+                            document.getElementById("nav_documentos_sub").style.display = "block";
+                        }
                 }
-                else if(navID.contains("nav_cronologia")) {
-                    document.getElementById("nav_cronologia").style.display = "inline-block";
-                        document.getElementById("nav_cronologia_sub").style.display = "inline-block";
+                else if (navID.contains("nav_cronologia")) {
+                    document.getElementById("nav_cronologia").style.display = "block";
+                    if(navID.contains("nav_cronologia_sub")) {
+                        document.getElementById("nav_cronologia_sub").style.display = "block";
+                        }
                 }
                 
         }
