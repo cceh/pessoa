@@ -4,6 +4,8 @@
     
     version="2.0">
    
+   <xsl:param name="language"/>
+   
 <xsl:output method="xml"></xsl:output>
     
     <xsl:template match="/">
@@ -14,7 +16,7 @@
            
                 <events>
                     <xsl:attribute name="title">
-                        <xsl:value-of select="//title/normalize-space(.)"/>
+                        <xsl:value-of select=".//titleStmt/title/normalize-space(.)"/>
                     </xsl:attribute>
 
                     
@@ -88,10 +90,18 @@
              
              
                         <xsl:attribute name="link">
-                            <xsl:value-of select=".//idno"/>
+                            <xsl:value-of select=".//idno[@type='filename']"/>
                         </xsl:attribute>
                     
-                    Fernando Pessoa,<xsl:value-of select=".//origDate"/>,<xsl:value-of select="/note[@type='genre']/rs"/>
+                    <xsl:text>Fernando Pessoa, </xsl:text><xsl:value-of select=".//origDate"/><xsl:text>, </xsl:text>
+                    <xsl:choose>
+                        <xsl:when test="$language='pt'">
+                            <xsl:value-of select="string-join(.//note[@type='genre']/rs, '/')"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </events>
 
             <!--</xsl:result-document>-->
