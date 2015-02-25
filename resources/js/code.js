@@ -34,7 +34,7 @@ function u_nav(navID) {
         "nav_projeto"]
        
        for (var i = 0; i<=IDs.length; i++) {
-        if (document.getElementById(navID).style.display = "none" && IDs[i].contains(navID)) {
+        if (document.getElementById(navID).style.display == "none" && IDs[i].contains(navID)) {
             if (navID.contains("nav_documentos_sub_") || navID.contains("nav_cronologia_sub_")) {
                 document.getElementById(navID).style.display = "inline-block";
             }
@@ -57,9 +57,6 @@ function u_nav(navID) {
         }
         else {
             document.getElementById(IDs[i]).style.display = "none";
-           /* if(navID == "nav_documentos_sub" || navID == "nav_cronologia_sub") {
-                document.getElementById(IDs.indexOf(IDs[i]-1)).style.display = "block";
-            }*/
             }
        }
     };
