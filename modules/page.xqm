@@ -86,13 +86,16 @@ declare function page:createThirdNav($type as xs:string) as node()* {
             {concat($nr,"0")}
             </a></li>
         else if ($type = "cronologia") then for $date in ("1900 - 1909","1910 - 1919","1920 - 1929","1930 - 1935", doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item[5]/tei:list/tei:item/tei:term[@xml:lang=$helpers:web-language]/attribute()[2])
-        return if ($date = "timeline" or $date = "#timeline") then
-            <li class="{concat("nav_",$type,"_tab")}"><a href="#">{doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item[5]/tei:list/tei:item/tei:term[@xml:lang=$helpers:web-language]/data(.)}</a></li>
-        else <li class="{concat("nav_",$type,"_tab")}">
-            <a href="#" 
-            onclick="u_nav({concat("'nav_",$type,"_sub_",(index-of(("1900 - 1909","1910 - 1919","1920 - 1929","1930 - 1935"),$date)-1),"'")})">
-            {$date}
-            </a></li>
+            return if ($date = "timeline" or $date = "#timeline") then
+                <li class="{concat("nav_",$type,"_tab")}">
+                <a href="{concat($helpers:app-root,"/timeline.html?plang=",$helpers:web-language)}">
+                {doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item[5]/tei:list/tei:item/tei:term[@xml:lang=$helpers:web-language]/data(.)}
+                </a></li>
+            else <li class="{concat("nav_",$type,"_tab")}">
+                <a href="#" 
+                onclick="u_nav({concat("'nav_",$type,"_sub_",(index-of(("1900 - 1909","1910 - 1919","1920 - 1929","1930 - 1935"),$date)-1),"'")})">
+                {$date}
+                </a></li>
         else ()
 };
 
@@ -173,16 +176,16 @@ declare function page:createItem($type as xs:string, $indikator as xs:string?) a
 
 (: SEARCH PAGE :)
 
-declare function page:singleElement($node as node(), $model as map(*),$xmltype as xs:string,$xmlid as xs:string) as node()* {
+declare %templates:wrap function page:singleElement($node as node(), $model as map(*),$xmltype as xs:string,$xmlid as xs:string) as xs:string? {
     let $doc := doc('/db/apps/pessoa/data/lists.xml')    
     return page:singleAttribute($doc,$xmltype,$xmlid)     
 };
 
-declare function page:singleAttribute($doc as node(),$type as xs:string,$id as xs:string) as node()? {
+declare function page:singleAttribute($doc as node(),$type as xs:string,$id as xs:string) as xs:string? {
     let $entry := if($helpers:web-language = "pt") 
                   then $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @xml:id=$id]
                   else $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @corresp=concat("#",$id)]
-     return $entry
+     return $entry/data(.)
 };
 (:
 declare function page:page_singeAttribute_term($doc as node(),$type as xs:string,$id as xs:string, $lang as xs:string) as node()? {
@@ -222,3 +225,138 @@ declare function page:createOption($xmltype as xs:string, $value as xs:string*,$
 };
 
 
+declare %templates:wrap function page:createTimelineBody($node as node(), $model as map(*)) as node()* {
+    let $lists := doc('/db/apps/pessoa/data/lists.xml')    
+    let $headline := page:singleAttribute($lists,"timeline","timeline_title")
+    
+    
+    let $body := <body onload="onLoad();" onresize="onResize();">
+         
+        <h2>{$headline}</h2>
+        <div id="my-timeline" style="height: 1300px; border: 1px solid #aaa; border-radius: 10px;" ></div>
+        </body>
+    
+    return  $body
+};
+
+declare %templates:wrap function page:createTimelineHeader($node as node(), $model as map(*)) as node()* {
+let $lists := doc('/db/apps/pessoa/data/lists.xml') 
+let $title := <title>{$lists//tei:list[@type="navigation"]/tei:item[5]/tei:list/tei:item/tei:term[@xml:lang=$helpers:web-language]/data(.)}</title>
+let $meta := <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+let $style := <style type="text/css">
+         body {{
+         font-family: sans-serif;
+         font-size: 8pt;
+		 
+         }}
+ #my-timeline {{
+ overflow: no;
+ }}
+.tape-special_event {{  margin-top: 12px; }}
+.simile {{
+width: 1800px;
+}}
+      </style>
+
+let $script1 := 
+      <script type="text/javascript">
+      Timeline_ajax_url="{concat($helpers:app-root,"/resources/js/timeline_2.3.0/timeline_ajax/simile-ajax-api.js")}";
+      Timeline_urlPrefix='{concat($helpers:app-root,"/resources/js/timeline_2.3.0/timeline_js/")}';       
+      Timeline_parameters='bundle=true';
+    </script>
+  let $script2 :=  <script src="{concat($helpers:app-root,"/resources/js/timeline_2.3.0/timeline_js/timeline-api.js")}"    
+      type="text/javascript">
+    </script> 
+ let $script3 := <script type="text/javascript">
+        var tl;
+        function onLoad() {{
+            var eventSource = new Timeline.DefaultEventSource(0);
+            
+            var theme = Timeline.ClassicTheme.create();
+            theme.event.bubble.width = 300;
+            theme.event.bubble.height = 150;
+			theme.event.tape.height = 10;
+			theme.event.track.gap = -7;
+			
+            theme.ether.backgroundColors[1] = theme.ether.backgroundColors[0];
+            var data = Timeline.DateTime.parseGregorianDateTime("Oct 02 1894")
+            var bandInfos = [
+                Timeline.createBandInfo({{
+                    width:          "3%",
+                    intervalUnit:   Timeline.DateTime.DECADE, 
+                    intervalPixels: 800,
+                    date:           data,
+                    showEventText:  false,
+                    theme:          theme
+               }}),
+				
+                Timeline.createBandInfo({{
+                    width:          "97%", 
+                    intervalUnit:   Timeline.DateTime.YEAR, 
+                    intervalPixels: 80,
+                    eventSource:    eventSource,
+                    date:           data,
+                    theme:          theme
+				
+               }})
+            ];
+            bandInfos[0].etherPainter = new Timeline.YearCountEtherPainter({{
+                startDate:  "Jun 13 1888 ",
+                multiple:   1,
+                theme:      theme
+            }});
+			
+			
+			
+			
+            bandInfos[0].syncWith = 1;
+            bandInfos[0].highlight = false;
+            bandInfos[0].decorators = [
+                new Timeline.SpanHighlightDecorator({{
+                    startDate:  "Jun 13 1888 ",
+                    endDate:    "Nov 30 1935 ",
+                    startLabel: "{page:singleAttribute($lists,"timeline","birth")}",
+                    endLabel:   "{page:singleAttribute($lists,"timeline","death")}",
+                    color:      "#B8B8E6",
+                    opacity:    50,
+                    theme:      theme
+               }})
+            ];
+            			
+			
+			
+            tl = Timeline.create(document.getElementById("my-timeline"), bandInfos, Timeline.HORIZONTAL);
+            tl.loadXML("{concat($helpers:app-root,"/events?lang=",$helpers:web-language)}", function(xml, url) {{
+                eventSource.loadXML(xml, url);
+            }});
+        }}
+				
+		
+        var resizeTimerID = null;
+        function onResize() {{
+            if (resizeTimerID == null) {{
+                resizeTimerID = window.setTimeout(function() {{
+                    resizeTimerID = null;
+                    tl.layout();
+              }}, 500);
+           }}
+       }}
+    </script>		
+    return ($title,$meta,$style,$script1, $script2, $script3)
+};
+
+declare %templates:wrap function page:docControll($node as node(), $model as map(*)) {
+    let $db := collection("/db/apps/pessoa/data/doc","/db/apps/pessoa/data/pub")
+    let $doc := if(substring-after($helpers:request-path,"doc/")) 
+                    then substring-after($helpers:request-path,"doc/")
+                else substring-after($helpers:request-path,"pub")
+    let $index := index-of($db,doc(concat("/db/apps/pessoa/data/doc/",$doc,".xml")))    
+    let $libary :=  if(substring-after($helpers:request-path,"doc/")) 
+                    then "doc"
+                else "pub"
+    let $arrows := <div style="color:red"> 
+                        <a href="{concat($helpers:app-root,'/',$libary,'/',substring-before(root($db[position() = (($index) -1)])/util:document-name(.),".xml"),"?plang=",$helpers:web-language)}" style="color:red;margin:0px 5px;">Back</a> 
+                        <a href="{concat($helpers:app-root,'/',$libary,'/',substring-before(root($db[position() = (($index) +1)])/util:document-name(.),".xml"),"?plang=",$helpers:web-language)}" style="color:red;margin:0px 5px;">Forward</a>
+                    </div>
+    return $arrows
+};

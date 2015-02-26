@@ -98,8 +98,21 @@
                         <xsl:when test="$language='pt'">
                             <xsl:value-of select="string-join(.//note[@type='genre']/rs, '/')"/>
                         </xsl:when>
+                        <xsl:when test="$language='en'">    
+                            <xsl:if test=".//note[@type='genre']/rs[@key='lista_editorial'] ">
+                                <xsl:value-of select="substring-after(doc('/db/apps/pessoa/data/lists.xml')//list[@type='genres' and @xml:lang='en']/item[@corresp='#lista_editorial'],'#lista_editorial')" /> 
+                            </xsl:if>
+                            <xsl:if test=".//note[@type='genre']/rs[@key='nota_editorial']">
+                                <xsl:value-of select="substring-after(doc('/db/apps/pessoa/data/lists.xml')//list[@type='genres' and @xml:lang='en']/item[@corresp='#nota_editorial'],'#nota_editorial')"/> 
+                            </xsl:if>
+                            <xsl:if test=".//note[@type='genre']/rs[@key='plano_editorial']">
+                                <xsl:value-of select="substring-after(doc('/db/apps/pessoa/data/lists.xml')//list[@type='genres' and @xml:lang='en']/item[@corresp='#plano_editorial'],'#plano_editorial')"/> 
+                            </xsl:if>
+                            <xsl:if test=".//note[@type='genre']/rs[@key='poesia']">
+                                <xsl:value-of select="substring-after(doc('/db/apps/pessoa/data/lists.xml')//list[@type='genres' and @xml:lang='en']/item[@corresp='#poesia'], '#poesia')"/> 
+                            </xsl:if>
+                        </xsl:when>
                         <xsl:otherwise>
-                            
                         </xsl:otherwise>
                     </xsl:choose>
                 </events>

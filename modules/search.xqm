@@ -256,7 +256,7 @@ if(exists($sel) and $sel = "union")
                 return if(substring-after($file_name,"BNP") != "" or substring-after($file_name,"X"))
                         then <li><a href="{$helpers:app-root}/data/doc/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"), '&amp;file=', $file_name)}">{$title}</a></li>
                         else <li><a href="{$helpers:app-root}/data/pub/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"), '&amp;file=', $file_name)}">{$title}</a></li>
-    else <p>Nothing found</p>
+    else <p>{page:singleAttribute(doc('/db/apps/pessoa/data/lists.xml'),"search","no_results")}</p>
     else <p>Error</p>
 };
 
@@ -331,9 +331,8 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
                   <div class="tab" id="ta_date" onclick="hide('se_date')"><h6>{page:singleAttribute($doc,"search","date")}</h6></div>
                             <div class="selection" id="se_date">    
                                 <div id="datum">
-                                    <input type="date" name="after"/>
-                                    <label>to</label>
-                                    <input type="date" name="before"/>
+                                    <input type="date" name="after" placeholder="{page:singleAttribute($doc,"search","from")}"/>
+                                    <input type="date" name="before" placeholder="{page:singleAttribute($doc,"search","to")}"/>
                                 </div>
                     </div>  
                     <div class="tab" id="ta_lang" onclick="hide('se_lang')"><h6>{page:singleAttribute($doc,"search","language")}</h6></div>
@@ -341,9 +340,9 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
                                 {search:page_createInput_item_lang("language","checkbox","lang",("pt","en","fr"),$doc)}
                                 <br/>
                                 <input type="radio" name="lang_ao" value="and" id="and"/>
-                                    <label for="and">and</label>
+                                    <label for="and">{page:singleAttribute($doc,"search","and")}</label>
                                 <input type="radio" name="lang_ao" value="or" id="or" checked="checked"/>
-                                    <label for="or">or</label>
+                                    <label for="or">{page:singleAttribute($doc,"search","or")}</label>
                             </div>
                      <h6>{page:singleAttribute($doc,"search","free_search")}</h6>
                      <input name="term" placeholder="{page:singleAttribute($doc,"search","search_term")}..." />
