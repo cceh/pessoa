@@ -31,9 +31,9 @@ function u_nav(navID) {
         "nav_cronologia_sub_1",
         "nav_cronologia_sub_2",
         "nav_cronologia_sub_3",        
-        "nav_projeto"]
+        "nav_projeto"];
        
-       for (var i = 0; i<=IDs.length; i++) {
+       for (var i = 0; i<IDs.length; i++) {
         if (document.getElementById(navID).style.display == "none" && IDs[i].contains(navID)) {
             if (navID.contains("nav_documentos_sub_") || navID.contains("nav_cronologia_sub_")) {
                 document.getElementById(navID).style.display = "inline-block";
