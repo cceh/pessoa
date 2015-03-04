@@ -360,26 +360,34 @@ ul#tabs {
     list-style-type: none;
     padding: 0;
     text-align: center;
+    
 }
 ul#tabs li {
     display: inline-block;
-    background-color: #EDF8FA;
+    background-color: #A8A8A8;
     border: 1px solid #d4d4d1;
     padding: 5px 20px;
     margin-bottom: 4px;
-    color: #08C;
     cursor: pointer;
 }
+
 ul#tabs li:hover {
-    background-color: #BFD0CA;
+    background-color: #900;
+   
 }
+
+
 ul#tabs li.active {
-    background-color: #BFD0CA;
+    background-color: #900;
 }
 ul#tab {
     list-style-type: none;
     padding: 5px;
     border: 1px solid #d4d4d1;  
+}
+
+ul#tab a {
+    color: #222;
 }
 ul#tab li {
     display: none;
@@ -387,6 +395,12 @@ ul#tab li {
 ul#tab li.active {
     display: block;
 }
+
+
+
+#genreList a{
+    color: #222;
+} 
 
 /* Search Button*/
 
