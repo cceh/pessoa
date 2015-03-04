@@ -234,15 +234,16 @@ declare function author:getYearOrTitleOfDocument($doc, $orderBy){
 };
 
 declare function author:formatDocID($id){
+ 
    let $id := $id
    return
-   if(fn:contains($id,"BNP/E3 ")) then
-        let $num := fn:substring-after($id,"BNP/E3 ")
+   if(fn:contains($id,"BNP_E3_")) then
+        let $num := fn:substring-after($id,"BNP_E3_")
         let $num := fn:tokenize($num,'[A-Z,a-z,-]')[1]
         let $length := fn:string-length($num)
         let $diff := 4-$length
         let $newNumber := fn:concat(fn:substring("0000",0,$diff),$num)
-        return fn:concat("BNP/E3 ",$newNumber, fn:substring-after($id,$num))
+        return fn:concat("BNP_E3_",$newNumber, fn:substring-after($id,$num))
     else if(fn:starts-with($id,"MN")) then
         let $num := if (fn:contains($id,"-")) then fn:substring-after(fn:substring-before($id,"-"),"MN") else fn:substring-after(fn:substring-before($id,".xml"),"MN")
         let $length := fn:string-length($num)
