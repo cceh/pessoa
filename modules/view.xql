@@ -17,6 +17,8 @@ import module namespace doc="http://localhost:8080/exist/apps/pessoa/doc" at "do
 import module namespace search="http://localhost:8080/exist/apps/pessoa/search" at "search.xqm";
 import module namespace author="http://localhost:8080/exist/apps/pessoa/author" at "author.xqm";
 import module namespace page="http://localhost:8080/exist/apps/pessoa/page" at "page.xqm";
+import module namespace charts="http://localhost:8080/exist/apps/pessoa/charts" at "charts.xqm";
+
 
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers";
 
