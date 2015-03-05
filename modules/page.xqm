@@ -43,7 +43,7 @@ for $target in $type
     let $name := if($helpers:web-language = "pt") then $doc//tei:term[@xml:lang = $helpers:web-language and @xml:id= $target]
                                   else $doc//tei:term[@xml:lang = $helpers:web-language and @corresp= concat("#",$target)]
     
-  return <li><a href="#{$target}" role="tab" data-toggle="tab" onclick="u_nav({concat("'","nav_",$target,"'")})">{$name}</a></li>
+  return <li><a href="#{$target}" role="tab" data-toggle="tab" onClick="u_nav({concat("'","nav_",$target,"'")})">{$name}</a></li>
 };
 
 
@@ -174,7 +174,7 @@ declare function page:createItem($type as xs:string, $indikator as xs:string?) a
 };
 
 
-(: SEARCH PAGE :)
+(:###### SEARCH PAGE ######:)
 
 declare %templates:wrap function page:singleElement($node as node(), $model as map(*),$xmltype as xs:string,$xmlid as xs:string) as xs:string? {
     let $doc := doc('/db/apps/pessoa/data/lists.xml')    
@@ -224,7 +224,7 @@ declare function page:createOption($xmltype as xs:string, $value as xs:string*,$
 
 };
 
-
+(:###### TIMELINE ######:)
 declare %templates:wrap function page:createTimelineBody($node as node(), $model as map(*)) as node()* {
     let $lists := doc('/db/apps/pessoa/data/lists.xml')    
     let $headline := page:singleAttribute($lists,"timeline","timeline_title")
