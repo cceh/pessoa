@@ -25,7 +25,7 @@ h1 {
 } 
 #titletool2
 {
-    color: #F5F5F5;
+    color=#fff;
 }
 #titletool
 {
@@ -46,15 +46,15 @@ p {
     clear:both;
 }
 #page-header {
-    width : 1069px;
     height:300px;
     border: 1px solid #000;   
     margin-left: auto; 
     margin-right: auto; 
-    margin-top: -20px;
     border: 1px solid #222;
     z-index: 1;
-    background: url('../img/pessoa4.png') center no-repeat;
+    position:absolute;
+    margin-top: 63px;
+    width: 1267px; 
 }
 
 .flagge {
@@ -134,6 +134,19 @@ header
  width: 824px; 
  margin: 0 auto;
  font-size: 18px;
+ 
+ position:absolute; 
+ margin-top: 325px; 
+ 
+ /*top: 325px;
+ left: 252px;
+ */
+ 
+ margin-left: 252px; 
+ z-index:1; 
+ border:0px solid #888;
+ 
+ background: #990000;
 }
 
 #navi2
@@ -514,7 +527,7 @@ ul#tab li.active {
                 font-size:16px;
                 }
                 
-#abc
+#title
 {            
  margin: 0; 
  width: 490px; 
@@ -522,6 +535,9 @@ ul#tab li.active {
  background: #990000; 
  margin-left: 10px;
  padding: 5px 10px; 
+ z-index:2; 
+ position:absolute;
+ margin-left: 105px;
 }
 
 #re-navi li
@@ -537,6 +553,8 @@ ul#tab li.active {
     width: 1267px; 
     height: 80px; 
     background: #222; 
+    position:absolute;
+    top: 1200px;
 }
 
 .link
@@ -571,8 +589,7 @@ ul#tab li.active {
      margin:0 auto;
     }
 .nav_autores_tab, .nav_documentos_tab, .nav_publicacoes_tab, .nav_genero_tab, .nav_cronologia_tab, .nav_bibliografia_tab {
-    display:inline-block;
-    
+    display:inline-block;    
 }
 
 #nav_autores {
@@ -630,4 +647,55 @@ ul#tab li.active {
 }
 .nav_documentos_sub_tab:hover , .nav_cronologia_sub_tab:hover {
         background-color: #4E4E4E;
+}
+
+#lang 
+{
+  position:absolute; 
+  margin-top: 31px;
+  /*top: 31px;
+  left: 848px;*/ 
+  z-index:1; 
+  margin-left: 1076px;
+  color:#990000;  
+}
+
+#article
+{
+ position:absolute; 
+ top: 430px; 
+ margin-left: 106px; 
+ z-index:1;
+ border: 5px solid #990000;
+ width: 1077px; 
+ min-height: 750px;   
+}
+
+#filter
+{
+ width: 1068px;
+ border-bottom: 1px solid #222;
+ padding: 5px;
+ background: #990000; 
+ color:#fff;
+}
+
+#text-div
+{
+ display:inline-block;
+ width: 562px; 
+ min-height: 100px;
+ border: 3px solid #222;
+ margin-left: 16px; 
+ margin-top: 15px;   
+}
+
+#img-div
+{
+ display:inline-block;
+ width: 444px;
+ min-height: 100px;
+ border: 3px solid #222; 
+ margin-left: 15px;
+ margin-top: 15px;   
 }
