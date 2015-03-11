@@ -15,8 +15,8 @@ body > div.container {
     max-width: 70%;
 }
 #content.container {
-    width: 750px;
-    margin: 0 auto 50px auto;
+    width: 1230px;
+    margin: 12px auto;
 }
 
 h1 {
@@ -51,9 +51,6 @@ p {
     margin-left: auto; 
     margin-right: auto; 
     border: 1px solid #222;
-    z-index: 1;
-    position:absolute;
-    margin-top: 63px;
     width: 1267px; 
 }
 
@@ -132,20 +129,9 @@ header
 #navi
 {
  width: 824px; 
- margin: 0 auto;
+ margin: -30px auto 0px 252px;
  font-size: 18px;
- 
- position:absolute; 
- margin-top: 325px; 
- 
- /*top: 325px;
- left: 252px;
- */
- 
- margin-left: 252px; 
- z-index:1; 
  border:0px solid #888;
- 
  background: #990000;
 }
 
@@ -157,7 +143,7 @@ header
 
 #content
 {
- width: 750px;
+ width: 1230px;
  margin: 0 auto; 
 }
 
@@ -287,15 +273,6 @@ padding: 0 5px;
    padding: 5px;
   }
 
-#footer
-{
- width: 800px; 
- height: 100px;
- margin: 0 auto; 
- border: 1px solid #000;
- text-align: center; 
-}
-
 #filter-nav
 {
  border: 1px solid #9B9B9B;
@@ -313,6 +290,7 @@ padding: 0 5px;
 {
  float: right; 
  font-size: 15px;
+ padding: 0 10px;
 }
 
 #td-1, #td-2, #td-3, #td-4, #td-5, #td-6, #td-7, #td-8, #td-9 {
@@ -379,7 +357,7 @@ ul#tabs {
 ul#tabs li {
     display: inline-block;
     background-color: #A8A8A8;
-    border: 1px solid #d4d4d1;
+    /*border: 1px solid #d4d4d1;*/
     padding: 5px 20px;
     margin-bottom: 4px;
     cursor: pointer;
@@ -397,7 +375,7 @@ ul#tabs li.active {
 ul#tab {
     list-style-type: none;
     padding: 5px;
-    border: 1px solid #d4d4d1;  
+   /* border: 1px solid #d4d4d1;  */
 }
 
 ul#tab a {
@@ -529,32 +507,34 @@ ul#tab li.active {
                 
 #title
 {            
- margin: 0; 
  width: 490px; 
  height: 95px; 
  background: #990000; 
- margin-left: 10px;
- padding: 5px 10px; 
- z-index:2; 
- position:absolute;
+ margin-top: 0px;
  margin-left: 105px;
+ padding: 5px 10px; 
+ position:absolute;
+ z-index:1;
+top: 0px !important; 
 }
 
-#re-navi li
+#navi-elements li
 {
     color: #fff; 
     display: inline-block;
     padding: 16px 20px 6px 0px; 
 }
+#navi-elements {
+        padding:0px 0px 7px 40px;    
 
-#re-footer
+}
+#footer
 {
     z-index:1;
     width: 1267px; 
     height: 80px; 
     background: #222; 
-    position:absolute;
-    top: 1200px;
+    margin:0px auto;
 }
 
 .link
@@ -622,8 +602,7 @@ ul#tab li.active {
     
     }
 .nav_cronologia_tab {
-       padding: 3px 25px;
-
+       padding: 3px 14px;
 }    
 .nav_cronologia_sub_tab {
 }
@@ -651,29 +630,20 @@ ul#tab li.active {
 
 #lang 
 {
-  position:absolute; 
-  margin-top: 31px;
-  /*top: 31px;
-  left: 848px;*/ 
-  z-index:1; 
+  margin-top: 30px;
   margin-left: 1076px;
   color:#990000;  
 }
 
 #article
 {
- position:absolute; 
- top: 430px; 
- margin-left: 106px; 
- z-index:1;
  border: 5px solid #990000;
- width: 1077px; 
  min-height: 750px;   
 }
 
 #filter
 {
- width: 1068px;
+ width: 1221px;
  border-bottom: 1px solid #222;
  padding: 5px;
  background: #990000; 
@@ -683,19 +653,24 @@ ul#tab li.active {
 #text-div
 {
  display:inline-block;
- width: 562px; 
+ width: 55%; 
  min-height: 100px;
- border: 3px solid #222;
- margin-left: 16px; 
- margin-top: 15px;   
+border-right: 3px dotted #222 !important;
+margin-left:5px;
+margin-right:2.5px;
 }
 
 #img-div
 {
  display:inline-block;
- width: 444px;
+ width: 40%;
  min-height: 100px;
- border: 3px solid #222; 
- margin-left: 15px;
- margin-top: 15px;   
+ float:right;
+ margin-right:5px;
+ margin-left:2.5px;
 }
+
+#img-div, #text-div {
+ margin-top:15px; 
+ margin-bottom:15px;
+ }
