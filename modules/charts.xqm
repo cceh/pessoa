@@ -8,20 +8,28 @@ import module namespace doc="http://localhost:8080/exist/apps/pessoa/doc" at "do
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
 import module namespace app="http://localhost:8080/exist/apps/pessoa/templates" at "app.xql";
 import module namespace search="http://localhost:8080/exist/apps/pessoa/search" at "search.xqm";
-declare namespace tei="http://www.tei-c.org/ns/1.0";
+
+
+import module namespace kwic="http://exist-db.org/xquery/kwic";
+declare namespace util="http://exist-db.org/xquery/util";
+declare namespace text="http://exist-db.org/xquery/text";
 declare namespace request="http://exist-db.org/xquery/request";
+declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 
 declare %templates:wrap function charts:test($node as node(), $model as map(*)) as node()* {
     let $test := <p> Huhu</p>
+    let $kuerzel := <p>{charts:getAuthors("key")}</p>
+     for $hit in charts:getRoles() 
+     let $author := <p>{root($hit)/util:document-name(.)}</p>
     
-    return ($test)
+    return ($test,$author,$kuerzel)
 };
 
 
 declare %templates:wrape function charts:autores($node as node(), $model as map(*)) as node()* {
     let $canvas := <canvas id="autores" width="400" height="400"></canvas>
-    let $autores := concat('"',string-join(charts:getAuthors(),'","'),'"')
+    let $autores := concat('"',string-join(charts:getAuthors("full"),'","'),'"')
     let $roles := charts:getLists("roles")
     (:concat('"',string-join(charts:getLists("roles"),'","'),'"'):)
    
@@ -72,10 +80,11 @@ declare function charts:getLists($type as xs:string) as xs:string* {
         return $data/data(.)
 };
 
-declare function charts:getAuthors() as xs:string* {
+declare function charts:getAuthors($type as xs:string) as xs:string* {
         let $doc := doc('/db/apps/pessoa/data/lists.xml')    
         for $data in $doc//tei:listPerson[@type="authors"]/tei:person
-        return $data/tei:persName/data(.)
+        return if($type = "full") then $data/tei:persName/data(.)
+                else $data/attribute()
 
 };
 
@@ -90,3 +99,18 @@ declare function charts:createBarChartDatasets($labels as xs:string+) as xs:stri
         data: [65, 59, 80, 81, 56, 55, 40]'
         )
 };
+
+
+declare function charts:getRoles() as node()* {
+    for $author in charts:getAuthors("key")
+        return charts:createAuthorsRoles($author)
+};
+
+declare function charts:createAuthorsRoles($person as xs:string) as node()*{
+    let $db := collection("/db/apps/pessoa/data/doc")
+    for $role in charts:getLists("roles")
+        let $merge := concat('("person","role"),','"',$person,'","',$role,'"')
+                let $build_range :=concat("//range:field-eq(",$merge,")")
+                let $build_search := concat("$db",$build_range)
+           return util:eval($build_search)
+           };
