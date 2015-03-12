@@ -14,7 +14,7 @@ declare namespace request="http://exist-db.org/xquery/request";
 
 declare %templates:wrap function page:construct($node as node(), $model as map(*)) as node()* {
     let $MainNav :=                
-            <ul id="re-navi" >
+            <ul id="navi-elements" >
                 {page:createMainNav()}
                 <li>                    
                  <a href="#" class="glyphicon glyphicon-search" onclick="hide('searchbox')" role="tab" data-toggle="tab"></a>                     
@@ -85,17 +85,18 @@ declare function page:createThirdNav($type as xs:string) as node()* {
             onclick="u_nav({concat("'nav_",$type,"_sub_",$nr,"'")})">
             {concat($nr,"0")}
             </a></li>
-        else if ($type = "cronologia") then for $date in ("1900 - 1909","1910 - 1919","1920 - 1929","1930 - 1935", doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item[5]/tei:list/tei:item/tei:term[@xml:lang=$helpers:web-language]/attribute()[2])
+    else if ($type = "cronologia") then for $date in ("1900 - 1909","1910 - 1919","1920 - 1929","1930 - 1935",(doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item[5]/tei:list/tei:item/tei:term[@xml:lang=$helpers:web-language]/attribute()[2]))
             return if ($date = "timeline" or $date = "#timeline") then
                 <li class="{concat("nav_",$type,"_tab")}">
                 <a href="{concat($helpers:app-root,"/timeline.html?plang=",$helpers:web-language)}">
                 {doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item[5]/tei:list/tei:item/tei:term[@xml:lang=$helpers:web-language]/data(.)}
                 </a></li>
-            else <li class="{concat("nav_",$type,"_tab")}">
+            else if(substring-after($date,"19")!= "") then  <li class="{concat("nav_",$type,"_tab")}">
                 <a href="#" 
                 onclick="u_nav({concat("'nav_",$type,"_sub_",(index-of(("1900 - 1909","1910 - 1919","1920 - 1929","1930 - 1935"),$date)-1),"'")})">
                 {$date}
                 </a></li>
+                else ()
         else ()
 };
 
