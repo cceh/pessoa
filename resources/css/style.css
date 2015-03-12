@@ -14,6 +14,12 @@ body {
 body > div.container {
     max-width: 70%;
 }
+
+*
+{ 
+ font-family: 'Open Sans', sans-serif;  
+}
+
 #content.container {
     width: 1230px;
     margin: 12px auto;
@@ -21,7 +27,7 @@ body > div.container {
 
 h1 {
     text-align: center;
-    font-size: 30px; 
+    font-size: 29px; 
 } 
 #titletool2
 {
@@ -33,10 +39,13 @@ h1 {
     font-size : 25px;
 }
 h2 {
-    font-size: 14pt;
+    font-size: 18pt;
     line-height: 20px;
+    margin: 0;
+    /*
     margin-bottom: 5px;
     margin-top: 15px;
+    */
     text-align: center; 
 }
 p {
@@ -114,6 +123,7 @@ header
 
 .q 
 {
+
  border-bottom: 2px solid #000;
 }
 
@@ -129,8 +139,8 @@ header
 #navi
 {
  width: 824px; 
- margin: -30px auto 0px 252px;
- font-size: 18px;
+ margin: -30px auto 0;
+ font-size: 17px;
  border:0px solid #888;
  background: #990000;
 }
@@ -356,6 +366,9 @@ ul#tabs {
 }
 ul#tabs li {
     display: inline-block;
+}
+ul#tabs span {
+    display: inline-block;
     background-color: #A8A8A8;
     /*border: 1px solid #d4d4d1;*/
     padding: 5px 20px;
@@ -363,13 +376,13 @@ ul#tabs li {
     cursor: pointer;
 }
 
-ul#tabs li:hover {
+ul#tabs span:hover {
     background-color: #900;
    
 }
 
 
-ul#tabs li.active {
+ul#tabs span.active {
     background-color: #900;
 }
 ul#tab {
@@ -397,27 +410,31 @@ ul#tab li.active {
 /* Search Button*/
 
 
+#searchfield{
+    width:824px;
+    margin: -10px auto 0 auto;
+}
+
 .container-4{
             overflow: hidden;
             width: 150px;
             vertical-align: middle;
             white-space: nowrap;
-            display:none;
+            background: #990000; 
+            float: right; 
+            padding: 5px;
+
+
             }
             
             .container-4 input#search{
-                width: 120px;
-                height: 20px;
-                
-                background: white;
-                border: solid 1px;
+                width: 125px;
+                height: 32px;
+                background: #fff;
                 font-size: 10pt;
-                /*float: left;*/
-                color: black;
+                color: #000;
                /* padding-left: 15px;*/
-                -webkit-border-radius: 15px;
-                -moz-border-radius: 15px;
-                border-radius: 15px;
+                
               }
 
             .container-4 input#search::-webkit-input-placeholder {
@@ -511,11 +528,10 @@ ul#tab li.active {
  height: 95px; 
  background: #990000; 
  margin-top: 0px;
- margin-left: 105px;
+ margin-left:30px;
  padding: 5px 10px; 
- position:absolute;
  z-index:1;
-top: 0px !important; 
+position:absolute;
 }
 
 #navi-elements li
@@ -533,7 +549,7 @@ top: 0px !important;
     z-index:1;
     width: 1267px; 
     height: 80px; 
-    background: #222; 
+    background: #F3EDE0; 
     margin:0px auto;
 }
 
@@ -565,7 +581,6 @@ top: 0px !important;
 }
 
 #nav_autores, #nav_documentos, #nav_publicacoes, #nav_genero, #nav_cronologia, #nav_bibliografia, #nav_projeto {
-     display:none;
      margin:0 auto;
     }
 .nav_autores_tab, .nav_documentos_tab, .nav_publicacoes_tab, .nav_genero_tab, .nav_cronologia_tab, .nav_bibliografia_tab {
@@ -628,23 +643,29 @@ top: 0px !important;
         background-color: #4E4E4E;
 }
 
+#headline {
+ margin: 0 auto;
+ display:block;
+ width:1270px;
+ }
 #lang 
 {
   margin-top: 30px;
-  margin-left: 1076px;
+  float:right;
+  display:block;
   color:#990000;  
 }
 
 #article
 {
  border: 5px solid #990000;
- min-height: 750px;   
+ min-height: 300px;   
 }
+
 
 #filter
 {
  width: 1221px;
- border-bottom: 1px solid #222;
  padding: 5px;
  background: #990000; 
  color:#fff;
@@ -674,3 +695,51 @@ margin-right:2.5px;
  margin-top:15px; 
  margin-bottom:15px;
  }
+ 
+ 
+ 
+ #titleline {
+     background-color:#990000;
+     color: #fff;
+     max-width:300px;
+     display:block;
+     margin:15px auto 0 auto;
+     padding: 4px 0;
+ }
+ 
+ #tabline {
+     background-color: #F3EDE0;
+ }
+ #titledate {
+     font-size:14pt;
+ }
+ 
+ #back {
+     float: left;
+     margin-left:5px;
+ }
+ #forward {
+     float: right;
+     margin-right:5px;
+ }
+ 
+ 
+ #scrollline {
+     margin:0;
+ }
+ #back,#forward {
+    display: inline-block;
+    background-color: #A8A8A8;
+    /*border: 1px solid #d4d4d1;*/
+    padding: 5px 20px;
+    margin-bottom: 4px;
+    cursor: pointer;     
+    width: 100px;
+    text-align:center;
+     }   
+
+#back:hover, #forward:hover {
+        background-color: #900;
+}
+
+

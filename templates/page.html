@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title class="config:app-title">App Title</title>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css' />
         <meta class="config:app-meta" />
         <link class="helpers:app-root" rel="shortcut icon" href="resources/images/favicon.ico" />
         <link class="helpers:app-root" rel="stylesheet" type="text/css"
@@ -66,19 +67,25 @@
     </head>
     <body id="body">
         <div id="side">
-            <div id="title">
-                 <h1>
-                     <a style="color=white;" id="title-tool2" class="helpers:app-root " href="index.html">
-                        <span id="title-tool" class="config:app-title">Generated page</span>
-                    </a>
-                 </h1>   
+            <div id="headline">
+                <div id="title">
+                     <h1>
+                         <a style="color=white;" id="title-tool2" class="helpers:app-root " href="index.html">
+                            <span id="title-tool" class="config:app-title">Generated page</span>
+                        </a>
+                     </h1>   
+                </div>
+                <div id="lang">
+                    <a class="link" onclick="switchlang('en')">English</a>|<a class="link" onclick="switchlang('pt')">Portuguese</a>
+                </div>         
+                <div class="clear"></div>
             </div>
-            <div id="lang">
-                <a class="link" onclick="switchlang('en')">English</a>|<a class="link" onclick="switchlang('pt')">Portuguese</a>
-            </div>            
-            <div id="page-header" style="background: url('resources/images/pessoa-title.png');" class="helpers:app-root"></div>  
+                <div id="page-header" style="background: url('resources/images/pessoa-title.png');" class="helpers:app-root"></div>  
+            
             <script class="search:search-function" />
+            
             <div id="navi" class="page:construct"></div>
+            <div id="searchfield" class="page:construct_search" ></div>
             <div id="content" class="container"></div>
             <div id="footer">
                 <a href="#">informação legal</a>
