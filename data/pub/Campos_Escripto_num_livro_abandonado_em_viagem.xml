@@ -1,0 +1,77 @@
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Escripto num livro abandonado em viagem</title>
+                <author>
+                    <rs type="person" key="AdC">Álvaro de Campos</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Alena Geduldig</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc><!-- Presença, n.º 10, 15 de Março de 1928, p. 2,	 Escripto num livro abandonado em viagem -->
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Escripto num livro abandonado em viagem</title>
+                        <author>
+                            <rs type="person" key="AdC">Álvaro de Campos</rs>
+                        </author>
+                        <textLang mainLang="pt"/>
+                    </analytic>
+                    <monogr>
+                        <!-- Titel der Zeitschrift: -->
+                        <title level="j">Presença</title>
+                        <imprint>
+                            <pubPlace><!-- falls Ort --></pubPlace>
+                            <date when="1928-03-15">15 de Março de 1928</date>
+                        </imprint>
+                        <!-- Nummer der Zeitschrift: -->
+                        <biblScope unit="issue">10</biblScope>
+                        <!-- Seite: -->
+                        <biblScope unit="page">2</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="poesia">Poesia</rs>
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="pub/res-1900-a-1928-03-n10_0002_2_t0" />
+    </facsimile>
+    <text xml:id="escripto_num_livro_abandonado_em_viagem">
+        <body>
+            <div>
+<head>Escripto num livro abandonado em viagem</head>
+
+<lg>
+    <l>Venho dos lados de Beja.</l>
+    <l>Vou para o meio de Lisboa.</l>
+    <l>Não trago nada e não acharei nada.</l>
+    <l>Tenho o cansaço anticipado do que não acharei,</l>
+    <l>E a saudade que sinto não é nem no passado nem do futuro.</l>
+    <l>Deixo escripta neste livro a imagem do meu designio morto:</l>
+    <l>Fui, como hervas, e não me arrancaram.</l>
+</lg>
+
+<signed>ÁLVARO DE CAMPOS</signed>
+            </div>
+        </body>
+    </text>
+</TEI>

@@ -1,0 +1,77 @@
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Ode</title>
+                <author>
+                    <rs type="person" key="RR">Ricardo Reis</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Alena Geduldig</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc><!--Presença, n.º 10, 15 de Março de 1928, p. 2, 		Ode, Ode --> 
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Ode</title>
+                        <author>
+                            <rs type="person" key="RR">Ricardo Reis</rs>
+                        </author>
+                        <textLang mainLang="pt"/>
+                    </analytic>
+                    <monogr>
+                        <!-- Titel der Zeitschrift: -->
+                        <title level="j">Presença</title>
+                        <imprint>
+                            <pubPlace><!-- falls Ort --></pubPlace>
+                            <date when="1928-03-15">15 de Março de 1928</date>
+                        </imprint>
+                        <!-- Nummer der Zeitschrift: -->
+                        <biblScope unit="issue">10</biblScope>
+                        <!-- Seite: -->
+                        <biblScope unit="page">2</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="poesia">Poesia</rs>
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="pub/res-1900-a-1928-03-n10_0002_2_t0" />
+    </facsimile>
+    <text xml:id="ode">
+<body>
+    <div>
+        <head>Ode</head>
+        
+        <lg>
+            <l>O rastro breve que das hervas molles</l>
+            <l>Ergue o pé findo, o écho que ôco côa,</l>
+            <l rend="indent">A sombra que se adumbra,</l>
+            <l rend="indent">O branco que a nau larga —</l>
+            <l>Nem maior nem melhor deixa a alma às almas,</l>
+            <l>O ido aos indos. A lembrança esquece.</l>
+            <l rend="indent">Mortos, inda morremos.</l>
+            <l rend="indent">Lydia, somos só nossos.</l>
+        </lg>
+        <signed>RICARDO REIS</signed>
+    </div>
+</body>
+    </text>
+</TEI>

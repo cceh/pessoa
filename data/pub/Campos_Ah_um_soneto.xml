@@ -1,0 +1,90 @@
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Ah, um soneto...</title>
+                <author>
+                    <rs type="person" key="AdC">Álvaro de Campos</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Alena Geduldig</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc><!-- Presença, n.º 34, Novembro – Fevereiro de 1932, p. 7,	Ah, um soneto... --> 
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Ah, um soneto...</title>
+                        <author>
+                            <rs type="person" key="AdC">Álvaro de Campos</rs>
+                        </author>
+                        <textLang mainLang="pt"/>
+                    </analytic>
+                    <monogr>
+                        <!-- Titel der Zeitschrift: -->
+                        <title level="j">Presença</title>
+                        <imprint>
+                            <pubPlace><!-- falls Ort --></pubPlace>
+                            <date from="1931-11" to="1932-02">Novembro – Fevereiro de 1932</date>
+                        </imprint>
+                        <!-- Nummer der Zeitschrift: -->
+                        <biblScope unit="issue">34</biblScope>
+                        <!-- Seite: -->
+                        <biblScope unit="page">7</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="poesia">Poesia</rs>
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="pub/" />
+    </facsimile>
+    <text xml:id="ah_um_soneto">
+        <body>
+            <div>
+<head>Ah, um soneto…</head>
+
+<lg>
+    <l>Meu coração é um almirante louco</l>
+    <l>Que abandonou a profissão do mar</l>
+    <l>E que a vai relembrando pouco a pouco</l>
+    <l>Em casa a passear, a passear…</l>
+</lg>
+<lg>
+    <l>No movimento (eu mesmo me desloco</l>
+    <l>Nesta cadeira, só de o imaginar)</l>
+    <l>O mar abandonado fica em foco</l>
+    <l>Nos músculos cansados de parar.</l>
+</lg>
+<lg>
+    <l>Há saudades nas pernas e nos braços.</l>
+    <l>Há saudades no cérebro por fora.</l>
+    <l>Há grandes raivas feitas de cansaços.</l>
+</lg>
+<lg>
+    <l>Mas – esta é boa! – era do coração</l>
+    <l>Que eu falava… e onde diabo estou eu agora</l>
+    <l>Com almirante em vez de sensação?…</l>
+</lg>
+
+<signed>ÁLVARO DE CAMPOS</signed>
+            </div>
+        </body>
+    </text>
+</TEI>

@@ -1,0 +1,98 @@
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Gazetilha</title>
+                <author>
+                    <rs type="person" key="AdC">Álvaro de Campos</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Alena Geduldig</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc><!-- Sol, n.º 11, 10 de Novembro 1926, p. 2,		Gazetilha [reeditado pela Presença em 1929]-->
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Gazetilha</title>
+                        <author>
+                            <rs type="person" key="AdC">Álvaro de Campos</rs>
+                        </author>
+                        <textLang mainLang="pt"/>
+                    </analytic>
+                    <monogr>
+                        <!-- Titel der Zeitschrift: -->
+                        <title level="j">Sol</title>
+                        <imprint>
+                            <pubPlace><!-- falls Ort --></pubPlace>
+                            <date when="1926-11-10">10 de Novembro 1926</date>
+                        </imprint>
+                        <!-- Nummer der Zeitschrift: -->
+                        <biblScope unit="issue">11</biblScope>
+                        <!-- Seite: -->
+                        <biblScope unit="page">2</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="poesia">Poesia</rs>
+                    </note>
+                    <!--<note>Lapsos corrigidos segundo: Álvaro de Campos - Livro de Versos. Fernando Pessoa.
+                  (Edição Crítica. Introdução, transcrição, organização e notas de Teresa Rita
+                  Lopes.) Lisboa: Estampa, 1993</note>-->
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <!-- s.d.
+Poesias de Álvaro de Campos. Fernando Pessoa. Lisboa: Ática, 1944 (imp. 1993).  - 281. -->
+    <facsimile>
+        <graphic url="pub/res-1900-a-1929-01-n18_0001_1_t0" />
+    </facsimile>
+    <text xml:id="gazetilha">
+        <body>
+            <div>
+<head>Gazetilha</head>
+
+<lg>
+    <l>Dos Lloyd Georges da Babilónia</l>
+    <l>Não resa a história nada.</l>
+    <l>Dos Briands da Assíria ou do Egito,</l>
+    <l>Dos Trotskys de qualquer colónia</l>
+    <l>Grega ou romana já passada,</l>
+    <l>O nome é morto, inda que escrito.</l>
+</lg>
+<lg>
+    <l>Só o parvo dum poeta, ou um louco</l>
+    <l>Que fazia filosofia,</l>
+    <l>Ou um geómetra maduro,</l>
+    <l>Sobrevive a êsse tanto pouco</l>
+    <l>Que está lá para traz no escuro</l>
+    <l>E nem a história já historía.</l>
+</lg>
+<lg>
+    <l>Ó grandes homens do Momento!</l>
+    <l>Ó grandes glórias a ferver</l>
+    <l>De quem a obscuridade foge!</l>
+    <l>Aproveitem sem pensamento!</l>
+    <l>Tratem da fama e do comer,</l>
+    <l>Que amanhã é dos loucos de hoje!</l>
+</lg>
+
+<signed>ÁLVARO DE CAMPOS</signed>
+
+            </div>
+        </body>
+    </text>
+</TEI>

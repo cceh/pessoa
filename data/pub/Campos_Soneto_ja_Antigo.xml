@@ -1,0 +1,91 @@
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Soneto já Antigo</title>
+                <author>
+                    <rs type="person" key="AdC">Álvaro de Campos</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Alena Geduldig</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc> <!--Contemporânea, n.º 6, Dezembro de 1922, p. 121,	Soneto já Antigo-->
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Soneto já Antigo</title>
+                        <author>
+                            <rs type="person" key="AdC">Álvaro de Campos</rs>
+                        </author>
+                        <textLang mainLang="pt"/>
+                    </analytic>
+                    <monogr>
+                        <!-- Titel der Zeitschrift: -->
+                        <title level="j">Contemporânea</title>
+                        <imprint>
+                            <pubPlace><!-- falls Ort --></pubPlace>
+                            <date when="1922-12">Dezembro de 1922</date>
+                        </imprint>
+                        <!-- Nummer der Zeitschrift: -->
+                        <biblScope unit="issue">6</biblScope>
+                        <!-- Seite: -->
+                        <biblScope unit="page">121</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="poesia">Poesia</rs>
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="pub/178423_0425_121_t0" />
+    </facsimile>
+    <text xml:id="soneto_ja_antigo">
+        <body>
+            <div>
+<head>Soneto já Antigo</head>
+
+<lg>
+    <l>Olha, Daisy: quando eu morrer tu has de</l>
+    <l>Dizer aos meus amigos ahi de Londres,</l>
+    <l>Embora não o sintas, que tu escondes</l>
+    <l>A grande dôr da minha morte. Irás de</l>
+</lg>
+<lg>
+    <l>Londres p’ra York, onde nascestes (dizes…</l>
+    <l>Que eu nada que tu digas acredito),</l>
+    <l>Contar áquelle pobre rapazito</l>
+    <l>Que me deu tantas horas tão felizes,</l>
+</lg>
+<lg>
+    <l>Embora não o saibas, que morri…</l>
+    <l>Mesmo elle, a quem eu tanto julguei amar,</l>
+    <l>Nada se importará… Depois vae dar</l>
+</lg>
+<lg>
+    <l>A noticia a essa extranha Cecily</l>
+    <l>Que acreditava que eu seria grande…</l>
+    <l>Raios partam a vida e quem lá ande!</l>
+</lg>
+
+
+<signed rend="right">ÁLVARO DE CAMPOS</signed>
+            </div>
+        </body>
+    </text>
+</TEI>

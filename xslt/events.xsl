@@ -27,27 +27,27 @@
                                                     editorial</rs>-->
                    <!-- </note>-->
                     
-                    <xsl:for-each select=".//origDate">
+                    <xsl:for-each select=".//origDate | .//imprint/date">
                      <xsl:attribute name="start">
                         <xsl:value-of select="@from|@when|@notAfter|@notBefore"/>
                     </xsl:attribute>
                     </xsl:for-each>
                    
                    
-                    <xsl:if test=".//origDate/@to">
+                    <xsl:if test=".//origDate/@to or .//imprint/date/@to">
                         <xsl:attribute name="end">
-                            <xsl:value-of select=".//origDate/@to"/>
+                            <xsl:value-of select=".//origDate/@to | .//imprint/date/@to"/>
                         </xsl:attribute>
                     </xsl:if>
                    
                    
-                    <xsl:if test=".//origDate/@from and .//origDate/@to">
+                    <xsl:if test="(.//origDate/@from and .//origDate/@to) or (.//imprint/date/@from and .//imprint/date/@to)">
                         <xsl:attribute name="durationEvent">
                             <xsl:text>true</xsl:text>
                         </xsl:attribute>
                     </xsl:if>
                     
-                    <xsl:if test=".//origDate/@from and .//origDate/@to">
+                    <xsl:if test="(.//origDate/@from and .//origDate/@to) or (.//imprint/date/@from and .//imprint/date/@to)">
                         <xsl:attribute name="classname">
                             <xsl:text>special_event</xsl:text>
                         </xsl:attribute>
@@ -85,7 +85,7 @@
                     </xsl:if>-->
                     
                     <xsl:attribute name="caption">
-                        <xsl:value-of select=".//origDate"/>
+                        <xsl:value-of select=".//origDate | .//imprint/date"/>
                     </xsl:attribute>
              
              
@@ -93,7 +93,7 @@
                             <xsl:value-of select=".//idno[@type='filename']"/>
                         </xsl:attribute>
                     
-                    <xsl:text>Fernando Pessoa, </xsl:text><xsl:value-of select=".//origDate"/><xsl:text>, </xsl:text>
+                    <xsl:text>Fernando Pessoa, </xsl:text><xsl:value-of select=".//origDate | .//imprint/date"/><xsl:text>, </xsl:text>
                     <xsl:choose>
                         <xsl:when test="$language='pt'">
                             <xsl:value-of select="string-join(.//note[@type='genre']/rs, '/')"/>
