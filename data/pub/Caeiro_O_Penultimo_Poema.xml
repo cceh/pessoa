@@ -1,0 +1,83 @@
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>O Penúltimo Poema</title>
+                <author>
+                    <rs type="person" key="AC">Alberto Caiero</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Alena Geduldig</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc><!--Presença, n.º 31-32, Março de 1931, p. 10,		O Penúltimo Poema --> 
+                <biblStruct>
+                    <analytic>
+                        <title level="a">O Penúltimo Poema</title>
+                        <author>
+                            <rs type="person" key="AC">Alberto Caeiro</rs>
+                        </author>
+                        <textLang mainLang="pt"/>
+                    </analytic>
+                    <monogr>
+                        <!-- Titel der Zeitschrift: -->
+                        <title level="j">Presença</title>
+                        <imprint>
+                            <pubPlace><!-- falls Ort --></pubPlace>
+                            <date when="1931-03">Março de 1931</date>
+                        </imprint>
+                        <!-- Nummer der Zeitschrift: -->
+                        <biblScope unit="issue">31-32</biblScope>
+                        <!-- Seite: -->
+                        <biblScope unit="page">10</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="poesia">Poesia</rs>
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="pub/" />
+    </facsimile>
+    <text xml:id="o_penultimo_poema">
+        <body>
+<div>
+    <head>O Penúltimo Poema</head>
+    
+    <lg>
+        <l>Também sei fazer conjecturas.</l>
+        <l>Há em cada coisa aquilo que ela é que a anima.</l>
+        <l>Na planta está por fora e é uma ninfa pequena.</l>
+        <l>No animal é um ser interior longínquo.</l>
+        <l>No homem é a alma que vive com êle e é já êle.</l>
+        <l>Nos deuses tem o mesmo tamanho</l>
+        <l>E o mesmo espaço que o corpo</l>
+        <l>E é a mesma coisa que o corpo.</l>
+        <l>Porisso se diz que os deuses nunca morrem.</l>
+        <l>Porisso os deuses não têm corpo e alma</l>
+        <l>Mas só corpo e são perfeitos.</l>
+        <l>O corpo é que lhes é alma</l>
+        <l>E têm a consciência na própria carne divina.</l>
+    </lg>
+    
+    <signed>ALBERTO CAEIRO</signed>
+</div>
+        </body>
+    </text>
+</TEI>

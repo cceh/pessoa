@@ -1,0 +1,81 @@
+
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Quero acabar entre rosas, porque as amei na infância.</title>
+                <author>
+                    <rs type="person" key="AdC">Álvaro de Campos</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Alena Geduldig</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc><!-- Descobrimento, n.º do Inverno, 1932, p. 516, 	«Quero acabar entre rosas»... --> 
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Quero acabar entre rosas, porque as amei na infância.</title>
+                        <author>
+                            <rs type="person" key="AdC">Álvaro de Campos</rs>
+                        </author>
+                        <textLang mainLang="pt"/>
+                    </analytic>
+                    <monogr>
+                        <!-- Titel der Zeitschrift: -->
+                        <title level="j">Descobrimento</title>
+                        <imprint>
+                            <pubPlace><!-- falls Ort --></pubPlace>
+                            <date when="1932">1932</date>
+                        </imprint>
+                        <!-- Nummer der Zeitschrift: -->
+                        <biblScope unit="issue">do Inverno</biblScope>
+                        <!-- Seite: -->
+                        <biblScope unit="page">516</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="poesia">Poesia</rs>
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="pub/" />
+    </facsimile>
+    <text xml:id="quero_acabar_entre_rosas_porque_as_amei_na_infancia">
+        <body>
+            <div>
+<head>Quero acabar entre rosas, porque as amei na infância.</head>
+
+
+<lg>
+    <l>Quero acabar entre rosas, porque as amei na infância.</l>
+    <l>Os crisantemos de depois, desfolhei-os a frio.</l>
+    <l>Falem pouco, devagar.</l>
+    <l>Que eu não oiça, sobretudo com o pensamento.</l>
+    <l>O que quis? Tenho as mãos vazias,</l>
+    <l>Crispadas flèbilmente sôbre a colcha longínqua.</l>
+    <l>O que pensei? Tenho a bôca sêca, abstracta.</l>
+    <l>O que vivi? Era tão bom dormir!</l>
+</lg>
+
+<signed>ÁLVARO DE CAMPOS</signed>
+
+            </div>
+        </body>
+    </text>
+</TEI>

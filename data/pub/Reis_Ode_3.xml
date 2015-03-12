@@ -1,0 +1,75 @@
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Ode</title>
+                <author>
+                    <rs type="person" key="RR">Ricardo Reis</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Alena Geduldig</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc><!-- Presença, n.º 37, Fevereiro de 1933, p. 8,			Ode --> 
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Ode</title>
+                        <author>
+                            <rs type="person" key="RR">Ricardo Reis</rs>
+                        </author>
+                        <textLang mainLang="pt"/>
+                    </analytic>
+                    <monogr>
+                        <!-- Titel der Zeitschrift: -->
+                        <title level="j">Presença</title>
+                        <imprint>
+                            <pubPlace><!-- falls Ort --></pubPlace>
+                            <date when="1933-02">Fevereiro de 1933</date>
+                        </imprint>
+                        <!-- Nummer der Zeitschrift: -->
+                        <biblScope unit="issue">37</biblScope>
+                        <!-- Seite: -->
+                        <biblScope unit="page">8</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="poesia">Poesia</rs>
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="pub/res-1900-a-1928-03-n10_0002_2_t0" />
+    </facsimile>
+    <text xml:id="ode">
+<body>
+    <div>
+        <head>Ode</head>
+        
+        <lg>
+            <l>Para ser grande, sê inteiro: nada</l> 
+            <l rend="indent">Teu exagera ou exclui.</l>
+            <l>Sê todo em cada coisa. Põe quanto és</l> 
+            <l rend="indent">No mínimo que fazes,</l>
+            <l>Assim em cada lago a lua tôda</l> 
+            <l rend="indent">Brilha, porque alta vive.</l>
+        </lg>
+        <signed>RICARDO REIS</signed>
+    </div>
+</body>
+    </text>
+</TEI>

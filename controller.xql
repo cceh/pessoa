@@ -101,7 +101,7 @@ else if (contains($exist:path, "search")) then
     else if (contains($exist:path, "events")) then
     let $language := request:get-parameter("lang", "pt")
     return 
-transform:transform(collection("/db/apps/pessoa/data/doc")//tei:TEI, doc("/db/apps/pessoa/xslt/events.xsl"), <parameters><param name="language" value="{$language}"/></parameters>)
+transform:transform((collection("/db/apps/pessoa/data/doc"), collection("/db/apps/pessoa/data/pub"))//tei:TEI, doc("/db/apps/pessoa/xslt/events.xsl"), <parameters><param name="language" value="{$language}"/></parameters>)
 
 else
     (: everything else is passed through :)
