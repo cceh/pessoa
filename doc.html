@@ -37,48 +37,22 @@
        
     </style>
     <div id="content">
+        <div id="titleline">
+            <p class="doc:get-title"></p>
+        </div>
         <div id="article">
-            <div id="filter">
-            <select class="filter" name="Filter 1">
-                <option value="0">Filter 1</option>
-                <option value="a1">A1</option>
-                <option value="a2">A2</option>
-                <option value="a3">A3</option>
-            </select>
-                <select class="filter" name="Filter 2">
-                    <option value="0">Filter 2</option>
-                    <option value="b1">B1</option>
-                    <option value="b2">B2</option>
-                    <option value="b3">B3</option>
-                </select>
-                <select class="filter" name="Filter 3">
-                    <option value="0">Filter 3</option>
-                    <option value="c1">C1</option>
-                    <option value="c2">C2</option>
-                    <option value="c3">C3</option>
-                </select>
-                <select class="filter" name="RDF">
-                    <option value="0">RDF</option>
-                    <option value="c1">R1</option>
-                    <option value="c2">R2</option>
-                    <option value="c3">R3</option>
-                </select> 
-                <div id="filter-nav-a">
-                    <a href="">Drucken</a>
-                    <a href="">XML</a>
-                    <a href="">Zitat</a>
-                </div>
-                <div class="clear"/>
-            </div>
             <div>
-                <ul id="tabs">
-                    <li class="active"><a href="#diplomática" class="page:singleElement?xmltype=tabs&amp;xmlid=transcricao-diplomatica"></a></li>
-                    <li><a href="#primeira" class="page:singleElement?xmltype=tabs&amp;xmlid=primeira-versao"></a></li>
-                    <li><a href="#final" class="page:singleElement?xmltype=tabs&amp;xmlid=versao-final"></a></li>
-                    <li><a href="#pessoal" class="page:singleElement?xmltype=tabs&amp;xmlid=versao-pessoal"></a></li>
-                </ul>
+                <div id="tabline">
+                    <ul id="tabs">
+                        <li><a href="#diplomática" ><span class="active page:singleElement?xmltype=tabs&amp;xmlid=transcricao-diplomatica"></span></a></li>
+                        <li><a href="#primeira" ><span class="page:singleElement?xmltype=tabs&amp;xmlid=primeira-versao"></span></a></li>
+                        <li><a href="#final"><span class="page:singleElement?xmltype=tabs&amp;xmlid=versao-final"></span></a></li>
+                        <li><a href="#pessoal" ><span class="page:singleElement?xmltype=tabs&amp;xmlid=versao-pessoal"></span></a></li>
+                    </ul>
+                </div>
+                <div class="page:docControll" id="scrollline">
+                </div>
             </div>
-            <h2>Lorem Ipsum dolor sit amet</h2>
             <div id="text-div">
                 <ul id="tab">
                     <li class="active">
@@ -112,6 +86,40 @@
             </div>
             <div id="img-div">
              <p class="doc:get-image">facsimile</p>
+            </div>
+            <div id="filter">
+                <!--
+                <select class="filter" name="Filter 1">
+                <option value="0">Filter 1</option>
+                <option value="a1">A1</option>
+                <option value="a2">A2</option>
+                <option value="a3">A3</option>
+            </select>
+                <select class="filter" name="Filter 2">
+                    <option value="0">Filter 2</option>
+                    <option value="b1">B1</option>
+                    <option value="b2">B2</option>
+                    <option value="b3">B3</option>
+                </select>
+                <select class="filter" name="Filter 3">
+                    <option value="0">Filter 3</option>
+                    <option value="c1">C1</option>
+                    <option value="c2">C2</option>
+                    <option value="c3">C3</option>
+                </select>
+                <select class="filter" name="RDF">
+                    <option value="0">RDF</option>
+                    <option value="c1">R1</option>
+                    <option value="c2">R2</option>
+                    <option value="c3">R3</option>
+                </select> -->
+                <div id="filter-nav-a">
+                    <a href="">Drucken</a>
+                    <a href="">XML</a>
+                    <a href="">Zitat</a>
+                </div>
+                <div class="clear"/>
+                
             </div>
         </div>
     </div>

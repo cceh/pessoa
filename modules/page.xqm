@@ -22,17 +22,21 @@ declare %templates:wrap function page:construct($node as node(), $model as map(*
             </ul>
     let $SubNav := page:createSubNav()
 
-    let $search := <div class="container-4" id="searchbox">
+    
+    let $return := ($MainNav, $SubNav)
+    return $return
+};
+declare %templates:wrap function page:construct_search($node as node(), $model as map(*)) as node()* {
+let $search := <div class="container-4" id="searchbox" style="display:none">
                             <input type="search" id="search" placeholder="Search..." />
                             <button class="icon" id="button" onclick="search()"><i class="fa fa-search" ></i>
                                 </button>
                         </div>      
+    let $clear :=  <div class="clear"></div>
     let $switchlang := <script>
         function switchlang(value){{location.href="{concat($helpers:app-root,substring-after($helpers:request-path,"pessoa/"))}?plang="+value;}}
-        
     </script>
-    let $return := ($MainNav,$search, $switchlang, $SubNav)
-    return $return
+    return ($search,$clear,$switchlang)
 };
 
 
@@ -56,7 +60,7 @@ declare function page:createSubNav() as node()* {
 
 declare function page:createSubNavTabs($tab as xs:string) as node()* {
     let $SubNav := 
-        <div class="navbar" id="{concat("nav_",$tab)}"  > 
+        <div class="navbar" id="{concat("nav_",$tab)}"  style="display:none"> 
             <ul class="nav_tabs">
             {page:createContent($tab)}
             </ul>
@@ -151,15 +155,18 @@ declare function page:createItem($type as xs:string, $indikator as xs:string?) a
         then for $date in (xs:integer(concat("19",$indikator,"0")) to xs:integer(concat("19",$indikator,"9")))
         for $para in ("date","date_when","date_notBefore","date_notAfter","date_from","date_to")
                 let $db := collection("/db/apps/pessoa/data/doc","/db/apps/pessoa/data/pub")
-                let $result := search:date_search($db,$para,$date) 
+                let $result := search:result_union(search:date_search($db,$para,$date))
                 for $hit in $result
-                    let $label := if(substring-after(root($hit)/util:document-name(.), "BNP") != "") then substring-after(replace(substring-before(root($hit)/util:document-name(.), ".xml"), "_", " "), "BNP E3 ")
-                                  else if(substring-after(root($hit)/util:document-name(.),"MN") != "") then substring-after(replace(substring-before(root($hit)/util:document-name(.), ".xml"), "_", " "), "MN")
-                                  else if(    substring-after(root($hit)/util:document-name(.),"Caeiro") != "" 
+                    let $label := if(substring-after(root($hit)/util:document-name(.), "BNP") != "") then 
+                                    substring-after(replace(substring-before(root($hit)/util:document-name(.), ".xml"), "_", " "), "E3")
+                                  else if(substring-after(root($hit)/util:document-name(.),"MN") != "") then 
+                                    substring-after(replace(substring-before(root($hit)/util:document-name(.), ".xml"), "_", " "), "MN")
+                                  else if(page:clearPublikation($hit) != "") then page:clearPublikation($hit) (:
+                                  if(    substring-after(root($hit)/util:document-name(.),"Caeiro") != "" 
                                            or substring-after(root($hit)/util:document-name(.),"Pessoa") != "" 
                                            or substring-after(root($hit)/util:document-name(.),"Campos") != ""
                                            or substring-after(root($hit)/util:document-name(.),"Reis") != "")
-                                           then substring-after(replace(substring-before(root($hit)/util:document-name(.),".xml"),"-", " "),"_")
+                                           then substring-after(replace(substring-before(root($hit)/util:document-name(.),".xml"),"-", " "),"_"):)
                                   else ()
                     let $ref := if(substring-after(root($hit)/util:document-name(.),"BNP")!= "" or substring-after(root($hit)/util:document-name(.),"MN")!= "") 
                     then  concat($helpers:app-root, "/doc/", substring-before(root($hit)/util:document-name(.), ".xml"))
@@ -172,6 +179,13 @@ declare function page:createItem($type as xs:string, $indikator as xs:string?) a
                         else substring-after($bibl/attribute()[2],"#")
             return <item label="{$label}"  ref="{$helpers:app-root}/page/bibliografia.html?type={$ref}" /> 
    else for $a in "10" return <item label="nothin" ref="#"/>
+};
+
+declare function page:clearPublikation($pub as node()) as xs:string {
+    for $author in ("Caeiro","Pessoa","Campos","Reis")
+     return   if(substring-after(root($pub)/util:document-name(.),$author) != "")
+            then substring-after(replace(replace(substring-before(root($pub)/util:document-name(.),".xml"),"-", " "),"_"," "),$author)
+            else ()
 };
 
 
@@ -355,9 +369,18 @@ declare %templates:wrap function page:docControll($node as node(), $model as map
     let $libary :=  if(substring-after($helpers:request-path,"doc/")) 
                     then "doc"
                 else "pub"
-    let $arrows := <div style="color:red"> 
-                        <a href="{concat($helpers:app-root,'/',$libary,'/',substring-before(root($db[position() = (($index) -1)])/util:document-name(.),".xml"),"?plang=",$helpers:web-language)}" style="color:red;margin:0px 5px;">Back</a> 
-                        <a href="{concat($helpers:app-root,'/',$libary,'/',substring-before(root($db[position() = (($index) +1)])/util:document-name(.),".xml"),"?plang=",$helpers:web-language)}" style="color:red;margin:0px 5px;">Forward</a>
+    let $arrows := <div>
+                            <a href="{concat($helpers:app-root,'/',$libary,'/',substring-before(root($db[position() = (($index) -1)])/util:document-name(.),".xml"),"?plang=",$helpers:web-language)}">
+                                <span id="back"> 
+                                    Back 
+                                </span>
+                            </a>
+                            <a href="{concat($helpers:app-root,'/',$libary,'/',substring-before(root($db[position() = (($index) +1)])/util:document-name(.),".xml"),"?plang=",$helpers:web-language)}">
+                                <span id="forward">
+                                    Forward
+                                </span>
+                            </a>
+                            <div class="clear"></div>
                     </div>
     return $arrows
 };

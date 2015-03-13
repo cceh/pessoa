@@ -3,10 +3,19 @@ xquery version "3.0";
 module namespace doc="http://localhost:8080/exist/apps/pessoa/doc";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 
+import module namespace templates="http://exist-db.org/xquery/templates" at "templates.xql";
+
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
 import module namespace author="http://localhost:8080/exist/apps/pessoa/author" at "author.xqm";
 
 (: declare variable $ms:id := request:get-parameter("id", ()); :)
+
+declare function doc:get-title($node as node(), $model as map(*), $id as xs:string) as node()+{
+    let $xml := doc:get-xml($id)
+    let $title := $xml//tei:title/data(.)
+    let $date := <i id="titledate">{$xml//tei:origDate/data(.)}</i>
+    return <h2>{$title} {$date}</h2>
+};
 
 declare function doc:get-text($node as node(), $model as map(*), $id as xs:string) as item()+{
     let $xml := doc:get-xml($id)
