@@ -28,7 +28,7 @@ declare %templates:wrap function page:construct($node as node(), $model as map(*
 };
 declare %templates:wrap function page:construct_search($node as node(), $model as map(*)) as node()* {
 let $search := <div class="container-4" id="searchbox" style="display:none">
-                            <input type="search" id="search" placeholder="Search..." />
+                            <input type="search" id="search" placeholder="{concat(page:singleAttribute(doc("/db/apps/pessoa/data/lists.xml"),"search","search_verb"),"....")}" />
                             <button class="icon" id="button" onclick="search()"><i class="fa fa-search" ></i>
                                 </button>
                         </div>      
@@ -220,12 +220,13 @@ declare function page:createInput_item($xmltype as xs:string,$btype as xs:string
         return ($input,$label)
 };
 
-declare function page:createInput_term($xmltype as xs:string, $btype as xs:string, $name as xs:string, $value as xs:string*,$doc as node()) as node()* {
+declare function page:createInput_term($xmltype as xs:string, $btype as xs:string, $name as xs:string, $value as xs:string*,$doc as node(), $checked as xs:string?) as node()* {
     for $id in $value
         let $entry := if($helpers:web-language = "pt")
                       then $doc//tei:list[@type=$xmltype]/tei:item/tei:term[@xml:lang=$helpers:web-language and @xml:id=$id]
                       else $doc//tei:list[@type=$xmltype]/tei:item/tei:term[@xml:lang=$helpers:web-language and @corresp=concat("#",$id)]
-        let $input := <input type="{$btype}" name="{$name}" value="{$id}" id="{$id}"/>
+        let $input := if($checked = "checked") then <input type="{$btype}" name="{$name}" value="{$id}" id="{$id}" checked="checked"/>
+                       else <input type="{$btype}" name="{$name}" value="{$id}" id="{$id}" />
         let $label := <label for="{$id}">{$entry}</label>
         return ($input,$label)
 };
