@@ -35,24 +35,24 @@ declare %templates:wrap function search:profisearch($node as node(), $model as m
                         else $dbase                   
         let $dbase := $r_genre
         (:Suche nach "Erwähnten" Rollen:)
-        let $r_mention := if(search:get-parameters("notional")="mentioned" and search:get-parameters("person")!="") then search:author_build($dbase)
+        let $r_mention := if(search:get-parameters("person")!="") then search:author_build($dbase)
                         else $dbase
         let $dbase := $r_mention
-        let $r_real := if(search:get-parameters("notional") ="real" and search:get-parameters("person")!="") then search:search_range("person",$dbase)
+      (:  let $r_real := if(search:get-parameters("notional") ="real" and search:get-parameters("person")!="") then search:search_range("person",$dbase)
                         else $dbase
         let $dbase := $r_real                
-     
+     :)
         (: Datumssuche :)
         let $r_date := if(search:get-parameters("before") != "" or search:get-parameters("after") != "") then search:date_build($dbase)
                         else $dbase
         let $dbase := $r_date
         (: Volltext Suche :)                
 
-        let $r_all := ($r_genre,$r_mention,$r_real,$r_date)
+      (:  let $r_all := ($r_genre,$r_mention,$r_date) :)
        
         return map{
             "r_union"   := search:result_union($dbase),
-            "r_dbase"   := $dbase,
+            (:"r_dbase"   := $dbase,:)
             "query"     := $term
         }
         
@@ -199,8 +199,11 @@ declare function search:search_range($para as xs:string, $db as node()*) as node
 
 (: Suche nach den Autoren und der Rollen :)
 declare function search:author_build($db as node()*) as node()* {
+        let $roles :=  if(search:get-parameters("release") = "published" ) then "person"
+                        else if (search:get-parameters("release") = "unpublished") then search:get-parameters("role")
+                        else (search:get-parameters("role"),"person")
         for $person in search:get-parameters("person")
-           for $role in search:get-parameters("role")
+           for $role in $roles
                 let $merge := concat('("person","role"),','"',$person,'","',$role,'"')
                 let $build_range :=concat("//range:field-eq(",$merge,")")
                 let $build_search := concat("$db",$build_range)
@@ -236,11 +239,11 @@ if(exists($sel) and $sel = "union")
             let $file_name := root($hit)/util:document-name(.)
             let $expanded := kwic:expand($hit)
             let $title := 
-            if(doc(concat("/db/apps/pessoa/data/doc/",$file_name))//tei:sourceDesc/tei:msDesc) 
-                then doc(concat("/db/apps/pessoa/data/doc/",$file_name))//tei:msDesc/tei:msIdentifier/tei:idno[1]/data(.)
-                else doc(concat("/db/apps/pessoa/data/pub/",$file_name))//tei:biblStruct/tei:analytic/tei:title[1]/data(.)
+                    if(doc(concat("/db/apps/pessoa/data/doc/",$file_name))//tei:sourceDesc/tei:msDesc) 
+                        then doc(concat("/db/apps/pessoa/data/doc/",$file_name))//tei:msDesc/tei:msIdentifier/tei:idno[1]/data(.)
+                        else doc(concat("/db/apps/pessoa/data/pub/",$file_name))//tei:biblStruct/tei:analytic/tei:title[1]/data(.)
             order by $file_name
-            return if(substring-after($file_name,"BNP") != "" or substring-after($file_name,"X"))
+            return if(substring-after($file_name,"BNP") != "" or substring-after($file_name,"MN") != "")
                     then <li><a href="{$helpers:app-root}/data/doc/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"), '&amp;file=', $file_name)}">{$title}</a>
                         {kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="40"/>)}</li>
                     else <li><a href="{$helpers:app-root}/data/pub/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"), '&amp;file=', $file_name)}">{$title}</a>
@@ -249,11 +252,11 @@ if(exists($sel) and $sel = "union")
         else for $hit in $model(concat("r_",$sel))
             let $file_name := root($hit)/util:document-name(.)
             let $title := 
-            if(doc(concat("/db/apps/pessoa/data/doc/",$file_name))//tei:sourceDesc/tei:msDesc) 
-                then doc(concat("/db/apps/pessoa/data/doc/",$file_name))//tei:msDesc/tei:msIdentifier/tei:idno[1]/data(.)
-                else doc(concat("/db/apps/pessoa/data/pub/",$file_name))//tei:biblStruct/tei:analytic/tei:title[1]/data(.)
+                    if(doc(concat("/db/apps/pessoa/data/doc/",$file_name))//tei:sourceDesc/tei:msDesc) 
+                        then doc(concat("/db/apps/pessoa/data/doc/",$file_name))//tei:msDesc/tei:msIdentifier/tei:idno[1]/data(.)
+                        else doc(concat("/db/apps/pessoa/data/pub/",$file_name))//tei:biblStruct/tei:analytic/tei:title[1]/data(.)
                 order by $file_name
-                return if(substring-after($file_name,"BNP") != "" or substring-after($file_name,"X"))
+                return if(substring-after($file_name,"BNP") != "" or substring-after($file_name,"MN") != "")
                         then <li><a href="{$helpers:app-root}/data/doc/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"), '&amp;file=', $file_name)}">{$title}</a></li>
                         else <li><a href="{$helpers:app-root}/data/pub/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"), '&amp;file=', $file_name)}">{$title}</a></li>
     else <p>{page:singleAttribute(doc('/db/apps/pessoa/data/lists.xml'),"search","no_results")}</p>
@@ -301,42 +304,43 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
                             <!-- Nachher mit class="search:profisearch austauschen -->
             <div class="tab" id="ta_author" onclick="hide('se_author')"><h6>{page:singleAttribute($doc,"navigation","autores")}</h6>
             </div>
-            <div class="selection" id="se_author">
-                {page:createInput_term("search","checkbox","notional",("real","mentioned"),$doc)}
-                
-                <br/>
+            <div class="selection" id="se_author" style="display:none;">
+             <!--
+             {page:createInput_term("search","checkbox","notional",("real","mentioned"),$doc,"checked")}
+                             <br/>
+                -->
                 <select name="person" size="5" multiple="multiple">
                     {search:page_createOption_authors("authors",("FP","AC","AdC","RR"),$doc)}
                 </select>
                 <p class="small_text">{page:singleAttribute($doc,"search","multiple_entries")}</p>
                 <br/>
                 {page:singleAttribute($doc,"search","mentioned_as")}
-                {page:createInput_item("roles","checkbox","role",("autor","editor","tradutor","tema"),$doc)}
+                {page:createInput_item("roles","checkbox","role",("author","editor","translator","topic"),$doc)}
                 </div>
                 <div class="tab" id="ta_release" onclick="hide('se_release')"><h6>{page:singleAttribute($doc,"search","published")}&amp;{page:singleAttribute($doc,"search","unpublished")}</h6>
                 </div>
-                <div class="selection" id="se_release">
-                {page:createInput_term("search","radio","release",("published","unpublished"),$doc)}
+                <div class="selection" id="se_release" style="display:none;">
+                {page:createInput_term("search","radio","release",("published","unpublished"),$doc, "")}
                 <input type="radio" name="release" value="either" id="either" checked="checked"/>
                 <label for="either">{page:singleAttribute($doc,"search","published")}&amp;{page:singleAttribute($doc,"search","unpublished")}</label>
                 </div>
                 <div class="tab" id="ta_genre" onclick="hide('se_genre')"><h6>{page:singleAttribute($doc,"search","genre")}</h6>
                 </div>
-                    <div class="selection" id="se_genre">
+                    <div class="selection" id="se_genre" style="display:none;">
                         <select name="genre" size="7" multiple="multiple">
                         {page:createOption("genres",("lista_editorial","nota_editorial","plano_editorial","poesia"),$doc)}
                         </select>
                         <p class="small_text">{page:singleAttribute($doc,"search","multiple_entries")}</p>
                     </div>
                   <div class="tab" id="ta_date" onclick="hide('se_date')"><h6>{page:singleAttribute($doc,"search","date")}</h6></div>
-                            <div class="selection" id="se_date">    
+                            <div class="selection" id="se_date" style="display:none;">    
                                 <div id="datum">
                                     <input type="date" name="after" placeholder="{page:singleAttribute($doc,"search","from")}"/>
                                     <input type="date" name="before" placeholder="{page:singleAttribute($doc,"search","to")}"/>
                                 </div>
                     </div>  
                     <div class="tab" id="ta_lang" onclick="hide('se_lang')"><h6>{page:singleAttribute($doc,"search","language")}</h6></div>
-                            <div class="selection" id="se_lang">
+                            <div class="selection" id="se_lang" style="display:none;">
                                 {search:page_createInput_item_lang("language","checkbox","lang",("pt","en","fr"),$doc)}
                                 <br/>
                                 <input type="radio" name="lang_ao" value="and" id="and"/>

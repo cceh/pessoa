@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <div xmlns="http://www.w3.org/1999/xhtml" class="templates:surround?with=templates/page.html&amp;at=content">
+    <script class="helpers:app-root" type="text/javascript" src="resources/js/chart/Chart.js"></script>
+    
     <div class="row-fluid">
         <div id="content" class="span12 main">
             <h2> Free Chart</h2>
             <div class="span6">
-                <p class="charts:test"></p>
-                <canvas id="myChart" width="400" height="400"></canvas>
+           <!--     <p class="charts:test"></p>-->
+             <!--   <canvas id="myChart" width="400" height="400"></canvas>-->
                 <script>
-                    Chart.defaults.global.responsive = true;
+                  /*  Chart.defaults.global.responsive = true;
                     var ctx = $("#myChart").get(0).getContext("2d");
                     
                     var data = {
@@ -56,9 +58,10 @@
                     // Deletet    
                     };
                         var myBarChart = new Chart(ctx).Bar(data, options);
-                        
+                        */
                 </script>
                 <div class="charts:autores"></div>
+                <div class="charts:genre"></div>
             </div>
         </div>
         
