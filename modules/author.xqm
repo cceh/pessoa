@@ -112,7 +112,7 @@ declare function author:listAll($node as node(), $model as map(*), $author, $ord
             for $text in $texts where (fn:substring(author:getYearOrTitle($text,$orderBy),0,$i) = $year) return $text  
     order by $year
     return
-        (<div>{$year }</div>,       
+        (<div><b>{$year }</b></div>,       
          for $text in $textsInYear order by (author:getYearOrTitle($text,$orderBy))return           
             if((fn:starts-with($text//(tei:teiHeader)[1]//(tei:titleStmt)[1]//(tei:title)[1]/data(.),"BNP")) or (fn:starts-with($text//(tei:teiHeader)[1]//(tei:titleStmt)[1]//(tei:title)[1]/data(.),"MN") )) then          
                 <div>{author:listDocumentByYear($text,$authorKey)}</div>    
@@ -134,7 +134,7 @@ declare function author:listPublications($node as node(), $model as map(*), $aut
         let $pubsInYear :=
             for $pub in $pubs where (fn:substring(author:getYearOrTitleOfPublication($pub,$orderBy),0,$i) = $year ) return $pub
     order by $year 
-    return (<div>{$year }</div>,
+    return (<div><b>{$year }</b></div>,
             for $pub in $pubsInYear order by (author:getYearOrTitleOfPublication($pub,$orderBy))return
             author:listPublication($pub,$authorKey))   
 };
@@ -180,12 +180,12 @@ declare function author:listDocuments($node as node(), $model as map(*), $author
                 let $docsInYear := 
                     for $doc in $docs where (fn:substring(author:getYearOrTitleOfDocument($doc,$orderBy),0,$i) = $year ) return $doc
             order by $year 
-            return (<div>{$year}</div>,
+            return (<div><b>{$year}</b></div>,
                     for $doc in $docsInYear order by author:getYearOrTitleOfDocument($doc,"date") return author:listDocumentByYear($doc,$authorKey))
         else 
             let $roles := fn:distinct-values($docs//tei:text//tei:rs[@type = 'person' and @key=$authorKey]/@role/data(.)) 
             for $role in $roles return
-                <p>mencionado como {if($role="author") then "autor" else if($role ="translator") then "traductor" else if($role ="topic") then "tema" else $role}:{author:listDocumentsByRole($docs, $authorKey, $role, $orderBy)}</p>       
+                <p><b>mencionado como {if($role="author") then "autor" else if($role ="translator") then "traductor" else if($role ="topic") then "tema" else $role}</b>:{author:listDocumentsByRole($docs, $authorKey, $role, $orderBy)}</p>       
 };
 
 
@@ -234,22 +234,21 @@ declare function author:getYearOrTitleOfDocument($doc, $orderBy){
 };
 
 declare function author:formatDocID($id){
- 
    let $id := $id
    return
    if(fn:contains($id,"BNP_E3_")) then
-        let $num := fn:substring-after($id,"BNP_E3_")
-        let $num := fn:tokenize($num,'[A-Z,a-z,-]')[1]
-        let $length := fn:string-length($num)
+        let $numPart := fn:substring-after($id,"BNP_E3_")
+        let $numPart := fn:tokenize($numPart,'[A-Z,a-z,-]')[1]
+        let $length := fn:string-length($numPart)
         let $diff := 4-$length
-        let $newNumber := fn:concat(fn:substring("0000",0,$diff),$num)
-        return fn:concat("BNP_E3_",$newNumber, fn:substring-after($id,$num))
+        let $newNumber := fn:concat(fn:substring("0000",0,$diff),$numPart)
+        return fn:concat("BNP_E3_",$newNumber, fn:substring-after($id,$numPart))
     else if(fn:starts-with($id,"MN")) then
-        let $num := if (fn:contains($id,"-")) then fn:substring-after(fn:substring-before($id,"-"),"MN") else fn:substring-after(fn:substring-before($id,".xml"),"MN")
-        let $length := fn:string-length($num)
+        let $numPart := if (fn:contains($id,"-")) then fn:substring-after(fn:substring-before($id,"-"),"MN") else fn:substring-after(fn:substring-before($id,".xml"),"MN")
+        let $length := fn:string-length($numPart)
         let $diff := 4-$length
-        let $newNumber := fn:concat(fn:substring("0000",0,$diff),$num)
-        return fn:concat("MN",$newNumber, fn:substring-after($id,$num))
+        let $newNumber := fn:concat(fn:substring("0000",0,$diff),$numPart)
+        return fn:concat("MN",$newNumber, fn:substring-after($id,$numPart))
     else $id 
 };
 

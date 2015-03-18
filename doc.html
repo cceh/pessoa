@@ -31,8 +31,32 @@
             }
             }    
         }
+        
+        
+        if ( window.addEventListener ) {
+        addEventListener( "load", draw(100,100), false );
+        } else {
+        attachEvent( "onload", draw(100,100) );
+        }
+function draw(w, h) {
+var canvas = document.getCSSCanvasContext("2d", "lines", w, h);
+        
+canvas.strokeStyle = "rgb(0,0,0)";
+canvas.beginPath();
+canvas.moveTo( 0,0);
+canvas.lineTo( w, h );
+canvas.stroke();
+
+//canvas.strokeStyle ="rgb(0,0,0)";
+
+//canvas.moveTo( 0,h);
+//canvas.lineTo( w,0 );
+//canvas.stroke();
+}
 
     </script>
+    
+    
     <style type="text/css">
        
     </style>
