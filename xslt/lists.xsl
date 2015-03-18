@@ -18,7 +18,7 @@
                             <xsl:sort select="current-grouping-key()" />
                             <li>
                                 <xsl:value-of select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//listPerson[@type='authors']/person[@xml:id=$key]/persName" /> (<xsl:value-of select="@role" />)<!-- Mehrsprachigkeit -->
-                                <a href="#" title="índice"><img src="../../resources/images/list-48.png" width="16" height="auto" style="vertical-align:middle;" /></a>
+                                <a href="#" title="show index"><img src="../../resources/images/list-48.png" width="16" height="auto" style="vertical-align:middle;" /></a>
                             </li>
                         </xsl:for-each-group>
                     </xsl:for-each-group>
@@ -40,8 +40,8 @@
                         <xsl:sort select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type='journal']/item[@xml:id=current()/@key]" />
                         <xsl:variable name="key" select="@key" />
                         <li>
-                            <xsl:value-of select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type='journal']/item[@xml:id=$key]" /> (<xsl:value-of select="@role" />)<!-- Mehrsprachigkeit -->
-                            <a href="#" title="índice"><img src="../../resources/images/list-48.png" width="16" height="auto" style="vertical-align:middle;" /></a>
+                            <xsl:value-of select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type='journal']/item[@xml:id=$key]" /><!-- Mehrsprachigkeit -->
+                            <a href="#" title="show index"><img src="../../resources/images/list-48.png" width="16" height="auto" style="vertical-align:middle;" /></a>
                        </li>
                     </xsl:for-each-group>
                 </ul>

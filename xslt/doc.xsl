@@ -4,12 +4,13 @@
     <xsl:strip-space elements="rs"/>
     <xsl:template match="/">
         <style type="text/css">
-            h3 {margin-bottom: 5px;}
+            .text h3, .text.edited h3 {margin-bottom: 5px;}
+            .text h2, .text.edited h3 {margin-bottom: 20px;}
             div.text {display: inline-block; position: relative; }
             div.text.bnp-e3-180r {margin: 10px 130px;}
             
             
-            div.text[id="bnp-e3-51-89r"]{background: -webkit-canvas(lines);  }
+            .delSpan{background: -webkit-canvas(lines);  }
             
             .item {margin: 10px 0; position: relative;}
             .list .item .list .item {margin-left: 2em;}
@@ -26,6 +27,7 @@
             .seg .add.above {position: absolute; top: -0.5em; left: 0; font-size: smaller; white-space: nowrap;}
             .seg .add.below {position: absolute; top: 1.5em; left: 0; font-size: smaller; white-space: nowrap; line-height: 0.9em;}
             .add {top: 0;}
+            .seg.variant {color: #47C285;}
             
             .note.addition {position: absolute;}
             .note.addition.margin.top.right {top: 20px; right: -100px; font-size: smaller;}
@@ -221,7 +223,7 @@
                 <xsl:apply-templates select="seg[1]"/>
             </span>
             <span class="add below">
-                <xsl:apply-templates select="seg[2]/add"/>
+                <xsl:apply-templates select="seg[2]/add/text()"/>
             </span>
         </span>
     </xsl:template>
@@ -266,6 +268,13 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
+    <xsl:template match="delSpan">
+        <xsl:variable name="anchorID" select="@spanTo/substring-after(.,'#')" />
+        <span class="delSpan">
+            <xsl:apply-templates select="following::*[following::anchor[@xml:id=$anchorID]]" />
+        </span>
+    </xsl:template>
+    <xsl:template match="*[preceding::delSpan][following::anchor[@type='delSpanAnchor']]" />
     
     <!-- subst -->
     <xsl:template match="subst[del and add/@place='above'] | subst[del and add]">
@@ -280,12 +289,12 @@
     </xsl:template>
     
     <!-- add -->
-    <xsl:template match="add[@place='above']">
+    <xsl:template match="add[@place='above'][not(ancestor::choice)]">
         <span class="add above">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    <xsl:template match="add[@place='below']">
+    <xsl:template match="add[@place='below'][not(ancestor::choice)]">
         <span class="add below">
             <xsl:apply-templates/>
         </span>
@@ -316,8 +325,8 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    <xsl:template match="rs[@type='work-part']">
-        <span class="work-part">
+    <xsl:template match="rs[@type='text']">
+        <span class="text">
             <xsl:apply-templates/>
         </span>
     </xsl:template>

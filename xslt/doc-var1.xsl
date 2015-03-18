@@ -10,14 +10,14 @@
     hier: 1. Alternative anzeigen -->
     <xsl:template match="choice[seg and seg[2]/add/@place='below']">
         <span class="choice">
-            <span class="seg">
+            <span class="seg variant" title="variant">
                 <xsl:apply-templates select="seg[1]/text()"/>
             </span>
         </span>
     </xsl:template>
     <xsl:template match="choice[seg and seg[2]/add/@place='above']">
         <span class="choice">
-            <span class="seg">
+            <span class="seg variant">
                 <xsl:apply-templates select="seg[1]/text()"/>
             </span>
         </span>
