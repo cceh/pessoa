@@ -2,19 +2,8 @@
     
     <xsl:import href="doc-edited.xsl"/>
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
-    <xsl:preserve-space elements="*"/>
     
-    <!-- editorische Ergänzungen anzeigen -->
-    <xsl:template match="supplied">
-        <span class="supplied" title="{@reason}">
-            <xsl:choose>
-                <xsl:when test="not(node()) or note">□</xsl:when>
-                <xsl:otherwise>
-                    &lt;<xsl:apply-templates />&gt;
-                </xsl:otherwise>
-            </xsl:choose>
-        </span>
-    </xsl:template>
+    
     
     <!-- choices -->
     <!-- Alternativen von Pessoa selbst 

@@ -6,7 +6,6 @@
     
     <xsl:import href="doc.xsl"/>
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
-    <xsl:preserve-space elements="*"/>
     
     <!-- externer Parameter lb: yes|no
     (Zeilenumbrüche anzeigen oder nicht) -->

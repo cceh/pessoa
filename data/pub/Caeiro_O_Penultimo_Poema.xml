@@ -4,7 +4,7 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>O Penúltimo Poema</title>
+                <title><rs type="work" key="O2-4">O Penúltimo Poema</rs></title>
                 <author>
                     <rs type="person" key="AC">Alberto Caiero</rs>
                 </author>
@@ -22,9 +22,9 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <p>Publication Information</p>
+                <idno type="filename">Caeiro_O_Penultimo_Poema.xml</idno>
             </publicationStmt>
-            <sourceDesc><!--Presença, n.º 31-32, Março de 1931, p. 10,		O Penúltimo Poema --> 
+            <sourceDesc>
                 <biblStruct>
                     <analytic>
                         <title level="a">O Penúltimo Poema</title>
@@ -34,15 +34,11 @@
                         <textLang mainLang="pt"/>
                     </analytic>
                     <monogr>
-                        <!-- Titel der Zeitschrift: -->
-                        <title level="j">Presença</title>
+                        <title level="j"><rs type="journal" key="J1">Presença</rs></title>
                         <imprint>
-                            <pubPlace><!-- falls Ort --></pubPlace>
                             <date when="1931-03">Março de 1931</date>
                         </imprint>
-                        <!-- Nummer der Zeitschrift: -->
                         <biblScope unit="issue">31-32</biblScope>
-                        <!-- Seite: -->
                         <biblScope unit="page">10</biblScope>
                     </monogr>
                     <note type="genre">
@@ -53,31 +49,29 @@
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic url="pub/" />
+        <graphic url="pub/"/>
     </facsimile>
     <text xml:id="o_penultimo_poema">
         <body>
-<div>
-    <head>O Penúltimo Poema</head>
-    
-    <lg>
-        <l>Também sei fazer conjecturas.</l>
-        <l>Há em cada coisa aquilo que ela é que a anima.</l>
-        <l>Na planta está por fora e é uma ninfa pequena.</l>
-        <l>No animal é um ser interior longínquo.</l>
-        <l>No homem é a alma que vive com êle e é já êle.</l>
-        <l>Nos deuses tem o mesmo tamanho</l>
-        <l>E o mesmo espaço que o corpo</l>
-        <l>E é a mesma coisa que o corpo.</l>
-        <l>Porisso se diz que os deuses nunca morrem.</l>
-        <l>Porisso os deuses não têm corpo e alma</l>
-        <l>Mas só corpo e são perfeitos.</l>
-        <l>O corpo é que lhes é alma</l>
-        <l>E têm a consciência na própria carne divina.</l>
-    </lg>
-    
-    <signed>ALBERTO CAEIRO</signed>
-</div>
+            <div>
+                <head>O Penúltimo Poema</head>
+                <lg>
+                    <l>Também sei fazer conjecturas.</l>
+                    <l>Há em cada coisa aquilo que ela é que a anima.</l>
+                    <l>Na planta está por fora e é uma ninfa pequena.</l>
+                    <l>No animal é um ser interior longínquo.</l>
+                    <l>No homem é a alma que vive com êle e é já êle.</l>
+                    <l>Nos deuses tem o mesmo tamanho</l>
+                    <l>E o mesmo espaço que o corpo</l>
+                    <l>E é a mesma coisa que o corpo.</l>
+                    <l>Porisso se diz que os deuses nunca morrem.</l>
+                    <l>Porisso os deuses não têm corpo e alma</l>
+                    <l>Mas só corpo e são perfeitos.</l>
+                    <l>O corpo é que lhes é alma</l>
+                    <l>E têm a consciência na própria carne divina.</l>
+                </lg>
+                <signed>ALBERTO CAEIRO</signed>
+            </div>
         </body>
     </text>
 </TEI>

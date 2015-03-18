@@ -17,11 +17,11 @@
     <!-- choices -->
     <!-- Abkürzungen und Auflösungen: Darstellung der aufgelösten Form -->
     <xsl:template match="choice[abbr and expan]">
-        <xsl:apply-templates select="expan/text() | expan/ex/text()"/>
+        <xsl:apply-templates select="expan/text() | expan/ex"/>
     </xsl:template>
     <xsl:template match="abbr"/>
     <xsl:template match="ex">
-        <span class="ex"><xsl:apply-templates /></span>
+        <span class="ex" style="color:purple;">[<xsl:apply-templates />]</span>
     </xsl:template>
     
     <!-- Ersetzung von Pessoa selbst: etwas wird gelöscht, etwas anderes hinzugefügt
@@ -61,4 +61,16 @@
     </xsl:template>
     <xsl:template match="lb[preceding-sibling::*[1][local-name()='pc']]"/>
     <xsl:template match="pc"/>
+    
+    <!-- editorische Ergänzungen anzeigen -->
+    <xsl:template match="supplied">
+        <span class="supplied" title="{@reason}">
+            <xsl:choose>
+                <xsl:when test="not(node()) or note">□</xsl:when>
+                <xsl:otherwise>
+                    &lt;<xsl:apply-templates />&gt;
+                </xsl:otherwise>
+            </xsl:choose>
+        </span>
+    </xsl:template>
 </xsl:stylesheet>
