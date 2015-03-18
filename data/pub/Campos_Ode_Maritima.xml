@@ -4,7 +4,7 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Ode Marítima</title>
+                <title><rs type="work" key="O4-11">Ode Marítima</rs></title>
                 <author>
                     <rs type="person" key="AdC">Álvaro de Campos</rs>
                 </author>
@@ -22,9 +22,9 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <p>Publication Information</p>
+                <idno type="filename">Campos_Ode_Maritima.xml</idno>
             </publicationStmt>
-            <sourceDesc> <!--Orpheu, n.º 2, Abril – Junho de 1915, pp. 129-152, Ode Marítima-->
+            <sourceDesc>
                 <biblStruct>
                     <analytic>
                         <title level="a">Ode Marítima</title>
@@ -34,15 +34,11 @@
                         <textLang mainLang="pt"/>
                     </analytic>
                     <monogr>
-                        <!-- Titel der Zeitschrift: -->
-                        <title level="j">Orpheu</title>
+                        <title level="j"><rs type="journal" key="J12">Orpheu</rs></title>
                         <imprint>
-                            <pubPlace><!-- falls Ort --></pubPlace>
                             <date from="1915-04" to="1915-06">Abril – Junho de 1915</date>
                         </imprint>
-                        <!-- Nummer der Zeitschrift: -->
                         <biblScope unit="issue">2</biblScope>
-                        <!-- Seite: -->
                         <biblScope unit="page">129-152</biblScope>
                     </monogr>
                     <note type="genre">
@@ -53,14 +49,13 @@
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic url="pub/" />
+        <graphic url="pub/"/>
     </facsimile>
     <text xml:id="ode_maritima">
         <body>
             <div>
                 <head rend="center">Ode Marítima</head>
-
-               <lg>
+                <lg>
                     <l>Sózinho, no cais deserto, a esta manhã de verão,</l>
                     <l>Ólho pró lado da barra, ólho pró Indefinido,</l>
                     <l>Ólho e contenta-me vêr,</l>
@@ -78,25 +73,25 @@
                     <l>Com o sentido marítimo desta Hora,</l>
                     <l>Com a doçura dolorosa que sobe em mim como uma náusea,</l>
                     <l>Como um começar a enjoar, mas no espírito.</l>
-               </lg>
-               <lg>
-                    <l>Ólho de longe o paquete, com uma grande independência de alma,</l>
-                    <l>E dentro de mim um volante começa a girar, lentamente.</l>
-               </lg>
-               <lg>
-	               <l>Os paquetes que entram de manhã na barra</l>
-                   <l>Trazem aos meus olhos comsigo</l>
-                   <l>O mistério alegre e triste de quem chega e parte.</l>
-                   <l>Trazem memórias de cais afastados e doutros momentos</l>
-                   <l>Doutro modo da mesma humanidade noutros portos.</l>
-                   <l>Todo o atracar, todo o largar de navio,</l>
-                   <l>É – sinto-o em mim como o meu sangue –</l>
-                   <l>Inconscientemente simbólico, terrivelmente</l>
-                   <l>Ameaçador de significações metafísicas</l>
-                   <l>Que perturbam em mim quem eu fui…</l>
                 </lg>
                 <lg>
-	               <l>Ah, todo o cais é uma saudade de pedra!</l>
+                    <l>Ólho de longe o paquete, com uma grande independência de alma,</l>
+                    <l>E dentro de mim um volante começa a girar, lentamente.</l>
+                </lg>
+                <lg>
+                    <l>Os paquetes que entram de manhã na barra</l>
+                    <l>Trazem aos meus olhos comsigo</l>
+                    <l>O mistério alegre e triste de quem chega e parte.</l>
+                    <l>Trazem memórias de cais afastados e doutros momentos</l>
+                    <l>Doutro modo da mesma humanidade noutros portos.</l>
+                    <l>Todo o atracar, todo o largar de navio,</l>
+                    <l>É – sinto-o em mim como o meu sangue –</l>
+                    <l>Inconscientemente simbólico, terrivelmente</l>
+                    <l>Ameaçador de significações metafísicas</l>
+                    <l>Que perturbam em mim quem eu fui…</l>
+                </lg>
+                <lg>
+                    <l>Ah, todo o cais é uma saudade de pedra!</l>
                     <l>E quando o navio larga do cais</l>
                     <l>E se repara de repente que se abriu um espaço</l>
                     <l>Entre o cais e o navio,</l>
@@ -249,12 +244,14 @@
                     <l>Ah, os cabos, as ilhas, as praias areentas!</l>
                     <l>As solidões marítimas, como certos momentos no Pacífico</l>
                     <l>Em que não sei porque sugestão aprendida na escola</l>
-                    <l>Se sente pesar sôbre os nervos o facto de que aquêle é o maior dos oceanos</l>
+                    <l>Se sente pesar sôbre os nervos o facto de que aquêle é o maior dos
+                        oceanos</l>
                     <l>E o mundo e o sabôr das cousas tornam-se um deserto dentro de nós!</l>
                     <l>A extensão mais humana, mais salpicada, do Atlântico!</l>
                     <l>O Índico, o mais misterioso dos oceanos todos!</l>
                     <l>O Mediterrâneo, dôce, sem mistério nenhum, clássico, um mar pra bater</l>
-                    <l>De encontro a esplanadas olhadas de jardins próximos por estátuas brancas!</l>
+                    <l>De encontro a esplanadas olhadas de jardins próximos por estátuas
+                        brancas!</l>
                     <l>Todos os mares, todos os estreitos, todas as baïas, todos os gôlfos,</l>
                     <l>Queria apertá-los ao peito, sentí-los bem e morrer!</l>
                 </lg>
@@ -298,7 +295,8 @@
                     <l>Vão rareando – ai de mim! – os navios de vela nos mares!</l>
                     <l>E eu, que amo a civilisação moderna, eu que beijo com a alma as máquinas,</l>
                     <l>Eu o engenheiro, eu o civilisado, eu o educado no estrangeiro,</l>
-                    <l>Gostaria de ter outra vez ao pé da minha vista só veleiros e barcos de madeira,</l>
+                    <l>Gostaria de ter outra vez ao pé da minha vista só veleiros e barcos de
+                        madeira,</l>
                     <l>De não saber doutra vida marítima que a antiga vida dos mares!</l>
                     <l>Porque os mares antigos são a Distância Absoluta,</l>
                     <l>O Puro Longe, liberto do peso do Actual…</l>
@@ -348,7 +346,7 @@
                 </lg>
                 <lg>
                     <l>Ahò-ò-ò-ò-ò-ò-ò-ò-ò-ò-ò----yyyy…</l>
-                        <l>Schooner ahò-ò-ò-ò-ò-ò-ò-ò-ò-ò-ò-ò-ò----yyyy…)</l>
+                    <l>Schooner ahò-ò-ò-ò-ò-ò-ò-ò-ò-ò-ò-ò-ò----yyyy…)</l>
                 </lg>
                 <lg>
                     <l>Escuto-te de aqui, agora, e desperto a qualquer cousa.</l>
@@ -431,7 +429,8 @@
                     <l>Comissários de bordo! escravos das galés! combatentes de Lepanto!</l>
                     <l>Piratas do tempo de Roma! Navegadores da Grécia!</l>
                     <l>Fenícios! Cartaginêses! Portuguêses atirados de Sagres</l>
-                    <l>Para a aventura indefinida, para o Mar Absoluto, para realizar o Impossivel!</l>
+                    <l>Para a aventura indefinida, para o Mar Absoluto, para realizar o
+                        Impossivel!</l>
                 </lg>
                 <lg>
                     <l>Eh-eh-eh-eh-eh-eh-eh-eh-eh!</l>
@@ -559,7 +558,7 @@
                 <lg>
                     <l rend="italic">Darby M’Graw-aw-aw-aw-aw!</l>
                     <l>Darby M’Graw-aw-aw-aw aw-aw-aw-aw!</l>
-                    <l rend ="italic">Fetch a-a-aft the ru-u-u-u-u-u-u-u-u-um, Darby!</l>
+                    <l rend="italic">Fetch a-a-aft the ru-u-u-u-u-u-u-u-u-um, Darby!</l>
                 </lg>
                 <lg>
                     <l>Eia, que vida essa! essa era a vida, eia!</l>
@@ -733,7 +732,8 @@
                 <lg>
                     <l>Arre! por não poder agir d’acôrdo com o meu delírio!</l>
                     <l>Arre! por andar sempre agarrado às saias da civilisação!</l>
-                    <l>Por andar com a <hi rend="italic">douceur des mœurs</hi> às costas, como um fardo de rendas!</l>
+                    <l>Por andar com a <hi rend="italic">douceur des mœurs</hi> às costas, como um
+                        fardo de rendas!</l>
                     <l>Môços de esquina – todos nós o sômos – do humanitarismo moderno!</l>
                     <l>Estupôres de tísicos, de neurasténicos, de linfáticos,</l>
                     <l>Sem coragem para ser gente com violência e audácia,</l>
@@ -795,7 +795,8 @@
                     <l>Arrastado – ó prazer, ó beijada dôr! –</l>
                     <l>Arrastado à cauda de cavalos chicoteados por vós…</l>
                     <l>Mas isto no mar, isto no ma-a-a-ar, isto no MA-A-A-AR!</l>
-                    <l>Eh-eh-eh-eh-eh! Eh-eh-eh-eh-eh-eh-eh! EH-EH-EH-EH EH-EH-EH! No MA-A-A-A-AR!</l>
+                    <l>Eh-eh-eh-eh-eh! Eh-eh-eh-eh-eh-eh-eh! EH-EH-EH-EH EH-EH-EH! No
+                        MA-A-A-A-AR!</l>
                     <l>Yeh-eh-eh-eh-eh eh! Yeh-eh-eh-eh-eh-eh! Yeh-eh-eh-eh-eh-eh-eh-eh!</l>
                     <l>Grita tudo! tudo a gritar! ventos, vagas, barcos,</l>
                     <l>Mares, gáveas, piratas, a minha alma, o sangue, e o ar, e o ar!</l>
@@ -915,7 +916,8 @@
                 </lg>
                 <lg>
                     <l>E outras vezes, numa melodia muito saudosa e tão medieval,</l>
-                    <l>Era a «Bela Infanta»… Relembro, e a pobre velha voz ergue-se dentro de mim</l>
+                    <l>Era a «Bela Infanta»… Relembro, e a pobre velha voz ergue-se dentro de
+                        mim</l>
                     <l>E lembra-me que pouco me lembrei dela depois, e ela amava-me tanto!</l>
                     <l>Como fui ingrato para ela – e afinal que fiz eu da vida?</l>
                     <l>Era a «Bela Infanta»… Eu fechava os olhos, e ela cantava:</l>
@@ -928,7 +930,7 @@
                     <l>Eu abria um pouco os olhos e via a janela cheia de luar</l>
                     <l>E depois fechava os olhos outra vez, e em tudo isto era feliz.</l>
                 </lg>
-                <lg rend ="indent">
+                <lg rend="indent">
                     <l rend="italic">Estando a Bela Infanta</l>
                     <l rend="italic">No seu jardim assentada,</l>
                     <l rend="italic">Seu pente de ouro na mão,</l>
@@ -947,7 +949,8 @@
                     <l>Dá me não sei que remorso absurdo pensar nisto.</l>
                     <l>Oh turbilhão lento de sensações desencontradas!</l>
                     <l>Vertigem tenue de confusas cousas na alma!</l>
-                    <l>Furias partidas, ternuras como carrinhos de linha com que as crianças brincam,</l>
+                    <l>Furias partidas, ternuras como carrinhos de linha com que as crianças
+                        brincam,</l>
                     <l>Grandes desabamentos de imaginação sobre os olhos dos sentidos,</l>
                     <l>Lágrimas, lágrimas inuteis,</l>
                     <l>Leves brisas de contradicção roçando pela face a alma…</l>
@@ -970,8 +973,10 @@
                     <l>A furia da pirataria, da chacina, o apetite, quasi do paladar, do saque,</l>
                     <l>Da chacina inutil de mulheres e de crianças,</l>
                     <l>Da tortura futil, e só para nos distrairmos, dos passageiros pobres,</l>
-                    <l>E a sensualidade de escangalhar e partir as cousas mais queridas dos outros,</l>
-                    <l>Mas sonho isto tudo com um mêdo de qualquer cousa a respirar-me sobre a nuca.</l>
+                    <l>E a sensualidade de escangalhar e partir as cousas mais queridas dos
+                        outros,</l>
+                    <l>Mas sonho isto tudo com um mêdo de qualquer cousa a respirar-me sobre a
+                        nuca.</l>
                 </lg>
                 <lg>
                     <l>Lembro-me de que seria interessante</l>
@@ -979,7 +984,8 @@
                     <l>(Mas sinto-me sem querer as mães dêles),</l>
                     <l>Enterrar vivas nas ilhas desertas as crianças de quatro anos</l>
                     <l>Levando os pais em barcos até lá para vêrem</l>
-                    <l>(Mas estremeço, lembrando-me dum filho que não tenho e está dormindo tranquilo em casa).</l>
+                    <l>(Mas estremeço, lembrando-me dum filho que não tenho e está dormindo
+                        tranquilo em casa).</l>
                 </lg>
                 <lg>
                     <l>Aguilhôo uma ansia fria dos crimes maritimos,</l>
@@ -987,17 +993,23 @@
                     <l>Crimes nem sequer com razão de ser de maldade e de fúria,</l>
                     <l>Feitos a frio, nem sequer para ferir, nem sequer para fazer mal,</l>
                     <l>Nem sequer para nos divertirmos, mas apenas para passar o tempo,</l>
-                    <l>Como quem faz paciencias a uma mesa de jantar de provincia com a toalha atirada pra o outro lado da mesa depois de jantar,</l>
-                    <l>Só pelo suave gosto de cometer crimes abominaveis e não os achar grande cousa,</l>
-                    <l>De ver sofrer até ao ponto da loucura e da morte-pela-dôr mas nunca deixar chegar lá…</l>
+                    <l>Como quem faz paciencias a uma mesa de jantar de provincia com a toalha
+                        atirada pra o outro lado da mesa depois de jantar,</l>
+                    <l>Só pelo suave gosto de cometer crimes abominaveis e não os achar grande
+                        cousa,</l>
+                    <l>De ver sofrer até ao ponto da loucura e da morte-pela-dôr mas nunca deixar
+                        chegar lá…</l>
                     <l>Mas a minha imaginação recusa-se a acompanhar-me.</l>
                     <l>Um calafrio arrepia-me.</l>
-                    <l>E de repente, mais de repente do que da outra vez, de mais longe, de mais fundo,</l>
+                    <l>E de repente, mais de repente do que da outra vez, de mais longe, de mais
+                        fundo,</l>
                     <l>De repente – oh pavor por todas as minhas veias! –,</l>
-                    <l>Oh frio repentino da porta para o Mistério que se abriu dentro de mim e deixou entrar uma corrente de ar!</l>
+                    <l>Oh frio repentino da porta para o Mistério que se abriu dentro de mim e
+                        deixou entrar uma corrente de ar!</l>
                     <l>Lembro-me de Deus, do Transcendental da vida, e de repente</l>
                     <l>A velha voz do marinheiro inglez Jim Barns, com quem eu falava,</l>
-                    <l>Tornada voz das ternuras misteriosas dentro de mim, das pequenas cousas de regaço de mãe e de fita de cabelo de irmã,</l>
+                    <l>Tornada voz das ternuras misteriosas dentro de mim, das pequenas cousas de
+                        regaço de mãe e de fita de cabelo de irmã,</l>
                     <l>Mas estupendamente vinda de além da aparência das cousas,</l>
                     <l>A Voz surda e remota tornada A Voz Absoluta, a Voz Sem Bôca,</l>
                     <l>Vinda de sobre e de dentro da solidão nocturna dos mares,</l>
@@ -1005,7 +1017,8 @@
                 </lg>
                 <lg>
                     <l>Vem surdamente, como se fôsse suprimida e se ouvisse,</l>
-                    <l>Longinquamente, como se estivesse soando noutro logar e aqui não se pudesse ouvir,</l>
+                    <l>Longinquamente, como se estivesse soando noutro logar e aqui não se pudesse
+                        ouvir,</l>
                     <l>Como um soluço abafado, uma luz que se apaga, um halito silencioso,</l>
                     <l>De nenhum lado do espaço, de nenhum local no tempo,</l>
                     <l>O grito eterno e noturno, o sôpro fundo e confuso:</l>
@@ -1055,12 +1068,14 @@
                     <l>Os portos cheios de vapores de muitas especies!</l>
                     <l>Pequenos, grandes, de varias côres, com varias disposições de vigias,</l>
                     <l>De tão deliciosamente tantas companhias de navegação!</l>
-                    <l>Vapôres nos portos, tão individuais na separação destacada dos ancoramentos!</l>
+                    <l>Vapôres nos portos, tão individuais na separação destacada dos
+                        ancoramentos!</l>
                     <l>Tão prasenteiro o seu garbo quieto de cousas comerciais que andam no mar,</l>
                     <l>No velho mar sempre o homerico, ó Ulisses!</l>
                     <l>O olhar humanitario dos faróis na distância da noite,</l>
                     <l>Ou o subito farol proximo na noite muito escura</l>
-                    <l>(«Que perto da terra que estavamos passando!» E o som da agua canta-nos ao ouvido)!…</l>
+                    <l>(«Que perto da terra que estavamos passando!» E o som da agua canta-nos ao
+                        ouvido)!…</l>
                 </lg>
                 <lg>
                     <l>Tudo isto hoje é como sempre foi, mas ha o comercio;</l>
@@ -1068,14 +1083,17 @@
                     <l>Envaidece-me da minha epoca!</l>
                     <l>A mistura de gente a bordo dos navios de passageiros</l>
                     <l>Dá-me o orgulho moderno de viver numa epoca onde é tão facil</l>
-                    <l>Misturarem-se as raças, transpôrem-se os espaços, vêr com facilidade todas as cousas,</l>
+                    <l>Misturarem-se as raças, transpôrem-se os espaços, vêr com facilidade todas as
+                        cousas,</l>
                     <l>E gosar a vida realisando um grande numero de sonhos.</l>
                 </lg>
                 <lg>
-                    <l>Limpos, regulares, modernos como um escritório com guichets em rêdes de arame amarelo,</l>
+                    <l>Limpos, regulares, modernos como um escritório com guichets em rêdes de arame
+                        amarelo,</l>
                     <l>Meus sentimentos agora, naturais e comedidos como gentlemen,</l>
                     <l>São práticos, longe de desvairamentos, enchem de ar marítimo os pulmões,</l>
-                    <l>Como gente perfeitamente consciente de como é higienico respirar o ar do mar.</l>
+                    <l>Como gente perfeitamente consciente de como é higienico respirar o ar do
+                        mar.</l>
                 </lg>
                 <lg>
                     <l>O dia é perfeitamente já de horas de trabalho.</l>
@@ -1130,7 +1148,8 @@
                     <l>Tantas caras curiosas! Todas as caras são curiosas</l>
                     <l>E nada traz tanta religiosidade como olhar muito para gente.</l>
                     <l>A fraternidade afinal não é uma idéa revolucionaria.</l>
-                    <l>É uma cousa que a gente aprende pela vida fóra, onde tem que tolerar tudo,</l>
+                    <l>É uma cousa que a gente aprende pela vida fóra, onde tem que tolerar
+                        tudo,</l>
                     <l>E passa a achar graça ao que tem que tolerar,</l>
                     <l>E acaba quasi a chorar de ternura sobre o que tolerou!</l>
                 </lg>
@@ -1194,10 +1213,9 @@
                     <l>Traça um semicirculo de não sei que emoção</l>
                     <l>No silencio comovido da minh’alma…</l>
                 </lg>
-
-                <signed rend="center">ÁLVARO DE CAMPOS</signed> 
-<trailer rend="italic"><hi rend="center">Engenheiro.</hi></trailer>
-
+                <signed rend="center">ÁLVARO DE CAMPOS<lb/>
+                    <hi rend="center italic">Engenheiro.</hi>
+                </signed>
             </div>
         </body>
     </text>
