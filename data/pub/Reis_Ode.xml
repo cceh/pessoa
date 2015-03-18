@@ -4,7 +4,7 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Ode</title>
+                <title><rs type="work" key="O3-2">Ode</rs></title>
                 <author>
                     <rs type="person" key="RR">Ricardo Reis</rs>
                 </author>
@@ -22,9 +22,9 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <p>Publication Information</p>
+                <idno type="filename">Reis_Ode.xml</idno>
             </publicationStmt>
-            <sourceDesc><!--Presença, n.º 10, 15 de Março de 1928, p. 2, 		Ode, Ode --> 
+            <sourceDesc>
                 <biblStruct>
                     <analytic>
                         <title level="a">Ode</title>
@@ -34,15 +34,11 @@
                         <textLang mainLang="pt"/>
                     </analytic>
                     <monogr>
-                        <!-- Titel der Zeitschrift: -->
-                        <title level="j">Presença</title>
+                        <title level="j"><rs type="journal" key="J1">Presença</rs></title>
                         <imprint>
-                            <pubPlace><!-- falls Ort --></pubPlace>
                             <date when="1928-03-15">15 de Março de 1928</date>
                         </imprint>
-                        <!-- Nummer der Zeitschrift: -->
                         <biblScope unit="issue">10</biblScope>
-                        <!-- Seite: -->
                         <biblScope unit="page">2</biblScope>
                     </monogr>
                     <note type="genre">
@@ -53,25 +49,24 @@
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic url="pub/res-1900-a-1928-03-n10_0002_2_t0" />
+        <graphic url="pub/res-1900-a-1928-03-n10_0002_2_t0"/>
     </facsimile>
     <text xml:id="ode">
-<body>
-    <div>
-        <head>Ode</head>
-        
-        <lg>
-            <l>O rastro breve que das hervas molles</l>
-            <l>Ergue o pé findo, o écho que ôco côa,</l>
-            <l rend="indent">A sombra que se adumbra,</l>
-            <l rend="indent">O branco que a nau larga —</l>
-            <l>Nem maior nem melhor deixa a alma às almas,</l>
-            <l>O ido aos indos. A lembrança esquece.</l>
-            <l rend="indent">Mortos, inda morremos.</l>
-            <l rend="indent">Lydia, somos só nossos.</l>
-        </lg>
-        <signed rend="center">RICARDO REIS</signed>
-    </div>
-</body>
+        <body>
+            <div>
+                <head>Ode</head>
+                <lg>
+                    <l>O rastro breve que das hervas molles</l>
+                    <l>Ergue o pé findo, o écho que ôco côa,</l>
+                    <l rend="indent">A sombra que se adumbra,</l>
+                    <l rend="indent">O branco que a nau larga —</l>
+                    <l>Nem maior nem melhor deixa a alma às almas,</l>
+                    <l>O ido aos indos. A lembrança esquece.</l>
+                    <l rend="indent">Mortos, inda morremos.</l>
+                    <l rend="indent">Lydia, somos só nossos.</l>
+                </lg>
+                <signed rend="center">RICARDO REIS</signed>
+            </div>
+        </body>
     </text>
 </TEI>
