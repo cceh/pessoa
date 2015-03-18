@@ -7,12 +7,10 @@
         function reorder(){
         if ($("#date").is(":checked"))
         {
-        alert("test");
         $("#genreList").load("http://localhost:8080/exist/apps/pessoa/page/genre_poesia?orderBy=date");
         
         }
         else{
-        alert("test");
         $("#genreList").load("http://localhost:8080/exist/apps/pessoa/page/genre_poesia?orderBy=alphab"); 
         }
         }

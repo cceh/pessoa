@@ -66,7 +66,7 @@ declare function doc:get-genre($node as node(), $model as map(*), $type as xs:st
      order by (author:getYearOrTitle($doc,$orderBy))
      return
         if ($doc//tei:sourceDesc/tei:msDesc)
-                    then  ( <div><a href="{$helpers:app-root}/doc/{replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_")}">{ ($doc//tei:idno)[1]/data(.)}</a></div>,<br />)                              
+                    then  ( <div><a href="{$helpers:app-root}/doc/{replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_")}">{($doc//tei:title)[1]/data(.)}</a></div>,<br />)                              
                     else (<div><a href="{$helpers:app-root}/{substring-before(substring-after(document-uri($doc),"/db/apps/pessoa/data"),".xml")}">{($doc//tei:sourceDesc[1]/tei:biblStruct[1]/tei:analytic/tei:title)[1]/data(.)}</a></div>,<br />)           
     )      
 };

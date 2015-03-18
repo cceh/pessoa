@@ -4,8 +4,12 @@
     <xsl:template match="/">
         <style type="text/css">
             h3 {margin-bottom: 5px;}
-            div.text {display: inline-block; position: relative;}
+            div.text {display: inline-block; position: relative; }
             div.text.bnp-e3-180r {margin: 10px 130px;}
+            
+            
+            div.text[id="bnp-e3-51-89r"]{background: -webkit-canvas(lines);  }
+            
             .item {margin: 10px 0; position: relative;}
             .list .item .list .item {margin-left: 2em;}
             .ab {display: inline-block;}
@@ -56,8 +60,11 @@
             .offset {margin-left: 2em;}
             .indent {margin-left: 2em;}
             .right {text-align: right;}
+     
+
         </style>
         <xsl:apply-templates/>
+       
     </xsl:template>
     
     <!-- Header & Text -->
@@ -70,14 +77,17 @@
         </p>
     </xsl:template>
     <xsl:template match="text">
-        <div class="text">
+        
+            <div class="text">
             <xsl:if test="@xml:id">
                 <xsl:attribute name="id">
                     <xsl:value-of select="@xml:id"/>
                 </xsl:attribute>
             </xsl:if>
+          
             <xsl:apply-templates/>
         </div>
+      
     </xsl:template>
     
     <!-- Textstruktur -->
@@ -319,4 +329,6 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
+
+  
 </xsl:stylesheet>
