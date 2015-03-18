@@ -2,7 +2,6 @@
     
     <xsl:import href="doc-edited.xsl"/>
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
-    <xsl:preserve-space elements="*"/>
     
     
     <!-- choices -->

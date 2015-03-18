@@ -1,6 +1,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" xpath-default-namespace="http://www.tei-c.org/ns/1.0" version="2.0">
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
     <xsl:preserve-space elements="*"/>
+    <xsl:strip-space elements="rs"/>
     <xsl:template match="/">
         <style type="text/css">
             h3 {margin-bottom: 5px;}
@@ -68,26 +69,16 @@
     </xsl:template>
     
     <!-- Header & Text -->
-    <xsl:template match="teiHeader">
-        <h2>
-            <xsl:apply-templates select="//titleStmt/title"/>
-        </h2>
-        <p>
-            <xsl:value-of select="//origin//origDate"/>
-        </p>
-    </xsl:template>
+    <xsl:template match="teiHeader" />
     <xsl:template match="text">
-        
             <div class="text">
             <xsl:if test="@xml:id">
                 <xsl:attribute name="id">
                     <xsl:value-of select="@xml:id"/>
                 </xsl:attribute>
             </xsl:if>
-          
             <xsl:apply-templates/>
         </div>
-      
     </xsl:template>
     
     <!-- Textstruktur -->
@@ -299,6 +290,7 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
+    <xsl:template match="add[@resp]" />
     
     <!-- Personen, Orte, etc. -->
     <xsl:template match="rs[@type='person']">

@@ -4,7 +4,7 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Duas odes</title>
+                <title><rs type="work" key="O3-1">Duas odes</rs></title>
                 <author>
                     <rs type="person" key="RR">Ricardo Reis</rs>
                 </author>
@@ -22,9 +22,9 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <p>Publication Information</p>
+                <idno type="filename">Reis_Duas_Odes.xml</idno>
             </publicationStmt>
-            <sourceDesc><!--Presença, n.º 31-32, Março – Junho de 1931, p.10, 	Duas odes --> 
+            <sourceDesc>
                 <biblStruct>
                     <analytic>
                         <title level="a">Duas odes</title>
@@ -34,15 +34,11 @@
                         <textLang mainLang="pt"/>
                     </analytic>
                     <monogr>
-                        <!-- Titel der Zeitschrift: -->
-                        <title level="j">Presença</title>
+                        <title level="j"><rs type="journal" key="J1">Presença</rs></title>
                         <imprint>
-                            <pubPlace><!-- falls Ort --></pubPlace>
                             <date from="1931-03" to="1931-06">Março – Junho de 1931</date>
                         </imprint>
-                        <!-- Nummer der Zeitschrift: -->
                         <biblScope unit="issue">31-32</biblScope>
-                        <!-- Seite: -->
                         <biblScope unit="page">10</biblScope>
                     </monogr>
                     <note type="genre">
@@ -53,41 +49,36 @@
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic url="pub/" />
+        <graphic url="pub/"/>
     </facsimile>
     <text xml:id="duas_odes">
-<body>
-    <div>
-        <head>Duas Odes</head>
-        
-        <div>
-            <lg>
-                <l>Quando, Lídia, vier o nosso outono</l>
-                <l>Com o inverno que há nêle, reservemos</l> 
-                <l>Um pensamento, não para a futura</l> 
-                <l rend="indent">Primavera, que é de outrem,</l>
-                <l>Nem para o estio, de quem somos mortos,</l>
-                <l>Senão para o que fica do que passa –</l> 
-                <l>O amarelo actual que as fôlhas vivem</l> 
-                <l rend="indent">E as torna diferentes.</l>
-            </lg>
-        </div>
-        
-        <div>
-            <lg>
-                <l>Ténue, como se de Éolo a esquecessem,</l>
-                <l>A brisa da manhã titila o campo,</l>
-                <l rend="indent">E há comêço do sol.</l>
-                <l>Não desejemos, Lídia, nesta hora</l>
-                <l>Mais sol do que ela, nem mais alta brisa</l> 
-                <l rend="indent">Que a que é pequena e existe.</l>
-            </lg>
-        </div>
-        
-        <signed>RICARDO REIS</signed>
-    </div>
-    </body>
-        
+        <body>
+            <div>
+                <head>Duas Odes</head>
+                <div>
+                    <lg>
+                        <l>Quando, Lídia, vier o nosso outono</l>
+                        <l>Com o inverno que há nêle, reservemos</l>
+                        <l>Um pensamento, não para a futura</l>
+                        <l rend="indent">Primavera, que é de outrem,</l>
+                        <l>Nem para o estio, de quem somos mortos,</l>
+                        <l>Senão para o que fica do que passa –</l>
+                        <l>O amarelo actual que as fôlhas vivem</l>
+                        <l rend="indent">E as torna diferentes.</l>
+                    </lg>
+                </div>
+                <div>
+                    <lg>
+                        <l>Ténue, como se de Éolo a esquecessem,</l>
+                        <l>A brisa da manhã titila o campo,</l>
+                        <l rend="indent">E há comêço do sol.</l>
+                        <l>Não desejemos, Lídia, nesta hora</l>
+                        <l>Mais sol do que ela, nem mais alta brisa</l>
+                        <l rend="indent">Que a que é pequena e existe.</l>
+                    </lg>
+                </div>
+                <signed rend="center">RICARDO REIS</signed>
+            </div>
+        </body>
     </text>
 </TEI>
-        
