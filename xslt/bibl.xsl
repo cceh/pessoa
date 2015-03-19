@@ -7,7 +7,7 @@
 	<xsl:param name="listNo_string"/>
 	<xsl:variable name="listNo" select="number($listNo_string)"></xsl:variable>
 	<xsl:variable name="title">
-		<xsl:value-of select="/TEI/teiHeader/fileDesc/titleStmt/title[1]"/>
+		<xsl:value-of select="/TEI/teiHeader/fileDesc/titleStmt/title[1]/text()"/>
 	</xsl:variable>
 
 	<xsl:template match="/">
@@ -22,6 +22,7 @@
 				
 				h2{
 				    font-size:medium;
+				    margin-bottom:10px;
 				}
 				
 				p + h2{
@@ -40,9 +41,9 @@
 			</head>
 
 			<body>
-				<h1>
+				<!--<h1>
 					<xsl:value-of select="$title"/>
-				</h1>
+				</h1>-->
 				<xsl:apply-templates/>
 			</body>
 		</html>

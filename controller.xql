@@ -40,6 +40,20 @@ else if (contains($exist:path, "/doc/")) then
 			<forward url="{$exist:controller}/modules/view.xql"/>
 		</error-handler>
     </dispatch>)
+else if (contains($exist:path, "/pub/")) then
+    (session:set-attribute("id", $exist:resource), 
+    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <forward url="{$exist:controller}/pub.html">
+            <add-parameter name="id" value="{$exist:resource}" />
+        </forward>
+        <view>
+            <forward url="{$exist:controller}/modules/view.xql"/>
+        </view>
+		<error-handler>
+			<forward url="{$exist:controller}/error-page.html" method="get"/>
+			<forward url="{$exist:controller}/modules/view.xql"/>
+		</error-handler>
+	</dispatch>)
 else if (contains($exist:path, "/author/")) then
     if (request:get-parameter("orderBy","")!="") then
     let $orderBy := request:get-parameter("orderBy", "alphab")

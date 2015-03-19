@@ -17,6 +17,12 @@ declare function doc:get-title($node as node(), $model as map(*), $id as xs:stri
     return <h2>{$title} {$date}</h2>
 };
 
+declare function doc:get-indexes($node as node(), $model as map(*), $id as xs:string) as item()+{
+    let $xml := doc:get-xml($id)
+    let $stylesheet := doc("/db/apps/pessoa/xslt/lists.xsl")
+    return transform:transform($xml, $stylesheet, ())
+};
+
 declare function doc:get-text($node as node(), $model as map(*), $id as xs:string) as item()+{
     let $xml := doc:get-xml($id)
     let $stylesheet := doc("/db/apps/pessoa/xslt/doc.xsl")

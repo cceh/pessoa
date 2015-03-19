@@ -13,6 +13,7 @@ import module namespace helpers="http://projects.uni-koeln.de:8080/apps/pessoa/h
 import module namespace config="http://localhost:8080/exist/apps/pessoa/config" at "config.xqm";
 import module namespace lists="http://localhost:8080/exist/apps/pessoa/lists" at "lists.xqm";
 import module namespace doc="http://localhost:8080/exist/apps/pessoa/doc" at "doc.xqm";
+import module namespace pub="http://localhost:8080/exist/apps/pessoa/pub" at "pub.xqm";
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
 import module namespace search="http://localhost:8080/exist/apps/pessoa/search" at "search.xqm";
 import module namespace author="http://localhost:8080/exist/apps/pessoa/author" at "author.xqm";
