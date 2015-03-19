@@ -309,7 +309,7 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
              {page:createInput_term("search","checkbox","notional",("real","mentioned"),$doc,"checked")}
                              <br/>
                 -->
-                <select name="person" size="5" multiple="multiple">
+                <select name="person" class="selectsearch" size="5" multiple="multiple">
                     {search:page_createOption_authors("authors",("FP","AC","AdC","RR"),$doc)}
                 </select>
                 <p class="small_text">{page:singleAttribute($doc,"search","multiple_entries")}</p>
