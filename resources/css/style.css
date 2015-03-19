@@ -186,7 +186,8 @@ table
 
 .small_text
 {
- font-size: 10px;
+ font-size: 11px;
+ margin: 5px 0 5px 5px; 
 }
 
 textarea
@@ -501,26 +502,36 @@ ul#tab li.active {
                 }
                 .clear
                 {
-                clear = both;
+                clear: both;
                 }
                 
                 .tab {
-                background-color:#6699CC; 
+                background-color:#990000; 
+                color: #fff; 
                 border:solid 0.5px;
                 width: 120px;
                 }                
                 .tab:hover {
-                background-color:#0066CC; 
+                background-color:#222; 
                 }
                 .selection {
-                background-color:#6699CC;
+                background-color:#990000;
                 border:solid 0.5px;
                 visibility:hidden;
                 display:none;
+                color: #222; 
                 }
                 h6 {
                 font-size:16px;
+                text-align: center; 
+                padding: 5px 0;
+                margin-bottom: 0; 
                 }
+                
+.selectsearch
+{
+    margin: 10px 0 0 5px; 
+}
                 
 #title
 {            
