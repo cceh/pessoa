@@ -1,0 +1,99 @@
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>BNP/E3 12-1-10<hi rend="superscript">r</hi></title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Transcrição, Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Isabel Figueiredo-Iken</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <idno type="filename">BNP_E3_12-1-10r.xml</idno>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <institution>Biblioteca Nacional de Portugal</institution>
+                        <idno>BNP/E3 12-1-10r</idno>
+                    </msIdentifier>
+                    <msContents>
+                        <msItemStruct>
+                            <author>
+                                <rs type="person" key="FP">Fernando Pessoa</rs>
+                            </author>
+                            <note type="genre">
+                                <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                            </note>
+                            <textLang mainLang="pt"/>
+                        </msItemStruct>
+                    </msContents>
+                    <history>
+                        <origin>
+                            <p>
+                                <origDate notAfter="1916-09">ant. Setembro de 1916</origDate>
+                            </p>
+                        </origin>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic
+            url="bn-acpc-e-e3-12-1-1-100_JPG_24-C-R0150/bn-acpc-e-e3-12-1-1-100_0019_10_t24-C-R0150.jpg"
+        />
+    </facsimile>
+    <text xml:id="bnp-e3-12-1-10r">
+        <body>
+            <div>
+                <list>
+                    <head><hi rend="underline"><rs type="person">Antonio Móra</rs>:</hi></head>
+                    <item xml:id="I1"><rs type="text">Dissertação sobre as revoluções</rs>.</item>
+                    <item xml:id="I2"><rs type="text">Dissertação a favôr da Allemanha<lb/>e do seu
+                            procedimento na guerra presente</rs>.</item>
+                    <item xml:id="I3"><rs type="text">Dissertação sobre a arte moderna</rs>.</item>
+                    <note target="range(I1,I3)" place="margin right" type="addition">
+                        <metamark rend="curly bracket" function="grouping"/>
+                        <label>Trez<lb/>Disserta<pc>-</pc><lb/>ções.</label>
+                    </note>
+                    <item><rs type="text">Prolegómenos a uma reformação<lb/>do paganismo</rs>.</item>
+                    <item><rs type="text">Os Fundamentos do Paganismo</rs>.</item>
+                </list>
+                <metamark rend="double line" function="distinct"/>
+                <list>
+                    <head><hi rend="underline"><rs type="person" key="FP" role="author">
+                        <choice>
+                            <abbr>F<am>.</am></abbr>
+                            <expan>F<ex>ernando</ex></expan>
+                        </choice> Pessôa
+                    </rs></hi>:</head>
+                    <item>
+                        <label>1.</label>
+                        <list>
+                            <head><hi rend="underline">Opusculos</hi>:</head>
+                            <item><label>(a)</label> <rs type="text">14 de Maio – Commentarios a<lb/>uma victoria da plebe</rs>.</item>
+                            <item><label>(b)</label> <rs type="text">O principio aristrocatico</rs>.</item>
+                            <item><label>(c)</label> <rs type="text">Introdução ao estudo do<lb/>problema nacional</rs>.</item>
+                        </list>
+                    </item>
+                </list>
+                <metamark rend="line" function="distinct"/>
+                <gap reason="selection" unit="lines" extent="12"/>
+            </div>
+        </body>
+    </text>
+</TEI>
