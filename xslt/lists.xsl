@@ -8,7 +8,15 @@
     
     <xsl:template match="/">
         <div>
-            <xsl:if test=".//rs[@type='person'][@key]">
+            <script type="text/javascript">
+                function highlight(id){
+                    $("."+id).css("color","orange");
+                };
+                function clear(id){
+                    $("."+id).css("color","black");
+                };
+            </script>
+            <xsl:if test=".//rs[@type='person']">
                 <h2>Persons</h2><!-- Mehrsprachigkeit -->
                 <ul>
                     <xsl:for-each-group select=".//rs[@type='person'][@key]" group-by="@key">
@@ -18,10 +26,14 @@
                             <xsl:sort select="current-grouping-key()" />
                             <li>
                                 <xsl:value-of select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//listPerson[@type='authors']/person[@xml:id=$key]/persName" /> (<xsl:value-of select="@role" />)<!-- Mehrsprachigkeit -->
-                                <a href="#" title="show index"><img src="../../resources/images/list-48.png" width="16" height="auto" style="vertical-align:middle;" /></a>
+                                <a href="#" title="show index"><img src="../resources/images/list-48.png" width="16" height="auto" style="vertical-align:middle;" /></a>
                             </li>
                         </xsl:for-each-group>
                     </xsl:for-each-group>
+                    <xsl:for-each select=".//rs[@type='person'][not(@key)]">
+                        <xsl:sort select="."/>
+                        <li><a onmouseover="highlight('{@xml:id}');" onmouseout="clear('{@xml:id}');" href="#"><xsl:value-of select="." /></a></li>
+                    </xsl:for-each>
                 </ul>
             </xsl:if>
             <xsl:if test=".//rs[@type='text']">
@@ -41,7 +53,7 @@
                         <xsl:variable name="key" select="@key" />
                         <li>
                             <xsl:value-of select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type='journal']/item[@xml:id=$key]" /><!-- Mehrsprachigkeit -->
-                            <a href="#" title="show index"><img src="../../resources/images/list-48.png" width="16" height="auto" style="vertical-align:middle;" /></a>
+                            <a href="#" title="show index"><img src="../resources/images/list-48.png" width="16" height="auto" style="vertical-align:middle;" /></a>
                        </li>
                     </xsl:for-each-group>
                 </ul>
