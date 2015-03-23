@@ -303,30 +303,30 @@
     
     <!-- Personen, Orte, etc. -->
     <xsl:template match="rs[@type='person']">
-        <span class="person">
+        <span class="person {@xml:id}">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
     
     <xsl:template match="rs[@type='place']">
-        <span class="place">
+        <span class="place {@xml:id}">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
     
     <xsl:template match="rs[@type='journal']">
-        <span class="journal">
+        <span class="journal {@xml:id}">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
     
     <xsl:template match="rs[@type='work']">
-        <span class="work">
+        <span class="work {@xml:id}">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
     <xsl:template match="rs[@type='text']">
-        <span class="text">
+        <span class="text {@xml:id}">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
