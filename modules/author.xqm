@@ -134,7 +134,7 @@ declare function author:listPublications($node as node(), $model as map(*), $aut
         let $pubsInYear :=
             for $pub in $pubs where (fn:substring(author:getYearOrTitleOfPublication($pub,$orderBy),0,$i) = $year ) return $pub
     order by $year 
-    return (<div><b>{$year }</b></div>,
+    return (<div><b>{$year}</b></div>,
             for $pub in $pubsInYear order by (author:getYearOrTitleOfPublication($pub,$orderBy))return
             author:listPublication($pub,$authorKey))   
 };
@@ -144,6 +144,7 @@ declare function author:listPublication($pub, $authorKey){
     let $author := $pub//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:author/tei:rs/@key
     return  if($author = $authorKey) then  
        (<div><a href="{$helpers:app-root}/pub/{replace(replace(replace($title," ","_"),"«",""),"»","")}">{$title}</a></div>, <br />)      
+      
     else()
 };
 
@@ -197,21 +198,30 @@ declare function author:listDocumentsByRole($docs, $authorKey, $role, $orderBy){
     return
     if ($doc//tei:text//tei:rs[@type ='person' and @key=$authorKey]) then
         if(fn:index-of($roles, $role)) then
-            (<div><a href="{$helpers:app-root}/doc/{replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_")}">{($doc//tei:title)[1]/data(.)} </a></div>,<br/>)
+            (<div><a href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{($doc//tei:title)[1]/data(.)} </a></div>,<br/>)
         else()
     else()
 };
 
 declare function author:listDocumentByYear($doc, $authorKey){ 
     let $roles := author:getRoles($doc,$authorKey)
-    let $text := ""
+    let $rolesNum := fn:count($roles)
+    let $text := " "
     let $text := 
-        for $role in $roles
+        for $role at $i in $roles
         return
-        fn:concat($text,if($role="author") then " autor" else if($role ="translator") then " traductor" else if($role ="topic") then " tema" else " editor" )
+        if($i < $rolesNum) then
+        fn:concat($text,if($role="author") then "autor, " else if($role ="translator") then "traductor, " else if($role ="topic") then "tema, " else "editor, ")
+        else
+        fn:concat($text,if($role="author") then "autor" else if($role ="translator") then "traductor" else if($role ="topic") then "tema" else "editor")
+       (: if($i > 1) then 
+        fn:concat($text,if($role="author") then ", autor" else if($role ="translator") then ", traductor" else if($role ="topic") then ", tema" else ", editor" )
+        else
+        fn:concat($text,if($role="author") then "autor" else if($role ="translator") then "traductor" else if($role ="topic") then "tema" else "editor" )
+        :)
    return  
     if(count($roles) > 0) then    
-       (<div><a href="{$helpers:app-root}/doc/{replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_")}">{($doc//tei:title)[1]/data(.)} </a>  (menciado como:{$text})</div>, <br />)    
+       (<div><a href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{($doc//tei:title)[1]/data(.)} </a>  <span class="mencionadoComo"> (mencionado como:{$text})</span></div>, <br />)    
     else ()
   
 };
