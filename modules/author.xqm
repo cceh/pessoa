@@ -128,7 +128,8 @@ declare function author:listPublications($node as node(), $model as map(*), $aut
         for $pub in $pubs where ($pub//tei:author/tei:rs/@key =$authorKey)
         return $pub
     let $years := 
-        for $pub in $pubs return fn:substring(author:getYearOrTitleOfPublication($pub,$orderBy),0,$i)
+        for $pub in $pubs return fn:substring(author:getYearOrTitleOfPublication($pub,$orderBy),0,$i)   
+    
     let $years := fn:distinct-values($years)
     for $year in $years 
         let $pubsInYear :=
@@ -136,7 +137,7 @@ declare function author:listPublications($node as node(), $model as map(*), $aut
     order by $year 
     return (<div><b>{$year}</b></div>,
             for $pub in $pubsInYear order by (author:getYearOrTitleOfPublication($pub,$orderBy))return
-            author:listPublication($pub,$authorKey))   
+            author:listPublication($pub,$authorKey))              
 };
 
 declare function author:listPublication($pub, $authorKey){
@@ -272,7 +273,7 @@ declare function author:getRoles($doc, $authorKey){
 declare function author:getYearOrTitle($text, $orderBy){
     let $pub := author:getYearOrTitleOfPublication($text,$orderBy)
     let $doc := author:getYearOrTitleOfDocument($text, $orderBy)
-    return if($doc) then $doc
-    else if($pub) then $pub
+    return if($pub) then $pub
+    else if($doc) then $doc
     else ()
 };
