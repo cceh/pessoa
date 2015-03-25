@@ -302,7 +302,7 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
      <div class="search_filter">
                        <form class="/helpers:app-root" action="search?plang={$helpers:web-language}" method="post" id="search">
                             <!-- Nachher mit class="search:profisearch austauschen -->
-            <div class="tab" id="ta_author" onclick="hide('se_author')"><h6>{page:singleAttribute($doc,"navigation","autores")}</h6>
+            <div class="tab" id="ta_author" onclick="hide('se_author')"><h6>{page:singleAttribute($doc,"search","authors")}</h6>
             </div>
             <div class="selection" id="se_author" style="display:none;">
              <!--
