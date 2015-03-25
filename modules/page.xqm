@@ -92,7 +92,7 @@ declare function page:createThirdNav($type as xs:string) as node()* {
     else if ($type = "cronologia") then for $date in ("1900 - 1909","1910 - 1919","1920 - 1929","1930 - 1935",(doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item[5]/tei:list/tei:item/tei:term[@xml:lang=$helpers:web-language]/attribute()[2]))
             return if ($date = "timeline" or $date = "#timeline") then
                 <li class="{concat("nav_",$type,"_tab")}">
-                <a href="{concat($helpers:app-root,"/timeline.html?plang=",$helpers:web-language)}">
+                <a href="{concat($helpers:app-root,"/timeline.html?plang=",$helpers:web-language)}" target="_blank">
                 {doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item[5]/tei:list/tei:item/tei:term[@xml:lang=$helpers:web-language]/data(.)}
                 </a></li>
             else if(substring-after($date,"19")!= "") then  <li class="{concat("nav_",$type,"_tab")}">
@@ -259,29 +259,31 @@ declare function page:page_singeAttribute_term($doc as node(),$type as xs:string
 declare function page:createInput_item($xmltype as xs:string,$btype as xs:string, $name as xs:string, $value as xs:string*,$doc as node()) as node()* {
     for $id in $value
         let $entry := if($helpers:web-language = "pt")
-                      then $doc//tei:list[@type=$xmltype and @xml:lang=$helpers:web-language]/tei:item[@xml:id=$id]
-                      else $doc//tei:list[@type=$xmltype and @xml:lang=$helpers:web-language]/tei:item[@corresp=concat("#",$id)]
-        let $input := <input type="{$btype}" name="{$name}" value="{$id}" id="{$id}"/>
-        let $label := <label for="{$id}">{$entry}</label>
-        return ($input,$label)
+                      then $doc//tei:list[@type=$xmltype and @xml:lang=$helpers:web-language]/tei:item[@xml:id=$id]/data(.)
+                      else $doc//tei:list[@type=$xmltype and @xml:lang=$helpers:web-language]/tei:item[@corresp=concat("#",$id)]/data(.)
+        let $input := <input class="{concat($name,"_input-box")}" type="{$btype}" name="{$name}" value="{$id}" id="{$id}"/>
+        let $label := <label class="{concat($name,"_input-label")}" for="{$id}">{$entry}</label>
+        let $breaked := <br />
+        return ($input,$label,$breaked)
 };
 
 declare function page:createInput_term($xmltype as xs:string, $btype as xs:string, $name as xs:string, $value as xs:string*,$doc as node(), $checked as xs:string?) as node()* {
     for $id in $value
         let $entry := if($helpers:web-language = "pt")
-                      then $doc//tei:list[@type=$xmltype]/tei:item/tei:term[@xml:lang=$helpers:web-language and @xml:id=$id]
-                      else $doc//tei:list[@type=$xmltype]/tei:item/tei:term[@xml:lang=$helpers:web-language and @corresp=concat("#",$id)]
-        let $input := if($checked = "checked") then <input type="{$btype}" name="{$name}" value="{$id}" id="{$id}" checked="checked"/>
-                       else <input type="{$btype}" name="{$name}" value="{$id}" id="{$id}" />
-        let $label := <label for="{$id}">{$entry}</label>
-        return ($input,$label)
+                      then $doc//tei:list[@type=$xmltype]/tei:item/tei:term[@xml:lang=$helpers:web-language and @xml:id=$id]/data(.)
+                      else $doc//tei:list[@type=$xmltype]/tei:item/tei:term[@xml:lang=$helpers:web-language and @corresp=concat("#",$id)]/data(.)
+        let $input := if($checked = "checked") then <input class="{concat($name,"_input-box")}" type="{$btype}" name="{$name}" value="{$id}" id="{$id}" checked="checked"/>
+                       else <input class="{concat($name,"_input-box")}" type="{$btype}" name="{$name}" value="{$id}" id="{$id}" />
+        let $label := <label class="{concat($name,"_input-label")}" for="{$id}">{$entry}</label>
+        let $breaked := <br />
+        return ($input,$label,$breaked)
 };
 
 declare function page:createOption($xmltype as xs:string, $value as xs:string*,$doc as node()) as node()* {
     for $id in $value
          let $entry := if($helpers:web-language = "pt")
-                      then $doc//tei:list[@type=$xmltype and @xml:lang=$helpers:web-language]/tei:item[@xml:id=$id]
-                      else $doc//tei:list[@type=$xmltype and @xml:lang=$helpers:web-language]/tei:item[@corresp=concat("#",$id)]
+                      then $doc//tei:list[@type=$xmltype and @xml:lang=$helpers:web-language]/tei:item[@xml:id=$id]/data(.)
+                      else $doc//tei:list[@type=$xmltype and @xml:lang=$helpers:web-language]/tei:item[@corresp=concat("#",$id)]/data(.)
         return <option value="{$id}">{$entry}</option>
 
 };

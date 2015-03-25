@@ -61,6 +61,7 @@ p {
     margin-right: auto; 
     border: 1px solid #222;
     width: 1267px; 
+    z-index:0;
 }
 
 .flagge {
@@ -143,6 +144,8 @@ header
  font-size: 17px;
  border:0px solid #888;
  background: #990000;
+ z-index:1;
+ position: relative;
 }
 
 #navi2
@@ -188,6 +191,7 @@ table
 {
  font-size: 11px;
  margin: 5px 0 5px 5px; 
+color: #fff;
 }
 
 textarea
@@ -520,10 +524,21 @@ ul#tab li.active {
                 visibility:hidden;
                 display:none;
                 color: #222; 
+                width:180px;
                 }
+                .date-field {
+                    width: 150px;
+                }
+                .role_input-box, .release_input-box, .lang_input-box {
+                    margin-left:5px !important;
+                }
+                .role_input-label, .release_input-label, .lang_input-label {
+                    color: #fff !important; 
+                }
+                
                 h6 {
                 font-size:16px;
-                text-align: center; 
+                text-align: left; 
                 padding: 5px 0;
                 margin-bottom: 0; 
                 }
@@ -553,6 +568,7 @@ position:absolute;
 }
 #navi-elements {
         padding:0px 0px 7px 40px;    
+        z-index:1;
 
 }
 #footer
@@ -765,8 +781,10 @@ margin-right:2.5px;
         background-color: #900;
 }
 
-#header-imge {
+#header-image {
     width:1267px;
     height:300px;
+    position:absolute;
+    z-index:0;
     
 }
