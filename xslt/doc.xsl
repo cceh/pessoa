@@ -100,7 +100,10 @@
         </div>
     </xsl:template>
     <xsl:template match="item">
-        <div class="item">
+        <div class="item" style="position: relative;">
+            <xsl:if test="@xml:id">
+                <xsl:attribute name="id"><xsl:value-of select="@xml:id" /></xsl:attribute>
+            </xsl:if>
             <xsl:apply-templates/>
         </div>
     </xsl:template>
@@ -157,16 +160,18 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    <xsl:template match="note[@type='addition'][@place='margin right']">´
-        <xsl:variable name="range">
+    <xsl:template match="note[@type='addition'][@place='margin right']">
+        <xsl:variable name="target">
             <xsl:choose>
-                <xsl:when test="@target = 'i1'">r1</xsl:when>
-                <xsl:when test="@target = 'range(i2,i3)'">r2-3</xsl:when>
-                <xsl:when test="@target = 'range(i4,i5)'">r4-5</xsl:when>
-                <xsl:when test="@target = 'i6'">r6</xsl:when>
+                <xsl:when test="contains(@target, 'range')">
+                    <xsl:value-of select="substring-before(substring-after(@target, 'range('), ',')"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="@target" />
+                </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-        <span class="note addition margin right {ancestor::text/@xml:id} {$range}">
+        <span class="note addition margin right target-{$target}" style="position: absolute; top: 0; right: -100px;">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
@@ -203,11 +208,17 @@
     <xsl:template match="metamark[@rend='line'][@function='distinct']">
         <div class="metamark line distinct" title="distinct">______________________________________</div>
     </xsl:template>
+    <xsl:template match="metamark[@rend='double line'][@function='distinct']">
+        <div class="metamark line distinct" title="distinct">
+            ______________________________________<br/>
+            ______________________________________
+        </div>
+    </xsl:template>
     <xsl:template match="metamark[@rend='curly bracket'][@function='grouping'][parent::note/contains(@place, 'margin left')]">
         <span class="metamark curly-bracket grouping left {ancestor::text/@xml:id}" title="grouping">{</span>
     </xsl:template>
     <xsl:template match="metamark[@rend='curly bracket'][@function='grouping'][parent::note/contains(@place, 'margin right')]">
-        <span class="metamark curly-bracket grouping right {ancestor::text/@xml:id}" title="grouping">}</span>
+        <span class="metamark curly-bracket grouping right {ancestor::text/@xml:id}" title="grouping" style="font-size: 32pt; font-family: Times">}</span>
     </xsl:template>
     <xsl:template match="metamark[@rend='bracket'][@function='grouping'][parent::note/contains(@place, 'margin left')]">
         <span class="metamark bracket grouping left {ancestor::text/@xml:id}" title="grouping">[</span>
