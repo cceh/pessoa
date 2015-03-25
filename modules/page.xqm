@@ -21,9 +21,9 @@ declare %templates:wrap function page:construct($node as node(), $model as map(*
                 </li>
             </ul>
     let $SubNav := page:createSubNav()
-
+    let $ExtNav := page:createExtNav()
     
-    let $return := ($MainNav, $SubNav)
+    let $return := ($MainNav, $SubNav, $ExtNav)
     return $return
 };
 declare %templates:wrap function page:construct_search($node as node(), $model as map(*)) as node()* {
@@ -47,7 +47,7 @@ for $target in $type
     let $name := if($helpers:web-language = "pt") then $doc//tei:term[@xml:lang = $helpers:web-language and @xml:id= $target]
                                   else $doc//tei:term[@xml:lang = $helpers:web-language and @corresp= concat("#",$target)]
     
-  return <li><a href="#{$target}" role="tab" data-toggle="tab" onClick="u_nav({concat("'","nav_",$target,"'")})">{$name}</a></li>
+  return <li><a href="#{$target}" role="tab" data-toggle="tab" onClick="u_nav({concat("'","nav_",$target,"'")})">{$name/data(.)}</a></li>
 };
 
 
@@ -115,17 +115,63 @@ declare function page:createThirdNavTab($type as xs:string) as node()* {
          <ul class="nav_sub_tabs">        
         {page:createThirdNavContent($type,$indikator)}
         </ul></div>
+        
      else ()
 };
+
+
 
 declare function page:createThirdNavContent($type as xs:string, $indikator as xs:string) as node()* {
         if ($type = "documentos") then for $item in page:createItem($type, $indikator) 
             return <li class="{concat("nav_",$type,"_sub_tab")}"><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></li>
-        else if ($type = "cronologia") then for $item in page:createItem($type,$indikator)
-            return <li class="{concat("nav_",$type,"_sub_tab")}"><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></li>
+       else if ($type = "cronologia") then for $nr in (0 to 9)
+            return <li class="{concat("nav_",$type,"_sub_tab")}"><a href="#" onClick="u_nav({concat("'nav_",$type,"_sub_ext_",concat($indikator,$nr),"'")})">{concat("'",$indikator,$nr)}</a></li>
            else ()
 };
 
+
+declare function page:createExtNav() {
+        let $type := "cronologia"
+        return <div class="navbar" id="{concat("nav_",$type,"_sub_ext")}"  style="display:none"> 
+            <ul class="nav_tabs">
+            {page:createExtNavTab($type)}
+            </ul>
+        </div>
+};
+(:
+declare function page:createExtNavTab($tab as xs:string) as node()*{
+    if($tab = "cronologia")then for $indikator in (0 to 3) return 
+         <div  id="{concat("nav_",$tab,"_ext_",$indikator)}" style="display:none"> 
+         <ul class="nav_sub_tabs">        
+        {page:createYearsExtendedTab($tab,$indikator)}
+        </ul></div>
+        else () 
+    
+};
+:)
+declare function page:createExtNavTab($type as xs:string) as node()* {
+    if($type = "cronologia")then for $indikator in (0 to 3) 
+        for $nr in (0 to 9) return if($indikator != 3) then
+         <div id="{concat("nav_",$type,"_sub_ext_",$indikator,$nr)}" style="display:none">
+             <ul class="nav_sub_tabs">
+             {page:createExtendedTabsContent($type, concat($indikator,$nr))}
+             </ul></div>
+        else if($indikator = 3 and $nr <=5) then
+         <div id="{concat("nav_",$type,"_sub_ext_",$indikator,$nr)}" style="display:none">
+             <ul class="nav_sub_tabs">
+             {page:createExtendedTabsContent($type, concat($indikator,$nr))}
+             </ul></div>
+             else ()
+        else ()
+        
+};
+
+declare function page:createExtendedTabsContent($type as xs:string, $indikator as xs:string) as node()* {
+        if($type = "cronologia") then
+        for $item in page:createItem($type,$indikator)
+            return <li class="{concat("nav_",$type,"_sub_ext_tab")}"><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></li>
+            else ()
+};
 
 declare function page:createItem($type as xs:string, $indikator as xs:string?) as item()* {
     if($type ="autores")
@@ -152,7 +198,7 @@ declare function page:createItem($type as xs:string, $indikator as xs:string?) a
                       <item label="{$label}" ref="{$ref}?plang={$helpers:web-language}"  />
                       else ()
    else if($type = "cronologia")
-        then for $date in (xs:integer(concat("19",$indikator,"0")) to xs:integer(concat("19",$indikator,"9")))
+        then let $date := concat("19",$indikator)
         for $para in ("date","date_when","date_notBefore","date_notAfter","date_from","date_to")
                 let $db := collection("/db/apps/pessoa/data/doc","/db/apps/pessoa/data/pub")
                 let $result := search:result_union(search:date_search($db,$para,$date))
