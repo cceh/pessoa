@@ -313,21 +313,21 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
                     {search:page_createOption_authors("authors",("FP","AC","AdC","RR"),$doc)}
                 </select>
                 <p class="small_text">{page:singleAttribute($doc,"search","multiple_entries")}</p>
-                <br/>
-                {page:singleAttribute($doc,"search","mentioned_as")}
+               
+                <p>{page:singleAttribute($doc,"search","mentioned_as")} :</p>
                 {page:createInput_item("roles","checkbox","role",("author","editor","translator","topic"),$doc)}
                 </div>
-                <div class="tab" id="ta_release" onclick="hide('se_release')"><h6>{page:singleAttribute($doc,"search","published")}&amp;{page:singleAttribute($doc,"search","unpublished")}</h6>
+                <div class="tab" id="ta_release" onclick="hide('se_release')"><h6>{page:singleAttribute($doc,"search","published")} &amp; {page:singleAttribute($doc,"search","unpublished")}</h6>
                 </div>
                 <div class="selection" id="se_release" style="display:none;">
                 {page:createInput_term("search","radio","release",("published","unpublished"),$doc, "")}
-                <input type="radio" name="release" value="either" id="either" checked="checked"/>
-                <label for="either">{page:singleAttribute($doc,"search","published")}&amp;{page:singleAttribute($doc,"search","unpublished")}</label>
+                <input class="release_input-box" type="radio" name="release" value="either" id="either" checked="checked"/>
+                <label class="release_input-label" for="either"> {page:singleAttribute($doc,"search","published")} &amp; {page:singleAttribute($doc,"search","unpublished")}</label>
                 </div>
                 <div class="tab" id="ta_genre" onclick="hide('se_genre')"><h6>{page:singleAttribute($doc,"search","genre")}</h6>
                 </div>
                     <div class="selection" id="se_genre" style="display:none;">
-                        <select name="genre" size="7" multiple="multiple">
+                        <select class="selectsearch" name="genre" size="7" multiple="multiple">
                         {page:createOption("genres",("lista_editorial","nota_editorial","plano_editorial","poesia"),$doc)}
                         </select>
                         <p class="small_text">{page:singleAttribute($doc,"search","multiple_entries")}</p>
@@ -335,18 +335,18 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
                   <div class="tab" id="ta_date" onclick="hide('se_date')"><h6>{page:singleAttribute($doc,"search","date")}</h6></div>
                             <div class="selection" id="se_date" style="display:none;">    
                                 <div id="datum">
-                                    <input type="date" name="after" placeholder="{page:singleAttribute($doc,"search","from")}"/>
-                                    <input type="date" name="before" placeholder="{page:singleAttribute($doc,"search","to")}"/>
+                                    <input type="date" class="date-field" name="after" placeholder="{page:singleAttribute($doc,"search","from")}"/>
+                                    <input type="date" class="date-field" name="before" placeholder="{page:singleAttribute($doc,"search","to")}"/>
                                 </div>
                     </div>  
                     <div class="tab" id="ta_lang" onclick="hide('se_lang')"><h6>{page:singleAttribute($doc,"search","language")}</h6></div>
                             <div class="selection" id="se_lang" style="display:none;">
                                 {search:page_createInput_item_lang("language","checkbox","lang",("pt","en","fr"),$doc)}
                                 <br/>
-                                <input type="radio" name="lang_ao" value="and" id="and"/>
-                                    <label for="and">{page:singleAttribute($doc,"search","and")}</label>
-                                <input type="radio" name="lang_ao" value="or" id="or" checked="checked"/>
-                                    <label for="or">{page:singleAttribute($doc,"search","or")}</label>
+                                <input class="lang_input-box" type="radio" name="lang_ao" value="and" id="and"/>
+                                    <label class="lang_input-label" for="and">{page:singleAttribute($doc,"search","and")}</label>
+                                <input class="lang_input-box" type="radio" name="lang_ao" value="or" id="or" checked="checked"/>
+                                    <label class="lang_input-label" for="or">{page:singleAttribute($doc,"search","or")}</label>
                             </div>
                      <h6>{page:singleAttribute($doc,"search","free_search")}</h6>
                      <input name="term" placeholder="{page:singleAttribute($doc,"search","search_term")}..." />
@@ -361,14 +361,15 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
 declare function search:page_createInput_item_lang($xmltype as xs:string,$btype as xs:string, $name as xs:string, $value as xs:string*,$doc as node()) as node()* {
     for $id in $value
         let $entry := if($helpers:web-language = "pt")
-                      then $doc//tei:list[@type=$xmltype and @xml:lang=$helpers:web-language]/tei:item[@xml:id=$id]
-                      else $doc//tei:list[@type=$xmltype and @xml:lang=$helpers:web-language]/tei:item[@corresp=concat("#",$id)]
-        let $input := <input type="{$btype}" name="{$name}" value="{$id}" id="{$id}" checked="checked"/>
-        let $label := <label for="{$id}">{$entry}</label>
-        return ($input,$label)
+                      then $doc//tei:list[@type=$xmltype and @xml:lang=$helpers:web-language]/tei:item[@xml:id=$id]/data(.)
+                      else $doc//tei:list[@type=$xmltype and @xml:lang=$helpers:web-language]/tei:item[@corresp=concat("#",$id)]/data(.)
+        let $input := <input class="{concat($name,"_input-box")}" type="{$btype}" name="{$name}" value="{$id}" id="{$id}" checked="checked"/>
+        let $label := <label class="{concat($name,"_input-label")}" for="{$id}">{$entry}</label>
+        let $breaked := <br />
+        return ($input,$label,$breaked)
 };
 declare function search:page_createOption_authors($xmltype as xs:string, $value as xs:string*, $doc as node()) as node()* {
     for $id in $value
-        let $entry := $doc//tei:listPerson[@type=$xmltype]/tei:person[@xml:id=$id]/tei:persName
+        let $entry := $doc//tei:listPerson[@type=$xmltype]/tei:person[@xml:id=$id]/tei:persName/data(.)
         return <option value="{$id}">{$entry}</option>
 };
