@@ -76,13 +76,13 @@ declare function doc:get-genre($node as node(), $model as map(*), $type as xs:st
         let $docsInYear :=  
             for $doc in $docs where(fn:substring(author:getYearOrTitle($doc,$orderBy),0,$i) = $year) return $doc
     order by $year       
-    return (<div>{$year}</div>,
+    return (<div><br />{$year}</div>,
      for $doc in $docsInYear 
      order by (author:getYearOrTitle($doc,$orderBy))
      return
         if ($doc//tei:sourceDesc/tei:msDesc)
-                    then  ( <div><a href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{($doc//tei:title)[1]/data(.)}</a></div>,<br />)                              
-                    else (<div><a href="{$helpers:app-root}/{substring-before(substring-after(document-uri($doc),"/db/apps/pessoa/data"),".xml")}">{($doc//tei:sourceDesc[1]/tei:biblStruct[1]/tei:analytic/tei:title)[1]/data(.)}</a></div>,<br />)           
+                    then  ( <div class="doctabelcontent"><a href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{($doc//tei:title)[1]/data(.)}</a></div>)                              
+                    else (<div class="doctabelcontent"><a href="{$helpers:app-root}/{substring-before(substring-after(document-uri($doc),"/db/apps/pessoa/data"),".xml")}">{($doc//tei:sourceDesc[1]/tei:biblStruct[1]/tei:analytic/tei:title)[1]/data(.)}</a></div>)           
     )      
 };
 
