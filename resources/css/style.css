@@ -607,10 +607,18 @@ position:absolute;
     list-style:none;
 }
 
+.nav_sub_tabs a {
+    text-decoration: none;
+}
+.nav_sub_tabs:hover a {
+        text-decoration: none;
+
+}
+
 #nav_autores, #nav_documentos, #nav_publicacoes, #nav_genero, #nav_cronologia, #nav_bibliografia, #nav_projeto {
      margin:0 auto;
     }
-.nav_autores_tab, .nav_documentos_tab, .nav_publicacoes_tab, .nav_genero_tab, .nav_cronologia_tab, .nav_bibliografia_tab {
+.nav_autores_tab, .nav_documentos_tab, .nav_publicacoes_tab, .nav_genero_tab, .nav_cronologia_tab, .nav_bibliografia_tab, .nav_projeto_tab {
     display:inline-block;    
 }
 
@@ -657,7 +665,11 @@ position:absolute;
 #nav_projeto {
     
     }
-.nav_documentos_sub_tab, .nav_cronologia_sub_tab {
+.nav_projeto_tab {
+    padding: 8px 40px;
+}
+
+.nav_documentos_sub_tab, .nav_cronologia_sub_tab, .nav_cronologia_sub_ext_tab {
         text-decoration:none;
         display:inline-block;
         margin: 3px 5px; 
@@ -666,21 +678,22 @@ position:absolute;
         min-width: 95px;
         text-align: center;
 }
-.nav_documentos_sub_tab:hover , .nav_cronologia_sub_tab:hover {
+.nav_cronologia_sub_tab {
+    min-width: 65px !important;
+    margin: 3px 4px !important;
+}
+.nav_documentos_sub_tab:hover, .nav_cronologia_sub_tab:hover, .nav_cronologia_sub_ext_tab:hover {
         background-color: #4E4E4E;
+        text-decoration:none;
 }
-.nav_cronologia_ext_tab {
-    text-decoration:none;
-        display:inline-block;
-        margin: 3px 5px; 
-        padding: 5px; 
-        background: #222; 
-        min-width: 95px;
-        text-align: center;
+
+nav_documents_sub_tab a, nav_cronologia_sub_tab a, nav_cronologia_sub_ext_tab a{
+            text-decoration:none;
 }
-.nav_cronologia_ext_tab:hover {
-            background-color: #4E4E4E;
+nav_documents_sub_tab:hover a, nav_cronologia_sub_tab:hover a, nav_cronologia_sub_ext_tab:hover a {
+            text-decoration:none;
 }
+
 
 #headline {
  margin: 0 auto;
