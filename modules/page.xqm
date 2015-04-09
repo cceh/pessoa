@@ -23,10 +23,10 @@ declare %templates:wrap function page:construct($node as node(), $model as map(*
     let $SubNav := page:createSubNav()
     let $ExtNav := page:createExtNav()
     
-    let $return := ($MainNav, $SubNav, $ExtNav)
+    let $return := ($MainNav,page:construct_search() ,$SubNav, $ExtNav)
     return $return
 };
-declare %templates:wrap function page:construct_search($node as node(), $model as map(*)) as node()* {
+declare function page:construct_search() as node()* {
 let $search := <div class="container-4" id="searchbox" style="display:none">
                             <input type="search" id="search" placeholder="{concat(page:singleAttribute(doc("/db/apps/pessoa/data/lists.xml"),"search","search_verb"),"....")}" />
                             <button class="icon" id="button" onclick="search()"><i class="fa fa-search" ></i>
@@ -41,7 +41,7 @@ let $search := <div class="container-4" id="searchbox" style="display:none">
 
 
 declare function page:createMainNav() as node()* {
-let $type := ("autores","documentos","publicacoes","genero","cronologia","bibliografia","projeto")
+let $type := ("autores","documentos","publicacoes","obras","genero","cronologia","bibliografia","projeto")
 let $doc := doc("/db/apps/pessoa/data/lists.xml")
 for $target in $type 
     let $name := if($helpers:web-language = "pt") then $doc//tei:term[@xml:lang = $helpers:web-language and @xml:id= $target]
@@ -65,7 +65,7 @@ declare function page:createSubNavTabs($tab as xs:string) as node()* {
             {page:createContent($tab)}
             </ul>
         </div>
-    let $ThirdNav := if($tab = "documentos" or $tab = "cronologia") then
+    let $ThirdNav := if($tab = "documentos" or $tab = "cronologia" or $tab = "obras") then
             <div class="navbar" id="{concat("nav_",$tab,"_sub")}" style="display:none" > 
                 {page:createThirdNavTab($tab)}
             </div>
@@ -73,7 +73,7 @@ declare function page:createSubNavTabs($tab as xs:string) as node()* {
         return ($SubNav,$ThirdNav)
 };
 declare function page:createContent($type as xs:string) as node()* {
-    if($type != "documentos" and $type != "cronologia") then
+    if($type != "documentos" and $type != "cronologia" and $type != "obras") then
         for $item in page:createItem($type,"")
         return <li class="{concat("nav_",$type,"_tab")}" ><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></li>
     else  let $result := page:createThirdNav($type)
@@ -91,31 +91,41 @@ declare function page:createThirdNav($type as xs:string) as node()* {
             </a></li>
     else if ($type = "cronologia") then for $date in ("1900 - 1909","1910 - 1919","1920 - 1929","1930 - 1935",(doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item[5]/tei:list/tei:item/tei:term[@xml:lang=$helpers:web-language]/attribute()[2]))
             return if ($date = "timeline" or $date = "#timeline") then
-                <li class="{concat("nav_",$type,"_tab")}">
-                <a href="{concat($helpers:app-root,"/timeline.html?plang=",$helpers:web-language)}" target="_blank">
-                {doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item[5]/tei:list/tei:item/tei:term[@xml:lang=$helpers:web-language]/data(.)}
-                </a></li>
-            else if(substring-after($date,"19")!= "") then  <li class="{concat("nav_",$type,"_tab")}">
-                <a href="#" 
-                onclick="u_nav({concat("'nav_",$type,"_sub_",(index-of(("1900 - 1909","1910 - 1919","1920 - 1929","1930 - 1935"),$date)-1),"'")})">
-                {$date}
-                </a></li>
-                else ()
-        else ()
+                        <li class="{concat("nav_",$type,"_tab")}">
+                        <a href="{concat($helpers:app-root,"/timeline.html?plang=",$helpers:web-language)}" target="_blank">
+                        {doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item[5]/tei:list/tei:item/tei:term[@xml:lang=$helpers:web-language]/data(.)}
+                        </a></li>
+                    else if(substring-after($date,"19")!= "") then  <li class="{concat("nav_",$type,"_tab")}">
+                        <a href="#" 
+                        onclick="u_nav({concat("'nav_",$type,"_sub_",(index-of(("1900 - 1909","1910 - 1919","1920 - 1929","1930 - 1935"),$date)-1),"'")})">
+                        {$date}
+                        </a></li>
+                        else ()
+    else if ($type = "obras") then for $works in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="works"]/tei:item 
+       return  <li class="{concat("nav_",$type,"_tab")}">
+            <a href="#"
+            onclick="u_nav({concat("'nav_",$type,"_sub_",$works/attribute(),"'" )})">
+            {$works/tei:title[1]/data(.)}
+            </a></li>
+    else ()
 };
 
 declare function page:createThirdNavTab($type as xs:string) as node()* {
    if ($type = "documentos") then for $indikator in (1 to 9) return
-    <div  id="{concat("nav_",$type,"_sub_",$indikator)}" style="display:none"> 
-    <ul class="nav_sub_tabs">
-    {page:createThirdNavContent($type,$indikator)}
+          <div  id="{concat("nav_",$type,"_sub_",$indikator)}" style="display:none"> 
+          <ul class="nav_sub_tabs">
+          {page:createThirdNavContent($type,$indikator)}
          </ul>   </div>
     else if ($type = "cronologia") then for $indikator in (0 to 3) return 
          <div  id="{concat("nav_",$type,"_sub_",$indikator)}" style="display:none"> 
          <ul class="nav_sub_tabs">        
         {page:createThirdNavContent($type,$indikator)}
         </ul></div>
-        
+    else if ($type = "obras") then for $indikator in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="works"]/tei:item/attribute() return
+        <div  id="{concat("nav_",$type,"_sub_",$indikator)}" style="display:none"> 
+         <ul class="nav_sub_tabs">        
+        {page:createThirdNavContent($type,$indikator)}
+        </ul></div>
      else ()
 };
 
@@ -128,6 +138,8 @@ declare function page:createThirdNavContent($type as xs:string, $indikator as xs
             return <a href="#" onClick="u_nav({concat("'nav_",$type,"_sub_ext_",concat($indikator,$nr),"'")})"><li class="{concat("nav_",$type,"_sub_tab")}">{concat("'",$indikator,$nr)}</li></a>
        else if ($type = "cronologia" and $indikator = "3") then for $nr in (0 to 5) 
             return <a href="#" onClick="u_nav({concat("'nav_",$type,"_sub_ext_",concat($indikator,$nr),"'")})"><li class="{concat("nav_",$type,"_sub_tab")}">{concat("'",$indikator,$nr)}</li></a>
+       else if ($type = "obras") then for $item in page:createItem($type, $indikator)
+            return <li class="{concat("nav_",$type,"_sub_tab")}"><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></li>
            else ()
 };
 
@@ -229,7 +241,11 @@ declare function page:createItem($type as xs:string, $indikator as xs:string?) a
             let $label := $projeto/data(.)
                 let $ref := if($helpers:web-language = "pt") then $projeto/attribute()[2]
                             else substring-after($projeto/attribute()[2],"#")
-            return <item label="{$label}"  ref="{$helpers:app-root}/page/bibliografia.html?type={$ref}" /> 
+            return <item label="{$label}"  ref="{$helpers:app-root}/page/porjeto.html?type={$ref}" /> 
+   else if ($type = "obras")
+         then for $works in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="works"]/tei:item[@xml:id=$indikator]/tei:title[@type="alt"]
+         let $label := $works/data(.)
+          return <item label="{$label}" ref="{$helpers:app-root}/page/obras.html?type={$indikator}"/>
    else for $a in "10" return <item label="nothin" ref="#"/>
 };
 

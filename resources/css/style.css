@@ -436,8 +436,11 @@ ul#tab li.active {
             background: #990000; 
             float: right; 
             padding: 5px;
-
-
+            position:absolute;
+            z-index:1;
+            margin: -10px 0 0 675px;
+            border:2px solid black;
+    
             }
             
             .container-4 input#search{
@@ -511,6 +514,9 @@ ul#tab li.active {
                 float:left;
                 margin: 5px;
                 
+                }
+                .search_resultList a {
+                    color:black;
                 }
                 .clear
                 {
@@ -623,10 +629,10 @@ position:absolute;
 
 }
 
-#nav_autores, #nav_documentos, #nav_publicacoes, #nav_genero, #nav_cronologia, #nav_bibliografia, #nav_projeto {
+#nav_autores, #nav_documentos, #nav_publicacoes,#nav_obras, #nav_genero, #nav_cronologia, #nav_bibliografia, #nav_projeto {
      margin:0 auto;
     }
-.nav_autores_tab, .nav_documentos_tab, .nav_publicacoes_tab, .nav_genero_tab, .nav_cronologia_tab, .nav_bibliografia_tab, .nav_projeto_tab {
+.nav_autores_tab, .nav_documentos_tab, .nav_publicacoes_tab, .nav_obras_tab, .nav_genero_tab, .nav_cronologia_tab, .nav_bibliografia_tab, .nav_projeto_tab {
     display:inline-block;    
 }
 
@@ -650,6 +656,9 @@ position:absolute;
     }
 .nav_publicacoes_tab {
     
+}
+.nav_obras_tab {
+    padding:3px 25px;
 }
 #nav_genero {
     }
@@ -677,7 +686,7 @@ position:absolute;
     padding: 8px 40px;
 }
 
-.nav_documentos_sub_tab, .nav_cronologia_sub_tab, .nav_cronologia_sub_ext_tab {
+.nav_documentos_sub_tab, .nav_cronologia_sub_tab, .nav_cronologia_sub_ext_tab, .nav_obras_sub_tab {
         text-decoration:none;
         display:inline-block;
         margin: 3px 5px; 
@@ -690,7 +699,7 @@ position:absolute;
     min-width: 65px !important;
     margin: 3px 4px !important;
 }
-.nav_documentos_sub_tab:hover, .nav_cronologia_sub_tab:hover, .nav_cronologia_sub_ext_tab:hover {
+.nav_documentos_sub_tab:hover, .nav_cronologia_sub_tab:hover, .nav_cronologia_sub_ext_tab:hover, .nav_obras_sub_tab:hover {
         background-color: #4E4E4E;
         text-decoration:none;
 }
