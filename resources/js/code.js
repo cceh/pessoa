@@ -42,7 +42,7 @@ function u_nav(navID) {
                         document.getElementById("nav_cronologia_sub").style.display = "block";
                         }                    
                      if(navID.indexOf("nav_cronologia_sub_ext") != -1) {
-                     document.getElementById("nav_cronologia_sub_ext").style.display = "block";
+                     document.getElementById("nav_cronologia_sub_ext").style.display = "inline-block";
                      }
                 }
                 
@@ -51,7 +51,24 @@ function u_nav(navID) {
        
             
             else {
-            document.getElementById(IDs[i]).style.display = "none";
+                if(navID.indexOf("nav_cronologia_sub_ext_") != -1 ) {
+                 if( IDs[i].length <= 20 && IDs[i].indexOf("nav_cronologia_sub_") != -1 && IDs[i].substr(19,1) == navID.substr(23,1)) {
+                      //  alert("ID "+IDs[i].substr(19,1)+" nav "+navID.substr(23,1));
+                    document.getElementById(IDs[i]).style.display ="inline-block";
+                    /*  if(IDs[i].indexOf("nav_cronologia_sub_ext_") != -1 && IDs[i] != navID && document.getElementById("nav_cronologia_sub_ext").style.display == "inline-block" ) {
+                            
+                       }
+                       else {
+                       }
+                       */
+                 }                    
+                 else {
+                    document.getElementById(IDs[i]).style.display = "none";
+                 }
+                }
+                else {
+                document.getElementById(IDs[i]).style.display = "none";
+                }
             }
         }    
        

@@ -124,8 +124,10 @@ declare function page:createThirdNavTab($type as xs:string) as node()* {
 declare function page:createThirdNavContent($type as xs:string, $indikator as xs:string) as node()* {
         if ($type = "documentos") then for $item in page:createItem($type, $indikator) 
             return <li class="{concat("nav_",$type,"_sub_tab")}"><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></li>
-       else if ($type = "cronologia") then for $nr in (0 to 9)
-            return <li class="{concat("nav_",$type,"_sub_tab")}"><a href="#" onClick="u_nav({concat("'nav_",$type,"_sub_ext_",concat($indikator,$nr),"'")})">{concat("'",$indikator,$nr)}</a></li>
+       else if ($type = "cronologia" and $indikator != "3") then for $nr in (0 to 9)
+            return <a href="#" onClick="u_nav({concat("'nav_",$type,"_sub_ext_",concat($indikator,$nr),"'")})"><li class="{concat("nav_",$type,"_sub_tab")}">{concat("'",$indikator,$nr)}</li></a>
+       else if ($type = "cronologia" and $indikator = "3") then for $nr in (0 to 5) 
+            return <a href="#" onClick="u_nav({concat("'nav_",$type,"_sub_ext_",concat($indikator,$nr),"'")})"><li class="{concat("nav_",$type,"_sub_tab")}">{concat("'",$indikator,$nr)}</li></a>
            else ()
 };
 
@@ -133,9 +135,7 @@ declare function page:createThirdNavContent($type as xs:string, $indikator as xs
 declare function page:createExtNav() {
         let $type := "cronologia"
         return <div class="navbar" id="{concat("nav_",$type,"_sub_ext")}"  style="display:none"> 
-            <ul class="nav_tabs">
             {page:createExtNavTab($type)}
-            </ul>
         </div>
 };
 (:
@@ -169,7 +169,7 @@ declare function page:createExtNavTab($type as xs:string) as node()* {
 declare function page:createExtendedTabsContent($type as xs:string, $indikator as xs:string) as node()* {
         if($type = "cronologia") then
         for $item in page:createItem($type,$indikator)
-            return <li class="{concat("nav_",$type,"_sub_ext_tab")}"><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></li>
+            return <a href="{$item/@ref/data(.)}"><li class="{concat("nav_",$type,"_sub_ext_tab")}">{$item/@label/data(.)}</li></a>
             else ()
 };
 
@@ -220,9 +220,15 @@ declare function page:createItem($type as xs:string, $indikator as xs:string?) a
                 return <item label="{$label}" ref="{$ref}"/>
    else if ($type ="bibliografia")
         then for $bibl in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item[6]/tei:list/tei:item/tei:term[@xml:lang=$helpers:web-language]   
-            let $label :=$bibl/data(.)
+            let $label := $bibl/data(.)
             let $ref := if($helpers:web-language = "pt") then $bibl/attribute()[2]
                         else substring-after($bibl/attribute()[2],"#")
+            return <item label="{$label}"  ref="{$helpers:app-root}/page/bibliografia.html?type={$ref}" /> 
+   else if ($type = "projeto") 
+        then for $projeto in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item[7]/tei:list/tei:item/tei:term[@xml:lang=$helpers:web-language]
+            let $label := $projeto/data(.)
+                let $ref := if($helpers:web-language = "pt") then $projeto/attribute()[2]
+                            else substring-after($projeto/attribute()[2],"#")
             return <item label="{$label}"  ref="{$helpers:app-root}/page/bibliografia.html?type={$ref}" /> 
    else for $a in "10" return <item label="nothin" ref="#"/>
 };
