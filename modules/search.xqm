@@ -8,6 +8,7 @@ import module namespace lists="http://localhost:8080/exist/apps/pessoa/lists" at
 import module namespace doc="http://localhost:8080/exist/apps/pessoa/doc" at "doc.xqm";
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
 import module namespace page="http://localhost:8080/exist/apps/pessoa/page" at "page.xqm";
+import module namespace author="http://localhost:8080/exist/apps/pessoa/author" at "author.xqm";
 
 import module namespace kwic="http://exist-db.org/xquery/kwic";
 declare namespace util="http://exist-db.org/xquery/util";
@@ -230,7 +231,9 @@ declare function search:date_search($db as node()*,$para as xs:string,$date as x
 };
 
 (: Profi Result :)
-declare function search:profiresult($node as node(), $model as map(*), $sel as xs:string) as node()+ {
+declare function search:profiresult($node as node(), $model as map(*), $sel as xs:string, $sort as xs:string?) as node()+ {
+
+
 if(exists($sel) and $sel = "union") 
     then
     if(exists($model(concat("r_",$sel))))
@@ -238,11 +241,13 @@ if(exists($sel) and $sel = "union")
         for $hit in $model(concat("r_",$sel))
             let $file_name := root($hit)/util:document-name(.)
             let $expanded := kwic:expand($hit)
+            let $sort := if($sort = "cronolgi") then (author:getYearOrTitle($hit,"date"))
+                        else $file_name
             let $title := 
                     if(doc(concat("/db/apps/pessoa/data/doc/",$file_name))//tei:sourceDesc/tei:msDesc) 
                         then doc(concat("/db/apps/pessoa/data/doc/",$file_name))//tei:msDesc/tei:msIdentifier/tei:idno[1]/data(.)
                         else doc(concat("/db/apps/pessoa/data/pub/",$file_name))//tei:biblStruct/tei:analytic/tei:title[1]/data(.)
-            order by $file_name
+            order by $sort
             return if(substring-after($file_name,"BNP") != "" or substring-after($file_name,"MN") != "")
                     then <li><a href="{$helpers:app-root}/data/doc/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"), '&amp;file=', $file_name)}">{$title}</a>
                         {kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="40"/>)}</li>
@@ -255,7 +260,7 @@ if(exists($sel) and $sel = "union")
                     if(doc(concat("/db/apps/pessoa/data/doc/",$file_name))//tei:sourceDesc/tei:msDesc) 
                         then doc(concat("/db/apps/pessoa/data/doc/",$file_name))//tei:msDesc/tei:msIdentifier/tei:idno[1]/data(.)
                         else doc(concat("/db/apps/pessoa/data/pub/",$file_name))//tei:biblStruct/tei:analytic/tei:title[1]/data(.)
-                order by $file_name
+                order by $sort
                 return if(substring-after($file_name,"BNP") != "" or substring-after($file_name,"MN") != "")
                         then <li><a href="{$helpers:app-root}/data/doc/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"), '&amp;file=', $file_name)}">{$title}</a></li>
                         else <li><a href="{$helpers:app-root}/data/pub/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"), '&amp;file=', $file_name)}">{$title}</a></li>
