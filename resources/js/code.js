@@ -12,7 +12,11 @@ function u_nav(navID) {
        
        var IDs = new Array ("nav_autores","nav_bibliografia","nav_documentos","nav_documentos_sub",
        "nav_documentos_sub_1","nav_documentos_sub_2","nav_documentos_sub_3","nav_documentos_sub_4","nav_documentos_sub_5","nav_documentos_sub_6","nav_documentos_sub_7","nav_documentos_sub_8","nav_documentos_sub_9",
-       "nav_publicacoes","nav_genero","nav_cronologia","nav_cronologia_sub",
+       "nav_publicacoes",
+       "nav_obras",
+       "nav_obras_sub",       
+       "nav_obras_sub_O1","nav_obras_sub_O2","nav_obras_sub_O3","nav_obras_sub_O4","nav_obras_sub_O5","nav_obras_sub_O6",
+       "nav_genero","nav_cronologia","nav_cronologia_sub",
        "nav_cronologia_sub_0","nav_cronologia_sub_1","nav_cronologia_sub_2","nav_cronologia_sub_3",
        "nav_projeto",
        "nav_cronologia_sub_ext",
@@ -24,7 +28,7 @@ function u_nav(navID) {
        for (var i = 0; i<IDs.length; i++) {
 
         if (document.getElementById(navID).style.display == "none" && IDs[i].indexOf(navID) != -1) {
-            if (navID.indexOf("nav_documentos_sub_") != -1 || navID.indexOf("nav_cronologia_sub_") != -1 ) {
+            if (navID.indexOf("nav_documentos_sub_") != -1 || navID.indexOf("nav_cronologia_sub_") != -1 || navID.indexOf("nav_obras_sub_") != -1) {
                 document.getElementById(navID).style.display = "inline-block";
             }
             else {
@@ -45,6 +49,12 @@ function u_nav(navID) {
                      document.getElementById("nav_cronologia_sub_ext").style.display = "inline-block";
                      }
                 }
+              else if(navID.indexOf("nav_obras") != -1) {
+                  document.getElementById("nav_obras").style.display = "block";
+                   if(navID.indexOf("nav_obras_sub") != -1) {
+                    document.getElementById("nav_obras_sub").style.display = "block"
+                    }
+              }
                 
                 
         }
