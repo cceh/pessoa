@@ -23,21 +23,21 @@
             .seg {position: relative;}
             
             .choice {position: relative;}
-            .choice .add.below {position: absolute; top: 1em; left: 0; font-size: smaller; margin-top: 5px;}
-            .choice .add.above {position: absolute; top: -0.8em; left: 0; font-size: smaller;}
+            .choice .add.below {position: absolute; top: 1em; left: 0; font-size: small; margin-top: 5px;}
+            .choice .add.above {position: absolute; top: -0.8em; left: 0; font-size: small;}
             
             .subst {position: relative;}
-            .subst .add.above {position: absolute; top: -0.5em; left: 0; font-size: smaller;}
-            .seg .add.above {position: absolute; top: -1em; left: 0; font-size: smaller; white-space: nowrap;}
-            .seg .add.below {position: absolute; top: 1.5em; left: 0; font-size: smaller; white-space: nowrap; line-height: 0.9em;}
+            .subst .add.above {position: absolute; top: -0.5em; left: 0; font-size: small;}
+            .seg .add.above {position: absolute; top: -1em; left: 0; font-size: small; white-space: nowrap;}
+            .seg .add.below {position: absolute; top: 1.5em; left: 0; font-size: small; white-space: nowrap; line-height: 0.9em;}
             .add {top: 0;}
             .seg.variant {color: #47C285;}
-            .above { position: relative; top: -0.8em; left: 0; font-size: smaller;}
+            .above { position: relative; top: -0.8em; left: 0; font-size: small;}
             
             .note.addition {position: absolute;}
-            .note.addition.margin.top.right {top: 20px; right: -100px; font-size: smaller;}
-            .bnp-e3-180r.note.addition.margin.left {left: -140px; font-size: smaller; vertical-align: middle; display: inline-block; width: 130px; text-align: right;}
-            .bnp-e3-180r.note.addition.margin.right {right: -140px; font-size: smaller; vartical-align: middle; display: inline-block; width: 130px;}
+            .note.addition.margin.top.right {top: 20px; right: -100px; font-size: small;}
+            .bnp-e3-180r.note.addition.margin.left {left: -140px; font-size: small; vertical-align: middle; display: inline-block; width: 130px; text-align: right;}
+            .bnp-e3-180r.note.addition.margin.right {right: -140px; font-size: small; vartical-align: middle; display: inline-block; width: 130px;}
             .note, .note .label, .note .metamark {vertical-align: middle;}
             
             /* special case 180r */
@@ -107,8 +107,7 @@
                     <xsl:apply-templates/>
                 </h3> 
             </xsl:otherwise>
-        </xsl:choose>
-       
+        </xsl:choose>      
     </xsl:template>
     <xsl:template match="list">
         <xsl:choose>
@@ -130,17 +129,17 @@
             <xsl:if test="@xml:id">
                 <xsl:attribute name="id"><xsl:value-of select="@xml:id" /></xsl:attribute>
             </xsl:if>
-           <xsl:choose>
+           <!--<xsl:choose>
                 <xsl:when test="child::label">
                     <xsl:apply-templates select="label"/>
                     <div style="display: inline-table">
                         <xsl:apply-templates select="label/following-sibling::*"/>
                     </div>
                 </xsl:when>
-                <xsl:otherwise> 
+                <xsl:otherwise> -->
                     <xsl:apply-templates/>
-                </xsl:otherwise>
-            </xsl:choose> 
+              <!--  </xsl:otherwise>
+            </xsl:choose> -->
 
         </div>
     </xsl:template>
@@ -228,10 +227,12 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-        <span class="note addition margin right target-{$target}" style="position: absolute; top: 0; right: -100px;">
+        <span class="note addition margin right target-{$target}" style="position: absolute; right: -100px;">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
+
+ 
     
     <!-- Zeilenumbrüche anzeigen -->
     <xsl:template match="lb">
@@ -245,11 +246,11 @@
         </span>
     </xsl:template>
     <xsl:template match="hi[@rend='superscript']">
-        <span style="position:relative;top:-4px; font-size: smaller;">
+        <span style="position:relative;top:-4px; font-size: small;">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    
+
     
     <!-- editorische Ergänzungen nicht anzeigen -->
     <xsl:template match="supplied"/>
@@ -290,9 +291,9 @@
     <xsl:template match="metamark[@rend='curly bracket'][@function='grouping'][parent::note/contains(@place, 'margin right')]">
         <span class="metamark curly-bracket grouping right {ancestor::text/@xml:id}" title="grouping" style="font-size: 32pt; font-family: Times">}</span>
     </xsl:template>
-    <!--<xsl:template match="metamark[@rend ='curly bracket'][@function='grouping'][@place='margin right']">
-        <span class="metamark curly-bracket grouping right {ancestor::text/@xml:id}" title="grouping" style="font-size: 32pt; font-family: Times">}</span>
-    </xsl:template>-->
+    <xsl:template match="metamark[@rend ='curly bracket'][@function='grouping'][@place='margin right']">
+        <span class="metamark curly-bracket grouping right {ancestor::text/@xml:id}" title="grouping" style="font-size: 32pt; font-family: Times; position: absolute; right: -140px; top:45px;">}</span>
+    </xsl:template>
     <xsl:template match="metamark[@rend='bracket'][@function='grouping'][parent::note/contains(@place, 'margin left')]">
         <span class="metamark bracket grouping left {ancestor::text/@xml:id}" title="grouping" style="font-size: 32pt; font-family: Times">[</span>
     </xsl:template>
