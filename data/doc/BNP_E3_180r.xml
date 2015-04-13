@@ -85,7 +85,10 @@
                                     <expan>R<ex>icardo</ex>
                                     </expan>
                                 </choice> Reis</rs>
-                        </rs>)</item>
+                        </rs>)
+                        <note target="I1" place="margin right" type="addition">
+                            <label>Vol. I</label>
+                        </note></item>     
                     <item xml:id="I2">
                         <label>2.</label>
                         <anchor xml:id="A1"/>
@@ -97,8 +100,7 @@
                             </choice>
                             <lb/> do meu mestre<lb/>
                             <rs type="person" key="AC" role="topic">Caeiro</rs>
-                        </rs>
-                        <lb/>
+                        </rs>        
                (<rs type="person" key="AdC" role="author">
                             <choice>
                                 <abbr>Alv<am>.</am>
@@ -107,6 +109,14 @@
                                 </expan>
                             </choice> de Campos</rs>)
                         <anchor xml:id="A2"/>
+                        <note target="range(I1,I3)" place="margin left" type="addition">
+                            <label>1 vol. (I-III)</label>
+                            <metamark rend="curly bracket" function="grouping"/>
+                        </note>
+                        <note target="range(I2,I3)" place="margin right" type="addition">
+                            <metamark rend="curly bracket" function="grouping"/>
+                            <label>Vol. II</label>
+                        </note>
                     </item>
                     <item xml:id="I3">
                         <label>3.</label>
@@ -117,7 +127,8 @@
                                 <expan>F<ex>ernando</ex>
                                 </expan>
                             </choice>
-                            <lb/> Pessoa</rs>)</item>
+                            <lb/> Pessoa</rs>)
+                        </item>
                     <item xml:id="I4">
                         <label>4.</label>
                         <anchor xml:id="A3"/>
@@ -131,6 +142,10 @@
                                 </expan>
                             </choice> de<lb/> Campos</rs>)
                         <anchor xml:id="A4"/>
+                        <note target="range(I4,I5)" place="margin right" type="addition">
+                            <metamark rend="curly bracket" function="grouping"/>
+                            <label>Vol. III</label>
+                        </note>
                     </item>
                     <item xml:id="I5">
                         <label>5.</label>
@@ -152,7 +167,13 @@
                                 </expan>
                             </choice> Reis</rs>)
                         <anchor xml:id="A6"/>
-                    </item>
+                        <note target="range(I4,I6)" place="margin left" type="addition">
+                            <supplied resp="UH" reason="omitted-in-original">
+                                <label>1 vol. (IV-VI)</label>
+                            </supplied>
+                            <metamark rend="curly bracket" function="grouping"/>
+                        </note>
+                    </item>                   
                     <item xml:id="I6">
                         <label>6.</label>
                         <anchor xml:id="A7"/>
@@ -169,36 +190,19 @@
                             </choice> de<lb/> Campos</rs>) — [<rs type="text" xml:id="T10">Triumphal</rs>,<lb/>
                         <rs type="text" xml:id="T11">Maritima</rs> — <supplied resp="PS" reason="omitted-in-original"/>]
                         <anchor xml:id="A8"/>
-                    </item>
+                        <note target="I6" place="margin right" type="addition">
+                            <metamark rend="bracket" function="grouping"/>
+                            <label>Vol. IV</label>
+                        </note>
+                        
+                    </item>    
                 </list>
-                <ab n="a">
-                    <note target="range(I1,I3)" place="margin left" type="addition">
-                        <label>1 vol. (I-III)</label>
-                        <metamark rend="curly bracket" function="grouping"/>
-                    </note>
-                    <note target="range(I4,I6)" place="margin left" type="addition">
-                        <supplied resp="UH" reason="omitted-in-original">
-                            <label>1 vol. (IV-VI)</label>
-                        </supplied>
-                        <metamark rend="curly bracket" function="grouping"/>
-                    </note>
-                </ab>
+             
                 <ab n="b">
-                    <note target="I1" place="margin right" type="addition">
-                        <label>Vol. I</label>
-                    </note>
-                    <note target="range(I2,I3)" place="margin right" type="addition">
-                        <metamark rend="curly bracket" function="grouping"/>
-                        <label>Vol. II</label>
-                    </note>
-                    <note target="range(I4,I5)" place="margin right" type="addition">
-                        <metamark rend="curly bracket" function="grouping"/>
-                        <label>Vol. III</label>
-                    </note>
-                    <note target="I6" place="margin right" type="addition">
-                        <metamark rend="bracket" function="grouping"/>
-                        <label>Vol. IV</label>
-                    </note>
+                   
+                    
+                    
+                    
                 </ab>
                 <ab n="c">
                     <note target="range(I1,I5)" place="margin top right" type="addition">ou 1 a 5<lb/>
