@@ -21,6 +21,7 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
+            <publisher/>
             <idno type="filename">MN246.xml</idno>
          </publicationStmt>
          <sourceDesc>
@@ -61,13 +62,20 @@
             <head><rs type="text"><hi rend="underline">Ficções do Interludio.</hi></rs></head>
             <list>
                <item>
-                  <label>1.</label> <rs type="text" xml:id="T1">Introducção Geral</rs>.<lb/>
+                  <label>1.</label> <rs type="text" xml:id="T1">Introducção Geral
+                     <note xml:id="N1" target="#T1" place="margin right" type="addition">30</note>
+                  </rs>.<lb/>
                   <rs type="work" key="O2"><rs type="text" xml:id="T2">Poemas Completos de <rs type="person"
-                     key="AC" role="author">Alberto Caeiro</rs></rs></rs><lb/> 
+                     key="AC" role="author">Alberto Caeiro</rs></rs>
+                     <note xml:id="N2" target="#T2" place="margin right" type="addition">100</note>
+                  </rs><lb/> 
                   (<rs type="text">prefacio dos parentes</rs>, <rs type="text">prefacio<lb/> 
                      do <rs type="person" key="RR" role="author">Dr. Ricardo Reis</rs></rs>).<lb/> 
                   <rs type="text" xml:id="T3">Notas para a Recordação do meu mestre<lb/>
-                     <rs type="person" key="AC" role="topic">Caeiro</rs></rs>
+                     <rs type="person" key="AC" role="topic">Caeiro</rs>
+                     <note xml:id="N3" target="#T3" place="margin right" type="addition">20</note>
+                     <metamark place="margin right" rend="curly bracket" function="grouping" target="range(N1,N5)" />
+                  </rs>
                   <rs type="person" key="AdC" role="author">(Alvaro de Campos)</rs>. 
                </item>
                <item>
@@ -75,9 +83,14 @@
                      Reis</rs>, <rs type="text" xml:id="T4">“Odes”, <choice>
                         <abbr>liv<am>.</am></abbr>
                         <expan>liv<ex>ros</ex></expan>
-                     </choice> I-III. <add place="above">ou I-II</add></rs></rs><lb/>
+                     </choice> I-III. <add place="above">ou I-II</add>
+                        <note xml:id="N4" target="#T4" place="margin right" type="addition">50</note>
+                     </rs>
+                  </rs><lb/>
                   <rs type="person" key="AdC" role="author">Alvaro de Campos</rs>, <rs type="text" xml:id="T5">“Poemas antes de
-                     Acordar”</rs>.
+                     Acordar”
+                     <note xml:id="N5" target="#T5" place="margin right" type="addition">20</note>
+                  </rs>.
                </item>
                <item>
                   <label>3.</label> <rs type="work" key="O4"><rs type="person" key="AdC" role="author">Alvaro de Campos</rs>, <rs type="text">“Arco de Triumpho”</rs><lb/> 
@@ -129,14 +142,6 @@
                   <rs type="text">“Ultimatum”</rs>.<metamark rend="arrow" target="#A1" function="move"><label>?</label></metamark>
                </item>
             </list>
-            <ab>
-               <note xml:id="N1" target="#T1" place="margin right" type="addition">30</note>
-               <note xml:id="N2" target="#T2" place="margin right" type="addition">100</note>
-               <note xml:id="N3" target="#T3" place="margin right" type="addition">20</note>
-               <note xml:id="N4" target="#T4" place="margin right" type="addition">50</note>
-               <note xml:id="N5" target="#T5" place="margin right" type="addition">20</note>
-               <metamark place="margin right" rend="curly bracket" function="grouping" target="range(N1,N5)" />
-            </ab>
          </div>
       </body>
    </text>
