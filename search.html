@@ -4,11 +4,6 @@
     <div class="row-fluid">
         <div id="content" class="span12 main">
             <h2 class="page:singleElement?xmltype=search&amp;xmlid=search_noun"></h2>
-            <style  type="text/css" >
-               
-               
-             
-            </style>
             <script type="text/javascript">
                 function hide(id) {
                     if(document.getElementById(id).style.display == 'none') {
@@ -30,27 +25,16 @@
                  <div class="search_resultList">
                      <div id="tabline">
                          <ul id="tabs">
-                             <li><a href="#alphabetical"><span class="active page:singleElement?xmltype=order&amp;xmlid=alphabetical"></span></a></li>
-                             <li><a href="#chronological"><span class="page:singleElement?xmltype=order&amp;xmlid=chronological"></span></a></li>
+                             <li><a href="#alphabetical" onclick="recorder('alpha')"><span class="active page:singleElement?xmltype=order&amp;xmlid=alphabetical"></span></a></li>
+                             <li><a href="#chronological" onclick="recorder('cronologi')"><span class="page:singleElement?xmltype=order&amp;xmlid=chronological"></span></a></li>
                          </ul>            
                      </div>
                          <h2 class="page:singleElement?xmltype=search&amp;xmlid=results"></h2>
-                         <ul id="tab"> 
-                            <li class="active">
-                                 <div id="alphabetical" class="active">
-                                     <p class="search:profiresult?sel=union&amp;sort=alpha"></p>
-                                 </div>
-                            </li>
-                            <li>
-                                <div id="chronological"> 
-                                     <p class="search:profiresult?sel=union&amp;sort=cronolgi"></p>
-                                </div>
-                             </li>
-                         </ul>
-                       <!-- <div class="search:profiresult?sel=union"/>    -->                                         
+                         <div id="result">
+                            <p class="search:profiresult?sel=union&amp;orderBy=alpha"></p>
+                         </div>
                     </div>
                 </div>
             </div>
         </div>
-   
 </div>
