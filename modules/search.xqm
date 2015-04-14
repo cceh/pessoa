@@ -48,7 +48,6 @@ declare %templates:wrap function search:profisearch($node as node(), $model as m
                         else $dbase
         let $dbase := $r_date
         (: Volltext Suche :)                
-
       (:  let $r_all := ($r_genre,$r_mention,$r_date) :)
        
         return map{
@@ -77,6 +76,22 @@ declare function search:get-parameters($key as xs:string) as xs:string* {
                 else ()
 };
 
+declare function search:mergeParameters () as xs:string {
+    let $term := concat("term:",search:get-parameters("term"))
+    let $after := concat(",after:",search:get-parameters("after"))
+    let $before := concat(",before:",search:get-parameters("before"))
+    let $lang := for $slang in search:get-parameters("lang") return
+                concat(",lang:", $slang)
+    let $lang_ao := concat(",lang_ao:",search:get-parameters("lang_ao"))
+    let $person := for $sperson in search:get-parameters("person") return
+                concat(",person:",$sperson)
+    let $genre := for $sgenre in search:get-parameters("genre") return
+                concat(",genre:",$sgenre)
+    let $role := for $srole in search:get-parameters("role") return
+                concat(",role:",$srole)
+    let $release := concat(",release:",search:get-parameters("release"))
+    return string-join(($term,$after,$before,$lang,$lang_ao,$person,$genre,$role,$release),'')
+};
 (: ODER FUNKTION : FIltert die Sprache, TERM :)
 declare function search:lang_or_term($db as node()*) as node()* {
     for $hit in search:get-parameters("lang")
@@ -230,18 +245,21 @@ declare function search:date_search($db as node()*,$para as xs:string,$date as x
         return util:eval($search_build)
 };
 
+
+
 (: Profi Result :)
-declare function search:profiresult($node as node(), $model as map(*), $sel as xs:string, $sort as xs:string?) as node()+ {
+declare function search:profiresult($node as node(), $model as map(*), $sel as xs:string, $orderBy as xs:string?) as node()+ {
 
 
 if(exists($sel) and $sel = "union") 
     then
     if(exists($model(concat("r_",$sel))))
     then if ($model("query")!="") then 
+    
         for $hit in $model(concat("r_",$sel))
             let $file_name := root($hit)/util:document-name(.)
             let $expanded := kwic:expand($hit)
-            let $sort := if($sort = "cronolgi") then (author:getYearOrTitle($hit,"date"))
+           let $sort := if($orderBy !="alpha") then (author:getYearOrTitle($hit,"date"))
                         else $file_name
             let $title := 
                     if(doc(concat("/db/apps/pessoa/data/doc/",$file_name))//tei:sourceDesc/tei:msDesc) 
@@ -256,6 +274,8 @@ if(exists($sel) and $sel = "union")
             
         else for $hit in $model(concat("r_",$sel))
             let $file_name := root($hit)/util:document-name(.)
+            let $sort := if($orderBy!="alpha") then (author:getYearOrTitle($hit,"date"))
+                        else $file_name
             let $title := 
                     if(doc(concat("/db/apps/pessoa/data/doc/",$file_name))//tei:sourceDesc/tei:msDesc) 
                         then doc(concat("/db/apps/pessoa/data/doc/",$file_name))//tei:msDesc/tei:msIdentifier/tei:idno[1]/data(.)
@@ -292,15 +312,39 @@ if($term and $file and $sel and $sel="text","head","lang")
     else $node
 };
 
-declare function search:search-function($node as node(), $model as map(*)) as node() {
+declare function search:search-function($node as node(), $model as map(*)) as node()+ {
     let $func := "function search()"
-        let $lang := if(request:get-parameter("plang",'')!="") then request:get-parameter("plang",'') else "pt"
-
     return <script> {$func} {{var value = $("#search").val();
-                location.href="{$helpers:app-root}/search?term="+value+"&amp;search=simple&amp;plang={$lang}";
+                location.href="{$helpers:app-root}/search?term="+value+"&amp;search=simple&amp;plang={$helpers:web-language}";
                 }};</script>
 };
+declare function search:recorder() as node() {
+  let $search := if(request:get-parameter("search",'') != "") then request:get-parameter("search",'') else ""
+  let $term := if(request:get-parameter("term",'') != "") then request:get-parameter("term",'') else ""
+  let $parameters := search:mergeParameters() 
+ (:let $sort := if(request:get-parameter("sort",'') != "") then request:get-parameter("term",'') else "alpha":)
+  let $code := if($search != "" and $term != "") then 
+    <script> function recorder(sort) {{
+    $('#result').load('{$helpers:app-root}/search?term={$term}&amp;search={$search}&amp;plang={$helpers:web-language}&amp;orderBy='+sort);
+    $.ajax({{
+    type: "POST",
+    {$parameters}
+    }});
+   alert('{$parameters}');
+  }}
+  </script>
+  else 
+  <script> function recorder(sort) {{
+        $('#result').load('{$helpers:app-root}/search?orderBy='+sort);
+        $.ajax({{
+    type: "POST",
+    {$parameters}
+    }});
+    alert('{$parameters}');
 
+  }}</script>
+  return $code
+};
 declare function search:search-page($node as node(), $model as map(*)) as node()* {
     let $doc := doc('/db/apps/pessoa/data/lists.xml')
     let $filter := 
@@ -360,8 +404,11 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
       
 </form>
 </div>
-    return $filter
+
+    return (search:recorder(),$filter)
 };
+
+
 
 declare function search:page_createInput_item_lang($xmltype as xs:string,$btype as xs:string, $name as xs:string, $value as xs:string*,$doc as node()) as node()* {
     for $id in $value

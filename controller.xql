@@ -8,6 +8,7 @@ declare variable $exist:root external;
 
 import module namespace doc="http://localhost:8080/exist/apps/pessoa/doc" at "modules/doc.xqm";
 import module namespace author="http://localhost:8080/exist/apps/pessoa/author" at "modules/author.xqm";
+import module namespace search="http://localhost:8080/exist/apps/pessoa/search" at "modules/search.xqm";
 
 if ($exist:path eq "/") then
     (: forward root path to index.xql :)
@@ -101,6 +102,11 @@ else if (contains($exist:path, "/$shared/")) then
     </dispatch>
     (:Suche:)
 else if (contains($exist:path, "search")) then
+if(request:get-parameter("orderBy", '') != "") 
+then 
+let $orderBy := request:get-parameter("orderBy", '')
+   return( search:profiresult(<node />, search:profisearch(<node />, map {"test" := "test"}, request:get-parameter("term",'')), "union",$orderBy))
+   else 
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <forward url="{$exist:controller}/search.html" />
         <view>
