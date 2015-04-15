@@ -5,16 +5,16 @@
     <xsl:template match="/">
         <style type="text/css">
             .text h3, .text.edited h3 {margin-bottom: 5px;}
-            .text h2, .text.edited h3 {margin-bottom: 20px;}
+            .text h2, .text.edited h3 {margin-bottom: 20px; text-align: left;}
             div.text {display: inline-block; position: relative; }
-            div.text.bnp-e3-180r {margin: 10px 130px;}
+       
             
             
             .head.text{margin-left: 5px;}
             
             .delSpan{background: -webkit-canvas(lines);  }
-            
-            .item {margin: 10px 0; position: relative;}
+           
+            .item {margin: 15px 0; position: relative;}
             .item .label {padding-right: 1em;}
             .list .item .list .item {margin-left: 2em;}
           
@@ -23,35 +23,41 @@
             .seg {position: relative;}
             
             .choice {position: relative;}
-            .choice .add.below {position: absolute; top: 1em; left: 0; font-size: small; margin-top: 5px;}
+            .choice .add.below {position: absolute; top: 1.5em; left: 0; font-size: small;}
             .choice .add.above {position: absolute; top: -0.8em; left: 0; font-size: small;}
             
             .subst {position: relative;}
-            .subst .add.above {position: absolute; top: -0.5em; left: 0; font-size: small;}
-            .seg .add.above {position: absolute; top: -1em; left: 0; font-size: small; white-space: nowrap;}
+            .subst .add.above {position: absolute; top: -1em; left: 0; font-size: small;}
+            .seg .add.above {position: absolute; top: -0.3em; left: 0; font-size: small; white-space: nowrap; line-height: 0.9em;}
             .seg .add.below {position: absolute; top: 1.5em; left: 0; font-size: small; white-space: nowrap; line-height: 0.9em;}
+            
             .add {top: 0;}
+            
+           
+      
             .seg.variant {color: #47C285;}
             .above { position: relative; top: -0.8em; left: 0; font-size: small;}
             
-            .note.addition {position: absolute;}
-            .note.addition.margin.top.right {top: 20px; right: -100px; font-size: small;}
-            .bnp-e3-180r.note.addition.margin.left {left: -140px; font-size: small; vertical-align: middle; display: inline-block; width: 130px; text-align: right;}
-            .bnp-e3-180r.note.addition.margin.right {right: -140px; font-size: small; vartical-align: middle; display: inline-block; width: 130px;}
+            .note.margin.left {left: -60px; vertical-align: middle; display: inline-block; width: 130px; text-align: right; position: absolute;}
+            .note.addition {position: absolute; font-size: small;}
+            .note.addition.margin.top.right {top: 20px; right: -100px; vertical-align: middle; display: inline-block; width: 130px; text-align: right; font-size:small;}
+            .note.addition.margin.left {left: -140px; vertical-align: middle; display: inline-block; width: 130px; text-align: right;}
+            .note.addition.margin.right {right: -140px;  vertical-align: middle; display: inline-block; width: 130px;}
             .note, .note .label, .note .metamark {vertical-align: middle;}
             
             /* special case 180r */
-            .bnp-e3-180r.note.addition.margin.left .label {text-align: left;}
-            .bnp-e3-180r.note.addition.margin.left .metamark {text-align: right;}
-            .bnp-e3-180r.note.addition.margin.left.r1-3 {top: 70px;}
-            .bnp-e3-180r.note.addition.margin.left.r4-6 {top: 240px;}
-            .bnp-e3-180r.note.addition.margin.right.r1 {top: 80px;}
-            .bnp-e3-180r.note.addition.margin.right.r2-3 {top: 140px;}
-            .bnp-e3-180r.note.addition.margin.right.r4-5 {top: 250px;}
-            .bnp-e3-180r.note.addition.margin.right.r6 {top: 330px;}
-            .bnp-e3-180r.r1-3 .metamark.curly-bracket.left, .bnp-e3-180r.r4-6 .metamark.curly-bracket.left {font-size: 90pt;}
-            .bnp-e3-180r.r2-3 .metamark.curly-bracket.right, .bnp-e3-180r.r4-5 .metamark.curly-bracket.right {font-size: 50pt;}
-            .bnp-e3-180r.r6 .metamark.bracket.right {font-size: 32pt;}
+           
+            .note.addition.margin.left .label {text-align: left; padding:0px;}
+            .note.addition.margin.left .metamark {text-align: right;}
+            .note.addition.margin.left.r1-3 {top: 70px;}
+            .note.addition.margin.left.r4-6 {top: 240px;}
+            .note.addition.margin.right.r1 {top: 80px;}
+            .note.addition.margin.right.r2-3 {top: 140px;}
+            .note.addition.margin.right.r4-5 {top: 250px;}
+            .note.addition.margin.right.r6 {top: 330px;}
+            .r1-3 .metamark.curly-bracket.left, .r4-6 .metamark.curly-bracket.left {font-size: 90pt;}
+            .r2-3 .metamark.curly-bracket.right, .r4-5 .metamark.curly-bracket.right {font-size: 50pt;}
+            .r6 .metamark.bracket.right {font-size: 32pt;}
             .text.edited .note.addition {position: relative; display: block;}
             
             .metamark.line {margin: 2em;}
@@ -63,12 +69,13 @@
             .ex, .supplied {color: purple;}
             
             /* special case 180r */
-            .bnp-e3-180r.metamark.curly-bracket.left, .metamark.bracket.left {margin-left: 5px; text-align: right;}
-            .bnp-e3-180r.metamark.curly-bracket.right, .metamark.bracket.right {margin-right: 5px; text-align: left;}
+            .metamark.curly-bracket.left, .metamark.bracket.left {margin-left: 5px; text-align: right;}
+            .metamark.curly-bracket.right, .metamark.bracket.right {margin-right: 5px; text-align: left;}
             
             .offset {margin-left: 2em;}
             .indent {margin-left: 2em;}
             .right {text-align: right;}
+           
      
 
         </style>
@@ -79,16 +86,31 @@
     <!-- Header & Text -->
     <xsl:template match="teiHeader" />
     <xsl:template match="text">
-            <div class="text">
-            <xsl:if test="@xml:id">
-                <xsl:attribute name="id">
-                    <xsl:value-of select="@xml:id"/>
-                </xsl:attribute>
-            </xsl:if>
-            <xsl:apply-templates/>
-        </div>
+        <xsl:choose>
+            <xsl:when test="//note[@place='margin left']">
+                <div class="text" style="padding-left:100px;">
+                    <xsl:if test="@xml:id">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="@xml:id"/>
+                        </xsl:attribute>
+                    </xsl:if>                   
+                    <xsl:apply-templates/> 
+                </div>
+            </xsl:when>
+            <xsl:otherwise>
+                <div class="text">
+                    <xsl:if test="@xml:id">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="@xml:id"/>
+                        </xsl:attribute>
+                    </xsl:if> 
+                    <xsl:apply-templates/>
+                </div>
+            </xsl:otherwise>
+        </xsl:choose>         
     </xsl:template>
-    
+   
+   
     <!-- Textstruktur -->
     <xsl:template match="head">
         <h2>
@@ -176,11 +198,14 @@
             <xsl:apply-templates />
         </span>
     </xsl:template>
-    <xsl:template match="seg">
+    <xsl:template match="seg">         
         <span>
             <xsl:choose>
                 <xsl:when test="@rend='indent'">
                     <xsl:attribute name="class">seg indent</xsl:attribute>    
+                </xsl:when>
+                <xsl:when test="@rend='right'">
+                    <xsl:attribute name="class">seg right</xsl:attribute>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:attribute name="class">seg</xsl:attribute>
@@ -202,6 +227,12 @@
     <!-- zusätzliche Bemerkungen am Rand -->
     <xsl:template match="note[@type='addition'][@place='margin top right']">
         <span class="note addition margin top right">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+ 
+    <xsl:template match="note[not(@type)][@place='margin left']">
+        <span class="note margin left">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
@@ -258,8 +289,19 @@
     
     <!-- metamarks -->
     
+    <xsl:template match="metamark[@rend='line'][@place='left']">
+        <!--TODO-->
+    </xsl:template>
+    <xsl:template match="metamark[@rend='arrow'][@function='move']">
+        <xsl:variable name="target" select="@target/substring-after(.,'#')"/>
+        <!--TODO-->
+    </xsl:template>
+    
     <xsl:template match="metamark[@function='end'][@rend='line']">
         <div class="metamark line end" title="end">___________</div>
+    </xsl:template>
+    <xsl:template match="metamark[@function='end'][@rend='short line center']">
+        <div class="metamark line end" style="text-align:center;">___________</div>
     </xsl:template>
     <xsl:template match="metamark[@rend='line'][@function='ditto']">
         <span class="metamark line ditto" title="ditto">_______</span>
@@ -353,7 +395,21 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    
+    <xsl:template match="del[following-sibling::add[1][@place ='superimposed']]">
+        <span class="del superimposed">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+    <xsl:template match="del[@rend='overtyped' and following-sibling::add[1][not(@*)]]">
+        <span class="del overtyped">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+    <xsl:template match="del[@rend='overwritten']">
+        <span class="del overwritten">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
     <xsl:template match="delSpan">
         <xsl:variable name="anchorID" select="@spanTo/substring-after(.,'#')" />
         <span class="delSpan">
@@ -368,12 +424,13 @@
     <xsl:template match="subst[del and add/@place] | subst[del and add]">
         <xsl:variable name="place" select="add/@place"/>
         <span class="subst">
-            <span class="del">
+            <xsl:apply-templates/>
+           <!-- <span class="del">
                 <xsl:apply-templates select="del/text()"/>
             </span>
             <span class="add {$place}">
                 <xsl:apply-templates select="add/text()"/>
-            </span>
+            </span>-->
         </span>
     </xsl:template>
     
@@ -391,7 +448,11 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    
+  <xsl:template match="add">
+      <span class="add">
+          <xsl:apply-templates/>
+      </span>
+  </xsl:template>
     
     <xsl:template match="add[@resp]" />
 
