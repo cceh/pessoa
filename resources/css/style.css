@@ -39,7 +39,7 @@ h1 {
     font-size : 25px;
 }
 h2 {
-    font-size: 18pt;
+    font-size: 17pt;
     line-height: 20px;
     margin: 0;
     /*
@@ -60,7 +60,7 @@ p {
     margin-left: auto; 
     margin-right: auto; 
     border: 1px solid #222;
-    width: 1267px; 
+    width: 99%; 
     z-index:0;
 }
 
@@ -141,7 +141,7 @@ header
 {
  width: 824px; 
  margin: -30px auto 0;
- font-size: 17px;
+ font-size: 16px;
  border:0px solid #888;
  background: #990000;
  z-index:1;
@@ -476,13 +476,13 @@ ul#tab li.active {
           -moz-border-radius-bottomright: 5px;
           border-top-right-radius: 5px;
           border-bottom-right-radius: 5px;
-
-          border: solid 0,5px;
+          
+          
           background: #232833;
-          height: 32px;
-          width: 25px;
+          height: 26px;
+          width: 119px;
           color: #4f5b66;
-          opacity: 0;
+          opacity: 1;
           font-size: 10pt;
          
           -webkit-transition: all .55s ease;
@@ -491,12 +491,6 @@ ul#tab li.active {
           -o-transition: all .55s ease;
           transition: all .55s ease;
         }
-        .container-4:hover button.icon, .container-4:active button.icon, .container-4:focus button.icon{
-            outline: none;
-            opacity: 1;
-           margin-left: -20px; 
-          }
-         
           .container-4:hover button.icon:hover{
             background: white;
           }
@@ -578,19 +572,20 @@ position:absolute;
 {
     color: #fff; 
     display: inline-block;
-    padding: 16px 20px 6px 0px; 
+    padding: 16px 20px 6px 0px;
+    font-size: 16px; 
 }
 #navi-elements {
-        padding:0px 0px 7px 40px;    
+        padding:0px 0px 7px 9px;    
         z-index:1;
-
+          
 }
 #footer
 {
     z-index:1;
     width: 1267px; 
     height: 80px; 
-    background: #F3EDE0; 
+    background: #5c5859; 
     margin:0px auto;
 }
 
@@ -646,7 +641,7 @@ position:absolute;
 #nav_documentos {
 }
 .nav_documentos_tab {
-   padding: 3px 25px;
+   padding: 3px 28px;
 }  
 
 .nav_documentos_sub_tab {
@@ -658,7 +653,7 @@ position:absolute;
     
 }
 .nav_obras_tab {
-    padding:3px 25px;
+    padding:4px 28px;
 }
 #nav_genero {
     }
@@ -669,7 +664,7 @@ position:absolute;
     
     }
 .nav_cronologia_tab {
-       padding: 3px 14px;
+       padding: 3px 40px;
 }    
 .nav_cronologia_sub_tab {
 }
@@ -683,7 +678,7 @@ position:absolute;
     
     }
 .nav_projeto_tab {
-    padding: 8px 40px;
+    padding: 6px 12px;
 }
 
 .nav_documentos_sub_tab, .nav_cronologia_sub_tab, .nav_cronologia_sub_ext_tab, .nav_obras_sub_tab {
@@ -715,11 +710,12 @@ nav_documents_sub_tab:hover a, nav_cronologia_sub_tab:hover a, nav_cronologia_su
 #headline {
  margin: 0 auto;
  display:block;
- width:1270px;
+ width:100%;
  }
 #lang 
 {
   margin-top: 30px;
+  margin-right: 10px; 
   float:right;
   display:block;
   color:#990000;  
@@ -727,7 +723,7 @@ nav_documents_sub_tab:hover a, nav_cronologia_sub_tab:hover a, nav_cronologia_su
 
 #article
 {
- border: 5px solid #990000;
+ border: 3px solid #990000;
  min-height: 300px;   
 }
 
@@ -812,7 +808,7 @@ margin-right:2.5px;
 }
 
 #header-image {
-    width:1267px;
+    width:99%;
     height:300px;
     position:absolute;
     z-index:0;
