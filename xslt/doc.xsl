@@ -76,7 +76,7 @@
             .offset {margin-left: 2em;}
             .indent {margin-left: 2em;}
             .right {text-align: right;}
-           
+            .italic {font-style: italic;}
      
 
         </style>
@@ -121,6 +121,14 @@
         <h2>
             <xsl:apply-templates/>
         </h2>
+    </xsl:template>
+    <xsl:template match="seg[@rend='right']">
+           <div class="seg right">
+               <xsl:if test="following-sibling::lb[1]">
+                  <xsl:attribute name="style">top: -1em; margin-bottom: -2em;</xsl:attribute> 
+               </xsl:if>
+               <xsl:apply-templates/>
+           </div>
     </xsl:template>
     <xsl:template match="list/head">
         <xsl:choose>
@@ -188,9 +196,15 @@
         <span class="label">
             <xsl:apply-templates/>
         </span>
-       
     </xsl:template>
-   
+    <xsl:template match="label[lb]">
+        <span class="label">
+            <xsl:apply-templates select="preceding::lb"/>
+        </span>
+        <span class="label">
+            <xsl:apply-templates select="following::lb"/>
+        </span>
+    </xsl:template>
 
  
     <!-- Einrückungen / Ausrichtungen berücksichtigen -->
@@ -308,7 +322,9 @@
     
     
     <!-- metamarks -->
-    
+    <xsl:template match="metamark[@rend='quotes'][@function='ditto']">
+        <div class="metamark quotes ditto" title="ditto" style="display: inline; padding-left: 15px; padding-right: 15px;"> " </div>
+    </xsl:template>
     <xsl:template match="metamark[@rend='line'][@place='left']">
         <!--TODO-->
     </xsl:template>
@@ -536,7 +552,16 @@
      </p>
  </xsl:template>   
 
-  
+<xsl:template match="note[@resp]">
+    <div class="editorial note">
+        <xsl:apply-templates/>
+    </div>
+</xsl:template>
+    <xsl:template match="hi[@rend='italic']">
+        <span class="italic">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
 
   
   
