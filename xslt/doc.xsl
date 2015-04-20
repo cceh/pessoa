@@ -15,7 +15,7 @@
             .delSpan{background: -webkit-canvas(lines);  }
            
             .item {margin: 15px 0; position: relative;}
-            .item .label {padding-right: 1em;}
+            .item .label {padding-right: 1em;display: inline-table;}
             .list .item .list .item {margin-left: 2em;}
           
             .ab {display: inline-block;}
@@ -40,6 +40,7 @@
             
             .note.margin.left {left: -60px; vertical-align: middle; display: inline-block; width: 130px; text-align: right; position: absolute;}
             .note.addition {position: absolute; font-size: small;}
+           
             .note.addition.margin.top.right {top: 20px; right: -100px; vertical-align: middle; display: inline-block; width: 130px; text-align: right; font-size:small;}
             .note.addition.margin.left {left: -140px; vertical-align: middle; display: inline-block; width: 130px; text-align: right;}
             .note.addition.margin.right {right: -140px;  vertical-align: middle; display: inline-block; width: 130px;}
@@ -82,6 +83,10 @@
         <xsl:apply-templates/>
        
     </xsl:template>
+
+ 
+                
+    
     
     <!-- Header & Text -->
     <xsl:template match="teiHeader" />
@@ -166,9 +171,20 @@
         </div>
     </xsl:template>
     
- 
-    
-    <xsl:template match="label">
+    <!-- tabellen  z.B. 48G-33r--> 
+    <xsl:template match="text//table">
+            <xsl:apply-templates/>     
+    </xsl:template>
+    <xsl:template match="table/row">
+        <div class="item">
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    <xsl:template match="cell">
+                <xsl:apply-templates/> 
+        <xsl:text> </xsl:text>
+    </xsl:template>
+        <xsl:template match="label">
         <span class="label">
             <xsl:apply-templates/>
         </span>
@@ -230,7 +246,11 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
- 
+    <xsl:template match="note[@type='addition'][@place='right']">
+        <span class="note addition right">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
     <xsl:template match="note[not(@type)][@place='margin left']">
         <span class="note margin left">
             <xsl:apply-templates/>
@@ -410,13 +430,19 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
+   
+    
     <xsl:template match="delSpan">
         <xsl:variable name="anchorID" select="@spanTo/substring-after(.,'#')" />
-        <span class="delSpan">
-            <xsl:apply-templates select="following-sibling::*[following::anchor[@xml:id=$anchorID]]"/>
-        </span>
-    </xsl:template>
-   
+        <div class="delSpan">
+            <xsl:apply-templates select="following-sibling::*[following::anchor[@xml:id=$anchorID]]">
+                <xsl:with-param name="test"/>
+            </xsl:apply-templates>
+        </div>
+        </xsl:template> 
+
+    
+
    
    
     
