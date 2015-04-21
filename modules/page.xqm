@@ -34,11 +34,15 @@ let $search := <div class="container-4" id="searchbox" style="display:none">
                         </div>      
     let $clear :=  <div class="clear"></div>
     let $switchlang := <script>
-        function switchlang(value){{location.href="{concat($helpers:app-root,substring-after($helpers:request-path,"pessoa/"))}?plang="+value;}}
+        function switchlang(value){{location.href="{$helpers:app-root}/"+value+"{page:checkLanguage()}";}}
     </script>
     return ($search,$clear,$switchlang)
 };
 
+declare function page:checkLanguage() as xs:string {
+    let $return := if(contains($helpers:request-path,$helpers:web-language)) then substring-after($helpers:request-path,$helpers:web-language) else substring-after($helpers:request-path,"pessoa/")
+    return $return
+};
 
 declare function page:createMainNav() as node()* {
 let $type := ("autores","documentos","publicacoes","obras","genero","cronologia","bibliografia","projeto")
@@ -92,7 +96,7 @@ declare function page:createThirdNav($type as xs:string) as node()* {
     else if ($type = "cronologia") then for $date in ("1900 - 1909","1910 - 1919","1920 - 1929","1930 - 1935",(doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item[5]/tei:list/tei:item/tei:term[@xml:lang=$helpers:web-language]/attribute()[2]))
             return if ($date = "timeline" or $date = "#timeline") then
                         <li class="{concat("nav_",$type,"_tab")}">
-                        <a href="{concat($helpers:app-root,"/timeline.html?plang=",$helpers:web-language)}" target="_blank">
+                        <a href="{concat($helpers:app-root,"/timeline.html")}" target="_blank">
                         {doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item[5]/tei:list/tei:item/tei:term[@xml:lang=$helpers:web-language]/data(.)}
                         </a></li>
                     else if(substring-after($date,"19")!= "") then  <li class="{concat("nav_",$type,"_tab")}">
@@ -189,25 +193,25 @@ declare function page:createItem($type as xs:string, $indikator as xs:string?) a
     if($type ="autores")
         then for $pers in doc("/db/apps/pessoa/data/lists.xml")//tei:listPerson[@type="authors"]/tei:person/tei:persName/data(.)
              order by $pers collation "?lang=pt"
-             return <item label="{$pers}" ref="{$helpers:app-root}/author/{tokenize(lower-case($pers), '\s')[last()]}/all" /> 
+             return <item label="{$pers}" ref="{concat($helpers:app-root,'/',$helpers:web-language)}/author/{tokenize(lower-case($pers), '\s')[last()]}/all" /> 
    else if($type = "genero") 
         then for $genre in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="genres"][@xml:lang=$helpers:web-language]/tei:item   
             let $label :=$genre/data(.)
             let $ref := if($helpers:web-language = "pt") then $genre/attribute()
                         else substring-after($genre/attribute(), "#")
             order by $genre collation "?lang=pt" 
-            return <item label="{$label}"  ref="{$helpers:app-root}/page/genre_{$ref}.html" /> 
+            return <item label="{$label}"  ref="{concat($helpers:app-root,'/',$helpers:web-language)}/page/genre_{$ref}.html" /> 
    else if($type = "documentos") 
         then for $hit in xmldb:get-child-resources("/db/apps/pessoa/data/doc")
             let $label :=   if(substring-after($hit, "BNP_E3_") != "") then substring-after(replace(substring-before($hit, ".xml"), "_", " "), "BNP E3 ")
                             else if(substring-after($hit,"MN") != "") then substring-after(replace(substring-before($hit, ".xml"), "_", " "), "MN")
                             else ()
-                let $ref := concat($helpers:app-root, "/doc/", substring-before($hit, ".xml"))         
+                let $ref := concat($helpers:app-root,'/',$helpers:web-language, "/doc/", substring-before($hit, ".xml"))         
                       order by $hit collation "?lang=pt" 
                       return if(substring-after(replace(substring-before($hit, ".xml"), "_", " "), concat("BNP E3 ",$indikator)) 
                       or 
                       substring-after(replace(substring-before($hit, ".xml"), "_", " "), concat("MN",$indikator))) then
-                      <item label="{$label}" ref="{$ref}?plang={$helpers:web-language}"  />
+                      <item label="{$label}" ref="{$ref}"  />
                       else ()
    else if($type = "cronologia")
         then let $date := concat("19",$indikator)
@@ -227,25 +231,25 @@ declare function page:createItem($type as xs:string, $indikator as xs:string?) a
                                            then substring-after(replace(substring-before(root($hit)/util:document-name(.),".xml"),"-", " "),"_"):)
                                   else ()
                     let $ref := if(substring-after(root($hit)/util:document-name(.),"BNP")!= "" or substring-after(root($hit)/util:document-name(.),"MN")!= "") 
-                    then  concat($helpers:app-root, "/doc/", substring-before(root($hit)/util:document-name(.), ".xml"))
-                    else concat($helpers:app-root, "/pub/", substring-before(root($hit)/util:document-name(.), ".xml"))
+                    then  concat($helpers:app-root,'/',$helpers:web-language, "/doc/", substring-before(root($hit)/util:document-name(.), ".xml"))
+                    else concat($helpers:app-root,'/',$helpers:web-language, "/pub/", substring-before(root($hit)/util:document-name(.), ".xml"))
                 return <item label="{$label}" ref="{$ref}"/>
    else if ($type ="bibliografia")
         then for $bibl in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item[6]/tei:list/tei:item/tei:term[@xml:lang=$helpers:web-language]   
             let $label := $bibl/data(.)
             let $ref := if($helpers:web-language = "pt") then $bibl/attribute()[2]
                         else substring-after($bibl/attribute()[2],"#")
-            return <item label="{$label}"  ref="{$helpers:app-root}/page/bibliografia.html?type={$ref}" /> 
+            return <item label="{$label}"  ref="{concat($helpers:app-root,'/',$helpers:web-language)}/page/bibliografia.html?type={$ref}" /> 
    else if ($type = "projeto") 
         then for $projeto in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item[7]/tei:list/tei:item/tei:term[@xml:lang=$helpers:web-language]
             let $label := $projeto/data(.)
                 let $ref := if($helpers:web-language = "pt") then $projeto/attribute()[2]
                             else substring-after($projeto/attribute()[2],"#")
-            return <item label="{$label}"  ref="{$helpers:app-root}/page/porjeto.html?type={$ref}" /> 
+            return <item label="{$label}"  ref="{concat($helpers:app-root,'/',$helpers:web-language)}/page/porjeto.html?type={$ref}" /> 
    else if ($type = "obras")
          then for $works in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="works"]/tei:item[@xml:id=$indikator]/tei:title[@type="alt"]
          let $label := $works/data(.)
-          return <item label="{$label}" ref="{$helpers:app-root}/page/obras.html?type={$indikator}"/>
+          return <item label="{$label}" ref="{concat($helpers:app-root,'/',$helpers:web-language)}/page/obras.html?type={$indikator}"/>
    else for $a in "10" return <item label="nothin" ref="#"/>
 };
 
@@ -441,12 +445,12 @@ declare %templates:wrap function page:docControll($node as node(), $model as map
                     then "doc"
                 else "pub"
     let $arrows := <div>
-                            <a href="{concat($helpers:app-root,'/',$libary,'/',substring-before(root($db[position() = (($index) -1)])/util:document-name(.),".xml"),"?plang=",$helpers:web-language)}">
+                            <a href="{concat($helpers:app-root,'/',$helpers:web-language,'/',$libary,'/',substring-before(root($db[position() = (($index) -1)])/util:document-name(.),".xml"))}">
                                 <span id="back"> 
                                     Back 
                                 </span>
                             </a>
-                            <a href="{concat($helpers:app-root,'/',$libary,'/',substring-before(root($db[position() = (($index) +1)])/util:document-name(.),".xml"),"?plang=",$helpers:web-language)}">
+                            <a href="{concat($helpers:app-root,'/',$helpers:web-language,'/',$libary,'/',substring-before(root($db[position() = (($index) +1)])/util:document-name(.),".xml"))}">
                                 <span id="forward">
                                     Forward
                                 </span>
