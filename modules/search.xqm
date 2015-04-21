@@ -77,19 +77,19 @@ declare function search:get-parameters($key as xs:string) as xs:string* {
 };
 
 declare function search:mergeParameters () as xs:string {
-    let $term := concat("term:",search:get-parameters("term"))
-    let $after := concat(",after:",search:get-parameters("after"))
-    let $before := concat(",before:",search:get-parameters("before"))
+    let $term := concat("&amp;term=",search:get-parameters("term"))
+    let $after := concat("&amp;after=",search:get-parameters("after"))
+    let $before := concat("&amp;before=",search:get-parameters("before"))
     let $lang := for $slang in search:get-parameters("lang") return
-                concat(",lang:", $slang)
-    let $lang_ao := concat(",lang_ao:",search:get-parameters("lang_ao"))
+                concat("&amp;lang=", $slang)
+    let $lang_ao := concat("&amp;lang_ao=",search:get-parameters("lang_ao"))
     let $person := for $sperson in search:get-parameters("person") return
-                concat(",person:",$sperson)
+                concat("&amp;person=",$sperson)
     let $genre := for $sgenre in search:get-parameters("genre") return
-                concat(",genre:",$sgenre)
+                concat("&amp;genre=",$sgenre)
     let $role := for $srole in search:get-parameters("role") return
-                concat(",role:",$srole)
-    let $release := concat(",release:",search:get-parameters("release"))
+                concat("&amp;role=",$srole)
+    let $release := concat("&amp;release=",search:get-parameters("release"))
     return string-join(($term,$after,$before,$lang,$lang_ao,$person,$genre,$role,$release),'')
 };
 (: ODER FUNKTION : FIltert die Sprache, TERM :)
@@ -326,22 +326,12 @@ declare function search:recorder() as node() {
   let $code := if($search != "" and $term != "") then 
     <script> function recorder(sort) {{
     $('#result').load('{$helpers:app-root}/search?term={$term}&amp;search={$search}&amp;plang={$helpers:web-language}&amp;orderBy='+sort);
-    $.ajax({{
-    type: "POST",
-    {$parameters}
-    }});
-   alert('{$parameters}');
   }}
   </script>
   else 
   <script> function recorder(sort) {{
-        $('#result').load('{$helpers:app-root}/search?orderBy='+sort);
-        $.ajax({{
-    type: "POST",
-    {$parameters}
-    }});
-    alert('{$parameters}');
-
+        $('#result').load('{$helpers:app-root}/search?orderBy='+sort+'{$parameters}');
+       
   }}</script>
   return $code
 };

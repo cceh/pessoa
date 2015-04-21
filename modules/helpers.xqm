@@ -10,16 +10,20 @@ module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers";
 import module namespace templates="http://exist-db.org/xquery/templates";
 import module namespace config="http://localhost:8080/exist/apps/pessoa/config" at "config.xqm";
 
+
 (: web-root of the app :)
 declare variable $helpers:app-root := $config:webapp-root;
 (: declare variable $helpers:file-path := $config:file-path; :)
 declare variable $helpers:request-path := $config:request-path;
 declare variable $helpers:webfile-path := $config:webfile-path;
+declare variable $helpers:web-language := if(contains($helpers:request-path,"en")) then "en" else "pt";
+(:
+declare variable $helpers:web-language := ();
 
-declare variable $helpers:web-language := 
     let $lang :=  if(request:get-parameter("plang",'')!="") then request:get-parameter("plang",'') else "pt"
     return $lang
-    ;
+    ; :)
+    
 declare function helpers:app-root($node as node(), $model as map(*)){
  let $elname := $node/node-name(.)
  

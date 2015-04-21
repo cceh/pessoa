@@ -9,18 +9,29 @@ declare variable $exist:root external;
 import module namespace doc="http://localhost:8080/exist/apps/pessoa/doc" at "modules/doc.xqm";
 import module namespace author="http://localhost:8080/exist/apps/pessoa/author" at "modules/author.xqm";
 import module namespace search="http://localhost:8080/exist/apps/pessoa/search" at "modules/search.xqm";
+import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "modules/helpers.xqm";
 
 if ($exist:path eq "/") then
     (: forward root path to index.xql :)
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-        <redirect url="index.html"/>
+        <redirect url="{$helpers:web-language}/index.html"/>
     </dispatch>
-else if (contains($exist:path, "doc/versao-pessoal")) then
+    
+(: Language Notation :)
+
+else if(contains($exist:path,"pt") or contains($exist:path,"en")) then
+    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <forward url="{$exist:controller}/index.html"/>
+        <view>
+            <forward url="{$exist:controller}/modules/view.xql"/>
+        </view>
+    </dispatch>
+else if (contains($exist:path, concat($helpers:web-language, "doc/versao-pessoal"))) then
     let $lb := request:get-parameter("lb", "yes")
     let $abbr := request:get-parameter("abbr", "yes")
     let $id := request:get-parameter("id", ())
     return doc:get-text-pessoal(<node />, map {"test" := "test"}, $id, $lb, $abbr)
-else if (contains($exist:path, "/doc/")) then
+else if (contains($exist:path, concat($helpers:web-language, "/doc/"))) then
     if ($exist:resource = "xml") then
     let $id := substring-before(substring-after($exist:path, "/doc/"), "/xml")
     return
