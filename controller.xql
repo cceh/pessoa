@@ -19,19 +19,12 @@ if ($exist:path eq "/") then
     
 (: Language Notation :)
 
-else if(contains($exist:path,"pt") or contains($exist:path,"en")) then
-    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-        <forward url="{$exist:controller}/index.html"/>
-        <view>
-            <forward url="{$exist:controller}/modules/view.xql"/>
-        </view>
-    </dispatch>
-else if (contains($exist:path, concat($helpers:web-language, "doc/versao-pessoal"))) then
+else if (contains($exist:path,  "doc/versao-pessoal")) then
     let $lb := request:get-parameter("lb", "yes")
     let $abbr := request:get-parameter("abbr", "yes")
     let $id := request:get-parameter("id", ())
     return doc:get-text-pessoal(<node />, map {"test" := "test"}, $id, $lb, $abbr)
-else if (contains($exist:path, concat($helpers:web-language, "/doc/"))) then
+else if (contains($exist:path,  "/doc/")) then
     if ($exist:resource = "xml") then
     let $id := substring-before(substring-after($exist:path, "/doc/"), "/xml")
     return
@@ -42,7 +35,7 @@ else if (contains($exist:path, concat($helpers:web-language, "/doc/"))) then
     (session:set-attribute("id", $exist:resource), 
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <forward url="{$exist:controller}/doc.html">
-            <add-parameter name="id" value="{$exist:resource}" />
+        <add-parameter name="id" value="{$exist:resource}" />
         </forward>
         <view>
             <forward url="{$exist:controller}/modules/view.xql"/>
@@ -89,10 +82,22 @@ else if (contains($exist:path, "/author/")) then
 			<forward url="{$exist:controller}/modules/view.xql"/>
 		</error-handler>
     </dispatch>)
-else if(contains($exist:path, "page/genre_") and request:get-parameter("orderBy","")!="") then
+else if(contains($exist:path, "page/genre_") ) then
+        if(request:get-parameter("orderBy","")!="") then
         let $orderBy := request:get-parameter("orderBy", "alphab")
         let $type := substring-after($exist:path, '/genre_')
         return doc:get-genre(<node />, map {"test" := "test"}, $type, $orderBy)
+        else 
+        <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <forward url="{$exist:controller}/page/{$exist:resource}" />
+        <view>
+            <forward url="{$exist:controller}/modules/view.xql"/>
+        </view>
+		<error-handler>
+			<forward url="{$exist:controller}/error-page.html" method="get"/>
+			<forward url="{$exist:controller}/modules/view.xql"/>
+		</error-handler>
+    </dispatch>
 else if (ends-with($exist:resource, ".html")) then
     (: the html page is run through view.xql to expand templates :)
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
