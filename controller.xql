@@ -18,7 +18,13 @@ if ($exist:path eq "/") then
     </dispatch>
     
 (: Language Notation :)
-
+else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) then
+    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <forward url="{$exist:controller}/index.html" />
+        <view>
+            <forward url="{$exist:controller}/modules/view.xql"/>
+        </view>
+    </dispatch>
 else if (contains($exist:path,  "doc/versao-pessoal")) then
     let $lb := request:get-parameter("lb", "yes")
     let $abbr := request:get-parameter("abbr", "yes")
@@ -118,10 +124,23 @@ else if (contains($exist:path, "/$shared/")) then
     </dispatch>
     (:Suche:)
 else if (contains($exist:path, "search")) then
-if(request:get-parameter("orderBy", '') != "") 
-then 
-let $orderBy := request:get-parameter("orderBy", '')
-   return( search:profiresult(<node />, search:profisearch(<node />, map {"test" := "test"}, request:get-parameter("term",'')), "union",$orderBy))
+    if(request:get-parameter("orderBy", '') != "") 
+    then 
+       let $orderBy := request:get-parameter("orderBy", '')
+       return( search:profiresult(<node />, search:profisearch(<node />, map {"test" := "test"}, request:get-parameter("term",'')), "union",$orderBy))
+   else if (contains($exist:path, "simple"))
+    then 
+        <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+            <forward url="{$exist:controller}/search.html" />
+            <add-parameter name="search" value="simple" />
+            <view>
+                <forward url="{$exist:controller}/modules/view.xql"/>
+            </view>
+            <error-handler>
+                <forward url="{$exist:controller}/error-page.html" method="get"/>
+                <forward url="{$exist:controller}/modules/view.xql"/>
+            </error-handler>
+        </dispatch>
    else 
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <forward url="{$exist:controller}/search.html" />
