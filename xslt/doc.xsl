@@ -75,7 +75,7 @@
             
             .offset {margin-left: 2em;}
             .indent {margin-left: 2em;}
-            .right {text-align: right;}
+            .right {float: right;}
             .italic {font-style: italic;}
      
 
@@ -122,14 +122,9 @@
             <xsl:apply-templates/>
         </h2>
     </xsl:template>
-    <xsl:template match="seg[@rend='right']">
-           <div class="seg right">
-               <xsl:if test="following-sibling::lb[1]">
-                  <xsl:attribute name="style">top: -1em; margin-bottom: -2em;</xsl:attribute> 
-               </xsl:if>
-               <xsl:apply-templates/>
-           </div>
-    </xsl:template>
+   
+    
+   
     <xsl:template match="list/head">
         <xsl:choose>
             <xsl:when test="name(../preceding-sibling::node()[1])='label' and name(../parent::node())='item'">
@@ -255,6 +250,11 @@
     
     
     <!-- zusätzliche Bemerkungen am Rand -->
+    <!--<xsl:template match="note[@place='right']">
+        <span class="note right">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>-->
     <xsl:template match="note[@type='addition'][@place='margin top right']">
         <span class="note addition margin top right">
             <xsl:apply-templates/>
@@ -322,6 +322,12 @@
     
     
     <!-- metamarks -->
+    <xsl:template match="metamark[@rend='line'][@function='assignment']">
+        <div class="metamark line assignment" style="display: inline;">________</div>
+    </xsl:template>
+    <xsl:template match="metamark[@rend='curly bracket'][@function='assignment'][parent::note[@place='right']]">
+        <div class="metamark curly-bracket right assignment" style="font-size: 32pt; font-family: Times; display: inline; margin-left:1em;">}</div>
+    </xsl:template>
     <xsl:template match="metamark[@rend='quotes'][@function='ditto']">
         <div class="metamark quotes ditto" title="ditto" style="display: inline; padding-left: 15px; padding-right: 15px;"> " </div>
     </xsl:template>
