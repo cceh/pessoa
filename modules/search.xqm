@@ -313,10 +313,21 @@ if($term and $file and $sel and $sel="text","head","lang")
 };
 
 declare function search:search-function($node as node(), $model as map(*)) as node()+ {
-    let $func := "function search()"
-    return <script> {$func} {{var value = $("#search").val();
-                location.href="{$helpers:app-root}/search?term="+value+"&amp;search=simple&amp;plang={$helpers:web-language}";
+    let $search := <script>function search() {{var value = $("#search").val();
+                location.href="{$helpers:app-root}/{$helpers:web-language}/simple/search?term="+value;
                 }};</script>
+    let $enter := <script>
+                function test() {{
+                alert("tada");
+                }};
+                $("#search").keypress(function( event ) {{
+                if(event.which == 13) {{
+                event.test();
+                }}
+                
+                }}); </script>
+    
+    return ($search,$enter)
 };
 declare function search:recorder() as node() {
   let $search := if(request:get-parameter("search",'') != "") then request:get-parameter("search",'') else ""
@@ -325,7 +336,7 @@ declare function search:recorder() as node() {
  (:let $sort := if(request:get-parameter("sort",'') != "") then request:get-parameter("term",'') else "alpha":)
   let $code := if($search != "" and $term != "") then 
     <script> function recorder(sort) {{
-    $('#result').load('{$helpers:app-root}/search?term={$term}&amp;search={$search}&amp;plang={$helpers:web-language}&amp;orderBy='+sort);
+    $('#result').load('{$helpers:app-root}/{$helpers:web-language}/search?term={$term}&amp;search={$search}&amp;orderBy='+sort);
   }}
   </script>
   else 
@@ -339,7 +350,7 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
     let $doc := doc('/db/apps/pessoa/data/lists.xml')
     let $filter := 
      <div class="search_filter">
-                       <form class="/helpers:app-root" action="search?plang={$helpers:web-language}" method="post" id="search">
+                       <form class="/helpers:app-root" action="search" method="post" id="search">
                             <!-- Nachher mit class="search:profisearch austauschen -->
             <div class="tab" id="ta_author" onclick="hide('se_author')"><h6>{page:singleAttribute($doc,"search","authors")}</h6>
             </div>

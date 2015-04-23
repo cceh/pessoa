@@ -12,6 +12,7 @@ function u_nav(navID) {
        
        var IDs = new Array ("nav_autores","nav_bibliografia","nav_documentos","nav_documentos_sub",
        "nav_documentos_sub_1","nav_documentos_sub_2","nav_documentos_sub_3","nav_documentos_sub_4","nav_documentos_sub_5","nav_documentos_sub_6","nav_documentos_sub_7","nav_documentos_sub_8","nav_documentos_sub_9",
+    //   "nav_documentos_sub_10","nav_documentos_sub_20","nav_documentos_sub_30","nav_documentos_sub_40","nav_documentos_sub_50","nav_documentos_sub_60","nav_documentos_sub_70","nav_documentos_sub_80","nav_documentos_sub_90",
        "nav_publicacoes",
        "nav_obras",
        "nav_obras_sub",       
