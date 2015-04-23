@@ -18,15 +18,17 @@
     
     <div class="row-fluid">
         <div id="content" class="span12 main">
-            <form method="get">
-                Ordem:<br/>
-                <input id ="date" name="order" type="radio" value="no" onchange="reorder();"></input> cronológico <br/>   
-                <input id="alphab" checked="checked" name="order" type="radio" value="yes" onchange="reorder();"></input> alfabético   
-            </form>
+            <div id="genre-content">
+                <form method="get">
+                    Ordem:<br/>
+                    <input id ="date" name="order" type="radio" value="no" onchange="reorder();"></input> cronológico <br/>   
+                    <input id="alphab" checked="checked" name="order" type="radio" value="yes" onchange="reorder();"></input> alfabético   
+                </form>
             <h2>Documentos - Lista Editorial</h2>
             <div id="genreList" class="span6">
                 <p class="doc:get-genre?type=lista_editorial&amp;orderBy=alphab">genre</p>
             </div>
+            </div>    
         </div>
     </div>
 </div>

@@ -12,9 +12,9 @@ import module namespace author="http://localhost:8080/exist/apps/pessoa/author" 
 
 declare function doc:get-title($node as node(), $model as map(*), $id as xs:string) as node()+{
     let $xml := doc:get-xml($id)
-    let $title := $xml//tei:title/data(.)
-    let $date := <i id="titledate">{$xml//tei:origDate/data(.)}</i>
-    return <h2>{$title} {$date}</h2>
+    let $title := <h2>{$xml//tei:title/data(.)}</h2>
+    let $date := <p id="titledate">{$xml//tei:origDate/data(.)}</p>
+    return <div>{$title} {$date}</div>
 };
 
 declare function doc:get-indexes($node as node(), $model as map(*), $id as xs:string) as item()+{
