@@ -86,6 +86,8 @@ p {
 }
 #content.main {
     padding-top: 20px;
+   /* width: 820px; */
+    margin: 0 auto; 
 }
 .vl {
     border-left: 1px dotted #999999;
@@ -497,15 +499,15 @@ ul#tab li.active {
           }
 /* Search Button End*/
  .search_filter {
-                width:30%;
-                /*background-color:green; */
+                 width:15%;
+                 margin: 5px 0 5px 140px;
                 }
                 
                 .search_resultList {
                 width:60%;
               /*  background-color:red; */
                 }
-                .search_filter,  .search_resultList {
+                .search_resultList {
                 float:left;
                 margin: 5px;
                 
@@ -523,6 +525,7 @@ ul#tab li.active {
                 color: #fff; 
                 border:solid 0.5px;
                 width: 120px;
+                margin: 0 auto; 
                 }                
                 .tab:hover {
                 background-color:#222; 
@@ -534,6 +537,7 @@ ul#tab li.active {
                 display:none;
                 color: #222; 
                 width:180px;
+                margin-bottom: 20px;
                 }
                 .date-field {
                     width: 150px;
@@ -547,7 +551,7 @@ ul#tab li.active {
                 
                 h6 {
                 font-size:16px;
-                text-align: left; 
+                text-align: center; 
                 padding: 5px 0;
                 margin-bottom: 0; 
                 }
@@ -642,7 +646,7 @@ position:absolute;
 #nav_documentos {
 }
 .nav_documentos_tab {
-   padding: 3px 28px;
+   padding: 3px 7px;
 }  
 
 .nav_documentos_sub_tab {
@@ -673,13 +677,13 @@ position:absolute;
     
     }
 .nav_bibliografia_tab {
-    padding: 8px 18px;
+    padding: 8px 12px;
 }    
 #nav_projeto {
     
     }
 .nav_projeto_tab {
-    padding: 6px 12px;
+    padding: 6px 37px;
 }
 
 .nav_documentos_sub_tab, .nav_cronologia_sub_tab, .nav_cronologia_sub_ext_tab, .nav_obras_sub_tab {
@@ -774,7 +778,7 @@ margin-right:2.5px;
  }
  
  #tabline {
-     background-color: #F3EDE0;
+     
  }
  #titledate {
      font-size:12pt;
