@@ -27,7 +27,7 @@
             .choice .add.above {position: absolute; top: -0.8em; left: 0; font-size: small;}
             
             .subst {position: relative;}
-            .subst .add.above {position: absolute; top: -1em; left: 0; font-size: small;}
+            .subst .add.above {position: absolute; top: -1em; left: 0; font-size: small; width: 200px;}
             .seg .add.above {position: absolute; top: -0.3em; left: 0; font-size: small; white-space: nowrap; line-height: 0.9em;}
             .seg .add.below {position: absolute; top: 1.5em; left: 0; font-size: small; white-space: nowrap; line-height: 0.9em;}
             
@@ -45,7 +45,7 @@
             .note.addition.margin.left {left: -140px; vertical-align: middle; display: inline-block; width: 130px; text-align: right;}
             .note.addition.margin.right {right: -140px;  vertical-align: middle; display: inline-block; width: 130px;}
             .note, .note .label, .note .metamark {vertical-align: middle;}
-            
+          
             /* special case 180r */
            
             .note.addition.margin.left .label {text-align: left; padding:0px;}
@@ -62,6 +62,7 @@
             .text.edited .note.addition {position: relative; display: block;}
             
             .metamark.line {margin: 2em;}
+            
             
             .del {text-decoration: line-through;}
             .gap {cursor: pointer;}
@@ -192,14 +193,7 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    <xsl:template match="label[lb]">
-        <span class="label">
-            <xsl:apply-templates select="preceding::lb"/>
-        </span>
-        <span class="label">
-            <xsl:apply-templates select="following::lb"/>
-        </span>
-    </xsl:template>
+   
 
  
     <!-- Einrückungen / Ausrichtungen berücksichtigen -->
@@ -250,11 +244,7 @@
     
     
     <!-- zusätzliche Bemerkungen am Rand -->
-    <!--<xsl:template match="note[@place='right']">
-        <span class="note right">
-            <xsl:apply-templates/>
-        </span>
-    </xsl:template>-->
+  
     <xsl:template match="note[@type='addition'][@place='margin top right']">
         <span class="note addition margin top right">
             <xsl:apply-templates/>
@@ -296,6 +286,7 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
+    
 
  
     
@@ -315,6 +306,17 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
+    <xsl:template match="hi[@rend='red']">
+        <span style="color: red;">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+    <xsl:template match="hi[@rend='underline red']">
+        <span style="text-decoration: underline; color: red;">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+    
 
     
     <!-- editorische Ergänzungen nicht anzeigen -->
@@ -322,6 +324,10 @@
     
     
     <!-- metamarks -->
+    
+    <xsl:template match="metamark[@rend='short line center'][@function='distinct']">
+        <div class="metamark short line center distinct" style="margin: 2em; text-align:center;">_________</div>
+    </xsl:template>
     <xsl:template match="metamark[@rend='line'][@function='assignment']">
         <div class="metamark line assignment" style="display: inline;">________</div>
     </xsl:template>
@@ -357,8 +363,10 @@
             <xsl:otherwise>
                 <div class="metamark line distinct" title="distinct">______________________________________</div>
             </xsl:otherwise>
-        </xsl:choose>
-        
+        </xsl:choose>  
+    </xsl:template>
+    <xsl:template match="metamark[@rend='line'][@function='highlight']">
+        <div class="metamark line highlight" sytle="margin: 0.5em;">______________________________________</div>
     </xsl:template>
     <xsl:template match="metamark[@rend='underline'][@function='distinct']">
         <div class="metamark line distinct" title="distinct">______________________________________</div>
