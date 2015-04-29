@@ -46,6 +46,13 @@ canvas.moveTo( 0,0);
 canvas.lineTo( w, h );
 canvas.stroke();
 
+var canvas2 = document.getCSSCanvasContext("2d", "verticalLine", w, h);
+canvas2.strokeStyle = "rgb(0,0,0)";
+canvas2.beginPath();
+canvas2.moveTo( 0,0);
+canvas2.lineTo( 10,60 );
+canvas2.stroke();
+
 
 }
 
