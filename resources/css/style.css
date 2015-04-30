@@ -41,7 +41,7 @@ h1 {
 h2 {
     font-size: 17pt;
     line-height: 20px;
-    margin: 0;
+    margin: 0 auto 0 auto;
     /*
     margin-bottom: 5px;
     margin-top: 15px;
@@ -320,6 +320,7 @@ border : 1px solid black;
 
 label {
     display:inline;
+    font-weight: 100 !important;
 }
 
 /*Table Style*/ 
@@ -369,6 +370,8 @@ ul#tabs {
     list-style-type: none;
     padding: 0;
     text-align: center;
+      float: left;
+      margin: 0 0 0 12px;
     
 }
 ul#tabs li {
@@ -376,9 +379,9 @@ ul#tabs li {
 }
 ul#tabs span {
     display: inline-block;
-    background-color: #A8A8A8;
+    background-color: #5c5859;
     /*border: 1px solid #d4d4d1;*/
-    padding: 5px 20px;
+    padding: 3px 12px;
     margin-bottom: 4px;
     cursor: pointer;
 }
@@ -395,6 +398,7 @@ ul#tabs span.active {
 ul#tab {
     list-style-type: none;
     padding: 5px;
+      float: left;
    /* border: 1px solid #d4d4d1;  */
 }
 
@@ -407,8 +411,6 @@ ul#tab li {
 ul#tab li.active {
     display: block;
 }
-
-
 
 #genreList a{
     color: #222;
@@ -425,6 +427,10 @@ ul#tab li.active {
 
 /* Search Button*/
 
+#search
+{
+    margin: 0 0 0 5px; 
+}
 
 #searchfield{
     width:824px;
@@ -441,9 +447,9 @@ ul#tab li.active {
             padding: 5px;
             position:absolute;
             z-index:1;
-            margin: -10px 0 0 675px;
-            border:2px solid black;
-    
+            margin: -10px 0 0 674px;
+            border: 1px solid #000; 
+            border-top: none;
             }
             
             .container-4 input#search{
@@ -499,21 +505,23 @@ ul#tab li.active {
           }
 /* Search Button End*/
  .search_filter {
-                 width:15%;
-                 margin: 5px 0 5px 140px;
+                 width:17%;
+                 margin: 5px 0 10px 140px;
+                 border-right: 1px solid #000; 
+                 border-top: 1px solid #000;
+                 display: inline-block;
+                 float: left; 
                 }
                 
                 .search_resultList {
-                width:60%;
-              /*  background-color:red; */
-                }
-                .search_resultList {
+                width:50%; /*60%*/
+                display: inline-block;
                 float:left;
                 margin: 5px;
-                
+                border-top: 1px solid #000; 
                 }
                 .search_resultList a {
-                    color:black;
+                    color:#fff;
                 }
                 .clear
                 {
@@ -525,7 +533,8 @@ ul#tab li.active {
                 color: #fff; 
                 border:solid 0.5px;
                 width: 120px;
-                margin: 0 auto; 
+                margin: 15px auto 0 auto; 
+                cursor:pointer;
                 }                
                 .tab:hover {
                 background-color:#222; 
@@ -537,10 +546,15 @@ ul#tab li.active {
                 display:none;
                 color: #222; 
                 width:180px;
-                margin-bottom: 20px;
+                margin-bottom: 23px;
+                margin-left: auto; 
+                margin-right: 14px; 
+                padding: 1px 5px; 
                 }
                 .date-field {
-                    width: 150px;
+                    width: 135px;
+                    height: 34px;
+                    margin: 2px 17px;
                 }
                 .role_input-box, .release_input-box, .lang_input-box {
                     margin-left:5px !important;
@@ -550,17 +564,37 @@ ul#tab li.active {
                 }
                 
                 h6 {
-                font-size:16px;
+                font-size:15px;
                 text-align: center; 
                 padding: 5px 0;
                 margin-bottom: 0; 
+                margin-top: 0; 
                 }
+                
+                #spezsearch
+                {
+                    width: 178px;
+                    margin-left: 14px;
+                }
+                #spezsearchbutton
+                {
+                    margin-left: 55px;
+                }
+                
                 
 .selectsearch
 {
     margin: 10px 0 0 5px; 
+    height: 100px !important;
 }
-                
+      
+#result
+{
+    text-align: center; 
+    margin-top: 10px; 
+}
+
+      
 #title
 {            
  width: 490px; 
@@ -833,4 +867,11 @@ margin-right:2.5px;
     width: 125px; 
     height: 25px;
     display: block; 
+    margin: 0 0 0 5px; 
 }
+
+#date, #alphab
+{
+    margin-left: 5px !important; 
+}
+
