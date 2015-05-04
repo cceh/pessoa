@@ -53,7 +53,11 @@ canvas2.moveTo( 0,0);
 canvas2.lineTo( 10,60 );
 canvas2.stroke();
 
-
+var canvas3 = document.getCSSCanvasContext("2d", "circle", w, h);
+canvas3.strokeStyle = "rgb(0,0,0)";
+canvas3.beginPath();
+canvas3.arc(12,12,12,0,2*Math.PI);
+canvas3.stroke();
 }
 
     </script>
