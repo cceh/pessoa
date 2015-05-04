@@ -545,7 +545,9 @@
             </xsl:apply-templates>
         </div>
         </xsl:template> 
-
+    
+   <!-- <xsl:template match="*[preceding-sibling::delSpan][following::anchor[@xml:id=current()/preceding-sibling::delSpan/@spanTo/substring-after(.,'#')]]" priority="100"/>
+-->
     
 
    
