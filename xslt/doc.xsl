@@ -20,23 +20,25 @@
             .note.addition.margin.left {left: -35em;}
             .note-label.margin.left {padding: 0px;}
             
-            /*metamarks (in notes)*/  
+            /*metamarks*/
+            .metamark {cursor: pointer;}
+            
             .metamark.bracket {font-size: 32pt; font-family: Times; vertical-align: middle; float:none;}
             .metamark.curly-bracket {font-size: 32pt; font-family: Times; vertical-align: middle; float: none;}
             .metamark.curly-bracket.grouping.right {float: none;  right: -150px vertical-align: middle;}
-            
+         
             .metamark.line.assignment {display:inline;}
+            .metamark.short.line.center {margin: 2em; text-align:center;}
+            .metamark.line.highlight {margin: 0.5em;}
+            
             
             .red {color: red;}
             
-            
-            
- 
-         
-            
             .delSpan{background: -webkit-canvas(lines);  }
             .verticalLine {background: -webkit-canvas(verticalLine); display: inline-table; margin-left:110px; width:10px; height:60px;}
-           
+            .circled {background: -webkit-canvas(circle); width:25px; height:25px;}
+            
+            
            
             
            
@@ -66,7 +68,7 @@
             .del {text-decoration: line-through;}
             .gap {cursor: pointer;}
             .supplied {cursor: pointer;}
-            .metamark {cursor: pointer;}
+            
             .ex, .supplied {color: purple;}
             
             
@@ -116,7 +118,11 @@
             <xsl:apply-templates/>
         </h2>
     </xsl:template>
-   
+    <xsl:template match="head[hi[@rend='underline center']]">
+       <h2 style="text-align: center;">
+           <xsl:apply-templates/>
+       </h2> 
+    </xsl:template>
     <xsl:template match="list/head">
         <h2>
             <xsl:if test="name(../preceding-sibling::node()[1])='label' and name(../parent::node())='item'">
@@ -244,55 +250,56 @@
     </xsl:template>
     
     <xsl:template match="metamark[@rend='short line center'][@function='distinct']">
-        <div class="metamark short line center distinct" style="margin: 2em; text-align:center;">_________</div>
+        <div class="metamark short line center" title="distinct">_________</div>
     </xsl:template>
     
     <xsl:template match="metamark[@rend='short line center red'][@function='distinct']">
-        <div class="metamark short line center distinct red" style="margin: 2em; text-align:center;">_________</div>
+        <div class="metamark short line center red" title="distinct">_________</div>
     </xsl:template>
     
     <xsl:template match="metamark[@rend='line'][@place='left']">
-        <div class="verticalLine">      </div>
+        <div class="verticalLine" title="left">      </div>
     </xsl:template>
     
+    <!-- TODO -->
     <xsl:template match="metamark[@function='end'][@rend='line']">
         <div class="metamark line end" title="end">___________</div>
     </xsl:template>
     
     <xsl:template match="metamark[@function='end'][@rend='short line center']">
-        <div class="metamark line end" style="text-align:center;">___________</div>
+        <div class="metamark short line center" title="end">___________</div>
     </xsl:template>
     
     <xsl:template match="metamark[@rend='line'][@function='ditto']">
-        <span class="metamark line ditto" title="ditto">_______</span>
+        <span class="metamark line" title="ditto">_______</span>
     </xsl:template>
     
     <xsl:template match="metamark[@rend='line'][@function='distinct']">
         <xsl:choose>
             <xsl:when test="label[@rend='right']">
                 <xsl:variable name="label" select="label/data(.)"/>
-                <div class="metamark line distinct" title="distinct">______________________________________<xsl:value-of select="$label"/></div> 
+                <div class="metamark line" title="distinct" style="margin-bottom: 15px;">______________________________________<xsl:value-of select="$label"/></div> 
             </xsl:when>
             <xsl:otherwise>
-                <div class="metamark line distinct" title="distinct">______________________________________</div>
+                <div class="metamark line" title="distinct" style="margin-bottom: 15px;">______________________________________</div>
             </xsl:otherwise>
         </xsl:choose>  
     </xsl:template>
     
     <xsl:template match="metamark[@rend='line red'][@function='distinct']">
-        <div class="metamark line distinct red" title="distinct">______________________________________</div>
+        <div class="metamark line red" title="distinct">______________________________________</div>
     </xsl:template>
     
     <xsl:template match="metamark[@rend='line'][@function='highlight']">
-        <div class="metamark line highlight" sytle="margin: 0.5em;">______________________________________</div>
+        <div class="metamark line highlight">______________________________________</div>
     </xsl:template>
     
     <xsl:template match="metamark[@rend='underline'][@function='distinct']">
-        <div class="metamark line distinct" title="distinct">______________________________________</div>
+        <div class="metamark underline" title="distinct">______________________________________</div>
     </xsl:template>
     
     <xsl:template match="metamark[@rend='double line'][@function='distinct']">
-        <div class="metamark line distinct" title="distinct">
+        <div class="metamark double line" title="distinct" style="margin-bottom: 15px;">
             ______________________________________<br/>
             ______________________________________
         </div>
@@ -303,11 +310,18 @@
         <div class="metamark quotes ditto" title="ditto" style="display: inline; padding-left: 15px; padding-right: 15px;"> " </div>
     </xsl:template>
     
+    <!--Pfeile-->
+
     
     
     <!-- Hervorhebungen -->
     <xsl:template match="hi[@rend='underline']">
         <span style="text-decoration: underline;">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+    <xsl:template match="hi[@rend='underline center']">
+        <span style="text-decoration: underline; text-align: center;">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
@@ -330,6 +344,11 @@
         <span style="font-style: italic;">
             <xsl:apply-templates/>
         </span>
+    </xsl:template>
+    <xsl:template match="hi[@rend='circled']">
+        <div class="circled">
+            <xsl:apply-templates/>
+        </div>
     </xsl:template>
     
     <!-- Personen, Orte, etc. -->
@@ -541,7 +560,6 @@
         <xsl:variable name="anchorID" select="@spanTo/substring-after(.,'#')" />
         <div class="delSpan">
             <xsl:apply-templates select="following-sibling::*[following::anchor[@xml:id=$anchorID]]">
-                <xsl:with-param name="test"/>
             </xsl:apply-templates>
         </div>
         </xsl:template> 
