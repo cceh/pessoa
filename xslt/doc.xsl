@@ -6,8 +6,8 @@
         <style type="text/css">
             /*Textstruktur*/
              div.text {display: inline-block; position: relative; }
-            .text h2 {margin-bottom: 20px; text-align: left;}
-            .item {margin: 15px 0; position: relative;}
+            .text h2 {margin-bottom: 20px; margin-top: 20px; text-align:left;}
+            .item {margin-bottom: 20px; position: relative;}
             .item .label {padding-right: 1em;display: inline-table;}
             .list .item .list .item {margin-left: 2em;}
             
@@ -30,47 +30,45 @@
             .metamark.line.assignment {display:inline;}
             .metamark.line.highlight {margin: 0.5em;}
             .metamark.quotes.ditto {display: inline; padding-left: 15px; padding-right: 15px;}
-            .metamark.line.distinct {margin-bottom:15px; text-align:center;}
-            .metamark.line.end {margin-bottom:15px; text-align:center;}
-            
+            .metamark.line.distinct {margin-bottom:20px; text-align:center; line-height: 50%}
+            .metamark.line.end {margin-bottom:20px; text-align:center; line-height:50%}
+            .metamark.double.line{margin-bottom:20px; text-align:center; line-height: 50%;} 
             
             .red {color: red;}
             .offset {margin-left: 2em;}
             .indent {margin-left: 2em;}
-            .right {float: right;}     
+            .right {float: right;}   
+            .left {float: left;}
+            .center {text-align: center;}
             
             .delSpan{background: -webkit-canvas(lines);  }
             .verticalLine {background: -webkit-canvas(verticalLine); display: inline-table; margin-left:110px; width:10px; height:60px;}
             .circled {background: -webkit-canvas(circle); width:25px; height:25px;}
 
-          
+            p {font-size: 16px;}
+            
             .ab {display: inline-block;}
-            .ab.right {float: right;}
+  
             .seg {position: relative;}
+           /* .seg.add.below {position: absolute; top: -0.8em; left: 0; font-size: small; width:200%;} */
             
             .choice {position: relative;}
-            .choice .add.below {position: absolute; top: 1.5em; left: 0; font-size: small;}
-            .choice .add.above {position: absolute; top: -0.8em; left: 0; font-size: small;}
-            
+            /*.choice .add.below {position: absolute; top: 1.5em; left: 0; font-size: small;}*/
+        
             .subst {position: relative;}
-            .subst .add.above {position: absolute; top: -1em; left: 0; font-size: small; width: 200px;}
-            .seg .add.above {position: absolute; top: -0.3em; left: 0; font-size: small; white-space: nowrap; line-height: 0.9em;}
-            .seg .add.below {position: absolute; top: 1.5em; left: 0; font-size: small; white-space: nowrap; line-height: 0.9em;}
-            
+          
+          /*  .add.below {position: absolute; top: 1.5em; left: -20px; font-size: small; width:200%} */
             .add {top: 0;}
-            
-           
-      
-            .seg.variant {color: #47C285;}
-            .above { position: relative; top: -0.8em; left: 0; font-size: small;}
+    
+            .above { position: absolute; top: -0.8em; left: 0; font-size: small; width:200%;}
+            .below{position: absolute; top: 1.5em; left: 0px; font-size: small; width:200%}
             
            
            
             .del {text-decoration: line-through;}
             .gap {cursor: pointer;}
-            .supplied {cursor: pointer;}
-            
-            .ex, .supplied {color: purple;}
+            .supplied {cursor: pointer;}           
+          /*  .ex, .supplied {color: purple;} */
             
             
             
@@ -109,11 +107,20 @@
             </xsl:otherwise>
         </xsl:choose>         
     </xsl:template>
+    
+    <xsl:template match="div[@rend='text-center']">
+        <div class ="div center">
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
    
    
     <!-- Textstruktur -->
     <xsl:template match="head">
         <h2>
+            <xsl:if test="ancestor::*[@rend='text-center']">
+                <xsl:attribute name="style">text-align: center;</xsl:attribute>
+            </xsl:if>
             <xsl:apply-templates/>
         </h2>
     </xsl:template>
@@ -148,6 +155,11 @@
             <xsl:apply-templates/>
         </div>
     </xsl:template> 
+    <xsl:template match="label[seg[add[@place]]]">
+        <span class="label" style="margin-bottom: 10px;">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
     
     <!-- zusätzliche Bemerkungen am Rand -->
     
@@ -169,6 +181,12 @@
             <xsl:if test="child::label[1]">
                 <xsl:attribute name="style">left: -100px;</xsl:attribute>
             </xsl:if>
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+    
+    <xsl:template match="note[@type='addition'][@place='right']">
+        <span class="note addition right">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
@@ -252,18 +270,25 @@
     </xsl:template>
     <xsl:template match="metamark[@rend='line'][@function='distinct']">
         <xsl:choose>
-            <xsl:when test="label[@rend='right']">
+            <xsl:when test="label[@place='right'][@rend='red']">
                 <xsl:variable name="label" select="label/data(.)"/>
-                <div class="metamark line distinct">_______________________<xsl:value-of select="$label"/></div> 
+                <div class="metamark line distinct">_______________________<span style="color: red;"><xsl:value-of select="$label"/></span></div> 
             </xsl:when>
             <xsl:otherwise>
                 <div class="metamark line distinct">_______________________</div>
             </xsl:otherwise>
         </xsl:choose>  
     </xsl:template>  
-    <xsl:template match="metamark[@rend='line'][@function='ditto']">
+    <xsl:template match="choice/abbr/metamark[@rend='line'][@function='ditto']">
+        <xsl:variable name="expan" select="following::expan[1]/data(.)"/>
+        <xsl:variable name="size" select='count($expan)'/>
+        <span class="metamark line ditto">
+            <xsl:for-each select="0 to string-length($expan)">_</xsl:for-each>
+        </span>
+    </xsl:template>
+    <!--<xsl:template match="metamark[@rend='line'][@function='ditto']">
         <span class="metamark line ditto">_______</span>
-    </xsl:template> 
+    </xsl:template> -->
     <xsl:template match="metamark[@rend='line red'][@function='distinct']">
         <div class="metamark line distinct red">_______________________</div>
     </xsl:template> 
@@ -285,6 +310,9 @@
     
     <!--quotes-->
     <xsl:template match="metamark[@rend='quotes'][@function='ditto']">
+        <div class="metamark quotes ditto"> " </div>
+    </xsl:template>
+    <xsl:template match="metamark[@rend='quotation marks'][@function='ditto']">
         <div class="metamark quotes ditto"> " </div>
     </xsl:template>
     
@@ -430,14 +458,20 @@
     </xsl:template>
     
     <!-- Auflösungen von Abkürzungen nicht anzeigen -->
-    <xsl:template match="expan" />
+    <xsl:template match="expan">
+        <xsl:text> </xsl:text>
+    </xsl:template>
     
     <!-- gaps -->
     <xsl:template match="gap[@reason='selection']">
         <span class="gap" title="selection">[...]</span>
     </xsl:template>
     
-    <!-- del -->
+
+        
+
+    
+    <!-- del - -->
     <xsl:template match="del[gap]">
         <span class="del">
             [<xsl:value-of select="for $c in (1 to gap/@quantity) return '?'"/>]
@@ -445,7 +479,7 @@
     </xsl:template>
     <xsl:template match="del">
         <span class="del">
-            <xsl:apply-templates/>
+            <xsl:apply-templates/>          
         </span>
     </xsl:template>
     <xsl:template match="del[following-sibling::add[1][@place ='superimposed']]">
@@ -462,7 +496,16 @@
         <span class="del overwritten">
             <xsl:apply-templates/>
         </span>
+    </xsl:template> 
+    
+    <!-- subst -->
+    <xsl:template match="subst[del and add]">
+        <span class="subst">
+            <xsl:apply-templates/>
+        </span>
     </xsl:template>
+    
+    
     
     
     <!-- tabellen  z.B. 48G-33r--> 
@@ -497,6 +540,9 @@
                 <xsl:when test="@rend='right'">
                     <xsl:attribute name="class">seg right</xsl:attribute>
                 </xsl:when>
+                <xsl:when test="@rend='left'">
+                    <xsl:attribute name="class">seg left</xsl:attribute>
+                </xsl:when>
                 <xsl:otherwise>
                     <xsl:attribute name="class">seg</xsl:attribute>
                 </xsl:otherwise>
@@ -515,31 +561,7 @@
     
  
     
-    
-   
-   
 
-    
-   
-    
-    
-      
-
-   
-
-   
-   
-    
- 
-    
-   
-    
-
-    
-   
-    
-   
-   
     
     <xsl:template match="delSpan">
         <xsl:variable name="anchorID" select="@spanTo/substring-after(.,'#')" />
@@ -556,30 +578,12 @@
    
    
     
-    <!-- subst -->
-    <xsl:template match="subst[del and add/@place] | subst[del and add]">
-        <xsl:variable name="place" select="add/@place"/>
-        <span class="subst">
-            <xsl:apply-templates/>
-           <!-- <span class="del">
-                <xsl:apply-templates select="del/text()"/>
-            </span>
-            <span class="add {$place}">
-                <xsl:apply-templates select="add/text()"/>
-            </span>-->
-        </span>
-    </xsl:template>
-    
-
+   
    
     
     <!-- add -->
-    <xsl:template match="add[@place='above'][not(ancestor::choice)]">
-        <span class="add above">
-            <xsl:apply-templates/>
-        </span>
-    </xsl:template>
-    <xsl:template match="add[@place='below'][not(ancestor::choice)]">
+   
+    <xsl:template match="add[@place='below'][not(ancestor::choice)][not(ancestor::subst)]">
         <span class="add below">
             <xsl:apply-templates/>
         </span>
@@ -589,6 +593,11 @@
           <xsl:apply-templates/>
       </span>
   </xsl:template>
+    <xsl:template match="add[@place='above']">
+        <span class=" add above">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
     
     <xsl:template match="add[@resp]" />
 
@@ -618,8 +627,12 @@
      </p>
  </xsl:template>   
 
-
-    
+<!-- special case 87-68r-->
+    <xsl:template match="text[@xml:id='bnp-e3-87-68r']//ab[@rend='right']" priority="1" >
+        <div class ="ab right">
+        <xsl:apply-templates/>
+        </div><br/>
+    </xsl:template>
 
   
   
