@@ -88,14 +88,18 @@ else if (contains($exist:path, "/author/")) then
 			<forward url="{$exist:controller}/modules/view.xql"/>
 		</error-handler>
     </dispatch>)
-else if(contains($exist:path, "page/genre_") ) then
-        if(request:get-parameter("orderBy","")!="") then
-        let $orderBy := request:get-parameter("orderBy", "alphab")
-        let $type := substring-after($exist:path, '/genre_')
+else if(contains($exist:path, "page/genre") ) then
+        if(request:get-parameter("orderBy",'') ) then
+        let $orderBy := request:get-parameter("orderBy", '')
+        let $type := $exist:resource
         return doc:get-genre(<node />, map {"test" := "test"}, $type, $orderBy)
-        else 
+        else (
+        session:set-attribute("type",$exist:resource),
+        session:set-attribute("orderBy","alphab"),
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-        <forward url="{$exist:controller}/page/{$exist:resource}" />
+        <forward url="{$exist:controller}/page/genre.html" />
+        <add-parameter name="type" value="{$exist:resource}" />
+        <add-parameter name="orderBy" value="alphab"/>
         <view>
             <forward url="{$exist:controller}/modules/view.xql"/>
         </view>
@@ -104,6 +108,23 @@ else if(contains($exist:path, "page/genre_") ) then
 			<forward url="{$exist:controller}/modules/view.xql"/>
 		</error-handler>
     </dispatch>
+)
+else if(contains($exist:path,"page/bibliografia")) then
+let $type :=$exist:resource
+return (
+    session:set-attribute("type",$type),
+    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <forward url="{$exist:controller}/page/bibliografia.html" />
+        <add-parameter name="type" value="{$type}" />
+        <view>
+            <forward url="{$exist:controller}/modules/view.xql"/>
+        </view>
+		<error-handler>
+			<forward url="{$exist:controller}/error-page.html" method="get"/>
+			<forward url="{$exist:controller}/modules/view.xql"/>
+		</error-handler>
+    </dispatch>
+)
 else if (ends-with($exist:resource, ".html")) then
     (: the html page is run through view.xql to expand templates :)
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">

@@ -30,17 +30,23 @@ declare function page:construct_search() as node()* {
 let $search := <div class="container-4" id="searchbox" style="display:none">
                             <input type="search" id="search" placeholder="{concat(page:singleAttribute(doc("/db/apps/pessoa/data/lists.xml"),"search","search_verb"),"....")}" />
                             <button class="icon2" id="button2" onclick="search()">Go</button>
-                            <a class="small_text">{page:singleAttribute(doc("/db/apps/pessoa/data/lists.xml"),"search","search_noun_ext")}</a>
+                            <a class="small_text" id="search-link">{page:singleAttribute(doc("/db/apps/pessoa/data/lists.xml"),"search","search_noun_ext")}</a>
                         </div>      
     let $clear :=  <div class="clear"></div>
     let $switchlang := <script>
-        function switchlang(value){{location.href="{$helpers:app-root}/"+value+"/{substring-after($helpers:request-path,concat($helpers:web-language,"/"))}";}}
+        function switchlang(value){{location.href="{$helpers:app-root}/"+value+"/{substring-after($helpers:request-path,concat("/",$helpers:web-language,"/"))}";}}
     </script>
     return ($search,$clear,$switchlang)
 };
 
+(:
 declare function page:checkLanguage() as xs:string {
-    let $return := if(contains($helpers:request-path,$helpers:web-language)) then substring-after($helpers:request-path,$helpers:web-language) else substring-after($helpers:request-path,"pessoa/")
+    let $return := if(contains($helpers:request-path,$helpers:web-language)) then substring-after($helpers:request-path,concat("/",$helpers:web-language,"/" )) else substring-after($helpers:request-path,"pessoa/")
+    return $return
+};
+:)
+declare function page:checkLanguage() as xs:string {
+    let $return := substring-after($helpers:request-path,concat("pessoa/",$helpers:web-language,"/" )) 
     return $return
 };
 
@@ -202,7 +208,7 @@ declare function page:createItem($type as xs:string, $indikator as xs:string?) a
             let $ref := if($helpers:web-language = "pt") then $genre/attribute()
                         else substring-after($genre/attribute(), "#")
             order by $genre collation "?lang=pt" 
-            return <item label="{$label}"  ref="{concat($helpers:app-root,'/',$helpers:web-language)}/page/genre_{$ref}.html" /> 
+            return <item label="{$label}"  ref="{concat($helpers:app-root,'/',$helpers:web-language)}/page/genre/{$ref}" /> 
    else if($type = "documentos") 
         then for $hit in xmldb:get-child-resources("/db/apps/pessoa/data/doc")
             
@@ -236,7 +242,7 @@ declare function page:createItem($type as xs:string, $indikator as xs:string?) a
             let $label := $bibl/data(.)
             let $ref := if($helpers:web-language = "pt") then $bibl/attribute()[2]
                         else substring-after($bibl/attribute()[2],"#")
-            return <item label="{$label}"  ref="{concat($helpers:app-root,'/',$helpers:web-language)}/page/bibliografia.html?type={$ref}" /> 
+            return <item label="{$label}"  ref="{concat($helpers:app-root,'/',$helpers:web-language)}/page/bibliografia/{$ref}" /> 
    else if ($type = "projeto") 
         then for $projeto in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item/tei:list[@type="projeto"]/tei:item/tei:term[@xml:lang=$helpers:web-language]
             let $label := $projeto/data(.)
