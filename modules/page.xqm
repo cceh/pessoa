@@ -30,25 +30,15 @@ declare function page:construct_search() as node()* {
 let $search := <div class="container-4" id="searchbox" style="display:none">
                             <input type="search" id="search" placeholder="{concat(page:singleAttribute(doc("/db/apps/pessoa/data/lists.xml"),"search","search_verb"),"....")}" />
                             <button class="icon2" id="button2" onclick="search()">Go</button>
-                            <a class="small_text" id="search-link">{page:singleAttribute(doc("/db/apps/pessoa/data/lists.xml"),"search","search_noun_ext")}</a>
+                            <a class="small_text" id="search-link" href="{$helpers:app-root}/search">{page:singleAttribute(doc("/db/apps/pessoa/data/lists.xml"),"search","search_noun_ext")}</a>
                         </div>      
     let $clear :=  <div class="clear"></div>
     let $switchlang := <script>
-        function switchlang(value){{location.href="{$helpers:app-root}/"+value+"/{substring-after($helpers:request-path,concat("/",$helpers:web-language,"/"))}";}}
+        function switchlang(value){{location.href="{$helpers:app-root}/"+value+"/{substring-after($config:request-path,concat("/",$helpers:web-language,"/"))}";}}
     </script>
-    return ($search,$clear,$switchlang)
+    return ($search,$clear,$switchlang, search:search-function())
 };
 
-(:
-declare function page:checkLanguage() as xs:string {
-    let $return := if(contains($helpers:request-path,$helpers:web-language)) then substring-after($helpers:request-path,concat("/",$helpers:web-language,"/" )) else substring-after($helpers:request-path,"pessoa/")
-    return $return
-};
-:)
-declare function page:checkLanguage() as xs:string {
-    let $return := substring-after($helpers:request-path,concat("pessoa/",$helpers:web-language,"/" )) 
-    return $return
-};
 
 declare function page:createMainNav() as node()* {
 let $type := ("autores","documentos","publicacoes","obras","genero","cronologia","bibliografia","projeto")
@@ -75,7 +65,7 @@ declare function page:createSubNavTabs($tab as xs:string) as node()* {
             {page:createContent($tab)}
             </ul>
         </div>
-    let $ThirdNav := if($tab = "documentos" or $tab = "cronologia" or $tab = "obras") then
+    let $ThirdNav := if($tab = "documentos" or $tab = "cronologia" or $tab = "obras" or $tab ="publicacoes") then
             <div class="navbar" id="{concat("nav_",$tab,"_sub")}" style="display:none" > 
                 {page:createThirdNavTab($tab)}
             </div>
@@ -83,7 +73,7 @@ declare function page:createSubNavTabs($tab as xs:string) as node()* {
         return ($SubNav,$ThirdNav)
 };
 declare function page:createContent($type as xs:string) as node()* {
-    if($type != "documentos" and $type != "cronologia" and $type != "obras") then
+    if($type != "documentos" and $type != "cronologia" and $type != "obras" and $type != "publicacoes") then
         for $item in page:createItem($type,"")
         return <li class="{concat("nav_",$type,"_tab")}" ><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></li>
     else  let $result := page:createThirdNav($type)
@@ -99,7 +89,6 @@ declare function page:createThirdNav($type as xs:string) as node()* {
             onclick="u_nav({concat("'nav_",$type,"_sub_",$nr,"'")})">
             {concat($nr,"0")}
             </a></li>
-    
     else if ($type = "cronologia") then 
     for $date in ("1900 - 1909","1910 - 1919","1920 - 1929","1930 - 1935", (doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item/tei:list[@type="cronologia"]/tei:item/tei:term[@xml:lang=$helpers:web-language]/data(.)))
             return if (contains($date, "1") != xs:boolean("true") ) then
@@ -116,27 +105,39 @@ declare function page:createThirdNav($type as xs:string) as node()* {
     else if ($type = "obras") then for $works in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="works"]/tei:item 
        return  <li class="{concat("nav_",$type,"_tab")}">
             <a href="#"
-            onclick="u_nav({concat("'nav_",$type,"_sub_",$works/attribute(),"'" )})">
+            onclick="u_nav({concat(" 'nav_",$type,"_sub_",$works/attribute(),"'" )})">
             {$works/tei:title[1]/data(.)}
             </a></li>
+    else if ($type ="publicacoes") then for $authors in doc("/db/apps/pessoa/data/lists.xml")//tei:listPerson[@type="authors"]/tei:person
+        return <li class="{concat("nav_",$type,"_tab")}">
+                    <a href="#"
+                    onclick="u_nav({concat(" 'nav_",$type,"_sub_",$authors/attribute(),"'" )})">
+                    {$authors/tei:persName/data(.)}
+                    </a>
+                    </li>
     else ()
 };
 
 declare function page:createThirdNavTab($type as xs:string) as node()* {
    if ($type = "documentos") then for $indikator in (1 to 9, "10","20","30","40","50","60","70","80","90") return
           <div  id="{concat("nav_",$type,"_sub_",$indikator)}" style="display:none"> 
-          <ul class="nav_sub_tabs">
-          {page:createThirdNavContent($type,$indikator)}
+            <ul class="nav_sub_tabs">
+            {page:createThirdNavContent($type,$indikator)}
          </ul>   </div>
     else if ($type = "cronologia") then for $indikator in (0 to 3) return 
          <div  id="{concat("nav_",$type,"_sub_",$indikator)}" style="display:none"> 
-         <ul class="nav_sub_tabs">        
-        {page:createThirdNavContent($type,$indikator)}
+            <ul class="nav_sub_tabs">        
+           {page:createThirdNavContent($type,$indikator)}
         </ul></div>
     else if ($type = "obras") then for $indikator in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="works"]/tei:item/attribute() return
         <div  id="{concat("nav_",$type,"_sub_",$indikator)}" style="display:none"> 
-         <ul class="nav_sub_tabs">        
-        {page:createThirdNavContent($type,$indikator)}
+            <ul class="nav_sub_tabs">        
+           {page:createThirdNavContent($type,$indikator)}
+        </ul></div>
+     else if($type= "publicacoes") then for $indikator in doc("/db/apps/pessoa/data/lists.xml")//tei:listPerson[@type="authors"]/tei:person/attribute() return
+        <div  id="{concat("nav_",$type,"_sub_",$indikator)}" style="display:none"> 
+            <ul class="nav_sub_tabs">        
+           {page:createThirdNavContent($type,$indikator)}
         </ul></div>
      else ()
 };
@@ -151,8 +152,10 @@ declare function page:createThirdNavContent($type as xs:string, $indikator as xs
        else if ($type = "cronologia" and $indikator = "3") then for $nr in (0 to 5) 
             return <a href="#" onClick="u_nav({concat("'nav_",$type,"_sub_ext_",concat($indikator,$nr),"'")})"><li class="{concat("nav_",$type,"_sub_tab")}">{concat("'",$indikator,$nr)}</li></a>
        else if ($type = "obras") then for $item in page:createItem($type, $indikator)
-            return <li class="{concat("nav_",$type,"_sub_tab")}"><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></li>
-           else ()
+            return <a href="{$item/@ref/data(.)}"><li class="{concat("nav_",$type,"_sub_tab")}">{$item/@label/data(.)}</li></a>
+      else if ($type = "publicacoes") then for $item in page:createItem($type, $indikator)
+            return <a href="{$item/@ref/data(.)}"><li class="{concat("nav_",$type,"_sub_tab")}">{$item/@label/data(.)}</li></a>
+       else ()
 };
 
 
@@ -162,17 +165,7 @@ declare function page:createExtNav() {
             {page:createExtNavTab($type)}
         </div>
 };
-(:
-declare function page:createExtNavTab($tab as xs:string) as node()*{
-    if($tab = "cronologia")then for $indikator in (0 to 3) return 
-         <div  id="{concat("nav_",$tab,"_ext_",$indikator)}" style="display:none"> 
-         <ul class="nav_sub_tabs">        
-        {page:createYearsExtendedTab($tab,$indikator)}
-        </ul></div>
-        else () 
-    
-};
-:)
+
 declare function page:createExtNavTab($type as xs:string) as node()* {
     if($type = "cronologia")then for $indikator in (0 to 3) 
         for $nr in (0 to 9) return if($indikator != 3) then
@@ -211,8 +204,6 @@ declare function page:createItem($type as xs:string, $indikator as xs:string?) a
             return <item label="{$label}"  ref="{concat($helpers:app-root,'/',$helpers:web-language)}/page/genre/{$ref}" /> 
    else if($type = "documentos") 
         then for $hit in xmldb:get-child-resources("/db/apps/pessoa/data/doc")
-            
-            
             let $label :=   if(substring-after($hit, "BNP_E3_") != "") then substring-after(replace(substring-before($hit, ".xml"), "_", " "), "BNP E3 ")
                             else if(substring-after($hit,"MN") != "") then substring-after(substring-before($hit, ".xml"), "MN")
                             else ()
@@ -253,6 +244,12 @@ declare function page:createItem($type as xs:string, $indikator as xs:string?) a
          then for $works in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="works"]/tei:item[@xml:id=$indikator]/tei:title[@type="alt"]
          let $label := $works/data(.)
           return <item label="{$label}" ref="{concat($helpers:app-root,'/',$helpers:web-language)}/page/obras.html?type={$indikator}"/>
+    else if($type ="publicacoes")
+        then for $hit in xmldb:get-child-resources("/db/apps/pessoa/data/pub")
+            let $label :=  doc(concat("/db/apps/pessoa/data/pub/",$hit))//tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct/tei:analytic/tei:title[1]/data(.) 
+           return if(doc(concat("/db/apps/pessoa/data/pub/",$hit))//tei:author/tei:rs[@key=$indikator]) 
+                        then <item label="{$label}" ref="{concat($helpers:app-root,'/',$helpers:web-language)}/pub/{substring-before($hit,".xml")}" />
+                        else ()
    else for $a in "10" return <item label="nothin" ref="#"/>
 };
 
@@ -265,113 +262,6 @@ declare function page:clearPublikation($pub as node()) as xs:string {
             else ()
 };
 
-(:
-: ##### Ansich funtkionsfähig (glaub ich) ######
-
-
-declare function page:getCorrectDoc($label as xs:string, $indi as xs:string, $pos as xs:integer) as xs:boolean? {
-if ($pos <= 53) then
-let $stash := ("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
-let $cut := if(string-length(substring-before($label,"-")) = 2 or string-length(substring-before($label,"-")) = 1) then substring-before($label,"-") 
-                    else if( not(contains(substring-after($label,"-"),substring($stash,$pos,1))) and string-length(substring-after($label,"-")) = 3 ) then substring-before($label,"-") 
-                    else substring-before($label,substring($stash,$pos,1))
-return  if (string-length($cut) = 3 and string-length($indi) = 2 and contains(substring($cut,1,1),substring($indi,1,1)) and page:thirdposcheck($cut) = xs:boolean("true") )  then xs:boolean("true")
-                           else if ( (string-length($cut) = 2 or string-length($cut) = 1)  and string-length($indi) = 1 and contains(substring($cut,1,1),$indi) )  then xs:boolean("true")
-                           else if ( (string-length($cut) = 1 or string-length($cut) = 2 or string-length($cut) = 3) and not(contains(substring($cut,1,1),substring($indi,1,1))) ) then xs:boolean("false")
-                           else page:getCorrectDoc($label,$indi,$pos+1)
-else ()
-
-};
-:)
-(:
-declare function page:thirdposcheck($label as xs:string) as xs:boolean? {
-    for $check in (1 to 9) 
-    return if( contains(substring($label,3,1),$check)) then xs:boolean("true")
-    else ()
-};
-:)
-
-(:
-declare function page:getCorrectDoc($label as xs:string, $indi as xs:string, $pos as xs:integer, $check as xs:integer, $run as xs:boolean) as xs:boolean? {
-    if ( $run = xs:boolean("false") and $pos <= string-length($label) ) then 
-  (:       let $pos := if($check = 10) then $pos+1 else $pos :)
-         let $check := if($check = 10) then 1 else $check+1
-         let $run := contains(substring($label,$pos,1),$check) 
-            return page:getCorrectDoc($label,$indi,$pos,$check,$run)
-     else if($run = xs:boolean("true") and page:getCorrectDoc_alphabetical($label,$pos+1,1) = xs:boolean("true"))        then
-         let $return := if($pos = 3 and string-length($indi) = 2 and contains(substring($label,1,1),substring($indi,1,1) )) then xs:boolean("true")
-                            else if ( ($pos = 1 or $pos = 2 )  and string-length($indi) = 1 and contains(substring($label,1,1),$indi) ) then xs:boolean("true")
-                            else  xs:boolean("false")
-                            return  if ($return = xs:boolean("true")) then xs:boolean("true")
-                                            else page:getCorrectDoc($label,$indi,$pos+1,1,xs:boolean("false"))
-                                            
-      else if($run = xs:boolean("true") and page:getCorrectDoc_alphabetical($label,$pos+1,1) = xs:boolean("false") ) then 
-                        page:getCorrectDoc($label,$indi,$pos+1,1,xs:boolean("false"))
-      
-     else 
-     let $return := if($pos = 3 and string-length($indi) = 2 and contains(substring($label,1,1),substring($indi,1,1) )) then xs:boolean("true")
-                            else if ( ($pos = 1 or $pos = 2 )  and string-length($indi) = 1 and contains(substring($label,1,1),$indi) ) then xs:boolean("true")
-                            else xs:boolean("false")
-                            return $return
-                            
-      
-    
-};
-:)
-
-(:
- 
-declare function page:getCorrectDoc($label as xs:string, $indi as xs:string, $pos as xs:integer, $check as xs:integer, $run as xs:boolean) as xs:boolean {
-    if( contains(substring($label,1,1),substring($indi,1,1))) then   
-           if($run = xs:boolean("false" )and $pos < string-length($label)) then
-       (:    let $pos := if($check = 10) then $pos+1 else $pos:)
-          (:  let $check :=  if($check = 10) then 1 else $check+1 :)
-                let $temp_run := contains(substring($label,$pos,1),$check)
-                return page:getCorrectDoc($label,$indi,$pos,$check+1,$temp_run)
-            else if($run = xs:boolean("true") and $pos < string-length($label)) then
-                let $temp_pos := $pos+1
-                let $temp_run := page:getCorrectDoc_alphabetical($label,$temp_pos,1)
-                return page:getCorrectDoc($label,$indi,$temp_pos,0,$temp_run)
-            else if($run = xs:boolean("true") and $pos = string-length($label)) then
-                             let $return :=
-                                if($pos = 3 and string-length($indi) = 2) then xs:boolean("true")
-                               else if ( ($pos = 1 or $pos = 2 )  and string-length($indi) = 1) then xs:boolean("true")
-                               else  xs:boolean("false")
-                            return $return
-                            else  xs:boolean("false")
-    else xs:boolean("false")
-};
-
-:)
-
-
-(:
-declare function page:getCorrectDoc($label as xs:string,$indi as xs:string) as xs:boolean? {
- 
-    if(contains(substring($label,1,1),substring($indi,1,1)) ) then
-        let $c_label := if( contains($label,"-") ) then substring-before($label,"-") else $label
-        let $count  := 0
-        for $pos in ( 1 to string-length($c_label))
-            let $count  :=  if (page:getCorrectDoc_Step2($c_label,$pos) = xs:boolean("true") ) then $count+1 else $count
-            return if($pos = string-length($c_label) ) then page:getCorrectDoc_Step3($count,$indi) else ()
-    else xs:boolean("false")
-    
-
-};
-
-declare function page:getCorrectDoc_Step2($c_label as xs:string, $pos as xs:integer) as xs:boolean? {
-if( page:getCorretDoc_alphabetical($c_label,$pos) != xs:boolean("true") ) then
-       xs:boolean("true") 
-else xs:boolean("false")
-
-};
-
-declare function page:getCorrectDoc_Step3($count as xs:integer, $indi as xs:string) as xs:boolean {
-let $indi_length := string-length($indi)
-return if(  $indi_length+1 = $count) then xs:boolean("true") else xs:boolean("false")
-};
-
-:)
 
 declare function page:getCorrectDoc($label as xs:string, $indi as xs:string) as xs:boolean+ {
 if(contains(substring($label,1,1),substring($indi,1,1)) ) then
@@ -399,25 +289,7 @@ declare function  page:getCorrectDoc_nummeric($label as xs:string, $pos as xs:in
     for $cut in (1 to 9)
     return if (contains(substring($label, $pos, 1),$cut)) then xs:boolean("true") else ()
 };
-(:
-declare function page:getCorrectDoc_alphabetical($label as xs:string, $pos as xs:integer, $pos2 as xs:integer) as xs:boolean {
-   if ($pos2 <= 53) then
-        let $stash := ("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-")
-        let $id := contains(substring($label,$pos,1),substring($stash,$pos2,1))
-    return   if($id = xs:boolean("true")) then  xs:boolean("true") else page:getCorrectDoc_alphabetical($label,$pos,$pos2+1)
-    else xs:boolean("false")
 
-};
-:)
-(:
-declare function page:getCorrectDoc($label as xs:string, $nr as xs:string) as xs:boolean? {
-    for $cut in ( "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y" ,"z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y" ,"Z", "-") 
-    let $id := substring-before($label, $cut)
-    return if (string-length($id) = 3 and string-length($nr) = 2 and  contains(substring($id,1,1), substring($nr,1,1)) )  then xs:boolean("true")
-    else if ( ( string-length($id) = 2 or string-length($id) = 1 ) and string-length($nr) = 1 and contains(substring($id,1,1), substring($nr,1,1)) ) then xs:boolean("true")
-    else ()
-    
-}; :)
 
 (:###### SEARCH PAGE ######:)
 

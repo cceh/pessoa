@@ -195,7 +195,7 @@ display: inline-block;
 .nav_autores_tab, .nav_documentos_tab, .nav_publicacoes_tab, .nav_obras_tab, .nav_genero_tab, .nav_cronologia_tab, .nav_bibliografia_tab, .nav_projeto_tab{
     display:inline-block;    
     }
-    .nav_autores_tab{
+    .nav_autores_tab, .nav_publicacoes_tab{
         padding: 3px 25px;    
     }
     .nav_documentos_tab {
@@ -217,7 +217,7 @@ display: inline-block;
         padding: 6px 37px;
     }
 
-.nav_documentos_sub_tab, .nav_cronologia_sub_tab, .nav_cronologia_sub_ext_tab, .nav_obras_sub_tab{
+.nav_documentos_sub_tab, .nav_cronologia_sub_tab, .nav_cronologia_sub_ext_tab, .nav_obras_sub_tab, .nav_publicacoes_sub_tab{
         text-decoration:none;
         display:inline-block;
         margin: 3px 5px; 
@@ -230,7 +230,7 @@ display: inline-block;
         min-width: 65px !important;
         margin: 3px 4px !important;
     }
-    .nav_documentos_sub_tab:hover, .nav_cronologia_sub_tab:hover, .nav_cronologia_sub_ext_tab:hover, .nav_obras_sub_tab:hover{
+    .nav_documentos_sub_tab:hover, .nav_cronologia_sub_tab:hover, .nav_cronologia_sub_ext_tab:hover, .nav_obras_sub_tab:hover, .nav_publicacoes_sub_tab:hover{
             background-color: #4E4E4E;
             text-decoration:none;
     }
