@@ -48,6 +48,12 @@ h6{
     margin: 0;
 }
 
+
+label{
+    display:inline;
+    font-weight: 100 !important;
+}
+
 .clear{
     clear:both;
 }
@@ -195,7 +201,7 @@ display: inline-block;
 .nav_autores_tab, .nav_documentos_tab, .nav_publicacoes_tab, .nav_obras_tab, .nav_genero_tab, .nav_cronologia_tab, .nav_bibliografia_tab, .nav_projeto_tab{
     display:inline-block;    
     }
-    .nav_autores_tab{
+    .nav_autores_tab, .nav_publicacoes_tab{
         padding: 3px 25px;    
     }
     .nav_documentos_tab {
@@ -217,7 +223,7 @@ display: inline-block;
         padding: 6px 37px;
     }
 
-.nav_documentos_sub_tab, .nav_cronologia_sub_tab, .nav_cronologia_sub_ext_tab, .nav_obras_sub_tab{
+.nav_documentos_sub_tab, .nav_cronologia_sub_tab, .nav_cronologia_sub_ext_tab, .nav_obras_sub_tab, .nav_publicacoes_sub_tab{
         text-decoration:none;
         display:inline-block;
         margin: 3px 5px; 
@@ -230,7 +236,7 @@ display: inline-block;
         min-width: 65px !important;
         margin: 3px 4px !important;
     }
-    .nav_documentos_sub_tab:hover, .nav_cronologia_sub_tab:hover, .nav_cronologia_sub_ext_tab:hover, .nav_obras_sub_tab:hover{
+    .nav_documentos_sub_tab:hover, .nav_cronologia_sub_tab:hover, .nav_cronologia_sub_ext_tab:hover, .nav_obras_sub_tab:hover, .nav_publicacoes_sub_tab:hover{
             background-color: #4E4E4E;
             text-decoration:none;
     }
@@ -348,11 +354,6 @@ float:left;
 border : 1px solid black;
 }
 
-label{
-    display:inline;
-    font-weight: 100 !important;
-}
-
 /* Document / Publication Styles */
 .text .label {
    display: inline-block;
@@ -373,7 +374,6 @@ ul#tabs{
     list-style-type: none;
     padding: 0;
     text-align: center;
-    float: left;
     margin: 0 0 0 12px;
 }
     ul#tabs li{
@@ -465,7 +465,7 @@ ul#tab{
           
 /* Search Button End*/
 
- .search_filters{
+ .search_filter{
     width:17%;
     margin: 5px 0 10px 140px;
     border-right: 1px solid #000; 
@@ -601,17 +601,17 @@ ul#tab{
      margin: 7px 0 0 0;
  }
  
-  #back {
+#back{
      float: left;
      margin-left:5px;
  }
  
- #forward {
+#forward {
      float: right;
      margin-right:5px;
  }
  
- #back,#forward {
+#back,#forward {
     display: inline-block;
     background-color: #A8A8A8;
     padding: 5px 20px;
@@ -649,47 +649,23 @@ ul#tab{
 }
 */
 
-
-
 /* Sandbox - Der Ort zum experimentieren*/
 
 #search-link{
     cursor: pointer; 
 }
 
+#suche
+{
+ 
+}
+#lorem
+{
+  width: 824px;
+  margin: 0 auto 0 190px;
+}
 
 /*Tempörärer Mülleimer*/
 /*
-.vl {border-left: 1px dotted #999999;}
-.lg {margin-bottom: 15px;}
-.q {border-bottom: 2px solid #000;}
-.a, .b, .c, .d, .e, .f{border-bottom: 1px solid #000;}
-.a:hover, .b:hover, .c:hover, .d:hover, .e:hover, .f:hover { background-color: #33CCFF;}
-table content:
-table{ border: 1px solid #000; border-top: none;}
-.divTable{display: table;width:auto; background-color:#eee; border:1px solid  #666666;border-spacing:5px;cellspacing:poor IE support for  this}
-    .divRow{display:table-row;width:auto;}
-    .divCell{ float:left; display:table-column; width:100px; background-color:#ccc; }
-    th, td {padding: 5px;}
-    #navi2{width: 700px; margin: 2px auto;}
-    Details der Navi
-    .navbar-inner {}
-    .navbar .nav {}
-    .navbar .nav > li > a {}
-    .navbar .nav > li > a:hover {}
-    #filter-nav{border: 20px solid #9B9B9B;height: 35px;display: block;}  
-    #tabline {}
-    #nav_autores {}
-    #nav_documentos {}
-    .nav_documentos_sub_tab {}
-    #nav_publicacoes {}
-    .nav_cronologia_sub_tab {}
-    #nav_bibliografia {}
-    .nav_publicacoes_tab {}
-    #nav_genero {}
-    #nav_cronologia {}
-    #nav_projeto {}
-    #rdf{width: 750px; height: 200px; margin: 0 auto; border: 1px solid #000;}   
-    #pfeil{display: inline-block; margin: 10px; float: left;}
-    #pfeil2{display: inline-block; margin: 10px; float: right;}
+
 */
