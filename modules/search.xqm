@@ -312,23 +312,18 @@ if($term and $file and $sel and $sel="text","head","lang")
     else $node
 };
 
-declare function search:search-function($node as node(), $model as map(*)) as node()+ {
+declare function search:search-function() as node() {
     let $search := <script>function search() {{var value = $("#search").val();
                 location.href="{$helpers:app-root}/{$helpers:web-language}/simple/search?term="+value;
-                }};</script>
-    let $enter := <script>
-                function test() {{
-                alert("tada");
                 }};
-                $("#search").keypress(function( event ) {{
+                $('#search').keydown(function( event ) {{
                 if(event.which == 13) {{
-                event.test();
+                search()
                 }}
-                
-                }}); </script>
-    
-    return ($search,$enter)
+                }});</script>
+    return $search
 };
+
 declare function search:recorder() as node() {
   let $search := if(request:get-parameter("search",'') != "") then request:get-parameter("search",'') else ""
   let $term := if(request:get-parameter("term",'') != "") then request:get-parameter("term",'') else ""
