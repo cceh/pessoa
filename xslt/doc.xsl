@@ -2,7 +2,7 @@
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
     <xsl:preserve-space elements="*"/>
     <xsl:strip-space elements="rs"/>
-    <xsl:template match="/" mode="normal">
+    <xsl:template match="/">
         <style type="text/css">
             /*Textstruktur*/
              div.text {display: inline-block; position: relative; }
@@ -74,21 +74,16 @@
             
 
         </style>
-        <xsl:apply-templates />       
+        <xsl:apply-templates/>       
     </xsl:template>
 
  
-    <!-- "Eingangstemplate" --> 
-    <xsl:template match="*" priority="5">
-        <xsl:param name="special">no</xsl:param>
-        <xsl:if test="$special='no'">
-            <xsl:apply-templates select="." mode="normal"/>
-        </xsl:if>
-    </xsl:template>
+                
+    
     
     <!-- Header & Text -->
-    <xsl:template match="teiHeader" mode="normal" />
-    <xsl:template match="text" mode="normal">
+    <xsl:template match="teiHeader" />
+    <xsl:template match="text">
         <xsl:choose>
             <xsl:when test="//note[@place='margin left']">
                 <div class="text" style="padding-left:100px;">
@@ -121,7 +116,7 @@
    
    
     <!-- Textstruktur -->
-    <xsl:template match="head" mode="normal">
+    <xsl:template match="head">
         <h2>
             <xsl:if test="ancestor::*[@rend='text-center']">
                 <xsl:attribute name="style">text-align: center;</xsl:attribute>
@@ -129,12 +124,12 @@
             <xsl:apply-templates/>
         </h2>
     </xsl:template>
-    <xsl:template match="head[hi[@rend='underline center']]" mode="normal">
+    <xsl:template match="head[hi[@rend='underline center']]">
        <h2 style="text-align: center;">
            <xsl:apply-templates/>
        </h2> 
     </xsl:template>
-    <xsl:template match="list/head" mode="normal">
+    <xsl:template match="list/head">
         <h2>
             <xsl:if test="name(../preceding-sibling::node()[1])='label' and name(../parent::node())='item'">
                 <xsl:attribute name="style">display: inline;</xsl:attribute>
@@ -143,7 +138,7 @@
         </h2> 
     </xsl:template>
     
-    <xsl:template match="list" mode="normal">
+    <xsl:template match="list">
         <div class="list">
         <xsl:if test="name(preceding-sibling::node()[1])='label' and name(..)='item'">
             <xsl:attribute name="style">display: inline;</xsl:attribute>
@@ -152,7 +147,7 @@
         </div>                   
     </xsl:template>
     
-    <xsl:template match="item" mode="normal">
+    <xsl:template match="item">
         <div class="item">
             <xsl:if test="@xml:id">
                 <xsl:attribute name="id"><xsl:value-of select="@xml:id" /></xsl:attribute>
@@ -169,13 +164,13 @@
     <!-- zusätzliche Bemerkungen am Rand -->
     
     <!--notes-->
-    <xsl:template match="note[@type='addition'][@place='margin top right']" mode="normal">
+    <xsl:template match="note[@type='addition'][@place='margin top right']">
         <span class="note addition margin top right">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
     
-    <xsl:template match="note[@type='addition'][@place='margin left']" mode="normal">
+    <xsl:template match="note[@type='addition'][@place='margin left']">
         <xsl:variable name="range">
             <xsl:choose>
                 <xsl:when test="@target = 'range(i1,i3)'">r1-3</xsl:when>
@@ -190,7 +185,6 @@
         </span>
     </xsl:template>
     
-<<<<<<< Updated upstream
     <xsl:template match="note[@type='addition'][@place='right']">
         <span class="note addition right">
             <xsl:apply-templates/>
@@ -198,9 +192,6 @@
     </xsl:template>
     
     <xsl:template match="note[@type='addition'][@place='margin right']">
-=======
-    <xsl:template match="note[@type='addition'][@place='margin right']" mode="normal">
->>>>>>> Stashed changes
         <xsl:variable name="target">
             <xsl:choose>
                 <xsl:when test="contains(@target, 'range')">
@@ -219,18 +210,18 @@
         </span>     
     </xsl:template>
     
-    <xsl:template match="note[not(@type)][@place='margin left']" mode="normal">
+    <xsl:template match="note[not(@type)][@place='margin left']">
         <span class="note margin left">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    <xsl:template match="note[@place='right'][not(@type)]" mode="normal">
+    <xsl:template match="note[@place='right'][not(@type)]">
         <span class="note right">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
     
-    <xsl:template match="note[@resp]" mode="normal">
+    <xsl:template match="note[@resp]">
         <div class="editorial note">
             <xsl:apply-templates/>
         </div>
@@ -238,7 +229,7 @@
     
     <!--note-labels-->
     
-    <xsl:template match="label[parent::note[@place='margin left']]" mode="normal">
+    <xsl:template match="label[parent::note[@place='margin left']]">
         <span class="note-label margin left">
             <xsl:apply-templates/> 
         </span>
@@ -246,23 +237,23 @@
     
     <!-- metamarks -->
     <!--brackets-->
-    <xsl:template match="metamark[@rend='curly bracket'][@function='grouping'][parent::note/contains(@place, 'margin left')]" mode="normal">
+    <xsl:template match="metamark[@rend='curly bracket'][@function='grouping'][parent::note/contains(@place, 'margin left')]">
         <span class="metamark curly-bracket grouping left {ancestor::text/@xml:id}" title="grouping">{</span>
     </xsl:template>
     
-    <xsl:template match="metamark[@rend='curly bracket'][@function='grouping'][parent::note/contains(@place, 'margin right')]" mode="normal">
+    <xsl:template match="metamark[@rend='curly bracket'][@function='grouping'][parent::note/contains(@place, 'margin right')]">
         <span class="metamark curly-bracket grouping right {ancestor::text/@xml:id}" title="grouping">}</span>
     </xsl:template>
     
-    <xsl:template match="metamark[@rend='bracket'][@function='grouping'][parent::note/contains(@place, 'margin right')]" mode="normal">
+    <xsl:template match="metamark[@rend='bracket'][@function='grouping'][parent::note/contains(@place, 'margin right')]">
         <span class="metamark bracket grouping right {ancestor::text/@xml:id}" title="grouping">]</span>
     </xsl:template>
     
-    <xsl:template match="metamark[@rend='curly bracket'][@place='margin right'][@function='grouping']" mode="normal">
+    <xsl:template match="metamark[@rend='curly bracket'][@place='margin right'][@function='grouping']">
         <span class="metamark curly-bracket grouping right {ancestor::text/@xml:id}" title="grouping" style="position: absolute; right: -150px;">}</span>
     </xsl:template>
     
-    <xsl:template match="metamark[@rend='curly bracket'][@function='assignment'][parent::note[@place='right']]" mode="normal">
+    <xsl:template match="metamark[@rend='curly bracket'][@function='assignment'][parent::note[@place='right']]">
         <div class="metamark curly-bracket assignment right">
             <xsl:if test="following-sibling::*">
                 <xsl:attribute name="style">display: inline;</xsl:attribute>
@@ -271,13 +262,13 @@
     </xsl:template>
     
     <!--lines-->
-    <xsl:template match="metamark[@rend='line'][@function='end']" mode="normal">
+    <xsl:template match="metamark[@rend='line'][@function='end']">
         <div class="metamark line end">_______________________</div>
     </xsl:template>
-    <xsl:template match="metamark[@rend='line'][@function='assignment']" mode="normal">
+    <xsl:template match="metamark[@rend='line'][@function='assignment']">
         <div class="metamark line assignment">   ______ </div>
     </xsl:template>
-    <xsl:template match="metamark[@rend='line'][@function='distinct']" mode="normal">
+    <xsl:template match="metamark[@rend='line'][@function='distinct']">
         <xsl:choose>
             <xsl:when test="label[@place='right'][@rend='red']">
                 <xsl:variable name="label" select="label/data(.)"/>
@@ -288,7 +279,6 @@
             </xsl:otherwise>
         </xsl:choose>  
     </xsl:template>  
-<<<<<<< Updated upstream
     <xsl:template match="choice/abbr/metamark[@rend='line'][@function='ditto']">
         <xsl:variable name="expan" select="following::expan[1]/data(.)"/>
         <xsl:variable name="size" select='count($expan)'/>
@@ -300,24 +290,18 @@
         <span class="metamark line ditto">_______</span>
     </xsl:template> -->
     <xsl:template match="metamark[@rend='line red'][@function='distinct']">
-=======
-    <xsl:template match="metamark[@rend='line'][@function='ditto']" mode="normal">
-        <span class="metamark line ditto">_______</span>
-    </xsl:template> 
-    <xsl:template match="metamark[@rend='line red'][@function='distinct']" mode="normal">
->>>>>>> Stashed changes
         <div class="metamark line distinct red">_______________________</div>
     </xsl:template> 
-    <xsl:template match="metamark[@rend='line'][@function='highlight']" mode="normal">
+    <xsl:template match="metamark[@rend='line'][@function='highlight']">
         <div class="metamark line highlight">_______________________</div>
     </xsl:template>
-    <xsl:template match="metamark[@rend='line'][@place='left']" mode="normal">
+    <xsl:template match="metamark[@rend='line'][@place='left']">
         <div class="verticalLine" title="left">      </div>
     </xsl:template>
-    <xsl:template match="metamark[@rend='underline'][@function='distinct']" mode="normal">
+    <xsl:template match="metamark[@rend='underline'][@function='distinct']">
         <div class="metamark underline" title="distinct">_______________________</div>
     </xsl:template> 
-    <xsl:template match="metamark[@rend='double line'][@function='distinct']" mode="normal">
+    <xsl:template match="metamark[@rend='double line'][@function='distinct']">
         <div class="metamark double line" title="distinct">
             _______________________<br/>
             _______________________
@@ -325,7 +309,7 @@
     </xsl:template>
     
     <!--quotes-->
-    <xsl:template match="metamark[@rend='quotes'][@function='ditto']" mode="normal">
+    <xsl:template match="metamark[@rend='quotes'][@function='ditto']">
         <div class="metamark quotes ditto"> " </div>
     </xsl:template>
     <xsl:template match="metamark[@rend='quotation marks'][@function='ditto']">
@@ -337,111 +321,111 @@
     
     
     <!-- Hervorhebungen -->
-    <xsl:template match="hi[@rend='underline']" mode="normal">
+    <xsl:template match="hi[@rend='underline']">
         <span style="text-decoration: underline;">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    <xsl:template match="hi[@rend='underline center']" mode="normal">
+    <xsl:template match="hi[@rend='underline center']">
         <span style="text-decoration: underline; text-align: center;">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    <xsl:template match="hi[@rend='superscript']" mode="normal">
+    <xsl:template match="hi[@rend='superscript']">
         <span style="position:relative;top:-4px; font-size: small;">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    <xsl:template match="hi[@rend='red']" mode="normal">
+    <xsl:template match="hi[@rend='red']">
         <span style="color: red;">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    <xsl:template match="hi[@rend='underline red']" mode="normal">
+    <xsl:template match="hi[@rend='underline red']">
         <span style="text-decoration: underline; color: red;">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    <xsl:template match="hi[@rend='underline-red']" mode="normal">
+    <xsl:template match="hi[@rend='underline-red']">
         <span style="text-decoration: underline; color: red;">
             <span style="color: black;">
             <xsl:apply-templates/>
             </span>
         </span>
     </xsl:template>
-    <xsl:template match="hi[@rend='italic']" mode="normal">
+    <xsl:template match="hi[@rend='italic']">
         <span style="font-style: italic;">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    <xsl:template match="hi[@rend='circled']" mode="normal">
+    <xsl:template match="hi[@rend='circled']">
         <div class="circled">
             <xsl:apply-templates/>
         </div>
     </xsl:template>
     
     <!-- Personen, Orte, etc. -->
-    <xsl:template match="rs[@type='person']" mode="normal">
+    <xsl:template match="rs[@type='person']">
         <span class="person {@xml:id}">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
     
-    <xsl:template match="rs[@type='place']" mode="normal">
+    <xsl:template match="rs[@type='place']">
         <span class="place {@xml:id}">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
     
-    <xsl:template match="rs[@type='journal']" mode="normal">
+    <xsl:template match="rs[@type='journal']">
         <span class="journal {@xml:id}">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
     
-    <xsl:template match="rs[@type='work']" mode="normal">
+    <xsl:template match="rs[@type='work']">
         <span class="work {@xml:id}">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    <xsl:template match="rs[@type='text']" mode="normal">
+    <xsl:template match="rs[@type='text']">
         <span class="text {@xml:id}">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
     
     <!-- Zeilenumbrüche anzeigen -->
-    <xsl:template match="lb" mode="normal">
+    <xsl:template match="lb">
         <br/>
     </xsl:template>
     
     <!-- editorische Ergänzungen nicht anzeigen -->
-    <xsl:template match="supplied" mode="normal"/>
+    <xsl:template match="supplied"/>
     
     <!-- Einrückungen / Ausrichtungen berücksichtigen -->
-    <xsl:template match="hi[@rend='indent']" mode="normal">
+    <xsl:template match="hi[@rend='indent']">
         <span class="indent">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    <xsl:template match="ab[@rend='offset']" mode="normal">
+    <xsl:template match="ab[@rend='offset']">
         <span class="ab offset">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    <xsl:template match="ab[@rend='indent']" mode="normal">
+    <xsl:template match="ab[@rend='indent']">
         <span class="ab indent">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    <xsl:template match="ab[@rend='right']" mode="normal">
+    <xsl:template match="ab[@rend='right']">
         <span class="ab right">
             <xsl:apply-templates />
         </span>
     </xsl:template>
     
     <!-- choices -->
-    <xsl:template match="choice[seg and seg[2]/add/@place='below']" mode="normal">
+    <xsl:template match="choice[seg and seg[2]/add/@place='below']">
         <span class="choice">
             <span class="seg">
                 <xsl:apply-templates select="seg[1]"/>
@@ -451,7 +435,7 @@
             </span>
         </span>
     </xsl:template>
-    <xsl:template match="choice[abbr/gap and expan[@resp]]" mode="normal">
+    <xsl:template match="choice[abbr/gap and expan[@resp]]">
         <span class="choice">
             <span class="abbr">
                 <span class="gap" title="{abbr/gap/@reason}">
@@ -462,7 +446,7 @@
             </span>
         </span>
     </xsl:template>
-    <xsl:template match="choice[seg and seg[2]/add/@place='above']" mode="normal">
+    <xsl:template match="choice[seg and seg[2]/add/@place='above']">
         <span class="choice">
             <span class="seg">
                 <xsl:apply-templates select="seg[1]"/>
@@ -474,50 +458,41 @@
     </xsl:template>
     
     <!-- Auflösungen von Abkürzungen nicht anzeigen -->
-<<<<<<< Updated upstream
     <xsl:template match="expan">
         <xsl:text> </xsl:text>
     </xsl:template>
-=======
-    <xsl:template match="expan" mode="normal" />
->>>>>>> Stashed changes
     
     <!-- gaps -->
-    <xsl:template match="gap[@reason='selection']" mode="normal">
+    <xsl:template match="gap[@reason='selection']">
         <span class="gap" title="selection">[...]</span>
     </xsl:template>
     
-<<<<<<< Updated upstream
 
         
 
     
     <!-- del - -->
     <xsl:template match="del[gap]">
-=======
-    <!-- del -->
-    <xsl:template match="del[gap]" mode="normal">
->>>>>>> Stashed changes
         <span class="del">
             [<xsl:value-of select="for $c in (1 to gap/@quantity) return '?'"/>]
         </span>
     </xsl:template>
-    <xsl:template match="del" mode="normal">
+    <xsl:template match="del">
         <span class="del">
             <xsl:apply-templates/>          
         </span>
     </xsl:template>
-    <xsl:template match="del[following-sibling::add[1][@place ='superimposed']]" mode="normal">
+    <xsl:template match="del[following-sibling::add[1][@place ='superimposed']]">
         <span class="del superimposed">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    <xsl:template match="del[@rend='overtyped' and following-sibling::add[1][not(@*)]]" mode="normal">
+    <xsl:template match="del[@rend='overtyped' and following-sibling::add[1][not(@*)]]">
         <span class="del overtyped">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    <xsl:template match="del[@rend='overwritten']" mode="normal">
+    <xsl:template match="del[@rend='overwritten']">
         <span class="del overwritten">
             <xsl:apply-templates/>
         </span>
@@ -534,19 +509,19 @@
     
     
     <!-- tabellen  z.B. 48G-33r--> 
-    <xsl:template match="text//table" mode="normal">
+    <xsl:template match="text//table">
             <xsl:apply-templates/>     
     </xsl:template>
-    <xsl:template match="table/row" mode="normal">
+    <xsl:template match="table/row">
         <div class="item">
             <xsl:apply-templates/>
         </div>
     </xsl:template>
-    <xsl:template match="cell" mode="normal">
+    <xsl:template match="cell">
                 <xsl:apply-templates/> 
         <xsl:text> </xsl:text>
     </xsl:template>
-    <xsl:template match="label" mode="normal">
+        <xsl:template match="label">
         <span class="label">
             <xsl:apply-templates/>
         </span>
@@ -556,7 +531,7 @@
  
 
     
-    <xsl:template match="seg" mode="normal">         
+    <xsl:template match="seg">         
         <span>
             <xsl:choose>
                 <xsl:when test="@rend='indent'">
@@ -575,7 +550,6 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-<<<<<<< Updated upstream
    
 
     
@@ -590,24 +564,17 @@
 
     
     <xsl:template match="delSpan">
-=======
-    
-    <xsl:template match="delSpan" mode="normal">
->>>>>>> Stashed changes
         <xsl:variable name="anchorID" select="@spanTo/substring-after(.,'#')" />
         <div class="delSpan">
-            <xsl:apply-templates select="following-sibling::*[following::anchor[@xml:id=$anchorID]]"/>
+            <xsl:apply-templates select="following-sibling::*[following::anchor[@xml:id=$anchorID]]">
+            </xsl:apply-templates>
         </div>
         </xsl:template> 
     
-   <xsl:template match="*[preceding-sibling::delSpan][following::anchor[@xml:id=current()/preceding-sibling::delSpan/@spanTo/substring-after(.,'#')]]" priority="3" mode="normal">
-      <xsl:apply-templates select=".">
-          <xsl:with-param name="special">yes</xsl:with-param>
-      </xsl:apply-templates>
-   </xsl:template>
+   <!-- <xsl:template match="*[preceding-sibling::delSpan][following::anchor[@xml:id=current()/preceding-sibling::delSpan/@spanTo/substring-after(.,'#')]]" priority="100"/>
+-->
     
 
-<<<<<<< Updated upstream
    
    
     
@@ -617,37 +584,11 @@
     <!-- add -->
    
     <xsl:template match="add[@place='below'][not(ancestor::choice)][not(ancestor::subst)]">
-=======
-    <!-- subst -->
-    <xsl:template match="subst[del and add/@place] | subst[del and add]" mode="normal">
-        <xsl:variable name="place" select="add/@place"/>
-        <span class="subst">
-            <xsl:apply-templates/>
-           <!-- <span class="del">
-                <xsl:apply-templates select="del/text()"/>
-            </span>
-            <span class="add {$place}">
-                <xsl:apply-templates select="add/text()"/>
-            </span>-->
-        </span>
-    </xsl:template>
-    
-
-   
-    
-    <!-- add -->
-    <xsl:template match="add[@place='above'][not(ancestor::choice)]" mode="normal">
-        <span class="add above">
-            <xsl:apply-templates/>
-        </span>
-    </xsl:template>
-    <xsl:template match="add[@place='below'][not(ancestor::choice)]" mode="normal">
->>>>>>> Stashed changes
         <span class="add below">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    <xsl:template match="add" mode="normal">
+  <xsl:template match="add">
       <span class="add">
           <xsl:apply-templates/>
       </span>
@@ -658,35 +599,34 @@
         </span>
     </xsl:template>
     
-    <xsl:template match="add[@resp]" mode="normal"/>
+    <xsl:template match="add[@resp]" />
 
     
    
 
-    <xsl:template match="p" mode="normal">
+    <xsl:template match="p">
     <p>
         <xsl:apply-templates/>
     </p>
 </xsl:template>
     
-    <xsl:template match="p[@rend='indent']" mode="normal">
+    <xsl:template match="p[@rend='indent']">
         <p style="indent">
             <xsl:apply-templates/>
         </p>
     </xsl:template>
     
- <xsl:template match="p[@rend='text-center']" mode="normal">
+<xsl:template match="p[@rend='text-center']">
     <p style="text-align: center;">
         <xsl:apply-templates/>
     </p>
 </xsl:template>
-    <xsl:template match="p[@rend='position-center']" mode="normal">
+ <xsl:template match="p[@rend='position-center']">
      <p style="text-align: center;">
          <xsl:apply-templates/>
      </p>
  </xsl:template>   
 
-<<<<<<< Updated upstream
 <!-- special case 87-68r-->
     <xsl:template match="text[@xml:id='bnp-e3-87-68r']//ab[@rend='right']" priority="1" >
         <div class ="ab right">
@@ -695,9 +635,5 @@
     </xsl:template>
 
   
-=======
-
->>>>>>> Stashed changes
   
 </xsl:stylesheet>
-
