@@ -7,7 +7,7 @@
             /*Textstruktur*/
              div.text {display: inline-block; position: relative; }
             .text h2 {margin-bottom: 20px; margin-top: 20px; text-align:left;}
-            .item {margin-bottom: 20px; position: relative;}
+            .item {margin-bottom: 20px; margin-top: 10px; position: relative;}
             .item .label {padding-right: 1em;display: inline-table;}
             .list .item .list .item {margin-left: 2em;}
             
@@ -17,8 +17,8 @@
             .note.margin.left {left: 5em;}
             .note.addition.margin.right {right: -120px;}
             .note.addition.margin.top.right {right: -120px;}
-            .note.addition.margin.left {left: -35em;}
-            .note-label.margin.left {padding: 0px;}
+            .note.addition.margin.left {left: -35px;;}
+            .note-label.margin.left {padding: 0px; float: none;}
             
             /*metamarks*/
             .metamark {cursor: pointer;}
@@ -60,8 +60,9 @@
           /*  .add.below {position: absolute; top: 1.5em; left: -20px; font-size: small; width:200%} */
             .add {top: 0;}
     
-            .above { position: absolute; top: -0.8em; left: 0; font-size: small; width:200%;}
+            .above { position: absolute; top: -0.8em; left: 0px;; font-size: small; width:200%;}
             .below{position: absolute; top: 1.5em; left: 0px; font-size: small; width:200%}
+            #bnp-e3-71a-2v .below{left: -40px;}
             
            
            
@@ -171,16 +172,29 @@
     </xsl:template>
     
     <xsl:template match="note[@type='addition'][@place='margin left']">
-        <xsl:variable name="range">
+        <xsl:variable name="target">
             <xsl:choose>
-                <xsl:when test="@target = 'range(i1,i3)'">r1-3</xsl:when>
-                <xsl:when test="@target = 'range(i4,i6)'">r4-6</xsl:when>
-            </xsl:choose>
+                <xsl:when test="contains(@target, 'range')">
+                    <xsl:value-of select="concat(substring-before(substring-after(@target, 'range('), ','),'-',substring-before(substring-after(@target,','),')'))"/>       
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="@target" />
+                </xsl:otherwise>
+            </xsl:choose> 
         </xsl:variable>
-        <span class="note addition margin left {ancestor::text/@xml:id} {$range}">
+        <span class="note addition margin left target-{$target}">
+            <xsl:attribute name="style">
+                <xsl:if test="contains(@target,'range')">
+                    <xsl:variable name="from" select="substring-after(substring-before($target,'-'),'I')"/>
+                    <xsl:variable name="to" select ="substring-after($target,'-I')"/>
+                    <xsl:if test="number($to)-number($from) > 1"> 
+                       top: -2em;   
+                    </xsl:if>                 
+                </xsl:if>
             <xsl:if test="child::label[1]">
-                <xsl:attribute name="style">left: -100px;</xsl:attribute>
+                left: -100px;
             </xsl:if>
+            </xsl:attribute>
             <xsl:apply-templates/>
         </span>
     </xsl:template>
@@ -195,7 +209,7 @@
         <xsl:variable name="target">
             <xsl:choose>
                 <xsl:when test="contains(@target, 'range')">
-                    <xsl:value-of select="substring-before(substring-after(@target, 'range('), ',')"/>       
+                    <xsl:value-of select="concat(substring-before(substring-after(@target, 'range('), ','),'-',substring-before(substring-after(@target,','),')'))"/>       
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:value-of select="@target" />
@@ -205,6 +219,13 @@
         <span class="note addition margin right target-{$target}">   
             <xsl:if test="parent::*[1][lb] or preceding-sibling::*[lb] and not(contains(@target,'range'))">
                 <xsl:attribute name="style">bottom: 1em;</xsl:attribute>
+            </xsl:if>
+            <xsl:if test="contains(@target,'range')">
+                <xsl:variable name="from" select="substring-after(substring-before($target,'-'),'I')"/>
+                <xsl:variable name="to" select ="substring-after($target,'-I')"/>
+                    <xsl:if test="number($to)-number($from) > 1"> 
+                        <xsl:attribute name="style">top: -2em;</xsl:attribute>   
+                    </xsl:if>                 
             </xsl:if>
             <xsl:apply-templates/>
         </span>     
@@ -508,6 +529,7 @@
     
     
     
+    
     <!-- tabellen  z.B. 48G-33r--> 
     <xsl:template match="text//table">
             <xsl:apply-templates/>     
@@ -595,14 +617,14 @@
   </xsl:template>
     <xsl:template match="add[@place='above']">
         <span class=" add above">
+            <xsl:if test="not(ancestor::subst) and not(ancestor::choice)">            
+               <xsl:attribute name="style">position:relative;</xsl:attribute>             
+            </xsl:if>
             <xsl:apply-templates/>
         </span>
     </xsl:template>
     
     <xsl:template match="add[@resp]" />
-
-    
-   
 
     <xsl:template match="p">
     <p>
