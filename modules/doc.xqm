@@ -1,12 +1,18 @@
 xquery version "3.0";
 
 module namespace doc="http://localhost:8080/exist/apps/pessoa/doc";
-declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 import module namespace templates="http://exist-db.org/xquery/templates" at "templates.xql";
 
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
 import module namespace author="http://localhost:8080/exist/apps/pessoa/author" at "author.xqm";
+import module namespace page="http://localhost:8080/exist/apps/pessoa/page" at "page.xqm";
+import module namespace app="http://localhost:8080/exist/apps/pessoa/templates" at "app.xql";
+
+
+declare namespace request="http://exist-db.org/xquery/request";
+declare namespace tei="http://www.tei-c.org/ns/1.0";
+
 
 (: declare variable $ms:id := request:get-parameter("id", ()); :)
 
@@ -138,3 +144,28 @@ declare function doc:get-xml($id){
     return doc(concat("/db/apps/pessoa/data/doc/", $file-name)) 
 };
 
+declare  function doc:get-recorder($node as node(), $model as map(*)) as node() {
+    let $script := <script type="text/javascript">
+        
+        function reorder(){{
+        if ($("#date").is(":checked"))
+        {{
+        $("#genreList").load("{$helpers:request-path}?orderBy=date");
+        
+        }}
+        else{{
+        $("#genreList").load("{$helpers:request-path}?orderBy=alphab"); 
+        }}
+        }}
+    </script> 
+    return $script
+};
+
+declare function doc:get-genre_type($node as node(), $model as map(*)) as node() {
+    let $type := substring-after($helpers:request-path,"genre/")
+   
+    let $title := if($helpers:web-language = "pt") 
+        then data(doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="genres"][@xml:lang=$helpers:web-language]/tei:item[@xml:id=$type])
+        else data(doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="genres"][@xml:lang=$helpers:web-language]/tei:item[@corresp=concat("#",$type)])
+    return <h2>Documentos - { $title}</h2>
+};
