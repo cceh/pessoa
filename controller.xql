@@ -40,7 +40,7 @@ else if (contains($exist:path,  "/doc/")) then
     else
     (session:set-attribute("id", $exist:resource), 
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-        <forward url="{$exist:controller}/doc.html">
+        <forward url="{$exist:controller}/page/doc.html">
         <add-parameter name="id" value="{$exist:resource}" />
         </forward>
         <view>
@@ -54,7 +54,7 @@ else if (contains($exist:path,  "/doc/")) then
 else if (contains($exist:path, "/pub/")) then
     (session:set-attribute("id", $exist:resource), 
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-        <forward url="{$exist:controller}/pub.html">
+        <forward url="{$exist:controller}/page/pub.html">
             <add-parameter name="id" value="{$exist:resource}" />
         </forward>
         <view>
@@ -68,7 +68,7 @@ else if (contains($exist:path, "/pub/")) then
 else if (contains($exist:path, "/author/")) then
     if (request:get-parameter("orderBy","")!="") then
     let $orderBy := request:get-parameter("orderBy", "alphab")
-    let $author := substring-before(substring-after($exist:path, '/author/'), '/')
+    let $author := substring-before(substring-after($exist:path, '/page/author/'), '/')
     let $textType := $exist:resource
     return 
    author:reorder(<node />, map {"test" := "test"},$orderBy, $textType, $author)
@@ -79,7 +79,7 @@ else if (contains($exist:path, "/author/")) then
     (session:set-attribute("textType", $textType),
     session:set-attribute("author", $author),
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-        <forward url="{$exist:controller}/author.html" />
+        <forward url="{$exist:controller}/page/author.html" />
         <view>
             <forward url="{$exist:controller}/modules/view.xql"/>
         </view>
@@ -152,7 +152,7 @@ else if (contains($exist:path, "search")) then
    else if (contains($exist:path, "simple"))
     then 
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-            <forward url="{$exist:controller}/search.html" />
+            <forward url="{$exist:controller}/page/search.html" />
             <add-parameter name="search" value="simple" />
             <view>
                 <forward url="{$exist:controller}/modules/view.xql"/>
@@ -164,7 +164,7 @@ else if (contains($exist:path, "search")) then
         </dispatch>
    else 
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-        <forward url="{$exist:controller}/search.html" />
+        <forward url="{$exist:controller}/page/search.html" />
         <view>
             <forward url="{$exist:controller}/modules/view.xql"/>
         </view>
