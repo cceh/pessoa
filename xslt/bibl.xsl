@@ -12,8 +12,9 @@
 
 	<xsl:template match="/">
 		<html>
-			<style type="text/css">
-				h1{
+			<!--<style type="text/css">
+				
+					h1{
 				    text-align:center;
 				    font-size:larger;
 				    padding-top:1em;
@@ -32,7 +33,7 @@
 				p.bibl{
 				    padding-left:20px;
 				    text-indent:-20px;
-				}</style>
+				}</style>-->
 
 			<head>
 				<title>

@@ -173,7 +173,7 @@ display: inline-block;
     #navi-elements li{
         color: #fff; 
         display: inline-block;
-        padding: 16px 20px 6px 0px;
+        padding: 16px 10px 6px 9px;
         font-size: 16px; 
     }
     
@@ -223,7 +223,7 @@ display: inline-block;
         padding: 6px 37px;
     }
 
-.nav_documentos_sub_tab, .nav_cronologia_sub_tab, .nav_cronologia_sub_ext_tab, .nav_obras_sub_tab, .nav_publicacoes_sub_tab{
+.nav_documentos_sub_tab, .nav_cronologia_sub_tab, .nav_cronologia_sub_ext_tab, .nav_obras_sub_tab,.nav_publicacoes_sub_tab{
         text-decoration:none;
         display:inline-block;
         margin: 3px 5px; 
@@ -235,6 +235,10 @@ display: inline-block;
     .nav_cronologia_sub_tab{
         min-width: 65px !important;
         margin: 3px 4px !important;
+    }
+    .nav_publicacoes_sub_tab
+    {
+       margin: 3px 21px 3px 5px !important;  
     }
     .nav_documentos_sub_tab:hover, .nav_cronologia_sub_tab:hover, .nav_cronologia_sub_ext_tab:hover, .nav_obras_sub_tab:hover, .nav_publicacoes_sub_tab:hover{
             background-color: #4E4E4E;
@@ -355,7 +359,7 @@ border : 1px solid black;
 }
 
 /* Document / Publication Styles */
-.text .label {
+.text .label{
    display: inline-block;
    padding: 0;
    font-size: inherit;
@@ -390,7 +394,7 @@ ul#tabs{
             background-color: #900;   
         }
         ul#tabs span.active{
-            background-color: #900;
+          
         }
     
 ul#tab{
@@ -404,7 +408,7 @@ ul#tab{
     ul#tab li{
         display: none;
     }
-        ul#tab li.active {
+        ul#tab li.active{
             display: block;
         }
 
@@ -418,6 +422,9 @@ ul#tab{
     display: inline-block;
     margin: 10px 18px;
     min-width: 164px;
+}
+.doctabelcontent:hover{
+    text-decoration: none !important;
 }
 
 /* Search Button*/
@@ -585,7 +592,7 @@ ul#tab{
  
  /* Content Darstellung */
  
-#titleline {
+#titleline{
      background-color:#990000;
      color: #fff;
      max-width:300px;
@@ -594,7 +601,7 @@ ul#tab{
      padding: 4px 0;
  }
  
-#titledate {
+#titledate{
      font-size:12pt;
      font-style: italic; 
      text-align: center; 
@@ -606,12 +613,12 @@ ul#tab{
      margin-left:5px;
  }
  
-#forward {
+#forward{
      float: right;
      margin-right:5px;
  }
  
-#back,#forward {
+#back,#forward{
     display: inline-block;
     background-color: #A8A8A8;
     padding: 5px 20px;
@@ -620,11 +627,11 @@ ul#tab{
     width: 100px;
     text-align:center;
     }   
-    #back:hover, #forward:hover {
+    #back:hover, #forward:hover{
             background-color: #900;
     }
 
-#img-div, #text-div {
+#img-div, #text-div{
     margin: 15px 0; 
 }
 
@@ -655,14 +662,13 @@ ul#tab{
     cursor: pointer; 
 }
 
-#suche
-{
- 
-}
-#lorem
-{
+#lorem{
   width: 824px;
   margin: 0 auto 0 190px;
+}
+
+.metamark{
+ cursor: text !important; 
 }
 
 /*Tempörärer Mülleimer*/
