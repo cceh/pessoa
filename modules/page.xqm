@@ -33,12 +33,34 @@ let $search := <div class="container-4" id="searchbox" style="display:none">
                             <a class="small_text" id="search-link" href="{$helpers:app-root}/search">{page:singleAttribute(doc("/db/apps/pessoa/data/lists.xml"),"search","search_noun_ext")}</a>
                         </div>      
     let $clear :=  <div class="clear"></div>
-    let $switchlang := <script>
+    let $switchlang := if(contains($config:request-path,"search")) then 
+    <script>
+        function switchlang(value){{
+       location.href="{$helpers:app-root}/"+value+"/{substring-after($config:request-path,concat("/",$helpers:web-language,"/"))}{page:search_SwitchLang()}";
+        }}
+    </script>
+    else <script>
         function switchlang(value){{location.href="{$helpers:app-root}/"+value+"/{substring-after($config:request-path,concat("/",$helpers:web-language,"/"))}";}}
     </script>
     return ($search,$clear,$switchlang, search:search-function())
 };
+(:
+declare function page:search_SwitchLange() as xs:string* {
 
+let $return := if(  request:get-parameter("search",'') = "simple") then 
+       concat( "$('#result').load(' ",$helpers:request-path, "?term=",request:get-parameter("term",''),"&amp;search=simple&amp;orderBy=alphab');")
+       else concat( "$('#result').load('",$helpers:request-path,"?orderBy=alphab",search:mergeParameters(),"');")
+       return $return
+};
+:)
+
+declare function page:search_SwitchLang() as xs:string {
+let $return := 
+    if(  request:get-parameter("search",'') = "simple") then
+    string-join(("?term=",search:get-parameters("term"),"&amp;search=simple"),'')
+    else string-join(("?term",substring-after(search:mergeParameters(),"term")),'')
+    return $return
+};
 
 declare function page:createMainNav() as node()* {
 let $type := ("autores","documentos","publicacoes","obras","genero","cronologia","bibliografia","projeto")

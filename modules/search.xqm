@@ -249,30 +249,42 @@ declare function search:date_search($db as node()*,$para as xs:string,$date as x
 
 (: Profi Result :)
 declare function search:profiresult($node as node(), $model as map(*), $sel as xs:string, $orderBy as xs:string?) as node()+ {
-
-
 if(exists($sel) and $sel = "union") 
     then
     if(exists($model(concat("r_",$sel))))
+    
     then if ($model("query")!="") then 
     
-        for $hit in $model(concat("r_",$sel))
+    let $i := if($orderBy !="alpha") then 2  else 5
+    let $years :=
+        for $doc in $model(concat("r_",$sel))
+         return fn:substring(author:getYearOrTitle($doc,$orderBy),0,$i) 
+        let $years := fn:distinct-values($years)
+        for $year in  $years 
+                let $docsInYear :=  
+            for $doc in $model(concat("r_",$sel)) where(fn:substring(author:getYearOrTitle($doc,$orderBy),0,$i) = $year) return $doc
+            order by $year
+            return (<div><br />{$year}</div>,
+    
+        for $hit in $docsInYear
             let $file_name := root($hit)/util:document-name(.)
             let $expanded := kwic:expand($hit)
-           let $sort := if($orderBy !="alpha") then (author:getYearOrTitle($hit,"date"))
-                        else $file_name
             let $title := 
                     if(doc(concat("/db/apps/pessoa/data/doc/",$file_name))//tei:sourceDesc/tei:msDesc) 
                         then doc(concat("/db/apps/pessoa/data/doc/",$file_name))//tei:msDesc/tei:msIdentifier/tei:idno[1]/data(.)
                         else doc(concat("/db/apps/pessoa/data/pub/",$file_name))//tei:biblStruct/tei:analytic/tei:title[1]/data(.)
-            order by $sort
+            order by (author:getYearOrTitle($hit,$orderBy))
             return if(substring-after($file_name,"BNP") != "" or substring-after($file_name,"MN") != "")
                     then <li><a href="{$helpers:app-root}/data/doc/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"), '&amp;file=', $file_name)}">{$title}</a>
                         {kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="40"/>)}</li>
                     else <li><a href="{$helpers:app-root}/data/pub/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"), '&amp;file=', $file_name)}">{$title}</a>
                         {kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="40"/>)}</li>
-            
-        else for $hit in $model(concat("r_",$sel))
+            )
+        else 
+        
+        
+        
+        for $hit in $model(concat("r_",$sel))
             let $file_name := root($hit)/util:document-name(.)
             let $sort := if($orderBy!="alpha") then (author:getYearOrTitle($hit,"date"))
                         else $file_name
@@ -314,7 +326,7 @@ if($term and $file and $sel and $sel="text","head","lang")
 
 declare function search:search-function() as node() {
     let $search := <script>function search() {{var value = $("#search").val();
-                location.href="{$helpers:app-root}/{$helpers:web-language}/simple/search?term="+value;
+                location.href="{$helpers:app-root}/{$helpers:web-language}/search?search=simple&amp;term="+value;
                 }};
                 $('#search').keydown(function( event ) {{
                 if(event.which == 13) {{
@@ -331,12 +343,12 @@ declare function search:recorder() as node() {
  (:let $sort := if(request:get-parameter("sort",'') != "") then request:get-parameter("term",'') else "alpha":)
   let $code := if($search != "" and $term != "") then 
     <script> function recorder(sort) {{
-    $('#result').load('{$helpers:app-root}/{$helpers:web-language}/search?term={$term}&amp;search={$search}&amp;orderBy='+sort);
+    $('#result').load('{$helpers:request-path}?term={$term}&amp;search={$search}&amp;orderBy='+sort);
   }}
   </script>
   else 
   <script> function recorder(sort) {{
-        $('#result').load('{$helpers:app-root}/search?orderBy='+sort+'{$parameters}');
+        $('#result').load('{$helpers:request-path}?orderBy='+sort+'{$parameters}');
        
   }}</script>
   return $code

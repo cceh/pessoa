@@ -145,23 +145,10 @@ else if (contains($exist:path, "/$shared/")) then
     </dispatch>
     (:Suche:)
 else if (contains($exist:path, "search")) then
-    if(request:get-parameter("orderBy", '') != "") 
+    if(request:get-parameter("orderBy", '') != "" ) 
     then 
        let $orderBy := request:get-parameter("orderBy", '')
        return( search:profiresult(<node />, search:profisearch(<node />, map {"test" := "test"}, request:get-parameter("term",'')), "union",$orderBy))
-   else if (contains($exist:path, "simple"))
-    then 
-        <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-            <forward url="{$exist:controller}/page/search.html" />
-            <add-parameter name="search" value="simple" />
-            <view>
-                <forward url="{$exist:controller}/modules/view.xql"/>
-            </view>
-            <error-handler>
-                <forward url="{$exist:controller}/error-page.html" method="get"/>
-                <forward url="{$exist:controller}/modules/view.xql"/>
-            </error-handler>
-        </dispatch>
    else 
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <forward url="{$exist:controller}/page/search.html" />
