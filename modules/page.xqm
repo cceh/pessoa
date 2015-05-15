@@ -115,7 +115,7 @@ declare function page:createThirdNav($type as xs:string) as node()* {
     for $date in ("1900 - 1909","1910 - 1919","1920 - 1929","1930 - 1935", (doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item/tei:list[@type="cronologia"]/tei:item/tei:term[@xml:lang=$helpers:web-language]/data(.)))
             return if (contains($date, "1") != xs:boolean("true") ) then
                         <li class="{concat("nav_",$type,"_tab")}">
-                        <a href="{concat($helpers:app-root,"/timeline.html")}" target="_blank">
+                        <a href="{concat($helpers:app-root,"/",$helpers:web-language,"/page/timeline.html")}" target="_blank">
                         {$date}
                         </a></li>
                     else if(substring-after($date,"19")!= "") then  <li class="{concat("nav_",$type,"_tab")}">
@@ -373,9 +373,9 @@ declare %templates:wrap function page:createTimelineBody($node as node(), $model
     
     
     let $body := <body onload="onLoad();" onresize="onResize();">
-         
-        <h2>{$headline}</h2>
-        <div id="my-timeline" style="height: 1300px; border: 1px solid #aaa; border-radius: 10px;" ></div>
+         <h1><u>{$headline}</u></h1>
+
+       <div id="my-timeline" style="height: 1500px; border: 1px solid #aaa; border-radius: 10px;" ></div>
         </body>
     
     return  $body
@@ -385,32 +385,36 @@ declare %templates:wrap function page:createTimelineHeader($node as node(), $mod
 let $lists := doc('/db/apps/pessoa/data/lists.xml') 
 let $title := <title>{$lists//tei:list[@type="navigation"]/tei:item[5]/tei:list/tei:item/tei:term[@xml:lang=$helpers:web-language]/data(.)}</title>
 let $meta := <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+let $google := 	 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700" rel="stylesheet" type="text/css" ></link>
+
 let $style := <style type="text/css">
-         body {{
-         font-family: sans-serif;
-         font-size: 8pt;
+                  body {{
+         
+         font-size: 9pt;
 		 
          }}
+		 
  #my-timeline {{
  overflow: no;
  }}
-.tape-special_event {{  margin-top: 12px; }}
+.tape-special_event {{  margin-top: 12px;  }}
 .simile {{
 width: 1800px;
 }}
       </style>
 
+let $style1 :=   <link type="text/css" rel="stylesheet" href="{$helpers:app-root}/resources/css/timeline-bundle_nachvollziehen.css"   ></link>  
+
 let $script1 := 
-      <script type="text/javascript">
-      Timeline_ajax_url="{concat($helpers:app-root,"/resources/js/timeline_2.3.0/timeline_ajax/simile-ajax-api.js")}";
-      Timeline_urlPrefix='{concat($helpers:app-root,"/resources/js/timeline_2.3.0/timeline_js/")}';       
-      Timeline_parameters='bundle=true';
-    </script>
+           <script src="http://api.simile-widgets.org/timeline/2.3.1/timeline-api.js?bundle=true" type="text/javascript"></script>  
+(:
   let $script2 :=  <script src="{concat($helpers:app-root,"/resources/js/timeline_2.3.0/timeline_js/timeline-api.js")}"    
       type="text/javascript">
     </script> 
+ l:)
  let $script3 := <script type="text/javascript">
-        var tl;
+         var tl;
         function onLoad() {{
             var eventSource = new Timeline.DefaultEventSource(0);
             
@@ -419,9 +423,12 @@ let $script1 :=
             theme.event.bubble.height = 150;
 			theme.event.tape.height = 10;
 			theme.event.track.gap = -7;
+		
 			
-            theme.ether.backgroundColors[1] = theme.ether.backgroundColors[0];
-            var data = Timeline.DateTime.parseGregorianDateTime("Oct 02 1894")
+			
+        
+			
+            var data = Timeline.DateTime.parseGregorianDateTime("Oct 02 1905")
             var bandInfos = [
                 Timeline.createBandInfo({{
                     width:          "3%",
@@ -430,17 +437,28 @@ let $script1 :=
                     date:           data,
                     showEventText:  false,
                     theme:          theme
-               }}),
+                }}),
+				
+				    Timeline.createBandInfo({{
+                    width:          "3%", 
+                    intervalUnit:   Timeline.DateTime.YEAR, 
+                    intervalPixels: 80,
+                    date:           data,
+					showEventText:  false,
+                    theme:          theme
+				
+                }}),
 				
                 Timeline.createBandInfo({{
-                    width:          "97%", 
+                    width:          "94%", 
                     intervalUnit:   Timeline.DateTime.YEAR, 
                     intervalPixels: 80,
                     eventSource:    eventSource,
                     date:           data,
+					position:       false,
                     theme:          theme
 				
-               }})
+                }})
             ];
             bandInfos[0].etherPainter = new Timeline.YearCountEtherPainter({{
                 startDate:  "Jun 13 1888 ",
@@ -451,8 +469,10 @@ let $script1 :=
 			
 			
 			
-            bandInfos[0].syncWith = 1;
-            bandInfos[0].highlight = false;
+          
+			bandInfos[0].syncWith = 2;
+		    bandInfos[1].syncWith = 2;
+            bandInfos[1].highlight = false;
             bandInfos[0].decorators = [
                 new Timeline.SpanHighlightDecorator({{
                     startDate:  "Jun 13 1888 ",
@@ -462,29 +482,18 @@ let $script1 :=
                     color:      "#B8B8E6",
                     opacity:    50,
                     theme:      theme
-               }})
+                }})
             ];
             			
 			
 			
             tl = Timeline.create(document.getElementById("my-timeline"), bandInfos, Timeline.HORIZONTAL);
-            tl.loadXML("{concat($helpers:app-root,"/events?lang=",$helpers:web-language)}", function(xml, url) {{
+            tl.loadXML("{$helpers:web-language}_events.xml", function(xml, url) {{
                 eventSource.loadXML(xml, url);
             }});
         }}
-				
-		
-        var resizeTimerID = null;
-        function onResize() {{
-            if (resizeTimerID == null) {{
-                resizeTimerID = window.setTimeout(function() {{
-                    resizeTimerID = null;
-                    tl.layout();
-              }}, 500);
-           }}
-       }}
     </script>		
-    return ($title,$meta,$style,$script1, $script2, $script3)
+    return ($title,$meta,$google,$style,$style1,$script1,$script3)
 };
 
 declare %templates:wrap function page:docControll($node as node(), $model as map(*)) {

@@ -165,7 +165,14 @@ else if (contains($exist:path, "search")) then
     let $language := request:get-parameter("lang", "pt")
     return 
 transform:transform((collection("/db/apps/pessoa/data/doc"), collection("/db/apps/pessoa/data/pub"))//tei:TEI, doc("/db/apps/pessoa/xslt/events.xsl"), <parameters><param name="language" value="{$language}"/></parameters>)
-
+    else if (contains($exist:path,"timeline")) then
+    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <forward url="{$exist:controller}/page/timeline.html" />
+        <error-handler>
+            <forward url="{$exist:controller}/error-page.html" method="get"/>
+            <forward url="{$exist:controller}/modules/view.xql"/>
+        </error-handler>
+    </dispatch>
 else
     (: everything else is passed through :)
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
