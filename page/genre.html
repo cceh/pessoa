@@ -2,12 +2,12 @@
 <div xmlns="http://www.w3.org/1999/xhtml" class="templates:surround?with=templates/page.html&amp;at=content">
     
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type="text/javascript">
+   <!-- <script type="text/javascript">
         
         function reorder(){
         if ($("#date").is(":checked"))
         {
-        $("#genreList").load("http://localhost:8080/exist/apps/pessoa/page/genre_lista_editorial?orderBy=date");
+        $("#genreList").load("http://localhost:8080/exist/apps/pessoa/page/genre/lista_editorial/date");
         
         }
         else{
@@ -15,9 +15,10 @@
         }
         }
     </script> 
-    
+    -->
     <div class="row-fluid">
         <div id="content" class="span12 main">
+            <div class="doc:get-recorder"></div>
             <div id="genre-content">
                 <form method="get">
                     Ordem:
@@ -25,9 +26,9 @@
                     <input id="alphab" checked="checked" name="order" type="radio" value="yes" onchange="reorder();"></input> alfabético   
                 </form>
                 <br /><br />
-            <h2>Documentos - Lista Editorial</h2>
+            <h2 class="doc:get-genre_type"></h2>
             <div id="genreList" class="span6">
-                <p class="doc:get-genre?type=lista_editorial&amp;orderBy=alphab">genre</p>
+                <p class="doc:get-genre">genre</p>
             </div>
             </div>    
         </div>

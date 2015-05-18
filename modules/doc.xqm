@@ -1,12 +1,18 @@
 xquery version "3.0";
 
 module namespace doc="http://localhost:8080/exist/apps/pessoa/doc";
-declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 import module namespace templates="http://exist-db.org/xquery/templates" at "templates.xql";
 
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
 import module namespace author="http://localhost:8080/exist/apps/pessoa/author" at "author.xqm";
+import module namespace page="http://localhost:8080/exist/apps/pessoa/page" at "page.xqm";
+import module namespace app="http://localhost:8080/exist/apps/pessoa/templates" at "app.xql";
+
+
+declare namespace request="http://exist-db.org/xquery/request";
+declare namespace tei="http://www.tei-c.org/ns/1.0";
+
 
 (: declare variable $ms:id := request:get-parameter("id", ()); :)
 
@@ -138,3 +144,92 @@ declare function doc:get-xml($id){
     return doc(concat("/db/apps/pessoa/data/doc/", $file-name)) 
 };
 
+declare  function doc:get-recorder($node as node(), $model as map(*)) as node() {
+    let $script := <script type="text/javascript">
+        
+        function reorder(){{
+        if ($("#date").is(":checked"))
+        {{
+        $("#genreList").load("{$helpers:request-path}?orderBy=date");
+        
+        }}
+        else{{
+        $("#genreList").load("{$helpers:request-path}?orderBy=alphab"); 
+        }}
+        }}
+    </script> 
+    return $script
+};
+
+declare function doc:get-genre_type($node as node(), $model as map(*)) as node() {
+    let $type := substring-after($helpers:request-path,"genre/")
+   
+    let $title := if($helpers:web-language = "pt") 
+        then data(doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="genres"][@xml:lang=$helpers:web-language]/tei:item[@xml:id=$type])
+        else data(doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="genres"][@xml:lang=$helpers:web-language]/tei:item[@corresp=concat("#",$type)])
+    return <h2>Documentos - { $title}</h2>
+};
+
+declare function doc:get-versaoPessoal($node as node(), $model as map(*)) as node() {
+let $script := <script type="text/javascript">
+
+        function versaoPessoal(){{
+            var url = window.location.href;
+            var i = url.lastIndexOf("/");
+            var j = url.lastIndexOf("#");
+            var id = url.substring(i+1,j);
+            if ($("#lb").is(":checked"))
+            {{
+            if($("#abbr").is(":checked"))
+            {{
+            $("#tabs-4-text").load("http://localhost:8080/exist/apps/pessoa/{$helpers:web-language}/page/doc/versao-pessoal?id=" + id + "&amp;lb=yes&amp;abbr=yes");
+            }}
+            else
+            {{
+            $("#tabs-4-text").load("http://localhost:8080/exist/apps/pessoa/{$helpers:web-language}/page/doc/versao-pessoal?id=" + id + "&amp;lb=yes&amp;abbr=no");
+            }}
+            }}
+            else
+            {{
+            if($("#abbr").is(":checked"))
+            {{
+            $("#tabs-4-text").load("http://localhost:8080/exist/apps/pessoa/{$helpers:web-language}/page/doc/versao-pessoal?id=" + id + "&amp;lb=no&amp;abbr=yes");
+            }}
+            else
+            {{
+            $("#tabs-4-text").load("http://localhost:8080/exist/apps/pessoa/{$helpers:web-language}/page/doc/versao-pessoal?id=" + id + "&amp;lb=no&amp;abbr=no");
+            }}
+            }}
+        }}
+        
+        
+        if ( window.addEventListener ) {{
+        addEventListener( "load", draw(100,100), false );
+        }} else {{
+        attachEvent( "onload", draw(100,100) );
+        }}
+function draw(w, h) {{
+var canvas = document.getCSSCanvasContext("2d", "lines", w, h);
+canvas.strokeStyle = "rgb(0,0,0)";
+canvas.beginPath();
+canvas.moveTo( 0,0);
+canvas.lineTo( w, h );
+canvas.stroke();
+
+var canvas2 = document.getCSSCanvasContext("2d", "verticalLine", w, h);
+canvas2.strokeStyle = "rgb(0,0,0)";
+canvas2.beginPath();
+canvas2.moveTo( 0,0);
+canvas2.lineTo( 10,60 );
+canvas2.stroke();
+
+var canvas3 = document.getCSSCanvasContext("2d", "circle", w, h);
+canvas3.strokeStyle = "rgb(0,0,0)";
+canvas3.beginPath();
+canvas3.arc(12,12,12,0,2*Math.PI);
+canvas3.stroke();
+}}
+
+    </script>
+    return $script
+};

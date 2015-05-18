@@ -16,7 +16,7 @@ declare variable $helpers:app-root := $config:webapp-root;
 (: declare variable $helpers:file-path := $config:file-path; :)
 declare variable $helpers:request-path := $config:request-path;
 declare variable $helpers:webfile-path := $config:webfile-path;
-declare variable $helpers:web-language := if(contains($helpers:request-path,"en")) then "en" else "pt";
+declare variable $helpers:web-language := if(contains($config:request-path,"/en/")) then "en" else "pt";
 (:
 declare variable $helpers:web-language := ();
 
@@ -40,7 +40,7 @@ declare function helpers:app-root($node as node(), $model as map(*)){
                 {helpers:copy-class-attr($node)}
              </img>
         else if (xs:string($elname) = "a")
-             then <a href="{$helpers:app-root}/{$node/@href}">
+             then <a href="{$helpers:app-root}/{$helpers:web-language}/{$node/@href}">
                     {$node/@*[not(xs:string(node-name(.)) = "href") and not(xs:string(node-name(.)) = "class")]}
                     {helpers:copy-class-attr($node)}
                     {templates:process($node/node(), $model)}

@@ -40,7 +40,7 @@ else if (contains($exist:path,  "/doc/")) then
     else
     (session:set-attribute("id", $exist:resource), 
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-        <forward url="{$exist:controller}/doc.html">
+        <forward url="{$exist:controller}/page/doc.html">
         <add-parameter name="id" value="{$exist:resource}" />
         </forward>
         <view>
@@ -54,7 +54,7 @@ else if (contains($exist:path,  "/doc/")) then
 else if (contains($exist:path, "/pub/")) then
     (session:set-attribute("id", $exist:resource), 
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-        <forward url="{$exist:controller}/pub.html">
+        <forward url="{$exist:controller}/page/pub.html">
             <add-parameter name="id" value="{$exist:resource}" />
         </forward>
         <view>
@@ -68,7 +68,7 @@ else if (contains($exist:path, "/pub/")) then
 else if (contains($exist:path, "/author/")) then
     if (request:get-parameter("orderBy","")!="") then
     let $orderBy := request:get-parameter("orderBy", "alphab")
-    let $author := substring-before(substring-after($exist:path, '/author/'), '/')
+    let $author := substring-before(substring-after($exist:path, '/page/author/'), '/')
     let $textType := $exist:resource
     return 
    author:reorder(<node />, map {"test" := "test"},$orderBy, $textType, $author)
@@ -79,7 +79,7 @@ else if (contains($exist:path, "/author/")) then
     (session:set-attribute("textType", $textType),
     session:set-attribute("author", $author),
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-        <forward url="{$exist:controller}/author.html" />
+        <forward url="{$exist:controller}/page/author.html" />
         <view>
             <forward url="{$exist:controller}/modules/view.xql"/>
         </view>
@@ -88,14 +88,18 @@ else if (contains($exist:path, "/author/")) then
 			<forward url="{$exist:controller}/modules/view.xql"/>
 		</error-handler>
     </dispatch>)
-else if(contains($exist:path, "page/genre_") ) then
-        if(request:get-parameter("orderBy","")!="") then
-        let $orderBy := request:get-parameter("orderBy", "alphab")
-        let $type := substring-after($exist:path, '/genre_')
+else if(contains($exist:path, "page/genre") ) then
+        if(request:get-parameter("orderBy",'') ) then
+        let $orderBy := request:get-parameter("orderBy", '')
+        let $type := $exist:resource
         return doc:get-genre(<node />, map {"test" := "test"}, $type, $orderBy)
-        else 
+        else (
+        session:set-attribute("type",$exist:resource),
+        session:set-attribute("orderBy","alphab"),
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-        <forward url="{$exist:controller}/page/{$exist:resource}" />
+        <forward url="{$exist:controller}/page/genre.html" />
+        <add-parameter name="type" value="{$exist:resource}" />
+        <add-parameter name="orderBy" value="alphab"/>
         <view>
             <forward url="{$exist:controller}/modules/view.xql"/>
         </view>
@@ -104,6 +108,23 @@ else if(contains($exist:path, "page/genre_") ) then
 			<forward url="{$exist:controller}/modules/view.xql"/>
 		</error-handler>
     </dispatch>
+)
+else if(contains($exist:path,"page/bibliografia")) then
+let $type :=$exist:resource
+return (
+    session:set-attribute("type",$type),
+    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <forward url="{$exist:controller}/page/bibliografia.html" />
+        <add-parameter name="type" value="{$type}" />
+        <view>
+            <forward url="{$exist:controller}/modules/view.xql"/>
+        </view>
+		<error-handler>
+			<forward url="{$exist:controller}/error-page.html" method="get"/>
+			<forward url="{$exist:controller}/modules/view.xql"/>
+		</error-handler>
+    </dispatch>
+)
 else if (ends-with($exist:resource, ".html")) then
     (: the html page is run through view.xql to expand templates :)
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
@@ -124,26 +145,13 @@ else if (contains($exist:path, "/$shared/")) then
     </dispatch>
     (:Suche:)
 else if (contains($exist:path, "search")) then
-    if(request:get-parameter("orderBy", '') != "") 
+    if(request:get-parameter("orderBy", '') != "" ) 
     then 
        let $orderBy := request:get-parameter("orderBy", '')
        return( search:profiresult(<node />, search:profisearch(<node />, map {"test" := "test"}, request:get-parameter("term",'')), "union",$orderBy))
-   else if (contains($exist:path, "simple"))
-    then 
-        <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-            <forward url="{$exist:controller}/search.html" />
-            <add-parameter name="search" value="simple" />
-            <view>
-                <forward url="{$exist:controller}/modules/view.xql"/>
-            </view>
-            <error-handler>
-                <forward url="{$exist:controller}/error-page.html" method="get"/>
-                <forward url="{$exist:controller}/modules/view.xql"/>
-            </error-handler>
-        </dispatch>
    else 
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-        <forward url="{$exist:controller}/search.html" />
+        <forward url="{$exist:controller}/page/search.html" />
         <view>
             <forward url="{$exist:controller}/modules/view.xql"/>
         </view>
@@ -157,7 +165,14 @@ else if (contains($exist:path, "search")) then
     let $language := request:get-parameter("lang", "pt")
     return 
 transform:transform((collection("/db/apps/pessoa/data/doc"), collection("/db/apps/pessoa/data/pub"))//tei:TEI, doc("/db/apps/pessoa/xslt/events.xsl"), <parameters><param name="language" value="{$language}"/></parameters>)
-
+    else if (contains($exist:path,"timeline")) then
+    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <forward url="{$exist:controller}/page/timeline.html" />
+        <error-handler>
+            <forward url="{$exist:controller}/error-page.html" method="get"/>
+            <forward url="{$exist:controller}/modules/view.xql"/>
+        </error-handler>
+    </dispatch>
 else
     (: everything else is passed through :)
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">

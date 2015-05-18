@@ -44,11 +44,11 @@ declare function app:test($node as node(), $model as map(*)) {
 
 
 
-declare function app:get-bibl($node as node(), $model as map(*))as item()* {
+declare function app:get-bibl($node as node(), $model as map(*), $type as xs:string)as item()* {
     let $xml := doc("/db/apps/pessoa/data/bibl.xml")
     let $stylesheet := doc("/db/apps/pessoa/xslt/bibl.xsl")
-    let $type := substring-after(request:get-parameter("type",''),"bib")
-    return  transform:transform($xml, $stylesheet,(<parameters><param name="listNo_string" value="{$type}"/></parameters>))
+    let $typ := substring-after($type,"bib")
+    return  transform:transform($xml, $stylesheet,(<parameters><param name="listNo_string" value="{$typ}"/></parameters>))
 
 };
 
