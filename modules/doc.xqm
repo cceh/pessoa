@@ -100,10 +100,12 @@ declare function doc:getNavigation($years, $type){
         {for $year at $i in $years
         order by $year
             return if ($i = count($years)) then
-                <a href="{$type}#{$year}">{$year}</a>
+                <a href="#{$year}">{$year}</a>
                 else
-                (<a href="{$type}#{$year}">{$year}</a>,<span>|</span>)
-        }       
+                (<a href="#{$year}">{$year}</a>,<span>|</span>)
+        }  
+        <br/>
+        <br/>
     </div>
 };
 

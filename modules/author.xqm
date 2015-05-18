@@ -132,7 +132,9 @@ declare function author:getNavigation($years){
                 <a href="#{$year}">{$year}</a>
                 else
                 (<a href="#{$year}">{$year}</a>,<span>|</span>)
-        }       
+        } 
+        <br/>
+        <br/>
     </div>
 };
 
@@ -206,8 +208,10 @@ declare function author:listDocuments($node as node(), $model as map(*), $author
                     )
         else 
             let $roles := fn:distinct-values($docs//tei:text//tei:rs[@type = 'person' and @key=$authorKey]/@role/data(.)) 
+            return(author:getNavigation($roles),
             for $role in $roles return
-                <p><b>mencionado como {if($role="author") then "autor" else if($role ="translator") then "traductor" else if($role ="topic") then "tema" else $role}</b>:{author:listDocumentsByRole($docs, $authorKey, $role, $orderBy)}</p>       
+                <p><h2>mencionado como {if($role="author") then "autor" else if($role ="translator") then "traductor" else if($role ="topic") then "tema" else $role}:</h2>{author:listDocumentsByRole($docs, $authorKey, $role, $orderBy)}</p>       
+            )
 };
 
 
