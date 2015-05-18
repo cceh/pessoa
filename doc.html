@@ -34,9 +34,9 @@
         
         
         if ( window.addEventListener ) {
-        addEventListener( "load", draw(100,100), false );
+        addEventListener( "load", draw(500,500), false );
         } else {
-        attachEvent( "onload", draw(100,100) );
+        attachEvent( "onload", draw(500,500) );
         }
 function draw(w, h) {
 var canvas = document.getCSSCanvasContext("2d", "lines", w, h);
@@ -58,6 +58,8 @@ canvas3.strokeStyle = "rgb(0,0,0)";
 canvas3.beginPath();
 canvas3.arc(12,12,12,0,2*Math.PI);
 canvas3.stroke();
+
+
 }
 
     </script>
