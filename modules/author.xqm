@@ -107,17 +107,33 @@ declare function author:listAll($node as node(), $model as map(*), $author, $ord
     let $i := if($orderBy ="alphab") then 2 else 5
     let $years := for $text in $texts return fn:substring(author:getYearOrTitle($text,$orderBy),0,$i)
     let $years := fn:distinct-values($years)
+    return (author:getNavigation($years),
     for $year in $years
         let $textsInYear :=
             for $text in $texts where (fn:substring(author:getYearOrTitle($text,$orderBy),0,$i) = $year) return $text  
     order by $year
     return
-        (<div><b>{$year }</b></div>,       
+        (<div><h2>{$year }</h2></div>,       
          for $text in $textsInYear order by (author:getYearOrTitle($text,$orderBy))return           
             if((fn:starts-with($text//(tei:teiHeader)[1]//(tei:titleStmt)[1]//(tei:title)[1]/data(.),"BNP")) or (fn:starts-with($text//(tei:teiHeader)[1]//(tei:titleStmt)[1]//(tei:title)[1]/data(.),"MN") )) then          
                 <div>{author:listDocumentByYear($text,$authorKey)}</div>    
             else (<div>{author:listPublication($text,$authorKey)}</div>)          
-        )    
+        )  
+        )
+};
+
+declare function author:getNavigation($years){
+    let $years := for $year in $years order by $year return $year
+    return
+    <div> 
+        {for $year at $i in $years
+        order by $year
+            return if ($i = count($years)) then
+                <a href="#{$year}">{$year}</a>
+                else
+                (<a href="#{$year}">{$year}</a>,<span>|</span>)
+        }       
+    </div>
 };
 
 declare function author:listPublications($node as node(), $model as map(*), $author, $orderBy){
@@ -131,13 +147,15 @@ declare function author:listPublications($node as node(), $model as map(*), $aut
         for $pub in $pubs return fn:substring(author:getYearOrTitleOfPublication($pub,$orderBy),0,$i)   
     
     let $years := fn:distinct-values($years)
+    return (author:getNavigation($years),
     for $year in $years 
         let $pubsInYear :=
             for $pub in $pubs where (fn:substring(author:getYearOrTitleOfPublication($pub,$orderBy),0,$i) = $year ) return $pub
     order by $year 
-    return (<div><b>{$year}</b></div>,
+    return (<div><h2>{$year}</h2></div>,
             for $pub in $pubsInYear order by (author:getYearOrTitleOfPublication($pub,$orderBy))return
-            author:listPublication($pub,$authorKey))              
+            author:listPublication($pub,$authorKey))    
+            )
 };
 
 declare function author:listPublication($pub, $authorKey){
@@ -178,12 +196,14 @@ declare function author:listDocuments($node as node(), $model as map(*), $author
     let $years := fn:distinct-values($years)
     return 
         if($orderBy ="date") then
+        (author:getNavigation($years),
             for $year in $years
                 let $docsInYear := 
                     for $doc in $docs where (fn:substring(author:getYearOrTitleOfDocument($doc,$orderBy),0,$i) = $year ) return $doc
             order by $year 
-            return (<div><b>{$year}</b></div>,
+            return (<div><h2>{$year}</h2></div>,
                     for $doc in $docsInYear order by author:getYearOrTitleOfDocument($doc,"date") return author:listDocumentByYear($doc,$authorKey))
+                    )
         else 
             let $roles := fn:distinct-values($docs//tei:text//tei:rs[@type = 'person' and @key=$authorKey]/@role/data(.)) 
             for $role in $roles return

@@ -78,18 +78,33 @@ declare function doc:get-genre($node as node(), $model as map(*), $type as xs:st
         for $doc in $docs 
         return fn:substring(author:getYearOrTitle($doc,$orderBy),0,$i) 
     let $years := fn:distinct-values($years)
+    return (doc:getNavigation($years, $type),
     for $year in $years 
         let $docsInYear :=  
             for $doc in $docs where(fn:substring(author:getYearOrTitle($doc,$orderBy),0,$i) = $year) return $doc
     order by $year       
-    return (<div><br />{$year}</div>,
+    return (<div><br /><h3 id="{$year}">{$year}</h3></div>,
      for $doc in $docsInYear 
      order by (author:getYearOrTitle($doc,$orderBy))
      return
         if ($doc//tei:sourceDesc/tei:msDesc)
                     then  ( <div class="doctabelcontent"><a href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{($doc//tei:title)[1]/data(.)}</a></div>)                              
                     else (<div class="doctabelcontent"><a href="{$helpers:app-root}/{substring-before(substring-after(document-uri($doc),"/db/apps/pessoa/data"),".xml")}">{($doc//tei:sourceDesc[1]/tei:biblStruct[1]/tei:analytic/tei:title)[1]/data(.)}</a></div>)           
-    )      
+    ) )     
+};
+
+declare function doc:getNavigation($years, $type){
+    let $years := for $year in $years order by $year return $year
+    return
+    <div> 
+        {for $year at $i in $years
+        order by $year
+            return if ($i = count($years)) then
+                <a href="{$type}#{$year}">{$year}</a>
+                else
+                (<a href="{$type}#{$year}">{$year}</a>,<span>|</span>)
+        }       
+    </div>
 };
 
 
