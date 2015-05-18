@@ -10,6 +10,7 @@
             .item {margin-bottom: 20px; margin-top: 10px; position: relative;}
             .item .label {padding-right: 1em;display: inline-table;}
             .list .item .list .item {margin-left: 2em;}
+             p {font-size: 16px;}
             
             /*notes*/
             .note {position: absolute; font-size: small; vertical-align: middle;}
@@ -19,6 +20,7 @@
             .note.addition.margin.top.right {right: -120px;}
             .note.addition.margin.left {left: -35px;;}
             .note-label.margin.left {padding: 0px; float: none;}
+            .editorial-note {text-align: justify;}
             
             /*metamarks*/
             .metamark {cursor: pointer;}
@@ -40,36 +42,25 @@
             .right {float: right;}   
             .left {float: left;}
             .center {text-align: center;}
+            .above { position: absolute; top: -0.8em; left: 0px;; font-size: small; width:200%;}
+            .below{position: absolute; top: 1.5em; left: 0px; font-size: small; width:200%}
+            .ab {display: inline-block;}
+            .seg {position: relative;}          
+            .choice {position: relative;}
+            .subst {position: relative;}
+            /*.add {top: 0;}*/
+            .del {text-decoration: line-through;}
+            .gap {cursor: pointer;}
+            .supplied {cursor: pointer;}           
+            /*  .ex, .supplied {color: purple;} */
             
             .delSpan{background: -webkit-canvas(lines);  }
             .verticalLine {background: -webkit-canvas(verticalLine); display: inline-table; margin-left:110px; width:10px; height:60px;}
             .circled {background: -webkit-canvas(circle); width:25px; height:25px;}
 
-            p {font-size: 16px;}
+            /*special case 71A-2V*/
+            #bnp-e3-71a-2v .below{left: -40px;}   
             
-            .ab {display: inline-block;}
-  
-            .seg {position: relative;}
-           /* .seg.add.below {position: absolute; top: -0.8em; left: 0; font-size: small; width:200%;} */
-            
-            .choice {position: relative;}
-            /*.choice .add.below {position: absolute; top: 1.5em; left: 0; font-size: small;}*/
-        
-            .subst {position: relative;}
-          
-          /*  .add.below {position: absolute; top: 1.5em; left: -20px; font-size: small; width:200%} */
-            .add {top: 0;}
-    
-            .above { position: absolute; top: -0.8em; left: 0px;; font-size: small; width:200%;}
-            .below{position: absolute; top: 1.5em; left: 0px; font-size: small; width:200%}
-            #bnp-e3-71a-2v .below{left: -40px;}
-            
-           
-           
-            .del {text-decoration: line-through;}
-            .gap {cursor: pointer;}
-            .supplied {cursor: pointer;}           
-          /*  .ex, .supplied {color: purple;} */
             
             
             
@@ -243,10 +234,13 @@
     </xsl:template>
     
     <xsl:template match="note[@resp]">
-        <div class="editorial note">
+        <div class="editorial-note">
             <xsl:apply-templates/>
         </div>
     </xsl:template>
+    
+   
+   
     
     <!--note-labels-->
     
@@ -548,9 +542,6 @@
         </span>
     </xsl:template>
    
-
- 
-
     
     <xsl:template match="seg">         
         <span>
@@ -572,17 +563,6 @@
         </span>
     </xsl:template>
    
-
-    
-    
-    
-
-        
-    
-    
- 
-    
-
     
     <xsl:template match="delSpan">
         <xsl:variable name="anchorID" select="@spanTo/substring-after(.,'#')" />
@@ -595,13 +575,7 @@
    <!-- <xsl:template match="*[preceding-sibling::delSpan][following::anchor[@xml:id=current()/preceding-sibling::delSpan/@spanTo/substring-after(.,'#')]]" priority="100"/>
 -->
     
-
-   
-   
-    
-   
-   
-    
+ 
     <!-- add -->
    
     <xsl:template match="add[@place='below'][not(ancestor::choice)][not(ancestor::subst)]">
@@ -631,11 +605,11 @@
     </p>
 </xsl:template>
     
-    <xsl:template match="p[@rend='indent']">
+<xsl:template match="p[@rend='indent']">
         <p style="indent">
             <xsl:apply-templates/>
         </p>
-    </xsl:template>
+</xsl:template>
     
 <xsl:template match="p[@rend='text-center']">
     <p style="text-align: center;">
@@ -654,7 +628,4 @@
         <xsl:apply-templates/>
         </div><br/>
     </xsl:template>
-
-  
-  
 </xsl:stylesheet>
