@@ -161,6 +161,15 @@ declare function doc:get-xml($id){
     return doc(concat("/db/apps/pessoa/data/doc/", $file-name)) 
 };
 
+declare function doc:footerfilter($node as node(), $model as map(*)) {
+let $filter := <div id="filter">
+                <a class="filter-a" href="">Drucken</a>
+                <a class="filter-a" href="{$helpers:request-path}/xml">XML</a>
+                <a class="filter-a" href="">Zitat</a>
+            </div>
+            return $filter
+};
+
 declare  function doc:get-recorder($node as node(), $model as map(*)) as node() {
     let $script := <script type="text/javascript">
         

@@ -113,7 +113,7 @@ declare function author:listAll($node as node(), $model as map(*), $author, $ord
             for $text in $texts where (fn:substring(author:getYearOrTitle($text,$orderBy),0,$i) = $year) return $text  
     order by $year
     return
-        (<div><h2>{$year }</h2></div>,       
+        (<div id="{$year}"><h2>{$year }</h2></div>,       
          for $text in $textsInYear order by (author:getYearOrTitle($text,$orderBy))return           
             if((fn:starts-with($text//(tei:teiHeader)[1]//(tei:titleStmt)[1]//(tei:title)[1]/data(.),"BNP")) or (fn:starts-with($text//(tei:teiHeader)[1]//(tei:titleStmt)[1]//(tei:title)[1]/data(.),"MN") )) then          
                 <div>{author:listDocumentByYear($text,$authorKey)}</div>    
@@ -300,4 +300,27 @@ declare function author:getYearOrTitle($text, $orderBy){
     return if($pub) then $pub
     else if($doc) then $doc
     else ()
+};
+
+declare function author:getrecorder($node as node(), $model as map(*)){
+let $script := <script type="text/javascript">
+        
+        function reorder(){{
+        var url = window.location.href;
+        var i = url.lastIndexOf("/");
+        var substr = url.substring(0,i);
+        i = substr.lastIndexOf("/");
+        var author = substr.substring(i+1,substr.length);
+        var textType = url.substring(url.lastIndexOf("/")+1,url.length);
+        if ($("#date").is(":checked"))
+        {{
+        $("#tab").load("http://localhost:8080/exist/apps/pessoa/{$helpers:web-language}/page/author/"+author+"/"+textType+"?orderBy=date");
+        
+        }}
+        else{{
+        $("#tab").load("http://localhost:8080/exist/apps/pessoa/{$helpers:web-language}/page/author/"+author+"/"+textType+"?orderBy=alphab"); 
+        }}
+        }}
+    </script> 
+    return $script
 };

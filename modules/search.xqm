@@ -360,7 +360,7 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
                        <form class="/helpers:app-root" action="search" method="post" id="search">
                             <!-- Nachher mit class="search:profisearch austauschen -->
                             <h6>{page:singleAttribute($doc,"search","free_search")}</h6>
-                     <input id="spezsearch" name="term" placeholder="{page:singleAttribute($doc,"search","search_term")}..." />
+                     <input id="spezsearch" name="term" placeholder="{page:singleAttribute($doc,"search","term")}..." />
              <br/>
             <div class="tab" id="ta_author" onclick="hide('se_author')"><h6>{page:singleAttribute($doc,"search","authors")}</h6>
             </div>
@@ -382,7 +382,7 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
                 <div class="selection" id="se_release" style="display:none;">
                 {page:createInput_term("search","radio","release",("published","unpublished"),$doc, "")}
                 <input class="release_input-box" type="radio" name="release" value="either" id="either" checked="checked"/>
-                <label class="release_input-label" for="either"> {page:singleAttribute($doc,"search","published")} &amp; {page:singleAttribute($doc,"search","unpublished")}</label>
+                <label class="release_input-label" for="either"> {page:singleAttribute($doc,"search","published")}<br /> &amp; {page:singleAttribute($doc,"search","unpublished")}</label>
                 </div>
                 <div class="tab" id="ta_genre" onclick="hide('se_genre')"><h6>{page:singleAttribute($doc,"search","genre")}</h6>
                 </div>

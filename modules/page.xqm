@@ -28,9 +28,9 @@ declare %templates:wrap function page:construct($node as node(), $model as map(*
 };
 declare function page:construct_search() as node()* {
 let $search := <div class="container-4" id="searchbox" style="display:none">
-                            <input type="search" id="search" placeholder="{concat(page:singleAttribute(doc("/db/apps/pessoa/data/lists.xml"),"search","search_verb"),"....")}" />
-                            <button class="icon2" id="button2" onclick="search()">Go</button>
-                            <a class="small_text" id="search-link" href="{$helpers:app-root}/search">{page:singleAttribute(doc("/db/apps/pessoa/data/lists.xml"),"search","search_noun_ext")}</a>
+                            <input type="search" id="search" placeholder="{concat(page:singleAttribute(doc("/db/apps/pessoa/data/lists.xml"),"search","term"),"....")}" />
+                            <button class="icon2" id="button2" onclick="search()">{page:singleAttribute(doc("/db/apps/pessoa/data/lists.xml"),"search","search_verb")}</button>
+                            <a class="small_text" id="search-link" href="{$helpers:app-root}/{$helpers:web-language}/search">{page:singleAttribute(doc("/db/apps/pessoa/data/lists.xml"),"search","search_noun_ext")}</a>
                         </div>      
     let $clear :=  <div class="clear"></div>
     let $switchlang := if(contains($config:request-path,"search")) then 
@@ -312,6 +312,11 @@ declare function  page:getCorrectDoc_nummeric($label as xs:string, $pos as xs:in
     return if (contains(substring($label, $pos, 1),$cut)) then xs:boolean("true") else ()
 };
 
+
+declare function page:getPath($node as node(), $model as map(*)) {
+let $path := <div id="path">{ substring-after( $helpers:request-path,$helpers:web-language)}</div>
+return $path
+};
 
 (:###### SEARCH PAGE ######:)
 
