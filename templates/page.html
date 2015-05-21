@@ -38,18 +38,23 @@
   </script> -->
         <script type="text/javascript">
         $(document).ready(function(){
-        $("div#tabs").click(function(e){
+        $("li.tabs").click(function(e){
         if (!$(this).hasClass("active")) {
         var tabNum = $(this).index();
         var nthChild = tabNum+1;
-        $("div#tabs .active").removeClass("active");
+        $("ul#tabs .active").removeClass("active");
         $(this).addClass("active");
-        $("div#tab .active").removeClass("active");
-        $("div#tab :nth-child("+nthChild+")").addClass("active");
+        $("ul#tab .active").removeClass("active");
+        $("ul#tab :nth-child("+nthChild+")").addClass("active");
         }
         });
         });
         </script>
+        <style>
+            li.tabs.active span {
+           background-color: #990000  !important;
+            }
+        </style>
         <!--<script type="text/javascript">
            	$(document).ready(function() {
            		$(".fancybox").fancybox();
@@ -77,7 +82,7 @@
             
             <div id="navi" class="page:construct"></div>
             <!--<div id="searchfield" class="page:construct_search" ></div>-->
-
+            <div class="page:getPath"></div>
             <div id="content" class="container"></div>
             <div id="footer">
                 <a href="#">informação legal</a>
