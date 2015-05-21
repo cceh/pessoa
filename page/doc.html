@@ -63,6 +63,34 @@ canvas3.stroke();
 }
 
     </script> -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+        
+        $("li.tabs").click(function(e){
+        if (!$(this).hasClass("active")) {
+        var tabNum = $(this).index();
+        var nthChild = tabNum+1;
+        $("ul#tabs .active").removeClass("active");
+        $(this).addClass("active");
+        $("ul#tab .active").removeClass("active");
+        $("ul#tab :nth-child("+nthChild+")").addClass("active");
+        }
+        });
+        
+        $("li.itabs").click(function(e){
+        if (!$(this).hasClass("active")) {
+        var tabNum = $(this).index();
+        var nthChild = tabNum+1;
+        $("ul#indextabs .active").removeClass("active");
+        $(this).addClass("active");
+        $("ul#indextab .active").removeClass("active");
+        $("ul#indextab :nth-child("+nthChild+")").addClass("active");
+        }
+        });
+        
+        
+        });
+    </script>
     <script class="doc:get-versaoPessoal"></script>
     <div id="content">
         <div id="titleline">
@@ -113,13 +141,28 @@ canvas3.stroke();
                 </ul>
             </div>
             <div id="img-div">
-             <p class="doc:get-image">facsimile</p>
-             <p class="doc:get-indexes">indexes</p>
+                <div id="indexline">
+                    <ul id="indextabs">
+                        <li class="itabs active"><a href="#facsimile"><span>Facsimilie</span></a></li>
+                        <li class="itabs"><a href="#index"><span>Index</span></a></li>
+                    </ul>
+                </div>
+                <div>
+                <ul id="indextab">
+                    <li class="active">
+                        <div id="facsimile">
+                            <p class="doc:get-image">facsimile</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="index">
+                            <p class="doc:get-indexes">indexes</p>
+                        </div>
+                    </li>
+                </ul>
+                </div>
             </div>
             <div id="filter" class="doc:footerfilter">
-      
-                
-                                
             </div>
         </div>
     </div>

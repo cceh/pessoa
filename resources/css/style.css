@@ -244,11 +244,15 @@ display: inline-block;
             background-color: #4E4E4E;
             text-decoration:none;
     }
-    nav_documents_sub_tab a, nav_cronologia_sub_tab a, nav_cronologia_sub_ext_tab a{
+    .nav_documents_sub_tab a, .nav_cronologia_sub_tab a, .nav_cronologia_sub_ext_tab a{
                 text-decoration:none;
     }
-    nav_documents_sub_tab:hover a, nav_cronologia_sub_tab:hover a, nav_cronologia_sub_ext_tab:hover a{
+    .nav_documents_sub_tab:hover a, .nav_cronologia_sub_tab:hover a, .nav_cronologia_sub_ext_tab:hover a{
                 text-decoration:none;
+    }
+.nav_documentos_tab:hover, .nav_autores_tab:hover, .nav_documentos_tab:hover, .nav_publicacoes_tab:hover, .nav_obras_tab:hover, .nav_genero_tab:hover, .nav_cronologia_tab:hover, .nav_bibliografia_tab:hover, .nav_projeto_tab:hover {
+    background-color: #4E4E4E  !important;
+    text-decoration:none;
     }
 
 /* Search */
@@ -411,6 +415,46 @@ ul#tab{
         ul#tab li.active{
             display: block;
         }
+
+/* Index / FacsimilieTabs*/
+ul#indextabs{
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin: 0 0 0 12px;
+}
+    ul#indextabs li{
+        display: inline-block;
+    }    
+    ul#indextabs span{
+        display: inline-block;
+        background-color: #5c5859;
+        padding: 3px 12px;
+        margin-bottom: 4px;
+        cursor: pointer;
+    }
+        ul#indextabs span:hover{
+            background-color: #900;   
+        }
+        ul#indextabs span.active{
+          
+        }
+    
+ul#indextab{
+    list-style-type: none;
+    padding: 5px;
+    float: left;
+}
+    ul#indextab a{
+        color: #222;
+    }
+    ul#indextab li{
+        display: none;
+    }
+        ul#indextab li.active{
+            display: block;
+        }
+
 
 #genreList a{
     color: #222;
@@ -672,6 +716,11 @@ ul#tab{
 }
 
 li.tabs.active span {
+           background-color: #990000  !important;
+            }
+            
+            
+li.itabs.active span {
            background-color: #990000  !important;
             }
 
