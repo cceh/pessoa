@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <div xmlns="http://www.w3.org/1999/xhtml" class="templates:surround?with=templates/page.html&amp;at=content">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script class="helpers:app-root" type="text/javascript" src="resources/jui/jquery-ui.min.js"></script>
+    <link class="helpers:app-root" rel="stylesheet" href="resources/jui/jquery-ui.min.css" type="text/css" />
+    <link class="helpers:app-root" rel="stylesheet" href="resources/jui/jquery-ui.structure.min.css" type="text/css" />
+    <!--
+        <script class="helpers:app-root" type="text/javascript" src="resources/jmobile/jquery.mobile.custom.js"></script>
+    <link class="helpers:app-root" rel="stylesheet" href="resources/jmobile/jquery.mobile.custom.structure.css" type="text/css" />
+    <link class="helpers:app-root" rel="stylesheet" href="resources/jmobile/jquery.mobile.custom.theme.css" type="text/css" />
+    <link class="helpers:app-root" rel="stylesheet" href="resources/jmobile/jquery.mobile.custom.structure.min.css" type="text/css" />
+    <script class="helpers:app-root" type="text/javascript" src="resources/jmobile/jquery.mobile.custom.min.js"></script>
+    <link class="helpers:app-root" rel="stylesheet" href="resources/jmobile/jquery.mobile.custom.theme.min.css" type="text/css" />
+    -->
 <!--    <script type="text/javascript">
 
         function versaoPessoal(){
@@ -63,6 +74,34 @@ canvas3.stroke();
 }
 
     </script> -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+        
+        $("li.tabs").click(function(e){
+        if (!$(this).hasClass("active")) {
+        var tabNum = $(this).index();
+        var nthChild = tabNum+1;
+        $("ul#tabs .active").removeClass("active");
+        $(this).addClass("active");
+        $("ul#tab .active").removeClass("active");
+        $("ul#tab :nth-child("+nthChild+")").addClass("active");
+        }
+        });
+        
+        $("li.itabs").click(function(e){
+        if (!$(this).hasClass("active")) {
+        var tabNum = $(this).index();
+        var nthChild = tabNum+1;
+        $("ul#indextabs .active").removeClass("active");
+        $(this).addClass("active");
+        $("ul#indextab .active").removeClass("active");
+        $("ul#indextab :nth-child("+nthChild+")").addClass("active");
+        }
+        });
+        
+        
+        });
+    </script>
     <script class="doc:get-versaoPessoal"></script>
     <div id="content">
         <div id="titleline">
@@ -113,13 +152,28 @@ canvas3.stroke();
                 </ul>
             </div>
             <div id="img-div">
-             <p class="doc:get-image">facsimile</p>
-             <p class="doc:get-indexes">indexes</p>
+                <div id="indexline">
+                    <ul id="indextabs">
+                        <li class="itabs active"><a href="#facsimile"><span>Facsimilie</span></a></li>
+                        <li class="itabs"><a href="#index"><span>Index</span></a></li>
+                    </ul>
+                </div>
+                <div>
+                <ul id="indextab">
+                    <li class="active">
+                        <div id="facsimile">
+                            <p class="doc:get-image">facsimile</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="index">
+                            <p class="doc:get-indexes">indexes</p>
+                        </div>
+                    </li>
+                </ul>
+                </div>
             </div>
             <div id="filter" class="doc:footerfilter">
-      
-                
-                                
             </div>
         </div>
     </div>

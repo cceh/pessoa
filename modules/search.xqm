@@ -254,32 +254,23 @@ if(exists($sel) and $sel = "union")
     if(exists($model(concat("r_",$sel))))
     
     then if ($model("query")!="") then 
-    
-    let $i := if($orderBy !="alpha") then 2  else 5
-    let $years :=
-        for $doc in $model(concat("r_",$sel))
-         return fn:substring(author:getYearOrTitle($doc,$orderBy),0,$i) 
-        let $years := fn:distinct-values($years)
-        for $year in  $years 
-                let $docsInYear :=  
-            for $doc in $model(concat("r_",$sel)) where(fn:substring(author:getYearOrTitle($doc,$orderBy),0,$i) = $year) return $doc
-            order by $year
-            return (<div><br />{$year}</div>,
-    
-        for $hit in $docsInYear
+        for $hit in $model(concat("r_",$sel))
+       
             let $file_name := root($hit)/util:document-name(.)
+            let $sort := if($orderBy!="alpha") then (author:getYearOrTitle($hit,"date"))
+                        else $file_name
             let $expanded := kwic:expand($hit)
             let $title := 
                     if(doc(concat("/db/apps/pessoa/data/doc/",$file_name))//tei:sourceDesc/tei:msDesc) 
                         then doc(concat("/db/apps/pessoa/data/doc/",$file_name))//tei:msDesc/tei:msIdentifier/tei:idno[1]/data(.)
                         else doc(concat("/db/apps/pessoa/data/pub/",$file_name))//tei:biblStruct/tei:analytic/tei:title[1]/data(.)
-            order by (author:getYearOrTitle($hit,$orderBy))
+            order by $sort
             return if(substring-after($file_name,"BNP") != "" or substring-after($file_name,"MN") != "")
                     then <li><a href="{$helpers:app-root}/data/doc/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"), '&amp;file=', $file_name)}">{$title}</a>
                         {kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="40"/>)}</li>
                     else <li><a href="{$helpers:app-root}/data/pub/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"), '&amp;file=', $file_name)}">{$title}</a>
                         {kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="40"/>)}</li>
-            )
+            
         else 
         
         

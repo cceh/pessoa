@@ -39,8 +39,11 @@ function u_nav(navID) {
              }
              if (navID.indexOf("nav_documentos") != -1) {
                         document.getElementById("nav_documentos").style.display = "block";
+                    //   document.getElementById("nav_documentos").style.backgroundColor = "#4E4E4E";
+                       
                         if(navID.indexOf("nav_documentos_sub") != -1) {
                             document.getElementById("nav_documentos_sub").style.display = "block";
+
                         }
                 }
                 else if (navID.indexOf("nav_cronologia") != -1) {

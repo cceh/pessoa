@@ -12,7 +12,9 @@
         <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery-1.11.2.js"></script>
         <script class="helpers:app-root" type="text/javascript" src="resources/js/bootstrap.min.js"></script>
         <script class="helpers:app-root" type="text/javascript" src="resources/js/code.js"></script>
-       <!--
+        
+        
+        <!--
         <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery-1.7.1.min.js"></script>
         <script class="helpers:app-root" type="text/javascript" src="resources/js/loadsource.js"></script> -->
         <!-- Add mousewheel plugin (this is optional) 
@@ -36,24 +38,9 @@
       $( "#tabs" ).tabs();
   });
   </script> -->
-        <script type="text/javascript">
-        $(document).ready(function(){
-        $("li.tabs").click(function(e){
-        if (!$(this).hasClass("active")) {
-        var tabNum = $(this).index();
-        var nthChild = tabNum+1;
-        $("ul#tabs .active").removeClass("active");
-        $(this).addClass("active");
-        $("ul#tab .active").removeClass("active");
-        $("ul#tab :nth-child("+nthChild+")").addClass("active");
-        }
-        });
-        });
-        </script>
+
         <style>
-            li.tabs.active span {
-           background-color: #990000  !important;
-            }
+            
         </style>
         <!--<script type="text/javascript">
            	$(document).ready(function() {
