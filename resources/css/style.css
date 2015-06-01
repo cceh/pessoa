@@ -585,8 +585,13 @@ ul#indextab{
 }
       
 #result{
-    text-align: center; 
-    margin-top: 10px; 
+    text-align: left; 
+    margin-top: 30px; 
+    margin-left: 15px; 
+}
+
+#result a{
+    color: #f00 !important;
 }
 
 .link{
@@ -701,6 +706,17 @@ ul#indextab{
 */
 
 /* Sandbox - Der Ort zum experimentieren*/
+
+#tabline
+{
+    float: right; 
+}
+
+#path
+{
+    width: 210px; 
+    float: right; 
+}
 
 #search-link{
     cursor: pointer; 

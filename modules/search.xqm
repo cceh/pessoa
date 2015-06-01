@@ -351,8 +351,7 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
                        <form class="/helpers:app-root" action="search" method="post" id="search">
                             <!-- Nachher mit class="search:profisearch austauschen -->
                             <h6>{page:singleAttribute($doc,"search","free_search")}</h6>
-                     <input id="spezsearch" name="term" placeholder="{page:singleAttribute($doc,"search","term")}..." />
-             <br/>
+                                  <br/>
             <div class="tab" id="ta_author" onclick="hide('se_author')"><h6>{page:singleAttribute($doc,"search","authors")}</h6>
             </div>
             <div class="selection" id="se_author" style="display:none;">
@@ -402,6 +401,9 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
                      <!--<h6>{page:singleAttribute($doc,"search","free_search")}</h6>
                      <input name="term" placeholder="{page:singleAttribute($doc,"search","search_term")}..." /> -->
              <br/>
+             <input id="spezsearch" name="term" placeholder="{page:singleAttribute($doc,"search","term")}..." />
+             <br />
+             <br />
            <button id="spezsearchbutton">{page:singleAttribute($doc,"search","search_verb")}</button>
       
 </form>
