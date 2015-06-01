@@ -162,12 +162,21 @@ declare function doc:get-xml($id){
 };
 
 declare function doc:footerfilter($node as node(), $model as map(*)) {
+let $script :=     <script>
+  $("#zitat").click(function() {{
+    $( "#dialog" ).dialog();
+  }});
+  </script>
+  let $popup:= 
+  <div id="dialog" title="Basic dialog" style="display:none;border:solid">
+  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+</div>
 let $filter := <div id="filter">
                 <a class="filter-a" href="">Drucken</a>
                 <a class="filter-a" href="{$helpers:request-path}/xml">XML</a>
-                <a class="filter-a" href="">Zitat</a>
+                <a class="filter-a" id="zitat" >Zitat</a>
             </div>
-            return $filter
+            return ($filter,$script,$popup)
 };
 
 declare  function doc:get-recorder($node as node(), $model as map(*)) as node() {
