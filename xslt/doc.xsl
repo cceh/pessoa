@@ -61,17 +61,10 @@
             /*special case 71A-2V*/
             #bnp-e3-71a-2v .below{left: -40px;}   
             
-            
-            
-            
-
+            /*special case 
         </style>
         <xsl:apply-templates/>       
     </xsl:template>
-
- 
-                
-    
     
     <!-- Header & Text -->
     <xsl:template match="teiHeader" />
@@ -296,9 +289,9 @@
     </xsl:template>  
     <xsl:template match="choice/abbr/metamark[@rend='line'][@function='ditto']">
         <xsl:variable name="expan" select="following::expan[1]/data(.)"/>
-        <xsl:variable name="size" select='count($expan)'/>
+        <xsl:variable name="size" select='string-length($expan)'/>
         <span class="metamark line ditto">
-            <xsl:for-each select="0 to string-length($expan)">_</xsl:for-each>
+            <xsl:for-each select="0 to $size">_</xsl:for-each>
         </span>
     </xsl:template>
     <!--<xsl:template match="metamark[@rend='line'][@function='ditto']">
@@ -536,7 +529,8 @@
                 <xsl:apply-templates/> 
         <xsl:text> </xsl:text>
     </xsl:template>
-        <xsl:template match="label">
+    
+    <xsl:template match="label">
         <span class="label">
             <xsl:apply-templates/>
         </span>
@@ -590,9 +584,9 @@
   </xsl:template>
     <xsl:template match="add[@place='above']">
         <span class=" add above">
-            <xsl:if test="not(ancestor::subst) and not(ancestor::choice)">            
-               <xsl:attribute name="style">position:relative;</xsl:attribute>             
-            </xsl:if>
+            <xsl:if test="not(ancestor::subst) and not(ancestor::choice) and not(ancestor::seg)"> 
+                 <xsl:attribute name="style">position:relative;</xsl:attribute>             
+            </xsl:if>  
             <xsl:apply-templates/>
         </span>
     </xsl:template>
@@ -606,7 +600,7 @@
 </xsl:template>
     
 <xsl:template match="p[@rend='indent']">
-        <p style="indent">
+        <p style="margin-left: 2em;">
             <xsl:apply-templates/>
         </p>
 </xsl:template>
@@ -628,4 +622,5 @@
         <xsl:apply-templates/>
         </div><br/>
     </xsl:template>
+    
 </xsl:stylesheet>
