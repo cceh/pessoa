@@ -83,7 +83,7 @@ declare function doc:get-genre($node as node(), $model as map(*), $type as xs:st
         let $docsInYear :=  
             for $doc in $docs where(fn:substring(author:getYearOrTitle($doc,$orderBy),0,$i) = $year) return $doc
     order by $year       
-    return (<div class="sub_Nav"><br /><h2 id="{$year}">{$year}</h2></div>,
+    return (<div class="sub_Nav"><h2 id="{$year}">{$year}</h2></div>,
      for $doc in $docsInYear 
      order by (author:getYearOrTitle($doc,$orderBy))
      return

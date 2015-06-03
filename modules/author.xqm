@@ -113,7 +113,7 @@ declare function author:listAll($node as node(), $model as map(*), $author, $ord
             for $text in $texts where (fn:substring(author:getYearOrTitle($text,$orderBy),0,$i) = $year) return $text  
     order by $year
     return
-        (<div class="sub_Nav"id="{$year}"><br /><h2>{$year }</h2></div>,       
+        (<div class="sub_Nav"id="{$year}"><h2>{$year }</h2></div>,       
          for $text in $textsInYear order by (author:getYearOrTitle($text,$orderBy))return           
             if((fn:starts-with($text//(tei:teiHeader)[1]//(tei:titleStmt)[1]//(tei:title)[1]/data(.),"BNP")) or (fn:starts-with($text//(tei:teiHeader)[1]//(tei:titleStmt)[1]//(tei:title)[1]/data(.),"MN") )) then          
                 <div>{author:listDocumentByYear($text,$authorKey)}</div>    
@@ -154,7 +154,7 @@ declare function author:listPublications($node as node(), $model as map(*), $aut
         let $pubsInYear :=
             for $pub in $pubs where (fn:substring(author:getYearOrTitleOfPublication($pub,$orderBy),0,$i) = $year ) return $pub
     order by $year 
-    return (<div class="sub_Nav"><br /><h2>{$year}</h2></div>,
+    return (<div class="sub_Nav"><h2>{$year}</h2></div>,
             for $pub in $pubsInYear order by (author:getYearOrTitleOfPublication($pub,$orderBy))return
             author:listPublication($pub,$authorKey))    
             )
@@ -203,14 +203,14 @@ declare function author:listDocuments($node as node(), $model as map(*), $author
                 let $docsInYear := 
                     for $doc in $docs where (fn:substring(author:getYearOrTitleOfDocument($doc,$orderBy),0,$i) = $year ) return $doc
             order by $year 
-            return (<div class="sub_Nav"><br /><h2>{$year}</h2></div>,
+            return (<div class="sub_Nav"><h2>{$year}</h2></div>,
                     for $doc in $docsInYear order by author:getYearOrTitleOfDocument($doc,"date") return author:listDocumentByYear($doc,$authorKey))
                     )
         else 
             let $roles := fn:distinct-values($docs//tei:text//tei:rs[@type = 'person' and @key=$authorKey]/@role/data(.)) 
             return(author:getNavigation($roles),
             for $role in $roles return
-                (<div class="sub_Nav"><br /><h2>mencionado como {if($role="author") then "autor" else if($role ="translator") then "traductor" else if($role ="topic") then "tema" else $role}:</h2></div>,author:listDocumentsByRole($docs, $authorKey, $role, $orderBy))       
+                (<div class="sub_Nav"><h2>mencionado como {if($role="author") then "autor" else if($role ="translator") then "traductor" else if($role ="topic") then "tema" else $role}:</h2></div>,author:listDocumentsByRole($docs, $authorKey, $role, $orderBy))       
             )
 };
 
