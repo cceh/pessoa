@@ -83,7 +83,7 @@ declare function doc:get-genre($node as node(), $model as map(*), $type as xs:st
         let $docsInYear :=  
             for $doc in $docs where(fn:substring(author:getYearOrTitle($doc,$orderBy),0,$i) = $year) return $doc
     order by $year       
-    return (<div><br /><h3 id="{$year}">{$year}</h3></div>,
+    return (<div class="sub_Nav"><br /><h2 id="{$year}">{$year}</h2></div>,
      for $doc in $docsInYear 
      order by (author:getYearOrTitle($doc,$orderBy))
      return
@@ -96,7 +96,7 @@ declare function doc:get-genre($node as node(), $model as map(*), $type as xs:st
 declare function doc:getNavigation($years, $type){
     let $years := for $year in $years order by $year return $year
     return
-    <div> 
+    <div class="navigation"> 
         {for $year at $i in $years
         order by $year
             return if ($i = count($years)) then
