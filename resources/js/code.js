@@ -10,7 +10,7 @@ function hide(id) {
 
 function u_nav(navID) {
        
-       var IDs = new Array ("nav_autores","nav_bibliografia","nav_documentos","nav_documentos_sub",
+       var IDs = new Array ("nav_autores","nav_index","nav_documentos","nav_documentos_sub",
        "nav_documentos_sub_1","nav_documentos_sub_2","nav_documentos_sub_3","nav_documentos_sub_4","nav_documentos_sub_5","nav_documentos_sub_6","nav_documentos_sub_7","nav_documentos_sub_8","nav_documentos_sub_9",
       "nav_documentos_sub_10","nav_documentos_sub_20","nav_documentos_sub_30","nav_documentos_sub_40","nav_documentos_sub_50","nav_documentos_sub_60","nav_documentos_sub_70","nav_documentos_sub_80","nav_documentos_sub_90",
        "nav_publicacoes",
@@ -22,6 +22,7 @@ function u_nav(navID) {
        "nav_genero","nav_cronologia","nav_cronologia_sub",
        "nav_cronologia_sub_0","nav_cronologia_sub_1","nav_cronologia_sub_2","nav_cronologia_sub_3",
        "nav_projeto",
+       "nav_index_sub_bibliografia",
        "nav_cronologia_sub_ext",
        "nav_cronologia_sub_ext_00","nav_cronologia_sub_ext_01","nav_cronologia_sub_ext_02","nav_cronologia_sub_ext_03","nav_cronologia_sub_ext_04","nav_cronologia_sub_ext_05","nav_cronologia_sub_ext_06","nav_cronologia_sub_ext_07","nav_cronologia_sub_ext_08","nav_cronologia_sub_ext_09",
        "nav_cronologia_sub_ext_10","nav_cronologia_sub_ext_11","nav_cronologia_sub_ext_12","nav_cronologia_sub_ext_13","nav_cronologia_sub_ext_14","nav_cronologia_sub_ext_15","nav_cronologia_sub_ext_16","nav_cronologia_sub_ext_17","nav_cronologia_sub_ext_18","nav_cronologia_sub_ext_19",
@@ -68,11 +69,13 @@ function u_nav(navID) {
                     document.getElementById("nav_publicacoes_sub").style.display = "block"
                     }
               }
-                
-                
+              else if(navID.indexOf("nav_index") != -1) {
+                  document.getElementById("nav_index").style.display = "block";
+                   if(navID.indexOf("nav_index_sub") != -1) {
+                    document.getElementById("nav_index_sub").style.display = "block"
+                    }
+              }
         }
-       
-            
             else {
                 if(navID.indexOf("nav_cronologia_sub_ext_") != -1 ) {
                  if( IDs[i].length <= 20 && IDs[i].indexOf("nav_cronologia_sub_") != -1 && IDs[i].substr(19,1) == navID.substr(23,1)) {
@@ -96,6 +99,7 @@ function u_nav(navID) {
         }    
        
     };
+    
 
 
  
