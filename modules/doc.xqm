@@ -26,7 +26,7 @@ declare function doc:get-title($node as node(), $model as map(*), $id as xs:stri
 declare function doc:get-indexes($node as node(), $model as map(*), $id as xs:string) as item()+{
     let $xml := doc:get-xml($id)
     let $stylesheet := doc("/db/apps/pessoa/xslt/lists.xsl")
-    return transform:transform($xml, $stylesheet, ())
+    return transform:transform($xml, $stylesheet, (<parameters><param name="lang" value="{$helpers:web-language}" /></parameters>))
 };
 
 declare function doc:get-text($node as node(), $model as map(*), $id as xs:string) as item()+{
@@ -173,7 +173,7 @@ let $script :=     <script>
 </div>
 let $filter := <div id="filter">
                 <a class="filter-a" href="">Drucken</a>
-                <a class="filter-a" href="{$helpers:request-path}/xml">XML</a>
+                <a class="filter-a" href="{$helpers:request-path}/xml" target="_blank">XML</a>
                 <a class="filter-a" id="zitat" >Zitat</a>
             </div>
             return ($filter,$script,$popup)
