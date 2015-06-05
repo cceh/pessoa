@@ -5,6 +5,7 @@
     version="2.0">
     
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
+    <xsl:param name="lang">pt</xsl:param>
     
     <xsl:template match="/">
         <div>
@@ -17,7 +18,10 @@
                 };
             </script>
             <xsl:if test=".//rs[@type='person']">
-                <h2>Persons</h2><!-- Mehrsprachigkeit -->
+                <h2><xsl:choose>
+                    <xsl:when test="$lang='en'">Persons</xsl:when>
+                    <xsl:otherwise>Pessoas</xsl:otherwise>
+                </xsl:choose></h2>
                 <ul>
                     <xsl:for-each-group select=".//rs[@type='person'][@key]" group-by="@key">
                         <xsl:sort select="current-grouping-key()" />
@@ -30,6 +34,7 @@
                             </li>
                         </xsl:for-each-group>
                     </xsl:for-each-group>
+                    ---
                     <xsl:for-each select=".//rs[@type='person'][not(@key)]">
                         <xsl:sort select="."/>
                         <li><a onmouseover="highlight('{@xml:id}');" onmouseout="clear('{@xml:id}');" href="#"><xsl:value-of select="." /></a></li>
@@ -37,7 +42,10 @@
                 </ul>
             </xsl:if>
             <xsl:if test=".//rs[@type='text']">
-                <h2>Texts</h2><!-- Mehrsprachigkeit -->
+                <h2><xsl:choose>
+                    <xsl:when test="$lang='en'">Texts</xsl:when>
+                    <xsl:otherwise>Textos</xsl:otherwise>
+                </xsl:choose></h2>
                 <ul>
                     <xsl:for-each select=".//rs[@type='text']">
                         <xsl:sort select="." order="ascending" />
@@ -46,7 +54,10 @@
                 </ul>
             </xsl:if>
             <xsl:if test=".//rs[@type='journal']">
-                <h2>Journals</h2><!-- Mehrsprachigkeit -->
+                <h2><xsl:choose>
+                    <xsl:when test="$lang='en'">Journals</xsl:when>
+                    <xsl:otherwise>Journais</xsl:otherwise>
+                </xsl:choose></h2>
                 <ul>
                     <xsl:for-each-group select=".//rs[@type='journal']" group-by="@key">
                         <xsl:sort select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type='journal']/item[@xml:id=current()/@key]" />
