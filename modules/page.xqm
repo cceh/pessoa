@@ -114,7 +114,7 @@ declare function page:createThirdNav($type as xs:string) as node()* {
     else if ($type = "cronologia") then 
     for $date in ("1900 - 1909","1910 - 1919","1920 - 1929","1930 - 1935", (doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item/tei:list[@type="cronologia"]/tei:item/tei:term[@xml:lang=$helpers:web-language]/data(.)))
             return if (contains($date, "1") != xs:boolean("true") ) then
-                        <li class="{concat("nav_",$type,"_tab")}">
+                        <li class="{concat("nav_",$type,"_tab")}"> <span class="step">|</span> 
                         <a href="{concat($helpers:app-root,"/",$helpers:web-language,"/page/timeline.html")}" target="_blank">
                         {$date}
                         </a></li>
@@ -261,7 +261,7 @@ declare function page:createItem($type as xs:string, $indikator as xs:string?) a
             let $label := $projeto/data(.)
                 let $ref := if($helpers:web-language = "pt") then $projeto/attribute()[2]
                             else substring-after($projeto/attribute()[2],"#")
-            return <item label="{$label}"  ref="{concat($helpers:app-root,'/',$helpers:web-language)}/page/projeto.html?type={$ref}" /> 
+            return <item label="{$label}"  ref="{concat($helpers:app-root,'/',$helpers:web-language)}/page/{$ref}.html" /> 
    else if ($type = "obras")
          then for $works in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="works"]/tei:item[@xml:id=$indikator]/tei:title[@type="alt"]
          let $label := $works/data(.)

@@ -125,6 +125,30 @@ return (
 		</error-handler>
     </dispatch>
 )
+
+else if (contains($exist:path,"timeline")) then
+    (
+    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <forward url="{$exist:controller}/page/timeline.html" />
+        <view>
+            <forward url="{$exist:controller}/modules/view.xql"/>
+        </view>
+        <error-handler>
+            <forward url="{$exist:controller}/error-page.html" method="get"/>
+            <forward url="{$exist:controller}/modules/view.xql"/>
+        </error-handler>
+    </dispatch>)
+    else if (ends-with($exist:resource, ".html") and contains($exist:path,"page/")) then
+     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+                 <forward url="{$exist:controller}/page/{substring-after($exist:path,"page/")}"/>
+        <view>
+            <forward url="{$exist:controller}/modules/view.xql"/>
+        </view>
+		<error-handler>
+			<forward url="{$exist:controller}/error-page.html" method="get"/>
+			<forward url="{$exist:controller}/modules/view.xql"/>
+		</error-handler>
+    </dispatch>
 else if (ends-with($exist:resource, ".html")) then
     (: the html page is run through view.xql to expand templates :)
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
@@ -164,15 +188,8 @@ else if (contains($exist:path, "search")) then
     else if (contains($exist:path, "events")) then
     let $language := request:get-parameter("lang", "pt")
     return 
-transform:transform((collection("/db/apps/pessoa/data/doc"), collection("/db/apps/pessoa/data/pub"))//tei:TEI, doc("/db/apps/pessoa/xslt/events.xsl"), <parameters><param name="language" value="{$language}"/></parameters>)
-    else if (contains($exist:path,"timeline")) then
-    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-        <forward url="{$exist:controller}/page/timeline.html" />
-        <error-handler>
-            <forward url="{$exist:controller}/error-page.html" method="get"/>
-            <forward url="{$exist:controller}/modules/view.xql"/>
-        </error-handler>
-    </dispatch>
+        transform:transform((collection("/db/apps/pessoa/data/doc"), collection("/db/apps/pessoa/data/pub"))//tei:TEI, doc("/db/apps/pessoa/xslt/events.xsl"), <parameters><param name="language" value="{$language}"/></parameters>)
+    
 else
     (: everything else is passed through :)
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
