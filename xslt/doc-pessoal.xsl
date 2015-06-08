@@ -11,6 +11,9 @@
     <!-- externer Parameter abbr: yes|no
     (Abkürzungen anzeigen oder nicht) -->
     <xsl:param name="abbr" />
+    
+
+    
 
    <!-- Trotz Aufhebung der lb's soll am Rand genug Platz für Notes bleiben --> 
     <xsl:template match="text">
@@ -61,9 +64,15 @@
         <xsl:choose>
             <xsl:when test="$abbr = 'yes'">
                 <xsl:apply-templates select="abbr/text() | abbr/child::*" />
+                <xsl:if test="following-sibling::choice[1]">
+                    <xsl:text>&#160;</xsl:text>
+                </xsl:if>           
             </xsl:when>
             <xsl:otherwise>
                 <xsl:apply-templates select="expan/text() | expan/child::*"/>
+                <xsl:if test="following-sibling::choice[1]">
+                    <xsl:text>&#160;</xsl:text>
+                </xsl:if>            
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
@@ -92,6 +101,12 @@
         </span>   
     </xsl:template>
     
-    
+<!-- special case 180r -->
+    <xsl:template match="text[@xml:id='bnp-e3-180r']//note[@place='margin top right']">
+        <span class="note addition margin top right" style="right: 0px;">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+       
    
 </xsl:stylesheet>

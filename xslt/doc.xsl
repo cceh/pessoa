@@ -42,7 +42,7 @@
             .right {float: right;}   
             .left {float: left;}
             .center {text-align: center;}
-            .above { position: absolute; top: -0.8em; left: 0px;; font-size: small; width:200%;}
+            .above { position: absolute; top: -0.8em; left: 0px;; font-size: small; width:205%;}
             .below{position: absolute; top: 1.5em; left: 0px; font-size: small; width:200%}
             .ab {display: inline-block;}
             .seg {position: relative;}          
@@ -461,6 +461,15 @@
             <span class="add above">
                 <xsl:apply-templates select="seg[2]/add/text()"/>
             </span>
+        </span>
+    </xsl:template>
+    
+    <xsl:template match="choice//abbr">
+        <span class ="abbr">
+            <xsl:apply-templates/>
+            <xsl:if test="following-sibling::choice[1]">
+                <xsl:text>&#160;</xsl:text>
+            </xsl:if>           
         </span>
     </xsl:template>
     
