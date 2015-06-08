@@ -32,4 +32,6 @@
     <xsl:template match="subst[del/@n and add/@n]">
         <xsl:apply-templates select="del/text()"/>
     </xsl:template>
+    
+   
 </xsl:stylesheet>

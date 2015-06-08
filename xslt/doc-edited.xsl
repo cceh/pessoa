@@ -3,11 +3,7 @@
     <xsl:import href="doc.xsl"/>
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
     
-    <xsl:template match="text">
-        <div class="text edited">
-            <xsl:apply-templates/>
-        </div>
-    </xsl:template>
+
     
     <!-- Einrückungen werden hier nicht berücksichtigt -->
     <xsl:template match="ab[@rend='indent'] | ab[@rend='offset'] | seg[@rend='indent']">
@@ -18,6 +14,9 @@
     <!-- Abkürzungen und Auflösungen: Darstellung der aufgelösten Form -->
     <xsl:template match="choice[abbr and expan]">
         <xsl:apply-templates select="expan/text() | expan/ex"/>
+        <xsl:if test="following-sibling::choice[1]">
+            <xsl:text>&#160;</xsl:text>
+        </xsl:if>      
     </xsl:template>
     <xsl:template match="abbr"/>
     <xsl:template match="ex">
@@ -56,11 +55,31 @@
     wenn es ein Silbentrennzeichen gibt, dann nichts ausgeben
     wenn es kein Silbentrennzeichen gibt, dann ein Leerzeichen ausgeben
     -->
-    <xsl:template match="lb[not(preceding-sibling::*[1][local-name()='pc'])]">
+    <xsl:template match="lb[not(preceding-sibling::*[1][local-name()='pc'])][not(ancestor::note)][not(ancestor::add)]">
         <xsl:text xml:space="preserve"> </xsl:text>
     </xsl:template>
     <xsl:template match="lb[preceding-sibling::*[1][local-name()='pc']]"/>
     <xsl:template match="pc"/>
+    
+    <!-- Trotz Aufhebung der lb's soll am Rand genug Platz für Notes bleiben --> 
+    <xsl:template match="text">
+        <div class="text edited">          
+            <xsl:if test="@xml:id">
+                <xsl:attribute name="id">
+                    <xsl:value-of select="@xml:id"/>
+                </xsl:attribute>
+            </xsl:if> 
+            <xsl:attribute name="style">
+                <xsl:if test="//note[contains(@place,'left')]">
+                    padding-left: 150px;  
+                </xsl:if>
+                <xsl:if test="//note[contains(@place,'right')]">
+                    padding-right:150px;
+                </xsl:if>
+            </xsl:attribute>   
+            <xsl:apply-templates/>         
+        </div>
+    </xsl:template>
     
     <!-- editorische Ergänzungen anzeigen -->
     <xsl:template match="supplied">
@@ -71,6 +90,18 @@
                     &lt;<xsl:apply-templates />&gt;
                 </xsl:otherwise>
             </xsl:choose>
+        </span>
+    </xsl:template>
+    
+    <!-- special case 180r -->
+    <xsl:template match="text[@xml:id='bnp-e3-180r']//note[@place='margin top right']">
+        <span class="note addition margin top right" style="right: 0px;">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+    <xsl:template match="text[@xml:id='bnp-e3-180r']//note[@place='margin left'][supplied]">
+        <span class="note addition margin left" style="left: -135px;">
+            <xsl:apply-templates/>
         </span>
     </xsl:template>
 </xsl:stylesheet>
