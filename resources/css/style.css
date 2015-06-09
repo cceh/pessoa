@@ -172,11 +172,11 @@ display: inline-block;
      font-size: 15px;
     }
 
-#navi-elements{
+#navi_elements{
         padding:0px 0px 7px 9px;    
         z-index:1;          
 }
-    #navi-elements li{
+    #navi_elements li{
         color: #fff; 
         display: inline-block;
         padding: 16px 10px 6px 9px;
@@ -787,6 +787,13 @@ li.itabs.active span {
     color:white;
     margin-right:5px;
 }
+
+/* ######### NAVI ACTIVE STYLE ##########*/
+#navi_elements li.active a {
+            text-decoration:underline !important;
+            font-weight:bold !important;
+            };
+
 
 /*Für die Buchstaben/Zahlen Navi 
   text-align: center;

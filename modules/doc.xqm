@@ -161,6 +161,33 @@ declare function doc:get-xml($id){
     return doc(concat("/db/apps/pessoa/data/doc/", $file-name)) 
 };
 
+
+declare %templates:wrap function doc:docControll($node as node(), $model as map(*)) {
+    let $db := collection("/db/apps/pessoa/data/doc","/db/apps/pessoa/data/pub")
+    let $doc := if(substring-after($helpers:request-path,"doc/")) 
+                    then substring-after($helpers:request-path,"doc/")
+                else substring-after($helpers:request-path,"pub")
+    let $index := index-of($db,doc(concat("/db/apps/pessoa/data/doc/",$doc,".xml")))    
+    let $libary :=  if(substring-after($helpers:request-path,"doc/")) 
+                    then "doc"
+                else "pub"
+
+    let $arrows := <div>
+                            <a href="{concat($helpers:app-root,'/',$helpers:web-language,'/',$libary,'/',substring-before(root($db[position() = (($index) -1)])/util:document-name(.),".xml"))}">
+                                <span id="back"> 
+                                    {page:singleAttribute(doc('/db/apps/pessoa/data/lists.xml'),"buttons","previous")}
+                                </span>
+                            </a>
+                            <a href="{concat($helpers:app-root,'/',$helpers:web-language,'/',$libary,'/',substring-before(root($db[position() = (($index) +1)])/util:document-name(.),".xml"))}">
+                                <span id="forward">
+                                    {page:singleAttribute(doc('/db/apps/pessoa/data/lists.xml'),"buttons","next")}
+                                </span>
+                            </a>
+                            <div class="clear"></div>
+                    </div>
+    return $arrows
+};
+
 declare function doc:footerfilter($node as node(), $model as map(*)) {
 let $script :=     <script>
   $("#zitat").click(function() {{
