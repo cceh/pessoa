@@ -14,7 +14,7 @@ declare namespace request="http://exist-db.org/xquery/request";
 
 declare %templates:wrap function page:construct($node as node(), $model as map(*)) as node()* {
     let $MainNav :=                
-            <ul id="navi-elements" >
+            <ul id="navi_elements" >
                 {page:createMainNav()}
                 <li>                    
                  <a href="#" class="glyphicon glyphicon-search" onclick="hide('searchbox')" role="tab" data-toggle="tab"></a>                     
@@ -23,7 +23,7 @@ declare %templates:wrap function page:construct($node as node(), $model as map(*
     let $SubNav := page:createSubNav()
     let $ExtNav := page:createExtNav()
     
-    let $return := ($MainNav,page:construct_search() ,$SubNav, $ExtNav)
+    let $return := ($MainNav,page:construct_search() ,$SubNav, $ExtNav,page:getPath())
     return $return
 };
 declare function page:construct_search() as node()* {
@@ -335,7 +335,7 @@ declare function  page:getCorrectDoc_nummeric($label as xs:string, $pos as xs:in
 };
 
 
-declare function page:getPath($node as node(), $model as map(*)) {
+declare function page:getPath() {
 let $path := <div id="path">{ substring-after( $helpers:request-path,$helpers:web-language)}</div>
 return $path
 };
@@ -521,29 +521,4 @@ let $script1 :=
         }}
     </script>		
     return ($title,$meta,$google,$style,$style1,$script1,$script3)
-};
-
-declare %templates:wrap function page:docControll($node as node(), $model as map(*)) {
-    let $db := collection("/db/apps/pessoa/data/doc","/db/apps/pessoa/data/pub")
-    let $doc := if(substring-after($helpers:request-path,"doc/")) 
-                    then substring-after($helpers:request-path,"doc/")
-                else substring-after($helpers:request-path,"pub")
-    let $index := index-of($db,doc(concat("/db/apps/pessoa/data/doc/",$doc,".xml")))    
-    let $libary :=  if(substring-after($helpers:request-path,"doc/")) 
-                    then "doc"
-                else "pub"
-    let $arrows := <div>
-                            <a href="{concat($helpers:app-root,'/',$helpers:web-language,'/',$libary,'/',substring-before(root($db[position() = (($index) -1)])/util:document-name(.),".xml"))}">
-                                <span id="back"> 
-                                    Back 
-                                </span>
-                            </a>
-                            <a href="{concat($helpers:app-root,'/',$helpers:web-language,'/',$libary,'/',substring-before(root($db[position() = (($index) +1)])/util:document-name(.),".xml"))}">
-                                <span id="forward">
-                                    Forward
-                                </span>
-                            </a>
-                            <div class="clear"></div>
-                    </div>
-    return $arrows
 };
