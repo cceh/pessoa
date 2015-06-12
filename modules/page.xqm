@@ -23,7 +23,7 @@ declare %templates:wrap function page:construct($node as node(), $model as map(*
     let $SubNav := page:createSubNav()
     let $ExtNav := page:createExtNav()
     
-    let $return := ($MainNav,page:construct_search() ,$SubNav, $ExtNav)
+    let $return := ($MainNav,page:construct_search() ,$SubNav, $ExtNav,page:getPath())
     return $return
 };
 declare function page:construct_search() as node()* {
@@ -335,7 +335,7 @@ declare function  page:getCorrectDoc_nummeric($label as xs:string, $pos as xs:in
 };
 
 
-declare function page:getPath($node as node(), $model as map(*)) {
+declare function page:getPath() {
 let $path := <div id="path">{ substring-after( $helpers:request-path,$helpers:web-language)}</div>
 return $path
 };
