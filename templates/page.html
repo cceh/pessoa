@@ -17,6 +17,20 @@
         <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery.fancybox.pack.js?v=2.1.5"></script>
         <link class="helpers:app-root" rel="stylesheet" href="resources/css/style.css" type="text/css" />
 
+        <script type="text/javascript">
+          /*      $(document).ready(function(){
+        
+        $("li.tabs").click(function(e){
+        if (!$(this).hasClass("active")) {
+        var tabNum = $(this).index();
+        var nthChild = tabNum+1;
+        $("ul#tabs .active").removeClass("active");
+        $(this).addClass("active");
+        $("ul#tab .active").removeClass("active");
+        $("ul#tab :nth-child("+nthChild+")").addClass("active");
+        }
+        });*/
+        </script>
     </head>
     <body id="body">
         <div id="side">
@@ -35,6 +49,7 @@
             </div>
             <div id="page-header"><img id="header-image" src="resources/images/pessoa-title.png"  class="helpers:app-root" /></div>  
             <div id="navi" class="page:construct"></div>
+           <!-- <div class="page:getPath"></div>-->
             <div class="clear"></div>
             <div id="content" class="container"></div>
             <div id="footer">
