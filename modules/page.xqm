@@ -23,7 +23,7 @@ declare %templates:wrap function page:construct($node as node(), $model as map(*
     let $SubNav := page:createSubNav()
     let $ExtNav := page:createExtNav()
     
-    let $return := ($MainNav,page:construct_search() ,$SubNav, $ExtNav,page:getPath())
+    let $return := ($MainNav,page:construct_search() ,$SubNav, $ExtNav)
     return $return
 };
 declare function page:construct_search() as node()* {
