@@ -25,16 +25,16 @@
         <div id="content" class="span12 main">  
             <div id="genre-content">
                 <form method="get">
-                    Ordem:
-                    <input id="date" name="order" type="radio" value="no" onchange="reorder();"></input><label for="date" class="page:singleElement?xmltype=order&amp;xmlid=chronological" />   
-                    <input id="alphab" checked="checked" name="order" type="radio" value="yes" onchange="reorder();"></input><label for="alphab" class="page:singleElement?xmltype=order&amp;xmlid=alphabetical" />   
+                    <span class="page:singleElement?xmltype=order&amp;xmlid=order">:</span>
+                    <input id="date" checked="checked" name="order" type="radio" value="no" onchange="reorder();"></input><label for="date" class="page:singleElement?xmltype=order&amp;xmlid=chronological" />   
+                    <input id="alphab"  name="order" type="radio" value="yes" onchange="reorder();"></input><label for="alphab" class="page:singleElement?xmltype=order&amp;xmlid=alphabetical" />   
                 </form>
                 <br/><br/>
             <h1 class ="author:getTitle"></h1>
             <div class="author:getTabs"/> 
             <div class="span6">       
                 <div id ="tab">                        
-                    <div class="author:getTabContent?orderBy=alphab"/>      
+                    <div class="author:getTabContent?orderBy=date"/>      
                 </div>            
             </div> 
         </div>
