@@ -50,7 +50,7 @@
                 <ul>
                    <xsl:for-each select="$persons//local:person">
                        <xsl:sort/>
-                       <li style="display:block;"><xsl:value-of select="." /></li>
+                       <li><xsl:value-of select="." /></li>
                    </xsl:for-each>
                 </ul>
             </xsl:if>
@@ -69,7 +69,7 @@
                 </xsl:choose></h2>
                 <ul>
                     <xsl:for-each select="$texts//local:text">
-                        <li style="display:block;"><xsl:value-of select="."/></li>
+                        <li><xsl:value-of select="."/></li>
                     </xsl:for-each>
                 </ul>
             </xsl:if>
@@ -92,7 +92,7 @@
                 </xsl:choose></h2>
                 <ul>
                     <xsl:for-each select="$journals//local:journal">
-                        <li style="display: block;"><xsl:value-of select="."/></li>
+                        <li><xsl:value-of select="."/></li>
                     </xsl:for-each>
                 </ul>
             </xsl:if>

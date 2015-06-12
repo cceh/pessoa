@@ -5,6 +5,9 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
 
+
+import module namespace page="http://localhost:8080/exist/apps/pessoa/page" at "page.xqm";
+
 declare function author:getTitle($node as node(), $model as map(*), $author){
     if($author = "pessoa") then
         <h1>Fernando Pessoa</h1>
@@ -22,18 +25,20 @@ declare function author:reorder($node as node(), $model as map(*),$orderBy, $tex
 };
 
 declare function author:getTabs($node as node(), $model as map(*), $textType as xs:string?, $author as xs:string?){
+    let $lists := doc('/db/apps/pessoa/data/lists.xml')
+    return
     if ($textType = "all") then
-        <ul id="tabs"><li class="active"><a href="{$helpers:app-root}/author/{$author}/all">Publicações e Documentos</a></li>
-        <li><a href="{$helpers:app-root}/author/{$author}/documents">Documentos</a></li>
-        <li><a href="{$helpers:app-root}/author/{$author}/publications">Publicações</a></li></ul>                
+        <ul id="tabs"><li class="active"><a href="{$helpers:app-root}/author/{$author}/all">{page:singleAttribute($lists,"author-pages", "publications-and-documents")}</a></li>
+        <li><a href="{$helpers:app-root}/author/{$author}/documents">{page:singleAttribute($lists, "author-pages","documents")}</a></li>
+        <li><a href="{$helpers:app-root}/author/{$author}/publications">{page:singleAttribute($lists, "author-pages","publications")}</a></li></ul>                
     else if($textType = "documents") then 
-        <ul id="tabs"><li><a href="{$helpers:app-root}/author/{$author}/all">Publicações e Documentos</a></li>
-        <li class="active"><a href="{$helpers:app-root}/author/{$author}/documents">Documentos</a></li>
-        <li><a href="{$helpers:app-root}/author/{$author}/publications">Publicações</a></li></ul> 
+        <ul id="tabs"><li><a href="{$helpers:app-root}/author/{$author}/all">{page:singleAttribute($lists, "author-pages","publications-and-documents")}</a></li>
+        <li class="active"><a href="{$helpers:app-root}/author/{$author}/documents">{page:singleAttribute($lists, "author-pages","documents")}</a></li>
+        <li><a href="{$helpers:app-root}/author/{$author}/publications">{page:singleAttribute($lists, "author-pages","publications")}</a></li></ul> 
     else if($textType ="publications") then
-        <ul id="tabs"><li><a href="{$helpers:app-root}/author/{$author}/all">Publicações e Documentos</a></li>
-        <li><a href="{$helpers:app-root}/author/{$author}/documents">Documentos</a></li>
-        <li class ="active"><a href="{$helpers:app-root}/author/{$author}/publications">Publicações</a></li></ul>         
+        <ul id="tabs"><li><a href="{$helpers:app-root}/author/{$author}/all">{page:singleAttribute($lists, "author-pages","publications-and-documents")}</a></li>
+        <li><a href="{$helpers:app-root}/author/{$author}/documents">{page:singleAttribute($lists, "author-pages","documents")}</a></li>
+        <li class ="active"><a href="{$helpers:app-root}/author/{$author}/publications">{page:singleAttribute($lists, "author-pages","publications")}</a></li></ul>         
     else()                   
 };
 
@@ -107,7 +112,7 @@ declare function author:listAll($node as node(), $model as map(*), $author, $ord
     let $i := if($orderBy ="alphab") then 2 else 5
     let $years := for $text in $texts return fn:substring(author:getYearOrTitle($text,$orderBy),0,$i)
     let $years := fn:distinct-values($years)
-    return (author:getNavigation($years),
+    return (author:getNavigation($years, $orderBy, ""),
     for $year in $years
         let $textsInYear :=
             for $text in $texts where (fn:substring(author:getYearOrTitle($text,$orderBy),0,$i) = $year) return $text  
@@ -122,8 +127,12 @@ declare function author:listAll($node as node(), $model as map(*), $author, $ord
         )
 };
 
-declare function author:getNavigation($years){
-    let $years := for $year in $years order by $year return $year
+declare function author:getNavigation($years, $orderBy, $type){
+    let $years := for $year in $years order by $year return 
+    if($orderBy ="alphab" and $type="doc") then
+        page:singleAttribute(doc('/db/apps/pessoa/data/lists.xml'),"roles", $year)
+        else
+    $year
     return
     <div class="navigation"> 
         {for $year at $i in $years
@@ -149,7 +158,7 @@ declare function author:listPublications($node as node(), $model as map(*), $aut
         for $pub in $pubs return fn:substring(author:getYearOrTitleOfPublication($pub,$orderBy),0,$i)   
     
     let $years := fn:distinct-values($years)
-    return (author:getNavigation($years),
+    return (author:getNavigation($years, $orderBy, ""),
     for $year in $years 
         let $pubsInYear :=
             for $pub in $pubs where (fn:substring(author:getYearOrTitleOfPublication($pub,$orderBy),0,$i) = $year ) return $pub
@@ -198,7 +207,7 @@ declare function author:listDocuments($node as node(), $model as map(*), $author
     let $years := fn:distinct-values($years)
     return 
         if($orderBy ="date") then
-        (author:getNavigation($years),
+        (author:getNavigation($years, $orderBy, ""),
             for $year in $years
                 let $docsInYear := 
                     for $doc in $docs where (fn:substring(author:getYearOrTitleOfDocument($doc,$orderBy),0,$i) = $year ) return $doc
@@ -208,9 +217,11 @@ declare function author:listDocuments($node as node(), $model as map(*), $author
                     )
         else 
             let $roles := fn:distinct-values($docs//tei:text//tei:rs[@type = 'person' and @key=$authorKey]/@role/data(.)) 
-            return(author:getNavigation($roles),
+           
+            return
+            ( author:getNavigation($roles, $orderBy, "doc"),
             for $role in $roles return
-                (<div class="sub_Nav"><h2>mencionado como {if($role="author") then "autor" else if($role ="translator") then "traductor" else if($role ="topic") then "tema" else $role}:</h2></div>,author:listDocumentsByRole($docs, $authorKey, $role, $orderBy))       
+                (<div class="sub_Nav"><h2><span>{page:singleAttribute(doc('/db/apps/pessoa/data/lists.xml'),"roles", "mentioned-as")}</span>: <span>{page:singleAttribute(doc('/db/apps/pessoa/data/lists.xml'),"roles", $role)}</span> </h2></div>,author:listDocumentsByRole($docs, $authorKey, $role, $orderBy))       
             )
 };
 
@@ -229,16 +240,17 @@ declare function author:listDocumentsByRole($docs, $authorKey, $role, $orderBy){
 };
 
 declare function author:listDocumentByYear($doc, $authorKey){ 
+    let $lists := doc('/db/apps/pessoa/data/lists.xml')
     let $roles := author:getRoles($doc,$authorKey)
     let $rolesNum := fn:count($roles)
-    let $text := " "
-    let $text := 
+    let $mentions := " "
+    let $mentions := 
         for $role at $i in $roles
         return
         if($i < $rolesNum) then
-        fn:concat($text,if($role="author") then "autor, " else if($role ="translator") then "traductor, " else if($role ="topic") then "tema, " else "editor, ")
+        fn:concat($mentions,page:singleAttribute($lists, "roles", $role),",")
         else
-        fn:concat($text,if($role="author") then "autor" else if($role ="translator") then "traductor" else if($role ="topic") then "tema" else "editor")
+        fn:concat($mentions,page:singleAttribute($lists,"roles",$role))
        (: if($i > 1) then 
         fn:concat($text,if($role="author") then ", autor" else if($role ="translator") then ", traductor" else if($role ="topic") then ", tema" else ", editor" )
         else
@@ -246,7 +258,7 @@ declare function author:listDocumentByYear($doc, $authorKey){
         :)
    return  
     if(count($roles) > 0) then    
-       (<div><a href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{($doc//tei:title)[1]/data(.)} </a>  <span class="mencionadoComo"> (mencionado como:{$text})</span></div>, <br />)    
+       (<div><a href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{($doc//tei:title)[1]/data(.)} </a>  <span class="mencionadoComo"> {concat(" (",page:singleAttribute($lists,"roles", "mentioned-as"))}: {$mentions})</span></div>, <br />)    
     else ()
   
 };

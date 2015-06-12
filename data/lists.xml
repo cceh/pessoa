@@ -80,12 +80,16 @@
                         </list>
                     </item>
                      <item>
-                         <term xml:lang="pt" xml:id="persons">Persons PT</term>
-                         <term xml:lang="en" corresp="#persons">Persons EN</term>
+                         <term xml:lang="pt" xml:id="persons">Pessoas</term>
+                         <term xml:lang="en" corresp="#persons">Persons</term>
                      </item>
                      <item>
-                         <term xml:lang="pt" xml:id="texts">Texts PT</term>
-                         <term xml:lang="en" corresp="#texts">Texts EN</term>
+                         <term xml:lang="pt" xml:id="texts">Textos</term>
+                         <term xml:lang="en" corresp="#texts">Texts</term>
+                     </item>
+                     <item>
+                         <term xml:lang="pt" xml:id="journals">Journais</term>
+                         <term xml:lang="en" corresp="#journals">Journals</term>
                      </item>
                     </list>
                 </item>
@@ -123,50 +127,69 @@
                     <persName>Ricardo Reis</persName>
                 </person>
             </listPerson>
-            <!-- ################ VERSAO PSSOAL ################### -->
-            <list type="personal-version" xml:lang="pt">
-                <item xml:id="diplomatic-version">versão diplomática</item>
-                <item xml:id="first-version">primeira versão</item>
-                <item xml:id="last-version">última versão</item>
-                <!-- abbr -->
-                <item xml:id="abbreviations">desenvolvimento de abreviaturas</item>
-                <!-- lb -->
-                <item xml:id="line-breaks">quebras de linha</item>
-            </list>
-            <list type="personal-version" xml:lang="en">
-                <item corresp="#diplomatic-version">diplomatic version</item>
-                <item corresp="#fist-version">first version</item>
-                <item corresp="#last-version">last version</item>
-                <!-- abbr -->
-                <item corresp="#abbreviations">expand abbreviations</item>
-                <!-- lb -->
-                <item corresp="#line-breaks">line breaks</item>
+            <!-- ################ VERSAO PESSOAL ################### -->
+            <list type="personal-version">
+                <item>
+                    <term xml:lang="pt" xml:id="diplomatic-version">versão diplomática</term>
+                    <term xml:lang="en" corresp="#diplomatic-version">diplomatic version</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="first-version">primeira versão</term>
+                    <term xml:lang="en" corresp="#first-version">first version</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="last-version">última versão</term>
+                    <term xml:lang="en" corresp="#last-version">last version</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="abbreviations">desenvolvimento de abreviaturas</term>
+                    <term xml:lang="en" corresp="#abbreviations">expand abbreviations</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="line-breaks">quebras de linha</term>
+                    <term xml:lang="en" corresp="#line-breaks">line breaks</term>
+                </item>
             </list>
             <!-- ################ AUTHOR-Pages #################### -->
-            <list type="author-pages" xml:lang="pt">
-                <item xml:id="publications-and-documents">Publicações e Documentos</item>
-                <item xml:id="documents">Documentos</item>
-                <item xml:id="publications">Publicações</item>
-            </list>
-            <list type="author-pages" xml:lang="en">
-                <item corresp="#publications-and-documents">Publications and Documents</item>
-                <item corresp="#documents">Documents</item>
-                <item corresp="#publications">Publications</item>
+            <list type="author-pages">
+                <item>
+                    <term xml:lang="pt" xml:id="publications-and-documents">Publicações e Documentos</term>
+                    <term xml:lang="en" corresp="#publications-and-documents">Publications and Documents</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="documents">Documentos</term>
+                    <term xml:lang="en" corresp="#documents">Documents</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="publications">Publicações</term>
+                    <term xml:lang="en" corresp="#publications">Publications</term>
+                </item>
             </list>
             <!-- ################## ROLES #################
              person roles (bitte auch in dieser Reihenfolge in der Suchmaske) -->
-            <list type="roles" xml:lang="pt">
-                <item xml:id="author">autor</item>
-                <item xml:id="editor">editor</item>
-                <item xml:id="translator">tradutor</item>
-                <item xml:id="topic">tema</item>
+            <list type="roles">
+                <item>
+                    <term xml:lang="pt" xml:id="author">autor</term>
+                    <term xml:lang="en" corresp="#author">author</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="editor">editor</term>
+                    <term xml:lang="en" corresp="#editor">editor</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="translator">tradutor</term>
+                    <term xml:lang="en" corresp="#translator">translator</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="topic">tema</term>
+                    <term xml:lang="en" corresp="#topic">topic</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="mentioned-as">mencionado como</term>
+                    <term xml:lang="en" corresp="#mentioned-as">mentioned as</term>
+                </item>
             </list>
-            <list type="roles" xml:lang="en">
-                <item corresp="#author">author</item>
-                <item corresp="#editor">editor</item>
-                <item corresp="#translator">translator</item>
-                <item corresp="#topic">topic</item>
-            </list>
+           
             <!-- ############## GENRES ###################### -->
             <list type="genres" xml:lang="pt">
          <!-- géneros de documentos e publicaçoes -->
@@ -313,6 +336,25 @@
                 <item>
                     <term xml:lang="pt" xml:id="alphabetical">alfabético</term>
                     <term xml:lang="en" corresp="#alphabetical">alphabetical</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="order">Ordem: </term>
+                    <term xml:lang="en" corresp="#order">Order: </term>
+                </item>
+            </list>
+      <!-- ####################### Buttons ######################### -->
+            <list type="buttons">
+                <item>
+                    <term xml:lang="pt" xml:id="previous">Anterior</term>
+                    <term xml:lang="n" corresp="#previous">Previous</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="next">Próximo</term>
+                    <term xml:lang="en" corresp="#next">Next</term>
+                </item>
+                <item>
+                    <term xml:lang="pt" xml:id="bindex">Indice</term>
+                    <term xml:lang="en" corresp="#bindex">Index</term>
                 </item>
             </list>
       <!-- ####################### TIMELINE ######################### -->

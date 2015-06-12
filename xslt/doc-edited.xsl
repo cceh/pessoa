@@ -2,7 +2,12 @@
     
     <xsl:import href="doc.xsl"/>
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
-    
+    <!-- externer Parameter lb: yes|no
+    (Zeilenumbrüche anzeigen oder nicht) -->
+    <xsl:param name="lb" />
+    <!-- externer Parameter abbr: yes|no
+    (Abkürzungen anzeigen oder nicht) -->
+    <xsl:param name="abbr" />
 
     
     <!-- Einrückungen werden hier nicht berücksichtigt -->
@@ -13,11 +18,22 @@
     <!-- choices -->
     <!-- Abkürzungen und Auflösungen: Darstellung der aufgelösten Form -->
     <xsl:template match="choice[abbr and expan]">
-        <xsl:apply-templates select="expan/text() | expan/ex"/>
-        <xsl:if test="following-sibling::choice[1]">
-            <xsl:text>&#160;</xsl:text>
-        </xsl:if>      
+        <xsl:choose>
+            <xsl:when test="$abbr = 'yes'">
+                <xsl:apply-templates select="abbr/text() | abbr/child::*" />
+                <xsl:if test="following-sibling::choice[1]">
+                    <xsl:text>&#160;</xsl:text>
+                </xsl:if>           
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:apply-templates select="expan/text() | expan/child::*"/>
+                <xsl:if test="following-sibling::choice[1]">
+                    <xsl:text>&#160;</xsl:text>
+                </xsl:if>            
+            </xsl:otherwise>
+        </xsl:choose> 
     </xsl:template>
+    
     <xsl:template match="abbr"/>
     <xsl:template match="ex">
         <span class="ex" style="color:purple;">[<xsl:apply-templates />]</span>
@@ -56,10 +72,26 @@
     wenn es kein Silbentrennzeichen gibt, dann ein Leerzeichen ausgeben
     -->
     <xsl:template match="lb[not(preceding-sibling::*[1][local-name()='pc'])][not(ancestor::note)][not(ancestor::add)]">
-        <xsl:text xml:space="preserve"> </xsl:text>
+        <xsl:choose>
+            <xsl:when test="$lb = 'yes'">
+                <br />
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text xml:space="preserve"> </xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
-    <xsl:template match="lb[preceding-sibling::*[1][local-name()='pc']]"/>
-    <xsl:template match="pc"/>
+    <xsl:template match="lb[preceding-sibling::*[1][local-name()='pc']]">
+        <xsl:if test="$lb = 'yes'">
+            <br />
+        </xsl:if>
+    </xsl:template>
+        
+    <xsl:template match="pc">
+        <xsl:if test="$lb = 'yes'">
+            <xsl:apply-templates />
+        </xsl:if>
+    </xsl:template>
     
     <!-- Trotz Aufhebung der lb's soll am Rand genug Platz für Notes bleiben --> 
     <xsl:template match="text">

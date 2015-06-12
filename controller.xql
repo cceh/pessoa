@@ -28,8 +28,9 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
 else if (contains($exist:path,  "doc/versao-pessoal")) then
     let $lb := request:get-parameter("lb", "yes")
     let $abbr := request:get-parameter("abbr", "yes")
+    let $version := request:get-parameter("version","diplomatic")
     let $id := request:get-parameter("id", ())
-    return doc:get-text-pessoal(<node />, map {"test" := "test"}, $id, $lb, $abbr)
+    return doc:get-text-pessoal(<node />, map {"test" := "test"}, $id, $lb, $abbr, $version)
 else if (contains($exist:path,  "/doc/")) then
     if ($exist:resource = "xml") then
     let $id := substring-before(substring-after($exist:path, "/doc/"), "/xml")

@@ -53,15 +53,20 @@ declare function doc:get-text-var2($node as node(), $model as map(*), $id as xs:
     return transform:transform($xml, $stylesheet, ())
 };
 
-declare function doc:get-text-pessoal($node as node(), $model as map(*), $id as xs:string, $lb as xs:string, $abbr as xs:string) as item()+{
+declare function doc:get-text-pessoal($node as node(), $model as map(*), $id as xs:string, $lb as xs:string, $abbr as xs:string, $version as xs:string) as item()+{
     let $xml := doc:get-xml($id)
-    let $stylesheet := doc("/db/apps/pessoa/xslt/doc-pessoal.xsl")
+    let $stylesheet := 
+    if($version ="first") then doc("/db/apps/pessoa/xslt/doc-var1.xsl")
+    else if($version ="last") then
+       doc("/db/apps/pessoa/xslt/doc-var2.xsl")
+    else doc("/db/apps/pessoa/xslt/doc-pessoal.xsl")
     return
     if($lb="yes") then
         if($abbr ="yes") then
-            transform:transform($xml, $stylesheet, (<parameters><param name="lb" value="yes"/><param name="abbr" value="yes"/></parameters>))
+             transform:transform($xml, $stylesheet, (<parameters><param name="lb" value="yes"/><param name="abbr" value="no"/></parameters>))
         else
-            transform:transform($xml, $stylesheet, (<parameters><param name="lb" value="yes"/><param name="abbr" value="no"/></parameters>))
+            transform:transform($xml, $stylesheet, (<parameters><param name="lb" value="yes"/><param name="abbr" value="yes"/></parameters>))
+           
     else
         if($abbr="yes") then
             transform:transform($xml, $stylesheet, (<parameters><param name="lb" value="no"/><param name="abbr" value="yes"/></parameters>))
@@ -83,7 +88,7 @@ declare function doc:get-genre($node as node(), $model as map(*), $type as xs:st
         let $docsInYear :=  
             for $doc in $docs where(fn:substring(author:getYearOrTitle($doc,$orderBy),0,$i) = $year) return $doc
     order by $year       
-    return (<div class="sub_Nav"><h2 id="{$year}">{$year}</h2></div>,
+    return (<div class="sub_Nav"><h2 id="{$year}">{if ($year = "B") then "BNP" else if ($year = "M") then "MN" else $year}</h2></div>,
      for $doc in $docsInYear 
      order by (author:getYearOrTitle($doc,$orderBy))
      return
@@ -94,7 +99,13 @@ declare function doc:get-genre($node as node(), $model as map(*), $type as xs:st
 };
 
 declare function doc:getNavigation($years, $type){
-    let $years := for $year in $years order by $year return $year
+    let $years := for $year in $years order by $year 
+    return 
+    if ($year = 'B') then "BNP"
+    else
+    if($year = 'M') then "MN"
+    else
+    $year
     return
     <div class="navigation"> 
         {for $year at $i in $years
@@ -161,6 +172,33 @@ declare function doc:get-xml($id){
     return doc(concat("/db/apps/pessoa/data/doc/", $file-name)) 
 };
 
+
+declare %templates:wrap function doc:docControll($node as node(), $model as map(*)) {
+    let $db := collection("/db/apps/pessoa/data/doc","/db/apps/pessoa/data/pub")
+    let $doc := if(substring-after($helpers:request-path,"doc/")) 
+                    then substring-after($helpers:request-path,"doc/")
+                else substring-after($helpers:request-path,"pub")
+    let $index := index-of($db,doc(concat("/db/apps/pessoa/data/doc/",$doc,".xml")))    
+    let $libary :=  if(substring-after($helpers:request-path,"doc/")) 
+                    then "doc"
+                else "pub"
+
+    let $arrows := <div>
+                            <a href="{concat($helpers:app-root,'/',$helpers:web-language,'/',$libary,'/',substring-before(root($db[position() = (($index) -1)])/util:document-name(.),".xml"))}">
+                                <span id="back"> 
+                                    {page:singleAttribute(doc('/db/apps/pessoa/data/lists.xml'),"buttons","previous")}
+                                </span>
+                            </a>
+                            <a href="{concat($helpers:app-root,'/',$helpers:web-language,'/',$libary,'/',substring-before(root($db[position() = (($index) +1)])/util:document-name(.),".xml"))}">
+                                <span id="forward">
+                                    {page:singleAttribute(doc('/db/apps/pessoa/data/lists.xml'),"buttons","next")}
+                                </span>
+                            </a>
+                            <div class="clear"></div>
+                    </div>
+    return $arrows
+};
+
 declare function doc:footerfilter($node as node(), $model as map(*)) {
 let $script :=     <script>
   $("#zitat").click(function() {{
@@ -202,7 +240,7 @@ declare function doc:get-genre_type($node as node(), $model as map(*)) as node()
     let $title := if($helpers:web-language = "pt") 
         then data(doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="genres"][@xml:lang=$helpers:web-language]/tei:item[@xml:id=$type])
         else data(doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="genres"][@xml:lang=$helpers:web-language]/tei:item[@corresp=concat("#",$type)])
-    return <h2>Documentos - { $title}</h2>
+    return <h2>{ $title}</h2>
 };
 
 declare function doc:get-versaoPessoal($node as node(), $model as map(*)) as node() {
@@ -213,28 +251,43 @@ let $script := <script type="text/javascript">
             var i = url.lastIndexOf("/");
             var j = url.lastIndexOf("#");
             var id = url.substring(i+1,j);
+           
+            var toLoad = "http://localhost:8080/exist/apps/pessoa/{$helpers:web-language}/page/doc/versao-pessoal?id=" + id;
             if ($("#lb").is(":checked"))
             {{
-            if($("#abbr").is(":checked"))
-            {{
-            $("#tabs-4-text").load("http://localhost:8080/exist/apps/pessoa/{$helpers:web-language}/page/doc/versao-pessoal?id=" + id + "&amp;lb=yes&amp;abbr=yes");
+               toLoad = toLoad.concat("&amp;lb=yes");
             }}
             else
             {{
-            $("#tabs-4-text").load("http://localhost:8080/exist/apps/pessoa/{$helpers:web-language}/page/doc/versao-pessoal?id=" + id + "&amp;lb=yes&amp;abbr=no");
+            toLoad = toLoad.concat("&amp;lb=no");
             }}
+            if ($("#abbr").is(":checked"))
+            {{
+               toLoad = toLoad.concat("&amp;abbr=yes");
             }}
             else
             {{
-            if($("#abbr").is(":checked"))
+                toLoad = toLoad.concat("&amp;abbr=no");
+            }}
+            
+            if ($("#diplomatic").is(":checked"))
             {{
-            $("#tabs-4-text").load("http://localhost:8080/exist/apps/pessoa/{$helpers:web-language}/page/doc/versao-pessoal?id=" + id + "&amp;lb=no&amp;abbr=yes");
+               toLoad = toLoad.concat("&amp;version=diplomatic");
             }}
-            else
+            if ($("#first").is(":checked"))
             {{
-            $("#tabs-4-text").load("http://localhost:8080/exist/apps/pessoa/{$helpers:web-language}/page/doc/versao-pessoal?id=" + id + "&amp;lb=no&amp;abbr=no");
+               toLoad = toLoad.concat("&amp;version=first");
             }}
+          
+            if ($("#last").is(":checked"))
+            {{
+               toLoad = toLoad.concat("&amp;version=last");
             }}
+             $("#tabs-4-text").load(toLoad);
+             
+             
+             
+           
         }}
         
         

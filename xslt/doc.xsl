@@ -36,7 +36,7 @@
             .metamark.line.end {margin-bottom:20px; text-align:center; line-height:50%}
             .metamark.double.line{margin-bottom:20px; text-align:center; line-height: 50%;} 
             
-            .red {color: red;}
+           /* .red {color: red;} */
             .offset {margin-left: 2em;}
             .indent {margin-left: 2em;}
             .right {float: right;}   
@@ -280,7 +280,7 @@
         <xsl:choose>
             <xsl:when test="label[@place='right'][@rend='red']">
                 <xsl:variable name="label" select="label/data(.)"/>
-                <div class="metamark line distinct">_______________________<span style="color: red;"><xsl:value-of select="$label"/></span></div> 
+                <div class="metamark line distinct">_______________________<xsl:value-of select="$label"/></div> 
             </xsl:when>
             <xsl:otherwise>
                 <div class="metamark line distinct">_______________________</div>
@@ -344,20 +344,18 @@
         </span>
     </xsl:template>
     <xsl:template match="hi[@rend='red']">
-        <span style="color: red;">
+        <span>
             <xsl:apply-templates/>
         </span>
     </xsl:template>
     <xsl:template match="hi[@rend='underline red']">
-        <span style="text-decoration: underline; color: red;">
+        <span style="text-decoration: underline; ">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
     <xsl:template match="hi[@rend='underline-red']">
-        <span style="text-decoration: underline; color: red;">
-            <span style="color: black;">
-            <xsl:apply-templates/>
-            </span>
+        <span style="text-decoration: underline;">
+            <xsl:apply-templates/>         
         </span>
     </xsl:template>
     <xsl:template match="hi[@rend='italic']">

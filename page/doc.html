@@ -90,12 +90,14 @@ canvas3.stroke();
         
         $("li.itabs").click(function(e){
         if (!$(this).hasClass("active")) {
-        var tabNum = $(this).index();
-        var nthChild = tabNum+1;
+        var tabNum = $(this).attr("title");
         $("ul#indextabs .active").removeClass("active");
         $(this).addClass("active");
         $("ul#indextab .active").removeClass("active");
-        $("ul#indextab :nth-child("+nthChild+")").addClass("active");
+        $("ul#indextab li#"+tabNum).addClass("active");
+       $("ul#indextab li#"+tabNum+" ul li").addClass("active");
+      /*  $("ul#indextab :nth-child("+nthChild+")").addClass("active");
+        */
         }
         });
         
@@ -110,11 +112,11 @@ canvas3.stroke();
         <div id="article">
             <div>
                
-                <div class="page:docControll" id="scrollline"></div>
+                <div class="doc:docControll" id="scrollline"></div>
                 
                 <div id="tabline">
                     <ul id="tabs">
-                        <li class="active tabs"><a href="#diplomática" ><span class="page:singleElement?xmltype=tabs&amp;xmlid=transcricao-diplomatica"></span></a></li>
+                        <li class="active tabs"><a href="#diplomática"  ><span class="page:singleElement?xmltype=tabs&amp;xmlid=transcricao-diplomatica"></span></a></li>
                         <li class="tabs"><a href="#primeira" ><span class="page:singleElement?xmltype=tabs&amp;xmlid=primeira-versao"></span></a></li>
                         <li class="tabs"><a href="#final"><span class="page:singleElement?xmltype=tabs&amp;xmlid=versao-final"></span></a></li>
                         <li class="tabs"><a href="#pessoal" ><span class="page:singleElement?xmltype=tabs&amp;xmlid=versao-pessoal"></span></a></li>
@@ -142,11 +144,14 @@ canvas3.stroke();
                     <li>
                         <div id="pessoal">
                             <form method="get">
-                                <input id ="lb" name="lb" type="checkbox" value="yes" onchange="versaoPessoal();"></input> lb<br/>
-                                <input id="abbr" name="abbr" type="checkbox" value="yes" onchange="versaoPessoal();"></input> abbr <br/>  
+                                <input id ="lb" name="lb" type="checkbox" checked="checked" value="yes" onchange="versaoPessoal();"></input><span class="page:singleElement?xmltype=personal-version&amp;xmlid=line-breaks"></span><br/>
+                                <input id="abbr" name="abbr" type="checkbox" checked="checked" value="yes" onchange="versaoPessoal();"></input><span class="page:singleElement?xmltype=personal-version&amp;xmlid=abbreviations"></span><br/>  
+                                <input id ="diplomatic" name="version" type="radio" checked="checked" value="yes" onchange="versaoPessoal();"></input><span class="page:singleElement?xmltype=personal-version&amp;xmlid=diplomatic-version"></span><br/> 
+                                <input id ="first" name="version" type="radio" value="yes" onchange="versaoPessoal();"></input><span class="page:singleElement?xmltype=personal-version&amp;xmlid=first-version"></span><br/> 
+                                <input id ="last" name="version" type="radio" value="yes" onchange="versaoPessoal();"></input><span class="page:singleElement?xmltype=personal-version&amp;xmlid=last-version"></span><br/> 
                             </form>
                             <div id="tabs-4-text">
-                                <p class="doc:get-text-pessoal?lb=yes&amp;abbr=yes">texto</p>
+                                <p class="doc:get-text-pessoal?lb=yes&amp;abbr=yes&amp;version=diplomatic">texto</p>
                             </div>
                         </div>
                     </li>
@@ -155,19 +160,19 @@ canvas3.stroke();
             <div id="img-div">
                 <div id="indexline">
                     <ul id="indextabs">
-                        <li class="itabs active"><a href="#facsimile"><span>Facsimilie</span></a></li>
-                        <li class="itabs"><a href="#index"><span>Index</span></a></li>
+                        <li class="itabs active"  title="facsimile"><a href="#facsimile"><span>Facsimilie</span></a></li>
+                        <li class="itabs"  title="index"><a href="#index"><span class="page:singleElement?xmltype=buttons&amp;xmlid=bindex"></span></a></li>
                     </ul>
                 </div>
                 <div>
                 <ul id="indextab">
-                    <li class="active">
-                        <div id="facsimile">
+                    <li class="active" id="facsimile">
+                        <div >
                             <p class="doc:get-image">facsimile</p>
                         </div>
                     </li>
-                    <li>
-                        <div id="index">
+                    <li id="index">
+                        <div >
                             <p class="doc:get-indexes">indexes</p>
                         </div>
                     </li>

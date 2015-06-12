@@ -794,7 +794,11 @@ li.itabs.active span {
     margin-right:5px;
 }
 
-#charttable
+/* ######### NAVI ACTIVE STYLE ##########*/
+#navi_elements li.active a {
+            text-decoration:underline !important;
+            font-weight:bold !important;
+            };#charttable
 {
     border: 1px solid #f00; 
     margin: 0 auto; 
@@ -804,6 +808,23 @@ li.itabs.active span {
 {
     min-height: 42px !important; 
 }
+#charttable
+{
+    border: 1px solid #f00; 
+    margin: 0 auto; 
+}
+/* ######### NAVI ACTIVE STYLE ##########*/
+#navi_elements li.active a {
+            text-decoration:underline !important;
+            font-weight:bold !important;
+            };
+
+.navbar
+{
+    min-height: 42px !important; 
+}
+
+
 
 /*Für die Buchstaben/Zahlen Navi 
   text-align: center;
