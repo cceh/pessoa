@@ -23,6 +23,7 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
+                <publisher />
                 <idno type="filename">BNP_E3_48B-23r.xml</idno>
             </publicationStmt>
             <sourceDesc>
@@ -63,7 +64,6 @@
                     <hi rend="underline">Editions:</hi></head>
                 <item>
                     <label>1.</label>
-                    <anchor xml:id="A1"/>
                     <rs type="person">Shakespeare</rs>: <rs type="text">“A Tormenta”</rs>. – <choice>
                         <abbr>Trad<am>.</am>
                         </abbr>
@@ -71,15 +71,13 @@
                         </expan>
                     </choice>
                     <rs type="person" key="FP" role="translator">Fernando Pessoa</rs>.
-                    <anchor xml:id="A2"/>
                 </item>
                 <item>
                     <label>2.</label>
                     <rs type="person">Antonio Botto</rs>: <rs type="text">“Canções”</rs>. – 2ª edição.</item>
                 <item>
                     <label>3.</label>
-                    <anchor xml:id="A3"/>
-                    <rs type="text">“English Poems – I <choice>
+                    <rs type="work" key="O6"><rs type="text">“English Poems – I <choice>
                             <abbr>+</abbr>
                             <expan>and</expan>
                         </choice> II (Antinous, Inscriptions)”</rs> – <rs type="person" key="FP" role="author">
@@ -88,8 +86,7 @@
                             </abbr>
                             <expan>F<ex>ernando</ex>
                             </expan>
-                        </choice> Pessoa</rs>.
-                    <anchor xml:id="A4"/>
+                        </choice> Pessoa</rs></rs>.
                 </item>
                 <item>
                     <label>4.</label>
@@ -109,9 +106,7 @@
                 </item>
                 <item>
                     <label>5.</label>
-                    <anchor xml:id="A5"/>
                     <rs type="text">“Essay on Political Suffrage”</rs> – <rs type="person" key="FP" role="author">Fernando Pessoa</rs>.
-                    <anchor xml:id="A6"/>
                 </item>
                 <item>
                     <label>6.</label>
@@ -121,8 +116,10 @@
                         </choice> Norgate</rs> – <rs type="institution">Home University Library</rs>.</item>
                 <item>
                     <label>7.</label>
-                    <rs type="text">“Protocols of the Learned Elders of Zion”</rs> – with commentaries. <metamark function="addition-anchor">x</metamark>
-                    <metamark rend="line" function="addition" target="#A7"/>
+                    <rs type="text">“Protocols of the Learned Elders of Zion”</rs> – with commentaries.
+                    <metamark rend="line" function="addition" target="#A7">
+                        <label>x</label>
+                    </metamark>
                 </item>
                 <item>
                     <label>8.</label>
@@ -134,15 +131,15 @@
                     <label>10.</label>
                     <rs type="text">“Epithalamium, Five Songs”</rs>.</item>
             </list>
-            <p rend="indent" xml:id="A7">
+            <p xml:id="A7">
                 <metamark function="addition-anchor">x</metamark> Reclames por annuncios, placards, circulares<lb/>
-                (a padres e entidades analogas) — <metamark rend="line" function="addition" target="#a2"/>
+                (a padres e entidades analogas) — <metamark rend="line" function="addition" target="#A8"/>
             </p>
             <p>
                 <rs type="person">
                     <hi rend="underline">Homem Christo</hi>
                 </rs> (his printing office).</p>
-            <p rend="indent" xml:id="A8">Israel infandum <choice>
+            <p xml:id="A8">Israel infandum <choice>
                     <abbr>n<am>.</am>
                     </abbr>
                     <expan>n<ex>efas</ex>
@@ -152,14 +149,8 @@
             </p>
             <p>
                 <rs type="text">“Protocolos dos Sabios de Sião”</rs>, traduzidos e commentados<lb/>
-                <seg rend="indent">por <rs type="person">A.L.R.</rs>
-                </seg>
+                por <rs type="person">A.L.R.</rs>
             </p>
-                <spanGrp>
-                    <span type="correlation" from="#A1" to="#A2"/>
-                    <span type="correlation" from="#A3" to="#A4"/>
-                    <span type="correlation" from="#A5" to="#A6"/>
-                </spanGrp>
             </div>
         </body>
     </text>
