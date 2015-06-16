@@ -365,14 +365,14 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
                 <p class="small_text">{page:singleAttribute($doc,"search","multiple_entries")}</p>
                
                 <p>{page:singleAttribute($doc,"search","mentioned_as")} :</p>
-                {page:createInput_item("roles","checkbox","role",("author","editor","translator","topic"),$doc)}
+                {page:createInput_term("roles","checkbox","role",("author","editor","translator","topic"),$doc,"")}
                 </div>
                 <div class="tab" id="ta_release" onclick="hide('se_release')"><h6>{page:singleAttribute($doc,"search","published")} &amp; {page:singleAttribute($doc,"search","unpublished")}</h6>
                 </div>
                 <div class="selection" id="se_release" style="display:none;">
                 {page:createInput_term("search","radio","release",("published","unpublished"),$doc, "")}
                 <input class="release_input-box" type="radio" name="release" value="either" id="either" checked="checked"/>
-                <label class="release_input-label" for="either"> {page:singleAttribute($doc,"search","published")}<br /> &amp; {page:singleAttribute($doc,"search","unpublished")}</label>
+                <label class="release_input-label" for="either"> {page:singleAttribute($doc,"search","all")}</label>
                 </div>
                 <div class="tab" id="ta_genre" onclick="hide('se_genre')"><h6>{page:singleAttribute($doc,"search","genre")}</h6>
                 </div>
@@ -385,8 +385,8 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
                   <div class="tab" id="ta_date" onclick="hide('se_date')"><h6>{page:singleAttribute($doc,"search","date")}</h6></div>
                             <div class="selection" id="se_date" style="display:none;">    
                                 <div id="datum">
-                                    <input type="date" class="date-field" name="after" placeholder="{page:singleAttribute($doc,"search","from")}"/>
-                                    <input type="date" class="date-field" name="before" placeholder="{page:singleAttribute($doc,"search","to")}"/>
+                                    <input type="datum" class="date_field" name="after" placeholder="{page:singleAttribute($doc,"search","from")}"/>
+                                    <input type="datum" class="date_field" name="before" placeholder="{page:singleAttribute($doc,"search","to")}"/>
                                 </div>
                     </div>  
                     <div class="tab" id="ta_lang" onclick="hide('se_lang')"><h6>{page:singleAttribute($doc,"search","language")}</h6></div>
