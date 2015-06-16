@@ -30,6 +30,28 @@
         $("ul#tab :nth-child("+nthChild+")").addClass("active");
         }
         });*/
+        
+     /*   $(document.ready(function(){ */
+        $(document).ready(function(){
+            $("li.mainNavTab").click(function() {
+                if(!$(this).hasClass("active")) {
+                    $("li.active").removeClass("active");
+                    $(this).addClass("active");
+                    var id1 = $(this).attr('id');
+                    $("div.active").css("display","none");
+                    $("div.active").removeClass("active");             
+                    $("div#nav_"+id1.substring(8)).addClass("active");
+                    $("div#nav_"+id1.substring(8)).css("display","block");
+                    
+                    $("div#nav_"+id1.substring(8)+" li").click(function() {
+                        if(!$(this).hasClass("active")) {
+                            $("div#nav_"+id1.substring(8)+" li.active").removeClass("active");
+                            $(this).addClass("active");
+                        }
+                    });
+                }
+        });
+        });
         </script>
     </head>
     <body id="body">
