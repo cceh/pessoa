@@ -108,7 +108,7 @@ declare function page:createContent($type as xs:string) as node()* {
 declare function page:createThirdNav($type as xs:string) as node()* {
     if($type ="documentos") then
         for $nr in (1 to 9, "10","20","30","40","50","60","70","80","90")
-        return <li  class="{concat("nav_",$type,"_tab")}">
+        return <li  class="{concat("nav_",$type,"_tab")}" id="navtab_{$type}_sub_{$nr}">
             {concat($nr,"0")}
             </li>
     else if ($type = "cronologia") then 
@@ -117,7 +117,7 @@ declare function page:createThirdNav($type as xs:string) as node()* {
                         <li class="{concat("nav_",$type,"_tab")}"> <span class="step">|</span> 
                         {$date}
                         </li>
-                    else if(substring-after($date,"19")!= "") then  <li class="{concat("nav_",$type,"_tab")}">
+                    else if(substring-after($date,"19")!= "") then  <li class="{concat("nav_",$type,"_tab")}"  id="navtab_{$type}_sub_{index-of(("1900 - 1909","1910 - 1919","1920 - 1929","1930 - 1935",(doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item/tei:list[@type="cronologia"]/tei:item/tei:term[@xml:lang=$helpers:web-language]/data(.))),$date)-1}">
                         {$date}</li>
                         else ()
    (: else if ($type = "obras") then for $works in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="works"]/tei:item 
@@ -127,7 +127,7 @@ declare function page:createThirdNav($type as xs:string) as node()* {
             {$works/tei:title[1]/data(.)}
             </a></li>:)
     else if ($type ="publicacoes") then for $authors in doc("/db/apps/pessoa/data/lists.xml")//tei:listPerson[@type="authors"]/tei:person
-        return <li class="{concat("nav_",$type,"_tab")}">
+        return <li class="{concat("nav_",$type,"_tab")}" id="navtab_{$type}_sub_{$authors/attribute()}">
                     {$authors/tei:persName/data(.)}
                     </li>
      else if($type = "index") then for $indexies in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="index"]/tei:item/tei:term[@xml:lang=$helpers:web-language]
