@@ -47,6 +47,18 @@
                         if(!$(this).hasClass("active")) {
                             $("div#nav_"+id1.substring(8)+" li.active").removeClass("active");
                             $(this).addClass("active");
+                            var id2 = $(this).attr('id');
+                            var clas = $(this).attr('class');
+                            var clas2 = clas.substring(0,clas.search("tab"));
+                            if(id2.contains("navtab")) {
+                                    $("div#"+clas2+"sub div.active").css("display","none");
+                                    $("div#"+clas2+"sub div.active").removeClass("active");   
+                                    $("div#nav"+id2.substring(6)).addClass("active");
+                                    $("div#nav"+id2.substring(6)).css("display","block");
+                                    $("div#"+clas2+"sub").addClass("active");
+                                    $("div#"+clas2+"sub").css("display","block");                                    
+                            }
+                          /*  alert(id2.substring(6)); */
                         }
                     });
                 }
