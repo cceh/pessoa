@@ -18,52 +18,6 @@
         <link class="helpers:app-root" rel="stylesheet" href="resources/css/style.css" type="text/css" />
 
         <script type="text/javascript">
-          /*      $(document).ready(function(){
-        
-        $("li.tabs").click(function(e){
-        if (!$(this).hasClass("active")) {
-        var tabNum = $(this).index();
-        var nthChild = tabNum+1;
-        $("ul#tabs .active").removeClass("active");
-        $(this).addClass("active");
-        $("ul#tab .active").removeClass("active");
-        $("ul#tab :nth-child("+nthChild+")").addClass("active");
-        }
-        });*/
-        
-     /*   $(document.ready(function(){ */
-        $(document).ready(function(){
-            $("li.mainNavTab").click(function() {
-                if(!$(this).hasClass("active")) {
-                    $("li.active").removeClass("active");
-                    $(this).addClass("active");
-                    var id1 = $(this).attr('id');
-                    $("div.active").css("display","none");
-                    $("div.active").removeClass("active");             
-                    $("div#nav_"+id1.substring(8)).addClass("active");
-                    $("div#nav_"+id1.substring(8)).css("display","block");
-                    
-                    $("div#nav_"+id1.substring(8)+" li").click(function() {
-                        if(!$(this).hasClass("active")) {
-                            $("div#nav_"+id1.substring(8)+" li.active").removeClass("active");
-                            $(this).addClass("active");
-                            var id2 = $(this).attr('id');
-                            var clas = $(this).attr('class');
-                            var clas2 = clas.substring(0,clas.search("tab"));
-                            if(id2.contains("navtab")) {
-                                    $("div#"+clas2+"sub div.active").css("display","none");
-                                    $("div#"+clas2+"sub div.active").removeClass("active");   
-                                    $("div#nav"+id2.substring(6)).addClass("active");
-                                    $("div#nav"+id2.substring(6)).css("display","block");
-                                    $("div#"+clas2+"sub").addClass("active");
-                                    $("div#"+clas2+"sub").css("display","block");                                    
-                            }
-                          /*  alert(id2.substring(6)); */
-                        }
-                    });
-                }
-        });
-        });
         </script>
     </head>
     <body id="body">

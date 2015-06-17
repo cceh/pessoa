@@ -107,25 +107,23 @@ declare function page:createContent($type as xs:string) as node()* {
 
 declare function page:createThirdNav($type as xs:string) as node()* {
     if($type ="documentos") then
-        for $nr in (1 to 9, "10","20","30","40","50","60","70","80","90")
-        return <li  class="{concat("nav_",$type,"_tab")}" id="navtab_{$type}_sub_{$nr}">
-            {concat($nr,"0")}
+        for $nr in ("1-9", "10","20","30","40","50","60","70","80","90","100","MN")
+        return if( $nr != "1-9") then <li  class="{concat("nav_",$type,"_tab")}" id="navtab_{$type}_sub_{$nr}">
+            {$nr}
+            </li>
+            else <li  class="{concat("nav_",$type,"_tab")}" id="navtab_{$type}_sub_{$nr}">
+            1 - 9
             </li>
     else if ($type = "cronologia") then 
     for $date in ("1900 - 1909","1910 - 1919","1920 - 1929","1930 - 1935", (doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item/tei:list[@type="cronologia"]/tei:item/tei:term[@xml:lang=$helpers:web-language]/data(.)))
             return if (contains($date, "1") != xs:boolean("true") ) then
                         <li class="{concat("nav_",$type,"_tab")}"> <span class="step">|</span> 
+                        <a href="{concat($helpers:app-root,"/",$helpers:web-language,"/page/timeline.html")}" target="_blank">
                         {$date}
-                        </li>
+                        </a></li>
                     else if(substring-after($date,"19")!= "") then  <li class="{concat("nav_",$type,"_tab")}"  id="navtab_{$type}_sub_{index-of(("1900 - 1909","1910 - 1919","1920 - 1929","1930 - 1935",(doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item/tei:list[@type="cronologia"]/tei:item/tei:term[@xml:lang=$helpers:web-language]/data(.))),$date)-1}">
                         {$date}</li>
                         else ()
-   (: else if ($type = "obras") then for $works in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="works"]/tei:item 
-       return  <li class="{concat("nav_",$type,"_tab")}">
-            <a href="#"
-            onclick="u_nav({concat(" 'nav_",$type,"_sub_",$works/attribute(),"'" )})">
-            {$works/tei:title[1]/data(.)}
-            </a></li>:)
     else if ($type ="publicacoes") then for $authors in doc("/db/apps/pessoa/data/lists.xml")//tei:listPerson[@type="authors"]/tei:person
         return <li class="{concat("nav_",$type,"_tab")}" id="navtab_{$type}_sub_{$authors/attribute()}">
                     {$authors/tei:persName/data(.)}
@@ -143,7 +141,7 @@ declare function page:createThirdNav($type as xs:string) as node()* {
 };
 
 declare function page:createThirdNavTab($type as xs:string) as node()* {
-   if ($type = "documentos") then for $indikator in (1 to 9, "10","20","30","40","50","60","70","80","90") return
+   if ($type = "documentos") then for $indikator in ("1-9", "10","20","30","40","50","60","70","80","90","100","MN") return
           <div  id="{concat("nav_",$type,"_sub_",$indikator)}" style="display:none"> 
             <ul class="nav_sub_tabs">
             {page:createThirdNavContent($type,$indikator)}
@@ -176,11 +174,11 @@ declare function page:createThirdNavTab($type as xs:string) as node()* {
 
 declare function page:createThirdNavContent($type as xs:string, $indikator as xs:string) as node()* {
         if ($type = "documentos") then for $item in page:createItem($type, $indikator) 
-            return <li class="{concat("nav_",$type,"_sub_tab")}"><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></li>
+            return <a href="{$item/@ref/data(.)}"><li class="{concat("nav_",$type,"_sub_tab")}">{$item/@label/data(.)}</li></a>
        else if ($type = "cronologia" and $indikator != "3") then for $nr in (0 to 9)
-            return <li class="{concat("nav_",$type,"_sub_tab")}">{concat("'",$indikator,$nr)}</li>
+            return <li class="{concat("nav_",$type,"_sub_tab")}" id="exttab_cro_{concat($indikator,$nr)}">{concat("'",$indikator,$nr)}</li>
        else if ($type = "cronologia" and $indikator = "3") then for $nr in (0 to 5) 
-            return <li class="{concat("nav_",$type,"_sub_tab")}">{concat("'",$indikator,$nr)}</li>
+            return <li class="{concat("nav_",$type,"_sub_tab")}"  id="exttab_cro_{concat($indikator,$nr)}">{concat("'",$indikator,$nr)}</li>
         (:      
        else if ($type = "obras") then for $item in page:createItem($type, $indikator)
             return <a href="{$item/@ref/data(.)}"><li class="{concat("nav_",$type,"_sub_tab")}">{$item/@label/data(.)}</li></a>
@@ -239,12 +237,14 @@ declare function page:createItem($type as xs:string, $indikator as xs:string?) a
    else if($type = "documentos") 
         then for $hit in xmldb:get-child-resources("/db/apps/pessoa/data/doc")
             let $label :=   if(substring-after($hit, "BNP_E3_") != "") then substring-after(replace(substring-before($hit, ".xml"), "_", " "), "BNP E3 ")
-                            else if(substring-after($hit,"MN") != "") then substring-after(substring-before($hit, ".xml"), "MN")
+                            else if(substring-after($hit,"MN") != "") then  substring-after(substring-before($hit, ".xml"),"MN")
                             else ()
                 let $ref := concat($helpers:app-root,'/',$helpers:web-language, "/doc/", substring-before($hit, ".xml"))         
                       order by $hit 
-                      return if( page:getCorrectDoc($label, $indikator) = xs:boolean("true") ) then
+                      return if( $indikator !="1-9" and page:getCorrectDoc($label, $indikator) = xs:boolean("true") and $indikator != "MN" and contains($hit,"BNP")) then
                       <item label="{$label}" ref="{$ref}"  />
+                      else if ($indikator = "MN" and contains($hit,"MN")) then <item label="{$label}" ref="{$ref}"  />
+                      else if($indikator = "1-9" and page:getCorretDoc_alphabetical($label,2) = xs:boolean("true")) then <item label="{$label}" ref="{$ref}"  />
                       else ()
    else if($type = "cronologia")
         then let $date := concat("19",$indikator)
@@ -296,18 +296,18 @@ declare function page:clearPublikation($pub as node()) as xs:string {
             else ()
 };
 
-
 declare function page:getCorrectDoc($label as xs:string, $indi as xs:string) as xs:boolean+ {
-if(contains(substring($label,1,1),substring($indi,1,1)) ) then
-    let $c_label := if( contains($label,"-") ) then substring-before($label,"-") else $label
-    for $pos in ( 1 to string-length($c_label))
-        return if (page:getCorretDoc_alphabetical($c_label,$pos) = xs:boolean("true") or $pos = string-length($c_label)) then page:getCorrectDoc_Step2($label,$indi,$pos) else xs:boolean("false")
-else xs:boolean("false")
+    if(contains(substring($label,1,1),substring($indi,1,1)) ) then
+        let $c_label := if( contains($label,"-") ) then substring-before($label,"-") else $label
+        for $pos in ( 1 to string-length($c_label))
+            return if (page:getCorretDoc_alphabetical($c_label,$pos) = xs:boolean("true") or $pos = string-length($c_label)) then page:getCorrectDoc_Step2($label,$indi,$pos) else xs:boolean("false")
+    else xs:boolean("false")
 };
 
 
 declare function page:getCorrectDoc_Step2($c_label as xs:string, $indi as xs:string,$pos as xs:integer) as xs:boolean{
-if( ($pos = 3 or  $pos = 4) and string-length($indi) = 2 and page:getCorrectDoc_nummeric($c_label,3) = xs:boolean("true")) then xs:boolean("true") 
+if( ($pos = 2  or $pos = 3) and string-length($indi) = 2 and page:getCorrectDoc_nummeric($c_label,2) = xs:boolean("true") and not( page:getCorrectDoc_nummeric($c_label,3) = xs:boolean("true"))) then xs:boolean("true") 
+else if ( ($pos = 3) and string-length($indi) = 3 and page:getCorrectDoc_nummeric($c_label,3) = xs:boolean("true")) then xs:boolean("true") 
 else if( ($pos = 3 or $pos = 2 or $pos = 1) and string-length($indi) = 1 and (  page:getCorretDoc_alphabetical($c_label,$pos)  = xs:boolean("true") or   page:getCorretDoc_alphabetical($c_label,2)  = xs:boolean("true") or   page:getCorretDoc_alphabetical($c_label,3)  = xs:boolean("true")) ) then xs:boolean("true")
 else xs:boolean("false")
 };
@@ -321,7 +321,7 @@ declare function page:getCorretDoc_alphabetical($label as xs:string, $pos as xs:
 
 declare function  page:getCorrectDoc_nummeric($label as xs:string, $pos as xs:integer) as xs:boolean? {
     for $cut in (1 to 9)
-    return if (contains(substring($label, $pos, 1),$cut)) then xs:boolean("true") else ()
+    return if (contains(substring($label, $pos, 1),$cut)) then xs:boolean("true") else  ()
 };
 
 
@@ -330,25 +330,6 @@ let $path := <div id="path">{ substring-after( $helpers:request-path,$helpers:we
 return $path
 };
 
-(: ####### BETA Java Automatisch generieren ###### :)
-(:
-declare function page:collectIds($string as xs:string, $model as map(*)) as map(*) {
-let $node := fn:serialize($string)
-return if(exists($model("collect")) and $model("collect")!= "") then
- map{ "collect" := concat($model("collect"),$node)    
-}
-else map{ "collect" := $node}
-};
-
-
-declare function page:getJavaIDs($node as node(), $model as map(*)) as node()* {
- if (exists($model("collect"))) then 
- 
-let $mainScript := <script type="text/javascript">{$model("collect")}</script>
-    return $mainScript
-    else <p> Fehler </p>
-};
-:)
 
 
 (:###### SEARCH PAGE ######:)
