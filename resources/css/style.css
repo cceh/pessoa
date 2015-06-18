@@ -152,6 +152,11 @@ label{
 
 /* Navigation */
 
+.mainNavTab
+{
+    cursor: pointer; 
+}
+
 #navi{
  width: 824px; 
  margin: -30px auto 0;
@@ -188,6 +193,7 @@ display: inline-block;
 .nav_tabs{
     background-color: #222;
     text-decoration:none;
+    color: #fff; 
 }
 
 .nav_sub_tabs{
@@ -797,9 +803,12 @@ li.itabs.active span {
 /* ######### NAVI ACTIVE STYLE ##########*/
 #navi_elements li.active {
             text-decoration:underline !important;
-            font-weight:bold !important;
             }
- 
+.nav_documentos_tab.active
+{
+   text-decoration:underline !important; 
+   background-color: #4E4E4E !important;
+}
 #charttable
 {
     border: 1px solid #f00; 
@@ -826,7 +835,12 @@ li.itabs.active span {
     min-height: 42px !important; 
 }
 
-
+.editorial-note
+{
+    margin-top: 20px; 
+    margin-right: 10px;
+    width: 450px;
+}
 
 /*Für die Buchstaben/Zahlen Navi 
   text-align: center;
