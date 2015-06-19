@@ -70,11 +70,6 @@ label{
     color: #F5F5F5;
     font-size : 25px;
 }
-
-#titletool2{
-    color: #fff;
-}
-
 /* Header */
 
 #page-header{
@@ -138,7 +133,7 @@ label{
 }
 
 #side{
- background-color: #fff;
+ background-color: #fff !important;
  margin: 0 auto;
 }
 
@@ -194,10 +189,13 @@ display: inline-block;
     background-color: #222;
     text-decoration:none;
     color: #fff; 
+    cursor: pointer; 
 }
 
 .nav_sub_tabs{
     list-style:none;
+    color: #fff !important; 
+    cursor: pointer; 
 }
     .nav_sub_tabs a{
         text-decoration: none;
@@ -217,7 +215,7 @@ display: inline-block;
         padding: 3px 25px;    
     }
     .nav_documentos_tab {
-       padding: 3px 7px;
+       padding: 3px 12px;
     }  
     .nav_obras_tab {
         padding:4px 28px;
@@ -250,7 +248,7 @@ display: inline-block;
     }
     .nav_publicacoes_sub_tab
     {
-       margin: 3px 21px 3px 5px !important;  
+       margin: 5px 21px 3px 5px !important;  
     }
     .nav_documentos_sub_tab:hover, .nav_cronologia_sub_tab:hover, .nav_cronologia_sub_ext_tab:hover, .nav_obras_sub_tab:hover, .nav_publicacoes_sub_tab:hover, .nav_bibliografia_sub_tab:hover{
             background-color: #4E4E4E;
@@ -418,8 +416,7 @@ ul#tabs a{
         ul#tabs span.active{
           
         }
-    
-    
+      
 ul#tab{
     list-style-type: none;
     padding: 5px;
@@ -654,9 +651,11 @@ ul#indextab{
     min-height: 100px;
     float:right;
 }
+    #img-div a{
+        color: #08298A !important;
+    }
 
-#image-div
-{
+#image-div{
   margin: 15px 0 15px 15px;
   display:inline-block;
   width: 40%;
@@ -700,12 +699,10 @@ ul#indextab{
     display: inline-block;
     background-color: #A8A8A8;
     padding: 5px 20px;
-    margin-bottom: 4px;
-    margin-top: 4px;
+    margin: 4px 0; 
     cursor: pointer;     
     width: 100px;
     text-align:center;
-    
     }   
     #back:hover, #forward:hover{
             background-color: #900;
@@ -736,8 +733,7 @@ ul#indextab{
 /* Sandbox - Der Ort zum experimentieren*/
 
 
-#path
-{
+#path{
     width: 210px; 
     float: left; 
 }
@@ -755,22 +751,14 @@ ul#indextab{
  cursor: text !important; 
 }
 
-li.tabs.active span {
+li.tabs.active span{
            background-color: #990000  !important;
-            }
-            
-            
-li.itabs.active span {
+            }            
+li.itabs.active span{
            background-color: #990000  !important;
             }
 
-#img-div a
-{
-    color: #08298A !important;
-}
-
-.sub_Nav 
-{
+.sub_Nav{
     width: 817px !important; 
     padding: 3px 0; 
     color: #fff !important;
@@ -779,76 +767,55 @@ li.itabs.active span {
     height: 26px;
 }
 
-.bibl 
-{
+.bibl{
     margin: 12px 0; 
 }
+    .bibl a{
+        color: #08298A; 
+    }
 
-.bibl a
-{
-    color: #08298A; 
-}
-
-.navigation
-{
+.navigation{
    text-align: center;
     margin: 8px 0; 
 }
 
-.step {
-    color:white;
+.step{
+    color:#fff;
     margin-right:5px;
 }
 
 /* ######### NAVI ACTIVE STYLE ##########*/
-#navi_elements li.active {
+#navi_elements li.active, .nav_documentos_tab.active, #navi_elements li.active a{
             text-decoration:underline !important;
             }
-.nav_documentos_tab.active
-{
-   text-decoration:underline !important; 
+.nav_documentos_tab.active{
    background-color: #4E4E4E !important;
 }
-#charttable
-{
-    border: 1px solid #f00; 
-    margin: 0 auto; 
-}
 
-.navbar
-{
-    min-height: 42px !important; 
-}
-#charttable
-{
-    border: 1px solid #f00; 
-    margin: 0 auto; 
-}
-/* ######### NAVI ACTIVE STYLE ##########*/
-#navi_elements li.active a {
-            text-decoration:underline !important;
+#navi_elements li.active a{
             font-weight:bold !important;
-            };
+            }
 
-.navbar
-{
+.navbar{
     min-height: 42px !important; 
 }
 
-.editorial-note
-{
+.editorial-note{
     margin-top: 20px; 
     margin-right: 10px;
     width: 450px;
 }
 
-/*Für die Buchstaben/Zahlen Navi 
-  text-align: center;
-  margin-top: -8px;
-  margin-bottom: 8px
-*/
-
 /*Tempörärer Mülleimer*/
 /*
-
+#title-tool2{
+    color: #fff;
+}
+.navbar{
+    min-height: 42px !important; 
+}
+#charttable{
+    border: 1px solid #f00; 
+    margin: 0 auto; 
+}
 */
