@@ -200,6 +200,7 @@ declare %templates:wrap function doc:docControll($node as node(), $model as map(
 };
 
 declare function doc:footerfilter($node as node(), $model as map(*)) {
+let $doc := doc("/db/apps/pessoa/data/lists.xml")
 let $script :=     <script>
   $("#zitat").click(function() {{
     $( "#dialog" ).dialog();
@@ -210,9 +211,9 @@ let $script :=     <script>
   <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
 </div>
 let $filter := <div id="filter">
-                <a class="filter-a" href="">Drucken</a>
+                <a class="filter-a" href="">{page:singleAttribute($doc, "footer","print")}</a>
                 <a class="filter-a" href="{$helpers:request-path}/xml" target="_blank">XML</a>
-                <a class="filter-a" id="zitat" >Zitat</a>
+                <a class="filter-a" id="zitat" >{page:singleAttribute($doc, "footer","cite")}</a>
             </div>
             return ($filter,$script,$popup)
 };
