@@ -307,7 +307,7 @@ declare function page:getCorrectDoc($label as xs:string, $indi as xs:string) as 
 
 declare function page:getCorrectDoc_Step2($c_label as xs:string, $indi as xs:string,$pos as xs:integer) as xs:boolean{
 if( ($pos = 2  or $pos = 3) and string-length($indi) = 2 and page:getCorrectDoc_nummeric($c_label,2) = xs:boolean("true") and not( page:getCorrectDoc_nummeric($c_label,3) = xs:boolean("true"))) then xs:boolean("true") 
-else if ( ($pos = 3) and string-length($indi) = 3 and page:getCorrectDoc_nummeric($c_label,3) = xs:boolean("true")) then xs:boolean("true") 
+else if ( ($pos = 3 or $pos = 4) and string-length($indi) = 3 and page:getCorrectDoc_nummeric($c_label,3) = xs:boolean("true")) then xs:boolean("true") 
 else if( ($pos = 3 or $pos = 2 or $pos = 1) and string-length($indi) = 1 and (  page:getCorretDoc_alphabetical($c_label,$pos)  = xs:boolean("true") or   page:getCorretDoc_alphabetical($c_label,2)  = xs:boolean("true") or   page:getCorretDoc_alphabetical($c_label,3)  = xs:boolean("true")) ) then xs:boolean("true")
 else xs:boolean("false")
 };
@@ -400,38 +400,8 @@ declare %templates:wrap function page:createTimelineBody($node as node(), $model
     return  $body
 };
 
-declare %templates:wrap function page:createTimelineHeader($node as node(), $model as map(*)) as node()* {
+declare  function page:createTimelineHeader($node as node(), $model as map(*)) as node()* {
 let $lists := doc('/db/apps/pessoa/data/lists.xml') 
-let $title := <title>{$lists//tei:list[@type="navigation"]/tei:item[5]/tei:list/tei:item/tei:term[@xml:lang=$helpers:web-language]/data(.)}</title>
-let $meta := <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
-let $google := 	 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700" rel="stylesheet" type="text/css" ></link>
-
-let $style := <style type="text/css">
-                  body {{
-         
-         font-size: 9pt;
-		 
-         }}
-		 
- #my-timeline {{
- overflow: no;
- }}
-.tape-special_event {{  margin-top: 12px;  }}
-.simile {{
-width: 1800px;
-}}
-      </style>
-
-let $style1 :=   <link type="text/css" rel="stylesheet" href="{$helpers:app-root}/resources/css/timeline-bundle_nachvollziehen.css"   ></link>  
-
-let $script1 := 
-           <script src="http://api.simile-widgets.org/timeline/2.3.1/timeline-api.js?bundle=true" type="text/javascript"></script>  
-(:
-  let $script2 :=  <script src="{concat($helpers:app-root,"/resources/js/timeline_2.3.0/timeline_js/timeline-api.js")}"    
-      type="text/javascript">
-    </script> 
- l:)
  let $script3 := <script type="text/javascript">
          var tl;
         function onLoad() {{
@@ -483,7 +453,7 @@ let $script1 :=
                 startDate:  "Jun 13 1888 ",
                 multiple:   1,
                 theme:      theme
-            }});
+           }});
 			
 			
 			
@@ -507,10 +477,10 @@ let $script1 :=
 			
 			
             tl = Timeline.create(document.getElementById("my-timeline"), bandInfos, Timeline.HORIZONTAL);
-            tl.loadXML("{$helpers:web-language}_events.xml", function(xml, url) {{
+            tl.loadXML("events.xml", function(xml, url) {{
                 eventSource.loadXML(xml, url);
             }});
         }}
     </script>		
-    return ($title,$meta,$google,$style,$style1,$script1,$script3)
+    return $script3
 };
