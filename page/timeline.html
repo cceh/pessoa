@@ -1,9 +1,44 @@
  <!-- Similet timeline  --> 
-<!DOCTYPE html SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml" >
-    <head class="page:createTimelineHeader">        
+    <head>        
+        <title>Linha do tempo</title>
+        <!--<meta  charset="utf-8" content=""> -->
+            
+            <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700" rel="stylesheet" type="text/css" />
+            <style type="text/css">
+
+         body {
+         
+         font-size: 9pt;
+		 
+         }
+		 
+ #my-timeline {
+ overflow: no;
+ height: 1500px;
+border: 3px solid #AAA;
+border-radius: 10px;
+background-color: #fff !important;
+ }
+.tape-special_event {  margin-top: 12px;  }
+.simile {
+width: 1800px;
+}
+
+
+      </style>
+            
+            
+            
+            <script src="http://api.simile-widgets.org/timeline/2.3.1/timeline-api.js?bundle=true" type="text/javascript"></script>  
+        <link  class ="helpers:app-root"  type="text/css" rel="stylesheet"  href="resources/css/timeline-bundle_nachvollziehen.css" media="all" />  
+                <script class="page:createTimelineHeader" type="text/javascript"  ></script>
 </head>
-    <body class="page:createTimelineBody" >
+    <body onload="onLoad();" onresize="onResize();">
+        <h1><u class="page:singleElement?xmltype=timeline&amp;xmlid=timeline_title"></u></h1>
+        <div id="my-timeline" style="height: 1500px; border: 1px solid #aaa; border-radius: 10px;" ></div>
+    
 </body>
    
 </html>     
