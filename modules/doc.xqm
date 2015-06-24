@@ -297,8 +297,9 @@ let $script := <script type="text/javascript">
         }} else {{
         attachEvent( "onload", draw(100,100) );
         }}
+        
 function draw(w, h) {{
-var canvas = document.getCSSCanvasContext("2d", "lines", w, h);
+var canvas = document.getCSSCanvasContext("2d", "lines", w, h); 
 canvas.strokeStyle = "rgb(0,0,0)";
 canvas.beginPath();
 canvas.moveTo( 0,0);
@@ -319,11 +320,35 @@ canvas3.arc(12,12,12,0,2*Math.PI);
 canvas3.stroke();
 }}
 
+
     </script>
     return $script
 };
 
-
+(:declare function doc:getIndex($node as node(), $model as map(*), $type){
+     let $lists := doc('/db/apps/pessoa/data/lists.xml')
+     let $docs := collection("/db/apps/pessoa/data/doc/") 
+     let $journals := 
+        for $doc in $docs return
+        $doc//tei:text//tei:rs[@type='journal']
+     let $journalKeys := $lists//tei:list[@type='journal']/@xml:id
+     let $journalNames := $lists//tei:list[@type='journal']/item
+     let $letters :=
+        for $name in $journalNames return substring($name,0,2)
+     let $letters := distinct-values($letters)
+     return 
+        (doc:getNavigation($letters),
+        for $letter in $letters 
+            let $journalsWithLetter := 
+                for $name in $journalNames where (substring($name,0,2) = $letter) return $name
+            order by upper-case($name)
+            return 
+             (<div class="sub_Nav"><h2 id="{$letter}">{$letter}</h2></div>,
+            for $journal in $journalsWithLetter order by $journal return
+            (<div class="indexItem">{$journal}</div>,<ul class="indexDocs">{
+            doc:getDocsForItem($item, $type)}</ul>)))
+            
+};:)
 
 declare function doc:getIndex($node as node(), $model as map(*), $type){
     let $lists := doc('/db/apps/pessoa/data/lists.xml')
@@ -345,7 +370,7 @@ declare function doc:getIndex($node as node(), $model as map(*), $type){
         for $letter in $letters 
             let $itemsWithLetter := 
                 for $item in $items where (substring($item,0,2) = $letter) return  $item
-        order by upper-case($letter)
+        order by upper-case($item)
         return 
             (<div class="sub_Nav"><h2 id="{$letter}">{$letter}</h2></div>,
             for $item in $itemsWithLetter order by $item return

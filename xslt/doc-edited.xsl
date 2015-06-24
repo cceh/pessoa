@@ -8,7 +8,7 @@
     <!-- externer Parameter abbr: yes|no
     (Abkürzungen anzeigen oder nicht) -->
     <xsl:param name="abbr" />
-
+    
     
     <!-- Einrückungen werden hier nicht berücksichtigt -->
     <xsl:template match="ab[@rend='indent'] | ab[@rend='offset'] | seg[@rend='indent']">
@@ -17,7 +17,7 @@
     
     <!-- choices -->
     <!-- Abkürzungen und Auflösungen: Darstellung der aufgelösten Form -->
-    <xsl:template match="choice[abbr and expan]">
+    <xsl:template match="choice[abbr and expan[ex]]">
         <xsl:choose>
             <xsl:when test="$abbr = 'yes'">
                 <xsl:apply-templates select="abbr/text() | abbr/child::*" />
@@ -26,13 +26,30 @@
                 </xsl:if>           
             </xsl:when>
             <xsl:otherwise>
-                <xsl:apply-templates select="expan/text() | expan/child::*"/>
-                <xsl:if test="following-sibling::choice[1]">
-                    <xsl:text>&#160;</xsl:text>
-                </xsl:if>            
+                <xsl:choose>
+                    <xsl:when test="abbr/metamark[@function='ditto']">
+                        <span class="ditto" style="color: purple;">
+                            <xsl:apply-templates select="expan/text() | expan/child::*"/>
+                        </span>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:apply-templates select="expan/text() | expan/child::*"/>                     
+                        <xsl:if test="following-sibling::choice[1]">
+                            <xsl:text>&#160;</xsl:text>
+                        </xsl:if>     
+                    </xsl:otherwise>
+                </xsl:choose>            
             </xsl:otherwise>
         </xsl:choose> 
     </xsl:template>
+    
+  
+    <xsl:template match="choice[abbr and expan[not(ex)]]">
+         [<span class="expan" style="color:purple">
+           <xsl:apply-templates select="expan/text() | expan/child::*"/>   
+         </span>]
+    </xsl:template>
+ 
     
     <xsl:template match="abbr"/>
     <xsl:template match="ex">
@@ -95,7 +112,7 @@
     
     <!-- Trotz Aufhebung der lb's soll am Rand genug Platz für Notes bleiben --> 
     <xsl:template match="text">
-        <div class="text edited">          
+        <div class="text">          
             <xsl:if test="@xml:id">
                 <xsl:attribute name="id">
                     <xsl:value-of select="@xml:id"/>
@@ -107,6 +124,9 @@
                 </xsl:if>
                 <xsl:if test="//note[contains(@place,'right')]">
                     padding-right:150px;
+                </xsl:if>
+                <xsl:if test="@xml:id='bnp-e3-87-39r'">
+                    padding-right: 60px;
                 </xsl:if>
             </xsl:attribute>   
             <xsl:apply-templates/>         
