@@ -4,7 +4,7 @@
     
     version="2.0">
    
-   <xsl:param name="language">en</xsl:param>
+   <xsl:param name="language"></xsl:param>
    
 <xsl:output method="xml"></xsl:output>
     

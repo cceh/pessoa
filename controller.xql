@@ -187,7 +187,7 @@ else if (contains($exist:path, "search")) then
     </dispatch>
     
     else if (contains($exist:path, "events")) then
-    let $language := request:get-parameter("lang", "pt")
+    let $language := $helpers:web-language (: request:get-parameter("lang", "pt"):)
     return 
         transform:transform((collection("/db/apps/pessoa/data/doc"), collection("/db/apps/pessoa/data/pub"))//tei:TEI, doc("/db/apps/pessoa/xslt/events.xsl"), <parameters><param name="language" value="{$language}"/></parameters>)
     
