@@ -321,3 +321,61 @@ canvas3.stroke();
     </script>
     return $script
 };
+
+
+
+declare function doc:getIndex($node as node(), $model as map(*), $type){
+    let $lists := doc('/db/apps/pessoa/data/lists.xml')
+    let $docs := collection("/db/apps/pessoa/data/doc/")   
+    let $items := 
+        for $doc in $docs return
+        if($type='journal') then 
+        $doc//tei:text//tei:rs[@type=$type]/@key
+        else
+            $doc//tei:text//tei:rs[@type=$type][not(child::tei:choice/tei:abbr)][not(child::tei:pc)]
+    let $items := distinct-values($items) 
+    let $items := 
+        for $item in $items return $item(:replace(replace(replace($item,'"',''),'“',''),'”',''):)
+    let $letters := 
+        for $item in $items order by $item return
+            fn:substring($item,0,2)
+    let $letters := distinct-values($letters)
+    return (doc:getNavigation($letters),
+        for $letter in $letters 
+            let $itemsWithLetter := 
+                for $item in $items where (substring($item,0,2) = $letter) return  $item
+        order by upper-case($letter)
+        return 
+            (<div class="sub_Nav"><h2 id="{$letter}">{$letter}</h2></div>,
+            for $item in $itemsWithLetter order by $item return
+            (<div class="indexItem">{if($type='journal') then ($lists//tei:list[@type='journal']/tei:item[@xml:id=$item]) else $item}</div>,<ul class="indexDocs">{
+            doc:getDocsForItem($item, $type)}</ul>)))
+};
+
+declare function doc:getDocsForItem($item, $type){
+    let $docs := collection("/db/apps/pessoa/data/doc/")
+    let $docsForItem := 
+    if($type='journal') then
+        for $doc in $docs return
+        if($doc//tei:text//tei:rs[@type=$type]/@key = $item) then $doc else ()
+    else
+        for $doc in $docs return
+            if($doc//tei:text//tei:rs[@type=$type][not(child::tei:choice/tei:abbr)][not(child::tei:pc)]= $item) then $doc else ()
+            
+    for $doc in $docsForItem return
+    <li class="indexDoc">
+    <a style="color: #08298A;" href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{($doc//tei:title)[1]/data(.)} </a>
+    </li>
+};
+
+declare function doc:getNavigation($letters){
+    <div class="navigation">
+        {for $letter at $i in $letters order by $letter return
+        if($i = count($letters)) then <a style="color: #08298A;" href="#{$letter}">{$letter}</a> else
+        (<a style="color: #08298A;" href="#{$letter}">{$letter}</a>,<span>|</span>)}
+    </div>
+};
+
+
+
+
