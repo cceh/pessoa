@@ -3,7 +3,7 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>BNP/E3 49B<hi rend="superscript">4</hi>-20a<hi rend="superscript">V</hi></title>
+                <title>26-6<hi rend="superscript">r</hi></title>
                 <author>
                     <rs type="person" key="FP">Fernando Pessoa</rs>
                 </author>
@@ -21,13 +21,14 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <idno type="filename">BNP_E3_49B4-20aV.xml</idno>
+                <publisher/>
+                <idno type="filename">BNP_E3_26-6r.xml</idno>
             </publicationStmt>
             <sourceDesc>
                 <msDesc>
                     <msIdentifier>
                         <institution>Biblioteca Nacional de Portugal</institution>
-                        <idno>BNP/E3 49B4-20aV</idno>
+                        <idno>BNP/E3 26-6r</idno>
                     </msIdentifier>
                     <msContents>
                         <msItemStruct>
@@ -35,15 +36,18 @@
                                 <rs type="person" key="FP">Fernando Pessoa</rs>
                             </author>
                             <note type="genre">
-                                <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                                <rs type="genre" key="lista_editorial">Lista
+                                editorial</rs>
+                                <rs type="genre" key="nota_editorial">Nota
+                                    editorial</rs>
                             </note>
-                            <textLang mainLang="pt"/>
+                            <textLang mainLang="pt" />
                         </msItemStruct>
                     </msContents>
                     <history>
                         <origin>
                             <p>
-                                <origDate when="1915" cert="medium">c. 1915</origDate>
+                                <origDate when="1918" cert="medium">c. 1918</origDate>
                             </p>
                         </origin>
                     </history>
@@ -53,50 +57,38 @@
     </teiHeader>
     <facsimile>
         <graphic
-            url="bn-acpc-e-e3-49b-4-1-101_JPG_24-C-R0150/bn-acpc-e-e3-49b-4-1-101_0042_20av_t24-C-R0150.jpg"
+            url="bn-acpc-e-e3-26-1-101_JPG_24-C-R0150/bn-acpc-e-e3-26-1-101_0011_6_t24-C-R0150.jpg"
         />
     </facsimile>
-    <text xml:id="x-49b4-20av">
+    <text xml:id="bnp-e3-26-6r">
         <body>
             <div>
-                <gap reason="selection" unit="lines" extent="13"/>
+                <head><hi rend="underline">O Movimento Pagão Portuguez:</hi></head>  
                 <list>
-                    <head><hi rend="underline red">PAGINAS NECESSARIAS.</hi></head>
                     <item>
                         <label>1.</label>
-                        <rs type="person"><hi rend="underline">Antonio Móra</hi></rs> — <rs type="text">Dissertação 
-                            <subst>
-                                <del rend="overtyped" n="1">em</del>
-                                <add n="2">a</add>
-                            </subst> favôr da <rs type="place">Allemanha</rs> <lb/> e do seu procedimento na guerra
-                            pre<pc>-</pc><lb/>sente</rs>.</item>
-                    <item>
-                        <label>2.</label>
-                        <anchor xml:id="A1"/>
-                        <rs type="person" key="FP" role="author"><hi rend="underline">Fernando Pessôa</hi></rs> — <rs type="text">A Guerra, Estudo
-                        Sociologico</rs>.
-                        <anchor xml:id="A2"/>
+                        <rs type="work" key="O2"><hi rend="underline"><rs type="person" key="AC" role="author">Alberto Caeiro</rs></hi>: <rs type="text">Poemas Completos</rs></rs>.
                     </item>
                     <item>
+                        <label>2.</label>
+                        <rs type="work" key="O3"><hi rend="underline"><rs type="person" key="RR" role="author">Ricardo Reis</rs></hi>: <rs type="text">Odes (I a L)</rs></rs>
+                    </item>        
+                    <item>
                         <label>3.</label>
-                        <rs type="person"><hi rend="underline">Antonio Móra</hi></rs> — <rs type="text">Proleg<subst><del rend="overtyped">e</del><add>ó</add></subst>menos a uma
-                        reformação do <lb/> paganismo</rs>.
+                        <hi rend="underline"><rs type="person">Antonio Móra</rs></hi>: <rs type="text">O Regresso dos Deuses</rs>.
                     </item>
                     <item>
                         <label>4.</label>
-                        <anchor xml:id="A3"/>
-                        <rs type="person" key="FP" role="author"><hi rend="underline">Fernando Pessôa</hi></rs> — <rs type="text">O caso de “Orpheu”</rs>.
-                        <anchor xml:id="A4"/>
+                        <rs type="work" key="O3"><hi rend="underline"><rs type="person" key="RR" role="author">Ricardo Reis</rs></hi>: <rs type="text">Novas Odes</rs></rs> (em quantidade).
                     </item>
                     <item>
                         <label>5.</label>
-                        <supplied resp="PS" reason="omitted-in-original"/>
+                        <hi rend="underline"><rs type="person">Antonio Móra</rs></hi>: <rs type="text">Fundamentos do <lb/> 
+                        Paganismo</rs>. (Theoria do monismo<lb/> objectivista). 
+                        <del rend="overstrike" n="2">(Theoria do Dualismo<lb/> Absoluto).</del>
                     </item>
                 </list>
-                <spanGrp>
-                    <span type="correlation" from="#A1" to="#A2" />
-                    <span type="correlation" from="#A3" to="#A4" />
-                </spanGrp>
+                <metamark rend="line" function="end"/>
             </div>
         </body>
     </text>
