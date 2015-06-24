@@ -11,6 +11,7 @@
             <style type="text/css">
                 .lg {margin: 15px 0;}
                 h2.center {text-align: center;}
+                div.poem {margin: 20px 0;}
             </style>
             <xsl:apply-templates select="//teiHeader//titleStmt/author | //text" />
         </div>
@@ -32,6 +33,12 @@
                 <xsl:attribute name="class">center</xsl:attribute>
             </xsl:when>
         </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template match="div[@type='poem']">
+        <div class="poem">
+            <xsl:apply-templates/>
+        </div>
     </xsl:template>
     
     <xsl:template match="lg">
