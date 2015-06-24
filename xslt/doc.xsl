@@ -2,13 +2,12 @@
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
     <xsl:preserve-space elements="*"/>
     <xsl:strip-space elements="rs"/>
-    
-    
+   
     <xsl:template match="/">
         <style type="text/css">
             /*Textstruktur*/
-             div.text {display: inline-block; position: relative; }
-            .text h2 {margin-bottom: 20px; margin-top: 20px; text-align:left;}
+             div.text {display: inline-block; position: relative; line-height: 1.8;}
+             .text h2 {margin-bottom: 20px; margin-top: 20px; text-align:left; line-height: 1.5;}
             .item {margin-bottom: 20px; margin-top: 10px; position: relative;}
             .item .label {padding-right: 1em;display: inline-table;}
             .list .item .list .item {margin-left: 2em;}
@@ -233,7 +232,10 @@
             <xsl:apply-templates />
         </div>
     </xsl:template>
-    
+    <xsl:template match="ref[@target]">
+        <xsl:variable name="id" select="@target"/>
+        <a href="http://localhost:8080/exist/apps/pessoa/doc/{$id}"> <xsl:apply-templates/></a>     
+    </xsl:template>
    
    
     
