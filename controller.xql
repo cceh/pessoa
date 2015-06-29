@@ -139,7 +139,23 @@ else if (contains($exist:path,"timeline")) then
             <forward url="{$exist:controller}/modules/view.xql"/>
         </error-handler>
     </dispatch>)
-    else if (ends-with($exist:resource, ".html") and contains($exist:path,"page/")) then
+ else if (contains($exist:path,"obras")) then
+ (
+         session:set-attribute("id",$exist:resource),
+         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <forward url="{$exist:controller}/page/obras.html" />
+        <add-parameter name="id" value="{$exist:resource}" />
+        <view>
+            <forward url="{$exist:controller}/modules/view.xql"/>
+        </view>
+		<error-handler>
+			<forward url="{$exist:controller}/error-page.html" method="get"/>
+			<forward url="{$exist:controller}/modules/view.xql"/>
+		</error-handler>
+    </dispatch>
+        
+ )
+ else if (ends-with($exist:resource, ".html") and contains($exist:path,"page/")) then
      <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
                  <forward url="{$exist:controller}/page/{substring-after($exist:path,"page/")}"/>
         <view>
