@@ -37,4 +37,13 @@
         <xsl:apply-templates select="add/text()"/>
     </xsl:template>
     
+    <!-- special case MN246 -->
+    <xsl:template match="text[@xml:id='mn246']//choice[seg[@n]]">
+                <xsl:value-of select="substring-after(seg[2],'ou')"/>  
+    </xsl:template>
+    
+    <xsl:template match="add[@place='above'][@n='2']">
+        <xsl:apply-templates select="text()"/>
+    </xsl:template>
+    
 </xsl:stylesheet>

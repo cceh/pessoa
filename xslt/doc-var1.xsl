@@ -33,5 +33,14 @@
         <xsl:apply-templates select="del/text()"/>
     </xsl:template>
     
+    <xsl:template match="*[@n='2']"/>
+        
+    
+    
+    <!-- special case MN246 -->
+    <xsl:template match="text[@xml:id='mn246']//choice[seg[@n]]">
+        <xsl:value-of select="seg[1]"/>       
+    </xsl:template>
+    
    
 </xsl:stylesheet>

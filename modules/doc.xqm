@@ -297,8 +297,9 @@ let $script := <script type="text/javascript">
         }} else {{
         attachEvent( "onload", draw(100,100) );
         }}
+        
 function draw(w, h) {{
-var canvas = document.getCSSCanvasContext("2d", "lines", w, h);
+var canvas = document.getCSSCanvasContext("2d", "lines", w, h); 
 canvas.strokeStyle = "rgb(0,0,0)";
 canvas.beginPath();
 canvas.moveTo( 0,0);
@@ -319,54 +320,122 @@ canvas3.arc(12,12,12,0,2*Math.PI);
 canvas3.stroke();
 }}
 
+
     </script>
     return $script
 };
 
+declare function doc:getIndexTitle($node as node(), $model as map(*), $type as xs:string){
+    let $lists := doc('/db/apps/pessoa/data/lists.xml')
+    return 
+    <h1>{$lists//tei:list[@type='index']//tei:term[@xml:id=$type]}</h1>
+    
+};
 
+declare function doc:getJournalIndex($node as node(), $model as map(*)){
+     let $lists := doc('/db/apps/pessoa/data/lists.xml')
+     let $docs := collection("/db/apps/pessoa/data/doc/") 
+     let $journals := 
+        for $doc in $docs return
+        $doc//tei:text//tei:rs[@type='journal']
+     let $journalKeys := $lists//tei:list[@type='journal']//tei:item/@xml:id/data(.)   
+     let $journalNames := $lists//tei:list[@type='journal']/tei:item
+     let $letters :=
+        for $name in $journalNames order by $name return substring($name,0,2)
+     let $letters := distinct-values($letters)
+     return 
+        (doc:getNavigation($letters),
+        for $letter in $letters order by $letter return
+            let $journalsWithLetter := 
+                for $name in $journalNames where (substring($name,0,2) = $letter) return $name    
+            return 
+             (<div class="sub_Nav"><h2 id="{$letter}">{$letter}</h2></div>,
+            for $journal in $journalsWithLetter order by $journal return
+            (<div class="indexItem">{$journal}</div>,
+            
+            <ul class="indexDocs">{
+            doc:getDocsForJournal($journal)
+           }</ul>)))    
+};
 
-declare function doc:getIndex($node as node(), $model as map(*), $type){
+declare function doc:getDocsForJournal($journal){
+    let $lists := doc('/db/apps/pessoa/data/lists.xml')
+    let $docs := collection("/db/apps/pessoa/data/doc/")
+    let $key := $lists//tei:list[@type='journal']/tei:item/text()[contains(.,$journal)]/../@xml:id/data(.)
+    for $doc in $docs return
+    if($doc//tei:text//tei:rs[@type='journal'][@key=$key]) then
+        <li class="indexDoc">
+        <a style="color: #08298A;" href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{($doc//tei:title)[1]/data(.)} </a>
+        </li>     
+     else()  
+};
+
+declare function doc:getTextIndex($node as node(), $model as map(*)){
     let $lists := doc('/db/apps/pessoa/data/lists.xml')
     let $docs := collection("/db/apps/pessoa/data/doc/")   
-    let $items := 
+    let $texts := 
         for $doc in $docs return
-        if($type='journal') then 
-        $doc//tei:text//tei:rs[@type=$type]/@key
-        else
-            $doc//tei:text//tei:rs[@type=$type][not(child::tei:choice/tei:abbr)][not(child::tei:pc)]
-    let $items := distinct-values($items) 
-    let $items := 
-        for $item in $items return $item(:replace(replace(replace($item,'"',''),'“',''),'”',''):)
+            $doc//tei:text//tei:rs[@type='text'][not(child::tei:choice/tei:abbr)][not(child::tei:pc)]
+    let $texts := distinct-values($texts) 
     let $letters := 
-        for $item in $items order by $item return
-            fn:substring($item,0,2)
+        for $text in $texts order by replace(replace(replace($text,'"',''),'“',''),'”','') return
+            upper-case(fn:substring(replace(replace(replace($text,'"',''),'“',''),'”',''),0,2))
     let $letters := distinct-values($letters)
     return (doc:getNavigation($letters),
         for $letter in $letters 
-            let $itemsWithLetter := 
-                for $item in $items where (substring($item,0,2) = $letter) return  $item
+            let $textsWithLetter := 
+                for $text in $texts where (upper-case(substring(replace(replace(replace($text,'"',''),'“',''),'”',''),0,2))=$letter) return $text
         order by upper-case($letter)
         return 
             (<div class="sub_Nav"><h2 id="{$letter}">{$letter}</h2></div>,
-            for $item in $itemsWithLetter order by $item return
-            (<div class="indexItem">{if($type='journal') then ($lists//tei:list[@type='journal']/tei:item[@xml:id=$item]) else $item}</div>,<ul class="indexDocs">{
-            doc:getDocsForItem($item, $type)}</ul>)))
+            for $text in $textsWithLetter order by upper-case(replace(replace(replace($text,'"',''),'“',''),'”','')) return
+            (<div class="indexItem">{replace(replace(replace($text,'"',''),'“',''),'”','')}</div>,<ul class="indexDocs">{
+            doc:getDocsForText($text)}</ul>)))           
 };
 
-declare function doc:getDocsForItem($item, $type){
+declare function doc:getDocsForText($text){
+    let $lists := doc('/db/apps/pessoa/data/lists.xml')
     let $docs := collection("/db/apps/pessoa/data/doc/")
-    let $docsForItem := 
-    if($type='journal') then
+    for $doc in $docs return
+    if($doc//tei:text//tei:rs[@type='text'][not(child::tei:choice/tei:abbr)][not(child::tei:pc)] = $text) then
+        <li class="indexDoc">
+        <a style="color: #08298A;" href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{($doc//tei:title)[1]/data(.)} </a>
+        </li>     
+     else()  
+};
+
+
+declare function doc:getPersonIndex($node as node(), $model as map(*)){
+    let $lists := doc('/db/apps/pessoa/data/lists.xml')
+    let $docs := collection("/db/apps/pessoa/data/doc/")   
+    let $persons := 
         for $doc in $docs return
-        if($doc//tei:text//tei:rs[@type=$type]/@key = $item) then $doc else ()
-    else
-        for $doc in $docs return
-            if($doc//tei:text//tei:rs[@type=$type][not(child::tei:choice/tei:abbr)][not(child::tei:pc)]= $item) then $doc else ()
-            
-    for $doc in $docsForItem return
+            $doc//tei:text//tei:rs[@type='person'][not(child::tei:choice/tei:abbr)][not(child::tei:pc)]
+    let $persons := distinct-values($persons) 
+    let $letters := 
+        for $person in $persons order by $person return
+            fn:substring($person,0,2)
+    let $letters := distinct-values($letters)
+    return (doc:getNavigation($letters),
+        for $letter in $letters 
+            let $personsWithLetter := 
+                for $person in $persons where (substring($person,0,2) = $letter) return  $person
+        order by upper-case($letter)
+        return 
+            (<div class="sub_Nav"><h2 id="{$letter}">{$letter}</h2></div>,
+            for $person in $personsWithLetter order by $person return
+            (<div class="indexItem">{$person}</div>,<ul class="indexDocs">{
+            doc:getDocsForPerson($person)}</ul>)))
+};
+
+declare function doc:getDocsForPerson($item){
+    let $docs := collection("/db/apps/pessoa/data/doc/")   
+    for $doc in $docs return 
+    if($doc//tei:text//tei:rs[@type='person'][not(child::tei:choice/tei:abbr)][not(child::tei:pc)]= $item) then
     <li class="indexDoc">
     <a style="color: #08298A;" href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{($doc//tei:title)[1]/data(.)} </a>
     </li>
+    else()
 };
 
 declare function doc:getNavigation($letters){
