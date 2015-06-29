@@ -21,6 +21,8 @@
         <field name="person" match="tei:teiHeader/tei:fileDesc//tei:titleStmt/tei:author/tei:rs/@key" type="xs:string" />
         <field name="role" match="tei:teiHeader/tei:fileDesc//tei:titleStmt/tei:author/tei:rs/@type" type="xs:string" />
         <field name="date" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct/tei:monogr/tei:imprint/tei:date/@when" type="xs:string"/>
+        <field name="type" match="tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title/tei:rs/@type" type="xs:string" />
+        <field name="key" match="tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title/tei:rs/@key" type="xs:string" />
       </create>
     </range>
   </index>
