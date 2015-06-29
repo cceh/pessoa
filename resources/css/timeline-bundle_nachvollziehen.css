@@ -1,4 +1,16 @@
 
+/* neue */
+
+h1
+{
+padding: 10px;
+margin-bottom: 0px;
+background-color: rgb(153, 0, 0);
+color: rgb(255, 255, 255);
+border-radius: 5px;
+}
+
+/* ende neue */
 
 /*------------------- Horizontal / Vertical lines ----------------*/
 
@@ -69,7 +81,7 @@
 .timeline-date-label {
   position: absolute;
   border: solid #aaa;
-  color: #aaa;
+  color: #000;
   width: 5em;
   height: 1.5em;}
 .timeline-date-label-em {color: #000;}
@@ -101,7 +113,7 @@
 .timeline-event-tape,
 .timeline-small-event-tape,
 .timeline-small-event-icon{
-	background-color:#58A0DC;/*	Farbe von DurationEvents*/
+	background-color:#fff;/*	Farbe von DurationEvents*/
 	overflow:hidden;
 }
 
@@ -115,7 +127,7 @@
   
 /*--------------------------------- TIMELINE-------------------------*/
 .timeline-ether-bg{width:100%; height:100%;}
-.timeline-band-0 .timeline-ether-bg{background-color:#eee} /*	Farbe von Bands oben*/
+.timeline-band-0 .timeline-ether-bg{background-color:#F1F1D4} /*	Farbe von Bands oben*/
 .timeline-band-1 .timeline-ether-bg{background-color:#ddd} /*	Farbe von Bands Mitte*/
 .timeline-band-2 .timeline-ether-bg{background-color:#ccc} /*	Farbe von Bands Unten*/
 .timeline-band-3 .timeline-ether-bg{background-color:#aaa}
@@ -157,6 +169,7 @@
 
 .timeline-event-bubble-time {
     color: #fff;/*	Farbe von Time. Soll weiss sein?*/
+	font-size: 0em;
 }
 
 .timeline-event-bubble-image {

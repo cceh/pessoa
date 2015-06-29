@@ -131,11 +131,12 @@ declare function page:createThirdNav($type as xs:string) as node()* {
      else if($type = "index") then for $indexies in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="index"]/tei:item/tei:term[@xml:lang=$helpers:web-language]
         let $id := if( contains($indexies/attribute()[2],"#")) then substring-after($indexies/attribute()[2],"#")
                         else $indexies/attribute()[2]
-        return  if(contains($indexies/attribute()[2],"bibliografia")) then   <li class="{concat("nav_",$type,"_tab")}">
+        return  if(contains($indexies/attribute()[2],"bibliografia")) then   <li class="{concat("nav_",$type,"_tab")}" id="navtab_{$type}_sub_{$id}">
                     {$indexies/data(.)}
             </li>
-            else <li class="{concat("nav_",$type,"_tab")}">
+            else <li class="{concat("nav_",$type,"_tab")}"><a href="{concat($helpers:app-root,"/",$helpers:web-language,"/page/",$id,".html")}">
                     {$indexies/data(.)}
+                    </a>
             </li>
     else ()
 };
