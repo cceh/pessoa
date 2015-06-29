@@ -23,6 +23,7 @@
             .note-label.margin.left {padding: 0px; float: none;}
             .editorial-note {text-align: justify;}
             
+            
             /*metamarks*/
             .metamark {cursor: pointer;}
             
@@ -55,14 +56,14 @@
             .supplied {cursor: pointer;}           
             /*  .ex, .supplied {color: purple;} */
             
-            .delSpan{background: -webkit-canvas(lines);  }
+            .delSpan{background: -webkit-canvas(lines);}
             .verticalLine {background: -webkit-canvas(verticalLine); display: inline-table; margin-left:110px; width:10px; height:60px;}
-            .circled {background: -webkit-canvas(circle); width:25px; height:25px;}
+            .circled {background: -webkit-canvas(circle);  width:25px; height:25px;}
 
             /*special case 71A-2V*/
             #bnp-e3-71a-2v .below{left: -40px;}   
+            #bnp-e3-71a-2v .note {position: relative;}
             
-            /*special case 
         </style>
         <xsl:apply-templates />       
     </xsl:template>
@@ -129,7 +130,10 @@
         <xsl:if test="name(preceding-sibling::node()[1])='label' and name(..)='item'">
             <xsl:attribute name="style">display: inline;</xsl:attribute>
         </xsl:if>
-            <xsl:apply-templates />
+        <xsl:if test="following-sibling::list[1]">
+            <xsl:attribute name="style">padding-bottom: 20px;</xsl:attribute>
+        </xsl:if>
+        <xsl:apply-templates />
         </div>                   
     </xsl:template>
     
@@ -223,6 +227,9 @@
     </xsl:template>
     <xsl:template match="note[@place='right'][not(@type)]" >
         <span class="note right">
+            <xsl:if test="@target='#I2' and ancestor::text[@xml:id='bnp-e3-87-39r']">
+                <xsl:attribute name="style">top: -20px;</xsl:attribute>
+            </xsl:if>
             <xsl:apply-templates />
         </span>
     </xsl:template>
@@ -560,10 +567,14 @@
                 <xsl:when test="@rend='left'">
                     <xsl:attribute name="class">seg left</xsl:attribute>
                 </xsl:when>
+                <xsl:when test="@type='add above'">
+                    <xsl:attribute name="class">seg add above</xsl:attribute>
+                </xsl:when>
                 <xsl:otherwise>
                     <xsl:attribute name="class">seg</xsl:attribute>
                 </xsl:otherwise>
             </xsl:choose>
+            
             <xsl:apply-templates />
         </span>
     </xsl:template>
@@ -641,10 +652,11 @@
  </xsl:template>   
 
 <!-- special case 87-68r-->
-            <xsl:template match="text[@xml:id='bnp-e3-87-68r']//ab[@rend='right']" priority="1">
+    <xsl:template match="text[@xml:id='bnp-e3-87-68r']//ab[@rend='right']" priority="1">
         <div class ="ab right">
             <xsl:apply-templates />
         </div><br/>
     </xsl:template>
- 
+    
+  
 </xsl:stylesheet>
