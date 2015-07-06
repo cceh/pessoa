@@ -14,7 +14,7 @@ declare function local:adapt-conf(){
 (: move search index to system :)
 declare function local:move-index(){
 	let $app-path := "/db/apps/pessoa"
-	let $conf-path := "/db/system/config/apps/pessoa/data"
+	let $conf-path := "/db/system/config/db/apps/pessoa/data"
 	return
     	(
 	xmldb:move($app-path, concat($conf-path, "/doc"), "SUCHE_doc-collection.xconf"),
