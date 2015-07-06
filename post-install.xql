@@ -1,6 +1,6 @@
 xquery version "1.0";
 import module namespace xmldb="http://exist-db.org/xquery/xmldb";
-import module namespace admin="http://projects.cceh.uni-koeln.de:8080/apps/pessoa/admin" at "admin.xqm"
+import module namespace admin="http://projects.cceh.uni-koeln.de:8080/apps/pessoa/admin" at "admin.xqm";
 
 (: adapt config paths to remote system :)
 declare function local:adapt-conf(){
