@@ -38,7 +38,7 @@
     <xsl:template match="div[@type='poem']">
         <div class="poem" id="">
             <xsl:attribute name="id">
-                <xsl:value-of select="@xml:id"/>
+                <xsl:value-of select="@id"/>
             </xsl:attribute>
             <xsl:apply-templates/>
         </div>

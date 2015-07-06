@@ -16,18 +16,51 @@ declare function obras:test($node as node(), $model as map(*), $id as xs:string?
 
 declare function obras:getObras($node as node(),$model as map(*), $id as xs:string) as node()* {
     let $list := doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="works"]/tei:item[@xml:id=$id]
-    let $stages := if(exists($list/tei:list/tei:item/tei:list)) then 2
-                            else 1
-    return for $stage in (0 to $stages) 
-                    for $item in obras:getTitles($id, $stage)
-                        return (<div>  { 
-                             if ($item/@ref/data(.) != "") then<p> <a href="{$item/@ref/data(.)}" class="wlink">{$item/@key/data(.)},{$item/@title/data(.)}</a> </p>
-                             else <p> {$item/@key/data(.)},{$item/@title/data(.)} </p>} { 
-                        if(exists(obras:getLinks($item/@key/data(.)) )) then                      
-                            <div> 
-                                <ul>{ for $links in obras:getLinks($item/@key/data(.)) return <a class="olink" href="{$links/@ref/data(.)}"><li>{$links/@doc/data(.)}</li></a>}</ul>
-                            </div> else () }
-                        </div> )
+   
+   return for $firstitem in $list/tei:title return
+        if(exists($firstitem[@type])) then 
+            <h4 class="t_obras_alt">{$firstitem/data(.)} </h4>
+            else <h4 class="t_obras">{$firstitem/data(.)}</h4>
+            ,
+         <ul class="oul">{
+            for $link in obras:getLinks( doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="works"]/tei:item[@xml:id=$id]/attribute(),"doc") return 
+                <a href="{$link/@ref/data(.)}" class="olink"><li>{$link/@doc/data(.)}</li></a>} 
+         </ul>
+         ,
+         let $list := doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="works"]/tei:item[@xml:id=$id]
+        for $secitem in $list/tei:list/tei:item return <div class="sec"> { 
+            if (exists($secitem[@xml:id])) then
+                if (exists(obras:getLinks($secitem/attribute(),"pub"))) then
+                        <a href="{obras:getLinks($secitem/attribute(),"pub")/@ref}" class="wlink">{$secitem/tei:title/data(.)}</a> 
+                        else  <p>{$secitem/tei:title/data(.)}</p> 
+                 else <p>{$secitem/tei:title/data(.)}</p>    }   
+                 {if(exists($secitem[@xml:id])) then 
+                    <ul class="oul">{ 
+                    for $link in obras:getLinks($secitem/attribute(),"doc") 
+                            return <a href="{$link/@ref/data(.)}" class="olink"><li>{$link/@doc/data(.)}</li></a> } 
+                   </ul> 
+                            else () } {
+            if(exists($secitem/tei:list)) then <ul>  {
+                for $thirditem in $secitem/tei:list/tei:item return 
+                    <li class="third">
+                    { 
+            if (exists($thirditem[@xml:id])) then 
+           
+                if(contains($thirditem/attribute(), "O3-5")) then <a href="{concat(obras:getLinks("O3-5","pub")/@ref,"#",substring-after($thirditem/attribute(),"O3-5-"))}" class="wlink">{$thirditem/tei:title/data(.)}</a> 
+                else  if (exists(obras:getLinks($thirditem/attribute(),"pub"))) then
+                           <a href="{obras:getLinks($thirditem/attribute(),"pub")/@ref}" class="wlink">{$thirditem/tei:title/data(.)}</a> 
+                      else  <p class="third-sec">{$thirditem/tei:title/data(.)}</p> 
+                 else
+                    <p>{$thirditem/tei:title/data(.)}</p>    }   
+                    {if(exists($thirditem[@xml:id])) then 
+                        <ul class="oul">{ 
+                            for $link in obras:getLinks($thirditem/attribute(),"doc") return 
+                            <a href="{$link/@ref/data(.)}" class="olink"><li>{$link/@doc/data(.)}</li></a> } 
+                        </ul> 
+                       else () } 
+                    </li>} 
+                   </ul> else () }
+               </div>
 };
 
 
@@ -50,17 +83,17 @@ declare function obras:getTitles ($id as xs:string, $stage as xs:integer) as ite
 
 };
 
-declare function obras:getLinks($id as xs:string) as item()* {
-        for $item in obras:buildSearch($id,"doc") 
+declare function obras:getLinks($id as xs:string, $lib as xs:string) as item()* {
+        for $item in obras:buildSearch($id,$lib) 
         let $doc := substring-before(root($item)/util:document-name(.),".xml")
-        let $ref := concat($helpers:app-root,"/",$helpers:web-language,"/doc/",$doc)
+        let $ref := concat($helpers:app-root,"/",$helpers:web-language,"/",$lib,"/",$doc)
         return <item doc="{$doc}"  ref="{$ref}"/>
 };
 
 declare function obras:buildSearch($id as xs:string, $type as xs:string) as node()* {
         let $db := if($type = "doc") then collection( "/db/apps/pessoa/data/doc")
                            else collection( "/db/apps/pessoa/data/pub")
-        let $key := if($type ="doc") then "person" else "key"
+        let $key := if($type ="doc")  then "person" else "key"
         let $search_terms := concat('("type","',$key,'"),"work","',$id,'"')
         let $search_funk := concat("//range:field-eq(",$search_terms,")")
         let $search_build := concat("$db",$search_funk)
