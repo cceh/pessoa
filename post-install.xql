@@ -1,6 +1,5 @@
 xquery version "1.0";
 import module namespace xmldb="http://exist-db.org/xquery/xmldb";
-import module namespace admin="http://projects.cceh.uni-koeln.de:8080/apps/pessoa/admin" at "/db/apps/pessoa/modules/admin.xqm";
 
 (: adapt config paths to remote system :)
 declare function local:adapt-conf(){
@@ -16,7 +15,6 @@ declare function local:adapt-conf(){
 declare function local:move-index(){
 	let $app-path := "/db/apps/pessoa"
 	let $conf-path := "/db/system/config/db/apps/pessoa/data"
-	let $log-in := xmldb:login("/db", $admin:admin-id, $admin:admin-pass)
 	return
     	(
 	xmldb:move($app-path, concat($conf-path, "/doc"), "SUCHE_doc-collection.xconf"),
