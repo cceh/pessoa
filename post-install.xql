@@ -20,7 +20,9 @@ declare function local:move-index(){
 	xmldb:move($app-path, concat($conf-path, "/doc"), "SUCHE_doc-collection.xconf"),
 	xmldb:move($app-path, concat($conf-path, "/pub"), "SUCHE_pub-collection.xconf"),
 	xmldb:rename(concat($conf-path, "/doc"), "SUCHE_doc-collection.xconf", "collection.xconf"),
-	xmldb:rename(concat($conf-path, "/pub"), "SUCHE_pub-collection.xconf", "collection.xconf")
+	xmldb:rename(concat($conf-path, "/pub"), "SUCHE_pub-collection.xconf", "collection.xconf"),
+	xmldb:reindex(concat($app-path, "/data/doc")),
+	xmldb:reindex(concat($app-path, "/data/pub"))
 	)
 };
 
