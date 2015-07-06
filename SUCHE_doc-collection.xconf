@@ -31,7 +31,9 @@
         
         <field name="role" match="tei:text/tei:body/tei:div//tei:rs/@role" type="xs:string"/>
         <field name="person" match="tei:text/tei:body/tei:div//tei:rs/@key" type="xs:string" />
-        <field name="works" match="tei:text/tei:body/tei:div//tei:rs/@type=work/@key" type="xs:string"/>
+        <field name="key" match="tei:text/tei:body/tei:div//tei:rs/@key" type="xs:string" />
+        <field name="type" match="tei:text/tei:body/tei:div//tei:rs/@type" type="xs:string"/>
+
       </create>
     </range>
   </index>
