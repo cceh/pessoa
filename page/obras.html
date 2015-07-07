@@ -9,9 +9,19 @@
                     max-width:100px;
                     
                 }
+                .olink:hover {
+                color: red;
+               
+                
+                }
                 .wlink {
                     color:blue;
                     max-width:100px;
+                }
+                
+                .wlink:hover {
+                color:red;
+               
                 }
                 .oul {
                 text-decoration:none !important;
@@ -27,11 +37,27 @@
                 
                 h4.t_obras_alt {
                     font-style:italic;
-                    font-size:12px;
+                    font-size:15px;
                 }
                 
+                .ObLink {
+                    cursor: pointer;     
+                    font-style:italic;
+                    margin-left:20px;
+                }
+                
+                .ObLink:hover {
+                text-decoration:underline;
+                }
             </style>
             <div class="obras:getObras"></div>
+                
+            <script type="text/javascript">
+               $(document).ready(function(){
+               ObrasHide();
+               $(".oul").hide();
+               });
+            </script>
         </div>    
     </div>
 </div>

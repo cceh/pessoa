@@ -5,6 +5,8 @@ module namespace obras="http://localhost:8080/exist/apps/pessoa/obras";
 
 import module namespace config="http://localhost:8080/exist/apps/pessoa/config" at "config.xqm";
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
+import module namespace page="http://localhost:8080/exist/apps/pessoa/page" at "page.xqm";
+
 
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare namespace request="http://exist-db.org/xquery/request";
@@ -22,10 +24,16 @@ declare function obras:getObras($node as node(),$model as map(*), $id as xs:stri
             <h4 class="t_obras_alt">{$firstitem/data(.)} </h4>
             else <h4 class="t_obras">{$firstitem/data(.)}</h4>
             ,
-         <ul class="oul">{
-            for $link in obras:getLinks( doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="works"]/tei:item[@xml:id=$id]/attribute(),"doc") return 
+           
+            if (exists(obras:getLinks( doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="works"]/tei:item[@xml:id=$id]/attribute(),"doc"))) then 
+             let $list := doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="works"]/tei:item[@xml:id=$id] 
+         return <div><span class="ObLink" id="link_{$list/attribute()}">{page:singleElement_xquery("navigation","documentos")}</span><ul class="oul"  id="{$list/attribute()}">{
+            for $link in obras:getLinks( $list/attribute(),"doc") return 
                 <a href="{$link/@ref/data(.)}" class="olink"><li>{$link/@doc/data(.)}</li></a>} 
-         </ul>
+                
+         </ul></div>
+         else ()
+         
          ,
          let $list := doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="works"]/tei:item[@xml:id=$id]
         for $secitem in $list/tei:list/tei:item return <div class="sec"> { 
@@ -33,13 +41,13 @@ declare function obras:getObras($node as node(),$model as map(*), $id as xs:stri
                 if (exists(obras:getLinks($secitem/attribute(),"pub"))) then
                         <a href="{obras:getLinks($secitem/attribute(),"pub")/@ref}" class="wlink">{$secitem/tei:title/data(.)}</a> 
                         else  <p>{$secitem/tei:title/data(.)}</p> 
-                 else <p>{$secitem/tei:title/data(.)}</p>    }   
-                 {if(exists($secitem[@xml:id])) then 
-                    <ul class="oul">{ 
+                 else <p>{$secitem/tei:title/data(.)}</p>}       
+                 {if(exists($secitem[@xml:id]) and exists(obras:getLinks($secitem/attribute(),"doc"))) then 
+             <div ><span class="ObLink" id="link_{$secitem/attribute()}">{page:singleElement_xquery("navigation","documentos")}</span><ul class="oul" id="{$secitem/attribute()}">{ 
                     for $link in obras:getLinks($secitem/attribute(),"doc") 
                             return <a href="{$link/@ref/data(.)}" class="olink"><li>{$link/@doc/data(.)}</li></a> } 
-                   </ul> 
-                            else () } {
+                   </ul> </div>
+                            else ()  }  {
             if(exists($secitem/tei:list)) then <ul>  {
                 for $thirditem in $secitem/tei:list/tei:item return 
                     <li class="third">
@@ -52,11 +60,12 @@ declare function obras:getObras($node as node(),$model as map(*), $id as xs:stri
                       else  <p class="third-sec">{$thirditem/tei:title/data(.)}</p> 
                  else
                     <p>{$thirditem/tei:title/data(.)}</p>    }   
-                    {if(exists($thirditem[@xml:id])) then 
+                    {if(exists($thirditem[@xml:id]) and exists(obras:getLinks($thirditem/attribute(),"doc"))) then 
+                    <div><span class="ObLink" id="link_{$thirditem/attribute()}">{page:singleElement_xquery("navigation","documentos")}</span>
                         <ul class="oul">{ 
                             for $link in obras:getLinks($thirditem/attribute(),"doc") return 
                             <a href="{$link/@ref/data(.)}" class="olink"><li>{$link/@doc/data(.)}</li></a> } 
-                        </ul> 
+                        </ul> </div>
                        else () } 
                     </li>} 
                    </ul> else () }
