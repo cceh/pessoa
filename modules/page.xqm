@@ -18,7 +18,7 @@ declare %templates:wrap function page:construct($node as node(), $model as map(*
             <ul id="navi_elements" >
                 {page:createMainNav()}
                 <li>                    
-                 <a href="#" class="glyphicon glyphicon-search" onclick="hide('searchbox')" role="tab" data-toggle="tab"></a>                     
+                 <a href="#" class="glyphicon glyphicon-search" id="search_button" role="tab" data-toggle="tab"></a>                     
                 </li>
             </ul>
             </div>
@@ -60,7 +60,7 @@ declare function page:search_SwitchLang() as xs:string {
 let $return := 
     if(  request:get-parameter("search",'') = "simple") then
     string-join(("?term=",search:get-parameters("term"),"&amp;search=simple"),'')
-    else string-join(("?term",substring-after(search:mergeParameters(),"term")),'')
+    else string-join(("?term",substring-after(search:mergeParameters("html"),"term")),'')
     return $return
 };
 

@@ -235,7 +235,7 @@
     </xsl:template>
     
     <xsl:template match="note[@resp]" >
-        <div class="editorial-note">
+                <div class="editorial-note">
             <xsl:apply-templates />
         </div>
     </xsl:template>

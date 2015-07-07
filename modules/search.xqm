@@ -76,21 +76,40 @@ declare function search:get-parameters($key as xs:string) as xs:string* {
                 else ()
 };
 
-declare function search:mergeParameters () as xs:string {
-    let $term := concat("&amp;term=",search:get-parameters("term"))
-    let $after := concat("&amp;after=",search:get-parameters("after"))
-    let $before := concat("&amp;before=",search:get-parameters("before"))
+declare function search:mergeParameters ($type as xs:string) as xs:string {
+    let $code := if($type = "html") then "&amp;" else "/"
+    let $term := concat($code,"term=",search:get-parameters("term"))
+    let $after := concat($code,"after=",search:get-parameters("after"))
+    let $before := concat($code,"before=",search:get-parameters("before"))
     let $lang := for $slang in search:get-parameters("lang") return
-                concat("&amp;lang=", $slang)
-    let $lang_ao := concat("&amp;lang_ao=",search:get-parameters("lang_ao"))
+                concat($code,"lang=", $slang)
+    let $lang_ao := concat($code,"lang_ao=",search:get-parameters("lang_ao"))
     let $person := for $sperson in search:get-parameters("person") return
-                concat("&amp;person=",$sperson)
+                concat($code,"person=",$sperson)
     let $genre := for $sgenre in search:get-parameters("genre") return
-                concat("&amp;genre=",$sgenre)
+                concat($code,"genre=",$sgenre)
     let $role := for $srole in search:get-parameters("role") return
-                concat("&amp;role=",$srole)
-    let $release := concat("&amp;release=",search:get-parameters("release"))
+                concat($code,"role=",$srole)
+    let $release := concat($code,"release=",search:get-parameters("release"))
     return string-join(($term,$after,$before,$lang,$lang_ao,$person,$genre,$role,$release),'')
+};
+
+declare function search:mergeParameters_xquery ($type as xs:string) as xs:string* {
+    let $code := if($type = "html") then "&amp;" else "/"
+    let $term := concat($code,"term=",search:get-parameters("term"))
+    let $after := concat($code,"after=",search:get-parameters("after"))
+    let $before := concat($code,"before=",search:get-parameters("before"))
+    let $lang := for $slang in search:get-parameters("lang") return
+                concat($code,"lang=", $slang)
+    let $lang_ao := concat($code,"lang_ao=",search:get-parameters("lang_ao"))
+    let $person := for $sperson in search:get-parameters("person") return
+                concat($code,"person=",$sperson)
+    let $genre := for $sgenre in search:get-parameters("genre") return
+                concat($code,"genre=",$sgenre)
+    let $role := for $srole in search:get-parameters("role") return
+                concat($code,"role=",$srole)
+    let $release := concat($code,"release=",search:get-parameters("release"))
+    return ($term,$after,$before,$lang,$lang_ao,$person,$genre,$role,$release)
 };
 (: ODER FUNKTION : FIltert die Sprache, TERM :)
 declare function search:lang_or_term($db as node()*) as node()* {
@@ -270,11 +289,7 @@ if(exists($sel) and $sel = "union")
                         {kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="40"/>)}</li>
                     else <li><a href="{$helpers:app-root}/{$helpers:web-language}/pub/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"))}">{$title}</a>
                         {kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="40"/>)}</li>
-            
         else 
-        
-        
-        
         for $hit in $model(concat("r_",$sel))
             let $file_name := root($hit)/util:document-name(.)
             let $sort := if($orderBy!="alpha") then (author:getYearOrTitle($hit,"date"))
@@ -315,6 +330,25 @@ if($term and $file and $sel and $sel="text","head","lang")
     else $node
 };
 
+
+declare function search:your_search($node as node(), $model as map(*)) as xs:string* {
+        let $headline := <h4>{page:singleElement_xquery("search","search_was")}</h4>
+        
+        
+       
+   
+       for $item in  search:mergeParameters_xquery("xquery")
+       let $term := if (exists( page:singleElement_xquery("search",substring-before(substring-after($item,"/"),"=")))) then  page:singleElement_xquery("search",substring-before(substring-after($item,"/"),"="))
+                             else if(contains($item,"lang")) then page:singleElement_xquery("search","language")
+                             else if (contains($item,"role")) then page:singleElement_xquery("roles","mentioned-as") 
+                            else $item
+       let $param := if (exists( page:singleElement_xquery("search",substring-after($item,"=")) )) then page:singleElement_xquery("search",substring-after($item,"=")) 
+                                else if (contains($item,"role")) then page:singleElement_xquery("roles",substring-after($item,"="))
+                            else substring-after($item,"=")
+       return ($term,"--",$param," // ")
+       
+};
+
 declare function search:search-function() as node() {
     let $search := <script>function search() {{var value = $("#search").val();
                 location.href="{$helpers:app-root}/{$helpers:web-language}/search?search=simple&amp;term="+value;
@@ -330,7 +364,7 @@ declare function search:search-function() as node() {
 declare function search:recorder() as node() {
   let $search := if(request:get-parameter("search",'') != "") then request:get-parameter("search",'') else ""
   let $term := if(request:get-parameter("term",'') != "") then request:get-parameter("term",'') else ""
-  let $parameters := search:mergeParameters() 
+  let $parameters := search:mergeParameters("html") 
  (:let $sort := if(request:get-parameter("sort",'') != "") then request:get-parameter("term",'') else "alpha":)
   let $code := if($search != "" and $term != "") then 
     <script> function recorder(sort) {{
@@ -352,9 +386,9 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
                             <!-- Nachher mit class="search:profisearch austauschen -->
                             <h6>{page:singleAttribute($doc,"search","free_search")}</h6>
                                   <br/>
-            <div class="tab" id="ta_author" onclick="hide('se_author')"><h6>{page:singleAttribute($doc,"search","authors")}</h6>
+            <div class="tab" id="ta_author"><h6>{page:singleAttribute($doc,"search","authors")}</h6>
             </div>
-            <div class="selection" id="se_author" style="display:none;">
+            <div class="selection" id="se_author">
              <!--
              {page:createInput_term("search","checkbox","notional",("real","mentioned"),$doc,"checked")}
                              <br/>
@@ -364,33 +398,33 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
                 </select>
                 <p class="small_text">{page:singleAttribute($doc,"search","multiple_entries")}</p>
                
-                <p>{page:singleAttribute($doc,"search","mentioned_as")} :</p>
+                <p class="small_text">{page:singleAttribute($doc,"search","mentioned_as")} :</p>
                 {page:createInput_term("roles","checkbox","role",("author","editor","translator","topic"),$doc,"")}
                 </div>
-                <div class="tab" id="ta_release" onclick="hide('se_release')"><h6>{page:singleAttribute($doc,"search","published")} &amp; {page:singleAttribute($doc,"search","unpublished")}</h6>
+                <div class="tab" id="ta_release"><h6>{page:singleAttribute($doc,"search","published")} &amp; {page:singleAttribute($doc,"search","unpublished")}</h6>
                 </div>
-                <div class="selection" id="se_release" style="display:none;">
+                <div class="selection" id="se_release">
                 {page:createInput_term("search","radio","release",("published","unpublished"),$doc, "")}
                 <input class="release_input-box" type="radio" name="release" value="either" id="either" checked="checked"/>
                 <label class="release_input-label" for="either"> {page:singleAttribute($doc,"search","all")}</label>
                 </div>
-                <div class="tab" id="ta_genre" onclick="hide('se_genre')"><h6>{page:singleAttribute($doc,"search","genre")}</h6>
+                <div class="tab" id="ta_genre"><h6>{page:singleAttribute($doc,"search","genre")}</h6>
                 </div>
-                    <div class="selection" id="se_genre" style="display:none;">
+                    <div class="selection" id="se_genre">
                         <select class="selectsearch" name="genre" size="7" multiple="multiple">
                         {page:createOption("genres",("lista_editorial","nota_editorial","plano_editorial","poesia"),$doc)}
                         </select>
                         <p class="small_text">{page:singleAttribute($doc,"search","multiple_entries")}</p>
                     </div>
-                  <div class="tab" id="ta_date" onclick="hide('se_date')"><h6>{page:singleAttribute($doc,"search","date")}</h6></div>
-                            <div class="selection" id="se_date" style="display:none;">    
+                  <div class="tab" id="ta_date"><h6>{page:singleAttribute($doc,"search","date")}</h6></div>
+                            <div class="selection" id="se_date">    
                                 <div id="datum">
                                     <input type="datum" class="date_field" name="after" placeholder="{page:singleAttribute($doc,"search","from")}"/>
                                     <input type="datum" class="date_field" name="before" placeholder="{page:singleAttribute($doc,"search","to")}"/>
                                 </div>
                     </div>  
-                    <div class="tab" id="ta_lang" onclick="hide('se_lang')"><h6>{page:singleAttribute($doc,"search","language")}</h6></div>
-                            <div class="selection" id="se_lang" style="display:none;">
+                    <div class="tab" id="ta_lang"><h6>{page:singleAttribute($doc,"search","language")}</h6></div>
+                            <div class="selection" id="se_lang">
                                 {search:page_createInput_item_lang("language","checkbox","lang",("pt","en","fr"),$doc)}
                                 <br/>
                                 <input class="lang_input-box" type="radio" name="lang_ao" value="and" id="and"/>
