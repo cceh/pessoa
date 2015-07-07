@@ -1,11 +1,3 @@
-function hide(id) {
-                        if (document.getElementById(id).style.display == 'none') {
-                            document.getElementById(id).style.display ="block";
-                            }
-                        else {
-                            document.getElementById(id).style.display ="none";
-                            }
-                        };
 /*"autores","documentos","publicacoes","genero","cronologia","bibliografia","projeto" */
 $(document).ready(function(){
             $("li.mainNavTab").click(function() {
@@ -53,6 +45,21 @@ $(document).ready(function(){
         });
         });
 
+$(document).ready(function(){ 
+    /*$("div#searchbox").hide();*/
+    $("a#search_button").click(function() {
+           
+           if(!$(this).hasClass("active")) {
+               $(this).addClass("active");
+               $("div#searchbox").show();
+            }
+           else {
+               $(this).removeClass("active");
+                $("div#searchbox").hide();
+             }
+           });
+});
+
 function ObrasHide() {
            $("span.ObLink").click(function() {
            var id1 = $(this).attr("id");
@@ -67,4 +74,37 @@ function ObrasHide() {
              }
            });
 };
+ 
+ 
+ function DocHide() {
+        $("div.editorial-note").before("<span>Note</span>");
+         $("span.note").click(function() {
+           
+           if(!$(this).hasClass("active")) {
+               $(this).addClass("active");
+               $(".editorial-note").show("slow");
+            }
+           else {
+               $(this).removeClass("active");
+                $(".editorial-note").hide("slow");
+             }
+           });
+ }
+ 
+ function SearchHide() {
+    $("div.tab").click(function() {
+       var id1 = $(this).attr("id");
+           var id2 = id1.substring(3)
+           
+           if(!$(this).hasClass("active")) {
+               $(this).addClass("active");
+               $("div#se_"+id2).show("drop","easeInBack");
+            }
+           else {
+               $(this).removeClass("active");
+                $("div#se_"+id2).hide("drop","easeInBack");
+             }
+           });
+     
+ };
  
