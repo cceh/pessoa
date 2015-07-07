@@ -53,5 +53,18 @@ $(document).ready(function(){
         });
         });
 
-
+function ObrasHide() {
+           $("span.ObLink").click(function() {
+           var id1 = $(this).attr("id");
+           var id2 = id1.substring(5)
+           if(!$(this).hasClass("active")) {
+               $(this).addClass("active");
+               $("#"+id2).show("slow");
+            }
+           else {
+               $(this).removeClass("active");
+                $("#"+id2).hide("slow");
+             }
+           });
+};
  

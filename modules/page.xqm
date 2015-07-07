@@ -333,11 +333,19 @@ return $path
 
 
 
-(:###### SEARCH PAGE ######:)
+(:###### CALL LIST ELEMENTS ######:)
 
 declare %templates:wrap function page:singleElement($node as node(), $model as map(*),$xmltype as xs:string,$xmlid as xs:string) as xs:string? {
     let $doc := doc('/db/apps/pessoa/data/lists.xml')    
     return page:singleAttribute($doc,$xmltype,$xmlid)     
+};
+
+declare function page:singleElement_xquery($type as xs:string,$id as xs:string) as xs:string? {
+    let $doc := doc('/db/apps/pessoa/data/lists.xml')   
+    let $entry := if($helpers:web-language = "pt") 
+                  then $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @xml:id=$id]
+                  else $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @corresp=concat("#",$id)]
+     return $entry/data(.)
 };
 
 declare function page:singleAttribute($doc as node(),$type as xs:string,$id as xs:string) as xs:string? {
@@ -346,6 +354,8 @@ declare function page:singleAttribute($doc as node(),$type as xs:string,$id as x
                   else $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @corresp=concat("#",$id)]
      return $entry/data(.)
 };
+
+
 (:
 declare function page:page_singeAttribute_term($doc as node(),$type as xs:string,$id as xs:string, $lang as xs:string) as node()? {
     let $entry := if($lang = "pt") 
