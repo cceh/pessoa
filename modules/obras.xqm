@@ -48,12 +48,11 @@ declare function obras:getObras($node as node(),$model as map(*), $id as xs:stri
                             return <a href="{$link/@ref/data(.)}" class="olink"><li>{$link/@doc/data(.)}</li></a> } 
                    </ul> </div>
                             else ()  }  {
-            if(exists($secitem/tei:list)) then <ul>  {
+            if(exists($secitem/tei:list)) then <ul class="wul">  {
                 for $thirditem in $secitem/tei:list/tei:item return 
                     <li class="third">
                     { 
             if (exists($thirditem[@xml:id])) then 
-           
                 if(contains($thirditem/attribute(), "O3-5")) then <a href="{concat(obras:getLinks("O3-5","pub")/@ref,"#",substring-after($thirditem/attribute(),"O3-5-"))}" class="wlink">{$thirditem/tei:title/data(.)}</a> 
                 else  if (exists(obras:getLinks($thirditem/attribute(),"pub"))) then
                            <a href="{obras:getLinks($thirditem/attribute(),"pub")/@ref}" class="wlink">{$thirditem/tei:title/data(.)}</a> 
