@@ -82,11 +82,11 @@ function ObrasHide() {
            
            if(!$(this).hasClass("active")) {
                $(this).addClass("active");
-               $(".editorial-note").show("slow");
+               $(".editorial-note").show();
             }
            else {
                $(this).removeClass("active");
-                $(".editorial-note").hide("slow");
+                $(".editorial-note").hide();
              }
            });
  }
@@ -98,11 +98,11 @@ function ObrasHide() {
            
            if(!$(this).hasClass("active")) {
                $(this).addClass("active");
-               $("div#se_"+id2).show("drop","easeInBack");
+               $("div#se_"+id2).show();
             }
            else {
                $(this).removeClass("active");
-                $("div#se_"+id2).hide("drop","easeInBack");
+                $("div#se_"+id2).hide();
              }
            });
      
