@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>144T-52<hi rend="superscript">r</hi>
+            </title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name/>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher/>
+            <idno type="filename">BNP_E3_144T-52r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 144T-52r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="en"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate from="1902" to="1912">1902-1912</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3_144t_JPG_24-C-R0150/bn-acpc-e-e3_144t_0109_52r_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text xml:id="bnp-e3-144t-52r">
+      <body>
+         <div>
+            <list>
+               <item xml:id="I1">
+                  <del rend="overstrike">
+                     <hi rend="underline"><rs type="person">Mario</rs></hi>. Data poema.</del>
+               </item>        
+               <item xml:id="I2">
+                  <choice>
+                     <abbr>—</abbr>
+                     <expan>
+                        <rs type="person">Mario</rs>
+                     </expan>
+                  </choice>
+                  <abbr>L<am>.</am></abbr>
+                   Kuhne Book.
+               </item>
+               <item xml:id="I3">
+                  <choice>
+                     <abbr>—</abbr>
+                     <expan>
+                        <rs type="person">Mario</rs>
+                     </expan>
+                  </choice> <supplied resp="PS" reason="omitted-in-original"/> 
+               </item>
+            </list>
+            <note target="range(I1,I3)" place="right" type="addition">Key to House.</note>
+            <metamark rend="curly bracket" function="grouping"/> 
+            <list>
+               <item xml:id="I4" xml:lang="la">
+                  <hi rend="underline">Ultimus Joculatorum.</hi> 
+               </item> 
+               <item xml:id="I5" xml:lang="en">a Kind of Sartor<lb/>
+                  Resartus</item>
+               <abbr>—</abbr>
+               <item>Instead of <lb/><hi rend="underline">Book of Friar Maurice</hi></item>
+               <add place="bellow">or another good <hi>title</hi></add>
+               <item>The Nothingness Club.</item>
+               <item>The Zero<hi rend="underline">Club.</hi></item>
+               <signed><hi rend="overstrike">Dr. E. Hy</hi></signed>
+               
+            </list>
+       </div>
+      </body>
+   </text>
+</TEI>
