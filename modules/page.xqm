@@ -24,9 +24,9 @@ declare %templates:wrap function page:construct($node as node(), $model as map(*
             </div>
     let $SubNav := page:createSubNav()
     let $ExtNav := page:createExtNav()
-    
     let $return := ($MainNav,page:construct_search() ,$SubNav, $ExtNav)
     return $return
+            
 };
 declare function page:construct_search() as node()* {
 let $search := <div class="container-4" id="searchbox" style="display:none">

@@ -1,8 +1,8 @@
 /*"autores","documentos","publicacoes","genero","cronologia","bibliografia","projeto" */
 $(document).ready(function(){
-            $("li.mainNavTab").click(function() {
+            $("ul#navi_elements li.mainNavTab").click(function() {
                 if(!$(this).hasClass("active")) {
-                    $("li.active").removeClass("active");
+                    $("ul#navi_elements li.active").removeClass("active");
                     $(this).addClass("active");
                     var id1 = $(this).attr('id');
                     $("div.active").css("display","none");
