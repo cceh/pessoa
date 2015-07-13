@@ -13,6 +13,10 @@ declare namespace templates="http://exist-db.org/xquery/templates";
 declare namespace repo="http://exist-db.org/xquery/repo";
 declare namespace expath="http://expath.org/ns/pkg";
 
+declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization";
+declare namespace xmldb = "http://exist-db.org/xquery/xmldb";
+declare namespace request = "http://exist-db.org/xquery/request";
+
 declare variable $config:conf-file := doc("/db/apps/pessoa/conf.xml");
 declare variable $config:webapp-root := $config:conf-file//webapp-root/data(.);
 (: declare variable $config:file-path := "" :)

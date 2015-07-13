@@ -332,7 +332,9 @@ if($term and $file and $sel and $sel="text","head","lang")
 
 
 declare %templates:wrap function search:your_search($node as node(), $model as map(*)) as node()* {
-
+        let $head := <h4> {page:singleElement_xquery("search","search_was")}</h4>
+     return   if (search:get-parameters("term") != "" or search:get-parameters("lang") != "")  then
+      (   $head, 
        for $item in  search:mergeParameters_xquery("xquery")
        let $term := if (exists( page:singleElement_xquery("search",substring-before(substring-after($item,"/"),"=")))) then  page:singleElement_xquery("search",substring-before(substring-after($item,"/"),"="))
                              else if(contains($item,"lang")) then page:singleElement_xquery("search","language")
@@ -346,8 +348,9 @@ declare %templates:wrap function search:your_search($node as node(), $model as m
                                 else if (contains($item,"lang")) then page:singleElementList_xquery("language",substring-after($item,"="))
                                 else if (contains($item,"person")) then doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson[@type="authors"]/tei:person[@xml:id=substring-after($item,"=")]/tei:persName/data(.)   
                             else substring-after($item,"=")
-          let $result := concat("<li>",$term," : ",$param,"</li>")
-       return util:eval($result)
+          let $result := if($param != "") then concat("<span class='search_your_list'>",$term," : ",$param,"</span>") else ()
+       return  if($result != "") then util:eval($result)  else () )
+       else ()
        
 };
 
@@ -386,7 +389,6 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
      <div class="search_filter">
                        <form class="/helpers:app-root" action="search" method="post" id="search">
                             <!-- Nachher mit class="search:profisearch austauschen -->
-                            <h6>{page:singleAttribute($doc,"search","free_search")}</h6>
                                   <br/>
             <div class="tab" id="ta_author"><h6>{page:singleAttribute($doc,"search","authors")}</h6>
             </div>
@@ -437,6 +439,7 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
                      <!--<h6>{page:singleAttribute($doc,"search","free_search")}</h6>
                      <input name="term" placeholder="{page:singleAttribute($doc,"search","search_term")}..." /> -->
              <br/>
+            <h6>{page:singleAttribute($doc,"search","free_search")}</h6>
              <input id="spezsearch" name="term" placeholder="{page:singleAttribute($doc,"search","term")}..." />
              <br />
              <br />
