@@ -44,7 +44,7 @@ declare %templates:wrap function search:profisearch($node as node(), $model as m
         let $dbase := $r_real                
      :)
         (: Datumssuche :)
-        let $r_date := if(search:get-parameters("before") != "" or search:get-parameters("after") != "") then search:date_build($dbase)
+        let $r_date := if(search:get-parameters("to") != "" or search:get-parameters("from") != "") then search:date_build($dbase)
                         else $dbase
         let $dbase := $r_date
         (: Volltext Suche :)                
@@ -79,8 +79,8 @@ declare function search:get-parameters($key as xs:string) as xs:string* {
 declare function search:mergeParameters ($type as xs:string) as xs:string {
     let $code := if($type = "html") then "&amp;" else "/"
     let $term := concat($code,"term=",search:get-parameters("term"))
-    let $after := concat($code,"after=",search:get-parameters("after"))
-    let $before := concat($code,"before=",search:get-parameters("before"))
+    let $after := concat($code,"from=",search:get-parameters("from"))
+    let $before := concat($code,"to=",search:get-parameters("to"))
     let $lang := for $slang in search:get-parameters("lang") return
                 concat($code,"lang=", $slang)
     let $lang_ao := concat($code,"lang_ao=",search:get-parameters("lang_ao"))
@@ -97,8 +97,8 @@ declare function search:mergeParameters ($type as xs:string) as xs:string {
 declare function search:mergeParameters_xquery ($type as xs:string) as xs:string* {
     let $code := if($type = "html") then "&amp;" else "/"
     let $term := concat($code,"term=",search:get-parameters("term"))
-    let $after := concat($code,"after=",search:get-parameters("after"))
-    let $before := concat($code,"before=",search:get-parameters("before"))
+    let $after := concat($code,"from=",search:get-parameters("from"))
+    let $before := concat($code,"to=",search:get-parameters("to"))
     let $lang := for $slang in search:get-parameters("lang") return
                 concat($code,"lang=", $slang)
     let $lang_ao := concat($code,"lang_ao=",search:get-parameters("lang_ao"))
@@ -140,8 +140,8 @@ declare function search:lang_and_term($db as node()*, $step as xs:string) as nod
 (: ODER FUNTKION : Filtert die Sprache :) 
 declare function search:lang_or ($db as xs:string+) as node()*{
     for $match in $db
-        let $result := if(search:get-parameters("release") != "either") then  search:lang_filter_or($match,"")
-                      else if(search:get-parameters("release") = "either") then 
+        let $result := if(search:get-parameters("release") != "all") then  search:lang_filter_or($match,"")
+                      else if(search:get-parameters("release") = "all") then 
                             if($match = "/db/apps/pessoa/data/doc") then search:lang_filter_or($match,"unpublished")
                             else if ($match = "/db/apps/pessoa/data/pub") then search:lang_filter_or($match, "published")
                             else()
@@ -171,8 +171,8 @@ declare function search:lang_filter_or($db as xs:string, $step as xs:string?) as
 
 declare function search:lang_and($db as xs:string+) as node()* {
     for $match in $db 
-        let $result := if(search:get-parameters("release") != "either") then  search:lang_filter_and($match,"")
-                      else if(search:get-parameters("release") = "either") then 
+        let $result := if(search:get-parameters("release") != "all") then  search:lang_filter_and($match,"")
+                      else if(search:get-parameters("release") = "all") then 
                             if($match = "/db/apps/pessoa/data/doc") then search:lang_filter_and($match,"unpublished")
                             else if ($match = "/db/apps/pessoa/data/pub") then search:lang_filter_and($match, "published")
                             else()
@@ -247,8 +247,8 @@ declare function search:author_build($db as node()*) as node()* {
 
 (: Suche nach Datumsbereich :)
 declare function search:date_build($db as node()*) as node()* {
-     let $start := if(search:get-parameters("after") ="") then xs:integer("1900") else xs:integer(search:get-parameters("after"))
-     let $end := if( search:get-parameters("before") = "") then xs:integer("1935") else xs:integer(search:get-parameters("before"))
+     let $start := if(search:get-parameters("from") ="") then xs:integer("1900") else xs:integer(search:get-parameters("from"))
+     let $end := if( search:get-parameters("to") = "") then xs:integer("1935") else xs:integer(search:get-parameters("to"))
      let $paras := ("date","date_when","date_notBefore","date_notAfter","date_from","date_to")
      for $date in ($start to $end)
         for $para in $paras
@@ -331,21 +331,23 @@ if($term and $file and $sel and $sel="text","head","lang")
 };
 
 
-declare function search:your_search($node as node(), $model as map(*)) as xs:string* {
-        let $headline := <h4>{page:singleElement_xquery("search","search_was")}</h4>
-        
-        
-       
-   
+declare %templates:wrap function search:your_search($node as node(), $model as map(*)) as node()* {
+
        for $item in  search:mergeParameters_xquery("xquery")
        let $term := if (exists( page:singleElement_xquery("search",substring-before(substring-after($item,"/"),"=")))) then  page:singleElement_xquery("search",substring-before(substring-after($item,"/"),"="))
                              else if(contains($item,"lang")) then page:singleElement_xquery("search","language")
                              else if (contains($item,"role")) then page:singleElement_xquery("roles","mentioned-as") 
+                             else if (contains($item, "person")) then page:singleElement_xquery("search","author") 
+                             else if (contains($item,"release")) then "liberação"
                             else $item
-       let $param := if (exists( page:singleElement_xquery("search",substring-after($item,"=")) )) then page:singleElement_xquery("search",substring-after($item,"=")) 
+       let $param := if (exists( page:singleElement_xquery("search",substring-after($item,"=")) )) then page:singleElement_xquery("search",substring-after($item,"="))
                                 else if (contains($item,"role")) then page:singleElement_xquery("roles",substring-after($item,"="))
+                                else if (contains($item, "genre")) then page:singleElementList_xquery("genres",substring-after($item,"="))
+                                else if (contains($item,"lang")) then page:singleElementList_xquery("language",substring-after($item,"="))
+                                else if (contains($item,"person")) then doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson[@type="authors"]/tei:person[@xml:id=substring-after($item,"=")]/tei:persName/data(.)   
                             else substring-after($item,"=")
-       return ($term,"--",$param," // ")
+          let $result := concat("<li>",$term," : ",$param,"</li>")
+       return util:eval($result)
        
 };
 
@@ -405,7 +407,7 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
                 </div>
                 <div class="selection" id="se_release">
                 {page:createInput_term("search","radio","release",("published","unpublished"),$doc, "")}
-                <input class="release_input-box" type="radio" name="release" value="either" id="either" checked="checked"/>
+                <input class="release_input-box" type="radio" name="release" value="all" id="either" checked="checked"/>
                 <label class="release_input-label" for="either"> {page:singleAttribute($doc,"search","all")}</label>
                 </div>
                 <div class="tab" id="ta_genre"><h6>{page:singleAttribute($doc,"search","genre")}</h6>
@@ -419,8 +421,8 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
                   <div class="tab" id="ta_date"><h6>{page:singleAttribute($doc,"search","date")}</h6></div>
                             <div class="selection" id="se_date">    
                                 <div id="datum">
-                                    <input type="datum" class="date_field" name="after" placeholder="{page:singleAttribute($doc,"search","from")}"/>
-                                    <input type="datum" class="date_field" name="before" placeholder="{page:singleAttribute($doc,"search","to")}"/>
+                                    <input type="datum" class="date_field" name="from" placeholder="{page:singleAttribute($doc,"search","from")}"/>
+                                    <input type="datum" class="date_field" name="to" placeholder="{page:singleAttribute($doc,"search","to")}"/>
                                 </div>
                     </div>  
                     <div class="tab" id="ta_lang"><h6>{page:singleAttribute($doc,"search","language")}</h6></div>
