@@ -42,6 +42,11 @@ $(document).ready(function(){
                           }
                     });
                 }
+                else if ($(this).hasClass("active")) {
+                    $("div#navi").children("div.navbar").css("display","none");
+                    $("div#navi").children("div.navbar").children("div").css("display","none");
+                    $("div#navi .active").removeClass("active");
+                }
         });
         });
 

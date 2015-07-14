@@ -337,7 +337,7 @@ declare %templates:wrap function search:your_search($node as node(), $model as m
       (   $head, 
        for $item in  search:mergeParameters_xquery("xquery")
        let $term := if (exists( page:singleElement_xquery("search",substring-before(substring-after($item,"/"),"=")))) then  page:singleElement_xquery("search",substring-before(substring-after($item,"/"),"="))
-                             else if(contains($item,"lang")) then page:singleElement_xquery("search","language")
+                             else if(contains($item,"lang")) then   page:singleElement_xquery("search","language") 
                              else if (contains($item,"role")) then page:singleElement_xquery("roles","mentioned-as") 
                              else if (contains($item, "person")) then page:singleElement_xquery("search","author") 
                              else if (contains($item,"release")) then "liberação"
@@ -345,7 +345,8 @@ declare %templates:wrap function search:your_search($node as node(), $model as m
        let $param := if (exists( page:singleElement_xquery("search",substring-after($item,"=")) )) then page:singleElement_xquery("search",substring-after($item,"="))
                                 else if (contains($item,"role")) then page:singleElement_xquery("roles",substring-after($item,"="))
                                 else if (contains($item, "genre")) then page:singleElementList_xquery("genres",substring-after($item,"="))
-                                else if (contains($item,"lang")) then page:singleElementList_xquery("language",substring-after($item,"="))
+                                else if (contains($item,"lang")) then (
+                                   if(count(search:get-parameters("lang")) != 3) then page:singleElementList_xquery("language",substring-after($item,"="))else () )
                                 else if (contains($item,"person")) then doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson[@type="authors"]/tei:person[@xml:id=substring-after($item,"=")]/tei:persName/data(.)   
                             else substring-after($item,"=")
           let $result := if($param != "") then concat("<span class='search_your_list'>",$term," : ",$param,"</span>") else ()
