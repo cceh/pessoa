@@ -14,6 +14,10 @@
     <target name="deploy-local">
         <echo message="Deploying app to local eXist-db."/>
         <property file="deploy-local.properties"/>
+        <!-- Generatig zip files from the data -->
+        <zip destfile="data/pub.zip" basedir="data/pub/" excludes="dont*.*"/>
+        <zip destfile="data/doc.zip" basedir="data/doc/" excludes="dont*.*"/>
+        
         <xdb:store uri="${uri}" createcollection="true" createsubcollections="true" user="${user}" password="${password}">
             <fileset dir=".">
                 <include name="**/*.*"/>
@@ -26,6 +30,8 @@
                 <exclude name="**/.gitignore"/>
             </fileset>
         </xdb:store>
+        <delete file="data/pub.zip"/>
+        <delete file="data/doc.zip"/>
     </target>
     <target name="deploy-remote">
         <echo message="Deploying app to remote eXist-db:"/>
@@ -35,6 +41,10 @@
         </condition>
         <fail if="do.abort">Deployment aborted by user.</fail>-->
         <property file="deploy-remote.properties"/>
+        <!-- Generatig zip files from the data -->
+        <zip destfile="data/pub.zip" basedir="data/pub/" excludes="dont*.*"/>
+        <zip destfile="data/doc.zip" basedir="data/doc/" excludes="dont*.*"/>
+        
         <xdb:store uri="${uri}" createcollection="true" createsubcollections="true" user="${user}" password="${password}">
             <fileset dir=".">
                 <include name="**/*.*"/>
@@ -47,6 +57,8 @@
                 <exclude name="**/.gitignore"/>
             </fileset>
         </xdb:store>
+        <delete file="data/pub.zip"/>
+        <delete file="data/doc.zip"/>
         <xdb:xquery uri="${uri}" queryfile="post-install.xql" user="${user}" password="${password}"/>
     </target>
 </project>
