@@ -201,7 +201,14 @@ else if (contains($exist:path, "search")) then
             <forward url="{$exist:controller}/modules/view.xql"/>
         </error-handler>
     </dispatch>
-    
+else if(contains($exist:path, "download")) then 
+     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <forward url="{$exist:controller}/data/{$exist:resource}" />
+		<error-handler>
+			<forward url="{$exist:controller}/error-page.html" method="get"/>
+			<forward url="{$exist:controller}/modules/view.xql"/>
+		</error-handler>
+    </dispatch>
     else if (contains($exist:path, "events")) then
     let $language := $helpers:web-language (: request:get-parameter("lang", "pt"):)
     return 
