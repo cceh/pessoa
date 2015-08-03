@@ -344,6 +344,7 @@ padding: 0 5px;
  padding: 10px 30px 25px 30px;
  background: #990000; 
  color:#fff;
+ cursor:pointer;
 }
 
 .filter{
@@ -708,7 +709,7 @@ ul#indextab{
     }
 
 
-#genre-content, #persons-content, #texts-content   {
+#genre-content, #persons-content, #texts-content, #obras-content  {
      width: 824px; 
      margin: 0 auto;
 }
@@ -819,8 +820,10 @@ li.itabs.active span{
 }
 
 .editorial-note{
-    margin-top: 20px; 
+    /*margin-top: 20px*/; 
+    border: 1px solid;
     margin-right: 10px;
+    padding: 10px;
     width: 450px;
 }
 
@@ -830,6 +833,39 @@ li.itabs.active span{
     margin-left: 2px;
     min-width: 49%;
     display:inline-block;
+}
+
+.nota {
+    border:solid 1px;
+    display:block;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 55px;
+    color:white;
+            background-color: #5c5859;
+
+}
+.nota:hover{
+            background-color: #990000 !important;
+}
+
+.nota.active {
+    border:solid 1px;
+    
+    
+}
+
+
+#nota_bottom.active {
+    border-top:none;
+}
+
+#nota_top {
+    margin-top:20px;
+}
+
+#nota_top.active {
+    border-bottom:none;
 }
 
 .search_your_div {    
