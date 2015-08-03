@@ -82,16 +82,36 @@ function ObrasHide() {
  
  
  function DocHide() {
-        $("div.editorial-note").before("<span>Note</span>");
-         $("span.note").click(function() {
+            
+           var path = $(location).attr('href');
+           
+           if(path.search("/en/") != -1) {
+            var name =   "Note";
+           }
+           else if (path.search("/pt/") != -1)  {
+               var name ="Nota";
+           }
+           else {
+               var name ="Nota";
+           }
+        $("div.editorial-note").before("<span class='nota' id='nota_top'>"+name+"</span>");
+        $("div.editorial-note").after("<span class='nota' id='nota_bottom'>"+name+"</span>");
+
+         $("span.nota").click(function() {
            
            if(!$(this).hasClass("active")) {
-               $(this).addClass("active");
-               $(".editorial-note").show();
+               $("#nota_bottom").addClass("active");
+               $("#nota_top").addClass("active");
+               $(".editorial-note").show("slow");
+               $("#nota_bottom").show();
             }
            else {
-               $(this).removeClass("active");
-                $(".editorial-note").hide();
+               $("#nota_bottom").removeClass("active");
+               $("#nota_top").removeClass("active");
+                $(".editorial-note").hide("slow");
+                $("#nota_bottom").hide();
+
+
              }
            });
  }

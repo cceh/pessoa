@@ -208,7 +208,7 @@ let $script :=     <script>
   </script>
   let $popup:= 
   <div id="dialog" title="Basic dialog" style="display:none;border:solid">
-  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+  <p>Edição Digital de Fernando Pessoa, 2015, {$helpers:request-path}</p>
 </div>
 let $filter := <div id="filter">
                 <a class="filter-a" href="">{page:singleAttribute($doc, "footer","print")}</a>
