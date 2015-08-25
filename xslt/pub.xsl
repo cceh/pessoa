@@ -13,7 +13,7 @@
                 h2.center {text-align: center;}
                 div.poem {margin: 20px 0;}
             </style>
-            <xsl:apply-templates select="//teiHeader//titleStmt/author | //text" />
+            <xsl:apply-templates select="//text" />
         </div>
     </xsl:template>
     
