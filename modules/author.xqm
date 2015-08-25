@@ -172,8 +172,13 @@ declare function author:listPublications($node as node(), $model as map(*), $aut
 declare function author:listPublication($pub, $authorKey){
     let $title := ($pub//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title)[1]/data(.)
     let $author := $pub//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:author/tei:rs/@key
+    let $ref := $pub//tei:teiHeader/tei:fileDesc/tei:publicationStmt/tei:idno[@type="filename"]/data(.)
     return  if($author = $authorKey) then  
-       (<div><a href="{$helpers:app-root}/pub/{replace(replace(replace($title," ","_"),"«",""),"»","")}">{$title}</a></div>, <br />)      
+       (
+       (:<div><a href="{$helpers:app-root}/pub/{replace(replace(replace($title," ","_"),"«",""),"»","")}">{$title}</a></div>, <br />
+       :)
+       <div><a href="{$helpers:app-root}/pub/{substring-before($ref,".xml")}">{$title}</a></div>, <br />
+       )      
       
     else()
 };
@@ -326,11 +331,11 @@ let $script := <script type="text/javascript">
         var textType = url.substring(url.lastIndexOf("/")+1,url.length);
         if ($("#date").is(":checked"))
         {{
-        $("#tab").load("http://localhost:8080/exist/apps/pessoa/{$helpers:web-language}/page/author/"+author+"/"+textType+"?orderBy=date");
+        $("#tab").load("{$helpers:app-root}/{$helpers:web-language}/page/author/"+author+"/"+textType+"?orderBy=date");
         
         }}
         else{{
-        $("#tab").load("http://localhost:8080/exist/apps/pessoa/{$helpers:web-language}/page/author/"+author+"/"+textType+"?orderBy=alphab"); 
+        $("#tab").load("{$helpers:app-root}/{$helpers:web-language}/page/author/"+author+"/"+textType+"?orderBy=alphab"); 
         }}
         }}
     </script> 
