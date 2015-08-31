@@ -15,9 +15,10 @@
         <echo message="Deploying app to local eXist-db."/>
         <property file="deploy-local.properties"/>
         <!-- Generating zip files from the data -->
+        <!--
         <zip destfile="data/pub.zip" basedir="data/pub/" excludes="dont*.*"/>
         <zip destfile="data/doc.zip" basedir="data/doc/" excludes="dont*.*"/>
-        
+        -->
         <xdb:store uri="${uri}" createcollection="true" createsubcollections="true" user="${user}" password="${password}">
             <fileset dir=".">
                 <include name="**/*.*"/>
@@ -28,10 +29,17 @@
                 <exclude name="**/*.md"/>
                 <exclude name="*.xpr"/>
                 <exclude name="**/.gitignore"/>
+                <exclude name="data/**"/>
+                <exclude name="resources/js/chart/src/*"/>
+                <exclude name="**/bootstrap*.*"/>
+                <exclude name="**/jquery*.*"/>
+                <exclude name="resources/images/*"/>
             </fileset>
         </xdb:store>
+        <!--
         <delete file="data/pub.zip"/>
         <delete file="data/doc.zip"/>
+    -->
     </target>
     <target name="deploy-remote">
         <echo message="Deploying app to remote eXist-db:"/>

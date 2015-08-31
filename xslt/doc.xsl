@@ -242,7 +242,7 @@
     </xsl:template>
     <xsl:template match="ref[@target]">
         <xsl:variable name="id" select="@target"/>
-        <a href="http://localhost:8080/exist/apps/pessoa/doc/{$id}"> <xsl:apply-templates/></a>     
+        <a href="../data/doc/{$id}"> <xsl:apply-templates/></a>     
     </xsl:template>
    
    
