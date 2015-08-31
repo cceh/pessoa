@@ -54,7 +54,8 @@
                    </xsl:for-each>
                 </ul>
             </xsl:if>
-            <xsl:if test=".//rs[@type='work']">
+           
+        <!--    <xsl:if test=".//rs[@type='work']">
                 <xsl:variable name="works">
                     <local:works>
                         <xsl:for-each select=".//rs[@type='work']">
@@ -84,6 +85,7 @@
                         <li><xsl:value-of select="."/></li>
                     </xsl:for-each>
                 </ul>
+                -->
                 <!--
                 <h2 style="margin-top: 20px;"><xsl:choose>
                     <xsl:when test="$lang='en'">Work</xsl:when>
@@ -95,15 +97,17 @@
                     </xsl:for-each>
                 </ul>
                 -->
-                 </xsl:if>
+            <!--     </xsl:if>-->
             
-                <!--
+                
                    <xsl:if test=".//rs[@type='text']">
                     <xsl:variable name="texts">
                         <local:texts>
-                        <xsl:for-each select=".//rs[@type='text']">
+                        <xsl:for-each select=".//rs[@type='work']">
                             <xsl:sort select="." order="ascending" />
-                            <local:text><xsl:apply-templates /></local:text>
+                            <local:text><xsl:apply-templates >
+                                <xsl:with-param name="Text" select=".//rs[@type='text']"/>
+                            </xsl:apply-templates></local:text>
                         </xsl:for-each>
                         </local:texts>
                     </xsl:variable>
@@ -112,14 +116,33 @@
                         <xsl:otherwise>Textos</xsl:otherwise>
                     </xsl:choose></h2>
                     <ul>
-                        <xsl:for-each select="$texts//local:text">
+                        <xsl:for-each select="$texts//local:text/child::node()">
                             <li><xsl:value-of select="."/></li>
                         </xsl:for-each>
                     </ul>
                 </xsl:if>
-                -->
-           
-            
+                <!--
+            <xsl:if test=".//rs[@type='text']">
+                <xsl:variable name="texts">
+                    <local:texts>
+                        <xsl:for-each select=".//rs[@type='text']">
+                            <xsl:sort select="." order="ascending" />
+                            <local:text><xsl:apply-templates /></local:text>
+                        </xsl:for-each>
+                    </local:texts>
+                </xsl:variable>
+                <h2 style="margin-top: 20px;"><xsl:choose>
+                    <xsl:when test="$lang='en'">Texts</xsl:when>
+                    <xsl:otherwise>Textos</xsl:otherwise>
+                </xsl:choose></h2>
+                <ul>
+                    <xsl:for-each select="$texts//local:text">
+                        <li><xsl:value-of select="."/></li>
+                    </xsl:for-each>
+                </ul>
+             
+            </xsl:if>
+               -->
             <xsl:if test=".//rs[@type='journal']">
                 <xsl:variable name="journals">
                     <local:journals>

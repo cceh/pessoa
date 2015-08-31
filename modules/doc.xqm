@@ -203,19 +203,19 @@ declare function doc:footerfilter($node as node(), $model as map(*)) {
 let $doc := doc("/db/apps/pessoa/data/lists.xml")
 let $script :=     <script>
   $("#zitat").click(function() {{
-    $( "#dialog" ).dialog();
+    $( "#dialog" ).toggle();
   }});
   </script>
   let $popup:= 
-  <div id="dialog" title="Basic dialog" style="display:none;border:solid">
-  <p>Edição Digital de Fernando Pessoa, 2015, {$helpers:request-path}</p>
+  <div id="dialog" title="Basic dialog" style="display:none;border:solid"><p>
+  Edição Digital de Fernando Pessoa, 2015, "{$helpers:request-path}"</p>
 </div>
 let $filter := <div id="filter">
                 <a class="filter-a" href="">{page:singleAttribute($doc, "footer","print")}</a>
                 <a class="filter-a" href="{$helpers:request-path}/xml" target="_blank">XML</a>
                 <a class="filter-a" id="zitat" >{page:singleAttribute($doc, "footer","cite")}</a>
             </div>
-            return ($filter,$script,$popup)
+            return ($popup,$filter,$script)
 };
 
 declare  function doc:get-recorder($node as node(), $model as map(*)) as node() {
