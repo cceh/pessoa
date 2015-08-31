@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+    schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>DEPOIS DA FEIRA</title>
+                <respStmt>
+                    <resp>Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Sviatoslav Drach</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">DEPOIS DA FEIRA</title>
+                        <author>
+                            <rs type="person" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j">Presença</title>
+                        <imprint>
+                            <pubPlace></pubPlace>
+                            <date when="1928-11-16">16, Novembro de 1928</date>
+                        </imprint>
+                        <biblScope unit="issue">16</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="poesia">Poesia</rs>
+                    </note>
+                    <note></note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="pub/res-1900-a-1928-11-n16_0005_5_t0.jpg"/>
+    </facsimile>
+    <text xml:id="depois-sa-feira">
+        <body>
+            <div>
+                <head>DEPOIS DA FEIRA</head>
+                <lg>
+                    <l>Vão vagos pela estrada, </l>
+                    <l>Cantando sem razão </l>
+                    <l>A ultima esperança dada </l>
+                    <l>À ultima illusão.</l>
+                    <l>Não significam nada.</l>
+                    <l>Mimos e bobos são.</l>
+                </lg>
+                <lg>
+                    <l>Vão juntos e diversos</l>
+                    <l rend="indent"> Sob um luar de ver,</l>
+                    <l>Em que sonhos immersos </l>
+                    <l>Nem saberão dizer,</l>
+                    <l>E cantam aquelles versos </l>
+                    <l>Que lembram sem querer.</l>
+                </lg>
+                <lg>
+                    <l>Paragens de um morto mytho,</l>
+                    <l rend="indent"> Tão lyricos!, tam sós!</l>
+                    <l>Não têm na voz um grito.</l>
+                    <l>Mal têm a própria voz;</l>
+                    <l>E ignora-os o infinito </l>
+                    <l>Qne nos ignora a nós.</l>
+                </lg>
+                <signed>FERNANDO PESSOA.</signed>
+            </div>
+        </body>
+    </text>
+</TEI>

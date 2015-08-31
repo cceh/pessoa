@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+    schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>GOMES LEAL</title>
+                <respStmt>
+                    <resp>Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Sviatoslav Drach</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">GOMES LEAL</title>
+                        <author>
+                            <rs type="person" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j">Notícias Ilustrado</title>
+                        <imprint>
+                            <pubPlace></pubPlace>
+                            <date when="1928-10-28">28 de Outubro de 1928</date>
+                        </imprint>
+                        <biblScope></biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="poesia">Poesia</rs>
+                    </note>
+                    <note></note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="pub/FP147_1928-10-28_0007_Gomes_Leal.jpg"/>
+    </facsimile>
+    <text xml:id="gomes-leal">
+        <body>
+            <div>
+                <head>GOMES LEAL</head>
+                <lg>
+                    <l>Sagra, sinistro, a alguns o astro baço. </l>
+                    <l>Seus trez anneis irreversiveis são </l>
+                    <l>A desgraça, a amargura, a solidão... </l>
+                    <l>Oito luas fataes fitam do espaço.</l>
+                </lg>
+                <lg>
+                    <l>Este, poeta, Apollo em seu regaço </l>
+                    <l>A Saturno entregou. A plumbea mão </l>
+                    <l>Lhe ergueu ao alto o afflicto coração,</l>
+                    <l>E, erguido, o apertou, sangrando lasso.</l>
+                </lg>
+                <lg>
+                    <l>Inuteis oito luas da loucura </l>
+                    <l>Quando a cinctura triplice denota </l>
+                    <l>Solidão, e desgraça, e amargura!</l>
+                </lg>
+                <lg>
+                    <l>Mas da noite sem fim um rastro brota, </l>
+                    <l>Vestigio de maligna formosura...</l>
+                    <l>É a lua além de Deus, algida e ignota.</l>
+                </lg>
+                <signed>FERNANDO PESSOA.</signed>
+            </div>
+        </body>
+    </text>
+</TEI>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+    schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Spell</title>
+                <respStmt>
+                    <resp>Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Sviatoslav Drach</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Spell</title>
+                        <author>
+                            <rs type="person" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j">Contemporânea</title>
+                        <imprint>
+                            <pubPlace></pubPlace>
+                            <date when="1923-03">Março de 1923</date>
+                        </imprint>
+                        <biblScope unit="issue">9</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="poesia">Poesia</rs>
+                    </note>
+                    <note></note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text xml:id="spell">
+        <body>
+            <div>
+                <head>Spell</head>
+                <lg>
+                    <l>From the moonlit brink of dreams</l>
+                    <l rend="indent">I stretch foiled hands to thee,</l>
+                    <l>O borne down other streams</l>
+                    <l rend="indent">Than eye can think to see!</l>
+                    <l>O crowned with spirit-beams!</l>
+                    <l rend="indent">O veiled spiritually!</l>
+                </lg>
+                <lg>
+                    <l>My dreams and thoughts abate</l>
+                    <l rend="indent">Their pennons at thy feet,</l>
+                    <l>O angel born too late</l>
+                    <l rend="indent">For fallen man to meet!</l>
+                    <l>In what new sensual state</l>
+                    <l rend="indent">Could our twined lives feel sweet?</l>
+                </lg>
+                <lg>
+                    <l>What new emotion must</l>
+                    <l rend="indent">I dream, to think thee mine?</l>
+                    <l>What purity of lust?</l>
+                    <l rend="indent">O tendrilled as a vine</l>
+                    <l>Around my caressed trust!</l>
+                    <l rend="indent">O dream-pressed spirit-Wine!</l>
+                </lg>    
+                <signed>FERNANDO PESSOA.</signed>
+            </div>
+        </body>
+    </text>
+</TEI>

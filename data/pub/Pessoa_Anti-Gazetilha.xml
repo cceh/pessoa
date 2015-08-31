@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+    schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Anti-Gazetilha</title>
+                <respStmt>
+                    <resp>Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Sviatoslav Drach</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Anti-Gazetilha</title>
+                        <author>
+                            <rs type="person" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j">Sol</title>
+                        <imprint>
+                            <pubPlace></pubPlace>
+                            <date when="1926-11">Novembro de 1926</date>
+                        </imprint>
+                        <biblScope></biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="poesia">Poesia</rs>
+                    </note>
+                    <note></note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="pub/j-3339-2-g_0001_t0_crop.jpg"/>
+    </facsimile>
+    <text xml:id="anti-gazetilha">
+        <body>
+            <div>
+                <head>Anti-Gazetilha</head>
+                <lg>
+                    <l>No comboio descendente</l>
+                    <l>Vinha tudo á gargalhada,</l>
+                    <l>Uns por verem rir os outros</l>
+                    <l>E os outros sem ser por nada —</l>
+                    <l>No comboio descendente</l>
+                    <l>Da Queluz à Cruz Quebrada…</l>
+                </lg>
+                <lg>
+                    <l>No comboio descendente</l>
+                    <l>Vinham todos á janela,</l>
+                    <l>Uns calados para os outros</l>
+                    <l>E os outros a dar-lhes tréla —</l>
+                    <l>No comboio descendente</l>
+                    <l>Da Cruz Quebrada a Palmela…</l>
+                </lg>
+                <lg>
+                    <l>No comboio descendente</l>
+                    <l>Mas que grande reinação:</l>
+                    <l>Uns dormindo, outros com sono,</l>
+                    <l>E os outros nem sim nem não —</l>
+                    <l>No comboio descendente</l>
+                    <l>De Palmela a Portimão…</l>
+                </lg>
+                <signed>FERNANDO PESSÔA.</signed>
+            </div>
+        </body>
+    </text>
+</TEI>

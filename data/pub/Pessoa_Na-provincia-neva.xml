@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+    schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Natal. Na provincia neva</title>
+                <respStmt>
+                    <resp>Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Sviatoslav Drach</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Natal. Na provincia neva</title>
+                        <author>
+                            <rs type="person" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j">Notícias ilustrado</title>
+                        <imprint>
+                            <pubPlace></pubPlace>
+                            <date when="1928-12-30">30 de Dezembro de 1928</date>
+                        </imprint>
+                        <biblScope></biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="poesia">Poesia</rs>
+                    </note>
+                    <note></note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="pub/FP147_1928-12-30_0015_Natal.jpg"/>
+    </facsimile>
+    
+    <text xml:id="natal-na-provincia-neva">
+        <body>
+            <div>
+                <head>Natal</head>
+                <lg>
+                    <l>Natal. Na provincia neva.</l>
+                    <l>Nos lares aconchegados</l>
+                    <l>Um sentimento conserva</l>
+                    <l>Os sentimentos passados.</l>
+                </lg>
+                <lg>
+                    <l>Coração opposto ao mundo,</l>
+                    <l>Como a familia é verdade!</l>
+                    <l>Meu pensamento é profundo,</l>
+                    <l>Estou só, e sonho saudade.</l>
+                </lg>
+                <lg>
+                    <l>E como é branca de graça</l>
+                    <l>A paisagem que não sei,</l>
+                    <l>Vista de traz da vidraça</l>
+                    <l>Do lar que nunca terei!</l>
+                </lg>
+                <signed>FERNANDO PESSOA.</signed>
+            </div>
+        </body>
+    </text>
+</TEI>
