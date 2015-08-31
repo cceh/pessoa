@@ -7,7 +7,7 @@
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
     
     <xsl:template match="ref">
-        <a href="{@target}">
+        <a href="{@target}" class="pLink">
             <xsl:apply-templates/>
         </a>
     </xsl:template>
