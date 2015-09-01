@@ -447,12 +447,12 @@ let $lists := doc('/db/apps/pessoa/data/lists.xml')
                     theme:          theme
                 }}),
 				
-				    Timeline.createBandInfo({{
+            Timeline.createBandInfo({{
                     width:          "3%", 
                     intervalUnit:   Timeline.DateTime.YEAR, 
                     intervalPixels: 80,
                     date:           data,
-					showEventText:  false,
+                    showEventText:  false,
                     theme:          theme
 				
                 }}),
