@@ -45,7 +45,15 @@
                     </xsl:attribute>
              
                     <xsl:attribute name="link">
-                        <xsl:value-of select=".//idno[@type='filename']"/>
+                        <xsl:variable name="filename" select=".//idno[@type='filename']"/>
+                        <xsl:choose>
+                            <xsl:when test="starts-with($filename, 'MN') or starts-with($filename, 'BNP')">
+                                <xsl:value-of select="concat('../../doc/', $filename)"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="concat('../../pub/', $filename)"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </xsl:attribute>
                     
                     <xsl:attribute name="icon">
