@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-    schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>MARINHA</title>
+                <title><rs type="work" key="O1-23">Marinha</rs></title>
                 <respStmt>
                     <resp>Edição</resp>
                     <name>Pedro Sepúlveda</name>
@@ -21,12 +19,13 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <p>Publication Information</p>
+                <publisher/>
+                <idno type="filename">Pessoa_Marinha.xml</idno>
             </publicationStmt>
             <sourceDesc>
                 <biblStruct>
                     <analytic>
-                        <title level="a">MARINHA</title>
+                        <title level="a">Marinha</title>
                         <author>
                             <rs type="person" key="FP">Fernando Pessoa</rs>
                         </author>
@@ -35,7 +34,6 @@
                     <monogr>
                         <title level="j">Presença</title>
                         <imprint>
-                            <pubPlace></pubPlace>
                             <date when="1927-06-04">4 de Junho de 1927</date>
                         </imprint>
                         <biblScope unit="issue">5</biblScope>
@@ -43,7 +41,6 @@
                     <note type="genre">
                         <rs type="genre" key="poesia">Poesia</rs>
                     </note>
-                    <note></note>
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
@@ -56,24 +53,24 @@
             <div>
                 <head>MARINHA</head>
                 <lg>
-                    <l>Ditosos a quem acena </l>
+                    <l>Ditosos a quem acena</l>
                     <l>Um lenço de despedida!</l>
                     <l>São felizes: teem pena...</l>
                     <l>Eu sofro sem pena a vida.</l>
                 </lg>
                 <lg>
                     <l>Dôo-me até onde penso,</l>
-                    <l>E a dôr é já de pensar, </l>
-                    <l>Orfão de um sonho suspenso </l>
+                    <l>E a dôr é já de pensar,</l>
+                    <l>Orfão de um sonho suspenso</l>
                     <l>Pela maré a vasar. . .</l>
                 </lg>
                 <lg>
-                    <l>E sobe até mim, já farto </l>
+                    <l>E sobe até mim, já farto</l>
                     <l>De improfíquas agonias,</l>
-                    <l>No cais de onde nunca parto, </l>
+                    <l>No cais de onde nunca parto,</l>
                     <l>A maresia dos dias.</l>
                 </lg>
-                <signed>FERNANDO PESSOA.</signed>
+                <signed>Fernando Pessoa</signed>
             </div>
         </body>
     </text>

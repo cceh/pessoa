@@ -93,7 +93,7 @@
                             <xsl:value-of select=".//idno[@type='filename']"/>
                         </xsl:attribute>
                     <xsl:attribute name="icon">
-                        <xsl:text>/exist/apps/pessoa/resources/images/circle_event.png</xsl:text>
+                        <xsl:text>/pessoa/resources/images/circle_event.png</xsl:text>
                     </xsl:attribute>
                     
                     <xsl:text>Fernando Pessoa, </xsl:text><xsl:value-of select=".//origDate | .//imprint/date"/><xsl:text>, </xsl:text>
