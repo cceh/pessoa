@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-    schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Anti-Gazetilha</title>
+                <title><rs type="work" key="O1-5">Anti-Gazetilha</rs></title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
                 <respStmt>
                     <resp>Edição</resp>
                     <name>Pedro Sepúlveda</name>
@@ -21,7 +22,8 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <p>Publication Information</p>
+                <publisher/>
+                <idno type="filename">Pessoa_Anti-Gazetilha.xml</idno>
             </publicationStmt>
             <sourceDesc>
                 <biblStruct>
@@ -35,15 +37,12 @@
                     <monogr>
                         <title level="j">Sol</title>
                         <imprint>
-                            <pubPlace></pubPlace>
                             <date when="1926-11">Novembro de 1926</date>
                         </imprint>
-                        <biblScope></biblScope>
                     </monogr>
                     <note type="genre">
                         <rs type="genre" key="poesia">Poesia</rs>
                     </note>
-                    <note></note>
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
@@ -79,7 +78,7 @@
                     <l>No comboio descendente</l>
                     <l>De Palmela a Portimão…</l>
                 </lg>
-                <signed>FERNANDO PESSÔA.</signed>
+                <signed>FERNANDO PESSOA</signed>
             </div>
         </body>
     </text>

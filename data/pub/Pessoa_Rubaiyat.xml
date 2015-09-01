@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-    schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>RUBAIYAT</title>
+                <title><rs type="work" key="O1-33">Rubaiyat</rs></title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
                 <respStmt>
                     <resp>Edição</resp>
                     <name>Pedro Sepúlveda</name>
@@ -21,12 +22,13 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <p>Publication Information</p>
+                <publisher/>
+                <idno type="filename">Pessoa_Rubaiyat.xml</idno>
             </publicationStmt>
             <sourceDesc>
                 <biblStruct>
                     <analytic>
-                        <title level="a">RUBAIYAT</title>
+                        <title level="a">Rubaiyat</title>
                         <author>
                             <rs type="person" key="FP">Fernando Pessoa</rs>
                         </author>
@@ -35,15 +37,14 @@
                     <monogr>
                         <title level="j">Contemporânea</title>
                         <imprint>
-                            <pubPlace></pubPlace>
                             <date from="1926-07" to="1926-10">Julho-Outubro de 1926</date>
                         </imprint>
+                        <biblScope unit="volume">3.ª serie</biblScope>
                         <biblScope unit="issue">2</biblScope>
                     </monogr>
                     <note type="genre">
                         <rs type="genre" key="poesia">Poesia</rs>
                     </note>
-                    <note></note>
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
@@ -57,12 +58,12 @@
                 <head>RUBAIYAT</head>
                 <lg>
                     <l>O fim do longo, inutil dia ensombra.</l>
-                    <l>A mesma sp’rança que não deu se escombra, </l>
+                    <l>A mesma sp’rança que não deu se escombra,</l>
                     <l>Prolixa... A vida é um mendigo bebado</l>
                     <l>Que extende a mão á sua propria sombra.</l>
                 </lg>
                 <lg>
-                    <l>Dormimos o universo. A extensa massa </l>
+                    <l>Dormimos o universo. A extensa massa</l>
                     <l>Da confusão das cousas nos enlaça,</l>
                     <l>Sonhos; e a ebria confluencia humana</l>
                     <l>Vazia echoa-se de raça em raça.</l>
@@ -73,7 +74,7 @@
                     <l>Ora o vinho bebemos porque ha dôr.</l>
                     <l>Mas de um e de outro vinho nada resta.</l>
                 </lg>
-                <signed>FERNANDO PESSÔA.</signed>
+                <signed>FERNANDO PESSOA</signed>
             </div>
         </body>
     </text>

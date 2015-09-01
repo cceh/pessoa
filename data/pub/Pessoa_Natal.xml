@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-    schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Natal</title>
+                <title><rs type="work" key="O1-25">Natal</rs></title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
                 <respStmt>
                     <resp>Edição</resp>
                     <name>Pedro Sepúlveda</name>
@@ -21,7 +22,8 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <p>Publication Information</p>
+                <publisher/>
+                <idno type="filename">Pessoa_Natal.xml</idno>
             </publicationStmt>
             <sourceDesc>
                 <biblStruct>
@@ -35,7 +37,6 @@
                     <monogr>
                         <title level="j">Contemporânea</title>
                         <imprint>
-                            <pubPlace></pubPlace>
                             <date when="1922-12">Dezembro de 1922</date>
                         </imprint>
                         <biblScope unit="issue">6</biblScope>
@@ -43,7 +44,6 @@
                     <note type="genre">
                         <rs type="genre" key="poesia">Poesia</rs>
                     </note>
-                    <note></note>
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
@@ -57,7 +57,7 @@
                 <head>Natal</head>
                 <lg>
                     <l>Nasce um deus. Outros morrem. A Verdade</l>
-                    <l>Nem veiu nem se foi: o Erro mudou. </l>
+                    <l>Nem veiu nem se foi: o Erro mudou.</l>
                     <l>Temos agora uma outra Eternidade,</l>
                     <l>E era sempre melhor o que passou.</l>
                 </lg>
@@ -67,7 +67,7 @@
                     <l>Um novo deus é só uma palavra.</l>
                     <l>Não procures nem creias: tudo é occulto.</l>
                 </lg>
-                <signed>FERNANDO PESSOA.</signed>
+                <signed>FERNANDO PESSOA</signed>
             </div>
         </body>
     </text>
