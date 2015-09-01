@@ -30,7 +30,7 @@
                    
                     <xsl:if test="(.//origDate/@from and .//origDate/@to) or (.//imprint/date/@from and .//imprint/date/@to)">
                         <xsl:attribute name="durationEvent">
-                            <xsl:text>true</xsl:text>
+                            <xsl:text>false</xsl:text>
                         </xsl:attribute>
                     </xsl:if>
                     
