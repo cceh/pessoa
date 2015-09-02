@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-    schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>GUIA-ME A SÓ RAZÃO</title>
+                <title><rs type="work" key="O1-17">Guia-me a só razão</rs></title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
                 <respStmt>
                     <resp>Edição</resp>
                     <name>Pedro Sepúlveda</name>
@@ -21,7 +22,8 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <p>Publication Information</p>
+                <publisher/>
+                <idno type="filename">Pessoa_Guia-me-a-so-razao.xml</idno>
             </publicationStmt>
             <sourceDesc>
                 <biblStruct>
@@ -35,7 +37,6 @@
                     <monogr>
                         <title level="j">Descobrimento</title>
                         <imprint>
-                            <pubPlace></pubPlace>
                             <date when="1932">1932</date>
                         </imprint>
                         <biblScope unit="issue">4</biblScope>
@@ -43,7 +44,6 @@
                     <note type="genre">
                         <rs type="genre" key="poesia">Poesia</rs>
                     </note>
-                    <note></note>
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
@@ -57,14 +57,14 @@
                 <head>[GUIA-ME A SÓ RAZÃO]</head>
                 <lg>
                     <l>Guia-me a só razão.</l>
-                    <l>Não me deram mais guia. </l>
+                    <l>Não me deram mais guia.</l>
                     <l>Alumia-me em vão?</l>
                     <l>Só ela me alumia.</l>
                 </lg>
                 <lg>
                     <l>Tivesse Quem criou</l>
                     <l>O mundo desejado </l>
-                    <l>Que eu fôsse outro que sou, </l>
+                    <l>Que eu fôsse outro que sou,</l>
                     <l>Ter-me-hia outro criado.</l>
                 </lg>
                 <lg>
@@ -74,18 +74,17 @@
                     <l>« Cego, fôra eu bendito » ?</l>
                 </lg>
                 <lg>
-                    <l>Como o olhar, a razão </l>
-                    <l>Deus me deu, para ver </l>
+                    <l>Como o olhar, a razão</l>
+                    <l>Deus me deu, para ver</l>
                     <l>Para além da visão —</l>
                     <l>Olhar de conhecer.</l>
                 </lg>
                 <lg>
                     <l>Se ver é enganar-me,</l>
                     <l>Pensar um descaminho,</l>
-                    <l>Não sei. Deus os quis dar-me </l>
+                    <l>Não sei. Deus os quis dar-me</l>
                     <l>Por verdade e caminho.</l>
                 </lg>
-                <signed>FERNANDO PESSOA.</signed>
             </div>
         </body>
     </text>

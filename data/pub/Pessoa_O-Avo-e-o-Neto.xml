@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-    schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>O AVÔ E O NETO</title>
+                <title><rs type="work" key="O1-28">O Avô e o Neto</rs></title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
                 <respStmt>
                     <resp>Edição</resp>
                     <name>Pedro Sepúlveda</name>
@@ -21,19 +22,20 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <p>Publication Information</p>
+                <publisher/>
+                <idno type="filename">Pessoa_O-Avo-e-o-Neto.xml</idno>
             </publicationStmt>
             <sourceDesc>
                 <biblStruct>
                     <analytic>
-                        <title level="a">O AVÔ E O NETO</title>
+                        <title level="a">O Avô e o Neto</title>
                         <author>
                             <rs type="person" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt"/>
                     </analytic>
                     <monogr>
-                        <title level="j">,  Theosouro de Juventude</title>
+                        <title level="j">Theosouro de Juventude</title>
                         <imprint>
                             <pubPlace>Rio de Janeiro</pubPlace>
                             <date from="1925" to="1928">1925-1928</date>
@@ -43,7 +45,6 @@
                     <note type="genre">
                         <rs type="genre" key="poesia">Poesia</rs>
                     </note>
-                    <note></note>
                 </biblStruct>
             </sourceDesc>
         </fileDesc>

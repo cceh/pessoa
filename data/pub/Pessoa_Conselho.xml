@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-    schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Conselho</title>
+                <title><rs type="work" key="O1-10">Conselho</rs></title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
                 <respStmt>
                     <resp>Edição</resp>
                     <name>Pedro Sepúlveda</name>
@@ -21,7 +22,8 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <p>Publication Information</p>
+                <publisher/>
+                <idno type="filename">Pessoa_Conselho.xml</idno>
             </publicationStmt>
             <sourceDesc>
                 <biblStruct>
@@ -35,7 +37,6 @@
                     <monogr>
                         <title level="j">Sudoeste, Cadernos de Almada Negreiros</title>
                         <imprint>
-                            <pubPlace></pubPlace>
                             <date when="1935-11-03">3 de Novembro de 1935</date>
                         </imprint>
                         <biblScope></biblScope>
@@ -43,7 +44,6 @@
                     <note type="genre">
                         <rs type="genre" key="poesia">Poesia</rs>
                     </note>
-                    <note>???</note>
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
@@ -57,30 +57,30 @@
             <div>
                 <head>Conselho</head>
                 <lg>
-                    <l>Cérca de grandes muros quem te sonhas. </l>
-                    <l>Depois, onde é visível o jardim </l>
+                    <l>Cérca de grandes muros quem te sonhas.</l>
+                    <l>Depois, onde é visível o jardim</l>
                     <l>Através do portão de grade dada,</l>
-                    <l>Põe quantas flores são as mais risonhas, </l>
+                    <l>Põe quantas flores são as mais risonhas,</l>
                     <l>Para que te conheçam só assim.</l>
                     <l>Onde ninguém o vir não ponhas nada.</l>
                 </lg>
                 <lg>
                     <l>Faze canteiros como os que outros têm,</l>
-                    <l>Onde os olhares possam entrever </l>
+                    <l>Onde os olhares possam entrever</l>
                     <l>O teu jardim como lho vais mostrar.</l>
                     <l>Mas onde és teu, e nunca o vê ninguém,</l>
-                    <l>Deixa as flores que vêm do chão crescer </l>
+                    <l>Deixa as flores que vêm do chão crescer</l>
                     <l>E deixa as ervas naturais medrar.</l>
                 </lg>
                 <lg>
                     <l>Faze de ti um duplo sêr guardado;</l>
                     <l>E que ninguém, que veja e fite, possa</l>
-                    <l>Saber mais que um jardim de quem tu és </l>
+                    <l>Saber mais que um jardim de quem tu és</l>
                     <l>Um jardim ostensivo e reservado,</l>
-                    <l>Por trás do qual a flor nativa roça </l>
+                    <l>Por trás do qual a flor nativa roça</l>
                     <l>A erva tam pobre que nem tu a vês...</l>
                 </lg>
-                <signed>FERNANDO PESSOA.</signed>
+                <signed>FERNANDO PESSOA</signed>
             </div>
         </body>
     </text>

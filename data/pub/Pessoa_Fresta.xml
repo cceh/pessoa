@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-    schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>FRESTA</title>
+                <title><rs type="work" key="O1-15">Fresta</rs></title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
                 <respStmt>
                     <resp>Edição</resp>
                     <name>Pedro Sepúlveda</name>
@@ -21,12 +22,13 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <p>Publication Information</p>
+                <publisher/>
+                <idno type="filename">Pessoa_Fresta.xml</idno>
             </publicationStmt>
             <sourceDesc>
                 <biblStruct>
                     <analytic>
-                        <title level="a">FRESTA</title>
+                        <title level="a">Fresta</title>
                         <author>
                             <rs type="person" key="FP">Fernando Pessoa</rs>
                         </author>
@@ -35,15 +37,14 @@
                     <monogr>
                         <title level="j">Momento</title>
                         <imprint>
-                            <pubPlace></pubPlace>
-                            <date when="1934-03-05">5, Março de 1934</date>
+                            <date when="1934-03">Março de 1934</date>
                         </imprint>
+                        <biblScope unit="volume">2.ª série</biblScope>
                         <biblScope unit="issue">5</biblScope>
                     </monogr>
                     <note type="genre">
                         <rs type="genre" key="poesia">Poesia</rs>
                     </note>
-                    <note></note>
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
@@ -56,25 +57,24 @@
             <div>
                 <head>FRESTA</head>
                 <lg>
-                    <l>Em meus momentos escuros </l>
-                    <l>Em que em mim não há ninguem, </l>
-                    <l>E tudo é nevoas e muros </l>
+                    <l>Em meus momentos escuros</l>
+                    <l>Em que em mim não há ninguem,</l>
+                    <l>E tudo é nevoas e muros</l>
                     <l>Quanto a vida dá ou tem,</l>
                 </lg>
                 <lg>
-                    <l>Se, um instante, erguendo a fronte </l>
+                    <l>Se, um instante, erguendo a fronte</l>
                     <l>De onde em mim sou soterrado,</l>
-                    <l>Vejo o longinquo horisonte </l>
+                    <l>Vejo o longinquo horisonte</l>
                     <l>Cheio do sol posto ou nado,</l>
                 </lg>
                 <lg>
                     <l>Revivo, existo, conheço;</l>
-                    <l>E, inda que seja ilusão </l>
+                    <l>E, inda que seja ilusão</l>
                     <l>O exterior em que me esqueço,</l>
-                    <l>Nada mais quero nem peço: </l>
+                    <l>Nada mais quero nem peço:</l>
                     <l>Entrego-lhe o coração.</l>
                 </lg>
-                <signed>FERNANDO PESSOA.</signed>
             </div>
         </body>
     </text>

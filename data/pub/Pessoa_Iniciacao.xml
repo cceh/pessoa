@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-    schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>INICIAÇÃO</title>
+                <title><rs type="work" key="O1-20">Iniciação</rs></title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
                 <respStmt>
                     <resp>Edição</resp>
                     <name>Pedro Sepúlveda</name>
@@ -21,12 +22,13 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <p>Publication Information</p>
+                <publisher/>
+                <idno type="filename">Pessoa_Iniciacao.xml</idno>
             </publicationStmt>
             <sourceDesc>
                 <biblStruct>
                     <analytic>
-                        <title level="a">INICIAÇÃO</title>
+                        <title level="a">Iniciação</title>
                         <author>
                             <rs type="person" key="FP">Fernando Pessoa</rs>
                         </author>
@@ -35,7 +37,6 @@
                     <monogr>
                         <title level="j">Presença</title>
                         <imprint>
-                            <pubPlace></pubPlace>
                             <date from="1932-03" to="1932-05">Março-Maio de 1932</date>
                         </imprint>
                         <biblScope unit="issue">35</biblScope>
@@ -43,7 +44,6 @@
                     <note type="genre">
                         <rs type="genre" key="poesia">Poesia</rs>
                     </note>
-                    <note></note>
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
@@ -92,7 +92,7 @@
                     <l>………………………..</l>
                     <l>Neófito, não ha morte.</l>
                 </lg>
-                <signed>FERNANDO PESSOA.</signed>
+                <signed>FERNANDO PESSOA</signed>
             </div>
         </body>
     </text>

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-    schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>TOMAMOS A VILLA DEPOIS DE UM INTENSO BOMBARDEAMENTO</title>
+                <title><rs type="work" key="O1-26">Natal (“Natal. Na provincia neva”)</rs></title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
                 <respStmt>
                     <resp>Edição</resp>
                     <name>Pedro Sepúlveda</name>
@@ -21,62 +22,58 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <p>Publication Information</p>
+                <publisher/>
+                <idno type="filename">Natal-Na-provincia-neva.xml</idno>
             </publicationStmt>
             <sourceDesc>
                 <biblStruct>
                     <analytic>
-                        <title level="a">TOMAMOS A VILLA DEPOIS DE UM INTENSO BOMBARDEAMENTO</title>
+                        <title level="a">Natal</title>
                         <author>
                             <rs type="person" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt"/>
                     </analytic>
                     <monogr>
-                        <title level="j">Notícias Ilustrado</title>
+                        <title level="j">Notícias ilustrado</title>
                         <imprint>
-                            <pubPlace></pubPlace>
-                            <date when="1929-07-14">14 de Julho de 1929</date>
+                            <date when="1928-12-30">30 de Dezembro de 1928</date>
                         </imprint>
                         <biblScope></biblScope>
                     </monogr>
                     <note type="genre">
                         <rs type="genre" key="poesia">Poesia</rs>
                     </note>
-                    <note></note>
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic url="pub/FP147_1929-07-14_0018_Tamamos_a_vila.jpg"/>
+        <graphic url="pub/FP147_1928-12-30_0015_Natal.jpg"/>
     </facsimile>
-    <text xml:id="tomamos-a-villa">
+    <text xml:id="natal-na-provincia-neva">
         <body>
             <div>
-                <head>TOMAMOS A VILLA DEPOIS DE UM INTENSO BOMBARDEAMENTO</head>
+                <head>Natal</head>
                 <lg>
-                    <l>A CREANÇA LOURA</l>
-                    <l>JAZ NO MEIO DA RUA.</l>
-                    <l>TEM AS TRIPAS DE FÓRA </l>
-                    <l>E POR UMA CORDA SUA </l>
-                    <l>UM COMBOIO QUE IGNORA.</l>
+                    <l>Natal. Na provincia neva.</l>
+                    <l>Nos lares aconchegados</l>
+                    <l>Um sentimento conserva</l>
+                    <l>Os sentimentos passados.</l>
                 </lg>
                 <lg>
-                    <l>A CARA ESTÁ UM FEIXE </l>
-                    <l>DE SANGUE E DE NADA.</l>
-                    <l>LUZ UM PEQUENO PEIXE —</l>
-                    <l>DOS QUE BOIAM NAS BANHEIRAS —</l>
-                    <l>Á BEIRA DA ESTRADA.</l>
+                    <l>Coração opposto ao mundo,</l>
+                    <l>Como a familia é verdade!</l>
+                    <l>Meu pensamento é profundo,</l>
+                    <l>Estou só, e sonho saudade.</l>
                 </lg>
                 <lg>
-                    <l>CAHE SOBRE A ESTRADA O ESCURO. </l>
-                    <l>LONGE, AINDA UMA LUZ DOURA</l>
-                    <l> A CREAÇÃO DO FUTURO...</l>
-                    <l/>
-                    <l>E O DA CREANÇA LOURA?</l>
+                    <l>E como é branca de graça</l>
+                    <l>A paisagem que não sei,</l>
+                    <l>Vista de traz da vidraça</l>
+                    <l>Do lar que nunca terei!</l>
                 </lg>
-                <signed>FERNANDO PESSOA.</signed>
+                <signed>FERNANDO PESSOA</signed>
             </div>
         </body>
     </text>

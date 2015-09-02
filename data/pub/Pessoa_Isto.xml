@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-    schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>ISTO</title>
+                <title><rs type="work" key="O1-22">Isto</rs></title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
                 <respStmt>
                     <resp>Edição</resp>
                     <name>Pedro Sepúlveda</name>
@@ -21,12 +22,13 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <p>Publication Information</p>
+                <publisher/>
+                <idno type="filename">Pessoa_Isto.xml</idno>
             </publicationStmt>
             <sourceDesc>
                 <biblStruct>
                     <analytic>
-                        <title level="a">ISTO</title>
+                        <title level="a">Isto</title>
                         <author>
                             <rs type="person" key="FP">Fernando Pessoa</rs>
                         </author>
@@ -35,7 +37,6 @@
                     <monogr>
                         <title level="j">Presença</title>
                         <imprint>
-                            <pubPlace></pubPlace>
                             <date when="1933-04">Abril de 1933</date>
                         </imprint>
                         <biblScope unit="issue">38</biblScope>
@@ -43,7 +44,6 @@
                     <note type="genre">
                         <rs type="genre" key="poesia">Poesia</rs>
                     </note>
-                    <note></note>
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
@@ -76,7 +76,7 @@
                     <l>Sério do que não é.</l>
                     <l>Sentir? Sinta quem lê!</l>
                 </lg>
-                <signed>FERNANDO PESSOA.</signed>
+                <signed>FERNANDO PESSOA</signed>
             </div>
         </body>
     </text>

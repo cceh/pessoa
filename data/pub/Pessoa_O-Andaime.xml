@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-    schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>O Andaime</title>
+                <title><rs type="work" key="O1-27">O Andaime</rs></title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
                 <respStmt>
                     <resp>Edição</resp>
                     <name>Pedro Sepúlveda</name>
@@ -21,7 +22,8 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <p>Publication Information</p>
+                <publisher/>
+                <idno type="filename">Pessoa_O-Andaime.xml</idno>
             </publicationStmt>
             <sourceDesc>
                 <biblStruct>
@@ -35,7 +37,6 @@
                     <monogr>
                         <title level="j">Presença</title>
                         <imprint>
-                            <pubPlace></pubPlace>
                             <date from="1931-03" to="1931-06">Março-Junho de 1931</date>
                         </imprint>
                         <biblScope unit="issue">31-32</biblScope>
@@ -43,7 +44,6 @@
                     <note type="genre">
                         <rs type="genre" key="poesia">Poesia</rs>
                     </note>
-                    <note></note>
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
@@ -58,14 +58,14 @@
                 <lg>
                     <l>O tempo que eu hei sonhado</l>
                     <l>Quantos anos foi de vida!</l>
-                    <l>Ah, quanto do meu passado </l>
-                    <l>Foi só a vida mentida </l>
+                    <l>Ah, quanto do meu passado</l>
+                    <l>Foi só a vida mentida</l>
                     <l>De um futuro imaginado!</l>
                 </lg>
                 <lg>
-                    <l>Aqui à beira do rio </l>
+                    <l>Aqui à beira do rio</l>
                     <l>Sossego sem ter razão.</l>
-                    <l>Este seu correr vazio </l>
+                    <l>Este seu correr vazio</l>
                     <l>Figura, anónimo e frio,</l>
                     <l>A vida vivida em vão.</l>
                 </lg>
@@ -77,10 +77,10 @@
                     <l>Rola mais que o meu desejo.</l>
                 </lg>
                 <lg>
-                    <l>Ondas do rio, tão leves </l>
+                    <l>Ondas do rio, tão leves</l>
                     <l>Que não sois ondas sequer,</l>
                     <l>Horas, dias, anos, breves</l>
-                    <l> Passam — verduras ou neves </l>
+                    <l> Passam — verduras ou neves</l>
                     <l>Que o mesmo sol faz morrer.</l>
                 </lg>
                 <lg>
@@ -91,22 +91,22 @@
                     <l>Despiu-se, e o reino acabou.</l>
                 </lg>
                 <lg>
-                    <l>Leve som das águas lentas, </l>
+                    <l>Leve som das águas lentas,</l>
                     <l>Gulosas da margem ida,</l>
                     <l>Que lembranças sonolentas </l>
                     <l>De esperanças nevoentas!</l>
                     <l>Que sonhos o sonho e a vida!</l>
                 </lg>
                 <lg>
-                    <l>Que fiz de mim? Encontrei-me </l>
+                    <l>Que fiz de mim? Encontrei-me</l>
                     <l>Quando estava já perdido.</l>
-                    <l>Impaciente deixei-me </l>
-                    <l>Como a um louco que teime </l>
+                    <l>Impaciente deixei-me</l>
+                    <l>Como a um louco que teime</l>
                     <l>No que lhe foi desmentido.</l>
                 </lg>
                 <lg>
-                    <l>Som morto das águas mansas </l>
-                    <l>Que correm por ter que ser, </l>
+                    <l>Som morto das águas mansas</l>
+                    <l>Que correm por ter que ser,</l>
                     <l>Leva não só as lembranças,</l>
                     <l>Mas as mortas esperanças —</l>
                     <l>Mortas, porque hão de morrer.</l>
@@ -115,17 +115,17 @@
                     <l>Sou já o morto futuro.</l>
                     <l>Só um sonho me liga a mim —</l>
                     <l>O sonho atrasado e obscuro </l>
-                    <l>Do que eu devera ser — muro </l>
+                    <l>Do que eu devera ser — muro</l>
                     <l>Do meu deserto jardim.</l>
                 </lg>
                 <lg>
-                    <l>Ondas passadas, levai-me </l>
+                    <l>Ondas passadas, levai-me</l>
                     <l>Para o olvido do mar!</l>
                     <l>Ao que não serei legai-me,</l>
                     <l>Que cerquei com um andaime</l>
                     <l> A casa por fabricar.</l>
                 </lg>
-                <signed>FERNANDO PESSOA.</signed>
+                <signed>FERNANDO PESSOA</signed>
             </div>
         </body>
     </text>
