@@ -65,20 +65,7 @@ $(document).ready(function(){
            });
 });
 
-function ObrasHide() {
-           $("span.ObLink").click(function() {
-           var id1 = $(this).attr("id");
-           var id2 = id1.substring(5)
-           if(!$(this).hasClass("active")) {
-               $(this).addClass("active");
-               $("#"+id2).show("slow");
-            }
-           else {
-               $(this).removeClass("active");
-                $("#"+id2).hide("slow");
-             }
-           });
-};
+
  
  
  function DocHide() {
@@ -133,3 +120,38 @@ function ObrasHide() {
      
  };
  
+ /*############## Obras Control ############*/
+ 
+ function ObrasHide() {
+           $("span.ObLink").click(function() {
+           var id1 = $(this).attr("id");
+           var id2 = id1.substring(5)
+           if(!$(this).hasClass("active")) {
+               $(this).addClass("active");
+               $("#"+id2).show("slow");
+            }
+           else {
+               $(this).removeClass("active");
+                $("#"+id2).hide("slow");
+             }
+           });
+};
+
+
+function ObrasControl() {
+    
+    $(".DocList").children("div").each(function() {
+        if($(this).children("a")) {
+            $(this).append("<p>Leer</p>");
+        }
+        else {
+            $(this).append("<p>TOtal Leer</p>");
+        }
+        });
+        
+        
+    };
+
+  
+    
+    
