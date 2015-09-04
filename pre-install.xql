@@ -25,8 +25,15 @@ declare function local:mkcol-recursive($collection, $components) {
 (: Helper function to recursively create a collection hierarchy. :)
 declare function local:mkcol($collection, $path) {
     local:mkcol-recursive($collection, tokenize($path, "/"))
+}; 
+
+declare function local:remove-old-data(){
+    xdb:remove("/db/apps/pessoa/data/doc"),
+    xdb:remove("/db/apps/pessoa/data/pub")
 };
 
-(: store the collection configuration :)
+(: store the collection configuration 
 local:mkcol("/db/system/config", $target),
-xdb:store-files-from-pattern(concat("/system/config", $target), $dir, "*.xconf")
+xdb:store-files-from-pattern(concat("/system/config", $target), $dir, "*.xconf"),:)
+(: delete old pubs and docs :)
+local:remove-old-data() 
