@@ -253,7 +253,7 @@ let $script := <script type="text/javascript">
             var j = url.lastIndexOf("#");
             var id = url.substring(i+1,j);
            
-            var toLoad = "http://localhost:8080/exist/apps/pessoa/{$helpers:web-language}/page/doc/versao-pessoal?id=" + id;
+            var toLoad = "{$helpers:app-root}/{$helpers:web-language}/page/doc/versao-pessoal?id=" + id;
             if ($("#lb").is(":checked"))
             {{
                toLoad = toLoad.concat("&amp;lb=yes");

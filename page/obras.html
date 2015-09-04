@@ -67,11 +67,36 @@
                 
             </style>
             <div  id="obras-content">
+                <div class="obras:SearchObras">
+                    <div class="Obras-Titleline">
+                        <div><i class="obras:printData?type=MainTitle"/></div>
+                        <div><i class="obras:printData?type=AltTitle"/></div>
+                        <div class="DocLinkList">Documentos</div>
+                        <div class="templates:each?from=FirstRef&amp;to=ref DocList">
+                                <i class="obras:PrintLinks?folder=doc"/>
+                        </div>
+                    </div>
+                    <div class="Obras-Workslist">
+                        <div class="templates:each?from=Works&amp;to=Work">
+                            <div class="obras:AnalyzeWorks">
+                           <div class="work"> <i class="obras:printData?type=WorkName"/></div>
+                              <div>
+                                  <div><i class="obras:PrintLinks?folder=pub&amp;name=pub"/></div>
+                                  <div>Documentos</div>
+                                  <div class="templates:each?from=docs&amp;to=ref DocList">
+                                      <i class="obras:PrintLinks?folder=doc"/>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             <div class="obras:getObras"></div>
                 </div>
             <script type="text/javascript">
                $(document).ready(function(){
                ObrasHide();
+               ObrasControl();
                });
             </script>
         </div>    

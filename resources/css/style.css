@@ -398,6 +398,7 @@ ul#tabs{
     text-align: center;
     margin-right: 15px;
     color: #08298A !important;
+    
 }
 ul#tabs a{
         color: #08298A;
@@ -425,6 +426,7 @@ ul#tab{
     list-style-type: none;
     padding: 5px;
     float: left;
+    width:100%;
 }
     ul#tab a{
         color: #08298A;
@@ -675,12 +677,16 @@ ul#indextab{
 #titleline{
      background-color:#990000;
      color: #fff;
-     max-width:300px;
+     max-width:400px;
      display:block;
      margin:15px auto 0 auto;
      padding: 4px 0;
  }
  
+#titleline h2 {
+    padding: 5px 10px;
+}
+
 #titledate{
      font-size:12pt;
      font-style: italic; 
@@ -887,7 +893,7 @@ li.itabs.active span{
     margin-top: -93px;
     padding: 5px;
     position: absolute;
-    width: 310px;
+    width: 330px;
     
 }
 
