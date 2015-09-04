@@ -281,7 +281,7 @@ declare function page:createItem($type as xs:string, $indikator as xs:string?) a
           return <item label="{$label}" ref="{concat($helpers:app-root,'/',$helpers:web-language)}/page/obras/{$works/attribute()}"/>
     else if($type ="publicacoes")
         then for $hit in xmldb:get-child-resources("/db/apps/pessoa/data/pub")
-            let $label :=  doc(concat("/db/apps/pessoa/data/pub/",$hit))//tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct/tei:analytic/tei:title[1]/data(.) 
+            let $label :=  doc(concat("/db/apps/pessoa/data/pub/",$hit))//tei:fileDesc/tei:titleStmt/tei:title/data(.) 
            return if(doc(concat("/db/apps/pessoa/data/pub/",$hit))//tei:author/tei:rs[@key=$indikator]) 
                         then <item label="{$label}" ref="{concat($helpers:app-root,'/',$helpers:web-language)}/pub/{substring-before($hit,".xml")}" />
                         else ()
