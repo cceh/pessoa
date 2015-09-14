@@ -140,15 +140,18 @@ $(document).ready(function(){
 
 function ObrasControl() {
     
-    $(".DocList").children("div").each(function() {
-        if($(this).children("a")) {
-            $(this).append("<p>Leer</p>");
-        }
-        else {
-            $(this).append("<p>TOtal Leer</p>");
-        }
+        $("div.work").click(function() {
+            $(this).nextAll("div").toggle();
         });
         
+        $("div.SubNav").click(function() {
+            $(this).next("div").toggle();
+            $(this).next("div").children("div").toggle();
+        });
+        $("div.DocLinkList").click(function() {
+            $(this).next("div").toggle();
+            $(this).next("div").children("div").toggle();
+        });
         
     };
 
