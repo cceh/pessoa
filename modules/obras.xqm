@@ -120,32 +120,67 @@ declare function obras:SearchObras($node as node(), $model as map(*)) {
         "MainTitle" := $list/tei:title[1]/data(.),
         "AltTitle" := string-join($AltTitle,", "),
         "FirstRef" := obras:buildSearch(substring-after($helpers:request-path,"obras/"),"doc"),
-        "Works" := $list/tei:list/tei:item
+        "Works" := obras:ScanWorksDeep($list/tei:list/tei:item)
         
     }
+};
+
+declare function obras:ScanWorksDeep ($works as node()* ) {
+    let $return := if(data($works/attribute()) != "") then $works
+            else $works/tei:list/tei:item
+            return $return
 };
 
 
 declare function obras:AnalyzeWorks($node as node(), $model as map(*)) {
     let $db := $model("Work") 
-    let $id := $db/attribute()/data(.)
+    let $id := data($db/attribute())
+    (:  :)
+    
     return map {
-        "WorkName" := $db/tei:title/data(.),
+        "WorkName" := $db/tei:title[1]/data(.),
+        "WorkAltName" := $db/tei:title[@type="alt"]/data(.),
         "WorkId" :=$id ,
+        "SubWorks" := $db/tei:list/tei:item,
         "ref" := obras:buildSearch($id,"pub"),
         "docs" := obras:buildSearch($id,"doc")
     }
 };
 
+declare function obras:CheckForDocs ($node as node(), $model as map(*)) {
+    if ($model("docs") != "") then <div class="SubNav olink">{page:singleElement_xquery("navigation","documentos")}</div> else ""
+};
+
+declare function obras:CheckForWorks($node as node(), $model as map(*)) {
+    let $db := $model("ref") 
+    let $doc := substring-before(root($db)/util:document-name(.),".xml")
+    let $ref := concat($helpers:app-root,"/",$helpers:web-language,"/pub/",$doc)
+   return if($model("SubWorks") != "") then <div class="SubNav olink">{page:singleElement_xquery("navigation","publicacoes")}</div> else <a href="{$ref}" class="olink">{page:singleElement_xquery("navigation","publicacoes")}</a>
+
+};
+
+declare function obras:PrintSubWorks($node as node(), $model as map(*)) {
+    let $db := $model("SubWork")
+    
+    let $doc := substring-before(root($model("ref"))/util:document-name(.),".xml")
+    let $ref := concat($helpers:app-root,"/",$helpers:web-language,"/pub/",$doc,"#",substring-after(data($db/attribute()),concat($model("WorkId"),"-")) )
+    return <a href="{$ref}" class="olink">{$db/tei:title/data(.)}</a>
+};
 
 declare function obras:PrintLinks($node as node(), $model as map(*), $folder as xs:string, $name as xs:string?) {
     let $db := $model("ref") 
     let $doc := substring-before(root($db)/util:document-name(.),".xml")
         let $ref := concat($helpers:app-root,"/",$helpers:web-language,"/",$folder,"/",$doc)
-        let $docn := if($name != "") then  "Publicacoes" else $doc     
+        let $docn := if($name != "") then  page:singleElement_xquery("navigation","publicacoes") else $doc     
         return <a href="{$ref}" class="olink">{$docn}</a>
 };
 
 declare function obras:printData($node as node(), $model as map(*), $type as xs:string) {
     $model($type)
+};
+
+declare function obras:printWorkName($node as node(), $model as map(*))  {
+    let $mainName := $model("WorkName")
+    let $AltName := if($model("WorkAltName") != "") then <i class="AltTitle">{concat(',',string-join($model("WorkAltName"),",")) } </i> else ()
+    return ($mainName, $AltName)
 };
