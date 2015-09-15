@@ -6,18 +6,19 @@
               
               #obras-content {
               text-align:center;
+              width:400px;
               }
               
               
-              .DocList, .PubList, .LinkLists {
+              .Obras-DocList, .Obras-PubList, .Obras-LinkLists {
               display:none;
               }
               
-              .work:hover {
-              text-decoration:underline;
-              cursor: pointer;   
+              .Obras-DocList,.Obras-PubList {
+              margin-left: 79px;
+              text-align: left;
               }
-              
+              .Obras-PubList{}
               .olink {
                 color: #08298A !important;
                 text-decoration:none;
@@ -31,39 +32,76 @@
                 
                 
                 }
-                #MainTitle {
-                
+                #Obras-MainTitle {
+                    font-size:29px;
+                    font-weight:500;
+                    
                 }
-             .AltTitle {
-                font-style:italic;
-             };
                 
+                #Obras-MainAltTitle {
+                    font-size:20px;
+                }
+                
+             .Obras-AltTitle {
+                font-style:italic;
+             }
+             
+             #Obras-Titleline {
+                margin-bottom:15px;
+             }
+             
+             #Obras-Workslist {
+             
+             }
+             
+             .Obras-LinkLists {
+             
+             }
+             
+             .Obras-Work {
+                margin: 3px 0;
+          
+             }
+             
+             .Obras-WorkName {
+             
+             }
+             .Obras-WorkName:hover {
+                text-decoration:underline;
+                cursor: pointer;   
+             }
+             
+             #Obras-DocLinkList {
+             }
+             
+             .selected {
+             text-decoration:underline;
+             }
             </style>
             <div  id="obras-content">
                <div class="obras:SearchObras">
-                    <div class="Obras-Titleline">
-                        <div id="MainTitle"><i class="obras:printData?type=MainTitle"/></div>
-                        <div class="AltTitle"><i class="obras:printData?type=AltTitle"/></div>
-                        <div class="DocLinkList olink">Documentos</div>
-                        <div class="templates:each?from=FirstRef&amp;to=ref DocList">
+                    <div id="Obras-Titleline">
+                        <div id="Obras-MainTitle"><i class="obras:printData?type=MainTitle"/></div>
+                        <div class="Obras-AltTitle" id="Obras-MainAltTitle"><i class="obras:printData?type=AltTitle"/></div>
+                        <div id="Obras-DocLinkList" class="olink">Documentos</div>
+                        <div class="templates:each?from=FirstRef&amp;to=ref Obras-DocList">
                                 <i class="obras:PrintLinks?folder=doc"/>
                         </div>
                     </div>
-                    <div class="Obras-Workslist">
-                        <div class="templates:each?from=Works&amp;to=Work">
+                    <div id="Obras-Workslist">
+                        <div class="templates:each?from=Works&amp;to=Work Obras-Work">
                             <div class="obras:AnalyzeWorks">
-                                <div class="work"> <i class="obras:printWorkName"/></div>
-                                  <div class="LinkLists">
+                                <div class="Obras-WorkName"> <i class="obras:printWorkName"/></div>
+                                  <div class="Obras-LinkLists">
                                       <i class="obras:CheckForWorks"/>
-                                      <div class="templates:each?from=SubWorks&amp;to=SubWork PubList">
+                                      <div class="templates:each?from=SubWorks&amp;to=SubWork Obras-PubList">
                                           <i class="obras:PrintSubWorks"/>
                                       </div>
                                     <i class="obras:CheckForDocs"/>
-                                      <div class="templates:each?from=docs&amp;to=ref DocList">
+                                      <div class="templates:each?from=docs&amp;to=ref Obras-DocList">
                                          <i class="obras:PrintLinks?folder=doc"/>
                                      </div>
                                   </div>
-                                
                             </div>
                         </div>
                     </div>
