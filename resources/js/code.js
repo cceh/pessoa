@@ -139,18 +139,40 @@ $(document).ready(function(){
 
 
 function ObrasControl() {
-    
-        $("div.work").click(function() {
-            $(this).nextAll("div").toggle();
+        $("div.Obras-SubNav").next("div").css("display","block");
+        $("div#Obras-DocLinkList").next("div").css("display","block");
+        
+        $("div.Obras-WorkName").click(function() {
+            $(this).nextAll("div").toggle("blind","slow");
+            
+            if(!$(this).hasClass("selected")) {
+                $(this).addClass("selected");
+            }
+            else {
+                $(this).removeClass("selected");
+            }
         });
         
-        $("div.SubNav").click(function() {
-            $(this).next("div").toggle();
-            $(this).next("div").children("div").toggle();
+        $("div.Obras-SubNav").click(function() {
+            $(this).next("div").children("div").toggle("blind","slow");
+            
+            if(!$(this).hasClass("selected")) {
+                $(this).addClass("selected");
+            }
+            else {
+                $(this).removeClass("selected");
+            }
+           
         });
-        $("div.DocLinkList").click(function() {
-            $(this).next("div").toggle();
-            $(this).next("div").children("div").toggle();
+        $("div#Obras-DocLinkList").click(function() {
+            $(this).next("div").children("div").toggle("blind","slow");
+            
+            if(!$(this).hasClass("selected")) {
+                $(this).addClass("selected");
+            }
+            else {
+                $(this).removeClass("selected");
+            }
         });
         
     };

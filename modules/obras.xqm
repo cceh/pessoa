@@ -148,14 +148,14 @@ declare function obras:AnalyzeWorks($node as node(), $model as map(*)) {
 };
 
 declare function obras:CheckForDocs ($node as node(), $model as map(*)) {
-    if ($model("docs") != "") then <div class="SubNav olink">{page:singleElement_xquery("navigation","documentos")}</div> else ""
+    if ($model("docs") != "") then <div class="Obras-SubNav olink">{page:singleElement_xquery("navigation","documentos")}</div> else ""
 };
 
 declare function obras:CheckForWorks($node as node(), $model as map(*)) {
     let $db := $model("ref") 
     let $doc := substring-before(root($db)/util:document-name(.),".xml")
     let $ref := concat($helpers:app-root,"/",$helpers:web-language,"/pub/",$doc)
-   return if($model("SubWorks") != "") then <div class="SubNav olink">{page:singleElement_xquery("navigation","publicacoes")}</div> else <a href="{$ref}" class="olink">{page:singleElement_xquery("navigation","publicacoes")}</a>
+   return if($model("SubWorks") != "") then <div class="Obras-SubNav olink">{page:singleElement_xquery("navigation","publicacoes")}</div> else <a href="{$ref}" class="olink">{page:singleElement_xquery("navigation","publicacoes")}</a>
 
 };
 
@@ -181,6 +181,6 @@ declare function obras:printData($node as node(), $model as map(*), $type as xs:
 
 declare function obras:printWorkName($node as node(), $model as map(*))  {
     let $mainName := $model("WorkName")
-    let $AltName := if($model("WorkAltName") != "") then <i class="AltTitle">{concat(',',string-join($model("WorkAltName"),",")) } </i> else ()
+    let $AltName := if($model("WorkAltName") != "") then <i class="Obras-AltTitle">{concat(',',string-join($model("WorkAltName"),",")) } </i> else ()
     return ($mainName, $AltName)
 };
