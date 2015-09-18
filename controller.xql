@@ -53,6 +53,13 @@ else if (contains($exist:path,  "/doc/")) then
 		</error-handler>
     </dispatch>)
 else if (contains($exist:path, "/pub/")) then
+if ($exist:resource = "xml") then
+    let $id := substring-before(substring-after($exist:path, "/pub/"), "/xml")
+    return
+    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <forward url="{$exist:controller}/data/pub/{$id}.xml"/>
+    </dispatch>
+    else
     (session:set-attribute("id", $exist:resource), 
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <forward url="{$exist:controller}/page/pub.html">

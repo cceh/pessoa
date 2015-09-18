@@ -3,11 +3,27 @@
     <div class="row-fluid">
         <div id="content" class="span12 main">
             <style  type="text/css">
-                .olink {
+              
+              #obras-content {
+              text-align:center;
+              width:400px;
+              }
+              
+              
+              .Obras-DocList, .Obras-PubList, .Obras-LinkLists {
+              display:none;
+              }
+              
+              .Obras-DocList,.Obras-PubList {
+              margin-left: 79px;
+              text-align: left;
+              }
+              .Obras-PubList{}
+              .olink {
                 color: #08298A !important;
                 text-decoration:none;
-                    max-width:200px;
-                    
+           
+                    cursor: pointer;   
                     
                 }
                 .olink:hover {
@@ -16,62 +32,85 @@
                 
                 
                 }
-                .wlink {
-                color: #08298A !important;
-                max-width:200px;
+                #Obras-MainTitle {
+                    font-size:29px;
+                    font-weight:500;
+                    
                 }
                 
-                .wlink:hover {
-                color: #08298A !important;
+                #Obras-MainAltTitle {
+                    font-size:20px;
+                }
                 
+             .Obras-AltTitle {
+                font-style:italic;
+             }
+             
+             #Obras-Titleline {
+                margin-bottom:15px;
+             }
+             
+             #Obras-Workslist {
+             
+             }
+             
+             .Obras-LinkLists {
+             
+             }
+             
+             .Obras-Work {
+                margin: 3px 0;
+          
+             }
+             
+             .Obras-WorkName {
+             
+             }
+             .Obras-WorkName:hover {
                 text-decoration:underline;
-                
-                }
-                .oul {
-                text-decoration:none !important;
-                max-width:200px;
-                list-style:none;
-                display:none;
-                }
-                .oul li {
-                text-decoration:none !important;
-                max-width:200px;
-                
-                }
-                
-                .wul{
-                list-style:none;
-                }
-                h4.t_obras {
-                    font-weight:bold;
-                }
-                
-                h4.t_obras_alt {
-                    font-style:italic;
-                    font-size:15px;
-                }
-                
-                
-                
-                .ObLink {
-                    cursor: pointer;     
-                    font-style:italic;
-                    margin-left:20px;
-                    text-decoration:underline;
-                }
-                
-                .ObLink:hover {
-                text-decoration:underline;
-                color:blue;
-                }
-                
+                cursor: pointer;   
+             }
+             
+             #Obras-DocLinkList {
+             }
+             
+             .selected {
+             text-decoration:underline;
+             }
             </style>
             <div  id="obras-content">
-            <div class="obras:getObras"></div>
+               <div class="obras:SearchObras">
+                    <div id="Obras-Titleline">
+                        <div id="Obras-MainTitle"><i class="obras:printData?type=MainTitle"/></div>
+                        <div class="Obras-AltTitle" id="Obras-MainAltTitle"><i class="obras:printData?type=AltTitle"/></div>
+                        <div id="Obras-DocLinkList" class="olink">Documentos</div>
+                        <div class="templates:each?from=FirstRef&amp;to=ref Obras-DocList">
+                                <i class="obras:PrintLinks?folder=doc"/>
+                        </div>
+                    </div>
+                    <div id="Obras-Workslist">
+                        <div class="templates:each?from=Works&amp;to=Work Obras-Work">
+                            <div class="obras:AnalyzeWorks">
+                                <div class="Obras-WorkName"> <i class="obras:printWorkName"/></div>
+                                  <div class="Obras-LinkLists">
+                                      <i class="obras:CheckForWorks"/>
+                                      <div class="templates:each?from=SubWorks&amp;to=SubWork Obras-PubList">
+                                          <i class="obras:PrintSubWorks"/>
+                                      </div>
+                                    <i class="obras:CheckForDocs"/>
+                                      <div class="templates:each?from=docs&amp;to=ref Obras-DocList">
+                                         <i class="obras:PrintLinks?folder=doc"/>
+                                     </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--    <div class="obras:getObras"></div>-->
                 </div>
             <script type="text/javascript">
                $(document).ready(function(){
-               ObrasHide();
+               ObrasControl();
                });
             </script>
         </div>    

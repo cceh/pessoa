@@ -13,9 +13,9 @@
     </xsl:template>
     
     <xsl:template match="head">
-        <h2>
+        <h1>
             <xsl:apply-templates/>
-        </h2>
+        </h1>
     </xsl:template>
     
     <xsl:template match="head[@type='sub']">

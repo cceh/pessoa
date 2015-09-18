@@ -65,20 +65,7 @@ $(document).ready(function(){
            });
 });
 
-function ObrasHide() {
-           $("span.ObLink").click(function() {
-           var id1 = $(this).attr("id");
-           var id2 = id1.substring(5)
-           if(!$(this).hasClass("active")) {
-               $(this).addClass("active");
-               $("#"+id2).show("slow");
-            }
-           else {
-               $(this).removeClass("active");
-                $("#"+id2).hide("slow");
-             }
-           });
-};
+
  
  
  function DocHide() {
@@ -133,3 +120,63 @@ function ObrasHide() {
      
  };
  
+ /*############## Obras Control ############*/
+ 
+ function ObrasHide() {
+           $("span.ObLink").click(function() {
+           var id1 = $(this).attr("id");
+           var id2 = id1.substring(5)
+           if(!$(this).hasClass("active")) {
+               $(this).addClass("active");
+               $("#"+id2).show("slow");
+            }
+           else {
+               $(this).removeClass("active");
+                $("#"+id2).hide("slow");
+             }
+           });
+};
+
+
+function ObrasControl() {
+        $("div.Obras-SubNav").next("div").css("display","block");
+        $("div#Obras-DocLinkList").next("div").css("display","block");
+        
+        $("div.Obras-WorkName").click(function() {
+            $(this).nextAll("div").toggle("blind","slow");
+            
+            if(!$(this).hasClass("selected")) {
+                $(this).addClass("selected");
+            }
+            else {
+                $(this).removeClass("selected");
+            }
+        });
+        
+        $("div.Obras-SubNav").click(function() {
+            $(this).next("div").children("div").toggle("blind","slow");
+            
+            if(!$(this).hasClass("selected")) {
+                $(this).addClass("selected");
+            }
+            else {
+                $(this).removeClass("selected");
+            }
+           
+        });
+        $("div#Obras-DocLinkList").click(function() {
+            $(this).next("div").children("div").toggle("blind","slow");
+            
+            if(!$(this).hasClass("selected")) {
+                $(this).addClass("selected");
+            }
+            else {
+                $(this).removeClass("selected");
+            }
+        });
+        
+    };
+
+  
+    
+    
