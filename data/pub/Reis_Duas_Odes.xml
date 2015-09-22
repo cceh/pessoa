@@ -26,9 +26,14 @@
                 <idno type="filename">Reis_Duas_Odes.xml</idno>
             </publicationStmt>
             <sourceDesc>
+                <list type="work-list">
+                    <item><rs type="work" key="O3-1">Duas Odes</rs></item>
+                    <item><rs type="work" key="O3-1-1">Quando, Lídia, vier o nosso outono</rs></item>
+                    <item><rs type="work" key="O3-1-2">Ténue, como se de Éolo a esquecessem,</rs></item>
+                </list>
                 <biblStruct>
                     <analytic>
-                        <title level="a">Duas Odes</title>
+                        <title level="a"><rs type="work" key="O3-1">Duas Odes</rs></title>
                         <author>
                             <rs type="person" key="RR">Ricardo Reis</rs>
                         </author>
@@ -52,11 +57,11 @@
     <facsimile>
         <graphic url="pub/res-1900-a_1931-1934_1931_n31-n32_0002.jpg"/>
     </facsimile>
-    <text xml:id="duas_odes">
+    <text corresp="#O3-1">
         <body>
             <div>
                 <head>Duas Odes</head>
-                <div type="poem">
+                <div type="poem" corresp="#O3-1-1">
                     <lg>
                         <l>Quando, Lídia, vier o nosso outono</l>
                         <l>Com o inverno que há nêle, reservemos</l>
@@ -68,7 +73,7 @@
                         <l rend="indent">E as torna diferentes.</l>
                     </lg>
                 </div>
-                <div type="poem">
+                <div type="poem" corresp="#O3-1-2">
                     <lg>
                         <l>Ténue, como se de Éolo a esquecessem,</l>
                         <l>A brisa da manhã titila o campo,</l>
