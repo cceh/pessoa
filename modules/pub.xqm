@@ -8,7 +8,7 @@ import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers
 declare function pub:get-title($node as node(), $model as map(*), $id as xs:string) as node()* {
    
    let $xml := (pub:get-xml($id))//tei:sourceDesc/tei:biblStruct/tei:monogr
-    let $title := <h2>{(pub:get-xml($id))/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title/tei:rs/data(.)}</h2>
+    let $title := <h2>{(pub:get-xml($id))/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title/data(.)}</h2>
     let $page := if( exists($xml/tei:biblScope[@unit="page"])) then concat( ", ", "pp.",$xml/tei:biblScope[@unit="page"]/data(.)) else () 
     let $author := <p class="titleline_additional" id="t_add_3"> {(pub:get-xml($id))//tei:sourceDesc/tei:biblStruct//tei:author/tei:rs/data(.)}</p>
     let $titlema := <p  class="titleline_additional" id="t_add_1">{$xml/tei:title/data(.)}{concat(" "," ")}{$xml/tei:biblScope[@unit="issue"]/data(.)},</p>
