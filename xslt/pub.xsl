@@ -35,11 +35,20 @@
         </xsl:choose>
     </xsl:template>
     
+    <xsl:template match="text">
+        <div>
+            <xsl:if test="@corresp">
+                <xsl:attribute name="id" select="substring-after(@corresp,'#')"/>
+            </xsl:if>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    
     <xsl:template match="div[@type='poem']">
-        <div class="poem" id="">
-            <xsl:attribute name="id">
-                <xsl:value-of select="@id"/>
-            </xsl:attribute>
+        <div class="poem">
+            <xsl:if test="@corresp">
+                <xsl:attribute name="id" select="substring-after(@corresp,'#')"/>
+            </xsl:if>
             <xsl:apply-templates/>
         </div>
     </xsl:template>
