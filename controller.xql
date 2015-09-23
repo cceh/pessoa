@@ -16,7 +16,11 @@ if ($exist:path eq "/") then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <redirect url="{$helpers:web-language}/index.html"/>
     </dispatch>
-    
+  else  if ( $exist:path eq "") then
+    (: forward root path to index.xql :)
+    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <redirect url="pessoa/{$helpers:web-language}/index.html"/>
+    </dispatch>
 (: Language Notation :)
 else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
@@ -176,6 +180,17 @@ else if (contains($exist:path,"timeline")) then
 else if (ends-with($exist:resource, ".html")) then
     (: the html page is run through view.xql to expand templates :)
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <view>
+            <forward url="{$exist:controller}/modules/view.xql"/>
+        </view>
+		<error-handler>
+			<forward url="{$exist:controller}/error-page.html" method="get"/>
+			<forward url="{$exist:controller}/modules/view.xql"/>
+		</error-handler>
+    </dispatch>
+    else if ( contains($exist:path,"page/") and not(ends-with($exist:resource,".html"))) then
+    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+                 <forward url="{$exist:controller}/page/{substring-after($exist:path,"page/")}.html"/>
         <view>
             <forward url="{$exist:controller}/modules/view.xql"/>
         </view>

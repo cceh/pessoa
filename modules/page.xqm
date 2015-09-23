@@ -134,7 +134,7 @@ declare function page:createThirdNav($type as xs:string) as node()* {
         return  if(contains($indexies/attribute()[2],"bibliografia")) then   <li class="{concat("nav_",$type,"_tab")}" id="navtab_{$type}_sub_{$id}">
                     {$indexies/data(.)}
             </li>
-            else <li class="{concat("nav_",$type,"_tab")}"><a href="{concat($helpers:app-root,"/",$helpers:web-language,"/page/",$id,".html")}">
+            else <li class="{concat("nav_",$type,"_tab")}"><a href="{concat($helpers:app-root,"/",$helpers:web-language,"/page/",$id)}">
                     {$indexies/data(.)}
                     </a>
             </li>
@@ -177,7 +177,9 @@ declare function page:createThirdNavContent($type as xs:string, $indikator as xs
         if ($type = "documentos") then for $item in page:createItem($type, $indikator) 
             return <a href="{$item/@ref/data(.)}"><li class="{concat("nav_",$type,"_sub_tab")}">{$item/@label/data(.)}</li></a>
        else if ($type = "cronologia" and $indikator != "3") then for $nr in (0 to 9)
-            return <li class="{concat("nav_",$type,"_sub_tab")}" id="exttab_cro_{concat($indikator,$nr)}">{concat("'",$indikator,$nr)}</li>
+         return   if( page:createItem("cronologia",concat($indikator,$nr))  ) then
+                    <li class="{concat("nav_",$type,"_sub_tab")}" id="exttab_cro_{concat($indikator,$nr)}">{concat("'",$indikator,$nr)}</li>
+            else <li class="{concat("nav_",$type,"_sub_tab")} emptyTab" id="exttab_cro_{concat($indikator,$nr)}">{concat("'",$indikator,$nr)}</li>
        else if ($type = "cronologia" and $indikator = "3") then for $nr in (0 to 5) 
             return <li class="{concat("nav_",$type,"_sub_tab")}"  id="exttab_cro_{concat($indikator,$nr)}">{concat("'",$indikator,$nr)}</li>
         (:      
@@ -274,7 +276,7 @@ declare function page:createItem($type as xs:string, $indikator as xs:string?) a
             let $label := $projeto/data(.)
                 let $ref := if($helpers:web-language = "pt") then $projeto/attribute()[2]
                             else substring-after($projeto/attribute()[2],"#")
-            return <item label="{$label}"  ref="{concat($helpers:app-root,'/',$helpers:web-language)}/page/{$ref}.html" /> 
+            return <item label="{$label}"  ref="{concat($helpers:app-root,'/',$helpers:web-language)}/page/{$ref}" /> 
    else if ($type = "obras")
          then for $works in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="works"]/tei:item
          let $label := $works/tei:title[1]/data(.)
@@ -507,9 +509,9 @@ let $lists := doc('/db/apps/pessoa/data/lists.xml')
 
 (: ########### Mehrsprachigkeit ##############:)
 
-declare   function page:MultiPage($node as node(), $model as map(*),$type as xs:string) {
+declare   function page:MultiPage($node as node(), $model as map(*),$xmlid as xs:string) {
 let $doc := doc("/db/apps/pessoa/data/webpage.xml")
 let $stylesheet := doc("/db/apps/pessoa/xslt/webpage.xsl")
-let $text := $doc//tei:text[@xml:id=$type]//tei:text[@xml:lang=$helpers:web-language]/tei:body
-return transform:transform($text, $stylesheet, ())
+let $text := $doc/tei:TEI/tei:text/tei:group/tei:text[@xml:id=$xmlid]/tei:group/tei:text[@xml:lang = $helpers:web-language]/tei:body
+return  transform:transform($text, $stylesheet, ())
 };

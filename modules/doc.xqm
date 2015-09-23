@@ -177,7 +177,7 @@ declare %templates:wrap function doc:docControll($node as node(), $model as map(
     let $db := collection("/db/apps/pessoa/data/doc","/db/apps/pessoa/data/pub")
     let $doc := if(substring-after($helpers:request-path,"doc/")) 
                     then substring-after($helpers:request-path,"doc/")
-                else substring-after($helpers:request-path,"pub")
+                else substring-after($helpers:request-path,"pub/")
     let $index := index-of($db,doc(concat("/db/apps/pessoa/data/doc/",$doc,".xml")))    
     let $libary :=  if(substring-after($helpers:request-path,"doc/")) 
                     then "doc"
@@ -241,7 +241,7 @@ declare function doc:get-genre_type($node as node(), $model as map(*)) as node()
     let $title := if($helpers:web-language = "pt") 
         then data(doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="genres"][@xml:lang=$helpers:web-language]/tei:item[@xml:id=$type])
         else data(doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="genres"][@xml:lang=$helpers:web-language]/tei:item[@corresp=concat("#",$type)])
-    return <h2>{ $title}</h2>
+    return <h1>{ $title}</h1>
 };
 
 declare function doc:get-versaoPessoal($node as node(), $model as map(*)) as node() {
@@ -328,8 +328,10 @@ canvas3.stroke();
 declare function doc:getIndexTitle($node as node(), $model as map(*), $type as xs:string){
     let $lists := doc('/db/apps/pessoa/data/lists.xml')
     return 
-    <h1>{$lists//tei:list[@type='index']//tei:term[@xml:id=$type]}</h1>
-    
+    <h1>{page:singleElementList_xquery("navigation",$type)}</h1>
+    (:
+    <h1>{$lists//tei:list[@type='navigation']//tei:term[@xml:id=$type]}</h1>
+    :)
 };
 
 declare function doc:getJournalIndex($node as node(), $model as map(*)){
