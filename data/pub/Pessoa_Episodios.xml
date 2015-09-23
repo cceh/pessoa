@@ -28,16 +28,24 @@
                 <idno type="filename">Pessoa_Episodios.xml</idno>
             </publicationStmt>
             <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="O1-13">Episodios</rs></item>
+                    <item><rs type="work" key="O1-13-1">I</rs></item>
+                    <item><rs type="work" key="O1-13-2">II</rs></item>
+                    <item><rs type="work" key="O1-13-3">III</rs></item>
+                    <item><rs type="work" key="O1-13-4">IV</rs></item>
+                    <item><rs type="work" key="O1-13-5">V</rs></item>
+                </list>
                 <biblStruct>
                     <analytic>
-                        <title level="a">Episodios</title>
+                        <title level="a"><rs type="work" key="O1-13">Episodios</rs></title>
                         <author>
                             <rs type="person" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt"/>
                     </analytic>
                     <monogr>
-                        <title level="j">Portugal Futurista</title>
+                        <title level="j"><rs type="journal" key="J29">Portugal Futurista</rs></title>
                         <imprint>
                             <date when="1917-11">Novembro de 1917</date>
                         </imprint>
@@ -54,12 +62,12 @@
         <graphic url="pub/res-1898-a_0031_21_t0.jpg"/>
         <graphic url="pub/res-1898-a_0032_22_t0.jpg"/>
     </facsimile>
-    <text xml:id="episodios">
+    <text corresp="#O1-13">
         <body>
             <div>
                 <head>EPISODIOS</head>
                 <head>A Mumia</head>
-                <div type="poem">
+                <div type="poem" corresp="#O1-13-1">
                     <head>I</head>
                     <lg>
                         <l>Andei leguas de sombra </l>
@@ -116,7 +124,7 @@
                         <l>E tiniu no infinito.</l>
                     </lg>
                 </div>
-                <div type="poem">
+                <div type="poem" corresp="#O1-13-2">
                     <head>II</head>
                     <lg>
                         <l>Na sombra Cleopatra jaz morta.</l>
@@ -145,7 +153,7 @@
                         <l>Porque é que chove?</l>
                     </lg>
                 </div>
-                <div type="poem">
+                <div type="poem" corresp="#O1-13-3">
                     <head>III</head>
                     <lg>
                         <l>De quem é o olhar</l>
@@ -195,7 +203,7 @@
                         <l>Metaphysicamente.</l>
                     </lg>
                 </div>
-                <div type="poem">
+                <div type="poem" corresp="#O1-13-4">
                     <head>IV</head>
                     <lg>
                         <l>As minhas ansiedades cahem </l>
@@ -213,7 +221,7 @@
                         <l>E colher esqueça aos gestos.</l>
                     </lg>
                 </div>
-                <div type="poem">
+                <div type="poem" corresp="#O1-13-5">
                     <head>V</head>
                     <lg>
                         <l>Porque abrem as cousas alas para eu passar?</l>

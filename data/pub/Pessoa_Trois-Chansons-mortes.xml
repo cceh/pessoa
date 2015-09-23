@@ -26,16 +26,22 @@
                 <idno type="filename">Pessoa_Trois-Chansons-mortes.xml</idno>
             </publicationStmt>
             <sourceDesc>
+                <list type="work-list">
+                    <item><rs type="work" key="O1-36">Trois Chansons mortes</rs></item>
+                    <item><rs type="work" key="O1-36-1">I</rs></item>
+                    <item><rs type="work" key="O1-36-2">II</rs></item>
+                    <item><rs type="work" key="O1-36-3">III</rs></item>
+                </list>
                 <biblStruct>
                     <analytic>
-                        <title level="a">Trois Chansons mortes</title>
+                        <title level="a"><rs type="work" key="O1-36">Trois Chansons mortes</rs></title>
                         <author>
                             <rs type="person" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="fr"/>
                     </analytic>
                     <monogr>
-                        <title level="j">Contemporânea</title>
+                        <title level="j"><rs type="journal" key="J11">Contemporânea</rs></title>
                         <imprint>
                             <date when="1923-01">Janeiro de 1923</date>
                         </imprint>
@@ -48,11 +54,14 @@
             </sourceDesc>
         </fileDesc>
     </teiHeader>
-    <text xml:id="trois-chansons-mortes">
+    <facsimile>
+        <graphic url="#"></graphic>
+    </facsimile>
+    <text corresp="#O1-36">
         <body>
             <div>
                 <head>TROIS<lb/> CHANSONS<lb/> MORTES</head>
-                <div type="poem">
+                <div type="poem" corresp="#O1-36-1">
                     <head>I</head>
                     <lg>
                         <l>Vous êtes belle: on vous adore.</l>
@@ -73,7 +82,7 @@
                         <l>S’oublie en un reflet joyeux.</l>
                     </lg>
                 </div>
-                <div type="poem">
+                <div type="poem" corresp="#O1-36-2">
                     <head>II</head>
                     <lg>
                         <l>J’eus un rêve. L’aube</l>
@@ -100,7 +109,7 @@
                         <l>Je ne le sais pas.</l>
                     </lg>
                 </div>
-                <div type="poem">
+                <div type="poem" corresp="#O1-36-3">
                     <head>III</head>
                     <lg>
                         <l>Si vous m’aimiez un peu?... Par rêve,</l>

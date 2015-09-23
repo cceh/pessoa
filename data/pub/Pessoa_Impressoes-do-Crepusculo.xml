@@ -28,16 +28,21 @@
                 <idno type="filename">Pessoa_Impressoes-do-Crepusculo.xml</idno>
             </publicationStmt>
             <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="O1-19">Impressões do Crepusculo</rs></item>
+                    <item><rs type="work" key="O1-19-1">I</rs></item>
+                    <item><rs type="work" key="O1-19-2">II</rs></item>
+                </list>
                 <biblStruct>
                     <analytic>
-                        <title level="a">Impressões do Crepusculo</title>
+                        <title level="a"><rs type="work" key="O1-19">Impressões do Crepusculo</rs></title>
                         <author>
                             <rs type="person" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt"/>
                     </analytic>
                     <monogr>
-                        <title level="j">A Renascença</title>
+                        <title level="j"><rs type="journal" key="J27">A Renascença</rs></title>
                         <imprint>
                             <date when="1914">1914</date>
                         </imprint>
@@ -53,11 +58,11 @@
     <facsimile>
         <graphic url="pub/res-2749-v_0017_t0.jpg"/>
     </facsimile>
-    <text xml:id="impressoes-do-crepusculo">
+    <text corresp="#O1-19">
         <body>
             <div>
                 <head>Impressões do crepusculo</head>
-                <div type="poem">
+                <div type="poem" corresp="#O1-19-1">
                     <head>I</head>
                     <lg>
                         <l>Ó sino da minha aldeia,</l>
@@ -84,7 +89,7 @@
                         <l>Sinto a saudade mais perto.</l>
                     </lg>
                 </div>
-                <div type="poem">
+                <div type="poem" corresp="#O1-19-2">
                     <head>II</head>
                     <lg>
                         <l>Pauis de roçarem ansias pela minh’alma em ouro...</l>

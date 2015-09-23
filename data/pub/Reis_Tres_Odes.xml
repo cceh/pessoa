@@ -4,7 +4,9 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title><rs type="work" key="O3-6">Três Odes</rs></title>
+                <title>
+                    <rs type="work" key="O3-6">Três Odes</rs>
+                </title>
                 <author>
                     <rs type="person" key="RR">Ricardo Reis</rs>
                 </author>
@@ -22,19 +24,32 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
+                <publisher/>
                 <idno type="filename">Reis_Tres_Odes.xml</idno>
             </publicationStmt>
             <sourceDesc>
+                <list type="work-index">
+                    <item>
+                        <rs type="work" key="O3-6">Três Odes</rs>
+                        <rs type="work" key="O3-6-1">Não só vinho, mas nêle o olvido, deito</rs>
+                        <rs type="work" key="O3-6-2">Quanta tristeza e amargura afoga</rs>
+                        <rs type="work" key="O3-6-3">A nada imploram tuas mãos já coisas,</rs>
+                    </item>
+                </list>
                 <biblStruct>
                     <analytic>
-                        <title level="a">Três Odes</title>
+                        <title level="a">
+                            <rs type="work" key="O3-6">Três Odes</rs>
+                        </title>
                         <author>
                             <rs type="person" key="RR">Ricardo Reis</rs>
                         </author>
                         <textLang mainLang="pt"/>
                     </analytic>
                     <monogr>
-                        <title level="j"><rs type="journal" key="J1">Presença</rs></title>
+                        <title level="j">
+                            <rs type="journal" key="J1">Presença</rs>
+                        </title>
                         <imprint>
                             <date when="1927-07-18">18 de Julho de 1927</date>
                         </imprint>
@@ -51,11 +66,11 @@
     <facsimile>
         <graphic url="pub/res-1900-a-1927-07-n6_0003_3_t0.jpg"/>
     </facsimile>
-    <text xml:id="tres_odes">
+    <text corresp="#O3-6">
         <body>
             <div>
                 <head>Três Odes</head>
-                <div type="poem">
+                <div type="poem" corresp="#O3-6-1">
                     <lg>
                         <l>Não só vinho, mas nêle o olvido, deito</l>
                         <l>Na taça: serei ledo, porque a dita</l>
@@ -71,7 +86,7 @@
                         <l rend="indent">Para deixar de ver.</l>
                     </lg>
                 </div>
-                <div type="poem">
+                <div type="poem" corresp="#O3-6-2">
                     <lg>
                         <l>Quanta tristeza e amargura afoga</l>
                         <l>Em confusão a streita vida! Quanto</l>
@@ -87,7 +102,7 @@
                         <l rend="indent">A um céu inexistente.</l>
                     </lg>
                 </div>
-                <div type="poem">
+                <div type="poem" corresp="#O3-6-3">
                     <lg>
                         <l>A nada imploram tuas mãos já coisas,</l>
                         <l>Nem convencem teus lábios já parados,</l>
