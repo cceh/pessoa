@@ -101,7 +101,73 @@ $(document).ready(function(){
 
              }
            });
+           
+           
+            
  }
+ 
+ 
+ function draw(w, h) {
+ 
+ /*
+  if(is.firefox() == true) {
+      var  ctx1= document.getElementsByClassName("delSpan");
+        var canvas = ctx1.getContext("2d");
+        var  ctx2= document.getElementsByClassName("verticalLine");
+        var canvas2 = ctx2.getContext("2d");
+        var  ctx3= document.getElementsByClassName("circled");
+        var canvas3 = ctx3.getContext("2d");
+  } 
+  else {
+      var canvas = document.getCSSCanvasContext("2d", "lines", w, h); 
+      var canvas2 = document.getCSSCanvasContext("2d", "verticalLine", w, h);
+      var canvas3 = document.getCSSCanvasContext("2d", "circle", w, h);
+  }
+ */
+            var canvas = document.getCSSCanvasContext("2d", "lines", w, h); 
+      var canvas2 = document.getCSSCanvasContext("2d", "verticalLine", w, h);
+      var canvas3 = document.getCSSCanvasContext("2d", "circle", w, h);
+            canvas.strokeStyle = "rgb(0,0,0)";
+            canvas.beginPath();
+            canvas.moveTo( 0,0);
+            canvas.lineTo( w, h );
+            canvas.stroke();
+            
+            
+            canvas2.strokeStyle = "rgb(0,0,0)";
+            canvas2.beginPath();
+            canvas2.moveTo( 0,0);
+            canvas2.lineTo( 10,60 );
+            canvas2.stroke();
+            
+            
+            canvas3.strokeStyle = "rgb(0,0,0)";
+            canvas3.beginPath();
+            canvas3.arc(12,12,12,0,2*Math.PI);
+            canvas3.stroke();
+            };
+ 
+
+function printContent() {
+
+            var id = $("div#text-div").children("ul").children("li.active").children("div").attr("id");
+            var printContents = document.getElementById(id).innerHTML;
+                 var originalContents = document.body.innerHTML;
+                document.body.innerHTML = printContents;
+                window.print();
+                document.body.innerHTML = originalContents;
+              
+
+/*
+                var printContents = $("div.text").html;
+               var printContents = document.getElementsByClassName("text").innerHTML;
+                var originalContents = document.body.innerHTML;
+                document.body.innerHTML = printContents;
+              window.print();
+                document.body.innerHTML = originalContents;
+            
+            */
+            }; 
  
  function SearchHide() {
     $("div.tab").click(function() {
@@ -119,6 +185,8 @@ $(document).ready(function(){
            });
      
  };
+ 
+ 
  
  /*############## Obras Control ############*/
  

@@ -174,22 +174,27 @@ declare function doc:get-xml($id){
 
 
 declare %templates:wrap function doc:docControll($node as node(), $model as map(*)) {
-    let $db := collection("/db/apps/pessoa/data/doc","/db/apps/pessoa/data/pub")
-    let $doc := if(substring-after($helpers:request-path,"doc/")) 
+      let $libary := if(contains($helpers:request-path,"/doc/")) then "doc" 
+                         else "pub"
+                
+   let $db := if($libary = "doc") then  collection("/db/apps/pessoa/data/doc") else collection("/db/apps/pessoa/data/pub")
+    let $sum := fn:count($db)
+   let $doc := if(substring-after($helpers:request-path,"doc/")) 
                     then substring-after($helpers:request-path,"doc/")
                 else substring-after($helpers:request-path,"pub/")
-    let $index := index-of($db,doc(concat("/db/apps/pessoa/data/doc/",$doc,".xml")))    
-    let $libary :=  if(substring-after($helpers:request-path,"doc/")) 
-                    then "doc"
-                else "pub"
+    let $index :=  index-of($db,doc(concat("/db/apps/pessoa/data/",$libary,"/",$doc,".xml")))    
+                           
+    let $forward := if($index != $sum) then $index+1 else 1
+    let $backward := if($index != 1) then ($index) -1 else $sum
+  
 
     let $arrows := <div>
-                            <a href="{concat($helpers:app-root,'/',$helpers:web-language,'/',$libary,'/',substring-before(root($db[position() = (($index) -1)])/util:document-name(.),".xml"))}">
+                            <a href="{concat($helpers:app-root,'/',$helpers:web-language,'/',$libary,'/',substring-before(root($db[position() = ($backward)])/util:document-name(.),".xml"))}">
                                 <span id="back"> 
                                     {page:singleAttribute(doc('/db/apps/pessoa/data/lists.xml'),"buttons","previous")}
                                 </span>
                             </a>
-                            <a href="{concat($helpers:app-root,'/',$helpers:web-language,'/',$libary,'/',substring-before(root($db[position() = (($index) +1)])/util:document-name(.),".xml"))}">
+                            <a href="{concat($helpers:app-root,'/',$helpers:web-language,'/',$libary,'/',substring-before(root($db[position() = ($forward)])/util:document-name(.),".xml"))}">
                                 <span id="forward">
                                     {page:singleAttribute(doc('/db/apps/pessoa/data/lists.xml'),"buttons","next")}
                                 </span>
@@ -211,7 +216,7 @@ let $script :=     <script>
   Edição Digital de Fernando Pessoa, 2015, "{$helpers:request-path}"</p>
 </div>
 let $filter := <div id="filter">
-                <a class="filter-a" href="">{page:singleAttribute($doc, "footer","print")}</a>
+                <a class="filter-a" onclick="printContent()">{page:singleAttribute($doc, "footer","print")}</a>
                 <a class="filter-a" href="{$helpers:request-path}/xml" target="_blank">XML</a>
                 <a class="filter-a" id="zitat" >{page:singleAttribute($doc, "footer","cite")}</a>
             </div>
@@ -298,27 +303,7 @@ let $script := <script type="text/javascript">
         attachEvent( "onload", draw(100,100) );
         }}
         
-function draw(w, h) {{
-var canvas = document.getCSSCanvasContext("2d", "lines", w, h); 
-canvas.strokeStyle = "rgb(0,0,0)";
-canvas.beginPath();
-canvas.moveTo( 0,0);
-canvas.lineTo( w, h );
-canvas.stroke();
 
-var canvas2 = document.getCSSCanvasContext("2d", "verticalLine", w, h);
-canvas2.strokeStyle = "rgb(0,0,0)";
-canvas2.beginPath();
-canvas2.moveTo( 0,0);
-canvas2.lineTo( 10,60 );
-canvas2.stroke();
-
-var canvas3 = document.getCSSCanvasContext("2d", "circle", w, h);
-canvas3.strokeStyle = "rgb(0,0,0)";
-canvas3.beginPath();
-canvas3.arc(12,12,12,0,2*Math.PI);
-canvas3.stroke();
-}}
 
 
     </script>
