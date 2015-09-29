@@ -56,9 +56,9 @@
             .supplied {cursor: pointer;}           
             /*  .ex, .supplied {color: purple;} */
             
-            .delSpan{background: -webkit-canvas(lines);}
-            .verticalLine {background: -webkit-canvas(verticalLine); display: inline-table; margin-left:110px; width:10px; height:60px;}
-            .circled {background: -webkit-canvas(circle);  width:25px; height:25px;}
+            .delSpan{background: -webkit-canvas(lines); background: -moz-element(lines);}
+            .verticalLine {background: -webkit-canvas(verticalLine); background: -moz-element(verticalLine); display: inline-table; margin-left:110px; width:10px; height:60px;}
+            .circled {background: -webkit-canvas(circle); background: -moz-element(circle);  width:25px; height:25px;}
 
             /*special case 71A-2V*/
             #bnp-e3-71a-2v .below{left: -40px;}   
