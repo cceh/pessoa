@@ -56,6 +56,7 @@ else if (contains($exist:path,  "/doc/")) then
 			<forward url="{$exist:controller}/modules/view.xql"/>
 		</error-handler>
     </dispatch>)
+   
 else if (contains($exist:path, "/pub/")) then
 if ($exist:resource = "xml") then
     let $id := substring-before(substring-after($exist:path, "/pub/"), "/xml")
@@ -77,6 +78,8 @@ if ($exist:resource = "xml") then
 			<forward url="{$exist:controller}/modules/view.xql"/>
 		</error-handler>
 	</dispatch>)
+	
+
 else if (contains($exist:path, "/author/")) then
     if (request:get-parameter("orderBy","")!="") then
     let $orderBy := request:get-parameter("orderBy", "alphab")
@@ -231,6 +234,40 @@ else if(contains($exist:path, "download")) then
 			<forward url="{$exist:controller}/modules/view.xql"/>
 		</error-handler>
     </dispatch>
+    else if ( not(contains(substring-after($exist:path,"pessoa/"),"/")) and not(contains($exist:resource,".")) ) then
+    
+    (: ( (not(contains($exist:path,"pub")) or not(contains($exist:path,"doc")) or not(contains($exist:path,"resources")) or not(contains($exist:path,"page")) ) (: and search:singleDocument($exist:resource) = fn:true() :)) then 
+   :) if( contains($exist:resource,"MN") or contains($exist:resource,"BNP")) then 
+    let $id := $exist:resource
+    return 
+     (session:set-attribute("id", $id), 
+    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <forward url="{$exist:controller}/page/doc.html">
+        <add-parameter name="id" value="{$exist:resource}" />
+        </forward>
+        <view>
+            <forward url="{$exist:controller}/modules/view.xql"/>
+        </view>
+		<error-handler>
+			<forward url="{$exist:controller}/error-page.html" method="get"/>
+			<forward url="{$exist:controller}/modules/view.xql"/>
+		</error-handler>
+    </dispatch>)
+    else 
+    
+    (session:set-attribute("id", $exist:resource), 
+    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <forward url="{$exist:controller}/page/pub.html">
+            <add-parameter name="id" value="{$exist:resource}" />
+        </forward>
+        <view>
+            <forward url="{$exist:controller}/modules/view.xql"/>
+        </view>
+		<error-handler>
+			<forward url="{$exist:controller}/error-page.html" method="get"/>
+			<forward url="{$exist:controller}/modules/view.xql"/>
+		</error-handler>
+	</dispatch>) 
     else if (contains($exist:path, "events")) then
     let $language := $helpers:web-language (: request:get-parameter("lang", "pt"):)
     return 

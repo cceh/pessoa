@@ -232,6 +232,14 @@ declare function search:search_range($para as xs:string, $db as node()*) as node
         return util:eval($search_build)
 };
 
+declare function search:search_range_simple($para as xs:string,$hit as xs:string, $db as node()*) as node()* {
+ 
+     (:   let $para := if($para = "person")then  "author" else () :)
+        let $search_terms := concat('("',$para,'"),"',$hit,'"')
+        let $search_funk := concat("//range:field-eq(",$search_terms,")")
+        let $search_build := concat("$db",$search_funk)
+        return util:eval($search_build)
+};
 (: Suche nach den Autoren und der Rollen :)
 declare function search:author_build($db as node()*) as node()* {
         let $roles :=  if(search:get-parameters("release") = "published" ) then "person"
@@ -467,4 +475,13 @@ declare function search:page_createOption_authors($xmltype as xs:string, $value 
     for $id in $value
         let $entry := $doc//tei:listPerson[@type=$xmltype]/tei:person[@xml:id=$id]/tei:persName/data(.)
         return <option value="{$id}">{$entry}</option>
+};
+
+
+declare function search:singleDocument($doc as xs:string) {
+    let $db := collection("/db/apps/pessoa/data/doc","/db/apps/pessoa/data/pub")
+    let $term := concat($doc,".xml")
+    let $result := search:search_range_simple("title",$term,$db)
+    return if($result != "") then fn:true() else fn:false()
+    
 };

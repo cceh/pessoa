@@ -14,6 +14,7 @@
     </lucene>
     <range>
       <create qname="tei:TEI">
+        <field name="title" match="tei:teiHeader/tei:fileDesc/tei:publicationStmt/tei:idno" type="xs:string"/>
         <field name="author" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msContents/tei:msItemStruct/tei:author/tei:rs/@key" type="xs:string"/>
         <field name="genre" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msContents/tei:msItemStruct/tei:note/tei:rs/@key" type="xs:string"/>
         <field name="mainLang" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msContents/tei:msItemStruct/tei:textLang/@mainLang" type="xs:string"/>
