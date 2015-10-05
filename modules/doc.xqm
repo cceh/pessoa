@@ -173,16 +173,17 @@ declare function doc:get-xml($id){
 };
 
 
-declare %templates:wrap function doc:docControll($node as node(), $model as map(*)) {
-      let $libary := if(contains($helpers:request-path,"/doc/")) then "doc" 
+declare %templates:wrap function doc:docControll($node as node(), $model as map(*), $id as xs:string) {
+      let $libary := if(contains($helpers:request-path,"BNP") or contains($helpers:request-path,"MN")) then "doc" 
                          else "pub"
                 
    let $db := if($libary = "doc") then  collection("/db/apps/pessoa/data/doc") else collection("/db/apps/pessoa/data/pub")
     let $sum := fn:count($db)
-   let $doc := if(substring-after($helpers:request-path,"doc/")) 
+  (: let $doc := $id 
+   if(substring-after($helpers:request-path,"doc/")) 
                     then substring-after($helpers:request-path,"doc/")
-                else substring-after($helpers:request-path,"pub/")
-    let $index :=  index-of($db,doc(concat("/db/apps/pessoa/data/",$libary,"/",$doc,".xml")))    
+                else substring-after($helpers:request-path,"pub/") :)
+    let $index :=  index-of($db,doc(concat("/db/apps/pessoa/data/",$libary,"/",$id,".xml")))    
                            
     let $forward := if($index != $sum) then $index+1 else 1
     let $backward := if($index != 1) then ($index) -1 else $sum
@@ -204,16 +205,17 @@ declare %templates:wrap function doc:docControll($node as node(), $model as map(
     return $arrows
 };
 
-declare function doc:footerfilter($node as node(), $model as map(*)) {
+declare function doc:footerfilter($node as node(), $model as map(*), $id as xs:string) {
 let $doc := doc("/db/apps/pessoa/data/lists.xml")
 let $script :=     <script>
   $("#zitat").click(function() {{
     $( "#dialog" ).toggle();
   }});
   </script>
+  
   let $popup:= 
   <div id="dialog" title="Basic dialog" style="display:none;border:solid"><p>
-  Edição Digital de Fernando Pessoa, 2015, "{$helpers:request-path}"</p>
+  Edição Digital de Fernando Pessoa, 2015, "{$helpers:app-root}/{$id}"</p>
 </div>
 let $filter := <div id="filter">
                 <a class="filter-a" onclick="printContent()">{page:singleAttribute($doc, "footer","print")}</a>
