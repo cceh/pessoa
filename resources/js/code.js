@@ -149,24 +149,25 @@ $(document).ready(function(){
  
 
 function printContent() {
-
-            var id = $("div#text-div").children("ul").children("li.active").children("div").attr("id");
+            if( $("div#text-div").children("ul").children("li").hasClass("active") ) { 
+            var id = $("div#text-div").children("ul").children("li.active").children("div").attr("id");  
+            }
+            else {
+            var id = "text-div";
+            }
+            
             var printContents = document.getElementById(id).innerHTML;
                  var originalContents = document.body.innerHTML;
-                document.body.innerHTML = printContents;
+                 var newWindow = window.open("","newWindow");
+                 newWindow.document.write (printContents);
+                 newWindow.print();
+                 newWindow.close();
+                 
+            /*
+            document.body.innerHTML = printContents;
                 window.print();
                 document.body.innerHTML = originalContents;
-              
-
-/*
-                var printContents = $("div.text").html;
-               var printContents = document.getElementsByClassName("text").innerHTML;
-                var originalContents = document.body.innerHTML;
-                document.body.innerHTML = printContents;
-              window.print();
-                document.body.innerHTML = originalContents;
-            
-            */
+              */
             }; 
  
  function SearchHide() {
