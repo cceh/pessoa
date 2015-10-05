@@ -35,10 +35,10 @@
                         <xsl:variable name="filename" select=".//idno[@type='filename']"/>
                         <xsl:choose>
                             <xsl:when test="starts-with($filename, 'MN') or starts-with($filename, 'BNP')">
-                                <xsl:value-of select="concat('../doc/', $filename)"/>
+                                <xsl:value-of select="concat('../doc/', substring-before($filename,'.xml'))"/>
                             </xsl:when>
                             <xsl:otherwise>
-                                <xsl:value-of select="concat('../pub/', $filename)"/>
+                                <xsl:value-of select="concat('../pub/', substring-before($filename,'.xml'))"/>
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:attribute>
