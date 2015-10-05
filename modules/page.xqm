@@ -498,7 +498,7 @@ let $lists := doc('/db/apps/pessoa/data/lists.xml')
 			
 			
             tl = Timeline.create(document.getElementById("my-timeline"), bandInfos, Timeline.HORIZONTAL);
-            tl.loadXML("events.xml", function(xml, url) {{
+            tl.loadXML("../events.xml", function(xml, url) {{
                 eventSource.loadXML(xml, url);
             }});
         }}
