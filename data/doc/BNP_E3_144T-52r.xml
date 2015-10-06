@@ -14,7 +14,7 @@
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
-               <name/>
+               <name>Ulrike Henny</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -58,43 +58,44 @@
             <list>
                <item xml:id="I1">
                   <del rend="overstrike">
-                     <hi rend="underline"><rs type="person">Mario</rs></hi>. Data poema.</del>
+                     <hi rend="underline"><rs type="person" key="P30">Mario</rs></hi>. <rs type="text">Data poema</rs>.</del>
                </item>        
                <item xml:id="I2">
                   <choice>
                      <abbr>—</abbr>
                      <expan>
-                        <rs type="person">Mario</rs>
+                        <rs type="person" key="P30">Mario</rs>
                      </expan>
                   </choice>
-                  <abbr>L<am>.</am></abbr>
-                   Kuhne Book.
+                  <rs type="text"><abbr>L<am>.</am></abbr>
+                   Kuhne Book</rs>.
+                  <note target="range(I1,I3)" place="right" type="addition">
+                     <metamark rend="vertical-lign" function="grouping"/> 
+                     <label>Key to House.</label>
+                  </note>
                </item>
                <item xml:id="I3">
                   <choice>
                      <abbr>—</abbr>
                      <expan>
-                        <rs type="person">Mario</rs>
+                        <rs type="person" key="P30">Mario</rs>
                      </expan>
                   </choice> <supplied resp="PS" reason="omitted-in-original"/> 
                </item>
             </list>
-            <note target="range(I1,I3)" place="right" type="addition">Key to House.</note>
-            <metamark rend="curly bracket" function="grouping"/> 
             <list>
-               <item xml:id="I4" xml:lang="la">
-                  <hi rend="underline">Ultimus Joculatorum.</hi> 
-               </item> 
-               <item xml:id="I5" xml:lang="en">a Kind of Sartor<lb/>
-                  Resartus</item>
-               <abbr>—</abbr>
-               <item>Instead of <lb/><hi rend="underline">Book of Friar Maurice</hi></item>
-               <add place="bellow">or another good <hi>title</hi></add>
-               <item>The Nothingness Club.</item>
-               <item>The Zero<hi rend="underline">Club.</hi></item>
-               <signed><hi rend="overstrike">Dr. E. Hy</hi></signed>
-               
+               <item xml:id="I4">
+                  <hi rend="underline"><rs type="text">Ultimus Joculatorum</rs>.</hi><lb/> 
+                  a Kind of Sartor<lb/>
+                  Resartus — Instead of<lb/> <hi rend="underline"><rs type="text">Book of Friar Maurice</rs></hi>
+                  <note place="left">or another good title</note>
+               </item>
+               <metamark rend="line" function="distinct"/>
+               <item><rs type="text">The Nothingness Club</rs>.</item>
+               <item><rs type="text">The Zero Club</rs>.</item>
             </list>
+            <metamark rend="line" function="distinct"/>
+            <ab><del rend="overstrike"><rs type="person" key="P31">Dr. E. Hy</rs></del></ab>
        </div>
       </body>
    </text>

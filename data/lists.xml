@@ -125,7 +125,8 @@
             <!-- ########### AUTHORS #################### -->
             <listPerson type="authors">
                 <person xml:id="FP">
-                    <persName>Fernando Pessoa</persName>
+                    <persName type="a">Fernando Pessôa</persName>
+                    <persName type="b">Fernando Pessoa</persName>
                 </person>
                 <person xml:id="AC">
                     <persName>Alberto Caeiro</persName>
@@ -422,9 +423,9 @@
             <!-- obras mencionadas -->
             <list type="works" n="1">
                 <item xml:id="O1">
-                    <title>Poemas de Fernando Pessoa</title>
-                    <title type="alt">Cancioneiro</title>
-                    <title type="alt">Itinerario</title>
+                    <title type="main" subtype="a">Poemas de Fernando Pessoa</title>
+                    <title type="alt" subtype="b">Cancioneiro</title>
+                    <title type="alt" subtype="c">Itinerario</title>
                     <list>
                         <item xml:id="O1-1">
                             <title>Abdicação</title>
@@ -443,7 +444,7 @@
                             <title type="alt">“Sol nulo dos dias vãos”</title>
                         </item>
                         <item xml:id="O1-9">
-                            <title>Chuva Obliqua</title>
+                            <title>Chuva Obliqua</title><!-- nur eines -->
                             <list>
                                 <item xml:id="O1-9-1">
                                     <title>I</title>
@@ -469,7 +470,7 @@
                             <title>Conselho</title>
                         </item>
                         <item xml:id="O1-11">
-                            <title>De um Cancioneiro</title>
+                            <title>De um Cancioneiro</title><!-- nur eines -->
                             <list>
                                 <item xml:id="O1-11-1">
                                     <title>No entardecer da terra</title>
@@ -669,10 +670,10 @@
                     </list>
                 </item>
                 <item xml:id="O2">
-                    <title>Poemas de Alberto Caeiro</title>
-                    <title type="alt">O Guardador de Rebanhos</title>
-                    <title type="alt">O Pastor Amoroso</title>
-                    <title type="alt">Poemas Inconjunctos</title>
+                    <title type="main" subtype="a">Poemas de Alberto Caeiro</title>
+                    <title type="alt" subtype="b">O Guardador de Rebanhos</title>
+                    <title type="alt" subtype="c">O Pastor Amoroso</title>
+                    <title type="alt" subtype="d">Poemas Inconjunctos</title>
                     <list>
                         <item>
                             <title>O Guardador de Rebanhos</title>
@@ -885,9 +886,9 @@
                     </list>
                 </item>
                 <item xml:id="O3">
-                    <title>Odes de Ricardo Reis</title>
-                    <title type="alt">Odes</title>
-                    <title type="alt">Livro de Odes</title>
+                    <title type="main" subtype="a">Odes de Ricardo Reis</title>
+                    <title type="alt" subtype="b">Odes</title>
+                    <title type="alt" subtype="c">Livro de Odes</title>
                     <list>
                         <item xml:id="O3-1">
                             <title>Duas odes</title>
@@ -991,10 +992,10 @@
                     </list>
                 </item>
                 <item xml:id="O4">
-                    <title>Poemas de Álvaro de Campos</title>
-                    <title type="alt">Arco de Triumpho</title>
-                    <title type="alt">Accessorios</title>
-                    <title type="alt">5 Odes</title>
+                    <title type="main" subtype="a">Poemas de Álvaro de Campos</title>
+                    <title type="alt" subtype="b">Arco de Triumpho</title>
+                    <title type="alt" subtype="c">Accessorios</title>
+                    <title type="alt" subtype="d">5 Odes</title>
                     <list>
                         <item xml:id="O4-1"><title>Addiamento</title></item>
                         <item xml:id="O4-2"><title>Ah, um soneto...</title></item>
@@ -1065,6 +1066,102 @@
                 <item xml:id="J33">Folhas de Arte</item>
                 <item xml:id="J34">Resurreição</item>
             </list>
+            <listPerson>
+                <person xml:id="P1">
+                    <persName type="a">Antonio Móra</persName>
+                    <persName type="b">Antonio Mora</persName>
+                </person>
+                <person xml:id="P2">
+                    <persName>Anton Tchekhov</persName>
+                </person>
+                <person xml:id="P3">
+                    <persName>José Enrique Rodó</persName>
+                </person>
+                <person xml:id="P4">
+                    <persName>J. M. Robertson</persName>
+                </person>
+                <person xml:id="P5">
+                    <persName>Novalis</persName>
+                </person>
+                <person xml:id="P6">
+                    <persName>Kant</persName>
+                </person>
+                <person xml:id="P7">
+                    <persName>Lord Dunsany</persName>
+                </person>
+                <person xml:id="P8">
+                    <persName>G. K. Chesterton</persName>
+                </person>
+                <person xml:id="P9">
+                    <persName>G. B. Shaw</persName>
+                </person>
+                <person xml:id="P10">
+                    <persName>Francisco Sanches</persName>
+                </person>
+                <person xml:id="P11">
+                    <persName>Fernandes Lopes</persName>
+                </person>
+                <person xml:id="P12">
+                    <persName>Napoleon</persName>
+                </person>
+                <person xml:id="P13">
+                    <persName>Pérès</persName>
+                </person>
+                <person xml:id="P14">
+                    <persName>Espronceda</persName>
+                </person>
+                <person xml:id="P15">
+                    <persName>Camoens</persName>
+                </person>
+                <person xml:id="P16">
+                    <persName>Thomas Crosse</persName>
+                </person>
+                <person xml:id="P17">
+                    <persName>Antonio Botto</persName>
+                </person>
+                <person xml:id="P18">
+                    <persName>Anthero de Quental</persName>
+                </person>
+                <person xml:id="P19">
+                    <persName>Alberto Sampaio</persName>
+                </person>
+                <person xml:id="P20">
+                    <persName>Columbus</persName>
+                </person>
+                <person xml:id="P21">
+                    <persName>King Sebastian</persName>
+                </person>
+                <person xml:id="P22">
+                    <persName>Christovam Falcão</persName>
+                </person>
+                <person xml:id="P23">
+                    <persName>Bernardino Ribeiro</persName>
+                </person>
+                <person xml:id="P24">
+                    <persName>José Anastacio da Cunha</persName>
+                </person>
+                <person xml:id="P25">
+                    <persName>Guerra Junqueiro</persName>
+                </person>
+                <person xml:id="P26">
+                    <persName>Cesario Verde</persName>
+                </person>
+                <person xml:id="P27">
+                    <persName>Diogo Pires</persName>
+                </person>
+                <person xml:id="P28">
+                    <persName>Solomon Molcho</persName>
+                </person>
+                <person xml:id="P29">
+                    <persName>Funck-Brentano</persName>
+                </person>
+                <person xml:id="P30">
+                    <persName>Mario de Sá-Carneiro</persName>
+                </person>
+                <person xml:id="P31">
+                    <persName>Dr. E. Hy</persName>
+                </person>
+            </listPerson>
         </body>
     </text>
 </TEI>

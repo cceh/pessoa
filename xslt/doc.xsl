@@ -257,11 +257,11 @@
     
     <!-- metamarks -->
     <!--brackets-->
-    <xsl:template match="metamark[@rend='curly bracket'][@function='grouping'][parent::note/contains(@place, 'margin left')]" >
+    <xsl:template match="metamark[@rend='curly-bracket'][@function='grouping'][parent::note/contains(@place, 'margin left')]" >
         <span class="metamark curly-bracket grouping left {ancestor::text/@xml:id}" title="grouping">{</span>
     </xsl:template>
     
-    <xsl:template match="metamark[@rend='curly bracket'][@function='grouping'][parent::note/contains(@place, 'margin right')]" >
+    <xsl:template match="metamark[@rend='curly-bracket'][@function='grouping'][parent::note/contains(@place, 'margin right')]" >
         <span class="metamark curly-bracket grouping right {ancestor::text/@xml:id}" title="grouping">}</span>
     </xsl:template>
     
@@ -269,11 +269,11 @@
         <span class="metamark bracket grouping right {ancestor::text/@xml:id}" title="grouping">]</span>
     </xsl:template>
     
-    <xsl:template match="metamark[@rend='curly bracket'][@place='margin right'][@function='grouping']" >
+    <xsl:template match="metamark[@rend='curly-bracket'][@place='margin right'][@function='grouping']" >
         <span class="metamark curly-bracket grouping right {ancestor::text/@xml:id}" title="grouping" style="position: absolute; right: -150px;">}</span>
     </xsl:template>
     
-    <xsl:template match="metamark[@rend='curly bracket'][@function='assignment'][parent::note[@place='right']]" >
+    <xsl:template match="metamark[@rend='curly-bracket'][@function='assignment'][parent::note[@place='right']]" >
         <div class="metamark curly-bracket assignment right">
             <xsl:if test="following-sibling::*">
                 <xsl:attribute name="style">display: inline;</xsl:attribute>
@@ -321,7 +321,7 @@
     <xsl:template match="metamark[@rend='underline'][@function='distinct']" >
         <div class="metamark underline" title="distinct">_______________________</div>
     </xsl:template> 
-    <xsl:template match="metamark[@rend='double line'][@function='distinct']" >
+    <xsl:template match="metamark[@rend='double-line'][@function='distinct']" >
         <div class="metamark double line" title="distinct">
             _______________________<br/>
             _______________________
