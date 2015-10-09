@@ -395,19 +395,18 @@ declare function doc:getDocsForText($text){
 
 declare function doc:getPersonIndex($node as node(), $model as map(*)){
     let $lists := doc('/db/apps/pessoa/data/lists.xml')
-    let $docs := collection("/db/apps/pessoa/data/doc/")   
-    let $persons := 
-        for $doc in $docs return
-            $doc//tei:text//tei:rs[@type='person'][not(child::tei:choice/tei:abbr)][not(child::tei:pc)]
-    let $persons := distinct-values($persons) 
+    let $docs := collection("/db/apps/pessoa/data/doc/") 
+    let $pubs := collection("/db/apps/pessoa/data/pub/")
+    let $persons := distinct-values($doc//tei:text//tei:rs[@type='person']/@key)
+    let $persons := $lists//tei:listPerson/person[@xml:id in $persons]/persName 
     let $letters := 
         for $person in $persons order by $person return
-            fn:substring($person,0,2)
+            fn:substring($person,1,2)
     let $letters := distinct-values($letters)
     return (doc:getNavigation($letters),
         for $letter in $letters 
             let $personsWithLetter := 
-                for $person in $persons where (substring($person,0,2) = $letter) return  $person
+                for $person in $persons where (substring($person,1,2) = $letter) return $person
         order by upper-case($letter)
         return 
             (<div class="sub_Nav"><h2 id="{$letter}">{$letter}</h2></div>,
@@ -418,8 +417,9 @@ declare function doc:getPersonIndex($node as node(), $model as map(*)){
 
 declare function doc:getDocsForPerson($item){
     let $docs := collection("/db/apps/pessoa/data/doc/")   
+    let $lists := doc('/db/apps/pessoa/data/lists.xml')
     for $doc in $docs return 
-    if($doc//tei:text//tei:rs[@type='person'][not(child::tei:choice/tei:abbr)][not(child::tei:pc)]= $item) then
+    if($doc//tei:text//tei:rs[@type='person']/@key = $lists//tei:listPerson/person[persName = $item]/@xml:id) then
     <li class="indexDoc">
     <a style="color: #08298A;" href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{($doc//tei:title)[1]/data(.)} </a>
     </li>
