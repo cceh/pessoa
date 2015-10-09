@@ -73,7 +73,7 @@
                     </head>
                     <item xml:id="I1">
                         <label>1.</label>
-                        <rs type="work" key="O4"><rs type="text">Poemas Completos de<lb/>
+                        <rs type="work" key="O2" style="a"><rs type="text">Poemas Completos de<lb/>
                             <rs type="person" key="AC" role="author">Alberto Caeiro</rs>
                         </rs></rs> (com<lb/>
                         <rs type="text">
@@ -91,7 +91,8 @@
                         </rs>)
                         <note target="I1" place="margin right" type="addition">
                             <label>Vol. I</label>
-                        </note></item>     
+                        </note>
+                    </item>     
                     <item xml:id="I2">
                         <label>2.</label>
                         <rs type="text">Notas para a <choice>
@@ -112,16 +113,16 @@
                             </choice> de Campos</rs>)
                         <note target="range(I1,I3)" place="margin left" type="addition">
                             <label>1 vol. (I-III)</label>
-                            <metamark rend="curly bracket" function="grouping"/>
+                            <metamark rend="curly-bracket" function="grouping"/>
                         </note>
                         <note target="range(I2,I3)" place="margin right" type="addition">
-                            <metamark rend="curly bracket" function="grouping"/>
+                            <metamark rend="curly-bracket" function="grouping"/>
                             <label>Vol. II</label>
                         </note>
                     </item>
                     <item xml:id="I3">
                         <label>3.</label>
-                        <rs type="work" key="O1-9"><rs type="text">Chuva Obliqua</rs> (<rs type="person" key="FP" role="author">
+                        <rs type="work" key="O1-9"><rs type="text">Chuva Obliqua</rs> (<rs type="person" key="FP" role="author" style="b">
                             <choice>
                                 <abbr>F<am>.</am>
                                 </abbr>
@@ -142,13 +143,13 @@
                                 </expan>
                             </choice> de<lb/> Campos</rs>)
                         <note target="range(I4,I5)" place="margin right" type="addition">
-                            <metamark rend="curly bracket" function="grouping"/>
+                            <metamark rend="curly-bracket" function="grouping"/>
                             <label>Vol. III</label>
                         </note>
                     </item>
                     <item xml:id="I5">
                         <label>5.</label>
-                        <rs type="work" key="O3"><rs type="text">Odes, <choice>
+                        <rs type="work" key="O3" style="b"><rs type="text">Odes, <choice>
                                 <abbr>Liv</abbr>
                                 <expan>Liv<ex>ros</ex>
                                 </expan>
@@ -168,14 +169,14 @@
                             <supplied resp="UH" reason="omitted-in-original">
                                 <label>1 vol. (IV-VI)</label>
                             </supplied>
-                            <metamark rend="curly bracket" function="grouping"/>
+                            <metamark rend="curly-bracket" function="grouping"/>
                         </note>
                     </item>                   
                     <item xml:id="I6">
                         <label>6.</label>
-                        <rs type="work" key="O4"><seg>
-                            <rs type="text">Trez Odes</rs>
-                            <add place="above" n="2"><rs type="text">Arco de Triumpho</rs></add>
+                        <seg>
+                            <rs type="work" key="O4" style="d"><rs type="text">Trez Odes</rs></rs>
+                            <add place="above" n="2"><rs type="work" key="O4" style="b"><rs type="text">Arco de Triumpho</rs></rs></add>
                         </seg>
                (<rs type="person" key="AdC" role="author">
                             <choice>
@@ -183,8 +184,8 @@
                                 </abbr>
                                 <expan>Alv<ex>aro</ex>
                                 </expan>
-                            </choice> de<lb/> Campos</rs>)</rs> — (<rs type="text">Triumphal</rs>,<lb/>
-                        <rs type="text">Maritima</rs> — <supplied resp="PS" reason="omitted-in-original"/>)
+                            </choice> de<lb/> Campos</rs>) — (<rs type="work" key="O4-12"><rs type="text">Triumphal</rs></rs>,<lb/>
+                        <rs type="work" key="O4-11"><rs type="text">Maritima</rs></rs> — <supplied resp="PS" reason="omitted-in-original"/>)
                         <note target="I6" place="margin right" type="addition">
                             <metamark rend="bracket" function="grouping"/>
                             <label>Vol. IV</label>

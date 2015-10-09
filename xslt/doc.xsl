@@ -415,6 +415,10 @@
     <xsl:template match="lb" >
         <br/>
     </xsl:template>
+    <!-- Seitenumbrüche -->
+    <xsl:template match="pb">
+        <span title="quebra de página" class="pb">[p. <xsl:value-of select="@n"/>]</span>
+    </xsl:template>
     
     <!-- editorische Ergänzungen nicht anzeigen -->
     <xsl:template match="supplied" />
@@ -599,12 +603,6 @@
       </xsl:choose> 
         
     </xsl:template>
-    
-    
-       
-        
-    
-    
  
     <!-- add -->
    
