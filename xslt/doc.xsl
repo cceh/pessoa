@@ -416,9 +416,7 @@
         <br/>
     </xsl:template>
     <!-- Seitenumbrüche -->
-    <xsl:template match="pb">
-        <span title="quebra de página" class="pb">[p. <xsl:value-of select="@n"/>]</span>
-    </xsl:template>
+    <xsl:template match="pb"/>
     
     <!-- editorische Ergänzungen nicht anzeigen -->
     <xsl:template match="supplied" />
@@ -493,13 +491,8 @@
     </xsl:template>
     
     <!-- gaps -->
-        <xsl:template match="gap[@reason='selection']" >
-        <span class="gap" title="selection">[...]</span>
-    </xsl:template>
-    
-
-        
-
+    <xsl:template match="gap[@reason='selection']"/>
+    <xsl:template match="gap[@reason='illegible']"/>
     
     <!-- del - -->
         <xsl:template match="del[gap]" >

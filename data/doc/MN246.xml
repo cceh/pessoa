@@ -19,9 +19,18 @@
                <resp>Codificação</resp>
                <name>Isabel Figueiredo-Iken</name>
             </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher/>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
             <idno type="filename">MN246.xml</idno>
          </publicationStmt>
          <sourceDesc>
@@ -56,16 +65,14 @@
    <facsimile>
       <graphic url="Bilder MN 14_246_602 und 786/avulsos (246).jpg"/>
    </facsimile>
-   <text xml:id="mn246">
+   <text>
       <body>
          <div>
             <head><rs type="text"><hi rend="underline">Ficções do Interludio.</hi></rs></head>
             <list>
                <item>
-                  <label>1.</label> <rs type="text" xml:id="T1">Introducção Geral
-                     <note xml:id="N1" target="#T1" place="margin right" type="addition">30</note>
-                  </rs>.<lb/>
-                  <rs type="work" key="O2"><rs type="text" xml:id="T2">Poemas Completos de <rs type="person"
+                  <label>1.</label> <rs type="text" xml:id="T1">Introducção Geral<note xml:id="N1" target="#T1" place="margin right" type="addition">30</note></rs>.<lb/>
+                  <rs type="work" key="O2" style="a"><rs type="text" xml:id="T2">Poemas Completos de <rs type="person"
                      key="AC" role="author">Alberto Caeiro</rs>
                      <note xml:id="N2" target="#T2" place="margin right" type="addition">100</note></rs>                   
                   </rs><lb/>
@@ -73,20 +80,18 @@
                      do <rs type="person" key="RR" role="author">Dr. Ricardo Reis</rs></rs>).<lb/> 
                   <rs type="text" xml:id="T3">Notas para a Recordação do meu mestre<lb/>
                      <rs type="person" key="AC" role="topic">Caeiro</rs>
-                     <metamark place="margin right" rend="curly bracket" function="grouping" target="range(N1,N5)" />
+                     <metamark place="margin right" rend="curly-bracket" function="grouping" target="range(N1,N5)" />
                      <note xml:id="N3" target="#T3" place="margin right" type="addition">20</note>                
                   </rs>
                   (<rs type="person" key="AdC" role="author">Alvaro de Campos</rs>). 
                </item>
                <item>
-                  <label>2.</label> <rs type="work" key="O3"><rs type="person" key="RR" role="author">Ricardo
+                  <label>2.</label> <rs type="work" key="O3" style="b"><rs type="person" key="RR" role="author">Ricardo
                      Reis</rs>, <rs type="text" xml:id="T4">“Odes”, <choice>
                         <abbr>liv<am>.</am></abbr>
                         <expan>liv<ex>ros</ex></expan>
                      </choice> <choice>
-                        <!-- ########## -->
-                        <seg n="1">I-III</seg> <seg type="add above">ou <seg n="2">I-II</seg></seg></choice>.
-                        <!-- ########## -->
+                        <seg n="1">I-III.</seg> <seg rend="add above" n="2">ou I-II</seg></choice>
                         <note xml:id="N4" target="#T4" place="margin right" type="addition">50</note>
                      </rs>
                   </rs><lb/>
@@ -96,14 +101,15 @@
                   </rs>.
                </item>
                <item>
-                  <label>3.</label> <rs type="work" key="O4"><rs type="person" key="AdC" role="author">Alvaro de Campos</rs>, <rs type="text">“Arco de Triumpho”</rs><lb/> 
-                     (<rs type="text">Ode Triumphal</rs>, <rs type="text">Ode Maritima</rs>, <rs type="text">Sau<pc>-</pc><lb/>dação a
-                        Walt Whitman</rs>, <rs type="text">A Passagem<lb/> das Horas</rs>, <rs type="text">Ode Mortal</rs>)</rs>.
+                  <label>3.</label> <rs type="work" key="O4" style="b"><rs type="person" key="AdC" role="author">Alvaro de Campos</rs>, <rs type="text">“Arco de Triumpho”</rs></rs><lb/> 
+                     (<rs type="work" key="O4-12"><rs type="text">Ode Triumphal</rs></rs>, 
+                     <rs type="work" key="O4-11"><rs type="text">Ode Maritima</rs></rs>, <rs type="text">Sau<pc>-</pc><lb/>dação a
+                        Walt Whitman</rs>, <rs type="text">A Passagem<lb/> das Horas</rs>, <rs type="text">Ode Mortal</rs>).
                </item>
                <item>
                   <label>4.</label> <rs type="text">Congresso</rs>. (<rs type="text"><hi rend="underline">Ultimatum</hi></rs> de 
                   <rs type="person" key="AdC" role="author">Alvaro de <lb/>Campos</rs>; 
-                  (<rs type="text"><hi rend="underline">Athena</hi></rs>, por <rs type="person" key="FP" role="author">Fernando Pessoa</rs>;)<lb/>
+                  (<rs type="text"><hi rend="underline">Athena</hi></rs>, por <rs type="person" key="FP" role="author" style="b">Fernando Pessoa</rs>;)<lb/>
                   <rs type="text"><hi rend="underline">O que é a metaphysica?</hi></rs>, por <rs type="person" key="AdC" role="author">Alvaro
                      <lb/> de Campos</rs>;
                   <rs type="text"><hi rend="underline">Apontamentos para uma<lb/> Esthetica não-aristotelica</hi></rs>, por<lb/>
@@ -117,7 +123,7 @@
                         de <rs type="person" key="AdC" role="author">Alvaro de Campos</rs></rs>.) (etc?)
                </item>
                <item>
-                  <label>5.</label> <rs type="work" key="O4"><rs type="person" key="AdC" role="author">Alvaro de Campos</rs>,
+                  <label>5.</label> <rs type="work" key="O4" style="c"><rs type="person" key="AdC" role="author">Alvaro de Campos</rs>,
                      <rs type="text">“Acessorios”</rs>, poemas</rs>.
                </item>
             </list>
@@ -127,7 +133,7 @@
                   <label>1.</label> ut supra.
                </item>
                <item>
-                  <label>2.</label> <rs type="work" key="O3"><rs type="person" key="RR" role="author">Ricardo Reis</rs>,
+                  <label>2.</label> <rs type="work" key="O3" style="b"><rs type="person" key="RR" role="author">Ricardo Reis</rs>,
                      <rs type="text">“Odes”, <choice>
                         <abbr>liv<am>.</am></abbr>
                         <expan>liv<ex>ros</ex></expan>
@@ -135,9 +141,10 @@
                </item>
                <item>
                   <label>3.</label>
-                  <rs type="work" key="O4"><rs type="person" key="AdC" role="author">Alvaro de Campos</rs>,
-                     <rs type="text">“Arco de<lb/> Triumpho”</rs> (<rs type="text">Ode Triumphal</rs>, <rs type="text">Ode<lb/> Maritima</rs>, 
-                     <rs type="text">Saudação a Walt<lb/>Whitman</rs>)</rs><anchor xml:id="A1"/>. 
+                  <rs type="work" key="O4" style="b"><rs type="person" key="AdC" role="author">Alvaro de Campos</rs>,
+                     <rs type="text">“Arco de<lb/> Triumpho”</rs></rs> (<rs type="work" key="O4-12"><rs type="text">Ode Triumphal</rs></rs>, 
+                     <rs type="work" key="O4-11"><rs type="text">Ode<lb/> Maritima</rs></rs>, 
+                     <rs type="text">Saudação a Walt<lb/>Whitman</rs>)<anchor xml:id="A1"/>. 
                </item>
                <item>
                   <label>4.</label>

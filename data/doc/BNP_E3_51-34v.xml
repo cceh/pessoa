@@ -12,16 +12,25 @@
                     <name>Pedro Sepúlveda</name>
                 </respStmt>
                 <respStmt>
-                    <resp>Codificação</resp>
+                    <resp>Modelagem de dados, Codificação</resp>
                     <name>Ulrike Henny</name>
                 </respStmt>
                 <respStmt>
                     <resp>Codificação</resp>
                     <name>Isabel Figueiredo-Iken</name>
                 </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
             </titleStmt>
             <publicationStmt>
-                <publisher/>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2016</date>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
                 <idno type="filename">BNP_E3_51-34v.xml</idno>
             </publicationStmt>
             <sourceDesc>
@@ -54,11 +63,9 @@
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic
-            url="bn-acpc-e-e3-51-1-106_JPG_24-C-R0150/bn-acpc-e-e3-51-1-106_0072_34av-34v_t24-C-R0150.jpg"
-        />
+        <graphic url="bn-acpc-e-e3-51-1-106_JPG_24-C-R0150/bn-acpc-e-e3-51-1-106_0072_34av-34v_t24-C-R0150.jpg"/>
     </facsimile>
-    <text xml:id="bnp-e3-51-34v">
+    <text>
         <body>
             <div>
                 <delSpan rend="overstrike" spanTo="#a1"/>
@@ -70,27 +77,27 @@
                     <metamark rend="line" function="distinct"/>
                 <item>
                     <label>2.</label>
-                    <rs type="work" key="O2">Obras de <rs type="person" key="AC" role="author">Alberto Caeiro</rs></rs>.<lb/>
+                    <rs type="work" key="O2" style="a">Obras de <rs type="person" key="AC" role="author">Alberto Caeiro</rs></rs>.<lb/>
                      (1889-1915).
                     <rs type="text">Re<pc>-</pc><lb/>censão de <rs type="person" key="RR" role="author">Ricardo
-                        <lb/>Reis.</rs> I. <rs type="text">"O Guarda<pc>-</pc><lb/>dor de
-                        Rebanhos"</rs></rs><lb/> (1910-1912)</item>
+                        <lb/>Reis.</rs> I. <rs type="work" key="O2-b"><rs type="text">"O Guarda<pc>-</pc><lb/>dor de
+                        Rebanhos"</rs></rs></rs><lb/> (1910-1912)</item>
                 <metamark rend="line" function="distinct"/>
                 <item>
                     <label>3.</label>
-                    <rs type="work" key="O2">Obras de <rs type="person" key="AC" role="author">Alberto Caeiro</rs></rs>.<lb/>
+                    <rs type="work" key="O2" style="a">Obras de <rs type="person" key="AC" role="author">Alberto Caeiro</rs></rs>.<lb/>
                     (1889-1915). <rs type="text">Re<pc>-</pc><lb/>censão de <rs type="person"
-                        key="RR" role="author">Ricardo<lb/> Reis.</rs> — II. <rs type="text"><add>Os</add> Poemas<lb/>
-                    inconjunctos</rs></rs>. (1908-<lb/>1915). 
+                        key="RR" role="author">Ricardo<lb/> Reis.</rs> — II. <rs type="work" key="O2" style="d"><rs type="text"><add>Os</add> Poemas<lb/>
+                    inconjunctos</rs></rs></rs>. (1908-<lb/>1915). 
                 </item>
                 <metamark rend="line" function="distinct"/>
                 <item>
-                    <label>4.</label>O Regresso dos Deuses,<lb/> por <rs type="person">Antonio Mora</rs>
+                    <label>4.</label>O Regresso dos Deuses,<lb/> por <rs type="person" key="P1" style="b">Antonio Mora</rs>
                 </item>
                 <metamark rend="line" function="distinct"/>
                 <item>
-                    <label>5.</label> <rs type="work" key="O3"><rs type="text">Odes</rs> de <rs type="person" key="RR" role="author">Ricardo
-                        Reis.</rs><lb/> Livro Segundo</rs>.
+                    <label>5.</label> <rs type="work" key="O3" style="a"><rs type="text">Odes</rs> de <rs type="person" key="RR" role="author">Ricardo
+                        Reis.</rs></rs><lb/> Livro Segundo.
                 </item>
                 </list>
                 <anchor xml:id="a1"/>

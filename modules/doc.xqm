@@ -396,34 +396,47 @@ declare function doc:getDocsForText($text){
 declare function doc:getPersonIndex($node as node(), $model as map(*)){
     let $lists := doc('/db/apps/pessoa/data/lists.xml')
     let $docs := collection("/db/apps/pessoa/data/doc/") 
-    let $pubs := collection("/db/apps/pessoa/data/pub/")
-    let $persons := distinct-values($doc//tei:text//tei:rs[@type='person']/@key)
-    let $persons := $lists//tei:listPerson/person[@xml:id in $persons]/persName 
+    let $personKeys := distinct-values($doc//tei:text//tei:rs[@type='person']/@key/text())
+    let $personNames := $lists//tei:listPerson/tei:person[@xml:id = $personKeys]/tei:persName 
     let $letters := 
-        for $person in $persons order by $person return
+        for $person in $personNames order by $person return
             fn:substring($person,1,2)
     let $letters := distinct-values($letters)
     return (doc:getNavigation($letters),
         for $letter in $letters 
             let $personsWithLetter := 
-                for $person in $persons where (substring($person,1,2) = $letter) return $person
+                for $person in $personNames where (substring($person,1,2) = $letter) return $person
         order by upper-case($letter)
         return 
             (<div class="sub_Nav"><h2 id="{$letter}">{$letter}</h2></div>,
             for $person in $personsWithLetter order by $person return
-            (<div class="indexItem">{$person}</div>,<ul class="indexDocs">{
+            (<div class="indexItem">
+                {$person} {let $persInList := $lists//tei:listPerson/tei:person[tei:persName = $person]
+                           return
+                              if ($persInList[tei:persName[2]])
+                              then let $psName := 
+                                     if ($persInList[tei:persName[1] = $person])
+                                     then $persInList/tei:persName[2]/data(.) 
+                                     else $persInList/tei:persName[1]/data(.)
+                                   return <span style="font-size:smaller;"> (ver também <a href="{$psName}">{$psName}</a>)</span>
+                              else ()}
+             </div>,<ul class="indexDocs">{
             doc:getDocsForPerson($person)}</ul>)))
 };
 
 declare function doc:getDocsForPerson($item){
     let $docs := collection("/db/apps/pessoa/data/doc/")   
     let $lists := doc('/db/apps/pessoa/data/lists.xml')
-    for $doc in $docs return 
-    if($doc//tei:text//tei:rs[@type='person']/@key = $lists//tei:listPerson/person[persName = $item]/@xml:id) then
-    <li class="indexDoc">
-    <a style="color: #08298A;" href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{($doc//tei:title)[1]/data(.)} </a>
-    </li>
-    else()
+    for $doc in $docs[.//tei:text//tei:rs[@type='person']/@key = $lists//tei:listPerson/tei:person[tei:persName = $item]/@xml:id]
+    let $cota := ($doc//tei:title)[1]/data(.)
+    where if ($lists//tei:listPerson/tei:person[tei:persName = $item][tei:persName[2]]) 
+          then $doc[.//tei:text//tei:rs[@type="person"][@key = $lists//tei:listPerson/tei:person[tei:persName = $item]/@xml:id][@style = $lists//tei:listPerson/tei:person/tei:persName[. = $item]/@type]]
+          else true()
+    order by xs:integer(replace($cota, "(BNP/E3|MN)\s?([0-9]+)([^0-9]+.*)?", "$2"))
+    return 
+        <li class="indexDoc" id="{$cota}">
+          <a style="color: #08298A;" href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{$cota}</a>
+        </li>
 };
 
 declare function doc:getNavigation($letters){

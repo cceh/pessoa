@@ -9,170 +9,56 @@
     <xsl:param name="lang">pt</xsl:param>
     
     <xsl:template match="/">
-        <xsl:apply-templates select="//body"/>
+        <xsl:apply-templates select=".//body"/>
     </xsl:template>
     
-    <xsl:template match="//body">
+    <xsl:template match="body">
         <div>
-            <script type="text/javascript">
-                function highlight(id){
-                    $("."+id).css("color","orange");
-                };
-                function clear(id){
-                    $("."+id).css("color","black");
-                };
-            </script>
+            <style type="text/css">
+                .indexLink {font-size:14pt;color:#08298A;margin-left:5px;}
+            </style>
             <xsl:if test=".//rs[@type='person']">
-                <xsl:variable name="persons">
-                    <local:persons>
-                    <xsl:for-each-group select=".//rs[@type='person'][@key]" group-by="@key">
-                        <xsl:sort select="current-grouping-key()" />
-                        <xsl:variable name="key" select="current-grouping-key()" />
-                        <xsl:for-each-group select="current-group()" group-by="@role">
-                            <xsl:sort select="current-grouping-key()" />
-                            <local:person key="{$key}" role="{@role}">
-                                <xsl:value-of select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//listPerson[@type='authors']/person[@xml:id=$key]/persName" /> (<xsl:value-of select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type='roles'][@xml:lang=$lang]/item[@xml:id=current()/@role or @corresp=concat('#',current()/@role)]" />)
-                                <!--<a href="#" title="show index"><img src="../../resources/images/list-48.png" width="16" height="auto" style="vertical-align:middle;" /></a>-->
-                            </local:person>
-                        </xsl:for-each-group>
-                    </xsl:for-each-group>
-                        <xsl:for-each select=".//rs[@type='person'][not(@key)]">
-                            <xsl:sort select="."/>
-                            <local:person><xsl:value-of select="." /></local:person>
-                            <!-- <a onmouseover="highlight('{@xml:id}');" onmouseout="clear('{@xml:id}');" href="#"> -->
-                        </xsl:for-each>
-                    </local:persons>
-                </xsl:variable>
                 <h2><xsl:choose>
                     <xsl:when test="$lang='en'">Persons</xsl:when>
                     <xsl:otherwise>Pessoas</xsl:otherwise>
                 </xsl:choose></h2>
                 <ul>
-                   <xsl:for-each select="$persons//local:person">
-                       <xsl:sort/>
-                       <li><xsl:value-of select="." /></li>
-                   </xsl:for-each>
+                    <xsl:for-each-group select=".//rs[@type='person']" group-by="@key">
+                        <xsl:sort select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//listPerson/person[@xml:id=current-grouping-key()]/persName[1]"/>
+                        <xsl:variable name="key" select="current-grouping-key()"/>
+                        <xsl:choose>
+                            <xsl:when test="@style">
+                                <xsl:for-each-group select="current-group()" group-by="@style">
+                                    <xsl:variable name="name" select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//listPerson/person[@xml:id=$key]/persName[@type=current-grouping-key()]"/>
+                                    <li><xsl:value-of select="$name"/> <a href="../../page/persons#{$name}" class="indexLink">→</a></li>
+                                </xsl:for-each-group>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:variable name="name" select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//listPerson/person[@xml:id=$key]/persName"/>
+                                <li><xsl:value-of select="$name"/> <a href="../../page/persons#{$name}" class="indexLink">→</a></li>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:for-each-group>
                 </ul>
             </xsl:if>
-           
-        <!--    <xsl:if test=".//rs[@type='work']">
-                <xsl:variable name="works">
-                    <local:works>
-                        <xsl:for-each select=".//rs[@type='work']">
-                            
-                                <xsl:sort select="." order="ascending"/>
-                            <local:work>
-                            
-                            </local:work>
-                            
-                        </xsl:for-each>
-                    </local:works>
-                    </xsl:variable>
-                <xsl:variable name="texts">
-                    <local:texts>
-                        <xsl:for-each select="$works/rs[@type='text']">
-                            <xsl:sort select="." order="ascending" />
-                            <local:text><xsl:apply-templates /></local:text>
-                        </xsl:for-each>
-                    </local:texts>
-                </xsl:variable>
-                <h2 style="margin-top: 20px;"><xsl:choose>
-                    <xsl:when test="$lang='en'">Texts</xsl:when>
-                    <xsl:otherwise>Textos</xsl:otherwise>
-                </xsl:choose></h2>
-                <ul>
-                    <xsl:for-each select="$texts//local:text">
-                        <li><xsl:value-of select="."/></li>
-                    </xsl:for-each>
-                </ul>
-                -->
-                <!--
-                <h2 style="margin-top: 20px;"><xsl:choose>
-                    <xsl:when test="$lang='en'">Work</xsl:when>
-                    <xsl:otherwise>Obras</xsl:otherwise>
-                </xsl:choose></h2>
-                <ul>
-                    <xsl:for-each select="$works//local:work">
-                        <li><xsl:value-of select="."/></li>
-                    </xsl:for-each>
-                </ul>
-                -->
-            <!--     </xsl:if>-->
-            
-                
-                   <xsl:if test=".//rs[@type='text']">
-                    <xsl:variable name="texts">
-                        <local:texts>
-                        <xsl:for-each select=".//rs[@type='work']">
-                            <xsl:sort select="." order="ascending" />
-                            <local:text><xsl:apply-templates >
-                                <xsl:with-param name="Text" select=".//rs[@type='text']"/>
-                            </xsl:apply-templates></local:text>
-                        </xsl:for-each>
-                        </local:texts>
-                    </xsl:variable>
-                    <h2 style="margin-top: 20px;"><xsl:choose>
-                        <xsl:when test="$lang='en'">Texts</xsl:when>
-                        <xsl:otherwise>Textos</xsl:otherwise>
-                    </xsl:choose></h2>
-                    <ul>
-                        <xsl:for-each select="$texts//local:text/child::node()">
-                            <li><xsl:value-of select="."/></li>
-                        </xsl:for-each>
-                    </ul>
-                </xsl:if>
-                <!--
             <xsl:if test=".//rs[@type='text']">
-                <xsl:variable name="texts">
-                    <local:texts>
-                        <xsl:for-each select=".//rs[@type='text']">
-                            <xsl:sort select="." order="ascending" />
-                            <local:text><xsl:apply-templates /></local:text>
-                        </xsl:for-each>
-                    </local:texts>
-                </xsl:variable>
-                <h2 style="margin-top: 20px;"><xsl:choose>
+                <h2><xsl:choose>
                     <xsl:when test="$lang='en'">Texts</xsl:when>
                     <xsl:otherwise>Textos</xsl:otherwise>
                 </xsl:choose></h2>
-                <ul>
-                    <xsl:for-each select="$texts//local:text">
-                        <li><xsl:value-of select="."/></li>
-                    </xsl:for-each>
-                </ul>
-             
             </xsl:if>
-               -->
             <xsl:if test=".//rs[@type='journal']">
-                <xsl:variable name="journals">
-                    <local:journals>
-                        <xsl:for-each-group select=".//rs[@type='journal']" group-by="@key">
-                            <xsl:sort select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type='journal']/item[@xml:id=current()/@key]" />
-                            <xsl:variable name="key" select="@key" />
-                            <journal key="{$key}">
-                                <xsl:value-of select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type='journal']/item[@xml:id=$key]" /><!-- Mehrsprachigkeit -->
-                                <!--<a href="#" title="show index"><img src="../../resources/images/list-48.png" width="16" height="auto" style="vertical-align:middle;" /></a>-->
-                            </journal>
-                        </xsl:for-each-group>
-                    </local:journals>
-                </xsl:variable>
-                <h2 style="margin-top: 20px;"><xsl:choose>
+                <h2><xsl:choose>
                     <xsl:when test="$lang='en'">Journals</xsl:when>
-                    <xsl:otherwise>Journais</xsl:otherwise>
+                    <xsl:otherwise>Jornais</xsl:otherwise>
                 </xsl:choose></h2>
                 <ul>
-                    <xsl:for-each select="$journals//local:journal">
-                        <li><xsl:value-of select="."/></li>
-                    </xsl:for-each>
+                    <xsl:for-each-group select=".//rs[@type='journal']" group-by="@key">
+                        <li><xsl:value-of select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type='journals']/item[@xml:id=current-grouping-key()]"/></li>
+                    </xsl:for-each-group>
                 </ul>
             </xsl:if>
         </div>
     </xsl:template>
-    
-    <xsl:template match="subst">
-        <xsl:apply-templates select="add" />
-    </xsl:template>
-    
-    <xsl:template match="del" />
     
 </xsl:stylesheet>

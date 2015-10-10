@@ -12,16 +12,25 @@
                     <name>Pedro Sepúlveda</name>
                 </respStmt>
                 <respStmt>
-                    <resp>Codificação</resp>
+                    <resp>Modelagem de dados, Codificação</resp>
                     <name>Ulrike Henny</name>
                 </respStmt>
                 <respStmt>
                     <resp>Codificação</resp>
                     <name>Isabel Figueiredo-Iken</name>
                 </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
             </titleStmt>
             <publicationStmt>
-                <publisher/>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2016</date>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
                 <idno type="filename">BNP_E3_5-83r.xml</idno>
             </publicationStmt>
             <sourceDesc>
@@ -36,10 +45,8 @@
                                 <rs type="person" key="FP">Fernando Pessoa</rs>
                             </author>
                             <note type="genre">
-                                <rs type="genre" key="lista_editorial">Lista
-                                editorial</rs>
-                                <rs type="genre" key="plano_editorial">Plano
-                                    editorial</rs>
+                                <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                                <rs type="genre" key="plano_editorial">Plano editorial</rs>
                             </note>
                             <textLang mainLang="pt"/>
                         </msItemStruct>
@@ -56,10 +63,9 @@
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic
-            url="bn-acpc-e-e3-5-1-85_JPG_24-C-R0150/bn-acpc-e-e3-5-1-85_0166_83_t24-C-R0150.jpg"/>
+        <graphic url="bn-acpc-e-e3-5-1-85_JPG_24-C-R0150/bn-acpc-e-e3-5-1-85_0166_83_t24-C-R0150.jpg"/>
     </facsimile>
-    <text xml:id="bnp-e3-5-83r">
+    <text>
         <body>
             <div>
                 <head><hi rend="underline">Na Casa de saude de Cascaes</hi></head>
@@ -67,7 +73,7 @@
                 <list> 
                     <item>
                         <label>(1)</label>
-                        Introdução, entrevista<lb/> com <rs type="person">Antonio Mora</rs>.
+                        Introdução, entrevista<lb/> com <rs type="person" key="P1" style="b">Antonio Mora</rs>.
                     </item>
                     <item>
                         <label>(2)</label>
@@ -79,7 +85,7 @@
                     </item>
                     <item>
                         <label>(4)</label>
-                        <rs type="text">“Prolegomenos”</rs> de <rs type="person">Antonio<lb/> Mora</rs>.
+                        <rs type="text">“Prolegomenos”</rs> de <rs type="person" key="P1" style="b">Antonio<lb/> Mora</rs>.
                     </item>  
                     <item>
                         <label>(5)</label>
@@ -95,8 +101,8 @@
             <metamark rend="line" function="distinct"/>
             <div>
                 <head><hi rend="underline"><rs type="title">Livro do Desassocego</rs>.</hi></head>
-                <ab>escripto por <rs type="person">Vicente Guedes<lb/>,</rs>
-                publicado por <rs type="person" key="FP" role="editor">Fernando<lb/> Pessoa</rs>.</ab>
+                <ab>escripto por <rs type="person" key="P62">Vicente Guedes<lb/>,</rs>
+                publicado por <rs type="person" key="FP" role="editor" style="b">Fernando<lb/> Pessoa</rs>.</ab>
             </div>
         </body>
     </text>

@@ -12,16 +12,25 @@
                <name>Pedro Sepúlveda</name>
             </respStmt>
             <respStmt>
-               <resp>Codificação</resp>
+               <resp>Modelagem de dados, Codificação</resp>
                <name>Ulrike Henny</name>
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
                <name>Isabel Figueiredo-Iken</name>
             </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher/>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
             <idno type="filename">MN602.xml</idno>
          </publicationStmt>
          <sourceDesc>
@@ -63,7 +72,7 @@
                   <hi rend="underline">Documentos do <add place="above" n="2">Neo-symbolismo, do</add> Futurismo <del rend="overstrike">portuguez</del> e do Sensacionismo portu<pc>-</pc><lb/>guezes.</hi>
                </head>  
                <item>
-                  √ <label>1.</label><rs type="text">Prefacio de <hi rend="underline">Orpheu</hi></rs> (1915) — <rs type="person">Luiz de Montalvor</rs>.
+                  √ <label>1.</label><rs type="text">Prefacio de <hi rend="underline">Orpheu</hi></rs> (1915) — <rs type="person" key="P70">Luiz de Montalvor</rs>.
                </item>
                <item>
                   √ <label>2.</label> <rs type="text"><choice>
@@ -75,7 +84,7 @@
                      <expan>de</expan>
                   </choice>
                   <hi rend="underline">Centauro</hi></rs> (191<supplied resp="PS" reason="omitted-in-original"/>) —
-                  <rs type="person"><choice>
+                  <rs type="person" key="P70"><choice>
                      <abbr><metamark rend="quotes" function="ditto"/></abbr>
                      <expan>Luiz</expan>
                   </choice>
@@ -89,17 +98,17 @@
                   </choice></rs>
                </item>        
                <item>
-                  √ <label>3.</label> <rs type="text">Ultimatum ás Gerações portuguezas do seculo XX</rs> — <rs type="person">Almada</rs>.
+                  √ <label>3.</label> <rs type="text">Ultimatum ás Gerações portuguezas do seculo XX</rs> — <rs type="person" key="P56">Almada</rs>.
                </item>
                <item>
                   √ <label>4.</label> <rs type="text">Ultimatum de <rs type="person" key="AdC" role="author">Alvaro de Campos</rs></rs>.
                </item>
                <item>
-                  <label>5.</label>	<rs type="text">Entrevista com <rs type="person" key="FP" role="topic">
+                  <label>5.</label>	<rs type="text">Entrevista com <rs type="person" key="FP" role="topic" style="b">
                      <choice>
                         <abbr>Fdo</abbr>
                         <expan>F<ex>ernando</ex></expan>
-                     </choice> Pessoa</rs></rs> (<rs type="journal" key=""><choice>
+                     </choice> Pessoa</rs></rs> (<rs type="journal" key="J36"><choice>
                                              <abbr>Rev<am>.</am></abbr>
                                              <expan>Rev<ex>ista</ex></expan>
                                             </choice>
@@ -108,10 +117,10 @@
                                                 <expan>Port<ex>uguesa</ex></expan>
                                              </choice></rs> — 1923).</item>
             <item>
-               <label>6.</label> <rs type="text">A Derrocada da Technica</rs>. <rs type="person">Raul Leal</rs>.
+               <label>6.</label> <rs type="text">A Derrocada da Technica</rs>. <rs type="person" key="P71">Raul Leal</rs>.
             </item>
             <item>
-               (<label>7.</label> <rs type="text"><add place="above">O meu</add> Manifesto a toda a gente</rs> — <rs type="person">Antonio Botto</rs>.) (Appen<lb/>dice).
+               (<label>7.</label> <rs type="text"><add place="above">O meu</add> Manifesto a toda a gente</rs> — <rs type="person" key="P17">Antonio Botto</rs>.) (Appen<lb/>dice).
             </item>
             <item>
                <label>8.</label> <rs type="text">Uma lição de moral aos <choice>
@@ -121,7 +130,7 @@
                                                                         <abbr>L<am>.</am></abbr>
                                                                         <expan>L<ex>isboa</ex></expan>
                                                                      </choice></rs> — 
-            <rs type="person">
+            <rs type="person" key="P71">
                <choice>
                   <abbr>R</abbr>
                   <expan>R<ex>aul</ex></expan>
@@ -135,7 +144,7 @@
                                                                </choice> de Campos</rs>.
             </item>
             <item>
-               <label>10.</label> <rs type="text">Sobre um Manifesto de Estudantes</rs> — <rs type="person" key="FP" role="author">
+               <label>10.</label> <rs type="text">Sobre um Manifesto de Estudantes</rs> — <rs type="person" key="FP" role="author" style="b">
                                                                                                 <choice>
                                                                                                    <abbr>F<am>.</am></abbr>
                                                                                                    <expan>F<ex>ernando</ex></expan>
@@ -145,21 +154,21 @@
                √ <label>11.</label> <rs type="text">Manifesto Anti-Dantas e por Extenso</rs>.
             </item>
             <item>
-               <label><hi rend="circled">12.</hi></label> <rs type="text">Prefacios</rs> — 
+               <label><hi rend="encircled">12.</hi></label> <rs type="text">Prefacios</rs> — 
                <subst>
-                  <del rend="overstrike">historia (<rs type="person" key="FP" role="author">
+                  <del rend="overstrike">historia (<rs type="person" key="FP" role="author" style="b">
                                                       <choice>
                                                          <abbr>F</abbr>
                                                          <expan>F<ex>ernando</ex></expan>
                                                       </choice> Pessoa</rs>
-                     — <rs type="person">Almada</rs> — <rs type="person">Raul Leal</rs>).<lb/> <rs type="person" key="AdC" role="author">Alvaro de Campos</rs>
-                     —  <rs type="person">Luiz de Montalvor</rs>
+                     — <rs type="person" key="P56">Almada</rs> — <rs type="person" key="P71">Raul Leal</rs>).<lb/> <rs type="person" key="AdC" role="author">Alvaro de Campos</rs>
+                     —  <rs type="person" key="P70">Luiz de Montalvor</rs>
                   </del>
                   <add place="above">de <rs type="person" key="AdC" role="author">Alvaro de Campos</rs>. (excertos)</add>
                </subst>
             </item>
             <item>
-               <label>13.</label> Manifesto sobre <rs type="person">Mario Eloy</rs> e <rs type="person">
+               <label>13.</label> Manifesto sobre <rs type="person" key="P72">Mario Eloy</rs> e <rs type="person" key="P73">
                                                                                           <choice>
                                                                                              <abbr>*Alb<am>.</am></abbr>
                                                                                              <expan>*Alb<ex>erto</ex></expan>

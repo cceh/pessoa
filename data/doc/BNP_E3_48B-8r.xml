@@ -14,16 +14,25 @@
                     <name>Pedro Sepúlveda</name>
                 </respStmt>
                 <respStmt>
-                    <resp>Codificação</resp>
+                    <resp>Modelagem de dados, Codificação</resp>
                     <name>Ulrike Henny</name>
                 </respStmt>
                 <respStmt>
                     <resp>Codificação</resp>
                     <name>Isabel Figueiredo-Iken</name>
                 </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
             </titleStmt>
             <publicationStmt>
-                <publisher/>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2016</date>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
                 <idno type="filename">BNP_E3_48B-8r.xml</idno>
             </publicationStmt>
             <sourceDesc>
@@ -63,30 +72,26 @@
             <div>
                 <list>
                     <item>
-                        <anchor xml:id="A1"/>
-                        <rs type="person" key="FP" role="editor">Fernando Pessoa</rs> – <lb/>
+                        <rs type="person" key="FP" role="editor" style="b">Fernando Pessoa</rs> – <lb/>
                         <ab rend="indent">
-                            <rs type="work" key="O4"><rs type="text" xml:id="T1">Os Poemas Completos de <rs type="person" key="AC" role="author">Alberto <lb/>Caeiro</rs>
+                            <rs type="work" key="O4" style="a"><rs type="text">Os Poemas Completos de <rs type="person" key="AC" role="author">Alberto <lb/>Caeiro</rs>
                             </rs></rs>
-                            <lb/> Com um <rs type="text" xml:id="T2">prefacio do <rs type="person" key="RR" role="author">Dr. Ricardo<lb/> Reis</rs>
+                            <lb/> Com um <rs type="text">prefacio do <rs type="person" key="RR" role="author">Dr. Ricardo<lb/> Reis</rs>
                             </rs>, <seg>e <add place="above" n="2">alguns</add> outros</seg>
                             apontamentos
                         </ab>
-                        <anchor xml:id="A2"/>
                     </item>
                 </list>
                 <metamark rend="line" function="distinct"/>
                 <list>
                     <item>
-                        <anchor xml:id="A3"/>
-                        <rs type="person" key="FP" role="editor">Fernando Pessoa</rs> – <lb/>
+                        <rs type="person" key="FP" role="editor" style="b">Fernando Pessoa</rs> – <lb/>
                         <ab rend="indent">
-                            <rs type="title">Accessorios</rs>
+                            <rs type="work" key="O4" style="c"><rs type="title">Accessorios</rs></rs>
                             <lb/>
                             <rs type="title">Versos de <rs type="person" key="AC" role="author">Alvaro de Campos</rs>
                             </rs>
                         </ab>
-                        <anchor xml:id="A4"/>
                     </item>
                 </list>
                 <metamark rend="line" function="distinct"/>
@@ -98,11 +103,6 @@
                         <label>2.</label>
                         <rs type="text">A Opinião Publica</rs>.</item>
                 </list>
-                <spanGrp>
-                    <span type="partOf" target="#T2 #T1" />
-                    <span type="correlation" from="#A1" to="#A2"/>
-                    <span type="correlation" from="#A3" to="#A4"/>
-                </spanGrp>
             </div>
         </body>
     </text>

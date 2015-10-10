@@ -77,9 +77,25 @@
         </xsl:choose>
     </xsl:template>
     
+    <!--<xsl:template match="choice[abbr and expan[not(ex)]]">
+        <xsl:choose>
+            <xsl:when test="$abbr = 'yes'">
+                <xsl:apply-templates select="abbr/text() | abbr/child::*" />
+                <xsl:if test="following-sibling::choice[1]">
+                    <xsl:text>&#160;</xsl:text>
+                </xsl:if>
+            </xsl:when>
+            <xsl:otherwise>
+                [<span class="expan" style="color:#99004D;">
+                    <xsl:apply-templates select="expan/text() | expan/child::*"/>   
+                </span>]
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>-->
+    
     <xsl:template match="abbr"/>
     <xsl:template match="ex">
-        <span class="ex"><xsl:apply-templates /></span>
+        <span class="ex" style="color:#99004D;">[<xsl:apply-templates />]</span>
     </xsl:template>
    
    <!-- Einrückungen aufheben wenn lb's entfernt werden-->

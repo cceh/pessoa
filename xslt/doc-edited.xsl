@@ -15,6 +15,9 @@
         <xsl:apply-templates/>
     </xsl:template>
     
+    <!-- gap -->
+    <xsl:template match="gap[@reason='illegible']"><span title="ilegível">†</span></xsl:template>
+    
     <!-- choices -->
     <!-- Abkürzungen und Auflösungen: Darstellung der aufgelösten Form -->
     <xsl:template match="choice[abbr and expan[ex]]">
@@ -28,7 +31,7 @@
             <xsl:otherwise>
                 <xsl:choose>
                     <xsl:when test="abbr/metamark[@function='ditto']">
-                        <span class="ditto" style="color: purple;">
+                        <span class="ditto" style="color:#99004D;">
                             <xsl:apply-templates select="expan/text() | expan/child::*"/>
                         </span>
                     </xsl:when>
@@ -45,7 +48,7 @@
     
   
     <xsl:template match="choice[abbr and expan[not(ex)]]">
-         [<span class="expan" style="color:purple">
+        [<span class="expan" style="color:#99004D;">
            <xsl:apply-templates select="expan/text() | expan/child::*"/>   
          </span>]
     </xsl:template>
@@ -53,7 +56,7 @@
     
     <xsl:template match="abbr"/>
     <xsl:template match="ex">
-        <span class="ex" style="color:purple;">[<xsl:apply-templates />]</span>
+        <span class="ex" style="color:#99004D;">[<xsl:apply-templates />]</span>
     </xsl:template>
     
     <!-- Ersetzung von Pessoa selbst: etwas wird gelöscht, etwas anderes hinzugefügt
@@ -135,7 +138,7 @@
     
     <!-- editorische Ergänzungen anzeigen -->
     <xsl:template match="supplied">
-        <span class="supplied" title="{@reason}">
+        <span class="supplied" title="lacuna no original">
             <xsl:choose>
                 <xsl:when test="not(node()) or note">□</xsl:when>
                 <xsl:otherwise>
