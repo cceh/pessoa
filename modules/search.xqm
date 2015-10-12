@@ -348,7 +348,7 @@ declare %templates:wrap function search:your_search($node as node(), $model as m
                              else if(contains($item,"lang")) then   page:singleElement_xquery("search","language") 
                              else if (contains($item,"role")) then page:singleElement_xquery("roles","mentioned-as") 
                              else if (contains($item, "person")) then page:singleElement_xquery("search","author") 
-                             else if (contains($item,"release")) then "liberação"
+                             else if (contains($item,"release")) then page:singleElement_xquery("search","publicado") 
                             else $item
        let $param := if (exists( page:singleElement_xquery("search",substring-after($item,"=")) )) then page:singleElement_xquery("search",substring-after($item,"="))
                                 else if (contains($item,"role")) then page:singleElement_xquery("roles",substring-after($item,"="))

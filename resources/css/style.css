@@ -129,6 +129,11 @@ label{
 
 }
 
+.content #doc, .content #pub {
+    margin: 0 auto;
+    width: 1125px;
+    
+}
 
 
 #content li{
@@ -236,7 +241,7 @@ display: inline-block;
         padding: 6px 37px;
     }
 
-.nav_documentos_sub_tab, .nav_cronologia_sub_tab, .nav_cronologia_sub_ext_tab, .nav_obras_sub_tab,.nav_publicacoes_sub_tab, .nav_bibliografia_sub_tab{
+.nav_documentos_sub_tab, .nav_cronologia_sub_tab, .nav_cronologia_sub_ext_tab, .nav_obras_sub_tab,.nav_publicacoes_sub_tab, .nav_bibliografia_sub_tab, #nav_searchButton{
         text-decoration:none;
         display:inline-block;
         margin: 3px 5px; 
@@ -253,7 +258,7 @@ display: inline-block;
     {
        margin: 5px 21px 3px 5px !important;  
     }
-    .nav_documentos_sub_tab:hover, .nav_cronologia_sub_tab:hover, .nav_cronologia_sub_ext_tab:hover, .nav_obras_sub_tab:hover, .nav_publicacoes_sub_tab:hover, .nav_bibliografia_sub_tab:hover{
+    .nav_documentos_sub_tab:hover, .nav_cronologia_sub_tab:hover, .nav_cronologia_sub_ext_tab:hover, .nav_obras_sub_tab:hover, .nav_publicacoes_sub_tab:hover, .nav_bibliografia_sub_tab:hover, #nav_searchButton:hover{
             background-color: #4E4E4E;
             text-decoration:none;
     }
@@ -276,6 +281,13 @@ display: inline-block;
  color: #fff;
 }
 
+#nav_searchButton {
+    color: white;
+    margin-left: -5px;
+    margin-top: 5px;
+    width: 108%;
+    cursor:pointer;
+}
 /* Zu bearbeiten */
 textarea{
  margin: 0 auto;
@@ -342,7 +354,7 @@ padding: 0 5px;
   }
 
 #filter{
- width: 1021px;
+
  max-height: 30px;
  padding: 10px 30px 25px 30px;
  background: #990000; 
@@ -388,6 +400,13 @@ border : 1px solid black;
    white-space: inherit;
    text-shadow: inherit;
    background-color: inherit;
+}
+
+
+#openseadragon1 {
+    
+    height: 500px;
+    width: 460px;
 }
 
 /*Tabs Style*/
@@ -542,7 +561,7 @@ ul#indextab{
     width:21%;
     margin: 5px 0 10px 140px;
     border-right: 1px solid #000; 
-    border-top: 1px solid #000;
+    
     display: inline-block;
     float: left; 
                 }
@@ -552,7 +571,7 @@ ul#indextab{
     display: inline-block;
     float:left;
     margin: 5px;
-    border-top: 1px solid #000; 
+   
     }
     .search_resultList a{
         color:#fff;
@@ -646,13 +665,13 @@ ul#indextab{
 }
 
 #text-div{
-    width: 55%; 
+    width: 50%; 
     min-height: 760px;
     border-right: 3px dotted #222 !important;
 }
 
 #img-div{
-    width: 40%;
+    width: 45%;
     min-height: 100px;
     float:right;
 }
