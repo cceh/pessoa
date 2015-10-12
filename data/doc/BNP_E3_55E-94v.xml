@@ -13,16 +13,25 @@
                <name>Pedro Sepúlveda</name>
             </respStmt>
             <respStmt>
-               <resp>Codificação</resp>
-               <name>Ulrike Henny</name>  
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
-               <name>Isabel Figueiredo-Iken</name>  
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher/>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
             <idno type="filename">BNP_E3_55E-94v.xml</idno>
          </publicationStmt>
          <sourceDesc>
@@ -54,11 +63,9 @@
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic
-         url="bn-acpc-e-e3-55e-1-100_JPG_24-C-R0150/bn-acpc-e-e3-55e-1-100_0191_94v_t24-C-R0150.jpg"
-      />
+      <graphic url="bn-acpc-e-e3-55e-1-100_JPG_24-C-R0150/bn-acpc-e-e3-55e-1-100_0191_94v_t24-C-R0150.jpg" />
    </facsimile>
-   <text xml:id="bnp-e3-55e-94v">
+   <text>
       <body>
         <div>
            <list>
@@ -74,7 +81,7 @@
                     </item>
                     <item>
                        <label>2.</label>
-                       <rs type="text">Gladio</rs>. — <note place="right">
+                       <rs type="work" key="O1-2"><rs type="text">Gladio</rs></rs>. — <note place="right">
                           <subst>
                              <del n="1" rend="overstrike">1</del>
                              <add n="2">1</add>
@@ -92,7 +99,7 @@
                     </item>
                     <item>
                        <label>5.</label>
-                       <rs type="text">O Corvo</rs> (<rs type="person">Poe</rs>) — <note place="right">3</note>
+                       <rs type="text">O Corvo</rs> (<rs type="person" key="P87">Poe</rs>) — <note place="right">3</note>
                     </item>
                     <item>
                        <label>6.</label>
@@ -110,125 +117,129 @@
               </item>
            </list>
            <metamark rend="line" function="distinct"/>
-           <list>
-              <item>
-                 <label>II —</label>
-                 <hi rend="underline">Antidoto</hi>.
-              </item>
-           </list>
-           <metamark rend="vertical lign" function="distinct"/>
-           <table>
-              <row>
-                 <cell>1.</cell>
-                 <cell>
-                    <choice>
-                       <abbr><metamark rend="line" function="placeholder"/></abbr>
-                       <expan>Prefacio.</expan>
-                    </choice>
-                 </cell>
-                 <cell>1 3/4</cell>
-                 <cell rows="2">
-                    <metamark rend="curly bracket" function="sum"/>
-                    2
-                 </cell>
-              </row>
-              <row>
-                 <cell>2.</cell>
-                 <cell>
-                    <choice>
-                       <abbr><metamark rend="line" function="placeholder"/></abbr>
-                       <expan>Gladio.</expan>
-                    </choice>
-                 </cell>
-                 <cell>1/4</cell>
-              </row>
-              <row>
-                 <cell>3.</cell>
-                 <cell>
-                    <choice>
-                       <abbr><metamark rend="line" function="placeholder"/></abbr>
-                       <expan>Auto do Circo.</expan>
-                    </choice>
-                 </cell>
-                 <cell rows="2" cols="2"/>
-              </row>
-              <row>
-                 <cell>4.</cell>
-                 <cell>
-                    <choice>
-                       <abbr><metamark rend="line" function="placeholder"/></abbr>
-                       <expan>Theoria da Orthographia Portugueza.</expan>
-                    </choice>
-                 </cell>
-              </row>
-              <row>
-                 <cell>5.</cell>
-                 <cell>
-                    <choice>
-                       <abbr><metamark rend="line" function="placeholder"/></abbr>
-                       <expan>O Corvo (Poe)</expan>
-                    </choice>
-                 </cell>
-                 <cell>1 1/2</cell>
-                 <cell rows="2">
-                    <metamark rend="curly bracket" function="sum"/>
-                    3
-                 </cell>
-              </row>
-              <row>
-                 <cell>6.</cell>
-                 <cell>
-                    <choice>
-                       <abbr><metamark rend="line" function="placeholder"/></abbr>
-                       <expan>Epigramas</expan>
-                    </choice>
-                 </cell>
-                 <cell>1 1/2</cell>
-              </row>
-              <row>
-                 <cell>7.</cell>
-                 <cell>
-                    <choice>
-                       <abbr><metamark rend="line" function="placeholder"/></abbr>
-                       <expan>Uma Entrevista.</expan>
-                    </choice>
-                 </cell>
-                 <cell>1 1/2</cell>
-                 <cell rows="2">
-                    <metamark rend="curly bracket" function="sum"/>
-                    2
-                 </cell>
-              </row>
-              <row>
-                 <cell>8.</cell>
-                 <cell>
-                    <choice>
-                       <abbr><metamark rend="line" function="placeholder"/></abbr>
-                       <expan>Merc. Acephalo</expan>
-                    </choice>
-                 </cell>
-                 <cell>1/2</cell>
-              </row>
-              <row>
-                 <cell cols="2"/>
-                 <cell>total</cell>
-                 <cell>
-                    <metamark rend="line" function="sum"/>
-                    7<hi rend="subscript">2</hi>
-                 </cell>
-              </row>
-              <row>
-                 <cell cols="3"/>
-                 <cell>
-                    <metamark rend="line" function="sum"/>
-                    9
-                 </cell>
-              </row>
-              <row>
-                 <cell cols="3"/>
-                 <cell>7</cell>
-              </row>
-           </table>
+           <div rend="left">
+               <list>
+                  <item>
+                     <label>II —</label>
+                     <hi rend="underline">Antidoto</hi>.
+                  </item>
+               </list>
+           </div>
+           <metamark rend="vertical-lign" function="distinct"/>
+           <div rend="right">
+               <table>
+                  <row>
+                     <cell>1.</cell>
+                     <cell>
+                        <choice>
+                           <abbr><metamark rend="line" function="placeholder"/></abbr>
+                           <expan>Prefacio.</expan>
+                        </choice>
+                     </cell>
+                     <cell>1 3/4</cell>
+                     <cell rows="2">
+                        <metamark rend="curly-bracket" function="sum"/>
+                        2
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>2.</cell>
+                     <cell>
+                        <choice>
+                           <abbr><metamark rend="line" function="placeholder"/></abbr>
+                           <expan>Gladio.</expan>
+                        </choice>
+                     </cell>
+                     <cell>1/4</cell>
+                  </row>
+                  <row>
+                     <cell>3.</cell>
+                     <cell>
+                        <choice>
+                           <abbr><metamark rend="line" function="placeholder"/></abbr>
+                           <expan>Auto do Circo.</expan>
+                        </choice>
+                     </cell>
+                     <cell rows="2" cols="2"/>
+                  </row>
+                  <row>
+                     <cell>4.</cell>
+                     <cell>
+                        <choice>
+                           <abbr><metamark rend="line" function="placeholder"/></abbr>
+                           <expan>Theoria da Orthographia Portugueza.</expan>
+                        </choice>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>5.</cell>
+                     <cell>
+                        <choice>
+                           <abbr><metamark rend="line" function="placeholder"/></abbr>
+                           <expan>O Corvo (Poe)</expan>
+                        </choice>
+                     </cell>
+                     <cell>1 1/2</cell>
+                     <cell rows="2">
+                        <metamark rend="curly-bracket" function="sum"/>
+                        3
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>6.</cell>
+                     <cell>
+                        <choice>
+                           <abbr><metamark rend="line" function="placeholder"/></abbr>
+                           <expan>Epigramas</expan>
+                        </choice>
+                     </cell>
+                     <cell>1 1/2</cell>
+                  </row>
+                  <row>
+                     <cell>7.</cell>
+                     <cell>
+                        <choice>
+                           <abbr><metamark rend="line" function="placeholder"/></abbr>
+                           <expan>Uma Entrevista.</expan>
+                        </choice>
+                     </cell>
+                     <cell>1 1/2</cell>
+                     <cell rows="2">
+                        <metamark rend="curly-bracket" function="sum"/>
+                        2
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>8.</cell>
+                     <cell>
+                        <choice>
+                           <abbr><metamark rend="line" function="placeholder"/></abbr>
+                           <expan>Merc. Acephalo</expan>
+                        </choice>
+                     </cell>
+                     <cell>1/2</cell>
+                  </row>
+                  <row>
+                     <cell cols="2"/>
+                     <cell>total</cell>
+                     <cell>
+                        <metamark rend="line" function="sum"/>
+                        7<hi rend="subscript">2</hi>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell cols="3"/>
+                     <cell>
+                        <metamark rend="line" function="sum"/>
+                        9
+                     </cell>
+                  </row>
+                  <row>
+                     <cell cols="3"/>
+                     <cell>7</cell>
+                  </row>
+               </table>
+           </div>
          </div>
       </body>
    </text>

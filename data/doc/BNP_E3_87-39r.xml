@@ -12,16 +12,25 @@
                <name>Pedro Sepúlveda</name>
             </respStmt>
             <respStmt>
-               <resp>Codificação</resp>
+               <resp>Modelagem de dados, Codificação</resp>
                <name>Ulrike Henny</name>
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
                <name>Isabel Figueiredo-Iken</name>
             </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher/>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
             <idno type="filename">BNP_E3_87-39r.xml</idno>
          </publicationStmt>
          <sourceDesc>
@@ -56,7 +65,7 @@
    <facsimile>
       <graphic url="bn-acpc-e-e3-87-1-103_JPG_24-C-R0150/bn-acpc-e-e3-87-1-103_0091_39_t24-C-R0150.jpg"/>
    </facsimile>
-   <text xml:id="bnp-e3-87-39r">
+   <text>
       <body>
         <div>
            <list>
@@ -68,17 +77,17 @@
                  </note>
               </item>
               <item xml:id="I2">
-                 <label>2.</label> Apice — <rs type="person">Sá-Carneiro</rs>
+                 <label>2.</label> <rs type="text">Apice</rs> — <rs type="person" key="P30">Sá-Carneiro</rs>
                  <note target="#I2" place="right">
-                    <metamark rend="curly bracket" function="assignment"/>
+                    <metamark rend="curly-bracket" function="assignment"/>
                     <choice><abbr>p<am>.</am></abbr><expan>p<ex>agina</ex></expan></choice> 2
                  </note>
                 <lb/>
-                 Ode — <rs type="person"><choice><abbr>M</abbr><expan>M<ex>anuel</ex></expan></choice> da Veiga</rs>
+                 Ode — <rs type="person" key="P81"><choice><abbr>M</abbr><expan>M<ex>anuel</ex></expan></choice> da Veiga</rs>
                 
               </item>
               <item xml:id="I3">
-                 <label>3.</label> O Inexito do “Theatro<lb/> Novo” — <rs type="person" key="FP" role="author">
+                 <label>3.</label> <rs type="text">O Inexito do “Theatro<lb/> Novo”</rs> — <rs type="person" key="FP" role="author" style="b">
                     <choice><abbr>F</abbr><expan>F<ex>ernando</ex></expan></choice> Pessoa</rs>
                  <note target="#I3" place="right">
                     <metamark rend="line" function="assignment"/>
@@ -86,9 +95,9 @@
                  </note>
               </item>
               <item xml:id="I4">
-                 <label>4.</label> Exploradores e Explorados.<lb/> — <choice><abbr>Bach<am>.</am></abbr><expan>Bach<ex>arel</ex></expan></choice> 
-                 <rs type="person">Raul Leal</rs><lb/>
-                 (ou <rs type="person">Carlos de Mousinho</rs>)
+                 <label>4.</label> <rs type="text">Exploradores e Explorados</rs>.<lb/> — <choice><abbr>Bach<am>.</am></abbr><expan>Bach<ex>arel</ex></expan></choice> 
+                 <rs type="person" key="P71">Raul Leal</rs><lb/>
+                 (ou <rs type="person" key="P82">Carlos de Mousinho</rs>)
                  <note target="#I4" place="right">
                     <metamark rend="line" function="assignment"/>
                     7 a 12
@@ -102,7 +111,7 @@
                  </note>
               </item>
               <item xml:id="I6">
-                 <label>6.</label><metamark rend="arrow" target="#I6 #I8" function="switching" /> <rs type="person">R. L. Stevenson</rs>
+                 <label>6.</label><metamark rend="arrow" target="#I6 #I8" function="switching" /> <rs type="person" key="P83">R. L. Stevenson</rs>
                  <note target="#I6" place="right">
                     <metamark rend="line" function="assignment"/>
                     15 a 20
@@ -116,9 +125,9 @@
                  </note>
               </item>
               <item xml:id="I8">
-                 <label>8.</label> <choice><abbr>Chr<am>.</am></abbr><expan>Chr<ex>onica</ex></expan></choice>
-                 <choice><abbr>Byz<am>.</am></abbr><expan>Byz<ex>antina</ex></expan></choice>
-                 — <rs type="person" key="FP" role="author">
+                 <label>8.</label> <rs type="text"><choice><abbr>Chr<am>.</am></abbr><expan>Chr<ex>onica</ex></expan></choice>
+                 <choice><abbr>Byz<am>.</am></abbr><expan>Byz<ex>antina</ex></expan></choice></rs>
+                 — <rs type="person" key="FP" role="author" style="b">
                     <choice><abbr>F</abbr><expan>F<ex>ernando</ex></expan></choice> Pessoa</rs>
                  <note target="#I8" place="right">
                     <metamark rend="line" function="assignment"/>
@@ -128,8 +137,8 @@
            </list>
         </div>
          <metamark rend="line" function="distinct"/>
-         <div rend ="text-center">
-            <head>ORPHEU</head>
+         <div rend="text-center">
+            <head><rs type="journal" key="J23">ORPHEU</rs></head>
             <head>SEGUNDA PHASE</head>
             <ab><seg rend="left">Vol. I</seg> <seg>(datas)</seg> <seg rend="right">No. 1</seg></ab><lb/>
             <ab>Directores</ab><lb/>

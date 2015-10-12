@@ -1,5 +1,4 @@
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -14,16 +13,25 @@
                     <name>Pedro Sepúlveda</name>
                 </respStmt>
                 <respStmt>
-                    <resp>Codificação</resp>
+                    <resp>Modelagem de dados, Codificação</resp>
                     <name>Ulrike Henny</name>
                 </respStmt>
                 <respStmt>
                     <resp>Codificação</resp>
                     <name>Isabel Figueiredo-Iken</name>
                 </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
             </titleStmt>
             <publicationStmt>
-                <publisher/>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2016</date>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
                 <idno type="filename">BNP_E3_48I-10r.xml</idno>
             </publicationStmt>
             <sourceDesc>
@@ -57,7 +65,7 @@
     <facsimile>
         <graphic url="bn-acpc-e-e3-48i-1-30_JPG_24-C-R0150/bn-acpc-e-e3-48i-1-30_0019_10_t24-C-R0150.jpg"/>
     </facsimile>
-    <text xml:id="bnp-e3-48i-10r">
+    <text>
         <body>
             <div>
                 <list>
@@ -65,35 +73,40 @@
                         <hi rend="underline">Translations:</hi>
                     </head>
                     <item>
-                        <rs type="text">Estudiante de <rs type="place">Salamanca</rs>
-                        </rs>.</item>
+                        <rs type="text">Estudiante de <rs type="place">Salamanca</rs></rs>.
+                    </item>
                     <item>
-                        <rs type="text">Sonnets of <rs type="person">Camoens</rs>
-                        </rs>.</item>
+                        <rs type="text">Sonnets of <rs type="person" key="P15">Camoens</rs></rs>.
+                    </item>
                     <item>
-                        <rs type="text">Songs from the old Portuguese Song Books</rs>.</item>
+                        <rs type="text">Songs from the old Portuguese Song Books</rs>.
+                    </item>
                     <item>
                         <rs type="text">Spanish and Portuguese Sonnets</rs>. <ab rend="offset">(Brazilian ?)</ab>
                     </item>
                     <item>
-                        <rs type="text">Portuguese Proverbs</rs>.</item>
+                        <rs type="text">Portuguese Proverbs</rs>.
+                    </item>
                     <item>
-                        <rs type="text">Portuguese Folk Verse</rs>.</item>
+                        <rs type="text">Portuguese Folk Verse</rs>.
+                    </item>
                 </list>
                 <list>
                     <head>
-                        <hi rend="underline">Articles (<rs type="person">Thomas Crosse</rs>):</hi>
+                        <hi rend="underline">Articles (<rs type="person" key="P16">Thomas Crosse</rs>):</hi>
                     </head>
                     <item>
-                        <rs type="text">The Birthplace of <rs type="person">Columbus</rs>
-                        </rs>.</item>
+                        <rs type="text">The Birthplace of <rs type="person" key="P20">Columbus</rs></rs>.
+                    </item>
                     <item>
-                        <rs type="text">The Origin of the Discoveries</rs>.</item>
+                        <rs type="text">The Origin of the Discoveries</rs>.
+                    </item>
                     <item>
-                        <rs type="text">A Pre Romantic (<rs type="person">José Anastacio da Cunha</rs>)</rs>.</item>
+                        <rs type="text">A Pre Romantic (<rs type="person" key="P24">José Anastacio da Cunha</rs>)</rs>.
+                    </item>
                     <item>
-                        <rs type="text">The Myth of <rs type="person">King Sebastian</rs>
-                        </rs>.</item>
+                        <rs type="text">The Myth of <rs type="person" key="P21">King Sebastian</rs></rs>.
+                    </item>
                 </list>
             </div>
         </body>

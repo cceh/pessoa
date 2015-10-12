@@ -12,16 +12,25 @@
                     <name>Pedro Sepúlveda</name>
                 </respStmt>
                 <respStmt>
-                    <resp>Codificação</resp>
+                    <resp>Modelagem de dados, Codificação</resp>
                     <name>Ulrike Henny</name>
                 </respStmt>
                 <respStmt>
                     <resp>Codificação</resp>
                     <name>Isabel Figueiredo-Iken</name>
                 </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
             </titleStmt>
             <publicationStmt>
-                <publisher/>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2016</date>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
                 <idno type="filename">BNP_E3_48D-13.xml</idno>
             </publicationStmt>
             <sourceDesc>
@@ -56,10 +65,9 @@
         <graphic url="bn-acpc-e-e3-48d-1-76_JPG_24-C-R0150/bn-acpc-e-e3-48d-1-76_0027_13_t24-C-R0150.jpg"/>
         <graphic url="bn-acpc-e-e3-48d-1-76_JPG_24-C-R0150/bn-acpc-e-e3-48d-1-76_0027_13v_t24-C-R0150.jpg" />
     </facsimile>
-    <text xml:id="x-48d-13">
+    <text>
         <body>
             <div>
-            <gap reason="selection" unit="number" extent="4"/>
             <list>
                 <item>
                     <label>1.</label> <rs type="text">Ultimatum</rs> – <supplied resp="PS" reason="omitted-in-original"/>
@@ -68,7 +76,7 @@
                     <label>2</label> <rs type="text">Poesias <choice>
                         <abbr>inters<am>.</am></abbr>
                         <expan>inters<ex>eccionistas</ex></expan>
-                    </choice> de <rs type="person" key="FP" role="author"><choice>
+                    </choice> de <rs type="person" key="FP" role="author" style="b"><choice>
                         <abbr>F<am>.</am></abbr>
                         <expan>F<ex>ernando</ex></expan>
                     </choice>
@@ -78,7 +86,7 @@
                     </choice></rs></rs>
                 </item>
                 <item>
-                    <label>3</label> <rs type="text">Eu-proprio o outro</rs> – <rs type="person"><choice>
+                    <label>3</label> <rs type="text">Eu-proprio o outro</rs> – <rs type="person" key="P30"><choice>
                         <abbr>M<am>.</am></abbr>
                         <expan>M<ex>ario</ex></expan>
                     </choice>
@@ -94,7 +102,7 @@
                     <label>4</label> <rs type="text">Poesias <choice>
                         <abbr>inters<am>.</am></abbr>
                         <expan>inters<ex>eccionistas</ex></expan>
-                    </choice></rs> – <rs type="person"><choice>
+                    </choice></rs> – <rs type="person" key="P36"><choice>
                         <abbr>A</abbr>
                         <expan>A<ex>lfredo</ex></expan>
                     </choice>
@@ -111,7 +119,7 @@
                     <label>5</label> <rs type="text">Prosa <choice>
                         <abbr>int<am>.</am></abbr>
                         <expan>int<ex>erseccionista</ex></expan>
-                    </choice> de <rs type="person"><choice>
+                    </choice> de <rs type="person" key="P37"><choice>
                         <abbr>C</abbr>
                         <expan>C<ex>ôrtes</ex></expan>
                     </choice>-<choice>
@@ -135,7 +143,7 @@
                     <label>7</label> <rs type="text">Prosa <choice>
                         <abbr>int<am>.</am></abbr>
                         <expan>int<ex>erseccionista</ex></expan>
-                    </choice> de <rs type="person"><choice>
+                    </choice> de <rs type="person" key="P36"><choice>
                         <abbr>A<am>.</am></abbr>
                         <expan>A<ex>lfredo</ex></expan>
                     </choice>
@@ -152,7 +160,7 @@
                     <label>8</label> <rs type="text">Poesia <choice>
                         <abbr>int</abbr>
                         <expan>int<ex>erseccionista</ex></expan>
-                    </choice> de <rs type="person"><choice>
+                    </choice> de <rs type="person" key="P37"><choice>
                         <abbr>C</abbr>
                         <expan>C<ex>ôrte</ex>s</expan>
                     </choice>-<choice>
@@ -164,7 +172,7 @@
                     <label>9</label> <rs type="text">Prosa <choice>
                         <abbr>int<am>.</am></abbr>
                         <expan>int<ex>erseccionista</ex></expan>
-                    </choice> de <rs type="person">Coelho <choice>
+                    </choice> de <rs type="person" key="P89">Coelho <choice>
                         <abbr>P<am>.</am></abbr>
                         <expan>Pacheco</expan>
                     </choice></rs></rs>
@@ -173,7 +181,7 @@
                     <label>10/11</label> <rs type="text">Poesias <choice>
                         <abbr>int<am>.</am></abbr>
                         <expan>int<ex>erseccionistas</ex></expan>
-                    </choice> de <rs type="person">Ferro e<lb/> Mourão</rs>.</rs>
+                    </choice> de <rs type="person" key="P90">Ferro</rs> e<lb/> <rs type="person" key="P94">Mourão</rs>.</rs>
                 </item>
                 <item>
                     <label>12.</label>

@@ -12,16 +12,25 @@
                     <name>Pedro Sepúlveda</name>
                 </respStmt>
                 <respStmt>
-                    <resp>Codificação</resp>
+                    <resp>Modelagem de dados, Codificação</resp>
                     <name>Ulrike Henny</name>
                 </respStmt>
                 <respStmt>
                     <resp>Codificação</resp>
                     <name>Isabel Figueiredo-Iken</name>
                 </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
             </titleStmt>
             <publicationStmt>
-                <publisher/>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2016</date>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
                 <idno type="filename">BNP_E3_48G-26r.xml</idno>
             </publicationStmt>
             <sourceDesc>
@@ -54,54 +63,46 @@
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic
-            url="bn-acpc-e-e3-48g-1-37_JPG_24-C-R0150/bn-acpc-e-e3-48g-1-37_0051_26_t24-C-R0150.jpg"
-        />
+        <graphic url="bn-acpc-e-e3-48g-1-37_JPG_24-C-R0150/bn-acpc-e-e3-48g-1-37_0051_26_t24-C-R0150.jpg"/>
     </facsimile>
-    <text xml:id="x-48g-26r">
+    <text>
         <body>
             <div>
-                <gap reason="selection" unit="lines" extent="5"/>
+                <gap reason="selection" unit="line" extent="5"/>
                 <list>
                     <head>
-                        <hi rend="underline">ATHENA:</hi><seg rend="right">100 reis</seg><lb/>
+                        <hi rend="underline"><rs type="journal" key="J2">ATHENA</rs>:</hi><seg rend="right">100 reis</seg><lb/>
                         Cadernos (quinzenaes) de cultura<lb/><seg rend="right">superior</seg>
                     </head>
                     <item>
                         <label>1.</label>
-                        <rs type="person"><hi rend="underline">Antonio Móra</hi></rs>: <rs
+                        <rs type="person" key="P1" style="a"><hi rend="underline">Antonio Móra</hi></rs>: <rs
                             type="text">A Attitude da <rs type="place"
-                            >Alle<pc>-</pc><lb/>manha</rs></rs>. </item>
+                            >Alle<pc>-</pc><lb/>manha</rs></rs>. 
+                    </item>
                     <item>
                         <label>2.</label>
-                        <rs type="work" key="O2"><rs type="person" key="AC" role="author"><hi
+                        <rs type="work" key="O2" style="b"><rs type="person" key="AC" role="author"><hi
                                     rend="underline">Alberto Caeiro</hi></rs>: <rs type="text">O
-                                Guardador de <lb/>Rebanhos</rs></rs>. </item>
+                                Guardador de <lb/>Rebanhos</rs></rs>. 
+                    </item>
                     <item>
                         <label>3.</label>
-                        <anchor xml:id="A1"/>
-                        <rs type="person" key="FP" role="author"><hi rend="underline">Fernando Pessôa</hi></rs>: <rs type="text">Introducção ao<lb/> problema
-                            nacional</rs>. <anchor xml:id="A2"/>
+                        <rs type="person" key="FP" role="author" style="a"><hi rend="underline">Fernando Pessôa</hi></rs>: <rs type="text">Introducção ao<lb/> problema
+                            nacional</rs>.
                     </item>
                     <item>
                         <label>4.</label>
-                        <anchor xml:id="A3"/>
-                        <rs type="person" key="RR" role="author"><hi rend="underline">Ricardo Reis</hi></rs>: <rs type="text">Odes</rs>. 
-                        <anchor xml:id="A4"/>
+                        <rs type="work" key="O3" style="b"><rs type="person" key="RR" role="author"><hi rend="underline">Ricardo Reis</hi></rs>: <rs type="text">Odes</rs></rs>. 
                     </item>
                     <item>
                         <label>5.</label>
-                        <rs type="person"><hi rend="underline">Antonio Móra</hi></rs>:
+                        <rs type="person" key="P1" style="a"><hi rend="underline">Antonio Móra</hi></rs>:
                         <rs type="text">Prolegomenos</rs>.
                     </item>
                 </list>
                 <metamark rend="line" function="distinct"/>
-                <metamark rend="line" place="left" function="?"/>
                 <ab rend="right">Compendio de politica<lb/> positiva<lb/> (sociologia politica)</ab>
-                <spanGrp>
-                    <span type="correlation" from="#A1" to="#A2"/>
-                    <span type="correlation" from="#A3" to="#A4"/>
-                </spanGrp>
             </div>
         </body>
     </text>

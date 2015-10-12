@@ -13,16 +13,25 @@
                <name>Pedro Sepúlveda</name>
             </respStmt>
             <respStmt>
-               <resp>Codificação</resp>
+               <resp>Modelagem de dados, Codificação</resp>
                <name>Ulrike Henny</name>
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
                <name>Isabel Figueiredo-Iken</name>
             </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher/>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
             <idno type="filename">BNP_E3_55J-44v.xml</idno>
          </publicationStmt>
          <sourceDesc>
@@ -57,18 +66,18 @@
    <facsimile>
       <graphic url="bn-acpc-e-e3-55j-1-100_JPG_24-C-R0150/bn-acpc-e-e3-55j-1-100_0088_44v_t24-C-R0150.jpg"/>
    </facsimile>
-   <text xml:id="bnp-e3-55j-44v">
+   <text>
       <body>
          <div>
-            <gap reason="selection" unit="lines" extent="31"/>
-            <head><hi rend="underline">Orpheu</hi>:</head>
+            <gap reason="selection" unit="line" extent="31"/>
+            <head><hi rend="underline"><rs type="journal" key="P23">Orpheu</rs></hi>:</head>
             <note place="left">(?)</note>
             <note>(distribuir o <lb/> indice do 1 e 2 <lb/> e errata).</note>
             <metamark rend="line" function="distinct"/>
             <list> 
                <item>
                   <label>1.</label>
-                  <rs type="person" key="FP" role="author">
+                  <rs type="person" key="FP" role="author" style="b">
                      <choice>
                         <abbr>F</abbr>
                         <expan>F<ex>ernando</ex></expan>
@@ -80,11 +89,11 @@
                </item>
                <item>
                   <label>2.</label>
-                  <rs type="person">Castello de <lb/> Moraes</rs>: alguns <lb/> contos.
+                  <rs type="person" key="P86">Castello de <lb/> Moraes</rs>: alguns <lb/> contos.
                </item>        
                <item>
                   <label>3.</label>
-                  <note place="left">?</note> (<rs type="person">
+                  <note place="left">?</note> (<rs type="person" key="P56">
                                                 <choice>
                                                    <abbr>J</abbr>
                                                    <expan>J<ex>osé</ex></expan>
@@ -98,15 +107,15 @@
                </item>
                <item>
                   <label>4.</label>
-                  <rs type="person">Mario de Sá<lb/> Carneiro</rs>.
+                  <rs type="person" key="P30">Mario de Sá<lb/> Carneiro</rs>.
                </item>
             </list>
             <metamark rend="line" function="distinct"/>
-            <gap reason="selection" unit="lines" extent="2"/>
+            <gap reason="selection" unit="line" extent="2"/>
             <list>   
                <item>
                   <label>1.</label>
-                  <rs type="person">
+                  <rs type="person" key="P30">
                      <choice>
                         <abbr>M</abbr>
                         <expan>M<ex>ario</ex></expan>
@@ -120,11 +129,11 @@
                </item>
                <item>
                   <label>2.</label>
-                  <rs type="person">Castello de Moraes</rs>: <lb/> 2 ou 3 contos
+                  <rs type="person" key="P86">Castello de Moraes</rs>: <lb/> 2 ou 3 contos
                </item>
                <item>
                   <label>3.</label>
-                  <rs type="person">
+                  <rs type="person" key="P56">
                      <choice>
                         <abbr>J</abbr>
                         <expan>J<ex>ose</ex></expan>
@@ -147,7 +156,7 @@
                   <label>5.</label> <supplied resp="PS" reason="omitted-in-original"/>
                </item>
             </list>
-            <gap reason="selection" unit="lines" extent="4"/>  
+            <gap reason="selection" unit="line" extent="4"/>  
          </div>
       </body>
    </text>

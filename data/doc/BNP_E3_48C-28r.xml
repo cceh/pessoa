@@ -1,5 +1,4 @@
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -14,16 +13,25 @@
                     <name>Pedro Sepúlveda</name>
                 </respStmt>
                 <respStmt>
-                    <resp>Codificação</resp>
+                    <resp>Modelagem de dados, Codificação</resp>
                     <name>Ulrike Henny</name>
                 </respStmt>
                 <respStmt>
                     <resp>Codificação</resp>
                     <name>Isabel Figueiredo-Iken</name>
                 </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
             </titleStmt>
             <publicationStmt>
-                <publisher/>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2016</date>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
                 <idno type="filename">BNP_E3_48C-28r.xml</idno>
             </publicationStmt>
             <sourceDesc>
@@ -58,54 +66,51 @@
     <facsimile>
         <graphic url="bn-acpc-e-e3-48c-1-50_JPG_24-C-R0150/bn-acpc-e-e3-48c-1-50_0067_28_t24-C-R0150.jpg"/>
     </facsimile>
-    <text xml:id="bnp-e3-48c-28r">
+    <text>
         <body>
             <div>
                 <list>
                     <item>
                         <list>
                             <head>
-                                <rs type="text" xml:id="T1">O REGRESSO DOS DEUSES</rs> — I. <rs type="text" xml:id="T2">POEMAS COMPLETOS DE <rs type="person" key="AC" role="author">ALBERTO<lb/> CAEIRO</rs> (1889-1915)</rs>.</head>
+                                <rs type="text">O REGRESSO DOS DEUSES</rs> — I. <rs type="work" key="O2" style="a"><rs type="text">POEMAS COMPLETOS DE <rs type="person" key="AC" role="author">ALBERTO<lb/> CAEIRO</rs> (1889-1915)</rs></rs>.</head>
                             <metamark rend="line" function="distinct"/>
                             <item>
                                 <label>1.</label>
-                                <rs type="text" xml:id="T3">Nota dos Editores</rs>.</item>
+                                Nota dos Editores.
+                            </item>
                             <item>
                                 <label>2.</label>
-                                <rs type="text" xml:id="T4">Prefacio do <rs type="person" key="RR" role="author">Dr. Ricardo Reis</rs>
-                                </rs>.</item>
+                                <rs type="text">Prefacio do <rs type="person" key="RR" role="author">Dr. Ricardo Reis</rs></rs>.
+                            </item>
                             <item>
                                 <label>3.</label>
-                                <rs type="text" xml:id="T5">Poemas Completos de <rs type="person" key="AC" role="author">Alberto Caeiro</rs>
+                                <rs type="text">Poemas Completos de <rs type="person" key="AC" role="author">Alberto Caeiro</rs>
                                 </rs>:
                                 <list>
                                     <item>
                                         <label>I.</label>
-                                        <rs type="work" key="O2"><rs type="text" xml:id="T6">O Guardador de Rebanhos</rs></rs>
+                                        <rs type="work" key="O2" style="b"><rs type="text">O Guardador de Rebanhos</rs></rs>
                                     </item>
                                     <item>
                                         <label>II.</label>
-                                        <rs type="title" xml:id="T7">O Pastor Amoroso</rs>
+                                        <rs type="work" key="O2" style="c"><rs type="text">O Pastor Amoroso</rs></rs>
                                     </item>
                                     <item>
                                         <label>III.</label>
-                                        <rs type="work" key="O3"><rs type="title" xml:id="T8">Poemas Inconjunctos</rs></rs>
+                                        <rs type="work" key="O2" style="d"><rs type="text">Poemas Inconjunctos</rs></rs>
                                     </item>
                                 </list>
                             </item>
                             <item>
                                 <label>4.</label>
-                                <anchor xml:id="A1"/>
-                                <rs type="text" xml:id="T9">Natividade de <rs type="person" key="AC" role="topic">Alberto Caeiro</rs>
-                                </rs>, por <rs type="person" key="FP" role="author">Fernando Pessoa</rs>.
-                                <anchor xml:id="A2"/>
+                                <rs type="text">Natividade de <rs type="person" key="AC" role="topic">Alberto Caeiro</rs>
+                                </rs>, por <rs type="person" key="FP" role="author" style="b">Fernando Pessoa</rs>.
                             </item>
                             <item>
                                 <label>5.</label>
-                                <anchor xml:id="A3"/>
-                                <rs type="title" xml:id="T10">Notas para a recordação do meu mestre <rs type="person" key="AC" role="topic">Caeiro</rs>
+                                <rs type="title">Notas para a recordação do meu mestre <rs type="person" key="AC" role="topic">Caeiro</rs>
                                 </rs>,<lb/> por <rs type="person" key="AdC" role="author">Alvaro de Campos</rs>.
-                                <anchor xml:id="A4"/>
                             </item>
                         </list>
                     </item>
@@ -113,8 +118,8 @@
                     <item>
                         <list>
                             <head>
-                                <rs type="text" corresp="#T1">O REGRESSO DOS DEUSES</rs> - II. <rs type="text" xml:id="T11">
-                                    <rs type="person" key="RR" role="author">RICARDO REIS</rs>, ODES, LIV. <lb/>I-III</rs>.</head>
+                                <rs type="text">O REGRESSO DOS DEUSES</rs> - II. <rs type="work" key="O3" style="b"><rs type="text">
+                                    <rs type="person" key="RR" role="author">RICARDO REIS</rs>, ODES, LIV. <lb/>I-III</rs></rs>.</head>
                             <item/>
                         </list>
                     </item>
@@ -122,31 +127,14 @@
                     <item>
                         <list>
                             <head>
-                                <rs type="text" corresp="#T1">O REGRESSO DOS DEUSES</rs> - III. <rs type="text" xml:id="T12">ACCESSORIOS</rs>, <rs type="text" xml:id="T13">POEMAS DE<lb/>
-                                    <rs type="person" key="AdC" role="author">ALVARO DE CAMPOS</rs>
-                                </rs>
+                                <rs type="text">O REGRESSO DOS DEUSES</rs> - III. <rs type="work" key="O4" style="c"><rs type="text">ACCESSORIOS, POEMAS DE<lb/>
+                                    <rs type="person" key="AdC" role="author">ALVARO DE CAMPOS</rs></rs></rs>
                             </head>
                             <item/>
                         </list>
                     </item>
                     <metamark rend="line" function="distinct"/>
                 </list>
-                <spanGrp>
-                    <span type="partOf" target="#T2 #T1" />
-                    <span type="partOf" target="#T3 #T2" />
-                    <span type="partOf" target="#T4 #T2" />
-                    <span type="partOf" target="#T5 #T2" />
-                    <span type="partOf" target="#T6 #T5" />
-                    <span type="partOf" target="#T7 #T5" />
-                    <span type="partOf" target="#T8 #T5" />
-                    <span type="partOf" target="#T9 #T2" />
-                    <span type="partOf" target="#T10 #T2" />
-                    <span type="partOf" target="#T11 #T1" />
-                    <span type="partOf" target="#T12 #T1" />
-                    <span type="partOf" target="#T13 #T1" />
-                    <span type="correlation" from="#A1" to="#A2"/>
-                    <span type="correlation" from="#A3" to="#A4"/>
-                </spanGrp>
             </div>
         </body>
     </text>
