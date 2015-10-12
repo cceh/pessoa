@@ -31,7 +31,7 @@ declare %templates:wrap function page:construct($node as node(), $model as map(*
 declare function page:construct_search() as node()* {
 let $search := <div class="container-4" id="searchbox" style="display:none">
                             <input type="search" id="search" placeholder="{concat(page:singleAttribute(doc("/db/apps/pessoa/data/lists.xml"),"search","term"),"....")}" />
-                            <button class="icon2" id="button2" onclick="search()">{page:singleAttribute(doc("/db/apps/pessoa/data/lists.xml"),"search","search_verb")}</button>
+                            <span class="icon2" id="nav_searchButton" onclick="search()">{page:singleAttribute(doc("/db/apps/pessoa/data/lists.xml"),"search","search_verb")}</span>
                             <a class="small_text" id="search-link" href="{$helpers:app-root}/{$helpers:web-language}/search">{page:singleAttribute(doc("/db/apps/pessoa/data/lists.xml"),"search","search_noun_ext")}</a>
                         </div>      
     let $clear :=  <div class="clear"></div>

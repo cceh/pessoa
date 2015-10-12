@@ -48,6 +48,21 @@ $(document).ready(function(){
                     $("div#navi .active").removeClass("active");
                 }
         });
+         function fixDiv() {
+        var $cache = $('#openseadragon1');
+        if ($(window).scrollTop() > 600)
+        $cache.css({
+        'position': 'fixed',
+        'top': '10px'
+        });
+        else
+        $cache.css({
+        'position': 'relative',
+        'top': 'auto'
+        });
+        }
+        $(window).scroll(fixDiv);
+        fixDiv();
         });
 
 $(document).ready(function(){ 
