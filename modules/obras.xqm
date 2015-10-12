@@ -95,6 +95,26 @@ declare function obras:PrintLinks($node as node(), $model as map(*), $folder as 
         else  page:singleElement_xquery("navigation","publicacoes")
 };
 
+declare function obras:PrintDocLinks($node as node(), $model as map(*), $id as xs:string) {
+   
+     if ( $model("ref")  != "") then 
+      let $db :=$model("ref")
+         let $doc := substring-before(root($db)/util:document-name(.),".xml")
+        let $ref := concat($helpers:app-root,"/",$helpers:web-language,"/doc/",$doc)
+        let $role :=  $db//tei:rs[@type="work" and @key=$id]//tei:rs[@role]
+        let $role2 := for $rolen in $role/@role return page:singleElement_xquery("roles",$rolen)
+        let $rolename := distinct-values(($role2,$role2))
+        let $docn := if( exists($rolename)) then  concat($doc," (", page:singleElement_xquery("roles","mentioned-as"),":" ,$rolename,")") 
+                                
+                                else $doc
+       return  <a href="{$ref}" class="olink">{$doc}{ if( exists($rolename)) then   <i> ({page:singleElement_xquery("roles","mentioned-as")}: {$rolename})</i> 
+                                
+                                else () }
+       
+       </a>
+   else ()
+};
+
 declare function obras:printData($node as node(), $model as map(*), $type as xs:string) {
     $model($type)
 };

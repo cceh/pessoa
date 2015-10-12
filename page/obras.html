@@ -17,6 +17,7 @@
               .Obras-DocList,.Obras-PubList {
               margin-left: 85px;
               text-align: left;
+              width: 310px;
               }
               .Obras-PubList{}
               .olink {
@@ -86,7 +87,7 @@
                         <div class="Obras-AltTitle" id="Obras-MainAltTitle"><i class="obras:printData?type=AltTitle"/></div>
                         <div id="Obras-DocLinkList" class="olink">Documentos</div>
                         <div class="templates:each?from=FirstRef&amp;to=ref Obras-DocList">
-                            <i class="obras:PrintLinks?folder=doc"/>
+                            <i class="obras:PrintDocLinks"/>
                         </div>
                     </div>
                     <div id="Obras-Workslist">
@@ -98,10 +99,10 @@
                                     <div class="templates:each?from=SubWorks&amp;to=SubWork Obras-PubList">
                                         <i class="obras:PrintSubWorks"/>
                                     </div>
-                                    <i class="obras:CheckForDocs"/>
+                                  <!--  <i class="obras:CheckForDocs"/>
                                     <div class="templates:each?from=docs&amp;to=ref Obras-DocList">
                                         <i class="obras:PrintLinks?folder=doc"/>
-                                    </div>
+                                    </div>-->
                                 </div>
                             </div>
                         </div>
