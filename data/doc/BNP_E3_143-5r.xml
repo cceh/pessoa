@@ -1,5 +1,4 @@
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -14,16 +13,25 @@
                     <name>Pedro Sepúlveda</name>
                 </respStmt>
                 <respStmt>
-                    <resp>Codificação</resp>
+                    <resp>Modelagem de dados, Codificação</resp>
                     <name>Ulrike Henny</name>
                 </respStmt>
                 <respStmt>
                     <resp>Codificação</resp>
                     <name>Isabel Figueiredo-Iken</name>
                 </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
             </titleStmt>
             <publicationStmt>
-                <publisher />
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2016</date>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
                 <idno type="filename">BNP_E3_143-5r.xml</idno>
             </publicationStmt>
             <sourceDesc>
@@ -58,7 +66,7 @@
     <facsimile>
         <graphic url="bn-acpc-e-e3-143-1-14_JPG_24-C-R0150/bn-acpc-e-e3-143-1-14_0009_5_t24-C-R0150.jpg"/>
     </facsimile>
-    <text xml:id="bnp-e3-143-5r">
+    <text>
         <body>
             <div>
                 <head>
@@ -86,30 +94,28 @@
                     <item>
                         <label>2.</label>
                         <rs type="text">
-                            <rs type="person" key="P22">Christovam Falcão</rs> e <rs type="person" key="P23">Bernardino<lb/>Ribeiro</rs>
-                        </rs>.
+                            <rs type="person" key="P22">Christovam Falcão</rs> e <rs type="person" key="P23">Bernardino<lb/>Ribeiro</rs></rs>.
                     </item>
                     <item>
                         <label>3.</label>
                         <rs type="text">
-                            <rs type="person" key="P24">José Anastacio da Cunha</rs>
-                        </rs>.
+                            <rs type="person" key="P24">José Anastacio da Cunha</rs></rs>.
                     </item>
                     <item>
                         <label>4.</label>
                         <rs type="text">
-                            <rs type="person" key="P18">Anthero de Quental</rs>
-                        </rs>.</item>
+                            <rs type="person" key="P18">Anthero de Quental</rs></rs>.
+                    </item>
                     <item>
                         <label>5.</label>
                         <rs type="text">
-                            <rs type="person" key="P25">Guerra Junqueiro</rs>
-                        </rs>.</item>
+                            <rs type="person" key="P25">Guerra Junqueiro</rs></rs>.
+                    </item>
                     <item>
                         <label>6.</label>
                         <rs type="text">
-                            <rs type="person" key="P26">Cesario Verde</rs>
-                        </rs>.</item>
+                            <rs type="person" key="P26">Cesario Verde</rs></rs>.
+                    </item>
                     <item>
                         <label>7.</label>
                         <rs type="text">Decadent, and Pessimist</rs>.

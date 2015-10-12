@@ -1,5 +1,4 @@
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -14,16 +13,25 @@
                     <name>Pedro Sepúlveda</name>
                 </respStmt>
                 <respStmt>
-                    <resp>Codificação</resp>
+                    <resp>Modelagem de dados, Codificação</resp>
                     <name>Ulrike Henny</name>
                 </respStmt>
                 <respStmt>
                     <resp>Codificação</resp>
                     <name>Isabel Figueiredo-Iken</name>
                 </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
             </titleStmt>
             <publicationStmt>
-                <publisher/>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2016</date>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
                 <idno type="filename">BNP_E3_143-13r.xml</idno>
             </publicationStmt>
             <sourceDesc>
@@ -57,7 +65,7 @@
     <facsimile>
         <graphic url="bn-acpc-e-e3-143-1-14_JPG_24-C-R0150/bn-acpc-e-e3-143-1-14_0025_13_t24-C-R0150.jpg"/>
     </facsimile>
-    <text xml:id="bnp-3e-143-13r">
+    <text>
         <body>
             <div>
                 <list>
@@ -82,8 +90,7 @@
                     <item>
                         <label>5.</label>
                         <rs type="text">
-                            <rs type="person" key="P21" style="a">King Sebastian</rs>
-                        </rs>.
+                            <rs type="person" key="P21" style="a">King Sebastian</rs></rs>.
                     </item>
                     <item>
                         <label>6.</label>
@@ -99,7 +106,7 @@
                         </rs> (based on <rs type="text">Interregno</rs>).
                     </item>
                 </list>
-                <gap reason="selection" unit="lines" extent="20"/>
+                <gap reason="selection" unit="line" extent="20"/>
             </div>
         </body>
     </text>
