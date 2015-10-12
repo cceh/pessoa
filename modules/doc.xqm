@@ -8,6 +8,7 @@ import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers
 import module namespace author="http://localhost:8080/exist/apps/pessoa/author" at "author.xqm";
 import module namespace page="http://localhost:8080/exist/apps/pessoa/page" at "page.xqm";
 import module namespace app="http://localhost:8080/exist/apps/pessoa/templates" at "app.xql";
+import module namespace search="http://localhost:8080/exist/apps/pessoa/search" at "search.xqm";
 
 
 declare namespace request="http://exist-db.org/xquery/request";
