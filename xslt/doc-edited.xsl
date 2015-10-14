@@ -31,7 +31,7 @@
             <xsl:otherwise>
                 <xsl:choose>
                     <xsl:when test="abbr/metamark[@function='ditto']">
-                        <span class="ditto" style="color:#99004D;">
+                        <span class="ditto">
                             <xsl:apply-templates select="expan/text() | expan/child::*"/>
                         </span>
                     </xsl:when>
@@ -48,15 +48,13 @@
     
   
     <xsl:template match="choice[abbr and expan[not(ex)]]">
-        [<span class="expan" style="color:#99004D;">
-           <xsl:apply-templates select="expan/text() | expan/child::*"/>   
-         </span>]
+        <span class="expan">[<xsl:apply-templates select="expan/text() | expan/child::*"/>]</span>
     </xsl:template>
  
     
     <xsl:template match="abbr"/>
     <xsl:template match="ex">
-        <span class="ex" style="color:#99004D;">[<xsl:apply-templates />]</span>
+        <span class="ex">[<xsl:apply-templates />]</span>
     </xsl:template>
     
     <!-- Ersetzung von Pessoa selbst: etwas wird gelöscht, etwas anderes hinzugefügt

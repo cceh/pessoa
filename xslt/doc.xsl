@@ -332,9 +332,6 @@
     <xsl:template match="metamark[@rend='quotes'][@function='ditto']" >
         <div class="metamark quotes ditto"> " </div>
     </xsl:template>
-    <xsl:template match="metamark[@rend='quotation marks'][@function='ditto']" >
-        <div class="metamark quotes ditto"> " </div>
-    </xsl:template>
     
     <!--Pfeile-->
     
@@ -375,7 +372,7 @@
             <xsl:apply-templates />
         </span>
     </xsl:template>
-    <xsl:template match="hi[@rend='circled']" >
+    <xsl:template match="hi[@rend='encircled']" >
         <div class="circled">
             <xsl:apply-templates />
         </div>
@@ -383,30 +380,30 @@
     
     <!-- Personen, Orte, etc. -->
     <xsl:template match="rs[@type='person']" >
-        <span class="person {@xml:id}">
+        <span class="person {@key}">
             <xsl:apply-templates />
         </span>
     </xsl:template>
     
     <xsl:template match="rs[@type='place']" >
-        <span class="place {@xml:id}">
+        <span class="place">
             <xsl:apply-templates />
         </span>
     </xsl:template>
     
     <xsl:template match="rs[@type='journal']" >
-        <span class="journal {@xml:id}">
+        <span class="journal {@key}">
             <xsl:apply-templates />
         </span>
     </xsl:template>
     
     <xsl:template match="rs[@type='work']" >
-        <span class="work {@xml:id}">
+        <span class="work {@key}">
             <xsl:apply-templates />
         </span>
     </xsl:template>
     <xsl:template match="rs[@type='text']" >
-        <span class="text {@xml:id}">
+        <span class="text {replace(.,'[“”.\s]','')}">
             <xsl:apply-templates />
         </span>
     </xsl:template>
@@ -527,8 +524,6 @@
             <xsl:apply-templates />
         </span>
     </xsl:template>
-    
-    
     
     
     
