@@ -20,7 +20,7 @@
         <zip destfile="data/doc.zip" basedir="data/doc/" excludes="dont*.*"/>
         -->
         <xdb:store uri="${uri}" createcollection="true" createsubcollections="true" user="${user}" password="${password}">
-            <fileset dir=".">
+            <fileset dir="./app/">
                 <include name="**/*.*"/>
                 <exclude name="build/"/>
                 <exclude name="modules/admin.xqm"/>
@@ -52,9 +52,9 @@
         <!-- Generating zip files from the data -->
         <zip destfile="data/pub.zip" basedir="data/pub/" excludes="dont*.*"/>
         <zip destfile="data/doc.zip" basedir="data/doc/" excludes="dont*.*"/>
-        <xdb:xquery uri="${uri}" queryfile="pre-install.xql" user="${user}" password="${password}"/>
+        <xdb:xquery uri="${uri}" queryfile="app/pre-install.xql" user="${user}" password="${password}"/>
         <xdb:store uri="${uri}" createcollection="true" createsubcollections="true" user="${user}" password="${password}">
-            <fileset dir=".">
+            <fileset dir="./app/">
                 <include name="**/*.*"/>
                 <exclude name="build/"/>
                 <exclude name="modules/admin.xqm"/>
@@ -65,6 +65,6 @@
                 <exclude name="**/.gitignore"/>
             </fileset>
         </xdb:store>
-        <xdb:xquery uri="${uri}" queryfile="post-install.xql" user="${user}" password="${password}"/>
+        <xdb:xquery uri="${uri}" queryfile="app/post-install.xql" user="${user}" password="${password}"/>
     </target>
 </project>
