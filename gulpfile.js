@@ -84,13 +84,13 @@ var exist_indexupdate_local_doc = {
 }
 
 gulp.task('upload-index-doc', function(){
-	return gulp.src('SUCHE_doc-collection.xconf')
+	return gulp.src('app/SUCHE_doc-collection.xconf')
 			.pipe(rename('collection.xconf'))
 			.pipe(exist.dest(exist_indexupdate_local_doc));
 });
 
 gulp.task('upload-index-pub', function(){
-	return gulp.src('SUCHE_pub-collection.xconf')
+	return gulp.src('app/SUCHE_pub-collection.xconf')
 			.pipe(rename('collection.xconf'))
 			.pipe(exist.dest(exist_indexupdate_local_pub));
 });
