@@ -1,0 +1,37 @@
+<!-- Save to : /system/config/db/apps/pessoa/data/doc -->
+<collection xmlns="http://exist-db.org/collection-config/1.0">
+  <index xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- xmlns:cmd="http://www.clarin.eu/cmd/" 
+        xmlns:oai="http://www.openarchives.org/OAI/2.0/" -->
+    
+    <!-- Disable the old full text index -->
+    <fulltext default="none" attributes="false"/>
+    <!-- Lucene index is configured below -->
+    <lucene>
+      <analyzer class="org.apache.lucene.analysis.standard.StandardAnalyzer"/>
+      <analyzer id="ws" class="org.apache.lucene.analysis.WhitespaceAnalyzer"/>
+      <text qname="tei:TEI"/>
+    </lucene>
+    <range>
+      <create qname="tei:TEI">
+        <field name="title" match="tei:teiHeader/tei:fileDesc/tei:publicationStmt/tei:idno" type="xs:string"/>
+        <field name="author" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msContents/tei:msItemStruct/tei:author/tei:rs/@key" type="xs:string"/>
+        <field name="genre" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msContents/tei:msItemStruct/tei:note/tei:rs/@key" type="xs:string"/>
+        <field name="mainLang" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msContents/tei:msItemStruct/tei:textLang/@mainLang" type="xs:string"/>
+        <field name="otherLang" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:msContents/tei:msItemStruct/tei:textLang/@otherLangs" type="xs:string"/>
+        
+        
+        <!-- @when, @notBefore, @notAfter, @from, @to-->
+        <field name="date_when" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:history/tei:origin/tei:p/tei:origDate/@when" type="xs:string"/>
+        <field name="date_notBefore" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:history/tei:origin/tei:p/tei:origDate/@notBefore" type="xs:string"/>
+        <field name="date_notAfter" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:history/tei:origin/tei:p/tei:origDate/@notAfter" type="xs:string"/>
+        <field name="date_from" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:history/tei:origin/tei:p/tei:origDate/@from" type="xs:string"/>
+        <field name="date_to" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:msDesc/tei:history/tei:origin/tei:p/tei:origDate/@to" type="xs:string"/>
+        <field name="role" match="tei:text/tei:body/tei:div//tei:rs/@role" type="xs:string"/>
+        <field name="style" match="tei:text/tei:body/tei:div//tei:rs/@style" type="xs:string"/>
+        <field name="person" match="tei:text/tei:body/tei:div//tei:rs/@key" type="xs:string"/>
+        <field name="type" match="tei:text/tei:body/tei:div//tei:rs/@type" type="xs:string"/>
+      </create>
+    </range>
+  </index>
+</collection>
