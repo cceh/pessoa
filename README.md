@@ -30,7 +30,7 @@ pessoa
 <a name="workflow"></a>
 ## Workflow
 
-Development on papyri is done using a local eXist instance. You will work on a local copy of the source code 
+Development for the Pessoa edition is done using a local eXist instance. You will work on a local copy of the source code 
 which is deployed to your local eXist after every change you want to test. Please do not use the eXist
 feature of the Oxygen editor to directly modifiy the files inside the database as this will inevitably lead 
 to chaos when working collaboratively using git.
