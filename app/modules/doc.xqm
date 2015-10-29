@@ -215,8 +215,8 @@ let $script :=     <script>
   </script>
   
   let $popup:= 
-  <div id="dialog" title="Basic dialog" style="display:none;border:solid"><p>
-  Edição Digital de Fernando Pessoa, 2015,  &#60; {$helpers:app-root}/{$id}  &#62;</p>
+  <div id="dialog" title="Citar" style="display:none;border:solid"><p>
+  Edição Digital de Fernando Pessoa, 2015,  &#60;{$helpers:app-root}/{$id}&#62;.</p>
 </div>
 let $filter := <div id="filter">
                 <a class="filter-a" onclick="printContent()">{page:singleAttribute($doc, "footer","print")}</a>

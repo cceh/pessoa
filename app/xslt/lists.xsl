@@ -29,7 +29,7 @@
                 }
             </script>
             <style type="text/css">
-                h2 {
+                #index h2 {
                     margin-top: 30px;
                     text-align: left;
                     }
@@ -64,7 +64,7 @@
                         <xsl:choose>
                             <xsl:when test="@style">
                                 <xsl:for-each-group select="current-group()" group-by="@style">
-                                    <xsl:variable name="name" select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//listPerson/person[@xml:id=$key]/persName[@type=current-grouping-key()]"/>
+                                    <xsl:variable name="name" select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//listPerson/person[@xml:id=$key or substring-after(@corresp,'#')=$key]/persName[@type=current-grouping-key()]"/>
                                     <li onmouseenter="highlight('person {$key}');" onmouseleave="clearH('{$key}');"><xsl:value-of select="$name"/> <a href="../../page/persons#{$name}" title="{$title}"><img class="indexImg" src="../../resources/images/glyphicons-35-old-man.png"/></a></li>
                                 </xsl:for-each-group>
                             </xsl:when>
@@ -119,6 +119,10 @@
     
     <xsl:template match="choice[abbr][expan]">
         <xsl:apply-templates select="expan"/>
+    </xsl:template>
+    
+    <xsl:template match="lb">
+        <xsl:text> </xsl:text>
     </xsl:template>
     
     <xsl:template match="text()">

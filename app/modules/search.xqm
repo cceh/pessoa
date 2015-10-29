@@ -432,7 +432,6 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
      <div class="search_filter">
                        <form class="/helpers:app-root" action="search" method="post" id="search">
                             <!-- Nachher mit class="search:profisearch austauschen -->
-                                  <br/>
             <div class="tab" id="ta_author"><h6>{page:singleAttribute($doc,"search","authors")}</h6>
             </div>
             <div class="selection" id="se_author">
@@ -445,7 +444,7 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
                 </select>
                 <p class="small_text">{page:singleAttribute($doc,"search","multiple_entries")}</p>
                
-                <p class="small_text">{page:singleAttribute($doc,"search","mentioned_as")} :</p>
+                <p class="small_text">{page:singleAttribute($doc,"search","mentioned_as")}:</p>
                 {page:createInput_term("roles","checkbox","role",("author","editor","translator","topic"),$doc,"")}
                 </div>
                 <div class="tab" id="ta_release"><h6>{page:singleAttribute($doc,"search","published")} &amp; {page:singleAttribute($doc,"search","unpublished")}</h6>

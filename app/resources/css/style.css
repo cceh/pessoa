@@ -277,16 +277,18 @@ display: inline-block;
 
 .small_text{
  font-size: 11px;
- margin: 5px 0 5px 5px; 
+ margin: 7px 0 0 6px; 
  color: #fff;
+ line-height: 1.2em;
 }
 
 #nav_searchButton {
-    color: white;
-    margin-left: -5px;
-    margin-top: 5px;
-    width: 108%;
-    cursor:pointer;
+    color: #FFF;
+    margin-left: 6px;
+    margin-top: 0;
+    width: 90%;
+    cursor: pointer;
+    font-size: 11pt;
 }
 /* Zu bearbeiten */
 textarea{
@@ -557,58 +559,60 @@ ul#indextab{
           
 /* Search Button End*/
 
- .search_filter{
+.search_filter{
     width:21%;
     margin: 5px 0 10px 140px;
-    border-right: 1px solid #000; 
-    
+    /* border-right: 1px solid #000; */
     display: inline-block;
     float: left; 
-                }
-                
+}       
 .search_resultList{
     width:50%;
     display: inline-block;
     float:left;
-    margin: 5px;
-   
-    }
-    .search_resultList a{
-        color:#fff;
-    }
+    margin: 10px 30px;   
+}
+.search_resultList a{
+    color:#fff;
+}
                 
 .tab{
     background-color:#990000; 
-    color: #fff; 
-    border:solid 0.5px;
+    color: #fff;
+    /*border:solid 0.5px;*/
     width: 120px;
     margin: 15px auto 0 auto; 
     cursor:pointer;
     }                
-    .tab:hover{
-        background-color:#222; 
-    }
+.tab:hover{
+    background-color:#222; 
+}
 
 .selection{
     background-color:#990000;
-    border:solid 0.5px;
+    /*border:solid 0.5px;*/
     display:none;
     color: #222; 
     width:180px;
     margin: 0 14px 23px auto;
-    padding: 1px 5px; 
+    padding: 7px; 
     }
-                .date_field{
-                    width: 135px;
-                    height: 34px;
-                    margin: 2px 17px;
-                }
-                .role_input-box, .release_input-box, .lang_input-box{
-                    margin-left:5px !important;
-                }
-                .role_input-label, .release_input-label, .lang_input-label{
-                    color: #fff !important; 
-                }
+.date_field{
+    width: 135px;
+    height: 34px;
+    margin: 2px 17px;
+}
+input[type="checkbox"].role_input-box, input[type="radio"].role_input-box,
+input[type="checkbox"].release_input-box, input[type="radio"].release_input-box,
+input[type="checkbox"].lang_input-box, input[type="radio"].lang_input-box {
+    margin-left: 5px;
+    margin-right: 3px;
+    vertical-align: top;
+    margin-top: 5px;
+}
+.role_input-label, .release_input-label, .lang_input-label{
+    color: #fff !important; 
+}
                 
 #spezsearch{
     width: 178px;
@@ -626,8 +630,9 @@ ul#indextab{
       
 #result{
     text-align: left; 
-    margin-top: 30px; 
-    margin-left: 20px; 
+    margin-top: 20px; 
+    margin-left: 0px; 
+    list-style: none;
 }
 
 #result a{
@@ -675,9 +680,9 @@ ul#indextab{
     min-height: 100px;
     float:right;
 }
-    #img-div a{
-        color: #08298A !important;
-    }
+#img-div a{
+    color: #08298A !important;
+}
 
 #image-div{
   margin: 15px 0 15px 15px;
@@ -743,7 +748,10 @@ ul#indextab{
 }
 
 #date, #alphab{
-    margin-left: 5px !important; 
+    margin-left: 5px !important;
+    height: 17px;
+    vertical-align: top;
+    margin-right: 2px;
 }
 
 /* Footer  Temporär Auskommentiert*/
@@ -904,15 +912,16 @@ li.itabs.active span{
 
 #resultados {
    text-align:left !important; 
+   margin: 40px 0 0 0;
 }
 
 #dialog {
     background-color: white;
     margin-left: 70px;
-    margin-top: -93px;
+    margin-top: -47px;
     padding: 5px;
     position: absolute;
-    width: 330px;
+    width: auto;
     
 }
 
@@ -930,6 +939,10 @@ li.itabs.active span{
 .OrderForm {
     text-align:center;
 } 
+.search_resultList .OrderForm {
+    text-align: left;
+    margin: 10px 0;
+}
 
 .emptyTab {
     display:none;
@@ -948,3 +961,24 @@ li.itabs.active span{
     margin: 0 auto; 
 }
 */
+.DivPessoal {
+    float: left;
+    display:block;
+    width:40%;
+}
+.DivPessoa input {
+    margin-right: 3px;
+    vertical-align: top;
+}
+#DivPessoal-1 {
+
+}
+#DivPessoal-2 {
+    margin-left:10px;
+}
+#DottedLine {
+    width:100%;
+    padding:5px;
+    border-bottom: 1px dotted #222;
+    margin-bottom: 20px;
+}
