@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 48B-55<hi rend="superscript">v</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_48B-55v.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 48B-55v</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="en"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate from="1902" to="1912" >1902-1912</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0113_55v_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <list> 
+               <item>
+                  <rs type="text">Artigo sobre a revolta do <rs type="place">Brazil</rs></rs> para <hi rend="underline">
+                     <gap reason="illegible" quantity="1" unit="word"/></hi>
+               </item>
+               <item>
+                  <choice>
+                     <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                     <expan><rs type="text">Artigo sobre a revolta do <rs type="place">Brazil</rs></rs></expan>
+                  </choice>
+                  (maior), para um magazine.
+               </item>        
+               <item xml:id="I3">
+                  <rs type="text">
+                     <choice>
+                        <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                        <expan>Artigo sobre</expan>
+                     </choice>
+                     automóveis</rs> (em 
+                     <gap reason="illegible" quantity="1" unit="word"/> ou comprimido) (Coelho).
+               </item>
+               <item xml:id="I4">
+                   <rs type="text">
+                      <choice>
+                         <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                         <expan>Artigo sobre</expan>
+                      </choice>
+                      revolução portuguesa – <gap reason="illegible" quantity="1" unit="word"/></rs>
+               </item>
+               <item xml:id="I5">
+                   <rs type="text">
+                      <choice>
+                         <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                         <expan>Artigo sobre</expan>
+                      </choice> as 3 revoltas portuguezas</rs> – maior.
+                  <note target="range(I3,I4,I5,I6,I7)" place="margin left" type="addition">
+                     <metamark rend="curly bracket" function="grouping"/>   
+                  </note>
+               </item>
+               <item xml:id="I6">
+                   <rs type="text">
+                      <choice>
+                         <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                         <expan>Artigo sobre</expan>
+                      </choice> a situação em <rs type="place">Portugal</rs></rs>.
+               </item>
+               <item xml:id="I7">
+                   <rs type="text">
+                      <choice>
+                         <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                         <expan>Artigo sobre</expan>
+                      </choice> <rs type="place">Portugal</rs> durante a revolução</rs>.
+               </item>
+               <item>
+                   <rs type="text">
+                      <choice>
+                         <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                         <expan>Artigo sobre</expan>
+                      </choice>
+                      <gap reason="illegible" unit="words" extent="5"/></rs>
+               </item>        
+               <item>
+                  <rs type="text">  
+                     <choice>
+                        <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                        <expan>Artigo sobre</expan>
+                     </choice> o clericalismo em <rs type="place">Portugal</rs></rs> (some 
+                                          <gap reason="illegible" quantity="1" unit="word"/> paper)
+               </item>
+               <item>
+                  <rs type="text">
+                     <choice>
+                        <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                        <expan>Artigo sobre</expan>
+                     </choice> a situação em <rs type="place">Hespanha</rs></rs>
+               </item>
+               <item>
+                  <rs type="text"> 
+                     Paragraphos <gap reason="illegible" quantity="1" unit="word"/>
+                  </rs>
+               </item>
+               <item>
+                  <rs type="text">
+                     <choice>
+                        <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                        <expan>Paragraphos</expan>
+                     </choice> anedocticos</rs>
+               </item>
+               <item>
+                  <rs type="text">
+                     <choice>
+                        <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                        <expan>Paragraphos</expan>
+                     </choice> noticiosos</rs>
+               </item>        
+               <item>
+                   <rs type="text">   
+                      Artigo para <hi rend="underline"><gap reason="illegible" quantity="1" unit="word"/></hi>(?): 
+                      The <hi rend="underline">honest</hi> in <rs type="place">Brazil</rs></rs>
+               </item>
+               <item>
+                   <rs type="text">
+                      <choice>
+                         <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                         <expan>Artigo</expan>
+                      </choice> sobre Pintores Portuguezes</rs>
+               </item>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>

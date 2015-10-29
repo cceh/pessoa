@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 48B-25<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_48B-25r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 48B-25r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                        <rs type="genre" key="plano_editorial">Plano editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="en"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate from="1920" to="1927">1920-1927</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0050_25_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <delSpan rend="overstrike" spanTo="#A1" />
+            <div rend="left">
+               <list> 
+                  <head>
+                     <rs type="text">Cancioneiro</rs>
+                  </head>
+                  <item>
+                     <label>1.</label>
+                     <rs type="text">Canção de Outono</rs>.
+                  </item>
+                  <item>
+                     <label>2.</label>
+                     <rs type="text">Realejo</rs>.
+                  </item>
+                  <item>
+                     <label>3.</label>
+                     <rs type="text">Gládio</rs>.
+                  </item>
+                  <item>
+                     <label>4.</label>
+                     <rs type="text" xml:id="T5">Transeunte</rs>.
+                  </item>
+               </list>
+            </div>
+            <anchor xml:id="A1" />
+            <div rend="right">
+               <list>
+                  <item><rs type="text">Monarchic Idea</rs>.</item>
+                  <item><rs type="text">Monarchic Idea</rs>.</item>
+               </list>
+               <metamark rend="line" function="distinct"/>
+               <list>
+                  <head><hi rend="underline">Dictionary of Technology:</hi></head>  
+                  <item>
+                     <label>1.</label> English, French, German.
+                  </item>
+                  <item>
+                     <label>2.</label>
+                     <choice>
+                        <abbr><metamark rend="line" function="ditto"/></abbr>
+                        <expan>English</expan>
+                     </choice>, Spanish, Portuguese.
+                     <metamark rend="curly-bracket" place="right" target="#N1"/>
+                     <note xml:id="N1 rend="vertical" place="margin right">
+                        <list>
+                           <item>
+                              <del rend="overstrike">E, F, G, S, P.</del>
+                           </item>
+                           <item>
+                              E, F, S <supplied resp="PS" reason="omitted-in-original"/>
+                           </item>
+                           <item>
+                              E, G, P <supplied resp="PS" reason="omitted-in-original"/>
+                           </item>
+                           <item>
+                              E, I, P <supplied resp="PS" reason="omitted-in-original"/>
+                           </item>
+                        </list>
+                     </note>
+                  </item>        
+                  <item>
+                     <label>3.</label>
+                     <choice>
+                        <abbr><metamark rend="line" function="ditto"/></abbr>
+                        <expan>English</expan>
+                     </choice>, Italian, Dutch.
+                  </item>
+                  <item>
+                     <label><del rend="overstrike">or: 4.</del></label>
+                     <choice>
+                        <abbr><metamark rend="line" function="ditto"/></abbr>
+                        <expan>English</expan>
+                     </choice>, Russian, (Scandinavian).
+                  </item>
+                  <item>
+                     <label><del rend= "overstrike"><gap reason="illegible" unit="character" extent="1"/></del></label>
+                     <del rend= "overstrike"><choice>
+                        <abbr><metamark rend="line" function="ditto"/></abbr>
+                        <expan>English</expan>
+                     </choice></del> 
+                  </item>
+                  <note>Or one volume: E, F, G, I, S, P. (D; R.) = 8.</note>
+               </list>
+            </div>
+            <metamark rend="line" function="distinct"/>
+            <div>
+               <list>
+                  <item>
+                     <rs type="work" key="O1" style="b"><rs type="text"><hi rend="underline">Cancioneiro</hi></rs></rs> – em varios “livros”, as simples canções.
+                  </item>
+                  <item>
+                     <rs type="work" key="O1" style="c"><rs type="text"><hi rend="underline">Itinerário</hi></rs></rs> – os poemas maiores, mas de indole reflectiva ou elegiaca, e.g. <lb/> “<rs type="text">Pequenito Coxo</rs>”.
+                  </item>
+                  <item>
+                     <rs type="text"><hi rend="underline">Poemas Portugueses</hi></rs> – Os poemas maiores – como “Agamemnon”, etc. <lb/> 
+                     (ou este titulo como titulo geral, dos outros livros <lb/> tambem).
+                  </item>
+               </list> 
+            </div>
+            <metamark rend="line" function="distinct"/>
+            <div>
+               <div rend="left">
+                  <list>
+                     <head><hi rend="underline">Poemas Portuguezes</hi></head>
+                     <item><label>1.</label> <rs type="text">À Memoria de <rs type="person" key="P51">Sidonio Paes</rs></rs>.</item>
+                     <item><label>2.</label> <rs type="text">O Manipanso</rs>.</item>
+                     <item><label>3.</label> <rs type="text"><rs type="person" key="P95">Agamemnon</rs></rs>.</item>
+                     <item><label>4.</label> <rs type="text"><rs type="person" key="P97">Juliano em Antiochia</rs></rs>.</item>
+                     <item><label>5.</label> <rs type="text">Decadencia</rs>.</item>	
+                     <item><label>6.</label> <rs type="text"><rs type="person" key="P102">D. João</rs> no Inferno</rs>.</item>
+                     <item><label>7.</label> <rs type="text">Mar Portuguez</rs>.</item>
+                     <item><label>8.</label> <rs type="text">Ode a Athena</rs>.</item>	
+                     <item><label>9.</label> <rs type="text">Orpheu</rs>.</item>
+                     <item><label>10.</label> <rs type="text">Ode ao Encoberto</rs>.</item>
+                  </list>
+                  <metamark rend="line" function="distinct"/>
+                  <list>
+                     <item>= <rs type="text">The Duke of Parma</rs>. (example of drama).</item>
+                     <item>= <rs type="text">Prometheus Revinctus</rs> (example of poem).</item>        
+                     <item>= <rs type="text">Antinous</rs>; <rs type="text">Epithalamium</rs>; <rs type="text">Spring 1917</rs>; <rs type="text">Elegy</rs>; <rs type="text">The Voyage</rs>; <lb/> <rs type="text">Summer</rs>;</item>
+                     <item>= <rs type="text">Books of Sonnets</rs>.</item>
+                     <item>= <rs type="text">Books (?) of Poems</rs>.</item>
+                  </list>
+               </div>
+               <metamark rend=" vertical line" place="centre" function="distinct"/>
+               <div rend="right">
+                  <list>
+                     <item>
+                        <list>
+                           <head>
+                              <rs type="text"><hi rend="underline">Theatro Menor</hi></rs>
+                           </head>
+                           <item>
+                              <label>1.</label>
+                              <rs type="text">O Marinheiro</rs>.
+                           </item>
+                           <item>
+                              <label>2.</label>
+                              <rs type="text">A Morte do Principe</rs>.
+                           </item>
+                           <item>
+                              <label>3.</label>
+                              <rs type="text">Sakyamuni</rs>.
+                           </item>
+                           <item>
+                              <label>4.</label>
+                              <rs type="text">A Cadella</rs>. 
+                           </item>
+                           <item>
+                              <label>5.</label>
+                              <rs type="text">As Cousas</rs>.
+                           </item>   
+                        </list>
+                     </item>
+                     <item>
+                        <rs type="text"><hi rend="underline">Auto das Bacantes</hi></rs>.
+                     </item>
+                     <item>
+                        <rs type="text"><hi rend="underline">Auto de Orpheu</hi></rs>.
+                     </item>
+                     <item>
+                        <rs type="text"><hi rend="underline">Trilogia dos Gigantes – (3 dramas)</hi></rs>.
+                     </item>
+                     <item>
+                        <rs type="text"><hi rend="underline">Ligéa (poema dramatico)</hi></rs>.
+                     </item>
+                     <item>
+                        <rs type="text"><hi rend="underline">Primeiro Fausto</hi></rs>.
+                     </item>
+                     <item>
+                        <rs type="text"><hi rend="underline">Segundo Fausto</hi></rs>.
+                     </item>
+                     <item>
+                        <rs type="text"><hi rend="underline">Terceiro Fausto</hi></rs>.
+                     </item>
+                     <item>
+                        <rs type="text"><hi rend="underline">Theomachia (ou Os Argonautas)</hi></rs>.
+                     </item>
+                     <item xml:id="I35">
+                        <rs type="text"><hi rend="underline"><rs type="person" key="P21" style="b">D. Sebastião</rs></hi></rs>.
+                     </item>
+                  </list> 
+               </div> 
+            </div>       
+         </div>
+      </body>
+   </text>
+</TEI>

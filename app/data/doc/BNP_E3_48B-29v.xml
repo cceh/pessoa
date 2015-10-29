@@ -4,7 +4,7 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>BNP/E3 48B-8<hi rend="superscript">r</hi></title>
+            <title>BNP/E3 48B-29<hi rend="superscript">v</hi></title>
             <author>
                <rs type="person" key="FP">Fernando Pessoa</rs>
             </author>
@@ -32,13 +32,13 @@
             <availability>
                <licence target="http://creativecommons.org/licenses/by/3.0/"/>
             </availability>
-            <idno type="filename">BNP_E3_48B-8r.xml</idno>
+            <idno type="filename">BNP_E3_48B-29v.xml</idno>
          </publicationStmt>
          <sourceDesc>
             <msDesc>
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
-                  <idno>BNP/E3 48B-8r</idno>
+                  <idno>BNP/E3 48B-29v</idno>
                </msIdentifier>
                <msContents>
                   <msItemStruct>
@@ -48,13 +48,13 @@
                      <note type="genre">
                         <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
-                     <textLang mainLang="pt"/>
+                     <textLang mainLang="pt" otherLangs="en"/>
                   </msItemStruct>
                </msContents>
                <history>
                   <origin>
                      <p>
-                        <origDate notBefore="1925">post. 1925</origDate>
+                        <origDate from="1920" to="1927">1920-1927</origDate>
                      </p>
                   </origin>
                </history>
@@ -63,39 +63,20 @@
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0015_8_t24-C-R0150.jpg"/>
+      <graphic url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0059_29v_t24-C-R0150.jpg"/>
    </facsimile>
    <text>
       <body>
          <div>
-            <list>
-               <head><rs type="person" key="FP" role="author" style="b">Fernando Pessoa</rs> – </head>
-               <item>
-                  <rs type="work" key="O2" style="a"><rs type="text">Os Poemas Completos de <rs type="person" key="AC" role="author">Alberto <lb/> Caeiro</rs></rs></rs> 
-               </item>
-               <item>  
-                  Com um prefacio do <rs type="person" key="RR" role="author">Dr. Ricardo <lb/> Reis,</rs> <seg>e <add place="above" n="2">alguns</add> outros</seg> apontamentos
-               </item>
-            </list>
-            <metamark rend="line" function="distinct"/>
+            <gap reason="selection" unit="line" extent="1"/>
+            <head><hi rend="underline">Anthologia:</hi></head> 
+            <head type="sub"><choice><abbr>Vol<am>.</am></abbr><expan>Vol<ex>ume</ex></expan></choice> 1°:</head>
             <list> 
-               <head><rs type="person" key="FP" role="author" style="b">Fernando Pessoa</rs> – </head>
-               <item>
-                  <rs type="work" key="O4" style="c"><rs type="text">Accessorios</rs></rs>
-               </item>
-               <item>
-                  <rs type="work" key="O4" style="a"><rs type="text">Versos de <rs type="person" key="AdC" role="author">Alvaro de Campos</rs></rs></rs>
-               </item>
+               <item><label>1.</label> <rs type="person" key="P65">Shakespeare</rs> - <rs type="text">A Tormenta</rs>.</item>
+               <item><label>2.</label> <rs type="person" key="P104">O. Henry</rs> - (um conto).</item>        
+               <item><label>3.</label> (<rs type="person" key="P105">Conan Doyle</rs> - <rs type="text">O Valle do Terror</rs>.)</item>
             </list>
-            <metamark rend="line" function="distinct"/>
-            <list>
-              <item>
-                 <label>1.</label> <rs type="text">Theoria do Suffragio Politico</rs>.
-              </item>
-              <item>
-                 <label>2.</label> <rs type="text">A Opinião Publica</rs>.
-              </item>  
-            </list>
+            <gap reason="selection" unit="line" extent="9"/>
          </div>
       </body>
    </text>

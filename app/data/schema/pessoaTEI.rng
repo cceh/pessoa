@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2015-10-29T15:34:16Z. .
+Schema generated from ODD source 2015-10-29T16:26:16Z. .
 TEI Edition: Version 2.9.1. Last updated on
 	15th October 2015, revision 46ac023
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.9.1/
@@ -129,6 +129,10 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.9.1/
    </define>
    <define name="tei_data.enumerated">
       <ref name="tei_data.word"/>
+   </define>
+   <define name="tei_att.canonical.attributes">
+      <ref name="tei_att.canonical.attribute.key"/>
+      <ref name="tei_att.canonical.attribute.ref"/>
    </define>
    <define name="tei_att.canonical.attribute.key">
       <optional>
@@ -259,6 +263,13 @@ Sample values include: 1] all; 2] most; 3] range</a:documentation>
          </attribute>
       </optional>
    </define>
+   <define name="tei_att.datable.w3c.attributes">
+      <ref name="tei_att.datable.w3c.attribute.when"/>
+      <ref name="tei_att.datable.w3c.attribute.notBefore"/>
+      <ref name="tei_att.datable.w3c.attribute.notAfter"/>
+      <ref name="tei_att.datable.w3c.attribute.from"/>
+      <ref name="tei_att.datable.w3c.attribute.to"/>
+   </define>
    <define name="tei_att.datable.w3c.attribute.when">
       <optional>
          <attribute name="when">
@@ -299,6 +310,19 @@ Sample values include: 1] all; 2] most; 3] range</a:documentation>
          </attribute>
       </optional>
    </define>
+   <define name="tei_att.datable.attributes">
+      <ref name="tei_att.datable.w3c.attributes"/>
+      <ref name="tei_att.datable.attribute.calendar"/>
+      <ref name="tei_att.datable.attribute.period"/>
+   </define>
+   <define name="tei_att.datable.attribute.calendar">
+      <optional>
+         <attribute name="calendar">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the system or calendar to which the date represented by the content of this element belongs.</a:documentation>
+            <ref name="tei_data.pointer"/>
+         </attribute>
+      </optional>
+   </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             id="pessoaTEI-att.datable-calendar-calendar-constraint-1">
       <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -310,6 +334,14 @@ Sample values include: 1] all; 2] most; 3] range</a:documentation>
 belongs, but this <sch:name/> element has no textual content.</sch:assert>
           </sch:rule>
    </pattern>
+   <define name="tei_att.datable.attribute.period">
+      <optional>
+         <attribute name="period">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies a pointer to some location defining a named period of time within which the datable item is understood to have occurred.</a:documentation>
+            <ref name="tei_data.pointer"/>
+         </attribute>
+      </optional>
+   </define>
    <define name="tei_att.datcat.attribute.datcat">
       <optional>
          <attribute name="datcat" ns="http://www.isocat.org/ns/dcr">
@@ -425,6 +457,12 @@ Sample values include: 1] approved; 2] candidate; 3] cleared; 4] deprecated; 5] 
             </list>
          </attribute>
       </optional>
+   </define>
+   <define name="tei_att.editLike.attributes">
+      <ref name="tei_att.dimensions.attributes"/>
+      <ref name="tei_att.source.attributes"/>
+      <ref name="tei_att.editLike.attribute.evidence"/>
+      <ref name="tei_att.editLike.attribute.instant"/>
    </define>
    <define name="tei_att.editLike.attribute.evidence">
       <optional>
@@ -573,6 +611,35 @@ Suggested values include: 1] internal; 2] external; 3] conjecture</a:documentati
          <ref name="tei_data.pointer"/>
       </attribute>
    </define>
+   <define name="tei_att.naming.attributes">
+      <ref name="tei_att.canonical.attributes"/>
+      <ref name="tei_att.naming.attribute.role"/>
+      <ref name="tei_att.naming.attribute.nymRef"/>
+   </define>
+   <define name="tei_att.naming.attribute.role">
+      <optional>
+         <attribute name="role">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">may be used to specify further information about the entity referenced by this name in the form of a set of whitespace-separated values, for example the occupation of a person, or the status of a place.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <ref name="tei_data.enumerated"/>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="tei_att.naming.attribute.nymRef">
+      <optional>
+         <attribute name="nymRef">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference to the canonical name) provides a means of locating the canonical form (nym) of the names associated with the object named by the element bearing it.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <ref name="tei_data.pointer"/>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
    <define name="tei_att.typed.attributes">
       <ref name="tei_att.typed.attribute.type"/>
       <ref name="tei_att.typed.attribute.subtype"/>
@@ -658,22 +725,32 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
           </sch:rule>
    </pattern>
    <define name="tei_model.nameLike.agent">
-      <notAllowed/>
+      <choice>
+         <ref name="tei_name"/>
+      </choice>
    </define>
    <define name="tei_model.nameLike.agent_alternation">
-      <notAllowed/>
+      <choice>
+         <ref name="tei_name"/>
+      </choice>
    </define>
    <define name="tei_model.nameLike.agent_sequence">
-      <empty/>
+      <ref name="tei_name"/>
    </define>
    <define name="tei_model.nameLike.agent_sequenceOptional">
-      <empty/>
+      <optional>
+         <ref name="tei_name"/>
+      </optional>
    </define>
    <define name="tei_model.nameLike.agent_sequenceOptionalRepeatable">
-      <empty/>
+      <zeroOrMore>
+         <ref name="tei_name"/>
+      </zeroOrMore>
    </define>
    <define name="tei_model.nameLike.agent_sequenceRepeatable">
-      <notAllowed/>
+      <oneOrMore>
+         <ref name="tei_name"/>
+      </oneOrMore>
    </define>
    <define name="tei_model.segLike">
       <choice>
@@ -1655,6 +1732,36 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
          <ref name="tei_facsimile"/>
       </choice>
    </define>
+   <define name="tei_att.personal.attributes">
+      <ref name="tei_att.naming.attributes"/>
+      <ref name="tei_att.personal.attribute.full"/>
+      <ref name="tei_att.personal.attribute.sort"/>
+   </define>
+   <define name="tei_att.personal.attribute.full">
+      <optional>
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                    name="full"
+                    a:defaultValue="yes">
+            <a:documentation>indicates whether the name component is given in full, as an abbreviation or simply as an initial.</a:documentation>
+            <choice>
+               <value>yes</value>
+               <a:documentation>the name component is spelled out in full.</a:documentation>
+               <value>abb</value>
+               <a:documentation>(abbreviated) the name component is given in an abbreviated form.</a:documentation>
+               <value>init</value>
+               <a:documentation>(initial letter) the name component is indicated only by one initial.</a:documentation>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="tei_att.personal.attribute.sort">
+      <optional>
+         <attribute name="sort">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the sort order of the name component in relation to others within the name.</a:documentation>
+            <ref name="tei_data.count"/>
+         </attribute>
+      </optional>
+   </define>
    <define name="tei_p">
       <element name="p">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(paragraph) marks paragraphs in prose. [3.1. Paragraphs 7.2.5. Speech Contents]</a:documentation>
@@ -1864,6 +1971,18 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
                </list>
             </attribute>
          </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_name">
+      <element name="name">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(name, proper noun) contains a proper noun or noun phrase. [3.5.1. Referring Strings]</a:documentation>
+         <ref name="tei_macro.phraseSeq"/>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.personal.attributes"/>
+         <ref name="tei_att.datable.attributes"/>
+         <ref name="tei_att.editLike.attributes"/>
+         <ref name="tei_att.typed.attributes"/>
          <empty/>
       </element>
    </define>
@@ -2261,8 +2380,10 @@ Elements 7.2.5. Speech Contents]</a:documentation>
                   <ref name="tei_respStmt"/>
                </choice>
             </zeroOrMore>
+            <ref name="tei_imprint"/>
             <zeroOrMore>
                <choice>
+                  <ref name="tei_imprint"/>
                   <ref name="tei_biblScope"/>
                </choice>
             </zeroOrMore>
@@ -2325,6 +2446,34 @@ Elements 7.2.5. Speech Contents]</a:documentation>
                </choice>
             </attribute>
          </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_imprint">
+      <element name="imprint">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">groups information relating to the publication or distribution of a bibliographic item. [3.11.2.4. Imprint, Size of a Document, and Reprint Information]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <empty/>
+            </zeroOrMore>
+            <oneOrMore>
+               <choice>
+                  <group>
+                     <ref name="tei_model.imprintPart"/>
+                  </group>
+                  <group>
+                     <ref name="tei_model.dateLike"/>
+                  </group>
+               </choice>
+               <zeroOrMore>
+                  <ref name="tei_respStmt"/>
+               </zeroOrMore>
+               <zeroOrMore>
+                  <ref name="tei_model.global"/>
+               </zeroOrMore>
+            </oneOrMore>
+         </group>
+         <ref name="tei_att.global.attributes"/>
          <empty/>
       </element>
    </define>
