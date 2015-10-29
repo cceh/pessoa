@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>BNP/E3 44-25</title>
+            <title>BNP/E3 48B-7</title>
             <author>
                <rs type="person" key="FP">Fernando Pessoa</rs>
             </author>
@@ -31,30 +32,27 @@
             <availability>
                <licence target="http://creativecommons.org/licenses/by/3.0/"/>
             </availability>
-            <idno type="filename">BNP_E3_44-25.xml</idno>
+            <idno type="filename">BNP_E3_48B-7.xml</idno>
          </publicationStmt>
          <sourceDesc>
             <msDesc>
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
-                  <idno>BNP/E3 44-25</idno>
+                  <idno>BNP/E3 48B-7</idno>
                </msIdentifier>
                <msContents>
                   <msItemStruct>
-                     <author>
-                        <rs type="person" key="FP">Fernando Pessoa</rs>
-                     </author>
+                     <author>Fernando Pessoa</author>
                      <note type="genre">
-                        <rs type="genre" key="lista_editorial">Lista
-                        editorial</rs>
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
-                     <textLang mainLang="en" />
+                     <textLang mainLang="pt"/>
                   </msItemStruct>
                </msContents>
                <history>
                   <origin>
                      <p>
-                        <origDate when="1919" cert="medium">c. 1919</origDate>
+                        <origDate when="1930" cert="medium">c. 1930</origDate>
                      </p>
                   </origin>
                </history>
@@ -63,47 +61,35 @@
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-44-1-54_JPG_24-C-R0150/bn-acpc-e-e3-44-1-54_0049_25_t24-C-R0150.jpg"/>
+      <graphic url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0013_7_t24-C-R0150.jpg"/>
    </facsimile>
    <text>
       <body>
-         <div>  
+         <div>
+            <head><hi rend="underline">Ficções do Interludio</hi></head>  
             <list> 
+               <metamark rend="arrow" target="#A1" function="addition"/>
+               <note xml:id="A1" rend="right">
+                  <hi rend="underline">
+                     <choice>
+                        <abbr>Pref<am>.</am></abbr>
+                        <expan>Pref<ex>acio</ex></expan>
+                     </choice>
+                  </hi>
+               </note>
                <item>
-                  <label>1.</label> 
-                  Newspaper.
-               </item>
+                  <label>1.</label> <rs type="text">O Banqueiro Anarchista</rs>.
+               </item>          
                <item>
-                  <label>2.</label>
-                  Film producing Company.
+                  <label>2.</label> <rs type="work" key="O2" style="a"><rs type="text">Poemas Completos de Alberto <lb/>  
+                  Caeiro</rs></rs> (1889-1915).
                </item>        
                <item>
-                  <label>3.</label>
-                  Chemical products Co. — <gap reason="illegible" unit="word" extent="1"/>
-               </item>
-               <item>
-                  <label>4.</label>
-                  Personal business questions,
-               </item>
-               <item>
-                  <label>5.</label>
-                  Shorthand System.
-               </item>
-               <item>
-                  <label>6.</label>
-                  <rs type="person" key="P65">Shakespeare</rs> Translations.
-               </item>
-               <item>
-                  <label>7.</label>
-                  Code.
-               </item>
-               <item>
-                  <label>8.</label>
-                  “Cosmopolis” — the <gap reason="illegible" unit="word" extent="1"/> plan
+                  <label>3.</label> <rs type="text">Manuscripto de um Sybarita</rs>.
                </item>
             </list>
             <metamark rend="line" function="distinct"/>
-            <gap reason="selection" unit="line" extent="33"/>
+            <gap reason="selection" unit="line" extent="1"/>
          </div>
       </body>
    </text>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>48A-6<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_48A-6r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 48A-6r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="en"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate from="1920" to="1927">1920-1927</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3-48a-1-66_JPG_24-C-R0150/bn-acpc-e-e3-48a-1-66_0011_6_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <head><hi rend="underline">QUARESMA, DECIFRADOR</hi></head>  
+            <list rend="inline"> 
+               <item>
+                  <label>1.</label> <rs type="text">O Pergaminho roubado</rs>.
+               </item>
+               <item>
+                  — <label>2.</label> <rs type="text">O Desap<pc>-</pc><lb />
+                  parecimento do <rs type="person" key="P94">Dr. Reis Gomes</rs></rs>.
+               </item>        
+               <item>
+                  — <label>3.</label> <rs type="text">O <lb/> Roubo na Quinta das Vinhas</rs>.
+               </item>
+               <item>
+                  — <label>4.</label> <rs type="text">O Caso <lb/> do Quarto Fechado</rs>.
+               </item>
+               <item>
+                  — <label>5.</label> <rs type="text">A Janella Es<pc>-</pc><lb />treita</rs>.
+               </item>
+            </list> 
+         </div>
+         <metamark rend="line" function="distinct"/>
+         <div>
+            <head><hi rend="underline">ANTITHESES</hi></head>
+            <list rend="inline">  
+               <item>
+                  <label>1.</label> <rs type="text">O Banqueiro Anarchista</rs>.
+               </item>                                  
+               <item>
+                  — <label>2.</label> <rs type="text">Primeiro <lb/> Antídoto</rs>.
+               </item>
+               <item>
+                  — <label>3.</label> <rs type="text">Segundo Antídoto</rs>.
+               </item>
+               <item>
+                  — <label>4.</label> <lb/> <rs type="text">Perspectiva Psychiatrica</rs>. 
+               </item>
+               <item>
+                  — <label>5.</label> <rs type="text">Allega<pc>-</pc><lb/>ções Finaes</rs>.
+               </item>
+            </list>
+         </div>
+         <metamark rend="line" function="distinct"/>
+         <div>
+            <head><hi rend="underline">HYPOTHESES</hi></head>
+            <list rend="inline"> 
+               <item>
+                  <label>1.</label> <rs type="text">Manuscrito de um Criticista</rs>.
+               </item>
+               <item>
+                  — <label>2.</label> <lb/> <rs type="text">Uma Tarde Clerical</rs>.
+               </item>
+               <item>
+                  — <label>3.</label> <rs type="text">Philosophia da<lb/> Gula</rs>.
+               </item>
+               <item>
+                  — <label>4.</label> <rs type="text">Na Casa de Saude de Cascaes</rs>. <lb/>
+               </item>
+               <item>
+                  — <label>5.</label> <rs type="text">Clavis Aurea</rs>.
+               </item>
+            </list>
+         </div>
+         <metamark rend="line" function="distinct"/>
+         <div>
+            <head><hi rend="underline">SPECTROS</hi></head>
+            <list rend="inline"> 
+               <item>
+                  <label>1.</label> <rs type="text">A Perda do Hiate “Nada”</rs>.
+               </item>
+               <item>
+                  — <label>2.</label> <rs type="text">Jacob<lb/> Dermot</rs>.
+               </item>
+               <item>
+                  — <label>3.</label> <rs type="text">O Desaparecimento do <rs type="person" key="P100">Prof. <lb/> Serzedas</rs></rs>.
+               </item>
+               <item>
+                  — <label>4.</label> <rs type="text">O Peregrino</rs>.
+               </item>
+               <item>
+                  — <label>5.</label> <rs type="text">O Crime <lb/> do <rs type="person" key="P101">Dr. Cerdeira</rs></rs>.
+               </item>
+            </list>
+         </div>
+         <metamark rend="line" function="distinct"/>
+         <div>
+            <head><hi rend="underline">NA PHARMACIA DO EVARISTO</hi></head>
+            <list rend="inline"> 
+               <item><rs type="text">Introducção a Toda a Sociologia</rs>. (1-5).</item>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>

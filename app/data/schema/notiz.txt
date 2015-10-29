@@ -1,0 +1,13 @@
+<define name="tei_model.respLike">
+      <choice>
+         <ref name="tei_author"/>
+         <ref name="tei_respStmt"/>
+      </choice>
+   </define>
+
+Ist das ein Bug? Sollte es nicht so sein:
+
+<oneOrMore>
+         <ref name="tei_author"/>
+         <ref name="tei_respStmt"/>
+      </oneOrMore>
