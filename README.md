@@ -30,7 +30,7 @@ pessoa
 <a name="workflow"></a>
 ## Workflow
 
-Development on papyri is done using a local eXist instance. You will work on a local copy of the source code 
+Development for the Pessoa edition is done using a local eXist instance. You will work on a local copy of the source code 
 which is deployed to your local eXist after every change you want to test. Please do not use the eXist
 feature of the Oxygen editor to directly modifiy the files inside the database as this will inevitably lead 
 to chaos when working collaboratively using git.
@@ -129,7 +129,7 @@ If your local eXist configuration differs, adjust accordingly.
 <a name="deploying-the-app-to-your-local-exist"></a>
 ### Deploying the app to your local eXist
 
-Now you should have everything together to deploy the papyri app to your local eXist 
+Now you should have everything together to deploy the pessoa app to your local eXist 
 
 ```sh
 gulp deploy-local
@@ -138,7 +138,7 @@ gulp deploy-local
 <a name="creating-the-index"></a>
 ### Creating the index
 
-The papyri apps needs a working database index. Use
+The Pessoa app needs a working database index. Use
 
 ```sh
 gulp update-index
@@ -148,7 +148,7 @@ to create it.
 
 Everytime there is a change in ```collection.xconf```, (e.g. after a ```git pull```), you need to update the index using this command.
 
-If there was no error, you should have a working papyri instance at http://localhost:8080/exist/apps/papyri (or similar).
+If there was no error, you should have a working pessoa instance at http://localhost:8080/exist/apps/pessoa (or similar).
 
 
 <a name="working-with-gulp"></a>
