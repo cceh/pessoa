@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?> 
+<?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>BNP/E3 144T-52<hi rend="superscript">r</hi>
-            </title>
+            <title>BNP/E3 48I-12<hi rend="superscript">r</hi></title>
             <author>
                <rs type="person" key="FP">Fernando Pessoa</rs>
             </author>
@@ -16,6 +15,10 @@
             <respStmt>
                <resp>Modelagem de dados, Codificação</resp>
                <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
             </respStmt>
             <respStmt>
                <resp>Consultoria</resp>
@@ -29,13 +32,13 @@
             <availability>
                <licence target="http://creativecommons.org/licenses/by/3.0/"/>
             </availability>
-            <idno type="filename">BNP_E3_144T-52r.xml</idno>
+            <idno type="filename">BNP_E3_48I-12r.xml</idno>
          </publicationStmt>
          <sourceDesc>
             <msDesc>
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
-                  <idno>BNP/E3 144T-52r</idno>
+                  <idno>BNP/E3 48I-12r</idno>
                </msIdentifier>
                <msContents>
                   <msItemStruct>
@@ -45,7 +48,7 @@
                      <note type="genre">
                         <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
-                     <textLang mainLang="pt" otherLangs="en"/>
+                     <textLang mainLang="pt"/>
                   </msItemStruct>
                </msContents>
                <history>
@@ -60,52 +63,42 @@
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3_144t_JPG_24-C-R0150/bn-acpc-e-e3_144t_0109_52r_t24-C-R0150.jpg"/>
+      <graphic url="bn-acpc-e-e3-48i-1-30_JPG_24-C-R0150/bn-acpc-e-e3-48i-1-30_0023_12_t24-C-R0150.jpg"/>
    </facsimile>
    <text>
       <body>
          <div>
             <list>
-               <item xml:id="I1">
-                  <del rend="overstrike">
-                     <hi rend="underline"><rs type="person" key="P30">Mario</rs></hi>. <rs type="text">Data poema</rs>.</del>
+               <head><hi rend="underline">Trilogia da Noite</hi></head>
+               <item>
+                  <label>1.</label> 
+                  <rs type="text"><rs type="person" key="P92">Fausto</rs></rs>. (a consciencia)
+               </item>
+               <item>
+                  <add place="margin left" n="2">?</add>
+                  <label>2.</label> 
+                  <rs type="person" key="P50">Jesus (Christo)</rs> (a illusão)
                </item>        
-               <item xml:id="I2">
-                  <choice>
-                     <abbr>—</abbr>
-                     <expan>
-                        <rs type="person" key="P30">Mario</rs>
-                     </expan>
-                  </choice>
-                  <rs type="text"><abbr>L<am>.</am></abbr>
-                   Kuhne Book</rs>.
-                  <note target="range(I1,I3)" place="right" type="addition">
-                     <metamark rend="vertical-lign" function="grouping"/> 
-                     <label>Key to House.</label>
-                  </note>
+               <item>
+                  <label>3.</label> (Um dominador) (<supplied resp="PS" reason="omitted-in-original"/>)
                </item>
-               <item xml:id="I3">
-                  <choice>
-                     <abbr>—</abbr>
-                     <expan>
-                        <rs type="person" key="P30">Mario</rs>
-                     </expan>
-                  </choice> <supplied resp="PS" reason="omitted-in-original"/> 
-               </item>
-            </list>
-            <list>
-               <item xml:id="I4">
-                  <hi rend="underline"><rs type="text">Ultimus Joculatorum</rs>.</hi><lb/> 
-                  a Kind of Sartor<lb/>
-                  Resartus — Instead of<lb/> <hi rend="underline"><rs type="text">Book of Friar Maurice</rs></hi>
-                  <note place="left">or another good title</note>
-               </item>
-               <metamark rend="line" function="distinct"/>
-               <item><rs type="text">The Nothingness Club</rs>.</item>
-               <item><rs type="text">The Zero Club</rs>.</item>
             </list>
             <metamark rend="line" function="distinct"/>
-            <ab><del rend="overstrike"><rs type="person" key="P31">Dr. E. Hy</rs></del></ab>
+            <ab>
+               Meu pai, meu 
+               <choice>
+                  <abbr>p<am>.</am></abbr>
+                  <expan>p<ex>ai</ex></expan>
+               </choice> porque me abandonaste(s)?
+            </ab>
+            <ab>
+               <hi rend="framed"><rs type="person" key="P113">Judas</rs> a symbol.</hi>
+               (<hi rend="underline"><rs type="person" key="P114">Satan</rs></hi> writes then)
+            </ab>
+            <list>
+               <item><hi rend="underline"><rs type="person" key="P115">Frei Gil</rs>.</hi></item>
+               <item><hi rend="underline"><rs type="person" key="P116">Paracelso</rs>.</hi></item>
+            </list>
          </div>
       </body>
    </text>

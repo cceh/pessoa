@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 63-31<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_63-31r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 63-31r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="en fr"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate when="1935" cert="medium">c. 1935</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3-63-1-55_JPG_24-C-R0150/bn-acpc-e-e3-63-1-55_0061_31_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <list>
+               <item>
+                  <list>
+                     <item>Traducção “<rs type="text">Ciume</rs>”, para inglez.</item>
+                     <item>Traducção “<rs type="text">Antonio</rs>”, para inglez.</item>        
+                     <item>Traducção poemas <rs type="person" key="P87">Edgar Poe</rs>, para portuguez.</item>
+                     <item>Traducção <rs type="person" key="P14">Espronceda</rs>, para inglez.</item>
+                  </list>
+               </item>
+               <metamark rend="line" function="distinct"/>
+               <item>
+                  <list>
+                     <item>“<rs type="text">Praça da Figueira</rs>”.</item>
+                     <item>“<rs type="text">Fátima</rs>”.</item>
+                     <item>“<rs type="text">Tarde e Boas Horas</rs>”.</item>
+                     <item>“<rs type="text">Quadras</rs>”.</item>
+                     <item>“<rs type="work" key="O1" style="c"><rs type="text">Itinerario</rs></rs>” (primeiro volume).</item>
+                  </list>
+               </item>
+               <metamark rend="line" function="distinct"/>
+               <item>“<rs type="text">Theory of Political Suffrage</rs>”.</item>
+               <metamark rend="line" function="distinct"/>
+               <item>
+                  <list>
+                     <head>Collaboração:</head>
+                     <item>“<rs type="journal" key="J1">Presença</rs>”,</item>
+                     <item>“<rs type="journal" key="J42">O Diabo</rs>”,</item>
+                     <item>“<rs type="journal" key="J43">Poesia</rs>” (Italia)</item>
+                     <item>“<rs type="journal" key="J44">Nouvelles Littéraires</rs>”,<lb/> 
+                        English periodical.</item>
+                  </list>
+               </item>
+            </list> 
+         </div>
+      </body>
+   </text>
+</TEI>

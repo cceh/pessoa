@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 48I-3<hi rend="superscript">v</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_48I-3v.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 48I-3v</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate from="1913" to="1915">1913-1915</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3-48i-1-30_JPG_24-C-R0150/bn-acpc-e-e3-48i-1-30_0006_3v_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <list> 
+               <item><rs type="text">O Mendigo</rs></item>
+               <item><rs type="text">O Livro do <rs type="person" key="P112">Rey Igorab</rs></rs>.</item>        
+               <item>
+                  <seg n="1">
+                     <choice>
+                        <abbr>Ms</abbr>
+                        <expan>M<ex>anu</ex>s<ex>cripto</ex></expan>
+                     </choice>
+                     <add n="2" place="above">
+                        O
+                        <choice>
+                           <abbr>ms</abbr>
+                           <expan>m<ex>anu</ex>s<ex>cripto</ex></expan>
+                        </choice> indefinido
+                     </add>
+                  </seg>
+                  achado numa gaveta.
+               </item>
+               <item>
+                  <seg>
+                     <rs type="text">Historia de um pantheista</rs>. 
+                     <add place="below" n="2">(contendo as <hi rend="underline">orações</hi>).</add>
+                  </seg>
+               </item>
+            </list>
+            <metamark rend="line" function="distinct"/>
+            <list>
+               <head rend="margin right"><hi rend="underline">Teatro d’êxtase</hi></head>
+               <item><rs type="text">O Marinheiro</rs>.</item>
+               <item><rs type="text">A Morte do Principe</rs>.</item>
+               <item><rs type="text">As Cousas</rs>.</item>
+               <item><rs type="text">O Erro</rs>.</item>
+               <item>
+                  <seg>
+                     <rs type="text">Dialogo no Jardim do Palacio</rs>.
+                     <add place="below" n="2">
+                        (<choice>
+                           <abbr>int<am>.</am></abbr>
+                           <expan>int<ex>roducção</ex></expan>
+                        </choice> do Simbolo com o Mysterio.)
+                     </add>
+                  </seg>
+               </item>
+               <item><rs type="text">Os Estrangeiros</rs>.</item>
+               <item><rs type="text">Chronos</rs>.</item>
+            </list>
+            <metamark rend="line" function="distinct"/>
+            <ab>
+               <hi rend="underline">Paues</hi><lb/> 
+               Juntar a<lb/> 
+               <hi rend="underline">Viagem Obliqua:</hi>
+            </ab>
+         </div>
+      </body>
+   </text>
+</TEI>

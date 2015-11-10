@@ -69,7 +69,7 @@
     </xsl:template>
     
     <!-- Header & Text -->
-    <xsl:template match="teiHeader"  />
+    <xsl:template match="teiHeader"/>
     <xsl:template match="text" >
         <xsl:choose>
             <xsl:when test="//note[@place='margin left']">
@@ -92,8 +92,21 @@
                     <xsl:apply-templates />
                 </div>
             </xsl:otherwise>
-        </xsl:choose>         
+        </xsl:choose>
+        <xsl:apply-templates select="//msDesc[@type='prose']"/>
     </xsl:template>
+    
+    <!-- editorial notes -->
+    <xsl:template match="msDesc[@type='prose']">
+        <div class="editorial-note">
+            <xsl:apply-templates />
+        </div>
+    </xsl:template>
+    <xsl:template match="ref[@target]">
+        <xsl:variable name="id" select="@target"/>
+        <a href="../data/doc/{$id}"> <xsl:apply-templates/></a>     
+    </xsl:template>
+    
     
     <xsl:template match="div[@rend='text-center']" >
         <div class ="div center">
@@ -234,18 +247,6 @@
         </span>
     </xsl:template>
     
-    <xsl:template match="note[@resp]" >
-        
-                <div class="editorial-note">
-            <xsl:apply-templates />
-        </div>
-    </xsl:template>
-    <xsl:template match="ref[@target]">
-        <xsl:variable name="id" select="@target"/>
-        <a href="../data/doc/{$id}"> <xsl:apply-templates/></a>     
-    </xsl:template>
-   
-   
     
     <!--note-labels-->
     

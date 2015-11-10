@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>BNP/E3 48D-56<hi rend="superscript">r</hi></title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Transcrição, Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Isabel Figueiredo-Iken</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2016</date>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">BNP_E3_48D-56r.xml</idno>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <institution>Biblioteca Nacional de Portugal</institution>
+                        <idno>BNP/E3 48D-56r</idno>
+                    </msIdentifier>
+                    <msContents>
+                        <msItemStruct>
+                            <author>
+                                <rs type="person" key="FP">Fernando Pessoa</rs>
+                            </author>
+                            <note type="genre">
+                                <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                                <rs type="genre" key="plano_editorial">Plano editorial</rs>
+                            </note>
+                            <textLang mainLang="pt" otherLangs="en fr"/>
+                        </msItemStruct>
+                    </msContents>
+                    <history>
+                        <origin>
+                            <p>
+                                <origDate notBefore="1918-05">post. Maio 1918</origDate>
+                            </p>
+                        </origin>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="bn-acpc-e-e3-48d-1-76_JPG_24-C-R0150/bn-acpc-e-e3-48d-1-76_0118_56_t24-C-R0150.jpg"/>
+    </facsimile>
+    <text>
+        <body>
+            <div>
+                <head>
+                    <hi rend="underline">
+                        <rs type="person" key="P1" style="b">
+                            <choice><abbr>Ant</abbr><expan>Ant<ex>onio</ex></expan></choice> Mora</rs>.
+                    </hi>
+                </head>  
+                <list>
+                    <item>
+                        <list> 
+                            <item>
+                                <label>1.</label> <rs type="text">Fundamentos do Paganismo. (Statica do Paganismo)</rs>.
+                            </item>
+                            <item>
+                                <label>2.</label> <rs type="text">O Systema Pagão. (Dynamica do Paganismo)</rs>.
+                            </item>        
+                            <item>
+                                <label>3.</label> <rs type="text">Paganismo e Christianismo</rs>.
+                            </item>
+                        </list>
+                    </item>
+                    <metamark rend="line" function="distinct"/>
+                    <item>
+                        <label>2.</label>
+                        <list> 
+                            <item>
+                                 <label>(a)</label>
+                                a <seg>metaphysica <del rend="overstrike"><add place="above">religião</add></del></seg> pagan.
+                            </item>
+                            <item> 
+                                <label>(b)</label>
+                                <subst>
+                                    <del rend="overstrike" n="1">ethica</del>
+                                    <add place="above" n="2">religião</add>
+                                </subst> pagan.
+                            </item>
+                            <item>
+                                <label>(c)</label>
+                                <subst>
+                                    <del rend="overstrike" n="1">esthetica</del>
+                                    <add place="above" n="2">ethica</add>
+                                </subst> a pagan.
+                            </item>
+                            <item>
+                                <label>(d)</label> a esthetica pagan.
+                            </item>
+                            <item>
+                                <label>(e)</label> a politica pagan.
+                            </item>
+                        </list>
+                    </item>
+                    <metamark rend="line" function="distinct"/>
+                    <item>
+                        <label>3.</label>
+                        <list>
+                            <item xml:id="I1">
+                                <label>(a)</label> As civilizações pre-pagans.
+                            </item>
+                            <item xml:id="I2">
+                                <label>(b)</label> O paganismo.
+                                <note target="range('I1,I3')" place="margin right">(?)</note>
+                            </item>
+                            <item xml:id="I3">
+                                <label>(c)</label> O Christianismo.
+                            </item>
+                        </list>
+                    </item>
+                </list>
+                <metamark rend="line" function="end"/>
+            </div>
+        </body>
+    </text>
+</TEI>

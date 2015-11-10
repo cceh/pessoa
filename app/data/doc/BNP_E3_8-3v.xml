@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -35,7 +36,7 @@
                 <idno type="filename">BNP_E3_8-3v.xml</idno>
             </publicationStmt>
             <sourceDesc>
-                <msDesc>
+                <msDesc xml:id="M1" type="structured">
                     <msIdentifier>
                         <institution>Biblioteca Nacional de Portugal</institution>
                         <idno>BNP/E3 8-3v</idno>
@@ -58,6 +59,19 @@
                             </p>
                         </origin>
                     </history>
+                </msDesc>
+                <msDesc corresp="#M1" type="prose">
+                    <msIdentifier></msIdentifier>
+                    <p>Lista manuscrita a tinta preta na metade de uma folha de papel que apresenta uma parte de
+                        marca de água «Express Bond | 5860», idêntica à da lista <ref target="BNP_E3_76A-61v"
+                            >76A-61<hi rend="superscript">v</hi></ref>. No rosto da folha encontra-se um
+                        trecho do que seria um texto prefacial do <hi rend="italic">Livro do Desassossego</hi>
+                        atribuído a Vicente Guedes. Publicada, em anexo, em LdD, 2010, 727. </p>
+                    <p>Junto do projeto de publicação d’<hi rend="italic">O Guardador de Rebanhos</hi>, e as
+                        suas traduções para inglês e francês, foram projetados diversos artigos sobre Caeiro e
+                        uma entrevista. Dadas as referências às revistas <hi rend="italic">O Teatro e A
+                            Águia</hi>, nas quais Pessoa colaborou em 1912 e 1913, mas que ainda estavam no seu
+                        horizonte em 1914, a lista poderá ser datada deste ano.</p>
                 </msDesc>
             </sourceDesc>
         </fileDesc>

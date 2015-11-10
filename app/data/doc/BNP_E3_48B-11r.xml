@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -34,7 +35,7 @@
                 <idno type="filename">BNP_E3_48B-11r.xml</idno>
             </publicationStmt>
             <sourceDesc>
-                <msDesc>
+                <msDesc xml:id="M1" type="structured">
                     <msIdentifier>
                         <institution>Biblioteca Nacional de Portugal</institution>
                         <idno>BNP/E3 48B-11r</idno>
@@ -57,6 +58,27 @@
                             </p>
                         </origin>
                     </history>
+                </msDesc>
+                <msDesc corresp="#M1" type="prose">
+                    <msIdentifier></msIdentifier>
+                    <p>Lista de projetos datilografada a tinta verde com outros elementos a
+                        tinta vermelha, publicada em <hi rend="italic">Obras de António Mora</hi> (p.
+                        159). Estes projetos surgem vinculados com a <hi rend="italic">Athena</hi>, que
+                        seria uma revista dirigida por António Mora e que surge aqui encabeçando os
+                        projetos «Cadernos de Reconstrucção Pagã», («cadernos de cultura superior» e
+                        «Cadernos quinzenaes de cultura superior» são outras variantes, cf. (cf.
+                        <ref target="BNP_E3_48G-33r">BNP/E3 48g-33r</ref>, <ref target="BNP_E3_48c-23v">48c-23v</ref>, 
+                        <ref target="BNP_E3_48B-11r">48b-11r</ref>,
+                        <ref target="BNP_E3_48G-26r">48g-26r</ref>, <ref target="BNP_E3_87-68r">87-68r</ref>). 
+                        <hi rend="italic">Cosmopolis</hi>
+                        foi o primeiro nome pensado para a editora posteriormente designada por <hi
+                            rend="italic">Olisipo</hi> (cf. Sousa; 2008, 86-97 e Ferreira; 2005, 69-87 e
+                        217-222). Este cosmopolitismo revela-se também na tripla redação hipotética da
+                        revista. Os projetos atribuídos a António Mora «Manifesto em favôr da Allemanha,
+                        e do seu procedimento na guerra presente» e «A attitude da Alemanha» estão
+                        relacionados com o período da Primeira Guerra e a defesa de Pessoa da Alemanha
+                        num período inicial da mesma (cf. nomeadamente SQI, 95-120 e AM,
+                        345-366).</p>
                 </msDesc>
             </sourceDesc>
         </fileDesc>
@@ -108,23 +130,6 @@
                 <p><rs type="person" key="P30">Mario de Sá-Carneiro</rs>, <rs type="person" key="P36">Alfredo Pedro Guisado</rs>, 
                     <rs type="person" key="P63">Manuel Anto<pc>-</pc><lb/>nio de Almeida</rs>,
                         <rs type="person" key="P64">João Corrêa d’Oliveira</rs>, etc.</p>
-                <note resp="PS">Lista de projetos datilografada a tinta verde com outros elementos a
-                    tinta vermelha, publicada em <hi rend="italic">Obras de António Mora</hi> (p.
-                    159). Estes projetos surgem vinculados com a <hi rend="italic">Athena</hi>, que
-                    seria uma revista dirigida por António Mora e que surge aqui encabeçando os
-                    projetos «Cadernos de Reconstrucção Pagã», («cadernos de cultura superior» e
-                    «Cadernos quinzenaes de cultura superior» são outras variantes, cf. (cf.
-                        <ref target="BNP_E3_48G-33r">BNP/E3 48g-33r</ref>, <ref target="BNP_E3_48c-23v">48c-23v</ref>, 
-                    <ref target="BNP_E3_48B-11r">48b-11r</ref>,
-                        <ref target="BNP_E3_48G-26r">48g-26r</ref>, <ref target="BNP_E3_87-68r">87-68r</ref>). <hi rend="italic">Cosmopolis</hi>
-                    foi o primeiro nome pensado para a editora posteriormente designada por <hi
-                        rend="italic">Olisipo</hi> (cf. Sousa; 2008, 86-97 e Ferreira; 2005, 69-87 e
-                    217-222). Este cosmopolitismo revela-se também na tripla redação hipotética da
-                    revista. Os projetos atribuídos a António Mora «Manifesto em favôr da Allemanha,
-                    e do seu procedimento na guerra presente» e «A attitude da Alemanha» estão
-                    relacionados com o período da Primeira Guerra e a defesa de Pessoa da Alemanha
-                    num período inicial da mesma (cf. nomeadamente SQI, 95-120 e AM,
-                    345-366).</note>
             </div>
         </body>
     </text>

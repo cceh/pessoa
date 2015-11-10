@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -35,7 +36,7 @@
                 <idno type="filename">BNP_E3_76A-61v.xml</idno>
             </publicationStmt>
             <sourceDesc>
-                <msDesc>
+                <msDesc xml:id="M1" type="structured">
                     <msIdentifier>
                         <institution>Biblioteca Nacional de Portugal</institution>
                         <idno>BNP/E3 76A-61v</idno>
@@ -59,6 +60,19 @@
                             </p>
                         </origin>
                     </history>
+                </msDesc>
+                <msDesc corresp="#M1" type="prose">
+                    <msIdentifier></msIdentifier>
+                    <p>Lista manuscrita a tinta preta numa folha de papel com a marca de água «Express Bond |
+                        5860». Publicada em RRP, 290.</p>
+                    <p>A figura de Ricardo Reis como defensor de um neoclassicismo científico, sem referências
+                        ao projeto de reconstrução do paganismo em torno do <hi rend="italic">mestre</hi>
+                        Alberto Caeiro, parece ter sido a primeira versão da <hi rend="italic">empresa</hi>
+                        atribuída a tal nome, aqui dividida em duas partes concomitantes: uma de diatribe contra
+                        a arte contemporânea e uma apresentação apologética da arte clássica. Segundo este
+                        pressuposto, esta lista terá sido elaborada num momento próximo ao da primeira aparição
+                        de Reis como figura autoral constituída e nomeada, registada por Pessoa em diversos
+                        contextos como ocorrida no primeiro semestre de 1914.</p>
                 </msDesc>
             </sourceDesc>
         </fileDesc>

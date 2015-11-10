@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 48B-66</title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_48B-66.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 48B-66</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="en fr"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate when="1913" cert="medium">c. 1913</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0136_66_t24-C-R0150.jpg"/>
+      <graphic url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0137_66v_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <head rend="red">LIST OF PUBLICATIONS:</head>  
+            <list> 
+               <item>
+                  <rs type="text">Sobre um Inquerito Literario</rs>. (<rs type="journal" key="J27">Renascença Portugueza</rs>). 
+                  <choice><abbr>P<am>.</am></abbr><expan>P<ex>amphleto</ex></expan></choice>
+                  <choice><abbr>p<am>.</am></abbr><expan>p<ex>ortuguez</ex></expan></choice>
+               </item>
+               <item>
+                  <rs type="text">A Oligarchia das Bestas</rs>. (Edição do autor). 
+                  <choice><abbr>Op<am>.</am></abbr><expan>Op<ex>usculo</ex></expan></choice>
+                  <choice><abbr>p<am>.</am></abbr><expan>p<ex>ortuguez</ex></expan></choice>.
+               </item>        
+               <item><rs type="text">The situation of Europe…</rs> (Article in English).</item>
+               <item><rs type="text">The Economistic Fallacy</rs>. (Article in English)</item>
+               <item><rs type="text">The Portuguese Republic: An Impartial Statement</rs>. (Booklet).</item>
+               <item><rs type="text"><rs type="place">Portugal</rs> e <rs type="place">Hespanha</rs>: o Problema Sociologico</rs>. (Folheto).</item>
+               <item><rs type="text">A Nova Poesia Portuguesa</rs>. (Folheto). <rs type="journal" key="J21">Renascença Portuguesa</rs>.</item>
+               <item><rs type="text">Voto aos Vertebrados</rs>.</item>
+               <item>
+                  <rs type="text">O Masculinismo</rs>. 
+                  <hi rend="red">three pamplhets in <choice><abbr>Port<am>.</am></abbr><expan>Port<ex></ex>uguese</expan></choice></hi>
+               </item>
+               <item><rs type="text"><choice><abbr>Lup<am>.</am></abbr><expan>Lup<ex>anares</ex></expan></choice> masculinos</rs>.</item>
+               <item><rs type="text">La France en 1950</rs>. par un Japonais.</item>
+               <item><rs type="text">Occult Boclets</rs> - three for advertisements.</item>
+               <item><rs type="text">Small poems in English Magazines</rs>.</item>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>

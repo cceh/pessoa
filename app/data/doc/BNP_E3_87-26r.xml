@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 87-26<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_87-26r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 87-26r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="en fr"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate from="1916" to="1917" cert="medium">c. 1916-1917</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3-87-1-103_JPG_24-C-R0150/bn-acpc-e-e3-87-1-103_0065_26_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <head><hi rend="underline"><rs type="journal" key="J23">Orpheu</rs> 3 e 4</hi></head> 
+            <list>
+                  <item><rs type="person" key="P30">Mario de Sá-Carneiro</rs>: <seg rend="right">16</seg></item>  
+                  <item><rs type="person" key="P106">Albino de Menzes</rs>: <add n="2">#</add>	<seg rend="right">6</seg></item>
+                  <item><rs type="person" key="P89">José Coelho Pacheco</rs>: <seg rend="right">8</seg></item>
+                  <item><rs type="person" key="P107">Mario da Cunha e Sá</rs>: <add n="2">#</add>	<seg rend="right">8</seg></item>
+                  <item>
+                     <subst><del rend="overstrike" n="1">AN Fernando</del>
+                     <add place="above" n="2"><rs type="person" key="P108">Silva Tavares</rs></add></subst> 
+                     <seg rend="right">8</seg>
+                  </item>
+                  <item><rs type="person" key="P56">José de Almada-Negreiros</rs>: <seg rend="right">18</seg></item>
+                  <item><rs type="person" key="P109">Augusto Ferreira Gomes</rs>: <seg rend="right">10</seg></item>
+                  <item><rs type="person" key="P110">M. Fernando de Carvalho</rs>: <seg rend="right">10</seg></item>
+                  <item><rs type="person">Barradas Telles D’Aviz</rs>: <add n="2">#</add> <seg rend="right">6</seg></item>
+                  <item><rs type="person" key="FP" role="author" style="b">Fernando Pessoa</rs>: <seg rend="right">8</seg></item>
+                  <item><rs type="person" key="P86">Castello de Moraes</rs>: <seg rend="right">12</seg></item>
+                  <item><rs type="person" key="AdC" role="author">Alvaro de Campos</rs>: <seg rend="right">12</seg></item>
+                  <item>Indice do 1º Volume. <seg rend="right">6</seg></item>
+                  <item>
+                     <metamark rend="line" function="sum" place="right"/>
+                     <seg rend="right"><hi rend="underline">128</hi> pp.</seg>
+                  </item>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>
