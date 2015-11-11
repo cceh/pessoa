@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 15<hi rend="superscript">4</hi>-65</title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_15-4-65.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 15-4-65</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                        <rs type="genre" key="plano_editorial">Plano editorial</rs>
+                     </note>
+                     <textLang mainLang="pt"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate from="1902" to="1912">1902-1912</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3-15-4-1-100_JPG_24-C-R0150/bn-acpc-e-e3-15-4-1-100_0135_65_t24-C-R0150.jpg"/>
+      <graphic url="bn-acpc-e-e3-15-4-1-100_JPG_24-C-R0150/bn-acpc-e-e3-15-4-1-100_0136_65v_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <gap reason="selection" unit="line" quantity="9"/>
+            <metamark rend="line" function="distinct"/>
+            <div>
+               <div rend="left">
+                  <head><rs type="text">Tratado de sociologia</rs>.</head>
+                  <list>
+                     <head><hi rend="underline">Theoria da moral.</hi></head>
+                     <item>
+                        <label>(1)</label>
+                        <hi rend="underline">Sociologia</hi>. (Sociedade)
+                     </item>
+                     <item>
+                        <label>(2)</label>
+                        <hi rend="underline">Moral</hi>.
+                        (<gap reason="illegible" unit="word" quantity="2"/>)
+                     </item>
+                     <item>
+                        <label>(3)</label>
+                        <subst>
+                           <del rend="overstrike" n="1">Esthetica</del>
+                           <add place="below" n="2">
+                              <hi rend="underline">Psychologia</hi>
+                           </add>
+                        </subst>. (individuo)
+                     </item>
+                  </list>
+               </div>
+               <metamark rend="vertical-line" function="distinct"/>
+               <div rend="right">
+                  <ab>
+                     <del rend="overstrike" n="2">Vida <lb/> <hi rend="underline">individual</hi></del> —
+                     <seg rend="right">(<list>
+                           <item>arte</item>
+                           <item>sciencia</item>
+                           <item>moral</item>
+                        </list>)</seg>
+                  </ab>
+                  <metamark rend="line" function="distinct"/>
+                  <ab>
+                     <subst>
+                        <del n="1"><gap reason="illegible" unit="word" quantity="1"/></del>
+                        <add n="2" place="above"><hi rend="underline">Esthetica</hi></add>
+                     </subst>
+                     estudo do <lb/>
+                     <choice>
+                        <abbr>ind<am>.</am></abbr>
+                        <expan>ind<ex>ividuo</ex></expan>
+                     </choice>
+                     como membro <lb/> de uma sociedade.
+                  </ab>
+                  <metamark rend="line" function="end"/>
+               </div>
+            </div>
+            <div>
+               <list>
+                  <item>
+                     <label>(3)</label>
+                     <hi rend="underline">natureza</hi> individual; 
+                     fins <hi rend="underline">individuais</hi>; 
+                     resultados <hi rend="underline">sociaes</hi>
+                  </item>
+                  <item>
+                     <label>(2)</label>
+                     <choice>
+                        <abbr><metamark rend="line" function="ditto"></abbr>
+                        <expan><hi rend="underline">natureza</hi></expan>
+                     </choice>
+                     <choice>
+                        <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                        <expan>individual</expan>
+                     </choice>;
+                     <choice>
+                        <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                        <expan>fins</expan>
+                     </choice>
+                      sociaes;
+                     <choice>
+                        <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                        <expan>resultados <hi rend="underline">sociaes</hi></expan>
+                     </choice>
+                  </item>
+                  <item>
+                     <label>(1)</label>
+                     <choice>
+                        <abbr><metamark rend="line" function="ditto"></abbr>
+                        <expan><hi rend="underline">natureza</hi></expan>
+                     </choice>
+                     social
+                     <choice>
+                        <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                        <expan>fins sociais;</expan>
+                     </choice>
+                     <choice>
+                        <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                        <expan>resultados <hi rend="underline">sociaes</hi></expan>
+                     </choice>
+                  </item>
+               </list>
+               <ab rend="right framed">over</ab>
+            </div>
+            <pb n="2"/>
+            <div>
+               <list>
+                  <item>
+                     <metamark rend="curly-bracket" function="grouping" target="range(I1,I3)" place="left">
+                        <label><hi rend="underline"><rs type="text">Sociologia</rs></hi></label>
+                     </metamark>
+                     <list>
+                        <item xml:id="I1">
+                           <label>(a)</label> parte introductoria philosophica.
+                        </item>
+                        <item xml:id="I2">
+                           <label><hi rend="underline">(b)</hi></label> 
+                           <hi rend="underline">parte introductoria e psychologi<lb/>ca.</hi>
+                        </item>
+                        <item>
+                           <label>(c)</label> parte sociologica.
+                        </item>
+                     </list>
+                  </item>
+                  <item>
+                     <hi rend="underline"><rs type="text">Psychologia da intelligencia</rs></hi>
+                  </item>
+                  <item>
+                     <hi rend="underline"><rs type="text">Theoria da Moral</rs></hi>.
+                  </item>
+               </list>
+            </div>
+      </body>
+   </text>
+</TEI>

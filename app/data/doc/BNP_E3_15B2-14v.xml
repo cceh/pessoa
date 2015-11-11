@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 15B2-14<hi rend="superscript">v</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_15B2-14v.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 15B2-14v</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="en"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate from="1902" to="1912">1902-1912</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3-15b-2-1-100_JPG_24-C-R0150/bn-acpc-e-e3-15b-2-1-100_0028_14v_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <list>
+               <item>
+                  <head><hi rend="underline">A.</hi></head>
+                  <list rend="inline">
+                     <item>
+                        <label>(1)</label>
+                        <rs type="text"><choice>
+                           <abbr>Olig<am>.</am></abbr>
+                           <expan>Olig<ex>archia</ex></expan>
+                        </choice></rs>,
+                     </item>
+                     <item>
+                        <label>(2)</label>
+                        <rs type="text">A coroação ...</rs>,
+                     </item>
+                     <item>
+                        <label><del n="2" rend="overstrike">(3)</del></label>
+                        <rs type="text"><choice>
+                           <abbr>Rep<am>.</am></abbr>
+                           <expan>Rep<ex>ublica</ex></expan>
+                        </choice> e
+                        <choice>
+                           <abbr>Mon<am>.</am></abbr>
+                           <expan>Mon<ex>archia</ex></expan>
+                        </choice></rs>,
+                     </item>
+                     <item>
+                        <label>(4)</label>
+                        <rs type="text"><rs type="place">Portugal</rs></rs>
+                     </item>
+                     <item>
+                        <label>(5)</label>
+                        <rs type="text">Poesias <lb/> Moraes</rs>;
+                     </item>
+                     <item>
+                        <label>(5)</label>
+                        <rs type="text">Lugares
+                        <choice>
+                           <abbr>marc<am>.</am></abbr>
+                           <expan>marc<ex>antes</ex></expan>
+                        </choice></rs>
+                     </item>
+                     <item>
+                        <label><del rend="overstrike" n="2">(6)</del></label>
+                        <rs type="text">Theoria do governo commercial</rs>.<lb/>
+                     </item>
+                     <item>
+                        <label>(7)</label>
+                        <supplied resp="PS" reason="omitted-in-original"/>
+                        <add place="right" n="2">\\\ <rs type="text">Trez estudos politicos</rs></add>
+                     </item>
+                  </list>
+               </item>
+               <metamark rend="line" function="distinct"/>
+               <item>
+                  <head><hi rend="underline">B.</hi></head>
+                  <list rend="inline">
+                     <item>
+                        <label>(1)</label> <rs type="text">Leis da Vida</rs>.
+                     </item>
+                     <item>
+                        <label>(2)</label> <rs type="text">Crise Moderna</rs>.
+                     </item>
+                     <item>
+                        <label>(3)</label>
+                        <rs type="person" key="P65">
+                           <choice>
+                              <abbr>Sh<am>.</am></abbr>
+                              <expan>Sh<ex>akespeare</ex></expan>
+                           </choice></rs> - <rs type="person" key="P130">Bacon</rs>
+                     </item>
+                     <item>(
+                        <label>(4)</label>
+                        <rs type="text">Leis do Rhythmo</rs>
+                     )</item>
+                  </list>
+               </item>
+               <metamark rend="line" function="distinct"/>
+               <item>
+                  <head><hi rend="underline">C</hi></head>
+                  <list rend="inline">
+                     <item>
+                        <label>(1)</label>
+                        <rs type="text">Da
+                        <choice>
+                           <abbr>Dict<am>.</am></abbr>
+                           <expan>Dict<ex>adura</ex></expan>
+                        </choice> à 
+                        <choice>
+                           <abbr>Rep<am>.</am></abbr>
+                           <expan resp="UH">Rep<ex>ublica</ex></expan>
+                        </choice></rs>
+                     </item>
+                     <item>
+                        <label>(2)</label>
+                        <rs type="text"><rs type="person" key="P68">Duke of Parma</rs></rs>.
+                     </item>
+                     <item>
+                        <label>(3)</label>
+                        <supplied resp="PS" reason="omitted-in-original"/>
+                     </item>
+                  </list>
+               </item>
+               <metamark rend="line" function="end"/>
+            </list> 
+         </div>  
+      </body>
+   </text>
+</TEI>
