@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?> 
+<?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>BNP/E3 87-40<hi rend="superscript">r</hi></title>
+            <title>BNP/E3 14E-5<hi rend="superscript">v</hi></title>
             <author>
                <rs type="person" key="FP">Fernando Pessoa</rs>
             </author>
@@ -32,13 +32,13 @@
             <availability>
                <licence target="http://creativecommons.org/licenses/by/3.0/"/>
             </availability>
-            <idno type="filename">BNP_E3_87-40r.xml</idno>
+            <idno type="filename">BNP_E3_14E-5v.xml</idno>
          </publicationStmt>
          <sourceDesc>
             <msDesc>
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
-                  <idno>BNP/E3 87-40r</idno>
+                  <idno>BNP/E3 14E-5v</idno>
                </msIdentifier>
                <msContents>
                   <msItemStruct>
@@ -48,13 +48,13 @@
                      <note type="genre">
                         <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
-                     <textLang mainLang="pt" otherLangs="en fr"/>
+                     <textLang mainLang="pt"/>
                   </msItemStruct>
                </msContents>
                <history>
                   <origin>
                      <p>
-                        <origDate from="1920" to="1927">1920-1927</origDate>
+                        <origDate when="1923" cert="medium">c. 1923</origDate>
                      </p>
                   </origin>
                </history>
@@ -63,29 +63,64 @@
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-87-1-103_JPG_24-C-R0150/bn-acpc-e-e3-87-1-103_0093_40_t24-C-R0150.jpg"/>
+      <graphic url="bn-acpc-e-e3-14e-1-96_JPG_24-c-R0150/bn-acpc-e-e3-14e-1-96_0010_5v_t24-C-R0150.jpg"/>
    </facsimile>
    <text>
       <body>
          <div>
+            <pb n="1"/>
+            <gap reason="selection" unit="line" extent="8"/>
+            <metamark rend="line" function="distinct"/>
+            <seg rend="right">4</seg>
             <list> 
-               <head><hi rend="underline">Orpheu do Vigesimo Anno.</hi></head>
                <item>
-                  <label>1.</label> <supplied resp="PS" reason="omitted-in-original"/>
+                  <label>1.</label>
+                  <abbr>Arc<am>.</am></abbr>  
+                  <gap reason="illegible" quantity="1" unit="word" /> vale.
+                  <seg rend="right">2</seg>
                </item>
                <item>
-                  <label>2.</label> <supplied resp="PS" reason="omitted-in-original"/>
-               </item>        
+                  <label>2.</label>
+                  <rs type="person" key="P30">Sá Carneiro</rs>.
+                  <seg rend="right">8</seg>
+               </item>       
                <item>
-                  <label>3.</label> <supplied resp="PS" reason="omitted-in-original"/>
+                  <label>3.</label>
+                  <rs type="person" key="P17">Antonio Botto</rs>.
+                  <seg rend="right">8</seg>
                </item>
                <item>
-                  <label>4.</label> <supplied resp="PS" reason="omitted-in-original"/> — <rs type="person" key="P80">Angelo de Lima</rs>,<lb/> <note>(in fine)</note>
+                  <label>4.</label>
+                  <rs type="person" key="AC" role="author">Caeiro</rs>.
+                  <seg rend="right">28 - 50</seg>
                </item>
                <item>
-                  <label>5.</label> <rs type="text">L’Homme aux Favoris Noirs</rs> —<lb/><rs type="person" key="P71">Raul Leal</rs>.
+                  <label>5.</label>
+                  <rs type="person" key="P71">Raul Leal</rs>.
+                  <seg rend="right">6</seg>
+               </item>
+               <item>
+                  <label>6.</label>
+                  <rs type="person" key="P70">Montalvor</rs>.
+                  <seg rend="right">10</seg>
+               </item>
+               <item>
+                  <label>7.</label>
+                  <rs type="person" key="FP" role="author" style="b">
+                     <choice>
+                        <abbr>F</abbr>
+                        <expan>F<ex>ernando</ex></expan>
+                     </choice> Pessoa</rs>.
+                  <seg rend="right">10</seg>
+               </item>
+               <item>
+                  <label>8.</label>
+                  <rs type="person" key="AdC" role="author">Alvaro de Campos</rs>.
+                  <seg rend="right"><hi rend="underline">20 - 96</hi></seg>
                </item>
             </list>
+            <pb n="2"/>
+            <gap reason="selection"/>
          </div>
       </body>
    </text>

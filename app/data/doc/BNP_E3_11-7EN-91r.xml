@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?> 
+<?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>BNP/E3 87-40<hi rend="superscript">r</hi></title>
+            <title>BNP/E3 11<hi rend="superscript">7</hi>EN-91<hi rend="superscript">r</hi></title>
             <author>
                <rs type="person" key="FP">Fernando Pessoa</rs>
             </author>
@@ -32,13 +32,13 @@
             <availability>
                <licence target="http://creativecommons.org/licenses/by/3.0/"/>
             </availability>
-            <idno type="filename">BNP_E3_87-40r.xml</idno>
+            <idno type="filename">BNP_E3_11-7EN-91r.xml</idno>
          </publicationStmt>
          <sourceDesc>
             <msDesc>
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
-                  <idno>BNP/E3 87-40r</idno>
+                  <idno>BNP/E3 11-7EN-91r</idno>
                </msIdentifier>
                <msContents>
                   <msItemStruct>
@@ -48,13 +48,13 @@
                      <note type="genre">
                         <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
-                     <textLang mainLang="pt" otherLangs="en fr"/>
+                     <textLang mainLang="pt"/>
                   </msItemStruct>
                </msContents>
                <history>
                   <origin>
                      <p>
-                        <origDate from="1920" to="1927">1920-1927</origDate>
+                        <origDate from="1902" to="1912">1902-1912</origDate>
                      </p>
                   </origin>
                </history>
@@ -63,29 +63,28 @@
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-87-1-103_JPG_24-C-R0150/bn-acpc-e-e3-87-1-103_0093_40_t24-C-R0150.jpg"/>
+      <graphic url="bn-acpc-e-e3-11-7-en-1-100_JPG_24-C-R0150/bn-acpc-e-e3-11-7-en-1-100_0183_91_t24-C-R0150.jpg"/>
    </facsimile>
    <text>
       <body>
          <div>
-            <list> 
-               <head><hi rend="underline">Orpheu do Vigesimo Anno.</hi></head>
+            <ab rend="right"><del rend="overstrike" n="2"><hi rend="underline">Artigos</hi></del></ab>
+            <delSpan rend="overstrike" spanTo="#A1" n="2"/>
+            <ab>Artigos para passar a pam<pc>-</pc><lb/>phleto: —</ab>
+            <list>
                <item>
-                  <label>1.</label> <supplied resp="PS" reason="omitted-in-original"/>
+                  “<rs type="text">O <hi rend="underline">Trust</hi></rs> <supplied resp="PS" reason="omitted-in-original"/>”
                </item>
                <item>
-                  <label>2.</label> <supplied resp="PS" reason="omitted-in-original"/>
-               </item>        
-               <item>
-                  <label>3.</label> <supplied resp="PS" reason="omitted-in-original"/>
-               </item>
-               <item>
-                  <label>4.</label> <supplied resp="PS" reason="omitted-in-original"/> — <rs type="person" key="P80">Angelo de Lima</rs>,<lb/> <note>(in fine)</note>
-               </item>
-               <item>
-                  <label>5.</label> <rs type="text">L’Homme aux Favoris Noirs</rs> —<lb/><rs type="person" key="P71">Raul Leal</rs>.
+                  “<rs type="text">Comparando...</rs>”
                </item>
             </list>
+            <anchor xml:id="A1"/>
+            <ab>
+               <hi rend="underline"><rs type="place">Portugal</rs>:</hi> (Esboço Epico).<lb/>
+               <del rend="overstrike" n="2">en</del> O estrangeiro <seg rend="right">O escarro</seg><lb/>
+               que era o seu sêr
+            </ab>       
          </div>
       </body>
    </text>
