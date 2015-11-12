@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 25-135<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_25-135r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 25-135r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="en"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate from="1902" to="1912">1902-1912</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3-25-1-136_JPG_24-C-R0150/bn-acpc-e-e3-25-1-136_0303_135_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <list>
+               <item>
+                  <rs type="text">Serzedas</rs> — 
+                  <choice>
+                     <abbr>arg<hi rend="superscript"><hi rend="underline">t</hi></hi></abbr>
+                     <expan>arg<ex>umen</ex>t<ex>o</ex></expan>
+                  </choice> pensamento = <lb/> realidade
+               </item>
+               <metamark rend="line" function="distinct"/>
+               <item>
+                  <rs type="text"><choice>
+                     <abbr>H<am>.</am></abbr>
+                     <expan>H<ex>istory</ex></expan>
+                  </choice>
+                  of a 
+                  <choice>
+                     <abbr>D<am>.</am></abbr>
+                     <expan>D<ex>ictatorship</ex></expan>
+                  </choice></rs> = argumento <lb/> 
+                  <choice>
+                     <abbr>s</abbr>
+                     <expan>s<ex>obre</ex></expan>
+                  </choice> literatura etc.
+               </item>
+               <metamark rend="line" function="distinct"/>
+               <item>
+                  Argumento <hi rend="underline">resulta.</hi>
+               </item>
+               <metamark rend="line" function="end"/>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>

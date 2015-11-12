@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 26A-100<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_26A-100v.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 26A-100v</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate>?</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3-26a-1-100_JPG_24-C-R0150/bn-acpc-e-e3-26a-1-100_0222_100v_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <gap reason="selection" unit="line" extent="7"/>
+            <head><hi rend="underline">Revista de Lisboa</hi></head>
+            <ab rend="margin-left">nº de <lb/> <hi rend="underline">paginas:</hi></ab>
+            <list>
+               <item>
+                  <label>1.</label>
+                  Apresentação.
+                  <seg rend="margin-left">3</seg>
+               </item>
+               <item>
+                  <label>2.</label>
+                  Ultimos Poemas de <rs type="person" key="P30">Mario de Sá-Carneiro</rs>.
+                  <seg rend="margin-left">20.</seg>
+               </item>
+               <item>
+                  <label>3.</label>
+                  <rs type="text">O Banqueiro Anarchista</rs> — 
+                  <rs type="person" key="FP" role="author" style="b">
+                     <choice>
+                        <abbr>F<am>.</am></abbr>
+                        <expan>F<ex >ernando</ex></expan>
+                     </choice> Pessoa
+                  </rs>.
+                  <seg rend="margin-left">30.</seg>
+               </item>
+               <item>
+                  <label>4.</label>
+                  <seg rend="margin-left">50.</seg>
+                  <rs type="text">“A Tormenta”</rs>, Comedia de <rs type="person" key="P65">William Shakes<pc>-</pc><lb/>peare</rs>,
+                  traduzida, em exacta con<pc>-</pc><lb/>formidade com o original, por <lb/>
+                  <rs type="person" key="FP" role="author" style="b">Fernando Pessoa</rs>.
+               </item>
+               <item>
+                  <label>5.</label>
+                  <seg rend="margin-left">10.</seg>
+                  <rs type="text">Discurso no Comicio Intellectual</rs> — <lb/> <rs type="person" key="P71">Raul Leal</rs>.
+               </item>
+               <item>
+                  <label>6.</label>
+                  <rs type="person" key="P56">José de Almada Negreiros</rs> -------------------------
+               </item>
+               <item>
+                  <label>7.</label> <supplied resp="PS" reason="omitted-in-original"/>
+               </item>
+            </list>
+            <ab rend="margin-left"><hi rend="underline">160 pages.</hi></ab>
+            <ab rend="center">
+               <metamark rend="line" function="distinct"/>
+               5 x 32.
+               <metamark rend="line" function="distinct"/>
+            </ab>
+            <table rend="center">
+               <row>
+                  <cell>
+                     1000 
+                     <choice>
+                        <abbr>ex<am>.</am></abbr>
+                        <expan>ex<ex>emplares</ex></expan>
+                     </choice> — 
+                  </cell>
+                  <cell>3.000 $ 00.</cell>
+               </row>
+               <row>
+                  <cell>Annuncios 24 x 100</cell>
+                  <cell><hi rend="underline">2.400 $ 00</hi></cell>
+               </row>
+               <row>
+                  <cell></cell>
+                  <cell>600 $ 00</cell>
+               </row>
+               <row>
+                  <cell cols="2">fica a $ 60 por exemplar</cell>
+               </row>
+               <row>
+                  <cell cols="2">
+                     vendido a 2 $ 50
+                     (<choice>
+                        <abbr>i<am>.</am></abbr>
+                        <expan>i<ex>d</ex></expan>
+                     </choice>
+                     <choice>
+                        <abbr>e<am>.</am></abbr>
+                        <expan>e<ex>st</ex></expan>
+                     </choice> a $ 20) fica 1 $ 40
+                  </cell>
+               </row>
+               <row>
+                  <cell></cell>
+                  <cell><hi rend="underline">= 1. 400 $ 00</hi></cell>
+               </row>
+            </table>
+         </div>
+      </body>
+   </text>
+</TEI>

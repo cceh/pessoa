@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 26B-52<hi rend="superscript">v</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_26B-52v.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 26B-52v</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate from="1920" to="1927">1920-1927</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3-26b-1-100_JPG_24-C-R0150/bn-acpc-e-e3-26b-1-100_0105_52v_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <list>
+               <item>
+                  Annuncios <rs type="journal" key="J2">“Athena”</rs>.
+                  <list rend="inline">
+                     <item>
+                        — <rs type="person" key="P131">Augusto Franco</rs> (Bonneville)
+                     </item>
+                     <item>
+                        — <rs type="person" key="P132">Moitinho d’Al<pc>-</pc><lb/>meida</rs>
+                     </item>
+                     <item>
+                        — outros.(Vêr lista).
+                     </item>
+                  </list>
+               </item>
+               <item>
+                  <rs type="journal" key="J6">Mercure de France</rs>.
+               </item>
+               <item>
+                  <rs type="journal" key="J50">Terra de Sol</rs>.
+               </item>
+               <item>
+                  <rs type="person" key="P">Gilka Machado</rs>. <rs type="person" key="P134">Cecilia Meyrelles</rs>.
+               </item>
+               <item>Completar e traduzir “<rs type="text">Banqueiro</rs>”.</item>
+               <item>Cambridge Literary Agency.</item>
+               <item><rs type="text">Poemas de <rs type="person" key="P87">Edgar Poe</rs></rs> (?).</item>
+               <item>Relatorio Companhia.</item>
+               <item>Medalhas (2).</item>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 39-17<hi rend="superscript">v</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_39-17v.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 39-17v</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                        <rs type="genre" key="plano_editorial">Plano editorial</rs>
+                     </note>
+                     <textLang mainLang="pt"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate when="1912-06-27" cert="medium">c. 27-6-1912</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3-39-1-51_JPG_24-C-R0150/bn-acpc-e-e3-39-1-51_0038_17v_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <head><hi rend="underline">Anthologia</hi></head>
+            <list>
+               <item>
+                  =
+                  <list>
+                     <item>
+                        <rs type="person" key="P53">Antonio Nobre</rs>: <rs type="text">Soneto: <hi rend="underline">Ó virgens</hi>...</rs>
+                     </item>
+                     <item>
+                        <rs type="person" key="P53">Antonio Nobre</rs>:
+                        <choice>
+                           <abbr><metamark rend="line" function="ditto"/></abbr>
+                           <expan>Soneto</expan>
+                        </choice>:
+                        <rs type="text"><hi rend="underline">Ao 
+                        <choice>
+                           <abbr>c<am>.</am></abbr>
+                           <expan>c<ex>air</ex></expan>
+                        </choice> das folhas</hi></rs>...
+                     </item>
+                     <item>
+                        <choice>
+                           <abbr><metamark rend="line" function="ditto"/></abbr>
+                           <expan><rs type="person" key="P53">Antonio Nobre</rs></expan>
+                        </choice>:
+                        <choice>
+                           <abbr><metamark rend="line" function="ditto"/></abbr>
+                           <expan>Soneto</expan>
+                        </choice>
+                        <gap reason="illegible" unit="word" extent="1"/> dos <lb/>
+                        <gap reason="illegible" unit="word" extent="1"/> 
+                     </item>
+                     <item>
+                        <choice>
+                           <abbr><metamark rend="line" function="ditto"/></abbr>
+                           <expan><rs type="person" key="P53">Antonio Nobre</rs></expan>
+                        </choice>:
+                        <rs type="text">A Ceifeira</rs>.
+                     </item>
+                  </list>
+               </item>
+               <metamark rend="line" function="distinct"/>
+               <item>
+                  <list>
+                     <item>
+                        <hi rend="underline"><rs type="person" key="P135">Jayme Cortesão</rs></hi>: <rs type="text">Perturba-se</rs>...
+                     </item>
+                     <item>
+                        <supplied resp="UH" reason="omitted-in-original">
+                           <choice>
+                              <abbr><metamark rend="line" function="ditto"/></abbr>
+                              <expan><rs type="person" key="P135">Jayme Cortesão</rs></expan>
+                           </choice>
+                        </supplied>: <rs type="text">Choupos</rs> (?) +
+                     </item>
+                  </list>
+               </item>
+               <metamark rend="line" function="distinct"/>
+               <item>
+                  <rs type="person" key="P52">
+                     <hi rend="underline">
+                        <choice>
+                           <abbr>T<am>.</am></abbr>
+                           <expan>T<ex>eixeira</ex></expan>
+                        </choice> de Pascoaes</hi></rs>:
+                  <rs type="text">Elegia</rs>. (<del rend="overstrike">da</del> Vida Etherea).
+               </item>
+               <metamark rend="line" function="distinct"/>
+               <item>
+                  <rs type="person" key="P125"><hi rend="underline">
+                     <choice>
+                        <abbr>Anto</abbr>
+                        <expan>Ant<ex>oni</ex>o</expan>
+                     </choice> Molarinho</hi></rs>: <rs type="text">Maria Manuela</rs>.
+               </item>
+               <metamark rend="line" function="distinct"/>
+               <item>
+                  <hi rend="underline"><rs type="person" key="P136">Mario Beirão</rs></hi>: <rs type="text">O Sonho</rs> (?)
+               </item>
+               <metamark rend="line" function="distinct"/>
+               <item>
+                  <hi rend="underline"><rs type="person" key="P26">Cesario-Verde</rs></hi>: <rs type="text">Sentimento de um Ocidental</rs>.
+               </item>
+               <metamark rend="line" function="distinct"/>
+               <item>
+                  <hi rend="underline"><rs type="person" key="P137">Augusto Casimiro</rs></hi>: 
+                  <supplied resp="PS" reason="omitted-in-original"/>
+               </item>
+               <item>
+                  <hi rend="underline">
+                     <rs type="person" key="P138">
+                        <choice>
+                           <abbr>Aug<am>.</am></abbr>
+                           <expan>Aug<ex>usto</ex></expan>
+                        </choice> de Santa-Rita</rs></hi>:
+                     <supplied resp="PS" reason="omitted-in-original"/>
+               </item>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>

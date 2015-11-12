@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 133F-24<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_133F-24r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 133F-24r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                        <rs type="genre" key="plano_editorial">Plano editorial</rs>
+                     </note>
+                     <textLang mainLang="pt"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate notBefore="1918">post. 1918</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3-133f-1-100_JPG_24-C-R0150/bn-acpc-e-e3-133f-1-100_0049_24_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <list> 
+               <item>
+                  <hi rend="underline"><rs type="text">Cinco Dialogos sobre a Tyrannia</rs></hi>.
+               </item>       
+               <item>
+                  <hi rend="underline"><rs type="text">Livro do Desasocego</rs></hi>.
+               </item>
+               <item>
+                  <hi rend="underline"><rs type="text">Theatro Statico</rs></hi> — 
+                  <list rend="inline">
+                     <item>
+                        <label>1.</label>
+                        <rs type="text">O 
+                        <choice>
+                           <abbr>Mar<am>.</am></abbr>
+                           <expan>Mar<ex>inheiro</ex></expan>
+                        </choice></rs>,
+                     </item>
+                     <item>
+                        <label>2.</label>
+                        <gap reason="illegible" extent="1" unit="word"/>,<lb/>
+                     </item>
+                     <item>
+                        <label>3.</label>
+                        <gap reason="illegible" extent="2" unit="word" />,
+                     </item>
+                     <item>
+                        <label>4.</label>
+                        <rs type="text">Salomé</rs>,<lb/>
+                     </item>
+                     <item>
+                        <label>5.</label>
+                        <rs type="text">Sakuyammi</rs>.
+                     </item>
+                  </list>
+               </item>
+               <item>
+                  <hi rend="underline"><rs type="work" key="O1" style="c"><rs type="text">Itinerario</rs></rs>.</hi>
+               </item>
+               <item>
+                  <hi rend="underline"><rs type="text">Quaresma, Decifrador</rs>.</hi>
+               </item>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>

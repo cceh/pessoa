@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 133F-28<hi rend="superscript">v</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_133F-28v.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 133F-28v</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="en"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate when="1933" cert="medium">c. 1933</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3-133f-1-100_JPG_24-C-R0150/bn-acpc-e-e3-133f-1-100_0058_28v_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <delSpan rend="overstrike" spanTo="#A1"/>
+            <list>
+               <head><hi rend="underline"><rs type="work" key="O1-13-2"><rs type="text">Ficções do Interludio</rs></rs></hi></head>
+               <item>
+                  <label>I. —</label>
+                  <list>
+                     <item>
+                        <label>1.</label>
+                        <rs type="work" key="O2" style="a"><rs type="text">Poemas Completos de <lb/> 
+                           <rs type="person" role="author" key="AC">Alberto Caeiro</rs></rs></rs>.
+                     </item>
+                     <item>
+                        <label>2.</label>
+                        Notas — 
+                        <rs type="person" role="author" key="AdC">
+                           <choice>
+                              <abbr>Alv<am>.</am></abbr>
+                              <expan>Alv<ex>aro</ex></expan>
+                           </choice> de <lb/> 
+                        Campos</rs>.
+                     </item>
+                     <item>
+                        <label>3.</label>
+                        <rs type="work" key="O3" style="b">
+                           <rs type="text">Odes 
+                              (<choice>
+                                 <abbr>liv<am>.</am></abbr>
+                                 <expan>liv<ex>ros</ex></expan>
+                              </choice> I — 
+                              <choice>
+                                 <seg n="1">V</seg>
+                                 <seg n="2"><add place="above">III</add></seg>
+                              </choice>)</rs><lb/> 
+                           <rs type="person" role="author" key="RR">
+                              <choice>
+                                 <abbr>R</abbr>
+                                 <expan>R<ex>icardo</ex></expan>
+                              </choice> Reis</rs>.
+                        </rs>
+                     </item>
+                  </list>
+               </item>
+            </list>
+            <metamark rend="line" function="distinct"/>
+            <ab>publish in 1933</ab>
+            <metamark rend="line" function="end"/>
+            <anchor xml:id="A1"/>
+         </div>
+      </body>
+   </text>
+</TEI>

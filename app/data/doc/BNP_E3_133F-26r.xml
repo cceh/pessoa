@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 133F-26<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_133F-26r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 133F-26r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="en"  />
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate when="1935">1935</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3-133f-1-100_JPG_24-C-R0150/bn-acpc-e-e3-133f-1-100_0053_26_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <list>
+               <head><hi rend="underline">Canções da Derrota.</hi></head>
+               <item>
+                  <label>1.</label>
+                  <rs type="text">À Memoria do <lb/>
+                     Presidente-Rei <rs type="person" key="P51">Sidonio Paes</rs>.</rs><lb/>
+                  <seg rend="right">1919.</seg>
+               </item>
+               <item>
+                  <label>2.</label>
+                  <rs type="text">Elegia na Sombra</rs>. <seg rend="right">1935</seg>
+               </item>        
+               <item>
+                  <label>3.</label>
+                  <rs type="text">Chamada</rs>. <seg rend="right">1919/1935.</seg>
+               </item>
+            </list>
+            <metamark rend="line" function="distinct"/>
+            <list>
+               <head><hi rend="underline">Praça da Figueira</hi>.</head>
+               <item>
+                  <label>1.</label>
+                  <rs type="text"><rs type="person" key="P141">Santo Antonio</rs></rs>.
+               </item>
+               <item>
+                  <label>2.</label>
+                  <rs type="text">
+                     <rs type="person" key="P142">
+                        <choice>
+                           <abbr>S<am>.</am></abbr>
+                           <expan>S<ex>ão</ex></expan>
+                        </choice> João</rs>.
+                  </rs>
+               </item>
+               <item>
+                  <label>3.</label>
+                  <rs type="text">
+                     <rs type="person" key="P143">
+                        <choice>
+                           <abbr>S<am>.</am></abbr>
+                           <expan>S<ex>ão</ex></expan>
+                        </choice> Pedro</rs>.
+                  </rs>
+               </item>
+            </list>
+            <metamark rend="line" function="distinct"/>
+            <p><rs type="text">O Christianismo Applicado</rs> <lb/> (Applied Christianity)</p>
+            <metamark rend="line" function="end"/>
+         </div>
+      </body>
+   </text>
+</TEI>
