@@ -46,22 +46,29 @@
                 <div id="personsList" class="span6"> 
                     <div class="index:plottAlpha">
                         <i class="index:printNavigation"/>
-                    <div class="templates:each?from=letters&amp;to=letter">
-                        <div class="sub_Nav"><i class="index:printLetter"/></div>
-                        <div class="index:getPersonIndex">
-                            <div class="templates:each?from=keys&amp;to=key">
-                                <div class="index:ScanDB">
-                                    <i class="index:printAuthorName"/> / <i class="index:printValue?get=style"/>
-                                    <div class="page:singleElement?xmltype=navigation&amp;xmlid=documentos docListButton"/>
-                                    <div class="docList">
-                                        <div class="templates:each?from=docs&amp;to=ref">
-                                            <i class="index:printDocLinks"/>
+                       
+                         <div class="templates:each?from=letters&amp;to=letter">
+                            <div class="sub_Nav"><i class="index:printLetter"/></div>
+                             <!-- <div class="index:getPersonIndex">
+                              <div class="templates:each?from=names&amp;to=person">
+                                    <i class="index:printValue?get=person"/>
+                                 </div>-->
+                            <div class="index:getPersonIndex">
+                                <div class="templates:each?from=keys&amp;to=key">
+                                  <div class="index:ScanDB">
+                                      <i class="index:printValue?get=key"/>
+                                      <i class="index:printValue?get=name"/>
+                                    <!--   <i class="index:printAuthorName"/> -->
+                                        <div class="page:singleElement?xmltype=navigation&amp;xmlid=documentos docListButton"/>
+                                        <div class="docList">
+                                            <div class="templates:each?from=docs&amp;to=ref">
+                                                <i class="index:printDocLinks"/>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     </div>
                 </div> 
             </div>

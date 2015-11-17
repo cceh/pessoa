@@ -23,18 +23,18 @@ var exist_local_conf = {
 			"controller.xql": "rwxr-xr-x"
 		}
 	};
-/*
+
 var exist_remote_conf = {
-		host: "papyri.uni-koeln.de",
+		host: "projects.uni-koeln.de",
 		port: 8080,
 		path: "/xmlrpc",
 		auth: secrets.remote,
-		target: "/db/apps/papyri",
+		target: "/db/apps/pessoa",
 		permissions: {
 			"controller.xql": "rwxr-xr-x"
 		}
 }
-*/
+
 
 // ------ Copy (and compile) sources and assets to build dir ----------
 
@@ -62,6 +62,19 @@ gulp.task('deploy-local', ['build', 'update-index'], function() {
 		.pipe(exist.dest(exist_local_conf));
 });
 
+gulp.task('remote-upload', ['build'], function() {
+
+	return gulp.src(buildDest + '**/*', {base: buildDest})
+		.pipe(exist.newer(exist_remote_conf))
+		.pipe(exist.dest(exist_remote_conf));
+});
+
+gulp.task('remote-post-install', ['remote-upload'], function() {
+	return gulp.src('scripts/post-deploy.xql')
+		.pipe(exist.query(exist_remote_conf));
+});
+
+gulp.task('deploy-remote', ['remote-upload', 'remote-post-install']);
 
 
 
