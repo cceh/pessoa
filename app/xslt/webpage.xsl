@@ -11,7 +11,9 @@
             <xsl:apply-templates/>
         </a>
     </xsl:template>
-    
+    <xsl:template match="graphic">
+        <img src="{@url}" class="logos"/>
+    </xsl:template>
     <xsl:template match="head">
         <h1>
             <xsl:apply-templates/>

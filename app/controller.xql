@@ -10,6 +10,7 @@ import module namespace doc="http://localhost:8080/exist/apps/pessoa/doc" at "mo
 import module namespace author="http://localhost:8080/exist/apps/pessoa/author" at "modules/author.xqm";
 import module namespace search="http://localhost:8080/exist/apps/pessoa/search" at "modules/search.xqm";
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "modules/helpers.xqm";
+import module namespace config="http://localhost:8080/exist/apps/pessoa/helpers" at "modules/config.xqm";
 
 if ($exist:path eq "/") then
     (: forward root path to index.xql :)
@@ -141,8 +142,22 @@ return (
     </dispatch>
 )
 
-else if (contains($exist:path,"timeline")) then
+else if (contains($exist:path,"timeline")) then 
     (
+    if( not(contains($exist:path,$helpers:web-language))) then 
+    (
+    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <redirect url="{$config:app-root}/{$helpers:web-language}/timeline" />
+        <view>
+            <forward url="{$exist:controller}/modules/view.xql"/>
+        </view>
+        <error-handler>
+            <forward url="{$exist:controller}/error-page.html" method="get"/>
+            <forward url="{$exist:controller}/modules/view.xql"/>
+        </error-handler>
+    </dispatch>)
+    else 
+     (
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <forward url="{$exist:controller}/page/timeline.html" />
         <view>
@@ -153,6 +168,7 @@ else if (contains($exist:path,"timeline")) then
             <forward url="{$exist:controller}/modules/view.xql"/>
         </error-handler>
     </dispatch>)
+    )
  else if (contains($exist:path,"obras")) then
  (
          session:set-attribute("id",$exist:resource),

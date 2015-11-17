@@ -43,7 +43,7 @@
                         </xsl:choose>
                     </xsl:attribute>
                     <xsl:attribute name="icon">
-                        <xsl:text>../resources/images/circle_event.png</xsl:text>
+                        <xsl:text>resources/images/circle_event.png</xsl:text>
                     </xsl:attribute>
                     <xsl:text>Fernando Pessoa, </xsl:text>
                     <xsl:value-of select=".//origDate | .//imprint/date"/>
