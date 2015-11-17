@@ -118,7 +118,7 @@ declare function page:createThirdNav($type as xs:string) as node()* {
     for $date in ("1900 - 1909","1910 - 1919","1920 - 1929","1930 - 1935", (doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item/tei:list[@type="cronologia"]/tei:item/tei:term[@xml:lang=$helpers:web-language]/data(.)))
             return if (contains($date, "1") != xs:boolean("true") ) then
                         <li class="{concat("nav_",$type,"_tab")}"> <span class="step">|</span> 
-                        <a href="{concat($helpers:app-root,"/",$helpers:web-language,"/page/timeline.html")}" target="_blank">
+                        <a href="{concat($helpers:app-root,"/",$helpers:web-language,"/timeline")}" target="_blank">
                         {$date}
                         </a></li>
                     else if(substring-after($date,"19")!= "") then  <li class="{concat("nav_",$type,"_tab")}"  id="navtab_{$type}_sub_{index-of(("1900 - 1909","1910 - 1919","1920 - 1929","1930 - 1935",(doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item/tei:list[@type="cronologia"]/tei:item/tei:term[@xml:lang=$helpers:web-language]/data(.))),$date)-1}">
@@ -280,7 +280,8 @@ declare function page:createItem($type as xs:string, $indikator as xs:string?) a
    else if ($type = "obras")
          then for $works in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="works"]/tei:item
          let $label := $works/tei:title[1]/data(.)
-          return <item label="{$label}" ref="{concat($helpers:app-root,'/',$helpers:web-language)}/page/obras/{$works/attribute()}"/>
+          return <item label="{$label}" ref="{concat($helpers:app-root,'/',$helpers:web-language)}/obras/{$works/tei:title[1]/data(.)}"/>
+          (:return <item label="{$label}" ref="{concat($helpers:app-root,'/',$helpers:web-language)}/page/obras/ {$works/attribute()}"/>:)
     else if($type ="publicacoes")
         then for $hit in xmldb:get-child-resources("/db/apps/pessoa/data/pub")
             let $label :=  doc(concat("/db/apps/pessoa/data/pub/",$hit))//tei:fileDesc/tei:titleStmt/tei:title/data(.) 

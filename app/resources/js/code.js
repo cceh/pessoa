@@ -48,9 +48,10 @@ $(document).ready(function(){
                     $("div#navi .active").removeClass("active");
                 }
         });
+        
          function fixDiv() {
         var $cache = $('#openseadragon1');
-        if ($(window).scrollTop() > 600)
+      if ($(window).scrollTop() > 600)
         $cache.css({
         'position': 'fixed',
         'top': '10px'
@@ -64,6 +65,23 @@ $(document).ready(function(){
         $(window).scroll(fixDiv);
         fixDiv();
         });
+
+
+$(document).ready(function(){
+	//Check to see if the window is top if not then display button
+	$(window).scroll(function(){
+		if ($(this).scrollTop() > 100) {
+			$('.ScrollToTop').fadeIn();
+		} else {
+			$('.ScrollToTop').fadeOut();
+		}
+	});
+	//Click event to scroll to top
+	$('.ScrollToTop').click(function(){
+		$('html, body').animate({scrollTop : 0},800);
+		return false;
+	});
+});
 
 $(document).ready(function(){ 
     /*$("div#searchbox").hide();*/
