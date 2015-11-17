@@ -73,19 +73,24 @@ label{
 /* Unbekannt*/
 
 .ScrollToTop {
-    background:#990000;
+    background: #990000 none repeat scroll 0 0;
     color: #ffffff;
-    display: none;
+    cursor: pointer;
+    display: block;
+    float: right;
     font-weight: bold;
-    height: 50px !important;
+    height: 40px !important;
     padding: 10px;
     position: fixed;
-    right: 170px;
+    right: 30px;
     text-align: center;
     text-decoration: none;
-    top: 870px;
+    top: 550px;
     width: 40px !important;
-    cursor:pointer;
+}
+
+.ScrollToTop:hover {
+    background:#4e4e4e !important;
 }
 
 #titletool{
