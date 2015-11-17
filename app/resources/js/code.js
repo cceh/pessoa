@@ -277,6 +277,11 @@ function ObrasControl() {
             }
         });
         
+        $("a.down").click(function(){
+            $(this).toggleClass("LinkSelected");
+         //   $(this).next("a").toggleClass("clink-show");
+            $(this).next("span").toggle("blind","slow");
+        });
     };
 
   

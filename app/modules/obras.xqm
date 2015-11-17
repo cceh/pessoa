@@ -84,7 +84,7 @@ declare function obras:PrintSubWorks($node as node(), $model as map(*)) {
              let $link := concat($helpers:app-root,"/",$helpers:web-language,"/pub/",$doc,"#",$model("SubWorkId"))
             return 
             if( $doc != "" ) then  
-            <a href="{$link}" class="olink">Publicacao</a> 
+            <a href="{$link}" class="olink">{page:singleElement_xquery("obras","publication")}</a> 
             else ()
             }</div>
                 {for $work in $model("ThirdWorks")/tei:item
@@ -105,8 +105,9 @@ declare function obras:PrintSubWorks($node as node(), $model as map(*)) {
              let $link := concat($helpers:app-root,"/",$helpers:web-language,"/pub/",$doc,"#",$model("SubWorkId"))
             return 
             <div> {
-            if( $doc != "" ) then  
-            <a href="{$link}" class="olink">{$model("SubWorkTitle")}</a> 
+            if( $doc != "" ) then  (
+            <span><a class="olink down">{$model("SubWorkTitle")}</a><span style="display:none">
+            <a href="{$link}" class="clink">{page:singleElement_xquery("obras","publication")}</a></span> </span>)
             else <span>{$model("SubWorkTitle")}</span>
            } </div>
 };
@@ -146,8 +147,10 @@ if($model("ref")  != "") then
   let $db := $model("ref") 
     let $doc := substring-before(root($db)/util:document-name(.),".xml")
     let $ref := concat($helpers:app-root,"/",$helpers:web-language,"/pub/",$doc)
-   return if($model("SubWorks") != "") then (<div><a href="{$ref}" class="olink">Publicacao</a></div>,<div class="Obras-SubNav olink">{page:singleElement_xquery("navigation","publicacoes")}</div>) else <a href="{$ref}" class="olink">{page:singleElement_xquery("navigation","publicacoes")}</a>
-else <div class="Obras-SubNav olink">{page:singleElement_xquery("navigation","publicacoes")}</div>
+   return if($model("SubWorks") != "") then (<div><a href="{$ref}" class="olink">{page:singleElement_xquery("obras","publication")}</a></div>,
+            <div class="Obras-SubNav olink">{page:singleElement_xquery("navigation","publicacoes")}</div>) 
+            else <a href="{$ref}" class="olink">{page:singleElement_xquery("obras","publication")}</a>
+ else <div class="Obras-SubNav olink">{page:singleElement_xquery("navigation","publicacoes")}</div>
 };
 
 declare function obras:PrintLinks($node as node(), $model as map(*), $folder as xs:string, $name as xs:string?) {
@@ -171,7 +174,7 @@ declare function obras:PrintDocLinks($node as node(), $model as map(*)) {
         let $workn := $db//tei:rs[@type="work" and @key=$id]/@style
         let $list :=  doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="works"]/tei:item[@xml:id=$id]
         let $mentioned := $list/tei:title[@subtype=$workn]/data(.)
-       return  <a href="{$ref}" class="olink">{$doc}{ if( exists($mentioned)) then   <i> ({page:singleElement_xquery("roles","mentioned-as")}: {$mentioned})</i> 
+       return  <a href="{$ref}" class="olink">{$doc}{ if( exists($mentioned)) then   <span> ({page:singleElement_xquery("roles","mentioned-as")}: <i>{$mentioned})</i></span> 
                                 else () }
        
        </a>

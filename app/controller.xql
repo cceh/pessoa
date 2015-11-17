@@ -104,7 +104,7 @@ else if (contains($exist:path, "/author/")) then
 			<forward url="{$exist:controller}/modules/view.xql"/>
 		</error-handler>
     </dispatch>)
-else if(contains($exist:path, "page/genre") ) then
+else if(contains($exist:path, "genre") ) then
         if(request:get-parameter("orderBy",'') ) then
         let $orderBy := request:get-parameter("orderBy", '')
         let $type := $exist:resource
@@ -125,7 +125,7 @@ else if(contains($exist:path, "page/genre") ) then
 		</error-handler>
     </dispatch>
 )
-else if(contains($exist:path,"page/bibliografia")) then
+else if(contains($exist:path,"bibliografia")) then
 let $type :=$exist:resource
 return (
     session:set-attribute("type",$type),

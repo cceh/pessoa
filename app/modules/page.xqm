@@ -236,7 +236,7 @@ declare function page:createItem($type as xs:string, $indikator as xs:string?) a
             let $ref := if($helpers:web-language = "pt") then $genre/attribute()
                         else substring-after($genre/attribute(), "#")
             order by $genre collation "?lang=pt" 
-            return <item label="{$label}"  ref="{concat($helpers:app-root,'/',$helpers:web-language)}/page/genre/{$ref}" /> 
+            return <item label="{$label}"  ref="{concat($helpers:app-root,'/',$helpers:web-language)}/genre/{$ref}" /> 
    else if($type = "documentos") 
         then for $hit in xmldb:get-child-resources("/db/apps/pessoa/data/doc")
             let $label :=   if(substring-after($hit, "BNP_E3_") != "") then substring-after(replace(substring-before($hit, ".xml"), "_", " "), "BNP E3 ")
