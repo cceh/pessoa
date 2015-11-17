@@ -7,13 +7,14 @@
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
     
     <xsl:template match="ref">
-        <a href="{@target}" class="pLink">
+        <a href="{@target}" class="pLink" target="_blank">
             <xsl:apply-templates/>
         </a>
     </xsl:template>
     <xsl:template match="graphic">
-        <img src="{@url}" class="logos"/>
+        <img src="{@url}" class="logos" title="{child::desc/text()}" alt="{child::desc/text()}"/>
     </xsl:template>
+    
     <xsl:template match="head">
         <h1>
             <xsl:apply-templates/>
