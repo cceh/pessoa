@@ -510,9 +510,4 @@ let $lists := doc('/db/apps/pessoa/data/lists.xml')
 
 (: ########### Mehrsprachigkeit ##############:)
 
-declare   function page:MultiPage($node as node(), $model as map(*),$xmlid as xs:string) {
-let $doc := doc("/db/apps/pessoa/data/webpage.xml")
-let $stylesheet := doc("/db/apps/pessoa/xslt/webpage.xsl")
-let $text := $doc/tei:TEI/tei:text/tei:group/tei:text[@xml:id=$xmlid]/tei:group/tei:text[@xml:lang = $helpers:web-language]/tei:body
-return  transform:transform($text, $stylesheet, ())
-};
+

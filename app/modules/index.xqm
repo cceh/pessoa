@@ -20,14 +20,14 @@ declare function index:getPersonIndex($node as node(), $model as map(*)) {
                             order by $person
                             return $key
                             else ()
-                        
+                  
    (:
     let $keys := for $person in $lists/tei:persName[1]
                 let $hit := if($lists/tei:persName[1] = $person) then 
                 let $key := if (contains($hit/parent::tei:person/attribute()/data(.),"#")) then substring-after(../$hit/tei:person/attribute()/data(.),"#") else ../$hit/tei:person/attribute()/data(.)
                 order by $person
                 return $key
-     :)           
+        else ():)           
      return map {
      "keys" := $keys 
      }
@@ -37,9 +37,9 @@ declare function index:getPersonIndex($node as node(), $model as map(*)) {
 
 declare function index:ScanDB($node as node(), $model as map(*)) {
     let $coll:= collection("/db/apps/pessoa/data/doc/") 
-    let $lists := doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson/tei:person
+    let $lists := doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson
     let $db := $model("key")
-    let $author := for $person in $lists
+    let $author := for $person in $lists/tei:person
                              return if( $person/attribute()/data(.) =$db) then
                               for $name in $person/tei:persName return
                                   if(substring($name,1,1) = $model("letter")) then $name  else () 

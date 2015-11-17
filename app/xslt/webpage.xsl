@@ -6,13 +6,14 @@
     
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
     
+    <xsl:param name="res"/>
     <xsl:template match="ref">
         <a href="{@target}" class="pLink" target="_blank">
             <xsl:apply-templates/>
         </a>
     </xsl:template>
     <xsl:template match="graphic">
-        <img src="{@url}" class="logos" title="{child::desc/text()}" alt="{child::desc/text()}"/>
+        <img src="{concat($res,@url)}" class="logos" title="{child::desc/text()}" alt="{child::desc/text()}"/>
     </xsl:template>
     
     <xsl:template match="head">
