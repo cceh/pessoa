@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 27<hi rend="superscript">23</hi>-86a<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_27-23-86Ar.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 27-23-86ar</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="en"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate from="1913" to="1915">1913-1915</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3-27-23-1-130_JPG_24-C-R0150/bn-acpc-e-e3-27-23-1-130_0171_86_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <pb n="1"/>
+            <gap reason="selection"/>
+            <pb n="2"/>
+            <gap reason="selection"/>
+            <list>
+               <head>
+                  <del rend="overstrike"><gap reason="illegible" unit="word" extent="1"/></del>
+                  Literary Hackwork.
+               </head>
+               <item>
+                  <label>1.</label>
+                  <rs type="text">Portuguese Proverbs</rs>.
+               </item>
+               <item>
+                  <label>2.</label>
+                  <rs type="text">Fifty sonnets of <rs type="person" key="P15">Camoens</rs></rs>.
+               </item>
+               <item>
+                  <label>3.</label>
+                  <rs type="text">Poemas de <rs type="person" key="P87">Edgar Poe</rs></rs>. <lb/>
+                  (A translation into
+                  <choice>
+                     <abbr>P<am>.</am></abbr>
+                     <expan>P<ex>ortuguese</ex></expan>
+                  </choice> <lb/>
+                  of <hi rend="underline">Liberty, Equality, Fraternity</hi>)
+               </item>
+               <item>
+                  <label>4.</label> <rs type="text">A Portuguese <lb/> Anthology</rs>.
+                  <gap reason="selection" unit="line" extent="3"/>
+               </item>
+               <item>
+                  <label>5.</label> <supplied resp="PS" reason="omitted-in-original"/>
+               </item>
+            </list>
+         </div> 
+      </body>
+   </text>
+</TEI>

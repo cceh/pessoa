@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 48-6<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_48-6r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 48-6r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" />
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate from="1902" to="1912">1902-1912</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3-48-1-56_JPG_24-C-R0150/bn-acpc-e-e3-48-1-56_0011_6_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <list>
+               <head><hi rend="underline">As Cem Melhores Poesias</hi>: (Lyricas)</head>
+               <item>
+                  <label>1.</label>
+                  <rs type="person" key="P16">Gomes Leal</rs>: <rs type="text">Miserere Mei</rs>
+               </item>       
+               <item>
+                  <label>2.</label>
+                  <rs type="person" key="P25">
+                     <choice>
+                        <abbr>G<am>.</am></abbr>
+                        <expan>G<ex>uerra</ex></expan>
+                     </choice> Junqueiro</rs>: <rs type="text">O Orfão</rs>
+               </item>        
+               <item>
+                  <label>3.</label>
+                  <choice>
+                     <abbr><metamark rend="line" function="ditto"/></abbr>
+                     <expan>
+                        <rs type="person" key="P25">
+                           <choice>
+                              <abbr>G<am>.</am></abbr>
+                              <expan>G<ex>uerra</ex></expan>
+                           </choice> Junqueiro</rs>
+                     </expan>
+                  </choice>: 
+                  <rs type="text">
+                     <choice>
+                        <abbr>M<am>.</am></abbr>
+                        <expan>M<ex>inha</ex></expan></choice>
+                     Mãe</rs>
+               </item>
+               <item>
+                  <label>4.</label>
+                  <rs type="person" key="P125">
+                     <choice>
+                        <abbr>Mola<am>.</am></abbr>
+                        <expan>Mola<ex>rinho</ex></expan>
+                     </choice>
+                  </rs>: 
+                  <rs type="text">
+                     <choice>
+                        <abbr>Ma<am>.</am></abbr>
+                        <expan>Ma<ex>ria</ex></expan>
+                     </choice> Manoela</rs>
+               </item>
+               <item>
+                  <label>5.</label>
+                  <rs type="person" key="P172">
+                     <choice>
+                        <abbr>J<am>.</am></abbr>
+                        <expan>J<ex>oão</ex></expan>
+                     </choice> de Lemos</rs>: <rs type="text">Lua de Londres</rs>
+               </item>
+               <item>
+                  <label>6.</label>
+                  <rs type="person" key="P160">Soares de Passos</rs>: <rs type="text">Firmamento</rs>
+               </item>
+               <item>
+                  <label>7.</label>
+                  <rs type="person" key="P140">Lopes-Vieira</rs>: <rs type="text">Voz do Longe</rs>.
+               </item>       
+               <item>
+                  <label>8.</label>
+                  <rs type="person" key="P25">Junqueiro</rs>: <rs type="text">Canção Perdida</rs>
+               </item>
+               <item>
+                  <label>9.</label>
+                  <rs type="person" key="P173">Palmeirim</rs>: <rs type="text">Camoens</rs>
+               </item>
+               <item>
+                  <label>10.</label>
+                  <rs type="person" key="P24">José Anastacio</rs>: <rs type="text">O Abraço</rs>
+               </item>        
+               <item>
+                  <label>11.</label> <supplied resp="PS" reason="omitted-in-original"/>
+               </item>
+               <item>
+                  <label>12.</label> <supplied resp="PS" reason="omitted-in-original"/>
+               </item>
+               <metamark rend="vertical-lign" function="distinct"/>
+               <cb/>
+               <item>
+                  <label>13.</label> <supplied resp="PS" reason="omitted-in-original"/>
+               </item>
+               <item>
+                  <label>14.</label> <supplied resp="PS" reason="omitted-in-original"/>
+               </item>
+               <item>
+                  <label>15.</label> <supplied resp="PS" reason="omitted-in-original"/>
+               </item>
+               <item>
+                  <label>16.</label> <supplied resp="PS" reason="omitted-in-original"/>
+               </item>
+               <item>
+                  <label>17.</label> <supplied resp="PS" reason="omitted-in-original"/>
+               </item>
+               <item>
+                  <label>18.</label> <supplied resp="PS" reason="omitted-in-original"/>
+               </item>        
+               <item>
+                  <label>19.</label> <supplied resp="PS" reason="omitted-in-original"/>
+               </item>
+               <item>
+                  <label>20.</label> <supplied resp="PS" reason="omitted-in-original"/>
+               </item>
+               <item>
+                  <label>21.</label> <supplied resp="PS" reason="omitted-in-original"/>
+               </item>
+               <item>
+                  <label>22.</label> <supplied resp="PS" reason="omitted-in-original"/>
+               </item>
+               <item>
+                  <label>23.</label> <supplied resp="PS" reason="omitted-in-original"/>
+               </item>
+               <item>
+                  <label>24.</label> <supplied resp="PS" reason="omitted-in-original"/>
+               </item>
+               <item>
+                  <label>25.</label> <supplied resp="PS" reason="omitted-in-original"/>
+               </item>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>
