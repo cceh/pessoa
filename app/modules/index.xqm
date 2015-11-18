@@ -40,21 +40,33 @@ declare function index:collectTexts($node as node(), $model as map(*)) {
                             
     let $names := distinct-values($texts)
     let $well := for $name in $names
-                    let $wellformed := if(  for $let in (a to z) 
+                  (:  let $wellformed := if(  for $let in (a to z) 
                                                            where substring($name,1,1) eq $let 
                                                            return xs:boolean
                     
-                    ) then substring($name,2) else $name
-                    return <item title="{$name}" well="{replace(replace(replace($wellformed,'"',''),'“',''),'”','')}"/>
+                    ) then substring($name,2) else $name :)
+                    return <item title="{$name}" well="{replace(replace(replace($name,'"',''),'“',''),'”','')}"/>
     
     (:<item name="{$single}"  ref="{substring-before(root($text)/util:document-name(.),".xml")}"/>:)
+    let $letters := for $letter in $well/@well return substring($letter,1,1)
+    let $letters := distinct-values($letters)
     return map {
         "texts" := $well,
-        "allDocs" := $docs
+        "allDocs" := $docs,
+        "letters" := $letters
     }
 
 };
 
+
+declare function index:scanTexts($node as node(), $model as map(*)) {
+    let $texts := for $text in $model("texts") where substring($text/@well,1,1) eq $model("letter") return $text 
+    
+    return map {
+        "scTexts" := $texts
+        }
+    
+};
 
 declare function index:scanDocs($node as node(), $model as map) {
         let $text := $model("text")
@@ -67,18 +79,11 @@ declare function index:scanDocs($node as node(), $model as map) {
 };
 
 declare function index:test($node as node(), $model as map(*),$get as xs:string) {
-        $model($get)
+        $model($get)/@well/data(.)
 
 };
 
-(:
-declare function index:checkAlpha($letter as xs:string) {
-    let $first := for $let in (a to z) where $letter eq $let return xs:boolean(true
 
-
-
-};
-:)
 
 (:######## PERSON INDEX #######:)
 
@@ -130,14 +135,17 @@ declare function index:ScanDB($node as node(), $model as map(*)) {
                                       :)                  
                                 order by xs:integer(replace($cota, "(BNP/E3|MN)\s?([0-9]+)([^0-9]+.*)?", "$2"))
                                 return substring-before(root($doc)/util:document-name(.),".xml") 
- 
+    
     return map {
        "docs" := $res,
-        "name" := $name       
+        "name" := $name,
+        "id" := $id
     }
 };
 
-
+declare function index:printAuthor($node as node(), $model as map(*)) {
+    <span id="{$model("id")}">{$model("name")}</span>
+};
 
 declare function index:plottAlpha($ndoe as node(), $mode as map(*)) {
         let $lists := doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson/tei:person

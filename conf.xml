@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<app-conf>
+    <!-- Webapp-Root: darauf beziehen sich z.B. CSS und JS-Dateien, die eingebunden werden
+    http://papyri.uni-koeln.de:8080/apps/pessoa -->
+    <webapp-root>http://localhost:8080/exist/apps/pessoa</webapp-root>
+    <!-- File-Path: Pfad im Dateisystem, unter dem z.B. Bilddateien zu finden sind 
+    <file-path></file-path> -->
+    <!-- Request-Path: Teil der request uri, der hinausgeworfen und durch die webapp-root ersetzt wird
+    /apps/pessoa -->
+    <request-path>/exist/apps/pessoa</request-path>
+    <!-- Webfile-Path: wie sind DB-externe Dateien, z.B. Bilddateien, übers Web zu erreichen?
+    http://projects.cceh.uni-koeln.de/pessoa-images -->
+    <webfile-path>http://projects.cceh.uni-koeln.de/pessoa-images</webfile-path>
+</app-conf>
