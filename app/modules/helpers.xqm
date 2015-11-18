@@ -9,6 +9,8 @@ module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers";
 
 import module namespace templates="http://exist-db.org/xquery/templates";
 import module namespace config="http://localhost:8080/exist/apps/pessoa/config" at "config.xqm";
+declare namespace tei="http://www.tei-c.org/ns/1.0";
+
 
 
 (: web-root of the app :)
@@ -56,4 +58,52 @@ declare function helpers:app-root($node as node(), $model as map(*)){
 
 declare function helpers:copy-class-attr($node as node()){
     attribute class {$node/@class/concat(substring-before(., "helpers:app-root"), substring-after(., "helpers:app-root"))}
+};
+
+
+declare function helpers:getValue($node as node(), $model as map(*), $get as xs:string) {
+        $model($get)
+};
+
+(:~
+ : Eine each Funktion zur Verwendung in views, identisch mit templates:each, 
+ : aber ohne %templates:wrap Annotation, also ohne zusätzliches umschließendes
+ : $node - Element
+ :)
+declare function helpers:each($node as node(), $model as map(*), $from as xs:string, $to as xs:string) {
+    for $item in $model($from)
+    return
+        element { node-name($node) } {
+            $node/@*, templates:process($node/node(), map:new(($model, map:entry($to, $item))))
+        }
+};
+
+(:~
+ : Identisch zu helpers:each aber ganz ohne irgendein umschließendes Element
+ :)
+declare function helpers:invisibleEach($node as node(), $model as map(*), $from as xs:string, $to as xs:string) {
+    for $item in $model($from)
+    return
+        templates:process($node/node(), map:new(($model, map:entry($to, $item))))
+};
+
+
+
+declare %templates:wrap function helpers:singleElement($node as node(), $model as map(*),$xmltype as xs:string,$xmlid as xs:string) as xs:string? {
+    let $doc := doc('/db/apps/pessoa/data/lists.xml')    
+    return helpers:singleAttribute($doc,$xmltype,$xmlid)     
+};
+
+declare function helpers:singleElementHidden($node as node(), $model as map(*),$xmltype as xs:string,$xmlid as xs:string) as xs:string? {
+    let $doc := doc('/db/apps/pessoa/data/lists.xml')    
+    return helpers:singleAttribute($doc,$xmltype,$xmlid)     
+};
+
+
+
+declare function helpers:singleAttribute($doc as node(),$type as xs:string,$id as xs:string) as xs:string? {
+    let $entry := if($helpers:web-language = "pt") 
+                  then $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @xml:id=$id]
+                  else $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @corresp=concat("#",$id)]
+     return $entry/data(.)
 };
