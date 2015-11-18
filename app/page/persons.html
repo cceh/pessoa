@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <div xmlns="http://www.w3.org/1999/xhtml" class="templates:surround?with=templates/page.html&amp;at=content">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    
     <style  type="text/css">
        .olink {
        color: #08298A !important;
@@ -12,9 +12,8 @@
        .olink:hover {
        text-decoration:underline;
        color: #08298A !important;
-       
-       
        }
+       
        .navigation a, .docListButton {
        color: #08298A !important;
        cursor: pointer;   
@@ -31,6 +30,14 @@
        .docList {
        display:none
        }
+       .docList span {
+        display:block;
+        }
+        
+        .person {
+        margin-left: 10px;
+        display:block;
+        }
    </style>
    <script>
        $(document).ready(function(){ 
@@ -46,25 +53,20 @@
                 <div id="personsList" class="span6"> 
                     <div class="index:plottAlpha">
                         <i class="index:printNavigation"/>
-                       
-                         <div class="templates:each?from=letters&amp;to=letter">
+                        <div class="helpers:invisibleEach?from=letters&amp;to=letter">
                             <div class="sub_Nav"><i class="index:printLetter"/></div>
-                             <!-- <div class="index:getPersonIndex">
-                              <div class="templates:each?from=names&amp;to=person">
-                                    <i class="index:printValue?get=person"/>
-                                 </div>-->
                             <div class="index:getPersonIndex">
-                                <div class="templates:each?from=keys&amp;to=key">
+                                <div class="helpers:invisibleEach?from=keys&amp;to=key">
                                   <div class="index:ScanDB">
-                                      <i class="index:printValue?get=key"/>
-                                      <i class="index:printValue?get=name"/>
-                                    <!--   <i class="index:printAuthorName"/> -->
-                                        <div class="page:singleElement?xmltype=navigation&amp;xmlid=documentos docListButton"/>
-                                        <div class="docList">
-                                            <div class="templates:each?from=docs&amp;to=ref">
-                                                <i class="index:printDocLinks"/>
-                                            </div>
-                                        </div>
+                                     <div class="person">
+                                       <i class="helpers:getValue?get=name"/>
+                                       <div class="docListButton"><i class="helpers:singleElementHidden?xmltype=navigation&amp;xmlid=documentos"/></div>
+                                         <div class="docList">
+                                             <div class="helpers:invisibleEach?from=docs&amp;to=ref">
+                                                 <span><i class="index:printDocLinks"/></span>
+                                             </div>
+                                         </div>
+                                      </div>
                                     </div>
                                 </div>
                             </div>
