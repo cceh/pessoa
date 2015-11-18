@@ -1,14 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <div xmlns="http://www.w3.org/1999/xhtml" class="templates:surround?with=templates/page.html&amp;at=content">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    
-    
+    <style  type="text/css">
+        .olink {
+        color: #08298A !important;
+        text-decoration:none;
+        margin-left: 20px;
+        cursor: pointer;   
+        
+        }
+        .olink:hover {
+        text-decoration:underline;
+        color: #08298A !important;
+        }
+        .docListButton {
+        margin-left:10px;
+        width:90px;
+        }
+        .docList {
+        display:none
+        }
+        .docList span {
+        display:block;
+        }
+        .navigation a, .docListButton {
+        color: #08298A !important;
+        cursor: pointer;   
+        text-decoration:none;
+        }
+        .navigation a:hover, .docListButton:hover {
+        text-decoration:underline;
+        color: #08298A !important;
+        }
+        .index-text {
+            margin-right:10px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){ 
+        $(".docListButton").click(function() {
+        $(this).next("div").toggle("slow");
+        })
+        });
+    </script>
     <div class="row-fluid">
         <div id="content" class="span12 main">  
             <div id="texts-content">
                 <h1 id="title-tool" class="page:singleElement?xmltype=index&amp;xmlid=texts"/>
-                <div id="textsList" class="span6">                              
-                    <p class="doc:getTextIndex"/>                                     
+                <div id="textsList" class="span6">                     
+                    <div class="index:collectTexts">
+                        <i class="index:printNavigation"/>
+                        <div class="helpers:invisibleEach?from=letters&amp;to=letter">
+                            <div class="sub_Nav"><i class="index:printLetter"/></div>
+                            <div class="index:scanTexts">
+                                <div class="index-text">
+                                <div class="helpers:invisibleEach?from=scTexts&amp;to=text">
+                                       <span><i class="index:test?get=text"/></span>
+                                    <div class="docListButton"><i class="helpers:singleElementHidden?xmltype=navigation&amp;xmlid=documentos"/></div>
+                                    <div class="docList">
+                                       <div class="index:scanDocs">
+                                        <div class="helpers:invisibleEach?from=refs&amp;to=ref">
+                                            <span><i class="index:printDocLinks"/></span>     
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
                 </div> 
             </div>
         </div>

@@ -55,12 +55,16 @@ gulp.task('build', ['copy']);
 // ------ Deploy build dir to eXist ----------
 
 
-gulp.task('deploy-local', ['build', 'update-index'], function() {
+gulp.task('local-upload', ['build'], function() {
 
 	return gulp.src(buildDest + '**/*', {base: buildDest})
 		.pipe(exist.newer(exist_local_conf))
 		.pipe(exist.dest(exist_local_conf));
 });
+
+gulp.task('deploy-local',['local-upload','update-index']);
+
+
 
 gulp.task('remote-upload', ['build'], function() {
 
