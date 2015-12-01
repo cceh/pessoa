@@ -222,32 +222,7 @@ declare function search:search_query($para as xs:string, $db as node()*) as node
             let $search_build := concat("collection($db)//tei:msItemStruct",$search_funk) 
             return util:eval($search_build)
 };
-(: Range Suche :)
-declare function search:search_range($para as xs:string, $db as node()*) as node()* {
-    for $hit in search:get-parameters($para)    
-     (:   let $para := if($para = "person")then  "author" else () :)
-        let $search_terms := concat('("',$para,'"),"',$hit,'"')
-        let $search_funk := concat("//range:field-eq(",$search_terms,")")
-        let $search_build := concat("$db",$search_funk)
-        return util:eval($search_build)
-};
 
-declare function search:search_range_simple($para as xs:string,$hit as xs:string, $db as node()*) as node()* {
- 
-     (:   let $para := if($para = "person")then  "author" else () :)
-        let $search_terms := concat('("',$para,'"),"',$hit,'"')
-        let $search_funk := concat("//range:field-eq(",$search_terms,")")
-        let $search_build := concat("$db",$search_funk)
-        return util:eval($search_build)
-};
-
-declare function search:searchRange_ex_two($db as node()*,$para1 as xs:string, $para2 as xs:string, $term1 as xs:string, $term2 as xs:string) as node()*{
-        let $merge := concat('("',$para1,",",$para2,'"),','"',$term1,'","',$term2,'"')
-                let $build_range :=concat("//range:field-eq(",$merge,")")
-                let $build_search := concat("$db",$build_range)
-           return util:eval($build_search)
-           };
-    
            
 (: Suche nach den Autoren und der Rollen  "author","editor","translator", :)
 declare function search:author_build($db as node()*) as node()* {
@@ -517,4 +492,38 @@ declare function search:singleDocument($doc as xs:string) {
     let $result := search:search_range_simple("title",$term,$db)
     return if($result != "") then fn:true() else fn:false()
     
+};
+
+
+(: Range Suche :)
+declare function search:search_range($para as xs:string, $db as node()*) as node()* {
+    for $hit in search:get-parameters($para)    
+     (:   let $para := if($para = "person")then  "author" else () :)
+        let $search_terms := concat('("',$para,'"),"',$hit,'"')
+        let $search_funk := concat("//range:field-eq(",$search_terms,")")
+        let $search_build := concat("$db",$search_funk)
+        return util:eval($search_build)
+};
+
+declare function search:search_range_simple($para as xs:string,$hit as xs:string, $db as node()*) as node()* {
+ 
+     (:   let $para := if($para = "person")then  "author" else () :)
+        let $search_terms := concat('("',$para,'"),"',$hit,'"')
+        let $search_funk := concat("//range:field-eq(",$search_terms,")")
+        let $search_build := concat("$db",$search_funk)
+        return util:eval($search_build)
+};
+
+declare function search:searchRange_ex_two($db as node()*,$para1 as xs:string, $para2 as xs:string, $term1 as xs:string, $term2 as xs:string) as node()*{
+        let $merge := concat('("',$para1,'","',$para2,'"),','"',$term1,'","',$term2,'"')
+                let $build_range :=concat("//range:field-eq(",$merge,")")
+                let $build_search := concat("$db",$build_range)
+           return util:eval($build_search)
+           };
+    
+
+declare function search:Search_FieldStartsWith($type as xs:string, $letter as xs:string, $db as node()*) {
+        let $range := concat("//range:field-starts-with(('",$type,"'),'",$letter,"')")
+         let $build := concat("$db",$range)
+        return util:eval($build)
 };
