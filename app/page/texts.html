@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <div xmlns="http://www.w3.org/1999/xhtml" class="templates:surround?with=templates/page.html&amp;at=content">
     <style  type="text/css">
-        .olink {
+        .olink, .tlink {
         color: #08298A !important;
         text-decoration:none;
-        margin-left: 20px;
         cursor: pointer;   
-        
         }
-        .olink:hover {
+        .olink:hover, tlink:hover {
         text-decoration:underline;
         color: #08298A !important;
+        }
+        
+        .olink {
+        margin-left: 20px;
         }
         .docListButton {
         margin-left:10px;
@@ -34,6 +36,9 @@
         .index-text {
             margin-right:10px;
         }
+        .index-title {
+            display:block;
+        }
     </style>
     <script>
         $(document).ready(function(){ 
@@ -54,8 +59,8 @@
                             <div class="index:scanTexts">
                                 <div class="index-text">
                                 <div class="helpers:invisibleEach?from=scTexts&amp;to=text">
-                                       <span><i class="index:test?get=text"/></span>
-                                    <div class="docListButton"><i class="helpers:singleElementHidden?xmltype=navigation&amp;xmlid=documentos"/></div>
+                                    <span class="index-title"><i class="index:printDocOrPub"/></span>
+                                    <i class="index:printDocButton"/>
                                     <div class="docList">
                                        <div class="index:scanDocs">
                                         <div class="helpers:invisibleEach?from=refs&amp;to=ref">
