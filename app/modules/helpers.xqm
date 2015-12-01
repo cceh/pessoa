@@ -87,7 +87,13 @@ declare function helpers:invisibleEach($node as node(), $model as map(*), $from 
         templates:process($node/node(), map:new(($model, map:entry($to, $item))))
 };
 
+declare function helpers:lettersOfTheAlphabet() {
+    ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z')
+};
 
+declare function helpers:lettersOfTheAlphabeHight() {
+('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z')
+};
 
 declare %templates:wrap function helpers:singleElement($node as node(), $model as map(*),$xmltype as xs:string,$xmlid as xs:string) as xs:string? {
     let $doc := doc('/db/apps/pessoa/data/lists.xml')    
@@ -105,5 +111,22 @@ declare function helpers:singleAttribute($doc as node(),$type as xs:string,$id a
     let $entry := if($helpers:web-language = "pt") 
                   then $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @xml:id=$id]
                   else $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @corresp=concat("#",$id)]
+     return $entry/data(.)
+};
+
+
+declare function helpers:singleElement_xquery($type as xs:string,$id as xs:string) as xs:string? {
+    let $doc := doc('/db/apps/pessoa/data/lists.xml')   
+    let $entry := if($helpers:web-language = "pt") 
+                  then $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @xml:id=$id]
+                  else $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @corresp=concat("#",$id)]
+     return $entry/data(.)
+};
+
+declare function helpers:singleElementList_xquery($type as xs:string,$id as xs:string) as xs:string? {
+    let $doc := doc('/db/apps/pessoa/data/lists.xml')   
+    let $entry := if($helpers:web-language = "pt") 
+                  then $doc//tei:list[@type=$type and @xml:lang=$helpers:web-language]/tei:item[@xml:id=$id]
+                  else $doc//tei:list[@type=$type and @xml:lang=$helpers:web-language]/tei:item[@corresp=concat("#",$id)]
      return $entry/data(.)
 };
