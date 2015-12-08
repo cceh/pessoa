@@ -26,14 +26,16 @@ let $doc := $model("ref")
 return <a href="{$ref}" class="olink">{$doc}</a>
 };
 
-(:
-declare function index:FindFirstLetter($text as xs:string) {
+
+declare function index:FindFirstLetter($text as xs:string,$pos as xs:integer) {
     for $a in (helpers:lettersOfTheAlphabet(),helpers:lettersOfTheAlphabeHight())
+      let $pos :=  if($a eq "Z") then $pos +1
+        else $pos
         let $look := substring($text,$pos,1)
         where $look eq $a
-        return $a
+        return $look
 };
-:)
+
 (:####### TEXT INDEX #######:)
 
 declare function index:collectTexts($node as node(), $model as map(*)) {
@@ -44,11 +46,14 @@ declare function index:collectTexts($node as node(), $model as map(*)) {
                             (:<item title="{$single}" well="{replace(replace(replace($single,'"',''),'“',''),'”','')}"/>:)
                             
    let $docs := for $doc in $texts
-                            return <item name="{$doc}"  ref="{substring-before(root($doc)/util:document-name(.),".xml")}"/>
+                            return <item name="{$doc}"  ref="{substring-before(root($doc)/util:document-name(.),".xml")}" 
+                           />
     
     let $pubs := collection('/db/apps/pessoa/data/pub')
     let $pubs_title := for $hit in $pubs//tei:teiHeader/tei:fileDesc
-                                    return <item ref="{substring-before($hit//tei:publicationStmt/tei:idno[@type="filename"]/data(.),".xml")}" well="{$hit//tei:sourceDesc/tei:biblStruct/tei:analytic/tei:title[@level = "a"]/data(.)}" type="pub"/>
+                                    return <item ref="{substring-before($hit//tei:publicationStmt/tei:idno[@type="filename"]/data(.),".xml")}" 
+                                    well="{$hit//tei:sourceDesc/tei:biblStruct/tei:analytic/tei:title[@level = "a"]/data(.)}" type="pub"
+                                    letter="{index:FindFirstLetter($hit//tei:sourceDesc/tei:biblStruct/tei:analytic/tei:title[@level = "a"]/data(.),1)}"/>
     (:let $pubs_letters := for $letter in $pubs_title return substring($letter,1,1)
     :)
     let $names := distinct-values($texts)
@@ -58,23 +63,26 @@ declare function index:collectTexts($node as node(), $model as map(*)) {
                                                            return xs:boolean
                     
                     ) then substring($name,2) else $name :)
-                    return <item title="{$name}" well="{replace(replace(replace($name,'"',''),'“',''),'”','')}" type="doc"/>
+                    return <item title="{$name}" well="{replace(replace(replace($name,'"',''),'“',''),'”','')}" type="doc"  letter="{index:FindFirstLetter($name,1)}"/>
+    
+    let $newletter := for $letter in $well/@well order by $letter return index:FindFirstLetter($letter,1)
     let $well := ($well, $pubs_title)
     (:<item name="{$single}"  ref="{substring-before(root($text)/util:document-name(.),".xml")}"/>:)
-    let $letters := for $letter in $well/@well order by $letter return substring($letter,1,1)
+    let $letters := for $letter in $well/@letter order by $letter return $letter
     let $letters := distinct-values($letters)
     return map {
         "texts" := $well,
         "allDocs" := $docs,
-        "letters" := $letters        
+        "letters" := $letters,
+        "newletter" := $newletter        
         }
 
 };
 
 
 declare function index:scanTexts($node as node(), $model as map(*)) {
-    let $texts := for $text in $model("texts") where substring($text/@well,1,1) eq $model("letter") return $text 
-    
+    let $texts := for $text in $model("texts") where $text/@letter eq $model("letter") return $text 
+    (:substring($text/@well,1,1):)
     return map {
         "scTexts" := $texts
         }
