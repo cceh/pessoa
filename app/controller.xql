@@ -111,7 +111,7 @@ else if(contains($exist:path, "genre") ) then
         return doc:get-genre(<node />, map {"test" := "test"}, $type, $orderBy)
         else (
         session:set-attribute("type",$exist:resource),
-        session:set-attribute("orderBy","alphab"),
+        session:set-attribute("orderBy","date"),
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <forward url="{$exist:controller}/page/genre.html" />
         <add-parameter name="type" value="{$exist:resource}" />
