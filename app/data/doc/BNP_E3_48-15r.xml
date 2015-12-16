@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 48-15<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher/>
+            <idno type="filename">BNP_E3_48-15r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 48-15r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate from="1902" to="1912">1902-1912</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3-48-1-56_JPG_24-C-R0150/bn-acpc-e-e3-48-1-56_0029_15_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <head>
+            <hi rend="underline">Anthologia Gongorica</hi>
+         </head> 
+         <p>precedida de uma <lb/> apologia do Gongorismo.</p>
+         <metamark rend="line" function="distinct"/>
+         <list>
+            <item><rs type="person" key="P81">Manuel da Veiga</rs>.</item>
+            <item><rs type="person" key="P182">Jeronymo Bahia</rs>.</item>
+         </list> 
+         <metamark rend="line" function="distinct"/> 
+         <list>
+            <item><rs type="person" key="P81"><hi rend="underline">Manuel da Veiga:</hi></rs></item>
+            <item><rs type="person" key="P183">Laura de Anfriso</rs>.</item>
+         </list> 
+         <metamark rend="line" function="distinct"/> 
+         <list>
+            <item><rs type="text">Phenix Renascida</rs></item>
+         </list>  
+         <div/>
+      </body>
+   </text>
+</TEI>
