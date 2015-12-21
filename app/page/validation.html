@@ -1,0 +1,26 @@
+<div xmlns="http://www.w3.org/1999/xhtml" class="templates:surround?with=templates/page.html&amp;at=content">
+    <div class="row-fluid">
+        <div id="content" class="span12 main">
+            <div id="lorem">
+                <div class="app:collections">
+                    All Docs : <i class="helpers:getValue?get=count"/>
+                    <div class="app:countDocs">
+                        <b style="color:green"> Valid : <u><i class="helpers:getValue?get=validDocs"/></u></b>
+                        <b style="color:red">Not Valid : <u><i class="helpers:getValue?get=invalidDocs"/></u></b>
+                    </div>
+                    <ol style="list-style-type:circle">
+                    <div class="helpers:invisibleEach?from=documents&amp;to=doc">
+                        <div class="app:checkDocuments">
+                            <li>
+                            <i class="helpers:getValue?get=name"/>
+                            <i class="helpers:getValue?get=valid"/>
+                            <br/>
+                            </li>
+                        </div>
+                    </div>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

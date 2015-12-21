@@ -30,6 +30,7 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
             <forward url="{$exist:controller}/modules/view.xql"/>
         </view>
     </dispatch>
+   
 else if (contains($exist:path,  "doc/versao-pessoal")) then
     let $lb := request:get-parameter("lb", "yes")
     let $abbr := request:get-parameter("abbr", "yes")

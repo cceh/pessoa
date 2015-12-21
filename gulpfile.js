@@ -25,7 +25,7 @@ var exist_local_conf = {
 	};
 
 var exist_remote_conf = {
-		host: "projects.uni-koeln.de",
+		host: "projects.cceh.uni-koeln.de",
 		port: 8080,
 		path: "/xmlrpc",
 		auth: secrets.remote,
