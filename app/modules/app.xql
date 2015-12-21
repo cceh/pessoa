@@ -61,7 +61,42 @@ let $text := $doc/tei:TEI/tei:text/tei:group/tei:text[@xml:id=$xmlid]/tei:group/
 return  transform:transform($text, $stylesheet, (<parameters><param name="res" value="{$helpers:app-root}"/></parameters>))
 };
 
+(:~Collect all Documents from the folders "doc" and "pub":)
+declare function app:collections($node as node(), $model as map(*)) {
+    let $docs := collection("/db/apps/pessoa/data/doc")
+    let $pubs := collection("/db/apps/pessoa/data/pub")
+    let $all := ($docs,$pubs)
+    return map { 
+        "documents" := $all,
+        "count" := count($all)
+        }
+};
 
+(:~ Checks the Documents from the model "doc", called the function app:validate, returns model with name and valid :)
+declare function app:checkDocuments($node as node(), $model as map(*)) {
+    let $document := $model("doc")
+    let $doc := root($document)/util:document-name(.)
+    let $valid := if(app:validate($document)) then <b style="color:green">Valid</b> else <b style="color:red">Not Valid</b>
+    let $clear := validation:clear-grammar-cache()
+    return map {
+    "name" := $doc,
+    "valid" := $valid
+    }
+};
 
+declare function app:countDocs($node as node(),$model as map(*)) {
+    let $valid := for $doc in $model("documents") where app:validate($doc) return app:validate($doc)
+    let $invalid := for $doc in $model("documents") where not(app:validate($doc)) return app:validate($doc)    
+    return map {
+        "validDocs" := count($valid),
+        "invalidDocs" := count($invalid)
+        }
+};
+
+(:~Document Validtion :)
+declare function app:validate($doc as node()*) {    
+    let $schema := "/db/apps/pessoa/data/schema/pessoaTEI.rng"
+    return validation:validate($doc,$schema)
+};
 
 
