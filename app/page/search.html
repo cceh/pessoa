@@ -25,16 +25,16 @@
                  <div class="search_resultList">
                      <div id="tabline">    
                      </div>
-                     <div class="search_your_div">  
-                         
+                     <div class="search_your_div">                           
                          <div class="search:your_search search_your_lsitdiv"></div>
+             
                      </div>
                      <div class="clear"></div>
-                     <h2 class="page:singleElement?xmltype=search&amp;xmlid=results" id="resultados"></h2>
+                     <div><h2  id="resultados"><i class="helpers:singleElementHidden?xmltype=search&amp;xmlid=results"/><i class="helpers:getValue?get=r_count"/></h2></div>
                      <form method="get" class="OrderForm">
                          <span class="page:singleElement?xmltype=order&amp;xmlid=order"></span>
-                         <input id="date" checked="checked" name="order" type="radio" value="no" onchange="recorder('alpha');"></input><label for="date" class="page:singleElement?xmltype=order&amp;xmlid=chronological" />   
-                         <input id="alphab"  name="order" type="radio" value="yes" onchange="recorder('cronologi');"></input><label for="alphab" class="page:singleElement?xmltype=order&amp;xmlid=alphabetical" />   
+                         <input id="date" name="order" type="radio" value="no" onchange="recorder('alpha');"></input><label for="date" class="page:singleElement?xmltype=order&amp;xmlid=chronological" />   
+                         <input id="alphab" checked="checked" name="order" type="radio" value="yes" onchange="recorder('cronologi');"></input><label for="alphab" class="page:singleElement?xmltype=order&amp;xmlid=alphabetical" />   
                      </form>
                      <div id="result">
                         <p class="search:profiresult?sel=union&amp;orderBy=alpha"></p>

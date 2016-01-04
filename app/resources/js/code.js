@@ -120,14 +120,14 @@ $(document).ready(function(){
          $("span.nota").click(function() {
            
            if(!$(this).hasClass("active")) {
-               $("#nota_bottom").addClass("active");
-               $("#nota_top").addClass("active");
+               $("#nota_bottom").addClass("selected");
+               $("#nota_top").addClass("selected");
                $(".editorial-note").show("slow");
                $("#nota_bottom").show();
             }
            else {
-               $("#nota_bottom").removeClass("active");
-               $("#nota_top").removeClass("active");
+               $("#nota_bottom").removeClass("selected");
+               $("#nota_top").removeClass("selected");
                 $(".editorial-note").hide("slow");
                 $("#nota_bottom").hide();
 
@@ -182,18 +182,21 @@ $(document).ready(function(){
  
 
 function printContent() {
-            if( $("div#text-div").children("ul").children("li").hasClass("active") ) { 
-            var id = $("div#text-div").children("ul").children("li.active").children("div").attr("id");  
+            if( $("div#text-div").children("ul").children("li").hasClass("selected") ) { 
+            var id = $("div#text-div").children("ul").children("li.selected").children("div").attr("id");  
             }
             else {
             var id = "text-div";
             }
+            var headerContent = $("div#titleline").children("div").html();
+            var zitatContent =  $("div#dialog").html();
+            var htmlContents = document.getElementById(id).innerHTML;
             
-            var printContents = document.getElementById(id).innerHTML;
+            var printContents = zitatContent+headerContent+htmlContents;
                  var originalContents = document.body.innerHTML;
                  var newWindow = window.open("","newWindow");
                  newWindow.document.write (printContents);
-                 newWindow.print();
+                 newWindow.print();                 
                  newWindow.close();
                  
             /*

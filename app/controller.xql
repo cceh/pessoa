@@ -30,6 +30,7 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
             <forward url="{$exist:controller}/modules/view.xql"/>
         </view>
     </dispatch>
+   
 else if (contains($exist:path,  "doc/versao-pessoal")) then
     let $lb := request:get-parameter("lb", "yes")
     let $abbr := request:get-parameter("abbr", "yes")
@@ -111,7 +112,7 @@ else if(contains($exist:path, "genre") ) then
         return doc:get-genre(<node />, map {"test" := "test"}, $type, $orderBy)
         else (
         session:set-attribute("type",$exist:resource),
-        session:set-attribute("orderBy","alphab"),
+        session:set-attribute("orderBy","date"),
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <forward url="{$exist:controller}/page/genre.html" />
         <add-parameter name="type" value="{$exist:resource}" />

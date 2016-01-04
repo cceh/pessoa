@@ -52,6 +52,7 @@ declare %templates:wrap function search:profisearch($node as node(), $model as m
        
         return map{
             "r_union"   := search:result_union($dbase),
+            "r_count" := count(search:result_union($dbase)),
             (:"r_dbase"   := $dbase,:)
             "query"     := $term
         }

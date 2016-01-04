@@ -25,8 +25,7 @@ declare %templates:wrap function page:construct($node as node(), $model as map(*
     let $SubNav := page:createSubNav()
     let $ExtNav := page:createExtNav()
     let $return := ($MainNav,page:construct_search() ,$SubNav, $ExtNav)
-    return $return
-            
+    return $return            
 };
 declare function page:construct_search() as node()* {
 let $search := <div class="container-4" id="searchbox" style="display:none">
@@ -35,14 +34,17 @@ let $search := <div class="container-4" id="searchbox" style="display:none">
                             <a class="small_text" id="search-link" href="{$helpers:app-root}/{$helpers:web-language}/search">{page:singleAttribute(doc("/db/apps/pessoa/data/lists.xml"),"search","search_noun_ext")}</a>
                         </div>      
     let $clear :=  <div class="clear"></div>
+    let $request-path := if($config:request-path != "") then $config:request-path else "index.html"
+    let $page :=     if(contains($config:request-path,concat("/",$helpers:web-language,"/"))) then substring-after($request-path,concat("/",$helpers:web-language,"/")) else substring-after($request-path,"pessoa//")
+    
     let $switchlang := if(contains($config:request-path,"search")) then 
     <script>
         function switchlang(value){{
-       location.href="{$helpers:app-root}/"+value+"/{substring-after($config:request-path,concat("/",$helpers:web-language,"/"))}{page:search_SwitchLang()}";
+       location.href="{$helpers:app-root}/"+value+"/{$page}{page:search_SwitchLang()}";
         }}
     </script>
     else <script>
-        function switchlang(value){{location.href="{$helpers:app-root}/"+value+"/{substring-after($config:request-path,concat("/",$helpers:web-language,"/"))}";}}
+        function switchlang(value){{location.href="{$helpers:app-root}/"+value+"/{$page}";}}
     </script>
     return ($search,$clear,$switchlang, search:search-function())
 };

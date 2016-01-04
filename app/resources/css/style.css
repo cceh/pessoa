@@ -106,6 +106,7 @@ label{
     margin: 0 auto; 
     width: 99%; 
     z-index:0;
+    max-width:1600px;
 }
     #page-header a{
         text-decoration: none;
@@ -113,6 +114,7 @@ label{
     }
 
 #header-image{
+    max-width:1600px;
     width:99%;
     height:300px;
     position:absolute;
@@ -467,7 +469,7 @@ ul#tabs a{
         ul#tabs span:hover{
             background-color: #900;   
         }
-        ul#tabs span.active{
+        ul#tabs span.selected{
           
         }
       
@@ -483,7 +485,7 @@ ul#tab{
     ul#tab li{
         display: none;
     }
-        ul#tab li.active{
+        ul#tab li.selected{
             display: block;
         }
 
@@ -523,7 +525,7 @@ ul#indextab{
     ul#indextab li{
         display: none;
     }
-        ul#indextab li.active{
+        ul#indextab li.selected{
             display: block;
         }
 
@@ -815,10 +817,10 @@ input[type="checkbox"].lang_input-box, input[type="radio"].lang_input-box {
  cursor: text !important; 
 }
 
-li.tabs.active span{
+li.tabs.selected span{
            background-color: #990000  !important;
             }            
-li.itabs.active span{
+li.itabs.selected span{
            background-color: #990000  !important;
             }
 
@@ -913,14 +915,14 @@ li.itabs.active span{
             background-color: #990000 !important;
 }
 
-.nota.active {
+.nota.selected {
     border:solid 1px;
     
     
 }
 
 
-#nota_bottom.active {
+#nota_bottom.selected {
     border-top:none;
 }
 
@@ -928,7 +930,7 @@ li.itabs.active span{
     margin-top:20px;
 }
 
-#nota_top.active {
+#nota_top.selected {
     border-bottom:none;
 }
 
