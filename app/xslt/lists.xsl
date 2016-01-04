@@ -89,8 +89,8 @@
                 </xsl:choose></h2>
                 <ul>
                     <xsl:for-each select=".//rs[@type='text']">
-                        <xsl:sort select="replace(.,'[“”]','')"/>
-                        <xsl:variable name="key" select="replace(.,'[“”.\s]','')"/>
+                        <xsl:sort select="replace(.,'[“”()]','')"/>
+                        <xsl:variable name="key" select="replace(.,'[“”.\s()]','')"/>
                         <li onmouseenter="highlight('text {$key}');" onmouseleave="clearH('{$key}');"><xsl:apply-templates /> <a href="../../page/texts#{.}" title="{$title}"><img class="indexImg typeB" src="../../resources/images/glyphicons-40-notes.png"/></a></li>
                     </xsl:for-each>
                 </ul>

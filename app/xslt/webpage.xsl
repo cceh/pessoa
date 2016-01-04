@@ -39,9 +39,19 @@
             <xsl:apply-templates/>
         </li>
     </xsl:template>
+    <xsl:template match="label">
+        <seg style="display: inline-block; width: 100px;">
+            <xsl:apply-templates/>
+        </seg>
+    </xsl:template>
     
     <xsl:template match="seg[@rend='smaller']">
         <span style="font-size: smaller;">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+    <xsl:template match="seg[@rend='italic']">
+        <span style="font-style: italic;">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
