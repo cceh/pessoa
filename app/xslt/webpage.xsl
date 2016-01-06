@@ -28,10 +28,15 @@
         </h3>
     </xsl:template>
     
-    <xsl:template match="list">
-        <ul>
+    <xsl:template match="list[not(@type)]">
+        <ul style="list-style:none;">
             <xsl:apply-templates/>
         </ul>
+    </xsl:template>
+    <xsl:template match="list[@type='ordered']">
+        <ol>
+            <xsl:apply-templates/>
+        </ol>
     </xsl:template>
     
     <xsl:template match="item">
@@ -39,11 +44,12 @@
             <xsl:apply-templates/>
         </li>
     </xsl:template>
-    <xsl:template match="label">
-        <seg style="display: inline-block; width: 100px;">
+    <xsl:template match="label[not(ancestor::list[@type='ordered'])]">
+        <seg style="display: inline-block; width: 40px;">
             <xsl:apply-templates/>
         </seg>
     </xsl:template>
+    <xsl:template match="label[ancestor::list[@type='ordered']]"/>
     
     <xsl:template match="seg[@rend='smaller']">
         <span style="font-size: smaller;">
