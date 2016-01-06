@@ -77,8 +77,8 @@ declare function app:checkDocuments($node as node(), $model as map(*)) {
     let $document := $model("doc")
     let $doc := root($document)/util:document-name(.)
     let $valid := if(app:validate($document)) then <b style="color:green">Valid</b> else <b style="color:red">Not Valid</b>
-    let $date := app:checkDate($document,$doc)
-    let $dateout := if($date/@check eq "true" ) then <u style="color:green">{$date/@date/data(.)}</u> else <u style="color:red">{$date/@date/data(.)} | {$date/@att/data(.)}</u>
+    let $date := if(contains($doc,"BNP") or contains($doc,"MN")) then app:checkDateDoc($document) else app:checkDatePub($document)
+    let $dateout := if(not(contains($date/@check, "false")) ) then <u style="color:green">{$date/@date/data(.)} | {$date/@att/data(.)}</u> else <u style="color:red">{$date/@date/data(.)} | {$date/@att/data(.)}</u>
     let $clear := validation:clear-grammar-cache()
     return map {
     "name" := $doc,
@@ -96,14 +96,26 @@ declare function app:countDocs($node as node(),$model as map(*)) {
         }
 };
 
-declare function app:checkDate($doc as node()*,$name as xs:string) {
-    let $type := if(contains($name,"BNP") or contains($name,"MN")) then "doc" else "pub"
-   
-   let $date := if(contains($name,"BNP") or contains($name,"MN")) then $doc//tei:origDate else $doc//tei:date
-   
-   let $check := if($type eq "pub") then ( if( contains($doc//tei:date/data(.),$doc//tei:date/@when)) then true() else false() ) else true()
-   let $att := if($type eq "pub") then $doc//tei:date/@when else "nothin"
-   return <item check="{$check}" date="{$date}" att="{$att}"/>
+declare function app:checkDatePub($doc as node()*) {
+    let $imprint := $doc//tei:imprint
+    let $range := if( exists($imprint/tei:date/attribute()[2])) then 2 else 1    
+    let $check := for $x in (1 to $range) 
+                            let $att := if(contains($imprint/tei:date/attribute()[$x],"-")) then substring-before( $imprint/tei:date/attribute()[$x],"-") else $imprint/tei:date/attribute()[$x]
+                            return if(contains($imprint/tei:date/data(.),$att)) then true() else false()     
+    let $att := if($range = 2) then ( for $x in (1 to $range) return $imprint/tei:date/attribute()[$x]  ) else $imprint/tei:date/attribute()[1]    
+    return <item check="{$check}" date="{$imprint/tei:date}" att="{$att}"/>
+};
+
+declare function app:checkDateDoc($doc as node()*) {
+    let $date := $doc//tei:msDesc/tei:history/tei:origin/tei:p
+    
+    let $range := if(exists($date/tei:origDate/attribute()[2])) then (if($date/tei:origDate/attribute()[2] != "medium") then 2 else 1) else 1
+    
+    let $check := for $x in (1 to $range) 
+                            let $att := if(contains($date/tei:origDate/attribute()[$x],"-")) then substring-before( $date/tei:origDate/attribute()[$x],"-") else $date/tei:origDate/attribute()[$x]
+                            return if(contains($date/tei:origDate/data(.),$att)) then true() else false()     
+    let $att := if($range = 2) then ( for $x in (1 to $range) return $date/tei:origDate/attribute()[$x]  ) else $date/tei:origDate/attribute()[1]    
+    return <item check="{$check}" date="{$date/tei:origDate}" att="{$att}"/>
 };
 
 (:~Document Validtion :)
