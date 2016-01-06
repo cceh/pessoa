@@ -34,7 +34,7 @@ declare function pub:get-image($node as node(), $model as map(*), $id as xs:stri
     let $file-names := pub:get-xml($id)//tei:graphic/@url/data(.)
     let $num-files := count($file-names)
     return
-    (<div id="openseadragon1" style="width: 400px; height: 380px;"></div>,
+    (<div id="openseadragon1"></div>,
     <script src="{$helpers:app-root}/resources/js/openseadragon.js"></script>,
     <script type="text/javascript">
         var viewer = OpenSeadragon({{
