@@ -77,10 +77,13 @@ declare function app:checkDocuments($node as node(), $model as map(*)) {
     let $document := $model("doc")
     let $doc := root($document)/util:document-name(.)
     let $valid := if(app:validate($document)) then <b style="color:green">Valid</b> else <b style="color:red">Not Valid</b>
+    let $date := app:checkDate($document,$doc)
+    let $dateout := if($date/@check eq "true" ) then <u style="color:green">{$date/@date/data(.)}</u> else <u style="color:red">{$date/@date/data(.)} | {$date/@att/data(.)}</u>
     let $clear := validation:clear-grammar-cache()
     return map {
     "name" := $doc,
-    "valid" := $valid
+    "valid" := $valid,
+    "date" := $dateout
     }
 };
 
@@ -91,6 +94,16 @@ declare function app:countDocs($node as node(),$model as map(*)) {
         "validDocs" := count($valid),
         "invalidDocs" := count($invalid)
         }
+};
+
+declare function app:checkDate($doc as node()*,$name as xs:string) {
+    let $type := if(contains($name,"BNP") or contains($name,"MN")) then "doc" else "pub"
+   
+   let $date := if(contains($name,"BNP") or contains($name,"MN")) then $doc//tei:origDate else $doc//tei:date
+   
+   let $check := if($type eq "pub") then ( if( contains($doc//tei:date/data(.),$doc//tei:date/@when)) then true() else false() ) else true()
+   let $att := if($type eq "pub") then $doc//tei:date/@when else "nothin"
+   return <item check="{$check}" date="{$date}" att="{$att}"/>
 };
 
 (:~Document Validtion :)
