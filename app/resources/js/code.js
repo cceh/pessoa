@@ -244,8 +244,28 @@ function printContent() {
 
 
 function ObrasControl() {
+        $("div#Obras-DocLinkList").click(function() {
+            $(this).next("ul").toggle("blind","slow"); 
+            $(this).toggleClass("selected");
+        });
+        
+        $("span.Obras-WorkName").click(function() {
+            $(this).next("div").toggle();
+             $(this).toggleClass("selected");
+        });
+        
+        $("div.Obras-SubNav-Publicacao").click(function() {
+            $(this).next("span").toggle();
+            $(this).toggleClass("selected");
+        });
+        
+        
+        $("div.Obras-SubNav-Publication").click(function() {
+            $(this).next("ul").toggle();
+            $(this).toggleClass("selected");
+        });
+/*
         $("div.Obras-SubNav").next("div").css("display","block");
-        $("div#Obras-DocLinkList").next("div").css("display","block");
         
         $("div.Obras-WorkName").click(function() {
             $(this).nextAll("div").toggle("blind","slow");
@@ -269,22 +289,15 @@ function ObrasControl() {
             }
            
         });
-        $("div#Obras-DocLinkList").click(function() {
-            $(this).next("div").children("div").toggle("blind","slow");
-            
-            if(!$(this).hasClass("selected")) {
-                $(this).addClass("selected");
-            }
-            else {
-                $(this).removeClass("selected");
-            }
-        });
+*/
         
+        /*
         $("a.down").click(function(){
             $(this).toggleClass("LinkSelected");
          //   $(this).next("a").toggleClass("clink-show");
             $(this).next("span").toggle("blind","slow");
         });
+        */
     };
 
   

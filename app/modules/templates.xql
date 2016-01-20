@@ -18,6 +18,7 @@ import module namespace util="http://exist-db.org/xquery/util";
 
 declare namespace expath="http://expath.org/ns/pkg"; 
 
+
 declare variable $templates:CONFIG_STOP_ON_ERROR := "stop-on-error";
 declare variable $templates:CONFIG_APP_ROOT := "app-root";
 declare variable $templates:CONFIG_ROOT := "root";
@@ -32,6 +33,8 @@ declare variable $templates:PROCESSING_ERROR := QName("http://exist-db.org/xquer
 declare variable $templates:TYPE_ERROR := QName("http://exist-db.org/xquery/templates", "TypeError");
 
 declare variable $templates:ATTR_DATA_TEMPLATE := "data-template";
+
+
 
 (:~
  : Start processing the provided content. Template functions are looked up by calling the
