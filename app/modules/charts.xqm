@@ -17,10 +17,26 @@ declare namespace request="http://exist-db.org/xquery/request";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 
+(: Import the Collector :)
+(:
+import module namespace collector="http://localhost:8080/exist/apps/magicaldraw/modules/collector" at "xmldb:exist://db/apps/magicaldraw/modules/collector.xqm";
+
+
+declare function charts:magicaldraw($node as node(), $model as map(*)) {
+    let $data-path := "/db/apps/pessoa/data"
+    let $db := "doc"
+    let $name := "genre"
+    let $term :=( "lista_editorial", "nota_editorial","plano_editorial" )
+    
+    return collector:printResults($data-path,$db,$name,$term)
+
+
+};
+:)
 declare %templates:wrap function charts:test($node as node(), $model as map(*)) as node()* {
     let $test := <p> Huhu</p>
   
-    return$test
+    return $test
 };
 
 declare %templates:wrape function charts:autores($node as node(), $model as map(*)) as node()* {

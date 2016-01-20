@@ -22,7 +22,10 @@ import module namespace charts="http://localhost:8080/exist/apps/pessoa/charts" 
 import module namespace obras="http://localhost:8080/exist/apps/pessoa/obras" at "obras.xqm";
 import module namespace index="http://localhost:8080/exist/apps/pessoa/index" at "index.xqm";
 
-
+(:~import MagicalDraw :)
+(:
+import module namespace collector="http://localhost:8080/exist/apps/magicaldraw/modules/collector" at "xmldb:exist://db/apps/magicaldraw/modules/collector.xqm";
+:)
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers";
 
 declare option exist:serialize "method=html5 media-type=text/html enforce-xhtml=yes";
