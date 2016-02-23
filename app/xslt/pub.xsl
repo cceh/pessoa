@@ -12,6 +12,7 @@
                 .lg {margin: 15px 0;}
                 h2.center {text-align: center;}
                 div.poem {margin: 20px 0;}
+                div.indent {display: inline-block; text-indent: 1em;}
             </style>
             <xsl:apply-templates select="//text" />
         </div>
@@ -61,6 +62,13 @@
     
     <xsl:template match="l">
         <xsl:apply-templates /><br />
+    </xsl:template>
+    
+    <xsl:template match="l[@rend='indent']">
+        <div class="indent">
+            <xsl:apply-templates />
+        </div>
+        <br />
     </xsl:template>
     
     <xsl:template match="dateline">
