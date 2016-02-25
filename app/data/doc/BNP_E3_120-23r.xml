@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 120-23<hi rend="superscript">r</hi>
+            </title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Ana Leonor</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_120-23r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 120-23r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate when="1930-08-03">c. 3-8-1930</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic
+         url="bn-acpc-e-e3-120-1-55_JPG_24-C-R0150/bn-acpc-e-e3-120-1-55_0045_23_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+       <div>
+         <list>
+           <item>
+              <label>1.</label>
+              <rs type="text">O Homem e a Cobra</rs>.
+           </item>
+           <item>
+              <label>2.</label>
+              <rs type="text">O Valle do Desasocego</rs>. (?)
+           </item>
+           <item>
+              <label>3.</label>
+              <rs type="text">De como <rs type="person" key="P12">Napoleão</rs>...</rs>
+           </item>
+           <item>
+              <label>4.</label>
+              <rs type="text">
+                 <subst>
+                    <del rend="overwritten" n="1">A</del>
+                    <add place="superimposed" n="2">O</add>
+                 </subst>
+                 <subst>
+                    <del rend="strikethrough" n="1">Agua</del>
+                    <add place="above" n="2">Segredo</add>
+                 </subst> de Tse-i-la</rs>.
+           </item>
+           <item>
+              <label>5.</label>
+              <rs type="text">Carta do <rs type="person" key="P222">
+                 <choice>
+                    <abbr>M<hi rend="superscript">z</hi></abbr>
+                    <expan>M<ex>arquez</ex></expan>
+                 </choice> de Pombal</rs></rs>.
+           </item>
+           <item>
+              <label>6.</label>
+              <rs type="text">Miscellanea</rs> – I, II, etc.
+           </item>
+         </list>
+        </div>
+      </body>
+   </text>
+</TEI>
