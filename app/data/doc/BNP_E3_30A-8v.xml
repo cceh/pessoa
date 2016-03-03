@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 30A-8<hi rend="superscript">v</hi>
+            </title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Ana Leonor</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher/>
+            <idno type="filename">BNP_E3_30A-8v.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 30A-8v</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLang="en"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate>?</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic
+         url="bn-acpc-e-e3-30a-1-25_JPG_24-C-R0150/bn-acpc-e-e3-30a-1-25_0016_8v_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+        <div>
+           <gap reason="selection" unit="line" extent="7"/>
+            <list>
+              <item><rs type="person" key="P14">Espronceda</rs>.</item>
+              <item>(<rs type="person" key="P212">Moch Einstein</rs>)</item>
+              <item><rs type="text">Sonetos de<rs type="person" key="P15">Camões</rs></rs></item>
+              <item><rs type="text">Anthologia Grega</rs>.</item>
+              <item><rs type="text">Evolution of States</rs>.</item>
+              <item>
+                 <rs type="text">
+                    <choice><abbr>Sh<am>.</am></abbr><expan>Sh<ex>ort</ex></expan></choice> 
+                    <choice><abbr>Hist<am>.</am></abbr><expan>Hist<ex>ory</ex></expan></choice> 
+                    of Freestyles</rs>.
+              </item>
+              <item>
+                 <rs type="text">
+                    <choice><abbr>Int<am>.</am></abbr><expan>Int<ex>roduction</ex></expan></choice>
+                    to Mathematics</rs>.
+              </item>
+              <item>(<rs type="person" key="P87">Edgar Poe</rs>)</item>
+            </list>
+           <gap reason="selection" unit="line" extent="27"/>
+        </div>
+      </body>
+   </text>
+</TEI>
