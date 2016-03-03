@@ -12,7 +12,8 @@
                 .lg {margin: 15px 0;}
                 h2.center {text-align: center;}
                 div.poem {margin: 20px 0;}
-                div.indent {display: inline-block; text-indent: 1em;}
+                p.indent {display: inline-block; text-indent: 1em; margin: 0;}
+                div.ab-right {text-align: right;}
             </style>
             <xsl:apply-templates select="//text" />
         </div>
@@ -65,9 +66,9 @@
     </xsl:template>
     
     <xsl:template match="l[@rend='indent']">
-        <div class="indent">
+        <p class="indent">
             <xsl:apply-templates />
-        </div>
+        </p>
         <br />
     </xsl:template>
     
@@ -77,6 +78,33 @@
     
     <xsl:template match="signed">
         <p class="signed"><xsl:apply-templates /></p>
+    </xsl:template>
+    
+    <xsl:template match="bibl">
+        <p type="bibl">
+            <xsl:apply-templates/>
+        </p>
+    </xsl:template>
+    
+    <xsl:template match="ab[@rend='right'][not(@type)]">
+        <div class="ab-right">
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="ab[@rend='right'][@type]">
+        <div class="ab-right">
+            <xsl:attribute name="type">
+                <xsl:value-of select="@type"/>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="hi[@rend='italic']">
+        <i>
+            <xsl:apply-templates/>
+        </i>
     </xsl:template>
     
 </xsl:stylesheet>
