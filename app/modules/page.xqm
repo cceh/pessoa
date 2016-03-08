@@ -174,17 +174,21 @@ declare function page:createThirdNavTab($type as xs:string) as node()* {
      else ()
 };
 
-
-
 declare function page:createThirdNavContent($type as xs:string, $indikator as xs:string) as node()* {
         if ($type = "documentos") then for $item in page:createItem($type, $indikator) 
             return <a href="{$item/@ref/data(.)}"><li class="{concat("nav_",$type,"_sub_tab")}">{$item/@label/data(.)}</li></a>
-       else if ($type = "cronologia" and $indikator != "3") then for $nr in (0 to 9)
-         return   if( page:createItem("cronologia",concat($indikator,$nr))  ) then
-                    <li class="{concat("nav_",$type,"_sub_tab")}" id="exttab_cro_{concat($indikator,$nr)}">{concat("'",$indikator,$nr)}</li>
-            else <li class="{concat("nav_",$type,"_sub_tab")} emptyTab" id="exttab_cro_{concat($indikator,$nr)}">{concat("'",$indikator,$nr)}</li>
-       else if ($type = "cronologia" and $indikator = "3") then for $nr in (0 to 5) 
+       else if ($type = "cronologia" ) then
+        let $field := (2,13,16,20,28,12,15,19,27,35)
+        let $indi := sum(xs:integer($indikator)+1)
+       for $nr in ($field[$indi] to $field[sum($indi + 5)])
+       let $nr := if($nr < 10) then concat(0,$nr) else $nr
+         return   if( page:createItem("cronologia",$nr)  ) then
+                    <li class="{concat("nav_",$type,"_sub_tab")}" id="exttab_cro_{$nr}">{concat("'",$nr)}</li>
+            else <li class="{concat("nav_",$type,"_sub_tab")} emptyTab" id="exttab_cro_{concat($indikator,$nr)}">{concat("'",$indikator,$nr)}</li> 
+    (:
+    else if ($type = "cronologia" and $indikator = "3") then for $nr in (0 to 5) 
             return <li class="{concat("nav_",$type,"_sub_tab")}"  id="exttab_cro_{concat($indikator,$nr)}">{concat("'",$indikator,$nr)}</li>
+      :)      
         (:      
        else if ($type = "obras") then for $item in page:createItem($type, $indikator)
             return <a href="{$item/@ref/data(.)}"><li class="{concat("nav_",$type,"_sub_tab")}">{$item/@label/data(.)}</li></a>
