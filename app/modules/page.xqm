@@ -117,13 +117,14 @@ declare function page:createThirdNav($type as xs:string) as node()* {
             1 - 9
             </li>
     else if ($type = "cronologia") then 
-    for $date in ("1900 - 1909","1910 - 1919","1920 - 1929","1930 - 1935", (doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item/tei:list[@type="cronologia"]/tei:item/tei:term[@xml:lang=$helpers:web-language]/data(.)))
+    let $time := ("1902-1912","1913-1915","1916-1919","1920-1927","1928-1935")
+    for $date in ($time, (doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item/tei:list[@type="cronologia"]/tei:item/tei:term[@xml:lang=$helpers:web-language]/data(.)))
             return if (contains($date, "1") != xs:boolean("true") ) then
                         <li class="{concat("nav_",$type,"_tab")}"> <span class="step">|</span> 
                         <a href="{concat($helpers:app-root,"/",$helpers:web-language,"/timeline")}" target="_blank">
                         {$date}
                         </a></li>
-                    else if(substring-after($date,"19")!= "") then  <li class="{concat("nav_",$type,"_tab")}"  id="navtab_{$type}_sub_{index-of(("1900 - 1909","1910 - 1919","1920 - 1929","1930 - 1935",(doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item/tei:list[@type="cronologia"]/tei:item/tei:term[@xml:lang=$helpers:web-language]/data(.))),$date)-1}">
+                    else if(substring-after($date,"19")!= "") then  <li class="{concat("nav_",$type,"_tab")}"  id="navtab_{$type}_sub_{index-of(($time,(doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item/tei:list[@type="cronologia"]/tei:item/tei:term[@xml:lang=$helpers:web-language]/data(.))),$date)-1}">
                         {$date}</li>
                         else ()
     else if ($type ="publicacoes") then for $authors in doc("/db/apps/pessoa/data/lists.xml")//tei:listPerson[@type="authors"]/tei:person
@@ -149,7 +150,7 @@ declare function page:createThirdNavTab($type as xs:string) as node()* {
             <ul class="nav_sub_tabs">
             {page:createThirdNavContent($type,$indikator)}
          </ul>   </div>
-    else if ($type = "cronologia") then for $indikator in (0 to 3) return 
+    else if ($type = "cronologia") then for $indikator in (0 to 4) return 
          <div  id="{concat("nav_",$type,"_sub_",$indikator)}" style="display:none"> 
             <ul class="nav_sub_tabs">        
            {page:createThirdNavContent($type,$indikator)}
