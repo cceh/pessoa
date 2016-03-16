@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>MN 18</title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Ana Leonor Branco</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">MN18.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Espolio Manuela Nogueira</institution>
+                  <idno>MN18</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="en fr"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate from="1933" to="1935">1933-1935</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="Espolio Manuela Nogueira (MN)/avulsos (18).jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <head>
+               <hi rend="underline">Cartas criticas a:</hi>
+            </head>
+            <list>
+               <item><rs type="person" key="P225">José Regio</rs>.</item>
+               <item><rs type="person" key="P226">João Gaspar Simões</rs>.</item>
+               <item><rs type="person" key="P227">Branquinho da Fonseca</rs>.</item>
+               <item><rs type="person" key="P228">Adolpho Casaes Monteiro</rs>.</item>
+               <item><rs type="person" key="P229">Alberto da Serpa</rs>.</item>
+               <item><rs type="person" key="P230">Arthur Augusto</rs>.</item>
+               <item><rs type="person" key="P231">Marques Mathias</rs>.</item>
+               <item><rs type="person" key="P232">Manuel Anselmo</rs>.</item>
+               <item><rs type="person" key="P233">Francisco Leão</rs>.</item>
+               <metamark rend="line" function="distinct"/>
+               <item>
+                  <rs type="person" key="P234">Vitorino Nemesio</rs>
+               </item>
+               <metamark rend="line" function="end"/>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>
