@@ -1,4 +1,4 @@
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" xpath-default-namespace="http://www.tei-c.org/ns/1.0" version="2.0">
+<xsl:stylesheet xmlns:xsl="http://wwwc.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" xpath-default-namespace="http://www.tei-c.org/ns/1.0" version="2.0">
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
     <xsl:preserve-space elements="*"/>
     <xsl:strip-space elements="rs"/>
@@ -374,9 +374,9 @@
         </span>
     </xsl:template>
     <xsl:template match="hi[@rend='encircled']" >
-        <div class="circled">
+        <span class="circled">
             <xsl:apply-templates />
-        </div>
+        </span>
     </xsl:template>
     
     <!-- Personen, Orte, etc. -->
