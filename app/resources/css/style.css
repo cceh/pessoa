@@ -1014,3 +1014,66 @@ li.itabs.selected span{
     border-bottom: 1px dotted #222;
     margin-bottom: 20px;
 }
+
+
+
+/* aus doc.xsl */
+
+            /*Textstruktur*/
+             div.text {display: inline-block; position: relative; line-height: 1.8;}
+             .text h2 {margin-bottom: 20px; margin-top: 20px; text-align:left; line-height: 1.5;}
+            .item {margin-bottom: 20px; margin-top: 10px; position: relative;}
+            .item .label {padding-right: 1em;display: inline-table;}
+            .list .item .list .item {margin-left: 2em;}
+             p {font-size: 16px;}
+            
+            /*notes*/
+            .note {position: absolute; font-size: small; vertical-align: middle;}
+            .note.right {right: -50px;}
+            .note.margin.left {left: 5em;}
+            .note.addition.margin.right {right: -120px;}
+            .note.addition.margin.top.right {right: -120px;}
+            .note.addition.margin.left {left: -35px;;}
+            .note-label.margin.left {padding: 0px; float: none;}
+            .editorial-note {text-align: justify;}
+            
+            
+            /*metamarks*/
+            .metamark {cursor: pointer;}
+            
+            .metamark.bracket {font-size: 32pt; font-family: Times; vertical-align: middle; float:none;}
+            .metamark.curly-bracket {font-size: 32pt; font-family: Times; vertical-align: middle; float: none;}
+            .metamark.curly-bracket.grouping.right {float: none;  right: -150px; vertical-align: middle;}
+         
+            .metamark.line.assignment {display:inline;}
+            .metamark.line.highlight {margin: 0.5em;}
+            .metamark.quotes.ditto {display: inline; padding-left: 15px; padding-right: 15px;}
+            .metamark.line.distinct {margin-bottom:20px; text-align:center; line-height: 50%}
+            .metamark.line.end {margin-bottom:20px; text-align:center; line-height:50%}
+            .metamark.double.line{margin-bottom:20px; text-align:center; line-height: 50%;} 
+            
+           /* .red {color: red;} */
+            .offset {margin-left: 2em;}
+            .indent {margin-left: 2em;}
+            .right {float: right;}   
+            .left {float: left;}
+            .center {text-align: center;}
+            .above { position: absolute; top: -0.8em; left: 0px;; font-size: small; width:205%;}
+            .below{position: absolute; top: 1.5em; left: 0px; font-size: small; width:200%}
+            .ab {display: inline-block;}
+            .seg {position: relative;}          
+            .choice {position: relative;}
+            .subst {position: relative;}
+            /*.add {top: 0;}*/
+            .del {text-decoration: line-through;}
+            .gap {cursor: pointer;}
+            .supplied {cursor: pointer;}           
+            /*  .ex, .supplied {color: purple;} */
+            
+            .delSpan{background: -webkit-canvas(lines); background: -moz-element(lines);}
+            .verticalLine {background: -webkit-canvas(verticalLine); background: -moz-element(verticalLine); display: inline-table; margin-left:110px; width:10px; height:60px;}
+            .circled {border: 1px solid black; border-radius: 30px; display: inline-block;}
+
+            /*special case 71A-2V*/
+            #bnp-e3-71a-2v .below{left: -40px;}   
+            #bnp-e3-71a-2v .note {position: relative;}

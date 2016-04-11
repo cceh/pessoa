@@ -4,7 +4,8 @@
     <xsl:strip-space elements="rs"/>
    
     <xsl:template match="/">
-        <style type="text/css">
+<!--        !in style.css ausgelagert!
+            <style type="text/css">
             /*Textstruktur*/
              div.text {display: inline-block; position: relative; line-height: 1.8;}
              .text h2 {margin-bottom: 20px; margin-top: 20px; text-align:left; line-height: 1.5;}
@@ -58,13 +59,13 @@
             
             .delSpan{background: -webkit-canvas(lines); background: -moz-element(lines);}
             .verticalLine {background: -webkit-canvas(verticalLine); background: -moz-element(verticalLine); display: inline-table; margin-left:110px; width:10px; height:60px;}
-            .circled {background: -webkit-canvas(circle); background: -moz-element(circle);  width:25px; height:25px;}
+            .circled {border: 1px solid black; border-radius: 30px; display: inline-block;}
 
             /*special case 71A-2V*/
             #bnp-e3-71a-2v .below{left: -40px;}   
             #bnp-e3-71a-2v .note {position: relative;}
             
-        </style>
+        </style>-->
         <xsl:apply-templates />       
     </xsl:template>
     
@@ -374,6 +375,12 @@
         </span>
     </xsl:template>
     <xsl:template match="hi[@rend='encircled']" >
+        <div class="circled">
+            <xsl:apply-templates />
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="note[@rend='encircled']" >
         <div class="circled">
             <xsl:apply-templates />
         </div>
