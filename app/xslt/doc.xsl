@@ -375,9 +375,9 @@
         </span>
     </xsl:template>
     <xsl:template match="hi[@rend='encircled']" >
-        <div class="circled">
+        <span class="circled">
             <xsl:apply-templates />
-        </div>
+        </span>
     </xsl:template>
     
     <xsl:template match="note[@rend='encircled']" >

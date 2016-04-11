@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -115,7 +116,7 @@
             </div>
             <metamark rend="line" function="distinct"/>
             <div>
-                <head><hi rend="underline"><rs type="title">Livro do Desassocego</rs>.</hi></head>
+                <head><hi rend="underline"><rs type="text">Livro do Desassocego</rs>.</hi></head>
                 <ab>escripto por <rs type="person" key="P62">Vicente Guedes,<lb/></rs>
                 publicado por <rs type="person" key="FP" role="editor" style="b">Fernando<lb/> Pessoa</rs>.</ab>
             </div>

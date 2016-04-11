@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 144C-11<hi rend="superscript">r</hi>
+            </title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Ana Leonor Branco</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_144C-11r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 144C-11r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                        <rs type="genre" key="plano_editorial">Plano editorial</rs>
+                     </note>
+                     <textLang mainLang="pt"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate when="1915" cert="medium">c. 1915</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3_144c_JPG_24-C-R0150/bn-acpc-e-e3_144c_0021_11r_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <gap reason="selection" unit="line" extent="7"/>
+            <list>
+               <item>
+                  <label>1.</label>
+                  <hi rend="underline"><rs type="work" key="O1" style="b"><rs type="text"
+                           >Cancioneiro</rs></rs></hi> – Livros 1 a 5. </item>
+               <item>
+                  <label>2.</label>
+                  <hi rend="underline"><rs type="work" key="O1-2"><rs type="text"
+                     >Gladio</rs></rs></hi> – (I. <rs type="text">Portugal</rs> – II. <rs
+                     type="text">Gladio</rs>) </item>
+               <item>
+                  <label>3.</label>
+                  <hi rend="underline"><rs type="text">Auréola</rs></hi> – (Parte I – Parte II –
+                  Parte III). </item>
+               <item>
+                  <label>4.</label>
+                  <hi rend="underline"><rs type="work" key="O1-13"><rs type="text"
+                        >Episodios</rs></rs></hi> – (Parte I – Parte – II). </item>
+               <item>
+                  <label>5.</label>
+                  <hi rend="underline"><rs type="text">Toda uma Literatura</rs></hi> – (<rs
+                     type="person" key="AC" role="author">
+                     <choice>
+                        <abbr>Alb<am>.</am></abbr>
+                        <expan>Alb<ex>erto</ex></expan>
+                     </choice> Caeiro</rs> – <rs type="person" key="RR" role="author">
+                     <choice>
+                        <abbr>R<am>.</am></abbr>
+                        <expan>R<ex>icardo</ex></expan>
+                     </choice> Reis</rs> – <rs type="person" key="AdC" role="author">
+                     <choice>
+                        <abbr>Alv<am>.</am></abbr>
+                        <expan>Alv<ex>aro</ex></expan>
+                     </choice> de Campos</rs>). </item>
+               <item>
+                  <label>6.</label>
+                  <hi rend="underline"><rs type="text">Trilogia dos Gigantes</rs></hi> – (<rs
+                     type="text">Briareu</rs>. <gap reason="illegible" unit="word" extent="1"/>. <rs
+                     type="text">Livôr</rs>). </item>
+               <item>
+                  <label>7.</label>
+                  <supplied resp="PS" reason="omitted-in-original"/>
+               </item>
+               <item>
+                  <label>8.</label>
+                  <supplied resp="PS" reason="omitted-in-original"/>
+               </item>
+               <item>
+                  <label>9.</label>
+                  <supplied resp="PS" reason="omitted-in-original"/>
+               </item>
+               <item>
+                  <label>10.</label>
+                  <supplied resp="PS" reason="omitted-in-original"/>
+               </item>
+            </list>
+            <gap reason="selection" unit="line" extent="18"/>
+         </div>
+      </body>
+   </text>
+</TEI>

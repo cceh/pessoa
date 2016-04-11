@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 175<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Ana Leonor Branco</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_175r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 175r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="en"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate from="1920" to="1927">1920-1927</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic
+         url="bn-acpc-e-e3-167-186_JPG_24-C-R0150/bn-acpc-e-e3-167-186_0017_175_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <list>
+               <item>
+                  <rs type="text">
+                     <choice>
+                        <abbr>Trad<am>.</am></abbr>
+                        <expan>Trad<ex>ucção</ex></expan>
+                     </choice> Banqueiro para inglez (e <choice>
+                        <abbr>franc</abbr>
+                        <expan>franc<ex>ez</ex></expan>
+                     </choice>)</rs>. 
+               </item>
+               <item>Two patents here (<abbr>Ann.</abbr> &amp; <abbr>dict.</abbr>)</item>
+               <item>
+                  <choice>
+                     <abbr>Trad<am>.</am></abbr>
+                     <expan>Trad<ex>ucção</ex></expan>
+                  </choice>
+                  <rs type="person" key="P65">Shakespeare</rs>.
+               </item>
+               <item>Correspondence.</item>
+               <item>
+                  <choice>
+                     <abbr>Trad<am>.</am></abbr>
+                     <expan>Trad<ex>ucção</ex></expan>
+                  </choice>
+                  <rs type="person" key="P87">Edgar Poe</rs>.</item>
+               <item>Poemas em Prosa, de <rs type="person" key="P32">Oscar Wilde</rs></item>
+               <item>
+                  <rs type="text">Ballada da Cadeia de Reading</rs>, de 
+                  <rs type="person" key="P32">
+                     <choice>
+                        <abbr>O<am>.</am></abbr>
+                        <expan>O<ex>scar</ex></expan>
+                     </choice><choice>
+                        <abbr>W<am>.</am></abbr>
+                        <expan>W<ex>ilde</ex></expan>
+                     </choice>
+                  </rs>.
+               </item>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>
