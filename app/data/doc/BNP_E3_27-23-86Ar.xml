@@ -26,7 +26,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -35,7 +36,7 @@
             <idno type="filename">BNP_E3_27-23-86Ar.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 27-23-86ar</idno>
@@ -59,11 +60,19 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. Na mesma folha encontram-se esboços relacionáveis com o trecho
+                  «A Divina Inveja», destinado ao <hi rend="italic">Livro do Desassossego</hi>,
+                  datável aproximadamente de 1914 (cf. LdD, 72 e 662-663). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-27-23-1-130_JPG_24-C-R0150/bn-acpc-e-e3-27-23-1-130_0171_86_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-27-23-1-130_JPG_24-C-R0150/bn-acpc-e-e3-27-23-1-130_0171_86_t24-C-R0150.jpg"
+      />
    </facsimile>
    <text>
       <body>
@@ -75,35 +84,32 @@
             <list>
                <head>
                   <del rend="overstrike"><gap reason="illegible" unit="word" extent="1"/></del>
-                  Literary Hackwork.
-               </head>
+                  Literary Hackwork. </head>
                <item>
                   <label>1.</label>
-                  <rs type="text">Portuguese Proverbs</rs>.
-               </item>
+                  <rs type="text">Portuguese Proverbs</rs>. </item>
                <item>
                   <label>2.</label>
-                  <rs type="text">Fifty sonnets of <rs type="person" key="P15">Camoens</rs></rs>.
-               </item>
+                  <rs type="text">Fifty sonnets of <rs type="person" key="P15">Camoens</rs></rs>. </item>
                <item>
                   <label>3.</label>
                   <rs type="text">Poemas de <rs type="person" key="P87">Edgar Poe</rs></rs>. <lb/>
-                  (A translation into
-                  <choice>
+                  (A translation into <choice>
                      <abbr>P<am>.</am></abbr>
                      <expan>P<ex>ortuguese</ex></expan>
-                  </choice> <lb/>
-                  of <hi rend="underline">Liberty, Equality, Fraternity</hi>)
+                  </choice>
+                  <lb/> of <hi rend="underline">Liberty, Equality, Fraternity</hi>) </item>
+               <item>
+                  <label>4.</label>
+                  <rs type="text">A Portuguese <lb/> Anthology</rs>. <gap reason="selection"
+                     unit="line" extent="3"/>
                </item>
                <item>
-                  <label>4.</label> <rs type="text">A Portuguese <lb/> Anthology</rs>.
-                  <gap reason="selection" unit="line" extent="3"/>
-               </item>
-               <item>
-                  <label>5.</label> <supplied resp="PS" reason="omitted-in-original"/>
+                  <label>5.</label>
+                  <supplied resp="PS" reason="omitted-in-original"/>
                </item>
             </list>
-         </div> 
+         </div>
       </body>
    </text>
 </TEI>

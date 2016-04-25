@@ -26,7 +26,8 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2016</date>
                 <availability>
@@ -35,7 +36,7 @@
                 <idno type="filename">BNP_E3_12-1-10r.xml</idno>
             </publicationStmt>
             <sourceDesc>
-                <msDesc>
+                <msDesc xml:id="M1" type="structured">
                     <msIdentifier>
                         <institution>Biblioteca Nacional de Portugal</institution>
                         <idno>BNP/E3 12-1-10r</idno>
@@ -59,44 +60,58 @@
                         </origin>
                     </history>
                 </msDesc>
+                <msDesc corresp="#M1" type="prose">
+                    <msIdentifier/>
+                    <p> Lista manuscrita, publicada parcialmente em <hi rend="italic">Obras de
+                            António Mora</hi> (2002, 153). </p>
+                </msDesc>
             </sourceDesc>
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic url="bn-acpc-e-e3-12-1-1-100_JPG_24-C-R0150/bn-acpc-e-e3-12-1-1-100_0019_10_t24-C-R0150.jpg"/>
+        <graphic
+            url="bn-acpc-e-e3-12-1-1-100_JPG_24-C-R0150/bn-acpc-e-e3-12-1-1-100_0019_10_t24-C-R0150.jpg"
+        />
     </facsimile>
     <text>
         <body>
             <div>
                 <list>
-                    <head><hi rend="underline"><rs type="person" key="P1" style="a">Antonio Móra</rs>:</hi></head>
+                    <head><hi rend="underline"><rs type="person" key="P1" style="a">Antonio
+                                Móra</rs>:</hi></head>
                     <item xml:id="I1"><rs type="text">Dissertação sobre as revoluções</rs>.</item>
                     <item xml:id="I2"><rs type="text">Dissertação a favôr da Allemanha<lb/>e do seu
-                            procedimento na guerra presente</rs>.
-                        <note target="range(I1,I3)" place="margin right" type="addition">
+                            procedimento na guerra presente</rs>. <note target="range(I1,I3)"
+                            place="margin right" type="addition">
                             <metamark rend="curly-bracket" function="grouping"/>
                             <label>Trez<lb/>Disserta<pc>-</pc><lb/>ções.</label>
                         </note>
                     </item>
                     <item xml:id="I3"><rs type="text">Dissertação sobre a arte moderna</rs>.</item>
-                    <item><rs type="text">Prolegómenos a uma reformação<lb/>do paganismo</rs>.</item>
+                    <item><rs type="text">Prolegómenos a uma reformação<lb/>do
+                        paganismo</rs>.</item>
                     <item><rs type="text">Os Fundamentos do Paganismo</rs>.</item>
                 </list>
                 <metamark rend="double-line" function="distinct"/>
                 <list>
                     <head><hi rend="underline"><rs type="person" key="FP" role="author" style="a">
-                        <choice>
-                            <abbr>F<am>.</am></abbr>
-                            <expan>F<ex>ernando</ex></expan>
-                        </choice> Pessôa</rs></hi>:</head>
+                                <choice>
+                                    <abbr>F<am>.</am></abbr>
+                                    <expan>F<ex>ernando</ex></expan>
+                                </choice> Pessôa</rs></hi>:</head>
                     <item>
                         <label>1.</label>
                         <list>
-                            <head>                           
-                            <hi rend="underline"><rs type="text">Opusculos</rs></hi>:</head>
-                            <item><label>(a)</label> <rs type="text">14 de Maio – Commentarios a<lb/>uma victoria da plebe</rs>.</item>
-                            <item><label>(b)</label> <rs type="text">O principio aristrocatico</rs>.</item>
-                            <item><label>(c)</label> <rs type="text">Introdução ao estudo do<lb/>problema nacional</rs>.</item>
+                            <head>
+                                <hi rend="underline"><rs type="text">Opusculos</rs></hi>:</head>
+                            <item><label>(a)</label>
+                                <rs type="text">14 de Maio – Commentarios a<lb/>uma victoria da
+                                    plebe</rs>.</item>
+                            <item><label>(b)</label>
+                                <rs type="text">O principio aristrocatico</rs>.</item>
+                            <item><label>(c)</label>
+                                <rs type="text">Introdução ao estudo do<lb/>problema
+                                nacional</rs>.</item>
                         </list>
                     </item>
                 </list>

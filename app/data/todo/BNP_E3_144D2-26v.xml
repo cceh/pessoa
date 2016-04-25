@@ -10,7 +10,7 @@
             <p>Publication Information</p>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 144D2-26v</idno>
@@ -31,9 +31,8 @@
                         <name>Isabel Figueiredo-Iken</name>
                      </respStmt>
                      <note type="genre">
-                        <rs type="genre" key="lista_editorial">Lista
-                           editorial</rs><rs type="genre" key="plano_editorial">Plano
-                              editorial</rs>
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs><rs type="genre"
+                           key="plano_editorial">Plano editorial</rs>
                      </note>
                      <textLang mainLang="pt"/>
                   </msItemStruct>
@@ -47,6 +46,11 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita no caderno 144D<hi rend="superscript">2</hi> (cf. <ref
+                     target="http://purl.pt/13880">http://purl.pt/13880</ref>). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -57,26 +61,33 @@
       <body>
          <list>
             <item><label>1.</label>poesias meramente lyricas.</item>
-            <item><label>2.</label><metamark rend="line" function="ditto">poesias</metamark> lyricas com largueza metaphysica, patriotica ou pessoal</item>        
-            <item><label>3.</label><metamark rend="line" function="ditto">poesias lyricas com</metamark> “extranheza”</item>
-            
-         </list> 
-         <note place="left above"><metamark rend="line" function="distinct"/></note><note place="left below"><metamark rend="line transversal" function="distinct"/></note>
+            <item><label>2.</label><metamark rend="line" function="ditto">poesias</metamark> lyricas
+               com largueza metaphysica, patriotica ou pessoal</item>
+            <item><label>3.</label><metamark rend="line" function="ditto">poesias lyricas
+                  com</metamark> “extranheza”</item>
+
+         </list>
+         <note place="left above"><metamark rend="line" function="distinct"/></note>
+         <note place="left below"><metamark rend="line transversal" function="distinct"/></note>
          <list>
             <item><label>1.</label>82 (1=6 sonetos) = 87</item>
-            <item><label>2.</label><supplied resp="PS" reason="omitted-in-original"></supplied> = 26</item>        
-            <item><label>3.</label><supplied resp="PS" reason="omitted-in-original"></supplied> = 5</item>
-           
-         </list>  
+            <item><label>2.</label><supplied resp="PS" reason="omitted-in-original"/> = 26</item>
+            <item><label>3.</label><supplied resp="PS" reason="omitted-in-original"/> = 5</item>
+
+         </list>
          <note place="left transversal">A+ C = 92 </note>
-         
-         <list> 
-            <item><label>1.</label><supplied resp="PS" reason="omitted-in-original"></supplied> </item>
-            <item><label>2.</label><rs type="title">Gladio</rs> (I. <rs type="place">Portugal</rs>. II.<hi rend="underline"> Prelio</hi>).</item>        
-            <item><label>3.</label><rs type="title">Aureola</rs> (<supplied resp="PS" reason="omitted-in-original"></supplied>(livro de exaltação<lb></lb>  mystica, patriotica, etc.)</item>
-            
-         </list> 
-         
+
+         <list>
+            <item><label>1.</label><supplied resp="PS" reason="omitted-in-original"/>
+            </item>
+            <item><label>2.</label><rs type="title">Gladio</rs> (I. <rs type="place">Portugal</rs>.
+                  II.<hi rend="underline"> Prelio</hi>).</item>
+            <item><label>3.</label><rs type="title">Aureola</rs> (<supplied resp="PS"
+                  reason="omitted-in-original"/>(livro de exaltação<lb/> mystica, patriotica,
+               etc.)</item>
+
+         </list>
+
          <div/>
       </body>
    </text>

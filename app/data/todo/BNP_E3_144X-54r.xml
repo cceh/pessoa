@@ -10,7 +10,7 @@
             <p>Publication Information</p>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 144X-54r</idno>
@@ -31,8 +31,7 @@
                         <name>Isabel Figueiredo-Iken</name>
                      </respStmt>
                      <note type="genre">
-                        <rs type="genre" key="lista_editorial">Lista
-                                                editorial</rs>
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
                      <textLang mainLang="pt" otherLangs="en"/>
                   </msItemStruct>
@@ -46,6 +45,12 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita no caderno 144X (cf. <ref target="http://purl.pt/13898"
+                     >http://purl.pt/13898</ref>), publicada em <hi rend="italic">Sensacionismo e
+                     Outros Ismos</hi> (2009, 316). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -54,25 +59,27 @@
    </facsimile>
    <text xml:id="bnp-e3-144x-54r">
       <body>
-        <note><del rend="overstrike">
-         
-           <list> 
-           <head><hi rend="underline">Plaquettes de “Orpheu”.</hi></head>  
-         
-           
-            <item><label>1.</label><rs type="title">Scena do Odio</rs> — <rs type="person">José de Almada-Negreiros</rs>.</item>
-            <item><label>2.</label><rs type="title">Two Unprintable Poems</rs> — <rs type="person" key="FP" role="author">Fernando Pessôa.</rs></item>        
-            <item><label>3.</label><rs type="title">Mundo Interior — Novella —</rs> <rs type="person">Mario de Sá-Carneiro</rs>.</item>
-            <item><label>4.</label><supplied resp="PS" reason="omitted-in-original"></supplied></item>
-           </list> 
-        </del></note>
-        
-         <list> 
-         <item><label>5.</label><supplied resp="PS" reason="omitted-in-original"></supplied></item>
-         <item><label>6.</label><supplied resp="PS" reason="omitted-in-original"></supplied></item>
-         </list> 
-        
-         
+         <note><del rend="overstrike">
+               <list>
+                  <head><hi rend="underline">Plaquettes de “Orpheu”.</hi></head>
+
+
+                  <item><label>1.</label><rs type="title">Scena do Odio</rs> — <rs type="person"
+                        >José de Almada-Negreiros</rs>.</item>
+                  <item><label>2.</label><rs type="title">Two Unprintable Poems</rs> — <rs
+                        type="person" key="FP" role="author">Fernando Pessôa.</rs></item>
+                  <item><label>3.</label><rs type="title">Mundo Interior — Novella —</rs>
+                     <rs type="person">Mario de Sá-Carneiro</rs>.</item>
+                  <item><label>4.</label><supplied resp="PS" reason="omitted-in-original"/></item>
+               </list>
+            </del></note>
+
+         <list>
+            <item><label>5.</label><supplied resp="PS" reason="omitted-in-original"/></item>
+            <item><label>6.</label><supplied resp="PS" reason="omitted-in-original"/></item>
+         </list>
+
+
          <div/>
       </body>
    </text>

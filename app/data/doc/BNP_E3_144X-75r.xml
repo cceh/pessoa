@@ -26,7 +26,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -35,7 +36,7 @@
             <idno type="filename">BNP_E3_144X-75r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 144X-75r</idno>
@@ -59,6 +60,12 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita no caderno 144X (cf. <ref target="http://purl.pt/13898"
+                     >http://purl.pt/13898</ref>), publicada em <hi rend="italic">Sensacionismo e
+                     Outros Ismos</hi> (2009, 323). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -68,19 +75,20 @@
    <text>
       <body>
          <div>
-            <p>Essays that can be contributed to English <lb/> papers, if so needed:</p>  
+            <p>Essays that can be contributed to English <lb/> papers, if so needed:</p>
             <list>
                <item>
-                  <label>1.</label> <rs type="text"><hi rend="underline">On Art and Artists</hi></rs>.
-               </item>
+                  <label>1.</label>
+                  <rs type="text"><hi rend="underline">On Art and Artists</hi></rs>. </item>
                <item>
-                  <label>2.</label> <rs type="text"><hi rend="underline">Art and Morality</hi></rs>.
-               </item>        
+                  <label>2.</label>
+                  <rs type="text"><hi rend="underline">Art and Morality</hi></rs>. </item>
                <item>
-                  <label>3.</label> <rs type="text"><hi rend="underline">The Three Forms of Beauty 
-                     (Beauty, Perfection, Pleasure)</hi></rs>
+                  <label>3.</label>
+                  <rs type="text"><hi rend="underline">The Three Forms of Beauty (Beauty,
+                        Perfection, Pleasure)</hi></rs>
                </item>
-            </list> 
+            </list>
             <metamark rend="line" function="distinct"/>
             <gap reason="selection" unit="line" extent="12"/>
          </div>

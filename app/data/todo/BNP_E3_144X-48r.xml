@@ -10,7 +10,7 @@
             <p>Publication Information</p>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 144X-48r</idno>
@@ -31,8 +31,7 @@
                         <name>Isabel Figueiredo-Iken</name>
                      </respStmt>
                      <note type="genre">
-                        <rs type="genre" key="lista_editorial">Lista
-                                                editorial</rs>
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
                      <textLang mainLang="pt" otherLangs="en"/>
                   </msItemStruct>
@@ -46,6 +45,12 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita no caderno 144X (cf. <ref target="http://purl.pt/13898"
+                     >http://purl.pt/13898</ref>), publicada em <hi rend="italic">Sensacionismo e
+                     Outros Ismos</hi> (2009, 308-309). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -54,20 +59,27 @@
    </facsimile>
    <text xml:id="bnp-e3-144x-48r">
       <body>
-        <note><del rend="overstrike">
-           <list>
-           <head><hi rend="underline">Order of publication:</hi></head>  
-         
-              <item><label>1.</label><rs type="title">Orpheu 3.</rs></item>
-              <item><del rend="overstrike">1.</del><label>2.</label><rs type="title">The Mad Fiddler.</rs></item>        
-              <item><del rend="overstrike">2.</del><label>3.</label><rs type="title">As sete salas do palacio abandonado.</rs></item><note place="right"><gap reason="selection" unit="characters" extent="6"/></note>
-              <item><del rend="overstrike">3.</del><label>4.</label><rs type="title">Problema Nacional.</rs></item>
-              <item><del rend="overstrike">4.</del><label>5.</label><rs type="title">Sensationist Sketches.</rs></item>
-           </list> 
-           <note place="left"><gap reason="selection" unit="characters" extent="6"/> </note>
-           <note><gap reason="selection" unit="lines" extent="16"/> </note>
-        </del>
-        </note>
+         <note><del rend="overstrike">
+               <list>
+                  <head><hi rend="underline">Order of publication:</hi></head>
+
+                  <item><label>1.</label><rs type="title">Orpheu 3.</rs></item>
+                  <item><del rend="overstrike">1.</del><label>2.</label><rs type="title">The Mad
+                        Fiddler.</rs></item>
+                  <item><del rend="overstrike">2.</del><label>3.</label><rs type="title">As sete
+                        salas do palacio abandonado.</rs></item>
+                  <note place="right"><gap reason="selection" unit="characters" extent="6"/></note>
+                  <item><del rend="overstrike">3.</del><label>4.</label><rs type="title">Problema
+                        Nacional.</rs></item>
+                  <item><del rend="overstrike">4.</del><label>5.</label><rs type="title"
+                        >Sensationist Sketches.</rs></item>
+               </list>
+               <note place="left"><gap reason="selection" unit="characters" extent="6"/>
+               </note>
+               <note><gap reason="selection" unit="lines" extent="16"/>
+               </note>
+            </del>
+         </note>
          <div/>
       </body>
    </text>

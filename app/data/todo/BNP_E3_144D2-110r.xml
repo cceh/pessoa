@@ -10,7 +10,7 @@
             <p>Publication Information</p>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 144D2-110r</idno>
@@ -31,10 +31,9 @@
                         <name>Isabel Figueiredo-Iken</name>
                      </respStmt>
                      <note type="genre">
-                        <rs type="genre" key="lista_editorial">Lista
-                                                editorial</rs>
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
-                     <textLang mainLang="pt" />
+                     <textLang mainLang="pt"/>
                   </msItemStruct>
                </msContents>
                <history>
@@ -46,20 +45,27 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita no caderno 144D<hi rend="superscript">2</hi> (cf. <ref
+                     target="http://purl.pt/13880">http://purl.pt/13880</ref>), publicada em <hi
+                     rend="italic">Sensacionismo e outros Ismos</hi> (2009, 342). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3_144d2_JPG_24-C-R0150/bn-acpc-e-e3_144d2_0281_110r_t24-C-R0150.jpg"/>
+      <graphic url="bn-acpc-e-e3_144d2_JPG_24-C-R0150/bn-acpc-e-e3_144d2_0281_110r_t24-C-R0150.jpg"
+      />
    </facsimile>
    <text xml:id="bnp-e3-144d2-110r">
       <body>
          <list>
             <item><label>1.</label>Episodios.</item>
-            <item><label>2.</label>As Sete Salas do Palacio Abandonado.</item>        
+            <item><label>2.</label>As Sete Salas do Palacio Abandonado.</item>
             <item><label>3.</label>Gládio.</item>
             <item><label>4.</label>Auréola.</item>
-         </list> 
+         </list>
          <div/>
       </body>
    </text>

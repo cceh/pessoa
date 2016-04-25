@@ -25,7 +25,8 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2016</date>
                 <availability>
@@ -34,7 +35,7 @@
                 <idno type="filename">BNP_E3_48B-22.xml</idno>
             </publicationStmt>
             <sourceDesc>
-                <msDesc>
+                <msDesc xml:id="M1" type="structured">
                     <msIdentifier>
                         <institution>Biblioteca Nacional de Portugal</institution>
                         <idno>BNP/E3 48B-22</idno>
@@ -51,66 +52,76 @@
                         </msItemStruct>
                     </msContents>
                     <history>
-                    <origin>
-                        <p>
-                            <origDate when="1915" cert="medium">
-                                <hi rend="italic">c</hi>. 1915</origDate>
-                        </p>
-                    </origin>
+                        <origin>
+                            <p>
+                                <origDate when="1915" cert="medium">
+                                    <hi rend="italic">c</hi>. 1915</origDate>
+                            </p>
+                        </origin>
                     </history>
+                </msDesc>
+                <msDesc corresp="#M1" type="prose">
+                    <msIdentifier/>
+                    <p> Lista manuscrita, publicada em <hi rend="italic">Obras de António Mora</hi>
+                        (2002, 159). </p>
                 </msDesc>
             </sourceDesc>
         </fileDesc>
     </teiHeader>
     <facsimile>
-    <graphic url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0044_22_t24-C-R0150.jpg" />
+        <graphic
+            url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0044_22_t24-C-R0150.jpg"
+        />
     </facsimile>
     <text>
         <body>
             <div>
-            <list>
-                <item>
-                    <label>1.</label>
-                    <rs type="person" key="P1" style="a">Antonio Móra</rs>: <rs type="text">Prolegomenos a uma reconstrucção do paganismo</rs>.
-                </item>  
-                <item>
-                    <label>2.</label>
-                    <rs type="person" key="FP" role="author" style="a">Fernando Pessôa</rs>: <rs type="text">O mytho de <rs type="person" key="P65">William Shakespeare</rs></rs>.
-                </item>
-                <item>
-                    <label>3.</label> 
-                    <rs type="person" key="P10"><subst><del rend="overstrike" n="1">Antonio</del><add place="above" n="2">Francisco</add></subst> Sanches</rs>: 
-                    <rs type="text">Quod nihil scitur</rs> — texto e traducção.
-                </item>
-                <item>
-                    <label>4.</label>
-                    <rs type="person" key="FP" role="author" style="a">Fernando Pessôa</rs>: <rs type="text">Introducção ao problema nacional</rs>.
-                </item>
-                <item>
-                    <label>5.</label>
-                    <rs type="person" key="FP" role="author" style="a">Fernando Pessôa</rs>: <rs type="text">Theoria da republica aristocratica</rs>.
-                </item>
-                <item>
-                    <label>6.</label>
-                    <rs type="person" key="P1" style="a">Antonio Móra</rs>: <rs type="text">Os fundamentos do paganismo</rs>.
-                </item>
-                <item>
-                    <label>7.</label>
-                    <rs type="person" key="P1" style="a">Antonio Móra</rs>: <rs type="text">Origens do christianismo</rs>.
-                </item>
-                <item>
-                    <label>8.</label>
-                    <rs type="person" key="FP" role="author" style="a">Fernando Pessôa</rs>: <rs type="text">A Guerra — estudo sociologico</rs>.
-                </item>
-              <item>
-                  <label>9.</label>
-                  <supplied resp="PS" reason="omitted-in-original" />
-              </item>
-              <item>
-                  <label>10.</label>
-                  <supplied resp="PS" reason="omitted-in-original" />
-              </item>
-           </list>
+                <list>
+                    <item>
+                        <label>1.</label>
+                        <rs type="person" key="P1" style="a">Antonio Móra</rs>: <rs type="text"
+                            >Prolegomenos a uma reconstrucção do paganismo</rs>. </item>
+                    <item>
+                        <label>2.</label>
+                        <rs type="person" key="FP" role="author" style="a">Fernando Pessôa</rs>: <rs
+                            type="text">O mytho de <rs type="person" key="P65">William
+                                Shakespeare</rs></rs>. </item>
+                    <item>
+                        <label>3.</label>
+                        <rs type="person" key="P10"><subst>
+                                <del rend="overstrike" n="1">Antonio</del>
+                                <add place="above" n="2">Francisco</add>
+                            </subst> Sanches</rs>: <rs type="text">Quod nihil scitur</rs> — texto e
+                        traducção. </item>
+                    <item>
+                        <label>4.</label>
+                        <rs type="person" key="FP" role="author" style="a">Fernando Pessôa</rs>: <rs
+                            type="text">Introducção ao problema nacional</rs>. </item>
+                    <item>
+                        <label>5.</label>
+                        <rs type="person" key="FP" role="author" style="a">Fernando Pessôa</rs>: <rs
+                            type="text">Theoria da republica aristocratica</rs>. </item>
+                    <item>
+                        <label>6.</label>
+                        <rs type="person" key="P1" style="a">Antonio Móra</rs>: <rs type="text">Os
+                            fundamentos do paganismo</rs>. </item>
+                    <item>
+                        <label>7.</label>
+                        <rs type="person" key="P1" style="a">Antonio Móra</rs>: <rs type="text"
+                            >Origens do christianismo</rs>. </item>
+                    <item>
+                        <label>8.</label>
+                        <rs type="person" key="FP" role="author" style="a">Fernando Pessôa</rs>: <rs
+                            type="text">A Guerra — estudo sociologico</rs>. </item>
+                    <item>
+                        <label>9.</label>
+                        <supplied resp="PS" reason="omitted-in-original"/>
+                    </item>
+                    <item>
+                        <label>10.</label>
+                        <supplied resp="PS" reason="omitted-in-original"/>
+                    </item>
+                </list>
             </div>
         </body>
     </text>

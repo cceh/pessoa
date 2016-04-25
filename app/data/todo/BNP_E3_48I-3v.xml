@@ -10,7 +10,7 @@
             <p>Publication Information</p>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 48I-3v</idno>
@@ -44,27 +44,41 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita, publicada em Freitas, <hi rend="italic">O Fio e o Labirinto: A
+                     Ficção Policial na obra de Fernando Pessoa</hi> (2009, 233). No verso
+                  encontra-se um plano para um livro de contos, que retoma alguns dos títulos
+                  referidos no primeiro elenco de projetos. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-48i-1-30_JPG_24-C-R0150/bn-acpc-e-e3-48i-1-30_0006_3v_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-48i-1-30_JPG_24-C-R0150/bn-acpc-e-e3-48i-1-30_0006_3v_t24-C-R0150.jpg"/>
    </facsimile>
    <text xml:id="bnp-e3-48i-3v">
       <body>
-           
-         <list> 
+
+         <list>
             <item>O Mendigo</item>
-            <item>O Livro do Rey Igorab.</item>        
-            <item><choice><abbr>M</abbr><expan>M<ex>anu</ex></expan></choice><choice><abbr>s</abbr><expan>s<ex>cripto</ex></expan></choice>
+            <item>O Livro do Rey Igorab.</item>
+            <item><choice>
+                  <abbr>M</abbr>
+                  <expan>M<ex>anu</ex></expan>
+               </choice><choice>
+                  <abbr>s</abbr>
+                  <expan>s<ex>cripto</ex></expan>
+               </choice>
                <choice>
                   <seg n="1">manuscripto</seg>
                   <seg n="2"><add place="top">O manuscripto indefinido</add></seg>
                </choice> achado numa gaveta.</item>
             <item>Historia de um pantheista. <add place="below">(contendo as orações).</add></item>
          </list>
-         
-            <metamark rend="line" function="distinct"/>
+
+         <metamark rend="line" function="distinct"/>
          <list>
             <item><note place="margin right"><hi rend="underline">Teatro d’êxtase</hi></note></item>
             <item>O Marinheiro.</item>
@@ -72,19 +86,21 @@
             <item>As Cousas.</item>
             <item>O Erro.</item>
             <item>Dialogo no Jardim do Palacio.</item>
-            <item><add place="below">(<choice><abbr>int</abbr><expan>int<ex>roducção</ex></expan></choice> do Simbolo com o Mysterio.)</add></item>
+            <item><add place="below">(<choice>
+                     <abbr>int</abbr>
+                     <expan>int<ex>roducção</ex></expan>
+                  </choice> do Simbolo com o Mysterio.)</add></item>
             <item>Os Estrangeiros.</item>
             <item>Chronos.</item>
-            
+
          </list>
-         
+
          <metamark rend="line" function="distinct"/>
-         
-            <note><hi rend="underline">Paues</hi><lb></lb> 
-               Juntar a<lb></lb> 
-               <hi rend="underline">Viagem Obliqua:</hi></note>
-          
-         
+
+         <note><hi rend="underline">Paues</hi><lb/> Juntar a<lb/>
+            <hi rend="underline">Viagem Obliqua:</hi></note>
+
+
          <div/>
       </body>
    </text>

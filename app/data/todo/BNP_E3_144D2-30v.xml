@@ -10,7 +10,7 @@
             <p>Publication Information</p>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 144D2-30v</idno>
@@ -31,9 +31,8 @@
                         <name>Isabel Figueiredo-Iken</name>
                      </respStmt>
                      <note type="genre">
-                        <rs type="genre" key="lista_editorial">Lista
-                           editorial</rs><rs type="genre" key="plano_editorial">Plano
-                              editorial</rs>
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs><rs type="genre"
+                           key="plano_editorial">Plano editorial</rs>
                      </note>
                      <textLang mainLang="pt"/>
                   </msItemStruct>
@@ -47,6 +46,11 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita no caderno 144D<hi rend="superscript">2</hi> (cf. <ref
+                     target="http://purl.pt/13880">http://purl.pt/13880</ref>). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -56,22 +60,28 @@
    <text xml:id="bnp-e3-144d2-30v">
       <body>
          <list>
-            <item>A.<hi rend="underline"> Exilio:</hi><label>1.</label><rs type="title">Tedio em Festa.</rs>  (Paues)</item>
-            <item><label>2.</label><rs type="title">Cinza das Horas.</rs> </item>        
-            <item><label>3.</label><rs type="title"><del rend="overstrike">Um</del>Uma partida. + Vespera da viagem.</rs> </item>
-            <item><label>4.</label><rs type="title">Signal Menos.</rs> </item>
+            <item>A.<hi rend="underline"> Exilio:</hi><label>1.</label><rs type="title">Tedio em
+                  Festa.</rs> (Paues)</item>
+            <item><label>2.</label><rs type="title">Cinza das Horas.</rs>
+            </item>
+            <item><label>3.</label><rs type="title"><del rend="overstrike">Um</del>Uma partida. +
+                  Vespera da viagem.</rs>
+            </item>
+            <item><label>4.</label><rs type="title">Signal Menos.</rs>
+            </item>
             <item><label>5.</label><rs type="title">Vidas soltas.</rs></item>
-            
-         </list>  
-         
-         <list> 
-            <item>B. <hi rend="underline"> Poemas sepultos:</hi><label>1.</label>Livro do Outro Amor.</item>
-            <item><label>2.</label><rs type="title">Dois Odios.</rs></item>        
-            <item><label>3.</label><supplied resp="PS" reason="omitted-in-original"></supplied></item>
-            
-         </list>  
-         
-         
+
+         </list>
+
+         <list>
+            <item>B. <hi rend="underline"> Poemas sepultos:</hi><label>1.</label>Livro do Outro
+               Amor.</item>
+            <item><label>2.</label><rs type="title">Dois Odios.</rs></item>
+            <item><label>3.</label><supplied resp="PS" reason="omitted-in-original"/></item>
+
+         </list>
+
+
          <div/>
       </body>
    </text>

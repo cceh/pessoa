@@ -26,7 +26,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -35,7 +36,7 @@
             <idno type="filename">BNP_E3_16A-50v.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 16A-50v</idno>
@@ -59,6 +60,14 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. Por baixo da lista encontram-se referências a livros a
+                  adquirir, assim como ao projeto «Novo Tratado de Astrologia», atribuído a
+                  «R[aphael] Baldaya». No verso encontra-se um testemunho do poema <hi rend="italic"
+                     >The Abyss</hi>, pertencente ao conjunto <hi rend="italic">The Mad
+                  Fiddler</hi>, com data autógrafa de «22-12-1914» (cf. PI-I, 284-287). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -74,30 +83,33 @@
             <list>
                <head><hi rend="underline">Cartas a escrever.</hi></head>
                <item>
-                  <del rend="overstrike" n="2"><rs type="text">Pretoria. — Duas lembranças</rs>. </del>
+                  <del rend="overstrike" n="2"><rs type="text">Pretoria. — Duas lembranças</rs>.
+                  </del>
                </item>
                <item>
-                  <rs type="text">Raul — Lausanne</rs>.
-               </item>        
+                  <rs type="text">Raul — Lausanne</rs>. </item>
                <item>
-                  <del rend="overstrike" n="2"><rs type="text"><rs type="person" key="P42">Cunha Dias</rs> — and about his mother</rs>.</del>
+                  <del rend="overstrike" n="2"><rs type="text"><rs type="person" key="P42">Cunha
+                           Dias</rs> — and about his mother</rs>.</del>
                </item>
                <item>
                   <rs type="text"><rs type="person" key="P43">Alvaro Pinto</rs> —<choice>
-                     <abbr>re<am>.</am></abbr>
-                     <expan>re<ex></ex>sposta</expan>
-                  </choice> Marinheiro.</rs>
+                        <abbr>re<am>.</am></abbr>
+                        <expan>re<ex/>sposta</expan>
+                     </choice> Marinheiro.</rs>
                </item>
                <item>
-                  <del rend="overstrike" n="2"><rs type="text"><rs type="person" key="P44">Garcia Pulido</rs> — <choice>
-                     <abbr>re<am>.</am></abbr>
-                     <expan>re<ex></ex>sposta</expan>
-                  </choice> his book</rs>.</del>
+                  <del rend="overstrike" n="2"><rs type="text"><rs type="person" key="P44">Garcia
+                           Pulido</rs> — <choice>
+                           <abbr>re<am>.</am></abbr>
+                           <expan>re<ex/>sposta</expan>
+                        </choice> his book</rs>.</del>
                </item>
-               <item>(<rs type="person" key="P45">Frank</rs> &amp; <rs type="person" key="P46">Cecil Palmer</rs>).</item>
-            </list> 
-            <gap reason="selection" unit="line" extent="8"/>    
-         </div>  
+               <item>(<rs type="person" key="P45">Frank</rs> &amp; <rs type="person" key="P46">Cecil
+                     Palmer</rs>).</item>
+            </list>
+            <gap reason="selection" unit="line" extent="8"/>
+         </div>
       </body>
    </text>
 </TEI>

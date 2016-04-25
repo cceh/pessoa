@@ -10,7 +10,7 @@
             <p>Publication Information</p>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 144D2-25r</idno>
@@ -31,11 +31,10 @@
                         <name>Isabel Figueiredo-Iken</name>
                      </respStmt>
                      <note type="genre">
-                        <rs type="genre" key="lista_editorial">Lista
-                           editorial</rs><rs type="genre" key="plano_editorial">Plano
-                              editorial</rs>
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs><rs type="genre"
+                           key="plano_editorial">Plano editorial</rs>
                      </note>
-                     <textLang mainLang="pt" />
+                     <textLang mainLang="pt"/>
                   </msItemStruct>
                </msContents>
                <history>
@@ -47,6 +46,11 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita no caderno 144D<hi rend="superscript">2</hi> (cf. <ref
+                     target="http://purl.pt/13880">http://purl.pt/13880</ref>). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -55,22 +59,39 @@
    </facsimile>
    <text xml:id="bnp-e3-144d2-25r">
       <body>
-         
+
          <list>
-            <item><note place="left"><hi rend="underline"><rs type="title"> Exilio.</rs>  </hi></note>	Poesias<hi rend="underline"> pequenas</hi>, de varia ordem,<lb></lb>  excepto social, mystica
-               (<gap reason="illegible" unit="character" extent="1"/>)<lb></lb> e patriotica. </item>
-            <item><note place="left"><hi rend="underline"><rs type="title">Gladio.</rs></hi></note>	Trez Partes I. <rs type="place">Portugal</rs>; II. Poe<pc>-</pc><lb />sias 
-               de  <subst><del cause="unclear" quantity="1" unit="character" /><add place="superimposed">patrioticas</add></subst>; III. Poesias de ordem <lb></lb>
-               social,<gap reason="illegible" unit="character" extent="1"/> .</item>        
-            <item><note place="left"><hi rend="underline"><rs type="title">Aureola.</rs></hi></note> Poesias mais extensas, que podem ser <lb></lb>de qualquér especie, patriotica (Caravellas) ou mera<pc>-</pc><lb />mente artistica (Musica);
-               e poesias mais<lb></lb> pequenas de tom mystico e religioso. Mesmo <lb></lb>as poesias patrioticas devem ter um <gap reason="illegible" unit="character" extent="1"/> <lb></lb>
-          <gap reason="illegible" unit="character" extent="1"/> e alta.(But remember 
-               <choice><abbr>C<am>.</am></abbr><expan>C<ex></ex></expan></choice><choice><abbr>B<am>.</am></abbr><expan>B<ex></ex></expan></choice><choice><abbr> G<am>.</am></abbr><expan> G<ex></ex></expan></choice>  <lb></lb>
-               no<hi rend="underline"><rs type="title"> Gladio</rs></hi>)</item>
-            
-            
-         </list>  
-         
+            <item><note place="left"><hi rend="underline"><rs type="title"> Exilio.</rs>
+                  </hi></note> Poesias<hi rend="underline"> pequenas</hi>, de varia ordem,<lb/>
+               excepto social, mystica (<gap reason="illegible" unit="character" extent="1"/>)<lb/>
+               e patriotica. </item>
+            <item><note place="left"><hi rend="underline"><rs type="title">Gladio.</rs></hi></note>
+               Trez Partes I. <rs type="place">Portugal</rs>; II. Poe<pc>-</pc><lb/>sias de <subst>
+                  <del cause="unclear" quantity="1" unit="character"/>
+                  <add place="superimposed">patrioticas</add>
+               </subst>; III. Poesias de ordem <lb/> social,<gap reason="illegible" unit="character"
+                  extent="1"/> .</item>
+            <item><note place="left"><hi rend="underline"><rs type="title">Aureola.</rs></hi></note>
+               Poesias mais extensas, que podem ser <lb/>de qualquér especie, patriotica
+               (Caravellas) ou mera<pc>-</pc><lb/>mente artistica (Musica); e poesias mais<lb/>
+               pequenas de tom mystico e religioso. Mesmo <lb/>as poesias patrioticas devem ter um
+                  <gap reason="illegible" unit="character" extent="1"/>
+               <lb/>
+               <gap reason="illegible" unit="character" extent="1"/> e alta.(But remember <choice>
+                  <abbr>C<am>.</am></abbr>
+                  <expan>C<ex/></expan>
+               </choice><choice>
+                  <abbr>B<am>.</am></abbr>
+                  <expan>B<ex/></expan>
+               </choice><choice>
+                  <abbr> G<am>.</am></abbr>
+                  <expan> G<ex/></expan>
+               </choice>
+               <lb/> no<hi rend="underline"><rs type="title"> Gladio</rs></hi>)</item>
+
+
+         </list>
+
          <div/>
       </body>
    </text>

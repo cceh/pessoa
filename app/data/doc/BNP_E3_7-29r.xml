@@ -26,7 +26,8 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2016</date>
                 <availability>
@@ -35,7 +36,7 @@
                 <idno type="filename">BNP_E3_7-29r.xml</idno>
             </publicationStmt>
             <sourceDesc>
-                <msDesc>
+                <msDesc xml:id="M1" type="structured">
                     <msIdentifier>
                         <institution>Biblioteca Nacional de Portugal</institution>
                         <idno>BNP/E3 7-29r</idno>
@@ -59,11 +60,17 @@
                         </origin>
                     </history>
                 </msDesc>
+                <msDesc corresp="#M1" type="prose">
+                    <msIdentifier/>
+                    <p> Lista manuscrita no verso de um impresso de «Proposta para Hypotheca»,
+                        publicada em <hi rend="italic">Livro do Desasocego</hi> (2010, 468). </p>
+                </msDesc>
             </sourceDesc>
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic url="bn-acpc-e-e3-7-1-50_JPG_24-C-R0150/bn-acpc-e-e3-7-1-50_0059_29_t24-C-R0150.jpg"/>
+        <graphic
+            url="bn-acpc-e-e3-7-1-50_JPG_24-C-R0150/bn-acpc-e-e3-7-1-50_0059_29_t24-C-R0150.jpg"/>
     </facsimile>
     <text>
         <body>
@@ -88,8 +95,8 @@
                             <abbr>Arist</abbr>
                             <expan>Arist<ex>ocracia</ex>
                             </expan>
-                        </choice> (critica) 
-               <add place="below">como se passa de uma idéa <lb/>de aristocracia a outra</add>
+                        </choice> (critica) <add place="below">como se passa de uma idéa <lb/>de
+                            aristocracia a outra</add>
                     </seg>
                 </item>
                 <metamark rend="line" function="distinct"/>
@@ -97,17 +104,17 @@
                 <metamark rend="line" function="distinct"/>
                 <item>
                     <rs type="person" key="P50"><choice>
-                        <abbr>J<am>.</am>
-                        </abbr>
-                        <expan>J<ex>esus</ex>
-                        </expan>
-                    </choice>
-                    <choice>
-                        <abbr>C<am>.</am>
-                        </abbr>
-                        <expan>C<ex>hristo</ex>
-                        </expan>
-                    </choice></rs> – um blagueur – as provas...<lb/>
+                            <abbr>J<am>.</am>
+                            </abbr>
+                            <expan>J<ex>esus</ex>
+                            </expan>
+                        </choice>
+                        <choice>
+                            <abbr>C<am>.</am>
+                            </abbr>
+                            <expan>C<ex>hristo</ex>
+                            </expan>
+                        </choice></rs> – um blagueur – as provas...<lb/>
                     <seg rend="indent">
                         <choice>
                             <abbr>Cf<am>.</am>

@@ -10,7 +10,7 @@
             <p>Publication Information</p>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 144D2-41v</idno>
@@ -31,10 +31,9 @@
                         <name>Isabel Figueiredo-Iken</name>
                      </respStmt>
                      <note type="genre">
-                        <rs type="genre" key="lista_editorial">Lista
-                                                editorial</rs>
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
-                     <textLang mainLang="pt"  otherLangs="fr" />
+                     <textLang mainLang="pt" otherLangs="fr"/>
                   </msItemStruct>
                </msContents>
                <history>
@@ -46,6 +45,12 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita no caderno 144D<hi rend="superscript">2</hi> (cf. <ref
+                     target="http://purl.pt/13880">http://purl.pt/13880</ref>), publicada em <hi
+                     rend="italic">Obras de Jean Seul de Méluret</hi> (2006, 45). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -54,31 +59,35 @@
    </facsimile>
    <text xml:id="bnp-e3-144d2-41v">
       <body>
-         <head><hi rend="underline">Europa –<lb></lb> 
-            No. I.
-         </hi></head>  
-         <list> 
-            <item><label>1.</label>Manifesto da<choice><abbr> R<am>.</am></abbr><expan> R<ex>evista</ex></expan></choice>
-               <choice><abbr> E <am>.</am></abbr><expan>  E<ex>uropa</ex></expan></choice></item>
-            <item><label>2.</label>Além-Deus</item>        
+         <head><hi rend="underline">Europa –<lb/> No. I. </hi></head>
+         <list>
+            <item><label>1.</label>Manifesto da<choice>
+                  <abbr> R<am>.</am></abbr>
+                  <expan> R<ex>evista</ex></expan>
+               </choice>
+               <choice>
+                  <abbr> E <am>.</am></abbr>
+                  <expan> E<ex>uropa</ex></expan>
+               </choice></item>
+            <item><label>2.</label>Além-Deus</item>
             <item><label>3.</label>Eu-proprio-o-outro.</item>
             <item><label>4.</label>Como o faria <choice>
-               <abbr><gap reason="illegible" quantity="1" unit="character" /></abbr>
-               <expan resp="PS">and</expan></choice>(pastiches)</item>
+                  <abbr><gap reason="illegible" quantity="1" unit="character"/></abbr>
+                  <expan resp="PS">and</expan>
+               </choice>(pastiches)</item>
             <item><label>5.</label>Traducção do manifesto.</item>
          </list>
-            <metamark rend="line" function="distinct"/>   
-            
-            
-         <list> 
-            <head><hi rend="underline">No. 2.</hi></head>  
-         
-            <item><label>1.</label>La France à <del rend="overstrike"> 2000 </del>
-             l’an 2000.</item>
+         <metamark rend="line" function="distinct"/>
+
+
+         <list>
+            <head><hi rend="underline">No. 2.</hi></head>
+
+            <item><label>1.</label>La France à <del rend="overstrike"> 2000 </del> l’an 2000.</item>
             <item><label>2.</label>/Poèmes à la X./</item>
-               
+
          </list>
-         
+
          <div/>
       </body>
    </text>

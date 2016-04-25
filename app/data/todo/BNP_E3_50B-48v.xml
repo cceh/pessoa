@@ -22,7 +22,7 @@
             <idno type="filename">BNP_E3_50B-48v.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 50B-48v</idno>
@@ -47,6 +47,11 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. Por cima desta lista encontra-se um plano estruturante de
+                  «Aureola», aqui elencado, enquanto título de um volume de poesia. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -57,25 +62,28 @@
    </facsimile>
    <text xml:id="bnp-e3-50b-48v">
       <body>
-          <div>
-             <gap reason="selection" unit="lines" extent="2"/>
-            <metamark rend="underline" function="distinct"></metamark> 
-             <gap reason="selection" unit="lines" extent="9"/>  
-             <metamark rend="underline" function="distinct"></metamark> 
-             <div rend="left">
-         <list>
-            <item> As sete salas — paulismo.</item>
-            <item><rs type="title">Cancioneiro</rs> — <supplied resp="PS" reason="omitted-in-original"></supplied></item>        
-            <item><rs type="title">Aureola</rs> — <supplied resp="PS" reason="omitted-in-original"></supplied></item>
-            </list> </div>
-            <metamark rend="vertical line" place="center" function="distinct"/>           
-         <div rend="right">
-            <list>
-               <item> Episodios — 	<label>(1)</label> As 7 salas
-               <label>(2)</label> 3 poemas
-               <label>(3) </label>Livro do outro amôr
-               <label>(4)</label><supplied resp="PS" reason="omitted-in-original"></supplied></item>
-            </list> </div>
+         <div>
+            <gap reason="selection" unit="lines" extent="2"/>
+            <metamark rend="underline" function="distinct"/>
+            <gap reason="selection" unit="lines" extent="9"/>
+            <metamark rend="underline" function="distinct"/>
+            <div rend="left">
+               <list>
+                  <item> As sete salas — paulismo.</item>
+                  <item><rs type="title">Cancioneiro</rs> — <supplied resp="PS"
+                        reason="omitted-in-original"/></item>
+                  <item><rs type="title">Aureola</rs> — <supplied resp="PS"
+                        reason="omitted-in-original"/></item>
+               </list>
+            </div>
+            <metamark rend="vertical line" place="center" function="distinct"/>
+            <div rend="right">
+               <list>
+                  <item> Episodios — <label>(1)</label> As 7 salas <label>(2)</label> 3 poemas
+                        <label>(3) </label>Livro do outro amôr <label>(4)</label><supplied resp="PS"
+                        reason="omitted-in-original"/></item>
+               </list>
+            </div>
          </div>
       </body>
    </text>

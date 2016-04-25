@@ -26,7 +26,8 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2016</date>
                 <availability>
@@ -35,7 +36,7 @@
                 <idno type="filename">BNP_E3_48I-10r.xml</idno>
             </publicationStmt>
             <sourceDesc>
-                <msDesc>
+                <msDesc xml:id="M1" type="structured">
                     <msIdentifier>
                         <institution>Biblioteca Nacional de Portugal</institution>
                         <idno>BNP/E3 48I-10r</idno>
@@ -59,11 +60,18 @@
                         </origin>
                     </history>
                 </msDesc>
+                <msDesc corresp="#M1" type="prose">
+                    <msIdentifier/>
+                    <p> Lista datilografada, publicada em <hi rend="italic">A Demonstração do
+                            Indemonstrável</hi> (2011, 81). </p>
+                </msDesc>
             </sourceDesc>
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic url="bn-acpc-e-e3-48i-1-30_JPG_24-C-R0150/bn-acpc-e-e3-48i-1-30_0019_10_t24-C-R0150.jpg"/>
+        <graphic
+            url="bn-acpc-e-e3-48i-1-30_JPG_24-C-R0150/bn-acpc-e-e3-48i-1-30_0019_10_t24-C-R0150.jpg"
+        />
     </facsimile>
     <text>
         <body>
@@ -73,40 +81,36 @@
                         <hi rend="underline">Translations:</hi>
                     </head>
                     <item>
-                        <rs type="text">Estudiante de <rs type="place">Salamanca</rs></rs>.
+                        <rs type="text">Estudiante de <rs type="place">Salamanca</rs></rs>. </item>
+                    <item>
+                        <rs type="text">Sonnets of <rs type="person" key="P15">Camoens</rs></rs>. </item>
+                    <item>
+                        <rs type="text">Songs from the old Portuguese Song Books</rs>. </item>
+                    <item>
+                        <rs type="text">Spanish and Portuguese Sonnets</rs>. <ab rend="offset"
+                            >(Brazilian ?)</ab>
                     </item>
                     <item>
-                        <rs type="text">Sonnets of <rs type="person" key="P15">Camoens</rs></rs>.
-                    </item>
+                        <rs type="text">Portuguese Proverbs</rs>. </item>
                     <item>
-                        <rs type="text">Songs from the old Portuguese Song Books</rs>.
-                    </item>
-                    <item>
-                        <rs type="text">Spanish and Portuguese Sonnets</rs>. <ab rend="offset">(Brazilian ?)</ab>
-                    </item>
-                    <item>
-                        <rs type="text">Portuguese Proverbs</rs>.
-                    </item>
-                    <item>
-                        <rs type="text">Portuguese Folk Verse</rs>.
-                    </item>
+                        <rs type="text">Portuguese Folk Verse</rs>. </item>
                 </list>
                 <list>
                     <head>
-                        <hi rend="underline">Articles (<rs type="person" key="P16">Thomas Crosse</rs>):</hi>
+                        <hi rend="underline">Articles (<rs type="person" key="P16">Thomas
+                                Crosse</rs>):</hi>
                     </head>
                     <item>
-                        <rs type="text">The Birthplace of <rs type="person" key="P20">Columbus</rs></rs>.
-                    </item>
+                        <rs type="text">The Birthplace of <rs type="person" key="P20"
+                            >Columbus</rs></rs>. </item>
                     <item>
-                        <rs type="text">The Origin of the Discoveries</rs>.
-                    </item>
+                        <rs type="text">The Origin of the Discoveries</rs>. </item>
                     <item>
-                        <rs type="text">A Pre Romantic (<rs type="person" key="P24">José Anastacio da Cunha</rs>)</rs>.
-                    </item>
+                        <rs type="text">A Pre Romantic (<rs type="person" key="P24">José Anastacio
+                                da Cunha</rs>)</rs>. </item>
                     <item>
-                        <rs type="text">The Myth of <rs type="person" key="P21">King Sebastian</rs></rs>.
-                    </item>
+                        <rs type="text">The Myth of <rs type="person" key="P21">King
+                            Sebastian</rs></rs>. </item>
                 </list>
             </div>
         </body>

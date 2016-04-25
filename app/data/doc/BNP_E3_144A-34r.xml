@@ -31,7 +31,7 @@
             <idno type="filename">BNP_E3_144A-34r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 144A-34r</idno>
@@ -55,6 +55,12 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita no caderno 144A (cf. <ref target="http://purl.pt/13873"
+                     >http://purl.pt/13873</ref>), publicada em <hi rend="italic">Sensacionismo e
+                     Outros Ismos</hi> (2009, 301). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -63,14 +69,18 @@
    </facsimile>
    <text>
       <body>
-        <div>
-         <list>
-           <item><label>1.</label> <rs type="person" key="P30">Mario de Sá Carneiro</rs>.</item>
-           <item><label>2.</label> <rs type="person" key="FP" role="author" style="b">Fernando Pessôa</rs>.</item>
-           <item><label>3.</label> <rs type="person" key="P36">Alfredo Pedro Guisado</rs>.</item>
-           <item><label>4.</label> <rs type="person" key="P37">Côrtes-Rodrigues</rs>.</item>
-         </list>
-       </div>
+         <div>
+            <list>
+               <item><label>1.</label>
+                  <rs type="person" key="P30">Mario de Sá Carneiro</rs>.</item>
+               <item><label>2.</label>
+                  <rs type="person" key="FP" role="author" style="b">Fernando Pessôa</rs>.</item>
+               <item><label>3.</label>
+                  <rs type="person" key="P36">Alfredo Pedro Guisado</rs>.</item>
+               <item><label>4.</label>
+                  <rs type="person" key="P37">Côrtes-Rodrigues</rs>.</item>
+            </list>
+         </div>
       </body>
    </text>
 </TEI>
