@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 48B-9</title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Ana Leonor Branco</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_48B-9.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 48B-9</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="en fr"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate from="1916" to="1919">1916-1919</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0019_9a_t24-C-R0150.jpg"/>
+      <graphic url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0017_9_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <head>As obras que ha<lb/>
+               que haver traduzidas<lb/>
+               em portuguez</head>
+               <metamark rend="line" function="distinct"/>
+            <list>
+               <item xml:id="I1">
+                  <label>1.</label> 
+                  <rs type="person" key="P218">Homero</rs>, <rs type="text">Iliada</rs>.	A.
+               </item>
+               <item xml:id="I2">
+                  <label>2.</label> 
+                  <rs type="person" key="P218">Homero</rs>, <rs type="text">Odyssea</rs>. B.
+               </item>
+               <item xml:id="I3">
+                  <label>3.</label> 
+                  <rs type="person" key="P219">Virgilio</rs>, <rs type="text">Eneida</rs>. C
+               </item>
+               <item xml:id="I4">
+                  <label>4.</label> 
+                  <rs type="person" key="P220">Dante</rs>, <rs type="text">Divina Comedia</rs>. D
+                  <metamark rend="curly-bracket" function="grouping" place="margin-left" target="range(I1,I7)"/>
+               </item>
+               <item xml:id="I5">
+                  <label>5.</label> 
+                  <rs type="person" key="P65">Shakespeare</rs>, <rs type="text">As Obras</rs>. A
+               </item>
+               <item xml:id="I6">
+                  <label>6.</label>
+                  <rs type="person" key="P84">Milton</rs>, 
+                  <rs type="text">Paraiso Perdido</rs>. B
+               </item>
+               <item xml:id="I7">
+                  <label>7.</label>
+                  <rs type="person" key="P198">Goethe</rs>,
+                  <rs type="text">Fausto</rs>. C.
+               </item>
+               <item xml:id="I8">
+                  <label>8.</label> 
+                  <rs type="person" key="P193">Eschylo</rs>, <rs type="text">As Obras</rs>.
+               </item>
+               <item xml:id="I9">
+                  <label>9.</label>
+                  <rs type="person" key="P236">Sophocles</rs>, <rs type="text">as Obras</rs>.
+                  <metamark rend="curly-bracket" function="grouping" place="margin-left" target="range(I8,I11)"/>
+               </item>
+               <item xml:id="I10">
+                  <label>10.</label>
+                  <rs type="person" key="P237">Euripides</rs>, <rs type="text">As Obras</rs>.
+               </item>
+               <item xml:id="I11">
+                  <label>11.</label>
+                  <rs type="person" key="P238">Aristophanes</rs>, <rs type="text">As Obras</rs>.
+               </item>
+               <item xml:id="I12">
+                  <label>12.</label>
+                  <rs type="person" key="P239">Ariosto</rs>, <rs type="text">Orlando Furioso</rs>.
+               </item>
+               <item xml:id="I13">
+                  <label>13.</label>
+                  <rs type="person" key="P240">Tasso</rs>, <rs type="text">Jerusalem Libertada</rs>.
+               </item>
+               <item xml:id="I14">
+                  <label>14.</label>
+                  <rs type="person" key="P241">Spenser</rs>, <rs type="text">Faerie Queene</rs>.
+                  <metamark rend="curly-bracket" function="grouping" place="margin-left" target="range(I12,I17)">
+                     <label>Classe onde está <rs type="person" key="P15">Camões</rs></label>
+                  </metamark>
+               </item>
+               <item xml:id="I15">
+                  <label>15.</label> 
+                  <rs type="person" key="P242">Molière</rs>, <rs type="text">As Obras</rs>, ou<lb/>
+                  só parte.
+               </item>
+               <item xml:id="I16">
+                  <label>16.</label> 
+                  <rs type="person" key="P243">Corneille</rs>, 
+                  <choice>
+                     <abbr>idem</abbr>
+                     <expan><rs type="text">As Obras</rs>, ou<lb/>
+                        só parte.</expan>
+                  </choice>.
+               </item>
+               <item xml:id="I17">
+                  <label>17.</label> 
+                  <rs type="person" key="P244">Racine</rs>, 
+                  <choice>
+                     <abbr>idem</abbr>
+                     <expan><rs type="text">As Obras</rs>, ou<lb/>
+                        só parte.</expan>
+                  </choice> 
+                  (ou todas).
+               </item>
+               <pb n="2"/>
+               <item>
+                  <label>18.</label> 
+                  <rs type="person" key="P245">Cervantes</rs>, <rs type="text">D. Quixote</rs>.
+               </item>
+               <item>
+                  <label>19.</label> 
+                  <rs type="person" key="P246">Calderon</rs>, (parte da obra).
+               </item>
+               <item>
+                  <label>20.</label> 
+                  <rs type="person" key="P169">Swift</rs>, <rs type="text">Gulliver’s Travels</rs>.
+               </item>
+               <item>
+                  <label>21.</label> 
+                  <rs type="person" key="P84">Milton</rs>, <rs type="text">Samson Agonistes</rs>.
+               </item>
+               <item>
+                  <label>22.</label>
+                  <rs type="person" key="P247">Rabelais</rs>, <rs type="text">A Obra</rs>.
+               </item>
+               <item>
+                  <label>23.</label> 
+                  <supplied resp="PS" reason="omitted-in-original"/>
+               </item>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>

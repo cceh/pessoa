@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 48-17</title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Ana Leonor Branco</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_48-17.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 48-17</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="en"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate from="1916" to="1917" cert="medium">c. 1916-1917</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3-48-1-56_JPG_24-C-R0150/bn-acpc-e-e3-48-1-56_0033_17_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <head>
+               <hi rend="underline">Sensationist 
+                  <choice>
+                     <abbr>Anthol<am>.</am></abbr>
+                     <expan>Anthol<ex>ogy</ex></expan>
+                  </choice>
+               </hi>
+            </head>
+            <div rend="left">
+               <list>
+                  <head><rs type="person" key="P30"><hi rend="underline">Mario de Sá-Carneiro</hi></rs></head>
+                  <item>
+                     <label>1.</label> <rs type="text">A Grande Sombra</rs> – II.
+                  </item>
+                  <item>
+                     <label>2.</label>	 	   
+                     <choice>
+                        <abbr><metamark rend="line" function="ditto"/></abbr>
+                        <expan><rs type="text">A Grande Sombra</rs></expan>
+                     </choice> IV. (?)
+                  </item>
+                  <item>
+                     <label>3.</label>
+                     <choice>
+                        <abbr><metamark rend="line" function="ditto"/></abbr>
+                        <expan><rs type="text">A Grande Sombra</rs></expan>
+                     </choice> VI.
+                  </item>
+                  <item>
+                     <label>4.</label> <rs type="text">Além</rs>.
+                  </item>
+                  <item>
+                     <label>5.</label> <rs type="text">Bailado</rs>.
+                  </item>
+               </list>
+            </div>
+            <div rend="right">
+               <list>
+                  <head><rs type="person" key="P70"><hi rend="underline">Luiz de Montalvor</hi></rs></head>
+                  <item><rs type="text">Narciso</rs></item>
+               </list>
+               <list>
+                  <head><rs type="person" key="P107"><hi rend="underline">Mario Saa</hi></rs>:</head>
+                  <item>
+                     <rs type="text">Extractos do “<choice>
+                        <abbr>Ev<am>.</am></abbr>
+                        <expan>Ev<ex>angelho</ex></expan>
+                     </choice> de <choice>
+                        <abbr>S<am>.</am></abbr>
+                        <expan>S<ex>an</ex></expan>
+                     </choice> Vito”</rs>
+                  </item>
+               </list>
+               <list>
+                  <head><rs type="person" key="FP" role="author">Fernando Pessoa</rs>:</head>
+                  <item><rs type="text">O Marinheiro</rs></item>
+                  <item><rs type="text">Na Floresta do Alheamento</rs></item>
+               </list>
+               <list>
+                  <head><rs type="person" key="AdC" role="author">Alvaro de Campos</rs></head>
+                  <item><rs type="work" key="04-13"><rs type="text">Opiario</rs></rs></item>
+                  <item><rs type="work" key="04-12"><rs type="text">Ode Triunfal</rs></rs>.</item>
+               </list>
+            </div>
+            <gap reason="selection" unit="line" extent="9"/>
+         </div>
+      </body>
+   </text>
+</TEI>
