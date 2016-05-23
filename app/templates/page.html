@@ -1,53 +1,49 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title class="config:app-title">App Title</title>
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css' />
-        <meta class="config:app-meta" />
-        <link class="helpers:app-root" rel="shortcut icon" href="resources/images/favicon.ico" />
-        <link class="helpers:app-root" rel="stylesheet" type="text/css"
-            href="resources/css/bootstrap.min.css" />
-        <link class="helpers:app-root" rel="stylesheet" type="text/css"
-            href="resources/css/style.css" />
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700" rel="stylesheet" type="text/css"/>
+        <meta class="config:app-meta"/>
+        <link class="helpers:app-root" rel="shortcut icon" href="resources/images/favicon.ico"/>
+        <link class="helpers:app-root" rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css"/>
+        <link class="helpers:app-root" rel="stylesheet" type="text/css" href="resources/css/style.css"/>
         <link class="helpers:app-root" rel="stylesheet" type="text/css" href="resources/css/jquery-ui.css"/>
         <link class="helpers:app-root" rel="stylesheet" type="text/css" href="resources/css/jquery-ui.structure.css"/>
-        
-        <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery-1.11.2.js"></script>
-        <script class="helpers:app-root" type="text/javascript" src="resources/js/bootstrap.min.js"></script>
-        <script class="helpers:app-root" type="text/javascript" src="resources/js/code.js"></script>
-        <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery-ui.js"></script>
-     <!--
+        <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery-1.11.2.js"/>
+        <script class="helpers:app-root" type="text/javascript" src="resources/js/bootstrap.min.js"/>
+        <script class="helpers:app-root" type="text/javascript" src="resources/js/code.js"/>
+        <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery-ui.js"/>
+        <!--
         <link class="helpers:app-root" rel="stylesheet"
             href="resources/css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
         <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery.fancybox.pack.js?v=2.1.5"></script>
         -->
-
-
-        <script type="text/javascript">
-        </script>
+        <script type="text/javascript"/>
     </head>
     <body id="body">
         <?php include("https://localhost:8080/exist/apps/pessoa/resources/php/connect.php"); ?>
         <div id="side">
             <div id="headline">
                 <div id="title">
-                     <h1>
-                         <a style="color=white;" id="title-tool2" class="helpers:app-root " href="index.html">
-                             <span id="title-tool" class="" data-template="page:singleElement" data-template-xmltype="site-title" data-template-xmlid="site-title"/>
-                             <br/>
-                             <span id="title-sub" data-template="page:singleElement" data-template-xmltype="site-title" data-template-xmlid="site-subtitle"/>
+                    <h1>
+                        <a style="color=white;" id="title-tool2" class="helpers:app-root " href="index.html">
+                            <span id="title-tool" class="" data-template="page:singleElement" data-template-xmltype="site-title" data-template-xmlid="site-title"/>
+                            <br/>
+                            <span id="title-sub" data-template="page:singleElement" data-template-xmltype="site-title" data-template-xmlid="site-subtitle"/>
                         </a>
-                     </h1>   
+                    </h1>
                 </div>
                 <div id="lang">
                     <a class="link" onclick="switchlang('en')">English</a>|<a class="link" onclick="switchlang('pt')">Português</a>
-                </div>         
-                <div class="clear"></div>
+                </div>
+                <div class="clear"/>
             </div>
-            <div id="page-header"><img id="header-image" src="resources/images/pessoa-title.png"  class="helpers:app-root" /></div>  
-            <div id="navi" class="page:construct"></div>
-            <div class="clear"></div>
-            <div id="content" class="container"></div>
+            <div id="page-header">
+                <img id="header-image" src="resources/images/pessoa2.jpg" class="helpers:app-root"/>
+                <img id="header-image" src="resources/images/pessoa2.jpg" class="helpers:app-root"/>
+            </div>
+            <div id="navi" class="page:construct"/>
+            <div class="clear"/>
+            <div id="content" class="container"/>
             <div class="whiteBorder ScrollToTop">
                 <i class="glyphicon glyphicon-triangle-top"/>
             </div>
@@ -68,7 +64,11 @@
               g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
             })();
           </script>
-        <noscript><p><img src="//projects.cceh.uni-koeln.de/piwik/piwik.php?idsite=10" style="border:0;" alt="" /></p></noscript>
+        <noscript>
+            <p>
+                <img src="//projects.cceh.uni-koeln.de/piwik/piwik.php?idsite=10" style="border:0;" alt=""/>
+            </p>
+        </noscript>
         <!-- End Piwik Code -->
     </body>
 </html>
