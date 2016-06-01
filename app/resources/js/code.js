@@ -47,8 +47,22 @@ $(document).ready(function(){
                     $("div#navi").children("div.navbar").children("div").css("display","none");
                     $("div#navi .active").removeClass("active");
                 }
+                
+                
         });
         
+        /*
+        function jsBlockStrikeThrough(block) {
+				var backgrWidth = document.getElementById(block).offsetWidth;
+				var backgrHeight = document.getElementById(block).offsetHeight;
+				var newSize = '';
+
+				newSize = newSize.concat(backgrWidth, 'px' , ' ', backgrHeight, 'px');
+
+				document.getElementById(block).style.backgroundImage = "url('../images/Kreuz.png')";
+				document.getElementById(block).style.backgroundSize = newSize;
+			}
+        */
          function fixDiv() {
         var $cache = $('#openseadragon1');
       if ($(window).scrollTop() > 600)
@@ -65,8 +79,33 @@ $(document).ready(function(){
         $(window).scroll(fixDiv);
         fixDiv();
         });
-
-
+/*
+function  jsBlockStrikeThrough(uri) {
+            $('.delSpan').each(function() {
+                var backgrWidth = $(this).css("width");
+                var backgrHeight = $(this).css("height");
+                var newSize = '';
+                var image = uri +'../../resources/images/Kreuz.png';
+                
+                newSize = newSize.concat(backgrWidth, 'px' , ' ', backgrHeight, 'px');
+                $(this).css({"background-image" : "url("+image+")",
+                                                                            "width" : backgrWidth,
+                                                                            "height" : backgrHeight });
+            })            
+       };*/
+/*
+        function  jsBlockStrikeThrough() {
+            $('.delSpan').each(function() {
+                var backgrWidth = $(this).document.offsetWidth;
+                var backgrHeight = $(this).offsetHeight;
+                var newSize = '';
+                newSize = newSize.concat(backgrWidth, 'px' , ' ', backgrHeight, 'px');
+                $(this).css({"background-image" : "url('images/Kreuz.png')",
+                                                                            "width": backgrWidth,
+                                                                            "height":backgrHeight});
+            })            
+        };
+        */
 $(document).ready(function(){
 	//Check to see if the window is top if not then display button
 	$(window).scroll(function(){

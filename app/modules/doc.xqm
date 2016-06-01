@@ -306,10 +306,24 @@ let $script := <script type="text/javascript">
         attachEvent( "onload", draw(100,100) );
         }}
         
-
-
-
+    
+    function  jsBlockStrikeThrough() {{
+            $('.delSpan').each(function() {{
+                var backgrWidth = $(this).css("width");
+                var backgrHeight = $(this).css("height");
+                var newSize = '';
+                var image = '{$helpers:app-root}/resources/images/Kreuz.png';
+                
+                newSize = newSize.concat(backgrWidth, ' ', backgrHeight);
+                $(this).css({{"background-image" : "url("+image+")",
+                                                                            "background-size" : newSize }});
+            }})            
+       }};
+    
     </script>
+   
+   
+        
     return $script
 };
 

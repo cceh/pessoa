@@ -1,39 +1,17 @@
 var	gulp = require('gulp'),
 	exist = require('gulp-exist'),
 	watch = require('gulp-watch'),
+	filter = require('gulp-filter')
 	newer = require('gulp-newer'),
-	zip = require('gulp-zip'),
 	plumber = require('gulp-plumber'),
+	zip = require('gulp-zip'),
+	sourcemaps = require('gulp-sourcemaps'),
 	rename = require('gulp-rename');
-	
+
 var secrets = require('./exist-secrets.json')
 
 var sourceDir = 'app/'
-
 var buildDest = 'build/';
-
-
-var exist_local_conf = {
-		host: "localhost",
-		port: 8080,
-		path: "/exist/xmlrpc",
-		auth: secrets.local,
-		target: "/db/apps/pessoa",
-		permissions: {
-			"controller.xql": "rwxr-xr-x"
-		}
-	};
-
-var exist_remote_conf = {
-		host: "projects.cceh.uni-koeln.de",
-		port: 8080,
-		path: "/xmlrpc",
-		auth: secrets.remote,
-		target: "/db/apps/pessoa",
-		permissions: {
-			"controller.xql": "rwxr-xr-x"
-		}
-}
 
 
 // ------ Copy (and compile) sources and assets to build dir ----------
@@ -46,36 +24,65 @@ gulp.task('copy', function() {
 		   	.pipe(gulp.dest(buildDest))
 })
 
-
 gulp.task('build', ['copy']);
-
-
 
 
 // ------ Deploy build dir to eXist ----------
 
+var localExist = exist.createClient({
+		host: "localhost",
+		port: 8080,
+		path: "/exist/xmlrpc",
+		basic_auth: secrets.local
+		// permissions: {
+		// 	"controller.xql": "rwxr-xr-x"
+		// },
+		// mime_types: {
+		// 	'.rng': "text/xml"
+		// }
+	});
 
-gulp.task('local-upload', ['build'], function() {
-
-	return gulp.src(buildDest + '**/*', {base: buildDest})
-		.pipe(exist.newer(exist_local_conf))
-		.pipe(exist.dest(exist_local_conf));
+var remoteExist = exist.createClient({
+		host: "papyri.uni-koeln.de",
+		port: 8080,
+		path: "/xmlrpc",
+		basic_auth: secrets.remote
+		// permissions: {
+		// 	"controller.xql": "rwxr-xr-x"
+		// },
+		// mime_types: {
+		// 	'.rng': "text/xml"
+		// }
 });
 
-gulp.task('deploy-local',['local-upload','update-index']);
+exist.defineMimeTypes({ 'text/xml': ['rng'] });
+
+var permissions = { 'controller.xql': 'rwxr-xr-x' };
 
 
+gulp.task('deploy-local', ['build'], function() {
+
+	return gulp.src(buildDest + '**/*', {base: buildDest})
+		.pipe(localExist.newer({target: "/db/apps/pessoa/"}))
+		.pipe(localExist.dest({
+			target: "/db/apps/pessoa",
+			permissions: permissions
+		}));
+});
 
 gulp.task('remote-upload', ['build'], function() {
 
 	return gulp.src(buildDest + '**/*', {base: buildDest})
-		.pipe(exist.newer(exist_remote_conf))
-		.pipe(exist.dest(exist_remote_conf));
+		.pipe(remoteExist.newer({target: "/db/apps/pessoa"}))
+		.pipe(remoteExist.dest({
+			target: "/db/apps/pessoa",
+			permissions: permissions
+		}));
 });
 
 gulp.task('remote-post-install', ['remote-upload'], function() {
 	return gulp.src('scripts/post-deploy.xql')
-		.pipe(exist.query(exist_remote_conf));
+		.pipe(remoteExist.query());
 });
 
 gulp.task('deploy-remote', ['remote-upload', 'remote-post-install']);
@@ -85,38 +92,25 @@ gulp.task('deploy-remote', ['remote-upload', 'remote-post-install']);
 
 // ------ Update Index ----------
 
-var exist_indexupdate_local_pub = {
-		host: "localhost",
-		port: 8080,
-		path: "/exist/xmlrpc",
-		auth: secrets.local,
-		target: "/db/system/config/db/apps/pessoa/data/pub"
-}
-var exist_indexupdate_local_doc = {
-		host: "localhost",
-		port: 8080,
-		path: "/exist/xmlrpc",
-		auth: secrets.local,
-		target: "/db/system/config/db/apps/pessoa/data/doc"
-}
-
-gulp.task('upload-index-doc', function(){
-	return gulp.src('app/SUCHE_doc-collection.xconf')
-			.pipe(rename('collection.xconf'))
-			.pipe(exist.dest(exist_indexupdate_local_doc));
+gulp.task('upload-index-conf', function(){
+	return gulp.src('collection.xconf')	             
+			.pipe(localExist.dest({target: "/db/system/config/db/apps/pessoa/data"}));
 });
 
-gulp.task('upload-index-pub', function(){
-	return gulp.src('app/SUCHE_pub-collection.xconf')
-			.pipe(rename('collection.xconf'))
-			.pipe(exist.dest(exist_indexupdate_local_pub));
-});
-
-gulp.task('update-index', ['upload-index-pub','upload-index-doc'], function() {
+gulp.task('update-index', ['upload-index-conf'], function() {
 	return gulp.src('scripts/reindex.xql')
-			.pipe(exist.query(exist_indexupdate_local_doc));
+			.pipe(localExist.query());
 });
 
+gulp.task('upload-index-conf-remote', function(){
+	return gulp.src('collection.xconf')	                      
+			.pipe(remoteExist.dest({target: "/db/system/config/db/apps/pessoa/data"}));
+});
+
+gulp.task('update-index-remote', ['upload-index-conf-remote'], function() {
+	return gulp.src('scripts/reindex.xql')
+			.pipe(remoteExist.query());
+});
 
 
 
@@ -127,7 +121,7 @@ gulp.task('xar', ['build'], function() {
 	var p = require('./package.json');
 
 	return gulp.src(buildDest + '**/*', {base: buildDest})
-			.pipe(zip("pessoa-" + p.version + ".xar"))
+			.pipe(zip("pessoa" + p.version + ".xar"))
 			.pipe(gulp.dest("."));
 });
 
@@ -143,13 +137,14 @@ gulp.task('watch-main', function() {
 			name: 'Main Watcher'
 	})
 	.pipe(plumber())
-	.pipe(exist.dest(exist_local_conf))
+	.pipe(localExist.dest({target: "/db/apps/pessoa"}))
 });
 
-
-
 gulp.task('watch-copy', function() {
-	gulp.watch([sourceDir + '**/*'], ['copy']);
+	gulp.watch([
+				
+				sourceDir + '**/*'
+				], ['copy']);
 });
 
 

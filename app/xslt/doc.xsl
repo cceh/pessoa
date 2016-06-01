@@ -57,7 +57,8 @@
             .supplied {cursor: pointer;}           
             /*  .ex, .supplied {color: purple;} */
             
-            .delSpan{background: -webkit-canvas(lines); background: -moz-element(lines);}
+            .
+            {background: -webkit-canvas(lines); background: -moz-element(lines);}
             .verticalLine {background: -webkit-canvas(verticalLine); background: -moz-element(verticalLine); display: inline-table; margin-left:110px; width:10px; height:60px;}
             .circled {border: 1px solid black; border-radius: 30px; display: inline-block;}
 
