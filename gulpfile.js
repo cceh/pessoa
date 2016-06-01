@@ -8,21 +8,21 @@ var	gulp = require('gulp'),
 	sourcemaps = require('gulp-sourcemaps'),
 	rename = require('gulp-rename');
 
-var secrets = require('./exist-secrets.json')
+var secrets = require('./exist-secrets.json');
 
-var sourceDir = 'app/'
+var sourceDir = 'app/';
+
 var buildDest = 'build/';
+
 
 
 // ------ Copy (and compile) sources and assets to build dir ----------
 
-
-
 gulp.task('copy', function() {
-	return gulp.src(sourceDir + '**/*')
+	return gulp.src(sourceDir + '**/*.{xml,html,xql,xqm,xsl}')
 		   	.pipe(newer(buildDest))
 		   	.pipe(gulp.dest(buildDest))
-})
+});
 
 gulp.task('build', ['copy']);
 
@@ -43,7 +43,7 @@ var localExist = exist.createClient({
 	});
 
 var remoteExist = exist.createClient({
-		host: "papyri.uni-koeln.de",
+		host: "projects.cceh.uni-koeln.de",
 		port: 8080,
 		path: "/xmlrpc",
 		basic_auth: secrets.remote
@@ -92,18 +92,25 @@ gulp.task('deploy-remote', ['remote-upload', 'remote-post-install']);
 
 // ------ Update Index ----------
 
-gulp.task('upload-index-conf', function(){
-	return gulp.src('collection.xconf')	             
-			.pipe(localExist.dest({target: "/db/system/config/db/apps/pessoa/data"}));
+gulp.task('upload-index-conf_doc', function(){
+	return gulp.src(buildDest +'SUCHE_doc-collection.xconf')
+	                       .pipe(rename('collection.xconf'))
+			.pipe(localExist.dest({target: "/db/system/config/db/apps/pessoa/data/doc"}));
+});
+gulp.task('upload-index-conf_pub', function(){
+	return gulp.src(buildDest + 'SUCHE_pub-collection.xconf')
+	                       .pipe(rename('collection.xconf'))
+			.pipe(localExist.dest({target: "/db/system/config/db/apps/pessoa/data/pub"}));
 });
 
-gulp.task('update-index', ['upload-index-conf'], function() {
+gulp.task('update-index', ['upload-index-conf_doc','upload-index-conf_pub'], function() {
 	return gulp.src('scripts/reindex.xql')
 			.pipe(localExist.query());
 });
 
 gulp.task('upload-index-conf-remote', function(){
-	return gulp.src('collection.xconf')	                      
+	return gulp.src('collection.xconf')
+	                        .pipe(rename('collection.xconf'))
 			.pipe(remoteExist.dest({target: "/db/system/config/db/apps/pessoa/data"}));
 });
 
@@ -121,7 +128,7 @@ gulp.task('xar', ['build'], function() {
 	var p = require('./package.json');
 
 	return gulp.src(buildDest + '**/*', {base: buildDest})
-			.pipe(zip("pessoa" + p.version + ".xar"))
+			.pipe(zip(p.name + p.version + ".xar"))
 			.pipe(gulp.dest("."));
 });
 
@@ -142,8 +149,9 @@ gulp.task('watch-main', function() {
 
 gulp.task('watch-copy', function() {
 	gulp.watch([
-				
-				sourceDir + '**/*'
+				sourceDir +  'js/**/*',
+				sourceDir + 'imgs/**/*',
+				sourceDir + '**/*.{xml,html,xql,xqm,xsl}'
 				], ['copy']);
 });
 
