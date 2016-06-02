@@ -149,9 +149,7 @@ gulp.task('watch-main', function() {
 
 gulp.task('watch-copy', function() {
 	gulp.watch([
-				sourceDir +  'js/**/*',
-				sourceDir + 'imgs/**/*',
-				sourceDir + '**/*.{xml,html,xql,xqm,xsl}'
+                                    sourceDir + '**/*'
 				], ['copy']);
 });
 
