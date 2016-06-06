@@ -16,6 +16,21 @@
                     display: block;
                     margin-left: 60px;
                 }
+                
+                .Obras-Ref-FIrst {
+                    color:#08298A !important;
+                    text-decoration:none;
+                    margin:0px 5px;
+                }
+                .Obras-Ref-First:hover {
+                    color:#08298A !important;
+                    text-decoration:underline;
+                }
+                .Obras-Pub-First {
+                color:#08298A !important;
+                    }
+                    
+                    
             </style> 
             <wrap data-template="obras:SearchObras">              
                 <i data-template="helpers:getValue" data-template-get="MainTitle" />
@@ -34,9 +49,12 @@
                                         <i data-template="helpers:getValue" data-template-get="title" />
                                     </td>                     
                                     <td>
+                                        <a class="Obras-Pub-First" data-template="obras:PrintRef"  data-template-ref="PubRef" data-template-dir="pub"/>
+                                  <!--
                                         <wrap data-template="helpers:invisibleEach" data-template-from="refs" data-template-to="ref">
-                                            <a class="test" data-template="obras:PrintRef"  data-template-ref="ref"/>
+                                            <a class="Obras-Ref-FIrst" data-template="obras:PrintRef"  data-template-ref="ref" data-template-dir="doc"/>
                                         </wrap>
+                                        -->
                                     </td>
                                 </tr>
                                 <wrap data-template="helpers:invisibleEach" data-template-from="subworks" data-template-to="Sub">
@@ -46,9 +64,11 @@
                                                 <i data-template="helpers:getValue" data-template-get="title" />
                                             </td>
                                             <td>
+                                                <!--
                                                 <wrap data-template="helpers:invisibleEach" data-template-from="refs" data-template-to="ref">
-                                                    <i data-template="obras:PrintRef"  data-template-ref="ref"/>
+                                                    <a class="Obras-Ref-FIrst" data-template="obras:PrintRef"  data-template-ref="ref"/>
                                                 </wrap>
+                                                -->
                                             </td>
                                         </tr>
                                         <wrap data-template="helpers:invisibleEach" data-template-from="subworks" data-template-to="Third">
@@ -58,9 +78,11 @@
                                                         <i data-template="helpers:getValue" data-template-get="title" />
                                                     </td>
                                                     <td>
+                                                        <!--
                                                         <wrap data-template="helpers:invisibleEach" data-template-from="refs" data-template-to="ref">
-                                                            <i data-template="obras:PrintRef"  data-template-ref="ref"/>
+                                                            <a class="Obras-Ref-FIrst" data-template="obras:PrintRef"  data-template-ref="ref"/>
                                                         </wrap>
+                                                        -->
                                                     </td>
                                                 </tr>
                                             </wrap>

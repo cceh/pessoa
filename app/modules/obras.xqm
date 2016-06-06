@@ -31,9 +31,22 @@ declare function obras:buildSearch($xmlid as xs:string, $type as xs:string) as n
 };
 
 
-declare function obras:PrintRef($node as node(), $model as map(*), $ref as xs:string) {
+declare function obras:PrintRef($node as node(), $model as map(*), $ref as xs:string, $dir as xs:string) {
     let $refer := substring-before(root($model($ref))/util:document-name(.),".xml") 
-    return <a href="{$helpers:app-root}/{$helpers:web-language}/doc/{$refer}">{helpers:copy-class-attr($node)}{templates:process($node/node(), $model)}{$refer}</a>
+         let $title := $model($ref)
+    return <a href="{$helpers:app-root}/{$helpers:web-language}/{$dir}/{$refer}">    
+        {helpers:copy-all-class($node)}
+        {templates:process($node/node(), $model)}
+        {$title}</a>
+};
+
+declare function obras:PrintPub($node as node(), $model as map(*), $ref as xs:string) {
+    let $refer := substring-before(root($model($ref))/util:document-name(.),".xml") 
+     let $title := $model($ref)/tei:TEI/tei:teiHeader[1]/tei:fileDesc[1]/tei:titleStmt[1]/title[1]/data(.)
+    return <a href="{$helpers:app-root}/{$helpers:web-language}/doc/{$refer}">    
+        {helpers:copy-all-class($node)}
+        {templates:process($node/node(), $model)}
+        {$refer}</a>
 };
 (: Unikate :)
 
@@ -62,9 +75,13 @@ declare function obras:AnalyticObras($node as node(), $model as map(*), $ref as 
     return map {
         "title" := $title,
         "refs" := obras:buildSearch($work/@xml:id/data(.),"doc"),
-        "subworks" := obras:ScanSubWorks($work)       
+        "subworks" := obras:ScanSubWorks($work),
+        "XMLID" := $work/@xml:id/data(.),
+        "PubRef" := obras:buildSearch($work/@xml:id/data(.),"pub")
     }
 };
+
+
 
 declare function obras:ScanSubWorks($Work as node()*) {
 if(exists($Work/tei:list)) then (

@@ -60,6 +60,9 @@ declare function helpers:copy-class-attr($node as node()){
     attribute class {$node/@class/concat(substring-before(., "helpers:app-root"), substring-after(., "helpers:app-root"))}
 };
 
+declare function helpers:copy-all-class($node as node()) {
+        attribute class {$node/@class}
+ };
 
 declare function helpers:getValue($node as node(), $model as map(*), $get as xs:string) {
         $model($get)
