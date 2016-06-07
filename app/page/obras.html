@@ -3,196 +3,111 @@
     <div class="row-fluid">
         <div id="content" class="span12 main">
             <style  type="text/css">
-              
-              #obras-content {
-              text-align:center;
-              width:420px;
-              }
-              
-              #Obras-Workslist ul {
-              list-style:none;
-              margin-left: -25px;
-              }
-              }
-              .Obras-DocList, .Obras-PubList, .Obras-LinkLists {
-              display:none;
-              }
-              .Obras-SubNav {
-                margin-top:5px;
-                border-left: 1px dotted;
-                border-right:1px dotted;
-              }
-              
-             .Obras-PubList {
-                 list-style: none;
-                 margin-left: -20px;             
-            }
-            
-            .Obras-SubNav-Pub h8{
-                border-bottom: 1px dotted;
-                padding: 1px 6px 3px;
-            }
-              
-              .Obras-DocList, .Obras-PubList {
-              text-align: center;
-              width: 100%;
-              
-              }
-              .Obras-PubList{}
-              .olink,.clink {
-                color: #08298A !important;
-                text-decoration:none;
-           
-                    cursor: pointer;   
+                .Obras-First {
+                
+                }
+                
+                .Obras-Sub {
+                     display: block;
+                     margin-left: 30px;
+                }
+                
+                .Obras-Third {
+                    display: block;
+                    margin-left: 60px;
+                }
+                .Obras-Head{ 
+                }
+                
+                .Obras-First, .Obras-Sub, .Obras-Third, .Obras-Head {
+                width: 230px;
+                }
+                .Obras-Ref-FIrst {
+                    color:#08298A !important;
+                    text-decoration:none;
+                    margin:0px 5px;
+                }
+                .Obras-Ref-First:hover {
+                    color:#08298A !important;
+                    text-decoration:underline;
+                }
+                .Obras-Pub-First {
+                color:#08298A !important;
+                    }
                     
-                }
-                .olink:hover,.clink:hover {
-                text-decoration:underline;
-                color: #08298A !important;
-                
-                
-                }
-                .olink span {
-                font-size: 13px;
-                }
-                
-                .clink {
-                    display:block;
-                }
-                .clink-show {
-                display:block;
-                }
-                
-                #Obras-MainTitle {
-                    font-size:29px;
-                    font-weight:500;
                     
-                }
-                
-                #Obras-MainAltTitle {
-                    font-size:20px;
-                }
-                
-             .Obras-AltTitle {
-                font-style:italic;
-             }
-             
-             #Obras-Titleline {
-                margin-bottom:15px;
-             }
-             
-             #Obras-Workslist {
-             
-             }
-             
-             .Obras-LinkLists {
-             
-             }
-             
-             .Obras-Work {
-                margin: 3px 0;
-          
-             }
-             
-             .Obras-WorkName {
-             
-             }
-             .Obras-WorkName:hover {
-                text-decoration:underline;
-                cursor: pointer;   
-             }
-             
-             .Obras-SubNav-Alone {
-             
-             }
-             
-             
-             .selected, .LinkSelected {
-             text-decoration:underline;
-             }
-             
-             /* #### Doc Link List Classes */
-             #Obras-DocLinkList {
-             }
-             #Obras-DocList {
-                list-style: outside none none;
-                margin-left: 60px;
-                text-align: left;
-                width: 500px;
-                display:none;
-              }
-             .Obras-DocList-Doc {
-             display: inline-block;
-             width: 120px;
-             
-             }
-             
-             .Obras-DocList-Mention {
-             
-             }
-            </style>
-            <div  id="obras-content">
-                <div class="obras:SearchObras">
-                    <div id="Obras-Titleline">
-                        <div id="Obras-MainTitle"><i class="obras:printData?type=MainTitle"/></div>
-                        <div class="Obras-AltTitle" id="Obras-MainAltTitle"><i class="page:singleElement?xmltype=obras&amp;xmlid=alternative_titles"/>: <i class="obras:printData?type=AltTitle"/></div>
-                        <div id="Obras-DocLinkList" class="olink">Documentos</div>
-                        <ul id="Obras-DocList">
-                            <span data-template="helpers:invisibleEach" data-template-from="FirstRef" data-template-to="ref">
-                              <li>  <i class="obras:PrintDocLinks"/>
-                              </li>
-                            </span>
-                        </ul>
-                    </div>
-                    <div id="Obras-Workslist">
-                        <ul>
-                        <div data-template="helpers:invisibleEach" data-template-from="Works" data-template-to="Work">
-                            <div class="obras:AnalyzeWorks">
-                              <li> 
-                                  <span class="Obras-WorkName"><i class="obras:printWorkName"/></span>
-                                  <div class="Obras-LinkLists">
-                                      <i class="obras:CheckForWorks"/>
-                                      <div data-template="helpers:invisibleEach" data-template-from="SubWorks" data-template-to="SubWork">
-                                          <div class="obras:CheckSubWorks">
-                                              <i class="obras:PrintSubWorks"/>
-                                          </div>                                
-                                      </div>                        
-                                  </div>
-                              </li>                                
-                            </div>
-                        </div>
-                        </ul>
-                    </div>
-                </div>
-           <!--   <div class="obras:SearchObras">
-                    <div id="Obras-Titleline">
-                        <div id="Obras-MainTitle"><i class="obras:printData?type=MainTitle"/></div>
-                        <div class="Obras-AltTitle" id="Obras-MainAltTitle"><i class="obras:printData?type=AltTitle"/></div>
-                        <div id="Obras-DocLinkList" class="olink">Documentos</div>
-                        <div class="templates:each?from=FirstRef&amp;to=ref Obras-DocList">
-                                <i class="obras:PrintLinks?folder=doc"/>
-                        </div>
-                    </div>
-                    <div id="Obras-Workslist">
-                        <div class="templates:each?from=Works&amp;to=Work Obras-Work">
-                            <div class="obras:AnalyzeWorks">
-                                <div class="Obras-WorkName"> <i class="obras:printWorkName"/></div>
-                                  <div class="Obras-LinkLists">
-                                      <i class="obras:CheckForWorks"/>
-                                      <div class="templates:each?from=SubWorks&amp;to=SubWork Obras-PubList">
-                                          <i class="obras:PrintSubWorks"/>
-                                      </div>
-                                    <i class="obras:CheckForDocs"/>
-                                      <div class="templates:each?from=docs&amp;to=ref Obras-DocList">
-                                         <i class="obras:PrintLinks?folder=doc"/>
-                                     </div>
-                                  </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>-->
-                <!--    <div class="obras:getObras"></div>-->
-                </div>
+            </style> 
+            <wrap data-template="obras:SearchObras">              
+                <h1><i data-template="helpers:getValue" data-template-get="MainTitle" /></h1>
+                <h2><i data-template="page:singleElement" data-template-xmltype="obras" data-template-xmlid="alternative_titles"/>: <i data-template="helpers:getValue" data-template-get="AltTitle"/></h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th><i data-template="page:singleElement" data-template-xmltype="obras" data-template-xmlid="titel_of_obras"/></th>
+                            <th><i data-template="page:singleElement" data-template-xmltype="author-pages" data-template-xmlid="publications-and-documents"/></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="Obras-Head">
+                                <i data-template="helpers:getValue" data-template-get="MainTitle" />,
+                                <i data-template="helpers:getValue" data-template-get="AltTitle"/>
+                            </td>
+                            <td>
+                                <wrap data-template="helpers:invisibleEach" data-template-from="FirstRef" data-template-to="FR">
+                                    <a class="Obras-Ref-FIrst" data-template="obras:PrintRef"  data-template-ref="FR" data-template-dir="doc"/>                                    
+                                    <i data-template="obras:mentionedAs" data-template-ref="FR" data-template-dir="doc"/>                                    
+                                </wrap>
+                            </td>
+                        </tr>
+                        <wrap data-template="helpers:invisibleEach" data-template-from="Works" data-template-to="work">
+                            <wrap data-template="obras:AnalyticObras" data-template-ref="work">
+                                <tr>
+                                    <td class="Obras-First">
+                                        <i data-template="helpers:getValue" data-template-get="title" />
+                                    </td>                     
+                                    <td>
+                                        <a class="Obras-Pub-First" data-template="obras:PrintRef"  data-template-ref="PubRef" data-template-dir="pub"/>
+                                  
+                                        <wrap data-template="helpers:invisibleEach" data-template-from="refs" data-template-to="ref">
+                                            <a class="Obras-Ref-FIrst" data-template="obras:PrintRef"  data-template-ref="ref" data-template-dir="doc"/>
+                                        </wrap>                                        
+                                    </td>
+                                </tr>
+                                <wrap data-template="helpers:invisibleEach" data-template-from="subworks" data-template-to="Sub">
+                                    <wrap data-template="obras:AnalyticObras" data-template-ref="Sub">
+                                        <tr>
+                                            <td class="Obras-Sub">
+                                                <i data-template="helpers:getValue" data-template-get="title" />
+                                            </td>
+                                            <td>                                     
+                                                <a class="Obras-Ref-FIrst" data-template="obras:PrintSubRef"  data-template-ref="XMLID" data-template-dir="pub"/>
+                                                <wrap data-template="helpers:invisibleEach" data-template-from="refs" data-template-to="ref">
+                                                    <a class="Obras-Ref-FIrst" data-template="obras:PrintRef"  data-template-ref="ref" data-template-dir="doc"/>
+                                                </wrap>                                               
+                                            </td>
+                                        </tr>
+                                        <wrap data-template="helpers:invisibleEach" data-template-from="subworks" data-template-to="Third">
+                                            <wrap data-template="obras:AnalyticObras" data-template-ref="Third">
+                                                <tr>
+                                                    <td class="Obras-Third">
+                                                        <i data-template="helpers:getValue" data-template-get="title" />
+                                                    </td>
+                                                    <td>                                                       
+                                                        <wrap data-template="helpers:invisibleEach" data-template-from="refs" data-template-to="ref" data-template-dir="doc">
+                                                            <a class="Obras-Ref-FIrst" data-template="obras:PrintRef"  data-template-ref="ref"/>
+                                                        </wrap>                                                       
+                                                    </td>
+                                                </tr>
+                                            </wrap>
+                                        </wrap>
+                                    </wrap>
+                                </wrap>
+                            </wrap>
+                        </wrap>
+                    </tbody>               
+                </table>  
+            </wrap> 
             <script type="text/javascript">
                $(document).ready(function(){
                ObrasControl();

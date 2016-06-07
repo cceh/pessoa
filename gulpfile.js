@@ -93,12 +93,12 @@ gulp.task('deploy-remote', ['remote-upload', 'remote-post-install']);
 // ------ Update Index ----------
 
 gulp.task('upload-index-conf_doc', function(){
-	return gulp.src(buildDest +'SUCHE_doc-collection.xconf')
+	return gulp.src('app/SUCHE_doc-collection.xconf')
 	                       .pipe(rename('collection.xconf'))
 			.pipe(localExist.dest({target: "/db/system/config/db/apps/pessoa/data/doc"}));
 });
 gulp.task('upload-index-conf_pub', function(){
-	return gulp.src(buildDest + 'SUCHE_pub-collection.xconf')
+	return gulp.src('app/SUCHE_pub-collection.xconf')
 	                       .pipe(rename('collection.xconf'))
 			.pipe(localExist.dest({target: "/db/system/config/db/apps/pessoa/data/pub"}));
 });
@@ -149,9 +149,7 @@ gulp.task('watch-main', function() {
 
 gulp.task('watch-copy', function() {
 	gulp.watch([
-				sourceDir +  'js/**/*',
-				sourceDir + 'imgs/**/*',
-				sourceDir + '**/*.{xml,html,xql,xqm,xsl}'
+                                    sourceDir + '**/*'
 				], ['copy']);
 });
 
