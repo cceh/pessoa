@@ -78,7 +78,18 @@ $(document).ready(function(){
         }
         $(window).scroll(fixDiv);
         fixDiv();
+        
+        
         });
+        
+        function calcImage() {
+        var height = $(".header-image").width()  * 0.75;
+            $(".header-image").each(function() {
+                $(this).css( {"height" : height} );
+                
+            });     
+            $("#page-header").css({"height" : height});
+        };
 /*
 function  jsBlockStrikeThrough(uri) {
             $('.delSpan').each(function() {
