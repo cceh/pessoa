@@ -19,7 +19,7 @@ var buildDest = 'build/';
 // ------ Copy (and compile) sources and assets to build dir ----------
 
 gulp.task('copy', function() {
-	return gulp.src(sourceDir + '**/*.{xml,html,xql,xqm,xsl}')
+	return gulp.src(sourceDir + '**/*')
 		   	.pipe(newer(buildDest))
 		   	.pipe(gulp.dest(buildDest))
 });
