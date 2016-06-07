@@ -117,7 +117,8 @@ declare function page:createThirdNav($type as xs:string) as node()* {
             1 - 9
             </li>
     else if ($type = "cronologia") then 
-    let $time := ("1902-1912","1913-1915","1916-1919","1920-1927","1928-1935")
+    let $time := ("1913-1915","1916-1919","1920-1927","1928-1935")
+    (:     let $time := ("1902-1912","1913-1915","1916-1919","1920-1927","1928-1935") :)
     for $date in ($time, (doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item/tei:list[@type="cronologia"]/tei:item/tei:term[@xml:lang=$helpers:web-language]/data(.)))
             return if (contains($date, "1") != xs:boolean("true") ) then
                         <li class="{concat("nav_",$type,"_tab")}"> <span class="step">|</span> 
@@ -150,7 +151,8 @@ declare function page:createThirdNavTab($type as xs:string) as node()* {
             <ul class="nav_sub_tabs">
             {page:createThirdNavContent($type,$indikator)}
          </ul>   </div>
-    else if ($type = "cronologia") then for $indikator in (0 to 4) return 
+    else if ($type = "cronologia") then for $indikator in (0 to 3) return 
+    (:     else if ($type = "cronologia") then for $indikator in (0 to 4) return  :)
          <div  id="{concat("nav_",$type,"_sub_",$indikator)}" style="display:none"> 
             <ul class="nav_sub_tabs">        
            {page:createThirdNavContent($type,$indikator)}
@@ -178,9 +180,11 @@ declare function page:createThirdNavContent($type as xs:string, $indikator as xs
         if ($type = "documentos") then for $item in page:createItem($type, $indikator) 
             return <a href="{$item/@ref/data(.)}"><li class="{concat("nav_",$type,"_sub_tab")}">{$item/@label/data(.)}</li></a>
        else if ($type = "cronologia" ) then
-        let $field := (2,13,16,20,28,12,15,19,27,35)
+        let $field := (13,16,20,28,15,19,27,35)
+        (:        let $field := (2,13,16,20,28,12,15,19,27,35) :)
         let $indi := sum(xs:integer($indikator)+1)
-       for $nr in ($field[$indi] to $field[sum($indi + 5)])
+       for $nr in ($field[$indi] to $field[sum($indi + 4)])
+       (:        for $nr in ($field[$indi] to $field[sum($indi + 4)]) :)
        let $nr := if($nr < 10) then concat(0,$nr) else $nr
          return   if( page:createItem("cronologia",$nr)  ) then
                     <li class="{concat("nav_",$type,"_sub_tab")}" id="exttab_cro_{$nr}">{concat("'",$nr)}</li>
