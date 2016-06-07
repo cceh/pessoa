@@ -16,7 +16,12 @@
                     display: block;
                     margin-left: 60px;
                 }
+                .Obras-Head{ 
+                }
                 
+                .Obras-First, .Obras-Sub, .Obras-Third, .Obras-Head {
+                width: 230px;
+                }
                 .Obras-Ref-FIrst {
                     color:#08298A !important;
                     text-decoration:none;
@@ -33,15 +38,28 @@
                     
             </style> 
             <wrap data-template="obras:SearchObras">              
-                <i data-template="helpers:getValue" data-template-get="MainTitle" />
+                <h1><i data-template="helpers:getValue" data-template-get="MainTitle" /></h1>
+                <h2><i data-template="page:singleElement" data-template-xmltype="obras" data-template-xmlid="alternative_titles"/>: <i data-template="helpers:getValue" data-template-get="AltTitle"/></h2>
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>Título de obra</th>
-                            <th>Documentos e publicações</th>
+                            <th><i data-template="page:singleElement" data-template-xmltype="obras" data-template-xmlid="titel_of_obras"/></th>
+                            <th><i data-template="page:singleElement" data-template-xmltype="author-pages" data-template-xmlid="publications-and-documents"/></th>
                         </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <td class="Obras-Head">
+                                <i data-template="helpers:getValue" data-template-get="MainTitle" />,
+                                <i data-template="helpers:getValue" data-template-get="AltTitle"/>
+                            </td>
+                            <td>
+                                <wrap data-template="helpers:invisibleEach" data-template-from="FirstRef" data-template-to="FR">
+                                    <a class="Obras-Ref-FIrst" data-template="obras:PrintRef"  data-template-ref="FR" data-template-dir="doc"/>                                    
+                                    <i data-template="obras:mentionedAs" data-template-ref="FR" data-template-dir="doc"/>                                    
+                                </wrap>
+                            </td>
+                        </tr>
                         <wrap data-template="helpers:invisibleEach" data-template-from="Works" data-template-to="work">
                             <wrap data-template="obras:AnalyticObras" data-template-ref="work">
                                 <tr>
@@ -50,11 +68,10 @@
                                     </td>                     
                                     <td>
                                         <a class="Obras-Pub-First" data-template="obras:PrintRef"  data-template-ref="PubRef" data-template-dir="pub"/>
-                                  <!--
+                                  
                                         <wrap data-template="helpers:invisibleEach" data-template-from="refs" data-template-to="ref">
                                             <a class="Obras-Ref-FIrst" data-template="obras:PrintRef"  data-template-ref="ref" data-template-dir="doc"/>
-                                        </wrap>
-                                        -->
+                                        </wrap>                                        
                                     </td>
                                 </tr>
                                 <wrap data-template="helpers:invisibleEach" data-template-from="subworks" data-template-to="Sub">
@@ -63,12 +80,11 @@
                                             <td class="Obras-Sub">
                                                 <i data-template="helpers:getValue" data-template-get="title" />
                                             </td>
-                                            <td>
-                                                <!--
+                                            <td>                                     
+                                                <a class="Obras-Ref-FIrst" data-template="obras:PrintSubRef"  data-template-ref="XMLID" data-template-dir="pub"/>
                                                 <wrap data-template="helpers:invisibleEach" data-template-from="refs" data-template-to="ref">
-                                                    <a class="Obras-Ref-FIrst" data-template="obras:PrintRef"  data-template-ref="ref"/>
-                                                </wrap>
-                                                -->
+                                                    <a class="Obras-Ref-FIrst" data-template="obras:PrintRef"  data-template-ref="ref" data-template-dir="doc"/>
+                                                </wrap>                                               
                                             </td>
                                         </tr>
                                         <wrap data-template="helpers:invisibleEach" data-template-from="subworks" data-template-to="Third">
@@ -77,12 +93,10 @@
                                                     <td class="Obras-Third">
                                                         <i data-template="helpers:getValue" data-template-get="title" />
                                                     </td>
-                                                    <td>
-                                                        <!--
-                                                        <wrap data-template="helpers:invisibleEach" data-template-from="refs" data-template-to="ref">
+                                                    <td>                                                       
+                                                        <wrap data-template="helpers:invisibleEach" data-template-from="refs" data-template-to="ref" data-template-dir="doc">
                                                             <a class="Obras-Ref-FIrst" data-template="obras:PrintRef"  data-template-ref="ref"/>
-                                                        </wrap>
-                                                        -->
+                                                        </wrap>                                                       
                                                     </td>
                                                 </tr>
                                             </wrap>

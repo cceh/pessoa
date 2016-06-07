@@ -17,8 +17,9 @@ declare function obras:test($node as node(), $model as map(*),$id as xs:string) 
 
 
 (: Multifunktional :)
-declare function obras:buildSearch($xmlid as xs:string, $type as xs:string) as node()* {
-        let $db := if($type = "doc") then collection( "/db/apps/pessoa/data/doc")
+declare function obras:buildSearch($xmlid as xs:string?, $type as xs:string) as node()* {
+     if($xmlid != "") then (
+     let $db := if($type = "doc") then collection( "/db/apps/pessoa/data/doc")
                            else collection( "/db/apps/pessoa/data/pub")
         let $key := if($type ="doc")  then "person" else if($type = "pub-div") then "work-index-div"  else "work-index"
         let $search_terms := if($type ="doc") then  
@@ -28,25 +29,48 @@ declare function obras:buildSearch($xmlid as xs:string, $type as xs:string) as n
         let $search_funk := concat("//range:field-eq(",$search_terms,")")
         let $search_build := concat("$db",$search_funk)
         return util:eval($search_build)
+        )
+        else ()
 };
 
 
 declare function obras:PrintRef($node as node(), $model as map(*), $ref as xs:string, $dir as xs:string) {
-    let $refer := substring-before(root($model($ref))/util:document-name(.),".xml") 
-         let $title := $model($ref)
+   if($model($ref) != "") then (
+   let $refer := substring-before(root($model($ref))/util:document-name(.),".xml") 
+         let $title := doc(concat("/db/apps/pessoa/data/",$dir,"/",$refer,".xml"))//tei:TEI/tei:teiHeader[1]/tei:fileDesc[1]/tei:titleStmt[1]/tei:title[1]/data(.)
     return <a href="{$helpers:app-root}/{$helpers:web-language}/{$dir}/{$refer}">    
         {helpers:copy-all-class($node)}
         {templates:process($node/node(), $model)}
         {$title}</a>
+        )
+        else ()
 };
 
-declare function obras:PrintPub($node as node(), $model as map(*), $ref as xs:string) {
-    let $refer := substring-before(root($model($ref))/util:document-name(.),".xml") 
-     let $title := $model($ref)/tei:TEI/tei:teiHeader[1]/tei:fileDesc[1]/tei:titleStmt[1]/title[1]/data(.)
-    return <a href="{$helpers:app-root}/{$helpers:web-language}/doc/{$refer}">    
-        {helpers:copy-all-class($node)}
-        {templates:process($node/node(), $model)}
-        {$refer}</a>
+declare function obras:PrintSubRef($node as node(), $model as map(*), $ref as xs:string, $dir as xs:string) {
+ if($model($ref) != "") then (
+        if(exists(obras:buildSearch($model($ref),"pub"))) then (
+            let $refer :=  substring-before(root(obras:buildSearch($model($ref),"pub"))/util:document-name(.),".xml") 
+            let $doc := doc(concat("/db/apps/pessoa/data/",$dir,"/",$refer,".xml"))
+             let $title := $doc//tei:TEI/tei:teiHeader[1]/tei:fileDesc[1]/tei:titleStmt[1]/tei:title[1]/data(.)
+            return <a href="{$helpers:app-root}/{$helpers:web-language}/{$dir}/{$refer}#{$model($ref)}">    
+                {helpers:copy-all-class($node)}
+                {templates:process($node/node(), $model)}
+                {$title}</a>
+                )
+                else ()
+        )
+        else ()
+};
+
+
+declare function obras:mentionedAs($node as node(), $model as map(*), $ref as xs:string, $dir as xs:string) {
+        let $refer :=  substring-before(root($model($ref))/util:document-name(.),".xml") 
+        let $doc := doc(concat("/db/apps/pessoa/data/",$dir,"/",$refer,".xml"))
+        let $workn := $doc//tei:rs[@type="work" and @key=$model("xmlid")]/@style/data(.)
+        let $list :=  $model("listEntry")
+         let $mentioned := $list/tei:title[@subtype=$workn]/data(.)
+        return if(exists($mentioned)) then <span class="Obras-DocList-Mention"> ({page:singleElement_xquery("roles","mentioned-as")}: <i>{$mentioned})</i></span> 
+                                else ()
 };
 (: Unikate :)
 
@@ -62,6 +86,7 @@ declare function obras:SearchObras($node as node(), $model as map(*),$id as xs:s
         "MainTitle" := $list/tei:title[1]/data(.),
         "AltTitle" := string-join($AltTitle,", "),
         "FirstRef" := obras:buildSearch($xmlid,"doc"),
+        "listEntry" := $list,
         "Works" := $list/tei:list/tei:item,
         "xmlid" := $xmlid        
     }     
