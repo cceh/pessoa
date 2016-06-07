@@ -19,7 +19,7 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 declare function doc:get-title($node as node(), $model as map(*), $id as xs:string) as node()+{
     let $xml := doc:get-xml($id)
-    let $title := <h2>{$xml//tei:title/data(.)}</h2>
+    let $title := <h2>{substring-before($xml//tei:title/data(.),"/E3"),substring-after($xml//tei:title/data(.),"/E3")}</h2>
     let $date := <p id="titledate">{$xml//tei:origDate/data(.)}</p>
     return <div>{$title} {$date}</div>
 };
