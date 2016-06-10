@@ -10,7 +10,7 @@
             <p>Publication Information</p>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 144U-47v</idno>
@@ -31,11 +31,10 @@
                         <name>Isabel Figueiredo-Iken</name>
                      </respStmt>
                      <note type="genre">
-                        <rs type="genre" key="lista_editorial">Lista
-                           editorial</rs><rs type="genre" key="plano_editorial">Plano
-                              editorial</rs>
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs><rs type="genre"
+                           key="plano_editorial">Plano editorial</rs>
                      </note>
-                     <textLang mainLang="pt" otherLangs="en" />
+                     <textLang mainLang="pt" otherLangs="en"/>
                   </msItemStruct>
                </msContents>
                <history>
@@ -47,6 +46,12 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita no caderno 144U (cf. <ref target="http://purl.pt/13896"
+                     >http://purl.pt/13896</ref>), publicada em <hi rend="italic">Sensacionismo e
+                     outros Ismos</hi> (2009, 568). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -55,20 +60,30 @@
    </facsimile>
    <text xml:id="bnp-e3-144u-47v">
       <body>
-         <head><hi rend="underline">Episodios.</hi></head>  
-            
-         
-         <list> 
+         <head><hi rend="underline">Episodios.</hi></head>
+
+
+         <list>
             <item><rs type="title">A Mumia. </rs>— 5 poemas.</item>
-            <item><rs type="title">Ficções de Interludio</rs> — 5 poemas.</item>        
-            <item><rs type="title">As sete salas<metamark rend="line"  function="placeholder"><add resp="PS"> [do palacio abandonado]</add></metamark></rs> — (7) (9) (8) poemas.	  <note place="margin right"> 10</note></item>
-            <item><rs type="title">Chuva Obliqua</rs> — 6 poemas.	    <note place="margin right">  8</note> </item>
-            <item><rs type="title">A Casa Branca Nau Preta.</rs>	     <note place="margin right"> 3 </note>  </item>
-            <item><rs type="title">Passos da Cruz</rs> — 14 sonetos.	      <note place="margin right"> 14 </note> </item>
-            <item><note place="margin left"> 1. </note><rs type="title"> Tedio em Festa</rs>— (Paues + 2 others). </item>
-            <item><rs type="title">Além-Deus</rs> — 5 poemas.	<note place="margin right">  5. </note>  </item>
+            <item><rs type="title">Ficções de Interludio</rs> — 5 poemas.</item>
+            <item><rs type="title">As sete salas<metamark rend="line" function="placeholder"><add
+                        resp="PS"> [do palacio abandonado]</add></metamark></rs> — (7) (9) (8)
+               poemas. <note place="margin right"> 10</note></item>
+            <item><rs type="title">Chuva Obliqua</rs> — 6 poemas. <note place="margin right">
+                  8</note>
+            </item>
+            <item><rs type="title">A Casa Branca Nau Preta.</rs>
+               <note place="margin right"> 3 </note>
+            </item>
+            <item><rs type="title">Passos da Cruz</rs> — 14 sonetos. <note place="margin right"> 14
+               </note>
+            </item>
+            <item><note place="margin left"> 1. </note><rs type="title"> Tedio em Festa</rs>— (Paues
+               + 2 others). </item>
+            <item><rs type="title">Além-Deus</rs> — 5 poemas. <note place="margin right"> 5. </note>
+            </item>
             <item><rs type="title">Nyria.</rs></item>
-         </list> 
+         </list>
          <div/>
       </body>
    </text>

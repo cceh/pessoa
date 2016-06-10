@@ -27,7 +27,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -36,7 +37,7 @@
             <idno type="filename">BNP_E3_55L-5v.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 55L-5v</idno>
@@ -60,6 +61,11 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita, reproduzida como fac-símile em Castro, <hi rend="italic">Oscar
+                     Wilde and the art of Lying</hi> (2006). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -70,55 +76,51 @@
    </facsimile>
    <text>
       <body>
-        <div>
-          <list>
-            <item>
-               <label>1.</label>
-               <rs type="text">“A Decadencia da Mentira”</rs> – 
-               <rs type="person" key="P32">Oscar Wilde</rs>.
-            </item>
-            <item>
-               <label>2.</label>
-               <rs type="text">“Os Principaes Poemas de <rs type="person" key="P87">Edgar Poe.”</rs></rs>
-            </item>
-            <item>
-               <label>3.</label>
-               <rs type="text">“De 'A Renascença' de 
-                  <rs type="person" key="P164">Walter Pater</rs>.”</rs> Trechos selectos.
-            </item>
-            <item>
-               <note place="margin-left">(?)</note>
-               <label>4.</label>
-               <rs type="text">Selecta de <rs type="person" key="P217">Dryden</rs></rs>.
-            </item>
-            <item>
-               <label>5.</label>
-               <rs type="text">Alguns Poemas</rs> de <rs type="person" key="P185">Matthew Arnold</rs>.
-            </item>
-            <item>
-               <label>6.</label>
-               <rs type="text">Os Poemas de <rs type="person" key="P24">José Anastacio da Cunha</rs></rs>.
-            </item>
-            <item>
-               <label>7.</label>
-               <rs type="text">Selecta ou “Phenix Renascida.”</rs>
-            </item>
-            <item>
-               <label>8.</label>
-               <rs type="text">Da Anthologia Grega</rs> – 
-               (<rs type="person" key="RR" role="author">Ricardo Reis</rs>)
-            </item>
-            <item>
-               <label>9.</label>
-               <rs type="person" key="P162">Wordsworth</rs>.
-            </item>
-            <item>
-               <label>10.</label>
-               <supplied resp="PS" reason="omitted-in-original"/>
-            </item>
-          </list>
-           <gap reason="selection" unit="line" extent="7"/>
-        </div>
+         <div>
+            <list>
+               <item>
+                  <label>1.</label>
+                  <rs type="text">“A Decadencia da Mentira”</rs> – <rs type="person" key="P32">Oscar
+                     Wilde</rs>. </item>
+               <item>
+                  <label>2.</label>
+                  <rs type="text">“Os Principaes Poemas de <rs type="person" key="P87">Edgar
+                        Poe.”</rs></rs>
+               </item>
+               <item>
+                  <label>3.</label>
+                  <rs type="text">“De 'A Renascença' de <rs type="person" key="P164">Walter
+                        Pater</rs>.”</rs> Trechos selectos. </item>
+               <item>
+                  <note place="margin-left">(?)</note>
+                  <label>4.</label>
+                  <rs type="text">Selecta de <rs type="person" key="P217">Dryden</rs></rs>. </item>
+               <item>
+                  <label>5.</label>
+                  <rs type="text">Alguns Poemas</rs> de <rs type="person" key="P185">Matthew
+                     Arnold</rs>. </item>
+               <item>
+                  <label>6.</label>
+                  <rs type="text">Os Poemas de <rs type="person" key="P24">José Anastacio da
+                        Cunha</rs></rs>. </item>
+               <item>
+                  <label>7.</label>
+                  <rs type="text">Selecta ou “Phenix Renascida.”</rs>
+               </item>
+               <item>
+                  <label>8.</label>
+                  <rs type="text">Da Anthologia Grega</rs> – (<rs type="person" key="RR"
+                     role="author">Ricardo Reis</rs>) </item>
+               <item>
+                  <label>9.</label>
+                  <rs type="person" key="P162">Wordsworth</rs>. </item>
+               <item>
+                  <label>10.</label>
+                  <supplied resp="PS" reason="omitted-in-original"/>
+               </item>
+            </list>
+            <gap reason="selection" unit="line" extent="7"/>
+         </div>
       </body>
    </text>
 </TEI>

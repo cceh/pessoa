@@ -27,7 +27,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -36,7 +37,7 @@
             <idno type="filename">BNP_E3_31-95r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 31-95r</idno>
@@ -61,16 +62,22 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista datilografada no verso de papel timbrado «A. Xavier Pinto & C.a | Campo das
+                  Cebolas, 43-1.º». </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-31-1-96_JPG_24-C-R0150/bn-acpc-e-e3-31-1-96_0191_95_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-31-1-96_JPG_24-C-R0150/bn-acpc-e-e3-31-1-96_0191_95_t24-C-R0150.jpg"/>
    </facsimile>
    <text>
       <body>
          <div>
-            <list>   
+            <list>
                <item>
                   <label>1.</label>
                   <hi rend="underline"><rs type="text">Three Unprintable Poems</rs>.</hi>
@@ -78,54 +85,47 @@
                <item>
                   <label>2.</label>
                   <hi rend="underline"><rs type="text">Eighty Sonnets</rs>.</hi>
-               </item>        
-               <item>
-                  <label>3.</label>
-                  <hi rend="underline"><rs type="text">Prometheus Revinctus</rs></hi>,
-                  and Other Poems.
-                  (<list rend="inline">
-                     <item>
-                        <label>1.</label>
-                        <rs type="text">Prometheus Revinctus</rs>;
-                     </item>
-                     <item>
-                        <label>2.</label>
-                        <rs type="text">Spring</rs>,<lb/> 1917;
-                     </item>
-                     <item>
-                        <label>3.</label>
-                        Poems like <rs type="text">“What evil <lb/> planet”</rs>, and the like, sober 
-                        and <lb/> in equilibrium.
-                     </item>
-                  </list>)
                </item>
                <item>
+                  <label>3.</label>
+                  <hi rend="underline"><rs type="text">Prometheus Revinctus</rs></hi>, and Other
+                  Poems. (<list rend="inline">
+                     <item>
+                        <label>1.</label>
+                        <rs type="text">Prometheus Revinctus</rs>; </item>
+                     <item>
+                        <label>2.</label>
+                        <rs type="text">Spring</rs>,<lb/> 1917; </item>
+                     <item>
+                        <label>3.</label> Poems like <rs type="text">“What evil <lb/> planet”</rs>,
+                        and the like, sober and <lb/> in equilibrium. </item>
+                  </list>) </item>
+               <item>
                   <label>4.</label>
-                  <rs type="text">The Mad Fiddler</rs> — Poems before Sense.
-                  <p>(Containing all the poems that are <lb/> 
-                  good enough to be publish and <lb/> that are neither 
-                  sonnets nor so <lb/> stable or intellectually lyrical <lb/>  
-                  as to be included in the third <lb/> part of the book numbered 3).</p>
+                  <rs type="text">The Mad Fiddler</rs> — Poems before Sense. <p>(Containing all the
+                     poems that are <lb/> good enough to be publish and <lb/> that are neither
+                     sonnets nor so <lb/> stable or intellectually lyrical <lb/> as to be included
+                     in the third <lb/> part of the book numbered 3).</p>
                </item>
                <item>
                   <label>5.</label>
-                  <p>What book is to include poems like <rs type="text">“The <lb/>
-                     Voyage”</rs>, <rs type="text">“A Symphony of the South”</rs>,<lb/>
-                     <rs type="text">“An Elegy”</rs> and such like? (Leave <lb/> 
-                     this to be settled afterwards, if <lb/> such poems are indeed 
-                     worth pub<pc>-</pc><lb/>lishing. Consider also <rs type="text">“A Winter <lb/>
-                     Day”</rs> and the other poem — whichever <lb/> it is — which is the     
-                     fifth <lb/> one, in the old division of the long <lb/> 
-                     poems into two books of five, in the <lb/> second of those books).</p>
+                  <p>What book is to include poems like <rs type="text">“The <lb/> Voyage”</rs>, <rs
+                        type="text">“A Symphony of the South”</rs>,<lb/>
+                     <rs type="text">“An Elegy”</rs> and such like? (Leave <lb/> this to be settled
+                     afterwards, if <lb/> such poems are indeed worth pub<pc>-</pc><lb/>lishing.
+                     Consider also <rs type="text">“A Winter <lb/> Day”</rs> and the other poem —
+                     whichever <lb/> it is — which is the fifth <lb/> one, in the old division of
+                     the long <lb/> poems into two books of five, in the <lb/> second of those
+                     books).</p>
                </item>
                <item>
                   <label>6.</label>
-                  <hi rend="underline"><rs type="text">The <rs type="person" key="P68">Duke of Parma</rs></rs></hi>, A Tragedy.
-               </item>
+                  <hi rend="underline"><rs type="text">The <rs type="person" key="P68">Duke of
+                           Parma</rs></rs></hi>, A Tragedy. </item>
             </list>
-            <p>(These six books sum up all English poems which <lb/>
-               it is intended to publish for the pres<pc>-</pc><lb/>sent).</p>
-        </div>
+            <p>(These six books sum up all English poems which <lb/> it is intended to publish for
+               the pres<pc>-</pc><lb/>sent).</p>
+         </div>
       </body>
    </text>
 </TEI>

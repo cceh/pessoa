@@ -26,7 +26,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -35,7 +36,7 @@
             <idno type="filename">BNP_E3_87A-5r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 87A-5r</idno>
@@ -59,115 +60,112 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita, publicada em <hi rend="italic">Sensacionismo e outros
+                     Ismos</hi> (2009, 83). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-87a-1-22_JPG_24-C-R0150/bn-acpc-e-e3-87a-1-22_0011_5_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-87a-1-22_JPG_24-C-R0150/bn-acpc-e-e3-87a-1-22_0011_5_t24-C-R0150.jpg"/>
    </facsimile>
    <text>
       <body>
          <div>
-            <head><hi rend="underline"><rs type="journal" key="J12">Orpheu</rs></hi></head>  
-            <head><hi rend="underline">Orgão do Movimento Sensacionista</hi></head> 
-            <list> 
+            <head><hi rend="underline"><rs type="journal" key="J12">Orpheu</rs></hi></head>
+            <head><hi rend="underline">Orgão do Movimento Sensacionista</hi></head>
+            <list>
                <item>
-                  <label>1.</label> <rs type="text">O Sensacionismo</rs> — 
-                  <rs type="person" key="FP" role="author" style="b"><choice>
-                     <abbr>F<am>.</am></abbr>
-                     <expan>F<ex>ernando</ex></expan>
-                  </choice> Pessôa</rs>.
-               </item>
+                  <label>1.</label>
+                  <rs type="text">O Sensacionismo</rs> — <rs type="person" key="FP" role="author"
+                     style="b"><choice>
+                        <abbr>F<am>.</am></abbr>
+                        <expan>F<ex>ernando</ex></expan>
+                     </choice> Pessôa</rs>. </item>
                <item>
                   <label>2.</label>
-                  <del rend="overstrike" n="2">Nota sobre</del> “<rs type="journal" key="J12">Orpheu</rs>” — nota da redacção — assinada 
-                  <lb/> pelo <hi rend="underline">Comité Redactorial</hi>.
-               </item>        
+                  <del rend="overstrike" n="2">Nota sobre</del> “<rs type="journal" key="J12"
+                     >Orpheu</rs>” — nota da redacção — assinada <lb/> pelo <hi rend="underline"
+                     >Comité Redactorial</hi>. </item>
                <item xml:id="I1">
-                  <metamark place="left" rend="cross" function="doubt" target="#I1"/>(<label>3.</label> <rs type="text">Esthetica da Quarta Dimensão</rs>. 
-                     — <supplied resp="PS" reason="omitted-in-original"/>)
-               </item>
+                  <metamark place="left" rend="cross" function="doubt" target="#I1"
+                     />(<label>3.</label>
+                  <rs type="text">Esthetica da Quarta Dimensão</rs>. — <supplied resp="PS"
+                     reason="omitted-in-original"/>) </item>
                <item>
-                  <label>4.</label> <rs type="text">Poema (ou Poemas) de 
-                  <rs type="person" key="P30"><choice>
-                     <abbr>M</abbr>
-                     <expan>M<ex>ario</ex></expan>
-                  </choice> de Sá-Carneiro</rs></rs>.
-               </item>
+                  <label>4.</label>
+                  <rs type="text">Poema (ou Poemas) de <rs type="person" key="P30"><choice>
+                           <abbr>M</abbr>
+                           <expan>M<ex>ario</ex></expan>
+                        </choice> de Sá-Carneiro</rs></rs>. </item>
                <item>
-                  <label>5.</label> <rs type="text">Scena do Odio</rs> — 
-                  <rs type="person" key="P56"><choice>
-                     <abbr>J<am>.</am></abbr>
-                     <expan>J<ex>osé</ex></expan>
-                  </choice> 
-                  <choice>
-                     <abbr>Alm</abbr>
-                     <expan>Alm<ex>ada</ex></expan>
-                  </choice>-Negreiros</rs>.
-               </item>
-               <item><label>6.</label> <rs type="text">Duas caricaturas — Ruinas e Xadrez</rs>.</item>
+                  <label>5.</label>
+                  <rs type="text">Scena do Odio</rs> — <rs type="person" key="P56"><choice>
+                        <abbr>J<am>.</am></abbr>
+                        <expan>J<ex>osé</ex></expan>
+                     </choice>
+                     <choice>
+                        <abbr>Alm</abbr>
+                        <expan>Alm<ex>ada</ex></expan>
+                     </choice>-Negreiros</rs>. </item>
+               <item><label>6.</label>
+                  <rs type="text">Duas caricaturas — Ruinas e Xadrez</rs>.</item>
                <item>
-                  <label>7.</label> <rs type="text">Antinoüs</rs> — 
-                  <rs type="person" key="FP" role="author" style="b"><choice>
-                     <abbr>F</abbr>
-                     <expan>F<ex>ernando</ex></expan>
-                  </choice> Pessoa</rs>.
-               </item>
+                  <label>7.</label>
+                  <rs type="text">Antinoüs</rs> — <rs type="person" key="FP" role="author" style="b"><choice>
+                        <abbr>F</abbr>
+                        <expan>F<ex>ernando</ex></expan>
+                     </choice> Pessoa</rs>. </item>
                <item>
-                  <label>8.</label> 
-                  <rs type="text">Nota de obras sensacionistas</rs> — onde <lb/> sahiram, etc. — (Bibliographia do <lb/>
-                  movimento sensacionista). 
-                  (artigos de jornaes?)
-               </item>
+                  <label>8.</label>
+                  <rs type="text">Nota de obras sensacionistas</rs> — onde <lb/> sahiram, etc. —
+                  (Bibliographia do <lb/> movimento sensacionista). (artigos de jornaes?) </item>
                <item>
                   <note place="left">=</note>
                   <label>9.</label> (1o Manifesto — <rs type="text">Ultimatum</rs>)</item>
-               <item><label>10.</label> <rs type="text">Dê cá que eu apanho</rs> (sueltos)</item>
-       
+               <item><label>10.</label>
+                  <rs type="text">Dê cá que eu apanho</rs> (sueltos)</item>
+
             </list>
             <metamark rend="line" function="distinct"/>
-            <list> 
+            <list>
                <item>
                   <choice>
                      <abbr>pag<am>.</am></abbr>
                      <expan>pag<ex>ina</ex></expan>
-                  </choice> 1 = 1, 4,5 (c)
-               </item>
+                  </choice> 1 = 1, 4,5 (c) </item>
                <item>
                   <supplied resp="UH">
                      <choice>
                         <abbr>pag<am>.</am></abbr>
                         <expan>pag<ex>ina</ex></expan>
                      </choice>
-                  </supplied>
-                  2 = 5(f), 2, 10, <seg xml:id="A1">6<metamark rend="cross" place="below" function="doubt" target="#A1" /></seg>.
-               </item>        
+                  </supplied> 2 = 5(f), 2, 10, <seg xml:id="A1">6<metamark rend="cross"
+                        place="below" function="doubt" target="#A1"/></seg>. </item>
                <item>
                   <supplied resp="UH">
                      <choice>
                         <abbr>pag<am>.</am></abbr>
                         <expan>pag<ex>ina</ex></expan>
                      </choice>
-                  </supplied> 3 = 9
-               </item>
+                  </supplied> 3 = 9 </item>
                <item>
                   <supplied resp="UH">
                      <choice>
                         <abbr>pag<am>.</am></abbr>
                         <expan>pag<ex>ina</ex></expan>
                      </choice>
-                  </supplied>
-                  4 = 7
-               </item>
+                  </supplied> 4 = 7 </item>
                <item>
                   <supplied resp="UH">
                      <choice>
                         <abbr>pag<am>.</am></abbr>
                         <expan>pag<ex>ina</ex></expan>
                      </choice>
-                  </supplied>
-                  5 = 8
-               </item>
+                  </supplied> 5 = 8 </item>
             </list>
          </div>
       </body>

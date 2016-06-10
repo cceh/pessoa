@@ -26,7 +26,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -35,7 +36,7 @@
             <idno type="filename">BNP_E3_55J-44v.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 55J-44v</idno>
@@ -49,7 +50,7 @@
                         <rs type="genre" key="lista_editorial">Lista editorial</rs>
                         <rs type="genre" key="plano_editorial">Plano editorial</rs>
                      </note>
-                     <textLang mainLang="pt" />
+                     <textLang mainLang="pt"/>
                   </msItemStruct>
                </msContents>
                <history>
@@ -60,11 +61,18 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita, publicada em <hi rend="italic">Sensacionismo e outros
+                     Ismos</hi> (2009, 85). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-55j-1-100_JPG_24-C-R0150/bn-acpc-e-e3-55j-1-100_0088_44v_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-55j-1-100_JPG_24-C-R0150/bn-acpc-e-e3-55j-1-100_0088_44v_t24-C-R0150.jpg"
+      />
    </facsimile>
    <text>
       <body>
@@ -74,7 +82,7 @@
             <note place="left">(?)</note>
             <note>(distribuir o <lb/> indice do 1 e 2 <lb/> e errata).</note>
             <metamark rend="line" function="distinct"/>
-            <list> 
+            <list>
                <item>
                   <label>1.</label>
                   <rs type="person" key="FP" role="author" style="b">
@@ -85,34 +93,32 @@
                      <choice>
                         <abbr>P</abbr>
                         <expan>P<ex>essoa</ex></expan>
-                     </choice></rs>: “<rs type="journal" key="J23">Orpheu</rs>” <lb/> poema.
-               </item>
+                     </choice></rs>: “<rs type="journal" key="J23">Orpheu</rs>” <lb/> poema. </item>
                <item>
                   <label>2.</label>
-                  <rs type="person" key="P86">Castello de <lb/> Moraes</rs>: alguns <lb/> contos.
-               </item>        
+                  <rs type="person" key="P86">Castello de <lb/> Moraes</rs>: alguns <lb/> contos. </item>
                <item>
                   <label>3.</label>
                   <note place="left">?</note> (<rs type="person" key="P56">
-                                                <choice>
-                                                   <abbr>J</abbr>
-                                                   <expan>J<ex>osé</ex></expan>
-                                                </choice> <choice>
-                                                            <abbr>A</abbr>
-                                                            <expan>A<ex>lmada</ex></expan>
-                                                          </choice> <choice>
-                                                                      <abbr>N</abbr>
-                                                                      <expan>N<ex>egreiros</ex></expan>
-                                                                    </choice></rs>: <rs type="text">Scena do<lb/>Odio</rs>.)
-               </item>
+                     <choice>
+                        <abbr>J</abbr>
+                        <expan>J<ex>osé</ex></expan>
+                     </choice>
+                     <choice>
+                        <abbr>A</abbr>
+                        <expan>A<ex>lmada</ex></expan>
+                     </choice>
+                     <choice>
+                        <abbr>N</abbr>
+                        <expan>N<ex>egreiros</ex></expan>
+                     </choice></rs>: <rs type="text">Scena do<lb/>Odio</rs>.) </item>
                <item>
                   <label>4.</label>
-                  <rs type="person" key="P30">Mario de Sá<lb/> Carneiro</rs>.
-               </item>
+                  <rs type="person" key="P30">Mario de Sá<lb/> Carneiro</rs>. </item>
             </list>
             <metamark rend="line" function="distinct"/>
             <gap reason="selection" unit="line" extent="2"/>
-            <list>   
+            <list>
                <item>
                   <label>1.</label>
                   <rs type="person" key="P30">
@@ -120,17 +126,15 @@
                         <abbr>M</abbr>
                         <expan>M<ex>ario</ex></expan>
                      </choice> de <choice>
-                                    <abbr>S</abbr>
-                                    <expan>S<ex>á</ex></expan>
-                                 </choice>-<choice>
-                                             <abbr>C</abbr>
-                                             <expan>C<ex>arneiro</ex></expan>
-                                            </choice></rs>: <rs type="text">Poemas de <lb/>Paris</rs>.
-               </item>
+                        <abbr>S</abbr>
+                        <expan>S<ex>á</ex></expan>
+                     </choice>-<choice>
+                        <abbr>C</abbr>
+                        <expan>C<ex>arneiro</ex></expan>
+                     </choice></rs>: <rs type="text">Poemas de <lb/>Paris</rs>. </item>
                <item>
                   <label>2.</label>
-                  <rs type="person" key="P86">Castello de Moraes</rs>: <lb/> 2 ou 3 contos
-               </item>
+                  <rs type="person" key="P86">Castello de Moraes</rs>: <lb/> 2 ou 3 contos </item>
                <item>
                   <label>3.</label>
                   <rs type="person" key="P56">
@@ -138,25 +142,23 @@
                         <abbr>J</abbr>
                         <expan>J<ex>ose</ex></expan>
                      </choice><choice>
-                                 <abbr>A</abbr>
-                                 <expan>A<ex>lmada</ex></expan>
-                              </choice><choice>
-                                          <abbr>N</abbr>
-                                          <expan>N<ex>egreiros</ex></expan>
-                                       </choice></rs>: <rs type="text">Scena do<lb/> Odio</rs>.
-               </item>
+                        <abbr>A</abbr>
+                        <expan>A<ex>lmada</ex></expan>
+                     </choice><choice>
+                        <abbr>N</abbr>
+                        <expan>N<ex>egreiros</ex></expan>
+                     </choice></rs>: <rs type="text">Scena do<lb/> Odio</rs>. </item>
                <item>
-                  <label>4.</label>
-                  “<rs type="text">Livro do Outro <lb/> Amor</rs>” (<choice>
-                                                  <abbr>ass</abbr>
-                                                  <expan>ass<ex>inado</ex></expan>
-                                               </choice>)
-               </item>
+                  <label>4.</label> “<rs type="text">Livro do Outro <lb/> Amor</rs>” (<choice>
+                     <abbr>ass</abbr>
+                     <expan>ass<ex>inado</ex></expan>
+                  </choice>) </item>
                <item>
-                  <label>5.</label> <supplied resp="PS" reason="omitted-in-original"/>
+                  <label>5.</label>
+                  <supplied resp="PS" reason="omitted-in-original"/>
                </item>
             </list>
-            <gap reason="selection" unit="line" extent="4"/>  
+            <gap reason="selection" unit="line" extent="4"/>
          </div>
       </body>
    </text>

@@ -24,7 +24,7 @@
                 <idno type="filename">BNP_E3_144Y-51V.xml</idno>
             </publicationStmt>
             <sourceDesc>
-                <msDesc>
+                <msDesc xml:id="M1" type="structured">
                     <msIdentifier>
                         <institution>Biblioteca Nacional de Portugal</institution>
                         <idno>BNP/E3 144Y-51V</idno>
@@ -48,6 +48,11 @@
                         </origin>
                     </history>
                 </msDesc>
+                <msDesc corresp="#M1" type="prose">
+                    <msIdentifier/>
+                    <p> Lista manuscrita no caderno 144Y (cf. <ref target="http://purl.pt/13899"
+                            >http://purl.pt/13899</ref>). </p>
+                </msDesc>
             </sourceDesc>
         </fileDesc>
     </teiHeader>
@@ -61,25 +66,28 @@
                     <head>Books to figure in a “Library” or “Collection”.</head>
                     <metamark rend="line" function="distinct"/>
                     <item>
-                        <rs type="person">Mario de Sá-Carneiro</rs>: <rs type="text">Obras</rs>. 4 <choice><abbr>vols<am>.</am></abbr><expan>vol<ex>ume</ex>s</expan></choice>
+                        <rs type="person">Mario de Sá-Carneiro</rs>: <rs type="text">Obras</rs>. 4 <choice>
+                            <abbr>vols<am>.</am></abbr>
+                            <expan>vol<ex>ume</ex>s</expan>
+                        </choice>
                     </item>
                     <item>
-                        <rs type="person">José de Almada-Negreiros</rs>: (see what).
-                    </item>
+                        <rs type="person">José de Almada-Negreiros</rs>: (see what). </item>
                     <item>
-                        <rs type="person" key="FP" role="author">Fernando Pessoa</rs>: <rs type="text">Theatro Statico</rs>. (1.a serie)
-                    </item>
+                        <rs type="person" key="FP" role="author">Fernando Pessoa</rs>: <rs
+                            type="text">Theatro Statico</rs>. (1.a serie) </item>
                     <item>
                         <rs type="work" key="O1"><choice>
-                            <abbr>
-                                <metamark rend="line" function="ditto"/>
-                            </abbr>
-                            <expan><rs type="person" key="FP" role="author">Fernando Pessoa</rs></expan>
-                        </choice>: <rs type="text">Itinerario</rs>.</rs>
+                                <abbr>
+                                    <metamark rend="line" function="ditto"/>
+                                </abbr>
+                                <expan><rs type="person" key="FP" role="author">Fernando
+                                    Pessoa</rs></expan>
+                            </choice>: <rs type="text">Itinerario</rs>.</rs>
                     </item>
                     <item>
-                        <rs type="work" key="O4"><rs type="person" key="AdC" role="author">Alvaro de Campos</rs>: <rs type="text">Arco de Triumpho</rs></rs>.
-                    </item>
+                        <rs type="work" key="O4"><rs type="person" key="AdC" role="author">Alvaro de
+                                Campos</rs>: <rs type="text">Arco de Triumpho</rs></rs>. </item>
                 </list>
             </div>
         </body>

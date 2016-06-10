@@ -24,7 +24,7 @@
                 <idno type="filename">BNP_E3_48B-64r.xml</idno>
             </publicationStmt>
             <sourceDesc>
-                <msDesc>
+                <msDesc xml:id="M1" type="structured">
                     <msIdentifier>
                         <institution>Biblioteca Nacional de Portugal</institution>
                         <idno>BNP/E3 48B-64r</idno>
@@ -48,6 +48,11 @@
                         </origin>
                     </history>
                 </msDesc>
+                <msDesc corresp="#M1" type="prose">
+                    <msIdentifier/>
+                    <p> Lista datilografada, publicada em <hi rend="italic">Livro do
+                            Desassossego</hi> (1990, I, 53). </p>
+                </msDesc>
             </sourceDesc>
         </fileDesc>
     </teiHeader>
@@ -65,7 +70,8 @@
                     <item><rs type="text">The Mad Fiddler – Poems</rs>.</item>
                     <item><rs type="text">Five Poems – or Threes Unprintable Poems</rs>.</item>
                     <item><rs type="text">Prometheus Revinctus</rs>.</item>
-                    <item><rs type="text">Fifty Sonnets or Seventy-One Sonnets</rs>.<lb/>(perhaps also another book)</item>
+                    <item><rs type="text">Fifty Sonnets or Seventy-One Sonnets</rs>.<lb/>(perhaps
+                        also another book)</item>
                 </list>
                 <metamark rend="line" function="distinct"/>
                 <list>
@@ -79,7 +85,8 @@
             <div>
                 <head><hi rend="red">Meio-autonymamente:</hi></head>
                 <list>
-                    <item><rs type="work" key="O4"><rs type="person" key="AdC" role="author">Alvaro de Campos</rs>: <rs type="text">Arco de Triumpho</rs></rs>.</item>
+                    <item><rs type="work" key="O4"><rs type="person" key="AdC" role="author">Alvaro
+                                de Campos</rs>: <rs type="text">Arco de Triumpho</rs></rs>.</item>
                 </list>
                 <metamark rend="short line center" function="end"/>
             </div>

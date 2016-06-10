@@ -21,7 +21,7 @@
             <idno type="filename">BNP_E3_sem-cota-MN-210-211.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 semcota MN 210-211</idno>
@@ -46,6 +46,10 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -55,39 +59,46 @@
    </facsimile>
    <text xml:id="bnp-e-sem-cota-mn-210-211">
       <body>
-        
-            <p>
-               Editions of the type of<lb></lb>  “Inés de las Sierras”
-               16 to 32 pages, 50 to 100<lb></lb>  set in variable type. <note rend="square" place="right">	<gap reason="illegible" quantity="1" unit="character"/> 
-                  with a more pages<gap reason="illegible" quantity="2" unit="character"/> .</note>
-            </p>
+
+         <p> Editions of the type of<lb/> “Inés de las Sierras” 16 to 32 pages, 50 to 100<lb/> set
+            in variable type. <note rend="square" place="right">
+               <gap reason="illegible" quantity="1" unit="character"/> with a more pages<gap
+                  reason="illegible" quantity="2" unit="character"/> .</note>
+         </p>
          <metamark rend="line" function="distinct"/>
          <list>
             <item><rs type="title">“Os Lusiadas.” </rs>
             </item>
-            <item><rs type="work"><rs type="person" role="author">Antonio Ferreira</rs>: <rs type="title">“Obras.”</rs></rs></item>        
-            <item><rs type="work"><rs type="person" role="author"><abbr>J<am>.</am></abbr><abbr>B<am>.</am></abbr> Bury</rs>:<rs type="title"> “Historia da Liberdade <lb></lb> do Pensamento”</rs></rs></item>
+            <item><rs type="work"><rs type="person" role="author">Antonio Ferreira</rs>: <rs
+                     type="title">“Obras.”</rs></rs></item>
+            <item><rs type="work"><rs type="person" role="author"
+                           ><abbr>J<am>.</am></abbr><abbr>B<am>.</am></abbr> Bury</rs>:<rs
+                     type="title"> “Historia da Liberdade <lb/> do Pensamento”</rs></rs></item>
             <item>(<abbr>W<am>.</am></abbr><abbr>W<am>.</am></abbr> Jacobs.)</item>
             <item>(Welles).</item>
-            <item><rs type="work"><rs type="person" role="author">Jacintho Freire</rs>:<rs type="title"> “Vida de D. João de <lb></lb> Castro.”</rs></rs></item>
-            <item><rs type="title">Marilia de Dirceu.</rs></item>        
+            <item><rs type="work"><rs type="person" role="author">Jacintho Freire</rs>:<rs
+                     type="title"> “Vida de D. João de <lb/> Castro.”</rs></rs></item>
+            <item><rs type="title">Marilia de Dirceu.</rs></item>
             <item><rs type="title">Phenix Renascida</rs></item>
-            <item><rs type="work"><rs type="person" role="author">Soares dos Passos</rs> — <rs type="title"><choice><abbr>P<am>.</am></abbr><expan>P<ex>oemas</ex></expan></choice> Completos. </rs></rs>(?)</item>
+            <item><rs type="work"><rs type="person" role="author">Soares dos Passos</rs> — <rs
+                     type="title"><choice>
+                        <abbr>P<am>.</am></abbr>
+                        <expan>P<ex>oemas</ex></expan>
+                     </choice> Completos. </rs></rs>(?)</item>
             <item><rs type="title">Quadras populares</rs></item>
             <item><rs type="title">Cancioneiros.</rs></item>
-         </list>                                                                                
-               
-         <p> or the same<lb></lb> type of edition <lb></lb>                      
-            but in brief longitudes<lb></lb>
-            this Shape</p>
-               
-               
-               <metamark rend="quadrat" function="distinct"/>
-               
-               
-         <p> des<gap reason="illegible" quantity="1" unit="character"/>typ</p><metamark rend="arrow" place="to quadrat above"/>
-            
-         
+         </list>
+
+         <p> or the same<lb/> type of edition <lb/> but in brief longitudes<lb/> this Shape</p>
+
+
+         <metamark rend="quadrat" function="distinct"/>
+
+
+         <p> des<gap reason="illegible" quantity="1" unit="character"/>typ</p>
+         <metamark rend="arrow" place="to quadrat above"/>
+
+
          <div/>
       </body>
    </text>

@@ -37,7 +37,7 @@
             <idno type="filename">BNP_E3_171r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 171r</idno>
@@ -61,6 +61,10 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -73,22 +77,18 @@
          <div>
             <list>
                <item>
-                  <label>1.</label> “Acção”.
-               </item>
+                  <label>1.</label> “Acção”. </item>
                <item>
-                  <label>2.</label> My possible next<lb/> voyage here.
-               </item>
+                  <label>2.</label> My possible next<lb/> voyage here. </item>
                <item>
                   <label>3.</label> “Heraldo de Faro”<lb/> Back numbers<lb/> of this, or
-                  cuttings<lb/> from it.
-               </item>
+                  cuttings<lb/> from it. </item>
                <item>
-                  <label>4.</label> <rs type="person" key="P235">Miva</rs> &amp; other<lb/> 
-                  people I have been<lb/> introduced to here.
-               </item>
+                  <label>4.</label>
+                  <rs type="person" key="P235">Miva</rs> &amp; other<lb/> people I have been<lb/>
+                  introduced to here. </item>
                <item>
-                  <label>5.</label> Mascarenhas.
-               </item>
+                  <label>5.</label> Mascarenhas. </item>
             </list>
          </div>
       </body>

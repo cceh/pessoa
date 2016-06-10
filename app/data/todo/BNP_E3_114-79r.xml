@@ -14,7 +14,7 @@
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
-               <name>Isabel Figueiredo-Iken</name> 
+               <name>Isabel Figueiredo-Iken</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -22,7 +22,7 @@
             <idno type="filename">BNP_E3_114-79r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 114-79r</idno>
@@ -46,6 +46,14 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita, publicada em <hi rend="italic">Sensacionismo e Outros
+                     Ismos</hi> (2009, 385). A folha de papel contém um esboço de carta dirigida a
+                  um editor inglês, associado ao periódico literário <hi rend="italic">The
+                     Egoist</hi> e mencionando o envio do segundo número de <hi rend="italic"
+                     >Orpheu</hi>, publicado em Julho de 1915. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -57,10 +65,10 @@
    <text xml:id="bnp-e3-114-79r">
       <body>
          <div>
-            
+
             <div rend="left">
                <list>
-               <head><hi rend="underline">Translations of:</hi></head>
+                  <head><hi rend="underline">Translations of:</hi></head>
                   <item><rs type="title">Naval Ode</rs>,</item>
                   <item><rs type="title">Slanting Rain</rs>,</item>
                   <item><rs type="title">Manucure.</rs></item>
@@ -68,13 +76,22 @@
             </div>
             <div rend="right">
                <list>
-                  <item><rs type="work"><rs type="title">Ode Maritima</rs> – <rs type="person"><choice><abbr>Alv<am>.</am></abbr><expan>Alv<ex>aro</ex></expan></choice> de Campos.</rs></rs></item>
+                  <item><rs type="work"><rs type="title">Ode Maritima</rs> – <rs type="person"><choice>
+                              <abbr>Alv<am>.</am></abbr>
+                              <expan>Alv<ex>aro</ex></expan>
+                           </choice> de Campos.</rs></rs></item>
                   <item><rs type="title">A Passagem das Horas</rs> – o mesmo</item>
-                  <item><rs type="work"><rs type="title">Scena do Odio</rs> – <rs type="person"><choice><abbr>J<am>.</am></abbr><expan>J<ex>osé</ex></expan></choice><choice><abbr>Al<am>.</am></abbr><expan>Al<ex>mada</ex></expan></choice>Negreiros.</rs></rs></item>
+                  <item><rs type="work"><rs type="title">Scena do Odio</rs> – <rs type="person"><choice>
+                              <abbr>J<am>.</am></abbr>
+                              <expan>J<ex>osé</ex></expan>
+                           </choice><choice>
+                              <abbr>Al<am>.</am></abbr>
+                              <expan>Al<ex>mada</ex></expan>
+                           </choice>Negreiros.</rs></rs></item>
                </list>
             </div>
-            
-            
+
+
          </div>
       </body>
    </text>

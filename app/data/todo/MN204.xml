@@ -21,7 +21,7 @@
             <idno type="filename">BNP_E3_sem-cota-MN-204.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 semcota MN 204</idno>
@@ -46,6 +46,10 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -54,30 +58,35 @@
    </facsimile>
    <text xml:id="bnp-e-sem-cota-mn-204">
       <body>
-         <head><hi rend="underline"><note rend="transversal" place="center">Division.</note></hi></head>  
-         <note place="margin right"><gap reason="selection" unit="lines" extent="5"/> </note>
-         
-         <list> 
+         <head><hi rend="underline"><note rend="transversal" place="center"
+            >Division.</note></hi></head>
+         <note place="margin right"><gap reason="selection" unit="lines" extent="5"/>
+         </note>
+
+         <list>
             <item><label>1.</label><rs type="title">Antinous</rs></item>
             <item> —<hi rend="underline"> Lyrics:</hi> Island type. </item>
             <item><label>2.</label><rs type="title">Divineness.</rs></item>
-            <item>— <hi rend="underline">Lyrics:</hi> Mixed Kind.  </item>
+            <item>— <hi rend="underline">Lyrics:</hi> Mixed Kind. </item>
             <item><label>3.</label><rs type="title">Prayer to a Fair Body.</rs></item>
             <item>— <hi rend="underline">Lyrics:</hi> Religious Type. </item>
             <item><label>4.</label><rs type="title">Epithalamium.</rs></item>
-            <item>—<hi rend="underline"> Sonnets</hi> (30 to 50, 30 better)  </item>
-            
-            <item><label>5.</label><rs type="title">Spring</rs>, 1917.</item>                 
-            
+            <item>—<hi rend="underline"> Sonnets</hi> (30 to 50, 30 better) </item>
+
+            <item><label>5.</label><rs type="title">Spring</rs>, 1917.</item>
+
          </list>
          <metamark rend="line" function="distinct"/>
-         <gap reason="selection" unit="lines" extent="8"/> 
-         <note place="next page"><gap reason="selection" unit="lines" extent="9"/> </note> <pb></pb>
-         <list> 
+         <gap reason="selection" unit="lines" extent="8"/>
+         <note place="next page"><gap reason="selection" unit="lines" extent="9"/>
+         </note>
+         <pb/>
+         <list>
             <item> Lamp-Work — Stul.</item>
-            <item>Agencies for Songs (AKP).</item>        
+            <item>Agencies for Songs (AKP).</item>
             <item>Letters for chemical far.</item>
-            <item>Translations: <rs type="person">Poe</rs> + Anc. <gap reason="illegible" unit="characters" extent="1"/></item>          
+            <item>Translations: <rs type="person">Poe</rs> + Anc. <gap reason="illegible"
+                  unit="characters" extent="1"/></item>
          </list>
          <div/>
       </body>

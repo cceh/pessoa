@@ -25,7 +25,8 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2016</date>
                 <availability>
@@ -34,7 +35,7 @@
                 <idno type="filename">BNP_E3_93A-58r.xml</idno>
             </publicationStmt>
             <sourceDesc>
-                <msDesc>
+                <msDesc xml:id="M1" type="structured">
                     <msIdentifier>
                         <institution>Biblioteca Nacional de Portugal</institution>
                         <idno>BNP/E3 93A-58r</idno>
@@ -59,140 +60,149 @@
                         </origin>
                     </history>
                 </msDesc>
+                <msDesc corresp="#M1" type="prose">
+                    <msIdentifier/>
+                    <p> Lista datilografada, publicada em <hi rend="italic">Pessoa Inédito</hi>
+                        (1993, 217-218). </p>
+                </msDesc>
             </sourceDesc>
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic url="bn-acpc-e-e3-93a-1-71_JPG_24-C-R0150/bn-acpc-e-e3-93a-1-71_0120_58_t24-C-R0150.jpg" />
+        <graphic
+            url="bn-acpc-e-e3-93a-1-71_JPG_24-C-R0150/bn-acpc-e-e3-93a-1-71_0120_58_t24-C-R0150.jpg"
+        />
     </facsimile>
     <text>
         <body>
             <div>
-                <list> 
+                <list>
                     <item>
-                        <rs type="text">Five Epistles to the Boeotians</rs> 
-                        – <rs type="person" key="FP" role="author" style="b">Fernando Pessoa</rs>. <note>(5 <choice>
-                                                                                              <abbr>nos<am>.</am></abbr>
-                                                                                              <expan>n<ex>umer</ex>os</expan>
-                                                                                            </choice>)</note>
+                        <rs type="text">Five Epistles to the Boeotians</rs> – <rs type="person"
+                            key="FP" role="author" style="b">Fernando Pessoa</rs>. <note>(5 <choice>
+                                <abbr>nos<am>.</am></abbr>
+                                <expan>n<ex>umer</ex>os</expan>
+                            </choice>)</note>
                     </item>
                     <item>
-                        <rs type="text">The Strange Death of <rs type="person" key="P79">Professor Antena</rs></rs> 
-                        – <rs type="person" key="P30">Mario de Sá-Carneiro</rs>. <note>(1)</note>
-                    </item>        
-                    <item>
-                        <rs type="work" key="O4-13"><rs type="text">Opiary</rs></rs>, <rs type="work" key="O4-12"><rs type="text">Triumphal Ode</rs></rs>, <rs type="work" key="O4-11"><rs type="text">Naval Ode</rs></rs> 
-                        – <rs type="person" key="AdC" role="author">Alvaro de Campos</rs>. <note>(1, 2 or 3).</note>
+                        <rs type="text">The Strange Death of <rs type="person" key="P79">Professor
+                                Antena</rs></rs> – <rs type="person" key="P30">Mario de
+                            Sá-Carneiro</rs>. <note>(1)</note>
                     </item>
                     <item>
-                        <rs type="text">Portuguese Anthology</rs> <note>(beginning with extracts, text and transla<pc>-</pc><lb/>tions,
-                        from the Cancioneiros, and then throughout Portuguese<lb/> both prose and poetic literature).</note> 
-                            <note>(several <choice>
-                                        <abbr>nos</abbr>
-                                        <expan>n<ex>umer</ex>os</expan>
-                                     </choice>.)</note> <note>(?)</note>
+                        <rs type="work" key="O4-13"><rs type="text">Opiary</rs></rs>, <rs
+                            type="work" key="O4-12"><rs type="text">Triumphal Ode</rs></rs>, <rs
+                            type="work" key="O4-11"><rs type="text">Naval Ode</rs></rs> – <rs
+                            type="person" key="AdC" role="author">Alvaro de Campos</rs>. <note>(1, 2
+                            or 3).</note>
                     </item>
                     <item>
-                        “<rs type="text">A Engommadeira</rs>” 
-                        – <rs type="person" key="P56">José de Almada-Negreiros</rs>. 
-                        <note>(1 or 2 <choice>
-                                    <abbr>nos</abbr>
-                                    <expan>n<ex>umer</ex>os</expan>
-                                </choice>).</note> <note>(?)</note>
+                        <rs type="text">Portuguese Anthology</rs>
+                        <note>(beginning with extracts, text and transla<pc>-</pc><lb/>tions, from
+                            the Cancioneiros, and then throughout Portuguese<lb/> both prose and
+                            poetic literature).</note>
+                        <note>(several <choice>
+                                <abbr>nos</abbr>
+                                <expan>n<ex>umer</ex>os</expan>
+                            </choice>.)</note>
+                        <note>(?)</note>
+                    </item>
+                    <item> “<rs type="text">A Engommadeira</rs>” – <rs type="person" key="P56">José
+                            de Almada-Negreiros</rs>. <note>(1 or 2 <choice>
+                                <abbr>nos</abbr>
+                                <expan>n<ex>umer</ex>os</expan>
+                            </choice>).</note>
+                        <note>(?)</note>
                     </item>
                     <item>
-                        <rs type="text">Catullo da Paixão Cearense</rs>. 
-                        <note>(<choice>
+                        <rs type="text">Catullo da Paixão Cearense</rs>. <note>(<choice>
                                 <abbr>trans<am>.</am></abbr>
                                 <expan>trans<ex>lation</ex></expan>
-                                </choice> <choice>
-                                            <abbr>perh<am>.</am></abbr>
-                                            <expan>perh<ex>aps</ex></expan>
-                                          </choice> <choice>
-                                                        <abbr>w<am>.</am></abbr>
-                                                        <expan><ex>ith</ex></expan>
-                                                    </choice> text)</note>
+                            </choice>
+                            <choice>
+                                <abbr>perh<am>.</am></abbr>
+                                <expan>perh<ex>aps</ex></expan>
+                            </choice>
+                            <choice>
+                                <abbr>w<am>.</am></abbr>
+                                <expan><ex>ith</ex></expan>
+                            </choice> text)</note>
                         <note>(several <choice>
-                                    <abbr>nos</abbr>
-                                    <expan>n<ex>umer</ex>os</expan>
-                                 </choice> ?)</note>
+                                <abbr>nos</abbr>
+                                <expan>n<ex>umer</ex>os</expan>
+                            </choice> ?)</note>
                     </item>
                     <item>
-                        <rs type="text">A Man’s Death</rs> 
-                        – <rs type="person" key="P74">Joaquim Leitão</rs>. 
-                        <note>(1 <choice>
-                               <abbr>no</abbr>
-                               <expan>n<ex>umer</ex>o</expan>
-                           </choice>.)</note>
-                    </item> 
-                    <item>
-                        (<rs type="text">Religions of Lusitania</rs>).
+                        <rs type="text">A Man’s Death</rs> – <rs type="person" key="P74">Joaquim
+                            Leitão</rs>. <note>(1 <choice>
+                                <abbr>no</abbr>
+                                <expan>n<ex>umer</ex>o</expan>
+                            </choice>.)</note>
                     </item>
-                    <item>
-                        (<rs type="text">Part in the War</rs>, <note><choice>
-                                            <abbr>writ</abbr>
-                                            <expan>writ<ex>e</ex></expan>
-                                          </choice> down with absolute frankness</note>).
-                    </item>
-                    <item>
-                        (<rs type="text">The Problem of <rs type="place">Spanish Galicia</rs></rs> 
-                        — <note>by someone <rs type="person" key="P36"><choice>
-                                                            <abbr>A</abbr>
-                                                            <expan>A<ex>lfredo</ex></expan>
-                                                         </choice> <choice>
-                                                                    <abbr>P</abbr>
-                                                                    <expan>P<ex>edro</ex></expan>
-                                                                   </choice> <choice>
-                                                                                <abbr>G</abbr>
-                                                                                <expan>G<ex>uizado</ex></expan>
-                                                                              </choice></rs> will obtain</note>)
-                    </item>
-                    <item>
-                        (<rs type="text">The Catalonian problem</rs> 
-                        – <note>by someone from <rs type="place">Barcelona</rs></note>) 
-                        <note>(Or, per<pc>-</pc><lb/>haps, two articles, one on each side of the question, pre<pc>-</pc><lb/>ceded by 
-                        an explanation of why a paper called <rs type="text">“<choice>
-                                                                <abbr>P</abbr>
-                                                                <expan>P<ex>ortugal</ex></expan>
-                                                               </choice>”</rs> deals <lb/> with a Spanish matter)</note>.
-                    </item>
+                    <item> (<rs type="text">Religions of Lusitania</rs>). </item>
+                    <item> (<rs type="text">Part in the War</rs>, <note><choice>
+                                <abbr>writ</abbr>
+                                <expan>writ<ex>e</ex></expan>
+                            </choice> down with absolute frankness</note>). </item>
+                    <item> (<rs type="text">The Problem of <rs type="place">Spanish
+                            Galicia</rs></rs> — <note>by someone <rs type="person" key="P36"><choice>
+                                    <abbr>A</abbr>
+                                    <expan>A<ex>lfredo</ex></expan>
+                                </choice>
+                                <choice>
+                                    <abbr>P</abbr>
+                                    <expan>P<ex>edro</ex></expan>
+                                </choice>
+                                <choice>
+                                    <abbr>G</abbr>
+                                    <expan>G<ex>uizado</ex></expan>
+                                </choice></rs> will obtain</note>) </item>
+                    <item> (<rs type="text">The Catalonian problem</rs> – <note>by someone from <rs
+                                type="place">Barcelona</rs></note>) <note>(Or,
+                            per<pc>-</pc><lb/>haps, two articles, one on each side of the question,
+                                pre<pc>-</pc><lb/>ceded by an explanation of why a paper called <rs
+                                type="text">“<choice>
+                                    <abbr>P</abbr>
+                                    <expan>P<ex>ortugal</ex></expan>
+                                </choice>”</rs> deals <lb/> with a Spanish matter)</note>. </item>
                     <item>
                         <rs type="text"><rs type="person" key="P20">Columbus</rs> a Galician</rs>.
-                        <note>(The details concerning the “<rs type="place">Genoa</rs>” myth)</note><lb/>
-                        <note>(Examine, however, other details concerning the <rs type="place">Beja</rs>, or <lb/> something like it, thesis).</note>
+                            <note>(The details concerning the “<rs type="place">Genoa</rs>”
+                            myth)</note><lb/>
+                        <note>(Examine, however, other details concerning the <rs type="place"
+                                >Beja</rs>, or <lb/> something like it, thesis).</note>
                     </item>
                     <item>
                         <rs type="text">Editorial article on <rs type="person" key="P51"><choice>
-                                                <abbr>S</abbr>
-                                                <expan>S<ex>idonio</ex></expan>
-                                            </choice> <choice>
-                                                        <abbr>P</abbr>
-                                                        <expan>P<ex>ais</ex></expan>
-                                                      </choice></rs> and on his presidency</rs>, perhaps a succint <lb/>
-                        exposition of <hi rend="underline">S do S</hi>; or an <rs type="text">article on the Political Situa<pc>-</pc><lb/>tion 
-                        in<rs type="place">Portugal</rs></rs>.
+                                    <abbr>S</abbr>
+                                    <expan>S<ex>idonio</ex></expan>
+                                </choice>
+                                <choice>
+                                    <abbr>P</abbr>
+                                    <expan>P<ex>ais</ex></expan>
+                                </choice></rs> and on his presidency</rs>, perhaps a succint <lb/>
+                        exposition of <hi rend="underline">S do S</hi>; or an <rs type="text"
+                            >article on the Political Situa<pc>-</pc><lb/>tion in<rs type="place"
+                                >Portugal</rs></rs>. </item>
+                    <item> “<rs type="text">Octavio</rs>” (A Play in three acts) – <rs type="person"
+                            key="P75">Victoriano Braga</rs>. <note>(1 <choice>
+                                <abbr>no<am>.</am></abbr>
+                                <expan>n<ex>umer</ex>o</expan>
+                            </choice>)</note>
                     </item>
                     <item>
-                        “<rs type="text">Octavio</rs>” (A Play in three acts) 
-                        – <rs type="person" key="P75">Victoriano Braga</rs>. 
-                        <note>(1 <choice><abbr>no<am>.</am></abbr>
-                            <expan>n<ex>umer</ex>o</expan>
-                           </choice>)</note>
+                        <rs type="text">The Horoscope of <rs type="place">Portugal</rs></rs>. </item>
+                    <item>
+                        <rs type="text">The Myth of <rs type="person" key="P21" style="a">King
+                                Sebastian</rs></rs>. </item>
+                    <item>
+                        <rs type="text">Personal Jokes</rs>./ <note>(Jokes about Portuguese
+                            personalities or by <lb/> them, from <rs type="person" key="P76"
+                                >Bocage</rs> and <rs type="person" key="P77">Dr. Assis</rs> to
+                            really decent people).</note>
                     </item>
                     <item>
-                        <rs type="text">The Horoscope of <rs type="place">Portugal</rs></rs>.
-                    </item>
-                    <item>
-                        <rs type="text">The Myth of <rs type="person" key="P21" style="a">King Sebastian</rs></rs>.
-                    </item>
-                    <item>
-                        <rs type="text">Personal Jokes</rs>./ 
-                        <note>(Jokes about Portuguese personalities or by <lb/> them, from <rs type="person" key="P76">Bocage</rs> 
-                        and <rs type="person" key="P77">Dr. Assis</rs> to really decent people).</note>
-                    </item>
-                    <item>
-                        <rs type="text">Objectionable Personalia</rs>. (Scandal...)
-                    </item>
+                        <rs type="text">Objectionable Personalia</rs>. (Scandal...) </item>
                 </list>
             </div>
         </body>

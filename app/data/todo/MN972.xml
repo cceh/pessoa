@@ -21,7 +21,7 @@
             <idno type="filename">BNP_E3_sem-cota-MN-972.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 semcota MN 972</idno>
@@ -35,7 +35,7 @@
                         <rs type="genre" key="lista_editorial">Lista editorial</rs>
                         <rs type="genre" key="plano_editorial">Plano editorial</rs>
                      </note>
-                     <textLang mainLang="en"  otherLangs="pt" />
+                     <textLang mainLang="en" otherLangs="pt"/>
                   </msItemStruct>
                </msContents>
                <history>
@@ -46,6 +46,11 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita no verso de papel timbrado «F. A. Pessoa | R. do Ouro, 87, 2.º |
+                  Lisboa». </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -55,44 +60,70 @@
    <text xml:id="bnp-e-sem-cota-mn-972">
       <body>
          <list>
-            
-            <item><hi rend="underline"><rs type="person">Keats:</rs></hi>	<rs type="title">Ode to a Nightingale.</rs></item>        
+
+            <item><hi rend="underline"><rs type="person">Keats:</rs></hi>
+               <rs type="title">Ode to a Nightingale.</rs></item>
             <item><rs type="title">Ode on a Grecian Urn.</rs></item>
             <item><rs type="title">Ode to Psychee.</rs></item>
             <item><rs type="title">To Melancholy.</rs></item>
             <item><rs type="title">To Autumn.</rs></item>
-            <item><rs type="title">“La Belle Dame Sans Merci.”</rs></item>        
+            <item><rs type="title">“La Belle Dame Sans Merci.”</rs></item>
             <item>(What Sonnets?)</item>
-         </list> 
-         <metamark rend="line" function="distinct"/>  
-            
-            
+         </list>
+         <metamark rend="line" function="distinct"/>
+
+
          <list>
-            
-            <item><hi rend="underline"><rs type="person">Shelley</rs></hi>:	<rs type="title">Adonais.</rs></item>                                       
-            <item><rs type="title">Hymn to Intellectual Beauty.</rs></item>              
+
+            <item><hi rend="underline"><rs type="person">Shelley</rs></hi>: <rs type="title"
+                  >Adonais.</rs></item>
+            <item><rs type="title">Hymn to Intellectual Beauty.</rs></item>
             <item><rs type="title">The Cloud.</rs></item>
             <item><rs type="title">To a Skylark.</rs></item>
             <metamark rend="line" function="distinct"/>
-         </list> 
-            <list>
-               <item><hi rend="underline"><rs type="person">Tennyson</rs></hi>:	<rs type="title">Ulysses.</rs></item> 	<item><note place="right">Authors:  <rs type="person">Tennyson</rs></note></item>
-               <item><rs type="title">Tithonus.</rs></item>		<item><note place="right"><rs type="person">Browning</rs></note></item>
-               <item><rs type="title">Morte d’Arthur	</rs></item>	<item><note place="right"><abbr>M<am>.</am></abbr> <gap reason="illegible" unit="character" extent="1"/></note></item>
          </list>
-         <metamark rend="line" function="distinct"/>  
          <list>
-            <item>Coleridge: <rs type="title">	Ancient Mariner.</rs> (<choice><abbr>p<am>.</am></abbr><expan>p<ex>age</ex></expan></choice> 92)</item>        
-            <item><rs type="title">Kubla Khan.</rs> (<choice><abbr>p<am>.</am></abbr><expan>p<ex>age</ex></expan></choice> 219)</item>
-            <item><choice><abbr>p<am>.</am></abbr><expan>p<ex>age</ex></expan></choice> 75</item>
-            <item>(<choice><abbr>p<am>.</am></abbr><expan>p<ex>age</ex></expan></choice> 175) xx</item>
-            <item><choice><abbr>p<am>.</am></abbr><expan>p<ex>age</ex></expan></choice> 201</item>
-            <item><choice><abbr>p<am>.</am></abbr><expan>p<ex>age</ex></expan></choice> 222</item>
-           
+            <item><hi rend="underline"><rs type="person">Tennyson</rs></hi>: <rs type="title"
+                  >Ulysses.</rs></item>
+            <item><note place="right">Authors: <rs type="person">Tennyson</rs></note></item>
+            <item><rs type="title">Tithonus.</rs></item>
+            <item><note place="right"><rs type="person">Browning</rs></note></item>
+            <item><rs type="title">Morte d’Arthur </rs></item>
+            <item><note place="right"><abbr>M<am>.</am></abbr>
+                  <gap reason="illegible" unit="character" extent="1"/></note></item>
          </list>
-        
-         <note place="right"> <gap reason="selection" unit="numbers" extent="50"/></note>
-         
+         <metamark rend="line" function="distinct"/>
+         <list>
+            <item>Coleridge: <rs type="title"> Ancient Mariner.</rs> (<choice>
+                  <abbr>p<am>.</am></abbr>
+                  <expan>p<ex>age</ex></expan>
+               </choice> 92)</item>
+            <item><rs type="title">Kubla Khan.</rs> (<choice>
+                  <abbr>p<am>.</am></abbr>
+                  <expan>p<ex>age</ex></expan>
+               </choice> 219)</item>
+            <item><choice>
+                  <abbr>p<am>.</am></abbr>
+                  <expan>p<ex>age</ex></expan>
+               </choice> 75</item>
+            <item>(<choice>
+                  <abbr>p<am>.</am></abbr>
+                  <expan>p<ex>age</ex></expan>
+               </choice> 175) xx</item>
+            <item><choice>
+                  <abbr>p<am>.</am></abbr>
+                  <expan>p<ex>age</ex></expan>
+               </choice> 201</item>
+            <item><choice>
+                  <abbr>p<am>.</am></abbr>
+                  <expan>p<ex>age</ex></expan>
+               </choice> 222</item>
+
+         </list>
+
+         <note place="right">
+            <gap reason="selection" unit="numbers" extent="50"/></note>
+
          <div/>
       </body>
    </text>

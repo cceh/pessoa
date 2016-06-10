@@ -21,7 +21,7 @@
             <idno type="filename">BNP_E3_sem-cota-MN-680-a-683.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 semcota MN 680 a 683</idno>
@@ -45,6 +45,10 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -56,41 +60,55 @@
    </facsimile>
    <text xml:id="bnp-e-sem-cota-mn-680-a-683">
       <body>
-         <head><hi rend="underline"> Agencia
-         </hi></head>  
+         <head><hi rend="underline"> Agencia </hi></head>
          <list>
-            <item>Informações de cambios e vapores chegados etc.  
-            </item>
-            <item><metamark rend="line" function="ditto"/> de passageiros e entradas<lb></lb>  em hoteis.</item>        
-            <item><metamark rend="line" function="ditto"/> viagens, horarios, navios,<lb></lb> <choice><abbr>v<am>.</am></abbr><expan>v<ex>eiculos</ex></expan></choice> circulatorios, etc.</item>
+            <item>Informações de cambios e vapores chegados etc. </item>
+            <item><metamark rend="line" function="ditto"/> de passageiros e entradas<lb/> em
+               hoteis.</item>
+            <item><metamark rend="line" function="ditto"/> viagens, horarios, navios,<lb/>
+               <choice>
+                  <abbr>v<am>.</am></abbr>
+                  <expan>v<ex>eiculos</ex></expan>
+               </choice> circulatorios, etc.</item>
             <item>Listas de exportadores e importadores</item>
-            <item>Informação semanal sobre <lb></lb>commercio e industria<supplied resp="PS"> <gap reason="illegible" unit="character" extent="1"/></supplied></item>
-            <item><choice><abbr>Inf<am>.</am></abbr><expan>Inf<ex>ormação</ex></expan></choice> estatistica.</item>
-            <item>Informações commerciaes.</item>        
-         </list> 
-         <metamark rend="line" function="distinct"/> 
-         
+            <item>Informação semanal sobre <lb/>commercio e industria<supplied resp="PS">
+                  <gap reason="illegible" unit="character" extent="1"/></supplied></item>
+            <item><choice>
+                  <abbr>Inf<am>.</am></abbr>
+                  <expan>Inf<ex>ormação</ex></expan>
+               </choice> estatistica.</item>
+            <item>Informações commerciaes.</item>
+         </list>
+         <metamark rend="line" function="distinct"/>
+
          <list>
-            <head> Traducções.
-         </head>  
-         
+            <head> Traducções. </head>
+
             <item>Montagem e seguimento de escriptos.</item>
-            <item><supplied resp="PS"><gap reason="illegible" unit="character" extent="1"/></supplied> litterarios, heraldicos e genea<pc>-</pc><lb />logias.</item>
-            <item>Redacção correcta de cartas,<supplied resp="PS"><gap reason="illegible" unit="character" extent="1"/></supplied>,<lb></lb>  catalogos.</item>
+            <item><supplied resp="PS"><gap reason="illegible" unit="character" extent="1"
+                  /></supplied> litterarios, heraldicos e genea<pc>-</pc><lb/>logias.</item>
+            <item>Redacção correcta de cartas,<supplied resp="PS"><gap reason="illegible"
+                     unit="character" extent="1"/></supplied>,<lb/> catalogos.</item>
             <item>Revisão de provas typographicas.</item>
-            <item>Cortes de jornaes.</item>        
+            <item>Cortes de jornaes.</item>
             <item>Informações litterarias geraes.</item>
-            <item><del rend="overstrike"><gap reason="illegible" quantity="1" unit="character" /></del>Manufactura de corrigir pautas,<lb></lb> 
-               cifras para correspondencia <choice><abbr>scient<am>.</am></abbr><expan>scient<ex>ifica</ex></expan></choice>.</item>
-            <item>Trabalhos á machina,<supplied resp="PS"><gap reason="illegible" unit="character" extent="1"/></supplied> <lb></lb>no telegrapho.</item>
-            <item>Annuncios em todos os jornaes de <lb></lb> <rs type="place">Portugal</rs> e do estrangeiro.</item>
-            <item>Informação a proposito de livros <lb></lb>que vão sahir, etc.</item>        
-            <item>Endereçar e expedir cartas e <lb></lb>circulares.</item>
+            <item><del rend="overstrike"><gap reason="illegible" quantity="1" unit="character"
+                  /></del>Manufactura de corrigir pautas,<lb/> cifras para correspondencia <choice>
+                  <abbr>scient<am>.</am></abbr>
+                  <expan>scient<ex>ifica</ex></expan>
+               </choice>.</item>
+            <item>Trabalhos á machina,<supplied resp="PS"><gap reason="illegible" unit="character"
+                     extent="1"/></supplied>
+               <lb/>no telegrapho.</item>
+            <item>Annuncios em todos os jornaes de <lb/>
+               <rs type="place">Portugal</rs> e do estrangeiro.</item>
+            <item>Informação a proposito de livros <lb/>que vão sahir, etc.</item>
+            <item>Endereçar e expedir cartas e <lb/>circulares.</item>
             <item>Publicidade.</item>
-        
-         
-         </list> 
-         
+
+
+         </list>
+
          <div/>
       </body>
    </text>

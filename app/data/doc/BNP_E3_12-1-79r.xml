@@ -3,7 +3,8 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>BNP/E3 12<hi rend="superscript">1</hi>-79<hi rend="superscript">r</hi></title>
+                <title>BNP/E3 12<hi rend="superscript">1</hi>-79<hi rend="superscript"
+                    >r</hi></title>
                 <author>
                     <rs type="person" key="FP">Fernando Pessoa</rs>
                 </author>
@@ -25,7 +26,8 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2016</date>
                 <availability>
@@ -34,7 +36,7 @@
                 <idno type="filename">BNP_E3_12-1-79r.xml</idno>
             </publicationStmt>
             <sourceDesc>
-                <msDesc>
+                <msDesc xml:id="M1" type="structured">
                     <msIdentifier>
                         <institution>Biblioteca Nacional de Portugal</institution>
                         <idno>BNP/E3 12-1-79r</idno>
@@ -45,76 +47,94 @@
                                 <rs type="person" key="FP">Fernando Pessoa</rs>
                             </author>
                             <note type="genre">
-                                <rs type="genre" key="lista_editorial">Lista
-                                editorial</rs></note>
+                                <rs type="genre" key="lista_editorial">Lista editorial</rs></note>
                             <textLang mainLang="pt" otherLangs="en la"/>
                         </msItemStruct>
                     </msContents>
                     <history>
-                 <origin>
-                     <p>
-                         <origDate from="1918" to="1919" cert="medium">c. 1918-1919</origDate>
-                     </p>
-                 </origin>
-                 </history>
+                        <origin>
+                            <p>
+                                <origDate from="1918" to="1919" cert="medium">c.
+                                    1918-1919</origDate>
+                            </p>
+                        </origin>
+                    </history>
+                </msDesc>
+                <msDesc corresp="#M1" type="prose">
+                    <msIdentifier/>
+                    <p> Lista manuscrita, publicada em <hi rend="italic">Obras de António Mora</hi>
+                        (2002, 155). </p>
                 </msDesc>
             </sourceDesc>
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic url="bn-acpc-e-e3-12-1-1-100_JPG_24-C-R0150/bn-acpc-e-e3-12-1-1-100_0167_79_t24-C-R0150.jpg"/>
+        <graphic
+            url="bn-acpc-e-e3-12-1-1-100_JPG_24-C-R0150/bn-acpc-e-e3-12-1-1-100_0167_79_t24-C-R0150.jpg"
+        />
     </facsimile>
     <text>
         <body>
-          <div>
-            <list> 
-                <item>
-                    <hi rend="underline"><rs type="person" key="P2">Anton Tchekhov</rs></hi>: <rs type="text">Vanka</rs>.
-                </item>
-                <item>
-                    <note>? -</note> <hi rend="underline"><rs type="person" key="P3">José Enrique Rodó</rs></hi>: <rs type="text">Ariel</rs>. 
-                </item>        
-                <item>
-                    <note>? -</note> <hi rend="underline"><rs type="person" key="P4">J. M. Robertson</rs></hi>: <rs type="text">Short History of 
-                    <choice>
-                        <abbr>Ch</abbr>
-                        <expan>Ch<ex>ristianity</ex></expan>
-                    </choice></rs>  <note>(?)</note> 
-                </item>
-                <item>
-                    <hi rend="underline"><rs type="person" key="P5">Novalis</rs></hi>: <rs type="text">Discipulos em Saïs, Fragmentos</rs>.
-                </item>
-                <item>
-                    <hi rend="underline"><rs type="person" key="P6">Kant</rs></hi>: <rs type="text">Critica da razão pura</rs>. 
-                </item>
-                <item>
-                    <hi rend="underline"><rs type="person" key="P7">Lord Dunsany</rs></hi>: <rs type="text">(Dramas)</rs> 
-                </item>
-                <item>
-                    <note>? -</note> <hi rend="underline"><rs type="person" key="P8">G. K. Chesterton</rs></hi>: <rs type="text">Herejes</rs> 
-                </item>
-                <item>
-                    <note>? -</note> <hi rend="underline"><rs type="person" key="P9">G. B. Shaw</rs></hi>: <rs type="text">Homem e Superhomem</rs>. 
-                </item>
-                <item>
-                    <hi rend="underline"><rs type="person" key="P10">Francisco Sanches</rs></hi>: <rs type="text">Quod nihil scitur</rs>.
-                </item>
-                <item> 
-                    <choice>
-                        <abbr>
-                            <metamark rend="line" function="ditto"/>
-                        </abbr>
-                        <expan>
-                            <hi rend="underline"><rs type="person" key="P10">Francisco Sanches</rs></hi>
-                        </expan>
-                    </choice>
-                     <rs type="text">Anthologia portugueza</rs>. (? vols.).
-                </item>
-                <item><hi rend="underline"><rs type="person" key="P11">Fernandes Lopes</rs>:</hi> <rs type="text">Historia da Philosophia</rs></item>
-                <item><hi rend="underline"><rs type="person" key="P1" style="b">Antonio Mora</rs>:</hi> <rs type="text">Prolegomenos</rs>, etc...</item>
-            </list>
-            <gap reason="selection" unit="line" extent="22"/>
-           </div>
+            <div>
+                <list>
+                    <item>
+                        <hi rend="underline"><rs type="person" key="P2">Anton Tchekhov</rs></hi>:
+                            <rs type="text">Vanka</rs>. </item>
+                    <item>
+                        <note>? -</note>
+                        <hi rend="underline"><rs type="person" key="P3">José Enrique Rodó</rs></hi>:
+                            <rs type="text">Ariel</rs>. </item>
+                    <item>
+                        <note>? -</note>
+                        <hi rend="underline"><rs type="person" key="P4">J. M. Robertson</rs></hi>:
+                            <rs type="text">Short History of <choice>
+                                <abbr>Ch</abbr>
+                                <expan>Ch<ex>ristianity</ex></expan>
+                            </choice></rs>
+                        <note>(?)</note>
+                    </item>
+                    <item>
+                        <hi rend="underline"><rs type="person" key="P5">Novalis</rs></hi>: <rs
+                            type="text">Discipulos em Saïs, Fragmentos</rs>. </item>
+                    <item>
+                        <hi rend="underline"><rs type="person" key="P6">Kant</rs></hi>: <rs
+                            type="text">Critica da razão pura</rs>. </item>
+                    <item>
+                        <hi rend="underline"><rs type="person" key="P7">Lord Dunsany</rs></hi>: <rs
+                            type="text">(Dramas)</rs>
+                    </item>
+                    <item>
+                        <note>? -</note>
+                        <hi rend="underline"><rs type="person" key="P8">G. K. Chesterton</rs></hi>:
+                            <rs type="text">Herejes</rs>
+                    </item>
+                    <item>
+                        <note>? -</note>
+                        <hi rend="underline"><rs type="person" key="P9">G. B. Shaw</rs></hi>: <rs
+                            type="text">Homem e Superhomem</rs>. </item>
+                    <item>
+                        <hi rend="underline"><rs type="person" key="P10">Francisco
+                        Sanches</rs></hi>: <rs type="text">Quod nihil scitur</rs>. </item>
+                    <item>
+                        <choice>
+                            <abbr>
+                                <metamark rend="line" function="ditto"/>
+                            </abbr>
+                            <expan>
+                                <hi rend="underline"><rs type="person" key="P10">Francisco
+                                        Sanches</rs></hi>
+                            </expan>
+                        </choice>
+                        <rs type="text">Anthologia portugueza</rs>. (? vols.). </item>
+                    <item><hi rend="underline"><rs type="person" key="P11">Fernandes
+                            Lopes</rs>:</hi>
+                        <rs type="text">Historia da Philosophia</rs></item>
+                    <item><hi rend="underline"><rs type="person" key="P1" style="b">Antonio
+                                Mora</rs>:</hi>
+                        <rs type="text">Prolegomenos</rs>, etc...</item>
+                </list>
+                <gap reason="selection" unit="line" extent="22"/>
+            </div>
         </body>
     </text>
 </TEI>

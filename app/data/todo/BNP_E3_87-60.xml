@@ -21,7 +21,7 @@
             <idno type="filename">BNP_E3_87-60.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 87-60</idno>
@@ -34,7 +34,7 @@
                      <note type="genre">
                         <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
-                     <textLang mainLang="pt" otherLangs="en" />
+                     <textLang mainLang="pt" otherLangs="en"/>
                   </msItemStruct>
                </msContents>
                <history>
@@ -45,6 +45,10 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -54,10 +58,19 @@
    </facsimile>
    <text xml:id="bnp-e3-87-60">
       <body>
-         <head><hi rend="underline"><choice><abbr>G<am>.</am></abbr><expan>G<ex>remio</ex></expan></choice> de 
-            <choice><abbr> C<am>.</am></abbr><expan>C<ex>ultura</ex></expan></choice> <choice><abbr>P <am>.</am></abbr><expan>P<ex>ortugueza</ex></expan></choice></hi></head>  
+         <head><hi rend="underline"><choice>
+                  <abbr>G<am>.</am></abbr>
+                  <expan>G<ex>remio</ex></expan>
+               </choice> de <choice>
+                  <abbr> C<am>.</am></abbr>
+                  <expan>C<ex>ultura</ex></expan>
+               </choice>
+               <choice>
+                  <abbr>P <am>.</am></abbr>
+                  <expan>P<ex>ortugueza</ex></expan>
+               </choice></hi></head>
          <p>Babson’s Statistical Organization. </p>
-         <p>Similar Organization in other countries,<lb></lb>  if they exist. </p>
+         <p>Similar Organization in other countries,<lb/> if they exist. </p>
          <metamark rend="line" function="distinct"/>
          <p>Boletim Mensal do Gremio. </p>
          <metamark rend="line" function="distinct"/>
@@ -67,28 +80,37 @@
          <metamark rend="line" function="distinct"/>
          <p>Codigos particulares do Gremio </p>
          <metamark rend="line" function="distinct"/>
-         <p>O Boletim Mensal do Gremio contém<lb></lb>  indicações commerciaes, relativamente<lb></lb>  ao commercio e industria portuguezas,<lb></lb>  indicações do
-            trabalho feito pelo Gremio,<lb></lb>  notas literarias e culturaes, etc. Não<lb></lb>  contém “artigos”, nem o que com isso<lb></lb>  se pareça.
-            Nos relatorios fazer graphicos e curvas<lb></lb>  commerciaes, etc. genero <hi rend="underline">Babson.</hi></p>
+         <p>O Boletim Mensal do Gremio contém<lb/> indicações commerciaes, relativamente<lb/> ao
+            commercio e industria portuguezas,<lb/> indicações do trabalho feito pelo Gremio,<lb/>
+            notas literarias e culturaes, etc. Não<lb/> contém “artigos”, nem o que com isso<lb/> se
+            pareça. Nos relatorios fazer graphicos e curvas<lb/> commerciaes, etc. genero <hi
+               rend="underline">Babson.</hi></p>
          <metamark rend="line" function="distinct"/>
          <p>Socios do Gremio: 1 escudo mensal (can we get say 2500) </p>
          <p>Special donations. </p>
          <gap reason="selection" unit="lines" extent="8"/>
          <metamark rend="line" function="distinct"/>
-        
+
          <list>
-            <head><hi rend="underline">Gammeter Multigraph. 
-            </hi></head>  
-            <item> An organization <del rend="overstrike">with</del> needing this. Spanish<lb></lb> agent did not even write.<lb></lb>
+            <head><hi rend="underline">Gammeter Multigraph. </hi></head>
+            <item> An organization <del rend="overstrike">with</del> needing this. Spanish<lb/>
+               agent did not even write.<lb/>
             </item>
-            <item>Study the Gremio paper.</item>        
-            <item>Begin <choice><abbr>w<am>.</am></abbr><expan>w<ex>ith</ex></expan></choice> a <hi rend="underline">given</hi> capital &amp; on no <hi rend="underline">associate</hi><lb></lb>  terms, at least of importance.</item>
-         </list> 
+            <item>Study the Gremio paper.</item>
+            <item>Begin <choice>
+                  <abbr>w<am>.</am></abbr>
+                  <expan>w<ex>ith</ex></expan>
+               </choice> a <hi rend="underline">given</hi> capital &amp; on no <hi rend="underline"
+                  >associate</hi><lb/> terms, at least of importance.</item>
+         </list>
          <metamark rend="line" function="distinct"/>
          <list>
-            <item> Propriedade de <rs type="journal">“Orpheu”</rs> e sua republicação<lb></lb>  (Papel para elle): <supplied resp="PS" reason="omitted-in-original"></supplied> </item>
-            <item>Collecção <hi rend="underline">Olissipo</hi>: nacional, estrangeira de cousas nacionaes,<lb></lb> e puramente estrangeira (cultural).</item>        
-         </list> 
+            <item> Propriedade de <rs type="journal">“Orpheu”</rs> e sua republicação<lb/> (Papel
+               para elle): <supplied resp="PS" reason="omitted-in-original"/>
+            </item>
+            <item>Collecção <hi rend="underline">Olissipo</hi>: nacional, estrangeira de cousas
+               nacionaes,<lb/> e puramente estrangeira (cultural).</item>
+         </list>
          <div/>
       </body>
    </text>

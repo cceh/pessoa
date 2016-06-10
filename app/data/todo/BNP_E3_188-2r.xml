@@ -14,7 +14,7 @@
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
-               <name>Isabel Figueiredo-Iken</name>  
+               <name>Isabel Figueiredo-Iken</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -22,7 +22,7 @@
             <idno type="filename">BNP_E3_188-2r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 188-2r</idno>
@@ -46,6 +46,10 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita em papel com marca de água «Parchment Wove». </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -54,32 +58,49 @@
    </facsimile>
    <text xml:id="bnp-e3-188-2r">
       <body>
-         <head><hi rend="underline"> <choice><abbr>G<am>.</am></abbr><expan>G<ex>remio</ex></expan></choice>de
-        <choice><abbr>C<am>.</am></abbr><expan>C<ex>ultura</ex></expan></choice><choice><abbr> P<am>.</am></abbr><expan> P<ex>ortugueza</ex></expan></choice></hi></head>  
-         <list> 
-            <head>Subscripções para o Gremio:</head>
-            <item> Por <choice><abbr>nu<am>.</am></abbr><expan>nu<ex>mero</ex></expan></choice>: 1$00.</item> 
-            <item> Doações de ahi para cima, de quem<lb></lb> sympathisar com a attitude do Gremio.</item> 
-         </list>
-            <list>
-            <head><hi rend="underline">Despezas do Gremio:</hi></head>
-            <item> Renda mensal:		40$00.</item>
-             <item>Empregado:			10$00.</item>
-             <item>Prestação da mobilia: 	60$00.</item>
-             <item> Outras despezas:		40$00</item>
-             <note place="right"><metamark rend="line" function="distinct"/></note>
-             <item><note place="right">150$00</note></item>
-             <note place="right"><metamark rend="line" function="end"/></note> 
-  </list>
+         <head><hi rend="underline">
+               <choice>
+                  <abbr>G<am>.</am></abbr>
+                  <expan>G<ex>remio</ex></expan>
+               </choice>de <choice>
+                  <abbr>C<am>.</am></abbr>
+                  <expan>C<ex>ultura</ex></expan>
+               </choice><choice>
+                  <abbr> P<am>.</am></abbr>
+                  <expan> P<ex>ortugueza</ex></expan>
+               </choice></hi></head>
          <list>
-            <head><hi rend="underline">Select a printing office:</hi></head>
-            <item>17.00 copies of <choice><abbr>Th<am>.</am></abbr></choice><choice><abbr>Sr<am>.</am></abbr></choice><lb></lb>(each † Acção) =  1.020$00 </item>
-            <item>Sold at 50 c/ each	=   </item>
-            <item> from at 200 $	=   1.700$00</item>
+            <head>Subscripções para o Gremio:</head>
+            <item> Por <choice>
+                  <abbr>nu<am>.</am></abbr>
+                  <expan>nu<ex>mero</ex></expan>
+               </choice>: 1$00.</item>
+            <item> Doações de ahi para cima, de quem<lb/> sympathisar com a attitude do
+               Gremio.</item>
+         </list>
+         <list>
+            <head><hi rend="underline">Despezas do Gremio:</hi></head>
+            <item> Renda mensal: 40$00.</item>
+            <item>Empregado: 10$00.</item>
+            <item>Prestação da mobilia: 60$00.</item>
+            <item> Outras despezas: 40$00</item>
             <note place="right"><metamark rend="line" function="distinct"/></note>
             <item><note place="right">150$00</note></item>
-            <item><note place="right">Profit	=      680$00</note></item>
-            <note place="right"><metamark rend="line" function="end"/></note> 
+            <note place="right"><metamark rend="line" function="end"/></note>
+         </list>
+         <list>
+            <head><hi rend="underline">Select a printing office:</hi></head>
+            <item>17.00 copies of <choice>
+                  <abbr>Th<am>.</am></abbr>
+               </choice><choice>
+                  <abbr>Sr<am>.</am></abbr>
+               </choice><lb/>(each † Acção) = 1.020$00 </item>
+            <item>Sold at 50 c/ each = </item>
+            <item> from at 200 $ = 1.700$00</item>
+            <note place="right"><metamark rend="line" function="distinct"/></note>
+            <item><note place="right">150$00</note></item>
+            <item><note place="right">Profit = 680$00</note></item>
+            <note place="right"><metamark rend="line" function="end"/></note>
          </list>
          <div/>
       </body>

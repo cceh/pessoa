@@ -10,7 +10,7 @@
             <p>Publication Information</p>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 135A-54r</idno>
@@ -31,9 +31,8 @@
                         <name>Isabel Figueiredo-Iken</name>
                      </respStmt>
                      <note type="genre">
-                        <rs type="genre" key="lista_editorial">Lista
-                           editorial</rs><rs type="genre" key="plano_editorial">Plano
-                              editorial</rs>
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs><rs type="genre"
+                           key="plano_editorial">Plano editorial</rs>
                      </note>
                      <textLang mainLang="pt" otherLangs="en"/>
                   </msItemStruct>
@@ -47,31 +46,47 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita, publicada em <hi rend="italic">Sensacionismo e outros
+                     Ismos</hi> (2009, 101). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-135a-1-100_JPG_24-C-R0150/bn-acpc-e-e3-135a-1-100_0107_54_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-135a-1-100_JPG_24-C-R0150/bn-acpc-e-e3-135a-1-100_0107_54_t24-C-R0150.jpg"
+      />
    </facsimile>
    <text xml:id="bnp-e3-135a-54r">
       <body>
-         <head><hi rend="underline">HACKWORK.</hi></head>  
-         <list> 
-            <item><label>1.</label>Artigos em <rs type="journal">“A Aguia”</rs> –<lb></lb>  
-               2 primeiros<lb></lb> 
-               <choice><abbr> Art<am>.</am></abbr><expan> Art<ex>igo</ex></expan></choice>
-               <choice><abbr>s<am>.</am></abbr><expan>s<ex>obre</ex></expan></choice><rs type="person">Almada-Negreiros</rs>.
-            </item>
-            <item><label>2.</label>Artigo em  <rs type="journal">“Exilio”.</rs></item>        
-            <item><label>3.</label>Os artigos em <rs type="journal"> <hi rend="underline">O Theatro.</hi></rs></item>
-            <item><label>4.</label>Chronicas em <rs type="journal"><hi rend="underline">“0 Jornal”</hi>.</rs></item>
-            <item><label>5.</label>Resposta ao <choice><abbr>Inq<am>.</am></abbr><expan>Inq<ex></ex>uerito</expan></choice> Literario.</item>
+         <head><hi rend="underline">HACKWORK.</hi></head>
+         <list>
+            <item><label>1.</label>Artigos em <rs type="journal">“A Aguia”</rs> –<lb/> 2 primeiros<lb/>
+               <choice>
+                  <abbr> Art<am>.</am></abbr>
+                  <expan> Art<ex>igo</ex></expan>
+               </choice>
+               <choice>
+                  <abbr>s<am>.</am></abbr>
+                  <expan>s<ex>obre</ex></expan>
+               </choice><rs type="person">Almada-Negreiros</rs>. </item>
+            <item><label>2.</label>Artigo em <rs type="journal">“Exilio”.</rs></item>
+            <item><label>3.</label>Os artigos em <rs type="journal">
+                  <hi rend="underline">O Theatro.</hi></rs></item>
+            <item><label>4.</label>Chronicas em <rs type="journal"><hi rend="underline">“0
+                     Jornal”</hi>.</rs></item>
+            <item><label>5.</label>Resposta ao <choice>
+                  <abbr>Inq<am>.</am></abbr>
+                  <expan>Inq<ex/>uerito</expan>
+               </choice> Literario.</item>
             <item><label>6.</label>Paues (“Renascença”)</item>
             <item><label>7.</label>“Como organizar <rs type="place">Portugal.”</rs></item>
-            
+
          </list>
-         
-         
+
+
          <div/>
       </body>
    </text>

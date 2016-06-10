@@ -14,7 +14,7 @@
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
-               <name>Isabel Figueiredo-Iken</name>  
+               <name>Isabel Figueiredo-Iken</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -22,7 +22,7 @@
             <idno type="filename">BNP_E3_186r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 186r</idno>
@@ -46,6 +46,10 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -55,24 +59,27 @@
    </facsimile>
    <text xml:id="bnp-e3-186r">
       <body>
-         <head><hi rend="underline">3 secções:</hi></head>  
+         <head><hi rend="underline">3 secções:</hi></head>
          <list>
             <item><label>1.</label> Secção de informações.</item>
-            <item><label>2.</label>Secção editorial. </item>        
+            <item><label>2.</label>Secção editorial. </item>
             <item><label>3.</label>Secção cultural.</item>
-         </list> 
+         </list>
          <metamark rend="line" function="distinct"/>
-         <list> 
-            <head><hi rend="underline">Fórma de subsistir:</hi></head>  
-            
-            <item><label>1.</label>Por socios, que dão quotas, em troca<lb></lb> dos serviços da parte commercial. </item>
-            <item><anchor xml:id="A1"/><label>2.</label>Por dadivas de quem sympathize<lb></lb> com a obra encetada.</item>        
-            <item><label>3.</label>Por venda das edições e das<lb></lb> informações.</item>
-         </list> 
+         <list>
+            <head><hi rend="underline">Fórma de subsistir:</hi></head>
+
+            <item><label>1.</label>Por socios, que dão quotas, em troca<lb/> dos serviços da parte
+               commercial. </item>
+            <item><anchor xml:id="A1"/><label>2.</label>Por dadivas de quem sympathize<lb/> com a
+               obra encetada.</item>
+            <item><label>3.</label>Por venda das edições e das<lb/> informações.</item>
+         </list>
          <metamark rend="line" function="distinct"/>
-         <p><anchor rend="#A1"/>Pode haver tambem socios, que<lb></lb> deem quotas por simples interesse<lb></lb> pela obra tentada. </p>
+         <p><anchor rend="#A1"/>Pode haver tambem socios, que<lb/> deem quotas por simples
+            interesse<lb/> pela obra tentada. </p>
          <metamark rend="line" function="distinct"/>
-         <p> Estar prompta a installação em <lb></lb>1 de Janeiro de 1920.</p>
+         <p> Estar prompta a installação em <lb/>1 de Janeiro de 1920.</p>
          <metamark rend="line" function="end"/>
          <div/>
       </body>

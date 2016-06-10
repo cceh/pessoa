@@ -24,7 +24,7 @@
                 <idno type="filename">BNP_E3_48C-22.xml</idno>
             </publicationStmt>
             <sourceDesc>
-                <msDesc>
+                <msDesc xml:id="M1" type="structured">
                     <msIdentifier>
                         <institution>Biblioteca Nacional de Portugal</institution>
                         <idno>BNP/E3 48C-22</idno>
@@ -43,10 +43,16 @@
                     <history>
                         <origin>
                             <p>
-                                <origDate from="1917" to="1918" cert="medium">c. 1917-1918</origDate>
+                                <origDate from="1917" to="1918" cert="medium">c.
+                                    1917-1918</origDate>
                             </p>
                         </origin>
                     </history>
+                </msDesc>
+                <msDesc corresp="#M1" type="prose">
+                    <msIdentifier/>
+                    <p> Lista manuscrita, publicada em <hi rend="italic">Obras de António Mora</hi>
+                        (2002, 162). </p>
                 </msDesc>
             </sourceDesc>
         </fileDesc>
@@ -59,65 +65,66 @@
     <text xml:id="bnp-e3-48c-22">
         <body>
             <div>
-            <list>
-                <head><hi rend="underline">Cadernos de Reacção Pagan:</hi></head>
-                <item>
-                    <note>✓</note>
-                    <label>1.</label>
-                    <rs type="work" key="O2"><rs type="text"><hi rend="underline">O Guardador de Rebanhos</hi></rs> —
-                    <rs type="person" key="AC" role="author">
-                        <choice>
-                            <abbr>Alb<am>.</am></abbr>
-                            <expan>Alb<ex>erto</ex></expan>
-                        </choice> Caeiro</rs></rs>.
-                </item>
-                <item>
-                    <note>✓</note>
-                    <label>2.</label>
-                    <rs type="text"><hi rend="underline">Prolegomenos</hi></rs> …… — <rs type="person">Antonio Móra</rs>.
-                </item>
-                <item>
-                    <note>✓</note>
-                    <label>3.</label>
-                    <rs type="work" key="O3"><rs type="text"><hi rend="underline">Odes</hi></rs> — <rs type="person" key="RR" role="author">Ricardo Reis</rs></rs>.
-                </item>
-                <note place="margin left">(ex)</note>
-                <item>
-                    <note>✓</note>
-                    <label>4.</label>
-                    <rs type="text"><hi rend="underline">Dissertação a favôr da <choice>
-                        <abbr>All<am>.</am></abbr>
-                        <expan>All<ex>emanha</ex></expan>
-                    </choice></hi></rs> — <rs type="person"><choice>
-                            <abbr>A<am>.</am></abbr>
-                            <expan>A<ex>ntonio</ex></expan>
-                        </choice> Móra</rs>.
-                </item>
-                <item>
-                    <note rend="encircled">✓</note>
-                    <label>5.</label>
-                    <rs type="text"><hi rend="underline">Origens do Christianismo</hi></rs> — <rs type="person">
-                        <choice>
-                            <abbr>A<am>.</am></abbr>
-                            <expan>A<ex>ntonio</ex></expan>
-                        </choice> Móra</rs>.
-                </item>
-                <item>
-                    <note>✓</note>
-                    <label>6.</label> 
-                    <rs type="work" key="O2"><rs type="text"><hi rend="underline">O pastor amoroso</hi></rs> — <rs type="person" key="AC" role="author">Alberto Caeiro</rs></rs>.
-                </item>
-                <metamark rend="line" function="distinct"/>
-                <item>
-                    <note>+</note>
-                    <label>7.</label>
-                    <rs type="work" key="O4"><rs type="text">Arco de Triumpho</rs> — <rs type="person" key="AdC" role="author">Alvaro de Campos</rs></rs>.</item>
-                <item>
-                    <note>+</note>
-                    <label>8.</label>
-                    <rs type="text"><hi rend="underline">Indicios de Oiro</hi></rs> — <rs type="person">Mario de Sá-Carneiro</rs>.
-                </item>
-            </list>
+                <list>
+                    <head><hi rend="underline">Cadernos de Reacção Pagan:</hi></head>
+                    <item>
+                        <note>✓</note>
+                        <label>1.</label>
+                        <rs type="work" key="O2"><rs type="text"><hi rend="underline">O Guardador de
+                                    Rebanhos</hi></rs> — <rs type="person" key="AC" role="author">
+                                <choice>
+                                    <abbr>Alb<am>.</am></abbr>
+                                    <expan>Alb<ex>erto</ex></expan>
+                                </choice> Caeiro</rs></rs>. </item>
+                    <item>
+                        <note>✓</note>
+                        <label>2.</label>
+                        <rs type="text"><hi rend="underline">Prolegomenos</hi></rs> …… — <rs
+                            type="person">Antonio Móra</rs>. </item>
+                    <item>
+                        <note>✓</note>
+                        <label>3.</label>
+                        <rs type="work" key="O3"><rs type="text"><hi rend="underline">Odes</hi></rs>
+                            — <rs type="person" key="RR" role="author">Ricardo Reis</rs></rs>. </item>
+                    <note place="margin left">(ex)</note>
+                    <item>
+                        <note>✓</note>
+                        <label>4.</label>
+                        <rs type="text"><hi rend="underline">Dissertação a favôr da <choice>
+                                    <abbr>All<am>.</am></abbr>
+                                    <expan>All<ex>emanha</ex></expan>
+                                </choice></hi></rs> — <rs type="person"><choice>
+                                <abbr>A<am>.</am></abbr>
+                                <expan>A<ex>ntonio</ex></expan>
+                            </choice> Móra</rs>. </item>
+                    <item>
+                        <note rend="encircled">✓</note>
+                        <label>5.</label>
+                        <rs type="text"><hi rend="underline">Origens do Christianismo</hi></rs> —
+                            <rs type="person">
+                            <choice>
+                                <abbr>A<am>.</am></abbr>
+                                <expan>A<ex>ntonio</ex></expan>
+                            </choice> Móra</rs>. </item>
+                    <item>
+                        <note>✓</note>
+                        <label>6.</label>
+                        <rs type="work" key="O2"><rs type="text"><hi rend="underline">O pastor
+                                    amoroso</hi></rs> — <rs type="person" key="AC" role="author"
+                                >Alberto Caeiro</rs></rs>. </item>
+                    <metamark rend="line" function="distinct"/>
+                    <item>
+                        <note>+</note>
+                        <label>7.</label>
+                        <rs type="work" key="O4"><rs type="text">Arco de Triumpho</rs> — <rs
+                                type="person" key="AdC" role="author">Alvaro de
+                        Campos</rs></rs>.</item>
+                    <item>
+                        <note>+</note>
+                        <label>8.</label>
+                        <rs type="text"><hi rend="underline">Indicios de Oiro</hi></rs> — <rs
+                            type="person">Mario de Sá-Carneiro</rs>. </item>
+                </list>
             </div>
         </body>
     </text>

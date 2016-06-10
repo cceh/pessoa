@@ -27,7 +27,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -36,7 +37,7 @@
             <idno type="filename">BNP_E3_44-3r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 44-3r</idno>
@@ -60,6 +61,13 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. Na mesma folha encontra-se o poema que começa pelo verso «Meu
+                  coração vae no luar que vejo», escrito com a mesma caneta, datado de «10-7-1919» e
+                  publicado em <hi rend="italic">Poemas de Fernando Pessoa 1915-1920</hi> (2005,
+                  213). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -69,19 +77,23 @@
    </facsimile>
    <text>
       <body>
-        <div>
-           <gap reason="selection" unit="line" extent="4"/>
+         <div>
+            <gap reason="selection" unit="line" extent="4"/>
             <list>
-              <item><rs type="person" key="P24">José Anastacio da Cunha</rs>.</item>
-              <item><rs type="text"><rs type="person" key="P76">Bocage</rs>. Alguns sonetos.</rs></item>
-              <item><rs type="text">Sonetos. <rs type="person" key="P18">Anthero de Quental</rs>.</rs></item>
-              <item><rs type="text"><hi rend="underline">Patria</hi></rs>, de <rs type="person" key="P25">Guerra Junqueiro</rs>.</item>
-              <item><rs type="text"><rs type="person" key="P213">Catullo</rs> da Paixão Cearense.</rs></item>
-              <item><rs type="person" key="P24">José Anastacio da Cunha</rs>.</item>
-              <item><rs type="person" key="P81">Manuel da Veiga</rs>.</item>
-              <item><rs type="text">Os decadentes e futuristas</rs>.</item>
+               <item><rs type="person" key="P24">José Anastacio da Cunha</rs>.</item>
+               <item><rs type="text"><rs type="person" key="P76">Bocage</rs>. Alguns
+                  sonetos.</rs></item>
+               <item><rs type="text">Sonetos. <rs type="person" key="P18">Anthero de
+                     Quental</rs>.</rs></item>
+               <item><rs type="text"><hi rend="underline">Patria</hi></rs>, de <rs type="person"
+                     key="P25">Guerra Junqueiro</rs>.</item>
+               <item><rs type="text"><rs type="person" key="P213">Catullo</rs> da Paixão
+                     Cearense.</rs></item>
+               <item><rs type="person" key="P24">José Anastacio da Cunha</rs>.</item>
+               <item><rs type="person" key="P81">Manuel da Veiga</rs>.</item>
+               <item><rs type="text">Os decadentes e futuristas</rs>.</item>
             </list>
-        </div>
+         </div>
       </body>
    </text>
 </TEI>
