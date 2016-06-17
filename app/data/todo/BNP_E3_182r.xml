@@ -14,7 +14,7 @@
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
-               <name>Isabel Figueiredo-Iken</name>  
+               <name>Isabel Figueiredo-Iken</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -22,7 +22,7 @@
             <idno type="filename">BNP_E3_182r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 182r</idno>
@@ -46,6 +46,10 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -55,29 +59,43 @@
    </facsimile>
    <text xml:id="bnp-e3-182r">
       <body>
-         <head><hi rend="underlie">Edições do<choice><abbr>G<am>.</am></abbr><expan>G<ex>remio</ex></expan></choice>de<choice><abbr>C<am>.</am></abbr><expan>C<ex>ultura</ex></expan></choice> 
-            <choice><abbr>P<am>.</am></abbr><expan>P<ex>ortugueza</ex></expan></choice></hi></head>
+         <head><hi rend="underlie">Edições do<choice>
+                  <abbr>G<am>.</am></abbr>
+                  <expan>G<ex>remio</ex></expan>
+               </choice>de<choice>
+                  <abbr>C<am>.</am></abbr>
+                  <expan>C<ex>ultura</ex></expan>
+               </choice>
+               <choice>
+                  <abbr>P<am>.</am></abbr>
+                  <expan>P<ex>ortugueza</ex></expan>
+               </choice></hi></head>
          <list>
-            <item><rs type="person" key="FPC" role="author">Fernando Pessoa</rs> — “Contra a Democracia.”</item>
+            <item><rs type="person" key="FPC" role="author">Fernando Pessoa</rs> — “Contra a
+               Democracia.”</item>
             <item><metamark rend="line" function="ditto"/>— “A Monarchia Nova.”</item>
-            <item><rs type="work"><rs type="person" role="author">Mario de Sá-Carneiro</rs> — <rs type="title">“Indicios de Ouro.”</rs></rs></item>
+            <item><rs type="work"><rs type="person" role="author">Mario de Sá-Carneiro</rs> — <rs
+                     type="title">“Indicios de Ouro.”</rs></rs></item>
             <item>(<rs type="jounal">“Orpheu”</rs> ou <rs type="jounal">“Athena”</rs>).</item>
-            <item>(<rs type="journal">“Portugal”</rs> — magazine em inglez).</item>           
+            <item>(<rs type="journal">“Portugal”</rs> — magazine em inglez).</item>
             <item>(uma illustração em inglez ou francez).</item>
             <item>Traducção de <rs type="person">"Shakespeare</rs>.</item>
             <item><metamark rend="line" function="ditto"/>dos classicos gregos e latinos.</item>
-            <item>[<metamark rend="line" function="ditto"/>da Nibelungenlied] <gap reason="illegible" unit="character" quantity="1"/>hellenico, importa?<lb></lb> — ?</item>
-            <item>Livros portuguezes em inglez: <rs type="work"><rs type="person" role="author"></rs><choice><abbr>Alex<am>.</am></abbr><expan>Alex<ex>andre</ex></expan></choice>Herculano —<lb></lb>
-               <rs type="title">“Historia de Portugal”</rs></rs>e mais.
-            </item>
-            <item>(Edições — directas, anthologias, em inglez) — fora do<lb></lb> intuito. √</item>
+            <item>[<metamark rend="line" function="ditto"/>da Nibelungenlied] <gap
+                  reason="illegible" unit="character" quantity="1"/>hellenico, importa?<lb/> —
+               ?</item>
+            <item>Livros portuguezes em inglez: <rs type="work"><rs type="person" role="author"/><choice>
+                     <abbr>Alex<am>.</am></abbr>
+                     <expan>Alex<ex>andre</ex></expan>
+                  </choice>Herculano —<lb/>
+                  <rs type="title">“Historia de Portugal”</rs></rs>e mais. </item>
+            <item>(Edições — directas, anthologias, em inglez) — fora do<lb/> intuito. √</item>
             <item>“Age of Machinery.”</item>
             <item>“Bushido.”</item>
             <item>Home University Library.</item>
-            <item>Anthologias portuguezas — uma de versos, outra <lb></lb>de prosa — em inglez, francez, hespanhol,<lb></lb> italiano e alemão — etc.
-               
-            </item>
-            <item></item>
+            <item>Anthologias portuguezas — uma de versos, outra <lb/>de prosa — em inglez, francez,
+               hespanhol,<lb/> italiano e alemão — etc. </item>
+            <item/>
          </list>
          <div/>
       </body>

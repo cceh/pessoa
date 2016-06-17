@@ -22,7 +22,7 @@
             <idno type="filename">BNP_E3_48B-32r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 48B-32r</idno>
@@ -46,6 +46,11 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista datilografada, publicada em <hi rend="italic">Livro do Desassossego</hi>
+                  (1990, I, 50). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -56,50 +61,123 @@
    </facsimile>
    <text xml:id="bnp-e3-48b-32r">
       <body>
-          
-         <list> 
-            <item><rs type="title"> Auto do Circo.</rs> 
+
+         <list>
+            <item><rs type="title"> Auto do Circo.</rs>
             </item>
-            <item><rs type="title">O Banqueiro Anarchista.</rs></item>                               
+            <item><rs type="title">O Banqueiro Anarchista.</rs></item>
             <item><rs type="title">Allegação do Réu.</rs></item>
             <item><rs type="title">Na Pharmacia do Evaristo – I.</rs></item>
             <item><rs type="title">Antidoto.</rs></item>
-            <item><rs type="title"><choice><abbr>Th<am>.</am></abbr><expan>Th<ex>eoria</ex></expan></choice> da 
-               <choice><abbr>Orth<am>.</am></abbr><expan>Orth<ex>ographia</ex></expan></choice><choice><abbr>Port<am>.</am></abbr><expan>Port<ex>ugueza</ex></expan></choice>.</rs></item>
-            <item><rs type="title"><choice><abbr>Th<am>.</am></abbr><expan>Th<ex>eoria</ex></expan></choice>  do
-               <choice><abbr>Suff<am>.</am></abbr><expan>Suff<ex>ragio</ex></expan></choice> <choice><abbr>Pol<am>.</am></abbr><expan>Pol<ex>itico</ex></expan></choice>.</rs></item>        
-            <item><rs type="title"><choice><abbr>Th<am>.</am></abbr><expan>Th<ex>eoria</ex></expan></choice>  das <choice><abbr>Comp<am>.</am></abbr><expan>Comp<ex>anhias</ex></expan></choice>
-               <choice><abbr> Reg<am>.</am></abbr><expan> Reg<ex>ias</ex></expan></choice>.</rs></item>
-            <item><rs type="title"><choice><abbr>Th<am>.</am></abbr><expan>Th<ex>eoria</ex></expan></choice>  da Monarchia.</rs></item>
-            <item><rs type="title">Merc.<choice><abbr>Aceph <am>.</am></abbr><expan> Aceph<ex>alo</ex></expan></choice></rs></item>
-            <item><rs type="title">Na <choice><abbr>Flor <am>.</am></abbr><expan>Flor <ex>esta</ex></expan></choice> do
-               <choice><abbr>Alheam <am>.</am></abbr><expan>Alheam <ex>ento</ex></expan></choice></rs></item>
-            <item><rs type="title">O Marinheiro.</rs></item>        
+            <item><rs type="title"><choice>
+                     <abbr>Th<am>.</am></abbr>
+                     <expan>Th<ex>eoria</ex></expan>
+                  </choice> da <choice>
+                     <abbr>Orth<am>.</am></abbr>
+                     <expan>Orth<ex>ographia</ex></expan>
+                  </choice><choice>
+                     <abbr>Port<am>.</am></abbr>
+                     <expan>Port<ex>ugueza</ex></expan>
+                  </choice>.</rs></item>
+            <item><rs type="title"><choice>
+                     <abbr>Th<am>.</am></abbr>
+                     <expan>Th<ex>eoria</ex></expan>
+                  </choice> do <choice>
+                     <abbr>Suff<am>.</am></abbr>
+                     <expan>Suff<ex>ragio</ex></expan>
+                  </choice>
+                  <choice>
+                     <abbr>Pol<am>.</am></abbr>
+                     <expan>Pol<ex>itico</ex></expan>
+                  </choice>.</rs></item>
+            <item><rs type="title"><choice>
+                     <abbr>Th<am>.</am></abbr>
+                     <expan>Th<ex>eoria</ex></expan>
+                  </choice> das <choice>
+                     <abbr>Comp<am>.</am></abbr>
+                     <expan>Comp<ex>anhias</ex></expan>
+                  </choice>
+                  <choice>
+                     <abbr> Reg<am>.</am></abbr>
+                     <expan> Reg<ex>ias</ex></expan>
+                  </choice>.</rs></item>
+            <item><rs type="title"><choice>
+                     <abbr>Th<am>.</am></abbr>
+                     <expan>Th<ex>eoria</ex></expan>
+                  </choice> da Monarchia.</rs></item>
+            <item><rs type="title">Merc.<choice>
+                     <abbr>Aceph <am>.</am></abbr>
+                     <expan> Aceph<ex>alo</ex></expan>
+                  </choice></rs></item>
+            <item><rs type="title">Na <choice>
+                     <abbr>Flor <am>.</am></abbr>
+                     <expan>Flor <ex>esta</ex></expan>
+                  </choice> do <choice>
+                     <abbr>Alheam <am>.</am></abbr>
+                     <expan>Alheam <ex>ento</ex></expan>
+                  </choice></rs></item>
+            <item><rs type="title">O Marinheiro.</rs></item>
             <item><rs type="title">Além-Deus.</rs></item>
             <item><rs type="title">Amun-Râ.</rs></item>
             <item><rs type="title">Epigrammas.</rs></item>
-            <item><rs type="title">Orpheu.</rs></item>        
+            <item><rs type="title">Orpheu.</rs></item>
             <item><rs type="title">Mar Portuguez.</rs></item>
             <item><rs type="title">Medalhas – I a III.</rs></item>
             <item><rs type="title">Sakamuni.</rs></item>
             <item><rs type="title">Marcha Funebre.</rs></item>
             <item><rs type="person" key="AC" role="author">Caeiro</rs>. – 1 e 2.</item>
-            <item> <rs type="person" key="RR" role="author"><choice><abbr>R <am>.</am></abbr><expan>R<ex>icardo</ex></expan></choice> Reis</rs> – 1.</item>
-            <item><rs type="person" key="AdC" role="author"><choice><abbr>Alv <am>.</am></abbr><expan>Alv<ex>aro</ex></expan></choice> de Campos</rs>:
-               <choice><abbr> Saud <am>.</am></abbr><expan> Saud<ex>ação</ex></expan></choice> a <choice><abbr>W<am>.</am></abbr><expan> W<ex>halt</ex></expan></choice>
-               <choice><abbr>W<am>.</am></abbr><expan> W<ex>hitman</ex></expan></choice></item>
-            <item><rs type="person" key="AdC" role="author"><choice><abbr>Alv <am>.</am></abbr><expan>Alv<ex>aro</ex></expan></choice> de Campos</rs>: Soneto.</item>
-            <item><rs type="person" key="AdC" role="author"><choice><abbr>Alv <am>.</am></abbr><expan>Alv<ex>aro</ex></expan></choice> de Campos</rs>:
-               A <choice><abbr>Pas <am>.</am></abbr><expan>Pas<ex>sagem</ex></expan></choice> das
-               <choice><abbr> H <am>.</am></abbr><expan> H<ex>oras</ex></expan></choice></item>
+            <item>
+               <rs type="person" key="RR" role="author"><choice>
+                     <abbr>R <am>.</am></abbr>
+                     <expan>R<ex>icardo</ex></expan>
+                  </choice> Reis</rs> – 1.</item>
+            <item><rs type="person" key="AdC" role="author"><choice>
+                     <abbr>Alv <am>.</am></abbr>
+                     <expan>Alv<ex>aro</ex></expan>
+                  </choice> de Campos</rs>: <choice>
+                  <abbr> Saud <am>.</am></abbr>
+                  <expan> Saud<ex>ação</ex></expan>
+               </choice> a <choice>
+                  <abbr>W<am>.</am></abbr>
+                  <expan> W<ex>halt</ex></expan>
+               </choice>
+               <choice>
+                  <abbr>W<am>.</am></abbr>
+                  <expan> W<ex>hitman</ex></expan>
+               </choice></item>
+            <item><rs type="person" key="AdC" role="author"><choice>
+                     <abbr>Alv <am>.</am></abbr>
+                     <expan>Alv<ex>aro</ex></expan>
+                  </choice> de Campos</rs>: Soneto.</item>
+            <item><rs type="person" key="AdC" role="author"><choice>
+                     <abbr>Alv <am>.</am></abbr>
+                     <expan>Alv<ex>aro</ex></expan>
+                  </choice> de Campos</rs>: A <choice>
+                  <abbr>Pas <am>.</am></abbr>
+                  <expan>Pas<ex>sagem</ex></expan>
+               </choice> das <choice>
+                  <abbr> H <am>.</am></abbr>
+                  <expan> H<ex>oras</ex></expan>
+               </choice></item>
             <item><rs type="title">Uma Entrevista.</rs></item>
-            <item><rs type="title"><choice><abbr>Horosc <am>.</am></abbr><expan> Horosc<ex>opo</ex></expan></choice>
-               da<choice><abbr>Rep <am>.</am></abbr><expan>Rep <ex>ublica</ex></expan></choice>
-               <choice><abbr>Port <am>.</am></abbr><expan>Port <ex>uguesa</ex></expan></choice></rs></item>
-            <item><rs type="title"><choice><abbr>Horosc <am>.</am></abbr><expan> Horosc<ex>opo</ex></expan></choice> de <rs type="place">Portugal</rs>.</rs></item>
-            <item><rs type="person">Bandarra</rs>–<rs type="title"> 3º Corpo (serial).</rs></item>   
-           
-         </list>                  
+            <item><rs type="title"><choice>
+                     <abbr>Horosc <am>.</am></abbr>
+                     <expan> Horosc<ex>opo</ex></expan>
+                  </choice> da<choice>
+                     <abbr>Rep <am>.</am></abbr>
+                     <expan>Rep <ex>ublica</ex></expan>
+                  </choice>
+                  <choice>
+                     <abbr>Port <am>.</am></abbr>
+                     <expan>Port <ex>uguesa</ex></expan>
+                  </choice></rs></item>
+            <item><rs type="title"><choice>
+                     <abbr>Horosc <am>.</am></abbr>
+                     <expan> Horosc<ex>opo</ex></expan>
+                  </choice> de <rs type="place">Portugal</rs>.</rs></item>
+            <item><rs type="person">Bandarra</rs>–<rs type="title"> 3º Corpo (serial).</rs></item>
+
+         </list>
          <div/>
       </body>
    </text>

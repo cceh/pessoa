@@ -26,7 +26,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -35,7 +36,7 @@
             <idno type="filename">BNP_E3_48-14r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 48-14r</idno>
@@ -59,34 +60,40 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista datilografada. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-48-1-56_JPG_24-C-R0150/bn-acpc-e-e3-48-1-56_0027_14_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-48-1-56_JPG_24-C-R0150/bn-acpc-e-e3-48-1-56_0027_14_t24-C-R0150.jpg"/>
    </facsimile>
    <text>
       <body>
          <div>
-            <head>ANTHOLOGIA - <lb/> <choice><abbr>Vol<am>.</am></abbr><expan>Vol<ex>ume</ex></expan></choice> I.</head>
+            <head>ANTHOLOGIA - <lb/>
+               <choice>
+                  <abbr>Vol<am>.</am></abbr>
+                  <expan>Vol<ex>ume</ex></expan>
+               </choice> I.</head>
             <list>
                <item>
                   <label>1.</label>
-                  <rs type="person" key="P65">Shakespeare</rs>, <rs type="text">“A Tormenta”</rs>.
-               </item>
+                  <rs type="person" key="P65">Shakespeare</rs>, <rs type="text">“A Tormenta”</rs>. </item>
                <item>
                   <label>2.</label>
-                  <rs type="person" key="P83">Robert Louis Stevenson</rs>, 
-                  <rs type="text">
-                     “O Extranho Caso do <lb/> 
-                     <rs type="person" key="P207"><abbr>Dr<am>.</am></abbr> 
-                     Jekyll</rs> e do <rs type="person" key="P208"><abbr>Sr<am>.</am></abbr> Hyde</rs>”.
-                  </rs>
-               </item>        
+                  <rs type="person" key="P83">Robert Louis Stevenson</rs>, <rs type="text"> “O
+                     Extranho Caso do <lb/>
+                     <rs type="person" key="P207"><abbr>Dr<am>.</am></abbr> Jekyll</rs> e do <rs
+                        type="person" key="P208"><abbr>Sr<am>.</am></abbr> Hyde</rs>”. </rs>
+               </item>
                <item>
                   <label>3.</label>
-                  <rs type="person" key="Pi87">Edgar Poe</rs>, <rs type="text">Os principais poemas de</rs>.
-               </item>
+                  <rs type="person" key="Pi87">Edgar Poe</rs>, <rs type="text">Os principais poemas
+                     de</rs>. </item>
             </list>
             <metamark rend="line" function="end"/>
          </div>

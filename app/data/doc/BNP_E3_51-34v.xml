@@ -25,7 +25,8 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2016</date>
                 <availability>
@@ -34,7 +35,7 @@
                 <idno type="filename">BNP_E3_51-34v.xml</idno>
             </publicationStmt>
             <sourceDesc>
-                <msDesc>
+                <msDesc xml:id="M1" type="structured">
                     <msIdentifier>
                         <institution>Biblioteca Nacional de Portugal</institution>
                         <idno>BNP/E3 51-34v</idno>
@@ -59,11 +60,24 @@
                         </origin>
                     </history>
                 </msDesc>
+                <msDesc corresp="#M1" type="prose">
+                    <msIdentifier/>
+                    <p> Lista manuscrita, publicada em <hi rend="italic">Obras de António Mora</hi>
+                        (2002, 165). No verso da folha encontra-se um testemunho do primeiro poema
+                        do «Livro Primeiro» de «Odes» atribuídas a Ricardo Reis, publicado no
+                        primeiro número da revista <hi rend="italic">Athena</hi>, em Outubro de
+                        1924, que começa com o verso «Seguro assento na columna firme». Ao contrário
+                        de outros testemunhos que se encontram no espólio, este corresponde
+                        exatamente à versão publicada na revista (cf. PRR, 63-65 e AT n.º 1, 19).
+                    </p>
+                </msDesc>
             </sourceDesc>
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic url="bn-acpc-e-e3-51-1-106_JPG_24-C-R0150/bn-acpc-e-e3-51-1-106_0072_34av-34v_t24-C-R0150.jpg"/>
+        <graphic
+            url="bn-acpc-e-e3-51-1-106_JPG_24-C-R0150/bn-acpc-e-e3-51-1-106_0072_34av-34v_t24-C-R0150.jpg"
+        />
     </facsimile>
     <text>
         <body>
@@ -71,34 +85,38 @@
                 <delSpan rend="overstrike" spanTo="#A1"/>
                 <list>
                     <item>
-                        <label>1.</label> 
-                        <rs type="work" key="O3-5"><rs type="text">Odes</rs> de <rs type="person" key="RR" role="author">Ricardo Reis</rs>.<lb/> Livro Primeiro</rs>. 
+                        <label>1.</label>
+                        <rs type="work" key="O3-5"><rs type="text">Odes</rs> de <rs type="person"
+                                key="RR" role="author">Ricardo Reis</rs>.<lb/> Livro Primeiro</rs>. </item>
+                    <metamark rend="line" function="distinct"/>
+                    <item>
+                        <label>2.</label>
+                        <rs type="work" key="O2" style="a">Obras de <rs type="person" key="AC"
+                                role="author">Alberto Caeiro</rs></rs>.<lb/> (1889-1915). <rs
+                            type="text">Re<pc>-</pc><lb/>censão de <rs type="person" key="RR"
+                                role="author">Ricardo <lb/>Reis.</rs> I. <rs type="work" key="O2"
+                                style="b"><rs type="text">"O Guarda<pc>-</pc><lb/>dor de
+                                    Rebanhos"</rs></rs></rs><lb/> (1910-1912)</item>
+                    <metamark rend="line" function="distinct"/>
+                    <item>
+                        <label>3.</label>
+                        <rs type="work" key="O2" style="a">Obras de <rs type="person" key="AC"
+                                role="author">Alberto Caeiro</rs></rs>.<lb/> (1889-1915). <rs
+                            type="text">Re<pc>-</pc><lb/>censão de <rs type="person" key="RR"
+                                role="author">Ricardo<lb/> Reis.</rs> — II. <rs type="work" key="O2"
+                                style="d"><rs type="text"><add>Os</add> Poemas<lb/>
+                                    inconjunctos</rs></rs></rs>. (1908-<lb/>1915). </item>
+                    <metamark rend="line" function="distinct"/>
+                    <item>
+                        <label>4.</label>O Regresso dos Deuses,<lb/> por <rs type="person" key="P1"
+                            style="b">Antonio Mora</rs>
                     </item>
                     <metamark rend="line" function="distinct"/>
-                <item>
-                    <label>2.</label>
-                    <rs type="work" key="O2" style="a">Obras de <rs type="person" key="AC" role="author">Alberto Caeiro</rs></rs>.<lb/>
-                     (1889-1915).
-                    <rs type="text">Re<pc>-</pc><lb/>censão de <rs type="person" key="RR" role="author">Ricardo
-                        <lb/>Reis.</rs> I. <rs type="work" key="O2" style="b"><rs type="text">"O Guarda<pc>-</pc><lb/>dor de
-                        Rebanhos"</rs></rs></rs><lb/> (1910-1912)</item>
-                <metamark rend="line" function="distinct"/>
-                <item>
-                    <label>3.</label>
-                    <rs type="work" key="O2" style="a">Obras de <rs type="person" key="AC" role="author">Alberto Caeiro</rs></rs>.<lb/>
-                    (1889-1915). <rs type="text">Re<pc>-</pc><lb/>censão de <rs type="person"
-                        key="RR" role="author">Ricardo<lb/> Reis.</rs> — II. <rs type="work" key="O2" style="d"><rs type="text"><add>Os</add> Poemas<lb/>
-                    inconjunctos</rs></rs></rs>. (1908-<lb/>1915). 
-                </item>
-                <metamark rend="line" function="distinct"/>
-                <item>
-                    <label>4.</label>O Regresso dos Deuses,<lb/> por <rs type="person" key="P1" style="b">Antonio Mora</rs>
-                </item>
-                <metamark rend="line" function="distinct"/>
-                <item>
-                    <label>5.</label> <rs type="work" key="O3" style="a"><rs type="text">Odes</rs> de <rs type="person" key="RR" role="author">Ricardo
-                        Reis.</rs></rs><lb/> Livro Segundo.
-                </item>
+                    <item>
+                        <label>5.</label>
+                        <rs type="work" key="O3" style="a"><rs type="text">Odes</rs> de <rs
+                                type="person" key="RR" role="author">Ricardo Reis.</rs></rs><lb/>
+                        Livro Segundo. </item>
                 </list>
                 <anchor xml:id="A1"/>
             </div>

@@ -10,7 +10,7 @@
             <p>Publication Information</p>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 144G-44r</idno>
@@ -31,8 +31,7 @@
                         <name>Isabel Figueiredo-Iken</name>
                      </respStmt>
                      <note type="genre">
-                        <rs type="genre" key="lista_editorial">Lista
-                                                editorial</rs>
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
                      <textLang mainLang="pt" otherLangs="en"/>
                   </msItemStruct>
@@ -46,6 +45,11 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita no caderno 144G (cf. <ref target="http://purl.pt/13883"
+                     >http://purl.pt/13883</ref>). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -54,14 +58,15 @@
    </facsimile>
    <text xml:id="bnp-e3-144g-44r">
       <body>
-         <head>I.<hi rend="underline"> Politica — Nacional e Internacional</hi></head>  
-         <list> 
+         <head>I.<hi rend="underline"> Politica — Nacional e Internacional</hi></head>
+         <list>
             <item><label>1.</label><rs type="place">Portugal</rs>.</item>
-            <item><label>2.</label><rs type="place">Inglaterra</rs>.</item>        
+            <item><label>2.</label><rs type="place">Inglaterra</rs>.</item>
             <item><label>3.</label><rs type="place">França</rs>.</item>
             <item><label>4.</label><rs type="place">Belgica</rs>.</item>
-            <item><label>5.</label><rs type="place">Suissa</rs><note place="right">	etc.</note></item>
-            
+            <item><label>5.</label><rs type="place">Suissa</rs><note place="right">
+               etc.</note></item>
+
          </list>
          <metamark rend="line" function="distinct"/>
          <p>II. Artes e Litteratura. </p>
@@ -69,18 +74,19 @@
          <metamark rend="line" function="distinct"/>
          <p>III. Commercio</p>
          <metamark rend="doubleline" function="distinct"/>
-         <p><note rend="encircled" place="center"><hi rend="underline">Olisippo — <lb></lb> stralo</hi></note></p>
-         
-         <p><hi rend="underline">News from <rs type="place">Portugal.</rs></hi></p>  
-         <list> 
+         <p><note rend="encircled" place="center"><hi rend="underline">Olisippo — <lb/>
+               stralo</hi></note></p>
+
+         <p><hi rend="underline">News from <rs type="place">Portugal.</rs></hi></p>
+         <list>
             <item><label>1.</label>Political.</item>
-            <item><label>2.</label>Commercial.</item>        
+            <item><label>2.</label>Commercial.</item>
             <item><label>3.</label>Art and Literature.</item>
             <item><label>4.</label>Sports.</item>
             <item><label>5.</label>General</item>
-           
+
          </list>
-         
+
          <div/>
       </body>
    </text>

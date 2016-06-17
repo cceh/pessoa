@@ -14,7 +14,7 @@
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
-               <name>Isabel Figueiredo-Iken</name> 
+               <name>Isabel Figueiredo-Iken</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -22,7 +22,7 @@
             <idno type="filename">BNP_E3_133I-27r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 133I-27r</idno>
@@ -35,7 +35,7 @@
                      <note type="genre">
                         <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
-                     <textLang mainLang="pt" otherLangs="en" />
+                     <textLang mainLang="pt" otherLangs="en"/>
                   </msItemStruct>
                </msContents>
                <history>
@@ -45,6 +45,10 @@
                      </p>
                   </origin>
                </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita em papel com marca de água «Almaço Prado». </p>
             </msDesc>
          </sourceDesc>
       </fileDesc>
@@ -57,19 +61,29 @@
    <text xml:id="bnp-e3-133i-27r">
       <body>
          <list>
-            <item><hi rend="underline">Cinco<hi rend="superscript">Trez</hi> Contos por semana</hi><lb></lb> 
-               em fasciculos.</item>
-            <item>(five<hi rend="superscript">three</hi>) tales in a small, cheap<lb></lb>
-               <gap reason="illegible" unit="word" quantity="1"/>— 100 <gap reason="illegible" unit="character" quantity="1"/> works</item>
-            </list>
-          <list>
-             <item><choice><abbr>e<am>.</am></abbr></choice><choice><abbr>g<am>.</am></abbr></choice>— <label>1.</label><rs type="person">Martin Hewitt</rs></item>
-             <item><label>2.</label><rs type="person"><choice><abbr>W<am>.</am></abbr></choice> <choice><abbr>W<am>.</am></abbr></choice>Jacobs</rs>.</item>
-             <item><label>3.</label><supplied resp="PS" reason="omitted-in-original"></supplied></item>
-             <item><label>4.</label><supplied resp="PS" reason="omitted-in-original"></supplied></item>
-             <item><label>5.</label><supplied resp="PS" reason="omitted-in-original"></supplied></item>
-          </list> 
-         
+            <item><hi rend="underline">Cinco<hi rend="superscript">Trez</hi> Contos por
+               semana</hi><lb/> em fasciculos.</item>
+            <item>(five<hi rend="superscript">three</hi>) tales in a small, cheap<lb/>
+               <gap reason="illegible" unit="word" quantity="1"/>— 100 <gap reason="illegible"
+                  unit="character" quantity="1"/> works</item>
+         </list>
+         <list>
+            <item><choice>
+                  <abbr>e<am>.</am></abbr>
+               </choice><choice>
+                  <abbr>g<am>.</am></abbr>
+               </choice>— <label>1.</label><rs type="person">Martin Hewitt</rs></item>
+            <item><label>2.</label><rs type="person"><choice>
+                     <abbr>W<am>.</am></abbr>
+                  </choice>
+                  <choice>
+                     <abbr>W<am>.</am></abbr>
+                  </choice>Jacobs</rs>.</item>
+            <item><label>3.</label><supplied resp="PS" reason="omitted-in-original"/></item>
+            <item><label>4.</label><supplied resp="PS" reason="omitted-in-original"/></item>
+            <item><label>5.</label><supplied resp="PS" reason="omitted-in-original"/></item>
+         </list>
+
          <div/>
       </body>
    </text>

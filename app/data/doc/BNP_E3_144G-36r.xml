@@ -27,7 +27,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -36,7 +37,7 @@
             <idno type="filename">BNP_E3_144G-36r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 144G-36r</idno>
@@ -60,6 +61,11 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita no caderno 144G (cf. <ref target="http://purl.pt/13883"
+                     >http://purl.pt/13883</ref>). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -68,16 +74,17 @@
    </facsimile>
    <text>
       <body>
-        <div>
-         <list>
-           <item><rs type="text">Theoria do Suffragio Politico</rs>.</item>
-           <item><rs type="text">Ensaio sobre o Bolchevismo</rs>.</item>
-           <item><rs type="text">Bases para uma Orthographia Nacional</rs>.</item>
-           <item><rs type="text">O Renascimento da Tyrannia</rs>.</item>
-           <item><rs type="text">O Futuro do Racionalismo</rs>.</item>
-           <item><rs type="text">Evolução da Idéa de <rs type="person" key="P50">Jesus</rs></rs>.</item>
-          </list>
-        </div>
+         <div>
+            <list>
+               <item><rs type="text">Theoria do Suffragio Politico</rs>.</item>
+               <item><rs type="text">Ensaio sobre o Bolchevismo</rs>.</item>
+               <item><rs type="text">Bases para uma Orthographia Nacional</rs>.</item>
+               <item><rs type="text">O Renascimento da Tyrannia</rs>.</item>
+               <item><rs type="text">O Futuro do Racionalismo</rs>.</item>
+               <item><rs type="text">Evolução da Idéa de <rs type="person" key="P50"
+                  >Jesus</rs></rs>.</item>
+            </list>
+         </div>
       </body>
    </text>
 </TEI>

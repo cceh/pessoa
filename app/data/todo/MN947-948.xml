@@ -21,7 +21,7 @@
             <idno type="filename">BNP_E3_sem-cota-MN-947-948.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 semcota MN 947-948</idno>
@@ -45,6 +45,10 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista datilografada. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -54,29 +58,103 @@
    </facsimile>
    <text xml:id="bnp-e-sem-cota-mn-947-948">
       <body>
-         <list> 
-            <item><label>1.</label>Artigo editorial, de assumpto mais geral que<lb></lb> os outros todos (<choice><abbr>ap<am>.</am></abbr><expan>ap<ex>roximadamente</ex></expan></choice> 
-               2 <choice><abbr>pag<am>.</am></abbr><expan>pag<ex>inas</ex></expan></choice>.</item>
-            <item><label>2.</label>Chronicas financeiras — (1) Finanças do Estado,<lb></lb> (2) Finanças das Colonias, (3) Bolsa, (4)<lb></lb> Cambios, (5) Balança Commercial.
-               (<choice><abbr>ap<am>.</am></abbr><expan>ap<ex>roximadamente</ex></expan></choice>  5 <choice><abbr>pag<am>.</am></abbr><expan>pag<ex>inas</ex></expan></choice>). </item>        
-            <item><label>3.</label>Um artigo especial, de alguem com authoridade,<lb></lb> e sobre um assumpto de certo modo especial ou<lb></lb> technico. (<choice><abbr>ap<am>.</am></abbr><expan>ap<ex>roximadamente</ex></expan></choice>  3<choice><abbr>pag<am>.</am></abbr><expan>pag<ex>inas</ex></expan></choice> ).</item>
-            <item><label>4.</label>Chronica Colonial, por Colonias. (<choice><abbr>ap<am>.</am></abbr><expan>ap<ex>roximadamente</ex></expan></choice> 3 <choice><abbr>pag<am>.</am></abbr><expan>pag<ex>inas</ex></expan></choice>).  </item>
-            <item><label>5.</label>Chronica commercial e industrial: (1) Movimento<lb></lb> geral do commercio, baseado em parte nas ta<pc>-</pc><lb />bellas do fim do periodico e em dados parti<pc>-</pc><lb />culares complementares; (2) Movimento indus<pc>-</pc><lb />trial, incluindo a indicação de novas indus<pc>-</pc><lb />trias creadas 
-               (<choice><abbr>v<am>.</am></abbr><expan>v<ex>er</ex></expan></choice> 
-               secção de Patentes, etc.,<lb></lb> quanto a “novas industrias><del rend="overtyped"><gap reason="illegible" quantity="1" unit="character" /></del> , sobre cuja in<pc>-</pc><lb />troducção recahe patente). (<choice><abbr>ap<am>.</am></abbr><expan>ap<ex>roximadamente</ex></expan></choice> 3<choice><abbr>pag<am>.</am></abbr><expan>pag<ex>inas</ex></expan></choice> ).  </item>
-            <item><label>6.</label>Um, dois ou trez artigos de “publicidade por <lb></lb>artigo”. (<choice><abbr>ap<am>.</am></abbr><expan>ap<ex>roximadamente</ex></expan></choice> 10<choice><abbr>pag<am>.</am></abbr><expan>pag<ex>inas</ex></expan></choice>  todos juntos).  </item>
-            <item><label>7.</label>Movimento dos mercados mundiaes, classificando<lb></lb> por <hi rend="underline">artigos</hi>, sendo cada<hi rend="underline"> artigo</hi> seguido de no<pc>-</pc><lb />mes de vendedores (e talvez tambem de compra<pc>-</pc><lb />dores) d’elle, nomes que são annuncios,
-               e admittem talvez variedade typographica, dentro<lb></lb> de limites. (<choice><abbr>ap<am>.</am></abbr><expan>ap<ex>roximadamente</ex></expan></choice> 20 <choice><abbr>pag<am>.</am></abbr><expan>pag<ex>inas</ex></expan></choice>). </item>
-            <item><label>8.</label>Um artigo de propaganda do paiz em relação a<lb></lb> turismo. (<choice><abbr>ap<am>.</am></abbr><expan>ap<ex>roximadamente</ex></expan></choice><choice><abbr>pag<am>.</am></abbr><expan>pag<ex>inas</ex></expan></choice> ) (Illustrado). </item>
-            <item><label>9.</label>Informação do Tribunal do Commercio (Consti<pc>-</pc><lb />tuição de Sociedades, Alteração de Pactos <lb></lb>Sociaes, Dissolução de Sociedades, Acções e<lb></lb> seus Resultados, mas não Lettras Protestadas), <lb></lb>
-               e da Repartição de Propriedade Industrial <lb></lb>(pedidos de patentes, marcas, nomes e intro<pc>-</pc><lb />ducção de novas industrias). (<choice><abbr>ap<am>.</am></abbr><expan>ap<ex>roximadamente</ex></expan></choice> 8 <choice><abbr>pag<am>.</am></abbr><expan>pag<ex>inas</ex></expan></choice>).</item>
-           
-            <item><label>10;</label>Tabellas de importação, exportação e reexporta<pc>-</pc><lb /> ção do mez anterior (<choice><abbr>ap<am>.</am></abbr><expan>ap<ex>roximadamente</ex></expan></choice> 1 <choice><abbr>pag<am>.</am></abbr><expan>pag<ex>inas</ex></expan></choice>) Classi<pc>-</pc><lb />ficação especial. </item>        
+         <list>
+            <item><label>1.</label>Artigo editorial, de assumpto mais geral que<lb/> os outros todos (<choice>
+                  <abbr>ap<am>.</am></abbr>
+                  <expan>ap<ex>roximadamente</ex></expan>
+               </choice> 2 <choice>
+                  <abbr>pag<am>.</am></abbr>
+                  <expan>pag<ex>inas</ex></expan>
+               </choice>.</item>
+            <item><label>2.</label>Chronicas financeiras — (1) Finanças do Estado,<lb/> (2) Finanças
+               das Colonias, (3) Bolsa, (4)<lb/> Cambios, (5) Balança Commercial. (<choice>
+                  <abbr>ap<am>.</am></abbr>
+                  <expan>ap<ex>roximadamente</ex></expan>
+               </choice> 5 <choice>
+                  <abbr>pag<am>.</am></abbr>
+                  <expan>pag<ex>inas</ex></expan>
+               </choice>). </item>
+            <item><label>3.</label>Um artigo especial, de alguem com authoridade,<lb/> e sobre um
+               assumpto de certo modo especial ou<lb/> technico. (<choice>
+                  <abbr>ap<am>.</am></abbr>
+                  <expan>ap<ex>roximadamente</ex></expan>
+               </choice> 3<choice>
+                  <abbr>pag<am>.</am></abbr>
+                  <expan>pag<ex>inas</ex></expan>
+               </choice> ).</item>
+            <item><label>4.</label>Chronica Colonial, por Colonias. (<choice>
+                  <abbr>ap<am>.</am></abbr>
+                  <expan>ap<ex>roximadamente</ex></expan>
+               </choice> 3 <choice>
+                  <abbr>pag<am>.</am></abbr>
+                  <expan>pag<ex>inas</ex></expan>
+               </choice>). </item>
+            <item><label>5.</label>Chronica commercial e industrial: (1) Movimento<lb/> geral do
+               commercio, baseado em parte nas ta<pc>-</pc><lb/>bellas do fim do periodico e em
+               dados parti<pc>-</pc><lb/>culares complementares; (2) Movimento
+               indus<pc>-</pc><lb/>trial, incluindo a indicação de novas indus<pc>-</pc><lb/>trias
+               creadas (<choice>
+                  <abbr>v<am>.</am></abbr>
+                  <expan>v<ex>er</ex></expan>
+               </choice> secção de Patentes, etc.,<lb/> quanto a “novas industrias><del
+                  rend="overtyped"><gap reason="illegible" quantity="1" unit="character"/></del> ,
+               sobre cuja in<pc>-</pc><lb/>troducção recahe patente). (<choice>
+                  <abbr>ap<am>.</am></abbr>
+                  <expan>ap<ex>roximadamente</ex></expan>
+               </choice> 3<choice>
+                  <abbr>pag<am>.</am></abbr>
+                  <expan>pag<ex>inas</ex></expan>
+               </choice> ). </item>
+            <item><label>6.</label>Um, dois ou trez artigos de “publicidade por <lb/>artigo”. (<choice>
+                  <abbr>ap<am>.</am></abbr>
+                  <expan>ap<ex>roximadamente</ex></expan>
+               </choice> 10<choice>
+                  <abbr>pag<am>.</am></abbr>
+                  <expan>pag<ex>inas</ex></expan>
+               </choice> todos juntos). </item>
+            <item><label>7.</label>Movimento dos mercados mundiaes, classificando<lb/> por <hi
+                  rend="underline">artigos</hi>, sendo cada<hi rend="underline"> artigo</hi> seguido
+               de no<pc>-</pc><lb/>mes de vendedores (e talvez tambem de compra<pc>-</pc><lb/>dores)
+               d’elle, nomes que são annuncios, e admittem talvez variedade typographica,
+               dentro<lb/> de limites. (<choice>
+                  <abbr>ap<am>.</am></abbr>
+                  <expan>ap<ex>roximadamente</ex></expan>
+               </choice> 20 <choice>
+                  <abbr>pag<am>.</am></abbr>
+                  <expan>pag<ex>inas</ex></expan>
+               </choice>). </item>
+            <item><label>8.</label>Um artigo de propaganda do paiz em relação a<lb/> turismo. (<choice>
+                  <abbr>ap<am>.</am></abbr>
+                  <expan>ap<ex>roximadamente</ex></expan>
+               </choice><choice>
+                  <abbr>pag<am>.</am></abbr>
+                  <expan>pag<ex>inas</ex></expan>
+               </choice> ) (Illustrado). </item>
+            <item><label>9.</label>Informação do Tribunal do Commercio (Consti<pc>-</pc><lb/>tuição
+               de Sociedades, Alteração de Pactos <lb/>Sociaes, Dissolução de Sociedades, Acções
+               e<lb/> seus Resultados, mas não Lettras Protestadas), <lb/> e da Repartição de
+               Propriedade Industrial <lb/>(pedidos de patentes, marcas, nomes e
+               intro<pc>-</pc><lb/>ducção de novas industrias). (<choice>
+                  <abbr>ap<am>.</am></abbr>
+                  <expan>ap<ex>roximadamente</ex></expan>
+               </choice> 8 <choice>
+                  <abbr>pag<am>.</am></abbr>
+                  <expan>pag<ex>inas</ex></expan>
+               </choice>).</item>
+
+            <item><label>10;</label>Tabellas de importação, exportação e reexporta<pc>-</pc><lb/>
+               ção do mez anterior (<choice>
+                  <abbr>ap<am>.</am></abbr>
+                  <expan>ap<ex>roximadamente</ex></expan>
+               </choice> 1 <choice>
+                  <abbr>pag<am>.</am></abbr>
+                  <expan>pag<ex>inas</ex></expan>
+               </choice>) Classi<pc>-</pc><lb/>ficação especial. </item>
             <item><label>11.</label>Movimento maritimo, incluindo navios a chegar.</item>
             <item><label>12;</label>Annuncios.</item>
-           
+
          </list>
-         
+
          <div/>
       </body>
    </text>

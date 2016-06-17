@@ -14,7 +14,7 @@
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
-               <name>Isabel Figueiredo-Iken</name>  
+               <name>Isabel Figueiredo-Iken</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -22,7 +22,7 @@
             <idno type="filename">BNP_E3_55E-94v.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 55E-94v</idno>
@@ -46,6 +46,10 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -56,57 +60,62 @@
    </facsimile>
    <text xml:id="bnp-e3-55e-94v">
       <body>
-        <div>
-           <note rend="framed">
-           <div>
-         <list> 
-            <item>I —<label>1.</label>Prefacio.	— <del rend="overstrike">3 a 4 </del><note place="right">4</note></item>
-            <item><label>2.</label><rs type="title">Gladio.</rs>	— <del rend="overstrike">1</del><note place="right">1</note></item>        
-            <item><label>3.</label><rs type="title">Auto do Circo.</rs>	— <supplied resp="PS" reason="omitted-in-original"></supplied></item> 
-            <item>(?) —	<label>4.</label>Theoria da Orthographia Portugueza	—<supplied resp="PS" reason="omitted-in-original"></supplied></item>
-            <item><label>5.</label><rs type="work"><rs type="title">O Corvo</rs> (<rs type="person">Poe</rs>)</rs> — 3 </item>
-            <item><label>6.</label>Epigramas	— 4</item>
-            <item><label>7.</label>Uma Entrevista.	— 3</item>
-            <item><label>8.</label><choice><abbr>Merc<am>.</am></abbr></choice> Acephalo	— 1</item>
-         </list>
-         </div>
          <div>
-         <list>
-            <item xml:id="I1">II —<label>Antidoto.	</label>1. 1 3/4
-               <label xml:id="I2" >2. 1/4</label>
-               <label xml:id="I3">3.</label>
-               <label xml:id="I4">4. </label>
-               <label xml:id="I5">5. 1 1/2	</label>
-               <label xml:id="I6">6. 1 1/2</label>
-               <label xml:id="I7">7. 1 1/2	</label>
-               <label xml:id="I8">8. 1/2</label>
-               <metamark rend="line/string" function="distinct"/>
-               <label xml:id="I9" >total</label>7²
-              <metamark rend="line/string" function="distinct"/>
-               <label xml:id="I10">9</label>
-               <label xml:id="I11">7</label></item>
-         </list>
-            <ab n="a">
-               <note target="range(I1,I2,)" place=" right" type="addition"></note>  
-               <note place="right"> <del rend="overstrike3">3/4</del>²</note>
-               
-               <metamark rend="curly bracket" function="grouping"/></ab>
-            <ab n="b">
-               <note target="range(I5,I6)" place=" right" type="addition"> </note>  
-               <note place="right">3</note>
-               
-               <metamark rend="curly bracket" function="grouping"/></ab>
-            <ab n="c">
-               <note target="range(I7,I8,)" place=" right" type="addition"></note>  
-               <note place="right">2</note>
-               
-               <metamark rend="curly bracket" function="grouping"/></ab>
-            
+            <note rend="framed">
+               <div>
+                  <list>
+                     <item>I —<label>1.</label>Prefacio. — <del rend="overstrike">3 a 4 </del><note
+                           place="right">4</note></item>
+                     <item><label>2.</label><rs type="title">Gladio.</rs> — <del rend="overstrike"
+                           >1</del><note place="right">1</note></item>
+                     <item><label>3.</label><rs type="title">Auto do Circo.</rs> — <supplied
+                           resp="PS" reason="omitted-in-original"/></item>
+                     <item>(?) — <label>4.</label>Theoria da Orthographia Portugueza —<supplied
+                           resp="PS" reason="omitted-in-original"/></item>
+                     <item><label>5.</label><rs type="work"><rs type="title">O Corvo</rs> (<rs
+                              type="person">Poe</rs>)</rs> — 3 </item>
+                     <item><label>6.</label>Epigramas — 4</item>
+                     <item><label>7.</label>Uma Entrevista. — 3</item>
+                     <item><label>8.</label><choice>
+                           <abbr>Merc<am>.</am></abbr>
+                        </choice> Acephalo — 1</item>
+                  </list>
+               </div>
+               <div>
+                  <list>
+                     <item xml:id="I1">II —<label>Antidoto. </label>1. 1 3/4 <label xml:id="I2">2.
+                           1/4</label>
+                        <label xml:id="I3">3.</label>
+                        <label xml:id="I4">4. </label>
+                        <label xml:id="I5">5. 1 1/2 </label>
+                        <label xml:id="I6">6. 1 1/2</label>
+                        <label xml:id="I7">7. 1 1/2 </label>
+                        <label xml:id="I8">8. 1/2</label>
+                        <metamark rend="line/string" function="distinct"/>
+                        <label xml:id="I9">total</label>7² <metamark rend="line/string"
+                           function="distinct"/>
+                        <label xml:id="I10">9</label>
+                        <label xml:id="I11">7</label></item>
+                  </list>
+                  <ab n="a">
+                     <note target="range(I1,I2,)" place=" right" type="addition"/>
+                     <note place="right">
+                        <del rend="overstrike3">3/4</del>²</note>
+                     <metamark rend="curly bracket" function="grouping"/></ab>
+                  <ab n="b">
+                     <note target="range(I5,I6)" place=" right" type="addition"> </note>
+                     <note place="right">3</note>
+                     <metamark rend="curly bracket" function="grouping"/></ab>
+                  <ab n="c">
+                     <note target="range(I7,I8,)" place=" right" type="addition"/>
+                     <note place="right">2</note>
+                     <metamark rend="curly bracket" function="grouping"/></ab>
+
+               </div>
+            </note>
          </div>
-           </note>  
-         </div>
-            
-         
+
+
       </body>
    </text>
 </TEI>

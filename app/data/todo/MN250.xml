@@ -21,7 +21,7 @@
             <idno type="filename">BNP_E3_sem-cota-MN-250.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 semcota MN 250</idno>
@@ -45,6 +45,12 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista datilografada, com um acrescento manuscrito, no verso de papel impresso de
+                  «Aviso por causa da moral», texto publicado em nome de Campos, com data de 1923.
+               </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -54,22 +60,33 @@
    <text xml:id="bnp-e-sem-cota-mn-250">
       <body>
          <head><hi rend="underline"> Trechos portuguezes<del rend="overstrike"> antigos</del>.
-         </hi></head>  
+            </hi></head>
          <list>
-            <item><rs type="work"><rs type="title">MARIA MANUELA</rs>, de <rs type="person" role="author">Antonio Molarinho.</rs></rs> </item>
-            <item><rs type="work"><rs type="title">ODE</rs>, de <rs type="person" role="author">Manuel da Veiga.</rs></rs></item>        
+            <item><rs type="work"><rs type="title">MARIA MANUELA</rs>, de <rs type="person"
+                     role="author">Antonio Molarinho.</rs></rs>
+            </item>
+            <item><rs type="work"><rs type="title">ODE</rs>, de <rs type="person" role="author"
+                     >Manuel da Veiga.</rs></rs></item>
             <item><rs type="work"><rs type="title">SONETO MYSTICO ANONYMO</rs>.</rs></item>
             <item><rs type="work">dos<rs type="title"> CANCIONEIROS </rs>(varia).</rs></item>
-            <item><rs type="work"><rs type="title">O PRIMEIRO POEMA</rs> de <rs type="person" role="author">José Anastacio da Cunha.</rs></rs></item>
-            <item><rs type="work"><rs type="title">NO INTERVALLO DE UMA DOLOROSA DOENÇA</rs>, do mesmo.</rs></item>
-            <item><rs type="work"><rs type="title">SONETO</rs>, de<rs type="person" role="author"> Bocage.</rs></rs></item>        
-            <item><rs type="work"><rs type="title">A EXTRANHA MORTE DO PROFESSOR ATHENA</rs>, de<rs type="person" role="author"> Sá-Carneiro</rs></rs></item>
-            <item><rs type="work"><rs type="title">VARIAS LYRICAS</rs>, de <rs type="person" role="author">Garrett.</rs></rs></item>
-            <item><rs type="work"><rs type="title">PROPHECIAS</rs>, do <rs type="person" role="author">Bandarra.</rs></rs></item>
-            <item><rs type="work"><rs type="title">O Homem dos Sonhos</rs> ― <rs type="person" role="author">Sá-Carneiro.</rs></rs></item>
-            <item><rs type="work"><rs type="title">Soneto</rs>, de <rs type="person" role="author">Angelo de Lima.</rs></rs></item>
-            
-         </list> 
+            <item><rs type="work"><rs type="title">O PRIMEIRO POEMA</rs> de <rs type="person"
+                     role="author">José Anastacio da Cunha.</rs></rs></item>
+            <item><rs type="work"><rs type="title">NO INTERVALLO DE UMA DOLOROSA DOENÇA</rs>, do
+                  mesmo.</rs></item>
+            <item><rs type="work"><rs type="title">SONETO</rs>, de<rs type="person" role="author">
+                     Bocage.</rs></rs></item>
+            <item><rs type="work"><rs type="title">A EXTRANHA MORTE DO PROFESSOR ATHENA</rs>, de<rs
+                     type="person" role="author"> Sá-Carneiro</rs></rs></item>
+            <item><rs type="work"><rs type="title">VARIAS LYRICAS</rs>, de <rs type="person"
+                     role="author">Garrett.</rs></rs></item>
+            <item><rs type="work"><rs type="title">PROPHECIAS</rs>, do <rs type="person"
+                     role="author">Bandarra.</rs></rs></item>
+            <item><rs type="work"><rs type="title">O Homem dos Sonhos</rs> ― <rs type="person"
+                     role="author">Sá-Carneiro.</rs></rs></item>
+            <item><rs type="work"><rs type="title">Soneto</rs>, de <rs type="person" role="author"
+                     >Angelo de Lima.</rs></rs></item>
+
+         </list>
          <div/>
       </body>
    </text>

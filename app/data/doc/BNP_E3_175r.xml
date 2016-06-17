@@ -36,7 +36,7 @@
             <idno type="filename">BNP_E3_175r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 175r</idno>
@@ -60,6 +60,10 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista datilografada. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -79,16 +83,14 @@
                      </choice> Banqueiro para inglez (e <choice>
                         <abbr>franc</abbr>
                         <expan>franc<ex>ez</ex></expan>
-                     </choice>)</rs>. 
-               </item>
+                     </choice>)</rs>. </item>
                <item>Two patents here (<abbr>Ann.</abbr> &amp; <abbr>dict.</abbr>)</item>
                <item>
                   <choice>
                      <abbr>Trad<am>.</am></abbr>
                      <expan>Trad<ex>ucção</ex></expan>
                   </choice>
-                  <rs type="person" key="P65">Shakespeare</rs>.
-               </item>
+                  <rs type="person" key="P65">Shakespeare</rs>. </item>
                <item>Correspondence.</item>
                <item>
                   <choice>
@@ -98,8 +100,7 @@
                   <rs type="person" key="P87">Edgar Poe</rs>.</item>
                <item>Poemas em Prosa, de <rs type="person" key="P32">Oscar Wilde</rs></item>
                <item>
-                  <rs type="text">Ballada da Cadeia de Reading</rs>, de 
-                  <rs type="person" key="P32">
+                  <rs type="text">Ballada da Cadeia de Reading</rs>, de <rs type="person" key="P32">
                      <choice>
                         <abbr>O<am>.</am></abbr>
                         <expan>O<ex>scar</ex></expan>
@@ -107,8 +108,7 @@
                         <abbr>W<am>.</am></abbr>
                         <expan>W<ex>ilde</ex></expan>
                      </choice>
-                  </rs>.
-               </item>
+                  </rs>. </item>
             </list>
          </div>
       </body>

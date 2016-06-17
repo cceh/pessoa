@@ -14,7 +14,7 @@
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
-               <name>Isabel Figueiredo-Iken</name>  
+               <name>Isabel Figueiredo-Iken</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -22,7 +22,7 @@
             <idno type="filename">BNP_E3_128-11r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 128-11r</idno>
@@ -35,7 +35,7 @@
                      <note type="genre">
                         <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
-                     <textLang mainLang="en" otherLangs="pt" />
+                     <textLang mainLang="en" otherLangs="pt"/>
                   </msItemStruct>
                </msContents>
                <history>
@@ -45,6 +45,10 @@
                      </p>
                   </origin>
                </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. </p>
             </msDesc>
          </sourceDesc>
       </fileDesc>
@@ -57,27 +61,27 @@
    <text xml:id="bnp-e3-128-11r">
       <body>
          <list>
-            <head><hi rend="underline">Aristography.</hi></head>  
-            <item xml:id="I1">In	English	—    First.</item>
-            <item xml:id="I2">Portuguese	—  </item>        
-            <item xml:id="I3">Spanish	—</item>
-            <item xml:id="I4">French	—	</item>
-            <item xml:id="I5">Italian	—</item>
-            <item xml:id="I6">German	—	(last)</item>
-         </list> 
+            <head><hi rend="underline">Aristography.</hi></head>
+            <item xml:id="I1">In English — First.</item>
+            <item xml:id="I2">Portuguese — </item>
+            <item xml:id="I3">Spanish —</item>
+            <item xml:id="I4">French — </item>
+            <item xml:id="I5">Italian —</item>
+            <item xml:id="I6">German — (last)</item>
+         </list>
          <ab n="a">
-            <note target="range(I2,I3,I4,I5)" place=" right" type="addition"></note>  
+            <note target="range(I2,I3,I4,I5)" place=" right" type="addition"/>
             <note place="right">At same time.</note>
-            
             <metamark rend="curly bracket" function="grouping"/></ab>
-         
+
          <metamark rend="line" function="distinct"/>
          <p><hi rend="underline">Code</hi> or Two Codes. </p>
          <metamark rend="line" function="distinct"/>
          <list>
             <item><hi rend="underline">Parlour Games.</hi></item>
-            <item><hi rend="underline">Technical Dictionaries.</hi><label>A. </label><hi rend="underline">Commercial.</hi>
-            <label>B.</label><supplied resp="PS" reason="omitted-in-original"></supplied></item>
+            <item><hi rend="underline">Technical Dictionaries.</hi><label>A. </label><hi
+                  rend="underline">Commercial.</hi>
+               <label>B.</label><supplied resp="PS" reason="omitted-in-original"/></item>
          </list>
          <div/>
       </body>

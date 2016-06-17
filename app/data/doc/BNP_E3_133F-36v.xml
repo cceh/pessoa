@@ -26,7 +26,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -35,7 +36,7 @@
             <idno type="filename">BNP_E3_133F-36v.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 133F-36v</idno>
@@ -60,34 +61,40 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita, publicada em <hi rend="italic">Prosa de Álvaro de Campos</hi>
+                  (2012, 293). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-133f-1-100_JPG_24-C-R0150/bn-acpc-e-e3-133f-1-100_0074_36v_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-133f-1-100_JPG_24-C-R0150/bn-acpc-e-e3-133f-1-100_0074_36v_t24-C-R0150.jpg"
+      />
    </facsimile>
    <text>
       <body>
          <div>
-            <delSpan rend="overstrike" spanTo="#A1" />
+            <delSpan rend="overstrike" spanTo="#A1"/>
             <div rend="left">
                <list>
                   <item xml:id="I1">
                      <label>1.</label>
-                     <rs type="text">Ultimatum</rs>.
-                  </item>            
+                     <rs type="text">Ultimatum</rs>. </item>
                   <item xml:id="I2">
                      <label>2.</label>
                      <rs type="text">Desnivelamento</rs>
-                  </item>         
+                  </item>
                   <item xml:id="I3">
-                     <label>3.</label>	
-                     <rs type="text">O que é a 
-                     <choice>
-                        <abbr>met<am>.</am></abbr>
-                        <expan>met<ex>aphysica</ex></expan>
-                     </choice>?</rs>
-                     <metamark rend="curly-bracket" function="grouping" place="margin-left" target="range(I1,I5)"/>
+                     <label>3.</label>
+                     <rs type="text">O que é a <choice>
+                           <abbr>met<am>.</am></abbr>
+                           <expan>met<ex>aphysica</ex></expan>
+                        </choice>?</rs>
+                     <metamark rend="curly-bracket" function="grouping" place="margin-left"
+                        target="range(I1,I5)"/>
                   </item>
                   <item xml:id="I4">
                      <label>4.</label>
@@ -108,7 +115,8 @@
             <metamark rend="line" function="distinct"/>
             <metamark rend="vertical-line" function="distinct"/>
             <div rend="right">
-               <gap reason="illegible" unit="word" extent="1"/><lb/>
+               <gap reason="illegible" unit="word" extent="1"/>
+               <lb/>
                <gap reason="illegible" unit="word" extent="1"/>
                <metamark rend="line" function="distinct"/>
                <seg xml:id="A2">(subtitulo)</seg>
@@ -117,38 +125,33 @@
          </div>
          <div>
             <ab>
-               <hi rend="underline">Desnivelamento</hi> (titulo da <lb/>
-               carta a 
-               <rs type="person" key="P144">
+               <hi rend="underline">Desnivelamento</hi> (titulo da <lb/> carta a <rs type="person"
+                  key="P144">
                   <choice>
                      <abbr>J<am>.</am></abbr>
                      <expan>J<ex>osé</ex></expan>
-                  </choice> Pacheco</rs>)
-            </ab>
+                  </choice> Pacheco</rs>) </ab>
             <metamark rend="line" function="distinct"/>
             <list>
                <item>
                   <label>1.</label>
-                  <rs type="text">Ultimatum</rs> de 
-                  <rs type="person" key="AdC" role="author">
+                  <rs type="text">Ultimatum</rs> de <rs type="person" key="AdC" role="author">
                      <choice>
                         <abbr>A<am>.</am></abbr>
                         <expan>A<ex>lvaro</ex></expan>
-                     </choice> de 
-                     <choice>
+                     </choice> de <choice>
                         <abbr>C</abbr>
                         <expan resp="UH">C<ex>ampos</ex></expan>
-                     </choice></rs>.
-               </item>
+                     </choice></rs>. </item>
                <item xml:id="I6">
                   <label>2.</label>
                   <rs type="text">Carro Eléctrico</rs>
-                  <metamark rend="curly-bracket" function="grouping" place="margin-left" target="range(I6,I7)">
+                  <metamark rend="curly-bracket" function="grouping" place="margin-left"
+                     target="range(I6,I7)">
                      <label>quase-<lb/>Epistolario</label>
                   </metamark>
                   <metamark rend="vertical-line" function="distinct"/>
-                  <ab rend="margin-right">
-                     O incidente dado com <lb/> este castelhano de <lb/> casa?
+                  <ab rend="margin-right"> O incidente dado com <lb/> este castelhano de <lb/> casa?
                   </ab>
                </item>
                <item xml:id="I7">
@@ -158,7 +161,8 @@
                <item>
                   <label>4.</label>
                   <subst>
-                     <del n="1" rend="overstrike"><gap extent="2" unit="word" reason="illegible"/>......</del>
+                     <del n="1" rend="overstrike"><gap extent="2" unit="word" reason="illegible"
+                        />......</del>
                      <add n="2" place="above">O que é a Metaphysica?</add>
                   </subst>
                </item>
@@ -168,8 +172,8 @@
                </item>
                <item>
                   <label>6.</label>
-                  <rs type="text">Prefacio(s) a nada</rs>.
-                  <metamark function="grouping" rend="curly-bracket" target="range(I8,I10)"/>
+                  <rs type="text">Prefacio(s) a nada</rs>. <metamark function="grouping"
+                     rend="curly-bracket" target="range(I8,I10)"/>
                   <list rend="margin-right">
                      <item xml:id="I8">
                         <label>1.</label>
@@ -186,8 +190,7 @@
                            <choice>
                               <abbr>Pref<am>.</am></abbr>
                               <expan>Pref<ex>acio</ex></expan>
-                           </choice> aos 
-                           <choice>
+                           </choice> aos <choice>
                               <abbr>Manif<am>.</am></abbr>
                               <expan>Manif<ex>estos</ex></expan>
                            </choice>
@@ -201,15 +204,13 @@
                </item>
                <item>
                   <label>7.</label>
-                  <rs type="text">Inhellenismo</rs> (Notas).
-               </item>
+                  <rs type="text">Inhellenismo</rs> (Notas). </item>
                <item>
                   <label>8.</label>
-                  <rs type="text">Subsidios para o Estudo do Futuro</rs>.
-               </item>
+                  <rs type="text">Subsidios para o Estudo do Futuro</rs>. </item>
             </list>
          </div>
-         <anchor xml:id="A1" />
+         <anchor xml:id="A1"/>
       </body>
    </text>
 </TEI>

@@ -22,7 +22,7 @@
             <idno type="filename">BNP_E3_185r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 185r</idno>
@@ -46,6 +46,10 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista datilografada. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -55,21 +59,29 @@
    </facsimile>
    <text xml:id="bnp-e3-185r">
       <body>
-         
-         <list> 
-            <item><label>1.</label><rs type="title">The Jews and Freemasonry.</rs></item>                   
-            <item><label>2.</label><rs type="title">The Anti-Shakespearean Illusion.</rs></item>        
-            <item><label>3.</label><rs type="title">The Case of<rs type="person"> Oscar Wilde</rs>.</rs></item>
-            <item><label>4.</label><rs type="title">The Case of<rs type="person"> Robert Burns</rs></rs> (includ<pc>-</pc><lb />ing the conditions of fame?)</item>
-            <item><label>5.</label><rs type="title">The Problem of <rs type="person">Dante</rs></rs> (probably later).</item>
+
+         <list>
+            <item><label>1.</label><rs type="title">The Jews and Freemasonry.</rs></item>
+            <item><label>2.</label><rs type="title">The Anti-Shakespearean Illusion.</rs></item>
+            <item><label>3.</label><rs type="title">The Case of<rs type="person"> Oscar
+                  Wilde</rs>.</rs></item>
+            <item><label>4.</label><rs type="title">The Case of<rs type="person"> Robert
+                  Burns</rs></rs> (includ<pc>-</pc><lb/>ing the conditions of fame?)</item>
+            <item><label>5.</label><rs type="title">The Problem of <rs type="person">Dante</rs></rs>
+               (probably later).</item>
             <item><label>6.</label><rs type="title">The Problem of a Universal Language.</rs></item>
             <item><label>7.</label><rs type="title">Talent and Genius.</rs></item>
-            <item><label>8.</label><rs type="title">The Myth of the Lost King.</rs> (or <rs type="title">The<lb></lb>  Myth of King<rs type="person"> Sebastian</rs></rs>).</item>
-            <item><label>9.</label><rs type="title">Prophecy </rs>(more or less the subject<lb></lb>  of the introduction to <rs type="title">Ban<pc>-</pc><lb />darra</rs> III, with illustrative<lb></lb>
-               examples from <rs type="title"><choice><abbr>B<am>.</am></abbr><expan>B<ex>andarra</ex></expan></choice></rs> himself, as <lb></lb>also from <rs type="title">Nostradamus</rs>.)
+            <item><label>8.</label><rs type="title">The Myth of the Lost King.</rs> (or <rs
+                  type="title">The<lb/> Myth of King<rs type="person"> Sebastian</rs></rs>).</item>
+            <item><label>9.</label><rs type="title">Prophecy </rs>(more or less the subject<lb/> of
+               the introduction to <rs type="title">Ban<pc>-</pc><lb/>darra</rs> III, with
+               illustrative<lb/> examples from <rs type="title"><choice>
+                     <abbr>B<am>.</am></abbr>
+                     <expan>B<ex>andarra</ex></expan>
+                  </choice></rs> himself, as <lb/>also from <rs type="title">Nostradamus</rs>.)
             </item>
          </list>
-         
+
          <div/>
       </body>
    </text>

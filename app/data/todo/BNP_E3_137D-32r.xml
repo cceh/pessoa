@@ -14,7 +14,7 @@
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
-               <name>Isabel Figueiredo-Iken</name>  
+               <name>Isabel Figueiredo-Iken</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -22,7 +22,7 @@
             <idno type="filename">BNP_E3_137D-32r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 137D-32r</idno>
@@ -46,6 +46,10 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista datilografada. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -60,33 +64,58 @@
             <head><hi rend="underline">Financial propositions proper:</hi></head>
             <item>JMB, as usual.</item>
             <item>Lhi. (and patent ones).</item>
-            <item>The <choice><abbr>Span<am>.</am></abbr><expan>Span<ex>ish</ex></expan></choice><choice><abbr> prop <am>.</am></abbr><expan> prop<ex>osition</ex></expan></choice>/ Pamphlet / investigate.</item>
+            <item>The <choice>
+                  <abbr>Span<am>.</am></abbr>
+                  <expan>Span<ex>ish</ex></expan>
+               </choice><choice>
+                  <abbr> prop <am>.</am></abbr>
+                  <expan> prop<ex>osition</ex></expan>
+               </choice>/ Pamphlet / investigate.</item>
          </list>
          <list>
             <head><hi rend="underline">Patent propositions: </hi></head>
-            <item><choice><abbr>C<am>.</am></abbr></choice><choice><abbr>P<am>.</am></abbr></choice><choice><abbr>P<am>.</am></abbr></choice>(here).</item>
+            <item><choice>
+                  <abbr>C<am>.</am></abbr>
+               </choice><choice>
+                  <abbr>P<am>.</am></abbr>
+               </choice><choice>
+                  <abbr>P<am>.</am></abbr>
+               </choice>(here).</item>
             <item>Directory (here and elsewhere).</item>
             <item>Dictionary (here and <hi rend="underline">elsewhere</hi>).</item>
             <item>District directs.(here) (as 2).</item>
             <item>Cosmopolis.</item>
-            <item><choice><abbr>Com<am>.</am></abbr><expan>Com<ex>mercial</ex></expan></choice>Club.</item>
+            <item><choice>
+                  <abbr>Com<am>.</am></abbr>
+                  <expan>Com<ex>mercial</ex></expan>
+               </choice>Club.</item>
             <item>Monomark, developed.</item>
-            <item>English continental editions (&amp; banned).</item>       
-           </list>
+            <item>English continental editions (&amp; banned).</item>
+         </list>
          <list>
             <head><hi rend="underline">Literary propositions:</hi></head>
             <item>Monthly 5.00 edition here. </item>
             <item>Translation of plays (AVL). </item>
             <item>Shakespeare in parts (?). </item>
             <item>Translations into English. </item>
-            <item>Review (<choice><abbr>O<abbr><am>.</am></abbr></abbr></choice>or other) to fix matters.</item>
+            <item>Review (<choice>
+                  <abbr>O<abbr><am>.</am></abbr></abbr>
+               </choice>or other) to fix matters.</item>
          </list>
          <list>
             <head><hi rend="underline">Personal, to consider (?):</hi></head>
-            <item>JMB / <choice><abbr>DR<am>.</am></abbr></choice> and Vand.</item>
-            <item> Place in <choice><abbr>C<am>.</am></abbr></choice><choice><abbr>P<am>.</am></abbr></choice><choice><abbr>P<am>.</am></abbr></choice></item>
-            <item>Bookshop, etc., with MMH. </item>  
-          </list>
+            <item>JMB / <choice>
+                  <abbr>DR<am>.</am></abbr>
+               </choice> and Vand.</item>
+            <item> Place in <choice>
+                  <abbr>C<am>.</am></abbr>
+               </choice><choice>
+                  <abbr>P<am>.</am></abbr>
+               </choice><choice>
+                  <abbr>P<am>.</am></abbr>
+               </choice></item>
+            <item>Bookshop, etc., with MMH. </item>
+         </list>
          <div/>
       </body>
    </text>

@@ -21,7 +21,7 @@
             <idno type="filename">BNP_E3_137D-3.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 137D-3</idno>
@@ -45,6 +45,10 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -55,37 +59,53 @@
    </facsimile>
    <text xml:id="bnp-e3-137d-3">
       <body>
-         <list> 
-            <note rend=" encircled" place="left">√	</note><item>Code, with Foreign Editions. </item>
-            <metamark rend="short line" function="distinct"></metamark>
-            <note rend=" encircled" place="left">√	</note><item>Several Language Vocabulary. </item>
-            <metamark rend="short line" function="distinct"></metamark>
-            <item>Dictionary of (1) Authors, (2) Books,<lb></lb> (3) Persons in Books, (4) Quo <pc>-</pc><lb/>tations — on the usual ref<lb></lb>  erential basis. </item>
-            <metamark rend="short line" function="distinct"></metamark>
-            <note rend=" encircled" place="left">√	</note><item>Shorthand System. </item>
-            <metamark rend="short line" function="distinct"></metamark>
+         <list>
+            <note rend=" encircled" place="left">√ </note>
+            <item>Code, with Foreign Editions. </item>
+            <metamark rend="short line" function="distinct"/>
+            <note rend=" encircled" place="left">√ </note>
+            <item>Several Language Vocabulary. </item>
+            <metamark rend="short line" function="distinct"/>
+            <item>Dictionary of (1) Authors, (2) Books,<lb/> (3) Persons in Books, (4) Quo
+                  <pc>-</pc><lb/>tations — on the usual ref<lb/> erential basis. </item>
+            <metamark rend="short line" function="distinct"/>
+            <note rend=" encircled" place="left">√ </note>
+            <item>Shorthand System. </item>
+            <metamark rend="short line" function="distinct"/>
             <item>(Accounting Change). </item>
-            <metamark rend="short line" function="distinct"></metamark>
+            <metamark rend="short line" function="distinct"/>
             <item>Pronounciation of Foreign Languages. </item>
-            <metamark rend="short line" function="distinct"></metamark>
-            <item>Spanish-<choice><abbr>Port<am>.</am></abbr><expan>Port<ex>uguese</ex></expan></choice> &amp; <choice><abbr>Port<am>.</am></abbr><expan>Port<ex>uguese</ex></expan></choice>-Spanish<lb></lb>
-               <choice><abbr> dict<am>.</am></abbr><expan> dict<ex> ionary</ex></expan></choice> of different common words.
+            <metamark rend="short line" function="distinct"/>
+            <item>Spanish-<choice>
+                  <abbr>Port<am>.</am></abbr>
+                  <expan>Port<ex>uguese</ex></expan>
+               </choice> &amp; <choice>
+                  <abbr>Port<am>.</am></abbr>
+                  <expan>Port<ex>uguese</ex></expan>
+               </choice>-Spanish<lb/>
+               <choice>
+                  <abbr> dict<am>.</am></abbr>
+                  <expan> dict<ex> ionary</ex></expan>
+               </choice> of different common words. </item>
+            <metamark rend="short line" function="distinct"/>
+            <note rend=" encircled" place="left">√ </note>
+            <item>Year-Books — <gap reason="illegible" unit="characters" quantity="1"/>
             </item>
-            <metamark rend="short line" function="distinct"></metamark>
-            <note rend=" encircled" place="left">√	</note><item>Year-Books — <gap reason="illegible" unit="characters" quantity="1"/> </item>    
-            
-            <metamark rend="short line" function="distinct"></metamark>
+
+            <metamark rend="short line" function="distinct"/>
             <item>ABC Condensing Code. </item>
-            <metamark rend="short line" function="distinct"></metamark>
-            <item>Anthologia (verso e prosa) — em volumes vulgares, meus: <supplied resp="PS" reason="omitted-in-original"></supplied> </item>
-            <metamark rend="short line" function="distinct"></metamark>
+            <metamark rend="short line" function="distinct"/>
+            <item>Anthologia (verso e prosa) — em volumes vulgares, meus: <supplied resp="PS"
+                  reason="omitted-in-original"/>
+            </item>
+            <metamark rend="short line" function="distinct"/>
             <item>Anthology — (verse) </item>
-            <metamark rend="short line" function="distinct"></metamark>
+            <metamark rend="short line" function="distinct"/>
             <item>“Historias” </item>
-            <metamark rend="short line" function="distinct"></metamark>
+            <metamark rend="short line" function="distinct"/>
             <item>Diccionario da Lingua Portugueza.</item>
-            
-         </list> 
+
+         </list>
          <div/>
       </body>
    </text>

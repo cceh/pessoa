@@ -26,7 +26,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -35,7 +36,7 @@
             <idno type="filename">BNP_E3_44-47r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 44-47r</idno>
@@ -60,6 +61,11 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita, publicada em <hi rend="italic">Fausto ‒ tragédia subjetiva
+                     (fragmentos)</hi> (1988, 196). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -71,92 +77,93 @@
       <body>
          <div rend="left">
             <list>
-               <head><rs type="work" key="O1" style="c"><hi rend="underline">Itinerario</hi></rs></head>
+               <head><rs type="work" key="O1" style="c"><hi rend="underline"
+                  >Itinerario</hi></rs></head>
                <item>
-                  <label>1.</label> <rs type="text">Á Memoria do Dictador <rs type="person" key="P51">Sidonio Paes</rs></rs>.
-               </item>
+                  <label>1.</label>
+                  <rs type="text">Á Memoria do Dictador <rs type="person" key="P51">Sidonio
+                        Paes</rs></rs>. </item>
                <item>
-                  <label>2.</label> <rs type="text">O Manipanso</rs>.
-               </item>
+                  <label>2.</label>
+                  <rs type="text">O Manipanso</rs>. </item>
                <item>
-                  <label>3.</label> <rs type="text"><rs type="person" key="P95">Agamemnon</rs></rs>.
-               </item>
+                  <label>3.</label>
+                  <rs type="text"><rs type="person" key="P95">Agamemnon</rs></rs>. </item>
                <item>
-                  <label>4.</label> <rs type="text">Ode a <rs type="person" key="P96">Athena</rs></rs>.
-               </item>
+                  <label>4.</label>
+                  <rs type="text">Ode a <rs type="person" key="P96">Athena</rs></rs>. </item>
                <item>
-                  <label>5.</label> <rs type="text"><rs type="person" key="P97">Juliano em Antiochia</rs></rs>.
-               </item>
+                  <label>5.</label>
+                  <rs type="text"><rs type="person" key="P97">Juliano em Antiochia</rs></rs>. </item>
                <item>
-                  <label>6.</label> <rs type="text">Decadencia</rs>.
-               </item>
+                  <label>6.</label>
+                  <rs type="text">Decadencia</rs>. </item>
                <item>
-                  <label>7.</label> <rs type="text"><rs type="person" key="P98">Orpheu</rs></rs>.
-               </item>
+                  <label>7.</label>
+                  <rs type="text"><rs type="person" key="P98">Orpheu</rs></rs>. </item>
                <item>
-                  <label>8.</label> <rs type="text"><rs type="person" key="P99">Amun-Râ</rs></rs>.
-               </item>
+                  <label>8.</label>
+                  <rs type="text"><rs type="person" key="P99">Amun-Râ</rs></rs>. </item>
                <item>
-                  <label>9.</label> <rs type="text">Mar Portuguez</rs>.
-               </item>
+                  <label>9.</label>
+                  <rs type="text">Mar Portuguez</rs>. </item>
                <item>
-                  <label>10.</label> <rs type="text">Além-Deus</rs>.
-               </item>
+                  <label>10.</label>
+                  <rs type="text">Além-Deus</rs>. </item>
             </list>
          </div>
          <metamark rend="vertical-line" function="distinct"/>
          <div rend="right">
-            <p>em “poemas” — <rs type="work" key="O1" style="c"><rs type="text">Itinerario</rs></rs> = 10 </p>
-            <p>em “livros” — <rs type="work" key="O1" style="b"><rs type="text">Cancioneiro</rs></rs>. = 11 </p>
+            <p>em “poemas” — <rs type="work" key="O1" style="c"><rs type="text">Itinerario</rs></rs>
+               = 10 </p>
+            <p>em “livros” — <rs type="work" key="O1" style="b"><rs type="text"
+                  >Cancioneiro</rs></rs>. = 11 </p>
             <metamark rend="line" function="distinct"/>
             <list>
                <item>
-                  <rs type="work" key="O1" style="b"><rs type="text">Cancioneiro</rs></rs>. (<hi rend="underline">Livros</hi> de 100 poemas)
-               </item>
+                  <rs type="work" key="O1" style="b"><rs type="text">Cancioneiro</rs></rs>. (<hi
+                     rend="underline">Livros</hi> de 100 poemas) </item>
                <item>
                   <rs type="work" key="O1" style="c"><rs type="text">Itinerario</rs></rs>
                </item>
                <item>
-                  <rs type="text">Passagem</rs> (poemas menores que os do <rs type="work" key="O1" style="c"><rs type="text"><choice>
-                     <abbr>I<am>.</am></abbr>
-                     <expan>I<ex>tinerario</ex></expan>
-                  </choice></rs></rs>)
-               </item>
+                  <rs type="text">Passagem</rs> (poemas menores que os do <rs type="work" key="O1"
+                     style="c"><rs type="text"><choice>
+                           <abbr>I<am>.</am></abbr>
+                           <expan>I<ex>tinerario</ex></expan>
+                        </choice></rs></rs>) </item>
                <item>
-                  <rs type="text">Auto das Bacantes</rs>.
-               </item>
+                  <rs type="text">Auto das Bacantes</rs>. </item>
                <item>
                   <rs type="text">Auto de <rs type="person" key="P98">Orpheu</rs></rs>. (<choice>
                      <abbr>diff</abbr>
                      <expan>diff<ex>erente</ex></expan>
                   </choice> de <rs type="text"><rs type="person" key="P47"><choice>
-                     <abbr>I</abbr>
-                     <expan>I<ex>gnez</ex></expan>
-                  </choice> <supplied resp="PS">de Castro</supplied></rs></rs> — no 7)
+                           <abbr>I</abbr>
+                           <expan>I<ex>gnez</ex></expan>
+                        </choice>
+                        <supplied resp="PS">de Castro</supplied></rs></rs> — no 7) </item>
+               <item>
+                  <rs type="text"><rs type="person" key="P47">Ignez de Castro</rs></rs>. </item>
+               <item>
+                  <rs type="text">Trilogia dos Gigantes</rs>. </item>
+               <item>
+                  <rs type="text"><rs type="person" key="P21" style="b">D. Sebastião</rs></rs>. </item>
+               <item>
+                  <rs type="text">Primeiro <rs type="person" key="P92">Fausto</rs></rs>. </item>
+               <item>
+                  <rs type="text">Ligéa – Poema Dramatico</rs>. </item>
+               <item>
+                  <rs type="work" key="O2" style="a">“<rs type="person" key="AC" role="author"
+                        >Alberto Caeiro</rs>”</rs>
                </item>
                <item>
-                  <rs type="text"><rs type="person" key="P47">Ignez de Castro</rs></rs>.
+                  <rs type="work" key="O3" style="a">“<rs type="person" key="RR" role="author"
+                        >Ricardo Reis</rs>”</rs>
                </item>
                <item>
-                  <rs type="text">Trilogia dos Gigantes</rs>.
-               </item>
-               <item>
-                  <rs type="text"><rs type="person" key="P21" style="b">D. Sebastião</rs></rs>.
-               </item>
-               <item>
-                  <rs type="text">Primeiro <rs type="person" key="P92">Fausto</rs></rs>.
-               </item>
-               <item>
-                  <rs type="text">Ligéa – Poema Dramatico</rs>.
-               </item>
-               <item>
-                  <rs type="work" key="O2" style="a">“<rs type="person" key="AC" role="author">Alberto Caeiro</rs>”</rs>
-               </item>
-               <item>
-                  <rs type="work" key="O3" style="a">“<rs type="person" key="RR" role="author">Ricardo Reis</rs>”</rs>
-               </item>
-               <item>
-                  <rs type="work" key="O4" style="a">“<rs type="person" key="AdC" role="author">Alvaro de Campos</rs>.”</rs>
+                  <rs type="work" key="O4" style="a">“<rs type="person" key="AdC" role="author"
+                        >Alvaro de Campos</rs>.”</rs>
                </item>
             </list>
          </div>

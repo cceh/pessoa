@@ -31,7 +31,7 @@
             <idno type="filename">BNP_E3_30A-8v.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 30A-8v</idno>
@@ -55,6 +55,13 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. Na mesma folha encontra-se um testemunho de <hi rend="italic"
+                     >Fausto</hi> (cf. FAU, 22) e da tradução de «La Gioconda», de Walter Pater,
+                  continuação de um texto iniciado em BNP 30A-9r e publicado no n.º 2 da revista <hi
+                     rend="italic">Athena</hi>, em Novembro de 1924. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -64,29 +71,34 @@
    </facsimile>
    <text>
       <body>
-        <div>
-           <gap reason="selection" unit="line" extent="7"/>
+         <div>
+            <gap reason="selection" unit="line" extent="7"/>
             <list>
-              <item><rs type="person" key="P14">Espronceda</rs>.</item>
-              <item>(<rs type="person" key="P212">Moch Einstein</rs>)</item>
-              <item><rs type="text">Sonetos de<rs type="person" key="P15">Camões</rs></rs></item>
-              <item><rs type="text">Anthologia Grega</rs>.</item>
-              <item><rs type="text">Evolution of States</rs>.</item>
-              <item>
-                 <rs type="text">
-                    <choice><abbr>Sh<am>.</am></abbr><expan>Sh<ex>ort</ex></expan></choice> 
-                    <choice><abbr>Hist<am>.</am></abbr><expan>Hist<ex>ory</ex></expan></choice> 
-                    of Freestyles</rs>.
-              </item>
-              <item>
-                 <rs type="text">
-                    <choice><abbr>Int<am>.</am></abbr><expan>Int<ex>roduction</ex></expan></choice>
-                    to Mathematics</rs>.
-              </item>
-              <item>(<rs type="person" key="P87">Edgar Poe</rs>)</item>
+               <item><rs type="person" key="P14">Espronceda</rs>.</item>
+               <item>(<rs type="person" key="P212">Moch Einstein</rs>)</item>
+               <item><rs type="text">Sonetos de<rs type="person" key="P15">Camões</rs></rs></item>
+               <item><rs type="text">Anthologia Grega</rs>.</item>
+               <item><rs type="text">Evolution of States</rs>.</item>
+               <item>
+                  <rs type="text">
+                     <choice>
+                        <abbr>Sh<am>.</am></abbr>
+                        <expan>Sh<ex>ort</ex></expan>
+                     </choice>
+                     <choice>
+                        <abbr>Hist<am>.</am></abbr>
+                        <expan>Hist<ex>ory</ex></expan>
+                     </choice> of Freestyles</rs>. </item>
+               <item>
+                  <rs type="text">
+                     <choice>
+                        <abbr>Int<am>.</am></abbr>
+                        <expan>Int<ex>roduction</ex></expan>
+                     </choice> to Mathematics</rs>. </item>
+               <item>(<rs type="person" key="P87">Edgar Poe</rs>)</item>
             </list>
-           <gap reason="selection" unit="line" extent="27"/>
-        </div>
+            <gap reason="selection" unit="line" extent="27"/>
+         </div>
       </body>
    </text>
 </TEI>

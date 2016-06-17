@@ -14,7 +14,7 @@
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
-               <name>Isabel Figueiredo-Iken</name> 
+               <name>Isabel Figueiredo-Iken</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -22,7 +22,7 @@
             <idno type="filename">BNP_E3_49A6-34v.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 49A6-34v</idno>
@@ -35,49 +35,90 @@
                      <note type="genre">
                         <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
-                     <textLang mainLang="pt" otherLangs="en" />
+                     <textLang mainLang="pt" otherLangs="en"/>
                   </msItemStruct>
                </msContents>
                <history>
                   <origin>
                      <p>
-                        <origDate when="1921-05-31" >c. 31-5-1921</origDate>
+                        <origDate when="1921-05-31">c. 31-5-1921</origDate>
                      </p>
                   </origin>
                </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. Na mesma página e no verso encontram-se esboços de poemas
+                  ingleses, com data de «31-5-1921». </p>
             </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
       <graphic
-         url="bn-acpc-e-e3-49a-6-1-53_JPG_24-C-R0150/bn-acpc-e-e3-49a-6-1-53_0071_34v_t24-C-R0150.jpg"/>
+         url="bn-acpc-e-e3-49a-6-1-53_JPG_24-C-R0150/bn-acpc-e-e3-49a-6-1-53_0071_34v_t24-C-R0150.jpg"
+      />
    </facsimile>
    <text xml:id="bnp-e3-49a6-34v">
       <body>
-         <head> <hi rend="underline">Organização.</hi></head>
+         <head>
+            <hi rend="underline">Organização.</hi></head>
          <list>
-            <item><choice><abbr>C<am>.</am></abbr></choice><choice><abbr>P<am>.</am></abbr></choice>Portuguezes.</item>		<note place="right">	Minas de carvão</note>
-            <item><choice><abbr>C<am>.</am></abbr></choice>Geral de <choice><abbr>F<am>.</am></abbr></choice><choice><abbr>T<am>.</am></abbr></choice><choice><abbr>Exp<am>.</am></abbr></choice></item>	<note place="right">[Company]</note>	
+            <item><choice>
+                  <abbr>C<am>.</am></abbr>
+               </choice><choice>
+                  <abbr>P<am>.</am></abbr>
+               </choice>Portuguezes.</item>
+            <note place="right"> Minas de carvão</note>
+            <item><choice>
+                  <abbr>C<am>.</am></abbr>
+               </choice>Geral de <choice>
+                  <abbr>F<am>.</am></abbr>
+               </choice><choice>
+                  <abbr>T<am>.</am></abbr>
+               </choice><choice>
+                  <abbr>Exp<am>.</am></abbr>
+               </choice></item>
+            <note place="right">[Company]</note>
             <item>Agencia Olisipo.</item>
             <metamark rend="line" function="distinct"/>
-            <item>British Standard Exporter.	— Agency &amp; <gap reason="illegible" unit="word" quantity="1"/></item>
-            <item>Periodo Commercial.		(Who are the <lb></lb> <gap reason="illegible" unit="words" quantity="2"/>)</item>  
+            <item>British Standard Exporter. — Agency &amp; <gap reason="illegible" unit="word"
+                  quantity="1"/></item>
+            <item>Periodo Commercial. (Who are the <lb/>
+               <gap reason="illegible" unit="words" quantity="2"/>)</item>
             <item>Propaganda de <rs type="place">Portugal</rs>.</item>
          </list>
          <gap reason="selection" unit="lines" quantity="7"/>
-            <metamark rend="line" function="distinct"/>
+         <metamark rend="line" function="distinct"/>
          <list>
-            <item><choice><abbr>Trad<am>.</am></abbr><expan>Trad<ex>ucção </ex></expan></choice><choice><abbr>Dic<am>.</am></abbr><expan>Dic<ex>cionario </ex></expan></choice> Technico. (carta <rs type="place">Allemanha</rs>)</item>
-            <item><del rend="overstrike"><choice><abbr>C<am>.</am></abbr></choice><choice><abbr>L<am>.</am></abbr></choice><choice><abbr>A<am>.</am></abbr></choice></del></item> 
+            <item><choice>
+                  <abbr>Trad<am>.</am></abbr>
+                  <expan>Trad<ex>ucção </ex></expan>
+               </choice><choice>
+                  <abbr>Dic<am>.</am></abbr>
+                  <expan>Dic<ex>cionario </ex></expan>
+               </choice> Technico. (carta <rs type="place">Allemanha</rs>)</item>
+            <item><del rend="overstrike"><choice>
+                     <abbr>C<am>.</am></abbr>
+                  </choice><choice>
+                     <abbr>L<am>.</am></abbr>
+                  </choice><choice>
+                     <abbr>A<am>.</am></abbr>
+                  </choice></del></item>
             <item>(Translations). </item>
-            <item>Send for “Tempest” — <hi rend="underline">Watts.</hi> </item> </list>
+            <item>Send for “Tempest” — <hi rend="underline">Watts.</hi>
+            </item>
+         </list>
          <gap reason="selection" unit="lines" quantity="8"/>
-            <metamark rend="line" function="distinct"/>
+         <metamark rend="line" function="distinct"/>
          <gap reason="selection" unit="lines" quantity="2"/>
          <list>
             <item>Frederico — All-In Policy</item>
-            <item> Agency for <gap reason="illegible" unit="word" quantity="1"/>,<rs type="place"> Australia</rs> &amp;<metamark rend="arrow"/> <lb></lb><rs type="place"><choice><abbr>N<am>.</am><expan>N<ex>ew</ex></expan></abbr></choice> Zealand.</rs></item>
+            <item> Agency for <gap reason="illegible" unit="word" quantity="1"/>,<rs type="place">
+                  Australia</rs> &amp;<metamark rend="arrow"/>
+               <lb/><rs type="place"><choice>
+                     <abbr>N<am>.</am><expan>N<ex>ew</ex></expan></abbr>
+                  </choice> Zealand.</rs></item>
          </list>
          <gap reason="selection" unit="line" quantity="1"/>
          <metamark rend="line" function="distinct"/>

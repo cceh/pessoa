@@ -22,7 +22,7 @@
             <idno type="filename">BNP_E3_133M-30r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 133M-30r</idno>
@@ -46,6 +46,10 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista datilografada, com acrescentos manuscritos. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -56,29 +60,35 @@
    </facsimile>
    <text xml:id="bnp-e3-133m-30r">
       <body>
-         <list> 
-            <item> Commercial Code.      <note rend="framed"><del rend="overstrike"><gap reason="illegible" quantity="2" unit="characters" /> </del> </note>
+         <list>
+            <item> Commercial Code. <note rend="framed"><del rend="overstrike"><gap
+                        reason="illegible" quantity="2" unit="characters"/>
+                  </del>
+               </note>
             </item>
-            <item>Typewriter Fixings.</item>        
+            <item>Typewriter Fixings.</item>
             <item>Song-writing.</item>
             <item>System of Shorthand.</item>
             <item>Espronceda.</item>
             <item><del rend="overstrike">Stamps to Foreign Countries.</del></item>
-            <item><del rend="overstrike"><choice><abbr>Ill<am>.</am></abbr><expan>Ill<ex>ustrated</ex></expan></choice> Post Cards.</del></item>
-            <item><note rend="framed">(Advertise for Cipher Agency — <lb></lb> America).</note></item>
+            <item><del rend="overstrike"><choice>
+                     <abbr>Ill<am>.</am></abbr>
+                     <expan>Ill<ex>ustrated</ex></expan>
+                  </choice> Post Cards.</del></item>
+            <item><note rend="framed">(Advertise for Cipher Agency — <lb/> America).</note></item>
             <item><del rend="overstrike">Tales and Sketches.</del></item>
             <item>Anecdotes (Portuguese).</item>
             <item><del rend="overstrike">Stamps here.</del></item>
             <item><del rend="overstrike">Portuguese peculiar stories.</del></item>
-            
-            </list>
-         <metamark rend="short line" place="center" function="distinct"/>
-         <list> 
-            <item><label>1.</label>System of Shorthand.</item>
-            <item><label>2.</label>Look for door — in instead of out.</item>        
-            
+
          </list>
-            
+         <metamark rend="short line" place="center" function="distinct"/>
+         <list>
+            <item><label>1.</label>System of Shorthand.</item>
+            <item><label>2.</label>Look for door — in instead of out.</item>
+
+         </list>
+
          <div/>
       </body>
    </text>

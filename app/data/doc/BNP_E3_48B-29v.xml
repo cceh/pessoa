@@ -26,7 +26,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -35,7 +36,7 @@
             <idno type="filename">BNP_E3_48B-29v.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 48B-29v</idno>
@@ -59,22 +60,36 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita, publicada em Freitas,<hi rend="italic"> O Fio e o Labirinto: A
+                     Ficção Policial na obra de Fernando Pessoa</hi> (2009, 244). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0059_29v_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0059_29v_t24-C-R0150.jpg"
+      />
    </facsimile>
    <text>
       <body>
          <div>
             <gap reason="selection" unit="line" extent="1"/>
-            <head><hi rend="underline">Anthologia:</hi></head> 
-            <head type="sub"><choice><abbr>Vol<am>.</am></abbr><expan>Vol<ex>ume</ex></expan></choice> 1°:</head>
-            <list> 
-               <item><label>1.</label> <rs type="person" key="P65">Shakespeare</rs> - <rs type="text">A Tormenta</rs>.</item>
-               <item><label>2.</label> <rs type="person" key="P104">O. Henry</rs> - (um conto).</item>        
-               <item><label>3.</label> (<rs type="person" key="P105">Conan Doyle</rs> - <rs type="text">O Valle do Terror</rs>.)</item>
+            <head><hi rend="underline">Anthologia:</hi></head>
+            <head type="sub"><choice>
+                  <abbr>Vol<am>.</am></abbr>
+                  <expan>Vol<ex>ume</ex></expan>
+               </choice> 1°:</head>
+            <list>
+               <item><label>1.</label>
+                  <rs type="person" key="P65">Shakespeare</rs> - <rs type="text">A
+                  Tormenta</rs>.</item>
+               <item><label>2.</label>
+                  <rs type="person" key="P104">O. Henry</rs> - (um conto).</item>
+               <item><label>3.</label> (<rs type="person" key="P105">Conan Doyle</rs> - <rs
+                     type="text">O Valle do Terror</rs>.)</item>
             </list>
             <gap reason="selection" unit="line" extent="9"/>
          </div>

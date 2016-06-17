@@ -22,7 +22,7 @@
             <idno type="filename">BNP_E3_87-79r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 87-79r</idno>
@@ -46,6 +46,10 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -55,26 +59,30 @@
    </facsimile>
    <text xml:id="bnp-e3-87-79r">
       <body>
-         <head><hi rend="underline"> Organização de <rs type="place">“Portugal”</rs>. 
-         </hi></head>  
-         <list> 
-            <item>Artigo de fundo — theoria. 
-            </item>
-            <item><metamark rend="line" function="ditto"/> — practica.</item>        
+         <head><hi rend="underline"> Organização de <rs type="place">“Portugal”</rs>. </hi></head>
+         <list>
+            <item>Artigo de fundo — theoria. </item>
+            <item><metamark rend="line" function="ditto"/> — practica.</item>
             <item>Artigo litterario ou outro.</item>
-            <item>Summarios de ocorrencias —	 Internacionaes.<lb></lb> 
-               Nacionaes.
-            </item>
+            <item>Summarios de ocorrencias — Internacionaes.<lb/> Nacionaes. </item>
             <item>Secções especiaes: Sport.</item>
-            <item>Texto completo de “Octavio” (<choice><abbr>eng<am>.</am></abbr><expan>eng<ex>lish</ex></expan></choice></item>
-            <item>Theatros: Como para effeitos europeus, não existe theatro em <rs type="place">Portugal</rs>,<lb></lb>  não existem haveria <gap reason="selection" unit="nunber" extent="1"/>  </item>        
-            <item> <gap reason="selection" unit="nunber" extent="1"/>secções Theatro neste semanario.</item>
+            <item>Texto completo de “Octavio” (<choice>
+                  <abbr>eng<am>.</am></abbr>
+                  <expan>eng<ex>lish</ex></expan>
+               </choice></item>
+            <item>Theatros: Como para effeitos europeus, não existe theatro em <rs type="place"
+                  >Portugal</rs>,<lb/> não existem haveria <gap reason="selection" unit="nunber"
+                  extent="1"/>
+            </item>
+            <item>
+               <gap reason="selection" unit="nunber" extent="1"/>secções Theatro neste
+               semanario.</item>
             <item>Bull-fights (?)</item>
-            
+
          </list>
-         
-         
-         
+
+
+
          <div/>
       </body>
    </text>

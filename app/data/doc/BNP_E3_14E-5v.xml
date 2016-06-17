@@ -26,7 +26,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -35,7 +36,7 @@
             <idno type="filename">BNP_E3_14E-5v.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 14E-5v</idno>
@@ -59,11 +60,18 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. Na mesma página encontra-se um poema escrito em inglês e datado
+                  de «20-1-1923», cujo primeiro verso é «I have outwatched the Lesser Wain, and
+                  seen» (cf. PI, 182). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-14e-1-96_JPG_24-c-R0150/bn-acpc-e-e3-14e-1-96_0010_5v_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-14e-1-96_JPG_24-c-R0150/bn-acpc-e-e3-14e-1-96_0010_5v_t24-C-R0150.jpg"/>
    </facsimile>
    <text>
       <body>
@@ -72,37 +80,32 @@
             <gap reason="selection" unit="line" extent="8"/>
             <metamark rend="line" function="distinct"/>
             <seg rend="right">4</seg>
-            <list> 
+            <list>
                <item>
                   <label>1.</label>
-                  <abbr>Arc<am>.</am></abbr>  
-                  <gap reason="illegible" quantity="1" unit="word" /> vale.
-                  <seg rend="right">2</seg>
+                  <abbr>Arc<am>.</am></abbr>
+                  <gap reason="illegible" quantity="1" unit="word"/> vale. <seg rend="right">2</seg>
                </item>
                <item>
                   <label>2.</label>
-                  <rs type="person" key="P30">Sá Carneiro</rs>.
-                  <seg rend="right">8</seg>
-               </item>       
+                  <rs type="person" key="P30">Sá Carneiro</rs>. <seg rend="right">8</seg>
+               </item>
                <item>
                   <label>3.</label>
-                  <rs type="person" key="P17">Antonio Botto</rs>.
-                  <seg rend="right">8</seg>
+                  <rs type="person" key="P17">Antonio Botto</rs>. <seg rend="right">8</seg>
                </item>
                <item>
                   <label>4.</label>
-                  <rs type="person" key="AC" role="author">Caeiro</rs>.
-                  <seg rend="right">28 - 50</seg>
+                  <rs type="person" key="AC" role="author">Caeiro</rs>. <seg rend="right">28 -
+                     50</seg>
                </item>
                <item>
                   <label>5.</label>
-                  <rs type="person" key="P71">Raul Leal</rs>.
-                  <seg rend="right">6</seg>
+                  <rs type="person" key="P71">Raul Leal</rs>. <seg rend="right">6</seg>
                </item>
                <item>
                   <label>6.</label>
-                  <rs type="person" key="P70">Montalvor</rs>.
-                  <seg rend="right">10</seg>
+                  <rs type="person" key="P70">Montalvor</rs>. <seg rend="right">10</seg>
                </item>
                <item>
                   <label>7.</label>
@@ -110,13 +113,12 @@
                      <choice>
                         <abbr>F</abbr>
                         <expan>F<ex>ernando</ex></expan>
-                     </choice> Pessoa</rs>.
-                  <seg rend="right">10</seg>
+                     </choice> Pessoa</rs>. <seg rend="right">10</seg>
                </item>
                <item>
                   <label>8.</label>
-                  <rs type="person" key="AdC" role="author">Alvaro de Campos</rs>.
-                  <seg rend="right"><hi rend="underline">20 - 96</hi></seg>
+                  <rs type="person" key="AdC" role="author">Alvaro de Campos</rs>. <seg rend="right"
+                        ><hi rend="underline">20 - 96</hi></seg>
                </item>
             </list>
             <pb n="2"/>

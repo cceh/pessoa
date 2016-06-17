@@ -10,7 +10,7 @@
             <p>Publication Information</p>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 125B-53r</idno>
@@ -31,10 +31,9 @@
                         <name>Isabel Figueiredo-Iken</name>
                      </respStmt>
                      <note type="genre">
-                        <rs type="genre" key="lista_editorial">Lista
-                                                editorial</rs>
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
-                     <textLang mainLang="en" />
+                     <textLang mainLang="en"/>
                   </msItemStruct>
                </msContents>
                <history>
@@ -46,39 +45,49 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista datilografada, com acrescentos manuscritos, publicada em <hi rend="italic"
+                     >A Demonstração do Indemonstrável</hi> (2011, 75). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-125b-1-145_JPG_24-C-R0150/bn-acpc-e-e3-125b-1-145_0109_53_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-125b-1-145_JPG_24-C-R0150/bn-acpc-e-e3-125b-1-145_0109_53_t24-C-R0150.jpg"
+      />
    </facsimile>
    <text xml:id="bnp-e3-125b-53r">
       <body>
-         <list> 
-            <metamark rend="cross" function="mark"/> <item>Proving the Unprovable.</item><metamark rend="cross" function="mark"/>
-            <item>The Myth of King Sebastian.</item>        
+         <list>
+            <metamark rend="cross" function="mark"/>
+            <item>Proving the Unprovable.</item>
+            <metamark rend="cross" function="mark"/>
+            <item>The Myth of King Sebastian.</item>
             <item>Kings who will “return”.</item>
-            <item>Great Historical Problems (Great Men who never<lb></lb>  existed – King Sebastian’s end –the 
-               Birth<pc>-</pc><lb />plae of Columbus – the Discovery of Amer<pc>-</pc><lb />ica – etc) (Masque de Fer- <supplied resp="PS" reason="omitted-in-original"></supplied></item>
+            <item>Great Historical Problems (Great Men who never<lb/> existed – King Sebastian’s end
+               –the Birth<pc>-</pc><lb/>plae of Columbus – the Discovery of Amer<pc>-</pc><lb/>ica –
+               etc) (Masque de Fer- <supplied resp="PS" reason="omitted-in-original"/></item>
             <item>Translating.</item>
             <item>Slips and Mistakes of Authors.</item>
-            <item>Poe’s Offspring</item> 
+            <item>Poe’s Offspring</item>
             <item>A Portuguese Prophet (Bandarra).</item>
             <metamark rend="line" function="distinct"/>
-            <item>
-               Australian <choice>
-                  <abbr><gap reason="illegible" quantity="1" unit="character" /></abbr>
-                     <expan resp="PS">and</expan>
-               </choice> South African papers —<lb></lb> 
-               news etc. from Spain <choice><abbr><gap reason="illegible" quantity="1" unit="character" /></abbr>
-                  <expan resp="PS">and</expan></choice> Portugal.</item>
+            <item> Australian <choice>
+                  <abbr><gap reason="illegible" quantity="1" unit="character"/></abbr>
+                  <expan resp="PS">and</expan>
+               </choice> South African papers —<lb/> news etc. from Spain <choice>
+                  <abbr><gap reason="illegible" quantity="1" unit="character"/></abbr>
+                  <expan resp="PS">and</expan>
+               </choice> Portugal.</item>
             <metamark rend="line" function="end"/>
-            
+
             <item>Insanity in Fiction.</item>
-            
+
          </list>
-         
-         
+
+
          <div/>
       </body>
    </text>

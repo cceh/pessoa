@@ -25,7 +25,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -34,7 +35,7 @@
             <idno type="filename">BNP_E3_87-39r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 87-39r</idno>
@@ -43,12 +44,12 @@
                   <msItemStruct>
                      <author>
                         <rs type="person" key="FP">Fernando Pessoa</rs>
-                     </author>                    
+                     </author>
                      <note type="genre">
                         <rs type="genre" key="lista_editorial">Lista editorial</rs>
                         <rs type="genre" key="nota_editorial">Nota editorial</rs>
                      </note>
-                     <textLang mainLang="pt" />
+                     <textLang mainLang="pt"/>
                   </msItemStruct>
                </msContents>
                <history>
@@ -59,93 +60,121 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita no verso de uma folha impressa de «Sobre um manifesto de
+                  estudantes», panfleto publicado em 1923, publicada em <hi rend="italic">Prosa de
+                     Álvaro de Campos</hi> (295). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-87-1-103_JPG_24-C-R0150/bn-acpc-e-e3-87-1-103_0091_39_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-87-1-103_JPG_24-C-R0150/bn-acpc-e-e3-87-1-103_0091_39_t24-C-R0150.jpg"/>
    </facsimile>
    <text>
       <body>
-        <div>
-           <list>
-              <item xml:id="I1">
-                 <label>1.</label> Segunda Phase
-                 <note target="#I1" place="right">
-                    <metamark rend="line" function="assignment"/>
-                    <choice><abbr>p<am>.</am></abbr><expan>p<ex>agina</ex></expan></choice> 1
-                 </note>
-              </item>
-              <item xml:id="I2">
-                 <label>2.</label> <rs type="text">Apice</rs> — <rs type="person" key="P30">Sá-Carneiro</rs>
-                 <note target="#I2" place="right">
-                    <metamark rend="curly-bracket" function="assignment"/>
-                    <choice><abbr>p<am>.</am></abbr><expan>p<ex>agina</ex></expan></choice> 2
-                 </note>
-                <lb/>
-                 Ode — <rs type="person" key="P81"><choice><abbr>M</abbr><expan>M<ex>anuel</ex></expan></choice> da Veiga</rs>
-                
-              </item>
-              <item xml:id="I3">
-                 <label>3.</label> <rs type="text">O Inexito do “Theatro<lb/> Novo”</rs> — <rs type="person" key="FP" role="author" style="b">
-                    <choice><abbr>F</abbr><expan>F<ex>ernando</ex></expan></choice> Pessoa</rs>
-                 <note target="#I3" place="right">
-                    <metamark rend="line" function="assignment"/>
-                    <choice><abbr>pp<am>.</am></abbr><expan>p<ex>aginae</ex></expan></choice> 3 a <subst><del rend="overwritten">8</del><add>6</add></subst>
-                 </note>
-              </item>
-              <item xml:id="I4">
-                 <label>4.</label> <rs type="text">Exploradores e Explorados</rs>.<lb/> — <choice><abbr>Bach<am>.</am></abbr><expan>Bach<ex>arel</ex></expan></choice> 
-                 <rs type="person" key="P71">Raul Leal</rs><lb/>
-                 (ou <rs type="person" key="P82">Carlos de Mousinho</rs>)
-                 <note target="#I4" place="right">
-                    <metamark rend="line" function="assignment"/>
-                    7 a 12
-                 </note>
-              </item>
-              <item xml:id="I5">
-                 <label>5.</label> Versos
-                 <note target="#I5" place="right">
-                    <metamark rend="line" function="assignment"/>
-                    13 e 14
-                 </note>
-              </item>
-              <item xml:id="I6">
-                 <label>6.</label><metamark rend="arrow" target="#I6 #I8" function="switching" /> <rs type="person" key="P83">R. L. Stevenson</rs>
-                 <note target="#I6" place="right">
-                    <metamark rend="line" function="assignment"/>
-                    15 a 20
-                 </note>
-              </item>
-              <item xml:id="I7">
-                 <label>7.</label> Selecta
-                 <note target="#I7" place="right">
-                    <metamark rend="line" function="assignment"/>
-                    21 a 24
-                 </note>
-              </item>
-              <item xml:id="I8">
-                 <label>8.</label> <rs type="text"><choice><abbr>Chr<am>.</am></abbr><expan>Chr<ex>onica</ex></expan></choice>
-                 <choice><abbr>Byz<am>.</am></abbr><expan>Byz<ex>antina</ex></expan></choice></rs>
-                 — <rs type="person" key="FP" role="author" style="b">
-                    <choice><abbr>F</abbr><expan>F<ex>ernando</ex></expan></choice> Pessoa</rs>
-                 <note target="#I8" place="right">
-                    <metamark rend="line" function="assignment"/>
-                    25 a 32
-                 </note>
-              </item>
-           </list>
-        </div>
+         <div>
+            <list>
+               <item xml:id="I1">
+                  <label>1.</label> Segunda Phase <note target="#I1" place="right">
+                     <metamark rend="line" function="assignment"/>
+                     <choice>
+                        <abbr>p<am>.</am></abbr>
+                        <expan>p<ex>agina</ex></expan>
+                     </choice> 1 </note>
+               </item>
+               <item xml:id="I2">
+                  <label>2.</label>
+                  <rs type="text">Apice</rs> — <rs type="person" key="P30">Sá-Carneiro</rs>
+                  <note target="#I2" place="right">
+                     <metamark rend="curly-bracket" function="assignment"/>
+                     <choice>
+                        <abbr>p<am>.</am></abbr>
+                        <expan>p<ex>agina</ex></expan>
+                     </choice> 2 </note>
+                  <lb/> Ode — <rs type="person" key="P81"><choice>
+                        <abbr>M</abbr>
+                        <expan>M<ex>anuel</ex></expan>
+                     </choice> da Veiga</rs>
+               </item>
+               <item xml:id="I3">
+                  <label>3.</label>
+                  <rs type="text">O Inexito do “Theatro<lb/> Novo”</rs> — <rs type="person" key="FP"
+                     role="author" style="b">
+                     <choice>
+                        <abbr>F</abbr>
+                        <expan>F<ex>ernando</ex></expan>
+                     </choice> Pessoa</rs>
+                  <note target="#I3" place="right">
+                     <metamark rend="line" function="assignment"/>
+                     <choice>
+                        <abbr>pp<am>.</am></abbr>
+                        <expan>p<ex>aginae</ex></expan>
+                     </choice> 3 a <subst>
+                        <del rend="overwritten">8</del>
+                        <add>6</add>
+                     </subst>
+                  </note>
+               </item>
+               <item xml:id="I4">
+                  <label>4.</label>
+                  <rs type="text">Exploradores e Explorados</rs>.<lb/> — <choice>
+                     <abbr>Bach<am>.</am></abbr>
+                     <expan>Bach<ex>arel</ex></expan>
+                  </choice>
+                  <rs type="person" key="P71">Raul Leal</rs><lb/> (ou <rs type="person" key="P82"
+                     >Carlos de Mousinho</rs>) <note target="#I4" place="right">
+                     <metamark rend="line" function="assignment"/> 7 a 12 </note>
+               </item>
+               <item xml:id="I5">
+                  <label>5.</label> Versos <note target="#I5" place="right">
+                     <metamark rend="line" function="assignment"/> 13 e 14 </note>
+               </item>
+               <item xml:id="I6">
+                  <label>6.</label><metamark rend="arrow" target="#I6 #I8" function="switching"/>
+                  <rs type="person" key="P83">R. L. Stevenson</rs>
+                  <note target="#I6" place="right">
+                     <metamark rend="line" function="assignment"/> 15 a 20 </note>
+               </item>
+               <item xml:id="I7">
+                  <label>7.</label> Selecta <note target="#I7" place="right">
+                     <metamark rend="line" function="assignment"/> 21 a 24 </note>
+               </item>
+               <item xml:id="I8">
+                  <label>8.</label>
+                  <rs type="text"><choice>
+                        <abbr>Chr<am>.</am></abbr>
+                        <expan>Chr<ex>onica</ex></expan>
+                     </choice>
+                     <choice>
+                        <abbr>Byz<am>.</am></abbr>
+                        <expan>Byz<ex>antina</ex></expan>
+                     </choice></rs> — <rs type="person" key="FP" role="author" style="b">
+                     <choice>
+                        <abbr>F</abbr>
+                        <expan>F<ex>ernando</ex></expan>
+                     </choice> Pessoa</rs>
+                  <note target="#I8" place="right">
+                     <metamark rend="line" function="assignment"/> 25 a 32 </note>
+               </item>
+            </list>
+         </div>
          <metamark rend="line" function="distinct"/>
          <div rend="text-center">
             <head><rs type="journal" key="J23">ORPHEU</rs></head>
             <head>SEGUNDA PHASE</head>
-            <ab><seg rend="left">Vol. I</seg> <seg>(datas)</seg> <seg rend="right">No. 1</seg></ab><lb/>
-            <ab>Directores</ab><lb/>
+            <ab><seg rend="left">Vol. I</seg>
+               <seg>(datas)</seg>
+               <seg rend="right">No. 1</seg></ab>
+            <lb/>
+            <ab>Directores</ab>
+            <lb/>
             <ab><hi rend="underline">Summario</hi></ab>
             <ab><supplied resp="PS" reason="omitted-in-original"/></ab>
             <p>Publica-se a 1 e 16 de cada mez</p>
-            <p>Preço avulso — 1.00 escudo.</p>    
+            <p>Preço avulso — 1.00 escudo.</p>
          </div>
       </body>
    </text>

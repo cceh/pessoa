@@ -26,7 +26,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -35,7 +36,7 @@
             <idno type="filename">BNP_E3_15B4-48v.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 15B4-48v</idno>
@@ -59,6 +60,11 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. No verso encontra-se um excerto datilografado do livro «A
+                  Hereditariedade», de Opitz, com indicação de data de 1922. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -69,27 +75,33 @@
    </facsimile>
    <text>
       <body>
-        <div>
-         <list>
-           <item><rs type="text">Quaresma</rs></item>
-           <item><rs type="text">Bandarra</rs></item>
-           <item><rs type="text">Auto do Circo</rs></item>
-         </list>
-         <pb/>
-         <list>
-           <item><rs type="person" key="AdC" role="author">Alvaro de Campos</rs></item>
-           <item><rs type="text">Artigo “De Theatro”</rs>.</item>
-           <item><rs type="person" key="P138">Santa Rita</rs>.</item>
-           <item>Passar a limpo <rs type="person" key="P30"><choice><abbr type="name">M<am>.</am></abbr><expan>M<ex>ario</ex></expan></choice> Saa</rs>.</item>
-         </list>
-         <metamark rend="line" function="distinct"/>
-         <list>
-           <item>2 Patentes (ou, pelo menos, uma).</item>
-           <item><rs type="text"><choice><abbr>Trad<am>.</am></abbr><expan>ucção</expan></choice> “Tormenta”</rs>.</item>
-           <item>Code</item>
-         </list>
-         <metamark rend="line" function="end"/>
-        </div>
+         <div>
+            <list>
+               <item><rs type="text">Quaresma</rs></item>
+               <item><rs type="text">Bandarra</rs></item>
+               <item><rs type="text">Auto do Circo</rs></item>
+            </list>
+            <pb/>
+            <list>
+               <item><rs type="person" key="AdC" role="author">Alvaro de Campos</rs></item>
+               <item><rs type="text">Artigo “De Theatro”</rs>.</item>
+               <item><rs type="person" key="P138">Santa Rita</rs>.</item>
+               <item>Passar a limpo <rs type="person" key="P30"><choice>
+                        <abbr type="name">M<am>.</am></abbr>
+                        <expan>M<ex>ario</ex></expan>
+                     </choice> Saa</rs>.</item>
+            </list>
+            <metamark rend="line" function="distinct"/>
+            <list>
+               <item>2 Patentes (ou, pelo menos, uma).</item>
+               <item><rs type="text"><choice>
+                        <abbr>Trad<am>.</am></abbr>
+                        <expan>ucção</expan>
+                     </choice> “Tormenta”</rs>.</item>
+               <item>Code</item>
+            </list>
+            <metamark rend="line" function="end"/>
+         </div>
       </body>
    </text>
 </TEI>

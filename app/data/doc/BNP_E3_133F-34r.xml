@@ -26,7 +26,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -35,7 +36,7 @@
             <idno type="filename">BNP_E3_133F-34r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 133F-34r</idno>
@@ -59,42 +60,47 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-133f-1-100_JPG_24-C-R0150/bn-acpc-e-e3-133f-1-100_0069_34_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-133f-1-100_JPG_24-C-R0150/bn-acpc-e-e3-133f-1-100_0069_34_t24-C-R0150.jpg"
+      />
    </facsimile>
    <text>
       <body>
          <div>
             <list>
                <item><rs type="text">As condições do Prestigio</rs>.</item>
-               <item><rs type="text">Theoria do Suffragio Politico</rs>.</item>        
+               <item><rs type="text">Theoria do Suffragio Politico</rs>.</item>
                <item>
-                  <rs type="text">Theoria das Companhias Regionaes</rs>. <lb/>
-                  (bases da cultura____)
-               </item>
+                  <rs type="text">Theoria das Companhias Regionaes</rs>. <lb/> (bases da
+                  cultura____) </item>
                <item><rs type="text">O Theatro Portuguez</rs>.</item>
-               <item><rs type="text"><rs type="person" key="P17">Antonio Botto</rs> e o Ideal Esthetico</rs>.</item>
+               <item><rs type="text"><rs type="person" key="P17">Antonio Botto</rs> e o Ideal
+                     Esthetico</rs>.</item>
                <item><rs type="text">O Banqueiro Anarchista</rs>.</item>
-               <item><rs type="text">Na Botica do Evaristo</rs>. (serial)</item>        
+               <item><rs type="text">Na Botica do Evaristo</rs>. (serial)</item>
                <item><rs type="text">O Problema Politico Portuguez</rs>. (serial)</item>
                <item><rs type="text">Bases para uma Orthographia Portugueza</rs>.</item>
-               <item><rs type="text">A Philosophia de <rs type="person" key="P71">Raul Leal</rs></rs>.</item>
+               <item><rs type="text">A Philosophia de <rs type="person" key="P71">Raul
+                     Leal</rs></rs>.</item>
                <item>(<rs type="text">(O Renascimento da Tyrannia</rs>).</item>
-               <item><rs type="text">Horoscopo de <rs type="place">Portugal</rs></rs>.
-                  (<choice>
+               <item><rs type="text">Horoscopo de <rs type="place">Portugal</rs></rs>. (<choice>
                      <abbr>Hor<am>.</am></abbr>
                      <expan resp="UH">Hor<ex>oscopo</ex></expan>
                   </choice> de <rs type="person" key="P109">
-                  <choice>
-                     <abbr>F<am>.</am></abbr>
-                     <expan>F<ex>erreira</ex></expan>
-                  </choice> Gomes</rs>?).
-               </item>
-            </list> 
-        </div>
+                     <choice>
+                        <abbr>F<am>.</am></abbr>
+                        <expan>F<ex>erreira</ex></expan>
+                     </choice> Gomes</rs>?). </item>
+            </list>
+         </div>
       </body>
    </text>
 </TEI>

@@ -26,7 +26,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -35,7 +36,7 @@
             <idno type="filename">BNP_E3_48-1r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 48-1r</idno>
@@ -48,7 +49,7 @@
                      <note type="genre">
                         <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
-                     <textLang mainLang="en" otherLangs="pt" />
+                     <textLang mainLang="en" otherLangs="pt"/>
                   </msItemStruct>
                </msContents>
                <history>
@@ -59,11 +60,16 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-48-1-56_JPG_24-C-R0150/bn-acpc-e-e3-48-1-56_0001_1_t24-C-R0150.jpg"/>
+      <graphic url="bn-acpc-e-e3-48-1-56_JPG_24-C-R0150/bn-acpc-e-e3-48-1-56_0001_1_t24-C-R0150.jpg"
+      />
    </facsimile>
    <text>
       <body>
@@ -76,7 +82,8 @@
             <div rend="right">
                <list>
                   <item><rs type="text">Columbus Birth Place</rs>.</item>
-                  <item><rs type="text">The Myth of <rs type="person" key="P21">King Sebastian</rs>.</rs></item>        
+                  <item><rs type="text">The Myth of <rs type="person" key="P21">King
+                        Sebastian</rs>.</rs></item>
                   <item><rs type="text">Haunted Poems</rs>.</item>
                   <item>
                      <rs type="person" key="P145">
@@ -86,21 +93,16 @@
                         </choice> Pessanha</rs>
                   </item>
                   <item>
-                     <rs type="text">Catullo de Paixão Cearense</rs>.
-                  </item>
+                     <rs type="text">Catullo de Paixão Cearense</rs>. </item>
                   <item>
-                     <rs type="text">A Portuguese Rationalist</rs> (<rs type="person" key="P24">José Anastacio</rs>)
-                  </item>
-                  <item>
-                     The Folk Songs <seg>of 
-                        <add n="2" place="above">Spain 
-                           <choice>
+                     <rs type="text">A Portuguese Rationalist</rs> (<rs type="person" key="P24">José
+                        Anastacio</rs>) </item>
+                  <item> The Folk Songs <seg>of <add n="2" place="above">Spain <choice>
                               <abbr>&amp;</abbr>
                               <expan>and</expan>
-                           </choice></add> Portugal</seg>.
-                  </item>
+                           </choice></add> Portugal</seg>. </item>
                </list>
-            </div> 
+            </div>
             <metamark rend="line" function="distinct"/>
             <div rend="right">
                <list>

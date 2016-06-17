@@ -27,7 +27,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -36,7 +37,7 @@
             <idno type="filename">BNP_E3_128-1r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 128-1r</idno>
@@ -60,6 +61,10 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -69,43 +74,42 @@
    </facsimile>
    <text>
       <body>
-        <div>
-          <list>
-            <item><label>1.</label> Shorthand System – in 5 or 6 languages.</item>
-            <item><label>2.</label> Condensating Code.</item>
-            <item><label>3.</label> Full code (including 
-               <choice>
-                  <abbr>cond<am>.</am></abbr>
-                  <expan>cond<ex>ensating</ex></expan>
-               </choice> code).
-            </item>
-            <item><label>4.</label> International Language (study further this <abbr>conj.</abbr>)</item>
-            <item><label>5.</label> Technical Dictionaries.</item>
-            <item><label>6.</label> Method of Studying Foreign Languages.</item>
-            <item><label>7.</label> Correspondence Courses in Writing and Composition, etc.</item>
-            <item><label>8.</label> <rs type="journal" key="J2">Athena</rs>, 
-               <choice>
-                  <abbr>G</abbr>
-                  <expan>G<ex>remio</ex></expan>
-               </choice> de
-               <choice>
-                  <abbr>C</abbr>
-                  <expan>C<ex>ultura</ex></expan>
-               </choice> Portugueza, or <hi rend="underline">CSoares' plan</hi>. (study fully).</item>
-            <item><label>9.</label> Parlour (table) games.</item>
-            <item><label>10.</label> Second shorthand system (in several languages).</item>
-            <item><label>11.</label> Livro de versos em inglez.</item>
-            <item><label>12.</label> 
-               <choice>
-                  <abbr>
-                     <metamark rend="line" function="ditto"/>
-                  </abbr>
-                  <expan>Livro de versos</expan>
-               </choice>
-               em portuguez (para o fim do anno).</item>
-          </list>
-          <gap reason="selection" unit="line" extent="10"/>
-        </div>
+         <div>
+            <list>
+               <item><label>1.</label> Shorthand System – in 5 or 6 languages.</item>
+               <item><label>2.</label> Condensating Code.</item>
+               <item><label>3.</label> Full code (including <choice>
+                     <abbr>cond<am>.</am></abbr>
+                     <expan>cond<ex>ensating</ex></expan>
+                  </choice> code). </item>
+               <item><label>4.</label> International Language (study further this
+                  <abbr>conj.</abbr>)</item>
+               <item><label>5.</label> Technical Dictionaries.</item>
+               <item><label>6.</label> Method of Studying Foreign Languages.</item>
+               <item><label>7.</label> Correspondence Courses in Writing and Composition,
+                  etc.</item>
+               <item><label>8.</label>
+                  <rs type="journal" key="J2">Athena</rs>, <choice>
+                     <abbr>G</abbr>
+                     <expan>G<ex>remio</ex></expan>
+                  </choice> de <choice>
+                     <abbr>C</abbr>
+                     <expan>C<ex>ultura</ex></expan>
+                  </choice> Portugueza, or <hi rend="underline">CSoares' plan</hi>. (study
+                  fully).</item>
+               <item><label>9.</label> Parlour (table) games.</item>
+               <item><label>10.</label> Second shorthand system (in several languages).</item>
+               <item><label>11.</label> Livro de versos em inglez.</item>
+               <item><label>12.</label>
+                  <choice>
+                     <abbr>
+                        <metamark rend="line" function="ditto"/>
+                     </abbr>
+                     <expan>Livro de versos</expan>
+                  </choice> em portuguez (para o fim do anno).</item>
+            </list>
+            <gap reason="selection" unit="line" extent="10"/>
+         </div>
       </body>
-    </text>
+   </text>
 </TEI>
