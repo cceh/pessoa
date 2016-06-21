@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<div xmlns="http://www.w3.org/1999/xhtml" class="templates:surround?with=templates/page.html&amp;at=content">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-   
-    <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery-ui.min.js"></script>
-    <link class="helpers:app-root" rel="stylesheet" href="resources/css/jquery-ui.min.css" type="text/css" />
-    <link class="helpers:app-root" rel="stylesheet" href="resources/css/jquery-ui.structure.min.css" type="text/css" />
-    
-    <script type="text/javascript">
-        $(document).ready(function(){
+<div xmlns="http://www.w3.org/1999/xhtml"
+    class="templates:surround?with=templates/page.html&amp;at=content">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"/>
+    <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery-ui.min.js"/>
+    <link class="helpers:app-root" rel="stylesheet" href="resources/css/jquery-ui.min.css"
+        type="text/css"/>
+    <link class="helpers:app-root" rel="stylesheet" href="resources/css/jquery-ui.structure.min.css"
+        type="text/css"/>
+    <script type="text/javascript">  $(document).ready(function(){
         
         $("li.tabs").click(function(e){
         if (!$(this).hasClass("selected")) {
@@ -28,23 +28,144 @@
         $("ul#indextab .selected").removeClass("selected");
         $("ul#indextab li#"+tabNum).addClass("selected");
         $("ul#indextab li#"+tabNum+" ul li").addClass("selected");
-      /*  $("ul#indextab :nth-child("+nthChild+")").addClass("active");
+        /*  $("ul#indextab :nth-child("+nthChild+")").addClass("active");
         */
         }
-       
-        });
-        
-        
-       
         
         });
+    });
     </script>
-    <style>
-        .delSpan {
-    
+    <style> 
+        .delSpan { } #tdoc { 
+        border:1px solid; 
+        margin: 0 auto;
+        } 
+        #tdoc td { border: 1px dotted red; } 
+        #text-td {
+            width:500px;
+            min-height:1000px;
+        }
+        #img-td {
+           
+            width:500px;
         }
     </style>
-    
+    <script class="doc:get-versaoPessoal"/>
+    <div class="content" id="doc">
+        <table class="tbody" id="tdoc">
+            <tr>
+                <td>Header</td>
+            </tr>
+            <tr>
+                <td>
+                <div class="doc:docControll" id="scrollline"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ul id="tabs">
+                        <li class="selected tabs"><a href="#diplomática"><span class="page:singleElement?xmltype=tabs&amp;xmlid=transcricao-diplomatica"></span></a></li>
+                        <li class="tabs"><a href="#primeira"><span class="page:singleElement?xmltype=tabs&amp;xmlid=primeira-versao"></span></a></li>
+                        <li class="tabs"><a href="#final"><span class="page:singleElement?xmltype=tabs&amp;xmlid=versao-final"></span></a></li>
+                        <li class="tabs"><a href="#pessoal"><span class="page:singleElement?xmltype=tabs&amp;xmlid=versao-pessoal"></span></a></li>
+                    </ul>
+                </td>
+                <td>                    
+                    <ul id="indextabs">
+                        <li class="itabs selected" title="facsimile">
+                            <a href="#facsimile">
+                                <span class="page:singleElement?xmltype=buttons&amp;xmlid=facsimile"/>
+                            </a>
+                        </li>
+                        <li class="itabs" title="index">
+                            <a href="#index">
+                                <span class="page:singleElement?xmltype=buttons&amp;xmlid=bindex"/>
+                            </a>
+                        </li>
+                    </ul>                
+                </td>
+            </tr>
+            <tr>
+                <td id="text-td">                    
+                        <ul id="tab">
+                            <li class="selected">
+                                <div id="diplomática">
+                                    <p class="doc:get-text">texto</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div id="primeira">
+                                    <p class="doc:get-text-var1">texto</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div id="final">
+                                    <p class="doc:get-text-var2">texto</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div id="pessoal">
+                                    <form method="get">
+                                        <div id="DivPessoal-1" class="DivPessoal">
+                                            <input id="lb" name="lb" type="checkbox"
+                                                checked="checked" value="yes"
+                                                onchange="versaoPessoal();"/><label for="lb"
+                                                class="page:singleElement?xmltype=personal-version&amp;xmlid=line-breaks"/><br/>
+                                            <input id="abbr" name="abbr" type="checkbox"
+                                                checked="checked" value="yes"
+                                                onchange="versaoPessoal();"/><label for="abbr"
+                                                class="page:singleElement?xmltype=personal-version&amp;xmlid=abbreviations"
+                                            /><br/>
+                                        </div>
+                                        <div id="DivPessoal-2" class="DivPessoal">
+                                            <input id="diplomatic" name="version" type="radio"
+                                                checked="checked" value="yes"
+                                                onchange="versaoPessoal();"/><label for="diplomatic"
+                                                class="page:singleElement?xmltype=personal-version&amp;xmlid=diplomatic-version"/><br/>
+                                            <input id="first" name="version" type="radio"
+                                                value="yes" onchange="versaoPessoal();"/><label
+                                                for="first"
+                                                class="page:singleElement?xmltype=personal-version&amp;xmlid=first-version"/><br/>
+                                            <input id="last" name="version" type="radio" value="yes"
+                                                onchange="versaoPessoal();"/><label for="last"
+                                                class="page:singleElement?xmltype=personal-version&amp;xmlid=last-version"
+                                            /><br/>
+                                        </div>
+                                    </form>
+                                    <div class="clear"/>
+                                    <div id="DottedLine"/>
+                                    <div id="tabs-4-text">
+                                        <p
+                                            class="doc:get-text-pessoal?lb=yes&amp;abbr=yes&amp;version=diplomatic"
+                                            >texto</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>                    
+                </td>
+                <td id="img-td">                                           
+                        <div>
+                            <ul id="indextab">
+                                <li class="selected" id="facsimile">
+                                    <div>
+                                        <p class="doc:get-image">facsimile</p>
+                                    </div>
+                                </li>
+                                <li id="index">
+                                    <div>
+                                        <p class="doc:get-indexes">indexes</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>                    
+                </td>
+            </tr>
+            <tr>
+                <td><div id="filter" class="doc:footerfilter"/></td>
+            </tr>
+        </table>
+    </div>
+    <!--
     <script class="doc:get-versaoPessoal"></script>
     <div class="contet" id="doc">
         <div id="titleline">
@@ -131,13 +252,7 @@
             
         </div>
     </div>
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-            DocHide();
-            $(".editorial-note").hide();
-            $("#nota_bottom").hide();
-            jsBlockStrikeThrough();
-        });
-    </script>
+    -->
+    <script type="text/javascript"> $(document).ready(function() { DocHide();
+        $(".editorial-note").hide(); $("#nota_bottom").hide(); jsBlockStrikeThrough(); }); </script>
 </div>
