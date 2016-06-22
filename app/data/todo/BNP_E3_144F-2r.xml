@@ -10,7 +10,7 @@
             <p>Publication Information</p>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 144F-2r</idno>
@@ -31,8 +31,7 @@
                         <name>Isabel Figueiredo-Iken</name>
                      </respStmt>
                      <note type="genre">
-                        <rs type="genre" key="lista_editorial">Lista
-                                                editorial</rs>
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
                      <textLang mainLang="pt" otherLangs="en"/>
                   </msItemStruct>
@@ -46,6 +45,11 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita no caderno 144F. Na página anterior do caderno é mencionada a
+                  data «19-10-1935». </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -54,24 +58,29 @@
    </facsimile>
    <text xml:id="bnp-e3-144f-2r">
       <body>
-         
-         
-         <p>Collaboração revista italiana de<lb></lb>  poesia (comité portuguez ― <lb></lb><rs type="person"> Montalvor</rs>, <rs type="person">Casaes Monteiro</rs>,<lb></lb> 
-            <rs type="person">João de Castro Osorio</rs>, <rs type="person">José Osorio <lb></lb> de Oliveira</rs>.) </p>
+
+
+         <p>Collaboração revista italiana de<lb/> poesia (comité portuguez ― <lb/><rs type="person">
+               Montalvor</rs>, <rs type="person">Casaes Monteiro</rs>,<lb/>
+            <rs type="person">João de Castro Osorio</rs>, <rs type="person">José Osorio <lb/> de
+               Oliveira</rs>.) </p>
          <metamark rend="line" function="distinct"/>
          <p>English Poems <rs type="person">Celestino Soares</rs>.</p>
          <metamark rend="line" function="distinct"/>
-        
+
          <list>
             <item><rs type="title">“Presença”</rs> — <rs type="person">José Regio</rs>. </item>
-            <item><rs type="title">“O Diabo”</rs>.</item>        
+            <item><rs type="title">“O Diabo”</rs>.</item>
             <item><rs type="title">“Fradique.”</rs></item>
-            <item><rs type="title"><subst><del rend="overstrike"> “Poesia.”</del><add place="below">Lyrica</add></subst></rs> (ut supra).</item>
+            <item><rs type="title"><subst>
+                     <del rend="overstrike"> “Poesia.”</del>
+                     <add place="below">Lyrica</add>
+                  </subst></rs> (ut supra).</item>
             <item><del rend="overstrike">Madge’s address.</del></item>
             <item><del rend="overstrike">John.</del></item>
-         </list>  
+         </list>
          <note><del rend="overstrike"><gap reason="selection" unit="lines" extent="5"/></del></note>
-         
+
          <div/>
       </body>
    </text>

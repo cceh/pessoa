@@ -26,7 +26,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -35,7 +36,7 @@
             <idno type="filename">BNP_E3_48B-8r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 48B-8r</idno>
@@ -59,11 +60,17 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita, publicada em Sepúlveda, <hi rend="italic">O livro de
+                     Caeiro</hi> (2010, 408). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0015_8_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0015_8_t24-C-R0150.jpg"/>
    </facsimile>
    <text>
       <body>
@@ -71,30 +78,32 @@
             <list>
                <head><rs type="person" key="FP" role="author" style="b">Fernando Pessoa</rs> – </head>
                <item>
-                  <rs type="work" key="O2" style="a"><rs type="text">Os Poemas Completos de <rs type="person" key="AC" role="author">Alberto <lb/> Caeiro</rs></rs></rs> 
+                  <rs type="work" key="O2" style="a"><rs type="text">Os Poemas Completos de <rs
+                           type="person" key="AC" role="author">Alberto <lb/> Caeiro</rs></rs></rs>
                </item>
-               <item>  
-                  Com um prefacio do <rs type="person" key="RR" role="author">Dr. Ricardo <lb/> Reis,</rs> <seg>e <add place="above" n="2">alguns</add> outros</seg> apontamentos
-               </item>
+               <item> Com um prefacio do <rs type="person" key="RR" role="author">Dr. Ricardo <lb/>
+                     Reis,</rs>
+                  <seg>e <add place="above" n="2">alguns</add> outros</seg> apontamentos </item>
             </list>
             <metamark rend="line" function="distinct"/>
-            <list> 
+            <list>
                <head><rs type="person" key="FP" role="author" style="b">Fernando Pessoa</rs> – </head>
                <item>
                   <rs type="work" key="O4" style="c"><rs type="text">Accessorios</rs></rs>
                </item>
                <item>
-                  <rs type="work" key="O4" style="a"><rs type="text">Versos de <rs type="person" key="AdC" role="author">Alvaro de Campos</rs></rs></rs>
+                  <rs type="work" key="O4" style="a"><rs type="text">Versos de <rs type="person"
+                           key="AdC" role="author">Alvaro de Campos</rs></rs></rs>
                </item>
             </list>
             <metamark rend="line" function="distinct"/>
             <list>
-              <item>
-                 <label>1.</label> <rs type="text">Theoria do Suffragio Politico</rs>.
-              </item>
-              <item>
-                 <label>2.</label> <rs type="text">A Opinião Publica</rs>.
-              </item>  
+               <item>
+                  <label>1.</label>
+                  <rs type="text">Theoria do Suffragio Politico</rs>. </item>
+               <item>
+                  <label>2.</label>
+                  <rs type="text">A Opinião Publica</rs>. </item>
             </list>
          </div>
       </body>

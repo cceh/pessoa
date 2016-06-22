@@ -26,7 +26,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -35,7 +36,7 @@
             <idno type="filename">BNP_E3_63-31r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 63-31r</idno>
@@ -59,11 +60,19 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista datilografada, publicada em Barreto, <hi rend="italic">Pessoa e
+                     Fátima.</hi>
+                  <hi rend="italic">A propósito dos escritos pessoanos sobre catolicismo e
+                     política</hi> (2009, 268-269). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-63-1-55_JPG_24-C-R0150/bn-acpc-e-e3-63-1-55_0061_31_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-63-1-55_JPG_24-C-R0150/bn-acpc-e-e3-63-1-55_0061_31_t24-C-R0150.jpg"/>
    </facsimile>
    <text>
       <body>
@@ -72,9 +81,11 @@
                <item>
                   <list>
                      <item>Traducção “<rs type="text">Ciume</rs>”, para inglez.</item>
-                     <item>Traducção “<rs type="text">Antonio</rs>”, para inglez.</item>        
-                     <item>Traducção poemas <rs type="person" key="P87">Edgar Poe</rs>, para portuguez.</item>
-                     <item>Traducção <rs type="person" key="P14">Espronceda</rs>, para inglez.</item>
+                     <item>Traducção “<rs type="text">Antonio</rs>”, para inglez.</item>
+                     <item>Traducção poemas <rs type="person" key="P87">Edgar Poe</rs>, para
+                        portuguez.</item>
+                     <item>Traducção <rs type="person" key="P14">Espronceda</rs>, para
+                        inglez.</item>
                   </list>
                </item>
                <metamark rend="line" function="distinct"/>
@@ -84,7 +95,8 @@
                      <item>“<rs type="text">Fátima</rs>”.</item>
                      <item>“<rs type="text">Tarde e Boas Horas</rs>”.</item>
                      <item>“<rs type="text">Quadras</rs>”.</item>
-                     <item>“<rs type="work" key="O1" style="c"><rs type="text">Itinerario</rs></rs>” (primeiro volume).</item>
+                     <item>“<rs type="work" key="O1" style="c"><rs type="text">Itinerario</rs></rs>”
+                        (primeiro volume).</item>
                   </list>
                </item>
                <metamark rend="line" function="distinct"/>
@@ -96,11 +108,11 @@
                      <item>“<rs type="journal" key="J1">Presença</rs>”,</item>
                      <item>“<rs type="journal" key="J42">O Diabo</rs>”,</item>
                      <item>“<rs type="journal" key="J43">Poesia</rs>” (Italia)</item>
-                     <item>“<rs type="journal" key="J44">Nouvelles Littéraires</rs>”,<lb/> 
-                        English periodical.</item>
+                     <item>“<rs type="journal" key="J44">Nouvelles Littéraires</rs>”,<lb/> English
+                        periodical.</item>
                   </list>
                </item>
-            </list> 
+            </list>
          </div>
       </body>
    </text>

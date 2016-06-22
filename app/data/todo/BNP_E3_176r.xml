@@ -14,7 +14,7 @@
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
-               <name>Isabel Figueiredo-Iken</name> 
+               <name>Isabel Figueiredo-Iken</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -22,7 +22,7 @@
             <idno type="filename">BNP_E3_176r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 176r</idno>
@@ -46,6 +46,10 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista datilografada. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -56,30 +60,47 @@
    <text xml:id="bnp-e3-176r">
       <body>
          <head>EPIGRAMMAS PORTUGUEZES.</head>
-         <p> <rs type="person">Bocage</rs>:</p>
+         <p>
+            <rs type="person">Bocage</rs>:</p>
          <list>
             <item>Amor, etc: (95), 104.</item>
             <item>Auto-epigrammas: 90.</item>
-            <item>Troça pura: 2, 12, 22, 61, 67, 82, <supplied resp="PS" reason="omitted-in-original"></supplied></item>
-            <item>Medicos: 39 ― 46 ― 51 ― 58 ― 56 ― 88 ― <lb></lb>106 ― 109.</item>
+            <item>Troça pura: 2, 12, 22, 61, 67, 82, <supplied resp="PS"
+                  reason="omitted-in-original"/></item>
+            <item>Medicos: 39 ― 46 ― 51 ― 58 ― 56 ― 88 ― <lb/>106 ― 109.</item>
             <item>Escrivães, etc: 10, 54.</item>
          </list>
          <metamark rend="dotted line" function="distinct"/>
-         
+
          <p><rs type="person">Castilho</rs> (<rs type="title">“Excavações”</rs>):</p>
          <list>
-            <item>Bebedos: <choice><abbr>pag<am>.</am></abbr><expan>pag<ex>ina</ex></expan></choice>207 (6 epigrammas).</item>
-            <item>Amor:<choice><abbr>pag<am>.</am></abbr><expan>pag<ex>inas</ex></expan></choice>37, 229.</item>
-            <item>Medicina: <choice><abbr>pag<am>.</am></abbr><expan>pag<ex>ina</ex></expan></choice>276.</item>
+            <item>Bebedos: <choice>
+                  <abbr>pag<am>.</am></abbr>
+                  <expan>pag<ex>ina</ex></expan>
+               </choice>207 (6 epigrammas).</item>
+            <item>Amor:<choice>
+                  <abbr>pag<am>.</am></abbr>
+                  <expan>pag<ex>inas</ex></expan>
+               </choice>37, 229.</item>
+            <item>Medicina: <choice>
+                  <abbr>pag<am>.</am></abbr>
+                  <expan>pag<ex>ina</ex></expan>
+               </choice>276.</item>
          </list>
          <metamark rend="dotted line" function="distinct"/>
          <p><rs type="person">Camões</rs>:</p>
          <list>
-            <item>Varios:<choice><abbr>Vol<am>.</am></abbr><expan>Vol<ex>ume</ex></expan></choice> II,<choice><abbr>pag<am>.</am></abbr><expan>pag<ex>ina</ex></expan></choice>485.</item>
+            <item>Varios:<choice>
+                  <abbr>Vol<am>.</am></abbr>
+                  <expan>Vol<ex>ume</ex></expan>
+               </choice> II,<choice>
+                  <abbr>pag<am>.</am></abbr>
+                  <expan>pag<ex>ina</ex></expan>
+               </choice>485.</item>
          </list>
          <metamark rend="dotted line" function="distinct"/>
-           
-            
+
+
          <div/>
       </body>
    </text>

@@ -26,7 +26,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -35,7 +36,7 @@
             <idno type="filename">BNP_E3_16A-50v.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 48B-34r</idno>
@@ -59,68 +60,101 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista datilografada, publicada em <hi rend="italic">Rubaiyat</hi> (2009, 133).
+               </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0068_34_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0068_34_t24-C-R0150.jpg"
+      />
    </facsimile>
    <text>
       <body>
          <div>
-            <p>Plan of publishing books (in Portuguese) in small volumes, <lb/> of from 96 to 112 or 128 pages, at 5$00. 
-            (Type-body may <lb/> be from interlined 8 to 12, according to the matter).</p>
+            <p>Plan of publishing books (in Portuguese) in small volumes, <lb/> of from 96 to 112 or
+               128 pages, at 5$00. (Type-body may <lb/> be from interlined 8 to 12, according to the
+               matter).</p>
             <metamark rend="line" function="distinct"/>
-            <list> 
+            <list>
                <item><label>1.</label> “<rs type="text">Portugal</rs>”, poemas.</item>
-               <item><label>2.</label> 
-                  “<rs type="work" key="O1" style="b"><rs type="text">Cancioneiro</rs></rs>, <choice><abbr>Liv</abbr><expan>Liv<ex>ro</ex></expan></choice> I” (e seguintes, um livro por volume).
-               </item>        
-               <item><label>3.</label> 
-                  “<rs type="work" key="O2" style="a"><rs type="text">Poemas Completos de <rs type="person" key="AC" role="author">Alberto Caeiro</rs></rs></rs>, 1889-1915”.
-               </item>
-               <item><label>4.</label> 
-                  “<rs type="work" key="O3" style="a"><rs type="text">Odes de <rs type="person" key="RR" role="author">Ricardo Reis</rs></rs></rs>, 
-                  <choice><abbr>Liv</abbr><expan>Liv<ex>ros</ex></expan></choice> I a V.” (e seguintes assim).
-               </item>
-               <item><label>5.</label> 
-                  “<rs type="text">Notas para a Recordação...</rs> por <rs type="person" key="AdC" role="author">Alvaro de Campos</rs>.
-               </item>
-               <item><label>6.</label>
-                  “<rs type="work" key="O4" style="c"><rs type="text">Accessorios, Versos de <rs type="person" key="AdC" role="author">Alvaro de Campos</rs></rs></rs>.
-               </item>
+               <item><label>2.</label> “<rs type="work" key="O1" style="b"><rs type="text"
+                        >Cancioneiro</rs></rs>, <choice>
+                     <abbr>Liv</abbr>
+                     <expan>Liv<ex>ro</ex></expan>
+                  </choice> I” (e seguintes, um livro por volume). </item>
+               <item><label>3.</label> “<rs type="work" key="O2" style="a"><rs type="text">Poemas
+                        Completos de <rs type="person" key="AC" role="author">Alberto
+                        Caeiro</rs></rs></rs>, 1889-1915”. </item>
+               <item><label>4.</label> “<rs type="work" key="O3" style="a"><rs type="text">Odes de
+                           <rs type="person" key="RR" role="author">Ricardo Reis</rs></rs></rs>, <choice>
+                     <abbr>Liv</abbr>
+                     <expan>Liv<ex>ros</ex></expan>
+                  </choice> I a V.” (e seguintes assim). </item>
+               <item><label>5.</label> “<rs type="text">Notas para a Recordação...</rs> por <rs
+                     type="person" key="AdC" role="author">Alvaro de Campos</rs>. </item>
+               <item><label>6.</label> “<rs type="work" key="O4" style="c"><rs type="text"
+                        >Accessorios, Versos de <rs type="person" key="AdC" role="author">Alvaro de
+                           Campos</rs></rs></rs>. </item>
                <item><label>7.</label> “<rs type="text">O Banqueiro Anarquista</rs>”. (só?)</item>
                <item><label>8.</label> “<rs type="text">O Lago, e outros poemas</rs>”.</item>
-               <item><label>9.</label> “<rs type="text">Crypta, poemas</rs>”, (os poemas de ordem occulta).</item>
-               <item><label>10.</label> <rs type="text">Os contos Quaresma</rs>, um ou mais em cada volume, conforme.</item>
-               <item><label>11.</label> “<rs type="text">O Interregno</rs>”, (modificação definitiva e differente).</item>
-               <item><label>12.</label> <rs type="text">Os contos extensos</rs> (um por volume, ou mais, conforme).</item>
-               <item><label>13.</label> <rs type="text">Os contos pequenos</rs> (os que caibam, titulo do primeiro).</item>
-               <item><label>14.</label> “<rs type="work" key="O1-33"><rs type="text">Rubayat de <rs type="person" key="P103">Omar Khayyam</rs></rs></rs>” (I-II, provavelmente).</item>
+               <item><label>9.</label> “<rs type="text">Crypta, poemas</rs>”, (os poemas de ordem
+                  occulta).</item>
+               <item><label>10.</label>
+                  <rs type="text">Os contos Quaresma</rs>, um ou mais em cada volume,
+                  conforme.</item>
+               <item><label>11.</label> “<rs type="text">O Interregno</rs>”, (modificação definitiva
+                  e differente).</item>
+               <item><label>12.</label>
+                  <rs type="text">Os contos extensos</rs> (um por volume, ou mais, conforme).</item>
+               <item><label>13.</label>
+                  <rs type="text">Os contos pequenos</rs> (os que caibam, titulo do
+                  primeiro).</item>
+               <item><label>14.</label> “<rs type="work" key="O1-33"><rs type="text">Rubayat de <rs
+                           type="person" key="P103">Omar Khayyam</rs></rs></rs>” (I-II,
+                  provavelmente).</item>
                <item><label>15.</label> “<rs type="text">O Encoberto</rs>” (ou outro titulo).</item>
                <item><label>16.</label> “<rs type="text">Canções da Derrota</rs>”.</item>
-               <item><label>17.</label> <rs type="text">Outras Antitheses</rs> (conforme tamanho).</item>
-               <item><label>18.</label> “<rs type="text">O Marinheiro, e outros dramas</rs>, (e outros volumes assim).</item>
-               <item><label>19.</label> <rs type="text">Os estudos politicos</rs> (um ou mais por volume, conforme).</item>
-               <item><label>20.</label> <rs type="text">Traducções de estudos em inglez, conforme</rs>.</item>
-               <item><label>21.</label> <rs type="text">O livro sobre orthographia portugueza</rs>.</item>
-               <item><label>22.</label> <rs type="text">Talvez, cabendo, o livro sobre propriedade da linguagem</rs>.</item>
+               <item><label>17.</label>
+                  <rs type="text">Outras Antitheses</rs> (conforme tamanho).</item>
+               <item><label>18.</label> “<rs type="text">O Marinheiro, e outros dramas</rs>, (e
+                  outros volumes assim).</item>
+               <item><label>19.</label>
+                  <rs type="text">Os estudos politicos</rs> (um ou mais por volume,
+                  conforme).</item>
+               <item><label>20.</label>
+                  <rs type="text">Traducções de estudos em inglez, conforme</rs>.</item>
+               <item><label>21.</label>
+                  <rs type="text">O livro sobre orthographia portugueza</rs>.</item>
+               <item><label>22.</label>
+                  <rs type="text">Talvez, cabendo, o livro sobre propriedade da
+                  linguagem</rs>.</item>
                <item><label>23.</label> (No resto pelo mesmo principio).</item>
-            </list> 
+            </list>
             <metamark rend="line" function="distinct"/>
-            <p>As traducções de <rs type="person" key="P65">Shakespeare</rs>, <rs type="person" key="P87">Poe</rs> e outros poetas inglezes <lb/> 
-               e outros, devem ser publicadas em edições caras, ou 
-               em edi<pc>-</pc><lb/>ções caras ou não, conforme o editor queira.</p>
+            <p>As traducções de <rs type="person" key="P65">Shakespeare</rs>, <rs type="person"
+                  key="P87">Poe</rs> e outros poetas inglezes <lb/> e outros, devem ser publicadas
+               em edições caras, ou em edi<pc>-</pc><lb/>ções caras ou não, conforme o editor
+               queira.</p>
             <metamark rend="line" function="distinct"/>
-            <list> 
+            <list>
                <head>Traducções para inglez, Apontamento:</head>
-               <item><rs type="person" key="P14">Espronceda</rs>, “<rs type="text">The Student of Salamanca</rs>”.</item>
-               <item><rs type="text">Sonnets</rs>. (<del rend="overtyped" n="2">consodier.</del>).</item>        
-               <item>The “<rs type="text">Quod Nihil Scitur</rs>” of <rs type="person" key="P10">Francisco Sanches</rs>, 
-                  (see <choice><abbr>transl</abbr><expan>transl<ex>ation</ex></expan></choice> <lb/> in Bibliotheca Nacional).
-               </item>  
+               <item><rs type="person" key="P14">Espronceda</rs>, “<rs type="text">The Student of
+                     Salamanca</rs>”.</item>
+               <item><rs type="text">Sonnets</rs>. (<del rend="overtyped" n="2"
+                  >consodier.</del>).</item>
+               <item>The “<rs type="text">Quod Nihil Scitur</rs>” of <rs type="person" key="P10"
+                     >Francisco Sanches</rs>, (see <choice>
+                     <abbr>transl</abbr>
+                     <expan>transl<ex>ation</ex></expan>
+                  </choice>
+                  <lb/> in Bibliotheca Nacional). </item>
                <item>and so on.</item>
-            </list> 
+            </list>
          </div>
       </body>
    </text>

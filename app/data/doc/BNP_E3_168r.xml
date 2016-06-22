@@ -37,7 +37,7 @@
             <idno type="filename">BNP_E3_168r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 168r</idno>
@@ -61,6 +61,10 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista datilografada. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -74,22 +78,17 @@
             <head>Plan of translations:</head>
             <list>
                <item>
-                  <label>1.</label> Those which constitute the 48 pages booklets.
-               </item>
+                  <label>1.</label> Those which constitute the 48 pages booklets. </item>
                <item>
-                  <label>2.</label> Those which may be made up into limited de luxe<lb/>
-                  editions.
-               </item>
+                  <label>2.</label> Those which may be made up into limited de luxe<lb/> editions. </item>
                <item>
-                  <label>3.</label> The translations of poems into English.
-               </item>
+                  <label>3.</label> The translations of poems into English. </item>
                <item>
                   <label>4.</label> The translations of short stories and short novels<lb/> into
-                  English.
-               </item>
+                  English. </item>
                <item>
-                  <label>5.</label> Such odd and occasional translations as the <rs type="text"
-                        >Quod <lb/> Nihil Scitur.</rs>
+                  <label>5.</label> Such odd and occasional translations as the <rs type="text">Quod
+                     <lb/> Nihil Scitur.</rs>
                </item>
             </list>
          </div>

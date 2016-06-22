@@ -14,7 +14,7 @@
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
-               <name>Isabel Figueiredo-Iken</name> 
+               <name>Isabel Figueiredo-Iken</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -22,7 +22,7 @@
             <idno type="filename">BNP_E3_51-89v.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 51-89v</idno>
@@ -35,7 +35,7 @@
                      <note type="genre">
                         <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
-                     <textLang mainLang="pt" otherLangs="en" />
+                     <textLang mainLang="pt" otherLangs="en"/>
                   </msItemStruct>
                </msContents>
                <history>
@@ -45,6 +45,14 @@
                      </p>
                   </origin>
                </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista datilografada. No verso encontra-se a lista 51-89r e o poema manuscrito que
+                  começa pelo verso «Para ser grande, sê inteiro», datado de 14/2/1933 e atribuído a
+                  Ricardo Reis. Pessoa terá enviado o poema, publicado na revista <hi rend="italic"
+                     >Presença</hi> nesse mesmo mês, a João Gaspar Simões, juntamente com carta de
+                  18/2/1933 (cf. CP, 209). </p>
             </msDesc>
          </sourceDesc>
       </fileDesc>
@@ -56,23 +64,29 @@
    <text xml:id="bnp-e3-51-89v">
       <body>
          <note><del rend="overstrike">
-         
-            <list>
-               <head><hi rend="underline">Major: </hi></head>
-               <item><rs type="title">Terceiro Fausto.</rs> </item>     <note place="right"> one every two</note>
-                                                                        <note place="right"> years </note>
-               <item>Theomachia (or other name).</item>	  				   <note place="right">means </note>
-               <item><rs type="person"><choice><abbr>D<am>.</am></abbr></choice> Sebastião</rs> (or other name). </item>  <note place="right">ten</note>
-               <item><rs type="title">Prometheus Revinctus.</rs>   years.</item>
-               <item><rs type="title">The Duke of Parma.</rs> -------------------------------------------------------------------------------------</item>
-               <item><rs type="title">Ficções do Interludio</rs> (como conjuncto).</item>
-               <item><rs type="title">O Caso Vargas.</rs> (?)</item>
-               <item>Notas de Idéas.(?) </item>
-               <item><rs type="title">Cancioneiro.	</rs>(?)		(como conjuncto).</item>
-               <item>Poemas.		(?)		(como conjuncto).</item>
-              
-            </list> 
-         </del></note>
+               <list>
+                  <head><hi rend="underline">Major: </hi></head>
+                  <item><rs type="title">Terceiro Fausto.</rs>
+                  </item>
+                  <note place="right"> one every two</note>
+                  <note place="right"> years </note>
+                  <item>Theomachia (or other name).</item>
+                  <note place="right">means </note>
+                  <item><rs type="person"><choice>
+                           <abbr>D<am>.</am></abbr>
+                        </choice> Sebastião</rs> (or other name). </item>
+                  <note place="right">ten</note>
+                  <item><rs type="title">Prometheus Revinctus.</rs> years.</item>
+                  <item><rs type="title">The Duke of Parma.</rs>
+                     -------------------------------------------------------------------------------------</item>
+                  <item><rs type="title">Ficções do Interludio</rs> (como conjuncto).</item>
+                  <item><rs type="title">O Caso Vargas.</rs> (?)</item>
+                  <item>Notas de Idéas.(?) </item>
+                  <item><rs type="title">Cancioneiro. </rs>(?) (como conjuncto).</item>
+                  <item>Poemas. (?) (como conjuncto).</item>
+
+               </list>
+            </del></note>
          <div/>
       </body>
    </text>

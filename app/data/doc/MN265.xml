@@ -25,7 +25,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -34,9 +35,9 @@
             <idno type="filename">MN265.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
-                  <institution></institution>
+                  <institution/>
                   <idno>MN265</idno>
                </msIdentifier>
                <msContents>
@@ -58,6 +59,11 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista datilografada, publicada em Pizarro,<hi rend="italic"> Fernando Pessoa – O
+                     Guardador de Papéis</hi> (2009, 375). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -67,53 +73,63 @@
    <text>
       <body>
          <div>
-         <head><hi rend="red">EXCURSOS.</hi></head>  
-         <p><hi rend="red">Small Essays,</hi> based on the circumstance that “there is no<lb/>
-            <subst><del rend="overtyped"><gap reason="illegible" quantity="6" unit="character" /></del>
-            <add place="after">subject</add></subst>,
-            however wide, which
-            may not be con<pc>-</pc><lb />tained in a small discourse”.</p>
-         <list> 
-            <item><label>1.</label> <rs type="text">O verso e a prosa</rs>.</item>
-            <item><label>2.</label> <rs type="text">O orgulho e a vaidade</rs>.</item>        
-            <item><label>3.</label> <rs type="text">A novella policiaria</rs>.</item>
-            <item><label>4.</label> <rs type="text">O conceito de progresso</rs>.</item>
-            <item><label>5.</label> <rs type="text">A imaginação</rs>.</item>
-            <item><label>6.</label> (and others of the sort, which can be very easily picked<lb/>up from 
-              my many notes and casual observations)</item>
-            <item><label>7.</label> <rs type="text">A importancia social da ortographia</rs>.</item>
-            <item><label>8.</label> <rs type="text">Depois de Parmenides</rs>.</item>
-            <item><label>9.</label> <rs type="text">A pena de morte</rs>.</item>
-         </list>
-         <p>Ha, pois, só dois argumentos em favor da pena<lb/>  
-            de morte: de que é um dissuadente do crime; 
-            de que<lb/>a práctica do crime, que involve pena de morte, é<lb/>
-            um estado de guerra.</p> 
-         <p>Se se admittir que para amedrontar é legitimo<lb/>
-            empregar qualquer processo, então verificaremos
-            que<lb/> a tortura é muito mais amedrontante que a morte, e<lb/>
-            <del rend="overtyped">est</del> restabeleceremos a tortura.</p> 
-         <p>Quanto ao estado de guerra... Só a sedição pode<lb/>
-            assim designar-se, isto é, o crime de sedição, mas,<lb/> 
-            paraisso, ha que provar que o intuito é o que distin<pc>-</pc><lb />
-            gue a guerra - isto é, a destruição do Estado como<lb/>
-            Nação. Uma simples revolução, com as suas consequên<pc>-</pc><lb />cias, 
-            não constitue tal crime. Só se essa revolução<lb/>
-            tiver por intuito o dissolver a Nação, ou entregal-a<lb/> a outra, 
-            se pode admittir que os sediciosos fazem á<lb/> 
-            Nação uma declaração de guerra.
-         </p>
-         <list> 
-            <item><hi rend="red"><rs type="text">Os Sonhos. (seu symbolismo )</rs>.</hi></item>
-            <item><hi rend="red"><rs type="text">A Opinião Publica</rs>.</hi></item>        
-            <item><hi rend="red"><rs type="text">O Suffragio Politico</rs>.</hi></item>
-            <item><hi rend="red"><rs type="text">Notas para uma Regra de Vida</rs>.</hi></item>
-            <item><hi rend="red"><rs type="text">Esboço de uma Geometria dos Coexistentes e dos Antisolidos</rs>.</hi></item>
-            <item><hi rend="red"><rs type="text">A Moral da Força (Ensaio sobre a Moral)</rs>.</hi></item>
-            <item><hi rend="red"><rs type="text">Di<subst><del rend="overtyped">s</del><add>c</add></subst>taduras</rs>.</hi></item>
-            <item><hi rend="red"><rs type="text">Fundamentos do Conservantismo</rs>.</hi></item>
-            <item><hi rend="red"><rs type="text">A Monarchia</rs>.</hi></item>
-         </list>
+            <head><hi rend="red">EXCURSOS.</hi></head>
+            <p><hi rend="red">Small Essays,</hi> based on the circumstance that “there is no<lb/>
+               <subst>
+                  <del rend="overtyped"><gap reason="illegible" quantity="6" unit="character"
+                     /></del>
+                  <add place="after">subject</add>
+               </subst>, however wide, which may not be con<pc>-</pc><lb/>tained in a small
+               discourse”.</p>
+            <list>
+               <item><label>1.</label>
+                  <rs type="text">O verso e a prosa</rs>.</item>
+               <item><label>2.</label>
+                  <rs type="text">O orgulho e a vaidade</rs>.</item>
+               <item><label>3.</label>
+                  <rs type="text">A novella policiaria</rs>.</item>
+               <item><label>4.</label>
+                  <rs type="text">O conceito de progresso</rs>.</item>
+               <item><label>5.</label>
+                  <rs type="text">A imaginação</rs>.</item>
+               <item><label>6.</label> (and others of the sort, which can be very easily
+                  picked<lb/>up from my many notes and casual observations)</item>
+               <item><label>7.</label>
+                  <rs type="text">A importancia social da ortographia</rs>.</item>
+               <item><label>8.</label>
+                  <rs type="text">Depois de Parmenides</rs>.</item>
+               <item><label>9.</label>
+                  <rs type="text">A pena de morte</rs>.</item>
+            </list>
+            <p>Ha, pois, só dois argumentos em favor da pena<lb/> de morte: de que é um dissuadente
+               do crime; de que<lb/>a práctica do crime, que involve pena de morte, é<lb/> um estado
+               de guerra.</p>
+            <p>Se se admittir que para amedrontar é legitimo<lb/> empregar qualquer processo, então
+               verificaremos que<lb/> a tortura é muito mais amedrontante que a morte, e<lb/>
+               <del rend="overtyped">est</del> restabeleceremos a tortura.</p>
+            <p>Quanto ao estado de guerra... Só a sedição pode<lb/> assim designar-se, isto é, o
+               crime de sedição, mas,<lb/> paraisso, ha que provar que o intuito é o que
+                  distin<pc>-</pc><lb/> gue a guerra - isto é, a destruição do Estado como<lb/>
+               Nação. Uma simples revolução, com as suas consequên<pc>-</pc><lb/>cias, não constitue
+               tal crime. Só se essa revolução<lb/> tiver por intuito o dissolver a Nação, ou
+               entregal-a<lb/> a outra, se pode admittir que os sediciosos fazem á<lb/> Nação uma
+               declaração de guerra. </p>
+            <list>
+               <item><hi rend="red"><rs type="text">Os Sonhos. (seu symbolismo )</rs>.</hi></item>
+               <item><hi rend="red"><rs type="text">A Opinião Publica</rs>.</hi></item>
+               <item><hi rend="red"><rs type="text">O Suffragio Politico</rs>.</hi></item>
+               <item><hi rend="red"><rs type="text">Notas para uma Regra de Vida</rs>.</hi></item>
+               <item><hi rend="red"><rs type="text">Esboço de uma Geometria dos Coexistentes e dos
+                        Antisolidos</rs>.</hi></item>
+               <item><hi rend="red"><rs type="text">A Moral da Força (Ensaio sobre a
+                     Moral)</rs>.</hi></item>
+               <item><hi rend="red"><rs type="text">Di<subst>
+                           <del rend="overtyped">s</del>
+                           <add>c</add>
+                        </subst>taduras</rs>.</hi></item>
+               <item><hi rend="red"><rs type="text">Fundamentos do Conservantismo</rs>.</hi></item>
+               <item><hi rend="red"><rs type="text">A Monarchia</rs>.</hi></item>
+            </list>
          </div>
       </body>
    </text>

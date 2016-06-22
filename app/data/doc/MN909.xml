@@ -25,7 +25,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -34,9 +35,9 @@
             <idno type="filename">MN909.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
-                  <institution></institution>
+                  <institution/>
                   <idno>MN909</idno>
                </msIdentifier>
                <msContents>
@@ -58,6 +59,11 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita, publicada em <hi rend="italic">Livro do Desasocego</hi> (2010,
+                  537). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -67,34 +73,39 @@
    <text>
       <body>
          <div>
-            <list> 
+            <list>
                <item><rs type="text">Theoria do <choice>
-                                   <abbr>Suffr<am>.</am></abbr>
-                                   <expan>Suffr<ex>agio</ex></expan>
-                                </choice> Politico</rs>.
-               </item>
+                        <abbr>Suffr<am>.</am></abbr>
+                        <expan>Suffr<ex>agio</ex></expan>
+                     </choice> Politico</rs>. </item>
                <item><rs type="text">Politica Economica</rs>.</item>
             </list>
             <metamark rend="line" function="distinct"/>
             <list>
                <item><rs type="text">Banqueiro Anarchista</rs> (<choice>
-                                             <abbr>ingl</abbr>
-                                             <expan>ingl<ex>ez</ex></expan>
-                                           </choice> e<lb/>
-                                       <choice>
-                                          <abbr>fr</abbr><expan>fr<ex>ancez</ex></expan></choice>)
-               </item>
+                     <abbr>ingl</abbr>
+                     <expan>ingl<ex>ez</ex></expan>
+                  </choice> e<lb/>
+                  <choice>
+                     <abbr>fr</abbr>
+                     <expan>fr<ex>ancez</ex></expan>
+                  </choice>) </item>
             </list>
             <metamark rend="line" function="distinct"/>
-            <list>   
+            <list>
                <item><rs type="text">Erostratus</rs>.</item>
                <item><rs type="text">Livro da Lili</rs>.</item>
-               <item><rs type="text"><rs type="person" key="P32">Oscar Wilde</rs></rs> (<rs type="person" key="P17"><choice>
-                                    <abbr>A</abbr><expan>A<ex>ntonio</ex></expan></choice><choice><abbr>B</abbr><expan>B<ex>otto</ex></expan>
-                                  </choice></rs> preface re<pc>-</pc><lb/>modelled)
-               </item>  
+               <item><rs type="text"><rs type="person" key="P32">Oscar Wilde</rs></rs> (<rs
+                     type="person" key="P17"><choice>
+                        <abbr>A</abbr>
+                        <expan>A<ex>ntonio</ex></expan>
+                     </choice><choice>
+                        <abbr>B</abbr>
+                        <expan>B<ex>otto</ex></expan>
+                     </choice></rs> preface re<pc>-</pc><lb/>modelled) </item>
                <item><rs type="text">Portugal</rs>.</item>
-               <item><rs type="work" key="O1" style="bc"><rs type="text">Cancioneiro (ou Itinerario)</rs></rs>.</item>
+               <item><rs type="work" key="O1" style="bc"><rs type="text">Cancioneiro (ou
+                        Itinerario)</rs></rs>.</item>
             </list>
          </div>
       </body>

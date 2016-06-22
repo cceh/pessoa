@@ -26,7 +26,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -35,7 +36,7 @@
             <idno type="filename">BNP_E3_48-2r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 48-2r</idno>
@@ -48,7 +49,7 @@
                      <note type="genre">
                         <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
-                     <textLang mainLang="en" otherLangs="pt" />
+                     <textLang mainLang="en" otherLangs="pt"/>
                   </msItemStruct>
                </msContents>
                <history>
@@ -59,42 +60,49 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita em papel pautado de agenda, referente a «Dezembro | 19 |
+                  quinta-feira». </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-48-1-56_JPG_24-C-R0150/bn-acpc-e-e3-48-1-56_0003_2_t24-C-R0150.jpg"/>
+      <graphic url="bn-acpc-e-e3-48-1-56_JPG_24-C-R0150/bn-acpc-e-e3-48-1-56_0003_2_t24-C-R0150.jpg"
+      />
    </facsimile>
    <text>
       <body>
          <div>
             <list>
                <head><hi rend="underline">Anthologia</hi></head>
-               <item><label>1.</label> <rs type="text"><rs type="person" key="P65">Shakespeare</rs> (volumes)</rs></item>
+               <item><label>1.</label>
+                  <rs type="text"><rs type="person" key="P65">Shakespeare</rs> (volumes)</rs></item>
                <item>
                   <label>2.</label>
                   <list>
                      <item><rs type="person" key="P146">Tennyson</rs></item>
                      <item><rs type="person" key="P87">Poe</rs></item>
-                  </list>     
+                  </list>
                </item>
-            </list> 
+            </list>
             <metamark rend="line" function="distinct"/>
             <list>
                <head>Volumes <hi rend="underline">like Vigny’s on Flammarion’s</hi> set</head>
                <item>
-                  <rs type="person" key="P65">Shakespeare</rs>:
-                  <rs type="text"><rs type="person" key="P153">Othello</rs></rs>, <rs type="text"><rs type="person" key="P154">Lear</rs></rs>, 
-                  <rs type="text"><rs type="person" key="P155">Macbeth</rs></rs>. <seg>√</seg>
+                  <rs type="person" key="P65">Shakespeare</rs>: <rs type="text"><rs type="person"
+                        key="P153">Othello</rs></rs>, <rs type="text"><rs type="person" key="P154"
+                        >Lear</rs></rs>, <rs type="text"><rs type="person" key="P155"
+                     >Macbeth</rs></rs>. <seg>√</seg>
                </item>
                <item>
                   <choice>
                      <abbr><metamark rend="line" function="ditto"/></abbr>
                      <expan><rs type="person" key="P65">Shakespeare</rs></expan>
-                  </choice>:
-                  <rs type="text"><rs type="person" key="P150">Hamlet</rs></rs>, 
-                  <rs type="text"><rs type="person" key="P151">Antony</rs> and <rs type="person" key="P152">Cleopatra</rs></rs>, 
-                  <rs type="text">
+                  </choice>: <rs type="text"><rs type="person" key="P150">Hamlet</rs></rs>, <rs
+                     type="text"><rs type="person" key="P151">Antony</rs> and <rs type="person"
+                        key="P152">Cleopatra</rs></rs>, <rs type="text">
                      <rs type="person" key="P149">
                         <choice>
                            <abbr>Tit<am>.</am></abbr>
@@ -106,32 +114,32 @@
                         </choice>
                      </rs>
                   </rs>
-               </item>        
+               </item>
                <item>
                   <choice>
                      <abbr><metamark rend="line" function="ditto"/></abbr>
                      <expan><rs type="person" key="P65">Shakespeare</rs></expan>
-                  </choice>:
-                  <rs type="text">
+                  </choice>: <rs type="text">
                      <rs type="person" key="P148">
                         <choice>
                            <abbr>J<am>.</am></abbr>
                            <expan>J<ex>ulius</ex></expan>
-                        </choice> Caesar</rs></rs>, <rs type="text"><rs type="person" key="P147">Coriolanus</rs></rs>
+                        </choice> Caesar</rs></rs>, <rs type="text"><rs type="person" key="P147"
+                        >Coriolanus</rs></rs>
                </item>
                <item>
                   <choice>
                      <abbr><metamark rend="line" function="ditto"/></abbr>
                      <expan><rs type="person" key="P65">Shakespeare</rs></expan>
-                  </choice>:
-                  <rs type="text">Tempest</rs>, <rs type="text">Winter’s tale</rs>, <rs type="text">Twelfth Night</rs>
+                  </choice>: <rs type="text">Tempest</rs>, <rs type="text">Winter’s tale</rs>, <rs
+                     type="text">Twelfth Night</rs>
                </item>
                <item>
                   <choice>
                      <abbr><metamark rend="line" function="ditto"/></abbr>
                      <expan><rs type="person" key="P65">Shakespeare</rs></expan>
-                  </choice>:
-                  <rs type="text">As you like it</rs>, <rs type="text">Much Ado About Nothing.</rs>
+                  </choice>: <rs type="text">As you like it</rs>, <rs type="text">Much Ado About
+                     Nothing.</rs>
                </item>
             </list>
          </div>

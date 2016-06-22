@@ -14,7 +14,7 @@
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
-               <name>Isabel Figueiredo-Iken</name>  
+               <name>Isabel Figueiredo-Iken</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -22,7 +22,7 @@
             <idno type="filename">BNP_E3_93-56r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 93-56r</idno>
@@ -46,6 +46,11 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita em papel pautado de agenda, referente a «Maio | 7 |
+                  terça-feira». </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -55,35 +60,44 @@
    </facsimile>
    <text xml:id="bnp-e3-93-56r">
       <body>
-         <note><supplied resp="PS" reason="omitted-in-original"></supplied></note>
-         <metamark rend="line" function="distinct"></metamark>
-         <list> 
-            <item xml:id="I1"><label>1.</label><rs type="work"><rs type="person">Shakespeare</rs>,<rs type="title"> “A Tormenta”.</rs></rs></item>
-            <item xml:id="I2"><label>2.</label>um ou dois contos<lb></lb>			
-               os <subst><del rend="overstrike">poemas</del> bons<add place="above">poemas</add></subst>
-               
-              
-               <add></add>  de <rs type="person">Edgar Poe</rs> <lb></lb>.
-            <anchor rend="#I2"/><rs type="person">Synge</rs>—<rs type="title"><choice><abbr>Cav<am>.</am></abbr><expan>Cav<ex>algada</ex></expan></choice>até o mar</rs></item>
-            <item xml:id="I3"><label>3.</label>Sonetos Unicos.
-            Contos symbolicos de <rs type="person"><choice><abbr>H<am>.</am></abbr></choice><choice><abbr>G<am>.</am></abbr></choice>Wells</rs>.
-            O <rs type="title">Prometheu Preso</rs>, de <rs type="person">Eschylo</rs>.</item>
-            <anchor rend="#I3"/> <item xml:id="I4"><label>4.</label><rs type="work"><rs type="person">Shakespeare</rs>,<rs type="title"> Macbeth.</rs></rs> (?)</item>
-            <item xml:id="I5"><label>5.</label><supplied resp="PS" reason="omitted-in-original"></supplied></item>
+         <note><supplied resp="PS" reason="omitted-in-original"/></note>
+         <metamark rend="line" function="distinct"/>
+         <list>
+            <item xml:id="I1"><label>1.</label><rs type="work"><rs type="person"
+                     >Shakespeare</rs>,<rs type="title"> “A Tormenta”.</rs></rs></item>
+            <item xml:id="I2"><label>2.</label>um ou dois contos<lb/> os <subst><del
+                     rend="overstrike">poemas</del> bons<add place="above">poemas</add></subst>
+               <add/> de <rs type="person">Edgar Poe</rs>
+               <lb/>. <anchor rend="#I2"/><rs type="person">Synge</rs>—<rs type="title"><choice>
+                     <abbr>Cav<am>.</am></abbr>
+                     <expan>Cav<ex>algada</ex></expan>
+                  </choice>até o mar</rs></item>
+            <item xml:id="I3"><label>3.</label>Sonetos Unicos. Contos symbolicos de <rs
+                  type="person"><choice>
+                     <abbr>H<am>.</am></abbr>
+                  </choice><choice>
+                     <abbr>G<am>.</am></abbr>
+                  </choice>Wells</rs>. O <rs type="title">Prometheu Preso</rs>, de <rs type="person"
+                  >Eschylo</rs>.</item>
+            <anchor rend="#I3"/>
+            <item xml:id="I4"><label>4.</label><rs type="work"><rs type="person"
+                     >Shakespeare</rs>,<rs type="title"> Macbeth.</rs></rs> (?)</item>
+            <item xml:id="I5"><label>5.</label><supplied resp="PS" reason="omitted-in-original"
+               /></item>
          </list>
          <ab n="a">
-            <note target="range(I1,I2,)" place="left" type="addition"></note>  
+            <note target="range(I1,I2,)" place="left" type="addition"/>
             <metamark rend="curly bracket" function="grouping"/></ab>
          <ab n="b">
-            <note target="range(I3,I4,)" place="left" type="addition"></note>  
+            <note target="range(I3,I4,)" place="left" type="addition"/>
             <metamark rend="curly bracket" function="grouping"/></ab>
          <ab n="c">
-            <note target="range(I2, #I2)" place="right" type="addition"></note>  
+            <note target="range(I2, #I2)" place="right" type="addition"/>
             <metamark rend="curly bracket" function="grouping"/></ab>
          <ab n="d">
-            <note target="range(I3,I4,)" place="right" type="addition"></note>  
+            <note target="range(I3,I4,)" place="right" type="addition"/>
             <metamark rend="curly bracket" function="grouping"/></ab>
-         
+
          <div/>
       </body>
    </text>

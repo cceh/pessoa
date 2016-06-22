@@ -10,7 +10,7 @@
             <p>Publication Information</p>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 87-97 a 100r</idno>
@@ -31,10 +31,9 @@
                         <name>Isabel Figueiredo-Iken</name>
                      </respStmt>
                      <note type="genre">
-                        <rs type="genre" key="lista_editorial">Lista
-                           editorial</rs><rs type="genre" key="plano_editorial">Plano
-                              editorial</rs><rs type="genre" key="nota_editorial">Nota
-                                 editorial</rs>
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs><rs type="genre"
+                           key="plano_editorial">Plano editorial</rs><rs type="genre"
+                           key="nota_editorial">Nota editorial</rs>
                      </note>
                      <textLang mainLang="pt" otherLangs="en"/>
                   </msItemStruct>
@@ -42,116 +41,176 @@
                <history>
                   <origin>
                      <p>
-                        <origDate when="1935" >1935</origDate>
+                        <origDate when="1935">1935</origDate>
                         <origPlace/>
                      </p>
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita, publicada em Barreto, <hi rend="italic">Pessoa e Fátima.</hi>
+                  <hi rend="italic">A propósito dos escritos pessoanos sobre catolicismo e
+                     política</hi> (2009, 269-272). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-87-1-103_JPG_24-C-R0150/bn-acpc-e-e3-87-1-103_0209_97_t24-C-R0150.jpg"/>
-      <graphic url="bn-acpc-e-e3-87-1-103_JPG_24-C-R0150/bn-acpc-e-e3-87-1-103_0210_97v_t24-C-R0150.jpg"/>
-      <graphic url="bn-acpc-e-e3-87-1-103_JPG_24-C-R0150/bn-acpc-e-e3-87-1-103_0211_98_t24-C-R0150.jpg"/>
-      <graphic url="bn-acpc-e-e3-87-1-103_JPG_24-C-R0150/bn-acpc-e-e3-87-1-103_0212_98v_t24-C-R0150.jpg"/>
-      <graphic url="bn-acpc-e-e3-87-1-103_JPG_24-C-R0150/bn-acpc-e-e3-87-1-103_0213_99_t24-C-R0150.jpg"/>
-      <graphic url="bn-acpc-e-e3-87-1-103_JPG_24-C-R0150/bn-acpc-e-e3-87-1-103_0214_99v_t24-C-R0150.jpg"/>
-      <graphic url="bn-acpc-e-e3-87-1-103_JPG_24-C-R0150/bn-acpc-e-e3-87-1-103_0215_100_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-87-1-103_JPG_24-C-R0150/bn-acpc-e-e3-87-1-103_0209_97_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-87-1-103_JPG_24-C-R0150/bn-acpc-e-e3-87-1-103_0210_97v_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-87-1-103_JPG_24-C-R0150/bn-acpc-e-e3-87-1-103_0211_98_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-87-1-103_JPG_24-C-R0150/bn-acpc-e-e3-87-1-103_0212_98v_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-87-1-103_JPG_24-C-R0150/bn-acpc-e-e3-87-1-103_0213_99_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-87-1-103_JPG_24-C-R0150/bn-acpc-e-e3-87-1-103_0214_99v_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-87-1-103_JPG_24-C-R0150/bn-acpc-e-e3-87-1-103_0215_100_t24-C-R0150.jpg"/>
    </facsimile>
    <text xml:id="bnp-e3-87-97-a-100r">
       <body>
-         <head><note place="center"><hi rend="underline"><rs type="journal">Norma</rs></hi></note></head>   
-         
+         <head><note place="center"><hi rend="underline"><rs type="journal"
+            >Norma</rs></hi></note></head>
+
          <metamark rend="line" function="distinct"/>
-         <p><note place="center">Revista quinzenal de
-            literatura e sociologia</note></p>
+         <p><note place="center">Revista quinzenal de literatura e sociologia</note></p>
          <metamark rend="line" function="distinct"/>
-         <p><note place="center"><del rend="overstrike">Nacionalismo,   liberalismo,    anti-
-            tradicionalismo.</del></note></p>
+         <p><note place="center"><del rend="overstrike">Nacionalismo, liberalismo, anti-
+                  tradicionalismo.</del></note></p>
          <metamark rend="line" function="distinct"/>
-         <p>Esta revista é o<subst><del rend="overstrike"> produto</del><add>resultado</add>
-         </subst>de se tirar<lb></lb>  uma media entre<subst><del rend="overstrike">duas idéas minhas<lb></lb> ou projectos </del><add>dois projectos meus</add>
-         </subst>   – o de fazer uma <lb></lb>publicação em o que se chama<rs type="title"> “ca<pc>-</pc><lb/>dernos"</rs>, escripta inteiramente por<lb></lb> mim, e o de fazer uma revista,<lb></lb>
-            veramente tal, com collaboração <lb></lb>de diversos. A <choice><seg n="1">publicação</seg><seg n="2"><add place="above">revista</add></seg></choice>
-            , tal <lb></lb>qual apparece, participa dos <lb></lb>dois projectos: sou eu em casa, a<pc>-</pc><lb/>companhado de amigos a quem convidei.<lb></lb><hi rend="underline">  E de aqui</hi> se
-            <note place="margin right transversal"><subst><del rend="overstrike">deprehendera </del><add>concluirá</add>
-            </subst>, e bem, que todos os trabalhos alheios, que <lb></lb>aqui se publiquem, são <choice><seg n="1"> escolhidos ou</seg><seg n="2"><add place="above">sollicitados
-            </add></seg></choice> por<lb></lb> mim.</note>
-            Deprehende-se portanto,<hi rend="superscript">quanto ao texto</hi> , que <hi rend="underline">salvo</hi><lb></lb> indicação<hi rend="superscript"> especial</hi> em contrario, tudo quanto,<lb></lb>
-            original ou traduzido, aqui figure<lb></lb> sem assignatura, é <del rend="overstrike">escripto</del> original<lb></lb> meu ou traducção minha. /Em <lb></lb>
-            um outro caso, como no do primeiro<lb></lb> numero, o texto<hi rend="superscript"> poderá ser </hi><hi rend="underline">será</hi> inteiramente meu./
-         </p>
-         <p>A palavra <hi rend="underline">Norma</hi>, que <hi rend="superscript">dei</hi> á revista<lb></lb><del rend="overstrike">
-            <gap reason="illegible" quantity="2" unit="characters"/></del>
-            por titulo, significa,<subst><del rend="overstrike"> regra</del><add place="above"> como </add></subst>se<lb></lb> sabe, <hi rend="underline">regra</hi>; em seu sentido rigoro<pc>-</pc><lb />samente proprio,
-            não significa porém<lb></lb> <hi rend="underline">qualquer</hi> regra, mas uma regra men tal, uma regra com harmonização<lb></lb> de elementos contrarios, e, ainda e <lb></lb>principalmente, uma regra imposta<lb></lb>
-            pelo indivíduo a si mesmo, á <lb></lb>grega, e não derivada do exterior,<lb></lb>  á romana. Se alguem entender<lb></lb>
-            que <hi rend="underline">norma</hi> não quere dizer <hi rend="superscript">isto</hi>, ou,<lb></lb> <metamark rend="circle overstrike" function="löschen"/>que não quer dizer nada, ou
-            que<hi rend="superscript"><del rend="overtyped">
-               <gap reason="illegible" quantity="1" unit="characters" /></del>
-            </hi><lb></lb> não passa do nome de uma<lb></lb>  opera de Bellini, não será 
-            um <lb></lb><subst><del rend="overstrike">liberal</del><add> tolerante</add></subst> como eu que lhe negará<lb></lb> o direito de o pensar.</p>
+         <p>Esta revista é o<subst>
+               <del rend="overstrike"> produto</del>
+               <add>resultado</add>
+            </subst>de se tirar<lb/> uma media entre<subst>
+               <del rend="overstrike">duas idéas minhas<lb/> ou projectos </del>
+               <add>dois projectos meus</add>
+            </subst> – o de fazer uma <lb/>publicação em o que se chama<rs type="title">
+                  “ca<pc>-</pc><lb/>dernos"</rs>, escripta inteiramente por<lb/> mim, e o de fazer
+            uma revista,<lb/> veramente tal, com collaboração <lb/>de diversos. A <choice>
+               <seg n="1">publicação</seg>
+               <seg n="2"><add place="above">revista</add></seg>
+            </choice> , tal <lb/>qual apparece, participa dos <lb/>dois projectos: sou eu em casa,
+               a<pc>-</pc><lb/>companhado de amigos a quem convidei.<lb/><hi rend="underline"> E de
+               aqui</hi> se <note place="margin right transversal"><subst>
+                  <del rend="overstrike">deprehendera </del>
+                  <add>concluirá</add>
+               </subst>, e bem, que todos os trabalhos alheios, que <lb/>aqui se publiquem, são <choice>
+                  <seg n="1"> escolhidos ou</seg>
+                  <seg n="2"><add place="above">sollicitados </add></seg>
+               </choice> por<lb/> mim.</note> Deprehende-se portanto,<hi rend="superscript">quanto
+               ao texto</hi> , que <hi rend="underline">salvo</hi><lb/> indicação<hi
+               rend="superscript"> especial</hi> em contrario, tudo quanto,<lb/> original ou
+            traduzido, aqui figure<lb/> sem assignatura, é <del rend="overstrike">escripto</del>
+            original<lb/> meu ou traducção minha. /Em <lb/> um outro caso, como no do primeiro<lb/>
+            numero, o texto<hi rend="superscript"> poderá ser </hi><hi rend="underline">será</hi>
+            inteiramente meu./ </p>
+         <p>A palavra <hi rend="underline">Norma</hi>, que <hi rend="superscript">dei</hi> á
+               revista<lb/><del rend="overstrike">
+               <gap reason="illegible" quantity="2" unit="characters"/></del> por titulo, significa,<subst>
+               <del rend="overstrike"> regra</del>
+               <add place="above"> como </add>
+            </subst>se<lb/> sabe, <hi rend="underline">regra</hi>; em seu sentido
+            rigoro<pc>-</pc><lb/>samente proprio, não significa porém<lb/>
+            <hi rend="underline">qualquer</hi> regra, mas uma regra men tal, uma regra com
+            harmonização<lb/> de elementos contrarios, e, ainda e <lb/>principalmente, uma regra
+            imposta<lb/> pelo indivíduo a si mesmo, á <lb/>grega, e não derivada do exterior,<lb/> á
+            romana. Se alguem entender<lb/> que <hi rend="underline">norma</hi> não quere dizer <hi
+               rend="superscript">isto</hi>, ou,<lb/>
+            <metamark rend="circle overstrike" function="löschen"/>que não quer dizer nada, ou
+               que<hi rend="superscript"><del rend="overtyped">
+                  <gap reason="illegible" quantity="1" unit="characters"/></del>
+            </hi><lb/> não passa do nome de uma<lb/> opera de Bellini, não será um <lb/><subst>
+               <del rend="overstrike">liberal</del>
+               <add> tolerante</add>
+            </subst> como eu que lhe negará<lb/> o direito de o pensar.</p>
          <metamark rend="line" function="distinct"/>
          <list>
-            <head><note place="center"><hi rend="underline">No. 1.</hi></note></head>  
-            <item> (Apresentação)	 <note place="right"> — p. 1</note></item>
-            <item><rs type="person">Sá Carneiro</rs> (um poema <lb></lb>curto)<note place="right">	— p. 2</note></item>        
+            <head><note place="center"><hi rend="underline">No. 1.</hi></note></head>
+            <item> (Apresentação) <note place="right"> — p. 1</note></item>
+            <item><rs type="person">Sá Carneiro</rs> (um poema <lb/>curto)<note place="right"> — p.
+                  2</note></item>
             <item>Fatima<note place="right">— 3-10</note></item>
-            <item>“<choice><abbr>A<am>.</am></abbr><expan>A<ex>ssociações</ex></expan></choice>
-               <choice><abbr>S<am>.</am></abbr><expan>S<ex>ecretas</ex></expan></choice>”<note>(reproducção, correcta e aumentada,<lb></lb>  
-                  do artigo publicado no<rs type="journal"><hi rend="underline"><choice><abbr>D<am>.</am></abbr><expan>D<ex>iario de</ex></expan></choice> 
-                     <choice><abbr> L<am>.</am></abbr><expan> L<ex>isboa</ex></expan></choice></hi></rs> 
-               em 4 de Fevereiro de 1935)
-               </note></item> </list>
-            
-            <metamark rend="line" function="distinct"/>
-            
-         <list> 
-            <head><hi rend="underline">Quadrante.</hi></head>  
-            
+            <item>“<choice>
+                  <abbr>A<am>.</am></abbr>
+                  <expan>A<ex>ssociações</ex></expan>
+               </choice>
+               <choice>
+                  <abbr>S<am>.</am></abbr>
+                  <expan>S<ex>ecretas</ex></expan>
+               </choice>”<note>(reproducção, correcta e aumentada,<lb/> do artigo publicado no<rs
+                     type="journal"><hi rend="underline"><choice>
+                           <abbr>D<am>.</am></abbr>
+                           <expan>D<ex>iario de</ex></expan>
+                        </choice>
+                        <choice>
+                           <abbr> L<am>.</am></abbr>
+                           <expan> L<ex>isboa</ex></expan>
+                        </choice></hi></rs> em 4 de Fevereiro de 1935) </note></item>
+         </list>
+
+         <metamark rend="line" function="distinct"/>
+
+         <list>
+            <head><hi rend="underline">Quadrante.</hi></head>
+
             <item><label>1.</label><rs type="title">“A Romaria”</rs>.</item>
-            <item><label>2.</label>(Prefacio, correcto, ao livro<lb></lb><rs type="title"> “Acronios”</rs>)</item>        
+            <item><label>2.</label>(Prefacio, correcto, ao livro<lb/><rs type="title">
+                  “Acronios”</rs>)</item>
             <item><label>3.</label><rs type="title">Vigesimo Anno.</rs></item>
-            <item><label>4.</label><rs type="title">Uma revelação</rs>:<rs type="person">Victorino Nemesio</rs> ,<lb></lb> poeta.</item>
-            <item><label>5.</label>Prefacio aos Villancetes de<lb></lb> A. B.</item>
-            <item><label>6.</label> Concursos literários do <choice><abbr>s<am>.</am></abbr><expan>s<ex>ecretariado</ex></expan></choice>de
-               <choice><abbr>P<am>.</am></abbr><expan>P<ex>ropaganda</ex></expan></choice><choice><abbr> N<am>.</am></abbr><expan> N<ex>Nacional</ex></expan></choice></item>
+            <item><label>4.</label><rs type="title">Uma revelação</rs>:<rs type="person">Victorino
+                  Nemesio</rs> ,<lb/> poeta.</item>
+            <item><label>5.</label>Prefacio aos Villancetes de<lb/> A. B.</item>
+            <item><label>6.</label> Concursos literários do <choice>
+                  <abbr>s<am>.</am></abbr>
+                  <expan>s<ex>ecretariado</ex></expan>
+               </choice>de <choice>
+                  <abbr>P<am>.</am></abbr>
+                  <expan>P<ex>ropaganda</ex></expan>
+               </choice><choice>
+                  <abbr> N<am>.</am></abbr>
+                  <expan> N<ex>Nacional</ex></expan>
+               </choice></item>
             <item>(?) <label>7.</label><rs type="title">Crítica á Situação.</rs></item>
          </list>
-         
-        
-           
-            
-               
-            <p>Não se fazem assignaturas <lb></lb>nem se enviam números a ninguem directamente. <del rend="overstrike"> excepto dentro da área da cidade de Lisboa.</del> </p>
-         <p>Depositários (consignatarios) districtaes, com commissão sufficiente
-            para abastecer cada districto. — Isto inclue as Ilhas Adjacentes. </p>   
-         <p>Para Africa tratar com casas de cá —  ou uma só para todas as Colonias ou varias, para varias Colonias. 
-            (Depositario em<rs type="place">Lisboa</rs> ) </p>
-            <p><del rend="overstrike"> Qualquer pessoa, todavia, que enviar 2$50 (?) á Administração pode receber um numero. </del></p>
-         
-         <list>  
-            <head><hi rend="underline">Annuncios </hi>(só de pagina)</head>  
-         
+
+
+
+
+
+         <p>Não se fazem assignaturas <lb/>nem se enviam números a ninguem directamente. <del
+               rend="overstrike"> excepto dentro da área da cidade de Lisboa.</del>
+         </p>
+         <p>Depositários (consignatarios) districtaes, com commissão sufficiente para abastecer cada
+            districto. — Isto inclue as Ilhas Adjacentes. </p>
+         <p>Para Africa tratar com casas de cá — ou uma só para todas as Colonias ou varias, para
+            varias Colonias. (Depositario em<rs type="place">Lisboa</rs> ) </p>
+         <p><del rend="overstrike"> Qualquer pessoa, todavia, que enviar 2$50 (?) á Administração
+               pode receber um numero. </del></p>
+
+         <list>
+            <head><hi rend="underline">Annuncios </hi>(só de pagina)</head>
+
             <item><label>1 — </label>Automovel (Graham-Paige).</item>
-            <item><label>2 — </label> Receptor (Clarion).</item>        
+            <item><label>2 — </label> Receptor (Clarion).</item>
             <item><label>3 — </label>Companhia dos Telephones.</item>
             <item><label>4 — </label>Vacuum Oil Company.</item>
-            <item><label>5 — </label><supplied resp="PS" reason="omitted-in-original"></supplied></item>
-       
+            <item><label>5 — </label><supplied resp="PS" reason="omitted-in-original"/></item>
+
          </list>
-         
+
          <metamark rend="line" function="distinct"/>
          <note> Notas administrativas: 1a metade da pag. 2 da <hi rend="underline">capa.</hi></note>
-            <note>Annuncio na outra metade.</note>
-            <note>Annuncios nas 3a e 4a pag. capa. </note>
-            <note>1a pagina resguardo — annuncio de artigos no n.° seguinte. </note>
-            <note>(pagina resguardo frente abertura texto — qualquer uso semelhante, 
-               e.g., livros dos escriptores <hi rend="underline">novos</hi>)
-            </note>
-         
+         <note>Annuncio na outra metade.</note>
+         <note>Annuncios nas 3a e 4a pag. capa. </note>
+         <note>1a pagina resguardo — annuncio de artigos no n.° seguinte. </note>
+         <note>(pagina resguardo frente abertura texto — qualquer uso semelhante, e.g., livros dos
+            escriptores <hi rend="underline">novos</hi>) </note>
+
       </body>
    </text>
 </TEI>

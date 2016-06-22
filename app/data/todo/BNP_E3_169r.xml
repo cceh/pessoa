@@ -22,7 +22,7 @@
             <idno type="filename">BNP_E3_169r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 169r</idno>
@@ -46,6 +46,10 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista datilografada. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -55,26 +59,32 @@
    </facsimile>
    <text xml:id="bnp-e3-169r">
       <body>
-         <head><hi rend="underline">Para o livro EPISODIOS.</hi></head>  
-         <list> 
-            <item><label>1.</label><rs type="title">A Nova Poesia Portugueza — I.</rs></item>      
-            <item><label>2.</label><rs type="title">A Nova Poesia Portugueza — II.</rs></item>        
-            <item><label>3.</label><rs type="title">A Nova Poesia Portugueza — III</rs> (a carta no in<pc>-</pc><lb />querito literario).<lb></lb> 
-               (nota anterior)   </item>
-            <item><label>4.</label><rs type="work"><rs type="person" role="author"> Antonio Botto</rs> e <rs type="title"><del rend="overtyped">o Ideal Esthetico Creador</del></rs></rs> </item>
+         <head><hi rend="underline">Para o livro EPISODIOS.</hi></head>
+         <list>
+            <item><label>1.</label><rs type="title">A Nova Poesia Portugueza — I.</rs></item>
+            <item><label>2.</label><rs type="title">A Nova Poesia Portugueza — II.</rs></item>
+            <item><label>3.</label><rs type="title">A Nova Poesia Portugueza — III</rs> (a carta no
+                  in<pc>-</pc><lb/>querito literario).<lb/> (nota anterior) </item>
+            <item><label>4.</label><rs type="work"><rs type="person" role="author"> Antonio
+                     Botto</rs> e <rs type="title"><del rend="overtyped">o Ideal Esthetico
+                        Creador</del></rs></rs>
+            </item>
             <item><label>5.</label>Prefacio ao livro<rs type="title"> “Acronios”</rs>.</item>
-            <item><label>6.</label>Prefacio ao livro<rs type="title">  “Alma Errante”</rs>.</item>
-            <item><label>7.</label><rs type="work"><rs type="person" role="author">Antonio Botto</rs> e<rs type="title"> o Ideal Esthetico Creador.</rs></rs></item>
+            <item><label>6.</label>Prefacio ao livro<rs type="title"> “Alma Errante”</rs>.</item>
+            <item><label>7.</label><rs type="work"><rs type="person" role="author">Antonio
+                     Botto</rs> e<rs type="title"> o Ideal Esthetico Creador.</rs></rs></item>
             <item><label>8.</label>Carta ao Auctor de <rs type="title">“Sachá”</rs>.</item>
-            <item><label>9.</label>(?) <rs type="title">Desvios </rs>(as criticas de THEATRO).</item>
-            <item><label>10.</label>Entrevista na <rs type="journal">“Vida Portugueza”.</rs></item>         
-                  
-            <item><label>11.</label>Entrevista <del rend="overtyped">com</del> publicada em <rs type="journal">SOL.</rs></item>
+            <item><label>9.</label>(?) <rs type="title">Desvios </rs>(as criticas de
+               THEATRO).</item>
+            <item><label>10.</label>Entrevista na <rs type="journal">“Vida Portugueza”.</rs></item>
+
+            <item><label>11.</label>Entrevista <del rend="overtyped">com</del> publicada em <rs
+                  type="journal">SOL.</rs></item>
          </list>
-         
-         
-         
-         
+
+
+
+
          <div/>
       </body>
    </text>

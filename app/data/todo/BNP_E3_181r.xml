@@ -10,7 +10,7 @@
             <p>Publication Information</p>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 181r</idno>
@@ -31,10 +31,9 @@
                         <name>Isabel Figueiredo-Iken</name>
                      </respStmt>
                      <note type="genre">
-                        <rs type="genre" key="lista_editorial">Lista
-                           editorial</rs><rs type="genre" key="plano_editorial">Plano
-                              editorial</rs><rs type="genre" key="nota_editorial">Nota
-                                 editorial</rs>
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs><rs type="genre"
+                           key="plano_editorial">Plano editorial</rs><rs type="genre"
+                           key="nota_editorial">Nota editorial</rs>
                      </note>
                      <textLang mainLang="pt" otherLangs="en"/>
                   </msItemStruct>
@@ -48,58 +47,92 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita, publicada em <hi rend="italic">A Educação do Stoico</hi> (2007,
+                  64). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-167-186_JPG_24-C-R0150/bn-acpc-e-e3-167-186_0031_181_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-167-186_JPG_24-C-R0150/bn-acpc-e-e3-167-186_0031_181_t24-C-R0150.jpg"/>
    </facsimile>
    <text xml:id="bnp-e3-181r">
       <body>
-         <list> 
-            <item><rs type="title">Cancioneiro</rs>,<choice><abbr> liv<am>.</am></abbr><expan> liv<ex>ros</ex></expan></choice> I a V.</item>
-            <item><rs type="work"><rs type="title">Poemas completos</rs></rs> de <rs type="person" role="author">Alberto Caeiro</rs>.</item>        
+         <list>
+            <item><rs type="title">Cancioneiro</rs>,<choice>
+                  <abbr> liv<am>.</am></abbr>
+                  <expan> liv<ex>ros</ex></expan>
+               </choice> I a V.</item>
+            <item><rs type="work"><rs type="title">Poemas completos</rs></rs> de <rs type="person"
+                  role="author">Alberto Caeiro</rs>.</item>
             <item><rs type="title">Livro do Desasocego</rs>.</item>
          </list>
-           
+
          <metamark rend="line" function="distinct"/>
-         <list>   
+         <list>
             <item><rs type="title">Theoria do Suffragio Politico</rs>.</item>
          </list>
          <metamark rend="line" function="distinct"/>
-         <list>  
+         <list>
             <item xml:id="I1">The Mouth of Hell.</item>
             <item xml:id="I2">The Double Issue.</item>
          </list>
-         <note target="range(I1,I2)" place="left" type="addition"></note>
-         <metamark rend="curly bracket" function="grouping"/> 
+         <note target="range(I1,I2)" place="left" type="addition"/>
+         <metamark rend="curly bracket" function="grouping"/>
          <note target="range(I1,I2)" place="right" type="addition">J. S. B.</note>
          <metamark rend="curly bracket" function="grouping"/>
-         
+
          <metamark rend="line" function="distinct"/>
          <list>
-            <item><rs type="title">Espronceda</rs>.	       <note place="right"><rs type="person">Edgar Poe</rs></note>.</item>
-            <item><rs type="title">Three Pessimists</rs>.	    <note place="right">Tempest</note>.</item>        
+            <item><rs type="title">Espronceda</rs>. <note place="right"><rs type="person">Edgar
+                     Poe</rs></note>.</item>
+            <item><rs type="title">Three Pessimists</rs>. <note place="right">Tempest</note>.</item>
             <item>? The <choice>
-               <seg n="1">great</seg><seg n="2"><add place="above">Famous</add></seg></choice>
-               Sonnets	of<hi rend="underline"> the World</hi>. <metamark rend="transversal line" function="mark"/> <note place="right"> <rs type="person">Jekyll</rs> and <rs type="person">Hyde</rs> </note>.
-               (one  <metamark rend=" arrow" place="top down" function="indicate"/>from each author)
-               <label><rs type="person"><choice><abbr>Tho <am>.</am></abbr><expan> Tho<ex>mas</ex></expan></choice>Russell</rs>.</label>
+                  <seg n="1">great</seg>
+                  <seg n="2"><add place="above">Famous</add></seg>
+               </choice> Sonnets of<hi rend="underline"> the World</hi>. <metamark
+                  rend="transversal line" function="mark"/>
+               <note place="right">
+                  <rs type="person">Jekyll</rs> and <rs type="person">Hyde</rs>
+               </note>. (one <metamark rend=" arrow" place="top down" function="indicate"/>from each
+               author) <label><rs type="person"><choice>
+                        <abbr>Tho <am>.</am></abbr>
+                        <expan> Tho<ex>mas</ex></expan>
+                     </choice>Russell</rs>.</label>
                <label><rs type="person">Felix Arvers</rs>.</label>
                <label><rs type="person">Blanco White</rs>.</label>
-               <label><rs type="person"><choice><abbr>C <am>.</am></abbr><expan>C <ex>amillo</ex></expan></choice> Pessanha</rs>.</label>
+               <label><rs type="person"><choice>
+                        <abbr>C <am>.</am></abbr>
+                        <expan>C <ex>amillo</ex></expan>
+                     </choice> Pessanha</rs>.</label>
                <label><rs type="person">Angelo de Lima</rs>.</label>
-               <label><rs type="person"><choice><abbr>Fr <am>.</am></abbr><expan>Fr<ex>ancis</ex></expan></choice> <choice><abbr>Thom <am>.</am></abbr><expan>Thom <ex>pson</ex></expan></choice></rs>.</label>
-               <label><rs type="person"><choice><abbr>Fr <am>.</am></abbr><expan>Fr <ex>ei</ex></expan></choice>
-                  <choice><abbr>For <am>.</am></abbr><expan>For <ex>tunato</ex></expan></choice> de 
-                  <choice><abbr>S<am>.</am></abbr><expan>S<ex>ão</ex></expan></choice>Boaventura</rs>.</label>
-             
+               <label><rs type="person"><choice>
+                        <abbr>Fr <am>.</am></abbr>
+                        <expan>Fr<ex>ancis</ex></expan>
+                     </choice>
+                     <choice>
+                        <abbr>Thom <am>.</am></abbr>
+                        <expan>Thom <ex>pson</ex></expan>
+                     </choice></rs>.</label>
+               <label><rs type="person"><choice>
+                        <abbr>Fr <am>.</am></abbr>
+                        <expan>Fr <ex>ei</ex></expan>
+                     </choice>
+                     <choice>
+                        <abbr>For <am>.</am></abbr>
+                        <expan>For <ex>tunato</ex></expan>
+                     </choice> de <choice>
+                        <abbr>S<am>.</am></abbr>
+                        <expan>S<ex>ão</ex></expan>
+                     </choice>Boaventura</rs>.</label>
             </item>
-           
+
          </list>
-         <p>Some are not celebrated outside the language they were written in, but it is enough that they were celebrated there.
-            
-         </p>   
+         <p>Some are not celebrated outside the language they were written in, but it is enough that
+            they were celebrated there. </p>
          <div/>
       </body>
    </text>

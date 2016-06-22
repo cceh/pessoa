@@ -10,7 +10,7 @@
             <p>Publication Information</p>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 189r</idno>
@@ -31,9 +31,8 @@
                         <name>Isabel Figueiredo-Iken</name>
                      </respStmt>
                      <note type="genre">
-                        <rs type="genre" key="lista_editorial">Lista
-                           editorial</rs><rs type="genre" key="nota_editorial">Nota
-                              editorial</rs>
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs><rs type="genre"
+                           key="nota_editorial">Nota editorial</rs>
                      </note>
                      <textLang mainLang="pt" otherLangs="en la"/>
                   </msItemStruct>
@@ -47,6 +46,11 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista datilografada, publicada em <hi rend="italic">Prosa de Álvaro de
+                     Campos</hi> (2012, 298-299). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -55,57 +59,103 @@
    </facsimile>
    <text xml:id="bnp-e3-189r">
       <body>
-         <note place="right">são entidades com<lb></lb>  
-            similivida propria,<lb></lb>
-            sentimentos que eu não tenho,<lb></lb> opiniões que não acceito<lb></lb>
-            <del rend="overstrike">São</del> Seus escriptos são obras<lb></lb> alheias, embora, por<lb></lb> 
+         <note place="right">são entidades com<lb/> similivida propria,<lb/> sentimentos que eu não
+            tenho,<lb/> opiniões que não acceito<lb/>
+            <del rend="overstrike">São</del> Seus escriptos são obras<lb/> alheias, embora, por<lb/>
             acaso, sejam minhas. </note>
-            
-         <head><hi rend="underline">Escriptos orthonymos:</hi></head>  
-         <list> 
-            <item><label>a)</label><hi rend="underline"> Folhetos</hi>: 
-               <label><note place="center">(em inglez):</note><note place="right"> Antinous, 1918</note> </label>      
+
+         <head><hi rend="underline">Escriptos orthonymos:</hi></head>
+         <list>
+            <item><label>a)</label><hi rend="underline"> Folhetos</hi>: <label><note place="center"
+                     >(em inglez):</note><note place="right"> Antinous, 1918</note>
+               </label>
                <label place="right">35 Sonnets, 1918</label>
-               <label place="right"><rs type="title">English Poems (I-II)</rs>, 1922 (con<pc>-</pc><lb />tém o Antinous <subst>
-                  <del rend="overstrike">emendado</del>
-                  <add place="above">corrigido</add></subst> e<lb></lb> lnscriptions), </label>
-                  <label place="right"><rs type="title">English Poems, III</rs>.1922 (Epithalamium)</label>
-                  
-               <label><note place="center">(em português):</note><note place="right"><rs type="title"> O Interregno — Defeza e Justi<pc>-</pc><lb />ficação da Dictadura Militar<lb></lb> 
-                  em <rs type="place">Portugal</rs></rs>. 1928. </note></label></item>
+               <label place="right"><rs type="title">English Poems (I-II)</rs>, 1922
+                  (con<pc>-</pc><lb/>tém o Antinous <subst>
+                     <del rend="overstrike">emendado</del>
+                     <add place="above">corrigido</add>
+                  </subst> e<lb/> lnscriptions), </label>
+               <label place="right"><rs type="title">English Poems, III</rs>.1922
+                  (Epithalamium)</label>
+               <label><note place="center">(em português):</note><note place="right"><rs
+                        type="title"> O Interregno — Defeza e Justi<pc>-</pc><lb/>ficação da
+                        Dictadura Militar<lb/> em <rs type="place">Portugal</rs></rs>. 1928.
+                  </note></label></item>
             <item><label>b)</label><hi rend="underline"> Collaboração em revistas,<subst>
-               <del rend="overstrike">que sera publicada em livro com ou sem correcções </del>
-               <add place="above">salvo pequenos trechos ou poemas:</add></subst> </hi>
-              
-                                                               <label place="right"><rs type="title">O Marinheiro</rs>, Drama Statico em<lb></lb> um Quadro, ln <rs type="title">“Orpheu” 1</rs> (1915,<lb></lb>  Março)</label>    
-               <label place="left"><rs type="journal"> Aguia</rs></label>              <label place="right"><rs type="title"> Chuva Obliqua</rs>, Poemas-lntersecções   In<rs type="title"> “Orpheu” 2</rs> (Junho, 1915)</label>
-               <label place="left"><rs type="journal">Orpheu</rs></label>              <label place="right"><rs type="title"> O Banqueiro Anarchista</rs>.(Contempo<pc>-</pc><lb />ranea 1, 1922).</label>
+                     <del rend="overstrike">que sera publicada em livro com ou sem correcções </del>
+                     <add place="above">salvo pequenos trechos ou poemas:</add>
+                  </subst>
+               </hi>
+               <label place="right"><rs type="title">O Marinheiro</rs>, Drama Statico em<lb/> um
+                  Quadro, ln <rs type="title">“Orpheu” 1</rs> (1915,<lb/> Março)</label>
+               <label place="left"><rs type="journal"> Aguia</rs></label>
+               <label place="right"><rs type="title"> Chuva Obliqua</rs>, Poemas-lntersecções In<rs
+                     type="title"> “Orpheu” 2</rs> (Junho, 1915)</label>
+               <label place="left"><rs type="journal">Orpheu</rs></label>
+               <label place="right"><rs type="title"> O Banqueiro
+                     Anarchista</rs>.(Contempo<pc>-</pc><lb/>ranea 1, 1922).</label>
                <label place="left"><rs type="journal">Portugal Futurista</rs></label>
-               <label place="right"><rs type="title">Antonio Botto e o Ideal Esthetico<lb></lb> em <rs type="place">Portugal </rs></rs></label>
-               
-               <label place="left"><rs type="journal">Contemporanea</rs> 
-                  (<choice><abbr>C<am>.</am></abbr><expan>C<ex>ontemporane</ex></expan></choice>a, 3,1922).</label> 
-               <label place="left"><rs type="journal">Athena</rs> 	        </label>          <label place="right"><rs type="title"> Mar Portuguez   (<choice><abbr>C<am>.</am></abbr><expan>C<ex>ontemporane</ex></expan></choice>a 4,1922).</rs>    </label> 
-               <label place="left"><choice><abbr>Rev<am>.</am></abbr><expan>Rev<ex>ista</ex></expan></choice> de <choice><abbr>Com<am>.</am></abbr><expan>Com<ex>mercio</ex></expan></choice>e Contabilidade</label>   
+               <label place="right"><rs type="title">Antonio Botto e o Ideal Esthetico<lb/> em <rs
+                        type="place">Portugal </rs></rs></label>
+               <label place="left"><rs type="journal">Contemporanea</rs> (<choice>
+                     <abbr>C<am>.</am></abbr>
+                     <expan>C<ex>ontemporane</ex></expan>
+                  </choice>a, 3,1922).</label>
+               <label place="left"><rs type="journal">Athena</rs>
+               </label>
+               <label place="right"><rs type="title"> Mar Portuguez (<choice>
+                        <abbr>C<am>.</am></abbr>
+                        <expan>C<ex>ontemporane</ex></expan>
+                     </choice>a 4,1922).</rs>
+               </label>
+               <label place="left"><choice>
+                     <abbr>Rev<am>.</am></abbr>
+                     <expan>Rev<ex>ista</ex></expan>
+                  </choice> de <choice>
+                     <abbr>Com<am>.</am></abbr>
+                     <expan>Com<ex>mercio</ex></expan>
+                  </choice>e Contabilidade</label>
                <label place="left"><rs type="journal">Presença</rs></label>
-                                                                            
-               <label place="left"><rs type="person" key="AC" role="author"><choice><abbr> Alb<am>.</am></abbr><expan> Alb<ex>erto</ex></expan></choice> Caeiro  — </rs></label> <label place="right"><rs type="title"> “Escolha de Poemas”</rs> (<rs type="journal">Athena</rs> Nos. 4 e 5)</label>
-                  <label place="left"><rs type="person" key="RR" role="author">Ricardo Reis</rs>    —   </label>       <label place="right"> <rs type="title">  “Odes”, Livro 1</rs> (<rs type="journal">Athena</rs> , No. 1)</label>
-                                                                                                                        <label place="right"> Varias <rs type="title"> odes</rs> in<rs type="journal"> “Presença”</rs></label>
-               <label place="left"><rs type="person" key="AdC" role="author">Alvaro de Campos</rs>    — </label>       <label place="right"> <rs type="title">  “Opiario”</rs> e<rs type="title"> “Ode Triumphal”</rs> (Orpheu 1)</label>
-                                                                                                                        <label place="right"> <rs type="title">  “Ode Maritima”</rs>  (Orpheu 2)</label>
-                                                                                                                        <label place="right"><rs type="title">Ultimatum </rs>(<rs type="journal">Portugal Futurista</rs>)</label>
-               <label place="right"><rs type="title">Aviso por causa da moral</rs>. 1923 (manifesto †)</label>
+               <label place="left"><rs type="person" key="AC" role="author"><choice>
+                        <abbr> Alb<am>.</am></abbr>
+                        <expan> Alb<ex>erto</ex></expan>
+                     </choice> Caeiro — </rs></label>
+               <label place="right"><rs type="title"> “Escolha de Poemas”</rs> (<rs type="journal"
+                     >Athena</rs> Nos. 4 e 5)</label>
+               <label place="left"><rs type="person" key="RR" role="author">Ricardo Reis</rs> — </label>
+               <label place="right">
+                  <rs type="title"> “Odes”, Livro 1</rs> (<rs type="journal">Athena</rs> , No.
+                  1)</label>
+               <label place="right"> Varias <rs type="title"> odes</rs> in<rs type="journal">
+                     “Presença”</rs></label>
+               <label place="left"><rs type="person" key="AdC" role="author">Alvaro de Campos</rs> — </label>
+               <label place="right">
+                  <rs type="title"> “Opiario”</rs> e<rs type="title"> “Ode Triumphal”</rs> (Orpheu
+                  1)</label>
+               <label place="right">
+                  <rs type="title"> “Ode Maritima”</rs> (Orpheu 2)</label>
+               <label place="right"><rs type="title">Ultimatum </rs>(<rs type="journal">Portugal
+                     Futurista</rs>)</label>
+               <label place="right"><rs type="title">Aviso por causa da moral</rs>. 1923 (manifesto
+                  †)</label>
             </item>
-            
-         </list> 
-               <metamark rend="line" function="distinct"/>
-            <list>
-               <item>Resposta ao Inquerito Portugal, vasto Imperio (<rs type="journal"><choice><abbr>J<am>.</am></abbr><expan>J<ex>ornal</ex></expan></choice> 
-                  do<choice><abbr> C<am>.</am></abbr><expan> C<ex>omercio</ex></expan></choice></rs> 28/5/26 – 29/5/26) </item>
-               <item><choice><abbr>Entrev<am>.</am></abbr><expan>Entrev<ex>ista</ex></expan></choice> na<rs type="journal"> Revista Portugueza</rs></item>
-                  <item>J. B. Angioletti</item>
-            </list> 
+
+         </list>
+         <metamark rend="line" function="distinct"/>
+         <list>
+            <item>Resposta ao Inquerito Portugal, vasto Imperio (<rs type="journal"><choice>
+                     <abbr>J<am>.</am></abbr>
+                     <expan>J<ex>ornal</ex></expan>
+                  </choice> do<choice>
+                     <abbr> C<am>.</am></abbr>
+                     <expan> C<ex>omercio</ex></expan>
+                  </choice></rs> 28/5/26 – 29/5/26) </item>
+            <item><choice>
+                  <abbr>Entrev<am>.</am></abbr>
+                  <expan>Entrev<ex>ista</ex></expan>
+               </choice> na<rs type="journal"> Revista Portugueza</rs></item>
+            <item>J. B. Angioletti</item>
+         </list>
          <gap reason="selection" unit="lines" extent="6"/>
       </body>
    </text>

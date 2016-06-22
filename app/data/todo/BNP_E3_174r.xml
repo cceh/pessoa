@@ -14,7 +14,7 @@
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
-               <name>Isabel Figueiredo-Iken</name> 
+               <name>Isabel Figueiredo-Iken</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -22,7 +22,7 @@
             <idno type="filename">BNP_E3_174r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 174r</idno>
@@ -46,6 +46,10 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista datilografada. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -55,12 +59,12 @@
    </facsimile>
    <text xml:id="bnp-e3-174r">
       <body>
-         <head>THE BEST ENGLISH EPIGRAMS AND POETIC <lb></lb>TRIFLES.</head>
+         <head>THE BEST ENGLISH EPIGRAMS AND POETIC <lb/>TRIFLES.</head>
          <p>To be included:</p>
          <p>Rochester: “Here lies our sovereign...”</p>
          <p><rs type="person">Byrom</rs>: “God bless the King...”</p>
          <metamark rend="dotted line" function="distinct"/>
-       
+
          <p>From <rs type="person">Brewer</rs> (<rs type="title">“Art of Versification”</rs>):</p>
          <p>PAGES:</p>
          <list>
@@ -83,7 +87,7 @@
             <item>15 My daughters...</item>
             <item>15 Here lie the bones...</item>
          </list>
-         <metamark rend="dotted line" function="distinct"/> 
+         <metamark rend="dotted line" function="distinct"/>
          <div/>
       </body>
    </text>

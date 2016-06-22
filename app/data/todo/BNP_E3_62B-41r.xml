@@ -22,7 +22,7 @@
             <idno type="filename">BNP_E3_62B-41r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 62B-41r</idno>
@@ -46,6 +46,12 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. Na mesma folha encontra-se o poema que começa pelo verso
+                  «Tantos poemas contemporâneos!», datado de «1-11-1934» e atribuído pelos editores
+                  póstumos a Álvaro de Campos (cf. AdC, 309). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -56,23 +62,53 @@
    <text xml:id="bnp-e3-62b-41r">
       <body>
          <list>
-            <item><del rend="overstrike"><choice><abbr>Trad<am>.</am></abbr><expan>Trad<ex>ucção</ex></expan></choice> <rs type="person" key="AdC" role="translator">Jayme Azancot 
-            </rs></del></item> <note place="right"><gap reason="selection" unit="lines" extent="5"/> </note>    
-            <item>Copia <rs type="person"><choice><abbr>C<am>.</am></abbr><expan>C<ex>orreia</ex></expan></choice> de Oliveira </rs>.</item>        
+            <item><del rend="overstrike"><choice>
+                     <abbr>Trad<am>.</am></abbr>
+                     <expan>Trad<ex>ucção</ex></expan>
+                  </choice>
+                  <rs type="person" key="AdC" role="translator">Jayme Azancot </rs></del></item>
+            <note place="right"><gap reason="selection" unit="lines" extent="5"/>
+            </note>
+            <item>Copia <rs type="person"><choice>
+                     <abbr>C<am>.</am></abbr>
+                     <expan>C<ex>orreia</ex></expan>
+                  </choice> de Oliveira </rs>.</item>
             <item>2 originaes <rs type="person">Albino Lapa</rs>.</item>
-            <item>Copias materia prophetica <rs type="person"><choice><abbr>F<am>.</am></abbr><expan>F<ex>erreira</ex></expan></choice> Gomes</rs>.</item>
+            <item>Copias materia prophetica <rs type="person"><choice>
+                     <abbr>F<am>.</am></abbr>
+                     <expan>F<ex>erreira</ex></expan>
+                  </choice> Gomes</rs>.</item>
             <item>Registro livros Bibliotheca.</item>
-            <item>Carta<rs type="person"> José Regio</rs> (endereço <rs type="person">Antonio Botto</rs>).</item>
-            <item>Carta<rs type="person"> <choice><abbr>Ad<am>.</am></abbr><expan>Ad<ex>olfo</ex></expan></choice> Casaes Monteiro</rs>.</item>        
-            <item>Carta <rs type="person">Ribeiro Couto</rs> (ao mandar livro, <choice><abbr> end<am>.</am></abbr><expan> end<ex>ereço</ex></expan></choice><choice><abbr>Tª </abbr></choice> Soares).</item> 
-            <item>Artigo  <rs type="title">“Bandarra”.</rs></item>
-            <item><choice><abbr>Resp<am>.</am></abbr><expan>Resp<ex>osta</ex></expan></choice>
-               <rs type="person"><choice><abbr>Th<am>.</am></abbr><expan>Th<ex>omaz</ex></expan></choice> Colaço</rs> —  
-               <rs type="person"><choice><abbr>Ant<am>.</am></abbr><expan>Ant<ex>onio</ex></expan></choice> Botto</rs>.</item>
-           
-         </list> 
+            <item>Carta<rs type="person"> José Regio</rs> (endereço <rs type="person">Antonio
+                  Botto</rs>).</item>
+            <item>Carta<rs type="person">
+                  <choice>
+                     <abbr>Ad<am>.</am></abbr>
+                     <expan>Ad<ex>olfo</ex></expan>
+                  </choice> Casaes Monteiro</rs>.</item>
+            <item>Carta <rs type="person">Ribeiro Couto</rs> (ao mandar livro, <choice>
+                  <abbr> end<am>.</am></abbr>
+                  <expan> end<ex>ereço</ex></expan>
+               </choice><choice>
+                  <abbr>Tª </abbr>
+               </choice> Soares).</item>
+            <item>Artigo <rs type="title">“Bandarra”.</rs></item>
+            <item><choice>
+                  <abbr>Resp<am>.</am></abbr>
+                  <expan>Resp<ex>osta</ex></expan>
+               </choice>
+               <rs type="person"><choice>
+                     <abbr>Th<am>.</am></abbr>
+                     <expan>Th<ex>omaz</ex></expan>
+                  </choice> Colaço</rs> — <rs type="person"><choice>
+                     <abbr>Ant<am>.</am></abbr>
+                     <expan>Ant<ex>onio</ex></expan>
+                  </choice> Botto</rs>.</item>
+
+         </list>
          <metamark rend="line" function="distinct"/>
-         <note><gap reason="selection" unit="lines" extent="8"/> </note>
+         <note><gap reason="selection" unit="lines" extent="8"/>
+         </note>
          <div/>
       </body>
    </text>

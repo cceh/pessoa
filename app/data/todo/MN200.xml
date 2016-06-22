@@ -21,7 +21,7 @@
             <idno type="filename">BNP_E3_sem-cota-MN-200.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 semcota MN 200</idno>
@@ -35,7 +35,7 @@
                         <rs type="genre" key="lista_editorial">Lista editorial</rs>
                         <rs type="genre" key="plano_editorial">Plano editorial</rs>
                      </note>
-                     <textLang mainLang="pt" />
+                     <textLang mainLang="pt"/>
                   </msItemStruct>
                </msContents>
                <history>
@@ -46,6 +46,10 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista datilografada, com acrescentos manuscritos. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -54,27 +58,33 @@
    </facsimile>
    <text xml:id="bnp-e-sem-cota-mn-200">
       <body>
-         <head>AS MELHORES POESIAS LYRICAS DA<lb></lb>  LINGUA PORTUGUEZA.
-         </head>
+         <head>AS MELHORES POESIAS LYRICAS DA<lb/> LINGUA PORTUGUEZA. </head>
          <note>(exceptuam-se os autores vivos) </note>
          <list>
-            <item><rs type="work"><rs type="person" role="author"> Soares de Passos</rs>: <rs type="title">O Firmamento.</rs></rs></item>            
-                  
-            <item><rs type="work"><rs type="person" role="author">João de Deus</rs>:<rs type="title"> A Vida.</rs></rs></item>        
-            <item><rs type="work"><rs type="person" role="author">Antonio Molarinho</rs>: <rs type="title">Maria Manoela.</rs></rs></item>
-            <item><rs type="work"><rs type="person" role="author">José Duro</rs>: <rs type="title">Mortos.</rs></rs></item>
-            <item xml:id="I5"> <rs type="title">  Bacchantes.</rs></item>
+            <item><rs type="work"><rs type="person" role="author"> Soares de Passos</rs>: <rs
+                     type="title">O Firmamento.</rs></rs></item>
+
+            <item><rs type="work"><rs type="person" role="author">João de Deus</rs>:<rs type="title"
+                     > A Vida.</rs></rs></item>
+            <item><rs type="work"><rs type="person" role="author">Antonio Molarinho</rs>: <rs
+                     type="title">Maria Manoela.</rs></rs></item>
+            <item><rs type="work"><rs type="person" role="author">José Duro</rs>: <rs type="title"
+                     >Mortos.</rs></rs></item>
+            <item xml:id="I5">
+               <rs type="title"> Bacchantes.</rs></item>
             <item xml:id="I6"><del rend="overstrike">E</del><rs type="title">Em busca.</rs></item>
             <item xml:id="I7"><rs type="title">Prece.</rs> ---</item>
-            <item xml:id="I8"> <rs type="title">  Dor Suprema.</rs> ---</item>
-            <item><rs type="work"><rs type="person" role="author">José Anastacio da Cunha</rs>: <rs type="title">O Abraço.</rs></rs></item>
-            <item><rs type="work"><rs type="person" role="author">João de Lemos</rs>: <rs type="title">A Lua de Londres.</rs></rs></item>
-         </list> 
-         
+            <item xml:id="I8">
+               <rs type="title"> Dor Suprema.</rs> ---</item>
+            <item><rs type="work"><rs type="person" role="author">José Anastacio da Cunha</rs>: <rs
+                     type="title">O Abraço.</rs></rs></item>
+            <item><rs type="work"><rs type="person" role="author">João de Lemos</rs>: <rs
+                     type="title">A Lua de Londres.</rs></rs></item>
+         </list>
+
          <ab n="a">
             <note target="range(I5,I6,I7,I8)" place="margin left" type="addition">
                <note place="margin left"><label>escolher d’aqui</label></note>
-               
                <metamark rend="curly bracket" function="grouping"/>
             </note></ab>
       </body>

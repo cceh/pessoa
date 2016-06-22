@@ -23,7 +23,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -32,9 +33,9 @@
             <idno type="filename">MN14.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
-                  <institution></institution>
+                  <institution/>
                   <idno>MN14</idno>
                </msIdentifier>
                <msContents>
@@ -54,6 +55,11 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista datilografada, publicada em <hi rend="italic">A Educação do Stoico</hi>
+                  (2007, 61-62). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -63,28 +69,29 @@
    <text>
       <body>
          <div>
-         <list> 
-            <item><rs type="text">O Banqueiro Anarchista</rs>.</item>
-            <item><rs type="text">A Tomada do Monte Velho</rs>.</item>        
-            <item><rs type="text">A Despedida do Caixa</rs>.</item>
-            <item><rs type="text">O Beijo na Florinda</rs>.</item>
-            <item><rs type="text">O Marinheiro</rs>.</item>
-            <item><rs type="text">A Morte do Principe</rs>.</item>
-            <item><rs type="text">Sakyamuni</rs>.</item>
-            <item><rs type="text">Passos da Cruz, drama em 14 scenas</rs>.</item>
-            <item><rs type="text">Livro do Desasocego</rs>.</item>
-            <item><rs type="work" key="O1" style="b"><rs type="text">Cancioneiro; em partes</rs></rs>.</item>
-            <item><rs type="text">Portugal</rs>.</item> 
-            <item><rs type="text">O Interregno</rs>.</item>
-            <item><rs type="text">Erostratus, or the Future of Celebrity</rs></item>
-            <item><rs type="text">Anteros, or the Future of Affection</rs>.</item>
-            <item><rs type="text">Saturn, or the Future of the Past</rs>.</item>
-            <item><rs type="text">Auto do Circo</rs>.</item>
-            <item><rs type="text">O Caso Vargas</rs>.</item>
-            <item><rs type="text">Theoria do Suffragio Politico</rs>.</item>
-            <item><rs type="text">The Foundations of Conservatism</rs>.</item>
-            <item>O Unico Manuscripto .........</item>
-         </list>
+            <list>
+               <item><rs type="text">O Banqueiro Anarchista</rs>.</item>
+               <item><rs type="text">A Tomada do Monte Velho</rs>.</item>
+               <item><rs type="text">A Despedida do Caixa</rs>.</item>
+               <item><rs type="text">O Beijo na Florinda</rs>.</item>
+               <item><rs type="text">O Marinheiro</rs>.</item>
+               <item><rs type="text">A Morte do Principe</rs>.</item>
+               <item><rs type="text">Sakyamuni</rs>.</item>
+               <item><rs type="text">Passos da Cruz, drama em 14 scenas</rs>.</item>
+               <item><rs type="text">Livro do Desasocego</rs>.</item>
+               <item><rs type="work" key="O1" style="b"><rs type="text">Cancioneiro; em
+                     partes</rs></rs>.</item>
+               <item><rs type="text">Portugal</rs>.</item>
+               <item><rs type="text">O Interregno</rs>.</item>
+               <item><rs type="text">Erostratus, or the Future of Celebrity</rs></item>
+               <item><rs type="text">Anteros, or the Future of Affection</rs>.</item>
+               <item><rs type="text">Saturn, or the Future of the Past</rs>.</item>
+               <item><rs type="text">Auto do Circo</rs>.</item>
+               <item><rs type="text">O Caso Vargas</rs>.</item>
+               <item><rs type="text">Theoria do Suffragio Politico</rs>.</item>
+               <item><rs type="text">The Foundations of Conservatism</rs>.</item>
+               <item>O Unico Manuscripto .........</item>
+            </list>
          </div>
       </body>
    </text>

@@ -10,7 +10,7 @@
             <p>Publication Information</p>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 63-31r</idno>
@@ -31,8 +31,7 @@
                         <name>Isabel Figueiredo-Iken</name>
                      </respStmt>
                      <note type="genre">
-                        <rs type="genre" key="lista_editorial">Lista
-                                                editorial</rs>
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
                      <textLang mainLang="pt" otherLangs="en fr"/>
                   </msItemStruct>
@@ -46,17 +45,25 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista datilografada, publicada em Barreto, <hi rend="italic">Pessoa e
+                     Fátima.</hi>
+                  <hi rend="italic">A propósito dos escritos pessoanos sobre catolicismo e
+                     política</hi> (2009, 268-269). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-63-1-55_JPG_24-C-R0150/bn-acpc-e-e3-63-1-55_0061_31_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-63-1-55_JPG_24-C-R0150/bn-acpc-e-e3-63-1-55_0061_31_t24-C-R0150.jpg"/>
    </facsimile>
    <text xml:id="bnp-e3-63-31r">
       <body>
-         <list> 
+         <list>
             <item>Traducção “Ciume”, para inglez.</item>
-            <item>Traducção “Antonio”, para inglez.</item>        
+            <item>Traducção “Antonio”, para inglez.</item>
             <item>Traducção poemas Edgar Poe, para portuguez.</item>
             <item>Traducção Espronceda, para inglez.</item>
             <metamark rend="line" function="distinct"/>
@@ -66,21 +73,20 @@
             <item>“Quadras”.</item>
             <item>“Itinerario” (primeiro volume).</item>
             <metamark rend="line" function="distinct"/>
-          
+
             <item>“Theory of Political Suffrage”.</item>
-         </list> 
-            
-            <metamark rend="line" function="distinct"/>
-         <list> 
-         <head><hi rend="underline">Collaboração:</hi></head>  
-         
+         </list>
+
+         <metamark rend="line" function="distinct"/>
+         <list>
+            <head><hi rend="underline">Collaboração:</hi></head>
+
             <item>“Presença”,</item>
             <item>“O Diabo”,</item>
             <item>“Poesia” (Italia)</item>
-            <item>“Nouvelles Littéraires”,<lb></lb> 
-             English periodical.</item>
-     
-         </list>  
+            <item>“Nouvelles Littéraires”,<lb/> English periodical.</item>
+
+         </list>
          <div/>
       </body>
    </text>

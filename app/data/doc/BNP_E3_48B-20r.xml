@@ -26,7 +26,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -35,7 +36,7 @@
             <idno type="filename">BNP_E3_48B-20r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 48B-20r</idno>
@@ -59,28 +60,43 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita em papel timbrado de «Athena | Revista de Arte», publicada em
+                     Freitas,<hi rend="italic"> O Fio e o Labirinto: A Ficção Policial na obra de
+                     Fernando Pessoa</hi> (2009, 242). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0040_20_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0040_20_t24-C-R0150.jpg"
+      />
    </facsimile>
    <text>
       <body>
          <div>
-            <head><hi rend="underline">Major pieces:</hi></head>  
-            <list> 
-               <item><label>1.</label> <rs type="text">O Caso Vargas</rs>.</item>
-               <item><label>2.</label> <rs type="text">Os Cumplices</rs>.</item>        
-               <item><label>3.</label> <rs type="text">As Minas do Quanza</rs>.</item>
-               </list> 
-               <metamark rend="line" function="distinct"/>
-               <list> 
-                  <item><label>1.</label> <rs type="text">Conservatism</rs> (3 chapters or articles).</item>
-                  <item><label>2.</label> <rs type="text">Erostratus</rs>.</item>
-                  <item><label>3.</label> <rs type="text">Theory of Political Suffrage</rs>.</item>
-                  <item><label>4.</label> <rs type="text">Anteros</rs>.</item>
-            </list> 
+            <head><hi rend="underline">Major pieces:</hi></head>
+            <list>
+               <item><label>1.</label>
+                  <rs type="text">O Caso Vargas</rs>.</item>
+               <item><label>2.</label>
+                  <rs type="text">Os Cumplices</rs>.</item>
+               <item><label>3.</label>
+                  <rs type="text">As Minas do Quanza</rs>.</item>
+            </list>
+            <metamark rend="line" function="distinct"/>
+            <list>
+               <item><label>1.</label>
+                  <rs type="text">Conservatism</rs> (3 chapters or articles).</item>
+               <item><label>2.</label>
+                  <rs type="text">Erostratus</rs>.</item>
+               <item><label>3.</label>
+                  <rs type="text">Theory of Political Suffrage</rs>.</item>
+               <item><label>4.</label>
+                  <rs type="text">Anteros</rs>.</item>
+            </list>
          </div>
       </body>
    </text>

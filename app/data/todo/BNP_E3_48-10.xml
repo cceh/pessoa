@@ -26,7 +26,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -35,7 +36,7 @@
             <idno type="filename">BNP_E3_48-10.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 48-10</idno>
@@ -48,7 +49,7 @@
                      <note type="genre">
                         <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
-                     <textLang mainLang="en"  otherLangs="fr de"/>
+                     <textLang mainLang="en" otherLangs="fr de"/>
                   </msItemStruct>
                </msContents>
                <history>
@@ -59,18 +60,23 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-48-1-56_JPG_24-C-R0150/bn-acpc-e-e3-48-1-56_0019_10_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-48-1-56_JPG_24-C-R0150/bn-acpc-e-e3-48-1-56_0019_10_t24-C-R0150.jpg"/>
    </facsimile>
    <text>
       <body>
          <div>
             <head><hi rend="underline">Anthology.</hi></head>
             <head rend="right"><hi rend="underline">English Anthology.</hi></head>
-            <list> 
+            <list>
                <head><rs type="person" key="P184"><hi rend="underline">John Keats</hi></rs>:</head>
                <item><rs type="text">Ode to a Nightingale</rs>. <note>√</note></item>
                <item><rs type="text">Ode to a Grecian Urn</rs>. <note>√</note></item>
@@ -87,76 +93,115 @@
                         <abbr><metamark rend="line" function="ditto"/></abbr>
                         <expan>Sonnet -</expan>
                      </choice>
-                     <rs type="text">Grasshopper and Cricket</rs>.
-                  </rs>
+                     <rs type="text">Grasshopper and Cricket</rs>. </rs>
+               </item>
+               <item> (<rs type="text">The Eve of <choice>
+                        <abbr>St<am>.</am></abbr>
+                     </choice> Agnes</rs>). </item>
+            </list>
+            <metamark rend="line" function="distinct"/>
+            <list>
+               <head><rs type="person" key="P185"><hi rend="underline">Matthew
+                  Arnold</hi></rs>:</head>
+               <item><rs type="text">Empedocles on Etna. (or Fragments therefrom).</rs></item>
+               <item><rs type="text">Dover Beach</rs>.</item>
+               <item><rs type="text">The Scholar <subst>
+                        <del n="1" rend="overstrike">Gypsy</del>
+                        <add n="2">Gipsy</add>
+                     </subst></rs>. </item>
+               <item><rs type="text">The Forsaken Merman.</rs></item>
+               <item><rs type="text">Mycerinus</rs>.</item>
+               <item><rs type="text">Sohrab and Rustum</rs>.</item>
+               <item><rs type="text">(Human Life)</rs>.</item>
+               <item><rs type="text">(Consolation)</rs>.</item>
+               <item><rs type="text">Stanzas from the Grande Chartreuse</rs>.</item>
+               <item><rs type="text">Stanzas in the memory of the author of “Obermann”</rs>.</item>
+               <item><rs type="text">(A Southern night)</rs>.</item>
+               <item><rs type="text">(Switzerland)</rs>.</item>
+               <item><rs type="text">(Resignation)</rs>.</item>
+            </list>
+            <!-- ################### -->
+            <list>
+               <item><rs type="person"><hi rend="underline">Joseph Blanco Whithe</hi></rs>: <label>
+                     (the celebrated sonnet).</label>
+               </item>
+
+
+            </list>
+            <list>
+               <head><hi rend="underline"><rs rend="person">Alfred Tennyson</rs></hi> :</head>
+
+
+               <item>
+                  <rs type="title">Ulysses. </rs>
                </item>
                <item>
-                  (<rs type="text">The Eve of 
-                     <choice>
-                        <abbr>St<am>.</am></abbr></choice> Agnes</rs>).
+                  <note place="right"><label>
+                        <rs type="title"> Œnone. </rs>
+                     </label></note>
+                  <note place="right"><label>
+                        <rs type="title"> Tithonus. </rs>
+                     </label></note>
+                  <note place="right"><label>
+                        <rs type="title"> Morte d’Arthur. </rs>
+                     </label></note>
+                  <note place="right"><label>
+                        <rs type="title"> (The May Queen). (?) </rs>
+                     </label></note>
+                  <note place="right"><label>
+                        <rs type="title"> Sir Galahad. </rs>
+                     </label></note>
+                  <note place="right"><label>
+                        <rs type="title">Break, break, break… </rs>
+                     </label></note>
+                  <note place="right"><label>
+                        <rs type="title"> (Maud) (or fragments). </rs>
+                     </label></note></item>
+
+            </list>
+            <list>
+               <item><rs type="person"><hi rend="underline">
+                        <choice>
+                           <abbr>S<am>.</am></abbr>
+                        </choice>
+                        <choice>
+                           <abbr> T<am>.</am></abbr>
+                        </choice> Coleridge</hi></rs>: <label>
+                     <rs type="title"> Rime of the Ancient Mariner. </rs>
+                  </label>
+                  <note place="right"><label>
+                        <rs type="title">Ode on Dejection. </rs>
+                     </label></note>
+                  <note place="right"><label>
+                        <rs type="title"> Kubla Khan. </rs>
+                     </label></note></item>
+            </list>
+            <list>
+               <item>
+                  <rs type="person"><hi rend="underline"> Robert Browning</hi></rs>: <label><rs
+                        type="title"> Rabbi Ben Ezra. </rs>
+                  </label>
+                  <note place="right"><label>
+                        <rs type="title"> Last Ride Together. </rs>
+                     </label></note></item>
+
+
+            </list>
+            <list>
+               <item><note place="right"><rs type="person"><choice>
+                           <abbr>E<am>.</am></abbr>
+                           <expan>E<ex> dgar</ex></expan>
+                        </choice>
+                        <choice>
+                           <abbr>A<am>.</am></abbr>
+                           <expan>A<ex> llan</ex></expan>
+                        </choice> Poe</rs>: <label>
+                        <rs type="title"> Annabel Lee.</rs>
+                     </label></note>
+                  <note place="right"><label><rs type="title"> The Raven. </rs>
+                     </label></note>
                </item>
-         </list>
-         <metamark rend="line" function="distinct"/>
-         <list>
-            <head><rs type="person" key="P185"><hi rend="underline">Matthew Arnold</hi></rs>:</head>
-            <item><rs type="text">Empedocles on Etna. (or Fragments therefrom).</rs></item>
-            <item><rs type="text">Dover Beach</rs>.</item>
-            <item><rs type="text">The Scholar 
-               <subst>
-                  <del n="1" rend="overstrike">Gypsy</del>
-                  <add n="2">Gipsy</add>
-               </subst></rs>.
-            </item>
-            <item><rs type="text">The Forsaken Merman.</rs></item>
-            <item><rs type="text">Mycerinus</rs>.</item>
-            <item><rs type="text">Sohrab and Rustum</rs>.</item>
-            <item><rs type="text">(Human Life)</rs>.</item>
-            <item><rs type="text">(Consolation)</rs>.</item>
-            <item><rs type="text">Stanzas from the Grande Chartreuse</rs>.</item>
-            <item><rs type="text">Stanzas in the memory of the author of “Obermann”</rs>.</item>
-            <item><rs type="text">(A Southern night)</rs>.</item>
-            <item><rs type="text">(Switzerland)</rs>.</item>
-            <item><rs type="text">(Resignation)</rs>.</item>
-         </list>
-         <!-- ################### -->
-         <list> 
-            <item><rs type="person"><hi rend="underline">Joseph Blanco Whithe</hi></rs>: <label> (the celebrated sonnet).</label> </item>
-           
-            
-         </list>
-         <list>
-            <head><hi rend="underline"><rs rend="person">Alfred Tennyson</rs></hi> :</head>
-           
-               
-            <item> <rs type="title">Ulysses.    </rs> </item>
-              <item>
-               <note place="right"><label>  <rs type="title">     Œnone.    </rs> </label></note>
-               <note place="right"><label>  <rs type="title">      Tithonus.    </rs> </label></note>
-               <note place="right"><label>  <rs type="title"> Morte d’Arthur.   </rs> </label></note> 
-               <note place="right"><label>  <rs type="title">      (The May Queen).   (?)   </rs> </label></note>
-               <note place="right"><label>  <rs type="title">      Sir Galahad.   </rs> </label></note>
-               <note place="right"><label>  <rs type="title">Break, break, break…    </rs> </label></note> 
-               <note place="right"><label>  <rs type="title">      (Maud) (or fragments).    </rs> </label></note></item> 
-              
-         </list>
-         <list> 
-            <item><rs type="person"><hi rend="underline"> <choice><abbr>S<am>.</am></abbr></choice> <choice><abbr> T<am>.</am></abbr></choice> Coleridge</hi></rs>: 	<label>  <rs type="title">  Rime of the Ancient Mariner.   </rs> </label>
-               <note place="right"><label>  <rs type="title">Ode on Dejection.      </rs> </label></note> 
-         
-               <note place="right"><label>  <rs type="title">  Kubla Khan.   </rs> </label></note></item>
-         </list>
-         <list> 
-            <item> <rs type="person"><hi rend="underline">  Robert Browning</hi></rs>:  <label><rs type="title"> Rabbi Ben Ezra.	</rs> </label>		
-            
-                                                                                                      
-               <note place="right"><label>  <rs type="title">  Last Ride Together. </rs> </label></note></item>
-            
-            
-         </list>
-         <list>  
-         <item><note place="right"><rs type="person"><choice><abbr>E<am>.</am></abbr><expan>E<ex> dgar</ex></expan></choice>	<choice><abbr>A<am>.</am></abbr><expan>A<ex> llan</ex></expan></choice> Poe</rs>: <label> <rs type="title"> Annabel Lee.</rs> </label></note>
-            <note place="right"><label><rs type="title"> The Raven.    </rs> </label></note> </item>
-         </list>
+            </list>
          </div>
       </body>
    </text>

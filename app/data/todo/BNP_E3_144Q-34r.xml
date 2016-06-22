@@ -10,7 +10,7 @@
             <p>Publication Information</p>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 144Q-34r</idno>
@@ -31,9 +31,8 @@
                         <name>Isabel Figueiredo-Iken</name>
                      </respStmt>
                      <note type="genre">
-                        <rs type="genre" key="plano_editorial">Plano
-                           editorial</rs><rs type="genre" key="lista_editorial">Lista
-                              editorial</rs>
+                        <rs type="genre" key="plano_editorial">Plano editorial</rs><rs type="genre"
+                           key="lista_editorial">Lista editorial</rs>
                      </note>
                      <textLang mainLang="en" otherLangs="pt la"/>
                   </msItemStruct>
@@ -47,6 +46,12 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita no caderno 144Q (cf. <ref target="http://purl.pt/13892"
+                     >http://purl.pt/13892</ref>), publicada em <hi rend="italic">A Educação do
+                     Stoico</hi> (2007, 80). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -55,46 +60,76 @@
    </facsimile>
    <text xml:id="bnp-e3-144q-34r">
       <body>
-         <head>“From <rs type="place">Portugal.”</rs></head>  
-         <note place="center"><hi rend="underline"><choice><abbr>Vol<am>.</am></abbr><expan>Vol<ex>ume</ex></expan></choice> I. </hi> </note>
-         <note place="margin right"><choice><abbr>approx<am>.</am></abbr><expan>approx<ex>imadamente</ex></expan></choice> 
-            <choice><abbr>no<am>.</am></abbr><expan>no<ex>number</ex></expan></choice> no. <lb></lb> <hi rend="underline"> of pages.</hi></note>
-         <list> 
-            <item xml:id="I1"><label>1.</label><rs type="title">Introduction (brief).</rs><note place="margin right"><label>4 </label></note></item>
-            <item xml:id="I2"><label>2.</label><rs type="title">The Anarchist Banker.</rs><note place="margin right"><label>54 </label></note></item>        
-            <item xml:id="I3"><label>3.</label> <rs type="work"><rs type="title">Complete Poems</rs> of <rs type="person" role="author">Alberto Caeiro.</rs></rs>
-               (or only The “Keeper of Flocks”)</item>
-            <item xml:id="I4"><label>4.</label><rs type="work">English Poems<rs type="title"></rs>, by <rs type="person" role="author">Fernando Pessoa.</rs></rs></item>
-            <item xml:id="I5"><label>5.</label><rs type="title">The Quod Nihil Scitur of Francisco Sanches.</rs></item>
-            <item xml:id="I6"><label>6.</label>Extracts from <rs type="title">“The Lusiads”</rs> of <rs type="person">Camoens</rs></item>
+         <head>“From <rs type="place">Portugal.”</rs></head>
+         <note place="center"><hi rend="underline"><choice>
+                  <abbr>Vol<am>.</am></abbr>
+                  <expan>Vol<ex>ume</ex></expan>
+               </choice> I. </hi>
+         </note>
+         <note place="margin right"><choice>
+               <abbr>approx<am>.</am></abbr>
+               <expan>approx<ex>imadamente</ex></expan>
+            </choice>
+            <choice>
+               <abbr>no<am>.</am></abbr>
+               <expan>no<ex>number</ex></expan>
+            </choice> no. <lb/>
+            <hi rend="underline"> of pages.</hi></note>
+         <list>
+            <item xml:id="I1"><label>1.</label><rs type="title">Introduction (brief).</rs><note
+                  place="margin right"><label>4 </label></note></item>
+            <item xml:id="I2"><label>2.</label><rs type="title">The Anarchist Banker.</rs><note
+                  place="margin right"><label>54 </label></note></item>
+            <item xml:id="I3"><label>3.</label>
+               <rs type="work"><rs type="title">Complete Poems</rs> of <rs type="person"
+                     role="author">Alberto Caeiro.</rs></rs> (or only The “Keeper of Flocks”)</item>
+            <item xml:id="I4"><label>4.</label><rs type="work">English Poems<rs type="title"/>, by
+                     <rs type="person" role="author">Fernando Pessoa.</rs></rs></item>
+            <item xml:id="I5"><label>5.</label><rs type="title">The Quod Nihil Scitur of Francisco
+                  Sanches.</rs></item>
+            <item xml:id="I6"><label>6.</label>Extracts from <rs type="title">“The Lusiads”</rs> of
+                  <rs type="person">Camoens</rs></item>
             <item xml:id="I7"><label>7.</label>Octavio (is it too long?) —</item>
             <item xml:id="I8"><label>8.</label><rs type="title">A Grande Empreza</rs> —</item>
          </list>
-         <note place="right"><list> 
-            <item>Fialho.</item>
-            <item><rs type="person">Antonio Patricio.</rs></item>        
-            <item><rs type="title">“O Pantano.”</rs></item>
-            <item><rs type="person">Gil Vicente.</rs></item>
-            <item><rs type="person">José Castello de Moraes. </rs></item>
-            <item><rs type="person">Mario de Sá Carneiro.</rs></item>
-         </list></note>
-         <list> 
-            <item xml:id="I9"><label>1.</label><rs type="title">Introduction.</rs><note place="margin right"><label>4 </label></note>	</item>                                              
-            <item xml:id="I10"><label>2.</label><rs type="title">The Anarchist Banker.<note place="margin right"><label> 54</label></note>	</rs></item>                                            
-            <item xml:id="I11"><label>3.</label><rs type="person" role="author">Caeiro.</rs><note place="margin right"><label> 30 </label></note>		</item>                                   
-            <item xml:id="I12"><label>4.</label><rs type="title">The Grand Concern.<note place="margin right"><label>80 </label></note></rs></item>                                            
-            <item xml:id="I13"><label>5.</label>Extracts from <rs type="title">The Lusiads</rs> of <rs type="person">Camoens.<note place="margin right"><label>20 </label></note></rs></item>  
-            <item xml:id="I14"><label>6.</label>Quod Nihil Scitur.<note place="margin right"><label> 20 </label></note></item>                                                                  
-            <item xml:id="I15"><label>7.</label>Poems in English. }</item>                    
-            <item xml:id="I16"><label>8.</label>(a one-act play or a short story).</item>      
+         <note place="right"><list>
+               <item>Fialho.</item>
+               <item><rs type="person">Antonio Patricio.</rs></item>
+               <item><rs type="title">“O Pantano.”</rs></item>
+               <item><rs type="person">Gil Vicente.</rs></item>
+               <item><rs type="person">José Castello de Moraes. </rs></item>
+               <item><rs type="person">Mario de Sá Carneiro.</rs></item>
+            </list></note>
+         <list>
+            <item xml:id="I9"><label>1.</label><rs type="title">Introduction.</rs><note
+                  place="margin right"><label>4 </label></note>
+            </item>
+            <item xml:id="I10"><label>2.</label><rs type="title">The Anarchist Banker.<note
+                     place="margin right"><label> 54</label></note>
+               </rs></item>
+            <item xml:id="I11"><label>3.</label><rs type="person" role="author">Caeiro.</rs><note
+                  place="margin right"><label> 30 </label></note>
+            </item>
+            <item xml:id="I12"><label>4.</label><rs type="title">The Grand Concern.<note
+                     place="margin right"><label>80 </label></note></rs></item>
+            <item xml:id="I13"><label>5.</label>Extracts from <rs type="title">The Lusiads</rs> of
+                  <rs type="person">Camoens.<note place="margin right"><label>20
+                  </label></note></rs></item>
+            <item xml:id="I14"><label>6.</label>Quod Nihil Scitur.<note place="margin right"><label>
+                     20 </label></note></item>
+            <item xml:id="I15"><label>7.</label>Poems in English. }</item>
+            <item xml:id="I16"><label>8.</label>(a one-act play or a short story).</item>
          </list>
-         
-         <note target="range(I2,I3,I4,I5, I6,I7)" place="right" type="addition"><hi rend="underline"></hi></note>
+
+         <note target="range(I2,I3,I4,I5, I6,I7)" place="right" type="addition"><hi rend="underline"
+            /></note>
          <metamark rend="curly bracket" function="grouping"/>
-         <note xml:id="NI8" rend="arrow" place="left"></note><metamark rend="arrow" target="#NI10" place="right"></metamark>
-         <note xml:id="NI15" rend="arrow" place="left"></note><metamark rend="arrow" target="#NI14" place="right"></metamark>
-         
-        
+         <note xml:id="NI8" rend="arrow" place="left"/>
+         <metamark rend="arrow" target="#NI10" place="right"/>
+         <note xml:id="NI15" rend="arrow" place="left"/>
+         <metamark rend="arrow" target="#NI14" place="right"/>
+
+
          <div/>
       </body>
    </text>

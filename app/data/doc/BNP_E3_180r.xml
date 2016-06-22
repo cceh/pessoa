@@ -30,7 +30,8 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2016</date>
                 <availability>
@@ -39,7 +40,7 @@
                 <idno type="filename">BNP_E3_180r.xml</idno>
             </publicationStmt>
             <sourceDesc>
-                <msDesc>
+                <msDesc xml:id="M1" type="structured">
                     <msIdentifier>
                         <institution>Biblioteca Nacional de Portugal</institution>
                         <idno>BNP/E3 180r</idno>
@@ -64,26 +65,34 @@
                         </origin>
                     </history>
                 </msDesc>
+                <msDesc corresp="#M1" type="prose">
+                    <msIdentifier/>
+                    <p> Lista manuscrita, publicada em Sepúlveda, <hi rend="italic">Os livros de
+                            Fernando Pessoa</hi> (2013, 370). </p>
+                </msDesc>
             </sourceDesc>
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic url="bn-acpc-e-e3-167-186_JPG_24-C-R0150/bn-acpc-e-e3-167-186_0029_180_t24-C-R0150.jpg"/>
+        <graphic
+            url="bn-acpc-e-e3-167-186_JPG_24-C-R0150/bn-acpc-e-e3-167-186_0029_180_t24-C-R0150.jpg"
+        />
     </facsimile>
     <text>
         <body>
             <div>
                 <list>
                     <head>
-                        <rs type="work" key="O1-13-2"><rs type="text"><hi rend="underline">Ficções do Interludio</hi></rs></rs>
-                        <note target="range(I1,I5)" place="margin top right" type="addition">ou 1 a 5<lb/>
-                            num volume</note>
+                        <rs type="work" key="O1-13-2"><rs type="text"><hi rend="underline">Ficções
+                                    do Interludio</hi></rs></rs>
+                        <note target="range(I1,I5)" place="margin top right" type="addition">ou 1 a
+                            5<lb/> num volume</note>
                     </head>
                     <item xml:id="I1">
                         <label>1.</label>
                         <rs type="work" key="O2" style="a"><rs type="text">Poemas Completos de<lb/>
-                            <rs type="person" key="AC" role="author">Alberto Caeiro</rs>
-                        </rs></rs> (com<lb/>
+                                <rs type="person" key="AC" role="author">Alberto Caeiro</rs>
+                            </rs></rs> (com<lb/>
                         <rs type="text">
                             <choice>
                                 <abbr>pref<am>.</am>
@@ -96,11 +105,10 @@
                                     <expan>R<ex>icardo</ex>
                                     </expan>
                                 </choice> Reis</rs>
-                        </rs>)
-                        <note target="I1" place="margin right" type="addition">
+                        </rs>) <note target="I1" place="margin right" type="addition">
                             <label>Vol. I</label>
                         </note>
-                    </item>     
+                    </item>
                     <item xml:id="I2">
                         <label>2.</label>
                         <rs type="text">Notas para a <choice>
@@ -111,15 +119,14 @@
                             </choice>
                             <lb/> do meu mestre<lb/>
                             <rs type="person" key="AC" role="topic">Caeiro</rs>
-                        </rs>        
-               (<rs type="person" key="AdC" role="author">
+                        </rs> (<rs type="person" key="AdC" role="author">
                             <choice>
                                 <abbr>Alv<am>.</am>
                                 </abbr>
                                 <expan>Alv<ex>aro</ex>
                                 </expan>
-                            </choice> de Campos</rs>)
-                        <note target="range(I1,I3)" place="margin left" type="addition">
+                            </choice> de Campos</rs>) <note target="range(I1,I3)"
+                            place="margin left" type="addition">
                             <label>1 vol. (I-III)</label>
                             <metamark rend="curly-bracket" function="grouping"/>
                         </note>
@@ -130,15 +137,16 @@
                     </item>
                     <item xml:id="I3">
                         <label>3.</label>
-                        <rs type="work" key="O1-9"><rs type="text">Chuva Obliqua</rs> (<rs type="person" key="FP" role="author" style="b">
-                            <choice>
-                                <abbr>F<am>.</am>
-                                </abbr>
-                                <expan>F<ex>ernando</ex>
-                                </expan>
-                            </choice>
-                            <lb/> Pessoa</rs>)</rs>
-                        </item>
+                        <rs type="work" key="O1-9"><rs type="text">Chuva Obliqua</rs> (<rs
+                                type="person" key="FP" role="author" style="b">
+                                <choice>
+                                    <abbr>F<am>.</am>
+                                    </abbr>
+                                    <expan>F<ex>ernando</ex>
+                                    </expan>
+                                </choice>
+                                <lb/> Pessoa</rs>)</rs>
+                    </item>
                     <item xml:id="I4">
                         <label>4.</label>
                         <rs type="text">Poemas antes de<lb/>
@@ -149,8 +157,8 @@
                                 </abbr>
                                 <expan>Alv<ex>aro</ex>
                                 </expan>
-                            </choice> de<lb/> Campos</rs>)
-                        <note target="range(I4,I5)" place="margin right" type="addition">
+                            </choice> de<lb/> Campos</rs>) <note target="range(I4,I5)"
+                            place="margin right" type="addition">
                             <metamark rend="curly-bracket" function="grouping"/>
                             <label>Vol. III</label>
                         </note>
@@ -158,47 +166,49 @@
                     <item xml:id="I5">
                         <label>5.</label>
                         <rs type="work" key="O3" style="b"><rs type="text">Odes, <choice>
-                                <abbr>Liv</abbr>
-                                <expan>Liv<ex>ros</ex>
-                                </expan>
-                            </choice> I-<choice>
-                                <seg n="1">III</seg>
-                                <seg n="2">
-                                    <add place="above">II</add>
-                                </seg>
-                            </choice>
-                        </rs> (<rs type="person" key="RR" role="author">
-                            <choice>
-                                <abbr>R</abbr>
-                                <expan>R<ex>icardo</ex>
-                                </expan>
-                            </choice> Reis</rs>)</rs>
+                                    <abbr>Liv</abbr>
+                                    <expan>Liv<ex>ros</ex>
+                                    </expan>
+                                </choice> I-<choice>
+                                    <seg n="1">III</seg>
+                                    <seg n="2">
+                                        <add place="above">II</add>
+                                    </seg>
+                                </choice>
+                            </rs> (<rs type="person" key="RR" role="author">
+                                <choice>
+                                    <abbr>R</abbr>
+                                    <expan>R<ex>icardo</ex>
+                                    </expan>
+                                </choice> Reis</rs>)</rs>
                         <note target="range(I4,I6)" place="margin left" type="addition">
                             <supplied resp="UH" reason="omitted-in-original">
                                 <label>1 vol. (IV-VI)</label>
                             </supplied>
                             <metamark rend="curly-bracket" function="grouping"/>
                         </note>
-                    </item>                   
+                    </item>
                     <item xml:id="I6">
                         <label>6.</label>
                         <seg>
                             <rs type="work" key="O4" style="d"><rs type="text">Trez Odes</rs></rs>
-                            <add place="above" n="2"><rs type="work" key="O4" style="b"><rs type="text">Arco de Triumpho</rs></rs></add>
-                        </seg>
-               (<rs type="person" key="AdC" role="author">
+                            <add place="above" n="2"><rs type="work" key="O4" style="b"><rs
+                                        type="text">Arco de Triumpho</rs></rs></add>
+                        </seg> (<rs type="person" key="AdC" role="author">
                             <choice>
                                 <abbr>Alv<am>.</am>
                                 </abbr>
                                 <expan>Alv<ex>aro</ex>
                                 </expan>
-                            </choice> de<lb/> Campos</rs>) — (<rs type="work" key="O4-12"><rs type="text">Triumphal</rs></rs>,<lb/>
-                        <rs type="work" key="O4-11"><rs type="text">Maritima</rs></rs> — <supplied resp="PS" reason="omitted-in-original"/>)
-                        <note target="I6" place="margin right" type="addition">
+                            </choice> de<lb/> Campos</rs>) — (<rs type="work" key="O4-12"><rs
+                                type="text">Triumphal</rs></rs>,<lb/>
+                        <rs type="work" key="O4-11"><rs type="text">Maritima</rs></rs> — <supplied
+                            resp="PS" reason="omitted-in-original"/>) <note target="I6"
+                            place="margin right" type="addition">
                             <metamark rend="bracket" function="grouping"/>
                             <label>Vol. IV</label>
                         </note>
-                    </item>    
+                    </item>
                 </list>
             </div>
         </body>

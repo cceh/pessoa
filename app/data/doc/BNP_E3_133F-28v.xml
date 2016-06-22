@@ -26,7 +26,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -35,7 +36,7 @@
             <idno type="filename">BNP_E3_133F-28v.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 133F-28v</idno>
@@ -59,54 +60,55 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita, publicada em <hi rend="italic">Prosa de Álvaro de Campos</hi>
+                  (2012, 302). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-133f-1-100_JPG_24-C-R0150/bn-acpc-e-e3-133f-1-100_0058_28v_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-133f-1-100_JPG_24-C-R0150/bn-acpc-e-e3-133f-1-100_0058_28v_t24-C-R0150.jpg"
+      />
    </facsimile>
    <text>
       <body>
          <div>
             <delSpan rend="overstrike" spanTo="#A1"/>
             <list>
-               <head><hi rend="underline"><rs type="work" key="O1-13-2"><rs type="text">Ficções do Interludio</rs></rs></hi></head>
+               <head><hi rend="underline"><rs type="work" key="O1-13-2"><rs type="text">Ficções do
+                           Interludio</rs></rs></hi></head>
                <item>
                   <label>I. —</label>
                   <list>
                      <item>
                         <label>1.</label>
-                        <rs type="work" key="O2" style="a"><rs type="text">Poemas Completos de <lb/> 
-                           <rs type="person" role="author" key="AC">Alberto Caeiro</rs></rs></rs>.
-                     </item>
+                        <rs type="work" key="O2" style="a"><rs type="text">Poemas Completos de <lb/>
+                              <rs type="person" role="author" key="AC">Alberto
+                        Caeiro</rs></rs></rs>. </item>
                      <item>
-                        <label>2.</label>
-                        Notas — 
-                        <rs type="person" role="author" key="AdC">
+                        <label>2.</label> Notas — <rs type="person" role="author" key="AdC">
                            <choice>
                               <abbr>Alv<am>.</am></abbr>
                               <expan>Alv<ex>aro</ex></expan>
-                           </choice> de <lb/> 
-                        Campos</rs>.
-                     </item>
+                           </choice> de <lb/> Campos</rs>. </item>
                      <item>
                         <label>3.</label>
                         <rs type="work" key="O3" style="b">
-                           <rs type="text">Odes 
-                              (<choice>
+                           <rs type="text">Odes (<choice>
                                  <abbr>liv<am>.</am></abbr>
                                  <expan>liv<ex>ros</ex></expan>
-                              </choice> I — 
-                              <choice>
+                              </choice> I — <choice>
                                  <seg n="1">V</seg>
                                  <seg n="2"><add place="above">III</add></seg>
-                              </choice>)</rs><lb/> 
+                              </choice>)</rs><lb/>
                            <rs type="person" role="author" key="RR">
                               <choice>
                                  <abbr>R</abbr>
                                  <expan>R<ex>icardo</ex></expan>
-                              </choice> Reis</rs>.
-                        </rs>
+                              </choice> Reis</rs>. </rs>
                      </item>
                   </list>
                </item>

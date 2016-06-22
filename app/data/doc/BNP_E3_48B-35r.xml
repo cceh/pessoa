@@ -26,7 +26,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -35,7 +36,7 @@
             <idno type="filename">BNP_E3_48B-35r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 48B-35r</idno>
@@ -59,62 +60,123 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista datilografada, publicada em <hi rend="italic">Prosa de Álvaro de
+                     Campos</hi> (2012, 308-310). </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0070_35_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0070_35_t24-C-R0150.jpg"
+      />
    </facsimile>
    <text>
       <body>
          <div>
-            <head><hi rend="underline">Classification.</hi></head>  
-            <list> 
-               <item><label>1.</label> <rs type="text">Political and Ethical</rs>.</item>
-               <item><label>2.</label> <rs type="text">Literary, Critical and Psychological</rs>.</item>        
-               <item><label>3.</label> <rs type="text">Quaresma</rs>.</item>
-               <item><label>4.</label> <rs type="text">Antitheses</rs>.</item>
-               <item><label>5.</label> <rs type="text">Tales and stories</rs>.</item>
-               <item><label>6.</label> <rs type="text">Poetry for later choice</rs>.</item>
-               <item><label>7.</label> <rs type="text">Static Dramas</rs>.</item>
-               <item><label>8.</label> <rs type="text">Occult</rs> and the like.</item>
-               <item><label>9.</label> Plays like “<rs type="text">Play in one Act</rs>” and the like.</item>
-               <item><label>10.</label> <rs type="work" key="O1" style="b"><rs type="text">Cancioneiro</rs></rs>.</item>        
-               <item><label>11.</label> <rs type="text"><rs type="person" key="P68">Duke of Parma</rs></rs>.</item>
-               <item><label>12.</label> <rs type="text">O Encoberto</rs>.</item>
-               <item><label>13.</label> <rs type="text">A Catastrophe</rs>, etc.</item>
-               <item><label>14.</label> <rs type="text">Canções da Derrota</rs>.</item>
-               <item><label>15.</label> <rs type="text">Poemas de Lisboa</rs> (?)</item>
-               <item><label>16.</label> <rs type="work" key="O2" style="d"><rs type="text">Poemas inconjunctos</rs></rs> (já escolhidos).</item>
-               <item><label>17.</label> <rs type="text"><rs type="person" key="P103">Omar Khayyam</rs></rs> (et seq.).</item>
-               <item><label>18.</label> <rs type="text">Interpretação do Bandarra</rs>, &amp; the like.</item>        
-               <item><label>19.</label> <rs type="text">Diálogos sobre a Tyrannia</rs>.</item>
-               <item><label>20.</label> <rs type="text">Caso Vargas</rs>, (separate from 3).</item>
-               <item><label>21.</label> <rs type="text">Cúmplices</rs> (separate from 3).</item>
-               <item><label>22.</label> <rs type="text">Notas para a Recordação</rs>.</item>
-               <item><label>23.</label> <rs type="work" key="O2" style="a"><rs type="text"><rs type="person" key="AC" role="author">Caeiro</rs></rs></rs>.</item>
-               <item><label>24.</label> <rs type="work" key="O3" style="a"><rs type="text"><rs type="person" key="RR" role="author">Ricardo Reis</rs></rs></rs> (verso).</item>
-               <item><label>25.</label> <rs type="work" key="O4" style="a"><rs type="text"><rs type="person" key="AdC" role="author">Alvaro de Campos</rs></rs></rs> (verso).</item>
-               <item><label>26.</label> <rs type="person" key="RR" role="author">Ricardo Reis</rs> e 
-                  <rs type="person" key="AdC" role="author">Alvaro de Campos </rs>, 
-                  e <rs type="person" key="P1" style="b"><choice><abbr>Ant<am>.</am></abbr><expan>Ant<ex>onio</ex></expan></choice> Mora</rs> (prosa).
-               </item>   
-               <item><label>27.</label> <rs type="text">Astrologia (notas sobre)</rs>.</item>
-               <item><label>28.</label> <rs type="text">Astrologia (proprio horoscopo, com as notas)</rs>.</item>
-               <item><label>29.</label> <rs type="text">Astrologia (horoscopos alheios)</rs>.</item>
-               <item><label>30.</label> <rs type="text">Astrologia (varia, <choice><abbr>quest<am>.</am></abbr><expan>quest<ex>ões</ex></expan></choice>
-                  <choice><abbr>hor<am>.</am></abbr><expan>hor<ex>arias</ex></expan></choice>, etc.)</rs>
+            <head><hi rend="underline">Classification.</hi></head>
+            <list>
+               <item><label>1.</label>
+                  <rs type="text">Political and Ethical</rs>.</item>
+               <item><label>2.</label>
+                  <rs type="text">Literary, Critical and Psychological</rs>.</item>
+               <item><label>3.</label>
+                  <rs type="text">Quaresma</rs>.</item>
+               <item><label>4.</label>
+                  <rs type="text">Antitheses</rs>.</item>
+               <item><label>5.</label>
+                  <rs type="text">Tales and stories</rs>.</item>
+               <item><label>6.</label>
+                  <rs type="text">Poetry for later choice</rs>.</item>
+               <item><label>7.</label>
+                  <rs type="text">Static Dramas</rs>.</item>
+               <item><label>8.</label>
+                  <rs type="text">Occult</rs> and the like.</item>
+               <item><label>9.</label> Plays like “<rs type="text">Play in one Act</rs>” and the
+                  like.</item>
+               <item><label>10.</label>
+                  <rs type="work" key="O1" style="b"><rs type="text">Cancioneiro</rs></rs>.</item>
+               <item><label>11.</label>
+                  <rs type="text"><rs type="person" key="P68">Duke of Parma</rs></rs>.</item>
+               <item><label>12.</label>
+                  <rs type="text">O Encoberto</rs>.</item>
+               <item><label>13.</label>
+                  <rs type="text">A Catastrophe</rs>, etc.</item>
+               <item><label>14.</label>
+                  <rs type="text">Canções da Derrota</rs>.</item>
+               <item><label>15.</label>
+                  <rs type="text">Poemas de Lisboa</rs> (?)</item>
+               <item><label>16.</label>
+                  <rs type="work" key="O2" style="d"><rs type="text">Poemas inconjunctos</rs></rs>
+                  (já escolhidos).</item>
+               <item><label>17.</label>
+                  <rs type="text"><rs type="person" key="P103">Omar Khayyam</rs></rs> (et
+                  seq.).</item>
+               <item><label>18.</label>
+                  <rs type="text">Interpretação do Bandarra</rs>, &amp; the like.</item>
+               <item><label>19.</label>
+                  <rs type="text">Diálogos sobre a Tyrannia</rs>.</item>
+               <item><label>20.</label>
+                  <rs type="text">Caso Vargas</rs>, (separate from 3).</item>
+               <item><label>21.</label>
+                  <rs type="text">Cúmplices</rs> (separate from 3).</item>
+               <item><label>22.</label>
+                  <rs type="text">Notas para a Recordação</rs>.</item>
+               <item><label>23.</label>
+                  <rs type="work" key="O2" style="a"><rs type="text"><rs type="person" key="AC"
+                           role="author">Caeiro</rs></rs></rs>.</item>
+               <item><label>24.</label>
+                  <rs type="work" key="O3" style="a"><rs type="text"><rs type="person" key="RR"
+                           role="author">Ricardo Reis</rs></rs></rs> (verso).</item>
+               <item><label>25.</label>
+                  <rs type="work" key="O4" style="a"><rs type="text"><rs type="person" key="AdC"
+                           role="author">Alvaro de Campos</rs></rs></rs> (verso).</item>
+               <item><label>26.</label>
+                  <rs type="person" key="RR" role="author">Ricardo Reis</rs> e <rs type="person"
+                     key="AdC" role="author">Alvaro de Campos </rs>, e <rs type="person" key="P1"
+                     style="b"><choice>
+                        <abbr>Ant<am>.</am></abbr>
+                        <expan>Ant<ex>onio</ex></expan>
+                     </choice> Mora</rs> (prosa). </item>
+               <item><label>27.</label>
+                  <rs type="text">Astrologia (notas sobre)</rs>.</item>
+               <item><label>28.</label>
+                  <rs type="text">Astrologia (proprio horoscopo, com as notas)</rs>.</item>
+               <item><label>29.</label>
+                  <rs type="text">Astrologia (horoscopos alheios)</rs>.</item>
+               <item><label>30.</label>
+                  <rs type="text">Astrologia (varia, <choice>
+                        <abbr>quest<am>.</am></abbr>
+                        <expan>quest<ex>ões</ex></expan>
+                     </choice>
+                     <choice>
+                        <abbr>hor<am>.</am></abbr>
+                        <expan>hor<ex>arias</ex></expan>
+                     </choice>, etc.)</rs>
                </item>
-               <item><label>31.</label> <rs type="text">Automatic Writings</rs>, etc.</item>
-               <item><label>32.</label> <rs type="text">English Poems</rs> (chosen).</item>
-               <item><label>33.</label> <rs type="text">English Poems</rs> (various).</item>
-               <item><label>34.</label> <rs type="text">English Sonnets</rs>.</item>
-               <item><label>35.</label> <rs type="text">Poems forming Quincunx</rs>.</item>
-               <item><label>36.</label> <rs type="text">Poems in French</rs>.</item>        
-               <item><label>37.</label> <rs type="text">Translations into English</rs> (poems).</item>
-               <item><label>38.</label> <rs type="text">Translations into Portuguese</rs> (poems).</item>
-               <item><label>39.</label> <rs type="text">Translations from <rs type="person" key="P65">Shakespeare</rs></rs>.</item>
-               <item><label>40.</label> <rs type="text">Notes on the Portuguese Language</rs>, etc.</item>
+               <item><label>31.</label>
+                  <rs type="text">Automatic Writings</rs>, etc.</item>
+               <item><label>32.</label>
+                  <rs type="text">English Poems</rs> (chosen).</item>
+               <item><label>33.</label>
+                  <rs type="text">English Poems</rs> (various).</item>
+               <item><label>34.</label>
+                  <rs type="text">English Sonnets</rs>.</item>
+               <item><label>35.</label>
+                  <rs type="text">Poems forming Quincunx</rs>.</item>
+               <item><label>36.</label>
+                  <rs type="text">Poems in French</rs>.</item>
+               <item><label>37.</label>
+                  <rs type="text">Translations into English</rs> (poems).</item>
+               <item><label>38.</label>
+                  <rs type="text">Translations into Portuguese</rs> (poems).</item>
+               <item><label>39.</label>
+                  <rs type="text">Translations from <rs type="person" key="P65"
+                     >Shakespeare</rs></rs>.</item>
+               <item><label>40.</label>
+                  <rs type="text">Notes on the Portuguese Language</rs>, etc.</item>
                <item><label>41.</label> Plans and similar notes.</item>
             </list>
          </div>

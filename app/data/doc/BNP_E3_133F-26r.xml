@@ -26,7 +26,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -35,7 +36,7 @@
             <idno type="filename">BNP_E3_133F-26r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 133F-26r</idno>
@@ -48,7 +49,7 @@
                      <note type="genre">
                         <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
-                     <textLang mainLang="pt" otherLangs="en"  />
+                     <textLang mainLang="pt" otherLangs="en"/>
                   </msItemStruct>
                </msContents>
                <history>
@@ -59,11 +60,17 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-133f-1-100_JPG_24-C-R0150/bn-acpc-e-e3-133f-1-100_0053_26_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-133f-1-100_JPG_24-C-R0150/bn-acpc-e-e3-133f-1-100_0053_26_t24-C-R0150.jpg"
+      />
    </facsimile>
    <text>
       <body>
@@ -72,14 +79,14 @@
                <head><hi rend="underline">Canções da Derrota.</hi></head>
                <item>
                   <label>1.</label>
-                  <rs type="text">À Memoria do <lb/>
-                     Presidente-Rei <rs type="person" key="P51">Sidonio Paes</rs>.</rs><lb/>
+                  <rs type="text">À Memoria do <lb/> Presidente-Rei <rs type="person" key="P51"
+                        >Sidonio Paes</rs>.</rs><lb/>
                   <seg rend="right">1919.</seg>
                </item>
                <item>
                   <label>2.</label>
                   <rs type="text">Elegia na Sombra</rs>. <seg rend="right">1935</seg>
-               </item>        
+               </item>
                <item>
                   <label>3.</label>
                   <rs type="text">Chamada</rs>. <seg rend="right">1919/1935.</seg>
@@ -90,8 +97,7 @@
                <head><hi rend="underline">Praça da Figueira</hi>.</head>
                <item>
                   <label>1.</label>
-                  <rs type="text"><rs type="person" key="P141">Santo Antonio</rs></rs>.
-               </item>
+                  <rs type="text"><rs type="person" key="P141">Santo Antonio</rs></rs>. </item>
                <item>
                   <label>2.</label>
                   <rs type="text">
@@ -99,8 +105,7 @@
                         <choice>
                            <abbr>S<am>.</am></abbr>
                            <expan>S<ex>ão</ex></expan>
-                        </choice> João</rs>.
-                  </rs>
+                        </choice> João</rs>. </rs>
                </item>
                <item>
                   <label>3.</label>
@@ -109,12 +114,12 @@
                         <choice>
                            <abbr>S<am>.</am></abbr>
                            <expan>S<ex>ão</ex></expan>
-                        </choice> Pedro</rs>.
-                  </rs>
+                        </choice> Pedro</rs>. </rs>
                </item>
             </list>
             <metamark rend="line" function="distinct"/>
-            <p><rs type="text">O Christianismo Applicado</rs> <lb/> (Applied Christianity)</p>
+            <p><rs type="text">O Christianismo Applicado</rs>
+               <lb/> (Applied Christianity)</p>
             <metamark rend="line" function="end"/>
          </div>
       </body>

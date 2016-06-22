@@ -27,7 +27,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -36,7 +37,7 @@
             <idno type="filename">BNP_E3_48D-10r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 48D-10r</idno>
@@ -60,6 +61,10 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. </p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -68,72 +73,60 @@
          url="bn-acpc-e-e3-48d-1-76_JPG_24-C-R0150/bn-acpc-e-e3-48d-1-76_0021_10_t24-C-R0150.jpg"/>
    </facsimile>
    <text>
-     <body>
-        <div>
-          <list>
-            <item>
-               <label>1.</label> 
-               <rs type="text">Auto do Circo</rs>.
-            </item>
-            <item>
-               <label>2.</label> 
-               <rs type="text">O Banqueiro Anarchista</rs>.
-            </item>
-            <item>
-               <label>3.</label> 
-               <rs type="text">Dispersão</rs> 
-               (2<hi rend="superscript">a</hi> Edição).
-            </item>
-            <item>
-               <label>4.</label> 
-               <rs type="text">A Grande Sombra</rs>.
-            </item>
-            <item>
-               <label>5.</label> 
-               <rs type="work" key="O4-13"><rs type="text">Opiario</rs></rs> – 
-               <rs type="work" key="O4-12"><rs type="text">Ode Triumphal</rs></rs>.
-            </item>
-            <item>
-               <label>6.</label> 
-               <rs type="text">A Estranha Morte do 
-                  <choice>
-                     <abbr>Prof<am>.</am></abbr>
-                     <expan>Prof<ex>essor</ex></expan>
-                  </choice>
-                  <rs type="person">Antena</rs></rs>.
-            </item>
-            <item>
-               <label>7.</label> 
-               <rs type="work" key="O1" style="b">
-                  <rs type="text">Cancioneiro</rs>
-               </rs> – Livro 1.
-            </item>
-            <item>
-               <label>8.</label> 
-               <rs type="work" key="O3" style="b"><rs type="text">Odes</rs></rs> – Livro I 
-               (<rs type="person" key="RR" role="author">Ricardo Reis</rs>).
-            </item>
-            <item>
-               <label>9.</label>
-               <rs type="text">Photographias do Invisivel</rs>.
-            </item>
-            <item>
-               <label>10.</label>
-               <rs type="work" key="O4-11"><rs type="text">Ode Maritima</rs></rs>.
-            </item>
-            <item>
-               <label>11.</label>
-               <rs type="text">Os Principaes Poemas de <rs type="person" key="P87">Edgar Poe</rs></rs>.
-            </item>
-            <item>
-               <label>12.</label>
-               <rs type="text">Saudação a <rs type="person" key="P216">Walt Whitman</rs></rs>.
-            </item>
-            <item>
-               <label>13.</label> <supplied resp="PS" reason="omitted-in-original"/>
-            </item>
-          </list>
-        </div>
+      <body>
+         <div>
+            <list>
+               <item>
+                  <label>1.</label>
+                  <rs type="text">Auto do Circo</rs>. </item>
+               <item>
+                  <label>2.</label>
+                  <rs type="text">O Banqueiro Anarchista</rs>. </item>
+               <item>
+                  <label>3.</label>
+                  <rs type="text">Dispersão</rs> (2<hi rend="superscript">a</hi> Edição). </item>
+               <item>
+                  <label>4.</label>
+                  <rs type="text">A Grande Sombra</rs>. </item>
+               <item>
+                  <label>5.</label>
+                  <rs type="work" key="O4-13"><rs type="text">Opiario</rs></rs> – <rs type="work"
+                     key="O4-12"><rs type="text">Ode Triumphal</rs></rs>. </item>
+               <item>
+                  <label>6.</label>
+                  <rs type="text">A Estranha Morte do <choice>
+                        <abbr>Prof<am>.</am></abbr>
+                        <expan>Prof<ex>essor</ex></expan>
+                     </choice>
+                     <rs type="person">Antena</rs></rs>. </item>
+               <item>
+                  <label>7.</label>
+                  <rs type="work" key="O1" style="b">
+                     <rs type="text">Cancioneiro</rs>
+                  </rs> – Livro 1. </item>
+               <item>
+                  <label>8.</label>
+                  <rs type="work" key="O3" style="b"><rs type="text">Odes</rs></rs> – Livro I (<rs
+                     type="person" key="RR" role="author">Ricardo Reis</rs>). </item>
+               <item>
+                  <label>9.</label>
+                  <rs type="text">Photographias do Invisivel</rs>. </item>
+               <item>
+                  <label>10.</label>
+                  <rs type="work" key="O4-11"><rs type="text">Ode Maritima</rs></rs>. </item>
+               <item>
+                  <label>11.</label>
+                  <rs type="text">Os Principaes Poemas de <rs type="person" key="P87">Edgar
+                     Poe</rs></rs>. </item>
+               <item>
+                  <label>12.</label>
+                  <rs type="text">Saudação a <rs type="person" key="P216">Walt Whitman</rs></rs>. </item>
+               <item>
+                  <label>13.</label>
+                  <supplied resp="PS" reason="omitted-in-original"/>
+               </item>
+            </list>
+         </div>
       </body>
    </text>
 </TEI>

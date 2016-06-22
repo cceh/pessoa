@@ -24,7 +24,8 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2016</date>
                 <availability>
@@ -33,7 +34,7 @@
                 <idno type="filename">BNP_E3_51-89r.xml</idno>
             </publicationStmt>
             <sourceDesc>
-                <msDesc>
+                <msDesc xml:id="M1" type="structured">
                     <msIdentifier>
                         <institution>Biblioteca Nacional de Portugal</institution>
                         <idno>BNP/E3 51-89r</idno>
@@ -58,11 +59,23 @@
                         </origin>
                     </history>
                 </msDesc>
+                <msDesc corresp="#M1" type="prose">
+                    <msIdentifier/>
+                    <p> Lista manuscrita, publicada em Sepúlveda, <hi rend="italic">O livro de
+                            Caeiro</hi> (2010, 409). Por baixo da lista, na mesma página,
+                        encontra-se o poema manuscrito que começa pelo verso «Para ser grande, sê
+                        inteiro», datado de 14/2/1933 e atribuído a Ricardo Reis. Pessoa terá
+                        enviado o poema, publicado na revista <hi rend="italic">Presença</hi> nesse
+                        mesmo mês, a João Gaspar Simões, juntamente com carta de 18/2/1933 (cf. CP,
+                        209). </p>
+                </msDesc>
             </sourceDesc>
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic url="bn-acpc-e-e3-51-1-106_JPG_24-C-R0150/bn-acpc-e-e3-51-1-106_0183_89_t24-C-R0150.jpg"/>
+        <graphic
+            url="bn-acpc-e-e3-51-1-106_JPG_24-C-R0150/bn-acpc-e-e3-51-1-106_0183_89_t24-C-R0150.jpg"
+        />
     </facsimile>
     <text>
         <body>
@@ -81,13 +94,11 @@
                             </abbr>
                             <expan resp="UH">Liv<ex>ro</ex>
                             </expan>
-                        </choice> I (100 poemas).
-                    </item>
+                        </choice> I (100 poemas). </item>
                     <item xml:id="I3">
                         <label>3.</label>
                         <rs type="text"><rs type="person" key="AC" role="author">Caeiro</rs></rs>
-                        (só?).
-                    </item>
+                        (só?). </item>
                 </list>
                 <ab rend="right">(para 1933).</ab>
                 <metamark rend="line" function="distinct"/>
