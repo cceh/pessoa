@@ -7,7 +7,6 @@ import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers
 
 
 import module namespace page="http://localhost:8080/exist/apps/pessoa/page" at "page.xqm";
-
 declare function author:getTitle($node as node(), $model as map(*), $author){
     if($author = "pessoa") then
         <h1>Fernando Pessoa</h1>
@@ -28,24 +27,24 @@ declare function author:getTabs($node as node(), $model as map(*), $textType as 
     let $lists := doc('/db/apps/pessoa/data/lists.xml')
     return
     if ($textType = "all") then
-        <ul id="tabs"><li class="active"><a href="{$helpers:app-root}/author/{$author}/all">{page:singleAttribute($lists,"author-pages", "publications-and-documents")}</a></li>
+        <ul id="tabs"><li class="selected"><a href="{$helpers:app-root}/author/{$author}/all">{page:singleAttribute($lists,"author-pages", "publications-and-documents")}</a></li>
         <li><a href="{$helpers:app-root}/author/{$author}/documents">{page:singleAttribute($lists, "author-pages","documents")}</a></li>
         <li><a href="{$helpers:app-root}/author/{$author}/publications">{page:singleAttribute($lists, "author-pages","publications")}</a></li></ul>                
     else if($textType = "documents") then 
         <ul id="tabs"><li><a href="{$helpers:app-root}/author/{$author}/all">{page:singleAttribute($lists, "author-pages","publications-and-documents")}</a></li>
-        <li class="active"><a href="{$helpers:app-root}/author/{$author}/documents">{page:singleAttribute($lists, "author-pages","documents")}</a></li>
+        <li class="selected"><a href="{$helpers:app-root}/author/{$author}/documents">{page:singleAttribute($lists, "author-pages","documents")}</a></li>
         <li><a href="{$helpers:app-root}/author/{$author}/publications">{page:singleAttribute($lists, "author-pages","publications")}</a></li></ul> 
     else if($textType ="publications") then
         <ul id="tabs"><li><a href="{$helpers:app-root}/author/{$author}/all">{page:singleAttribute($lists, "author-pages","publications-and-documents")}</a></li>
         <li><a href="{$helpers:app-root}/author/{$author}/documents">{page:singleAttribute($lists, "author-pages","documents")}</a></li>
-        <li class ="active"><a href="{$helpers:app-root}/author/{$author}/publications">{page:singleAttribute($lists, "author-pages","publications")}</a></li></ul>         
+        <li class ="selected"><a href="{$helpers:app-root}/author/{$author}/publications">{page:singleAttribute($lists, "author-pages","publications")}</a></li></ul>         
     else()                   
 };
 
 declare function author:getTabContent($node as node(), $model as map(*), $textType, $author, $orderBy){
     if ($textType = "all") then
         <ul id="tab">
-            <li class ="active">
+            <li class ="selected">
                 <div id="all">
                     <div>{author:listAll($node, $model, $author, $orderBy)}</div>
                 </div>                           
@@ -68,7 +67,7 @@ declare function author:getTabContent($node as node(), $model as map(*), $textTy
                     <div>{author:listAll($node, $model, $author, $orderBy)}</div>
                 </div>
             </li>
-            <li class ="active">
+            <li class ="selected">
                 <div id="documents">
                     <div>{author:listDocuments($node, $model, $author, $orderBy)}</div>
                 </div>
@@ -91,7 +90,7 @@ declare function author:getTabContent($node as node(), $model as map(*), $textTy
                     <div>{ author:listDocuments($node, $model, $author, $orderBy)}</div>
                 </div>
             </li>
-            <li class="active">
+            <li class="selected">
                 <div id="publications">
                     <div>{author:listPublications($node, $model, $author, $orderBy)}</div>  
                 </div>

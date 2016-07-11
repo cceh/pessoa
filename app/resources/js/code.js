@@ -63,25 +63,29 @@ $(document).ready(function(){
 				document.getElementById(block).style.backgroundSize = newSize;
 			}
         */
-         function fixDiv() {
+         
+                   
+                   
+                   
+                   
+        });
+        function fixDiv() {
         var $cache = $('#openseadragon1');
-      if ($(window).scrollTop() > 600)
-        $cache.css({
-        'position': 'fixed',
-        'top': '10px'
-        });
-        else
-        $cache.css({
-        'position': 'relative',
-        'top': 'auto'
-        });
-        }
-        $(window).scroll(fixDiv);
-        fixDiv();
         
         
-        });
-        
+                 if ($(window).scrollTop() > 716)
+                   $cache.css({
+                   'position': 'fixed',
+                   'top': '10px'
+                   });
+                   else
+                   $cache.css({
+                   'position': 'relative',
+                   'top': 'auto'
+                   });
+                   
+                   }
+                   
         function calcImage() {
         var height = $(".header-image").width()  * 0.75;
             $(".header-image").each(function() {
@@ -90,6 +94,8 @@ $(document).ready(function(){
             });     
             $("#page-header").css({"height" : height});
         };
+        
+        
 /*
 function  jsBlockStrikeThrough(uri) {
             $('.delSpan').each(function() {
@@ -169,7 +175,7 @@ $(document).ready(function(){
 
          $("span.nota").click(function() {
            
-           if(!$(this).hasClass("active")) {
+           if(!$(this).hasClass("selected")) {
                $("#nota_bottom").addClass("selected");
                $("#nota_top").addClass("selected");
                $(".editorial-note").show("slow");
@@ -187,8 +193,17 @@ $(document).ready(function(){
            
            
             
- }
+ };
  
+ function itabs() {
+     $(".itabs").click(function() {
+        calcFacsimilie();
+     });
+ };
+ function calcFacsimilie() {
+            var height = $("#img-div").height();
+            $("#text-div").css({"height" : height});            
+        };
  
  function draw(w, h) {
  

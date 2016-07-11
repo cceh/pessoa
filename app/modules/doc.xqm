@@ -78,7 +78,7 @@ declare function doc:get-text-pessoal($node as node(), $model as map(*), $id as 
 declare function doc:get-genre($node as node(), $model as map(*), $type as xs:string, $orderBy as xs:string) as item()*{  
     let $i := if($orderBy = "alphab") then 2 else 5
     let $docs := 
-        for $doc in collection("/db/apps/pessoa/data") where ($doc//tei:rs[@type ="genre" and @key =$type])
+        for $doc in (collection("/db/apps/pessoa/data/doc/"),collection("/db/apps/pessoa/data/pub/")) where ($doc//tei:rs[@type ="genre" and @key =$type])
         return $doc
     let $years :=
         for $doc in $docs 
@@ -89,7 +89,7 @@ declare function doc:get-genre($node as node(), $model as map(*), $type as xs:st
         let $docsInYear :=  
             for $doc in $docs where(fn:substring(author:getYearOrTitle($doc,$orderBy),0,$i) = $year) return $doc
     order by $year       
-    return (<div class="sub_Nav"><h2 id="{$year}">{if ($year = "B") then "BNP" else if ($year = "M") then "MN" else $year}</h2></div>,
+    return (<div class="sub_Nav"><h2 id="{$year}">{if ($year = "B") then "BNP" else if ($year = "M") then "MN" else if ($year = "?") then "?" else $year}</h2></div>,
      for $doc in $docsInYear 
      order by (author:getYearOrTitle($doc,$orderBy))
      return

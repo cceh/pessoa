@@ -36,7 +36,7 @@ declare function obras:buildSearch($xmlid as xs:string?, $type as xs:string) as 
 
 declare function obras:PrintRef($node as node(), $model as map(*), $ref as xs:string, $dir as xs:string) {
    if($model($ref) != "") then (
-   let $refer := substring-before(root($model($ref))/util:document-name(.),".xml") 
+        let $refer := if($dir eq "pub") then substring-before(root($model($ref))/util:document-name(.),".xml")  else $model($ref)
          let $title := doc(concat("/db/apps/pessoa/data/",$dir,"/",$refer,".xml"))//tei:TEI/tei:teiHeader[1]/tei:fileDesc[1]/tei:titleStmt[1]/tei:title[1]/data(.)
     return <a href="{$helpers:app-root}/{$helpers:web-language}/{$dir}/{$refer}">    
         {helpers:copy-all-class($node)}
@@ -64,13 +64,26 @@ declare function obras:PrintSubRef($node as node(), $model as map(*), $ref as xs
 
 
 declare function obras:mentionedAs($node as node(), $model as map(*), $ref as xs:string, $dir as xs:string) {
-        let $refer :=  substring-before(root($model($ref))/util:document-name(.),".xml") 
+        let $refer := if($dir eq "pub") then substring-before(root($model($ref))/util:document-name(.),".xml")  else $model($ref)
         let $doc := doc(concat("/db/apps/pessoa/data/",$dir,"/",$refer,".xml"))
         let $workn := $doc//tei:rs[@type="work" and @key=$model("xmlid")]/@style/data(.)
         let $list :=  $model("listEntry")
          let $mentioned := $list/tei:title[@subtype=$workn]/data(.)
-        return if(exists($mentioned)) then <span class="Obras-DocList-Mention"> ({page:singleElement_xquery("roles","mentioned-as")}: <i>{$mentioned})</i></span> 
+        return if(exists($mentioned)) then <span class="Obras-DocList-Mention"> ({page:singleElement_xquery("roles","mentioned-as")}: <i>{$mentioned})</i>,</span> 
                                 else ()
+};
+
+declare function obras:SortByDate($db as node()*) {
+    let $refs := for $doc in $db 
+                            let $date := if(exists($doc//tei:origDate/@when)) then $doc//tei:origDate/@when/data(.)
+                                                else if(exists($doc//tei:origDate/@notBefore)) then $doc//tei:origDate/@notBefore/data(.)
+                                                else if(exists($doc//tei:origDate/@from)) then $doc//tei:origDate/@from/data(.)
+                                                else "Error"
+                                                 let $refer := substring-before(root($doc)/util:document-name(.),".xml") 
+                           return <item doc="{$refer}" date="{$date}"/>
+    let $return := for $item in $refs order by $item/@date return $item/@doc
+    
+    return $return
 };
 (: Unikate :)
 
@@ -85,7 +98,7 @@ declare function obras:SearchObras($node as node(), $model as map(*),$id as xs:s
     return map {
         "MainTitle" := $list/tei:title[1]/data(.),
         "AltTitle" := string-join($AltTitle,", "),
-        "FirstRef" := obras:buildSearch($xmlid,"doc"),
+        "FirstRef" := obras:SortByDate(obras:buildSearch($xmlid,"doc")),
         "listEntry" := $list,
         "Works" := $list/tei:list/tei:item,
         "xmlid" := $xmlid        
@@ -99,7 +112,7 @@ declare function obras:AnalyticObras($node as node(), $model as map(*), $ref as 
     
     return map {
         "title" := $title,
-        "refs" := obras:buildSearch($work/@xml:id/data(.),"doc"),
+        "refs" := obras:SortByDate(obras:buildSearch($work/@xml:id/data(.),"doc")),
         "subworks" := obras:ScanSubWorks($work),
         "XMLID" := $work/@xml:id/data(.),
         "PubRef" := obras:buildSearch($work/@xml:id/data(.),"pub")
