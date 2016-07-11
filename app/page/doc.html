@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <div xmlns="http://www.w3.org/1999/xhtml" class="templates:surround?with=templates/page.html&amp;at=content">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-   
+    
     <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery-ui.min.js"></script>
     <link class="helpers:app-root" rel="stylesheet" href="resources/css/jquery-ui.min.css" type="text/css" />
     <link class="helpers:app-root" rel="stylesheet" href="resources/css/jquery-ui.structure.min.css" type="text/css" />
@@ -28,22 +28,18 @@
         $("ul#indextab .selected").removeClass("selected");
         $("ul#indextab li#"+tabNum).addClass("selected");
         $("ul#indextab li#"+tabNum+" ul li").addClass("selected");
-      /*  $("ul#indextab :nth-child("+nthChild+")").addClass("active");
+        /*  $("ul#indextab :nth-child("+nthChild+")").addClass("active");
         */
         }
-       
+        
         });
         
         
-       
+        
         
         });
     </script>
-    <style>
-        .delSpan {
     
-        }
-    </style>
     
     <script class="doc:get-versaoPessoal"></script>
     <div class="contet" id="doc">
@@ -52,7 +48,7 @@
         </div>
         <div id="article">
             <div>
-               
+                
                 <div class="doc:docControll" id="scrollline"></div>
                 
                 <div id="tabline">
@@ -108,36 +104,55 @@
             <div id="img-div">
                 <div id="indexline">
                     <ul id="indextabs">
-                        <li class="itabs selected"  title="facsimile"><a href="#facsimile"><span class="page:singleElement?xmltype=buttons&amp;xmlid=facsimile"></span></a></li>
-                        <li class="itabs"  title="index"><a href="#index"><span class="page:singleElement?xmltype=buttons&amp;xmlid=bindex"></span></a></li>
+                        <li class="itabs selected"  title="facsimile">
+                            <a href="#facsimile">
+                                <span class="page:singleElement?xmltype=buttons&amp;xmlid=facsimile"/>
+                            </a>
+                        </li>
+                        <li class="itabs"  title="index">
+                            <a href="#index">
+                                <span class="page:singleElement?xmltype=buttons&amp;xmlid=bindex"/>                                
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div>
-                <ul id="indextab">
-                    <li class="selected" id="facsimile">
-                        <div >
-                            <p class="doc:get-image">facsimile</p>
-                        </div>
-                    </li>
-                    <li id="index">
-                        <div >
-                            <p class="doc:get-indexes">indexes</p>
-                        </div>
-                    </li>
-                </ul>
+                    <ul id="indextab">
+                        <li class="selected" id="facsimile">
+                            <div >
+                                <p class="doc:get-image">facsimile</p>
+                            </div>
+                        </li>
+                        <li id="index">
+                            <div >
+                                <p class="doc:get-indexes">indexes</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div id="filter" class="doc:footerfilter"/>
             
         </div>
     </div>
-
+    
     <script type="text/javascript">
         $(document).ready(function() {
-            DocHide();
-            $(".editorial-note").hide();
-            $("#nota_bottom").hide();
-            jsBlockStrikeThrough();
+        DocHide();
+   
+        jsBlockStrikeThrough();
+        calcFacsimilie();
+        fixDiv();
+        $(window).scroll(fixDiv);
+        itabs();
         });
     </script>
+    <style>
+      #nota_bottom{
+      display:none;
+      }
+      .editorial-note {
+      display:none;
+      }
+    </style>
 </div>

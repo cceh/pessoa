@@ -2,6 +2,7 @@
 module namespace index="http://localhost:8080/exist/apps/pessoa/index";
 import module namespace search="http://localhost:8080/exist/apps/pessoa/search" at "search.xqm";
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
+import module namespace obras="http://localhost:8080/exist/apps/pessoa/obras" at "obras.xqm";
 
 declare namespace request="http://exist-db.org/xquery/request";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
@@ -35,6 +36,37 @@ declare function index:FindFirstLetter($text as xs:string,$pos as xs:integer) {
         where $look eq $a
         return $look
 };
+
+
+
+(:### Genre Index ####:)
+
+declare function index:collectGenre($node as node(), $model as map(*),$type as xs:string,$orderBy as xs:string) {
+    let $items := for $fold in ("doc","pub")                                 
+                                let $db := search:search_range_simple("genre",$type,collection(concat("/db/apps/pessoa/data/",$fold,"/")))
+                                 for $doc in $db 
+                                        let $date := if($fold ="doc") then (
+                                                                if(exists($doc//tei:origDate/@when)) then $doc//tei:origDate/@when/data(.)
+                                                                else if(exists($doc//tei:origDate/@notBefore)) then $doc//tei:origDate/@notBefore/data(.)
+                                                                else if(exists($doc//tei:origDate/@from)) then $doc//tei:origDate/@from/data(.)
+                                                                else "Error"
+                                                                )
+                                                            else $doc//tei:imprint/tei:date/@when/data(.)
+                                        let $date :=      if(contains($date,"-")) then substring-before($date,"-") else $date                                                    
+                                        let $refer := substring-before(root($doc)/util:document-name(.),".xml") 
+                                        let $first := substring($doc//tei:titleStmt/tei:title/data(.),1,1)                     
+    
+    return <item folder="{$fold}" doc="{$refer}" date="{$date}" letter="{$first}"/> 
+    let $sort := if ($orderBy = "alphab") then  
+                                for $item in $items order by $item/@letter return $item
+                          else   
+                            for $item in $items order by $item/@date return $item
+                           
+    return map {
+    "db" := $sort
+    }
+};
+
 
 (:####### TEXT INDEX #######:)
 
