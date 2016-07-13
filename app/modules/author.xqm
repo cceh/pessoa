@@ -137,9 +137,9 @@ declare function author:getNavigation($years, $orderBy, $type){
         {for $year at $i in $years
         order by $year
             return if ($i = count($years)) then
-                <a href="#{$year}">{$year}</a>
+                <a href="#{$year}">{if(exists($year) ) then $year else "?"}</a>
                 else
-                (<a href="#{$year}">{$year}</a>,<span>|</span>)
+                (<a href="#{$year}">{if(exists($year) ) then $year else "?"}</a>,<span>|</span>)
         } 
         <br/>
         <br/>

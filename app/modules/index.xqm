@@ -49,22 +49,59 @@ declare function index:collectGenre($node as node(), $model as map(*),$type as x
                                                                 if(exists($doc//tei:origDate/@when)) then $doc//tei:origDate/@when/data(.)
                                                                 else if(exists($doc//tei:origDate/@notBefore)) then $doc//tei:origDate/@notBefore/data(.)
                                                                 else if(exists($doc//tei:origDate/@from)) then $doc//tei:origDate/@from/data(.)
-                                                                else "Error"
+                                                                else "?"
                                                                 )
-                                                            else $doc//tei:imprint/tei:date/@when/data(.)
-                                        let $date :=      if(contains($date,"-")) then substring-before($date,"-") else $date                                                    
+                                                            else (
+                                                                if(exists($doc//tei:imprint/tei:date/@when)) then $doc//tei:imprint/tei:date/@when/data(.)
+                                                                else if(exists($doc//tei:imprint/tei:date/@notBefore)) then $doc//tei:imprint/tei:date/@notBefore/data(.)
+                                                                else if(exists($doc//tei:imprint/tei:date/@from)) then $doc//tei:imprint/tei:date/@from/data(.)
+                                                                else "?"
+                                                            )
+                                        let $date :=    if($date eq "?") then "?"  
+                                                                else ( if(contains($date,"-")) then substring-before($date,"-") else $date )                                                   
                                         let $refer := substring-before(root($doc)/util:document-name(.),".xml") 
-                                        let $first := substring($doc//tei:titleStmt/tei:title/data(.),1,1)                     
+                                        let $first := if($fold eq "doc") then (
+                                                            if(substring($doc//tei:titleStmt/tei:title/data(.),1,1) eq "B") then "BNP"
+                                                            else "MN"
+                                                            )
+                                                            else substring($doc//tei:titleStmt/tei:title/data(.),1,1)                     
+                                       let $crit := if ($orderBy = "alphab") then $first else $date
+                                      order by $crit
+                                      return <item folder="{$fold}" doc="{$refer}"  title="{$doc//tei:titleStmt/tei:title/data(.)}" crit="{$crit}"/>   
+     let $criteria := for $item in $items return $item/@crit/data(.)                           
+     let $criteria := distinct-values($criteria)
+     
+     let $navigation :=   <div class="navigation"> 
+                                             {for $crit at $i in $criteria
+                                                 return if ($i = count($criteria)) then
+                                                     <a href="#{$crit}">{$crit}</a>
+                                                     else
+                                                     (<a href="#{$crit}">{$crit}</a>,<span>|</span>)
+                                             }  
+                                             <br/>
+                                             <br/>
+                                         </div>                         
+     let $list :=   <div>
+                            {for $crit in $criteria 
+                                return (<div class="sub_Nav"><h2 id="{$crit}">{$crit}</h2></div>,
+                                        for $item in $items where $item/@crit eq $crit
+                                        return <div class="doctabelcontent">
+                                        <a href="{$helpers:app-root}/{$item/@folder/data(.)}/{$item/@doc/data(.)}">
+                                            {$item/@title/data(.)}
+                                        </a>
+                                        </div>
+                                )
+                            }       
+                         </div>                         
+    return ($navigation,$list)
     
-    return <item folder="{$fold}" doc="{$refer}" date="{$date}" letter="{$first}"/> 
-    let $sort := if ($orderBy = "alphab") then  
-                                for $item in $items order by $item/@letter return $item
-                          else   
-                            for $item in $items order by $item/@date return $item
-                           
-    return map {
-    "db" := $sort
+    (:
+    map {
+    "db" := $sort,
+    "criteria" := $criteria,
+    "temp" := <h3>Test</h3>
     }
+    :)
 };
 
 

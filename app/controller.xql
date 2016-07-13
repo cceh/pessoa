@@ -1,16 +1,22 @@
 xquery version "3.0";
-declare namespace tei="http://www.tei-c.org/ns/1.0";
-declare variable $exist:path external;
-declare variable $exist:resource external;
-declare variable $exist:controller external;
-declare variable $exist:prefix external;
-declare variable $exist:root external;
+
 
 import module namespace doc="http://localhost:8080/exist/apps/pessoa/doc" at "modules/doc.xqm";
 import module namespace author="http://localhost:8080/exist/apps/pessoa/author" at "modules/author.xqm";
 import module namespace search="http://localhost:8080/exist/apps/pessoa/search" at "modules/search.xqm";
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "modules/helpers.xqm";
 import module namespace config="http://localhost:8080/exist/apps/pessoa/helpers" at "modules/config.xqm";
+import module namespace index="http://localhost:8080/exist/apps/pessoa/index" at "modules/index.xqm";
+
+declare namespace tei="http://www.tei-c.org/ns/1.0";
+
+
+declare variable $exist:path external;
+declare variable $exist:resource external;
+declare variable $exist:controller external;
+declare variable $exist:prefix external;
+declare variable $exist:root external;
+
 
 if ($exist:path eq "/") then
     (: forward root path to index.xql :)
@@ -107,16 +113,17 @@ else if (contains($exist:path, "/author/")) then
     </dispatch>)
 else if(contains($exist:path, "genre") ) then
         if(request:get-parameter("orderBy",'') ) then
-        let $orderBy := request:get-parameter("orderBy", '')
-        let $type := $exist:resource
-        return doc:get-genre(<node />, map {"test" := "test"}, $type, $orderBy)
+             let $orderBy := request:get-parameter("orderBy", '')
+             let $type := $exist:resource
+             return 
+             index:collectGenre(<node />, map {"test" := "test"}, $type, $orderBy) 
         else (
         session:set-attribute("type",$exist:resource),
         session:set-attribute("orderBy","date"),
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <forward url="{$exist:controller}/page/genre.html" />
         <add-parameter name="type" value="{$exist:resource}" />
-        <add-parameter name="orderBy" value="alphab"/>
+        <add-parameter name="orderBy" value="date"/>
         <view>
             <forward url="{$exist:controller}/modules/view.xql"/>
         </view>
