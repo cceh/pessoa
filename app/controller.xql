@@ -295,7 +295,7 @@ else if(contains($exist:path, "download")) then
     else if (contains($exist:path, "events")) then
     let $language := $helpers:web-language (: request:get-parameter("lang", "pt"):)
     return 
-        transform:transform((collection("/db/apps/pessoa/data/doc"), collection("/db/apps/pessoa/data/pub"))//tei:TEI, doc("/db/apps/pessoa/xslt/events.xsl"), <parameters><param name="language" value="{$language}"/></parameters>)
+        transform:transform((collection("/db/apps/pessoa/data/doc"), collection("/db/apps/pessoa/data/pub"))//tei:TEI, doc("/db/apps/pessoa/xslt/events.xsl"), <parameters><param name="language" value="{$language}"/><param name="basepath" value="{$exist:controller}"></param></parameters>)
     
 else
     (: everything else is passed through :)

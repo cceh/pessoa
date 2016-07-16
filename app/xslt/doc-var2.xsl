@@ -42,7 +42,7 @@
                 <xsl:value-of select="substring-after(seg[2],'ou')"/>  
     </xsl:template>
     
-    <xsl:template match="add[@place='above'][@n='2']">
+    <xsl:template match="add[@place='above'][@n='2'][not(parent::seg)]">
         <xsl:apply-templates select="text()"/>
     </xsl:template>
     

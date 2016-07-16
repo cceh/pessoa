@@ -36,4 +36,4 @@ declare function local:remove-old-data(){
 local:mkcol("/db/system/config", $target),
 xdb:store-files-from-pattern(concat("/system/config", $target), $dir, "*.xconf"),:)
 (: delete old pubs and docs :)
- local:remove-old-data() 
+   local:remove-old-data()

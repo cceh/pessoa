@@ -1,5 +1,6 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xpath-default-namespace="http://www.tei-c.org/ns/1.0" version="2.0">
     <xsl:param name="language"/>
+    <xsl:param name="basepath"/>
     <xsl:output method="xml"/>
     <xsl:template match="/">
         <data>
@@ -35,10 +36,10 @@
                         <xsl:variable name="filename" select=".//idno[@type='filename']"/>
                         <xsl:choose>
                             <xsl:when test="starts-with($filename, 'MN') or starts-with($filename, 'BNP')">
-                                <xsl:value-of select="concat('../doc/', substring-before($filename,'.xml'))"/>
+                                <xsl:value-of select="concat($basepath, '/doc/', substring-before($filename,'.xml'))"/>
                             </xsl:when>
                             <xsl:otherwise>
-                                <xsl:value-of select="concat('../pub/', substring-before($filename,'.xml'))"/>
+                                <xsl:value-of select="concat($basepath, '/pub/', substring-before($filename,'.xml'))"/>
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:attribute>

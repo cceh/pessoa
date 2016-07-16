@@ -24,8 +24,8 @@
     </xsl:template>
     <!-- Ergänzung von Pessoa selbst
     (alternativ: nichts  - das Hinzugefügte)
-    hier: das Hinzugefügte nicht anzeigen -->
-    <xsl:template match="seg/add[@n='2']"/>
+    hier: das Hinzugefügte nicht anzeigen 
+    <xsl:template match="seg/add[@n='2']"/> -->
     
     <!-- Ersetzung von Pessoa selbst: etwas wird gelöscht, etwas anderes hinzugefügt
     hier: Anzeigen des Gelöschten (wenn es zwei Textstufen sind) -->
