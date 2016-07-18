@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 87A-4</title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Transcrição</resp>
+               <name>Pablo Javier Pérez López</name>
+            </respStmt>
+            <respStmt>
+               <resp>Transcrição</resp>
+               <name>Jorge Uribe</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Ana Leonor Branco</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_87-4.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc xml:id="M1" type="structured">
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 87A-4</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                        <rs type="genre" key="plano_editorial">Plano editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="fr en"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate when="1916-09" cert="medium">c. Setembro de 1916</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita, publicada em <hi rend="italic">Sensacionismo e Outros
+                     Ismos</hi> (2009, 79-80). </p>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic
+         url="bn-acpc-e-e3-87a-1-22_JPG_24-C-R0150/bn-acpc-e-e3-87a-1-22_0009_4_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <head><hi rend="underline"><rs type="journal" key="J12">Orpheu</rs> 3</hi></head>
+            <list>
+               <item>
+                  <rs type="text">Varios poemas</rs> – <rs type="person" key="P145">Camillo
+                     Pessanha</rs>. <note rend="right">10</note>
+               </item>
+               <item>
+                  <del rend="overstrike">
+                     <rs type="text">Apoz o rapto</rs> – <rs type="person"
+                        key="P59">Albino de Menezes</rs>.
+                  </del>
+                  <note rend="right">6</note>
+               </item>
+               <item>
+                  <del rend="overstrike">
+                     <rs type="text">Poemas de Pauis</rs> – <rs type="person"
+                        key="P30">Mario de Sá-Carneiro</rs>.
+                  </del>
+                  <note rend="right">10</note></item>
+               <item>
+                  <del rend="overstrike">
+                     <rs type="text">Scena de Odio</rs> – <rs type="person"
+                        key="P56">José de Almada Negreiros</rs>. 
+                     <note rend="right">18</note>
+                  </del>
+               </item>
+               <item>
+                  <del rend="overstrike">
+                     <supplied resp="PS" reason="omitted-in-original"
+                        ><note>o título não foi citado pelo autor</note></supplied> – <rs type="person"
+                        key="P144">Jose <del rend="overstrike">Coelho</del> Pacheco</rs>. 
+                     <note rend="right">8</note>
+                  </del>
+               </item>
+               <item>
+                  <rs type="text"><choice>
+                        <abbr type="name">Alg<am>.</am></abbr>
+                        <expan>Alg<ex>uns</ex></expan>
+                     </choice> Estados de Alma</rs> – <rs type="person" key="AdC" role="author"
+                     >Alvaro de Campos</rs>. <note rend="right">12</note>
+               </item>
+               <item>
+                  <supplied resp="PS" reason="omitted-in-original"/> – <rs type="person" key="RR"
+                     role="author">Ricardo Reis</rs>. <note rend="right">8</note>
+               </item>
+               <metamark rend="line" function="distinct"/>
+               <item>
+                  <supplied resp="PS" reason="omitted-in-original">
+                     <note>o título não foi citado
+                        pelo autor</note>
+                  </supplied> – <del rend="overstrike"><rs type="person" key="FP"
+                        role="author" style="a">Fernando Pessôa</rs>. <note rend="right">8</note>
+                  </del>
+               </item>
+            </list>
+            <list>
+               <item><rs type="person" key="P56">Almada</rs></item>
+               <item><rs type="person" key="RR" role="author"><choice>
+                        <abbr>R</abbr>
+                        <expan>R<ex>icardo</ex></expan>
+                     </choice> Reis</rs>.
+               </item>
+            </list>
+            <metamark rend="line" function="distinct"/>
+            <p>4 hors-texte duplos de<lb/> <rs type="person" key="P251">Amadeo de Souza Cardoso</rs></p>
+            <metamark rend="line" function="distinct"/>
+            <div rend="float-left">
+               <table>
+                  <head><hi rend="underline">As rosas amo...</hi></head>
+                  <row>
+                     <cell>7 <unclear reason="illegible">comp.</unclear></cell>
+                     <cell>48 <unclear reason="illegible">quadras</unclear></cell>
+                  </row>
+                  <row>
+                     <cell><gap reason="illegible" unit="word" extent="1"/></cell>
+                     <cell>9 <choice>
+                        <abbr><milestone rend="quote" function="ditto" /></abbr>
+                        <expan><unclear reason="illegible">quadras</unclear></expan>
+                     </choice>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell><gap reason="illegible" unit="word" extent="1"/></cell>
+                     <cell>14 <choice>
+                        <abbr><milestone rend="quote" function="ditto" /></abbr>
+                        <expan><unclear reason="illegible">quadras</unclear></expan>
+                     </choice></cell>
+                  </row>
+                  <row>
+                     <metamark rend="line" function="distinct"/>
+                     <cell></cell>
+                     <cell>71 <choice>
+                        <abbr><milestone rend="quote" function="ditto" /></abbr>
+                        <expan><unclear reason="illegible">quadras</unclear></expan>
+                     </choice></cell>
+                     <metamark rend="line" function="end"/>
+                  </row>
+               </table>
+            </div>
+            <div rend="float-right">
+               <table>
+                  <head>
+                     <hi rend="underlined"><choice>
+                        <abbr>C</abbr>
+                        <expan>C<ex>om</ex></expan>
+                     </choice>
+                        <choice>
+                           <abbr>frontisp</abbr>
+                           <expan>frontisp<ex>icio</ex></expan>
+                        </choice></hi>
+                  </head>
+                  <row>
+                     <cell><rs type="person" key="P145">Pessanha</rs></cell>
+                     <cell>– 10</cell>
+                  </row>
+                  <row>
+                     <cell><rs type="person" key="P59">Albino</rs></cell>
+                     <cell>– 6</cell>
+                  </row>
+                  <row>
+                     <cell><rs type="person" key="P30">Sá-Carneiro</rs></cell>
+                     <cell>– 10</cell>
+                  </row>
+                  <row>
+                     <cell><rs type="person" key="P144">José Pacheco</rs></cell>
+                     <cell>– 8</cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <subst>
+                           <del rend="overstrike" n="1"><rs type="person" key="AdC" role="author">Alvaro
+                              de <choice>
+                                 <abbr>C</abbr>
+                                 <expan>C<ex>ampos</ex></expan>
+                              </choice></rs></del>
+                           <add place="above" n="2"><rs type="person" key="P56">Almada</rs></add>
+                        </subst>
+                     </cell>
+                     <cell>– 18</cell>
+                  </row>
+                  <row>
+                     <cell><rs type="person" key="AdC" role="author"><choice>
+                        <abbr>A</abbr>
+                        <expan>A<ex>lvaro</ex></expan>
+                     </choice> de Campos</rs></cell>
+                     <cell>– 12</cell>
+                  </row>
+                  <row>
+                     <cell><rs type="person" key="FP" role="author" style="b"><choice>
+                        <abbr>F</abbr>
+                        <expan>F<ex>ernando</ex></expan>
+                     </choice> Pessoa</rs></cell>
+                     <cell>
+                        – 8 ou 16
+                        <metamark rend="line" function="end"/>
+                     </cell>
+                  </row>
+               </table>
+            </div>
+            <div rend="float-right border">
+               <list>
+                  <item>64</item>
+                  <item>16</item>
+               </list>
+               <metamark rend="line" function="distinct"/>
+               <p>either 8p.<lb/> for me<lb/> or <supplied resp="PS" reason="omitted-in-original"/></p>
+            </div>
+         </div>
+      </body>
+   </text>
+</TEI>
