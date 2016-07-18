@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
@@ -23,13 +24,10 @@
                <resp>Codificação</resp>
                <name>Ana Leonor Branco</name>
             </respStmt>
-            <respStmt>
-               <resp>Codificação</resp>
-               <name>Sviatoslav Drach</name>
-            </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
@@ -51,7 +49,7 @@
                      <note type="genre">
                         <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
-                     <textLang mainLang="pt" otherLangs=""/>
+                     <textLang mainLang="en" otherLangs="pt"/>
                   </msItemStruct>
                </msContents>
                <history>
@@ -66,25 +64,30 @@
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0024_12_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0024_12_t24-C-R0150.jpg"
+      />
    </facsimile>
    <text>
       <body>
          <div>
-            
-            1. Theory of Political Suffrage.
-            2. An Essay on Initiation.
-            3. The Problem of an International Language.
-            4. The Evolution of the State.
-            5. Economic Politics.
-            6. The Basis of Shorthand.
-            7. Telegraphic Codes.
-            8. Sketch of a Geometry...
-            
-            
-            1. Extremismo.
-            2. Lusco-Fusco.
-            3. A Tenda Litteraria.
+            <list>
+               <item><label>1.</label> <rs type="text">Theory of Political Suffrage</rs>.</item>
+               <item><label>2.</label> <rs type="text">An Essay on Initiation</rs>.</item>
+               <item><label>3.</label> <rs type="text">The Problem of an International Language</rs>.</item>
+               <item><label>4.</label> <rs type="text">The Evolution of the State</rs>.</item>
+               <item><label>5.</label> <rs type="text">Economic Politics</rs>.</item>
+               <item><label>6.</label> <rs type="text">The Basis of Shorthand</rs>.</item>
+               <item><label>7.</label> <rs type="text">Telegraphic Codes</rs>.</item>
+               <item><label>8.</label> <rs type="text">Sketch of a Geometry...</rs></item>
+            </list>
+         </div>
+         <div rend="right">
+            <list>
+               <item><label>1.</label> <rs type="text">Extremismo</rs>.</item>
+               <item><label>2.</label> <rs type="text">Lusco-Fusco</rs>.</item>
+               <item><label>3.</label> <rs type="text">A Tenda Litteraria</rs>.</item>
+            </list>
          </div>
       </body>
    </text>

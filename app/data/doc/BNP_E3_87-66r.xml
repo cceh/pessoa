@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
@@ -56,7 +57,7 @@
                      <note type="genre">
                         <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
-                     <textLang mainLang="pt" otherLangs=""/>
+                     <textLang mainLang="pt"/>
                   </msItemStruct>
                </msContents>
                <history>
@@ -69,9 +70,9 @@
             </msDesc>
             <msDesc corresp="#M1" type="prose">
                <msIdentifier/>
-               <p> Lista manuscrita em papel com marca de água «British Bankpost»<hi rend="italic"
-                  > </hi>e timbre «F. A. Pessoa | R. do Ouro, 87, 2.º | Lisboa, publicada em <hi
-                     rend="italic">Obras de António Mora</hi> (2002, 167). </p>
+               <p> Lista manuscrita em papel com marca de água «British Bankpost» e timbre «F. A.
+                  Pessoa | R. do Ouro, 87, 2.º | Lisboa, publicada em <hi rend="italic">Obras de
+                     António Mora</hi> (2002, 167). </p>
             </msDesc>
          </sourceDesc>
       </fileDesc>
@@ -82,10 +83,55 @@
    </facsimile>
    <text>
       <body>
-         <div> Athena Minerva – 1 1. O Neo-Paganismo Portuguez (introducção á Revista e á obra de
-            Caeiro) – A[ntonio] Mora /ou/ R[icardo]Reis 2. Caeiro. 3. F[ernando] Pessoa – O
-            Principio Aristocratico. 4. J. Craveiro – Commentarios. 5. Reforma Ortographica
-            _________ </div>
+         <div>
+            <head>
+               <rs type="person" key="P96">Athena</rs><lb/> <rs type="person" key="P249">Minerva</rs> – 1 
+               <metamark rend="line" function="distinct"/>
+            </head>
+            <list>
+               <item>
+                  <label>1.</label>
+                  <rs type="text">O Neo-Paganismo Portuguez<lb/> (introducção á Revista e á obra de<lb/>
+                     <rs type="person" key="AC" role="topic">Caeiro</rs>)</rs> – 
+                  <hi rend="underline">
+                     <rs type="person" key="P1" style="b"><choice>
+                           <abbr>A</abbr>
+                           <expan>A<ex>ntonio</ex></expan>
+                        </choice> Mora</rs>
+                     <choice>
+                        <seg n="1" rend="circled">ou</seg>
+                        <seg n="2" rend="below" type="addition">+</seg>
+                     </choice>
+                     <rs type="person" key="RR" role="author"><choice>
+                           <abbr>R<am>.</am></abbr>
+                           <expan>R<ex>icardo</ex></expan>
+                        </choice> Reis</rs>
+                  </hi>
+               </item>
+               <item>
+                  <label>2.</label>
+                  <rs type="person" key="AC" role="author"><hi rend="underline">Caeiro</hi></rs>.
+               </item>
+               <item>
+                  <label>3.</label>
+                  <rs type="person" key="FP" role="author" style="b"><hi rend="underline"><choice>
+                           <abbr>F</abbr>
+                           <expan>F<ex>ernando</ex></expan>
+                        </choice> Pessoa</hi></rs> – <rs type="text">O Principio
+                  Aristocratico</rs>.
+               </item>
+               <item>
+                  <label>4.</label>
+                  <rs type="person" key="P250"><hi rend="underline">J. Craveiro</hi></rs> –
+                     <rs type="text">Commentarios</rs>.
+               </item>
+               <item>
+                  <label>5.</label>
+                  <rs type="text">Reforma Ortographica</rs>
+               </item>
+               <metamark rend="line" function="end"/>
+            </list>
+         </div>
       </body>
    </text>
 </TEI>
