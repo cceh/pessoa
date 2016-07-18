@@ -201,7 +201,9 @@ $(document).ready(function(){
      });
  };
  function calcFacsimilie() {
-            var height = $("#img-div").height();
+            var height_img = $("#img-div").height();
+            var height_text = $("#text-div").height();
+             var height = height_img < hiehgt_text ? height_img : height_text;
             $("#text-div").css({"height" : height});            
         };
  

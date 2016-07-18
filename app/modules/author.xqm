@@ -4,6 +4,7 @@ module namespace author="http://localhost:8080/exist/apps/pessoa/author";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
+import module namespace search="http://localhost:8080/exist/apps/pessoa/search" at "search.xqm";
 
 
 import module namespace page="http://localhost:8080/exist/apps/pessoa/page" at "page.xqm";
@@ -41,6 +42,73 @@ declare function author:getTabs($node as node(), $model as map(*), $textType as 
     else()                   
 };
 
+
+declare function author:getTabContent($node as node(), $model as map(*), $textType, $author, $orderBy) {
+    let $authorKey := if($author = "pessoa") then "FP" else if($author ="reis") then "RR" else if($author ="caeiro") then "AC" else if($author="campos") then "AdC" else ()
+    let $folders :=  switch($textType) 
+                            case "all" return ("doc","pub")
+                            case "documents" return "doc"
+                            case "publications" return "pub"
+                            default return ()
+    let $items := for $fold in $folders                              
+                                let $name := if($fold eq "doc") then ("person","role") else "person"
+                                let $case := if($fold eq "doc") then ("eq","eq") else "eq"
+                                let $content := if($fold eq "doc") then ($authorKey,"author") else $authorKey
+                                let $db := search:Search-MultiStats(collection(concat("/db/apps/pessoa/data/",$fold,"/")),$name,$case,$content)
+                                 for $doc in $db 
+                                        let $date := if($fold ="doc") then (
+                                                                if(exists($doc//tei:origDate/@when)) then $doc//tei:origDate/@when/data(.)
+                                                                else if(exists($doc//tei:origDate/@notBefore)) then $doc//tei:origDate/@notBefore/data(.)
+                                                                else if(exists($doc//tei:origDate/@from)) then $doc//tei:origDate/@from/data(.)
+                                                                else "?"
+                                                                )
+                                                            else (
+                                                                if(exists($doc//tei:imprint/tei:date/@when)) then $doc//tei:imprint/tei:date/@when/data(.)
+                                                                else if(exists($doc//tei:imprint/tei:date/@notBefore)) then $doc//tei:imprint/tei:date/@notBefore/data(.)
+                                                                else if(exists($doc//tei:imprint/tei:date/@from)) then $doc//tei:imprint/tei:date/@from/data(.)
+                                                                else "?"
+                                                            )
+                                        let $date :=    if($date eq "?") then "?"  
+                                                                else ( if(contains($date,"-")) then substring-before($date,"-") else $date )                                                   
+                                        let $refer := substring-before(root($doc)/util:document-name(.),".xml") 
+                                        let $first := if($fold eq "doc") then (
+                                                            if(substring($doc//tei:titleStmt/tei:title/data(.),1,1) eq "B") then "BNP"
+                                                            else "MN"
+                                                            )
+                                                            else substring($doc//tei:titleStmt/tei:title/data(.),1,1)                     
+                                       let $crit := if ($orderBy = "alphab") then $first else $date
+                                      order by $crit
+                                      return <item folder="{$fold}" doc="{$refer}"  title="{$doc//tei:titleStmt/tei:title/data(.)}" crit="{$crit}"/>   
+                    let $criteria := for $item in $items return $item/@crit/data(.)                           
+                     let $criteria := distinct-values($criteria)
+                     
+                     let $navigation :=   <div class="navigation"> 
+                                                             {for $crit at $i in $criteria
+                                                                 return if ($i = count($criteria)) then
+                                                                     <a href="#{$crit}" class="authorlink">{$crit}</a>
+                                                                     else
+                                                                     (<a href="#{$crit}" class="authorlink">{$crit}</a>,<span>|</span>)
+                                                             }  
+                                                             <br/>
+                                                             <br/>
+                                                         </div>                         
+                     let $list :=   <div>
+                                            {for $crit in $criteria 
+                                                return (<div class="sub_Nav"><h2 id="{$crit}">{$crit}</h2></div>,
+                                                        for $item in $items where $item/@crit eq $crit
+                                                        return <div class="doctabelcontent">
+                                                        <a href="{$helpers:app-root}/{$item/@folder/data(.)}/{$item/@doc/data(.)}">
+                                                            {$item/@title/data(.)}
+                                                        </a>
+                                                        </div>
+                                                )
+                                            }       
+                                         </div>                         
+                    return ($navigation,$list)
+};
+
+
+(:
 declare function author:getTabContent($node as node(), $model as map(*), $textType, $author, $orderBy){
     if ($textType = "all") then
         <ul id="tab">
@@ -174,30 +242,12 @@ declare function author:listPublication($pub, $authorKey){
     let $ref := $pub//tei:teiHeader/tei:fileDesc/tei:publicationStmt/tei:idno[@type="filename"]/data(.)
     return  if($author = $authorKey) then  
        (
-       (:<div><a href="{$helpers:app-root}/pub/{replace(replace(replace($title," ","_"),"«",""),"»","")}">{$title}</a></div>, <br />
-       :)
+       (\:<div><a href="{$helpers:app-root}/pub/{replace(replace(replace($title," ","_"),"«",""),"»","")}">{$title}</a></div>, <br />
+       :\)
        <div><a href="{$helpers:app-root}/pub/{substring-before($ref,".xml")}">{$title}</a></div>, <br />
        )      
       
     else()
-};
-
-declare function author:getYearOrTitleOfPublication($pub, $orderBy){
-    let $when := ($pub//tei:date)[1]/@when/data(.)
-    let $from := ($pub//tei:date)[1]/@from/data(.)
-    let $notBefore := ($pub//tei:date)[1]/@notBefore/data(.)
-    let $notAfter := ($pub//tei:date)[1]/@notAfter/data(.)
-    let $title :=  $pub//tei:teiHeader/tei:fileDesc/tei:titleStmt/(tei:title)[not(@*)]
-    return
-    if($orderBy="date") then
-        if($when) then $when
-            else if($from) then $from
-            else if($notBefore) then $notBefore
-            else if($notAfter) then $notAfter
-            else ()
-        else if($orderBy ="alphab") then
-      $title[1]/data(.)
-    else()  
 };
 
 declare function author:listDocuments($node as node(), $model as map(*), $author, $orderBy){
@@ -255,34 +305,19 @@ declare function author:listDocumentByYear($doc, $authorKey){
         fn:concat($mentions,page:singleAttribute($lists, "roles", $role),",")
         else
         fn:concat($mentions,page:singleAttribute($lists,"roles",$role))
-       (: if($i > 1) then 
+       (\: if($i > 1) then 
         fn:concat($text,if($role="author") then ", autor" else if($role ="translator") then ", traductor" else if($role ="topic") then ", tema" else ", editor" )
         else
         fn:concat($text,if($role="author") then "autor" else if($role ="translator") then "traductor" else if($role ="topic") then "tema" else "editor" )
-        :)
+        :\)
    return  
     if(count($roles) > 0) then    
        (<div><a href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{($doc//tei:title)[1]/data(.)} </a>  <span class="mencionadoComo"> {concat(" (",page:singleAttribute($lists,"roles", "mentioned-as"))}: {$mentions})</span></div>, <br />)    
     else ()
   
 };
+:)
 
-declare function author:getYearOrTitleOfDocument($doc, $orderBy){
-    let $when := $doc//tei:origDate/@when/data(.)
-    let $from := $doc//tei:origDate/@from/data(.)
-    let $notBefore := $doc//tei:origDate/@notBefore/data(.)
-    let $notAfter := $doc//tei:origDate/@notAfter/data(.)
-    let $signature :=  author:formatDocID(($doc//tei:idno)[1]/data(.))
-    return 
-    if($orderBy = "date") then
-        if($when) then $when
-        else if($from) then $from
-        else if($notBefore) then $notBefore
-        else if($notAfter) then $notAfter
-        else ()
-        else if($orderBy = "alphab") then $signature
-    else() 
-};
 
 declare function author:formatDocID($id){
    let $id := $id
@@ -318,6 +353,40 @@ declare function author:getYearOrTitle($text, $orderBy){
     else ()
 };
 
+
+declare function author:getYearOrTitleOfDocument($doc, $orderBy){
+    let $when := $doc//tei:origDate/@when/data(.)
+    let $from := $doc//tei:origDate/@from/data(.)
+    let $notBefore := $doc//tei:origDate/@notBefore/data(.)
+    let $notAfter := $doc//tei:origDate/@notAfter/data(.)
+    let $signature :=  author:formatDocID(($doc//tei:idno)[1]/data(.))
+    return 
+    if($orderBy = "date") then
+        if($when) then $when
+        else if($from) then $from
+        else if($notBefore) then $notBefore
+        else if($notAfter) then $notAfter
+        else ()
+        else if($orderBy = "alphab") then $signature
+    else() 
+};
+declare function author:getYearOrTitleOfPublication($pub, $orderBy){
+    let $when := ($pub//tei:date)[1]/@when/data(.)
+    let $from := ($pub//tei:date)[1]/@from/data(.)
+    let $notBefore := ($pub//tei:date)[1]/@notBefore/data(.)
+    let $notAfter := ($pub//tei:date)[1]/@notAfter/data(.)
+    let $title :=  $pub//tei:teiHeader/tei:fileDesc/tei:titleStmt/(tei:title)[not(@*)]
+    return
+    if($orderBy="date") then
+        if($when) then $when
+            else if($from) then $from
+            else if($notBefore) then $notBefore
+            else if($notAfter) then $notAfter
+            else ()
+        else if($orderBy ="alphab") then
+      $title[1]/data(.)
+    else()  
+};
 declare function author:getrecorder($node as node(), $model as map(*)){
 let $script := <script type="text/javascript">
         

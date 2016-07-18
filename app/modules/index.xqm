@@ -94,14 +94,7 @@ declare function index:collectGenre($node as node(), $model as map(*),$type as x
                             }       
                          </div>                         
     return ($navigation,$list)
-    
-    (:
-    map {
-    "db" := $sort,
-    "criteria" := $criteria,
-    "temp" := <h3>Test</h3>
-    }
-    :)
+  
 };
 
 

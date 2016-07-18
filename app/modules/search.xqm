@@ -350,24 +350,6 @@ declare %templates:wrap function search:your_search($node as node(), $model as m
                             case("from") return if($param != "") then (page:singleElement_xquery("search",$term),$param) else ()
                             case("to") return if($param != "") then (page:singleElement_xquery("search",$term),$param) else ()
                             default return (page:singleElement_xquery("search",$term), page:singleElement_xquery("search",$param))
-       
-     (:  let $case := substring-after($item,"=")
-       :)
-       (:
-       let $term := if (exists( page:singleElement_xquery("search",substring-before(substring-after($item,"/"),"=")))) then  page:singleElement_xquery("search",substring-before(substring-after($item,"/"),"="))
-                             else if(contains($item,"lang")) then  if( contains($item,"lang_ao") and count(search:get-parameters("lang")) != 3) then page:singleElement_xquery("search","language") else ()
-                             else if (contains($item,"role")) then page:singleElement_xquery("roles","mentioned-as") 
-                             else if (contains($item, "person")) then page:singleElement_xquery("search","author") 
-                             else if (contains($item,"release")) then page:singleElement_xquery("search","publicado") 
-                            else $item
-       let $param := if (exists( page:singleElement_xquery("search",substring-after($item,"=")) )) then page:singleElement_xquery("search",substring-after($item,"="))
-                                else if (contains($item,"role")) then page:singleElement_xquery("roles",substring-after($item,"="))
-                                else if (contains($item, "genre")) then page:singleElementList_xquery("genres",substring-after($item,"="))
-                                else if (contains($item,"lang=")) then (
-                                   if(count(search:get-parameters("lang")) != 3) then page:singleElementList_xquery("language",substring-after($item,"="))else () )
-                                else if(contains($item,"lang_ao=or") or contains($item,"lang_ao=and")  ) then if(count(search:get-parameters("lang")) != 3) then  page:singleElement_xquery("search",substring-after($item,"=")) else ()
-                                else if (contains($item,"person")) then doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson[@type="authors"]/tei:person[@xml:id=substring-after($item,"=")]/tei:persName/data(.)   
-                            else substring-after($item,"=") :)
           let $result := if($build != "") then concat("<span class='search_your_list'>",$build[1], ": ",$build[2] ,"</span>") else ()
        return  if($result != "") then util:eval($result)  else () )
        else ()
@@ -528,4 +510,15 @@ declare function search:Search_FieldStartsWith($type as xs:string, $letter as xs
         let $range := concat("//range:field-starts-with(('",$type,"'),'",$letter,"')")
          let $build := concat("$db",$range)
         return util:eval($build)
+};
+
+declare function search:Search-MultiStats($db as node()*, $name as xs:string*, $case as xs:string*,$content as xs:string*) as node()* {
+    let $name := concat('("',string-join($name,'","'),'")')
+    let $case := concat('("',string-join($case,'","'),'")')
+    let $content := concat('"',string-join($content,'","'),'"')
+ 
+    let $search-funk := concat('//range:field(',$name,',',$case,',',$content,')')
+    let $search-build := concat("$db",$search-funk)
+    return util:eval($search-build)
+
 };
