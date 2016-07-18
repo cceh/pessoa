@@ -18,8 +18,10 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 (: declare variable $ms:id := request:get-parameter("id", ()); :)
 
 declare function doc:get-title($node as node(), $model as map(*), $id as xs:string) as node()+{
-    let $xml := doc:get-xml($id)
-    let $title := <h2>{substring-before($xml//tei:title/data(.),"/E3"),substring-after($xml//tei:title/data(.),"/E3")}</h2>
+    let $xml := doc:get-xml($id)//tei:fileDesc
+    let $stylesheet := doc("/db/apps/pessoa/xslt/doc.xsl")
+    let $title :=  <h2>{for $elem in $xml//tei:title/node() return if(exists($elem/node())) then <span class="doc_superscript">{$elem/node()/data(.)}</span> else $elem}</h2>
+ (:   let $title := <h2>{substring-before($xml//tei:title/data(.),"/E3"),substring-after($xml//tei:title/data(.),"/E3")}</h2>:)
     let $date := <p id="titledate">{$xml//tei:origDate/data(.)}</p>
     return <div>{$title} {$date}</div>
 };

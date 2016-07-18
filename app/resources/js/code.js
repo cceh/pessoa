@@ -186,9 +186,8 @@ $(document).ready(function(){
                $("#nota_top").removeClass("selected");
                 $(".editorial-note").hide("slow");
                 $("#nota_bottom").hide();
-
-
              }
+             calcFacsimilie();
            });
            
            
@@ -203,7 +202,7 @@ $(document).ready(function(){
  function calcFacsimilie() {
             var height_img = $("#img-div").height();
             var height_text = $("#text-div").height();
-             var height = height_img < hiehgt_text ? height_img : height_text;
+             var height = height_img > height_text ? height_img : height_text;
             $("#text-div").css({"height" : height});            
         };
  
