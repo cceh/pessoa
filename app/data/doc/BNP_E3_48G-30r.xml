@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 48G-30<hi rend="superscript">r</hi>
+            </title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Transcrição</resp>
+               <name>Filipa Freitas</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Ana Leonor Branco</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_48G-30r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc xml:id="M1" type="structured">
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 48G-30r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                        <rs type="genre" key="nota_editorial">Nota editorial</rs>
+                     </note>
+                     <textLang mainLang="en"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate when="1920" cert="medium">c. 1920</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. </p>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic
+         url="bn-acpc-e-e3-48g-1-37_JPG_24-C-R0150/bn-acpc-e-e3-48g-1-37_0059_30_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <head>
+               <hi rend="underline">The Portuguese Review</hi>
+            </head>
+            <ab><metamark function="assignment" rend="line" target="#I1"/><hi rend="underline">Quarterly</hi></ab>
+            <note rend="right">type: <hi rend="underline">Mercure de France</hi>.</note>
+            <list>
+               <item xml:id="I1">
+                  <label>1.</label>
+               </item>
+               <item>
+                  <label>2.</label>
+                  <hi rend="underline">Unillustrated</hi>. (or <choice>
+                     <abbr>ill<am>.</am></abbr>
+                     <expan>ill<ex>ustrated</ex></expan>
+                  </choice> by hors-textes).
+               </item>
+               <item>
+                  <label>3.</label>
+                  <hi rend="underline"><choice>
+                        <abbr>N<am>.</am></abbr>
+                        <expan>N<ex>umber</ex></expan>
+                     </choice> of pages</hi>: <del rend="overstrike" n="2">least</del> Text: - least 128; most 160. (at least, 1st.
+                  Volume).<lb/> Adverts: - from 32 to 80.
+               </item>
+               <item>
+                  <label>4.</label>
+                  <hi rend="underline">Issued in <rs type="place">Lisbon</rs>; printed in <rs
+                        type="place">London</rs></hi> (with two <unclear reason="illegible"
+                     >water</unclear><supplied resp="PS" reason="omitted-in-original"
+                     >colours</supplied>).
+               </item>
+               <item>
+                  <label>5.</label>
+                  <hi rend="underline">Prices to be adjusted afterwards</hi>.
+               </item>
+            </list>
+            <metamark rend="line" function="distinct"/>
+            <list>
+               <head><hi rend="underline">1st. number:</hi></head>
+               <item>
+                  <label>1.</label> Introduction.
+               </item>
+               <item>
+                  <label>2.</label> “<rs type="text">Inscriptions</rs>” – <rs type="person"
+                     key="FP" role="author" style="b"><choice>
+                        <abbr>F<am>.</am></abbr>
+                        <expan>F<ex>ernando</ex></expan>
+                     </choice> Pessoa</rs>. or “<rs type="text">Elegy</rs>” or “<rs type="text"
+                     >Poems</rs>.”
+               </item>
+               <item>
+                  <label>3.</label>
+                  <rs type="text">The Strange Death of <rs type="person" key="P261">
+                     <choice>
+                           <abbr>Prof<am>.</am></abbr>
+                           <expan>Prof<ex>essor</ex></expan>
+                        </choice> Antena</rs></rs> – <rs type="person" key="P30">Mario de
+                     Sá-Carneiro</rs>.
+               </item>
+               <item>
+                  <label>4.</label> <rs type="text">Theory of the <gap reason="illegible" unit="word"
+                     extent="3"/></rs>
+               </item>
+               <item>
+                  <label>5.</label>
+                  <rs type="text">An Essay on Political Suffrage</rs>.
+               </item>
+               <item>
+                  <label>6.</label>
+                  <rs type="person" key="AdC">Alvaro de Campos</rs>: <rs type="text"
+                     >Ultimatum</rs>.
+               </item>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>

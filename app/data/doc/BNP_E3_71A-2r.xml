@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
@@ -56,7 +57,7 @@
                      <note type="genre">
                         <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
-                     <textLang mainLang="pt" otherLangs=""/>
+                     <textLang mainLang="pt"/>
                   </msItemStruct>
                </msContents>
                <history>
@@ -81,10 +82,47 @@
    </facsimile>
    <text>
       <body>
-         <div> O Regresso dos Deuses contem: 1. O Regresso dos deuses. 2. A nova Revelação – Alberto
-            Caeiro. 3. A phase neo-pagã – Ricardo Reis. 4. Milton superior a Shakespeare. 5. Os
-            doentes – Saudosismo. Interseccionismo. Sensacionismo. 6. Principios fundamentaes (as
-            theorias de “Na c[asa] de s[aude] de Cascaes”) [...] </div>
+         <div>
+            <head><hi rend="underline">O Regresso dos Deuses</hi></head>
+            <ab rend="right">contem:</ab>
+            <list>
+               <item>
+                  <label>1.</label>
+                  <rs type="text"><hi rend="underline">O Regresso dos deuses</hi></rs>.
+               </item>
+               <item>
+                  <label>2.</label>
+                  <rs type="text"><hi rend="underline">A nova Revelação</hi></rs> – <rs
+                     type="person" key="AC" role="author">Alberto Caeiro</rs>.
+               </item>
+               <item>
+                  <label>3.</label>
+                  <rs type="text"><hi rend="underline">A phase neo-pagã</hi></rs> – <rs
+                     type="person" key="RR" role="author">Ricardo Reis</rs>.
+               </item>
+               <item>
+                  <label>4.</label>
+                  <rs type="text"><hi rend="underline"><rs type="person" key="P84">Milton</rs>
+                        superior a <rs type="person" key="P65">Shakespeare</rs></hi></rs>
+               </item>
+               <item>
+                  <label>5.</label>
+                  <rs type="text"><hi rend="underline">Os doentes</hi> – Saudosismo.
+                     Interseccionismo.<lb/> Sensacionismo</rs>.
+               </item>
+               <item>
+                  <label>6.</label>
+                  <rs type="text">Principios fundamentaes (as theorias<lb/> de “Na <choice>
+                        <abbr>c<am>.</am></abbr>
+                        <expan>c<ex>asa</ex></expan>
+                     </choice> de <choice>
+                        <abbr>s<am>.</am></abbr>
+                        <expan>s<ex>aude</ex></expan>
+                     </choice> de Cascaes”)</rs>.
+               </item>
+            </list>
+            <gap reason="selection" unit="line" extent="40"/>
+         </div>
       </body>
    </text>
 </TEI>
