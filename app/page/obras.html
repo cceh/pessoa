@@ -74,24 +74,23 @@
                                   
                                         <wrap data-template="helpers:invisibleEach" data-template-from="refs" data-template-to="ref" >
                                             <span class="Obras-span"><a class="Obras-Ref-FIrst" data-template="obras:PrintRef"  data-template-ref="ref"/>,</span>
-                                            <i data-template="helpers:getValue" data-template-get="ref" />
                                         </wrap>           
                                         <span class="Obras-last"><a class="Obras-Ref-FIrst" data-template="obras:PrintRef"  data-template-ref="lastref" /></span>     
-                                        <i data-template="helpers:getValue" data-template-get="lastref" />
                                     </td>
                                 </tr>
-                                <!--<wrap data-template="helpers:invisibleEach" data-template-from="subworks" data-template-to="Sub">
+                                <wrap data-template="helpers:invisibleEach" data-template-from="subworks" data-template-to="Sub">
                                     <wrap data-template="obras:AnalyticObras" data-template-ref="Sub">
                                         <tr>
                                             <td class="Obras-Sub">
                                                 <i data-template="helpers:getValue" data-template-get="title" />
                                             </td>
                                             <td>                                     
-                                                <a class="Obras-Ref-FIrst" data-template="obras:PrintSubRef"  data-template-ref="XMLID" data-template-dir="pub"/>
                                                 <wrap data-template="helpers:invisibleEach" data-template-from="refs" data-template-to="ref" >
-                                                    <span class="Obras-span"><a class="Obras-Ref-FIrst" data-template="obras:PrintRef"  data-template-ref="ref" />,</span>
+                                                    <span class="Obras-span"><a class="Obras-Ref-FIrst" data-template="obras:PrintSubRef"  data-template-ref="ref"/>,</span>
+                                                    <i data-template="helpers:getValue" data-template-get="ref"/>
                                                 </wrap>           
-                                                <span class="Obras-last"><a class="Obras-Ref-FIrst" data-template="obras:PrintRef"  data-template-ref="lastref" /></span>                                               
+                                                <span class="Obras-last"><a class="Obras-Ref-FIrst" data-template="obras:PrintSubRef"  data-template-ref="lastref" /></span> 
+                                                <i data-template="helpers:getValue" data-template-get="lastref"/>
                                             </td>
                                         </tr>
                                         <wrap data-template="helpers:invisibleEach" data-template-from="subworks" data-template-to="Third">
@@ -102,15 +101,17 @@
                                                     </td>
                                                     <td>                                                       
                                                         <wrap data-template="helpers:invisibleEach" data-template-from="refs" data-template-to="ref" >
-                                                            <span class="Obras-span"><a class="Obras-Ref-FIrst" data-template="obras:PrintRef"  data-template-ref="ref" data-template-dir="doc"/>,</span>
+                                                            <span class="Obras-span"><a class="Obras-Ref-FIrst" data-template="obras:PrintSubRef"  data-template-ref="ref"/>,</span>
+                                                            <i data-template="helpers:getValue" data-template-get="ref"/>
                                                         </wrap>           
-                                                        <span class="Obras-last"><a class="Obras-Ref-FIrst" data-template="obras:PrintRef"  data-template-ref="lastref" data-template-dir="doc"/></span>
+                                                        <i data-template="helpers:getValue" data-template-get="lastref"/>
+                                                        <span class="Obras-last"><a class="Obras-Ref-FIrst" data-template="obras:PrintSubRef"  data-template-ref="lastref" /></span>
                                                     </td>
                                                 </tr>
                                             </wrap>
                                         </wrap>
                                     </wrap>
-                                </wrap>-->
+                                </wrap>
                             </wrap>
                         </wrap>
                     </tbody>               
