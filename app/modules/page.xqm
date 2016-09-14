@@ -73,10 +73,21 @@ for $target in $type
     let $name := if($helpers:web-language = "pt") then $doc//tei:term[@xml:lang = $helpers:web-language and @xml:id= $target]
                                   else $doc//tei:term[@xml:lang = $helpers:web-language and @corresp= concat("#",$target)]
     
-  return <li class="mainNavTab" id="navMain_{$target}">{$name/data(.)}</li>
+  return <li class="mainNavTab {page:HighlightPage($target)}" id="navMain_{$target}">{$name/data(.)}</li>
 };
 
 
+declare function page:HighlightPage($target) {
+  let $pagename :=   switch($target) 
+                                    case "autores" return "author"
+                                    case "publicacoes" return "pub"
+                                    case "obras" return "obras"
+                                    case "genero" return "genre"
+                                    case "index" return ("bibliografia","persons","texts","journals")
+                                    case "projeto" return ("about","team","documentation","download")
+                                   default return "nothin"
+   return for $page in $pagename  where contains($helpers:request-path,$page) return "highlight"                                
+};
 
 declare function page:createSubNav() as node()* {
     let $lists := doc("/db/apps/pessoa/data/lists.xml")
