@@ -94,10 +94,16 @@ declare function obras:SearchObras($node as node(), $model as map(*),$id as xs:s
     let $list := doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="works"]/tei:item[@xml:id=$xmlid]
     
     let $AltTitle := $list/tei:title[@type="alt"]/data(.)     
+    let $docs := obras:SortByDate(obras:buildSearch($xmlid,"doc"))
+    let $ref_amount := count($docs)
+    let $ADocs := for $ref in (1 to $ref_amount -1) return $docs[$ref]     
+    let $BDocs := $docs[$ref_amount]
+    
     return map {
         "MainTitle" := $list/tei:title[1]/data(.),
         "AltTitle" := string-join($AltTitle,", "),
-        "FirstRef" := obras:SortByDate(obras:buildSearch($xmlid,"doc")),
+        "FirstRef" := $ADocs,
+        "LastRef" := $BDocs,
         "listEntry" := $list,
         "Works" := $list/tei:list/tei:item,
         "xmlid" := $xmlid        
