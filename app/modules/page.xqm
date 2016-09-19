@@ -48,15 +48,6 @@ let $search := <div class="container-4" id="searchbox" style="display:none">
     </script>
     return ($search,$clear,$switchlang, search:search-function())
 };
-(:
-declare function page:search_SwitchLange() as xs:string* {
-
-let $return := if(  request:get-parameter("search",'') = "simple") then 
-       concat( "$('#result').load(' ",$helpers:request-path, "?term=",request:get-parameter("term",''),"&amp;search=simple&amp;orderBy=alphab');")
-       else concat( "$('#result').load('",$helpers:request-path,"?orderBy=alphab",search:mergeParameters(),"');")
-       return $return
-};
-:)
 
 declare function page:search_SwitchLang() as xs:string {
 let $return := 
