@@ -48,15 +48,6 @@ let $search := <div class="container-4" id="searchbox" style="display:none">
     </script>
     return ($search,$clear,$switchlang, search:search-function())
 };
-(:
-declare function page:search_SwitchLange() as xs:string* {
-
-let $return := if(  request:get-parameter("search",'') = "simple") then 
-       concat( "$('#result').load(' ",$helpers:request-path, "?term=",request:get-parameter("term",''),"&amp;search=simple&amp;orderBy=alphab');")
-       else concat( "$('#result').load('",$helpers:request-path,"?orderBy=alphab",search:mergeParameters(),"');")
-       return $return
-};
-:)
 
 declare function page:search_SwitchLang() as xs:string {
 let $return := 
@@ -73,10 +64,21 @@ for $target in $type
     let $name := if($helpers:web-language = "pt") then $doc//tei:term[@xml:lang = $helpers:web-language and @xml:id= $target]
                                   else $doc//tei:term[@xml:lang = $helpers:web-language and @corresp= concat("#",$target)]
     
-  return <li class="mainNavTab" id="navMain_{$target}">{$name/data(.)}</li>
+  return <li class="mainNavTab {page:HighlightPage($target)}" id="navMain_{$target}">{$name/data(.)}</li>
 };
 
 
+declare function page:HighlightPage($target) {
+  let $pagename :=   switch($target) 
+                                    case "autores" return "author"
+                                    case "publicacoes" return "pub"
+                                    case "obras" return "obras"
+                                    case "genero" return "genre"
+                                    case "index" return ("bibliografia","persons","texts","journals")
+                                    case "projeto" return ("about","team","documentation","download")
+                                   default return "nothin"
+   return for $page in $pagename  where contains($helpers:request-path,$page) return "highlight"                                
+};
 
 declare function page:createSubNav() as node()* {
     let $lists := doc("/db/apps/pessoa/data/lists.xml")
