@@ -75,6 +75,7 @@ declare function page:HighlightPage($target) {
                                     case "obras" return "obras"
                                     case "genero" return "genre"
                                     case "index" return ("bibliografia","persons","texts","journals")
+                                    case "documentos" return "doc"
                                     case "projeto" return ("about","team","documentation","download")
                                    default return "nothin"
    return for $page in $pagename  where contains($helpers:request-path,$page) return "highlight"                                
