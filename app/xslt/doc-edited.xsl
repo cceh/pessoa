@@ -15,8 +15,6 @@
         <xsl:apply-templates/>
     </xsl:template>
     
-    <!-- gap -->
-    <xsl:template match="gap[@reason='illegible']"><span title="ilegível">†</span></xsl:template>
     
     <!-- choices -->
     <!-- Abkürzungen und Auflösungen: Darstellung der aufgelösten Form -->

@@ -4,69 +4,6 @@
     <xsl:strip-space elements="rs"/>
    
     <xsl:template match="/">
-<!--        !in style.css ausgelagert!
-            <style type="text/css">
-            /*Textstruktur*/
-             div.text {display: inline-block; position: relative; line-height: 1.8;}
-             .text h2 {margin-bottom: 20px; margin-top: 20px; text-align:left; line-height: 1.5;}
-            .item {margin-bottom: 20px; margin-top: 10px; position: relative;}
-            .item .label {padding-right: 1em;display: inline-table;}
-            .list .item .list .item {margin-left: 2em;}
-             p {font-size: 16px;}
-            
-            /*notes*/
-            .note {position: absolute; font-size: small; vertical-align: middle;}
-            .note.right {right: -50px;}
-            .note.margin.left {left: 5em;}
-            .note.addition.margin.right {right: -120px;}
-            .note.addition.margin.top.right {right: -120px;}
-            .note.addition.margin.left {left: -35px;;}
-            .note-label.margin.left {padding: 0px; float: none;}
-            .editorial-note {text-align: justify;}
-            
-            
-            /*metamarks*/
-            .metamark {cursor: pointer;}
-            
-            .metamark.bracket {font-size: 32pt; font-family: Times; vertical-align: middle; float:none;}
-            .metamark.curly-bracket {font-size: 32pt; font-family: Times; vertical-align: middle; float: none;}
-            .metamark.curly-bracket.grouping.right {float: none;  right: -150px vertical-align: middle;}
-         
-            .metamark.line.assignment {display:inline;}
-            .metamark.line.highlight {margin: 0.5em;}
-            .metamark.quotes.ditto {display: inline; padding-left: 15px; padding-right: 15px;}
-            .metamark.line.distinct {margin-bottom:20px; text-align:center; line-height: 50%}
-            .metamark.line.end {margin-bottom:20px; text-align:center; line-height:50%}
-            .metamark.double.line{margin-bottom:20px; text-align:center; line-height: 50%;} 
-            
-           /* .red {color: red;} */
-            .offset {margin-left: 2em;}
-            .indent {margin-left: 2em;}
-            .right {float: right;}   
-            .left {float: left;}
-            .center {text-align: center;}
-            .above { position: absolute; top: -0.8em; left: 0px;; font-size: small; width:205%;}
-            .below{position: absolute; top: 1.5em; left: 0px; font-size: small; width:200%}
-            .ab {display: inline-block;}
-            .seg {position: relative;}          
-            .choice {position: relative;}
-            .subst {position: relative;}
-            /*.add {top: 0;}*/
-            .del {text-decoration: line-through;}
-            .gap {cursor: pointer;}
-            .supplied {cursor: pointer;}           
-            /*  .ex, .supplied {color: purple;} */
-            
-            .
-            {background: -webkit-canvas(lines); background: -moz-element(lines);}
-            .verticalLine {background: -webkit-canvas(verticalLine); background: -moz-element(verticalLine); display: inline-table; margin-left:110px; width:10px; height:60px;}
-            .circled {border: 1px solid black; border-radius: 30px; display: inline-block;}
-
-            /*special case 71A-2V*/
-            #bnp-e3-71a-2v .below{left: -40px;}   
-            #bnp-e3-71a-2v .note {position: relative;}
-            
-        </style>-->
         <xsl:apply-templates />       
     </xsl:template>
     
@@ -118,16 +55,26 @@
    
    
     <!-- Textstruktur -->
-    <xsl:template match="head" >
+    <xsl:template match="head">
         <h2>
-            <xsl:if test="ancestor::*[@rend='text-center']">
-                <xsl:attribute name="style">text-align: center;</xsl:attribute>
-            </xsl:if>
-            <xsl:apply-templates  />
+            <xsl:choose>
+                <xsl:when test="ancestor::*[@rend='text-center']">
+                    <xsl:attribute name="style">
+                        text-align: center;
+                        margin: 22px auto 22px auto;</xsl:attribute>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:attribute name="style">
+                        text-align: left;
+                        margin: 22px auto 22px auto;
+                    </xsl:attribute>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:apply-templates />
         </h2>
     </xsl:template>
     <xsl:template match="head[hi[@rend='underline center']]" >
-       <h2 style="text-align: center;">
+       <h2 style="text-align: center; margin: 22px auto 22px auto;">
            <xsl:apply-templates />
        </h2> 
     </xsl:template>
@@ -285,6 +232,12 @@
     </xsl:template>
     
     <!--lines-->
+    <xsl:template match="metamark[@rend='line-medium'][@function=('distinct','end')]" >
+        <hr style="width: 50%;" />
+    </xsl:template>
+    <xsl:template match="metamark[@rend='line-long'][@function=('distinct','end')]" >
+        <hr style="width: 100%;" />
+    </xsl:template>
     <xsl:template match="metamark[@rend='line'][@function='end']" >
         <div class="metamark line end">_______________________</div>
     </xsl:template>
@@ -498,10 +451,10 @@
     
     <!-- gaps -->
     <xsl:template match="gap[@reason='selection']"/>
-    <xsl:template match="gap[@reason='illegible']"/>
+    <xsl:template match="gap[@reason='illegible']"><span title="ilegível">†</span></xsl:template>
     
     <!-- del - -->
-        <xsl:template match="del[gap]" >
+    <xsl:template match="del[gap]" >
         <span class="del">
             [<xsl:value-of select="for $c in (1 to gap/@quantity) return '?'"/>]
         </span>

@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
@@ -65,7 +66,7 @@
             </msDesc>
             <msDesc corresp="#M1" type="prose">
                <msIdentifier/>
-               <p> Lista manuscrita. </p>
+               <p>Lista manuscrita.</p>
             </msDesc>
          </sourceDesc>
       </fileDesc>
@@ -81,7 +82,7 @@
             <head>(C) <hi rend="underline">Cultural</hi></head>
             <list>
                <item>
-                  <label>(a)</label>
+                  <label>(a)</label>&#x00A0;
                   <hi rend="underline">Cultura europeia central</hi>
                   <list>
                      <item>
@@ -95,7 +96,7 @@
                   </list>
                </item>
                <item>
-                  <label>(b)</label>
+                  <label>(b)</label>&#x00A0;
                   <hi rend="underline">Cultura nacional historica</hi>
                   <list>
                      <item><label>1.</label> Culto da traição</item>
@@ -104,7 +105,7 @@
                   </list>
                </item>
                <item>
-                  <label>(c)</label>
+                  <label>(c)</label>&#x00A0;
                   <hi rend="underline">Cultura nacional superior</hi>
                   <list>
                      <item><label>1.</label> Historia portugueza. </item>
@@ -119,34 +120,34 @@
                <item>
                   <label>A.</label> Parte cultural </item>
                <item>
-                  <label>B.</label>
+                  <label>B.</label>&#x00A0;
                   <choice>
                      <abbr><metamark rend="line" function="ditto"/></abbr>
                      <expan>Parte</expan>
                   </choice> de propaganda e <gap reason="illegible" unit="word" extent="1"/>. </item>
                <item>
-                  <label>C.</label>
+                  <label>C.</label>&#x00A0;
                   <choice>
                      <abbr><metamark rend="line" function="ditto"/></abbr>
                      <expan>Parte</expan>
                   </choice> de cultura nacional. </item>
             </list>
-            <metamark rend="line" function="distinct"/>
+            <metamark rend="line-long" function="distinct"/>
             <list>
                <head>
                   <hi rend="underline">(C) Processos:</hi>
                </head>
                <item>
-                  <label>(a)</label>
+                  <label>(a)</label>&#x00A0;
                   <hi rend="underline">Affirmativo</hi> — ensinando ideas <lb/>nacionaes
                   constructivas, quer <lb/> pelo estimulo do instincto de<lb/> tradição, quer pela
                   ideação do instincto de nacionalidade,<lb/> quer pela impulsionação do
                   <lb/>espirito constructivo e de<lb/>
-                  <seg>iniciativa <add n="2"><gap reason="illegible" unit="word" extent="1"/>, seja
+                  <seg>iniciativa <add n="2" place="above"><gap reason="illegible" unit="word" extent="1"/>, seja
                         de que for</add> (economica, cultural ou</seg>
                   <lb/>outra) </item>
                <item>
-                  <label>(b)</label>
+                  <label>(b)</label>&#x00A0;
                   <hi rend="underline">Defensivo</hi> — Combatendo (a)<lb/> as idéas
                   anti-portuguezas que <lb/> ha espalhadas pela civilização,<lb/>(b) as culturas
                   estrangeiras <lb/>especialmente inimigas da<lb/> nossa, ou do que nos<lb/> compete
@@ -179,31 +180,31 @@
                <list>
                   <item><label>1.</label>
                      <list>
-                        <item><label>a)</label>
+                        <item><label>a)</label>&#x00A0;
                            <hi rend="underline">Cultura geral</hi></item>
-                        <item><label>b)</label>
+                        <item><label>b)</label>&#x00A0;
                            <hi rend="underline">Cultura especial ou profissional</hi></item>
-                        <item><label>c)</label>
+                        <item><label>c)</label>&#x00A0;
                            <hi rend="underline">Cultura nacional</hi></item>
                      </list>
                   </item>
                   <item><label>2.</label>
                      <list>
-                        <item><label>a)</label>
+                        <item><label>a)</label>&#x00A0;
                            <hi rend="underline">Propaganda</hi> com respeito ao <lb/> turismo,
                            commercio e industria de <choice>
                               <abbr>prop<am>.</am></abbr>
                               <expan>prop<ex>aganda</ex></expan>
                            </choice>
                         </item>
-                        <item><label>b)</label>
+                        <item><label>b)</label>&#x00A0;
                            <hi rend="underline">Propaganda</hi> com respeito a <lb/>arte, literatura
                            etc. de <choice>
                               <abbr>prop<am>.</am></abbr>
                               <expan>prop<ex>aganda</ex></expan>
                            </choice>
                         </item>
-                        <item><label>c)</label>
+                        <item><label>c)</label>&#x00A0;
                            <hi rend="underline">Propaganda</hi> com respeito a<lb/> valorização
                            superior da nação no <lb/> estrangeiro </item>
                      </list>
