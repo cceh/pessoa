@@ -2,6 +2,8 @@
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
     <xsl:preserve-space elements="*"/>
     <xsl:strip-space elements="rs"/>
+    
+    <!-- authors: Ulrike Henny, Alena Geduldig -->
    
     <xsl:template match="/">
         <xsl:apply-templates />       
@@ -12,7 +14,7 @@
     <xsl:template match="text" >
         <xsl:choose>
             <xsl:when test="//note[@place='margin left']">
-                <div class="text" style="padding-left:100px;">
+                <div class="text" style="padding-left: 100px; position: relative;">
                     <xsl:if test="@xml:id">
                         <xsl:attribute name="id">
                             <xsl:value-of select="@xml:id"/>
@@ -99,15 +101,23 @@
         </div>                   
     </xsl:template>
     
-    <xsl:template match="item" >
-        <div class="item">
+    <xsl:template match="item">
+        <div>
             <xsl:if test="@xml:id">
                 <xsl:attribute name="id"><xsl:value-of select="@xml:id" /></xsl:attribute>
             </xsl:if>
+            <xsl:choose>
+                <xsl:when test="@rend">
+                    <xsl:attribute name="class">item <xsl:value-of select="@rend"/></xsl:attribute>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:attribute name="class">item</xsl:attribute>
+                </xsl:otherwise>
+            </xsl:choose>
             <xsl:apply-templates />
         </div>
     </xsl:template> 
-    <xsl:template match="label[seg[add[@place]]]" >
+    <xsl:template match="label[seg[add[@place]]]">
         <span class="label" style="margin-bottom: 10px;">
             <xsl:apply-templates />
         </span>
@@ -116,13 +126,13 @@
     <!-- zusätzliche Bemerkungen am Rand -->
     
     <!--notes-->
-    <xsl:template match="note[@type='addition'][@place='margin top right']" >
+    <xsl:template match="note[@type='addition'][@place='margin top right']">
         <span class="note addition margin top right">
             <xsl:apply-templates />
         </span>
     </xsl:template>
     
-    <xsl:template match="note[@type='addition'][@place='margin left']" >
+    <xsl:template match="note[@type='addition'][@place='margin left']">
         <xsl:variable name="target">
             <xsl:choose>
                 <xsl:when test="contains(@target, 'range')">
@@ -232,11 +242,17 @@
     </xsl:template>
     
     <!--lines-->
-    <xsl:template match="metamark[@rend='line-medium'][@function=('distinct','end')]" >
-        <hr style="width: 50%;" />
+    <xsl:template match="metamark[@rend='line-14'][@function=('distinct','end')]" >
+        <hr style="width: 25%; border-color: #000000; text-align: left; margin: 1em auto 1em 0;" />
     </xsl:template>
-    <xsl:template match="metamark[@rend='line-long'][@function=('distinct','end')]" >
-        <hr style="width: 100%;" />
+    <xsl:template match="metamark[@rend='line-24'][@function=('distinct','end')]" >
+        <hr style="width: 50%; border-color: #000000; text-align: left; margin: 1em auto 1em 0;" />
+    </xsl:template>
+    <xsl:template match="metamark[@rend='line-34'][@function=('distinct','end')]" >
+        <hr style="width: 75%; border-color: #000000; text-align: left; margin: 1em auto 1em 0;" />
+    </xsl:template>
+    <xsl:template match="metamark[@rend='line-44'][@function=('distinct','end')]" >
+        <hr style="width: 100%; border-color: #000000; margin: 1em auto 1em 0;" />
     </xsl:template>
     <xsl:template match="metamark[@rend='line'][@function='end']" >
         <div class="metamark line end">_______________________</div>
@@ -286,7 +302,7 @@
     
     <!--quotes-->
     <xsl:template match="metamark[@rend='quotes'][@function='ditto']" >
-        <div class="metamark quotes ditto"> " </div>
+        <span class="metamark quotes ditto"> " </span>
     </xsl:template>
     
     <!--Pfeile-->
@@ -403,7 +419,7 @@
     </xsl:template>
     
     <!-- choices -->
-        <xsl:template match="choice[seg and seg[2]/add/@place='below']" >
+    <xsl:template match="choice[seg and seg[2]/add/@place='below']" >
         <span class="choice">
             <span class="seg">
                 <xsl:apply-templates  select="seg[1]"/>
