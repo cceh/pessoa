@@ -4,19 +4,18 @@
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
     
     
-    
     <!-- choices -->
     <!-- Alternativen von Pessoa selbst 
         (etwas ist hinzugefügt, aber nichts gestrichen, die beiden Varianten schließen sich aber aus)
     hier: 2. Alternative anzeigen -->
-    <xsl:template match="choice[seg and seg[2]/add/@place='below']">
+    <xsl:template match="choice[seg and seg[2]/add/@place='below']" mode="#default deletion">
         <span class="choice">
             <span class="seg variant">
                 <xsl:apply-templates select="seg[2]/add/text()"/>
             </span>
         </span>
     </xsl:template>
-    <xsl:template match="choice[seg and seg[2]/add/@place='above']">
+    <xsl:template match="choice[seg and seg[2]/add/@place='above']" mode="#default deletion">
         <span class="choice">
             <span class="seg variant" title="variant">
                 <xsl:apply-templates select="seg[2]/add/text()"/>
@@ -27,22 +26,22 @@
     <!-- Ergänzung von Pessoa selbst
     (alternativ: nichts  - das Hinzugefügte)
     hier: das Hinzugefügte anzeigen -->
-    <xsl:template match="seg/add[@n='2']">
+    <xsl:template match="seg/add[@n='2']" mode="#default deletion">
         <xsl:apply-templates/>
     </xsl:template>
     
     <!-- Ersetzung von Pessoa selbst: etwas wird gelöscht, etwas anderes hinzugefügt
     hier: Anzeigen des Hinzugefügten -->
-    <xsl:template match="subst[del/@n and add/@n]">
+    <xsl:template match="subst[del/@n and add/@n]" mode="#default deletion">
         <xsl:apply-templates select="add/text()"/>
     </xsl:template>
     
     <!-- special case MN246 -->
-    <xsl:template match="text[@xml:id='mn246']//choice[seg[@n]]">
+    <xsl:template match="text[@xml:id='mn246']//choice[seg[@n]]" mode="#default deletion">
                 <xsl:value-of select="substring-after(seg[2],'ou')"/>  
     </xsl:template>
     
-    <xsl:template match="add[@place='above'][@n='2'][not(parent::seg)]">
+    <xsl:template match="add[@place='above'][@n='2'][not(parent::seg)]" mode="#default deletion">
         <xsl:apply-templates select="text()"/>
     </xsl:template>
     

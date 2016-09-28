@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -87,7 +88,7 @@
             <div>
                 <list>
                     <head>Books to figure in a “Library” or “Collection”.</head>
-                    <metamark rend="line" function="distinct"/>
+                    <metamark rend="line-44" function="distinct"/>
                     <item>
                         <rs type="person" key="P30">Mario de Sá-Carneiro</rs>: <rs type="text"
                             >Obras</rs>. 4 <choice>
@@ -96,14 +97,14 @@
                         </choice>
                     </item>
                     <item>
-                        <rs type="person">José de Almada-Negreiros</rs>: (see what). </item>
+                        <rs type="person" key="P56">José de Almada-Negreiros</rs>: (see what). </item>
                     <item>
                         <rs type="person" key="FP" role="author" style="b">Fernando Pessoa</rs>: <rs
-                            type="text">Theatro Statico</rs>. (1.a serie) </item>
+                            type="text">Theatro Statico</rs>. (1.<hi rend="superscript">a</hi> serie) </item>
                     <item>
                         <rs type="work" key="O1" style="c"><choice>
                                 <abbr>
-                                    <metamark rend="line" function="ditto"/>
+                                    <metamark rend="line-14" function="ditto"/>
                                 </abbr>
                                 <expan><rs type="person" key="FP" role="author" style="b">Fernando
                                         Pessoa</rs></expan>

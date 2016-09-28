@@ -1,50 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    exclude-result-prefixes="xs"
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    exclude-result-prefixes="xs" 
+    xpath-default-namespace="http://www.tei-c.org/ns/1.0" 
     version="2.0">
     
     <!-- Authors: Ulrike Henny, Alena Geduldig -->
     
+    <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
+    
+    
     <xsl:template match="/">
-        <xsl:apply-templates />       
+        <xsl:apply-templates />
     </xsl:template>
     
     <!-- Header & Text -->
-    <xsl:template match="teiHeader"/>
-    <xsl:template match="text">
+    <xsl:template match="teiHeader" mode="#default deletion"/>
+    <xsl:template match="text" mode="#default deletion">
         <div class="text">
             <xsl:apply-templates />
         </div>
-        <xsl:apply-templates select="//msDesc[@type='prose']"/>
+        <xsl:apply-templates select="//msDesc[@type='prose']" />
     </xsl:template>
     
     <!-- Editorial notes and interventions -->
-    <xsl:template match="msDesc[@type='prose']">
+    <xsl:template match="msDesc[@type='prose']" mode="#default deletion">
         <div class="editorial-note">
             <xsl:apply-templates />
         </div>
     </xsl:template>
-    <xsl:template match="ref[@target]">
+    <xsl:template match="ref[@target]" mode="#default deletion">
         <xsl:variable name="id" select="@target"/>
-        <a href="../data/doc/{$id}"> <xsl:apply-templates/></a>     
+        <a href="../data/doc/{$id}">
+            <xsl:apply-templates />
+        </a>     
     </xsl:template>
-    <xsl:template match="supplied"/>
+    <xsl:template match="supplied" mode="#default deletion"/>
     
     <!-- Structure of the text -->
-    <xsl:template match="head">
+    <xsl:template match="head" mode="#default deletion">
         <h2>
             <xsl:apply-templates />
         </h2>
     </xsl:template>
     
-    <xsl:template match="list">
-        <div class="list">
+    <xsl:template match="list" mode="#default deletion">
+        <div>
+            <xsl:choose>
+                <xsl:when test="preceding-sibling::*[1][name() = 'label']">
+                    <xsl:attribute name="class">list inline</xsl:attribute>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:attribute name="class">list</xsl:attribute>
+                </xsl:otherwise>
+            </xsl:choose>
             <xsl:apply-templates />
         </div>                   
     </xsl:template>
     
-    <xsl:template match="item">
+    <xsl:template match="item" mode="#default deletion">
         <div>
             <xsl:if test="@xml:id">
                 <xsl:attribute name="id"><xsl:value-of select="@xml:id" /></xsl:attribute>
@@ -61,89 +75,169 @@
         </div>
     </xsl:template>
     
-    <xsl:template match="label">
-        <span class="label">
+    <xsl:template match="label" mode="#default deletion">
+        <span>
+            <xsl:choose>
+                <xsl:when test="following-sibling::*[1][name() = 'list']">
+                    <xsl:attribute name="class">label inline</xsl:attribute>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:attribute name="class">label</xsl:attribute>
+                </xsl:otherwise>
+            </xsl:choose>
             <xsl:apply-templates />
         </span>
+    </xsl:template>
+    
+    <!-- Table structure for divs in columns / floating divs -->
+    <xsl:template match="div[div[@rend=('left','center','right')]]" mode="#default deletion">
+        <table>
+            <tr>
+                <xsl:for-each select="child::*">
+                    <xsl:choose>
+                        <xsl:when test="name() = 'div' and @rend">
+                            <td>
+                                <xsl:apply-templates />
+                            </td>
+                        </xsl:when>
+                        <xsl:when test="name() = 'metamark' and @rend='line-vertical'">
+                            <td class="line-vertical"></td>
+                        </xsl:when>
+                    </xsl:choose>
+                </xsl:for-each>
+            </tr>
+        </table>
     </xsl:template>
     
     <!-- Metamarks -->
     <!-- Lines -->
-    <xsl:template match="metamark[@rend='line-14'][@function=('distinct','end')]" >
+    <xsl:template match="metamark[@rend='line-14'][@function=('distinct','end')]" mode="#default deletion">
         <hr class="line line-14" />
     </xsl:template>
-    <xsl:template match="metamark[@rend='line-24'][@function=('distinct','end')]" >
+    <xsl:template match="metamark[@rend='line-24'][@function=('distinct','end')]" mode="#default deletion">
         <hr class="line line-24" />
     </xsl:template>
-    <xsl:template match="metamark[@rend='line-34'][@function=('distinct','end')]" >
+    <xsl:template match="metamark[@rend='line-34'][@function=('distinct','end')]" mode="#default deletion">
         <hr class="line line-34" />
     </xsl:template>
-    <xsl:template match="metamark[@rend='line-44'][@function=('distinct','end')]" >
+    <xsl:template match="metamark[@rend='line-44'][@function=('distinct','end')]" mode="#default deletion">
         <hr class="line line-44" />
     </xsl:template>
+    
     <!-- Quotes -->
-    <xsl:template match="metamark[@rend='quotes'][@function='ditto']" >
+    <xsl:template match="metamark[@rend='quotes'][@function='ditto']" mode="#default deletion">
         <span class="metamark quotes ditto"> " </span>
+    </xsl:template>
+    <xsl:template match="metamark[contains(@rend,'line')][@function='ditto']" mode="#default deletion">
+        <span class="metamark line ditto">
+            <xsl:choose>
+                <xsl:when test="@rend = 'line-14'">
+                    <hr class="line line-14 inline" />
+                </xsl:when>
+                <xsl:when test="@rend = 'line-24'">
+                    <hr class="line line-24 inline" />
+                </xsl:when>
+                <xsl:when test="@rend = 'line-34'">
+                    <hr class="line line-34 inline" />
+                </xsl:when>
+                <xsl:when test="@rend = 'line-44'">
+                    <hr class="line line-44 inline" />
+                </xsl:when>
+            </xsl:choose>
+        </span>
+    </xsl:template>
+    
+    <!-- Space -->
+    <xsl:template match="metamark[@rend='space']" mode="#default deletion">
+        &#x2003;
     </xsl:template>
     
     <!-- Highlighting -->
-    <xsl:template match="hi[@rend='underline']" >
+    <xsl:template match="hi[@rend='underline']" mode="#default deletion">
         <span class="underline">
             <xsl:apply-templates />
         </span>
     </xsl:template>
-    <xsl:template match="hi[@rend='italic']" >
+    <xsl:template match="hi[@rend='italic']" mode="#default deletion">
         <span class="italic">
             <xsl:apply-templates />
         </span>
     </xsl:template>
-    <xsl:template match="hi[@rend='circled']" >
+    <xsl:template match="hi[@rend='circled']" mode="#default deletion">
         <span class="circled">
             <xsl:apply-templates />
         </span>
     </xsl:template>
+    <xsl:template match="hi[@rend='superscript']" mode="#default deletion">
+        <sup>
+            <xsl:apply-templates />
+        </sup>
+    </xsl:template>
     
     <!-- Entities -->
-    <xsl:template match="rs[@type='person']" >
+    <xsl:template match="rs[@type='person']" mode="#default deletion">
         <span class="person {@key}">
             <xsl:apply-templates />
         </span>
     </xsl:template>
     
-    <xsl:template match="rs[@type='place']" >
+    <xsl:template match="rs[@type='place']" mode="#default deletion">
         <span class="place">
             <xsl:apply-templates />
         </span>
     </xsl:template>
     
-    <xsl:template match="rs[@type='journal']" >
+    <xsl:template match="rs[@type='journal']" mode="#default deletion">
         <span class="journal {@key}">
             <xsl:apply-templates />
         </span>
     </xsl:template>
     
-    <xsl:template match="rs[@type='work']" >
+    <xsl:template match="rs[@type='work']" mode="#default deletion">
         <span class="work {@key}">
             <xsl:apply-templates />
         </span>
     </xsl:template>
-    <xsl:template match="rs[@type='text']" >
+    <xsl:template match="rs[@type='text']" mode="#default deletion">
         <span class="text {replace(.,'[“”.\s]','')}">
             <xsl:apply-templates />
         </span>
     </xsl:template>
     
     <!-- Breaks -->
-    <xsl:template match="lb" >
+    <xsl:template match="lb" mode="#default deletion">
         <br/>
     </xsl:template>
-    <xsl:template match="pb"/>
+    <xsl:template match="pb" mode="#default deletion"/>
     
     <!-- Abbreviations -->
-    <xsl:template match="expan"/>
+    <xsl:template match="expan" mode="#default deletion"/>
     
     <!-- Gaps -->
-    <xsl:template match="gap[@reason='selection']"/>
-    <xsl:template match="gap[@reason='illegible']"><span title="ilegível">†</span></xsl:template>
+    <xsl:template match="gap[@reason='selection']" mode="#default deletion"/>
+    <xsl:template match="gap[@reason='illegible']" mode="#default deletion"><span title="ilegível">†</span></xsl:template>
+    
+    <!-- Additions -->
+    <xsl:template match="add[@n='2'][@place='above']" mode="#default deletion">
+        <span class="above">
+            <xsl:apply-templates />
+        </span>
+    </xsl:template>
+    <xsl:template match="seg[@type='anchor']" mode="#default deletion">
+        <span class="anchor">
+            <xsl:apply-templates />
+        </span>
+    </xsl:template>
+    
+    <!-- Deletions -->
+    <xsl:template match="delSpan" >
+        <xsl:variable name="anchorID" select="@spanTo/substring-after(.,'#')" />
+        <div class="delSpan">
+            <xsl:apply-templates select="following-sibling::*[following::anchor[@xml:id=$anchorID]]" mode="deletion"/>
+        </div>
+    </xsl:template> 
+    
+    <xsl:template match="*[preceding-sibling::delSpan][following::anchor[@xml:id=current()/preceding-sibling::delSpan/@spanTo/substring-after(.,'#')]]" mode="#default" priority="100"/>
+    
     
 </xsl:stylesheet>

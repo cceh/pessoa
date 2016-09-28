@@ -3,8 +3,7 @@
     
     <xsl:import href="doc.xsl"/>
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
-    <xsl:preserve-space elements="*"/>
-    <xsl:strip-space elements="rs"/>
+    
     <!-- externer Parameter lb: yes|no
     (Zeilenumbrüche anzeigen oder nicht) -->
     <xsl:param name="lb" />
@@ -13,10 +12,8 @@
     <xsl:param name="abbr" />
     
 
-    
-
    <!-- Trotz Aufhebung der lb's soll am Rand genug Platz für Notes bleiben --> 
-    <xsl:template match="text">
+    <xsl:template match="text" mode="#default deletion">
        <div class="text">          
                <xsl:if test="@xml:id">
                    <xsl:attribute name="id">
@@ -36,7 +33,7 @@
     </xsl:template>
     
     <!-- Anzeige von Zeilenumbrüchen -->
-    <xsl:template match="lb[not(preceding-sibling::*[1][local-name()='pc'])][not(ancestor::note)][not(ancestor::add)]">
+    <xsl:template match="lb[not(preceding-sibling::*[1][local-name()='pc'])][not(ancestor::note)][not(ancestor::add)]" mode="#default deletion">
         <xsl:choose>
             <xsl:when test="$lb = 'yes'">
                 <br />
@@ -47,20 +44,20 @@
         </xsl:choose>
     </xsl:template>
     
-    <xsl:template match="lb[preceding-sibling::*[1][local-name()='pc']]">
+    <xsl:template match="lb[preceding-sibling::*[1][local-name()='pc']]" mode="#default deletion">
         <xsl:if test="$lb = 'yes'">
             <br />
         </xsl:if>
     </xsl:template>
     
-    <xsl:template match="pc">
+    <xsl:template match="pc" mode="#default deletion">
         <xsl:if test="$lb = 'yes'">
             <xsl:apply-templates />
         </xsl:if>
     </xsl:template>
      
     <!-- Anzeige von Abkürzungen -->
-    <xsl:template match="choice[abbr and expan]">
+    <xsl:template match="choice[abbr and expan]" mode="#default deletion">
         <xsl:choose>
             <xsl:when test="$abbr = 'yes'">
                 <xsl:apply-templates select="abbr/text() | abbr/child::*" />
@@ -93,13 +90,13 @@
         </xsl:choose>
     </xsl:template>-->
     
-    <xsl:template match="abbr"/>
-    <xsl:template match="ex">
+    <xsl:template match="abbr" mode="#default deletion"/>
+    <xsl:template match="ex" mode="#default deletion">
         <span class="ex" style="color:#99004D;">[<xsl:apply-templates />]</span>
     </xsl:template>
    
    <!-- Einrückungen aufheben wenn lb's entfernt werden-->
-    <xsl:template match="seg[@rend='indent']">
+    <xsl:template match="seg[@rend='indent']" mode="#default deletion">
         <span>
             <xsl:if test="$lb='yes'">
               <xsl:attribute name="class">indent</xsl:attribute>  
@@ -108,7 +105,7 @@
         </span>   
     </xsl:template>
     
-    <xsl:template match="ab[@rend='indent']">
+    <xsl:template match="ab[@rend='indent']" mode="#default deletion">
         <span class="ab">
             <xsl:if test="$lb='yes'">
                 <xsl:attribute name="style">margin-left:2em;</xsl:attribute>  
@@ -118,7 +115,7 @@
     </xsl:template>
     
 <!-- special case 180r -->
-    <xsl:template match="text[@xml:id='bnp-e3-180r']//note[@place='margin top right']">
+    <xsl:template match="text[@xml:id='bnp-e3-180r']//note[@place='margin top right']" mode="#default deletion">
         <span class="note addition margin top right" style="right: 0px;">
             <xsl:apply-templates/>
         </span>

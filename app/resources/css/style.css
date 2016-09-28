@@ -1033,12 +1033,26 @@ li.itabs.selected span{
 }
 
 /* STYLES FÜR DIE XSLT-TRANSFORMATION DER DOKUMENTE */
+div.text {
+    line-height: 1.8em;
+}
 div.text h2 {
     text-align: left;
     margin: 22px auto 22px auto;
 }
 div.text div.list {
     margin: 1em 0;
+}
+div.text div.list.inline, div.text div.list div.list.inline {
+    display: inline-block;
+    margin-top: 0;
+    margin-left: 0;
+    max-width: 90%;
+}
+div.text span.label.inline {
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 0.5em;
 }
 div.text div.list div.list {
     margin-left: 2em;
@@ -1048,7 +1062,11 @@ div.text div.item {
 }
 div.text div.item.indent-2 {
     text-indent: -1em;
-    padding-left: 2.2em;
+    padding-left: 2em;
+}
+div.text table td {
+    vertical-align: top;
+    padding-right: 2em;
 }
 div.text span.metamark.quotes.ditto {
     display: inline-block;
@@ -1060,6 +1078,21 @@ div.text span.underline {
 }
 div.text span.italic {
     font-style: italic;
+}
+div.text span.anchor {
+    position: relative;
+}
+div.text span.above {
+    position: absolute;
+    font-size: smaller;
+    top: -1.5em;
+}
+div.text span.supplied {
+    bottom: 1px;
+    position: relative;
+}
+div.text td.line-vertical {
+    border-left: 1px solid #000000;
 }
 div.text hr.line {
     border-color: #000000; 
@@ -1077,4 +1110,8 @@ div.text hr.line-34 {
 }
 div.text hr.line-44 {
     width: 100%;
+}
+div.text hr.line-14.inline, div.text hr.line-24.inline, div.text hr.line-34.inline, div.text hr.line-44.inline {
+    display: inline-block;
+    margin: 0 0.5em 0.25em 0;
 }
