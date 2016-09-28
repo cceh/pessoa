@@ -1033,18 +1033,48 @@ li.itabs.selected span{
 }
 
 /* STYLES FÜR DIE XSLT-TRANSFORMATION DER DOKUMENTE */
-div.list div.list {
+div.text h2 {
+    text-align: left;
+    margin: 22px auto 22px auto;
+}
+div.text div.list {
+    margin: 1em 0;
+}
+div.text div.list div.list {
     margin-left: 2em;
 }
-div.item {
+div.text div.item {
     margin: 0.5em 0;
 }
-div.item.indent-2 {
+div.text div.item.indent-2 {
     text-indent: -1em;
     padding-left: 2.2em;
 }
-span.metamark.quotes.ditto {
+div.text span.metamark.quotes.ditto {
     display: inline-block;
     width: 2em;
     text-align: center;
+}
+div.text span.underline {
+    text-decoration: underline;
+}
+div.text span.italic {
+    font-style: italic;
+}
+div.text hr.line {
+    border-color: #000000; 
+    text-align: left; 
+    margin: 1em auto 1em 0;
+}
+div.text hr.line-14 {
+    width: 25%;
+}
+div.text hr.line-24 {
+    width: 50%;
+}
+div.text hr.line-34 {
+    width: 75%;
+}
+div.text hr.line-44 {
+    width: 100%;
 }
