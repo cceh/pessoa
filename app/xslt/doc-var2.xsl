@@ -36,6 +36,8 @@
         <xsl:apply-templates select="add/text()"/>
     </xsl:template>
     
+    <xsl:template match="del[@n='2']" mode="#default deletion"/>
+    
     <!-- special case MN246 -->
     <xsl:template match="text[@xml:id='mn246']//choice[seg[@n]]" mode="#default deletion">
                 <xsl:value-of select="substring-after(seg[2],'ou')"/>  

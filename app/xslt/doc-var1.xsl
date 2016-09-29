@@ -33,7 +33,9 @@
         <xsl:apply-templates select="del/text()"/>
     </xsl:template>
     
-    <xsl:template match="*[@n='2']" mode="#default deletion"/>
+    <xsl:template match="del[@n='2']" mode="#default deletion">
+        <xsl:apply-templates/>
+    </xsl:template>
         
     
     

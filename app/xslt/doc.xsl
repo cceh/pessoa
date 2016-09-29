@@ -9,7 +9,6 @@
     
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
     
-    
     <xsl:template match="/">
         <xsl:apply-templates />
     </xsl:template>
@@ -40,10 +39,14 @@
     <!-- Structure of the text -->
     <xsl:template match="head" mode="#default deletion">
         <h2>
+            <xsl:if test="@rend">
+                <xsl:attribute name="class" select="@rend"/>
+            </xsl:if>
             <xsl:apply-templates />
         </h2>
     </xsl:template>
     
+    <!-- Listen -->
     <xsl:template match="list" mode="#default deletion">
         <div>
             <xsl:choose>
@@ -65,7 +68,17 @@
             </xsl:if>
             <xsl:choose>
                 <xsl:when test="@rend">
-                    <xsl:attribute name="class">item <xsl:value-of select="@rend"/></xsl:attribute>
+                    <xsl:variable name="rend">
+                        <xsl:choose>
+                            <xsl:when test="contains(@rend, 'indent-2') and following-sibling::label">
+                                <xsl:value-of select="replace(@rend, 'indent-2', 'indent-2-label')"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="@rend"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:variable>
+                    <xsl:attribute name="class">item <xsl:value-of select="$rend"/></xsl:attribute>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:attribute name="class">item</xsl:attribute>
@@ -87,6 +100,31 @@
             </xsl:choose>
             <xsl:apply-templates />
         </span>
+    </xsl:template>
+    
+    <!-- Tabellen -->
+    <xsl:template match="table" mode="#default deletion">
+        <table>
+            <xsl:if test="@rend">
+                <xsl:attribute name="class" select="@rend"/>
+            </xsl:if>
+            <xsl:apply-templates/>
+        </table>
+    </xsl:template>
+    
+    <xsl:template match="row" mode="#default deletion">
+        <tr>
+            <xsl:apply-templates/>
+        </tr>
+    </xsl:template>
+    
+    <xsl:template match="cell" mode="#default deletion">
+        <td>
+            <xsl:if test="@rend">
+                <xsl:attribute name="class" select="@rend"/>
+            </xsl:if>
+            <xsl:apply-templates/>
+        </td>
     </xsl:template>
     
     <!-- Table structure for divs in columns / floating divs -->
@@ -148,8 +186,62 @@
     </xsl:template>
     
     <!-- Space -->
-    <xsl:template match="metamark[@rend='space']" mode="#default deletion">
+    <xsl:template match="metamark[@rend='space'][@function='distinct'][parent::item]" mode="#default deletion">
         &#x2003;
+    </xsl:template>
+    <xsl:template match="metamark[@rend='space'][@function='distinct'][parent::list|parent::div]" mode="#default deletion">
+        <br />
+    </xsl:template>
+    
+    <!-- Brackets -->
+    <xsl:template match="metamark[@rend='curly-bracket'][@function='grouping']" mode="#default deletion">
+        <xsl:choose>
+            <xsl:when test="parent::note[@place='margin-right']">
+                <span class="grouping-right">
+                    <xsl:if test="parent::note[@target[contains(.,'range')]]">
+                        <xsl:variable name="target" select="parent::note/@target"/>
+                        <xsl:variable name="items" select="tokenize(substring-before(substring-after($target, 'range('),')'),',')"/>
+                        <xsl:variable name="range" select="number(substring-after($items[2],'I')) - number(substring-after($items[1],'I')) + 1"/>
+                        <xsl:attribute name="style">
+                            font-size: <xsl:value-of select="$range * 2"/>em;
+                        </xsl:attribute>
+                    </xsl:if>
+                    }<xsl:apply-templates/>
+                </span>
+            </xsl:when>
+            <xsl:when test="parent::note[@place='margin-left']">
+                <span class="grouping-left">
+                    <xsl:apply-templates/>{
+                </span>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:template>
+    
+    <!-- Notes -->
+    <xsl:template match="note[@place='margin-right']" mode="#default deletion">
+        <span class="note margin-right">
+            <xsl:if test="@target[contains(.,'range')]">
+                <xsl:variable name="target" select="@target"/>
+                <xsl:variable name="items" select="tokenize(substring-before(substring-after($target, 'range('),')'),',')"/>
+                <xsl:variable name="range" select="number(substring-after($items[2],'I')) - number(substring-after($items[1],'I')) + 1"/>
+                <xsl:attribute name="style">
+                    top: -<xsl:value-of select="$range div 3"/>em;
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+    
+    <xsl:template match="note[@place='margin-left']" mode="#default deletion">
+        <span class="note margin-left">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+    
+    <xsl:template match="note[@place='center']" mode="#default deletion">
+        <div class="note center">
+            <xsl:apply-templates/>
+        </div>
     </xsl:template>
     
     <!-- Highlighting -->
@@ -230,7 +322,7 @@
     </xsl:template>
     
     <!-- Deletions -->
-    <xsl:template match="delSpan" >
+    <xsl:template match="delSpan">
         <xsl:variable name="anchorID" select="@spanTo/substring-after(.,'#')" />
         <div class="delSpan">
             <xsl:apply-templates select="following-sibling::*[following::anchor[@xml:id=$anchorID]]" mode="deletion"/>
@@ -239,5 +331,10 @@
     
     <xsl:template match="*[preceding-sibling::delSpan][following::anchor[@xml:id=current()/preceding-sibling::delSpan/@spanTo/substring-after(.,'#')]]" mode="#default" priority="100"/>
     
+    <xsl:template match="del[@rend='overstrike']" mode="#default deletion">
+        <span class="deletion overstrike">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
     
 </xsl:stylesheet>

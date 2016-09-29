@@ -1035,10 +1035,24 @@ li.itabs.selected span{
 /* STYLES FÜR DIE XSLT-TRANSFORMATION DER DOKUMENTE */
 div.text {
     line-height: 1.8em;
+    position: relative;
+    padding-left: 4em;
 }
 div.text h2 {
     text-align: left;
     margin: 22px auto 22px auto;
+}
+div.text h2.center {
+    text-align: center;
+}
+div.text table.center {
+    margin: 0px auto;
+}
+div.text table td.center {
+    text-align: center;
+}
+div.text table td.right {
+    text-align: right;
 }
 div.text div.list {
     margin: 1em 0;
@@ -1059,10 +1073,51 @@ div.text div.list div.list {
 }
 div.text div.item {
     margin: 0.5em 0;
+    position: relative;
+}
+div.text div.item.indent-2-label {
+    text-indent: -1em;
+    padding-left: 2em;
 }
 div.text div.item.indent-2 {
     text-indent: -1em;
+    padding-left: 1em;
+}
+div.text div.item.indent-2 *, div.text div.item.indent-2-label * {
+    text-indent: 0;
+}
+div.text span.note.margin-right {
+    display: inline-block;
+    position: absolute;
+    vertical-align: middle;
     padding-left: 2em;
+}
+div.text div.item span.note.margin-left {
+    position: absolute;
+    left: -3em;
+}
+div.text > span.note.margin-left {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    left: -4em;
+}
+div.text div.note.center {
+    text-align: center;
+}
+div.text div.note.center hr {
+    margin: 1em auto;
+    text-align: center;
+}
+div.text span.grouping-right {
+    font-weight: lighter;
+    vertical-align: middle;
+    color: #888888;
+}
+div.text span.grouping-right .label {
+    font-size: 15px;
+    font-weight: normal;
+    color: #000000;
 }
 div.text table td {
     vertical-align: top;
@@ -1090,6 +1145,9 @@ div.text span.above {
 div.text span.supplied {
     bottom: 1px;
     position: relative;
+}
+div.text span.deletion.overstrike {
+    text-decoration: line-through;
 }
 div.text td.line-vertical {
     border-left: 1px solid #000000;

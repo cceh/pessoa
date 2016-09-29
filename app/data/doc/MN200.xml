@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>MN 200</title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">MN200.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc xml:id="M1" type="structured">
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>MN 200</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                        <rs type="genre" key="plano_editorial">Plano editorial</rs>
+                     </note>
+                     <textLang mainLang="pt"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate>?</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista datilografada, com acrescentos manuscritos. </p>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="Espolio Manuela Nogueira (MN)/avulsos (200).jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <head rend="center">AS MELHORES POESIAS LYRICAS DA<lb/> LINGUA PORTUGUEZA.</head>
+         <ab>(exceptuam-se os autores vivos)</ab>
+         <list>
+            <item>
+               <rs type="person" key="P160">Soares de Passos</rs>: 
+               <rs type="text">O Firmamento.</rs>
+            </item>
+            <item>
+               <rs type="person" key="P190">João de Deus</rs>: 
+               <rs type="text">A Vida.</rs>
+            </item>
+            <item>
+               <rs type="person" key="P125">Antonio Molarinho</rs>: 
+               <rs type="text">Maria Manoela.</rs>
+            </item>
+            <item>
+               <rs type="person" key="P124">José Duro</rs>:
+               <list>
+                  <item><rs type="text">Mortos.</rs></item>
+                  <item xml:id="I5">
+                     <rs type="text">Bacchantes.</rs>
+                  </item>
+                  <item xml:id="I6">
+                     <rs type="text">Em busca.</rs>
+                     <note place="margin-right"  type="addition" target="range(I5,I8)">
+                        <metamark rend="curly-bracket" function="grouping">
+                           <label>escolher d’aqui</label>
+                        </metamark>
+                     </note>
+                  </item>
+                  <item xml:id="I7">
+                     <rs type="text">Prece.</rs> --- 
+                  </item>
+                  <item xml:id="I8">
+                     <rs type="text">Dor Suprema.</rs> --- 
+                  </item>
+               </list>
+            </item>
+            <item>
+               <rs type="person" key="P24">José Anastacio da Cunha</rs>: 
+               <rs type="text">O Abraço.</rs>
+            </item>
+            <item>
+               <rs type="person" key="P172">João de Lemos</rs>: 
+               <rs type="text">A Lua de Londres.</rs>
+            </item>
+         </list>
+      </body>
+   </text>
+</TEI>

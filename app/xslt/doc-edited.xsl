@@ -58,7 +58,7 @@
     wenn es ein Silbentrennzeichen gibt, dann nichts ausgeben
     wenn es kein Silbentrennzeichen gibt, dann ein Leerzeichen ausgeben
     -->
-    <xsl:template match="lb[not(preceding-sibling::*[1][local-name()='pc'])][not(ancestor::note)][not(ancestor::add)]" mode="#default deletion">
+    <xsl:template match="lb[not(preceding-sibling::*[1][local-name()='pc'])][not(ancestor::add)]" mode="#default deletion">
         <xsl:choose>
             <xsl:when test="$lb = 'yes'">
                 <br />
@@ -89,6 +89,26 @@
                     &lt;<xsl:apply-templates />&gt;
                 </xsl:otherwise>
             </xsl:choose>
+        </span>
+    </xsl:template>
+    
+    <!-- Randnotizen -->
+    <xsl:template match="metamark[@rend='curly-bracket'][@function='grouping']" mode="#default deletion">
+        <xsl:choose>
+            <xsl:when test="parent::note[@place='margin-right']"><xsl:apply-templates/></xsl:when>
+            <xsl:when test="parent::note[@place='margin-left']"><xsl:apply-templates/></xsl:when>
+        </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template match="note[@place='margin-right']" mode="#default deletion">
+        <span class="note">
+            [<xsl:apply-templates/>]
+        </span>
+    </xsl:template>
+    
+    <xsl:template match="label" mode="#default deletion">
+        <span class="label">
+            <xsl:apply-templates/>
         </span>
     </xsl:template>
     
