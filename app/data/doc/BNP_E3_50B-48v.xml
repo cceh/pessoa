@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>50B-48<hi rend="superscript">v</hi>
-            </title>
+            <title>BNP/E3 50B-48<hi rend="superscript">v</hi></title>
             <author>
                <rs type="person" key="FP">Fernando Pessoa</rs>
             </author>
@@ -13,16 +13,30 @@
                <name>Pedro Sepúlveda</name>
             </respStmt>
             <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
                <resp>Codificação</resp>
                <name>Sviatoslav Drach</name>
             </respStmt>
             <respStmt>
-               <resp>Codificação</resp>
-               <name/>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher/>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
             <idno type="filename">BNP_E3_50B-48v.xml</idno>
          </publicationStmt>
          <sourceDesc>
@@ -64,28 +78,31 @@
          url="bn-acpc-e-e3-50b-1-1-74_JPG_24-C-R0150/bn-acpc-e-e3-50b-1-1-74_0098_48v_t24-C-R0150.jpg"
       />
    </facsimile>
-   <text xml:id="bnp-e3-50b-48v">
+   <text>
       <body>
          <div>
-            <gap reason="selection" unit="lines" extent="2"/>
-            <metamark rend="underline" function="distinct"/>
-            <gap reason="selection" unit="lines" extent="9"/>
-            <metamark rend="underline" function="distinct"/>
+            <gap reason="selection" unit="line" extent="11"/>
             <div rend="left">
                <list>
-                  <item> As sete salas — paulismo.</item>
-                  <item><rs type="title">Cancioneiro</rs> — <supplied resp="PS"
-                        reason="omitted-in-original"/></item>
-                  <item><rs type="title">Aureola</rs> — <supplied resp="PS"
+                  <item><rs type="text">As sete salas — paulismo</rs>.</item>
+                  <item><rs type="work" key="O1" style="b"><rs type="text">Cancioneiro</rs></rs> —
+                        <supplied resp="PS" reason="omitted-in-original"/></item>
+                  <item><rs type="text">Aureola</rs> — <supplied resp="PS"
                         reason="omitted-in-original"/></item>
                </list>
             </div>
-            <metamark rend="vertical line" place="center" function="distinct"/>
+            <metamark rend="line-vertical" function="distinct"/>
             <div rend="right">
                <list>
-                  <item> Episodios — <label>(1)</label> As 7 salas <label>(2)</label> 3 poemas
-                        <label>(3) </label>Livro do outro amôr <label>(4)</label><supplied resp="PS"
-                        reason="omitted-in-original"/></item>
+                  <item><rs type="work" key="O1-13"><rs type="text">Episodios</rs></rs> — <list rend="inline">
+                        <item><label>(1)</label>&#x00A0;<rs type="text">As 7 salas</rs></item>
+                        <item><label>(2)</label>&#x00A0;<rs type="text">3 poemas</rs></item>
+                        <item><label>(3)</label>&#x00A0;<rs type="text">Livro do outro
+                           amôr</rs></item>
+                        <item><label>(4)</label>&#x00A0;<supplied resp="PS"
+                              reason="omitted-in-original"/></item>
+                     </list>
+                  </item>
                </list>
             </div>
          </div>

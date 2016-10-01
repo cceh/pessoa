@@ -18,7 +18,7 @@
     
     <!-- Choices -->
     <!-- Abkürzungen und Auflösungen: Darstellung der aufgelösten Form -->
-    <xsl:template match="choice[abbr and expan[ex]]" mode="#default deletion">
+    <xsl:template match="choice[abbr and expan[ex]]" mode="#default deletion addition">
         <xsl:choose>
             <xsl:when test="$abbr = 'no'">
                 <xsl:apply-templates select="abbr/text() | abbr/child::*" />
@@ -44,13 +44,20 @@
         </xsl:choose> 
     </xsl:template>
     
-    <xsl:template match="choice[abbr and expan[not(ex)]]" mode="#default deletion">
+    <xsl:template match="choice[abbr and expan[not(ex)]]" mode="#default deletion addition">
         <span class="expan">[<xsl:apply-templates select="expan/text() | expan/child::*"/>]</span>
     </xsl:template>
     
-    <xsl:template match="abbr" mode="#default deletion"/>
+    <xsl:template match="abbr" mode="#default deletion addition">
+        <xsl:choose>
+            <xsl:when test="parent::choice"/>
+            <xsl:otherwise>
+                <xsl:apply-templates/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
     
-    <xsl:template match="ex" mode="#default deletion">
+    <xsl:template match="ex" mode="#default deletion addition">
         <span class="ex">[<xsl:apply-templates />]</span>
     </xsl:template>
     
@@ -58,9 +65,9 @@
     wenn es ein Silbentrennzeichen gibt, dann nichts ausgeben
     wenn es kein Silbentrennzeichen gibt, dann ein Leerzeichen ausgeben
     -->
-    <xsl:template match="lb[not(preceding-sibling::*[1][local-name()='pc'])][not(ancestor::add)]" mode="#default deletion">
+    <xsl:template match="lb[not(preceding-sibling::*[1][local-name()='pc'])][not(ancestor::add)]" mode="#default deletion addition">
         <xsl:choose>
-            <xsl:when test="$lb = 'yes'">
+            <xsl:when test="$lb = 'yes' or ancestor::body//note[@place='margin-right']">
                 <br />
             </xsl:when>
             <xsl:otherwise>
@@ -68,20 +75,20 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    <xsl:template match="lb[preceding-sibling::*[1][local-name()='pc']]" mode="#default deletion">
-        <xsl:if test="$lb = 'yes'">
+    <xsl:template match="lb[preceding-sibling::*[1][local-name()='pc']]" mode="#default deletion addition">
+        <xsl:if test="$lb = 'yes' or ancestor::body//note[@place='margin-right']">
             <br />
         </xsl:if>
     </xsl:template>
     
-    <xsl:template match="pc" mode="#default deletion">
+    <xsl:template match="pc" mode="#default deletion addition">
         <xsl:if test="$lb = 'yes'">
             <xsl:apply-templates />
         </xsl:if>
     </xsl:template>
     
     <!-- editorische Ergänzungen anzeigen -->
-    <xsl:template match="supplied" mode="#default deletion">
+    <xsl:template match="supplied" mode="#default deletion addition">
         <span class="supplied" title="lacuna no original">
             <xsl:choose>
                 <xsl:when test="not(node()) or note">□</xsl:when>
@@ -92,25 +99,8 @@
         </span>
     </xsl:template>
     
-    <!-- Randnotizen -->
-    <xsl:template match="metamark[@rend='curly-bracket'][@function='grouping']" mode="#default deletion">
-        <xsl:choose>
-            <xsl:when test="parent::note[@place='margin-right']"><xsl:apply-templates/></xsl:when>
-            <xsl:when test="parent::note[@place='margin-left']"><xsl:apply-templates/></xsl:when>
-        </xsl:choose>
-    </xsl:template>
-    
-    <xsl:template match="note[@place='margin-right']" mode="#default deletion">
-        <span class="note">
-            [<xsl:apply-templates/>]
-        </span>
-    </xsl:template>
-    
-    <xsl:template match="label" mode="#default deletion">
-        <span class="label">
-            <xsl:apply-templates/>
-        </span>
-    </xsl:template>
+    <!-- Gelöschtes nicht anzeigen -->
+    <xsl:template match="del[@n='2']" mode="#default deletion addition"/>
     
 </xsl:stylesheet>
     

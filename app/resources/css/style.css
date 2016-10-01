@@ -31,7 +31,7 @@ body > div.container{
 }
 
 #content.container{
-    width: 1230px;
+    width: 1360px; /* war 1230 */
     margin: 12px auto;
 }
 
@@ -105,6 +105,7 @@ label{
     width: 90%; 
     z-index:0;
     max-width:1600px;
+    text-align: center;
 }
     #page-header a{
         text-decoration: none;
@@ -133,7 +134,7 @@ label{
  }
 
 #title{            
- width: 510px; 
+ width: 530px; /* war 510, aber dann brach die Zeile um */
  height: 95px; 
  background: #990000; 
  margin: 0 0 0 30px; 
@@ -1037,6 +1038,7 @@ div.text {
     line-height: 1.8em;
     position: relative;
     padding-left: 4em;
+    padding-right: 0.5em;
 }
 div.text h2 {
     text-align: left;
@@ -1054,6 +1056,10 @@ div.text table td.center {
 div.text table td.right {
     text-align: right;
 }
+div.text table td {
+    vertical-align: top;
+    padding-right: 2em;
+}
 div.text div.list {
     margin: 1em 0;
 }
@@ -1063,10 +1069,12 @@ div.text div.list.inline, div.text div.list div.list.inline {
     margin-left: 0;
     max-width: 90%;
 }
+div.text div.list.inline div.item:first-child {
+    margin-top: 0;
+}
 div.text span.label.inline {
     display: inline-block;
     vertical-align: top;
-    padding-top: 0.5em;
 }
 div.text div.list div.list {
     margin-left: 2em;
@@ -1074,6 +1082,9 @@ div.text div.list div.list {
 div.text div.item {
     margin: 0.5em 0;
     position: relative;
+}
+div.text div.item * {
+    vertical-align: top;
 }
 div.text div.item.indent-2-label {
     text-indent: -1em;
@@ -1083,6 +1094,10 @@ div.text div.item.indent-2 {
     text-indent: -1em;
     padding-left: 1em;
 }
+div.text p.indent-2 {
+    text-indent: -2em;
+    padding-left: 2em;
+}
 div.text div.item.indent-2 *, div.text div.item.indent-2-label * {
     text-indent: 0;
 }
@@ -1091,10 +1106,14 @@ div.text span.note.margin-right {
     position: absolute;
     vertical-align: middle;
     padding-left: 2em;
+    line-height: normal;
+    white-space: nowrap;
 }
 div.text div.item span.note.margin-left {
     position: absolute;
     left: -3em;
+    line-height: normal;
+    white-space: nowrap;
 }
 div.text > span.note.margin-left {
     display: inline-block;
@@ -1109,24 +1128,30 @@ div.text div.note.center hr {
     margin: 1em auto;
     text-align: center;
 }
-div.text span.grouping-right {
+div.text span.grouping-right, div.text span.grouping-left {
     font-weight: lighter;
     vertical-align: middle;
     color: #888888;
+    position: absolute;
+    right: -50px;
 }
-div.text span.grouping-right .label {
+div.text span.grouping-right .label, div.text span.grouping-left .label {
     font-size: 15px;
     font-weight: normal;
     color: #000000;
-}
-div.text table td {
-    vertical-align: top;
-    padding-right: 2em;
+    display: inline-block;
+    vertical-align: middle;
 }
 div.text span.metamark.quotes.ditto {
     display: inline-block;
-    width: 2em;
+    width: 3em;
     text-align: center;
+}
+div.text span.label.rotate-right {
+    transform: rotate(90deg);
+    position: relative;
+    top: 30%;
+    left: 30%;
 }
 div.text span.underline {
     text-decoration: underline;
@@ -1146,7 +1171,7 @@ div.text span.supplied {
     bottom: 1px;
     position: relative;
 }
-div.text span.deletion.overstrike {
+div.text span.deletion.overstrike, div.text span.deletion.overtyped {
     text-decoration: line-through;
 }
 div.text td.line-vertical {

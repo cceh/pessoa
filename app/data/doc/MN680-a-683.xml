@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>MN 680 a 683</title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">MN680-a-683.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc xml:id="M1" type="structured">
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>MN 680 a 683</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate from="1916" to="1919">1916-1919</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. </p>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="Espolio Manuela Nogueira (MN)/avulsos (680).jpg"/>
+      <graphic url="Espolio Manuela Nogueira (MN)/avulsos (682).jpg"/>
+      <graphic url="Espolio Manuela Nogueira (MN)/avulsos (683).jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <div>
+               <head><hi rend="underline">Agencia</hi></head>
+               <list>
+                  <item>Informações de cambios e vapores chegados etc.</item>
+                  <item rend="indent-2">
+                     <choice>
+                        <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                        <expan>Informações</expan>
+                     </choice> de passageiros e entradas<lb/> em hoteis. </item>
+                  <item rend="indent-2">
+                     <choice>
+                        <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                        <expan>Informações</expan>
+                     </choice> viagens, horarios, navios,<lb/>
+                     <choice>
+                        <abbr>v<am>.</am></abbr>
+                        <expan>v<ex>eiculos</ex></expan>
+                     </choice> circulatorios, etc.</item>
+                  <item>Listas de exportadores e importadores</item>
+                  <item rend="indent-2">Informação semanal sobre <lb/>commercio e industria
+                        <supplied resp="PS" reason="omitted-in-original"/>
+                  </item>
+                  <item><choice>
+                        <abbr>Inf<am>.</am></abbr>
+                        <expan>Inf<ex>ormação</ex></expan>
+                     </choice> estatistica.</item>
+                  <item>Informações commerciaes.</item>
+               </list>
+            </div>
+            <pb n="2"/>
+            <pb n="3"/>
+            <metamark rend="line-44" function="distinct"/>
+            <div>
+               <head>Traducções.</head>
+               <list>
+                  <item>Montagem e seguimento de escriptos.</item>
+                  <item rend="indent-2">
+                     <gap reason="illegible" unit="word" extent="1"/> litterarios, heraldicos e
+                        genea<pc>-</pc><lb/>logias.</item>
+                  <item rend="indent-2">Redacção correcta de cartas, <gap reason="illegible"
+                        unit="word" extent="1"/>,<lb/> catalogos.</item>
+                  <item>Revisão de provas typographicas.</item>
+                  <item>Cortes de jornaes.</item>
+                  <item>Informações litterarias geraes.</item>
+                  <item rend="indent-2">Manufactura de corrigir pautas,<lb/> cifras para
+                     correspondencia <choice>
+                        <abbr>scient<am>.</am></abbr>
+                        <expan>scient<ex>ifica</ex></expan>
+                     </choice>.</item>
+                  <item rend="indent-2">Trabalhos á machina, <gap reason="illegible" unit="word"
+                        extent="1"/>
+                     <lb/>no telegrapho.</item>
+                  <item rend="indent-2">Annuncios em todos os jornaes de <lb/>
+                     <rs type="place">Portugal</rs> e do estrangeiro.</item>
+                  <item rend="indent-2">Informação a proposito de livros <lb/>que vão sahir,
+                     etc.</item>
+                  <item rend="indent-2">Endereçar e expedir cartas e <lb/>circulares.</item>
+                  <pb n="4"/>
+                  <item>Publicidade.</item>
+               </list>
+            </div>
+         </div>
+      </body>
+   </text>
+</TEI>

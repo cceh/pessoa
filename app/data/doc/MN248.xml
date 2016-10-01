@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>MN 248 </title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">MN248.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc xml:id="M1" type="structured">
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>MN 248</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate notBefore="1923">post. 1923</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista datilografada, com um acrescento manuscrito, no verso de papel impresso de
+                  «Aviso por causa da moral», texto publicado em nome de Campos, com data de 1923.
+               </p>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="Espolio Manuela Nogueira (MN)/avulsos (248).jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <head><hi rend="underline"> Traducções. </hi></head>
+            <list>
+               <item><rs type="text">O CORVO</rs>, de <rs type="person" key="P87">Edgar Poe</rs>. </item>
+               <item><rs type="text">ODE</rs>, de <rs type="person" key="P266"
+                  >O’Shaughnessy</rs>.</item>
+               <item><rs type="text">A CIDADE NO MAR</rs>, de <rs type="person" key="P87">Edgar
+                     Poe</rs>.</item>
+               <item><rs type="text">A ULTIMA CAVALGADA</rs>, de <rs type="person" key="P267">Robert
+                     Browning</rs>.</item>
+               <item><rs type="text">O HOMEM E A COBRA</rs>, de <rs type="person" key="P268">Ambrose
+                     Bierce</rs>.</item>
+               <item><rs type="text">POEMAS EM PROSA</rs>, de <rs type="person" key="P32">Oscar
+                     Wilde</rs>.</item>
+               <item><rs type="text">A DECADENCIA DA MENTIRA</rs>, de <rs type="person" key="P32"
+                     >Oscar Wilde</rs>. </item>
+               <item><rs type="text">EPILOGO</rs>, da “Renascença”, de <rs type="person" key="P164"
+                     >Walter Pater</rs>.</item>
+               <item><rs type="text">LEONARDO DA VINCI</rs>, de <rs type="person" key="P164">Walter
+                     Pater</rs>.</item>
+               <item><rs type="text">CARTA AO CONDE DE CHESTERFIELD</rs>, do <rs type="person"
+                     key="P269"><abbr>Dr<am>.</am></abbr> Johnson</rs>.</item>
+               <item><rs type="text">DESCIDA AO MAELSTROM</rs>, de <rs type="person" key="P87">Edgar
+                     Poe</rs>.</item>
+               <item><rs type="text">A CAVALGADA ATÉ AO MAR</rs>, de <rs type="person" key="P270"
+                           ><abbr>J<am>.</am></abbr>&#x00A0;<abbr>M<am>.</am></abbr>
+                  Synge</rs>.</item>
+               <item><rs type="text">A TERRA DOS CEGOS</rs>, de <rs type="person" key="P271"
+                           ><abbr>H<am>.</am></abbr>&#x00A0;<abbr>G<am>.</am></abbr>
+                  Wells</rs>.</item>
+               <item><rs type="text">A PORTA NO MURO</rs>, de <rs type="person" key="P271"
+                           ><abbr>H<am>.</am></abbr>&#x00A0;<abbr>G<am>.</am></abbr>
+                  Wells</rs>.</item>
+               <item><rs type="text">O SENHOR DO CASTELLO NEGRO</rs>, de <rs type="person"
+                     key="P105">Sir <abbr>A<am>.</am></abbr> Conan Doyle</rs>.</item>
+               <item><rs type="text">A SOMBRA</rs>, de <rs type="person" key="P87">Edgar
+                  Poe</rs>.</item>
+               <item><rs type="text">STROPHES DA GRANDE CHARTREUSE</rs>, de <rs type="person"
+                     key="P185">Matthew Arnold</rs>.</item>
+               <item><rs type="text">ODE Á IMMORTALIDADE</rs>, de <rs type="person" key="P162"
+                     >William Wordsworth</rs>.</item>
+               <item><rs type="text">DE COMO NAPOLEÃO NUNCA EXISTIU</rs>, de <rs type="person"
+                     key="P13"><abbr>J<am>.</am></abbr>&#x00A0;<abbr>B<am>.</am></abbr>
+                  Pérès</rs>.</item>
+               <item><rs type="text">MAXIMAS</rs>, de <rs type="person" key="P272">La
+                     Rochefoucauld</rs>.</item>
+               <item><del rend="overtyped" n="2"><rs type="text">PROPHECIAS</rs>, de <rs
+                        type="person" key="P259">Bandarra</rs>.</del></item>
+               <item><rs type="person" key="P104"><abbr>O<am>.</am></abbr> Henry</rs> ― <rs
+                     type="text">Caminhos do Destino</rs>.</item>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>

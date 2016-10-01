@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>51-89<hi rend="superscript">v</hi>
-            </title>
+            <title>BNP/E3 51-89<hi rend="superscript">v</hi></title>
             <author>
                <rs type="person" key="FP">Fernando Pessoa</rs>
             </author>
             <respStmt>
                <resp>Transcrição, Edição</resp>
                <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
@@ -20,9 +24,19 @@
                <resp>Codificação</resp>
                <name>Sviatoslav Drach</name>
             </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher/>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
             <idno type="filename">BNP_E3_51-89v.xml</idno>
          </publicationStmt>
          <sourceDesc>
@@ -65,33 +79,34 @@
       <graphic
          url="bn-acpc-e-e3-51-1-106_JPG_24-C-R0150/bn-acpc-e-e3-51-1-106_0184_89v_t24-C-R0150.jpg"/>
    </facsimile>
-   <text xml:id="bnp-e3-51-89v">
+   <text>
       <body>
-         <note><del rend="overstrike">
+         <div>
+            <delSpan rend="overstrike" spanTo="#a1"/>
+            <div rend="left">
+               <head><hi rend="underline">Major</hi>:</head>
                <list>
-                  <head><hi rend="underline">Major: </hi></head>
-                  <item><rs type="title">Terceiro Fausto.</rs>
+                  <item><rs type="text">Terceiro Fausto</rs>.</item>
+                  <item><rs type="text">Theomachia</rs> (or other name). <note place="margin-right">
+                        <p>one every two<lb/>years<lb/>means<lb/>ten<lb/>years.</p>
+                     </note>
                   </item>
-                  <note place="right"> one every two</note>
-                  <note place="right"> years </note>
-                  <item>Theomachia (or other name).</item>
-                  <note place="right">means </note>
-                  <item><rs type="person"><choice>
-                           <abbr>D<am>.</am></abbr>
-                        </choice> Sebastião</rs> (or other name). </item>
-                  <note place="right">ten</note>
-                  <item><rs type="title">Prometheus Revinctus.</rs> years.</item>
-                  <item><rs type="title">The Duke of Parma.</rs>
-                     -------------------------------------------------------------------------------------</item>
-                  <item><rs type="title">Ficções do Interludio</rs> (como conjuncto).</item>
-                  <item><rs type="title">O Caso Vargas.</rs> (?)</item>
-                  <item>Notas de Idéas.(?) </item>
-                  <item><rs type="title">Cancioneiro. </rs>(?) (como conjuncto).</item>
+                  <item><rs type="person" key="P21" style="b">D. Sebastião</rs> (or other
+                     name).</item>
+                  <item><rs type="text">Prometheus Revinctus.</rs></item>
+                  <item><rs type="text">The Duke of Parma.</rs>
+                     -----------------------------------------------</item>
+                  <item><rs type="work" key="O1-13-2"><rs type="text">Ficções do
+                        Interludio</rs></rs> (como conjuncto).</item>
+                  <item><rs type="text">O Caso Vargas</rs>. (?)</item>
+                  <item>Notas de Idéas. (?)</item>
+                  <item><rs type="work" key="O1" style="b"><rs type="text">Cancioneiro</rs></rs>.
+                     (?) (como conjuncto).</item>
                   <item>Poemas. (?) (como conjuncto).</item>
-
                </list>
-            </del></note>
-         <div/>
+            </div>
+            <anchor xml:id="a1"/>
+         </div>
       </body>
    </text>
 </TEI>
