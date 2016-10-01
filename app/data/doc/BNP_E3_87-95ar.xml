@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 87-95a<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação, Modelagem de dados</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_87-95ar.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc xml:id="M1" type="structured">
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 87-95ar</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="en fr"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate when="1935" cert="medium">c. 1935</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. </p>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic
+         url="bn-acpc-e-e3-87-1-103_JPG_24-C-R0150/bn-acpc-e-e3-87-1-103_0205_95a_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <head><note rend="circled" place="left"><hi rend="underline">1 </hi></note></head>
+            <list>
+               <item><label>1.</label><choice>
+                     <abbr>Orph<am>.</am></abbr>
+                     <expan>Orph<ex>eu</ex></expan>
+                  </choice> Nova Phase (<hi rend="superscript"> Luiz</hi> Montalvor) </item>
+               <item><label>2.</label>7 <choice>
+                     <abbr>Can<am>.</am></abbr>
+                     <expan>Can<ex>ções</ex></expan>
+                  </choice> de Declinio</item>
+               <item><label>3.</label> Defeza do Capitalismo.</item>
+               <item><label>4.</label>Quinto Imperio </item>
+               <item><label>5.</label> L’Homme aux <gap reason="illegible" unit="word" extent="1"/>
+                  Noirs.</item>
+               <item><label>6.</label><rs type="text"> Jekyll &amp; Hyde</rs></item>
+            </list>
+            <metamark rend="line-44" function="distinct"/>
+            <list>
+               <head><note rend="circled" place="left"><hi rend="underline">2 </hi></note></head>
+
+               <item><label>1.</label><rs type="person">Almada Negreiros</rs>
+               </item>
+               <anchor xml:id="A1"/>
+               <item><label>2.</label>Trez Poemas de<rs type="person"> Poe</rs>. </item>
+               <item><anchor xml:id="a2"/><label>3.</label> Machina de Matar Revoluções.</item>
+               <item><label>4.</label>(poemas de <rs type="person">Carlos</rs><gap
+                     reason="illegible" unit="word" extent="1"/>, <choice>
+                     <abbr>p<am>.</am></abbr>
+                     <expan>p<ex>or</ex></expan>
+                  </choice><choice>
+                     <abbr>ex<am>.</am><expan>ex<ex>emplo</ex></expan></abbr>
+                  </choice></item>
+               <item><label>5.</label> Chronica Byzantina</item>
+               <item><label>6.</label><rs type="text"> Jekyll &amp; <choice>
+                        <abbr>Hy<am>.</am></abbr>
+                        <expan>Hy<ex>de</ex></expan>
+                     </choice></rs></item>
+            </list>
+            <metamark rend="line-44" function="distinct"/>
+            <list>
+               <head><note rend="circled" place="left"><hi rend="underline">3 </hi></note></head>
+
+               <item><label>1.</label>
+                  <supplied resp="PS" reason=" omitted-in-original"/>
+               </item>
+               <item><label>2.</label>Theoria do <choice>
+                     <abbr> Suffr<am>.</am></abbr>
+                     <expan> Suffr<ex>agio</ex></expan>
+                  </choice> Politico </item>
+               <item><label>3.</label><rs type="work">
+                     <rs type="text">Barrow-on-Furness</rs> (<rs type="person" role="author"><choice>
+                           <abbr>Al<am>.</am></abbr>
+                           <expan>Al<ex> varo</ex></expan>
+                        </choice> de Campos)</rs></rs></item>
+               <item><label>4 .</label>Sylva sebastica. </item>
+               <item><label>5.</label><supplied resp="PS" reason="omitted-in-original"/>
+               </item>
+            </list>
+            <metamark rend="line-44" function="distinct"/>
+            <gap reason="selection" unit="line" extent="5"/>
+         </div>
+      </body>
+   </text>
+</TEI>

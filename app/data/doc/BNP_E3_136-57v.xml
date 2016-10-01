@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 136-57<hi rend="superscript">v</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação, Modelagem de dados</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_136-57v.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc xml:id="M1" type="structured">
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 136-57v</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="en"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate from="1920" to="1927">1920-1927</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p>Lista manuscrita.</p>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic
+         url="bn-acpc-e-e3-136-1-63_JPG_24-C-R0150/bn-acpc-e-e3-136-1-63_0114_57v_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <p><hi rend="superscript">Open</hi> Letter to any writer of any article <lb/>“Portugal”
+               in any Encyclo<pc>-</pc><lb/>pedia<lb/> with some hints to the writers<lb/> of <hi
+                  rend="superscript">a few other</hi> correlated articles </p>
+            <metamark rend="line-44" function="distinct"/>
+            <p><choice>
+                  <abbr>Re<am>.</am></abbr>
+                  <expan>Re<ex>spond</ex></expan>
+               </choice>to the sociological errors &amp; injustices done to Portugal by the<lb/>
+               generality of writers on <del rend="overstrike">the</del> it √</p>
+            <metamark rend="line-44" function="distinct"/>
+            <p>Scotland in general and Burns<lb/> in particular.</p>
+            <note place="right">X</note>
+            <metamark rend="line-44" function="distinct"/>
+            <p><hi rend="underline">An <gap reason="illegible" extent="1" unit="word"/> for
+                  Burns.</hi>
+            </p>
+            <p>Being a critical analysis of the<lb/>
+               <gap reason="illegible" extent="1" unit="word"/>of Robert of that <lb/>
+               <hi rend="superscript">ending</hi>
+               <note rend="circled">surname</note>. <note rend="circled"> √</note></p>
+            <metamark rend="line-44" function="distinct"/>
+            <p><anchor xml:id="A1"/>
+               <hi rend="underline">"The New Decadence</hi></p>
+            <p> An Introduction to the Study of <lb/>Indifference.</p>
+            <metamark rend="line-44" function="distinct"/>
+            <p><anchor xml:id="a2"/>
+               <note rend="circled">or</note> Being an apology for of all culture not genuine.</p>
+         </div>
+         <div/>
+      </body>
+   </text>
+</TEI>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 114-79<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação, Modelagem de dados</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_114-79r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc xml:id="M1" type="structured">
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 114-79r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="en"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate from="1916" cert="medium">c. 1916</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p>Lista manuscrita, publicada em <hi rend="italic">Sensacionismo e Outros
+                     Ismos</hi> (2009, 385). A folha de papel contém um esboço de carta dirigida a
+                  um editor inglês, associado ao periódico literário <hi rend="italic">The
+                     Egoist</hi> e mencionando o envio do segundo número de <hi rend="italic"
+                     >Orpheu</hi>, publicado em Julho de 1915.</p>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic
+         url="bn-acpc-e-e3-114-1-1-119_JPG_24-C-R0150/bn-acpc-e-e3-114-1-1-119_0161_79_t24-C-R0150.jpg"
+      />
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <div rend="left">
+               <list>
+                  <head><hi rend="underline">Translations of:</hi></head>
+                  <item><rs type="text">Naval Ode</rs>,</item>
+                  <item><rs type="text">Slanting Rain</rs>,</item>
+                  <item><rs type="text">Manucure.</rs></item>
+               </list>
+            </div>
+            <div rend="right">
+               <list>
+                  <item><rs type="work"><rs type="text">Ode Maritima</rs> – <rs type="person"><choice>
+                              <abbr>Alv<am>.</am></abbr>
+                              <expan>Alv<ex>aro</ex></expan>
+                           </choice> de Campos.</rs></rs></item>
+                  <item><rs type="text">A Passagem das Horas</rs> – o mesmo</item>
+                  <item><rs type="work"><rs type="text">Scena do Odio</rs> – <rs type="person"><choice>
+                              <abbr>J<am>.</am></abbr>
+                              <expan>J<ex>osé</ex></expan>
+                           </choice><choice>
+                              <abbr>Al<am>.</am></abbr>
+                              <expan>Al<ex>mada</ex></expan>
+                           </choice>Negreiros.</rs></rs></item>
+               </list>
+            </div>
+         </div>
+      </body>
+   </text>
+</TEI>

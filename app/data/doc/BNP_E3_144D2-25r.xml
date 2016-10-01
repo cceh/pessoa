@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>1BNP/E3 44D<hi rend="superscript">2</hi>-25<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação, Modelagem de dados</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_144D2-25r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc xml:id="M1" type="structured">
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 144D2-25r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs><rs type="genre"
+                           key="plano_editorial">Plano editorial</rs>
+                     </note>
+                     <textLang mainLang="pt"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate when="1913" cert="medium">c. 1913</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p>Lista manuscrita no caderno 144D<hi rend="superscript">2</hi> (cf. <ref
+                     target="http://purl.pt/13880">http://purl.pt/13880</ref>).</p>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3_144d2_JPG_24-C-R0150/bn-acpc-e-e3_144d2_0075_25r_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <list>
+               <item><note place="left"><hi rend="underline"><rs type="text"> Exilio.</rs>
+                     </hi></note> Poesias<hi rend="underline"> pequenas</hi>, de varia ordem,<lb/>
+                  excepto social, mystica (<gap reason="illegible" unit="character" extent="1"
+                  />)<lb/> e patriotica. </item>
+               <item><note place="left"><hi rend="underline"><rs type="text"
+                     >Gladio.</rs></hi></note> Trez Partes I. <rs type="place">Portugal</rs>; II.
+                     Poe<pc>-</pc><lb/>sias de <subst>
+                     <del cause="unclear" extent="1" unit="character"/>
+                     <add place="superimposed">patrioticas</add>
+                  </subst>; III. Poesias de ordem <lb/> social,<gap reason="illegible"
+                     unit="character" extent="1"/> .</item>
+               <item><note place="left"><hi rend="underline"><rs type="text"
+                     >Aureola.</rs></hi></note> Poesias mais extensas, que podem ser <lb/>de
+                  qualquér especie, patriotica (Caravellas) ou mera<pc>-</pc><lb/>mente artistica
+                  (Musica); e poesias mais<lb/> pequenas de tom mystico e religioso. Mesmo <lb/>as
+                  poesias patrioticas devem ter um <gap reason="illegible" unit="character"
+                     extent="1"/>
+                  <lb/>
+                  <gap reason="illegible" unit="character" extent="1"/> e alta.(But remember <choice>
+                     <abbr>C<am>.</am></abbr>
+                     <expan>C<ex/></expan>
+                  </choice><choice>
+                     <abbr>B<am>.</am></abbr>
+                     <expan>B<ex/></expan>
+                  </choice><choice>
+                     <abbr> G<am>.</am></abbr>
+                     <expan> G<ex/></expan>
+                  </choice>
+                  <lb/> no<hi rend="underline"><rs type="text"> Gladio</rs></hi>)</item>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 144F-2<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação, Modelagem de dados</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_144F-2r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc xml:id="M1" type="structured">
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 144F-2r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="en"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate when="1935-10-19" cert="medium">c. 19-10-1935</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p>Lista manuscrita no caderno 144F. Na página anterior do caderno é mencionada a
+                  data «19-10-1935».</p>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3_144f_JPG_24-C-R0150/bn-acpc-e-e3_144f_0007_2r_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <p>Collaboração revista italiana de<lb/> poesia (comité portuguez ― <lb/><rs
+                  type="person"> Montalvor</rs>, <rs type="person">Casaes Monteiro</rs>,<lb/>
+               <rs type="person">João de Castro Osorio</rs>, <rs type="person">José Osorio <lb/> de
+                  Oliveira</rs>.) </p>
+            <metamark rend="line-44" function="distinct"/>
+            <p>English Poems <rs type="person">Celestino Soares</rs>.</p>
+            <metamark rend="line-44" function="distinct"/>
+            <list>
+               <item><rs type="text">“Presença”</rs> — <rs type="person">José Regio</rs>. </item>
+               <item><rs type="text">“O Diabo”</rs>.</item>
+               <item><rs type="text">“Fradique.”</rs></item>
+               <item><rs type="text"><subst>
+                        <del rend="overstrike"> “Poesia.”</del>
+                        <add place="below">Lyrica</add>
+                     </subst></rs> (ut supra).</item>
+               <item><del rend="overstrike">Madge’s address.</del></item>
+               <item><del rend="overstrike">John.</del></item>
+            </list>
+            <note><del rend="overstrike"><gap reason="selection" unit="lines" extent="5"
+               /></del></note>
+         </div>
+      </body>
+   </text>
+</TEI>

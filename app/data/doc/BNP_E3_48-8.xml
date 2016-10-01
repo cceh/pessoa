@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 48-8</title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação, Modelagem de dados</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_48-8.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc xml:id="M1" type="structured">
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 48-8</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="en fr sp it"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate>?</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p>Lista manuscrita.</p>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3-48-1-56_JPG_24-C-R0150/bn-acpc-e-e3-48-1-56_0015_8_t24-C-R0150.jpg"
+      />
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <head><hi rend="underline">Anthology.</hi></head>
+            <list>
+               <item><rs type="person">Francis Thompson</rs>: <label><rs type="text">The Hound of
+                        Heaven.</rs> (<choice>
+                        <abbr>vol<am>.</am></abbr>
+                        <expan>vol<ex>ume</ex></expan>
+                     </choice> i)</label>
+                  <note place="right"><label>:<rs type="text"> The Mistress of Vision.</rs> (<choice>
+                           <abbr>vol<am>.</am></abbr>
+                           <expan>vol<ex>ume</ex></expan>
+                        </choice> ii)</label></note>
+                  <note place="right"><label>: <rs type="text">The Kingdom of God</rs> ( <choice>
+                           <abbr>vol<am>.</am></abbr>
+                           <expan>vol<ex>ume</ex></expan>
+                        </choice>ii)</label></note>
+               </item>
+               <item><rs type="person">Robert Browning</rs>: <label><rs type="text">Rabi ben
+                        Ezra.</rs>
+                  </label>
+                  <note place="right"><label> : <rs type="text">James Lee’s wife. </rs>
+                     </label></note>
+                  <note place="right"><label>: <rs type="text">Prospice.</rs>
+                     </label></note>
+                  <note place="right"><label>: <rs type="text">Evelyn Hope.</rs>
+                     </label></note>
+                  <note place="right"><label>: <rs type="text">The Pied Piper of Hamelin.</rs>
+                     </label></note>
+               </item>
+               <item><rs type="person">John Keats</rs>: <label><rs type="text">Ode to a
+                        Nightingale.</rs>
+                  </label>
+                  <note place="right"><label>: <rs type="text">Ode to a Grecian Urn.</rs>
+                     </label></note>
+                  <note place="right"><label>:<rs type="text"> To Autumn.</rs>
+                     </label></note>
+                  <note place="right"><label>:<rs type="text"> Ode on Melancholy.</rs>
+                     </label></note>
+                  <note place="right"><label>:<rs type="text"> On Indolence.</rs>
+                     </label></note>
+                  <note place="right"><label>: <rs type="text">Last Sonnet.</rs>
+                     </label></note>
+                  <note place="right"><label>:<rs type="text"> (Ode to Psyche.)</rs>
+                     </label></note>
+                  <note place="right"><label>:<rs type="text">La Belle Dame sans Mercy.</rs>
+                     </label></note></item>
+               <item><rs type="person">Edgar Allan Poe</rs>: <label><rs type="text">Annabel
+                        Lee.</rs>
+                  </label>
+                  <note place="right"><label> : <rs type="text">(Ulalume) </rs>
+                     </label></note>
+                  <note place="right"><label> : <rs type="text">(The City in the Sea)</rs>
+                     </label></note></item>
+               <item><rs type="person"><choice>
+                        <abbr>S<am>.</am></abbr>
+                     </choice><choice>
+                        <abbr>T<am>.</am></abbr>
+                     </choice> Coleridge</rs>: <label><rs type="text"> The Rime of the Ancient
+                        Mariner. </rs>
+                  </label>
+                  <note place="right"><label>:<rs type="text"> Dejection: an Ode.</rs>
+                     </label></note>
+                  <note place="right"><label>:<rs type="text"> Kubla Khan. </rs>
+                     </label></note>
+                  <note place="right"><label> :<rs type="text"> (The Pains of Sleep). </rs>
+                     </label></note></item>
+               <item><rs type="person"><choice>
+                        <abbr>W<am>.</am></abbr>
+                     </choice> Wordsworth</rs>: <label><rs type="text"> Ode on the Intimations of
+                        Immortality. </rs>
+                  </label>
+                  <note><supplied resp="PS" reason="omitted-in-original"/></note>
+                  <note place="right"><label> :<rs type="text">Lines written above Tintern
+                           Abbey.</rs>
+                     </label></note>
+                  <note place="right"><label> :<rs type="text">Laodamia.</rs>
+                     </label></note></item>
+               <item><rs type="person">Ernst Dowson</rs>: <label><rs type="text"> Non Sum Qualis
+                        eram Bonae Sub Regno Cynarae.</rs>
+                  </label></item>
+               <item><rs type="person">Joseph Blanco White</rs>: <label><rs type="text">To
+                        Night.</rs>
+                  </label></item>
+               <item><rs type="person"><choice>
+                        <abbr>D<am>.</am></abbr>
+                     </choice><choice>
+                        <abbr>G<am>.</am></abbr>
+                     </choice> Rossetti</rs>:<label><rs type="text">The Blessed Damozel.</rs>
+                     <lb/> (any sonnet?) </label></item>
+               <item><rs type="person"><choice>
+                        <abbr>A<am>.</am></abbr>
+                     </choice><choice>
+                        <abbr>C<am>.</am></abbr>
+                     </choice> Swinburne</rs>: <label><note><supplied resp="PS"
+                           reason="omitted-in-original"/></note>
+                  </label></item>
+               <item><rs type="person">Thomas Hood</rs>: <label><rs type="text"> (The Song of the
+                        Shirt).</rs>
+                     <lb/>
+                  </label></item>
+               <item><rs type="person">Alfred de Vigny</rs>: <label>
+                     <rs type="text"> Moïse. </rs>
+                  </label><lb/><label> :<rs type="text"> La Colère de Samson.</rs></label></item>
+               <item><rs type="person">Gerard de Nerval</rs>:<label><rs type="text"> El
+                        Desdichado.</rs>
+                  </label></item>
+               <item><rs type="person">Victor Hugo</rs>:<label><rs type="text"> À Villequier. </rs>
+                  </label></item>
+               <item><rs type="person">Guerra Junqueiro</rs>:<label>
+                     <rs type="text"> Oração á Luz. </rs>
+                  </label>
+               </item>
+               <item><rs type="person">Teixeira de Pascoaes</rs>:<label><rs type="text">
+                        Elegia.</rs></label></item>
+               <item><rs type="person">António Molarinho</rs>: <label><rs type="text"> Maria
+                        Manoela.</rs>
+                  </label></item>
+               <item><rs type="person">Lord Tennyson</rs>:<label><rs type="text">
+                     (Mariana)</rs></label>
+                  <note place="right"><label>:<rs type="text"> Morte d’Arthur.</rs>
+                     </label></note>
+                  <note place="right"><label>:<rs type="text"> Lines written above Tintern
+                           Abbey.</rs></label></note>
+                  <note place="right">
+                     <label>:<rs type="text"> The Charge of The Light Brigade. </rs></label></note>
+                  <note place="right"><label>:<rs type="text"> (‘Break, break, break’)
+                     </rs></label></note>
+                  <note place="right">
+                     <label>:<rs type="text"> Ulysses. </rs></label></note>
+                  <note place="right">
+                     <label>:<rs type="text"> Tithonius. </rs></label></note>
+                  <note place="right">
+                     <label>:<rs type="text"> Oenone.</rs></label></note></item>
+               <item><rs type="person">O’Shaughnessy</rs>:<label><rs type="text"> Ode. (we are the
+                        music makers)</rs></label></item>
+               <item><rs type="person">John Milton</rs>: <label><rs type="text"
+                     >Lycidas.</rs></label>
+                  <note place="right"><label>: <rs type="text">L’Allegro.</rs></label></note>
+                  <note place="right"><label> : <rs type="text">Il Penseroso. </rs>
+                     </label></note>
+                  <note place="right">
+                     <label> :<rs type="text">
+                           <choice>
+                              <abbr>S<am>.</am></abbr>
+                           </choice> on his Blindness. </rs></label></note>
+                  <note place="right"><label>: <rs type="text">(Nativity
+                  Ode).</rs></label></note></item>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>

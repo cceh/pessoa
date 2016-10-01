@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 48I-9<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação, Modelagem de dados</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_48I-9r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc xml:id="M1" type="structured">
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 48I-9r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                        <rs type="genre" key="nota_editorial">Nota editorial</rs>
+                     </note>
+                     <textLang mainLang="pt"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate from="1920" to="1927">1920-1927</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p>Lista manuscrita, publicada em Uribe, <hi rend="italic">Pessoa’s Walter
+                     Pater.</hi>
+                  <hi rend="italic">Archival material from a reading story</hi>, 209-210.</p>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic
+         url="bn-acpc-e-e3-48i-1-30_JPG_24-C-R0150/bn-acpc-e-e3-48i-1-30_0017_9_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <list>
+               <item><label>1.</label>
+                  <choice>
+                     <abbr>Trad<am>.</am></abbr>
+                     <expan>Trad<ex>ucção</ex></expan>
+                  </choice> do Pimandro.</item>
+               <item><label>2.</label><choice>
+                     <abbr>Trad<am>.</am></abbr>
+                     <expan>Trad<ex>ucção</ex></expan>
+                  </choice> da Fama <choice>
+                     <abbr>Fratern<am>.</am></abbr>
+                     <expan>Fratern<ex>itatis</ex></expan>
+                  </choice>.</item>
+               <item><label>3.</label><choice>
+                     <abbr>Trad<am>.</am></abbr>
+                     <expan>Trad<ex>ucção</ex></expan>
+                  </choice> dos Versos d’Ouro. </item>
+               <item><label>4.</label><choice>
+                     <abbr>Trad<am>.</am></abbr>
+                     <expan>Trad<ex>ucção</ex></expan>
+                  </choice> dos <choice>
+                     <abbr> princ<am>.</am></abbr>
+                     <expan>princ<ex>ipaes </ex></expan>
+                  </choice><choice>
+                     <abbr> poem<am>.</am></abbr>
+                     <expan>poem<ex> as</ex></expan>
+                  </choice> de <rs type="person"><choice>
+                        <abbr> E<am>.</am></abbr>
+                        <expan>E<ex>dgar </ex></expan>
+                     </choice><choice>
+                        <abbr> A<am>.</am></abbr>
+                        <expan>A<ex>llen</ex></expan>
+                     </choice> Poe</rs>.</item>
+               <item><label>5.</label><choice>
+                     <abbr>Trad<am>.</am></abbr>
+                     <expan>Trad<ex>ucção</ex></expan>
+                  </choice> de <rs type="person">Omar Khayyam</rs>.</item>
+               <item><label>6.</label>Varias <choice>
+                     <abbr>Trad<am>.</am></abbr>
+                     <expan>Trad<ex>ucções</ex></expan>
+                  </choice> da <choice>
+                     <abbr> Anthol<am>.</am></abbr>
+                     <expan> Anthol<ex>ogia </ex></expan>
+                  </choice> Grega.</item>
+               <item><label>7.</label><choice>
+                     <abbr>Trad<am>.</am></abbr>
+                     <expan>Trad<ex>ucção</ex></expan>
+                  </choice> do <rs type="text">Prometheu Preso.”</rs></item>
+               <item><label>8.</label><supplied resp="PS" reason="omitted-in-original"/></item>
+            </list>
+            <metamark rend="line-44" function="distinct"/>
+            <list>
+               <item><label>1.</label><rs type="work"><rs type="text"> “A Tormenta”. </rs>– <rs
+                        type="person"><choice>
+                           <abbr>W<am>.</am></abbr>
+                           <expan>W<ex>illiam </ex></expan>
+                        </choice><choice>
+                           <abbr>Sh<am>.</am></abbr>
+                           <expan> Sh<ex>akespeare</ex></expan>
+                        </choice></rs></rs></item>
+               <item><label>2.</label><supplied resp="PS" reason="omitted-in-original"/></item>
+               <item><label>3.</label><supplied resp="PS" reason="omitted-in-original"/></item>
+            </list>
+            <metamark rend="line-44" function="distinct"/>
+            <p><hi rend="underline">Não incluir materia moderna<lb/> e controversa</hi>. Assim, não
+               <lb/> publicar, por <choice>
+                  <abbr>ex<am>.</am></abbr>
+               </choice>, livros sobre<lb/>
+               <rs type="person">Einstein</rs>, Socialismo, etc.</p>
+            <metamark rend="line-44" function="distinct"/>
+            <list>
+               <item><rs type="person">Antonio Vieira</rs>: Trechos capitaes.</item>
+               <item>Anthologia Portuguesa (não o que<lb/> é interessante, porém o que é de<lb/>
+                  interesse eterno).</item>
+            </list>
+            <metamark rend="line-44" function="distinct"/>
+            <list>
+               <item><rs type="person"> Oscar Wilde</rs>: Poemas em Prosa.</item>
+               <item><rs type="work"><rs type="person">Walter Pater</rs>: <rs type="text">A
+                        Renascença.</rs></rs></item>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>

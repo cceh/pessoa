@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 144D<hi rend="superscript">2</hi>-7<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação, Modelagem de dados</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_144D2-7r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc xml:id="M1" type="structured">
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 144D2-7r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="en"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate when="1913" cert="medium">c. 1913</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p>Lista manuscrita no caderno 144D<hi rend="superscript">2</hi> (cf. <ref
+                     target="http://purl.pt/13880">http://purl.pt/13880</ref>).</p>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3_144d2_JPG_24-C-R0150/bn-acpc-e-e3_144d2_0023_7r_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <head><hi rend="underline">Poesia.</hi></head>
+            <p><note place="center"><hi rend="underline">Portuguez.</hi></note></p>
+            <list>
+               <item><note place="left"><hi rend="underline">Livros: </hi></note><label><rs
+                        type="text">Gladio.</rs></label><note place="right">(1)</note></item>
+               <item><label><rs type="text">Agua Estagnada.</rs></label><note place="right"
+                     >(2)</note></item>
+               <item><label><rs type="text">Trilogia dos Gigantes.</rs>
+                  </label><note place="right"/>(3) ― a, b, c.</item>
+               <item><label><rs type="text">Fausto.</rs></label><note place="right"
+                  >(4)</note></item>
+               <item><label><rs type="text">Inez de Castro ― Tragedia.</rs></label><note
+                     place="right">(5)</note></item>
+            </list>
+            <list>
+               <head><note place="center"><hi rend="underline">Inglez.</hi></note></head>
+
+               <item><rs type="text">Ascension</rs>, and other poems.<note place="right">(6)
+                  </note></item>
+               <item><rs type="text">The Voyag</rs>e, and other poems.<note place="right">
+                     (7)</note></item>
+               <item>The Poems of <rs type="person">Frederick Wyatt. </rs><note place="right">(8)
+                  </note></item>
+               <item><rs type="text">The Duke of Parma ― A Tragedy.</rs><note place="right"
+                     >(9)</note></item>
+               <item><rs type="text">Marino ― A Tragedy.</rs><note place="right">(10) </note></item>
+               <item><rs type="text">Prometheus Rebound.</rs><note place="right">(11) </note></item>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>

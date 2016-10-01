@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 144P-46<hi rend="superscript">v</hi> a 48<hi rend="superscript"
+               >r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação, Modelagem de dados</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_144P-46v-a-48r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc xml:id="M1" type="structured">
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 144P-46v a 48r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="fr de"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate from="1915" cert="medium">c. 1915</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p>Lista manuscrita no caderno 144P (cf. <ref target="http://purl.pt/13891"
+                     >http://purl.pt/13891</ref>).</p>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3_144p_JPG_24-C-R0150/bn-acpc-e-e3_144p_0106_46v_t24-C-R0150.jpg"/>
+      <graphic url="bn-acpc-e-e3_144p_JPG_24-C-R0150/bn-acpc-e-e3_144p_0107_47r_t24-C-R0150.jpg"/>
+      <graphic url="bn-acpc-e-e3_144p_JPG_24-C-R0150/bn-acpc-e-e3_144p_0108_47v_t24-C-R0150.jpg"/>
+      <graphic url="bn-acpc-e-e3_144p_JPG_24-C-R0150/bn-acpc-e-e3_144p_0109_48r_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <head><hi rend="underline"> Cosmopolis <note place="right">Agencia
+               Geral.</note></hi></head>
+            <list>
+               <item><label>I.</label> Informação a respeito de comboios (<gap reason="illegible"
+                     unit="character" extent="1"/>)</item>
+               <item><label>I.</label><metamark rend="line" function="ditto"/><choice>
+                     <abbr>part<am>.</am></abbr>
+                     <expan>part<ex>idas</ex></expan>
+                  </choice> e <choice>
+                     <abbr>cheg<am>.</am></abbr>
+                     <expan>cheg<ex>adas</ex></expan>
+                  </choice>
+                  <gap reason="illegible" unit="character" extent="2"/>, e<lb/> passageiros. </item>
+               <item><label>I.</label><metamark rend="line" function="ditto"/> viagens, comboios,
+                  viagens <lb/>circulatorias, etc. </item>
+               <item>Montagem de escriptos.</item>
+               <item xml:id="I5"><label>II.</label>Correspondencia commercial. </item>
+               <item xml:id="I6"><label>Ia.</label>Listas de <choice>
+                     <abbr>exporta<am>.</am></abbr>
+                     <expan>exporta<ex>ções</ex></expan>
+                  </choice> ,<choice>
+                     <abbr> importa <am>.</am></abbr>
+                     <expan> importa <ex>ções</ex></expan>
+                  </choice>, negociantes e <lb/>fabricantes. </item>
+               <item xml:id="I7"><label>Ia.</label> Agentes nos <gap reason="illegible"
+                     unit="character" extent="1"/> e no estrangeiro.</item>
+               <item xml:id="I8"><label>III.</label>Buscas literarias etc. nas bibliothecas;
+                  rebusca<lb/> de jornaes antigos. Pesquizas heraldi <pc>-</pc><lb/>cas e
+                  genealogicas. </item>
+               <item xml:id="I9"><label>II.</label> Redacção correcta de cartas, circulares,<lb/>
+                  <note rend="circled"> II</note> catalogos (em todas as linguas)</item>
+               <item><label>III.</label> Revisão de provas typographicas, seguindo<lb/> a
+                  ortographia antiga a moderna.</item>
+               <item><label>III.</label> Revisão ortographica.</item>
+               <note><gap reason="illegible" unit="character" extent="3"> </gap></note>
+               <item><label>I.</label><gap reason="illegible" unit="character" extent="1"/> de
+                  jornaes, <choice>
+                     <abbr>nac<am>.</am></abbr>
+                     <expan>nac<ex>ionaes</ex></expan>
+                  </choice> e estrangeiros. </item>
+               <item><label>III.</label> Opinião sobre livros, etc. de autores que<lb/> a tencionem
+                  publicar.</item>
+               <item><label>III.</label> Informações literarias, e tudo das literaturas<lb/> de toda
+                  a especie; discursos, artigos, versos<lb/> para homenagear, etc.</item>
+               <item><label>I.</label> Informação semanal do movimento commercial <lb/>(parte da
+                  informação sobre os comboios), do movi <pc>-</pc><lb/>mento financeiro, etc.
+                  medindo o<lb/> do <hi rend="underline">estado.</hi></item>
+               <item><label>I.</label>Informação estatistica. </item>
+               <item><label>I.</label> Informações commerciaes (e particulares).</item>
+               <item><label>IV.</label> Compras no estrangeiro e em <rs type="place"
+                  >Lisboa</rs>,<lb/> assignaturas de jornaes estrangeiros,<lb/> obtenção de
+                  catalogos, etc.</item>
+               <item><note rend="circled">—</note> Á disposição do publico annuarios<lb/>
+                  estrangeiros, assim como <hi rend="underline">codigos</hi><lb/>
+                  <hi rend="underline">telegraphicos</hi>, listas de fabricantes,<lb/> etc.</item>
+               <item><label>V.</label>Manufactura de codigos particulares,<lb/> e de cifras para
+                  correspondencia <lb/>secreta. (Bi-Lateral). </item>
+               <item><label>V.</label>Edições de codigos telegraphicos proprios -<lb/>(<choice>
+                     <abbr>org<am>.</am></abbr>
+                     <expan>org<ex>anizar</ex></expan>
+                  </choice> inventarios) </item>
+               <item xml:id="I22">Edição do pequeno diccionario portuguez,</item>
+               <item xml:id="I23">
+                  <metamark rend="line" function="ditto"/> do<rs type="text"><hi rend="underline"
+                        >“All about <rs type="place">Portugal</rs>”.</hi></rs>
+               </item>
+               <item xml:id="I24"><metamark rend="line" function="ditto"/>de <rs type="journal">“A
+                     Semana”</rs>
+                  <subst>
+                     <del rend="overstrike">jornal dando noticias <lb/>de <rs type="place"
+                           >Portugal</rs> para o <rs type="place"> Brazil</rs></del>
+                     <add> em principio<lb/>
+                        <gap reason="illegible" unit="character" extent="1"/>
+                     </add>
+                  </subst><note>+</note></item>
+               <item><label>II.</label>Traducções em todos os generos e de e para<lb/> todas as
+                  linguas. </item>
+               <item><label>II.</label>Trabalhos á machina, ao <gap reason="illegible"
+                     unit="character" extent="1"/>
+                  <lb/> e de imprensa, por preços reduzidos. </item>
+               <item><label>VI.</label> Edição de agendas.</item>
+               <item><label>IV.</label>Annuncios em todos os jornaes de <rs type="place"
+                     >Portugal</rs> e<lb/> do estrangeiro. </item>
+               <item><label>IV.</label>Especialidade em mandar vir livros do <lb/>estrangeiro e em
+                  manter quem quizer in <pc>-</pc><lb/>lbformado ácerca dos livros do seu
+                  interesse<lb/> que vão sahindo. </item>
+               <item><label>II.</label>Endereçar e expedir circulares, cartas, etc. </item>
+               <item><label>VII.</label> Bureau de recuperação de correspondencia<lb/> para que a
+                  não queira <gap reason="illegible" unit="character" extent="1"/> com <lb/>casa.
+                  (Mediante <gap reason="illegible" unit="character" extent="1"/> começado)</item>
+               <item><label><note place="below">VI.</note></label> Edição de bilhetes-postaes
+                  illustrados,<lb/> de albuns de vistas de <rs type="place">Portugal</rs>,<lb/>
+                  etc.</item>
+               <item><label><note place="below">VIII.</note></label> Todos os trabalhos de advocacia
+                  e <lb/>procuradoria ... (artigo(s) <gap reason="illegible" unit="character"
+                     extent="1"/>)<lb/> (Encarrega-se de arrendar e alugar<lb/> casas.) Listas de
+                  casas para alugar<lb/> (Compra e venda de propriedades.)<lb/>
+                  <note rend="framed">(Hypothecas etc.) (?)</note>
+               </item>
+               <item><label>I.</label> Informações em todas as repartições<lb/> do estado.
+                     <p>Photographias do que se deseje, <gap reason="illegible" unit="character"
+                        extent="1"/> o que ter photographia <del rend="overstrike">
+                        <gap reason="illegible" extent="1" unit="character"/>
+                     </del> propria.</p></item>
+               <item><label>IX.</label>Correspondencia para jornaes estrangeiros. </item>
+               <item><label>IX .</label> Informação a respeito de <rs type="place">Portugal</rs> —
+                  English<lb/> novelists, por ex., que queiram saber qualquer<lb/> cousa a respeito
+                  de <rs type="place">Portugal</rs>. Investigações<lb/> historicas.</item>
+               <item><label>II.</label> Escreve-se annuncios e arranja-se<lb/> destes apto para
+                  elles ...<lb/> Dá-se opinião a respeito de papel-<lb/> timbrado, como deve ficar
+                  melhor</item>
+               <item><label>II.</label>Circulares á machina, <gap reason="illegible"
+                     unit="character" extent="1"/>a 50 <choice>
+                     <abbr>r</abbr>
+                     <expan>r<ex>eis</ex></expan>
+                  </choice> cada e a a confecção de † a 500 <choice>
+                     <abbr>r</abbr>
+                     <expan>r<ex>eis</ex></expan>
+                  </choice>
+                  <lb/> Não a <gap reason="illegible" unit="character" extent="1"/> de mais de<lb/>
+                  <gap reason="selection" unit="character" extent="5"/> circular)</item>
+               <item><label>II .</label>Bilhetes postaes illustrados de estrangeiros,<lb/> escriptos
+                  de lá... (Fornecer-se citações — <choice>
+                     <abbr>Dict<am>.</am></abbr>
+                     <expan>Dict<ex>ionary</ex></expan>
+                  </choice> of Quotations).</item>
+               <item><label>II.</label> Ideas para nomes de marcas, ex libris,<lb/> nomes de firmas,
+                  etc.</item>
+               <item><label>II.</label>Projectos de <hi rend="underline">decorações de montra</hi>,
+                  de <lb/>construção e decoração de estabeleci <pc/><lb/> mentos (por um architecto
+                  distante) </item>
+            </list>
+            <note target="range(I5,I9)" place="left" type="addition"><add> line</add>
+               <metamark rend="curly-bracket" function="grouping"/></note>
+            <note target="range(I22,I24)" place="margin-left" type="addition"><add> III</add>
+               <metamark rend="curly-bracket" function="grouping"/></note>
+            <list>
+               <item>“Como se arranja uma montra” opusculo </item>
+               <item>Informações para quem queira estudar varios <lb/>assumptos ou linguas.</item>
+               <item>On the back of notas-de-cambio an <lb/>advertisement.</item>
+               <item>A <gap reason="selection" unit="line" extent="2"/></item>
+               <item>1 annuncio simples, <hi rend=" underline">bem</hi> feito — 500 reis</item>
+               <item>1 <gap reason="illegible" unit="character" extent="1"/> de <gap
+                     reason="illegible" unit="character" extent="1"/>, estudada — 10000 reis</item>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>

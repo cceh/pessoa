@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 144M-24<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação, Modelagem de dados</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_144M-24r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 144M-24r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="en"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate when="1909" cert="medium">c. 1909</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3_144m_JPG_24-C-R0150/bn-acpc-e-e3_144m_0049_24r_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <note>Obras a traduzir:</note>
+            <head><hi rend="underline">Romances:</hi></head>
+            <list>
+               <item><label>1.</label><rs type="person">Ranger-Gull</rs>:<rs type="text"> “The
+                     Hypocrite.”</rs></item>
+               <item><label>2.</label><rs type="person"><metamark rend="line" function="ditto"
+                     /></rs>:<rs type="text"><subst>
+                        <del rend="overstrike"> “O Fumador de Cigarros.”</del>
+                        <add place="above"> “The Cigarette Smoker”</add>
+                     </subst></rs></item>
+               <item><label>3.</label><rs type="person"><metamark rend="line" function="ditto"
+                     /></rs>: <rs type="text">Miss Malevolent.</rs></item>
+               <item><label>4.</label><rs type="person"><choice>
+                        <abbr>F<am>.</am></abbr>
+                        <expan>F<ex/></expan>
+                     </choice> Anstey</rs>: <rs type="text">“Vice Versa.”</rs></item>
+               <item><label>5.</label><rs type="person">Dickens</rs>:<rs type="text"> Pickwick
+                     Papers.</rs></item>
+               <item><label>6.</label><rs type="person"><choice>
+                        <abbr>W<am>.</am></abbr>
+                        <expan>W<ex/></expan>
+                     </choice><choice>
+                        <abbr>W<am>.</am></abbr>
+                        <expan>W<ex/></expan>
+                     </choice>Jacobs</rs>:<rs type="text"> Master of Craft.</rs></item>
+               <item><label>7.</label><rs type="person"><metamark rend="line" function="ditto"
+                     /></rs>:<rs type="text"> At Sunwich Port.</rs></item>
+               <item><label>8.</label><rs type="person"><metamark rend="line" function="ditto"
+                     /></rs>: <rs type="text"><supplied resp="PS" reason="omitted-in-original"/>
+                  </rs></item>
+               <item><label>9.</label><rs type="person">Edgar Poe</rs>: <rs type="text">Contos de
+                     Raciocinio</rs></item>
+               <item><label>10.</label><rs type="person"><metamark rend="line" function="ditto"
+                     /></rs>:<rs type="text"> Contos</rs></item>
+               <item><label>11.</label><rs type="person"><metamark rend="line" function="ditto"
+                     /></rs>:<rs type="text"> Contos</rs></item>
+            </list>
+            <p><rs type="person">Stevenson</rs>: Dr. Jekyll and Mr. Hyde</p>
+         </div>
+      </body>
+   </text>
+</TEI>

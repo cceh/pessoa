@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 48B-108<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação, Modelagem de dados</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_48B-108r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc xml:id="M1" type="structured">
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 48B-108r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate notBefore="1923">post. 1923</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita no verso de papel impresso de «Sobre um manifesto de
+                  estudantes», panfleto publicado em 1923. </p>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic
+         url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0222_108_t24-C-R0150.jpg"
+      />
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <list>
+               <item><rs type="work"><rs type="text"><hi rend="underline"> O Corvo</hi>.</rs>
+                     <rs type="person" role="author">Edgar Poe</rs>.</rs></item>
+
+               <item><rs type="work"><rs type="text"><hi rend="underline"> Ode.</hi></rs><rs
+                        type="person" role="author"> O’Shaughnessy</rs>.</rs>
+               </item>
+               <item><rs type="person">Omar Khayyam</rs>.</item>
+               <item><rs type="text">Os <hi rend="underline"> Vedas</hi>.</rs></item>
+               <item><rs type="work">Canções de <rs type="person" role="author"
+                     >Shakespeare.</rs></rs></item>
+               <item><gap reason="illegible" extent="2" unit="character"/></item>
+               <item><rs type="work"><rs type="person" role="author">Browning</rs>. <rs type="text"
+                           ><hi rend="underline">Last Ride.</hi></rs></rs></item>
+               <item><metamark rend="line" function="ditto"/>
+                  <hi rend="underline">Prospice.</hi></item>
+               <item><metamark rend="line" function="ditto"/>
+                  <hi rend="underline">Rabbi Ben Ezra.</hi></item>
+               <item><metamark rend="line" function="ditto"/>
+                  <hi rend="underline">Love among the Ruins.</hi></item>
+               <item>Cantiga <gap reason="illegible" extent="3" unit="character"/></item>
+               <item><rs type="work"><rs type="text">Maria Manuela.</rs> (<rs type="person"
+                        role="author"> Molarinho</rs>)</rs></item>
+               <item><rs type="work"><rs type="text"><hi rend="underline">Sonetos.</hi></rs><rs
+                        type="person" role="author">Angelo de Lima.</rs></rs></item>
+               <item><rs type="person">Manuel da Veiga.</rs></item>
+               <item><rs type="work"><rs type="person"><choice>
+                           <abbr>J<am>.</am></abbr>
+                           <expan>J<ex>osé</ex></expan>
+                        </choice> Anastacio </rs>– <rs type="text"><choice>
+                           <abbr>Dol<am>.</am></abbr>
+                           <expan>Dol <ex>orosa</ex></expan>
+                        </choice> Doença</rs></rs></item>
+               <item><rs type="person"><metamark rend="line" function="ditto"/></rs> – 1os
+                  poemas</item>
+               <item><rs type="text">Soneto mystico.</rs></item>
+               <item>Um soneto de<rs type="person"> Bocage</rs>.</item>
+               <item><rs type="work"><rs type="text"><hi rend="underline">Epigrammas</hi></rs> de
+                        <rs type="person" role="author">Couto Guerreiro.</rs></rs></item>
+               <item><rs type="person">Camilo Pessanha.</rs></item>
+               <item><rs type="text">Phenix Renascida.</rs></item>
+               <item><rs type="work"><rs type="person" role="author"><choice>
+                           <abbr> Eug<am>.</am></abbr>
+                           <expan> Eug<ex>enio</ex></expan>
+                        </choice> de Castro</rs>:<rs type="text"><choice>
+                           <abbr> Epigr<am>.</am></abbr>
+                           <expan> Epigr<ex>aphe</ex></expan>
+                        </choice>
+                        <choice>
+                           <abbr> S<am>.</am></abbr>
+                           <expan>S <ex>ombra</ex></expan>
+                        </choice> do <choice>
+                           <abbr> Q<am>.</am></abbr>
+                           <expan>Q<ex>uadrante</ex></expan>
+                        </choice>.</rs></rs></item>
+               <item><rs type="work"><rs type="person" role="author">Garret</rs> – <rs type="text"
+                        >Lyrica do fim.</rs></rs></item>
+               <item><rs type="work"><rs type="person" role="author"><choice>
+                           <abbr>J<am>.</am></abbr>
+                           <expan>J<ex>oão </ex></expan>
+                        </choice> de Lemos</rs> – <rs type="text">Lua de Londres.</rs></rs></item>
+               <item><del rend="overstrike"><rs type="work"><rs type="text">Soneto</rs> de <rs
+                           type="person" role="author">Bocage</rs></rs></del></item>
+               <item><rs type="work"><rs type="person" role="author"><choice>
+                           <abbr>F<am>.</am></abbr>
+                           <expan>F<ex>ernando </ex></expan>
+                        </choice>
+                        <choice>
+                           <abbr>P<am>.</am></abbr>
+                           <expan>P<ex>essoa </ex></expan>
+                        </choice></rs><rs type="text"><hi rend="underline">
+                  Gladio</hi></rs></rs></item>
+               <item><rs type="work"><rs type="person" role="author">Sá-Carneiro</rs> – <rs
+                        type="text"><hi rend="underline">Apice</hi></rs></rs></item>
+               <item><rs type="work"><rs type="person" role="author"><metamark rend="line"
+                           function="ditto"/></rs> –<rs type="text"> Caranguejola</rs></rs></item>
+               <item><rs type="person" role="author">Ricardo Reis</rs>.</item>
+               <item><rs type="person">Francisco Beleza</rs>.</item>
+               <item><rs type="person">Mario Beirão</rs>.</item>
+               <item><rs type="person">Pascoaes</rs>.</item>
+               <item><rs type="person"><choice>
+                        <abbr>Alb<am>.</am></abbr>
+                        <expan>Alb<ex>erto</ex></expan>
+                     </choice> Osorio de Castro</rs>.</item>
+               <item><rs type="person">Henrique Rosa</rs>.</item>
+               <item><rs type="person">Luiz de Montalvor</rs>.</item>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>

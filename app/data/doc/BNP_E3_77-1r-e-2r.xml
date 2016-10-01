@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 77-1<hi rend="superscript">r</hi> e 2<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação, Modelagem de dados</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_77-1r-e-2r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc xml:id="M1" type="structured">
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 77-1r e 2r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="en" otherLangs="fr"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate>?</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p>Lista datilografada.</p>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3-77-1-87_JPG_24-C-R0150/bn-acpc-e-e3-77-1-87_0001_1_t24-C-R0150.jpg"
+      />
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <head>POEMS TO BE INCLUDED IN AN ENGLISH ANTHOLOGY.</head>
+            <list>
+               <item><label>1.</label><rs type="work"><rs type="person" role="author">Robert
+                        Browning</rs>:<rs type="text">Rabbi ben Ezra.</rs></rs></item>
+               <item><label>2.</label><rs type="work"><rs type="person" role="author">Robert
+                        Browning</rs>:<rs type="text">Prospice.</rs></rs></item>
+               <item><label>3.</label><rs type="work"><rs type="person" role="author">Robert
+                        Browning</rs>: Apparent Failure. </rs>(?).</item>
+               <item><label>4.</label>
+                  <rs type="work"><rs type="person" role="author">Joseph Blanco White</rs>: <rs
+                        type="text">To Night.</rs></rs></item>
+               <item><label>5.</label><rs type="work"><rs type="person" role="author">John
+                        Keats</rs>: <rs type="text">Ode to a Nightingale.</rs></rs></item>
+               <item><label>6.</label><rs type="work"><rs type="person" role="author">John
+                        Keats</rs>: <rs type="text">Ode to a Grecian Urn.</rs></rs></item>
+               <item><label>7.</label><rs type="work"><rs type="person" role="author">John
+                        Keats</rs>: <rs type="text">Ode to Psyche.</rs></rs></item>
+               <item><label>8.</label><rs type="work"><rs type="person" role="author">John Keats: La
+                        Belle Dame sans Merci.</rs></rs></item>
+               <item><label>9.</label> Anonymous (Scotch): <rs type="text">The Twa Corbies.</rs>
+                  (Palgrave).</item>
+               <item><label>10.</label><rs type="work"><rs type="person" role="author"><choice>
+                           <abbr>A<am>.</am></abbr>
+                        </choice><choice>
+                           <abbr>C<am>.</am></abbr>
+                        </choice> Swinburne</rs>:<rs type="text"> “Before the beginning of
+                        years...”</rs></rs></item>
+               <item><label>11.</label><rs type="work"><rs type="person" role="author"><choice>
+                           <abbr>A<am>.</am></abbr>
+                        </choice><choice>
+                           <abbr>C<am>.</am></abbr>
+                        </choice> Swinburne</rs>: <rs type="text">Itylus. </rs></rs>(?)</item>
+               <item><label>12.</label><rs type="work"><rs type="person" role="author"> Lord
+                        Tennyson</rs>: <rs type="text">“Break, break, break...”</rs></rs></item>
+               <item><label>13.</label><rs type="work"><rs type="person" role="author">Lord
+                        Tennyson</rs>: <rs type="text">The Poet’s Song. </rs></rs></item>
+               <item><label>14.</label><rs type="person">Percy Bysshe Shelley</rs>: Spirit’s song to
+                  Asia.</item>
+               <item><label>15.</label><rs type="work"><rs type="person" role="author"> William
+                        Wordsworth</rs>: <rs type="text"> Intimations of
+                  Immortality.</rs></rs></item>
+               <item><label>16.</label><rs type="work"><rs type="person" role="author">
+                        <choice>
+                           <abbr>S<am>.</am></abbr>
+                        </choice><choice>
+                           <abbr>T<am>.</am></abbr>
+                        </choice> Coleridge</rs>: <rs type="text">Kubla Khan.</rs></rs></item>
+               <item><label>17.</label><rs type="work"><rs type="person" role="author"><choice>
+                           <abbr>S<am>.</am></abbr>
+                        </choice>
+                        <choice>
+                           <abbr>T<am>.</am></abbr>
+                        </choice> Coleridge</rs>: <rs type="text"> The Rime of the Ancient Mariner.
+                     </rs></rs>(??) </item>
+               <item><label>18.</label><rs type="person"><choice>
+                        <abbr>J<am>.</am></abbr>
+                     </choice> Norris (of Bemerton)</rs>: To Darkness.</item>
+               <item><label>19.</label><rs type="work"><rs type="person" role="author"> Colonel
+                        Lovelace</rs>: <rs type="text"> To Anthea from Prison.</rs></rs></item>
+               <item><label>20.</label><rs type="work"><rs type="person" role="author">Colonel
+                        Lovelace</rs>: <rs type="text">To Lucasta on going to the
+                  Wars.</rs></rs></item>
+               <item><label>21.</label><rs type="work"><rs type="person" role="author">Thomas
+                        Gray</rs>:<rs type="text"> Elegy in a Country Churchyard.</rs></rs></item>
+               <item><label>22.</label><rs type="work"><rs type="person" role="author"> Matthew
+                        Arnold</rs>: <rs type="text">The Forsaken Merman.</rs></rs> (?)</item>
+               <item><label>23.</label><rs type="work"><rs type="person" role="author">
+                        <choice>
+                           <abbr>C<am>.</am></abbr>
+                        </choice><choice>
+                           <abbr>G<am>.</am></abbr>
+                        </choice>Rossetti</rs>:<rs type="text"> “When I am dead, my
+                     dearest...”</rs></rs></item>
+               <item><label>24.</label><rs type="work"><rs type="person" role="author"> Thomas
+                        Chatterton</rs>: <rs type="text"> Song from “Aella”.</rs></rs></item>
+               <item><label>25.</label><rs type="work"><rs type="person"><choice>
+                           <abbr>R<am>.</am></abbr>
+                        </choice><choice>
+                           <abbr>L<am>.</am></abbr>
+                        </choice>Stevenson</rs>:<rs type="text"> Epitaph. </rs></rs></item>
+               <item><label>26.</label>Anonymous (Scotch):<rs type="text"> The Forsaken Bride.</rs>
+                  (Palgrave).</item>
+               <item><label>27.</label>Anonymous: <rs type="text">“Love me not for comely face...”
+                  </rs></item>
+               <item><label>28.</label><rs type="work"><rs type="person" role="author"> Edgar Allan
+                        Poe</rs>:<rs type="text"> The Raven.</rs></rs></item>
+               <item><label>29.</label>
+                  <rs type="work"><rs type="person" role="author">Edgar Allan Poe</rs>:<rs
+                        type="text"> Israfel.</rs></rs></item>
+               <item><label>30.</label><rs type="work"><rs type="person" role="author"> Edgar Allan
+                        Poe</rs>:<rs type="text"> The City in the Sea.</rs></rs></item>
+               <item><label>31.</label><rs type="work"><rs type="person" role="author">Walt
+                        Whitman</rs>: By <rs type="text">the City Dead-House.</rs></rs>
+               </item>
+               <item><label>32.</label><rs type="work"><rs type="person" role="author">Walt
+                        Whitman</rs>: <rs type="text">“When Lilacs Last in the Dooryard
+                        Bloomed...”</rs></rs>
+               </item>
+               <item><label>33.</label>
+                  <rs type="work"><rs type="person" role="author">Thomas Hood</rs>: <rs type="text">
+                        The Bridge of Sighs.</rs></rs></item>
+               <item><label>34.</label><rs type="work"><rs type="person" role="author"> Thomas
+                        Hood</rs>:<rs type="text"> “I <subst>
+                           <del><gap reason="correction" extent="1" unit="character"/>R</del>
+                           <add place="above">r</add>
+                        </subst>emember, I remember...” </rs></rs></item>
+               <item><label>35.</label><rs type="work"><rs type="person" role="author"> William
+                        Cowper</rs>: <rs type="text"> The Castaway.</rs></rs></item>
+               <item><label>36.</label><rs type="work"><rs type="person" role="author"> Arthur Hugh
+                        Clough</rs>: <rs type="text"> “Say not the struggle...”</rs></rs></item>
+               <item><label>37.</label><rs type="person"><choice>
+                        <abbr>W<am>.</am></abbr>
+                     </choice><choice>
+                        <abbr>W<am>.</am></abbr>
+                     </choice> Henley</rs>: To <choice>
+                     <abbr>R<am>.</am></abbr>
+                  </choice><choice>
+                     <abbr>H<am>.</am></abbr>
+                  </choice><choice>
+                     <abbr>T<am>.</am></abbr>
+                  </choice><choice>
+                     <abbr>B<am>.</am></abbr>
+                  </choice>(?)</item>
+               <item><label>38.</label><rs type="person">Robert Herrick</rs>: “Gather ye
+                  rosebuds...” </item>
+               <item><label>39.</label><rs type="person"> Robert Herrick</rs>: “To Anthea...</item>
+               <item><label>40.</label><rs type="work"><rs type="person" role="author"> Ben
+                        Jonson</rs>:<rs type="text"> To Celia.</rs></rs></item>
+               <item><label>41.</label>
+                  <rs type="work"><rs type="person" role="author"> Lady Nairne</rs>: <rs type="text"
+                        >The Land o<del rend="overstrike">f’</del> the Leal.</rs></rs></item>
+               <item><label>42.</label><rs type="work"><rs type="person" role="author"> Percy Bysshe
+                        Shelley</rs>:<rs type="text"> Ode to the West Wind.</rs>
+                  </rs></item>
+               <item><label>43.</label><rs type="work"><rs type="person" role="author"> Percy Bysshe
+                        Shelley</rs>: <rs type="text">Ode to a Skylark.</rs></rs></item>
+               <item><label>44.</label>
+                  <rs type="work"><rs type="person" role="author"> James Shirley</rs>: <rs
+                        type="text">“The glories of our blood and state...”</rs></rs></item>
+               <item><label>45.</label><rs type="work"><rs type="person" role="author"> James
+                        Shirley</rs>: <rs type="text">“Victorious men of earth...”</rs></rs></item>
+               <item><label>46.</label><rs type="work"><rs type="person" role="author"> Edmund
+                        Waller</rs>: <rs type="text">“Go, lovely rose...”</rs></rs></item>
+               <item><label>47.</label><rs type="person">William Wordsworth</rs>: The Solitary
+                  Reaper. </item>
+               <item><label>48.</label><rs type="work"><rs type="person" role="author">Michael
+                        Drayton</rs>: <rs type="text">“Since there’s no help...”
+                  (sonnet).</rs></rs></item>
+               <item><label>49.</label><rs type="work"><rs type="person" role="author"> John
+                        Keats</rs>:<rs type="text"> Ode to Melancholy.</rs></rs></item>
+               <item><label>50.</label><rs type="work"><rs type="person" role="author">William
+                        Wordsworth</rs>: <rs type="text">To the Cuckoo</rs></rs>.</item>
+               <item><label>51.</label><rs type="person"> William Wordsworth</rs>: Buonaparte
+                  (sonnet).</item>
+               <item><label>52.</label><rs type="work"><rs type="person" role="author"> William
+                        Wordsworth</rs>: On the Extinction of the Venetian Republic
+                  </rs>(sonnet)</item>
+               <item><label>53.</label><rs type="person">William Wordsworth</rs>: France and
+                  England: September, 1802. (sonnet) </item>
+               <item><label>54.</label><rs type="person">William Wordsworth</rs>: Great Men.
+                  (sonnet).</item>
+               <item><label>55.</label><rs type="work"><rs type="person" role="author">William
+                        Wordsworth</rs>:<rs type="text"> Toussaint L’Ouverture.
+                  </rs></rs>(sonnet).</item>
+               <item><label>56.</label><rs type="person">William Wordsworth</rs>: A Beautiful
+                  Picture. (sonnet).</item>
+               <item><label>57.</label><rs type="person"> William Wordsworth</rs>: The Ship
+                  (sonnet).</item>
+               <item><label>58.</label>
+                  <rs type="person">William Wordsworth</rs>: Woodland Walks. (sonnet).</item>
+               <item><label>59.</label><rs type="work"><rs type="person" role="author">William
+                        Wordsworth</rs>:<rs type="text"> Personal Talk </rs></rs>(four
+                  sonnets).</item>
+               <item><label>60.</label><rs type="work"><rs type="person" role="author"> William
+                        Wordsworth</rs>:<rs type="text"> On Westminster Bridge
+                  (sonnet).</rs></rs></item>
+               <item><label>61.</label><rs type="person"> William Wordsworth</rs>: Milton
+                  (sonnet).</item>
+               <item><label>62.</label><rs type="person">William Wordsworth</rs>: The World
+                  (sonnet).</item>
+               <item><label>63.</label><rs type="person"> Thomas Moore</rs>: “Believe me if
+                  all...”</item>
+               <item><label>64.</label><rs type="work"><rs type="person" role="author"> Thomas
+                        Hood</rs>: <rs type="text">Fair Ines </rs></rs><del rend="overstrike"
+                     >(?)</del></item>
+               <item><label>65.</label><rs type="work"><rs type="person" role="author"> Lord
+                        Byron</rs>: <rs type="text">The Isles of Greece.</rs></rs></item>
+               <item><label>66.</label><rs type="work"><rs type="person" role="author"> Lord
+                        Byron</rs>: <rs type="text">Darkness</rs>
+                  </rs>(?).</item>
+               <item><label>67.</label><rs type="work"><rs type="person" role="author">Lord
+                        Byron</rs>:<rs type="text"> “When we two parted...” </rs></rs>(?)</item>
+               <item><label>68.</label><rs type="work"><rs type="person" role="author"><choice>
+                           <abbr>P<am>.</am></abbr>
+                        </choice><choice>
+                           <abbr>B<am>.</am></abbr>
+                        </choice>Shelley</rs>: <rs type="text">The Sensitive Plant.</rs>
+                  </rs></item>
+               <item><label>69.</label><choice>
+                     <abbr>P<am>.</am></abbr>
+                  </choice><choice>
+                     <abbr>B<am>.</am></abbr>
+                  </choice>Shelley: “I arise from dreams of thee...”</item>
+               <item><label>70.</label><rs type="work"><rs type="person" role="author">Thomas
+                        Campbell</rs>:<rs type="text"> Ye Mariners of England. </rs>
+                  </rs>
+               </item>
+               <item><label>71.</label><rs type="work"><rs type="person" role="author">Thomas
+                        Campbell</rs>: <rs type="text">The Battle of the Baltic. </rs>
+                  </rs></item>
+               <item><label>72.</label><rs type="work"><rs type="person" role="author"> Thomas
+                        Campbell</rs>:<rs type="text"> Hohenlinden </rs>
+                  </rs>(?).</item>
+               <item><label>73.</label><rs type="work"><rs type="person" role="author">John
+                        Keats</rs>: <rs type="text">“In a drear-nighted December...”</rs>
+                  </rs></item>
+               <item><label>74.</label><rs type="work"><rs type="person" role="author"> Charles
+                        Kingsley</rs>:<rs type="text"> The Sands of Dee</rs>
+                  </rs>(?)</item>
+               <item><label>75.</label><rs type="work"><rs type="person" role="author"> Charles
+                        Kingsley</rs>: <rs type="text">Three Fishers</rs>
+                  </rs>(?)</item>
+               <item><label>76.</label><rs type="person">Charles Mackay</rs>: The Lost Day
+                  (?)</item>
+               <item><label>77.</label><rs type="work"><rs type="person" role="author"><choice>
+                           <abbr>J<am>.</am></abbr>
+                        </choice><choice>
+                           <abbr>G<am>.</am></abbr>
+                        </choice> Whittier </rs>:<rs type="text"> Maud Muller. </rs>
+                  </rs>
+               </item>
+               <item><label>78.</label><rs type="work"><rs type="person" role="author">Joseph Rodman
+                        Drake</rs>:<rs type="text"> The American Flag. </rs></rs>(?)</item>
+               <item><label>79.</label><rs type="work"><rs type="person" role="author">Matthew
+                        Arnold</rs>:<rs type="text">The Scholar Gipsy.</rs></rs> (?) </item>
+               <item><label>80.</label><rs type="work"><rs type="person" role="author">Matthew
+                        Arnold</rs>:<rs type="text">The Buried Life </rs></rs>(?)</item>
+               <item><label>81.</label><rs type="work"><rs type="person" role="author"><choice>
+                           <abbr>P<am>.</am></abbr>
+                        </choice><choice>
+                           <abbr>B<am>.</am></abbr>
+                        </choice> Shelley</rs>: <rs type="text">To Night.</rs></rs></item>
+               <item><label>82.</label><rs type="person">Robert Southey</rs>: Love (?) (?)</item>
+               <item><label>83.</label><rs type="work"><rs type="person" role="author"> Robert
+                        Southey</rs>: <rs type="text">The Battle of Blenheim </rs></rs>(?)</item>
+               <item><label>84.</label><rs type="work"><rs type="person" role="author"> Hartley
+                        Coleridge</rs>: <rs type="text">The Birth of Speech.</rs>
+                  </rs> (?)</item>
+               <item><label>85.</label><rs type="work"><rs type="person" role="author"> Aubrey de
+                        Vere</rs> (the Younger):<rs type="text">The Sun-God</rs>
+                  </rs>(sonnet) (?)</item>
+               <item><label>86.</label><rs type="work"><rs type="person" role="author"><choice>
+                           <abbr>D<am>.</am></abbr>
+                        </choice><choice>
+                           <abbr>G<am>.</am></abbr>
+                        </choice> Rossetti </rs>:<rs type="text"> A Venetian Pastoral</rs>
+                  </rs>(sonnet)</item>
+               <item><label>87.</label><rs type="person"><choice>
+                        <abbr>A<am>.</am></abbr>
+                     </choice><choice>
+                        <abbr>C<am>.</am></abbr>
+                     </choice>Swinburne</rs>: Persecution of the Jews (sonnet)</item>
+               <item><label>88.</label><rs type="work"><rs type="person" role="author">John
+                        Milton</rs>:<rs type="text">At the Age of Twenty-three </rs></rs> (sonnet)
+                  (?)</item>
+               <item><label>89.</label><rs type="work"><rs type="person" role="author">John
+                        Milton</rs>: <rs type="text">To the Lord General Cromwell.</rs></rs>
+                  (sonnet) (?) </item>
+               <item><label>90.</label><rs type="work"><rs type="person" role="author">John
+                        Milton</rs>: <rs type="text">On the Massacre in Piemont (sonnet)</rs></rs>
+               </item>
+               <item><label>91.</label><rs type="work"><rs type="person" role="author">John
+                        Milton</rs>: <rs type="text">On His Blindness (sonnet)</rs></rs>
+               </item>
+               <item><label>92.</label><rs type="work"><rs type="person" role="author">John
+                        Milton</rs>: <rs type="text">To Cyriac Skinner (sonnet)</rs></rs>
+               </item>
+               <item><label>93.</label><rs type="work"><rs type="person" role="author">John
+                        Milton</rs>:<rs type="text"> L’Allegro. </rs></rs></item>
+               <item><label>94.</label><rs type="work"><rs type="person" role="author"> John
+                        Milto</rs>n: <rs type="text">Il Penseroso.</rs></rs></item>
+               <item><label>95.</label><rs type="work"><rs type="person" role="author">John
+                        Milton</rs>:<rs type="text"> Ode on the Morning of Christ’s Nativity. (?)
+                     </rs></rs></item>
+               <item><label>96.</label><rs type="work"><rs type="person" role="author"> John
+                        Milton</rs>: <rs type="text">Lycidas.</rs></rs></item>
+               <item><label>97.</label><rs type="person"><choice>
+                        <abbr>H<am>.</am></abbr>
+                     </choice>Vaughan</rs>: Friends in Paradise.</item>
+               <item><label>98.</label><rs type="work"><rs type="person" role="author"><choice>
+                           <abbr>H<am>.</am></abbr>
+                        </choice>Vaughan</rs>:<rs type="text"> The Retreat.</rs></rs></item>
+               <item><label>99.</label><rs type="person"><choice>
+                        <abbr>H<am>.</am></abbr>
+                     </choice>Vaughan</rs>:<supplied resp="PS" reason="omitted-in-original"/></item>
+               <item><label>100.</label><rs type="work"><rs type="person" role="author">William
+                        Habington</rs>:<rs type="text">Nox Nocti Indicat Scientiam.</rs></rs></item>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>

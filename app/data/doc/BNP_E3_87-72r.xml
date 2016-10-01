@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 87-72<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação, Modelagem de dados</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_87-72r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc xml:id="M1" type="structured">
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 87-72r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate when="1925" cert="medium">c. 1925</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p>Lista manuscrita.</p>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic
+         url="bn-acpc-e-e3-87-1-103_JPG_24-C-R0150/bn-acpc-e-e3-87-1-103_0157_72_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <gap reason="selection" unit="line" extent="20"/>
+            <note place="left under"><list>
+                  <head><hi rend="underline">Cadernos para fazer <add place="above">dar que</add>
+                        pensar</hi></head>
+                  <item><label>1.</label><rs type="person">Antonio Botto</rs> e <rs type="text">o
+                        Ideal Esthetico</rs> – <rs type="person" role="author"><choice>
+                           <abbr>F<am>.</am></abbr>
+                           <expan>F<ex>ernando</ex></expan>
+                        </choice>
+                        <choice>
+                           <abbr>P<am>.</am></abbr>
+                           <expan>P<ex>esssoa</ex></expan>
+                        </choice></rs></item>
+                  <item><label>2.</label>
+                     <rs type="work"><rs type="text"><choice>
+                              <abbr>Sod<am>.</am></abbr>
+                              <expan>Sod<ex>oma</ex></expan>
+                           </choice> Divinizada</rs> – <rs type="person" role="author">Raul
+                           Leal</rs></rs></item>
+                  <item><label>3.</label><rs type="text"><choice>
+                           <abbr>Banq<am>.</am></abbr>
+                           <expan>Banq<ex>ueiro</ex></expan>
+                        </choice> Anarchista.</rs></item>
+                  <item><label>4.</label><rs type="work"><rs type="text">Ultimatum </rs>, de<rs
+                           type="person" role="author">
+                           <choice>
+                              <abbr>A<am>.</am></abbr>
+                              <expan>A<ex>lvaro</ex></expan>
+                           </choice> de Campos.</rs></rs></item>
+                  <item><label>5.</label><rs type="person">Mario Saa</rs> – <gap reason="illegible"
+                        unit="character" extent="1"/></item>
+                  <item><label>6.</label><rs type="work">
+                        <rs type="person" role="author">Bandarra</rs> –<rs type="text"> 3º Corpo das
+                           Trovas.</rs></rs></item>
+               </list>
+            </note>
+            <metamark rend="line-44" function="distinct"/>
+            <note place="right under"><gap reason="selection" unit="line" extent="10"/>
+            </note>
+         </div>
+      </body>
+   </text>
+</TEI>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 133I-23<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação, Modelagem de dados</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_133I-23r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc xml:id="M1" type="structured">
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 133I-23r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate when="1923" cert="medium">c. 1923</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p>Lista manuscrita.</p>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic
+         url="bn-acpc-e-e3-133i-1-100_JPG_24-C-R0150/bn-acpc-e-e3-133i-1-100_0046_23_t24-C-R0150.jpg"
+      />
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <head rend="center"><hi rend="underline">No. 1.</hi></head>
+            <list>
+               <item><label>1.</label><rs type="work"><rs type="text"><hi rend="underline">O
+                           Corvo</hi></rs>, de <rs type="person">Edgar Poe</rs>. </rs> 4 <choice>
+                     <abbr>p<am>.</am></abbr>
+                     <expan>p<ex>aginas</ex></expan>
+                  </choice></item>
+               <item><label>2.</label>O celebre soneto mystico. 1 <choice>
+                     <abbr>p<am>.</am></abbr>
+                     <expan>p<ex>ágina</ex></expan>
+                  </choice></item>
+               <item><label>3.</label><rs type="text">Gladio.</rs> 1 <choice>
+                     <abbr>p<am>.</am></abbr>
+                     <expan>p<ex>ágina</ex></expan>
+                  </choice></item>
+               <item>(<label>4.</label>Da <hi rend="underline">Anthologia Grega</hi>)</item>
+               <item>Epigrammas de <rs type="person">Couto Guerreiro</rs>. (?)</item>
+               <item><rs type="person">José Anastacio da Cunha</rs>.</item>
+               <item>Dos <rs type="text">“Cancioneiros”</rs>.</item>
+               <item><rs type="person">O’Shaughnessy</rs></item>
+            </list>
+            <metamark rend="line-44" function="distinct"/>
+            <div rend="left">
+               <list>
+                  <item><rs type="person">Goethe</rs>.</item>
+                  <item><rs type="person">Heine</rs>.</item>
+                  <item><rs type="person">Schiller</rs>.</item>
+               </list>
+            </div>
+            <div rend="right">
+               <list>
+                  <item><rs type="person">Verlaine</rs>.</item>
+                  <item><rs type="person">Horacio</rs>.</item>
+               </list>
+            </div>
+         </div>
+      </body>
+   </text>
+</TEI>
