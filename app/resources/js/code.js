@@ -73,7 +73,7 @@ $(document).ready(function(){
         var $cache = $('#openseadragon1');
         
         
-                 if ($(window).scrollTop() > 716)
+                 if ($(window).scrollTop() > 900)
                    $cache.css({
                    'position': 'fixed',
                    'top': '10px'

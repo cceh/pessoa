@@ -32,38 +32,68 @@ declare function doc:get-indexes($node as node(), $model as map(*), $id as xs:st
     return transform:transform($xml, $stylesheet, (<parameters><param name="lang" value="{$helpers:web-language}" /></parameters>))
 };
 
-declare function doc:get-text($node as node(), $model as map(*), $id as xs:string) as item()+{
-    let $xml := doc:get-xml($id)
+declare function doc:createLink($node as node(), $model as map(*),$id as xs:string, $type as xs:string) {
+    let $types := ("transcricao-diplomatica","primeira-versao","versao-final","versao-pessoal")
+    let $links := for $typ in $types 
+                            return 
+                           if($typ eq $type) then <li class="selected tabs"><span>{helpers:singleElement_xquery("tabs",$typ)}</span></li>
+                           else <li class="tabs"><a href="{$helpers:app-root}/{$helpers:web-language}/doc/{$id}/{$typ}"><span>{helpers:singleElement_xquery("tabs",$typ)}</span></a></li>
+  return $links
+                            
+};
+
+declare function doc:catch-text($node as node(), $model as map(*),$id as xs:string, $type as xs:string,$lb as xs:string?, $abbr as xs:string?, $version as xs:string?) as item()+ {
+        let $xml := doc:get-xml($id)
+        return switch($type) 
+                case "transcricao-diplomatica" return doc:get-text($xml)
+                case "primeira-versao" return doc:get-text-var1($xml)
+                case "versao-final" return doc:get-text-var2($xml)
+                case "versao-pessoal" return (<form method="get">
+                                <div id="DivPessoal-1" class="DivPessoal">
+                                    <input id ="lb" name="lb" type="checkbox" checked="checked" value="yes" onchange="versaoPessoal();"></input><label for="lb">{helpers:singleElement_xquery("personal-version","line-breaks")}</label><br/>
+                                    <input id="abbr" name="abbr" type="checkbox" checked="checked" value="yes" onchange="versaoPessoal();"></input><label for="abbr">{helpers:singleElement_xquery("personal-version","abbreviations")}</label><br/>  
+                                </div>
+                                <div id="DivPessoal-2" class="DivPessoal">
+                                    <input id ="diplomatic" name="version" type="radio" checked="checked" value="yes" onchange="versaoPessoal();"></input><label for="diplomatic">{helpers:singleElement_xquery("personal-version","diplomatic-version")}</label><br/> 
+                                    <input id ="first" name="version" type="radio" value="yes" onchange="versaoPessoal();"></input><label for="first">{helpers:singleElement_xquery("personal-version","first-version")}</label><br/> 
+                                    <input id ="last" name="version" type="radio" value="yes" onchange="versaoPessoal();"></input><label for="last">{helpers:singleElement_xquery("personal-version","last-version")}</label><br/> 
+                                </div>
+                            </form>,
+                            <div class="clear"/>,                            
+                            <div id="DottedLine"></div>,<div id="versao-pessoal">{doc:get-text-pessoal(<node />, map {"test" := "test"}, $id, $lb, $abbr, $version)}</div>)
+                default return doc:get-text($xml)
+};
+
+declare function doc:get-text($xml) as item()+{
     let $stylesheet := doc("/db/apps/pessoa/xslt/doc.xsl")
     return transform:transform($xml, $stylesheet, ())
 };
 
-declare function doc:get-text-edited($node as node(), $model as map(*), $id as xs:string) as item()+{
+declare function doc:get-text-edited($node as node(), $model as map(*),$id as xs:string) as item()+{
     let $xml := doc:get-xml($id)
     let $stylesheet := doc("/db/apps/pessoa/xslt/doc-edited.xsl")
     return transform:transform($xml, $stylesheet, ())
 };
 
-declare function doc:get-text-var1($node as node(), $model as map(*), $id as xs:string) as item()+{
-    let $xml := doc:get-xml($id)
+declare function doc:get-text-var1($xml) as item()+{
     let $stylesheet := doc("/db/apps/pessoa/xslt/doc-var1.xsl")
     return transform:transform($xml, $stylesheet, ())
 };
 
-declare function doc:get-text-var2($node as node(), $model as map(*), $id as xs:string) as item()+{
-    let $xml := doc:get-xml($id)
+declare function doc:get-text-var2($xml) as item()+{
     let $stylesheet := doc("/db/apps/pessoa/xslt/doc-var2.xsl")
     return transform:transform($xml, $stylesheet, ())
 };
 
-declare function doc:get-text-pessoal($node as node(), $model as map(*), $id as xs:string, $lb as xs:string, $abbr as xs:string, $version as xs:string) as item()+{
-    let $xml := doc:get-xml($id)
+declare function doc:get-text-pessoal($node as node(),$model as map(*),$id as xs:string, $lb as xs:string, $abbr as xs:string, $version as xs:string) as item()+{
+        let $xml := doc:get-xml($id)
+
     let $stylesheet := 
     if($version ="first") then doc("/db/apps/pessoa/xslt/doc-var1.xsl")
     else if($version ="last") then
        doc("/db/apps/pessoa/xslt/doc-var2.xsl")
     else doc("/db/apps/pessoa/xslt/doc-pessoal.xsl")
-    return
+    let $text := 
     if($lb="yes") then
         if($abbr ="yes") then
              transform:transform($xml, $stylesheet, (<parameters><param name="lb" value="yes"/><param name="abbr" value="no"/></parameters>))
@@ -75,6 +105,7 @@ declare function doc:get-text-pessoal($node as node(), $model as map(*), $id as 
             transform:transform($xml, $stylesheet, (<parameters><param name="lb" value="no"/><param name="abbr" value="yes"/></parameters>))
         else
             transform:transform($xml, $stylesheet, (<parameters><param name="lb" value="no"/><param name="abbr" value="no"/></parameters>))
+            return $text
 };
 
 declare function doc:get-genre($node as node(), $model as map(*), $type as xs:string, $orderBy as xs:string) as item()*{  
@@ -164,10 +195,7 @@ declare function doc:get-year($node as node(), $model as map(*), $year as xs:str
                 if($doc//tei:origDate[@when=$year])
                 then (<a href="{$helpers:app-root}/doc/{replace(replace($doc//tei:idno/data(.), "/","_")," ", "_")}">{ $doc//tei:idno/data(.)}</a>,<br />)
                 else ()
-          
-   
-           else ()
-                
+           else ()                
 };
 
 declare function doc:get-xml($id){
@@ -222,7 +250,7 @@ let $script :=     <script>
 </div>
 let $filter := <div id="filter">
                 <a class="filter-a" onclick="printContent()">{page:singleAttribute($doc, "footer","print")}</a>
-                <a class="filter-a" href="{$helpers:request-path}/xml" target="_blank">XML</a>
+                <a class="filter-a" href="{$helpers:app-root}/doc/{$id}/xml" target="_blank">XML</a>
                 <a class="filter-a" id="zitat" >{page:singleAttribute($doc, "footer","cite")}</a>
             </div>
             return ($popup,$filter,$script)
@@ -254,7 +282,7 @@ declare function doc:get-genre_type($node as node(), $model as map(*)) as node()
     return <h1>{ $title}</h1>
 };
 
-declare function doc:get-versaoPessoal($node as node(), $model as map(*)) as node() {
+declare function doc:get-versaoPessoal($node as node(), $model as map(*), $id as xs:string) as node() {
 let $script := <script type="text/javascript">
 
         function versaoPessoal(){{
@@ -263,7 +291,7 @@ let $script := <script type="text/javascript">
             var j = url.lastIndexOf("#");
             var id = url.substring(i+1,j);
            
-            var toLoad = "{$helpers:app-root}/{$helpers:web-language}/page/doc/versao-pessoal?id=" + id;
+            var toLoad = "{$helpers:app-root}/{$helpers:web-language}/page/doc/{$id}/versao-pessoal?case=div";
             if ($("#lb").is(":checked"))
             {{
                toLoad = toLoad.concat("&amp;lb=yes");
@@ -294,7 +322,7 @@ let $script := <script type="text/javascript">
             {{
                toLoad = toLoad.concat("&amp;version=last");
             }}
-             $("#tabs-4-text").load(toLoad);
+             $("#versao-pessoal").load(toLoad);
              
              
              
