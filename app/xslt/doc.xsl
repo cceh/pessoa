@@ -27,14 +27,13 @@
         </div>
     </xsl:template>
     <xsl:template match="ref[@target]" mode="#default deletion addition">
-        <xsl:variable name="id" select="@target"/>
-        <a>
+        <a class="link">
             <xsl:attribute name="href">
                 <xsl:choose>
-                    <xsl:when test="starts-with(@href, 'http://')">
-                        <xsl:value-of select="@href"/>
+                    <xsl:when test="starts-with(@target, 'http://')">
+                        <xsl:value-of select="@target"/>
                     </xsl:when>
-                    <xsl:otherwise>../data/doc/<xsl:value-of select="$id"/></xsl:otherwise>
+                    <xsl:otherwise>../data/doc/<xsl:value-of select="@target"/></xsl:otherwise>
                 </xsl:choose>
             </xsl:attribute>
             <xsl:apply-templates/>
@@ -166,6 +165,15 @@
             <xsl:apply-templates/>
         </p>
     </xsl:template>
+    
+    <xsl:template match="ab" mode="#default deletion addition">
+        <p>
+            <xsl:if test="@rend">
+                <xsl:attribute name="class" select="@rend"/>
+            </xsl:if>
+            <xsl:apply-templates/>
+        </p>
+    </xsl:template>
 
     <!-- Metamarks -->
     <!-- Lines -->
@@ -189,11 +197,11 @@
     <!-- Quotes -->
     <xsl:template match="metamark[@rend = 'quotes'][@function = 'ditto']"
         mode="#default deletion addition">
-        <span class="metamark quotes ditto"> " </span>
+        <span class="metamark quotes ditto">"</span>
     </xsl:template>
     <xsl:template match="metamark[@rend = 'quotes-14'][@function = 'ditto']"
         mode="#default deletion addition">
-        <span class="metamark quotes-14 ditto"> " </span>
+        <span class="metamark quotes-14 ditto">"</span>
     </xsl:template>
     <xsl:template match="metamark[contains(@rend, 'line')][@function = 'ditto']"
         mode="#default deletion addition">
@@ -381,6 +389,11 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
+    <xsl:template match="add[@place='below']" mode="#default deletion addition">
+        <span class="below">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
     <xsl:template match="seg[@type = 'anchor']" mode="#default deletion addition">
         <span class="anchor">
             <xsl:apply-templates/>
@@ -415,6 +428,13 @@
     <xsl:template match="del[@rend = 'overtyped'] | seg[@rend = 'overtyped']"
         mode="#default deletion addition">
         <span class="deletion overtyped">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+    
+    <!-- Choices -->
+    <xsl:template match="choice[seg[@n='1'] and seg[@n='2']]" mode="#default deletion addition">
+        <span class="choice">
             <xsl:apply-templates/>
         </span>
     </xsl:template>

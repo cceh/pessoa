@@ -80,28 +80,60 @@
       <body>
          <div>
             <list>
-               <item><label>1.</label>poesias meramente lyricas.</item>
-               <item><label>2.</label><metamark rend="line" function="ditto">poesias</metamark>
-                  lyricas com largueza metaphysica, patriotica ou pessoal</item>
-               <item><label>3.</label><metamark rend="line" function="ditto">poesias lyricas
-                     com</metamark> “extranheza”</item>
+               <item>
+                  <label>A.</label> poesias meramente lyricas. </item>
+               <item>
+                  <label>B.</label>&#x00A0;<choice>
+                     <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                     <expan>poesias</expan>
+                  </choice> lyricas com largueza metaphysica, patriotica ou pessoal </item>
+               <item>
+                  <label>C.</label>&#x00A0;<choice>
+                     <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                     <expan>poesias</expan>
+                  </choice>&#x00A0;<choice>
+                     <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                     <expan>lyricas</expan>
+                  </choice>&#x00A0;<choice>
+                     <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                     <expan>com</expan>
+                  </choice> “extranheza” </item>
             </list>
-            <note place="left above"><metamark rend="line" function="distinct"/></note>
-            <note place="left below"><metamark rend="line transversal" function="distinct"/></note>
+            <metamark rend="line-24" function="distinct"/>
+            <table>
+               <row>
+                  <cell>A.</cell>
+                  <cell>82 (1=6 sonetos)</cell>
+                  <cell>=</cell>
+                  <cell rend="right">87</cell>
+               </row>
+               <row>
+                  <cell>B.</cell>
+                  <cell><supplied resp="PS" reason="omitted-in-original"/></cell>
+                  <cell>=</cell>
+                  <cell rend="right">26</cell>
+               </row>
+               <row>
+                  <cell>C.</cell>
+                  <cell><supplied resp="PS" reason="omitted-in-original"/></cell>
+                  <cell>=</cell>
+                  <cell rend="right">5</cell>
+               </row>
+            </table>
+            <ab>A + C = 92.</ab>
             <list>
-               <item><label>1.</label>82 (1=6 sonetos) = 87</item>
-               <item><label>2.</label><supplied resp="PS" reason="omitted-in-original"/> = 26</item>
-               <item><label>3.</label><supplied resp="PS" reason="omitted-in-original"/> = 5</item>
-            </list>
-            <note place="left transversal">A+ C = 92 </note>
-            <list>
-               <item><label>1.</label><supplied resp="PS" reason="omitted-in-original"/>
+               <item>
+                  <label>1.</label>&#x00A0;<supplied resp="PS" reason="omitted-in-original"/>
                </item>
-               <item><label>2.</label><rs type="text">Gladio</rs> (I. <rs type="place"
-                  >Portugal</rs>. II.<hi rend="underline"> Prelio</hi>).</item>
-               <item><label>3.</label><rs type="text">Aureola</rs> (<supplied resp="PS"
-                     reason="omitted-in-original"/>(livro de exaltação<lb/> mystica, patriotica,
-                  etc.)</item>
+               <item>
+                  <label>2.</label>&#x00A0;<rs type="work" key="O1-2"><rs type="text"
+                     >Gladio</rs></rs> (I. <rs type="text"><rs type="place">Portugal</rs></rs>. II.
+                     <rs type="text"><hi rend="underline">Prelio</hi></rs>). </item>
+               <item>
+                  <label>3.</label>&#x00A0;<rs type="text">Aureola</rs> (<supplied resp="PS"
+                     reason="omitted-in-original"/>
+                  <note place="margin-right">(livro de exaltação<lb/> mystica, patriotica,
+                     etc.)</note></item>
             </list>
          </div>
       </body>

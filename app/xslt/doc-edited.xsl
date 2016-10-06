@@ -100,7 +100,7 @@
     </xsl:template>
     
     <!-- Gelöschtes nicht anzeigen -->
-    <xsl:template match="del[@n='2']" mode="#default deletion addition"/>
+    <xsl:template match="del[@n='2']|del" mode="#default deletion addition"/>
     
 </xsl:stylesheet>
     

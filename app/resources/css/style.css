@@ -1047,8 +1047,20 @@ div.text h2 {
 div.text h2.center {
     text-align: center;
 }
+div.text h2.inline {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 0;
+    margin-right: 1em;
+}
+div.text table {
+    margin-left: 1em;
+}
 div.text table.center {
     margin: 0px auto;
+}
+div.text table.inline {
+    display: inline-block;
 }
 div.text table td.center {
     text-align: center;
@@ -1062,6 +1074,15 @@ div.text table td {
 }
 div.text div.list {
     margin: 1em 0;
+    padding-left: 1.5em;
+}
+div.text p {
+    padding-left: 1.1em;
+    margin: 1em 0;
+}
+div.text > p {
+    margin: 1em 0;
+    padding-left: 0;
 }
 div.text div.list.inline, div.text div.list div.list.inline {
     display: inline-block;
@@ -1082,6 +1103,7 @@ div.text div.list div.list {
 div.text div.item {
     margin: 0.5em 0;
     position: relative;
+    text-indent: -1.5em;
 }
 div.text div.item * {
     vertical-align: top;
@@ -1091,8 +1113,14 @@ div.text div.item.indent-2-label {
     padding-left: 2em;
 }
 div.text div.item.indent-2 {
-    text-indent: -1em;
-    padding-left: 1em;
+    text-indent: -3.5em;
+    padding-left: 2em;
+}
+div.text div.item span.label {
+    display: inline-block;
+    min-width: 2em;
+    text-align: right;
+    text-indent: 0;
 }
 div.text p.indent-2 {
     text-indent: -2em;
@@ -1108,10 +1136,11 @@ div.text span.note.margin-right {
     padding-left: 2em;
     line-height: normal;
     white-space: nowrap;
+    text-indent: 0;
 }
 div.text div.item span.note.margin-left {
     position: absolute;
-    left: -3em;
+    left: -4em;
     line-height: normal;
     white-space: nowrap;
 }
@@ -1144,7 +1173,7 @@ div.text span.grouping-right .label, div.text span.grouping-left .label {
 }
 div.text span.metamark.quotes.ditto {
     display: inline-block;
-    width: 3em;
+    width: 15%;
     text-align: center;
 }
 div.text span.label.rotate-right {
@@ -1156,8 +1185,11 @@ div.text span.label.rotate-right {
 div.text span.underline {
     text-decoration: underline;
 }
-div.text span.italic {
+div.text span.italic, div.editorial-note span.italic {
     font-style: italic;
+}
+div.text span.choice {
+    position: relative;
 }
 div.text span.anchor {
     position: relative;
@@ -1166,6 +1198,12 @@ div.text span.above {
     position: absolute;
     font-size: smaller;
     top: -1.5em;
+}
+div.text span.below {
+    position: absolute;
+    font-size: smaller;
+    bottom: -1.1em;
+    left: 0;
 }
 div.text span.supplied {
     bottom: 1px;

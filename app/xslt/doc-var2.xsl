@@ -32,7 +32,7 @@
     
     <!-- Ersetzung von Pessoa selbst: etwas wird gelöscht, etwas anderes hinzugefügt
     hier: Anzeigen des Hinzugefügten -->
-    <xsl:template match="subst[del/@n and add/@n]" mode="#default deletion addition">
+    <xsl:template match="subst[del and add/@n]" mode="#default deletion addition">
         <xsl:apply-templates select="add/text()"/>
     </xsl:template>
     

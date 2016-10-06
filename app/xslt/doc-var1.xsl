@@ -4,24 +4,31 @@
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
     
     
-    <!-- choices -->
+    <!-- Choices -->
     <!-- Alternativen von Pessoa selbst 
         (etwas ist hinzugefügt, aber nichts gestrichen, die beiden Varianten schließen sich aber aus)
     hier: 1. Alternative anzeigen -->
     <xsl:template match="choice[seg and seg[2]/add/@place='below']" mode="#default deletion addition">
         <span class="choice">
             <span class="seg variant" title="variant">
-                <xsl:apply-templates select="seg[1]/text()"/>
+                <xsl:apply-templates select="seg[1]"/><!-- war: seg[1]/text() -->
             </span>
         </span>
     </xsl:template>
     <xsl:template match="choice[seg and seg[2]/add/@place='above']" mode="#default deletion addition">
         <span class="choice">
             <span class="seg variant">
-                <xsl:apply-templates select="seg[1]/text()"/>
+                <xsl:apply-templates select="seg[1]"/><!-- war: seg[1]/text() -->
             </span>
         </span>
     </xsl:template>
+    <xsl:template match="subst" mode="#default deletion addition">
+        <span class="subst">
+            <xsl:apply-templates select="child::*[not(@n='2')]"/>
+        </span>
+    </xsl:template>
+    
+    
     <!-- Ergänzung von Pessoa selbst
     (alternativ: nichts  - das Hinzugefügte)
     hier: das Hinzugefügte nicht anzeigen 
