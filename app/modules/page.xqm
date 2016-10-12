@@ -181,8 +181,18 @@ declare function page:createThirdNavTab($type as xs:string) as node()* {
 
 declare function page:createThirdNavContent($type as xs:string, $indikator as xs:string) as node()* {
         if ($type = "documentos") then for $item in page:createItem($type, $indikator) 
-        order by $item/@label
-            return <a href="{$item/@ref/data(.)}"><li class="{concat("nav_",$type,"_sub_tab")}">{$item/@label/data(.)}</li></a>
+        let $title := 
+                for $elem in doc(concat("/db/apps/pessoa/data/doc/",$item/@label))//tei:titleStmt/tei:title/node() return
+                if(exists($elem/node())) 
+                    then <span class="doc_superscript">{$elem/node()/data(.)}</span> 
+                else (
+                    if(contains($elem,"BNP/E3")) then replace($elem,"BNP/E3 ","") 
+                    else if(contains($elem,"MN")) then replace($elem,"MN ","") 
+                    else $elem 
+                    )
+        order by $item/@label            
+                
+            return <a href="{$item/@ref/data(.)}"><li class="{concat("nav_",$type,"_sub_tab")}">{$title}</li></a>
        else if ($type = "cronologia" ) then
         let $field := (13,16,20,28,15,19,27,35)
         (:        let $field := (2,13,16,20,28,12,15,19,27,35) :)
@@ -257,8 +267,9 @@ declare function page:createItem($type as xs:string, $indikator as xs:string?) a
             let $label :=   if(substring-after($hit, "BNP_E3_") != "") then substring-after(replace(substring-before($hit, ".xml"), "_", " "), "BNP E3 ")
                             else if(substring-after($hit,"MN") != "") then  substring-after(substring-before($hit, ".xml"),"MN")
                             else ()
-                let $title := substring-after(doc(concat("/db/apps/pessoa/data/doc/",$hit))//tei:titleStmt/tei:title/data(.)," ")
-                let $ref := concat($helpers:app-root,'/',$helpers:web-language, "/doc/", substring-before($hit, ".xml"))         
+                (:let $title := substring-after(doc(concat("/db/apps/pessoa/data/doc/",$hit))//tei:titleStmt/tei:title/data(.)," "):)
+                let $title :=  $hit (:doc(concat("/db/apps/pessoa/data/doc/",$hit))//tei:titleStmt/tei:title :)  (:for $elem in doc(concat("/db/apps/pessoa/data/doc/",$hit))//tei:titleStmt/tei:title/node() return if(exists($elem/node())) then <span class="doc_superscript">{$elem/node()/data(.)}</span> else $elem
+                :)let $ref := concat($helpers:app-root,'/',$helpers:web-language, "/doc/", substring-before($hit, ".xml"))         
                       order by $hit 
                       return if( $indikator !="1-9" and page:getCorrectDoc($label, $indikator) = xs:boolean("true") and $indikator != "MN" and contains($hit,"BNP")) then
                       <item label="{$title}" ref="{$ref}"  />

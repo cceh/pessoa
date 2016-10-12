@@ -739,6 +739,17 @@ input[type="checkbox"].lang_input-box, input[type="radio"].lang_input-box {
      margin:0;
  }
  
+ #nota_bottom{
+      display:none;
+      }
+      .editorial-note {
+      display:none;
+      }
+      .doc_superscript {
+         font-size: 15px;
+         vertical-align: super;
+      }
+ 
  /* Content Darstellung */
  
 #titleline{
@@ -958,7 +969,7 @@ li.itabs.selected span{
    margin: 40px 0 0 0;
 }
 
-#dialog {
+#cite, #symboliga {
     background-color: white;
     margin-left: 70px;
     margin-top: -47px;
@@ -967,7 +978,27 @@ li.itabs.selected span{
     width: auto;
     
 }
+#symboliga {
+    margin-top: -135px;
+}
 
+#symboliga table tr td {
+    padding:1px 5px;
+
+}
+#symboliga table tr {
+    border-bottom:1px dotted #222;
+}
+#symboliga table tr:nth-last-child(1) {
+    border-bottom:none;
+}
+#symboliga table tr td:nth-child(odd) {
+    border-right:1px dotted #222;
+    
+}
+#symboliga table tr td:nth-child(even) {
+    margin-left:3px;
+}
 
 .pLink {
                 color: #08298A !important;
