@@ -236,24 +236,11 @@ declare %templates:wrap function doc:docControll($node as node(), $model as map(
     return $arrows
 };
 
-declare function doc:footerfilter($node as node(), $model as map(*), $id as xs:string) {
-let $doc := doc("/db/apps/pessoa/data/lists.xml")
-let $script :=     <script>
-  $("#zitat").click(function() {{
-    $( "#dialog" ).toggle();
-  }});
-  </script>
-  
-  let $popup:= 
-  <div id="dialog" title="Citar" style="display:none;border:solid"><p>
-  Edição Digital de Fernando Pessoa, 2015,  &#60;{$helpers:app-root}/{$id}&#62;.</p>
-</div>
-let $filter := <div id="filter">
-                <a class="filter-a" onclick="printContent()">{page:singleAttribute($doc, "footer","print")}</a>
-                <a class="filter-a" href="{$helpers:app-root}/doc/{$id}/xml" target="_blank">XML</a>
-                <a class="filter-a" id="zitat" >{page:singleAttribute($doc, "footer","cite")}</a>
-            </div>
-            return ($popup,$filter,$script)
+declare function doc:footerfilter($node as node(), $model as map(*), $id as xs:string,$dir as xs:string) {
+             map {
+                "xmllink" := <a class="filter-a" href="{$helpers:app-root}/{$dir}/{$id}/xml" target="_blank">XML</a>,
+                "footercitar" := concat($helpers:app-root,"/",$id)
+            }
 };
 
 declare  function doc:get-recorder($node as node(), $model as map(*)) as node() {
