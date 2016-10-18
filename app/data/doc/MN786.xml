@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>MN 786</title>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Transcrição</resp>
+               <name>Pablo Javier Pérez López</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação, Modelagem de dados</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">MN786.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>MN786</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>Fernando Pessoa</author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="en"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate notBefore="1926">post. 1926</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="Bilder MN 14_246_602 und 786/avulsos (786).jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <head rend="center">Pequenos folhetos,<lb/> com assignatura<lb/> — 10 por 20.00 — </head>
+            <head><hi rend="underline">Contemporânea</hi></head>
+            <table>
+               <row>
+                  <cell><supplied resp="PS" reason="omitted-in-original"/></cell>
+                  <cell/>
+                  <cell rend="right">10</cell>
+                  <cell>(nada)</cell>
+               </row>
+               <row>
+                  <cell><rs type="work" key="O1-36"><rs type="text">Trois Chansons
+                     Mortes</rs></rs></cell>
+                  <cell>—</cell>
+                  <cell rend="right">7</cell>
+                  <cell>(20)</cell>
+               </row>
+               <row>
+                  <cell><rs type="work" key="O1-34"><rs type="text">Spell</rs></rs></cell>
+                  <cell>—</cell>
+                  <cell rend="right">89</cell>
+                  <cell>(p. 150)</cell>
+               </row>
+               <row>
+                  <cell><rs type="text">Carta ao Author de Sachá</rs></cell>
+                  <cell>—</cell>
+                  <cell rend="right">98</cell>
+                  <cell>(p. 93)</cell>
+               </row>
+            </table>
+            <note place="margin-right">
+               <label rend="rotate-left">
+                  <rs type="work" key="O4-9"><rs type="text">Lisbon revisited
+                     (1923)</rs></rs>&#x00A;<rs type="person" key="AdC" role="author">Alvaro de
+                     Campos</rs> (8) </label>
+            </note>
+            <metamark rend="line-44" function="distinct"/>
+            <table>
+               <row>
+                  <cell xml:id="C1"><rs type="work" key="O1-26"><rs type="text"
+                     >Natal</rs></rs></cell>
+                  <cell rows="2">
+                     <metamark rend="curly-bracket" target="range(C1,C2)"/>
+                  </cell>
+                  <cell rows="2">6</cell>
+                  <cell>(88)</cell>
+               </row>
+               <row>
+                  <cell xml:id="C2"><rs type="work" key="O4-15"><rs type="text">Soneto já
+                           antigo</rs></rs>. <rs type="person" key="AdC" role="author">
+                        <choice>
+                           <abbr>A<am>.</am></abbr>
+                           <expan>A<ex>lvaro</ex></expan>
+                        </choice> de Campos</rs>
+                  </cell>
+                  <cell/>
+                  <cell/>
+                  <cell>(121)</cell>
+               </row>
+               <row>
+                  <cell><supplied resp="PS" reason="omitted-in-original"/></cell>
+                  <cell/>
+                  <cell>5</cell>
+                  <cell/>
+               </row>
+               <row>
+                  <cell xml:id="C3"><rs type="text">Mar Portuguez</rs></cell>
+                  <cell rows="2"><metamark rend="curly-bracket" target="range(C3,C4)"/></cell>
+                  <cell rows="2" rend="vertical-middle">5</cell>
+                  <cell>(9)</cell>
+               </row>
+               <row>
+                  <cell xml:id="C4"><rs type="text">Carta de <rs type="person" key="AdC"
+                           role="author">
+                           <choice>
+                              <abbr>Alv<am>.</am></abbr>
+                              <expan>Alv<ex>aro</ex></expan>
+                           </choice> de Campos</rs></rs>
+                  </cell>
+                  <cell/>
+                  <cell/>
+                  <cell>(<supplied resp="PS" reason="omitted-in-original"/>)</cell>
+               </row>
+            </table>
+            <metamark rend="line-44" function="distinct"/>
+            <table>
+               <row>
+                  <cell>
+                     <rs type="text"><choice>
+                           <abbr>Banq<am>.</am></abbr>
+                           <expan>Banq<ex>ueiro</ex></expan>
+                        </choice> Anarchista</rs>
+                  </cell>
+                  <cell>—</cell>
+                  <cell>1</cell>
+                  <cell>(p. 5)</cell>
+               </row>
+               <row>
+                  <cell>(nada)</cell>
+                  <cell>—</cell>
+                  <cell>2</cell>
+                  <cell>(<del rend="overstrike">p.</del>)</cell>
+               </row>
+               <row>
+                  <cell>
+                     <rs type="person" key="P17">Antonio Botto</rs> e o <supplied resp="PS"
+                        reason="omitted-in-original"/>
+                  </cell>
+                  <cell>—</cell>
+                  <cell>3</cell>
+                  <cell>(p. 121)</cell>
+               </row>
+            </table>
+            <metamark rend="line-44" function="distinct"/>
+            <table>
+               <row>
+                  <cell>3.ª serie — n.° 1</cell>
+                  <cell>—</cell>
+                  <cell>
+                     <rs type="work" key="O1-29"><rs type="text">O Menino da Sua Mãe</rs></rs>
+                  </cell>
+               </row>
+               <row>
+                  <cell>
+                     <choice>
+                        <abbr>
+                           <metamark rend="line-34" function="ditto"/>
+                        </abbr>
+                        <expan>3.ª serie — n.°</expan>
+                     </choice> 2 </cell>
+                  <cell>—</cell>
+                  <cell>
+                     <rs type="work" key="O4-10"><rs type="text">Lisbon Revisited
+                        (1926)</rs></rs>&#x00A0;<rs type="person" key="AdC" role="author">Alvaro de
+                        Campos</rs>
+                  </cell>
+               </row>
+            </table>
+         </div>
+      </body>
+   </text>
+</TEI>

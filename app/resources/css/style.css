@@ -1077,6 +1077,7 @@ div.text h2 {
 }
 div.text h2.center {
     text-align: center;
+    line-height: 1em;
 }
 div.text h2.inline {
     display: inline-block;
@@ -1104,7 +1105,7 @@ div.text table td {
     padding-right: 2em;
 }
 div.text div.list {
-    margin: 1em 0;
+    margin: 2em 0;
     padding-left: 1.5em;
 }
 div.text p {
@@ -1139,6 +1140,9 @@ div.text div.item {
 div.text div.item * {
     vertical-align: top;
 }
+div.text div.item hr {
+    vertical-align: bottom;
+}
 div.text div.item.indent-2-label {
     text-indent: -1em;
     padding-left: 2em;
@@ -1157,6 +1161,9 @@ div.text p.indent-2 {
     text-indent: -2em;
     padding-left: 2em;
 }
+div.text p.indent-first {
+    text-indent: 2em;
+}
 div.text div.item.indent-2 *, div.text div.item.indent-2-label * {
     text-indent: 0;
 }
@@ -1174,6 +1181,7 @@ div.text div.item span.note.margin-left {
     left: -4em;
     line-height: normal;
     white-space: nowrap;
+    top: 0.3em;
 }
 div.text > span.note.margin-left {
     display: inline-block;

@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
@@ -90,7 +91,9 @@
          <list>
             <item><rs type="text"><rs type="person" key="P47">Ignez de Castro</rs></rs>.</item>
             <item><rs type="text"><rs type="person" key="P48">Leonor Telles</rs></rs>.</item>
-            <metamark rend="line" function="distinct"/>
+            <metamark rend="line-14" function="distinct"/>
+         </list>
+         <list>
             <item><rs type="text"><rs type="person" key="P21" style="b">D.
                Sebastião</rs></rs>.</item>
             <item><rs type="text">Teomachia</rs>.</item>

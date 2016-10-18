@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 48-18 e 19<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Transcrição</resp>
+               <name>Pablo Javier Pérez López</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_48-18-e-19.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc xml:id="M1" type="structured">
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 48-18 e 19</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs></note>
+                     <textLang mainLang="pt" otherLangs="en"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate from="1934" to="1935" cert="medium">c. 1934-1935</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita, publicada em Sepúlveda, <hi rend="italic">Os livros de Fernando
+                     Pessoa</hi> (2013, 372-374). </p>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic
+         url="bn-acpc-e-e3-48-1-56_JPG_24-C-R0150/bn-acpc-e-e3-48-1-56_0035_18_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-48-1-56_JPG_24-C-R0150/bn-acpc-e-e3-48-1-56_0037_19_t24-C-R0150.jpg"/>
+      <!-- FEHLEN ZWEI BILDER -->
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <p> = (ordem alphabetica /<seg>do <add place="below" n="2">ultimo</add>
+               appellido</seg>/)</p>
+            <list>
+               <item><hi rend="underline">
+                     <rs type="person" key="P25">Guerra Junqueiro</rs></hi>: <rs type="text">Canção
+                     Perdida</rs>.</item>
+               <item><hi rend="underline">
+                     <rs type="person" key="P179">Gomes Leal</rs></hi>: <rs type="text">Misere
+                     Mei</rs>.</item>
+               <item>
+                  <hi rend="underline">
+                     <rs type="person" key="P26">Cesario Verde</rs>:</hi>&#x00A0;<supplied
+                     reason="omitted-in-original" resp="UH"/>
+               </item>
+               <item>
+                  <hi rend="underline">
+                     <rs type="person" key="P125">Antonio Molarinho</rs>:</hi>&#x00A0;<rs
+                     type="text">Maria Manuela</rs>. </item>
+               <item>
+                  <hi rend="underline">
+                     <rs type="person" key="P209">Guilherme de Faria</rs></hi>: <supplied
+                     reason="omitted-in-original" resp="UH"/>
+               </item>
+               <item rend="indent-2">
+                  <hi rend="underline">
+                     <rs type="person" key="P210">Manuel Duarte de Almeida</rs></hi>: <rs
+                     type="text">Paolo e<lb/> Francesca</rs>. ?</item>
+               <item>
+                  <hi rend="underline">
+                     <rs type="person" key="P145">Camillo Pessanha</rs>:</hi> (final de <rs
+                     type="text"><hi rend="underline">Clepsydra</hi></rs>). </item>
+               <item xml:id="I1">
+                  <hi rend="underline">
+                     <rs type="person" key="FP" role="author" style="b">Fernando Pessoa</rs>:
+                     </hi>&#x00A0;<rs type="text">Canção de Outomno</rs> ? </item>
+               <item xml:id="I2">
+                  <hi rend="underline">
+                     <rs type="person" key="RR" role="author">Ricardo
+                     Reis</rs>:</hi>&#x00A0;<supplied reason="omitted-in-original" resp="UH"/>
+                  <note place="margin-left" target="range(I1,I4)">
+                     <metamark rend="curly-bracket"/>
+                  </note>
+               </item>
+               <item xml:id="I3">
+                  <hi rend="underline">
+                     <rs type="person" key="AdC" role="author">Alvaro de
+                     Campos</rs>:</hi>&#x00A0;<supplied reason="omitted-in-original" resp="UH"/>
+               </item>
+               <item xml:id="I4">
+                  <hi rend="underline">
+                     <rs type="person" key="AC" role="author">Alberto
+                     Caeiro</rs>:</hi>&#x00A0;<supplied reason="omitted-in-original" resp="UH"/>
+               </item>
+               <item>
+                  <hi rend="underline">
+                     <rs type="person" key="P17">Antonio Botto</rs>
+                  </hi>: <rs type="text">Dandysmo</rs>
+                  <choice>
+                     <seg n="1">8</seg>
+                     <seg n="2"><add place="above">ou 11</add></seg>
+                  </choice> (o que é que a<lb/> fonte mur<pc>-</pc><lb/>mura?) </item>
+               <item>
+                  <hi rend="underline">
+                     <rs type="person" key="P44">Garcia Pulido</rs>: <supplied
+                        reason="omitted-in-original" resp="UH"/>
+                  </hi>
+               </item>
+               <item>
+                  <hi rend="underline">
+                     <choice>
+                        <seg n="1"><rs type="person" key="P225">José Regio</rs></seg>
+                        <seg n="2"><add place="below"><rs type="person" key="P282">Saul
+                              Dias</rs></add></seg>
+                     </choice>
+                  </hi>: <supplied reason="omitted-in-original" resp="UH"/>
+               </item>
+               <item>
+                  <hi rend="underline">
+                     <rs type="person">Adolfo Casais Monteiro</rs>:</hi>&#x00A0;<supplied
+                     reason="omitted-in-original" resp="UH"/>
+               </item>
+               <item>
+                  <hi rend="underline"> ? <rs type="person" key="P229">Alberto de
+                     Serpa</rs>:</hi>&#x00A0;<supplied reason="omitted-in-original" resp="UH"/>
+               </item>
+               <pb n="2"/>
+               <!-- ### -->
+               <item>
+                  <hi rend="underline"><rs type="person">Antonio Feijó:</rs></hi>
+               </item>
+               <item>
+                  <hi rend="underline"><rs type="person">Ignacio de Abreu e Lima:</rs>
+                  </hi>(Villa Nova de Gaya:<supplied resp="PS" reason="omitted-in-original"/>) </item>
+               <item>
+                  <hi rend="underline"><rs type="person">Conde de Monsaraz:</rs>
+                  </hi>(Nas recepções<lb/> da Embaixada ?) </item>
+               <item>
+                  <hi rend="underline"><rs type="person">Alberto de Monsaraz:</rs>
+                  </hi>
+               </item>
+               <item>
+                  <hi rend="underline"><rs type="person">João Saraiva:</rs>
+                  </hi>
+               </item>
+               <item>
+                  <hi rend="underline"><rs type="person">Antonio Carneiro:</rs></hi>
+               </item>
+               <item>
+                  <hi rend="underline"><rs type="person">José Castello de Moraes:</rs></hi>
+               </item>
+               <item>
+                  <hi rend="underline"><rs type="person">Luiz de Montalvor:</rs> Menino. é
+                     soneto</hi>
+               </item>
+               <item>
+                  <hi rend="underline"><rs type="person">Augusto de Santa-Rita:</rs></hi>C Prophecia
+                  Malabar </item>
+               <item>
+                  <hi rend="underline"><rs type="person">Côrtes-Rodrigues:</rs></hi>
+               </item>
+               <item>
+                  <hi rend="underline"><rs type="person">Alfredo Guisado:</rs>
+                  </hi>(/baloiço que me baloiça ?/) </item>
+               <item>
+                  <hi rend="underline"><rs type="person">Mario de Sá-Carneiro:</rs>
+                  </hi>(fio de luz) </item>
+               <item>
+                  <hi rend="underline"><rs type="person">José de Almada Negreiros:</rs></hi>
+               </item>
+               <item>
+                  <hi rend="underline"><rs type="person">Angelo de Lima:</rs>
+                  </hi>(chuva) soneto! </item>
+               <item>
+                  <hi rend="underline"><rs type="person">Augusto Ferreira Gomes:</rs>
+                  </hi>(algo do <choice>
+                     <abbr>Q<am>.</am></abbr>
+                     <expan>Q<ex>uinto</ex></expan>
+                  </choice>
+                  <choice>
+                     <abbr>Imp<am>.</am></abbr>
+                     <expan>Imp<ex/>erio</expan>
+                  </choice>) </item>
+               <pb n="3"/>
+               <item>
+                  <hi rend="underline">
+                     <rs type="person" key="P54">Eugenio de Castro</rs>:</hi>&#x00A0; <rs
+                     type="text">Epigraphe (Sombra do <lb/> Quadrante)</rs>
+               </item>
+               <item>
+                  <hi rend="underline">
+                     <rs type="person" key="P125">Antonio Molarinho</rs>:</hi>&#x00A0;<supplied
+                     reason="omitted-in-original" resp="UH"/>
+               </item>
+               <item>
+                  <hi rend="underline"> ? <rs type="person" key="P90">Antonio
+                     Ferro</rs>:</hi>&#x00A0;<supplied reason="omitted-in-original" resp="UH"/>
+               </item>
+               <item>
+                  <hi rend="underline">
+                     <rs type="person" key="P283">Fernanda de Castro</rs>:</hi>&#x00A0;<supplied
+                     reason="omitted-in-original" resp="UH"/>
+               </item>
+               <item>
+                  <hi rend="underline">
+                     <rs type="person" key="P284">Marta Mesquita da
+                     Camara</rs>:</hi>&#x00A0;<supplied reason="omitted-in-original" resp="UH"/>
+               </item>
+               <item>
+                  <hi rend="underline">
+                     <rs type="person" key="P285">Antonio Sergio</rs>:</hi>&#x00A0;<supplied
+                     reason="omitted-in-original" resp="UH"/>
+               </item>
+               <item>
+                  <hi rend="underline">
+                     <rs type="person" key="P135">Jayme Cortesão</rs>: </hi>&#x00A0;<rs type="text"
+                     >Choupos na luz do Luar</rs>
+               </item>
+               <item>
+                  <hi rend="underline">
+                     <rs type="person" key="P52"><choice>
+                           <abbr>T<am>.</am></abbr>
+                           <expan>T<ex>eixeira</ex></expan>
+                        </choice>de Pascoaes</rs>: </hi>
+                  <rs type="text">Elegias</rs> (?) (too long) </item>
+               <item>
+                  <hi rend="underline">
+                     <rs type="person" key="P136">Mario Beirão</rs>:</hi>&#x00A0;<supplied
+                     reason="omitted-in-original" resp="UH"/>
+               </item>
+               <item>
+                  <hi rend="underline">
+                     <rs type="person" key="P262">Affonso Duarte</rs>:</hi>&#x00A0;<supplied
+                     reason="omitted-in-original" resp="UH"/>
+               </item>
+               <item>
+                  <hi rend="underline">
+                     <rs type="person" key="P18">Anthero de Quental</rs>:</hi>
+               </item>
+               <item>
+                  <hi rend="underline">
+                     <rs type="person" key="P122">Henrique Rosa</rs>:</hi> (<rs type="text"
+                     >Shilock</rs> ?) </item>
+               <item>
+                  <hi rend="underline">
+                     <rs type="person" key="P124">José Duro</rs>:</hi>&#x00A0;<supplied
+                     reason="omitted-in-original" resp="UH"/>
+               </item>
+               <item>
+                  <hi rend="underline">
+                     <rs type="person" key="P286">Manuel Laranjeira</rs>:</hi>&#x00A0;<supplied
+                     reason="omitted-in-original" resp="UH"/>
+               </item>
+               <item>
+                  <hi rend="underline">
+                     <rs type="person" key="P287">Ribeiro de Carvalho</rs>: </hi>&#x00A0;<rs
+                     type="text">Nova Symphonia</rs>
+               </item>
+               <item>
+                  <hi rend="underline">
+                     <rs type="person" key="P200">Francisco Costa</rs>:</hi> (só sonetos?) </item>
+               <pb n="4"/>
+               <!-- ########## -->
+            </list>
+         </div>
+
+
+         <item xml:id="I43">
+            <rs type="text" xml:id="T44">
+               <anchor xml:id="A45"/><rs type="text" xml:id="T45"><metamark rend="curly bracket"
+                     function="grouping"/> ou Na mão de Deus<lb/></rs>
+               <spanGrp><span type="correlation" from="#T451" to="#T46">é soneto</span></spanGrp>
+               <anchor xml:id="A46"/><rs type="text" xml:id="T46">ou <choice>
+                     <abbr>Ep<am>.</am></abbr>
+                     <expan>Ep<ex>igramma</ex></expan>
+                  </choice> Transcendental<lb/></rs> é soneto <rs type="text" xml:id="T47">(from
+                  Epigramma <metamark rend="arranged in a circle" function="mark"><hi
+                        rend="superscript">azas de setim</hi></metamark> )</rs>
+            </rs></item>
+
+        <!-- <item xml:id="I44">
+            <rs type="text" xml:id="T48"><lb/>
+               <hi rend="underline">a ironia transcendental</hi> dos alemães seus mestres</rs>
+         </item>
+         <item xml:id="I45">
+            <rs type="text" xml:id="T49">espirituaes que não formaes<lb/>
+            Pseudo-omnipotencia</rs></item>
+
+         <metamark rend="line" function="distinct"/>
+         <p xml:id="T54">ou só poetas que já estavam escrevendo<lb/> em 1900? (<gap
+               reason="illegible" extent="2" unit="character"/> e dá<lb/>
+            <gap reason="illegible" extent="1" unit="character"/> a uma <choice>
+               <abbr>antho<am>.</am></abbr>
+               <expan>antho<ex>logia</ex></expan>
+            </choice> da Poesia Nova) </p>
+
+
+         <p xml:id="T55">ainda que insira poemas d’elles <lb/>escriptos posteriormente a esse<lb/>
+            anno (já neste seculo)</p>
+         <metamark rend="line" function="distinct"/>
+
+         <p xml:id="T56">Anthologia Portugueza </p>
+         <p xml:id="T57">Seculo XIX.</p>
+         <p xml:id="T58">(1750 — 1900)</p>
+         <metamark rend="line" function="distinct"/>
+         <p xml:id="T59">Pre-romanticos, Romanticos<lb/> Modernos </p>
+         <metamark rend="line" function="distinct"/>
+-->
+
+      </body>
+   </text>
+</TEI>

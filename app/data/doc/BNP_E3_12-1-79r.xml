@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -11,10 +12,6 @@
                 <respStmt>
                     <resp>Transcrição, Edição</resp>
                     <name>Pedro Sepúlveda</name>
-                </respStmt>
-                <respStmt>
-                    <resp>Transcrição</resp>
-                    <name>Pablo Javier Pérez López</name>
                 </respStmt>
                 <respStmt>
                     <resp>Transcrição</resp>
@@ -96,18 +93,16 @@
                         <hi rend="underline"><rs type="person" key="P2">Anton Tchekhov</rs></hi>:
                             <rs type="text">Vanka</rs>. </item>
                     <item>
-                        <note>? -</note>
+                        <note place="margin-left">? -</note>
                         <hi rend="underline"><rs type="person" key="P3">José Enrique Rodó</rs></hi>:
                             <rs type="text">Ariel</rs>. </item>
                     <item>
-                        <note>? -</note>
+                        <note place="margin-left">? -</note>
                         <hi rend="underline"><rs type="person" key="P4">J. M. Robertson</rs></hi>:
                             <rs type="text">Short History of <choice>
                                 <abbr>Ch</abbr>
                                 <expan>Ch<ex>ristianity</ex></expan>
-                            </choice></rs>
-                        <note>(?)</note>
-                    </item>
+                            </choice></rs> (?) </item>
                     <item>
                         <hi rend="underline"><rs type="person" key="P5">Novalis</rs></hi>: <rs
                             type="text">Discipulos em Saïs, Fragmentos</rs>. </item>
@@ -119,12 +114,12 @@
                             type="text">(Dramas)</rs>
                     </item>
                     <item>
-                        <note>? -</note>
+                        <note place="margin-left">? -</note>
                         <hi rend="underline"><rs type="person" key="P8">G. K. Chesterton</rs></hi>:
                             <rs type="text">Herejes</rs>
                     </item>
                     <item>
-                        <note>? -</note>
+                        <note place="margin-left">? -</note>
                         <hi rend="underline"><rs type="person" key="P9">G. B. Shaw</rs></hi>: <rs
                             type="text">Homem e Superhomem</rs>. </item>
                     <item>
@@ -133,19 +128,19 @@
                     <item>
                         <choice>
                             <abbr>
-                                <metamark rend="line" function="ditto"/>
+                                <metamark rend="line-14" function="ditto"/>
                             </abbr>
                             <expan>
                                 <hi rend="underline"><rs type="person" key="P10">Francisco
                                         Sanches</rs></hi>
                             </expan>
-                        </choice>
+                        </choice>&#x00A0;
                         <rs type="text">Anthologia portugueza</rs>. (? vols.). </item>
                     <item><hi rend="underline"><rs type="person" key="P11">Fernandes
-                            Lopes</rs>:</hi>
+                            Lopes</rs>:</hi>&#x00A0;
                         <rs type="text">Historia da Philosophia</rs></item>
                     <item><hi rend="underline"><rs type="person" key="P1" style="b">Antonio
-                                Mora</rs>:</hi>
+                                Mora</rs>:</hi>&#x00A0;
                         <rs type="text">Prolegomenos</rs>, etc...</item>
                 </list>
                 <gap reason="selection" unit="line" extent="22"/>
