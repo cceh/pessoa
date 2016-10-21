@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 189<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Transcrição</resp>
+               <name>Pablo Javier Pérez López</name>
+            </respStmt>
+            <respStmt>
+               <resp>Transcrição</resp>
+               <name>Jorge Uribe</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação, Modelagem de dados</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_189r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc xml:id="M1" type="structured">
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 189r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs><rs type="genre"
+                           key="nota_editorial">Nota editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="en la"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate when="1928" cert="medium">c. 1928</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista datilografada, publicada em <hi rend="italic">Prosa de Álvaro de
+                     Campos</hi> (2012, 298-299). </p>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3-189_JPG_24-C-R0150/bn-acpc-e-e3-189_0001_1_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <note place="right">são entidades com<lb/> similivida propria,<lb/> sentimentos que eu
+               não tenho,<lb/> opiniões que não acceito<lb/>
+               <del rend="overstrike">São</del> Seus escriptos são obras<lb/> alheias, embora,
+               por<lb/> acaso, sejam minhas. </note>
+            <head><hi rend="underline">Escriptos orthonymos:</hi></head>
+            <list>
+               <item><label>a)</label><hi rend="underline"> Folhetos</hi>: <label><note
+                        place="center">(em inglez):</note><note place="right"> Antinous, 1918</note>
+                  </label>
+                  <label place="right">35 Sonnets, 1918</label>
+                  <label place="right"><rs type="text">English Poems (I-II)</rs>, 1922
+                        (con<pc>-</pc><lb/>tém o Antinous <subst>
+                        <del rend="overstrike">emendado</del>
+                        <add place="above">corrigido</add>
+                     </subst> e<lb/> lnscriptions), </label>
+                  <label place="right"><rs type="text">English Poems, III</rs>.1922
+                     (Epithalamium)</label>
+                  <label><note place="center">(em português):</note><note place="right"><rs
+                           type="text"> O Interregno — Defeza e Justi<pc>-</pc><lb/>ficação da
+                           Dictadura Militar<lb/> em <rs type="place">Portugal</rs></rs>. 1928.
+                     </note></label></item>
+               <item><label>b)</label><hi rend="underline"> Collaboração em revistas,<subst>
+                        <del rend="overstrike">que sera publicada em livro com ou sem correcções </del>
+                        <add place="above">salvo pequenos trechos ou poemas:</add>
+                     </subst>
+                  </hi>
+                  <label place="right"><rs type="text">O Marinheiro</rs>, Drama Statico em<lb/> um
+                     Quadro, ln <rs type="text">“Orpheu” 1</rs> (1915,<lb/> Março)</label>
+                  <label place="left"><rs type="journal"> Aguia</rs></label>
+                  <label place="right"><rs type="text"> Chuva Obliqua</rs>, Poemas-lntersecções
+                        In<rs type="text"> “Orpheu” 2</rs> (Junho, 1915)</label>
+                  <label place="left"><rs type="journal">Orpheu</rs></label>
+                  <label place="right"><rs type="text"> O Banqueiro
+                        Anarchista</rs>.(Contempo<pc>-</pc><lb/>ranea 1, 1922).</label>
+                  <label place="left"><rs type="journal">Portugal Futurista</rs></label>
+                  <label place="right"><rs type="text">Antonio Botto e o Ideal Esthetico<lb/> em <rs
+                           type="place">Portugal </rs></rs></label>
+                  <label place="left"><rs type="journal">Contemporanea</rs> (<choice>
+                        <abbr>C<am>.</am></abbr>
+                        <expan>C<ex>ontemporane</ex></expan>
+                     </choice>a, 3,1922).</label>
+                  <label place="left"><rs type="journal">Athena</rs>
+                  </label>
+                  <label place="right"><rs type="text"> Mar Portuguez (<choice>
+                           <abbr>C<am>.</am></abbr>
+                           <expan>C<ex>ontemporane</ex></expan>
+                        </choice>a 4,1922).</rs>
+                  </label>
+                  <label place="left"><choice>
+                        <abbr>Rev<am>.</am></abbr>
+                        <expan>Rev<ex>ista</ex></expan>
+                     </choice> de <choice>
+                        <abbr>Com<am>.</am></abbr>
+                        <expan>Com<ex>mercio</ex></expan>
+                     </choice>e Contabilidade</label>
+                  <label place="left"><rs type="journal">Presença</rs></label>
+                  <label place="left"><rs type="person" key="AC" role="author"><choice>
+                           <abbr> Alb<am>.</am></abbr>
+                           <expan> Alb<ex>erto</ex></expan>
+                        </choice> Caeiro — </rs></label>
+                  <label place="right"><rs type="text"> “Escolha de Poemas”</rs> (<rs type="journal"
+                        >Athena</rs> Nos. 4 e 5)</label>
+                  <label place="left"><rs type="person" key="RR" role="author">Ricardo Reis</rs> — </label>
+                  <label place="right">
+                     <rs type="text"> “Odes”, Livro 1</rs> (<rs type="journal">Athena</rs> , No.
+                     1)</label>
+                  <label place="right"> Varias <rs type="text"> odes</rs> in<rs type="journal">
+                        “Presença”</rs></label>
+                  <label place="left"><rs type="person" key="AdC" role="author">Alvaro de
+                        Campos</rs> — </label>
+                  <label place="right">
+                     <rs type="text"> “Opiario”</rs> e<rs type="text"> “Ode Triumphal”</rs> (Orpheu
+                     1)</label>
+                  <label place="right">
+                     <rs type="text"> “Ode Maritima”</rs> (Orpheu 2)</label>
+                  <label place="right"><rs type="text">Ultimatum </rs>(<rs type="journal">Portugal
+                        Futurista</rs>)</label>
+                  <label place="right"><rs type="text">Aviso por causa da moral</rs>. 1923
+                     (manifesto †)</label>
+               </item>
+            </list>
+            <metamark rend="line-44" function="distinct"/>
+            <list>
+               <item>Resposta ao Inquerito Portugal, vasto Imperio (<rs type="journal"><choice>
+                        <abbr>J<am>.</am></abbr>
+                        <expan>J<ex>ornal</ex></expan>
+                     </choice> do<choice>
+                        <abbr> C<am>.</am></abbr>
+                        <expan> C<ex>omercio</ex></expan>
+                     </choice></rs> 28/5/26 – 29/5/26) </item>
+               <item><choice>
+                     <abbr>Entrev<am>.</am></abbr>
+                     <expan>Entrev<ex>ista</ex></expan>
+                  </choice> na<rs type="journal"> Revista Portugueza</rs></item>
+               <item>J. B. Angioletti</item>
+            </list>
+            <gap reason="selection" unit="line" extent="6"/>
+         </div>
+      </body>
+   </text>
+</TEI>

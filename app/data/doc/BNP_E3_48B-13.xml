@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 48B-13</title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Transcrição</resp>
+               <name>Pablo Javier Pérez López</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação, Modelagem de dados</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_48B-13.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc xml:id="M1" type="structured">
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 48B-13</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre"><rs type="genre" key="lista_editorial">Lista
+                        editorial</rs></note>
+                     <textLang mainLang="pt" otherLangs="en"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate when="1931" cert="medium">c. 1931</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita no verso de «Sobre um manifesto de estudantes», panfleto
+                  publicado em 1923, publicada em <hi rend="italic">Sobre Portugal</hi> (1979, 259).
+               </p>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic
+         url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0026_13_t24-C-R0150.jpg"
+      />
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <gap reason="selection" unit="lines" extent="6"/>
+            <metamark rend="line" function="distinct"/>
+            <list>
+
+               <item>Peça em um Acto. <add place="right">Erostratus. </add></item>
+               <item>Calvario. <add place="right">Anteros. </add></item>
+               <item>Sakyamuni. <add place="right">Saturn.</add></item>
+               <item>A Morte do Principe. <add place="right">English Sonnets.</add></item>
+               <item>Theoria do Suffragio Politico. <add place="right">Phrometheus
+                  Revinctus.</add></item>
+               <item>Portugal. <add place="right">The Duke of Parma.</add></item>
+               <item>Cancioneiro (varios livros). <add place="right">Mimicry.</add></item>
+               <item>Poemas Completos de <rs type="person" key="AC" role="author">Alberto
+                     Caeiro.</rs>
+                  <add place="right"><metamark rend="line" function="distinct"/></add></item>
+               <item>Odes, <choice>
+                     <abbr>liv<am>.</am></abbr>
+                     <expan>liv<ex>ros</ex></expan>
+                  </choice> I-II ( <rs type="person" key="RR" role="author"><choice>
+                        <abbr>Ric<am>.</am></abbr>
+                        <expan>Ric<ex>ardo</ex></expan>
+                     </choice> Reis).</rs>
+                  <add place="right">
+                     <del><gap reason="illegible" extent="1" unit="character"/></del> O Cão
+                     Preto.</add></item>
+               <item>? Cinco Odes, e o que veio <lb/>
+                  <add place="right"> O Fidalgo Multiplo</add> antes (<rs type="person" key="AdC"
+                     role="author"><choice>
+                        <abbr>Alv<am>.</am></abbr>
+                        <expan>Alv<ex>aro</ex></expan>
+                     </choice> de Campos).</rs>
+                  <add place="right">A Jura. </add></item>
+               <item>Accessorios. (<rs type="person" key="AdC" role="author"><choice>
+                        <abbr>Alv<am>.</am></abbr>
+                        <expan>Alv<ex>aro</ex></expan>
+                     </choice> de Campos]).</rs></item>
+               <item>O Caso Vargas.</item>
+
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>

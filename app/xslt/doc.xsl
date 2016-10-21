@@ -280,7 +280,23 @@
     </xsl:template>
 
     <!-- Notes -->
-    <xsl:template match="note[@place = 'margin-right']" mode="#default deletion addition">
+    <xsl:template match="note[@n='2']" mode="#default deletion addition"/>
+    
+    <xsl:template match="note[@place = 'margin-right'][not(@n='2')]" mode="#default deletion addition">
+        <xsl:call-template name="note-margin-right"/>
+    </xsl:template>
+
+    <xsl:template match="note[@place = 'margin-left'][not(@n='2')]" mode="#default deletion addition">
+        <xsl:call-template name="note-margin-left"/>
+    </xsl:template>
+
+    <xsl:template match="note[@place = 'center']" mode="#default deletion addition">
+        <div class="note center">
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    
+    <xsl:template name="note-margin-right">
         <span class="note margin-right">
             <xsl:if test="@target[contains(., 'range')]">
                 <xsl:variable name="target" select="@target"/>
@@ -294,8 +310,8 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-
-    <xsl:template match="note[@place = 'margin-left']" mode="#default deletion addition">
+    
+    <xsl:template name="note-margin-left">
         <span class="note margin-left">
             <xsl:if test="@target[contains(., 'range')]">
                 <xsl:variable name="target" select="@target"/>
@@ -308,12 +324,6 @@
             </xsl:if>
             <xsl:apply-templates/>
         </span>
-    </xsl:template>
-
-    <xsl:template match="note[@place = 'center']" mode="#default deletion addition">
-        <div class="note center">
-            <xsl:apply-templates/>
-        </div>
     </xsl:template>
 
     <!-- Highlighting -->

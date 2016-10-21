@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 181<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Transcrição</resp>
+               <name>Pablo Javier Pérez López</name>
+            </respStmt>
+            <respStmt>
+               <resp>Transcrição</resp>
+               <name>Jorge Uribe</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação, Modelagem de dados</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_181r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc xml:id="M1" type="structured">
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 181r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs><rs type="genre"
+                           key="plano_editorial">Plano editorial</rs><rs type="genre"
+                           key="nota_editorial">Nota editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="en"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate when="1931" cert="medium">c. 1931</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita, publicada em <hi rend="italic">A Educação do Stoico</hi> (2007,
+                  64). </p>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic
+         url="bn-acpc-e-e3-167-186_JPG_24-C-R0150/bn-acpc-e-e3-167-186_0031_181_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <list>
+               <item><rs type="text">Cancioneiro</rs>,<choice>
+                     <abbr> liv<am>.</am></abbr>
+                     <expan> liv<ex>ros</ex></expan>
+                  </choice> I a V.</item>
+               <item><rs type="work"><rs type="text">Poemas completos</rs></rs> de <rs type="person"
+                     role="author">Alberto Caeiro</rs>.</item>
+               <item><rs type="text">Livro do Desasocego</rs>.</item>
+            </list>
+            <metamark rend="line-44" function="distinct"/>
+            <list>
+               <item><rs type="text">Theoria do Suffragio Politico</rs>.</item>
+            </list>
+            <metamark rend="line-44" function="distinct"/>
+            <list>
+               <item xml:id="I1">The Mouth of Hell.</item>
+               <item xml:id="I2">The Double Issue.</item>
+            </list>
+            <note target="range(I1,I2)" place="left" type="addition"/>
+            <metamark rend="curly-bracket" function="grouping"/>
+            <note target="range(I1,I2)" place="right" type="addition">J. S. B.</note>
+            <metamark rend="curly-bracket" function="grouping"/>
+            <metamark rend="line-44" function="distinct"/>
+            <list>
+               <item><rs type="text">Espronceda</rs>. <note place="right"><rs type="person">Edgar
+                        Poe</rs></note>.</item>
+               <item><rs type="text">Three Pessimists</rs>. <note place="right"
+                  >Tempest</note>.</item>
+               <item>? The <choice>
+                     <seg n="1">great</seg>
+                     <seg n="2"><add place="above">Famous</add></seg>
+                  </choice> Sonnets of<hi rend="underline"> the World</hi>. <metamark
+                     rend="transversal line" function="mark"/>
+                  <note place="right">
+                     <rs type="person">Jekyll</rs> and <rs type="person">Hyde</rs>
+                  </note>. (one <metamark rend=" arrow" place="top down" function="indicate"/>from
+                  each author) <label><rs type="person"><choice>
+                           <abbr>Tho <am>.</am></abbr>
+                           <expan> Tho<ex>mas</ex></expan>
+                        </choice>Russell</rs>.</label>
+                  <label><rs type="person">Felix Arvers</rs>.</label>
+                  <label><rs type="person">Blanco White</rs>.</label>
+                  <label><rs type="person"><choice>
+                           <abbr>C <am>.</am></abbr>
+                           <expan>C <ex>amillo</ex></expan>
+                        </choice> Pessanha</rs>.</label>
+                  <label><rs type="person">Angelo de Lima</rs>.</label>
+                  <label><rs type="person"><choice>
+                           <abbr>Fr <am>.</am></abbr>
+                           <expan>Fr<ex>ancis</ex></expan>
+                        </choice>
+                        <choice>
+                           <abbr>Thom <am>.</am></abbr>
+                           <expan>Thom <ex>pson</ex></expan>
+                        </choice></rs>.</label>
+                  <label><rs type="person"><choice>
+                           <abbr>Fr <am>.</am></abbr>
+                           <expan>Fr <ex>ei</ex></expan>
+                        </choice>
+                        <choice>
+                           <abbr>For <am>.</am></abbr>
+                           <expan>For <ex>tunato</ex></expan>
+                        </choice> de <choice>
+                           <abbr>S<am>.</am></abbr>
+                           <expan>S<ex>ão</ex></expan>
+                        </choice>Boaventura</rs>.</label>
+               </item>
+            </list>
+            <p>Some are not celebrated outside the language they were written in, but it is enough
+               that they were celebrated there. </p>
+         </div>
+      </body>
+   </text>
+</TEI>

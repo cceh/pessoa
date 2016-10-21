@@ -43,6 +43,18 @@
         <xsl:apply-templates select="following-sibling::*[following::anchor[@xml:id=$anchorID]]" mode="addition" />
     </xsl:template>
     
+    <!-- einzublendende Notes -->
+    <!-- Notes -->
+    <xsl:template match="note[@place = 'margin-right'][@n='2']" mode="#default deletion addition">
+        <xsl:call-template name="note-margin-right"/>
+    </xsl:template>
+    
+    <xsl:template match="note[@place = 'margin-left'][@n='2']" mode="#default deletion addition">
+        <xsl:call-template name="note-margin-left"/>
+    </xsl:template>
+    
+    
+    
     
     <!-- special case MN246 -->
     <xsl:template match="text[@xml:id='mn246']//choice[seg[@n]]" mode="#default deletion addition">

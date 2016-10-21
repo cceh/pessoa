@@ -1,12 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>48D - 19 </title>
+            <title>BNP/E3 48D-19</title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Transcrição</resp>
+               <name>Pablo Javier Pérez López</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação, Modelagem de dados</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
-            <p>Publication Information</p>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_48D-19.xml</idno>
          </publicationStmt>
          <sourceDesc>
             <msDesc xml:id="M1" type="structured">
@@ -16,27 +51,9 @@
                </msIdentifier>
                <msContents>
                   <msItemStruct>
-                     <author>Fernando Pessoa</author>
-                     <respStmt>
-                        <resp>Transcrição, Edição</resp>
-                        <name>Pedro Sepúlveda</name>
-                     </respStmt>
-                     <respStmt>
-                        <resp>Transcrição</resp>
-                        <name>Pablo Javier Pérez López</name>
-                     </respStmt>
-                     <respStmt>
-                        <resp>Codificação</resp>
-                        <name>Ulrike Henny</name>
-                     </respStmt>
-                     <respStmt>
-                        <resp>Codificação</resp>
-                        <name>Isabel Figueiredo-Iken</name>
-                     </respStmt>
-                     <respStmt>
-                        <resp>Codificação</resp>
-                        <name>Sviatoslav Drach</name>
-                     </respStmt>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
                      <note type="genre"><rs type="genre" key="lista_editorial">Lista
                         editorial</rs></note>
                      <textLang mainLang="pt"/>
@@ -46,7 +63,6 @@
                   <origin>
                      <p>
                         <origDate when="1914" cert="medium">c. 1914</origDate>
-                        <origPlace/>
                      </p>
                   </origin>
                </history>
@@ -63,9 +79,9 @@
       <graphic
          url="bn-acpc-e-e3-48d-1-76_JPG_24-C-R0150/bn-acpc-e-e3-48d-1-76_0039_19_t24-C-R0150.jpg"/>
    </facsimile>
-   <text xml:id="bnp-e3-48d-19">
+   <text>
       <body>
-         <note><add place="right">(aparece sempre que fôr preciso)</add></note>
+         <div><note><add place="right">(aparece sempre que fôr preciso)</add></note>
          <head><hi rend="underline">Periodico de cultura superior</hi></head>
          <list>
             <item><label>1.</label>O Interseccionismo – (manifesto).</item>
@@ -79,10 +95,9 @@
          </list>
          <p> = (Formato genero “Povo de Aveiro”) =</p>
 
-         <metamark rend="line" function="distinct"/>
+         <metamark rend="line-44" function="distinct"/>
 
-         <gap reason="selection" unit="lines" extent="12"/>
-         <div/>
+         <gap reason="selection" unit="line" extent="12"/></div>
       </body>
    </text>
 </TEI>

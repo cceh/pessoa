@@ -1,13 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>48D-7<hi rend="superscript">r</hi>
-            </title>
+            <title>BNP/E3 48D-7<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Transcrição</resp>
+               <name>Pablo Javier Pérez López</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação, Modelagem de dados</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
-            <p>Publication Information</p>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_48D-7r.xml</idno>
          </publicationStmt>
          <sourceDesc>
             <msDesc xml:id="M1" type="structured">
@@ -17,27 +51,9 @@
                </msIdentifier>
                <msContents>
                   <msItemStruct>
-                     <author>Fernando Pessoa</author>
-                     <respStmt>
-                        <resp>Transcrição, Edição</resp>
-                        <name>Pedro Sepúlveda</name>
-                     </respStmt>
-                     <respStmt>
-                        <resp>Transcrição</resp>
-                        <name>Pablo Javier Pérez López</name>
-                     </respStmt>
-                     <respStmt>
-                        <resp>Codificação</resp>
-                        <name>Ulrike Henny</name>
-                     </respStmt>
-                     <respStmt>
-                        <resp>Codificação</resp>
-                        <name>Isabel Figueiredo-Iken</name>
-                     </respStmt>
-                     <respStmt>
-                        <resp>Codificação</resp>
-                        <name>Sviatoslav Drach</name>
-                     </respStmt>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
                      <note type="genre"><rs type="genre" key="lista_editorial">Lista
                         editorial</rs></note>
                      <textLang mainLang="pt" otherLangs="en"/>
@@ -47,7 +63,6 @@
                   <origin>
                      <p>
                         <origDate from="1916" to="1917" cert="medium">c. 1916-1917</origDate>
-                        <origPlace/>
                      </p>
                   </origin>
                </history>
@@ -64,9 +79,9 @@
       <graphic
          url="bn-acpc-e-e3-48d-1-76_JPG_24-C-R0150/bn-acpc-e-e3-48d-1-76_0015_7_t24-C-R0150.jpg"/>
    </facsimile>
-   <text xml:id="bnp-e3-48d-7r">
+   <text>
       <body>
-         <head><hi rend="underline">Manifestos sensacionistas</hi></head>
+         <div><head><hi rend="underline">Manifestos sensacionistas</hi></head>
          <list>
             <item><label>1.</label><hi rend="underline">Ultimatum</hi> — timbre alado em Auréola:
                insultos.</item>
@@ -87,8 +102,8 @@
             <item><label>4.</label>Manifesto scientifico.</item>
             <item><label>5.</label>Manifesto dizendo quanto nos outros não foi dito.</item>
          </list>
-         <metamark rend="line" function="distinct"/>
-         <metamark rend="line" function="distinct"/>
+         <metamark rend="line-44" function="distinct"/>
+         <metamark rend="line-44" function="distinct"/>
 
          <list>
             <head><hi rend="underline"><subst>
@@ -102,9 +117,8 @@
             <item><label>4.</label>Sensationist Poems.</item>
             <item><label>5.</label>Sensationism.</item>
             <item><label>6.</label>Sensationist Sketches.</item>
-            <metamark rend="line" function="distinct"/>
-         </list>
-         <div/>
+            <metamark rend="line-44" function="distinct"/>
+         </list></div>
       </body>
    </text>
 </TEI>

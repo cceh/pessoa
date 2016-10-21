@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 144Q-34<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Transcrição</resp>
+               <name>Pablo Javier Pérez López</name>
+            </respStmt>
+            <respStmt>
+               <resp>Transcrição</resp>
+               <name>Jorge Uribe</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação, Modelagem de dados</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_144Q-34r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc xml:id="M1" type="structured">
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 144Q-34r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="plano_editorial">Plano editorial</rs><rs type="genre"
+                           key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="en" otherLangs="pt la"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate when="1928" cert="medium">c. 1928</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita no caderno 144Q (cf. <ref target="http://purl.pt/13892"
+                     >http://purl.pt/13892</ref>), publicada em <hi rend="italic">A Educação do
+                     Stoico</hi> (2007, 80). </p>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic url="bn-acpc-e-e3_144q_JPG_24-C-R0150/bn-acpc-e-e3_144q_0069_34r_t24-C-R0150.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <head>“From <rs type="place">Portugal.”</rs></head>
+            <note place="center"><hi rend="underline"><choice>
+                     <abbr>Vol<am>.</am></abbr>
+                     <expan>Vol<ex>ume</ex></expan>
+                  </choice> I. </hi>
+            </note>
+            <note place="margin right"><choice>
+                  <abbr>approx<am>.</am></abbr>
+                  <expan>approx<ex>imadamente</ex></expan>
+               </choice>
+               <choice>
+                  <abbr>no<am>.</am></abbr>
+                  <expan>no<ex>number</ex></expan>
+               </choice> no. <lb/>
+               <hi rend="underline"> of pages.</hi></note>
+            <list>
+               <item xml:id="I1"><label>1.</label>&#x00A0;<rs type="text">Introduction
+                     (brief).</rs><note place="margin right"><label>4 </label></note></item>
+               <item xml:id="I2"><label>2.</label>&#x00A0;<rs type="text">The Anarchist
+                     Banker.</rs><note place="margin right"><label>54 </label></note></item>
+               <item xml:id="I3"><label>3.</label>&#x00A0; <rs type="work"><rs type="text">Complete
+                        Poems</rs> of <rs type="person" role="author">Alberto Caeiro.</rs></rs> (or
+                  only The “Keeper of Flocks”)</item>
+               <item xml:id="I4"><label>4.</label>&#x00A0;<rs type="work">English Poems<rs
+                        type="text"/>, by <rs type="person" role="author">Fernando
+                  Pessoa.</rs></rs></item>
+               <item xml:id="I5"><label>5.</label>&#x00A0;<rs type="text">The Quod Nihil Scitur of
+                     Francisco Sanches.</rs></item>
+               <item xml:id="I6"><label>6.</label> Extracts from <rs type="text">“The Lusiads”</rs>
+                  of <rs type="person">Camoens</rs></item>
+               <item xml:id="I7"><label>7.</label> Octavio (is it too long?) —</item>
+               <item xml:id="I8"><label>8.</label>&#x00A0;<rs type="text">A Grande Empreza</rs>
+                  —</item>
+            </list>
+            <note place="right"><list>
+                  <item>Fialho.</item>
+                  <item><rs type="person">Antonio Patricio.</rs></item>
+                  <item><rs type="text">“O Pantano.”</rs></item>
+                  <item><rs type="person">Gil Vicente.</rs></item>
+                  <item><rs type="person">José Castello de Moraes. </rs></item>
+                  <item><rs type="person">Mario de Sá Carneiro.</rs></item>
+               </list></note>
+            <list>
+               <item xml:id="I9"><label>1.</label>&#x00A0;<rs type="text">Introduction.</rs><note
+                     place="margin right"><label>4 </label></note>
+               </item>
+               <item xml:id="I10"><label>2.</label>&#x00A0;<rs type="text">The Anarchist
+                        Banker.<note place="margin right"><label> 54</label></note>
+                  </rs></item>
+               <item xml:id="I11"><label>3.</label>&#x00A0;<rs type="person" role="author"
+                     >Caeiro.</rs><note place="margin right"><label> 30 </label></note>
+               </item>
+               <item xml:id="I12"><label>4.</label>&#x00A0;<rs type="text">The Grand Concern.<note
+                        place="margin right"><label>80 </label></note></rs></item>
+               <item xml:id="I13"><label>5.</label> Extracts from <rs type="text">The Lusiads</rs>
+                  of <rs type="person">Camoens.<note place="margin right"><label>20
+                     </label></note></rs></item>
+               <item xml:id="I14"><label>6.</label> Quod Nihil Scitur.<note place="margin right"
+                        ><label> 20 </label></note></item>
+               <item xml:id="I15"><label>7.</label> Poems in English. }</item>
+               <item xml:id="I16"><label>8.</label> (a one-act play or a short story).</item>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>

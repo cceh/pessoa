@@ -1086,7 +1086,7 @@ div.text h2.inline {
     margin-right: 1em;
 }
 div.text table {
-    margin-left: 1em;
+    margin-left: 0em;
 }
 div.text table.center {
     margin: 0px auto;
@@ -1106,7 +1106,7 @@ div.text table td {
 }
 div.text div.list {
     margin: 2em 0;
-    padding-left: 1.5em;
+    padding-left: 0.5em;
 }
 div.text p {
     padding-left: 1.1em;
@@ -1135,10 +1135,9 @@ div.text div.list div.list {
 div.text div.item {
     margin: 0.5em 0;
     position: relative;
-    text-indent: -1.5em;
+    text-indent: 0em;
 }
 div.text div.item * {
-    vertical-align: top;
 }
 div.text div.item hr {
     vertical-align: bottom;
@@ -1148,7 +1147,7 @@ div.text div.item.indent-2-label {
     padding-left: 2em;
 }
 div.text div.item.indent-2 {
-    text-indent: -3.5em;
+    text-indent: -2em;
     padding-left: 2em;
 }
 div.text div.item span.label {
@@ -1201,7 +1200,7 @@ div.text span.grouping-right, div.text span.grouping-left {
     vertical-align: middle;
     color: #888888;
     position: absolute;
-    right: -50px;
+    right: -100px;
 }
 div.text span.grouping-right .label, div.text span.grouping-left .label {
     font-size: 15px;
@@ -1212,7 +1211,7 @@ div.text span.grouping-right .label, div.text span.grouping-left .label {
 }
 div.text span.metamark.quotes.ditto {
     display: inline-block;
-    width: 15%;
+    width: 8%;
     text-align: center;
 }
 div.text span.label.rotate-right {
@@ -1241,7 +1240,7 @@ div.text span.above {
 div.text span.below {
     position: absolute;
     font-size: smaller;
-    bottom: -1.1em;
+    bottom: -1.4em;
     left: 0;
 }
 div.text span.supplied {
