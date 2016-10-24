@@ -190,6 +190,7 @@ declare function page:createThirdNavContent($type as xs:string, $indikator as xs
                     else if(contains($elem,"MN")) then replace($elem,"MN ","") 
                     else $elem 
                     )
+         let $title := ($title,<span class="doc_superscript"/>)
         order by $item/@label            
                 
             return <a href="{$item/@ref/data(.)}"><li class="{concat("nav_",$type,"_sub_tab")}">{$title}</li></a>

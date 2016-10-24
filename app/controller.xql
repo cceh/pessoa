@@ -5,7 +5,7 @@ import module namespace doc="http://localhost:8080/exist/apps/pessoa/doc" at "mo
 import module namespace author="http://localhost:8080/exist/apps/pessoa/author" at "modules/author.xqm";
 import module namespace search="http://localhost:8080/exist/apps/pessoa/search" at "modules/search.xqm";
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "modules/helpers.xqm";
-import module namespace config="http://localhost:8080/exist/apps/pessoa/helpers" at "modules/config.xqm";
+import module namespace config="http://localhost:8080/exist/apps/pessoa/config" at "modules/config.xqm";
 import module namespace index="http://localhost:8080/exist/apps/pessoa/index" at "modules/index.xqm";
 
 declare namespace tei="http://www.tei-c.org/ns/1.0";
@@ -35,8 +35,7 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
         <view>
             <forward url="{$exist:controller}/modules/view.xql"/>
         </view>
-    </dispatch>
-   
+    </dispatch>   
     (:
     return doc:get-text-pessoal(<node />, map {"test" := "test"}, $id, $lb, $abbr, $version):)
 else if (contains($exist:path,  "/doc/")) then
