@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
@@ -62,25 +63,50 @@
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0048_24_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0048_24_t24-C-R0150.jpg"
+      />
    </facsimile>
    <text>
       <body>
          <div>
-            Encyclopedia Commercial
-            part[ially] Portuguese
+            <head><hi rend="underline">Continental English Library.</hi></head>
+            <list>
+               <item><label>1.</label>
+                  <subst>
+                     <del rend="overstrike">O</del>
+                     <add place="above">The</add>
+                  </subst> Mandarim (A) </item>
+               <item><label>2.</label>
+                  <choice>
+                     <abbr>St<am>.</am></abbr>
+                     <expan>St<ex>udent</ex></expan>
+                  </choice> of <rs type="place">Salamanca</rs> (B)</item>
+               <item><label>3.</label>
+                  <rs type="person">Ambrose Bierce</rs> (A)</item>
+               <item><label>4.</label>
+                  <rs type="text">Gulliver’s Travels</rs>. (&amp; others of <rs type="person"
+                     key="P169">Swift</rs>)</item>
+               <item><label>5.</label>
+                  <rs type="person" key="P159">Maupassant</rs>.</item>
+               <item><label>6.</label>
+                  <rs type="person">Tolstoi</rs> – <rs type="text">Kreutzer Sonata</rs>.</item>
+               <item><label>(7.</label> Pat<gap reason="illegible" unit="character"/>
+                  <rs type="person">Ribeiro</rs> on <rs type="person" key="P20"
+                  >Columbus</rs>)</item>
+               <item><label>8.</label>
+                  <supplied resp="PS" reason="omitted-in-original"/> (Systéme de
+                  Metaphysique).</item>
+            </list>
          </div>
-         <div>
-            Continental English Library.				
-            __________________
-            1. O The Mandarim 		(A)		
-            2. St[udent] of Salamanca	(B)
-            3. Ambrose Bierce		(A)
-            4. Gulliver’s Travels. 		(&amp; others of Swift)
-            5. Maupassant.
-            6. Tolstoi – Kreutzer Sonata.
-            (7.	Pat† Ribeiro on Columbus)
-            8. 	□		(Systéme de Metaphysique).
+         <div rend="right circled">
+            <hi rend="underline">Encyclopedia Commercial</hi><lb/>
+            <choice>
+               <abbr>part<am>.</am></abbr>
+               <expan>part<ex>ially</ex></expan>
+            </choice> Portuguese </div>
+         <div rend="bottom">
+            <gap reason="selection" unit="lines" extent="21"/>
          </div>
       </body>
    </text>

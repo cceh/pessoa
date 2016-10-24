@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 48B-29<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Transcrição</resp>
+               <name>Filipa Freitas</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Ana Leonor Branco</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher/>
+            <idno type="filename">BNP_E3_48B-29r</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 48B-29r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs=""/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate from="1920" to="1927">1920-1927</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic
+         url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0058_29_t24-C-R0150.jpg"
+      />
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <list>
+               <item><seg type="doubt">Traducção da obra de<lb/>
+                     <rs type="person" key="P65">Shakespeare</rs> – em volumes<lb/> separados, ou em
+                        fasci<pc>-</pc><add place="right margin">X</add><lb/> culos ou tomos – sendo
+                     <lb/> cerca de 3 peças por<lb/> edição final.</seg></item>
+               <item><rs type="text">Encyclopedia Portugueza</rs> – <lb/> a compilar e preparar<lb/>
+                  (Ha alguma cousa já?)</item>
+               <item>Pequeno <choice>
+                     <abbr>dicc<am>.</am></abbr>
+                     <expan>dicc<ex>ionario</ex></expan>
+                  </choice> portuguez.<lb/> Idem <hi rend="underline">e</hi> varias
+                  linguas<lb/></item>
+               <item>Album de Portugal – r<hi rend="underline">resumido</hi>.</item>
+               <item><rs type="text" rend="circled">Anthologia Universal – <lb/> The Great Anthology
+                     – <hi rend="circled">here?</hi></rs></item>
+               <item>Annuario de <rs type="place">Portugal</rs> para o <lb/> Estrangeiro.</item>
+               <item><choice>
+                     <abbr>Dicc<am>.</am></abbr>
+                     <expan>Dicc<ex>ionario</ex></expan>
+                  </choice>technico internacional.<lb/>
+                  <list>
+                     <item><label>1.</label> Inglez – Hespanhol – <choice>
+                           <abbr>Port<am>.</am></abbr>
+                           <expan>Port<ex>uguês</ex></expan>
+                        </choice>Port[uguês] (fr. USA)</item>
+                     <item><label>2.</label>
+                        <metamark rend="quotation marks" function="ditto"/> – <choice>
+                           <abbr>Fr<am>.</am></abbr>
+                           <expan>Fr<ex>ancês</ex></expan>
+                        </choice> – <subst>
+                           <del rend="overstrike">Alemão</del>
+                           <add place="above"><choice>
+                                 <abbr>Ita<am>.</am></abbr>
+                                 <expan>Ita<ex>liano</ex></expan>
+                              </choice></add>
+                        </subst>: <supplied resp="PS" reason="omitted-in-original"/></item>
+                     <item><label>3.</label>
+                        <metamark rend="quotation marks" function="ditto"/> – <choice>
+                           <abbr>Alem<am>.</am></abbr>
+                           <expan>Alem<ex>ão</ex></expan>
+                        </choice> – Hollandez</item>
+                  </list>
+               </item>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>

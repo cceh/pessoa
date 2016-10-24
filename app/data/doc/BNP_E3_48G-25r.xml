@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>BNP/E3 48D-14<hi rend="superscript">r</hi></title>
+            <title>BNP/E3 48G-25<hi rend="superscript">r</hi></title>
             <author>
                <rs type="person" key="FP">Fernando Pessoa</rs>
             </author>
@@ -36,13 +37,13 @@
             <availability>
                <licence target="http://creativecommons.org/licenses/by/3.0/"/>
             </availability>
-            <idno type="filename">BNP_E3_48D-14r.xml</idno>
+            <idno type="filename">BNP_E3_48D-25r.xml</idno>
          </publicationStmt>
          <sourceDesc>
             <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
-                  <idno>BNP/E3 48D-14r</idno>
+                  <idno>BNP/E3 48G-25r</idno>
                </msIdentifier>
                <msContents>
                   <msItemStruct>
@@ -52,32 +53,39 @@
                      <note type="genre">
                         <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
-                     <textLang mainLang="pt" otherLangs="en fr"/>
+                     <textLang mainLang="pt" otherLangs=""/>
                   </msItemStruct>
                </msContents>
                <history>
                   <origin>
                      <p>
-                        <origDate when="1913" cert="medium">c. 1913</origDate>
+                        <origDate from="1920" to="1927">1920-1927</origDate>
                      </p>
                   </origin>
                </history>
             </msDesc>
             <msDesc corresp="#M1" type="prose">
                <msIdentifier/>
-               <p> Lista manuscrita </p>
+               <p> Lista manuscrita. </p>
             </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
       <graphic
-         url="bn-acpc-e-e3-48d-1-76_JPG_24-C-R0150/bn-acpc-e-e3-48d-1-76_0029_14_t24-C-R0150.jpg"/>
+         url="bn-acpc-e-e3-48g-1-37_JPG_24-C-R0150/bn-acpc-e-e3-48g-1-37_0049_25_t24-C-R0150.jpg"/>
    </facsimile>
    <text>
       <body>
-         <div> Mario de Sá-Carneiro: Além. - Fernando Pessôa: Paues. ---- (Camillo Pessanha).
-            ----------------- (I. A. – versos sobre o “além”) --------------------------- </div>
+         <div>
+            <head><hi rend="underline">Review in English: <lb/> No. 1.</hi></head>
+            <list>
+               <item>“<rs type="text">The Anarchist Banker</rs>”.</item>
+               <item>A Masque of <rs type="person">Gil Vicente</rs>.</item>
+               <item>(propaganda article, say on<lb/>
+                  <rs type="place">Estoril</rs>).</item>
+            </list>
+         </div>
       </body>
    </text>
 </TEI>

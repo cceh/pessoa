@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
@@ -77,16 +78,46 @@
    </facsimile>
    <text>
       <body>
-         <div> 1. Olisipo Condensing Code. 2. Olisipo Hotel and Travel(lers’) Dictionary, in 6
-            languages. 3. Press letter from Spain and Portugal. 4. Olisipo Auxiliary Code. 5.
-            Olisipo Commercial (&amp; Technical) Dictionary, in 6 languages. 6. Olisipo Guide to
-            Portugal. 7. List of Portuguese Infra[structures], Producers and Exporters. 8. Monthly
-            Review of Portuguese Trade – subscribers. 9. Lists of Foreign Infra[structures] and
-            Exporters. 10. Guide Books to Portugal – several, gratis. 11. Translations of Portuguese
-            Books. 12. English Editions. (for the 6 d. (classics) 1/- etc 13. Edições de classicos
-            portugueses. 14. Edições de classicos estrangeiros, traduzidos. 15. The exact way to
-            pronounce French. 16. Aristography. 17. Parlour (table) Games. 18. Agency of
-            Publications and Papers. 19. Adv[ertisement] Agency. </div>
+         <div>
+            <list>
+               <item>
+                  <label><hi rend="circled">1.</hi></label> Olisipo Condensing Code.</item>
+               <item><label><hi rend="circled">2.</hi></label> Olisipo Hotel and Travel(lers’)
+                  Dictionary, in 6 languages.</item>
+               <item><label><hi rend="squared">3.</hi></label> Press letter from <rs type="place"
+                     >Spain</rs> and <rs type="place">Portugal</rs>.</item>
+               <item><label><hi rend="circled">4.</hi></label> Olisipo Auxiliary Code.</item>
+               <item><label><hi rend="circled">5.</hi></label> Olisipo Commercial (&amp; Technical)
+                  Dictionary, in 6 languages.</item>
+               <item><label>6.</label> Olisipo Guide to <rs type="place">Portugal</rs>.</item>
+               <item><label>7.</label> List of Portuguese <choice>
+                     <abbr>infra<am>.</am></abbr>
+                     <expan>infra<ex>structures</ex></expan>
+                  </choice>, Producers and Exporters.</item>
+               <item><label>8.</label> Monthly Review of Portuguese Trade – subscribers.</item>
+               <item><label>9.</label> Lists of Foreign <choice>
+                     <abbr>infra<am>.</am></abbr>
+                     <expan>infra<ex>structures</ex></expan>
+                  </choice> and Exporters.</item>
+               <item><label>10.</label>Guide Books to <rs type="place">Portugal</rs> – several,
+                  gratis.</item>
+               <item><label>11.</label> Translations of Portuguese Books.</item>
+               <item><label>12.</label> English Editions. <del rend="overstrike">(for the</del> 6 d.
+                     <add place="below">(classics)</add> 1/- etc</item>
+               <item><label>13.</label>Edições de classicos portugueses.</item>
+               <item><label>14.</label>Edições de classicos estrangeiros, traduzidos.</item>
+               <item><label><hi rend="circled">15.</hi></label>The exact way to pronounce
+                  French.</item>
+               <item><label><hi rend="circled">16.</hi></label> Aristography.</item>
+               <item><label><hi rend="squared">17.</hi></label> Parlour (table) Games.</item>
+               <item><label>18.</label> Agency of Publications and Papers.</item>
+               <item><label>19.</label>
+                  <choice>
+                     <abbr>Advert<am>.</am></abbr>
+                     <expan>Advert<ex>isement</ex></expan>
+                  </choice> Agency. </item>
+            </list>
+         </div>
       </body>
    </text>
 </TEI>

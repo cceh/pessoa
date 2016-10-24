@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>BNP/E3 48D-6<hi rend="superscript">r</hi></title>
+            <title>BNP/E3 48H-15<hi rend="superscript">r</hi></title>
             <author>
                <rs type="person" key="FP">Fernando Pessoa</rs>
             </author>
@@ -14,6 +15,10 @@
             <respStmt>
                <resp>Transcrição</resp>
                <name>Filipa Freitas</name>
+            </respStmt>
+            <respStmt>
+               <resp>Transcrição</resp>
+               <name>Jorge Uribe</name>
             </respStmt>
             <respStmt>
                <resp>Modelagem de dados, Codificação</resp>
@@ -29,19 +34,20 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2016</date>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/3.0/"/>
             </availability>
-            <idno type="filename">BNP_E3_48D-6r.xml</idno>
+            <idno type="filename">BNP_E3_48H-15r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
-                  <idno>BNP/E3 48D-6r</idno>
+                  <idno>BNP/E3 48H-15r</idno>
                </msIdentifier>
                <msContents>
                   <msItemStruct>
@@ -57,43 +63,41 @@
                <history>
                   <origin>
                      <p>
-                        <origDate from="1902" to="1912">1902-1912</origDate>
+                        <origDate when="1914" cert="medium">c. 1914</origDate>
                      </p>
                   </origin>
                </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita. </p>
             </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="bn-acpc-e-e3-48d-1-76_JPG_24-C-R0150/bn-acpc-e-e3-48d-1-76_0013_6_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-48h-1-65_JPG_24-C-R0150/bn-acpc-e-e3-48h-1-65_0029_15_t24-C-R0150.jpg"/>
    </facsimile>
    <text>
       <body>
          <div>
-            Articles to be written.
-            – in P[ortuguese] on authors – 
-            
-            A. Antonio Molarinho.
-            B. José Anastacio da Cunha.
-            C. Antonio Corrêa d’Oliveira.
-            D. O mysticismo na litteratura.
-            
-            
-            [48D-14r]		[c. 1913]
-            
-            Mario de Sá-Carneiro:	Além.
-            -
-            Fernando Pessôa:	Paues.
-            ----
-            (Camillo Pessanha).
-            
-            -----------------
-            
-            (I. A. 	– versos sobre o
-            “além”)
-            ---------------------------
-            
+            <list>
+               <item>- <rs type="text">Pamphleto <rs type="journal" key="J27"
+                  >Renascença</rs></rs>.</item>
+               <item>- <rs type="work" key="02"><rs type="person" key="AC" role="author">Alberto
+                        Caeiro</rs>. <rs type="text"><hi rend="underline">O <choice>
+                              <abbr>G</abbr>
+                              <expan>G<ex>uardador</ex></expan>
+                           </choice>de <choice>
+                              <abbr>R</abbr>
+                              <expan>R<ex>ebanhos</ex></expan>
+                           </choice></hi></rs></rs></item>
+               <item>- <rs type="text">English Poems</rs></item>
+               <item>- <rs type="person" key="P130">Bacon</rs>
+                  <unclear reason="illegible">Books</unclear></item>
+               <item>- <rs type="text">Political pamphlets</rs>.</item>
+            </list>
          </div>
       </body>
    </text>

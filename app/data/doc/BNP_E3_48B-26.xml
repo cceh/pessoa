@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 48B-26</title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Transcrição</resp>
+               <name>Filipa Freitas</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Ana Leonor Branco</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_48B-26.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc xml:id="M1" type="structured">
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 48B-26</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                        <rs type="genre" key="plano_editorial">Plano editorial</rs>
+                        <rs type="genre" key="nota_editorial">Nota editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs=""/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate when="1922-12">ant. Dezembro de 1922</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p> Lista manuscrita, publicada parcialmente em <hi rend="italic">Pessoa por
+                     Conhecer</hi> (1990, 487-491). </p>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic
+         url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0052_26_t24-C-R0150.jpg"/>
+      <graphic
+         url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0053_26v_t24-C-R0150.jpg"
+      />
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <p> Pouco, logo que seja muito; muitos, <choice>
+                  <seg n="1">logo</seg>
+                  <seg n="2"><add place="above">desde</add></seg>
+               </choice> que haja cada; chaos, <lb/> para que surja tudo. <metamark rend="line"
+                  function="distinct"/>
+            </p>
+         </div>
+         <div>
+            <list>
+               <item><rs type="person" key="P107">Mario Saa</rs>: <rs type="text">Poema</rs>.</item>
+               <item><rs type="person" key="P71">Raul Leal</rs>: <rs type="text">A
+                  Virgem-Besta</rs>.</item>
+               <item><rs type="person" key="FP" role="author">Fernando Pessoa</rs>: <rs type="text"
+                     >Além-Deus</rs>.</item>
+               <item><rs type="person" key="P56">Almada</rs>: (prosa).</item>
+               <item><rs type="person" key="P30">Sá Carneiro</rs>: (poema ou poemas). <rs
+                     type="text"><hi rend="underline">Caranguejola</hi></rs> ou <rs type="text"><hi
+                        rend="underline">Aquele outro</hi></rs>.</item>
+               <item><rs type="person">Luiz de Montalvor</rs>: (poemas). (ou um poema só).</item>
+               <item><rs type="person" key="AdC" role="author">Alvaro de Campos</rs>. (Soneto
+                  antigo).</item>
+               <item><add place="before">?</add><rs type="person" key="AC" role="author"
+                  >Caeiro</rs>.</item>
+            </list>
+         </div>
+         <div rend="right horizontal">
+            <list>
+               <div>
+                  <head><hi rend="left margin">I.</hi></head>
+                  <item><rs type="person" key="P107">Mario Saa</rs> (V)</item>
+                  <item><rs type="person" key="P71">Raul Leal</rs></item>
+                  <item><rs type="person" key="FP" role="author"><choice>
+                           <abbr>F</abbr>
+                           <expan>F<ex>ernando</ex></expan>
+                        </choice> Pessoa</rs></item>
+                  <item><rs type="person" key="P1" role="author"><choice>
+                           <abbr>A</abbr>
+                           <expan>A<ex>ntonio</ex></expan>
+                        </choice> Mora</rs></item>
+                  <item><rs type="person" key="AC" role="author">Caeiro.</rs></item>
+               </div>
+               <metamark rend="line" function="distinct"/>
+               <div>
+                  <head><hi rend="left margin">II.</hi></head>
+                  <item><rs type="person" key="P30">Sá-Carneiro</rs></item>
+                  <item><rs type="person" key="P56">Almada</rs></item>
+                  <item><rs type="person" key="AdC" role="author"><choice>
+                           <abbr>Alv<am>.</am></abbr>
+                           <expan>Alv<ex>aro</ex></expan>
+                        </choice> de Campos</rs></item>
+                  <item><rs type="person" key="P107">Mario Saa</rs></item>
+                  <item><rs type="person">Montalvor</rs>
+                     <del rend="overstrike">(<rs type="person" key="RR" role="author"><choice>
+                              <abbr>R<am>.</am></abbr>
+                              <expan>R<ex>icardo</ex></expan>
+                           </choice> Reis</rs>)</del></item>
+               </div>
+               <metamark rend="line" function="distinct"/>
+               <div>
+                  <head><hi rend="left margin">III.</hi></head>
+                  <item><rs type="person" key="RR" role="author"><choice>
+                           <abbr>R<am>.</am></abbr>
+                           <expan>R<ex>icardo</ex></expan>
+                        </choice> Reis.</rs></item>
+               </div>
+            </list>
+         </div>
+         <div rend="below horizontal">
+            <list>
+               <item><label>1.</label>
+                  <rs type="person" key="P107">Mario Saa</rs> (V)</item>
+               <item><label>2.</label>
+                  <rs type="person" key="P71">Raul Leal</rs></item>
+               <item><label>3.</label>
+                  <rs type="person" key="FP" role="author"><choice>
+                        <abbr>F<am>.</am></abbr>
+                        <expan>F<ex>ernando</ex></expan>
+                     </choice> Pessoa</rs></item>
+               <item><label>4.</label>
+                  <rs type="person" key="P56">Almada</rs></item>
+               <item><label>5.</label>
+                  <rs type="person" key="P30">Sá-Carneiro</rs></item>
+               <item><label>6.</label>
+                  <rs type="person" key="P1"><choice>
+                        <abbr>A</abbr>
+                        <expan>A<ex>ntonio</ex></expan>
+                     </choice> Mora</rs></item>
+               <item><label>7.</label>
+                  <rs type="person" key="AC" role="author">Caeiro. (1)</rs></item>
+               <item><label>8.</label>
+                  <rs type="person">Montalvor</rs>.</item>
+               <metamark rend="line" function="end"/>
+            </list>
+         </div>
+         <metamark rend="line" function="distinct"/>
+         <div rend="left below">
+            <list>
+               <item><label>1.</label>
+                  <rs type="person" key="P107">Mario Saa</rs>: Poema</item>
+               <item><label>2.</label>
+                  <rs type="person" key="P71">Raul Leal</rs>: <rs type="text">A
+                  Virgem-Besta</rs>.</item>
+               <item><label>3.</label>
+                  <rs type="person" key="P30">Sá-Carneiro</rs>: <rs type="text"><hi rend="underline"
+                        >Caranguejola ou Aquel’outro</hi></rs>.</item>
+               <item><label>4.</label>
+                  <rs type="person">Diniz da Silva</rs>: <rs type="text">Loucura</rs>.</item>
+               <item><seg type="doubt"><label>5.</label> Um Soneto Classico</seg></item>
+               <item><seg type="doubt"><label>6.</label>
+                     <rs type="text">O grande Soneto</rs> de <rs type="person" key="P80">Angelo de
+                        Lima</rs>.</seg></item>
+               <item><seg type="doubt"><label>7.</label> Um Soneto Classico<rs type="text">O
+                        Regresso dos Deuses</rs> – <rs type="person" key="P1">Antonio
+                     Móra</rs>.</seg></item>
+               <item>?<label>8.</label>
+                  <rs type="person" key="P17">Antonio Botto</rs><rs type="text">Canções</rs><gap
+                     reason="illegible" unit="word" extent="1"/></item>
+               <item><label>9.</label>
+                  <rs type="person" key="P56">Almada</rs>: Prosa.</item>
+               <item><label>10.</label>
+                  <rs type="person" key="AdC" role="author">Alvaro de Campos</rs>: <supplied
+                     resp="PS" reason="omitted-in-original"/></item>
+               <item><label>11.</label>
+                  <rs type="person" key="RR" role="author">Ricardo Reis</rs></item>
+               <item><label>12.</label>
+                  <rs type="person" key="AC" role="author">Caeiro</rs>.</item>
+            </list>
+         </div>
+         <div rend="right">
+            <gap reason="selection" unit="line" extent="6"/>
+         </div>
+         <div rend="below outlined">
+            <div>
+               <list>
+                  <item><add place="left margin"><hi rend="circled">5</hi></add>
+                     <label>1.</label>
+                     <rs type="person" key="P107">Mario Saa</rs>. <hi rend="circled">5</hi></item>
+                  <item><label>2.</label>
+                     <rs type="person" key="P71">Raul Leal</rs>. <hi rend="circled">1</hi></item>
+                  <item><label>3.</label>
+                     <rs type="person" key="FP" role="author"><choice>
+                           <abbr>F<am>.</am></abbr>
+                           <expan>F<ex>ernando</ex></expan>
+                        </choice> Pessoa</rs>. <hi rend="circled">2</hi></item>
+                  <metamark rend="line" function="distinct"/>
+                  <item><label>4.</label>
+                     <rs type="person" key="P56">Almada</rs>. <hi rend="circled">3</hi></item>
+                  <add place="left margin"><hi rend="circled">1</hi></add>
+                  <item><label>5.</label> (<subst>
+                        <del rend="overstrike"><rs type="person" key="AdC" role="author"><choice>
+                                 <abbr>Alv<am>.</am></abbr>
+                                 <expan>Alv<ex>aro</ex></expan>
+                              </choice> de Campos</rs></del>
+                        <add place="below"><rs type="person" key="P30">Sá-Carneiro</rs></add>
+                     </subst>) <hi rend="circled">4</hi></item>
+                  <item><choice>
+                        <abbr>Out<am>.</am></abbr>
+                        <expan>Out<ex>ubro</ex></expan>
+                     </choice></item>
+               </list>
+            </div>
+            <metamark rend="right vertical line" function="distinct"/>
+            <div rend="right">
+               <list>
+                  <item><label>1.</label>
+                     <rs type="person" key="P107"><choice>
+                           <abbr>M<am>º</am></abbr>
+                           <expan>M<ex>ario</ex></expan>
+                        </choice> Saa</rs> (poema)</item>
+                  <item><label><subst>
+                           <del rend="overtyped">2</del>
+                           <add place="superimposed">3</add>
+                        </subst>.</label>
+                     <rs type="person" key="P1"><choice>
+                           <abbr>A</abbr>
+                           <expan>A<ex>ntonio</ex></expan>
+                        </choice> Mora</rs>.</item>
+                  <item><label><subst>
+                           <del rend="overtyped">3</del>
+                           <add place="superimposed">2</add>
+                        </subst>.</label>
+                     <rs type="person" key="AC" role="author">Caeiro</rs>.</item>
+                  <item><label><subst>
+                           <del rend="overtyped">4</del>
+                           <add place="superimposed">5</add>
+                        </subst>.</label>
+                     <rs type="person" key="FP" role="author"><choice>
+                           <abbr>F<am>.</am></abbr>
+                           <expan>F<ex>ernando</ex></expan>
+                        </choice> Pessoa</rs> (<gap reason="illegible" unit="word" extent="1"
+                     />)</item>
+                  <item><label><subst>
+                           <del rend="overtyped">5</del>
+                           <add place="superimposed">4</add>
+                        </subst>.</label>
+                     <rs type="person" key="RR" role="author"><choice>
+                           <abbr>R<am>.</am></abbr>
+                           <expan>R<ex>icardo</ex></expan>
+                        </choice> Reis</rs>.</item>
+                  <item><choice>
+                        <abbr>Nov<am>º</am></abbr>
+                        <expan>Nov<ex>embro</ex></expan>
+                     </choice></item>
+               </list>
+            </div>
+            <metamark rend="right vertical line" function="distinct"/>
+            <div rend="right">
+               <list>
+                  <item><label>1.</label>
+                     <rs type="person">Montalvor</rs></item>
+                  <item><label>2.</label>
+                     <rs type="person" key="P71">Raul Leal</rs>.</item>
+                  <item><label>3.</label>
+                     <rs type="person" key="AdC" role="author"><choice>
+                           <abbr>Alv<am>.</am></abbr>
+                           <expan>Alv<ex>aro</ex></expan>
+                        </choice> de Campos</rs>.</item>
+                  <item><label>4.</label>
+                     <rs type="person" key="P107"><choice>
+                           <abbr>M<am>º</am></abbr>
+                           <expan>M<ex>ario</ex></expan>
+                        </choice> Saa</rs>.</item>
+                  <item><label>5.</label><gap reason="illegible" unit="word" extent="3"/> ou <rs
+                        type="person" key="FP" role="author"><choice>
+                           <abbr>F</abbr>
+                           <expan>F<ex>ernando</ex></expan>
+                        </choice> Pessoa</rs></item>
+                  <item><choice>
+                        <abbr>Dez<am>.</am></abbr>
+                        <expan>Dez<ex>embro</ex></expan>
+                     </choice></item>
+               </list>
+            </div>
+         </div>
+         <pb/>
+         <div>
+            <p> Confluem nesta revista as 3 correntes, que importam, <lb/> do pensamento portuguez:
+               os transcendentalistas, os pagãos,<lb/> e os sensacionistas. Os primeiros <subst>
+                  <del rend="overstrike"><gap reason="illegible" extent="1" unit="word"/></del>
+                  <add place="above">creem</add>
+               </subst>que exceder-se ser é<lb/> exceder-se; os segundos que ser é <supplied
+                  resp="PS" reason="omitted-in-original"/> ; os terceiros <supplied resp="PS"
+                  reason="omitted-in-original"/>
+            </p>
+         </div>
+         <div>
+            <p> Todos são bem portuguezas, porque todos são excessivas. </p>
+         </div>
+         <metamark rend="line" function="distinct"/>
+         <div rend="right outlined">
+            <list>
+               <div>
+                  <head>I.</head>
+                  <item><label>1.</label>
+                     <rs type="person" key="P107">Mario Saa</rs></item>
+                  <item><label>2.</label>
+                     <rs type="person" key="P71">Raul Leal.</rs>.</item>
+                  <item><label>3.</label>
+                     <rs type="person" key="FP" role="author"><choice>
+                           <abbr>F<am>.</am></abbr>
+                           <expan>F<ex>ernando</ex></expan>
+                        </choice> Pessoa</rs></item>
+                  <item><label>4.</label>
+                     <rs type="person" key="P56">Almada</rs></item>
+                  <item><label>5.</label>
+                     <rs type="person" key="AC" role="author">Caeiro</rs>.</item>
+               </div>
+               <metamark rend="line" function="distinct"/>
+               <div>
+                  <head><hi rend="left margin">II.</hi></head>
+                  <item><label>1.</label>
+                     <rs type="person" key="P30">Sá-Carneiro</rs>.</item>
+                  <item><label>2.</label>
+                     <rs type="person" key="P1"><choice>
+                           <abbr>A</abbr>
+                           <expan>A<ex>ntonio</ex></expan>
+                        </choice> Mora</rs></item>
+                  <item><label>3.</label>
+                     <rs type="person" key="AC" role="author">Caeiro</rs>.</item>
+                  <item><label>4.</label>
+                     <rs type="person" key="P107">Mario Saa</rs>.</item>
+                  <item><label>5.</label>
+                     <rs type="person" key="AdC" role="author"><choice>
+                           <abbr>Alv<am>.</am></abbr>
+                           <expan>Alv<ex>aro</ex></expan>
+                        </choice> de Campos</rs>.</item>
+                  <metamark rend="line" function="end"/>
+               </div>
+            </list>> </div>
+         <div rend="left below">
+            <list>
+               <item>√ <label>1.</label>
+                  <rs type="person" key="P107">Mario Saa</rs> Poema.</item>
+               <item>√ <label>2.</label>
+                  <rs type="person" key="P71">Raul Leal.</rs>: <rs type="text"> A <choice>
+                        <abbr>V<am>.</am></abbr>
+                        <expan>V<ex>irgem</ex></expan>
+                     </choice> -Besta.</rs>.</item>
+               <item>√ <label>3</label>
+                  <rs type="person" key="FP" role="author"><choice>
+                        <abbr>F<am>.</am></abbr>
+                        <expan>F<ex>ernando</ex></expan>
+                     </choice>Pessoa</rs>:<rs type="text">Além-Deus, ou Amon-Ra</rs>.</item>
+               <item><label>4</label><rs type="person" key="P56">Almada</rs>: Prosa.</item>
+               <item><label>5</label><rs type="person" key="P30">Sá-Carneiro</rs>.</item>
+               <item>√ <label>6</label>
+                  <rs type="person" key="P1"><choice>
+                        <abbr>A <am>.</am></abbr>
+                        <expan>A<ex>ntonio</ex></expan>
+                     </choice> Mora</rs>.</item>
+               <hi rend="braced">
+                  <item><label>7.</label>
+                     <rs type="person" key="AC" role="author">Caeiro</rs>.</item>
+                  <item><label>8.</label>
+                     <rs type="person" key="RR" role="author"><choice>
+                           <abbr>R<am>.</am></abbr>
+                           <expan>R<ex>icardo</ex></expan>
+                        </choice> Reis</rs>.</item>
+               </hi>
+               <gap reason="illegible" unit="word" extent="11"/>
+            </list>
+            <metamark rend="line" function="distinct"/>
+         </div>
+         <div rend="below">
+            <div>
+               <list>
+                  <item><label>1.</label>
+                     <rs type="person" key="P107">Mario Saa</rs></item>
+                  <item><label>2.</label>
+                     <rs type="person" key="P71">Raul Leal</rs>. √ </item>
+                  <item><label>3.</label>
+                     <rs type="person" key="FP" role="author"><choice>
+                           <abbr>F<am>.</am></abbr>
+                           <expan>F<ex>ernando</ex></expan>
+                        </choice>Pessoa</rs>. √</item>
+                  <item><label>4.</label><rs type="person" key="P56">Almada</rs>. √ </item>
+                  <item><label>5.</label><rs type="person">Montalvor</rs> √ </item>
+                  <item><label>6.</label>
+                     <rs type="person" key="P1"><choice>
+                           <abbr>A<am>.</am></abbr>
+                           <expan>A<ex>ntonio</ex></expan>
+                        </choice> Mora</rs></item>
+                  <item><label>7.</label>
+                     <rs type="person" key="AC" role="author">Caeiro</rs>.</item>
+                  <item><label>8.</label><subst>
+                        <del rend="overstrike"><rs type="person" key="AdC" role="author"><choice>
+                                 <abbr>A<am>.</am></abbr>
+                                 <expan>A<ex>lvaro de</ex></expan>
+                              </choice> Campos</rs></del>
+                        <add place="above"><rs type="person" key="P30">Sá-Carneiro</rs></add>
+                     </subst>. √</item>
+               </list>
+            </div>
+            <metamark rend="right vertical line" function="distinct"/>
+            <div rend="right">
+               <list>
+                  <item><label>1.</label>
+                     <rs type="person" key="FP" role="author"><choice>
+                           <abbr>F</abbr>
+                           <expan>F<ex>ernando</ex></expan>
+                        </choice>Pessoa</rs>
+                  </item>
+                  <item><label>2.</label>
+                     <rs type="person" key="P107">Mario Saa</rs></item>
+                  <item><label>3.</label>
+                     <rs type="person" key="RR" role="author"><choice>
+                           <abbr>R<am>.</am></abbr>
+                           <expan>R<ex>icardo</ex></expan>
+                        </choice> Reis</rs>.</item>
+                  <item><label>4.</label><supplied resp="PS" reason="omitted-in-original"/></item>
+                  <item><label>5.</label><rs type="person" key="AdC" role="author"><choice>
+                           <abbr>A<am>.</am></abbr>
+                           <expan>A<ex>lvaro de</ex></expan>
+                        </choice> Campos</rs>.</item>
+                  <item><label>6.</label><supplied resp="PS" reason="omitted-in-original"/></item>
+                  <item><label>7.</label><supplied resp="PS" reason="omitted-in-original"/></item>
+                  <item><label>8.</label><supplied resp="PS" reason="omitted-in-original"/></item>
+               </list>
+            </div>
+         </div>
+         <div rend="right outlined">
+            <div>
+               <list>
+                  <item><label>1.</label>
+                     <rs type="person" key="P107">Mario Saa</rs>. (3)</item>
+                  <item><label>2.</label>
+                     <rs type="person" key="P71">Raul Leal</rs>. (4)</item>
+                  <item><label><hi rend="circled">3.</hi></label>
+                     <rs type="person" key="FP" role="author"><choice>
+                           <abbr>F<am>.</am></abbr>
+                           <expan>F<ex>ernando</ex></expan>
+                        </choice>Pessoa</rs>. (3)</item>
+                  <item><label>4.</label>
+                     <rs type="person" key="P1"><choice>
+                           <abbr>Ant<am>º</am></abbr>
+                           <expan>Ant<ex>onio</ex></expan>
+                        </choice> Mora</rs>. (<supplied resp="PS" reason="omitted-in-original"
+                     />)</item>
+                  <item><label><hi rend="circled">5.</hi></label>
+                     <rs type="person" key="AC" role="author">Caeiro</rs>. (<supplied resp="PS"
+                        reason="omitted-in-original"/>)</item>
+                  <item><choice>
+                        <abbr>Out<am>º</am></abbr>
+                        <expan>Out<ex>ubro</ex></expan>
+                     </choice></item>
+               </list>
+            </div>
+            <metamark rend="right vertical line" function="distinct"/>
+            <div rend="right">
+               <list>
+                  <item><label>1.</label>
+                     <rs type="person" key="P30">Sá-Carneiro</rs>.</item>
+                  <item><label>2.</label>
+                     <rs type="person" key="P56">Almada</rs>.</item>
+                  <item><label>3.</label>
+                     <rs type="person" key="FP" role="author"><choice>
+                           <abbr>F<am>.</am></abbr>
+                           <expan>F<ex>ernando</ex></expan>
+                        </choice>Pessoa</rs>.</item>
+                  <item><label>4.</label>
+                     <rs type="person" key="P107"><choice>
+                           <abbr>M<am>.</am></abbr>
+                           <expan>M<ex>ario</ex></expan>
+                        </choice> Saa</rs> (prosa)</item>
+                  <item><label>5.</label>
+                     <rs type="person" key="RR" role="author"><choice>
+                           <abbr>R<am>.</am></abbr>
+                           <expan>R<ex>icardo</ex></expan>
+                        </choice> Reis</rs>.</item>
+                  <item><choice>
+                        <abbr>Nov<am>º</am></abbr>
+                        <expan>Nov<ex>embro</ex></expan>
+                     </choice></item>
+               </list>
+            </div>
+            <metamark rend="right vertical line" function="distinct"/>
+            <div rend="right">
+               <list>
+                  <item><label>1.</label>
+                     <rs type="person">Montalvor</rs></item>
+                  <item><label>2.</label>
+                     <rs type="person" key="P71"><choice>
+                           <abbr>R<am>.</am></abbr>
+                           <expan>R<ex>aul</ex></expan>
+                        </choice> Leal</rs>.</item>
+                  <item><label>3.</label>
+                     <rs type="person" key="AdC" role="author"><choice>
+                           <abbr>Alv<am>.</am></abbr>
+                           <expan>Alv<ex>aro de</ex></expan>
+                        </choice> Campos</rs>.</item>
+                  <item><label>4.</label>
+                     <rs type="person" key="FP" role="author"><choice>
+                           <abbr>F<am>.</am></abbr>
+                           <expan>F<ex>ernando</ex></expan>
+                        </choice>Pessoa</rs>. (poesia)</item>
+                  <item><label>5.</label>
+                     <rs type="person" key="AC" role="author">Caeiro</rs>.</item>
+                  <item><choice>
+                        <abbr>Dez<am>º</am></abbr>
+                        <expan>Dez<ex>embro</ex></expan>
+                     </choice></item>
+               </list>
+            </div>
+         </div>
+      </body>
+   </text>
+</TEI>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 48B-30<hi rend="superscript">r</hi></title>
+            <author>
+               <rs type="person" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Transcrição</resp>
+               <name>Filipa Freitas</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Ana Leonor Branco</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2016</date>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_48-30r.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 48B-30r</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItemStruct>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="en fr"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate when="1912" cert="medium">c. 1912</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile>
+      <graphic
+         url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0060_30_t24-C-R0150.jpg"
+      />
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <head><hi rend="underline">Rags</hi> (provisional title).</head>
+            <list>
+               <item><label>1.</label> “<rs type="text">Macaulay</rs>” – <choice>
+                     <abbr>art<am>.</am></abbr>
+                     <expan>art<ex>icle</ex></expan>
+                  </choice> in “D. H. S. Magazine”.</item>
+               <item><label>2.</label>
+                  <rs type="text">“Miner”</rs> – verses in “Natal Mercury.”</item>
+               <item><label>3.</label>
+                  <rs type="person"><choice>
+                        <abbr>C<am>.</am></abbr>
+                        <expan>C<ex>harles</ex></expan>
+                     </choice><choice>
+                        <abbr>R<am>.</am></abbr>
+                        <expan>R<ex>obert</ex></expan>
+                     </choice> Anon</rs> verses in “Natal Mercury”</item>
+               <item><label>4.</label> Several charades (under “Tagus” &amp; “J. E. H. C.”) in
+                  same.</item>
+               <item><label>5.</label>
+                  <metamark rend="line-14" function="ditto"/> in “Pimpão.” (1902).</item>
+               <item><label>6.</label>
+                  <metamark rend="line-14" function="ditto"/> in “<choice>
+                     <abbr>Alm<am>.</am></abbr>
+                     <expan>Alm<ex>anach</ex></expan>
+                  </choice> de Lembranças”.</item>
+               <item><label>7.</label> 3 dissertations in Curso Superior de Letras.</item>
+               <item><label>8.</label> Articles in <rs type="journal" key="J5"><hi rend="underline"
+                        >A Aguia</hi></rs>: Nos. 4, 5, 9, 11 and 12 (2.ª serie, I).</item>
+               <item><label>9.</label> 1 article in <rs type="journal" key="J20"><hi
+                        rend="underline">Republica</hi></rs>.</item>
+               <item><label>10.</label> 1 never-published humanitarian letter sent to <hi
+                     rend="underline">Mundo</hi>.</item>
+               <item><label>11.</label> 1 do. do. sent with two sonnets to “Natal Mercury”.</item>
+               <item><label>12.</label> 1 poem by quotation in “Imparcial” (1902).</item>
+               <item><label>13.</label> 2 essays in Cape of Good Hope Exams (&amp; other exam.
+                  things).</item>
+               <item><label>14.</label>
+                  <hi rend="blue">Translations in Kellogg’s Encyclopaedia</hi>.</item>
+               <item><label>15.</label>
+                  <supplied resp="PS" reason="omitted-in-original"/></item>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>

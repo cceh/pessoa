@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>BNP/E3 48B-36<hi rend="superscript">r</hi></title>
+            <title>BNP/E3 48B-31<hi rend="superscript">r</hi></title>
             <author>
                <rs type="person" key="FP">Fernando Pessoa</rs>
             </author>
@@ -30,13 +31,13 @@
          </titleStmt>
          <publicationStmt>
             <publisher/>
-            <idno type="filename">BNP_E3_48B-36r</idno>
+            <idno type="filename">BNP_E3_48B-31r</idno>
          </publicationStmt>
          <sourceDesc>
             <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
-                  <idno>BNP/E3 48B-36r</idno>
+                  <idno>BNP/E3 48B-31r</idno>
                </msIdentifier>
                <msContents>
                   <msItemStruct>
@@ -59,24 +60,46 @@
             </msDesc>
             <msDesc corresp="#M1" type="prose">
                <msIdentifier/>
-               <p> Lista datilografada. </p>
+               <p> Lista manuscrita. </p>
             </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
       <graphic
-         url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0072_36_t24-C-R0150.jpg"
+         url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0062_31_t24-C-R0150.jpg"
       />
    </facsimile>
    <text>
       <body>
-         <div> 1. Edgar Poe. 2. Thomaz Antonio Gonzaga. 3. A[lgernon] C[harles] Swinburne. 4. José
-            Anastacio da Cunha. 5. P[ercy] B[ysse] Shelley. 6. Manuel da Veiga. 7. Goethe. ? 8.
-            Cancioneiros – I. 9. Epigrammas celebres. <note>A Voltaire</note> magrissimo e
-            velhissimo 10. Grandes sonetos portuguezes. <div> No autor cuja epiderme Aos proprios
-               ossos collou-se Tarda a morte em bater firme Para não esbocar a fouce. estragar
-            </div>
+         <div>
+            <list>
+               <item>Traduccções – <choice>
+                     <abbr>Univ<am>.</am></abbr>
+                     <expan>Univ<ex>ersal</ex></expan>
+                  </choice> Anthology.</item>
+               <metamark rend="line-44" function="distinct"/>
+               <item>Espronceda – <supplied resp="PS" reason="omitted-in-original"/></item>
+               <metamark rend="line-44" function="distinct"/>
+               <item>A <choice>
+                     <abbr>Olig<am>.</am></abbr>
+                     <expan>Olig<ex>archia</ex></expan>
+                  </choice> das <choice>
+                     <abbr>B<am>.</am></abbr>
+                     <expan>B<ex>estas</ex></expan>
+                  </choice> – Decline and Fall.<lb/> O Triumpho do <choice>
+                     <abbr>Rad<am>.</am></abbr>
+                     <expan>Rad<ex>icalismo</ex></expan>
+                  </choice><supplied resp="PS" reason="omitted-in-original"/><lb/> Fim de
+                  Outomno.</item>
+               <metamark rend="line-44" function="distinct"/>
+               <item>Portugal etc.</item>
+               <metamark rend="line-44" function="distinct"/>
+               <item><rs type="person" key="">Francis Bacon</rs></item>
+               <metamark rend="line-44" function="distinct"/>
+               <item>The Duke of Parma</item>
+               <metamark rend="line-44" function="end"/>
+            </list>
          </div>
       </body>
    </text>

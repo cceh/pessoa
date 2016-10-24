@@ -1137,7 +1137,8 @@ div.text div.item {
     position: relative;
     text-indent: 0em;
 }
-div.text div.item * {
+div.text div.item > * {
+    vertical-align: top;
 }
 div.text div.item hr {
     vertical-align: bottom;
@@ -1175,9 +1176,12 @@ div.text span.note.margin-right {
     white-space: nowrap;
     text-indent: 0;
 }
+div.text div.list.inline span.note.margin-right {
+    right: -100px;
+}
 div.text div.item span.note.margin-left {
     position: absolute;
-    left: -4em;
+    left: -6em;
     line-height: normal;
     white-space: nowrap;
     top: 0.3em;

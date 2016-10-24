@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>BNP/E3 48B-42<hi rend="superscript">r</hi>
-            </title>
+            <title>BNP/E3 48D-14<hi rend="superscript">r</hi></title>
             <author>
                <rs type="person" key="FP">Fernando Pessoa</rs>
             </author>
@@ -37,13 +37,13 @@
             <availability>
                <licence target="http://creativecommons.org/licenses/by/3.0/"/>
             </availability>
-            <idno type="filename">BNP_E3_48B-42r.xml</idno>
+            <idno type="filename">BNP_E3_48D-14r.xml</idno>
          </publicationStmt>
          <sourceDesc>
             <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
-                  <idno>BNP/E3 48B-42r</idno>
+                  <idno>BNP/E3 48D-14r</idno>
                </msIdentifier>
                <msContents>
                   <msItemStruct>
@@ -53,42 +53,45 @@
                      <note type="genre">
                         <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
-                     <textLang mainLang="pt" otherLangs=""/>
+                     <textLang mainLang="pt" otherLangs="en fr"/>
                   </msItemStruct>
                </msContents>
                <history>
                   <origin>
                      <p>
-                        <origDate from="1920" to="1927">1920-1927</origDate>
+                        <origDate when="1913" cert="medium">c. 1913</origDate>
                      </p>
                   </origin>
                </history>
             </msDesc>
             <msDesc corresp="#M1" type="prose">
                <msIdentifier/>
-               <p> Lista manuscrita. </p>
+               <p> Lista manuscrita </p>
             </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
       <graphic
-         url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0086_42_t24-C-R0150.jpg"
-      />
+         url="bn-acpc-e-e3-48d-1-76_JPG_24-C-R0150/bn-acpc-e-e3-48d-1-76_0029_14_t24-C-R0150.jpg"/>
    </facsimile>
    <text>
       <body>
-         <div> Fama Fraternitatis Rosae Crucis (trad[ucção] Çoro) -------------------- 2.00 Du
-            Symbole – Alb[ert] Lantoine ------ (?) 1.50 Les Mystéres Païens et le Mystère Chrétien
-            (Alfred Loisy) ------------------------ 10.00 Le Pimandre (“La Sirène”) --------------
-            7.00 _____________________________________ Traducção da parte “interpretativa” do livro
-            de Kircher (†) sobre o ceptico, etc. _____________________________________ Traducção do
-            Pimandro. __________________________ Traducção da “Fama Fraternitatis”
-            ___________________________ “Os Classicos do Hermetismo.” (nenhum symbolo, e
-            recomendação de os não usar). _______________________________ Trad[ução] “Versos de
-            Ouro” de Pythagoras. _______________________________ /Trad[ução] do “Napoleão nunca
-            existiu” no sentido da confirmação ou these com o lado prophetico e hermetico./
-            ______________________________________ </div>
+         <div>
+            <list>
+               <item><rs type="person" key="P30">Mario de Sá-Carneiro</rs>: <rs type="text"><hi
+                        rend="underline">Além</hi></rs>.</item>
+               <metamark rend="line-44" function="distinct"/>
+               <item><rs type="person" key="FP" role="author">Fernando Pessôa</rs>: <rs type="text"
+                        ><hi rend="underline">Paues</hi></rs>.</item>
+               <metamark rend="line-44" function="distinct"/>
+               <item>(<rs type="person" key="P145" role="author">Camillo Pessanha</rs>)</item>
+               <metamark rend="line-44" function="distinct"/>
+               <item>(I. A. – <del rend="overstrike"><gap reason="selection" unit="character"
+                        extent="3"/></del>versos sobre o <lb/> “além”)</item>
+               <metamark rend="line-44" function="end"/>
+            </list>
+         </div>
       </body>
    </text>
 </TEI>
