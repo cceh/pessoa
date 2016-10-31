@@ -48,6 +48,16 @@
         <span class="expan">[<xsl:apply-templates select="expan/text() | expan/child::*"/>]</span>
     </xsl:template>
     
+    <xsl:template match="subst" mode="#default deletion addition">
+        <span class="subst">
+            <xsl:apply-templates select="child::*[not(@n='2')]"/>
+        </span>
+    </xsl:template>
+    
+    <xsl:template match="add[@place='below']" mode="#default deletion addition" priority="2">
+        <xsl:apply-templates/>
+    </xsl:template>
+    
     <xsl:template match="abbr" mode="#default deletion addition">
         <xsl:choose>
             <xsl:when test="parent::choice"/>

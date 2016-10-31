@@ -280,13 +280,15 @@
     </xsl:template>
 
     <!-- Notes -->
-    <xsl:template match="note[@n='2']" mode="#default deletion addition"/>
+    <!--<xsl:template match="note[@n='2']" mode="#default deletion addition">
+        
+    </xsl:template>-->
     
-    <xsl:template match="note[@place = 'margin-right'][not(@n='2')]" mode="#default deletion addition">
+    <xsl:template match="note[@place = 'margin-right']" mode="#default deletion addition">
         <xsl:call-template name="note-margin-right"/>
     </xsl:template>
 
-    <xsl:template match="note[@place = 'margin-left'][not(@n='2')]" mode="#default deletion addition">
+    <xsl:template match="note[@place = 'margin-left']" mode="#default deletion addition">
         <xsl:call-template name="note-margin-left"/>
     </xsl:template>
 
@@ -428,6 +430,11 @@
         match="*[preceding-sibling::addSpan][following::anchor[@xml:id = current()/preceding-sibling::addSpan/@spanTo/substring-after(., '#')]]"
         mode="#default" priority="100"/>
 
+    <!-- einzublendende Spans -->
+    <xsl:template match="addSpan[@n='2']">
+        <xsl:variable name="anchorID" select="@spanTo/substring-after(.,'#')" />
+        <xsl:apply-templates select="following-sibling::*[following::anchor[@xml:id=$anchorID]]" mode="addition" />
+    </xsl:template>
 
     <xsl:template match="del[@rend = 'overstrike'] | seg[@rend = 'overstrike']"
         mode="#default deletion addition">

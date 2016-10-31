@@ -11,14 +11,14 @@
     <xsl:template match="choice[seg and seg[2]/add/@place='below']" mode="#default deletion addition">
         <span class="choice">
             <span class="seg variant">
-                <xsl:apply-templates select="seg[2]/add/text()"/>
+                <xsl:apply-templates select="seg[2]/add"/><!-- war: text() -->
             </span>
         </span>
     </xsl:template>
     <xsl:template match="choice[seg and seg[2]/add/@place='above']" mode="#default deletion addition">
         <span class="choice">
             <span class="seg variant" title="variant">
-                <xsl:apply-templates select="seg[2]/add/text()"/>
+                <xsl:apply-templates select="seg[2]/add"/><!-- war: text() -->
             </span>
         </span>
     </xsl:template>
@@ -28,6 +28,14 @@
     hier: das Hinzugefügte anzeigen -->
     <xsl:template match="seg/add[@n='2']" mode="#default deletion addition">
         <xsl:apply-templates/>
+    </xsl:template>
+    
+    <xsl:template match="add[@place='above'][@n='2'][not(parent::seg)]" mode="#default deletion addition">
+        <xsl:apply-templates select="text()"/>
+    </xsl:template>
+    
+    <xsl:template match="add[@place='below'][parent::seg[@n='2']]" mode="#default deletion addition">
+        <xsl:apply-templates select="text()"/>
     </xsl:template>
     
     <!-- Ersetzung von Pessoa selbst: etwas wird gelöscht, etwas anderes hinzugefügt
@@ -61,8 +69,6 @@
                 <xsl:value-of select="substring-after(seg[2],'ou')"/>  
     </xsl:template>
     
-    <xsl:template match="add[@place='above'][@n='2'][not(parent::seg)]" mode="#default deletion addition">
-        <xsl:apply-templates select="text()"/>
-    </xsl:template>
+    
     
 </xsl:stylesheet>

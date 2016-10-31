@@ -22,12 +22,23 @@
             </span>
         </span>
     </xsl:template>
-    <xsl:template match="subst" mode="#default deletion addition">
-        <span class="subst">
-            <xsl:apply-templates select="child::*[not(@n='2')]"/>
-        </span>
+    
+    
+    <!-- Notes -->
+    
+    <xsl:template match="note[@n='2']" mode="#default deletion addition"/>
+    
+    <xsl:template match="note[@place = 'margin-right'][@n='2']" mode="#default deletion addition" priority="2">
     </xsl:template>
     
+    <xsl:template match="note[@place = 'margin-left'][@n='2']" mode="#default deletion addition" priority="2">
+    </xsl:template>
+    
+    <!-- addSpan -->
+    <xsl:template match="addSpan[@n='2']"/>
+    
+    <!-- add -->
+    <xsl:template match="add[@n='2']"/>
     
     <!-- Ergänzung von Pessoa selbst
     (alternativ: nichts  - das Hinzugefügte)
