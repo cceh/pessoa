@@ -1114,6 +1114,7 @@ div.text > p {
 div.text div.list.inline, div.text div.list div.list.inline {
     display: inline-block;
     margin-top: 0;
+    margin-bottom: 0;
     margin-left: 0;
     max-width: 90%;
 }
@@ -1123,6 +1124,9 @@ div.text div.list.inline div.item:first-child {
 div.text span.label.inline {
     display: inline-block;
     vertical-align: top;
+}
+div.text .overstrike .label {
+    text-decoration: line-through;
 }
 div.text div.list div.list {
     margin-left: 2em;
@@ -1135,16 +1139,25 @@ div.text div.item {
 div.text div.item > * {
     vertical-align: top;
 }
+div.text div.item .list.indent {
+    margin-top: 0;
+    margin-left: 4em;
+    margin-bottom: 0;
+}
 div.text div.item hr {
-    vertical-align: bottom;
+    /**/
+}
+div.text div.item hr.inline {
+    display: inline-block;
+    vertical-align: middle;
 }
 div.text div.item.indent-2-label {
     text-indent: -1em;
     padding-left: 2em;
 }
 div.text div.item.indent-2 {
-    text-indent: -2em;
-    padding-left: 2em;
+    text-indent: -3em;
+    padding-left: 3em;
 }
 div.text div.item span.label {
     display: inline-block;
@@ -1156,8 +1169,20 @@ div.text p.indent-2 {
     text-indent: -2em;
     padding-left: 2em;
 }
+div.text p.indent-1 {
+    text-indent: 2em;
+}
 div.text p.indent-first {
     text-indent: 2em;
+}
+div.text p.position-center {
+    display: inline-block;
+    margin: 0 40%;
+    white-space: nowrap;
+}
+div.text .border {
+    border: 1px solid black;
+    padding: 5px;
 }
 div.text div.item.indent-2 *, div.text div.item.indent-2-label * {
     text-indent: 0;
@@ -1257,6 +1282,9 @@ div.text hr.line {
     border-color: #000000; 
     text-align: left; 
     margin: 1em auto 1em 0;
+}
+div.text hr.line-18 {
+    width: 12.5%;
 }
 div.text hr.line-14 {
     width: 25%;

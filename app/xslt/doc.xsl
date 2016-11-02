@@ -55,6 +55,9 @@
     <xsl:template match="list" mode="#default deletion addition">
         <div>
             <xsl:choose>
+                <xsl:when test="(preceding-sibling::*[1][name() = 'label'] and @rend = 'indent') or @rend = 'indent'">
+                    <xsl:attribute name="class">list indent</xsl:attribute>
+                </xsl:when>
                 <xsl:when test="preceding-sibling::*[1][name() = 'label'] or @rend = 'inline'">
                     <xsl:attribute name="class">list inline</xsl:attribute>
                 </xsl:when>
@@ -181,18 +184,38 @@
         mode="#default deletion addition">
         <hr class="line line-14"/>
     </xsl:template>
+    <xsl:template match="metamark[@rend = 'line-14'][@function = ('placeholder')]"
+        mode="#default deletion addition">
+        <hr class="line line-14 inline"/>
+    </xsl:template>
+    
     <xsl:template match="metamark[@rend = 'line-24'][@function = ('distinct', 'end')]"
         mode="#default deletion addition">
         <hr class="line line-24"/>
     </xsl:template>
+    <xsl:template match="metamark[@rend = 'line-24'][@function = ('placeholder')]"
+        mode="#default deletion addition">
+        <hr class="line line-24 inline"/>
+    </xsl:template>
+    
     <xsl:template match="metamark[@rend = 'line-34'][@function = ('distinct', 'end')]"
         mode="#default deletion addition">
         <hr class="line line-34"/>
     </xsl:template>
+    <xsl:template match="metamark[@rend = 'line-34'][@function = ('placeholder')]"
+        mode="#default deletion addition">
+        <hr class="line line-34 inline"/>
+    </xsl:template>
+    
     <xsl:template match="metamark[@rend = 'line-44'][@function = ('distinct', 'end')]"
         mode="#default deletion addition">
         <hr class="line line-44"/>
     </xsl:template>
+    <xsl:template match="metamark[@rend = 'line-44'][@function = ('placeholder')]"
+        mode="#default deletion addition">
+        <hr class="line line-44 inline"/>
+    </xsl:template>
+    
 
     <!-- Quotes -->
     <xsl:template match="metamark[@rend = 'quotes'][@function = 'ditto']"
@@ -207,6 +230,9 @@
         mode="#default deletion addition">
         <span class="metamark line ditto">
             <xsl:choose>
+                <xsl:when test="@rend = 'line-18'">
+                    <hr class="line line-18 inline"/>
+                </xsl:when>
                 <xsl:when test="@rend = 'line-14'">
                     <hr class="line line-14 inline"/>
                 </xsl:when>
