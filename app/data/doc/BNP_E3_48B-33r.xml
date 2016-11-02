@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>BNP/E3 48B-33<hi rend="superscript">r</hi></title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Transcrição, Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Transcrição</resp>
+                    <name>Pablo Javier Pérez López</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Transcrição</resp>
+                    <name>Jorge Uribe</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação, Modelagem de dados</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2016</date>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">BNP_E3_48B-33r.xml</idno>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc xml:id="M1" type="structured">
+                    <msIdentifier>
+                        <institution>Biblioteca Nacional de Portugal</institution>
+                        <idno>BNP/E3 48B-33r</idno>
+                    </msIdentifier>
+                    <msContents>
+                        <msItemStruct>
+                            <author>
+                                <rs type="person" key="FP">Fernando Pessoa</rs>
+                            </author>
+                            <note type="genre">
+                                <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                            </note>
+                            <textLang mainLang="pt" otherLangs="en"/>
+                        </msItemStruct>
+                    </msContents>
+                    <history>
+                        <origin>
+                            <p>
+                                <origDate from="1917" to="1918" cert="medium">c.
+                                    1917-1918</origDate>
+                            </p>
+                        </origin>
+                    </history>
+                </msDesc>
+                <msDesc corresp="#M1" type="prose">
+                    <msIdentifier/>
+                    <p>
+                        Lista datilografada, publicada em <hi rend="italic">Obras de António Mora</hi> (2002, 160).
+                    </p>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic
+            url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0066_33_t24-C-R0150.jpg"
+        />
+    </facsimile>
+    <text>
+        <body>
+            <div>
+                <head><hi rend="underline">Obras atlanticas a publicar:</hi></head>
+                <head>Absorpção artistica:</head>
+                <list>
+                    <item rend="indent-2">
+                        <rs type="person" key="FP" role="author" style="b">Fernando Pessoa</rs>: <rs
+                            type="text">As Sete Salas do Palacio Abandonado.<lb/> Poemas, tentativas
+                            de absorpção das outras<lb/> artes.</rs>
+                    </item>
+                    <item>
+                        <rs type="person" key="P30">Mario de Sá-Carneiro</rs>: <metamark
+                            rend="line-14"/><lb/>etc. etc. </item>
+                </list>
+                <list>
+                    <head>Reconstrucção pagã:</head>
+                    <item rend="indent-2">
+                        <rs type="work" key="O2" style="b"><rs type="person" key="AC" role="author"
+                                >Alberto Caeiro</rs>: <rs type="text">“O Guardador de Rebanhos”
+                                Versos.</rs></rs><lb/> (Reconstrucção da <hi rend="underline"
+                            >sensibilidade pagã</hi>) </item>
+                    <item rend="indent-2">
+                        <rs type="work" key="O3" style="b"><rs type="person" key="RR">Ricardo
+                                Reis</rs>: <rs type="text">“Odes”</rs></rs> (Reconstrucção da <hi
+                            rend="underline">esthetica<lb/> pagã</hi>).</item>
+                    <item rend="indent-2">
+                        <rs type="person" key="P1" style="a">Antonio Móra</rs>: <rs type="text"
+                            >Dissertação a favôr da Allemanha</rs><lb/> (<supplied
+                            reason="omitted-in-original" resp="PS"/>
+                    </item>
+                    <item rend="indent-2">
+                        <rs type="person" key="P1" style="a">Antonio Móra</rs>: <rs type="text"
+                            >“Prolegomenos a uma reformação do<lb/> Paganismo.”</rs><lb/> (Theoria
+                        geral do paganismo<lb/> novo) </item>
+                    <item rend="indent-2">
+                        <rs type="person" key="P1" style="a">Antonio Móra</rs>: <rs type="text">“Os
+                            Fundamentos do Paganismo”</rs> (contra<pc>-</pc><lb/>these á <rs
+                            type="text">“Critica da Razão Pura”</rs> de <rs type="person" key="P6"
+                            >Kant</rs>, e<lb/> tentativa de reconstruir o Objectivismo
+                        pagão).</item>
+                </list>
+            </div>
+        </body>
+    </text>
+</TEI>

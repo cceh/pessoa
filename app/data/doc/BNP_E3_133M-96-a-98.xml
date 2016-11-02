@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>BNP/E3 133M-96-a-98</title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Transcrição, Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Transcrição</resp>
+                    <name>Pablo Javier Pérez López</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Transcrição</resp>
+                    <name>Jorge Uribe</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação, Modelagem de dados</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2016</date>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">BNP_E3_133M-96-a-98.xml</idno>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc xml:id="M1" type="structured">
+                    <msIdentifier>
+                        <institution>Biblioteca Nacional de Portugal</institution>
+                        <idno>BNP/E3 133M-96-a-98</idno>
+                    </msIdentifier>
+                    <msContents>
+                        <msItemStruct>
+                            <author>
+                                <rs type="person" key="FP">Fernando Pessoa</rs>
+                            </author>
+                            <note type="genre">
+                                <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                            </note>
+                            <textLang mainLang="pt" otherLangs="en"/>
+                        </msItemStruct>
+                    </msContents>
+                    <history>
+                        <origin>
+                            <p>
+                                <origDate from="1917" to="1918" cert="medium">c.
+                                    1917-1918</origDate>
+                            </p>
+                        </origin>
+                    </history>
+                </msDesc>
+                <msDesc corresp="#M1" type="prose">
+                    <msIdentifier/>
+                    <p> Lista manuscrita, publicada em <hi rend="italic">Sensacionismo e Outros
+                            Ismos</hi> (2009, 434-438). </p>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic
+            url="bn-acpc-e-e3-133m-1-100_JPG_24-C-R0150/bn-acpc-e-e3-133m-1-100_0193_96_t24-C-R0150.jpg"/>
+        <graphic
+            url="bn-acpc-e-e3-133m-1-100_JPG_24-C-R0150/bn-acpc-e-e3-133m-1-100_0194_96v_t24-C-R0150.jpg"/>
+        <graphic
+            url="bn-acpc-e-e3-133m-1-100_JPG_24-C-R0150/bn-acpc-e-e3-133m-1-100_0195_97_t24-C-R0150.jpg"/>
+        <graphic
+            url="bn-acpc-e-e3-133m-1-100_JPG_24-C-R0150/bn-acpc-e-e3-133m-1-100_0196_97v_t24-C-R0150.jpg"/>
+        <graphic
+            url="bn-acpc-e-e3-133m-1-100_JPG_24-C-R0150/bn-acpc-e-e3-133m-1-100_0197_98_t24-C-R0150.jpg"/>
+        <graphic
+            url="bn-acpc-e-e3-133m-1-100_JPG_24-C-R0150/bn-acpc-e-e3-133m-1-100_0198_98v_t24-C-R0150.jpg"
+        />
+    </facsimile>
+    <text>
+        <body>
+            <div>
+                <list>
+                    <item>
+                        <label>1.</label> Commercial Codes: <list rend="inline">
+                            <item>3 letter code.</item>
+                            <item>5 figure code.</item>
+                            <item>Ten code.</item>
+                            <item>Elementary Code.</item>
+                        </list>
+                    </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>2.</label> Tratado de Pronuncia Ingleza. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>3.</label> Gamage, or another, or elseways: <list rend="indent">
+                            <item>Table-football.</item>
+                            <item> (<choice>
+                                    <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                                    <expan/>
+                                </choice>-cricket). </item>
+                            <item>Strategy.</item>
+                            <item>Opposition.</item>
+                            <item>(Aspects)</item>
+                            <item>Lomelino’s game.</item>
+                        </list>
+                    </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>4.</label> Lista de palavras hespanholas </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>5.</label> Compendio de Astrologia </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>6.</label> Anthologia sensacionista </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>7.</label> Livro em casa do Jayme. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>8.</label> M. Nunes da Silva: <list rend="indent">
+                            <item>Conta a pagar + 1000.</item>
+                            <item>Gramophone e discos.</item>
+                            <item>Bath, crockery, etc.</item>
+                        </list>
+                    </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>9.</label> Frank Forbes-Leith.<lb/> Manuel Gouveia de Sousa. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>10.</label> Livros que ainda tem<lb/> Da Cunha Dias.<lb/>
+                        <choice>
+                            <abbr>V<am>.</am></abbr>
+                            <expan>V<ex>ictor</ex></expan>
+                        </choice> Hugo Nunes. </item>
+                    <pb n="2"/>
+                    <item>
+                        <label>11.</label>&#x00A0;<choice>
+                            <abbr>Trad<am>.</am></abbr>
+                            <expan>Trad<ex>ucção</ex></expan>
+                        </choice> lettra romanzas (<choice>
+                            <abbr>V<am>.</am></abbr>
+                            <expan>V<ex>ictoriano</ex></expan>
+                        </choice> Braga) </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>12.</label> Phonobrachygraphia. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>13.</label> Cosmopolis (<choice>
+                            <abbr>v<am>.</am></abbr>
+                            <expan>v<ex>er</ex></expan>
+                        </choice> Caderno azul) </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>14.</label> Small book on <choice>
+                            <abbr>Sh<am>.</am></abbr>
+                            <expan>Sh<ex>akespeare</ex></expan>
+                        </choice>–Bacon.<lb/> Larger <choice>
+                            <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                            <expan>book</expan>
+                        </choice>&#x00A0;<choice>
+                            <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                            <expan>on</expan>
+                        </choice>&#x00A0;<choice>
+                            <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                            <expan>Shakespeare-</expan>
+                        </choice>&#x00A0;<choice>
+                            <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                            <expan>Bacon.</expan>
+                        </choice>
+                    </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>15.</label> Anthologia Portugueza </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>16.</label> “All About Portugal” – a<lb/> compilation (<choice>
+                            <abbr>w<am>.</am></abbr>
+                            <expan>w<ex>ith</ex></expan>
+                        </choice> possible<lb/> articles from specialists) </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>17.</label> Contos Quaresma – em livro<lb/> ou folhetos. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>18.</label>&#x00A0;<choice>
+                            <abbr>Trad<am>.</am></abbr>
+                            <expan>ucção</expan>
+                        </choice> Sonetos de Camões (inglez)<lb/> Poemas de Poe (<choice>
+                            <abbr>Port<am>.</am></abbr>
+                            <expan>Port<ex>uguez</ex></expan>
+                        </choice>)<lb/>
+                        <choice>
+                            <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                            <expan>Poemas</expan>
+                        </choice> em prosa de Wilde (<choice>
+                            <abbr>Port<am>.</am></abbr>
+                            <expan>Port<ex>uguez</ex></expan>
+                        </choice>) </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>19.</label> War poems, in English and<lb/> in French. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>20.</label> M’s rimes: Sengo has. But<lb/> examine. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>21.</label> Alvaro de Campos:<lb/> Book (perhaps <choice>
+                            <abbr>w<am>.</am></abbr>
+                            <expan>w<ex>ith</ex></expan>
+                        </choice>&#x00A0;<choice>
+                            <abbr>advts<am>.</am></abbr>
+                            <expan>adv<ex>ertisemen</ex>ts<ex>.</ex></expan>
+                        </choice>) </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>22.</label>&#x00A0;<choice>
+                            <abbr>Trad<am>.</am></abbr>
+                            <expan>Trad<ex>ucção</ex></expan>
+                        </choice> “Estudiante de Sala<pc>-</pc><lb/>manca” </item>
+                    <pb n="3"/>
+                    <item rend="indent-2">
+                        <label>23.</label>&#x00A0;<choice>
+                            <abbr>Trad<am>.</am></abbr>
+                            <expan>Trad<ex>ucção</ex></expan>
+                        </choice> “Octavio”<lb/>
+                        <choice>
+                            <abbr><metamark rend="line-44" function="ditto"/></abbr>
+                            <expan>Traducção</expan>
+                        </choice> “O Desconhecido” </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>24.</label> Contos genero “O Gramophone”<lb/>
+                        <choice>
+                            <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                            <expan>Contos genero</expan>
+                        </choice> o conto inglez do<lb/> “altro-suicida”. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>25.</label> “The Mystic Maze” charme<lb/> supposto. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>26.</label>&#x00A0;<choice>
+                            <abbr>Transl<am>.</am></abbr>
+                            <expan>Transl<ex>ate</ex></expan>
+                        </choice> books on <choice>
+                            <abbr>Mag<am>.</am></abbr>
+                            <expan>Mag<ex>ical</ex></expan>
+                        </choice> Healing, etc.<lb/> into Portuguese. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>27.</label> Handy Portuguese Dictionary. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>28.</label> Poetry Society &amp; their review. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>29.</label> Translations: <list rend="indent">
+                            <item>Shakespeare’s Works.</item>
+                            <item>Martin Hewitt.</item>
+                            <item>Constantine Dix.</item>
+                            <item>Master of Mysteries.</item>
+                            <item><choice>
+                                    <abbr>A<am>.</am></abbr>
+                                    <expan>A<ex>nna</ex></expan>
+                                </choice>&#x00A0;<choice>
+                                    <abbr>K<am>.</am></abbr>
+                                    <expan>K<ex>atherine</ex></expan>
+                                </choice> Green.</item>
+                            <item>Dr. Jekyll &amp; Mr. Hyde.</item>
+                        </list>
+                    </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>30.</label> Neo-paganismo portuguez; em<lb/>
+                        <choice>
+                            <abbr>port<am>.</am></abbr>
+                            <expan>port<ex>uguez</ex></expan>
+                        </choice>, inglez e francez. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>31.</label> Frank &amp; Cecil Palmer<lb/> (money <choice>
+                            <abbr>re<am>.</am></abbr>
+                            <expan>re<ex>garding</ex></expan>
+                        </choice> proverbs) </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>32.</label>&#x00A0;<choice>
+                            <abbr>W<am>.</am></abbr>
+                            <expan>W<ex>illiam</ex></expan>
+                        </choice> A. Bentley: <list rend="indent">
+                            <item>articles for him.</item>
+                            <item>inquiries re publishers, etc.</item>
+                            <item>introductions (?)</item>
+                        </list>
+                    </item>
+                    <pb n="4"/>
+                    <item rend="indent-2">
+                        <label>33.</label> Book on Portugal for collection<lb/> like Home <choice>
+                            <abbr>Univ<am>.</am></abbr>
+                            <expan>Univ<ex>ersity</ex></expan>
+                        </choice> Library. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>34.</label>
+                        <list rend="inline">
+                            <item>Articles on the War.</item>
+                            <item>Book on the War.</item>
+                            <item><choice>
+                                    <abbr>Port<am>.</am></abbr>
+                                    <expan>Port<ex>uguese</ex></expan>
+                                </choice> book <choice>
+                                    <abbr>re<am>.</am></abbr>
+                                    <expan>re<ex>garding</ex></expan>
+                                </choice> the War.</item>
+                        </list>
+                    </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>35.</label> “Vinho de Borba” on<lb/> “<choice>
+                            <abbr>Olig<am>.</am></abbr>
+                            <expan>Olig<ex>archia</ex></expan>
+                        </choice> das Bestas” </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>36.</label> Any use – (?)<lb/> Miss Lord – tracts, L’pool.<lb/> Mark
+                        Hyam. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>37.</label> Angelo de Lima.<lb/> Visit &amp; 2 copies “Orpheu” 2
+                        <lb/> and(?) his <choice>
+                            <abbr>M<am>.</am></abbr>
+                            <expan>M<ex>anuscripts.</ex></expan>
+                        </choice>
+                    </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>38.</label> Antares Almanac &amp; others. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>39.</label> Gomes Leal subscription<lb/> (<choice>
+                            <abbr>Ren<am>.</am></abbr>
+                            <expan>Ren<ex>ascença</ex></expan>
+                        </choice>&#x00A0;<choice>
+                            <abbr>Port<am>.</am></abbr>
+                            <expan>Port<ex>ugueza</ex></expan>
+                        </choice>) </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>40.</label>&#x00A0;<choice>
+                            <abbr>Bett<am>.</am></abbr>
+                            <expan>Bett<ex>encourt</ex></expan>
+                        </choice> Raposo’s lessons. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>41.</label>&#x00A0;<choice>
+                            <abbr>Bibl<am>.</am></abbr>
+                            <expan>Bibl<ex>iotheca</ex></expan>
+                        </choice>&#x00A0;<choice>
+                            <abbr>Nac<am>.</am></abbr>
+                            <expan>Nac<ex>ional</ex></expan>
+                        </choice> – registo “Orpheu” </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>42.</label> Cambridge Literary Agency. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>43.</label> Renascença Portugueza </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>44.</label>&#x00A0;<choice>
+                            <abbr>Refs<am>.</am></abbr>
+                            <expan>Ref<ex>erence</ex>s</expan>
+                        </choice> to “Orpheu”<lb/> Porfirio.<lb/> Camoezas. </item>
+                    <pb n="5"/>
+                    <item rend="indent-2">
+                        <label>45.</label> Procure Indian book against<lb/> Theosophy, (<choice>
+                            <abbr>v<am>.</am></abbr>
+                            <expan>v<ex>er</ex></expan>
+                        </choice> Times <choice>
+                            <abbr>L<am>.</am></abbr>
+                            <expan>L<ex>iterary</ex></expan>
+                        </choice>&#x00A0;<choice>
+                            <abbr>S<am>.</am></abbr>
+                            <expan>S<ex>upplement</ex></expan>
+                        </choice>) </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>46.</label> Camoezas: <choice>
+                            <abbr>Th<am>.</am></abbr>
+                            <expan>Th<ex>omaz</ex></expan>
+                        </choice> Pires’ books. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>47.</label> Occult: Aglaophamus (Löbeck) </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>48.</label> Photos: from <choice>
+                            <abbr>V<am>.</am></abbr>
+                            <expan>V<ex>ictoriano</ex></expan>
+                        </choice> Braga. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>49.</label> Presents for <choice>
+                            <abbr>H<am>.</am></abbr>
+                            <expan>H<ex>enriqueta</ex></expan>
+                        </choice>, Mother, &amp; boys. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>50.</label> Eden Fisher &amp; Co. – publishers <lb/> in <choice>
+                            <abbr>Eng<am>.</am></abbr>
+                            <expan>Eng<ex>lish</ex></expan>
+                        </choice> ABC code. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>51.</label> Quidde’s Caligula. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>52.</label>&#x00A0;<choice>
+                            <abbr>Rat<am>.</am></abbr>
+                            <expan>Rat<ex>ionalist</ex></expan>
+                        </choice> Press Association. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>53.</label> An <choice>
+                            <abbr>Eng<am>.</am></abbr>
+                            <expan>Eng<ex>lish</ex></expan>
+                        </choice> book like “A la manière<lb/> de...” </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>54.</label> Kellogg. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>55.</label> A small Portuguese encyclopaedia<lb/> An English
+                        litterary <supplied reason="omitted-in-original" resp="PS"/> do. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>56.</label> Ivan de Nogales – article on<lb/> sensationism. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>57.</label> Write critics <choice>
+                            <abbr>re<am>.</am></abbr>
+                            <expan>re<ex>garding</ex></expan>
+                        </choice> poems (?) </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>58.</label>&#x00A0;<choice>
+                            <abbr>Transl<am>.</am></abbr>
+                            <expan>Transl<ex>ation</ex></expan>
+                        </choice> Marinheiro into French<lb/> and English –<lb/> Maeterlinck </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <pb n="6"/>
+                    <item>
+                        <label>59.</label> D. <choice>
+                            <abbr>M<am>.</am></abbr>
+                            <expan>M<ex>ario</ex></expan>
+                        </choice>&#x00A0;<choice>
+                            <abbr>Ign<am>.</am></abbr>
+                            <expan>Ign<ex>acio</ex></expan>
+                        </choice> Sette. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>60.</label> Carlos Ferreira: opinião para o<lb/> livro sobre Rei
+                        Alberto. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>61.</label> Astrological book on War.<lb/> Raphael Baldaya. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>62.</label> “The Education of the Will” </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>63.</label> Baldaya: Doctrine of Transits. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>64.</label>&#x00A0;<choice>
+                            <abbr>Soc<am>.</am></abbr>
+                            <expan>Soc<ex>iedade</ex></expan>
+                        </choice>&#x00A0;<choice>
+                            <abbr>Astrol<am>.</am></abbr>
+                            <expan>Astrol<ex>ogica</ex></expan>
+                        </choice> Portugueza: <choice>
+                            <abbr>C</abbr>
+                            <expan>C<ex>esar </ex></expan>
+                        </choice>Porto </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>65.</label> Biliteral Cipher (for sale, <choice>
+                            <abbr>advt<am>.</am></abbr>
+                            <expan>adv<ex>ertisemen</ex>t</expan>
+                        </choice>) </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>66.</label> Scotch Millionaire scheme. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <addSpan spanTo="#A1" n="2"/>
+                    <item>
+                        <label>67.</label> Cofre forte (aluguer <choice>
+                            <abbr>Cred<am>.</am></abbr>
+                            <expan>Cred<ex>ito</ex></expan>
+                        </choice> Predial<lb/> ou <choice>
+                            <abbr>Mpio</abbr>
+                            <expan>M<ex>onte</ex>pio</expan>
+                        </choice>) </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <del rend="overstrike"><label>68.</label> Malas para manuscritos</del>
+                    </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>62.</label> Teeth. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>64.</label> Retrato Sá-Carneiro – Bustorff. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>65.</label> Papeis Sá-Carneiro em<lb/> Paris<lb/> &amp; contas José
+                        de Araujo.. </item>
+                    <metamark rend="line-44" function="end"/>
+                    <anchor xml:id="A1"/>
+                </list>
+            </div>
+        </body>
+    </text>
+</TEI>
