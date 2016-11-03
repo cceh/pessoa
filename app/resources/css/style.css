@@ -1165,6 +1165,12 @@ div.text div.item span.label {
     text-align: right;
     text-indent: 0;
 }
+div.text div.item sup {
+    vertical-align: middle;
+}
+div.text p.right {
+    text-align: right;
+}
 div.text p.indent-2 {
     text-indent: -2em;
     padding-left: 2em;
@@ -1186,6 +1192,11 @@ div.text .border {
 }
 div.text div.item.indent-2 *, div.text div.item.indent-2-label * {
     text-indent: 0;
+}
+div.text span.note.circled {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px;
 }
 div.text span.note.margin-right {
     display: inline-block;

@@ -104,7 +104,7 @@
         <span>
             <xsl:choose>
                 <xsl:when test="following-sibling::*[1][name() = 'list']">
-                    <xsl:attribute name="class">label inline</xsl:attribute>
+                    <xsl:attribute name="class"><xsl:value-of select="string-join(('label','inline',@rend),' ')"/></xsl:attribute>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:attribute name="class">label</xsl:attribute>
@@ -250,7 +250,7 @@
     </xsl:template>
 
     <!-- Space -->
-    <xsl:template match="metamark[@rend = 'space'][@function = 'distinct'][parent::item]"
+    <xsl:template match="metamark[@rend = 'space'][@function = 'distinct'][parent::item or parent::head]"
         mode="#default deletion addition"> &#x2003; </xsl:template>
     <xsl:template
         match="metamark[@rend = 'space'][@function = 'distinct'][parent::list | parent::div]"
@@ -322,6 +322,15 @@
         <div class="note center">
             <xsl:apply-templates/>
         </div>
+    </xsl:template>
+    
+    <xsl:template match="note[@type='addition'][not(@place)][ancestor::item]" mode="#default deletion addition">
+        <span>
+            <xsl:if test="@rend">
+                <xsl:attribute name="class" select="concat('note ', @rend)"/>
+            </xsl:if>
+            <xsl:apply-templates/>
+        </span>
     </xsl:template>
     
     <xsl:template name="note-margin-right">
