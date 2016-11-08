@@ -107,7 +107,7 @@
                     <xsl:attribute name="class"><xsl:value-of select="string-join(('label','inline',@rend),' ')"/></xsl:attribute>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:attribute name="class">label</xsl:attribute>
+                    <xsl:attribute name="class"><xsl:value-of select="string-join(('label',@rend),' ')"/></xsl:attribute>
                 </xsl:otherwise>
             </xsl:choose>
             <xsl:apply-templates/>
@@ -349,16 +349,22 @@
     </xsl:template>
     
     <xsl:template name="note-margin-left">
-        <span class="note margin-left">
-            <xsl:if test="@target[contains(., 'range')]">
-                <xsl:variable name="target" select="@target"/>
-                <xsl:variable name="items"
-                    select="tokenize(substring-before(substring-after($target, 'range('), ')'), ',')"/>
-                <xsl:variable name="range"
-                    select="number(substring-after($items[2], 'I')) - number(substring-after($items[1], 'I')) + 1"/>
-                <xsl:attribute name="style"> top: -<xsl:value-of select="$range"/>em;
-                </xsl:attribute>
-            </xsl:if>
+        <span>
+            <xsl:choose>
+                <xsl:when test="@target[contains(., 'range')]">
+                    <xsl:variable name="target" select="@target"/>
+                    <xsl:variable name="items"
+                        select="tokenize(substring-before(substring-after($target, 'range('), ')'), ',')"/>
+                    <xsl:variable name="range"
+                        select="number(substring-after($items[2], 'I')) - number(substring-after($items[1], 'I')) + 1"/>
+                    <xsl:attribute name="style"> top: -<xsl:value-of select="$range"/>em;
+                    </xsl:attribute>
+                    <xsl:attribute name="class">note margin-left range</xsl:attribute>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:attribute name="class">note margin-left</xsl:attribute>
+                </xsl:otherwise>
+            </xsl:choose>
             <xsl:apply-templates/>
         </span>
     </xsl:template>

@@ -1121,6 +1121,11 @@ div.text div.list.inline, div.text div.list div.list.inline {
 div.text div.list.inline div.item:first-child {
     margin-top: 0;
 }
+div.text div.list.inline div.item.inline{
+    display: inline-block;
+    margin: 0;
+    text-indent: 0;
+}
 div.text span.label.inline {
     display: inline-block;
     vertical-align: top;
@@ -1134,7 +1139,7 @@ div.text div.list div.list {
 div.text div.item {
     margin: 0.5em 0;
     position: relative;
-    text-indent: 0em;
+    text-indent: 0;
 }
 div.text div.item > * {
     vertical-align: top;
@@ -1164,6 +1169,7 @@ div.text div.item span.label {
     min-width: 2em;
     text-align: right;
     text-indent: 0;
+    position: relative;
 }
 div.text div.item sup {
     vertical-align: middle;
@@ -1198,6 +1204,19 @@ div.text span.note.circled {
     border-radius: 10px;
     padding: 5px;
 }
+div.text span.label.circled {
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 0 4px;
+    position: relative;
+    top: -1px;
+}
+div.text span.label.framed {
+    border: 1px solid black;
+    padding: 0 4px;
+    position: relative;
+    top: -1px;
+}
 div.text span.note.margin-right {
     display: inline-block;
     position: absolute;
@@ -1210,12 +1229,18 @@ div.text span.note.margin-right {
 div.text div.list.inline span.note.margin-right {
     right: -100px;
 }
-div.text div.item span.note.margin-left {
+div.text div.item span.note.margin-left.range {
     position: absolute;
     left: -6em;
     line-height: normal;
     white-space: nowrap;
     top: 0.3em;
+}
+div.text div.item span.note.margin-left {
+    position: absolute;
+    left: 0;
+    line-height: normal;
+    white-space: nowrap;
 }
 div.text > span.note.margin-left {
     display: inline-block;
