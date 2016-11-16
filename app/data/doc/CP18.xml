@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>MN 204</title>
+            <title>CP 18</title>
             <author>
                <rs type="person" key="FP">Fernando Pessoa</rs>
             </author>
@@ -21,6 +21,10 @@
                <name>Sviatoslav Drach</name>
             </respStmt>
             <respStmt>
+               <resp>Codificação</resp>
+               <name>Ana Leonor Branco</name>
+            </respStmt>
+            <respStmt>
                <resp>Consultoria</resp>
                <name>Institut für Dokumentologie und Editorik (IDE)</name>
             </respStmt>
@@ -33,13 +37,13 @@
             <availability>
                <licence target="http://creativecommons.org/licenses/by/3.0/"/>
             </availability>
-            <idno type="filename">MN204.xml</idno>
+            <idno type="filename">CP18.xml</idno>
          </publicationStmt>
          <sourceDesc>
             <msDesc xml:id="M1" type="structured">
                <msIdentifier>
-                  <institution>Biblioteca Nacional de Portugal</institution>
-                  <idno>MN 204</idno>
+                  <institution>Espolio Manuela Nogueira</institution>
+                  <idno>CP18</idno>
                </msIdentifier>
                <msContents>
                   <msItemStruct>
@@ -48,15 +52,14 @@
                      </author>
                      <note type="genre">
                         <rs type="genre" key="lista_editorial">Lista editorial</rs>
-                        <rs type="genre" key="plano_editorial">Plano editorial</rs>
                      </note>
-                     <textLang mainLang="en"/>
+                     <textLang mainLang="pt" otherLangs="en fr"/>
                   </msItemStruct>
                </msContents>
                <history>
                   <origin>
                      <p>
-                        <origDate from="1917" cert="medium">c. 1917</origDate>
+                        <origDate from="1933" to="1935" cert="medium">c. 1933-1935</origDate>
                      </p>
                   </origin>
                </history>
@@ -69,41 +72,29 @@
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="Espolio Manuela Nogueira (MN)/avulsos (204).jpg"/>
+      <graphic url="Espolio Manuela Nogueira (MN)/avulsos (18).jpg"/>
    </facsimile>
    <text>
       <body>
          <div>
-            <head rend="center">
-               <hi rend="underline">Division.</hi>
+            <head>
+               <hi rend="underline">Cartas criticas a:</hi>
             </head>
-            <gap reason="selection" unit="line" extent="5"/>
             <list>
-               <item rend="indent-2">
-                  <label>1.</label>&#x00A0;<rs type="text">Antinous</rs><lb/> — <hi rend="underline"
-                     >Lyrics:</hi>&#x00A0;<hi rend="underline">Island</hi> type.</item>
-               <item rend="indent-2">
-                  <label>2.</label>&#x00A0;<rs type="text">Divineness.</rs><lb/> — <hi
-                     rend="underline">Lyrics:</hi> Mixed Kind.</item>
-               <item rend="indent-2">
-                  <label>3.</label>&#x00A0;<rs type="text">Prayer to a Fair Body.</rs><lb/> — <hi
-                     rend="underline">Lyrics:</hi> Religious Type.</item>
-               <item rend="indent-2">
-                  <label>4.</label>&#x00A0;<rs type="text">Epithalamium.</rs><lb/> — <hi
-                     rend="underline">Sonnets</hi> (30 to 50, 30 better)</item>
-               <item rend="indent-2">
-                  <label>5.</label>&#x00A0;<rs type="text">Spring</rs>, 1917.</item>
-            </list>
-            <metamark rend="line-44" function="distinct"/>
-            <gap reason="selection" unit="line" extent="8"/>
-            <pb n="2"/>
-            <gap reason="selection" unit="line" extent="9"/>
-            <list>
-               <item>Lamp-Work — Stul.</item>
-               <item>Agencies for Songs (AKP).</item>
-               <item>Letters for chemical far.</item>
-               <item>Translations: <rs type="person" key="P87">Poe</rs> + Anc. <gap
-                     reason="illegible" unit="word" extent="1"/></item>
+               <item><rs type="person" key="P225">José Regio</rs>.</item>
+               <item><rs type="person" key="P226">João Gaspar Simões</rs>.</item>
+               <item><rs type="person" key="P227">Branquinho da Fonseca</rs>.</item>
+               <item><rs type="person" key="P228">Adolpho Casaes Monteiro</rs>.</item>
+               <item><rs type="person" key="P229">Alberto da Serpa</rs>.</item>
+               <item><rs type="person" key="P230">Arthur Augusto</rs>.</item>
+               <item><rs type="person" key="P231">Marques Mathias</rs>.</item>
+               <item><rs type="person" key="P232">Manuel Anselmo</rs>.</item>
+               <item><rs type="person" key="P233">Francisco Leão</rs>.</item>
+               <metamark rend="line-14" function="distinct"/>
+               <item>
+                  <rs type="person" key="P234">Vitorino Nemesio</rs>
+               </item>
+               <metamark rend="line-14" function="end"/>
             </list>
          </div>
       </body>

@@ -1,20 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?> 
+<?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>MN 909</title>
+            <title>CP 818</title>
             <author>
                <rs type="person" key="FP">Fernando Pessoa</rs>
             </author>
             <respStmt>
                <resp>Transcrição, Edição</resp>
                <name>Pedro Sepúlveda</name>
-            </respStmt>
-            <respStmt>
-               <resp>Transcrição</resp>
-               <name>Pablo Javier Pérez López</name>
             </respStmt>
             <respStmt>
                <resp>Codificação, Modelagem de dados</resp>
@@ -37,17 +33,17 @@
             <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
                (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
-            <date>2016</date>
+            <date>2017</date>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/3.0/"/>
             </availability>
-            <idno type="filename">MN909.xml</idno>
+            <idno type="filename">CP818.xml</idno>
          </publicationStmt>
          <sourceDesc>
             <msDesc xml:id="M1" type="structured">
                <msIdentifier>
-                  <institution/>
-                  <idno>MN 909</idno>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>CP 818</idno>
                </msIdentifier>
                <msContents>
                   <msItemStruct>
@@ -57,64 +53,35 @@
                      <note type="genre">
                         <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
-                     <textLang mainLang="pt" otherLangs="en"/>
+                     <textLang mainLang="pt"/>
                   </msItemStruct>
                </msContents>
                <history>
                   <origin>
                      <p>
-                        <origDate when="1930" cert="medium">c. 1930</origDate>
+                        <origDate from="1913" cert="medium">c. 1913</origDate>
                      </p>
                   </origin>
                </history>
             </msDesc>
             <msDesc corresp="#M1" type="prose">
                <msIdentifier/>
-               <p> Lista manuscrita, publicada em <hi rend="italic">Livro do Desasocego</hi> (2010,
-                  537). </p>
+               <p>Lista manuscrita.</p>
             </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="Bilder MN 808_265_908_909 und 677-678/avulsos (909).jpg"/>
+      <graphic url="Espolio Manuela Nogueira (MN)/avulsos (818).jpg"/>
    </facsimile>
    <text>
       <body>
          <div>
             <list>
-               <item><rs type="text">Theoria do <choice>
-                        <abbr>Suffr<am>.</am></abbr>
-                        <expan>Suffr<ex>agio</ex></expan>
-                     </choice> Politico</rs>. </item>
-               <item><rs type="text">Politica Economica</rs>.</item>
-            </list>
-            <metamark rend="line" function="distinct"/>
-            <list>
-               <item><rs type="text">Banqueiro Anarchista</rs> (<choice>
-                     <abbr>ingl</abbr>
-                     <expan>ingl<ex>ez</ex></expan>
-                  </choice> e<lb/>
-                  <choice>
-                     <abbr>fr</abbr>
-                     <expan>fr<ex>ancez</ex></expan>
-                  </choice>) </item>
-            </list>
-            <metamark rend="line" function="distinct"/>
-            <list>
-               <item><rs type="text">Erostratus</rs>.</item>
-               <item><rs type="text">Livro da Lili</rs>.</item>
-               <item><rs type="text"><rs type="person" key="P32">Oscar Wilde</rs></rs> (<rs
-                     type="person" key="P17"><choice>
-                        <abbr>A</abbr>
-                        <expan>A<ex>ntonio</ex></expan>
-                     </choice><choice>
-                        <abbr>B</abbr>
-                        <expan>B<ex>otto</ex></expan>
-                     </choice></rs> preface re<pc>-</pc><lb/>modelled) </item>
-               <item><rs type="text">Portugal</rs>.</item>
-               <item><rs type="work" key="O1" style="bc"><rs type="text">Cancioneiro (ou
-                        Itinerario)</rs></rs>.</item>
+               <item rend="indent-2"><label><hi rend="underline">Livro de Prosa</hi>:</label><lb/>
+                  <rs type="work" key="O1-13"><rs type="text">Episodios</rs></rs>.</item>
+               <item rend="indent-2"><label><hi rend="underline">Livro de Versos</hi>:</label><lb/>
+                  <rs type="text">Intervallos</rs></item>
             </list>
          </div>
       </body>

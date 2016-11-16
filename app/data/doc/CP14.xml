@@ -1,16 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?> 
 <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>MN 818</title>
+            <title>CP 14</title>
             <author>
                <rs type="person" key="FP">Fernando Pessoa</rs>
             </author>
             <respStmt>
                <resp>Transcrição, Edição</resp>
                <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Transcrição</resp>
+               <name>Pablo Javier Pérez López</name>
             </respStmt>
             <respStmt>
                <resp>Codificação, Modelagem de dados</resp>
@@ -33,55 +37,71 @@
             <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
                (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
-            <date>2017</date>
+            <date>2016</date>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/3.0/"/>
             </availability>
-            <idno type="filename">MN818.xml</idno>
+            <idno type="filename">CP14.xml</idno>
          </publicationStmt>
          <sourceDesc>
             <msDesc xml:id="M1" type="structured">
                <msIdentifier>
-                  <institution>Biblioteca Nacional de Portugal</institution>
-                  <idno>MN 818</idno>
+                  <institution/>
+                  <idno>CP 14</idno>
                </msIdentifier>
                <msContents>
                   <msItemStruct>
-                     <author>
-                        <rs type="person" key="FP">Fernando Pessoa</rs>
-                     </author>
+                     <author><rs type="person" key="FP">Fernando Pessoa</rs></author>
                      <note type="genre">
                         <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
-                     <textLang mainLang="pt"/>
+                     <textLang mainLang="pt" otherLangs="en"/>
                   </msItemStruct>
                </msContents>
                <history>
                   <origin>
                      <p>
-                        <origDate from="1913" cert="medium">c. 1913</origDate>
+                        <origDate when="1929" cert="medium">c. 1929</origDate>
                      </p>
                   </origin>
                </history>
             </msDesc>
             <msDesc corresp="#M1" type="prose">
                <msIdentifier/>
-               <p>Lista manuscrita.</p>
+               <p> Lista datilografada, publicada em <hi rend="italic">A Educação do Stoico</hi>
+                  (2007, 61-62). </p>
             </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="Espolio Manuela Nogueira (MN)/avulsos (818).jpg"/>
+      <graphic url="Bilder MN 14_246_602 und 786/avulsos (14).jpg"/>
    </facsimile>
    <text>
       <body>
          <div>
             <list>
-               <item rend="indent-2"><label><hi rend="underline">Livro de Prosa</hi>:</label><lb/>
-                  <rs type="work" key="O1-13"><rs type="text">Episodios</rs></rs>.</item>
-               <item rend="indent-2"><label><hi rend="underline">Livro de Versos</hi>:</label><lb/>
-                  <rs type="text">Intervallos</rs></item>
+               <item><rs type="text">O Banqueiro Anarchista</rs>.</item>
+               <item><rs type="text">A Tomada do Monte Velho</rs>.</item>
+               <item><rs type="text">A Despedida do Caixa</rs>.</item>
+               <item><rs type="text">O Beijo na Florinda</rs>.</item>
+               <item><rs type="text">O Marinheiro</rs>.</item>
+               <item><rs type="text">A Morte do Principe</rs>.</item>
+               <item><rs type="text">Sakyamuni</rs>.</item>
+               <item><rs type="text">Passos da Cruz, drama em 14 scenas</rs>.</item>
+               <item><rs type="text">Livro do Desasocego</rs>.</item>
+               <item><rs type="work" key="O1" style="b"><rs type="text">Cancioneiro; em
+                     partes</rs></rs>.</item>
+               <item><rs type="text">Portugal</rs>.</item>
+               <item><rs type="text">O Interregno</rs>.</item>
+               <item><rs type="text">Erostratus, or the Future of Celebrity</rs></item>
+               <item><rs type="text">Anteros, or the Future of Affection</rs>.</item>
+               <item><rs type="text">Saturn, or the Future of the Past</rs>.</item>
+               <item><rs type="text">Auto do Circo</rs>.</item>
+               <item><rs type="text">O Caso Vargas</rs>.</item>
+               <item><rs type="text">Theoria do Suffragio Politico</rs>.</item>
+               <item><rs type="text">The Foundations of Conservatism</rs>.</item>
+               <item>O Unico Manuscripto .........</item>
             </list>
          </div>
       </body>

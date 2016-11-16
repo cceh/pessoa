@@ -4,7 +4,7 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>MN 14</title>
+            <title>CP 909</title>
             <author>
                <rs type="person" key="FP">Fernando Pessoa</rs>
             </author>
@@ -41,17 +41,19 @@
             <availability>
                <licence target="http://creativecommons.org/licenses/by/3.0/"/>
             </availability>
-            <idno type="filename">MN14.xml</idno>
+            <idno type="filename">CP909.xml</idno>
          </publicationStmt>
          <sourceDesc>
             <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution/>
-                  <idno>MN 14</idno>
+                  <idno>CP 909</idno>
                </msIdentifier>
                <msContents>
                   <msItemStruct>
-                     <author><rs type="person" key="FP">Fernando Pessoa</rs></author>
+                     <author>
+                        <rs type="person" key="FP">Fernando Pessoa</rs>
+                     </author>
                      <note type="genre">
                         <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
@@ -61,47 +63,58 @@
                <history>
                   <origin>
                      <p>
-                        <origDate when="1929" cert="medium">c. 1929</origDate>
+                        <origDate when="1930" cert="medium">c. 1930</origDate>
                      </p>
                   </origin>
                </history>
             </msDesc>
             <msDesc corresp="#M1" type="prose">
                <msIdentifier/>
-               <p> Lista datilografada, publicada em <hi rend="italic">A Educação do Stoico</hi>
-                  (2007, 61-62). </p>
+               <p> Lista manuscrita, publicada em <hi rend="italic">Livro do Desasocego</hi> (2010,
+                  537). </p>
             </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
    <facsimile>
-      <graphic url="Bilder MN 14_246_602 und 786/avulsos (14).jpg"/>
+      <graphic url="Bilder MN 808_265_908_909 und 677-678/avulsos (909).jpg"/>
    </facsimile>
    <text>
       <body>
          <div>
             <list>
-               <item><rs type="text">O Banqueiro Anarchista</rs>.</item>
-               <item><rs type="text">A Tomada do Monte Velho</rs>.</item>
-               <item><rs type="text">A Despedida do Caixa</rs>.</item>
-               <item><rs type="text">O Beijo na Florinda</rs>.</item>
-               <item><rs type="text">O Marinheiro</rs>.</item>
-               <item><rs type="text">A Morte do Principe</rs>.</item>
-               <item><rs type="text">Sakyamuni</rs>.</item>
-               <item><rs type="text">Passos da Cruz, drama em 14 scenas</rs>.</item>
-               <item><rs type="text">Livro do Desasocego</rs>.</item>
-               <item><rs type="work" key="O1" style="b"><rs type="text">Cancioneiro; em
-                     partes</rs></rs>.</item>
+               <item><rs type="text">Theoria do <choice>
+                        <abbr>Suffr<am>.</am></abbr>
+                        <expan>Suffr<ex>agio</ex></expan>
+                     </choice> Politico</rs>. </item>
+               <item><rs type="text">Politica Economica</rs>.</item>
+            </list>
+            <metamark rend="line" function="distinct"/>
+            <list>
+               <item><rs type="text">Banqueiro Anarchista</rs> (<choice>
+                     <abbr>ingl</abbr>
+                     <expan>ingl<ex>ez</ex></expan>
+                  </choice> e<lb/>
+                  <choice>
+                     <abbr>fr</abbr>
+                     <expan>fr<ex>ancez</ex></expan>
+                  </choice>) </item>
+            </list>
+            <metamark rend="line" function="distinct"/>
+            <list>
+               <item><rs type="text">Erostratus</rs>.</item>
+               <item><rs type="text">Livro da Lili</rs>.</item>
+               <item><rs type="text"><rs type="person" key="P32">Oscar Wilde</rs></rs> (<rs
+                     type="person" key="P17"><choice>
+                        <abbr>A</abbr>
+                        <expan>A<ex>ntonio</ex></expan>
+                     </choice><choice>
+                        <abbr>B</abbr>
+                        <expan>B<ex>otto</ex></expan>
+                     </choice></rs> preface re<pc>-</pc><lb/>modelled) </item>
                <item><rs type="text">Portugal</rs>.</item>
-               <item><rs type="text">O Interregno</rs>.</item>
-               <item><rs type="text">Erostratus, or the Future of Celebrity</rs></item>
-               <item><rs type="text">Anteros, or the Future of Affection</rs>.</item>
-               <item><rs type="text">Saturn, or the Future of the Past</rs>.</item>
-               <item><rs type="text">Auto do Circo</rs>.</item>
-               <item><rs type="text">O Caso Vargas</rs>.</item>
-               <item><rs type="text">Theoria do Suffragio Politico</rs>.</item>
-               <item><rs type="text">The Foundations of Conservatism</rs>.</item>
-               <item>O Unico Manuscripto .........</item>
+               <item><rs type="work" key="O1" style="bc"><rs type="text">Cancioneiro (ou
+                        Itinerario)</rs></rs>.</item>
             </list>
          </div>
       </body>
