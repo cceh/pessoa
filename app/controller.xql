@@ -308,7 +308,7 @@ else if(contains($exist:path, "download")) then
     else if ( not(contains(substring-after($exist:path,"pessoa/"),"/")) and not(contains($exist:resource,".")) ) then
     
     (: ( (not(contains($exist:path,"pub")) or not(contains($exist:path,"doc")) or not(contains($exist:path,"resources")) or not(contains($exist:path,"page")) ) (: and search:singleDocument($exist:resource) = fn:true() :)) then 
-   :) if( contains($exist:resource,"MN") or contains($exist:resource,"BNP")) then 
+   :) if( contains($exist:resource,"CP") or contains($exist:resource,"BNP")) then 
     let $id := $exist:resource
     return 
      (session:set-attribute("id", $id), 

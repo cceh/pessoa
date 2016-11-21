@@ -62,7 +62,7 @@ declare function index:collectGenre($node as node(), $model as map(*),$type as x
                                         let $refer := substring-before(root($doc)/util:document-name(.),".xml") 
                                         let $first := if($fold eq "doc") then (
                                                             if(substring($doc//tei:titleStmt/tei:title/data(.),1,1) eq "B") then "BNP"
-                                                            else "MN"
+                                                            else "CP"
                                                             )
                                                             else substring($doc//tei:titleStmt/tei:title/data(.),1,1)                     
                                        let $crit := if ($orderBy = "alphab") then $first else $date
@@ -226,10 +226,10 @@ declare function index:ScanDB($node as node(), $model as map(*)) {
     
     let $res := for $doc in $docs
                                 let $cota := ($doc//tei:title)[1]/data(.)
-                          (:     let $cota2 := if(contains($cota,"-")) then replace(substring-before($cota,"-"), "(BNP/E3|MN)\s?([0-9]+)([^0-9]+.*)?", "$2")
-                                                        else replace($cota, "(BNP/E3|MN)\s?([0-9]+)([^0-9]+.*)?", "$2")
+                          (:     let $cota2 := if(contains($cota,"-")) then replace(substring-before($cota,"-"), "(BNP/E3|CP)\s?([0-9]+)([^0-9]+.*)?", "$2")
+                                                        else replace($cota, "(BNP/E3|CP)\s?([0-9]+)([^0-9]+.*)?", "$2")
                                       :)                  
-                                order by xs:integer(replace($cota, "(BNP/E3|MN)\s?([0-9]+)([^0-9]+.*)?", "$2"))
+                                order by xs:integer(replace($cota, "(BNP/E3|CP)\s?([0-9]+)([^0-9]+.*)?", "$2"))
                                 return substring-before(root($doc)/util:document-name(.),".xml") 
     
     return map {
