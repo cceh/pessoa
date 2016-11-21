@@ -112,7 +112,7 @@ declare function page:createContent($type as xs:string) as node()* {
 
 declare function page:createThirdNav($type as xs:string) as node()* {
     if($type ="documentos") then
-        for $nr in ("1-9", "10","20","30","40","50","60","70","80","90","100","MN")
+        for $nr in ("1-9", "10","20","30","40","50","60","70","80","90","100","CP")
         return if( $nr != "1-9") then <li  class="{concat("nav_",$type,"_tab")}" id="navtab_{$type}_sub_{$nr}">
             {$nr}
             </li>
@@ -149,7 +149,7 @@ declare function page:createThirdNav($type as xs:string) as node()* {
 };
 
 declare function page:createThirdNavTab($type as xs:string) as node()* {
-   if ($type = "documentos") then for $indikator in ("1-9", "10","20","30","40","50","60","70","80","90","100","MN") return
+   if ($type = "documentos") then for $indikator in ("1-9", "10","20","30","40","50","60","70","80","90","100","CP") return
           <div  id="{concat("nav_",$type,"_sub_",$indikator)}" style="display:none"> 
             <ul class="nav_sub_tabs">
             {page:createThirdNavContent($type,$indikator)}
@@ -187,7 +187,7 @@ declare function page:createThirdNavContent($type as xs:string, $indikator as xs
                     then <span class="doc_superscript">{$elem/node()/data(.)}</span> 
                 else (
                     if(contains($elem,"BNP/E3")) then replace($elem,"BNP/E3 ","") 
-                    else if(contains($elem,"MN")) then replace($elem,"MN ","") 
+                    else if(contains($elem,"CP")) then replace($elem,"CP ","") 
                     else $elem 
                     )
          let $title := ($title,<span class="doc_superscript"/>)
@@ -266,15 +266,15 @@ declare function page:createItem($type as xs:string, $indikator as xs:string?) a
    else if($type = "documentos") 
         then for $hit in xmldb:get-child-resources("/db/apps/pessoa/data/doc")
             let $label :=   if(substring-after($hit, "BNP_E3_") != "") then substring-after(replace(substring-before($hit, ".xml"), "_", " "), "BNP E3 ")
-                            else if(substring-after($hit,"MN") != "") then  substring-after(substring-before($hit, ".xml"),"MN")
+                            else if(substring-after($hit,"CP") != "") then  substring-after(substring-before($hit, ".xml"),"CP")
                             else ()
                 (:let $title := substring-after(doc(concat("/db/apps/pessoa/data/doc/",$hit))//tei:titleStmt/tei:title/data(.)," "):)
                 let $title :=  $hit (:doc(concat("/db/apps/pessoa/data/doc/",$hit))//tei:titleStmt/tei:title :)  (:for $elem in doc(concat("/db/apps/pessoa/data/doc/",$hit))//tei:titleStmt/tei:title/node() return if(exists($elem/node())) then <span class="doc_superscript">{$elem/node()/data(.)}</span> else $elem
                 :)let $ref := concat($helpers:app-root,'/',$helpers:web-language, "/doc/", substring-before($hit, ".xml"))         
                       order by $hit 
-                      return if( $indikator !="1-9" and page:getCorrectDoc($label, $indikator) = xs:boolean("true") and $indikator != "MN" and contains($hit,"BNP")) then
+                      return if( $indikator !="1-9" and page:getCorrectDoc($label, $indikator) = xs:boolean("true") and $indikator != "CP" and contains($hit,"BNP")) then
                       <item label="{$title}" ref="{$ref}"  />
-                      else if ($indikator = "MN" and contains($hit,"MN")) then <item label="{$title}" ref="{$ref}"  />
+                      else if ($indikator = "CP" and contains($hit,"CP")) then <item label="{$title}" ref="{$ref}"  />
                       else if($indikator = "1-9" and page:getCorretDoc_alphabetical($label,2) = xs:boolean("true")) then <item label="{$title}" ref="{$ref}"  />
                       else ()
    else if($type = "cronologia")
@@ -285,11 +285,11 @@ declare function page:createItem($type as xs:string, $indikator as xs:string?) a
                 for $hit in $result
                     let $label := if(substring-after(root($hit)/util:document-name(.), "BNP") != "") then 
                                     substring-after(replace(substring-before(root($hit)/util:document-name(.), ".xml"), "_", " "), "E3")
-                                  else if(substring-after(root($hit)/util:document-name(.),"MN") != "") then 
-                                    substring-after(replace(substring-before(root($hit)/util:document-name(.), ".xml"), "_", " "), "MN")
+                                  else if(substring-after(root($hit)/util:document-name(.),"CP") != "") then 
+                                    substring-after(replace(substring-before(root($hit)/util:document-name(.), ".xml"), "_", " "), "CP")
                                   else if(page:clearPublikation($hit) != "") then page:clearPublikation($hit) 
                                   else ()
-                    let $ref := if(substring-after(root($hit)/util:document-name(.),"BNP")!= "" or substring-after(root($hit)/util:document-name(.),"MN")!= "") 
+                    let $ref := if(substring-after(root($hit)/util:document-name(.),"BNP")!= "" or substring-after(root($hit)/util:document-name(.),"CP")!= "") 
                     then  concat($helpers:app-root,'/',$helpers:web-language, "/doc/", substring-before(root($hit)/util:document-name(.), ".xml"))
                     else concat($helpers:app-root,'/',$helpers:web-language, "/pub/", substring-before(root($hit)/util:document-name(.), ".xml"))
                 return <item label="{$label}" ref="{$ref}"/>

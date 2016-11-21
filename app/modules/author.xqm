@@ -72,7 +72,7 @@ declare function author:getTabContent($node as node(), $model as map(*), $textTy
                                         let $refer := substring-before(root($doc)/util:document-name(.),".xml") 
                                         let $first := if($fold eq "doc") then (
                                                             if(substring($doc//tei:titleStmt/tei:title/data(.),1,1) eq "B") then "BNP"
-                                                            else "MN"
+                                                            else "CP"
                                                             )
                                                             else substring($doc//tei:titleStmt/tei:title/data(.),1,1)                     
                                        let $crit := if ($orderBy = "alphab") then $first else $date
@@ -119,12 +119,12 @@ declare function author:formatDocID($id){
         let $diff := 4-$length
         let $newNumber := fn:concat(fn:substring("0000",0,$diff),$numPart)
         return fn:concat("BNP_E3_",$newNumber, fn:substring-after($id,$numPart))
-    else if(fn:starts-with($id,"MN")) then
-        let $numPart := if (fn:contains($id,"-")) then fn:substring-after(fn:substring-before($id,"-"),"MN") else fn:substring-after(fn:substring-before($id,".xml"),"MN")
+    else if(fn:starts-with($id,"CP")) then
+        let $numPart := if (fn:contains($id,"-")) then fn:substring-after(fn:substring-before($id,"-"),"CP") else fn:substring-after(fn:substring-before($id,".xml"),"CP")
         let $length := fn:string-length($numPart)
         let $diff := 4-$length
         let $newNumber := fn:concat(fn:substring("0000",0,$diff),$numPart)
-        return fn:concat("MN",$newNumber, fn:substring-after($id,$numPart))
+        return fn:concat("CP",$newNumber, fn:substring-after($id,$numPart))
     else $id 
 };
 

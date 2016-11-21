@@ -122,7 +122,7 @@ declare function doc:get-genre($node as node(), $model as map(*), $type as xs:st
         let $docsInYear :=  
             for $doc in $docs where(fn:substring(author:getYearOrTitle($doc,$orderBy),0,$i) = $year) return $doc
     order by $year       
-    return (<div class="sub_Nav"><h2 id="{$year}">{if ($year = "B") then "BNP" else if ($year = "M") then "MN" else if ($year = "?") then "?" else $year}</h2></div>,
+    return (<div class="sub_Nav"><h2 id="{$year}">{if ($year = "B") then "BNP" else if ($year = "M") then "CP" else if ($year = "?") then "?" else $year}</h2></div>,
      for $doc in $docsInYear 
      order by (author:getYearOrTitle($doc,$orderBy))
      return
@@ -137,7 +137,7 @@ declare function doc:getNavigation($years, $type){
     return 
     if ($year = 'B') then "BNP"
     else
-    if($year = 'M') then "MN"
+    if($year = 'M') then "CP"
     else
     $year
     return
@@ -205,7 +205,7 @@ declare function doc:get-xml($id){
 
 
 declare %templates:wrap function doc:docControll($node as node(), $model as map(*), $id as xs:string) {
-      let $libary := if(contains($helpers:request-path,"BNP") or contains($helpers:request-path,"MN")) then "doc" 
+      let $libary := if(contains($helpers:request-path,"BNP") or contains($helpers:request-path,"CP")) then "doc" 
                          else "pub"
                 
    let $db := if($libary = "doc") then  collection("/db/apps/pessoa/data/doc") else collection("/db/apps/pessoa/data/pub")
@@ -465,7 +465,7 @@ declare function doc:getDocsForPerson($item){
     where if ($lists//tei:listPerson/tei:person[tei:persName = $item][tei:persName[2]]) 
           then $doc[.//tei:text//tei:rs[@type="person"][@key = $lists//tei:listPerson/tei:person[tei:persName = $item]/@xml:id][@style = $lists//tei:listPerson/tei:person/tei:persName[. = $item]/@type]]
           else true()
-    order by xs:integer(replace($cota, "(BNP/E3|MN)\s?([0-9]+)([^0-9]+.*)?", "$2"))
+    order by xs:integer(replace($cota, "(BNP/E3|CP)\s?([0-9]+)([^0-9]+.*)?", "$2"))
     return 
         <li class="indexDoc" id="{$cota}">
           <a style="color: #08298A;" href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{$cota}</a>

@@ -77,7 +77,7 @@ declare function app:checkDocuments($node as node(), $model as map(*)) {
     let $document := $model("doc")
     let $doc := root($document)/util:document-name(.)
     let $valid := if(app:validate($document)) then <b style="color:green">Valid</b> else <b style="color:red">Not Valid</b>
-    let $date := if(contains($doc,"BNP") or contains($doc,"MN")) then app:checkDateDoc($document) else app:checkDatePub($document)
+    let $date := if(contains($doc,"BNP") or contains($doc,"CP")) then app:checkDateDoc($document) else app:checkDatePub($document)
     let $dateout := if(not(contains($date/@check, "false")) ) then <u style="color:green">{$date/@date/data(.)} | {$date/@att/data(.)}</u> else <u style="color:red">{$date/@date/data(.)} | {$date/@att/data(.)}</u>
     let $clear := validation:clear-grammar-cache()
     return map {
