@@ -62,6 +62,64 @@
     </xsl:template>
     
     
+    <!-- einzublendende Pfeile -->
+    <xsl:template match="metamark[@rend='arrow-right-curved-up'][@n='2']" mode="#default deletion addition">
+        <span id="{@xml:id}" class="anchor invisible">x</span>
+    </xsl:template>
+    
+    <xsl:template match="metamark[@rend='arrow-right-curved-down'][@n='2']" mode="#default deletion addition">
+        <span id="{@xml:id}" class="anchor invisible">x</span>
+        <script type="text/javascript">
+            window.onload = function(){
+                var el1 = document.getElementById('<xsl:value-of select="@xml:id"/>');
+                var el2 = document.getElementById('<xsl:value-of select="@target"/>');
+                
+                var scrollX = window.pageXOffset;
+                var scrollY = window.pageYOffset;
+                
+                var rect1 = el1.getBoundingClientRect();
+                var rect2 = el2.getBoundingClientRect();
+                
+                var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                var svgNS = svg.namespaceURI;
+                
+                var defs = document.createElementNS(svgNS, 'defs');
+                var marker = document.createElementNS(svgNS, 'marker');
+                marker.setAttribute('id', 'arr1');
+                marker.setAttribute('viewBox', '0 0 10 10');
+                marker.setAttribute('refX', '0');
+                marker.setAttribute('refY', '5');
+                marker.setAttribute('markerUnits', 'strokeWidth');
+                marker.setAttribute('markerWidth', '10');
+                marker.setAttribute('markerHeight', '10');
+                marker.setAttribute('orient', 'auto');
+                
+                var markerpath = document.createElementNS(svgNS, 'path');
+                markerpath.setAttribute('d', 'M 0,0 l 10,5 l -10,5 z');
+                
+                marker.appendChild(markerpath);
+                defs.appendChild(marker);
+                
+                var path = document.createElementNS(svgNS,'path');
+                path.setAttribute('d', 'M ' + (rect1.right + 5 + scrollX) + ' ' + (rect1.bottom + scrollY) + ' A 10 55 0 1 1 ' + (rect2.right + 10 + scrollX) + ' ' + (rect2.top + scrollY));
+                path.setAttribute('stroke', '#000000');
+                path.setAttribute('fill', 'transparent');
+                path.setAttribute('marker-end', 'url(#arr1)');
+                
+                svg.appendChild(defs);
+                svg.appendChild(path);
+                
+                svg.setAttribute('style', 'position:absolute; top:0; left:0; width:100%; height:100%;')
+                document.body.appendChild(svg);
+            }
+        </script>
+    </xsl:template>
+    
+    <xsl:template match="anchor[.=''][@xml:id]" mode="#default deletion addition">
+        <span id="{@xml:id}" class="anchor invisible">x</span>
+    </xsl:template>
+    
+    
     
     
     <!-- special case MN246 -->

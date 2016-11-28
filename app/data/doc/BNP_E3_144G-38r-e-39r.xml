@@ -4,9 +4,10 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>BNP/E3 144G-38<hi rend="superscript">r</hi> e 39<hi rend="superscript">r</hi></title>
+                <title>BNP/E3 144G-38<hi rend="superscript">r</hi> e 39<hi rend="superscript"
+                    >r</hi></title>
                 <author>
-                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
                 </author>
                 <respStmt>
                     <resp>Transcrição, Edição</resp>
@@ -30,8 +31,8 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
-                    (IELT)</publisher>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
                 <availability>
@@ -48,7 +49,7 @@
                     <msContents>
                         <msItemStruct>
                             <author>
-                                <rs type="person" key="FP">Fernando Pessoa</rs>
+                                <rs type="name" key="FP">Fernando Pessoa</rs>
                             </author>
                             <note type="genre">
                                 <rs type="genre" key="lista_editorial">Lista editorial</rs>
@@ -66,7 +67,7 @@
                 </msDesc>
                 <msDesc corresp="#M1" type="prose">
                     <msIdentifier/>
-                    <p></p>
+                    <p/>
                 </msDesc>
             </sourceDesc>
         </fileDesc>
@@ -78,7 +79,73 @@
     <text>
         <body>
             <div>
-                TEST
+                <list>
+                    <item xml:id="I1">Primeiro Fausto</item>
+                    <item xml:id="I2">Segundo Fausto <note place="margin-right"
+                            target="range(I1,I3)">
+                            <metamark function="grouping" rend="curly-bracket">
+                                <label> Fausto <lb/>Adão <lb/>Lusbel. </label>
+                            </metamark>
+                        </note>
+                    </item>
+                    <item xml:id="I3">Terceiro Fausto</item>
+                    <item>D. Sebastião.</item>
+                    <item>Ligéa (poema dramatico).</item>
+                    <item>Trilogia dos Gigantes: <list rend="inline">
+                            <item>Briareu.</item>
+                            <item>Typho.</item>
+                            <item>Livor.</item>
+                        </list>
+                    </item>
+                    <item>
+                        <note place="margin-left">(E)</note> Prometheus Revinctus. </item>
+                    <item>
+                        <note place="margin-left">(E)</note> The Duke of Parma. </item>
+                    <item>
+                        <note place="margin-left">(E)</note> The Ship of Fools. </item>
+                    <item>Alberto Caeiro <note type="addition" n="2">– I vol.</note><anchor
+                            xml:id="A1"/></item>
+                    <item>Ricardos Reis <note type="addition" n="2">– I ou 2 v.</note></item>
+                    <item>Alvaro de Campos <note type="addition" n="2">– I vol.</note></item>
+                    <item>Livro do Desasocego.</item>
+                    <item>Contra a Democracia.</item>
+                    <item>Itinerario (“livros” varios).</item>
+                    <item>
+                        <note place="margin-left">(E)</note> English Poems. </item>
+                    <item>Sociologia Politica.</item>
+                    <item>
+                        <del rend="overstrike">(Antonio Mora).</del>
+                        <metamark xml:id="M1" rend="arrow-right-curved-up" function="assignment" target="A1" n="2">
+                            <label>
+                                <choice>
+                                    <abbr>F</abbr>
+                                    <expan>F<ex>ernando</ex></expan>
+                                </choice> Pessoa
+                            </label>
+                        </metamark>
+                        <metamark xml:id="M2" rend="arrow-right-curved-down" function="assignment" target="A2" n="2"/>
+                    </item>
+                    <item>Auto das Bacchantes.</item>
+                    <item>Auto do Orpheu.</item>
+                    <item>Quaresma, Decifrador.</item>
+                    <item>Marcos Alves.</item>
+                    <item>Contos para Metaphysicos.<anchor xml:id="A2"/></item>
+                    <item>Cinco Dialogos sobre a Tyrannia.</item>
+                    <pb n="2"/>
+                    <item>Legendas.</item>
+                    <item>Notas e Prefacios.</item>
+                    <item>
+                        <note place="margin-left">(E)</note> Impermanence. <note type="addition"
+                            n="2">(E?)</note>
+                    </item>
+                    <item>
+                        <note place="margin-left">(E)</note> English Sonets (in “books”). </item>
+                    <item>Bernardo Soares (Contos).</item>
+                    <item>Na Pharmacia do Evaristo.</item>
+                    <item>Theatro Statico (séries).</item>
+                    <item>Aristography (and translated adaptations).</item>
+                    <item>Telegraphic Code.</item>
+                </list>
             </div>
         </body>
     </text>

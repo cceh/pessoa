@@ -392,7 +392,7 @@
     </xsl:template>
 
     <!-- Entities -->
-    <xsl:template match="rs[@type = 'person']" mode="#default deletion addition">
+    <xsl:template match="rs[@type = 'name']" mode="#default deletion addition">
         <span class="person {@key}">
             <xsl:apply-templates/>
         </span>
@@ -404,7 +404,7 @@
         </span>
     </xsl:template>
 
-    <xsl:template match="rs[@type = 'journal']" mode="#default deletion addition">
+    <xsl:template match="rs[@type = 'periodical']" mode="#default deletion addition">
         <span class="journal {@key}">
             <xsl:apply-templates/>
         </span>
@@ -415,7 +415,7 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    <xsl:template match="rs[@type = 'text']" mode="#default deletion addition">
+    <xsl:template match="rs[@type = 'title']" mode="#default deletion addition">
         <span class="text {replace(.,'[“”.\s]','')}">
             <xsl:apply-templates/>
         </span>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>BNP/E3 90<hi rend="superscript">1</hi>-1r</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Transcrição, Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Transcrição</resp>
+                    <name>Pablo Javier Pérez López</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação, Modelagem de dados</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">BNP_E3_90-1-1r.xml</idno>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc xml:id="M1" type="structured">
+                    <msIdentifier>
+                        <institution>Biblioteca Nacional de Portugal</institution>
+                        <idno>BNP/E3 90 1-1r</idno>
+                    </msIdentifier>
+                    <msContents>
+                        <msItemStruct>
+                            <author>
+                                <rs type="name" key="FP">Fernando Pessoa</rs>
+                            </author>
+                            <note type="genre">
+                                <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                            </note>
+                            <textLang mainLang="pt" otherLangs="fr en"/>
+                        </msItemStruct>
+                    </msContents>
+                    <history>
+                        <origin>
+                            <p>
+                                <origDate when="1913" cert="medium">c. 1913</origDate>
+                            </p>
+                        </origin>
+                    </history>
+                </msDesc>
+                <msDesc corresp="#M1" type="prose">
+                    <msIdentifier/>
+                    <p/>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="bn-acpc-e-e3_144d2_JPG_24-C-R0150/bn-acpc-e-e3_144d2_0021_6r_t24-C-R0150.jpg"/>
+    </facsimile>
+    <text>
+        <body>
+            <div>
+                TEST
+            </div>
+        </body>
+    </text>
+</TEI>

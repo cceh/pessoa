@@ -26,8 +26,6 @@
     
     <!-- Notes -->
     
-    <xsl:template match="note[@n='2']" mode="#default deletion addition"/>
-    
     <xsl:template match="note[@place = 'margin-right'][@n='2']" mode="#default deletion addition" priority="2">
     </xsl:template>
     
@@ -52,7 +50,7 @@
     </xsl:template>
     
     
-    <xsl:template match="note[@type='addition'][@n='2']" mode="#default deletion addition"/>
+    <xsl:template match="note[@type='addition'][@n='2']|note[@n='2']" mode="#default deletion addition"/>
     
     
     <!-- special case MN246 -->
