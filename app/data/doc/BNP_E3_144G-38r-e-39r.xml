@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>BNP/E3 144G-38<hi rend="superscript">r</hi> e 39<hi rend="superscript">r</hi></title>
+                <author>
+                    <rs type="person" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Transcrição, Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Transcrição</resp>
+                    <name>Pablo Javier Pérez López</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Transcrição</resp>
+                    <name>Jorge Uribe</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação, Modelagem de dados</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+                    (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">BNP_E3_144G-38r-e-39r.xml</idno>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc xml:id="M1" type="structured">
+                    <msIdentifier>
+                        <institution>Biblioteca Nacional de Portugal</institution>
+                        <idno>BNP/E3 144G-38r-e-39r</idno>
+                    </msIdentifier>
+                    <msContents>
+                        <msItemStruct>
+                            <author>
+                                <rs type="person" key="FP">Fernando Pessoa</rs>
+                            </author>
+                            <note type="genre">
+                                <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                            </note>
+                            <textLang mainLang="pt" otherLangs="en"/>
+                        </msItemStruct>
+                    </msContents>
+                    <history>
+                        <origin>
+                            <p>
+                                <origDate when="1920" cert="medium">c. 1920</origDate>
+                            </p>
+                        </origin>
+                    </history>
+                </msDesc>
+                <msDesc corresp="#M1" type="prose">
+                    <msIdentifier/>
+                    <p></p>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="bn-acpc-e-e3_144g_JPG_24-C-R0150/bn-acpc-e-e3_144g_0103_38r_t24-C-R0150.jpg"/>
+        <graphic url="bn-acpc-e-e3_144g_JPG_24-C-R0150/bn-acpc-e-e3_144g_0105_39r_t24-C-R0150.jpg"/>
+    </facsimile>
+    <text>
+        <body>
+            <div>
+                TEST
+            </div>
+        </body>
+    </text>
+</TEI>
