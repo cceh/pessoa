@@ -257,6 +257,9 @@
         mode="#default deletion addition">
         <br/>
     </xsl:template>
+    <xsl:template match="metamark[@rend = 'space-14'][@function = 'ditto']"
+        mode="#default deletion addition"> &#x2003; &#x2003; &#x2003; &#x2003; &#x2003;
+    </xsl:template>
 
     <!-- Brackets -->
     <xsl:template match="metamark[@rend = 'curly-bracket'][@function = 'grouping']"
@@ -437,7 +440,7 @@
     </xsl:template>
 
     <!-- Additions -->
-    <xsl:template match="add[@n = '2'][@place = 'above']" mode="#default deletion addition">
+    <xsl:template match="add[@n = '2'][@place = 'above']|add[@place='above']" mode="#default deletion addition">
         <span class="above">
             <xsl:apply-templates/>
         </span>
@@ -496,5 +499,7 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
+    
+    
 
 </xsl:stylesheet>

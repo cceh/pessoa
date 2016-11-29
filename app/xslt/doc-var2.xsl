@@ -30,7 +30,7 @@
         <xsl:apply-templates/>
     </xsl:template>
     
-    <xsl:template match="add[@place='above'][@n='2'][not(parent::seg)]" mode="#default deletion addition">
+    <xsl:template match="add[@place='above'][@n='2'][not(parent::seg)]|add[@place='above'][parent::seg[@n='2']]" mode="#default deletion addition">
         <xsl:apply-templates select="text()"/>
     </xsl:template>
     

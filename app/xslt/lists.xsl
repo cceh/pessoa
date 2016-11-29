@@ -46,19 +46,19 @@
                     margin-left: 7px;
                 }
             </style>
-            <xsl:if test=".//rs[@type='person']">
+            <xsl:if test=".//rs[@type='name']">
                 <xsl:variable name="title">
                     <xsl:choose>
-                        <xsl:when test="$lang='en'">person index</xsl:when>
-                        <xsl:otherwise>índice de pessoas</xsl:otherwise>
+                        <xsl:when test="$lang='en'">name index</xsl:when>
+                        <xsl:otherwise>índice de nomes</xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
                 <h2><xsl:choose>
-                    <xsl:when test="$lang='en'">Persons</xsl:when>
-                    <xsl:otherwise>Pessoas</xsl:otherwise>
+                    <xsl:when test="$lang='en'">Names</xsl:when>
+                    <xsl:otherwise>Nomes</xsl:otherwise>
                 </xsl:choose></h2>
                 <ul>
-                    <xsl:for-each-group select=".//rs[@type='person']" group-by="@key">
+                    <xsl:for-each-group select=".//rs[@type='name']" group-by="@key">
                         <xsl:sort select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//listPerson/person[@xml:id=current-grouping-key()]/persName[1]"/>
                         <xsl:variable name="key" select="current-grouping-key()"/>
                         <xsl:choose>
@@ -76,40 +76,40 @@
                     </xsl:for-each-group>
                 </ul>
             </xsl:if>
-            <xsl:if test=".//rs[@type='text']">
+            <xsl:if test=".//rs[@type='title']">
                 <xsl:variable name="title">
                     <xsl:choose>
-                        <xsl:when test="$lang='en'">index of texts</xsl:when>
-                        <xsl:otherwise>índice de textos</xsl:otherwise>
+                        <xsl:when test="$lang='en'">index of titles</xsl:when>
+                        <xsl:otherwise>índice de títulos</xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
                 <h2><xsl:choose>
-                    <xsl:when test="$lang='en'">Texts</xsl:when>
-                    <xsl:otherwise>Textos</xsl:otherwise>
+                    <xsl:when test="$lang='en'">Titles</xsl:when>
+                    <xsl:otherwise>Títulos</xsl:otherwise>
                 </xsl:choose></h2>
                 <ul>
-                    <xsl:for-each select=".//rs[@type='text']">
+                    <xsl:for-each select=".//rs[@type='title']">
                         <xsl:sort select="replace(.,'[“”()]','')"/>
                         <xsl:variable name="key" select="replace(.,'[“”.\s()]','')"/>
                         <li onmouseenter="highlight('text {$key}');" onmouseleave="clearH('{$key}');"><xsl:apply-templates /> <a href="../../page/texts#{.}" title="{$title}"><img class="indexImg typeB" src="../../resources/images/glyphicons-40-notes.png"/></a></li>
                     </xsl:for-each>
                 </ul>
             </xsl:if>
-            <xsl:if test=".//rs[@type='journal']">
+            <xsl:if test=".//rs[@type='periodical']">
                 <xsl:variable name="title">
                     <xsl:choose>
-                        <xsl:when test="$lang='en'">journal index</xsl:when>
-                        <xsl:otherwise>índice de jornais</xsl:otherwise>
+                        <xsl:when test="$lang='en'">index of periodicals</xsl:when>
+                        <xsl:otherwise>índice de periódicos</xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
                 <h2><xsl:choose>
-                    <xsl:when test="$lang='en'">Journals</xsl:when>
-                    <xsl:otherwise>Jornais</xsl:otherwise>
+                    <xsl:when test="$lang='en'">Periodicals</xsl:when>
+                    <xsl:otherwise>Periódicos</xsl:otherwise>
                 </xsl:choose></h2>
                 <ul>
-                    <xsl:for-each-group select=".//rs[@type='journal']" group-by="@key">
-                        <xsl:sort select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type='journals']/item[@xml:id=current-grouping-key()]"/>
-                        <xsl:variable name="name"  select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type='journals']/item[@xml:id=current-grouping-key()]"/>
+                    <xsl:for-each-group select=".//rs[@type='periodical']" group-by="@key">
+                        <xsl:sort select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type='journal']/item[@xml:id=current-grouping-key()]"/>
+                        <xsl:variable name="name"  select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type='journal']/item[@xml:id=current-grouping-key()]"/>
                         <li onmouseenter="highlight('journal {current-grouping-key()}');" onmouseleave="clearH('{current-grouping-key()}');"><xsl:value-of select="$name"/> <a href="../../page/journals#{$name}" title="{$title}"><img class="indexImg" src="../../resources/images/glyphicons-609-newspaper.png"/></a></li>
                     </xsl:for-each-group>
                 </ul>
@@ -119,6 +119,10 @@
     
     <xsl:template match="choice[abbr][expan]">
         <xsl:apply-templates select="expan"/>
+    </xsl:template>
+    
+    <xsl:template match="choice[seg[@n='1'] and seg[@n='2']]">
+        <xsl:apply-templates select="seg[@n='2']"/>
     </xsl:template>
     
     <xsl:template match="lb">
