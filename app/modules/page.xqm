@@ -74,7 +74,7 @@ declare function page:HighlightPage($target) {
                                     case "publicacoes" return "pub"
                                     case "obras" return "obras"
                                     case "genero" return "genre"
-                                    case "index" return ("bibliografia","persons","texts","journals")
+                                    case "index" return ("bibliografia","names","titles","periodicals")
                                     case "documentos" return "doc"
                                     case "projeto" return ("about","team","documentation","download")
                                    default return "nothin"

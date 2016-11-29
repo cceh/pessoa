@@ -460,7 +460,9 @@ declare function doc:getDocsForPerson($item){
     let $docs := collection("/db/apps/pessoa/data/doc/")   
     let $lists := doc('/db/apps/pessoa/data/lists.xml')
     (: $docs[.//tei:text//tei:rs[@type='person']/@key = $lists//tei:listPerson/tei:person[tei:persName = $item]/@xml:id] :)
-    for $doc in search:search_range_simple("person","P48",$docs)
+    for $doc in search:search_range_simple("person",$item,$docs)
+(:        for $doc in search:search_range_simple("person","P48",$docs)
+:)
     let $cota := ($doc//tei:title)[1]/data(.)
     where if ($lists//tei:listPerson/tei:person[tei:persName = $item][tei:persName[2]]) 
           then $doc[.//tei:text//tei:rs[@type="person"][@key = $lists//tei:listPerson/tei:person[tei:persName = $item]/@xml:id][@style = $lists//tei:listPerson/tei:person/tei:persName[. = $item]/@type]]
