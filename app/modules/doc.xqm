@@ -358,9 +358,9 @@ declare function doc:getJournalIndex($node as node(), $model as map(*)){
      let $docs := collection("/db/apps/pessoa/data/doc/") 
      let $journals := 
         for $doc in $docs return
-        $doc//tei:text//tei:rs[@type='journal']
-     let $journalKeys := $lists//tei:list[@type='journal']//tei:item/@xml:id/data(.)   
-     let $journalNames := $lists//tei:list[@type='journal']/tei:item
+        $doc//tei:text//tei:rs[@type='periodical']
+     let $journalKeys := $lists//tei:list[@type='periodical']//tei:item/@xml:id/data(.)   
+     let $journalNames := $lists//tei:list[@type='periodical']/tei:item
      let $letters :=
         for $name in $journalNames order by $name return substring($name,0,2)
      let $letters := distinct-values($letters)
@@ -381,9 +381,9 @@ declare function doc:getJournalIndex($node as node(), $model as map(*)){
 declare function doc:getDocsForJournal($journal){
     let $lists := doc('/db/apps/pessoa/data/lists.xml')
     let $docs := collection("/db/apps/pessoa/data/doc/")
-    let $key := $lists//tei:list[@type='journal']/tei:item/text()[contains(.,$journal)]/../@xml:id/data(.)
+    let $key := $lists//tei:list[@type='periodical']/tei:item/text()[contains(.,$journal)]/../@xml:id/data(.)
     for $doc in $docs return
-    if($doc//tei:text//tei:rs[@type='journal']/@key[contains(.,$key)]) then
+    if($doc//tei:text//tei:rs[@type='periodical']/@key[contains(.,$key)]) then
         <li class="indexDoc">
         <a style="color: #08298A;" href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{($doc//tei:title)[1]/data(.)} </a>
         </li>     
@@ -428,7 +428,7 @@ declare function doc:getDocsForText($text){
 declare function doc:getPersonIndex($node as node(), $model as map(*)){
     let $lists := doc('/db/apps/pessoa/data/lists.xml')
     let $docs := collection("/db/apps/pessoa/data/doc/") 
-    let $personKeys := distinct-values($doc//tei:text//tei:rs[@type='person']/@key/text())
+    let $personKeys := distinct-values($doc//tei:text//tei:rs[@type='name']/@key/text())
     let $personNames := $lists//tei:listPerson/tei:person[@xml:id = $personKeys]/tei:persName 
     let $letters := 
         for $person in $personNames order by $person return
@@ -465,7 +465,7 @@ declare function doc:getDocsForPerson($item){
 :)
     let $cota := ($doc//tei:title)[1]/data(.)
     where if ($lists//tei:listPerson/tei:person[tei:persName = $item][tei:persName[2]]) 
-          then $doc[.//tei:text//tei:rs[@type="person"][@key = $lists//tei:listPerson/tei:person[tei:persName = $item]/@xml:id][@style = $lists//tei:listPerson/tei:person/tei:persName[. = $item]/@type]]
+          then $doc[.//tei:text//tei:rs[@type="name"][@key = $lists//tei:listPerson/tei:person[tei:persName = $item]/@xml:id][@style = $lists//tei:listPerson/tei:person/tei:persName[. = $item]/@type]]
           else true()
     order by xs:integer(replace($cota, "(BNP/E3|CP)\s?([0-9]+)([^0-9]+.*)?", "$2"))
     return 
@@ -495,9 +495,9 @@ declare function doc:getJournalIndex($node as node(), $model as map(*)){
      let $docs := collection("/db/apps/pessoa/data/doc/") 
      let $journals := 
         for $doc in $docs return
-        $doc//tei:text//tei:rs[@type='journal']
-     let $journalKeys := $lists//tei:list[@type='journal']//tei:item/@xml:id/data(.)   
-     let $journalNames := $lists//tei:list[@type='journal']/tei:item
+        $doc//tei:text//tei:rs[@type='periodical']
+     let $journalKeys := $lists//tei:list[@type='periodical']//tei:item/@xml:id/data(.)   
+     let $journalNames := $lists//tei:list[@type='periodical']/tei:item
      let $letters :=
         for $name in $journalNames order by $name return substring($name,0,2)
      let $letters := distinct-values($letters)
@@ -520,7 +520,7 @@ declare function doc:getDocsForJournal($journal){
     let $docs := collection("/db/apps/pessoa/data/doc/")
     let $key := $lists//tei:list[@type='journal']/tei:item/text()[contains(.,$journal)]/../@xml:id/data(.)
     for $doc in $docs return
-    if($doc//tei:text//tei:rs[@type='journal']/@key[contains(.,$key)]) then
+    if($doc//tei:text//tei:rs[@type='periodical']/@key[contains(.,$key)]) then
         <li class="indexDoc">
         <a style="color: #08298A;" href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{($doc//tei:title)[1]/data(.)} </a>
         </li>     
@@ -554,7 +554,7 @@ declare function doc:getDocsForText($text){
     let $lists := doc('/db/apps/pessoa/data/lists.xml')
     let $docs := collection("/db/apps/pessoa/data/doc/")
     for $doc in $docs return
-    if($doc//tei:text//tei:rs[@type='text'][not(child::tei:choice/tei:abbr)][not(child::tei:pc)] = $text) then
+    if($doc//tei:text//tei:rs[@type='title'][not(child::tei:choice/tei:abbr)][not(child::tei:pc)] = $text) then
         <li class="indexDoc">
         <a style="color: #08298A;" href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{($doc//tei:title)[1]/data(.)} </a>
         </li>     
@@ -567,7 +567,7 @@ declare function doc:getPersonIndex($node as node(), $model as map(*)){
     let $docs := collection("/db/apps/pessoa/data/doc/")   
     let $persons := 
         for $doc in $docs return
-            $doc//tei:text//tei:rs[@type='person'][not(child::tei:choice/tei:abbr)][not(child::tei:pc)]
+            $doc//tei:text//tei:rs[@type='name'][not(child::tei:choice/tei:abbr)][not(child::tei:pc)]
     let $persons := distinct-values($persons) 
     let $letters := 
         for $person in $persons order by $person return
@@ -588,7 +588,7 @@ declare function doc:getPersonIndex($node as node(), $model as map(*)){
 declare function doc:getDocsForPerson($item){
     let $docs := collection("/db/apps/pessoa/data/doc/")   
     for $doc in $docs return 
-    if($doc//tei:text//tei:rs[@type='person'][not(child::tei:choice/tei:abbr)][not(child::tei:pc)]= $item) then
+    if($doc//tei:text//tei:rs[@type='name'][not(child::tei:choice/tei:abbr)][not(child::tei:pc)]= $item) then
     <li class="indexDoc">
     <a style="color: #08298A;" href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{($doc//tei:title)[1]/data(.)} </a>
     </li>
