@@ -945,7 +945,7 @@ window.OpenSeadragon = window.OpenSeadragon || function( options ){
             showNavigationControl:   true,  //ZOOM/HOME/FULL/ROTATION
             navigationControlAnchor: null,  //ZOOM/HOME/FULL/ROTATION
             showZoomControl:         true,  //ZOOM
-            showHomeControl:         true,  //HOME
+            showHomeControl:         false,  //HOME
             showFullPageControl:     true,  //FULL
             showRotationControl:     true, //ROTATION
             controlsFadeDelay:       2000,  //ZOOM/HOME/FULL/SEQUENCE
