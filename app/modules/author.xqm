@@ -129,7 +129,7 @@ declare function author:formatDocID($id){
 };
 
 declare function author:getRoles($doc, $authorKey){
-    let $roles := $doc//tei:text//tei:rs[@type = 'person' and @key=$authorKey]/@role/data(.)
+    let $roles := $doc//tei:text//tei:rs[@type = 'name' and @key=$authorKey]/@role/data(.)
     let $uniqueRoles := fn:distinct-values($roles)
     return
     $uniqueRoles
@@ -142,7 +142,6 @@ declare function author:getYearOrTitle($text, $orderBy){
     else if($doc) then $doc
     else ()
 };
-
 
 declare function author:getYearOrTitleOfDocument($doc, $orderBy){
     let $when := $doc//tei:origDate/@when/data(.)
@@ -177,25 +176,32 @@ declare function author:getYearOrTitleOfPublication($pub, $orderBy){
       $title[1]/data(.)
     else()  
 };
-declare function author:getrecorder($node as node(), $model as map(*)){
-let $script := <script type="text/javascript">
-        
+declare function author:getrecorder($node as node(), $model as map(*),$author,$textType){
+let $script := 
+<script type="text/javascript">        
         function reorder(){{
+        
+        if ($("#date").is(":checked"))
+        {{
+        $("#tab").load("{$helpers:app-root}/{$helpers:web-language}/page/author/{$author}/{$textType}?orderBy=date");
+        
+        }}
+        else{{
+        $("#tab").load("{$helpers:app-root}/{$helpers:web-language}/page/author/{$author}/{$textType}?orderBy=alphab"); 
+        }}
+        }}
+    </script> 
+    return $script
+};
+
+(:
+var author = ""
+        var textType = ""
         var url = window.location.href;
         var i = url.lastIndexOf("/");
         var substr = url.substring(0,i);
         i = substr.lastIndexOf("/");
         var author = substr.substring(i+1,substr.length);
         var textType = url.substring(url.lastIndexOf("/")+1,url.length);
-        if ($("#date").is(":checked"))
-        {{
-        $("#tab").load("{$helpers:app-root}/{$helpers:web-language}/page/author/"+author+"/"+textType+"?orderBy=date");
         
-        }}
-        else{{
-        $("#tab").load("{$helpers:app-root}/{$helpers:web-language}/page/author/"+author+"/"+textType+"?orderBy=alphab"); 
-        }}
-        }}
-    </script> 
-    return $script
-};
+:)

@@ -101,8 +101,8 @@ declare function index:collectGenre($node as node(), $model as map(*),$type as x
 (:####### TEXT INDEX #######:)
 
 declare function index:collectTexts($node as node(), $model as map(*)) {
-    let $texts := for $text in  search:search_range_simple("type","text",collection('/db/apps/pessoa/data/doc'))
-                                for $single in $text//tei:rs[@type = "text"][not(child::tei:choice/tei:abbr)][not(child::tei:pc)]
+    let $texts := for $text in  search:search_range_simple("type","title",collection('/db/apps/pessoa/data/doc'))
+                                for $single in $text//tei:rs[@type = "title"][not(child::tei:choice/tei:abbr)][not(child::tei:pc)]
                                 order by $single
                             return $single
                             (:<item title="{$single}" well="{replace(replace(replace($single,'"',''),'“',''),'”','')}"/>:)
@@ -220,9 +220,9 @@ declare function index:ScanDB($node as node(), $model as map(*)) {
 
     let $id := if(contains($db/@id,"#")) then substring-after($db/@id,"#") else $db/@id
     let $docs := if(exists($db/@style)) then 
-                                for $doc in search:searchRange_ex_two($coll,"person","style",$id,$db/@style) where $doc//tei:rs[@type = "person" and  @key = $id and @style=$db/@style] return $doc
+                                for $doc in search:searchRange_ex_two($coll,"person","style",$id,$db/@style) where $doc//tei:rs[@type = "name" and  @key = $id and @style=$db/@style] return $doc
                                 else
-                                for $doc in search:search_range_simple("person",$id,$coll) where $doc//tei:rs[@type = "person" and  @key = $id] return $doc
+                                for $doc in search:search_range_simple("person",$id,$coll) where $doc//tei:rs[@type = "name" and  @key = $id] return $doc
     
     let $res := for $doc in $docs
                                 let $cota := ($doc//tei:title)[1]/data(.)
