@@ -36,8 +36,7 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
             <forward url="{$exist:controller}/modules/view.xql"/>
         </view>
     </dispatch>   
-    (:
-    return doc:get-text-pessoal(<node />, map {"test" := "test"}, $id, $lb, $abbr, $version):)
+    (:    return doc:get-text-pessoal(<node />, map {"test" := "test"}, $id, $lb, $abbr, $version):)
 else if (contains($exist:path,  "/doc/")) then
     if ($exist:resource = "xml") then
     let $id := substring-before(substring-after($exist:path, "/doc/"), "/xml")
