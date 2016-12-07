@@ -34,10 +34,7 @@
                         </span>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:apply-templates select="expan/text() | expan/child::*"/>                     
-                        <xsl:if test="following-sibling::choice[1]">
-                            <xsl:text>&#160;</xsl:text>
-                        </xsl:if>     
+                        <xsl:apply-templates select="expan/text() | expan/child::*"/> 
                     </xsl:otherwise>
                 </xsl:choose>            
             </xsl:otherwise>

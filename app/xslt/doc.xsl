@@ -184,6 +184,10 @@
         mode="#default deletion addition">
         <hr class="line line-14"/>
     </xsl:template>
+    <xsl:template match="metamark[@rend = 'line-14-center'][@function = ('distinct', 'end')]"
+        mode="#default deletion addition">
+        <hr class="line line-14 center"/>
+    </xsl:template>
     <xsl:template match="metamark[@rend = 'line-14'][@function = ('placeholder')]"
         mode="#default deletion addition">
         <hr class="line line-14 inline"/>
@@ -193,6 +197,10 @@
         mode="#default deletion addition">
         <hr class="line line-24"/>
     </xsl:template>
+    <xsl:template match="metamark[@rend = 'line-24-center'][@function = ('distinct', 'end')]"
+        mode="#default deletion addition">
+        <hr class="line line-24 center"/>
+    </xsl:template>
     <xsl:template match="metamark[@rend = 'line-24'][@function = ('placeholder')]"
         mode="#default deletion addition">
         <hr class="line line-24 inline"/>
@@ -201,6 +209,10 @@
     <xsl:template match="metamark[@rend = 'line-34'][@function = ('distinct', 'end')]"
         mode="#default deletion addition">
         <hr class="line line-34"/>
+    </xsl:template>
+    <xsl:template match="metamark[@rend = 'line-34-center'][@function = ('distinct', 'end')]"
+        mode="#default deletion addition">
+        <hr class="line line-34 center"/>
     </xsl:template>
     <xsl:template match="metamark[@rend = 'line-34'][@function = ('placeholder')]"
         mode="#default deletion addition">
