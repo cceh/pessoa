@@ -205,7 +205,7 @@ declare function doc:get-xml($id){
 
 
 declare %templates:wrap function doc:docControll($node as node(), $model as map(*), $id as xs:string) {
-      let $libary := if(contains($helpers:request-path,"BNP") or contains($helpers:request-path,"CP")) then "doc" 
+      let $libary :=      if(contains($helpers:request-path,"BNP") or contains($helpers:request-path,"CP")) then "doc" 
                          else "pub"
                 
    let $db := if($libary = "doc") then  collection("/db/apps/pessoa/data/doc") else collection("/db/apps/pessoa/data/pub")
