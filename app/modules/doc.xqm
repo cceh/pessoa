@@ -20,7 +20,7 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare function doc:get-title($node as node(), $model as map(*), $id as xs:string) as node()+{
     let $xml := doc:get-xml($id)//tei:fileDesc
     let $stylesheet := doc("/db/apps/pessoa/xslt/doc.xsl")
-    let $title :=  <h2>{for $elem in $xml//tei:title/node() return if(exists($elem/node())) then <span class="doc_superscript">{$elem/node()/data(.)}</span> else $elem}</h2>
+    let $title :=  <h2>{for $elem in $xml//tei:title/node() return if(exists($elem/node())) then <span class="doc_superscript">{$elem/node()/data(.)}</span> else replace($elem,"/E3","")}</h2>
  (:   let $title := <h2>{substring-before($xml//tei:title/data(.),"/E3"),substring-after($xml//tei:title/data(.),"/E3")}</h2>:)
     let $date := <p id="titledate">{$xml//tei:origDate/data(.)}</p>
     return <div>{$title} {$date}</div>
@@ -385,7 +385,7 @@ declare function doc:getDocsForJournal($journal){
     for $doc in $docs return
     if($doc//tei:text//tei:rs[@type='periodical']/@key[contains(.,$key)]) then
         <li class="indexDoc">
-        <a style="color: #08298A;" href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{($doc//tei:title)[1]/data(.)} </a>
+        <a style="color: #08298A;" href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{replace($doc//tei:title[1]/data(.),"/E3","")} </a>
         </li>     
      else()  
 };

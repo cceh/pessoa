@@ -7,7 +7,7 @@
             <xsl:for-each select="//TEI">
                 <events>
                     <xsl:attribute name="title">
-                        <xsl:value-of select=".//titleStmt/title/normalize-space(.)"/>
+                        <xsl:value-of select="replace(.//titleStmt/title/normalize-space(.),'/E3','')"/>
                     </xsl:attribute>
                     <xsl:for-each select=".//origDate | .//imprint/date">
                         <xsl:attribute name="start">
