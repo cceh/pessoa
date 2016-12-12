@@ -77,7 +77,7 @@ declare function author:getTabContent($node as node(), $model as map(*), $textTy
                                                             else substring($doc//tei:titleStmt/tei:title/data(.),1,1)                     
                                        let $crit := if ($orderBy = "alphab") then $first else $date
                                       order by $crit
-                                      return <item folder="{$fold}" doc="{$refer}"  title="{$doc//tei:titleStmt/tei:title/data(.)}" crit="{$crit}"/>   
+                                      return <item folder="{$fold}" doc="{$refer}"  title="{replace($doc//tei:titleStmt/tei:title/data(.),"/E3","")}" crit="{$crit}"/>   
                     let $criteria := for $item in $items return $item/@crit/data(.)                           
                      let $criteria := distinct-values($criteria)
                      

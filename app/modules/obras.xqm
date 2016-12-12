@@ -79,7 +79,7 @@ declare function obras:SortByDate($db as node()*) {
                                                 else "Error"
                                                  let $refer := substring-before(root($doc)/util:document-name(.),".xml") 
                              order by $date
-                           return <item doc="{$refer}" date="{$date}" dir="doc" title="{$doc//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[1]/data(.)}"/>
+                           return <item doc="{$refer}" date="{$date}" dir="doc" title="{replace($doc//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[1]/data(.),"/E3","")}"/>
 (:    let $return := for $item in $refs order by $item/@date return $item
 :)    
     return $refs

@@ -23,8 +23,8 @@ declare function index:printNavigation($node as node(), $model as map(*)) {
 declare function index:printDocLinks($node as node(), $model as map(*)) {
 let $doc := $model("ref")
 (:let $doc := substring-before(root($db)/util:document-name(.),".xml") :)
- let $ref := concat($helpers:app-root,"/",$helpers:web-language,"/doc/",$doc)
-return <a href="{$ref}" class="olink">{$doc}</a>
+ let $ref := concat($helpers:app-root,"/",$helpers:web-language,"/doc/",$doc/@link/data(.))
+return <a href="{$ref}" class="olink">{$doc/@title/data(.)}</a>
 };
 
 
@@ -87,7 +87,7 @@ declare function index:collectGenre($node as node(), $model as map(*),$type as x
                                         for $item in $items where $item/@crit eq $crit
                                         return <div class="doctabelcontent">
                                         <a href="{$helpers:app-root}/{$item/@folder/data(.)}/{$item/@doc/data(.)}">
-                                            {$item/@title/data(.)}
+                                            {replace($item/@title/data(.),"/E3","")}
                                         </a>
                                         </div>
                                 )
@@ -109,6 +109,7 @@ declare function index:collectTexts($node as node(), $model as map(*)) {
                             
    let $docs := for $doc in $texts
                             return <item name="{$doc}"  ref="{substring-before(root($doc)/util:document-name(.),".xml")}" 
+                                                    title="{replace(doc(concat('/db/apps/pessoa/data/doc/',root($doc)/util:document-name(.)))//tei:title[1]/data(.),"/E3","")}"
                            />
     
     let $pubs := collection('/db/apps/pessoa/data/pub')
@@ -155,7 +156,7 @@ declare function index:scanDocs($node as node(), $model as map) {
     if($model("text")/@type/data(.) eq "doc") then
              let $text := $model("text")
              let $aDocs := $model("allDocs")
-             let $docs := for $doc in $aDocs where $doc/@name eq $text/@title  return $doc/@ref/data(.)
+             let $docs := for $doc in $aDocs where $doc/@name eq $text/@title  return <item link="{$doc/@ref/data(.)}" title="{$doc/@title/data(.)}"/>
              return map {"refs" := $docs}
         else ()
 };
@@ -230,7 +231,7 @@ declare function index:ScanDB($node as node(), $model as map(*)) {
                                                         else replace($cota, "(BNP/E3|CP)\s?([0-9]+)([^0-9]+.*)?", "$2")
                                       :)                  
                                 order by xs:integer(replace($cota, "(BNP/E3|CP)\s?([0-9]+)([^0-9]+.*)?", "$2"))
-                                return substring-before(root($doc)/util:document-name(.),".xml") 
+                                return <item link="{substring-before(root($doc)/util:document-name(.),".xml")}" title="{replace($cota,"/E3","")}"/>
     
     return map {
        "docs" := $res,

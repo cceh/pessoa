@@ -191,7 +191,8 @@ declare function page:createThirdNavContent($type as xs:string, $indikator as xs
                     else $elem 
                     )
          let $title := ($title,<span class="doc_superscript"/>)
-        order by $item/@label            
+        (:order by $item/@label :)
+        order by $item/@label, number(replace($item/@label,"^\d+[A-Z]?\d?-(\d+).*?$", "$1"))
                 
             return <a href="{$item/@ref/data(.)}"><li class="{concat("nav_",$type,"_sub_tab")}">{$title}</li></a>
        else if ($type = "cronologia" ) then

@@ -282,7 +282,7 @@ if(exists($sel) and $sel = "union")
                         else doc(concat("/db/apps/pessoa/data/pub/",$file_name))//tei:biblStruct/tei:analytic/tei:title[1]/data(.)
             order by $sort
             return if(substring-after($file_name,"BNP") != "" or substring-after($file_name,"CP") != "")
-                    then <li><a href="{$helpers:app-root}/{$helpers:web-language}/doc/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"))}">{$title}</a>
+                    then <li><a href="{$helpers:app-root}/{$helpers:web-language}/doc/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"))}">{replace($title,"/E3","")}</a>
                         {kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="40"/>)}</li>
                     else <li><a href="{$helpers:app-root}/{$helpers:web-language}/pub/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"))}">{$title}</a>
                         {kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="40"/>)}</li>
@@ -297,7 +297,7 @@ if(exists($sel) and $sel = "union")
                         else doc(concat("/db/apps/pessoa/data/pub/",$file_name))//tei:biblStruct/tei:analytic/tei:title[1]/data(.)
                 order by $sort
                 return if(substring-after($file_name,"BNP") != "" or substring-after($file_name,"CP") != "")
-                        then <li><a href="{$helpers:app-root}/{$helpers:web-language}/doc/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"))}">{$title}</a></li>
+                        then <li><a href="{$helpers:app-root}/{$helpers:web-language}/doc/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"))}">{replace($title,"/E3","")}</a></li>
                         else <li><a href="{$helpers:app-root}/{$helpers:web-language}/pub/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"))}">{$title}</a></li>
     else <p>{page:singleAttribute(doc('/db/apps/pessoa/data/lists.xml'),"search","no_results")}</p>
     else <p>Error</p>
