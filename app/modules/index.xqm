@@ -20,11 +20,10 @@ declare function index:printNavigation($node as node(), $model as map(*)) {
 
 };
 
-declare function index:printDocLinks($node as node(), $model as map(*)) {
-let $doc := $model("ref")
-(:let $doc := substring-before(root($db)/util:document-name(.),".xml") :)
- let $ref := concat($helpers:app-root,"/",$helpers:web-language,"/doc/",$doc/@link/data(.))
-return <a href="{$ref}" class="olink">{$doc/@title/data(.)}</a>
+declare function index:printDocLinks($node as node(), $model as map(*),$ref) {
+    let $doc := $model($ref)
+    let $ref := concat($helpers:app-root,"/",$helpers:web-language,"/doc/",$doc/@link/data(.))
+    return <span><a href="{$ref}" class="olink">{$doc/@title/data(.)}</a>{if($doc/@coma/data(.) eq "yes") then "," else ()}</span>
 };
 
 
@@ -189,10 +188,12 @@ declare function index:getPersonIndex($node as node(), $model as map(*)) {
     let $lists := doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson[2]
     let $keys := for $hit in $lists/tei:person
                             let $id := $hit/attribute()/data(.)
+                            order by $hit/tei:persName[1]
                          return 
                          if( exists($hit/tei:persName[2]))
                                 then for $name in $hit/tei:persName
                                     where substring($name/data(.),1,1) eq $letter
+                                        
                                     return <item id="{$id}" style="{$name/@type/data(.)}"/>
                                     else if(substring($hit/tei:persName/data(.),1,1) eq $letter) then <item id="{$id}"/>
                                     else ()
@@ -205,7 +206,7 @@ declare function index:getPersonIndex($node as node(), $model as map(*)) {
 
 declare function index:ScanDB($node as node(), $model as map(*)) {
     let $coll:= collection("/db/apps/pessoa/data/doc/") 
-    let $lists := doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson
+    let $lists := doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson[2]
     let $db := $model("key")
     let $letter := $model("letter")
     let $name := if(exists($db/@style)) then 
@@ -227,14 +228,22 @@ declare function index:ScanDB($node as node(), $model as map(*)) {
     
     let $res := for $doc in $docs
                                 let $cota := ($doc//tei:title)[1]/data(.)
+                                let $link := substring-before(root($doc)/util:document-name(.),".xml")
                           (:     let $cota2 := if(contains($cota,"-")) then replace(substring-before($cota,"-"), "(BNP/E3|CP)\s?([0-9]+)([^0-9]+.*)?", "$2")
                                                         else replace($cota, "(BNP/E3|CP)\s?([0-9]+)([^0-9]+.*)?", "$2")
-                                      :)                  
-                                order by xs:integer(replace($cota, "(BNP/E3|CP)\s?([0-9]+)([^0-9]+.*)?", "$2"))
-                                return <item link="{substring-before(root($doc)/util:document-name(.),".xml")}" title="{replace($cota,"/E3","")}"/>
+                                      :)            
+                                      let $label := replace($link,("BNP_E3_|CP"),"")
+                                    let $front := if(contains($label,"-")) then substring-before($label,"-") else $label
+                                order by $front, xs:integer(replace($label, "^\d+[A-Z]?\d?-?([0-9]+).*$", "$1"))
+                                return <item link="{$link}" title="{replace($cota,"/E3","")}"/>
+                                
+                                
+   let $ref_amount := count($res)
+    let $ADocs := for $ref in (1 to $ref_amount -1) return <item link="{$res[$ref]/@link}" title="{$res[$ref]/@title}" coma="yes"/>     
+    let $BDocs := if($ref_amount != 0) then <item link="{$res[$ref_amount]/@link}" title="{$res[$ref_amount]/@title}" coma="no"/> else ()(:$res[$ref_amount] :)                            
     
     return map {
-       "docs" := $res,
+       "docs" := ($ADocs,$BDocs),
         "name" := $name,
         "id" := $id
     }
@@ -245,7 +254,7 @@ declare function index:printAuthor($node as node(), $model as map(*)) {
 };
 
 declare function index:plottAlpha($ndoe as node(), $mode as map(*)) {
-        let $lists := doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson/tei:person
+        let $lists := doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson[2]/tei:person
         let $letters := for $person in  $lists/tei:persName order by $person return fn:substring($person,1,1)
         let $letters := distinct-values($letters)
         return map {

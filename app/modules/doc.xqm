@@ -317,12 +317,7 @@ let $script := <script type="text/javascript">
         }}
         
         
-        if ( window.addEventListener ) {{
-        addEventListener( "load", draw(100,100), false );
-        }} else {{
-        attachEvent( "onload", draw(100,100) );
-        }}
-        
+
     
     function  jsBlockStrikeThrough() {{
             $('.delSpan').each(function() {{
@@ -343,6 +338,14 @@ let $script := <script type="text/javascript">
         
     return $script
 };
+
+(:        if ( window.addEventListener ) {{
+        addEventListener( "load", draw(100,100), false );
+        }} else {{
+        attachEvent( "onload", draw(100,100) );
+        }}
+        
+        :)
 
 declare function doc:getIndexTitle($node as node(), $model as map(*), $type as xs:string){
     let $lists := doc('/db/apps/pessoa/data/lists.xml')

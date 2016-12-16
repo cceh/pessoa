@@ -205,10 +205,10 @@ $(document).ready(function(){
              var height = height_img > height_text ? height_img : height_text;
             $("#text-div").css({"height" : height});            
         };
- 
+ /*
  function draw(w, h) {
  
- /*
+ /\*
   if(is.firefox() == true) {
       var  ctx1= document.getElementsByClassName("delSpan");
         var canvas = ctx1.getContext("2d");
@@ -222,7 +222,7 @@ $(document).ready(function(){
       var canvas2 = document.getCSSCanvasContext("2d", "verticalLine", w, h);
       var canvas3 = document.getCSSCanvasContext("2d", "circle", w, h);
   }
- */
+ *\/
             var canvas = document.getCSSCanvasContext("2d", "lines", w, h); 
       var canvas2 = document.getCSSCanvasContext("2d", "verticalLine", w, h);
       var canvas3 = document.getCSSCanvasContext("2d", "circle", w, h);
@@ -245,7 +245,7 @@ $(document).ready(function(){
             canvas3.arc(12,12,12,0,2*Math.PI);
             canvas3.stroke();
             };
- 
+ */
 
 function printContent() {
             if( $("div#text-div").children("ul").children("li").hasClass("selected") ) { 
@@ -366,6 +366,52 @@ function ObrasControl() {
         */
     };
 
-  
+function drawArrowsEach() {
+    for(var i = 1; $('#M'+i).index() != -1;i++) drawArrows(("M"+i),("A"+i))
     
+}
+  
+    function drawArrows(el1,el2) {
+        var el1 = document.getElementById(el1);
+                var el2 = document.getElementById(el2);
+                
+                var scrollX = window.pageXOffset;
+                var scrollY = window.pageYOffset;
+                
+                var rect1 = el1.getBoundingClientRect();
+                var rect2 = el2.getBoundingClientRect();
+                
+                var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                var svgNS = svg.namespaceURI;
+                
+                var defs = document.createElementNS(svgNS, 'defs');
+                var marker = document.createElementNS(svgNS, 'marker');
+                marker.setAttribute('id', 'arr1');
+                marker.setAttribute('viewBox', '0 0 10 10');
+                marker.setAttribute('refX', '0');
+                marker.setAttribute('refY', '5');
+                marker.setAttribute('markerUnits', 'strokeWidth');
+                marker.setAttribute('markerWidth', '10');
+                marker.setAttribute('markerHeight', '10');
+                marker.setAttribute('orient', 'auto');
+                
+                var markerpath = document.createElementNS(svgNS, 'path');
+                markerpath.setAttribute('d', 'M 0,0 l 10,5 l -10,5 z');
+                
+                marker.appendChild(markerpath);
+                defs.appendChild(marker);
+                
+                var path = document.createElementNS(svgNS,'path');
+                path.setAttribute('d', 'M ' + (rect1.right + 5 + scrollX) + ' ' + (rect1.bottom + scrollY) + ' A 10 55 0 1 1 ' + (rect2.right + 10 + scrollX) + ' ' + (rect2.top + scrollY));
+                path.setAttribute('stroke', '#000000');
+                path.setAttribute('fill', 'transparent');
+                path.setAttribute('marker-end', 'url(#arr1)');
+                
+                svg.appendChild(defs);
+                svg.appendChild(path);
+                
+                svg.setAttribute('style', 'position:absolute; top:0; left:0; width:100%; height:100%;')
+                document.body.appendChild(svg);
+        
+    };
     
