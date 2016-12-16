@@ -182,6 +182,7 @@
         fixDiv();
         $(window).scroll(fixDiv);
         itabs();
+        drawArrowsEach();
         });
        
             $("#zitat").click(function() {
@@ -190,6 +191,6 @@
             $("#symbols").click(function() {
             $( "#symboliga" ).toggle();
             });
-            $("html, body").animate({ scrollTop: $('#doc').offset().top }, 1000);
+            $("html, body").animate({ scrollTop: $('#titleline').offset().top }, 1000);
     </script>
 </div>

@@ -69,7 +69,7 @@
     
     <xsl:template match="metamark[@rend='arrow-right-curved-down'][@n='2']" mode="#default deletion addition">
         <span id="{@xml:id}" class="anchor invisible">x</span>
-        <script type="text/javascript">
+        <!--<script type="text/javascript">
             window.onload = function(){
                 var el1 = document.getElementById('<xsl:value-of select="@xml:id"/>');
                 var el2 = document.getElementById('<xsl:value-of select="@target"/>');
@@ -112,7 +112,7 @@
                 svg.setAttribute('style', 'position:absolute; top:0; left:0; width:100%; height:100%;')
                 document.body.appendChild(svg);
             }
-        </script>
+        </script>-->
     </xsl:template>
     
     <xsl:template match="anchor[.=''][@xml:id]" mode="#default deletion addition">

@@ -190,11 +190,11 @@ declare function page:createThirdNavContent($type as xs:string, $indikator as xs
                     else if(contains($elem,"CP")) then replace($elem,"CP ","") 
                     else $elem 
                     )
-         let $title := ($title,<span class="doc_superscript"/>)
-        (:order by $item/@label :)
-        order by $item/@label, number(replace($item/@label,"^\d+[A-Z]?\d?-(\d+).*?$", "$1"))
-                
-            return <a href="{$item/@ref/data(.)}"><li class="{concat("nav_",$type,"_sub_tab")}">{$title}</li></a>
+             let $title := ($title,<span class="doc_superscript"/>)
+             let $label := substring-before(replace($item/@label,("BNP_E3_|CP"),""),".xml")
+             let $front := if(contains($label,"-")) then substring-before($label,"-") else $label
+            order by $front, xs:integer(replace($label, "^\d+[A-Z]?\d?-?([0-9]+).*$", "$1")) 
+            return <a href="{$item/@ref/data(.)}"><li class="{concat("nav_",$type,"_sub_tab")}" >{$title}</li></a>
        else if ($type = "cronologia" ) then
         let $field := (13,16,20,28,15,19,27,35)
         (:        let $field := (2,13,16,20,28,12,15,19,27,35) :)

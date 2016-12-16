@@ -28,10 +28,10 @@
        width:90px;
        }
        .docList {
-       display:none
        }
-       .docList span {
+       .docList span{
         display:block;
+        float: left;
         }
         
         .person {
@@ -39,13 +39,13 @@
         display:block;
         }
    </style>
-   <script>
+<!--   <script>
        $(document).ready(function(){ 
         $(".docListButton").click(function() {
         $(this).next("div").toggle("slow");
         })
        });
-   </script>
+   </script>-->
     <div class="row-fluid">
         <div id="content" class="span12 main">  
             <div id="persons-content">
@@ -54,19 +54,22 @@
                     <div class="index:plottAlpha">
                         <i class="index:printNavigation"/>
                         <div class="helpers:invisibleEach?from=letters&amp;to=letter">
-                            <div class="sub_Nav"><i class="index:printLetter"/></div>
-                            <div class="index:getPersonIndex">
-                                <div class="helpers:invisibleEach?from=keys&amp;to=key">
-                                  <div class="index:ScanDB">
-                                     <div class="person">
-                                       <i class="index:printAuthor"/>
-                                       <div class="docListButton"><i class="helpers:singleElementHidden?xmltype=navigation&amp;xmlid=documentos"/></div>
-                                         <div class="docList">
-                                             <div class="helpers:invisibleEach?from=docs&amp;to=ref">
-                                                 <span><i class="index:printDocLinks"/></span>
-                                             </div>
-                                         </div>
-                                      </div>
+                            <div>
+                                <div class="sub_Nav"><i class="index:printLetter"/></div>
+                                <div class="index:getPersonIndex">
+                                    <div class="helpers:invisibleEach?from=keys&amp;to=key">
+                                        <div class="index:ScanDB">
+                                            <div class="person">
+                                                <i class="index:printAuthor"/>
+                                                <!--<div class="docListButton"><i class="helpers:singleElementHidden?xmltype=navigation&amp;xmlid=documentos"/></div>-->
+                                                <div class="docList">
+                                                    <each class="helpers:invisibleEach?from=docs&amp;to=ref">
+                                                        <i data-template="index:printDocLinks" data-template-ref="ref"/>
+                                                    </each>                                                    
+                                                </div>
+                                                <div class="clear"/>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
