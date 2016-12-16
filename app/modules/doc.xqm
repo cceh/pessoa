@@ -376,21 +376,31 @@ declare function doc:getJournalIndex($node as node(), $model as map(*)){
              (<div class="sub_Nav"><h2 id="{$letter}">{$letter}</h2></div>,
             for $journal in $journalsWithLetter order by $journal return
             (<div class="indexItem">{$journal}</div>,           
-            <ul class="indexDocs">{
+            <div class="indexDocs">{
             doc:getDocsForJournal($journal)
-           }</ul>)))    
+           }</div>)))    
 };
 
 declare function doc:getDocsForJournal($journal){
     let $lists := doc('/db/apps/pessoa/data/lists.xml')
     let $docs := collection("/db/apps/pessoa/data/doc/")
     let $key := $lists//tei:list[@type='periodical']/tei:item/text()[contains(.,$journal)]/../@xml:id/data(.)
-    for $doc in $docs return
-    if($doc//tei:text//tei:rs[@type='periodical']/@key[contains(.,$key)]) then
-        <li class="indexDoc">
-        <a style="color: #08298A;" href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{replace($doc//tei:title[1]/data(.),"/E3","")} </a>
-        </li>     
-     else()  
+    let $result := for $doc in $docs return
+        if($doc//tei:text//tei:rs[@type='periodical']/@key[contains(.,$key)]) then
+               $doc
+         else()  
+    let $amount := count($result)
+        for $a in (1 to $amount) 
+            let $link := substring-before(root($result[$a])/util:document-name(.),".xml")
+            let $label := replace($link,("BNP_E3_|CP"),"")
+            let $front := if(contains($label,"-")) then substring-before($label,"-") else $label
+            order by $front, xs:integer(replace($label, "^\d+[A-Z]?\d?-?([0-9]+).*$", "$1")) 
+        
+        return 
+            <span class="indexDoc">
+                <a style="color: #08298A;" href="{$helpers:app-root}/doc/{substring-before(replace(replace(($result[$a]//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{replace($result[$a]//tei:title[1]/data(.),"/E3","")} </a>
+                {if($a != $amount) then "," else ()}
+            </span>  
 };
 
 declare function doc:getTextIndex($node as node(), $model as map(*)){
