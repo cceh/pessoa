@@ -22,7 +22,7 @@
                 .Obras-First, .Obras-Sub, .Obras-Third, .Obras-Head {
                 width: 230px;
                 }
-                .Obras-Ref-FIrst {
+                .Obras-Ref-First {
                     color:#08298A !important;
                     text-decoration:none;
                    
@@ -51,31 +51,46 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <!--<tr>
                             <td class="Obras-Head">
-                                <i data-template="helpers:getValue" data-template-get="MainTitle" />,
-                                <i data-template="helpers:getValue" data-template-get="AltTitle"/>
+                                <i data-template="helpers:getValue" data-template-get="MainTitle" />
+                                
                             </td>
                             <td>
                                 <wrap data-template="helpers:invisibleEach" data-template-from="FirstRef" data-template-to="FR">
-                                    <a class="Obras-Ref-FIrst" data-template="obras:PrintRef"  data-template-ref="FR" />                                    
+                                    <a class="Obras-Ref-First" data-template="obras:PrintRef"  data-template-ref="FR" />                                    
                                     <i data-template="obras:mentionedAs" data-template-ref="FR" data-template-dir="doc"/>,                                    
                                 </wrap>
-                                <a class="Obras-Ref-FIrst" data-template="obras:PrintRef"  data-template-ref="LastRef" />                                    
+                                <a class="Obras-Ref-First" data-template="obras:PrintRef"  data-template-ref="LastRef" />                                    
                                 <i data-template="obras:mentionedAs" data-template-ref="LastRef" data-template-dir="doc"/>
                             </td>
                         </tr>
+                        <each data-template="helpers:invisibleEach" data-template-from="AltTitle" data-template-to="title">
+                            <tr>
+                                <td>
+                                    <i data-template="helpers:getValue" data-template-get="title"/>
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                        </each>-->
+                        
                         <wrap data-template="helpers:invisibleEach" data-template-from="Works" data-template-to="work">
-                            <wrap data-template="obras:AnalyticObras" data-template-ref="work">
+                            <get data-template="helpers:getValue" data-template-get="work" />
+                            <analytic data-template="obras:AnalyticObras" data-template-ref="work">
                                 <tr>
                                     <td class="Obras-First">
-                                        <i data-template="helpers:getValue" data-template-get="title" />
-                                    </td>                     
+                                        <get data-template="helpers:getValue" data-template-get="title" />
+                                    </td>  
                                     <td>
-                                        <wrap data-template="helpers:invisibleEach" data-template-from="refs" data-template-to="ref" >
-                                            <span class="Obras-span"><a class="Obras-Ref-FIrst" data-template="obras:PrintRef"  data-template-ref="ref"/>,</span>
-                                        </wrap>           
-                                        <span class="Obras-last"><a class="Obras-Ref-FIrst" data-template="obras:PrintRef"  data-template-ref="lastref" /></span>     
+                                        
+                                    </td>               
+                                    <td>
+                                        <each data-template="helpers:invisibleEach" data-template-from="refs" data-template-to="ref" >
+                                            <span class="Obras-span"><a class="Obras-Ref-First" data-template="obras:PrintRef"  data-template-ref="ref"/>,</span>
+                                        </each>           
+                                        <span class="Obras-last"><a class="Obras-Ref-First" data-template="obras:PrintRef"  data-template-ref="lastref" /></span>     
                                     </td>
                                 </tr>
                                 <wrap data-template="helpers:invisibleEach" data-template-from="subworks" data-template-to="Sub">
@@ -86,9 +101,9 @@
                                             </td>
                                             <td>                                     
                                                 <wrap data-template="helpers:invisibleEach" data-template-from="refs" data-template-to="ref" >
-                                                    <span class="Obras-span"><a class="Obras-Ref-FIrst" data-template="obras:PrintSubRef"  data-template-ref="ref"/>,</span>
+                                                    <span class="Obras-span"><a class="Obras-Ref-First" data-template="obras:PrintSubRef"  data-template-ref="ref"/>,</span>
                                                 </wrap>           
-                                                <span class="Obras-last"><a class="Obras-Ref-FIrst" data-template="obras:PrintSubRef"  data-template-ref="lastref" /></span> 
+                                                <span class="Obras-last"><a class="Obras-Ref-First" data-template="obras:PrintSubRef"  data-template-ref="lastref" /></span> 
                                             </td>
                                         </tr>
                                         <wrap data-template="helpers:invisibleEach" data-template-from="subworks" data-template-to="Third">
@@ -99,16 +114,16 @@
                                                     </td>
                                                     <td>                                                       
                                                         <wrap data-template="helpers:invisibleEach" data-template-from="refs" data-template-to="ref" >
-                                                            <span class="Obras-span"><a class="Obras-Ref-FIrst" data-template="obras:PrintSubRef"  data-template-ref="ref"/>,</span>
+                                                            <span class="Obras-span"><a class="Obras-Ref-First" data-template="obras:PrintSubRef"  data-template-ref="ref"/>,</span>
                                                         </wrap>           
-                                                        <span class="Obras-last"><a class="Obras-Ref-FIrst" data-template="obras:PrintSubRef"  data-template-ref="lastref" /></span>
+                                                        <span class="Obras-last"><a class="Obras-Ref-First" data-template="obras:PrintSubRef"  data-template-ref="lastref" /></span>
                                                     </td>
                                                 </tr>
                                             </wrap>
                                         </wrap>
                                     </wrap>
                                 </wrap>
-                            </wrap>
+                            </analytic>
                         </wrap>
                     </tbody>               
                 </table>  
