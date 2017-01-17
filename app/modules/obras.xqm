@@ -97,7 +97,7 @@ declare function obras:SearchObras($node as node(), $model as map(*),$id as xs:s
                                     order by $entry                                     
                                 return  <item title="{$entry/data(.)}" id="{$xmlid}" type="{if($xmlid eq "O2") then "Caiero" else "Title"}" style="{$entry/@subtype/data(.)}"/>                                     
                                 
-    let $Works := for $item in $list/tei:list/tei:item return <item title="{$item/tei:title/data(.)}" id="{$item/@xml:id}" type="{if($xmlid eq "O2") then "Caiero" else "Work"}" />
+    let $Works := for $item in $list/tei:list/tei:item return <item title="{$item/tei:title/data(.)}" id="{if($xmlid eq "O2") then $item/@corresp else $item/@xml:id}" type="{if($xmlid eq "O2") then "Caiero-List" else "Work"}" />
     let $Works := ($Works,$AltTitle)
     let $Works := for $work in $Works order by $work/@title/data(.) return $work
     (:let $ref_amount := count($docs)
@@ -148,13 +148,15 @@ if(exists($model($ref))) then (
     if($model($ref)/@type/data(.) eq "Title") then (
         let $data := $model($ref)
         let $title := $data/@title/data(.)
-         let $docs := obras:SortByDate(obras:buildSearch($data/@id,"doc"))
+         let $docs := obras:SortByDate(obras:buildSearch($data/@id/data(.),"doc"))
          
-        let $refs := for $doc in $docs where $doc//tei:rs/@key = "work" and $doc//tei:rs/@key = @xmlid and $doc//tei:rs/@style=$data/@subtype/data(.)
+        let $refs := for $doc in $docs 
+                          let $ref := doc(concat("/db/apps/pessoa/data/doc/",$doc/@doc/data(.),".xml"))
+                        where $ref//tei:rs[@type = "work" and @key = $data/@id/data(.) and @style=$data/@style/data(.)]
                                             return <item
-                                                            doc="{$model("PR")/@doc/data(.)}"
+                                                            doc="{$doc/@doc/data(.)}"
                                                             dir="doc"
-                                                            title="{$doc//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[1]/data(.)}"
+                                                            title="{$ref//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[1]/data(.)}"
                                                             jump="{$data}"/>
         let $Arefs := for $a in (1 to (count($refs ) -1)) return $refs[$a]
         let $Brefs := $refs[count($refs)]
@@ -171,32 +173,75 @@ if(exists($model($ref))) then (
         let $refs := $data/item
         let $Arefs := for $a in (1 to (count($refs ) -1)) return $refs[$a]
         let $Brefs := $refs[count($refs)]
+        let $param :=  "pub-div" 
+        let $XMLID := substring-before($data/@id/data(.),"-")
+        let $PRS := obras:buildSearch(concat("#",$XMLID),$param)
+        let $PR :=if(count($PRS) >= 1) then (
+                   
+                        <item doc="{substring-before(root($PRS)/util:document-name(.),".xml")}"
+                                    dir="pub"
+                                    title="{$PRS//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[1]/data(.)}"
+                                    jump="{$XMLID}"
+                                    step="Caiero"
+                            />
+                            
+                            )
+                            else()
+        return map {
+            "title" := $title,
+            "PR" := $PR,
+            "refs" := $Arefs,
+            "lastref" := $Brefs           
+            }
+    )
+    
+    
+    else if($model($ref)/@type/data(.) eq "Caiero-List") then (
+        let $data := $model($ref)
+        let $title := $data/@title/data(.)
+        let $refs := $data/item
+        let $Arefs := for $a in (1 to (count($refs ) -1)) return $refs[$a]
+        let $Brefs := $refs[count($refs)]
+        let $subworks := obras:ScanSubWorks($model("listEntry")//tei:item[@corresp = $data/@id/data(.)])
+        let $param :=  "pub-div" 
+       
+        let $XMLID := substring-after($data/@id/data(.),"-")
+        let $PRS := obras:buildSearch($XMLID,$param)
+        let $PR :=if(count($PRS) >= 1) then (
+                        <item doc="{substring-before(root($PRS)/util:document-name(.),".xml")}"
+                                    dir="pub"
+                                    title="{$PRS//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[1]/data(.)}"
+                                    jump="{$XMLID}"
+                                    step="Caiero-List"
+                            />
+                            )
+                            else()
         return map {
             "title" := $title,
             "refs" := $Arefs,
-            "lastref" := $Brefs
+            "lastref" := $Brefs,
+            "subworks" := $subworks,
+            "PR" := $PR
             }
     )
     else
     (
-       (: let $data := $model($ref)
-        let $title := $data/@title/data(.)
-        return map {
-            "title" := $title
-            }:)
         let $work := $model($ref)
         let $param := if($ref eq "Sub" or $ref eq "Third") then "pub-div" else "pub"
         let $XMLID := if($ref eq "Sub" or $ref eq "Third") then concat("#",$work/@id/data(.)) else $work/@id/data(.)
         let $title := $work/@title/data(.)
         let $refs := obras:SortByDate(obras:buildSearch($work/@id/data(.),"doc"))
         let $subworks := obras:ScanSubWorks($model("listEntry")//tei:item[@xml:id = $work/@id/data(.)])
+        
         let $PRS := obras:buildSearch($XMLID,$param)
+        let $doc := if(contains($XMLID,"O2")) then (if(count($PRS) >= 1) then substring-before(root($PRS)/util:document-name(.),".xml") else ()) else $model("PR")/@doc/data(.)
         let $PR :=if(count($PRS) >= 1) then (
                     if($ref eq "Sub" or $ref eq "Third") then 
-                        <item doc="{$model("PR")/@doc/data(.)}"
+                        <item doc="{$doc}"
                                     dir="pub"
                                     title="{$PRS//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[1]/data(.)}"
                                     jump="{$work/@id/data(.)}"
+                                    step="casual"
                             />
                             
                             else obras:AnalyticWork($XMLID,$param,$work,$PRS)
@@ -217,7 +262,8 @@ if(exists($model($ref))) then (
             "subworks" := $subworks,
             "XMLID" := $work/@xml:id/data(.),
             "ref_amount" := $ref_amount,
-            "PR" := $PR
+            "PR" := $PR,
+            "PRS" := $PRS
         }
         )
     )
