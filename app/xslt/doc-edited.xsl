@@ -51,7 +51,7 @@
         </span>
     </xsl:template>
     
-    <xsl:template match="add[@place='below']" mode="#default deletion addition" priority="2">
+    <xsl:template match="add[@place='below' or @place='above']" mode="#default deletion addition" priority="2">
         <xsl:apply-templates/>
     </xsl:template>
     

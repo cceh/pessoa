@@ -6,7 +6,7 @@ declare function local:adapt-conf(){
 	let $conf-file := doc("/db/apps/pessoa/conf.xml")
 	return 
     	(
-    		update replace $conf-file//webapp-root with <webapp-root>http://projects.cceh.uni-koeln.de/pessoa</webapp-root>,
+    		update replace $conf-file//webapp-root with <webapp-root>http://www.pessoadigital.pt</webapp-root>,
     		update replace $conf-file//request-path with <request-path>/apps/pessoa</request-path>
 	)
 };

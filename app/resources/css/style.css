@@ -1046,10 +1046,14 @@ li.itabs.selected span{
     display:block;
     width:40%;
 }
-.DivPessoa input {
+.DivPessoal input {
     margin-right: 3px;
     vertical-align: top;
 }
+.DivPessoal label {
+    vertical-align: middle;
+}
+
 #DivPessoal-1 {
 
 }
@@ -1195,6 +1199,9 @@ div.text p.indent-1 {
 div.text p.indent-first {
     text-indent: 2em;
 }
+div.text p.indent-13 {
+    padding-left: 30%;
+}
 div.text p.position-center {
     display: inline-block;
     margin: 0 40%;
@@ -1250,6 +1257,9 @@ div.text div.item span.note.margin-left {
     top: 5px;
     line-height: normal;
     white-space: nowrap;
+    text-align: right;
+    display: inline-block;
+    width: 3em;
 }
 div.text div.item.indent {
     text-indent: 3em;
@@ -1355,4 +1365,8 @@ div.text hr.line-44 {
 div.text hr.line-14.inline, div.text hr.line-24.inline, div.text hr.line-34.inline, div.text hr.line-44.inline {
     display: inline-block;
     margin: 0 0.5em 0.25em 0;
+}
+/* STYLES FÜR DIE XSLT-TRANSFORMATION DER PUBLIKATONEN */
+div#text-div .signed.indent-13 {
+    text-indent: 30%;
 }

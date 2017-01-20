@@ -77,7 +77,17 @@
     </xsl:template>
     
     <xsl:template match="signed">
-        <p class="signed"><xsl:apply-templates /></p>
+        <p>
+            <xsl:choose>
+                <xsl:when test="@rend">
+                    <xsl:attribute name="class">signed <xsl:value-of select="@rend"/></xsl:attribute>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:attribute name="class">signed</xsl:attribute>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:apply-templates />
+        </p>
     </xsl:template>
     
     <xsl:template match="bibl">

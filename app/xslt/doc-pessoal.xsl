@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" xpath-default-namespace="http://www.tei-c.org/ns/1.0" version="2.0">
     
+    <!-- Authors: Ulrike Henny, Alena Geduldig -->
+    
     <xsl:import href="doc.xsl"/>
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
     
@@ -33,7 +35,7 @@
     </xsl:template>
     
     <!-- Anzeige von Zeilenumbrüchen -->
-    <xsl:template match="lb[not(preceding-sibling::*[1][local-name()='pc'])][not(ancestor::note)][not(ancestor::add)]" mode="#default deletion">
+    <xsl:template match="lb[not(preceding-sibling::*[1][local-name()='pc'])][not(ancestor::note)][not(ancestor::add)]" mode="#default deletion addition">
         <xsl:choose>
             <xsl:when test="$lb = 'yes'">
                 <br />
@@ -44,59 +46,65 @@
         </xsl:choose>
     </xsl:template>
     
-    <xsl:template match="lb[preceding-sibling::*[1][local-name()='pc']]" mode="#default deletion">
+    <xsl:template match="lb[preceding-sibling::*[1][local-name()='pc']]" mode="#default deletion addition">
         <xsl:if test="$lb = 'yes'">
             <br />
         </xsl:if>
     </xsl:template>
     
-    <xsl:template match="pc" mode="#default deletion">
+    <xsl:template match="pc" mode="#default deletion addition">
         <xsl:if test="$lb = 'yes'">
             <xsl:apply-templates />
         </xsl:if>
     </xsl:template>
      
-    <!-- Anzeige von Abkürzungen -->
-    <xsl:template match="choice[abbr and expan]" mode="#default deletion">
+    <!-- Choices -->
+    <!-- Abkürzungen und Auflösungen: Darstellung der aufgelösten Form -->
+    <xsl:template match="choice[abbr and expan[ex]]" mode="#default deletion addition">
         <xsl:choose>
-            <xsl:when test="$abbr = 'yes'">
+            <!-- abbr no -> Abk. sollen nicht aufgelöst werden -->
+            <xsl:when test="$abbr = 'no'">
                 <xsl:apply-templates select="abbr/text() | abbr/child::*" />
                 <xsl:if test="following-sibling::choice[1]">
                     <xsl:text>&#160;</xsl:text>
                 </xsl:if>           
             </xsl:when>
             <xsl:otherwise>
-                <xsl:apply-templates select="expan/text() | expan/child::*"/>
-                <xsl:if test="following-sibling::choice[1]">
-                    <xsl:text>&#160;</xsl:text>
-                </xsl:if>            
+                <xsl:choose>
+                    <xsl:when test="abbr/metamark[@function='ditto']">
+                        <span class="ditto">
+                            <xsl:apply-templates select="expan/text() | expan/child::*"/>
+                        </span>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:apply-templates select="expan/text() | expan/child::*"/> 
+                    </xsl:otherwise>
+                </xsl:choose>            
             </xsl:otherwise>
-        </xsl:choose>
+        </xsl:choose> 
     </xsl:template>
     
-    <!--<xsl:template match="choice[abbr and expan[not(ex)]]">
+    <xsl:template match="choice[abbr and expan[not(ex)]]" mode="#default deletion addition">
+        <span class="expan">[<xsl:apply-templates select="expan/text() | expan/child::*"/>]</span>
+    </xsl:template>
+    
+    <xsl:template match="abbr" mode="#default deletion addition">
         <xsl:choose>
-            <xsl:when test="$abbr = 'yes'">
-                <xsl:apply-templates select="abbr/text() | abbr/child::*" />
-                <xsl:if test="following-sibling::choice[1]">
-                    <xsl:text>&#160;</xsl:text>
-                </xsl:if>
-            </xsl:when>
+            <xsl:when test="parent::choice"/>
             <xsl:otherwise>
-                [<span class="expan" style="color:#99004D;">
-                    <xsl:apply-templates select="expan/text() | expan/child::*"/>   
-                </span>]
+                <xsl:apply-templates/>
             </xsl:otherwise>
         </xsl:choose>
-    </xsl:template>-->
-    
-    <xsl:template match="abbr" mode="#default deletion"/>
-    <xsl:template match="ex" mode="#default deletion">
-        <span class="ex" style="color:#99004D;">[<xsl:apply-templates />]</span>
     </xsl:template>
+    
+    <xsl:template match="ex" mode="#default deletion addition">
+        <span class="ex">[<xsl:apply-templates />]</span>
+    </xsl:template>
+    
+    
    
    <!-- Einrückungen aufheben wenn lb's entfernt werden-->
-    <xsl:template match="seg[@rend='indent']" mode="#default deletion">
+    <xsl:template match="seg[@rend='indent']" mode="#default deletion addition">
         <span>
             <xsl:if test="$lb='yes'">
               <xsl:attribute name="class">indent</xsl:attribute>  
@@ -105,7 +113,7 @@
         </span>   
     </xsl:template>
     
-    <xsl:template match="ab[@rend='indent']" mode="#default deletion">
+    <xsl:template match="ab[@rend='indent']" mode="#default deletion addition">
         <span class="ab">
             <xsl:if test="$lb='yes'">
                 <xsl:attribute name="style">margin-left:2em;</xsl:attribute>  
@@ -115,7 +123,7 @@
     </xsl:template>
     
 <!-- special case 180r -->
-    <xsl:template match="text[@xml:id='bnp-e3-180r']//note[@place='margin top right']" mode="#default deletion">
+    <xsl:template match="text[@xml:id='bnp-e3-180r']//note[@place='margin top right']" mode="#default deletion addition">
         <span class="note addition margin top right" style="right: 0px;">
             <xsl:apply-templates/>
         </span>
