@@ -47,6 +47,8 @@
             <script type="text/javascript">
                 $(document).ready(function() {               
                 calcFacsimilie();           
+                fixDiv();
+                $(window).scroll(fixDiv);
                 });
                 
                 $("#zitat").click(function() {
@@ -55,6 +57,7 @@
                 $("#symbols").click(function() {
                 $( "#symboliga" ).toggle();
                 });
+                
             </script>
         </div>
     </div>
