@@ -80,44 +80,44 @@
         <body>
             <div>
                 <list>
-                    <item xml:id="I1">Primeiro Fausto</item>
-                    <item xml:id="I2">Segundo Fausto <note place="margin-right"
+                    <item xml:id="I1"><rs type="title">Primeiro Fausto</rs></item>
+                    <item xml:id="I2"><rs type="title">Segundo Fausto</rs> <note place="margin-right"
                             target="range(I1,I3)">
                             <metamark function="grouping" rend="curly-bracket">
-                                <label> Fausto <lb/>Adão <lb/>Lusbel. </label>
+                                <label> <rs type="name" key="P92">Fausto</rs> <lb/><rs type="name" key="P394">Adão</rs> <lb/><rs type="name" key="P395">Lusbel</rs>. </label>
                             </metamark>
                         </note>
                     </item>
-                    <item xml:id="I3">Terceiro Fausto</item>
-                    <item>D. Sebastião.</item>
-                    <item>Ligéa (poema dramatico).</item>
-                    <item>Trilogia dos Gigantes: <list rend="inline">
-                            <item>Briareu.</item>
-                            <item>Typho.</item>
-                            <item>Livor.</item>
+                    <item xml:id="I3"><rs type="title">Terceiro Fausto</rs></item>
+                    <item><rs type="title"><rs type="name" key="P21">D. Sebastião</rs></rs>.</item>
+                    <item><rs type="title">Ligéa (poema dramatico)</rs>.</item>
+                    <item><rs type="title">Trilogia dos Gigantes</rs>: <list rend="inline">
+                        <item><rs type="title">Briareu</rs>.</item>
+                        <item><rs type="title">Typho</rs>.</item>
+                        <item><rs type="title">Livor</rs>.</item>
                         </list>
                     </item>
                     <item>
-                        <note place="margin-left">(E)</note> Prometheus Revinctus. </item>
+                        <note place="margin-left">(E)</note> <rs type="title">Prometheus Revinctus</rs>. </item>
                     <item>
-                        <note place="margin-left">(E)</note> The Duke of Parma. </item>
+                        <note place="margin-left">(E)</note> <rs type="title">The Duke of Parma</rs>. </item>
                     <item>
-                        <note place="margin-left">(E)</note> The Ship of Fools. </item>
-                    <item>Alberto Caeiro <note type="addition" n="2">– I vol.</note><anchor
+                        <note place="margin-left">(E)</note> <rs type="title">The Ship of Fools</rs>. </item>
+                    <item><rs type="name" key="AC">Alberto Caeiro</rs> <note type="addition" n="2">– I vol.</note><anchor
                             xml:id="A1"/></item>
-                    <item>Ricardos Reis <note type="addition" n="2">– I ou 2 v.</note></item>
-                    <item>Alvaro de Campos <note type="addition" n="2">– I vol.</note></item>
-                    <item>Livro do Desasocego.</item>
-                    <item>Contra a Democracia.</item>
-                    <item>Itinerario (“livros” varios).</item>
+                    <item><rs type="name" key="RR">Ricardos Reis</rs> <note type="addition" n="2">– I ou 2 v.</note></item>
+                    <item><rs type="name" key="AdC">Alvaro de Campos <note type="addition" n="2">– I vol.</note></item>
+                    <item><rs type="title">Livro do Desasocego</rs>.</item>
+                    <item><rs type="title">Contra a Democracia</rs>.</item>
+                    <item><rs type="title">Itinerario (“livros” varios)</rs>.</item>
                     <item>
-                        <note place="margin-left">(E)</note> English Poems. </item>
-                    <item>Sociologia Politica.</item>
+                        <note place="margin-left">(E)</note> <rs type="title">English Poems</rs>. </item>
+                    <item><rs type="title">Sociologia Politica</rs>.</item>
                     <item>
-                        <del rend="overstrike">(Antonio Mora).</del>
+                        <del rend="overstrike">(<rs type="name" key="P1">Antonio Mora</rs>).</del>
                         <metamark xml:id="M1" rend="arrow-right-curved-up" function="assignment" target="A1" n="2">
                             <label>
-                                <choice>
+                                <rs type="name" key="FP" style="b"><choice>
                                     <abbr>F</abbr>
                                     <expan>F<ex>ernando</ex></expan>
                                 </choice> Pessoa
@@ -125,24 +125,24 @@
                         </metamark>
                         <metamark xml:id="M2" rend="arrow-right-curved-down" function="assignment" target="A2" n="2"/>
                     </item>
-                    <item>Auto das Bacchantes.</item>
-                    <item>Auto do Orpheu.</item>
-                    <item>Quaresma, Decifrador.</item>
-                    <item>Marcos Alves.</item>
-                    <item>Contos para Metaphysicos.<anchor xml:id="A2"/></item>
-                    <item>Cinco Dialogos sobre a Tyrannia.</item>
+                    <item><rs type="title">Auto das Bacchantes</rs>.</item>
+                    <item><rs type="title">Auto do Orpheu</rs>.</item>
+                    <item><rs type="title"><rs type="name" key="P34">Quaresma</rs>, Decifrador</rs>.</item>
+                    <item><rs type="title"><rs type="name" key="P93">Marcos Alves</rs></rs>.</item>
+                    <item><rs type="title">Contos para Metaphysicos</rs>.<anchor xml:id="A2"/></item>
+                    <item><rs type="title">Cinco Dialogos sobre a Tyrannia</rs>.</item>
                     <pb n="2"/>
-                    <item>Legendas.</item>
-                    <item>Notas e Prefacios.</item>
+                    <item><rs type="title">Legendas</rs>.</item>
+                    <item><rs type="title">Notas e Prefacios</rs>.</item>
                     <item>
-                        <note place="margin-left">(E)</note> Impermanence. <note type="addition"
+                        <note place="margin-left">(E)</note> <rs type="title">Impermanence</rs>. <note type="addition"
                             n="2">(E?)</note>
                     </item>
                     <item>
-                        <note place="margin-left">(E)</note> English Sonets (in “books”). </item>
-                    <item>Bernardo Soares (Contos).</item>
-                    <item>Na Pharmacia do Evaristo.</item>
-                    <item>Theatro Statico (séries).</item>
+                        <note place="margin-left">(E)</note> <rs type="title">English Sonets (in “books”)</rs>. </item>
+                    <item><rs type="title"><rs type="name" key="P393">Bernardo Soares</rs> (Contos)</rs>.</item>
+                    <item><rs type="title">Na Pharmacia do Evaristo</rs>.</item>
+                    <item><rs type="title">Theatro Statico (séries)</rs>.</item>
                     <item>Aristography (and translated adaptations).</item>
                     <item>Telegraphic Code.</item>
                 </list>
