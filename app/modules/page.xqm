@@ -9,6 +9,7 @@ import module namespace doc="http://localhost:8080/exist/apps/pessoa/doc" at "do
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
 import module namespace app="http://localhost:8080/exist/apps/pessoa/templates" at "app.xql";
 import module namespace search="http://localhost:8080/exist/apps/pessoa/search" at "search.xqm";
+
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare namespace request="http://exist-db.org/xquery/request";
 
