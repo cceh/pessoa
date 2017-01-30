@@ -71,7 +71,7 @@ gulp.task('local-upload', ['build'], function() {
 });
 
 gulp.task('local-post-install', ['local-upload'], function() {
-	return gulp.src('scripts/post-install.xql')
+	return gulp.src('app/post-install.xql')
 		.pipe(localExist.query());
 });
 gulp.task('deploy-local',['local-post-install']);
@@ -87,7 +87,7 @@ gulp.task('remote-upload', ['build'], function() {
 });
 
 gulp.task('remote-post-install', ['remote-upload'], function() {
-	return gulp.src('scripts/post-install.xql')
+	return gulp.src('app/post-install.xql')
 		.pipe(remoteExist.query());
 });
 
