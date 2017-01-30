@@ -60,7 +60,7 @@ exist.defineMimeTypes({ 'text/xml': ['rng'] });
 var permissions = { 'controller.xql': 'rwxr-xr-x' };
 
 
-gulp.task('deploy-local', ['build'], function() {
+gulp.task('local-upload', ['build'], function() {
 
 	return gulp.src(buildDest + '**/*', {base: buildDest})
 		.pipe(localExist.newer({target: "/db/apps/pessoa/"}))
@@ -69,6 +69,12 @@ gulp.task('deploy-local', ['build'], function() {
 			permissions: permissions
 		}));
 });
+
+gulp.task('local-post-install', ['local-upload'], function() {
+	return gulp.src('scripts/post-install.xql')
+		.pipe(localExist.query());
+});
+gulp.task('deploy-local',['local-post-install']);
 
 gulp.task('remote-upload', ['build'], function() {
 
@@ -81,7 +87,7 @@ gulp.task('remote-upload', ['build'], function() {
 });
 
 gulp.task('remote-post-install', ['remote-upload'], function() {
-	return gulp.src('scripts/post-deploy.xql')
+	return gulp.src('scripts/post-install.xql')
 		.pipe(remoteExist.query());
 });
 
