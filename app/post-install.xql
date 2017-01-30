@@ -29,26 +29,37 @@ declare function local:move-index(){
 
 
 declare function local:createDocXML() {
-let $input := 
-                    <docs> {
-                    
-                    for $indikator in ("1-9", "10","20","30","40","50","60","70","80","90","100","CP")  return
-                        <list id="{$indikator}"> {
-                            for $item in local:items($indikator)
-                                        let $label := substring-before(replace($item/@label,("BNP_E3_|CP"),""),".xml")
-                                         let $front := if(contains($label,"-")) then substring-before($label,"-") else $label
-                                        order by $front, xs:integer(replace($label, "^\d+[A-Z]?\d?-?([0-9]+).*$", "$1")) 
-                                        return <doc>{$item/@label/data(.)}</doc>
-                                        }
-                        </list>
-                        }
-                    </docs>
-                    
+let $items := for $indikator in ("1-9", "10","20","30","40","50","60","70","80","90","100","CP")  return local:docItems($indikator)
+let $items := for $item in $items order by xs:integer(local:anaIndi($item/@indi/data(.)))
+                        return <item label="{$item/@label/data(.)}"  indi="{$item/@indi/data(.)}"/>
+let $sum := sum($items)                        
+let $docs := <docs>
+                        {for $a in (1 to  $sum - 1) return
+                            <doc indi="{$items[$a]/@indi/data(.)}">{$items[$a]/@label/data(.)}</doc>
+                            }
+                        </docs>
+let $input :=$docs                    
 return xmldb:store("/db/apps/pessoa/data","doclist.xml",$input)
 };
 
 
-declare function local:items($indikator) {
+declare function local:anaIndi($indi) {
+    if($indi = "1-9" or $indi = "Pessoa") then "1"
+    else if($indi = "10" or $indi = "Caiero" ) then "2"
+    else if($indi = "20" or $indi = "Campos") then "3"
+    else if($indi = "30" or $indi = "Reis") then "4"
+    else if($indi = "40") then "5"
+    else if($indi = "50") then "6"
+    else if($indi = "60") then "7"
+    else if($indi = "70") then "8"
+    else if($indi = "80") then "9"
+    else if($indi = "90") then "10"
+    else if($indi = "100") then "11"
+    else if($indi = "CP") then "12"
+    else "Wrong"
+};
+
+declare function local:docItems($indikator) {
     for $hit in collection("/db/apps/pessoa/data/doc")/tei:TEI/tei:teiHeader/tei:fileDesc/tei:publicationStmt/tei:idno[@type="filename"]/data(.)
                 let $label :=   if(substring-after($hit, "BNP_E3_") != "") then substring-after(replace(substring-before($hit, ".xml"), "_", " "), "BNP E3 ")
                                 else if(substring-after($hit,"CP") != "") then  substring-after(substring-before($hit, ".xml"),"CP")
@@ -57,11 +68,11 @@ declare function local:items($indikator) {
                           return if( $indikator !="1-9" 
                                             and local:getCorrectDoc($label, $indikator) = xs:boolean("true") 
                                             and $indikator != "CP" and contains($hit,"BNP")) 
-                                                then <item label="{$title}"/>
+                                                then <item label="{$title}" indi="{$indikator}"/>
                                         else if ($indikator = "CP" and contains($hit,"CP")) 
-                                                then <item label="{$title}"/>
+                                                then <item label="{$title}" indi="{$indikator}"/>
                                         else if($indikator = "1-9" and local:getCorretDoc_alphabetical($label,2) = xs:boolean("true")) 
-                                                then <item label="{$title}"/>
+                                                then <item label="{$title}" indi="{$indikator}"/>
                                         else ()
                                         };
 
