@@ -1,6 +1,5 @@
 xquery version "1.0";
 import module namespace xmldb="http://exist-db.org/xquery/xmldb";
-import module namespace func="http://localhost:8080/exist/apps/pessoa/func" at "modules/func.xqm";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 (: adapt config paths to remote system :)
