@@ -37,7 +37,7 @@
             <idno type="filename">CP786.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
+            <msDesc xml:id="M1" type="structured">
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>CP786</idno>
@@ -59,6 +59,12 @@
                   </origin>
                </history>
             </msDesc>
+            <msDesc corresp="#M1" type="prose">
+               <msIdentifier/>
+               <p>Lista manuscrita no verso de uma folha impressa de «Sobre um manifesto de
+                  estudantes», panfleto publicado em 1923, publicada em <seg rend="italic">Prosa de
+                     Álvaro de Campos</seg> (2012, 295).</p>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -69,7 +75,8 @@
       <body>
          <div>
             <head rend="center">Pequenos folhetos,<lb/> com assignatura<lb/> — 10 por 20.00 — </head>
-            <head><hi rend="underline"><rs type="periodical" key="J11">Contemporânea</rs></hi></head>
+            <head><hi rend="underline"><rs type="periodical" key="J11"
+               >Contemporânea</rs></hi></head>
             <table>
                <row>
                   <cell><supplied resp="PS" reason="omitted-in-original"/></cell>

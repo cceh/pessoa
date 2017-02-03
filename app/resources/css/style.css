@@ -1179,7 +1179,7 @@ div.text div.item.indent-2 {
 div.text div.item span.label {
     display: inline-block;
     min-width: 2em;
-    text-align: right;
+    text-align: center; // war right
     text-indent: 0;
     position: relative;
 }
@@ -1321,6 +1321,7 @@ div.text span.above {
     position: absolute;
     font-size: smaller;
     top: -1.5em;
+    white-space: nowrap;
 }
 div.text span.below {
     position: absolute;

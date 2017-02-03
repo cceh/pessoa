@@ -5,9 +5,14 @@
     version="2.0">
     
     <xsl:template match="/">
-        
-        <xsl:for-each select="collection('../data/doc')"></xsl:for-each>
-        
+        <docs>
+            <xsl:for-each select="collection('../data/doc')//TEI">
+                <doc>
+                    <filename_1><xsl:value-of select="tokenize(base-uri(root(.)),'/')[last()]"/></filename_1>
+                    <filename_2><xsl:value-of select=".//idno[@type='filename']"/></filename_2>
+                </doc>
+            </xsl:for-each>
+        </docs>
     </xsl:template>
     
     
