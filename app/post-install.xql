@@ -11,7 +11,6 @@ declare function local:adapt-conf(){
     		update replace $conf-file//request-path with <request-path>/apps/pessoa</request-path>
 	)
 };
-
 (: move search index to system :)
 declare function local:move-index(){
 	let $app-path := "/db/apps/pessoa"
