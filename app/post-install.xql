@@ -11,7 +11,6 @@ declare function local:adapt-conf(){
     		update replace $conf-file//request-path with <request-path>/apps/pessoa</request-path>
 	)
 };
-
 (: move search index to system :)
 declare function local:move-index(){
 	let $app-path := "/db/apps/pessoa"
@@ -27,35 +26,68 @@ declare function local:move-index(){
 	)
 };
 
+declare function local:createXML() {
+    let $docs := local:createDocXML()
+    let $Sdocs := count($docs)
+    let $docs := <docs dir="doc">
+                                {for $a in (1 to $Sdocs)
+                                    return <doc pos="{$a}" indi="{$docs[$a]/@indi/data(.)}" id="{substring-before($docs[$a]/@label/data(.),".xml")}">{$docs[$a]/@label/data(.)}</doc>}
+                            </docs>
+    let $pub := local:createPubXML()
+    let $Spub := count($pub)
+    let $pub := <docs dir="pub">
+                                {for $a in (1 to $Spub)
+                                    return <doc pos="{$a}" indi="{$pub[$a]/@indi/data(.)}" id="{substring-before($pub[$a]/@label/data(.),".xml")}">{$pub[$a]/@label/data(.)}</doc>}
+                            </docs>
+    
+    let $input := <list>
+                            <meta>
+                                <sum id="doc">{$Sdocs}</sum>
+                                <sum id="pub">{$Spub}</sum>
+                         </meta>
+                            {$docs}
+                            {$pub}
+                        </list>
+    let $input := $input
+    return xmldb:store("/db/apps/pessoa/data","doclist.xml",$input)
+};
+declare function local:createPubXML() {
+  let $items := for $indikator in ("Pessoa","Caiero","Campos","Reis") return local:pubItems($indikator)
+  let $items := for $item in $items order by local:anaIndi($item/@indi/data(.))
+                        return <item label="{$item/@label/data(.)}"  indi="{$item/@indi/data(.)}"/>
+  return $items
+};
+
+declare function local:pubItems($indikator) {
+    for $hit in xmldb:get-child-resources("/db/apps/pessoa/data/pub") 
+    where contains($hit,$indikator)
+    return <item label="{$hit}" indi="{$indikator}"/>
+};
 
 declare function local:createDocXML() {
 let $items := for $indikator in ("1-9", "10","20","30","40","50","60","70","80","90","100","CP")  return local:docItems($indikator)
-let $items := for $item in $items order by xs:integer(local:anaIndi($item/@indi/data(.)))
+let $items := for $item in $items 
+                        let $title := substring-before(replace($item/@label,("BNP_E3_|CP"),""),".xml")
+                         let $front := if(contains($title,"-")) then substring-before($title,"-") else $title
+                        order by local:anaIndi($item/@indi/data(.)),$front, xs:integer(replace($title, "^\d+[A-Z]?\d?-?([0-9]+).*$", "$1")) 
                         return <item label="{$item/@label/data(.)}"  indi="{$item/@indi/data(.)}"/>
-let $sum := sum($items)                        
-let $docs := <docs>
-                        {for $a in (1 to  $sum - 1) return
-                            <doc indi="{$items[$a]/@indi/data(.)}">{$items[$a]/@label/data(.)}</doc>
-                            }
-                        </docs>
-let $input :=$docs                    
-return xmldb:store("/db/apps/pessoa/data","doclist.xml",$input)
+return $items
 };
 
 
 declare function local:anaIndi($indi) {
-    if($indi = "1-9" or $indi = "Pessoa") then "1"
-    else if($indi = "10" or $indi = "Caiero" ) then "2"
-    else if($indi = "20" or $indi = "Campos") then "3"
-    else if($indi = "30" or $indi = "Reis") then "4"
-    else if($indi = "40") then "5"
-    else if($indi = "50") then "6"
-    else if($indi = "60") then "7"
-    else if($indi = "70") then "8"
-    else if($indi = "80") then "9"
-    else if($indi = "90") then "10"
-    else if($indi = "100") then "11"
-    else if($indi = "CP") then "12"
+    if($indi = "1-9" or $indi = "Pessoa") then 1
+    else if($indi = "10" or $indi = "Caiero" ) then 2
+    else if($indi = "20" or $indi = "Campos") then 3
+    else if($indi = "30" or $indi = "Reis") then 4
+    else if($indi = "40") then 5
+    else if($indi = "50") then 6
+    else if($indi = "60") then 7
+    else if($indi = "70") then 8
+    else if($indi = "80") then 9
+    else if($indi = "90") then 10
+    else if($indi = "100") then 11
+    else if($indi = "CP") then 12
     else "Wrong"
 };
 
@@ -124,5 +156,5 @@ declare function  local:getCorrectDoc_nummeric($label as xs:string, $pos as xs:i
 (
 local:adapt-conf(),
 local:move-index(),
-local:createDocXML()
+local:createXML()
 )

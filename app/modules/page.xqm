@@ -265,20 +265,23 @@ declare function page:createItem($type as xs:string, $indikator as xs:string?) a
                         else substring-after($genre/attribute(), "#")
             order by $genre collation "?lang=pt" 
             return <item label="{$label}"  ref="{concat($helpers:app-root,'/',$helpers:web-language)}/genre/{$ref}" /> 
-   else if($type = "documentos") 
-        then for $hit in xmldb:get-child-resources("/db/apps/pessoa/data/doc")
+   else if($type = "documentos") then
+        for $item in doc("/db/apps/pessoa/data/doclist.xml")//docs[@dir = "doc"]/doc
+        where $item[@indi = $indikator]
+        return <item label="{$item/data(.)}" ref="{concat($helpers:app-root,'/',$helpers:web-language, "/doc/", $item/@id/data(.))}"/>
+        (:then for $hit in xmldb:get-child-resources("/db/apps/pessoa/data/doc")
             let $label :=   if(substring-after($hit, "BNP_E3_") != "") then substring-after(replace(substring-before($hit, ".xml"), "_", " "), "BNP E3 ")
                             else if(substring-after($hit,"CP") != "") then  substring-after(substring-before($hit, ".xml"),"CP")
                             else ()
-                (:let $title := substring-after(doc(concat("/db/apps/pessoa/data/doc/",$hit))//tei:titleStmt/tei:title/data(.)," "):)
-                let $title :=  $hit (:doc(concat("/db/apps/pessoa/data/doc/",$hit))//tei:titleStmt/tei:title :)  (:for $elem in doc(concat("/db/apps/pessoa/data/doc/",$hit))//tei:titleStmt/tei:title/node() return if(exists($elem/node())) then <span class="doc_superscript">{$elem/node()/data(.)}</span> else $elem
-                :)let $ref := concat($helpers:app-root,'/',$helpers:web-language, "/doc/", substring-before($hit, ".xml"))         
+                (\:let $title := substring-after(doc(concat("/db/apps/pessoa/data/doc/",$hit))//tei:titleStmt/tei:title/data(.)," "):\)
+                let $title :=  $hit (\:doc(concat("/db/apps/pessoa/data/doc/",$hit))//tei:titleStmt/tei:title :\)  (\:for $elem in doc(concat("/db/apps/pessoa/data/doc/",$hit))//tei:titleStmt/tei:title/node() return if(exists($elem/node())) then <span class="doc_superscript">{$elem/node()/data(.)}</span> else $elem
+                :\)let $ref := concat($helpers:app-root,'/',$helpers:web-language, "/doc/", substring-before($hit, ".xml"))         
                       order by $hit 
                       return if( $indikator !="1-9" and page:getCorrectDoc($label, $indikator) = xs:boolean("true") and $indikator != "CP" and contains($hit,"BNP")) then
                       <item label="{$title}" ref="{$ref}"  />
                       else if ($indikator = "CP" and contains($hit,"CP")) then <item label="{$title}" ref="{$ref}"  />
                       else if($indikator = "1-9" and page:getCorretDoc_alphabetical($label,2) = xs:boolean("true")) then <item label="{$title}" ref="{$ref}"  />
-                      else ()
+                      else ():)
    else if($type = "cronologia")
         then let $date := concat("19",$indikator)
         for $para in ("date","date_when","date_notBefore","date_notAfter","date_from","date_to")
@@ -329,34 +332,6 @@ declare function page:clearPublikation($pub as node()) as xs:string {
      return   if(substring-after(root($pub)/util:document-name(.),$author) != "")
             then substring-after(replace(replace(substring-before(root($pub)/util:document-name(.),".xml"),"-", " "),"_"," "),$author)
             else ()
-};
-
-declare function page:getCorrectDoc($label as xs:string, $indi as xs:string) as xs:boolean+ {
-    if(contains(substring($label,1,1),substring($indi,1,1)) ) then
-        let $c_label := if( contains($label,"-") ) then substring-before($label,"-") else $label
-        for $pos in ( 1 to string-length($c_label))
-            return if (page:getCorretDoc_alphabetical($c_label,$pos) = xs:boolean("true") or $pos = string-length($c_label)) then page:getCorrectDoc_Step2($label,$indi,$pos) else xs:boolean("false")
-    else xs:boolean("false")
-};
-
-
-declare function page:getCorrectDoc_Step2($c_label as xs:string, $indi as xs:string,$pos as xs:integer) as xs:boolean{
-if( ($pos = 2  or $pos = 3) and string-length($indi) = 2 and page:getCorrectDoc_nummeric($c_label,2) = xs:boolean("true") and not( page:getCorrectDoc_nummeric($c_label,3) = xs:boolean("true"))) then xs:boolean("true") 
-else if ( ($pos = 3 or $pos = 4) and string-length($indi) = 3 and page:getCorrectDoc_nummeric($c_label,3) = xs:boolean("true")) then xs:boolean("true") 
-else if( ($pos = 3 or $pos = 2 or $pos = 1) and string-length($indi) = 1 and (  page:getCorretDoc_alphabetical($c_label,$pos)  = xs:boolean("true") or   page:getCorretDoc_alphabetical($c_label,2)  = xs:boolean("true") or   page:getCorretDoc_alphabetical($c_label,3)  = xs:boolean("true")) ) then xs:boolean("true")
-else xs:boolean("false")
-};
-
-
-declare function page:getCorretDoc_alphabetical($label as xs:string, $pos as xs:integer) as xs:boolean? {
-    for $cut in ( "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y" ,"z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y" ,"Z","-") 
-    return if (contains(substring($label,$pos,1),$cut )) then xs:boolean("true") else ()
-
-};
-
-declare function  page:getCorrectDoc_nummeric($label as xs:string, $pos as xs:integer) as xs:boolean? {
-    for $cut in (0 to 9)
-    return if (contains(substring($label, $pos, 1),$cut)) then xs:boolean("true") else  ()
 };
 
 
