@@ -267,42 +267,80 @@ declare function search:date_search($db as node()*,$para as xs:string,$date as x
 declare function search:profiresult($node as node(), $model as map(*), $sel as xs:string, $orderBy as xs:string?) as node()+ {
 if(exists($sel) and $sel = "union") 
     then
-    if(exists($model(concat("r_",$sel))))
-    
-    then if ($model("query")!="") then 
-        for $hit in $model(concat("r_",$sel))
-       
-            let $file_name := root($hit)/util:document-name(.)
-            let $sort := if($orderBy!="alpha") then (author:getYearOrTitle($hit,"date"))
-                        else $file_name
-            let $expanded := kwic:expand($hit)
-            let $title := 
-                    if(doc(concat("/db/apps/pessoa/data/doc/",$file_name))//tei:sourceDesc/tei:msDesc) 
-                        then doc(concat("/db/apps/pessoa/data/doc/",$file_name))//tei:msDesc/tei:msIdentifier/tei:idno[1]/data(.)
-                        else doc(concat("/db/apps/pessoa/data/pub/",$file_name))//tei:biblStruct/tei:analytic/tei:title[1]/data(.)
-            order by $sort
-            return if(substring-after($file_name,"BNP") != "" or substring-after($file_name,"CP") != "")
-                    then <li><a href="{$helpers:app-root}/{$helpers:web-language}/doc/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"))}">{replace($title,"/E3","")}</a>
-                        {kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="40"/>)}</li>
-                    else <li><a href="{$helpers:app-root}/{$helpers:web-language}/pub/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"))}">{$title}</a>
-                        {kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="40"/>)}</li>
-        else 
-        for $hit in $model(concat("r_",$sel))
-            let $file_name := root($hit)/util:document-name(.)
-            let $sort := if($orderBy!="alpha") then (author:getYearOrTitle($hit,"date"))
-                        else $file_name
-            let $title := 
-                    if(doc(concat("/db/apps/pessoa/data/doc/",$file_name))//tei:sourceDesc/tei:msDesc) 
-                        then doc(concat("/db/apps/pessoa/data/doc/",$file_name))//tei:msDesc/tei:msIdentifier/tei:idno[1]/data(.)
-                        else doc(concat("/db/apps/pessoa/data/pub/",$file_name))//tei:biblStruct/tei:analytic/tei:title[1]/data(.)
-                order by $sort
-                return if(substring-after($file_name,"BNP") != "" or substring-after($file_name,"CP") != "")
-                        then <li><a href="{$helpers:app-root}/{$helpers:web-language}/doc/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"))}">{replace($title,"/E3","")}</a></li>
-                        else <li><a href="{$helpers:app-root}/{$helpers:web-language}/pub/{concat(substring-before($file_name, ".xml"),'?term=',$model("query"))}">{$title}</a></li>
+    if(exists($model(concat("r_",$sel))))    
+    then 
+        let $data := for $hit in $model(concat("r_",$sel))
+                                return   search:ResultToitem($hit,$model("query"))
+         let $data := if($orderBy eq "date") then for $item in $data order by $item/@date/data(.) return $item
+                                else for $item in $data order by $item/@title/data(.) return $item
+        return
+            if($model("query") != "") then                        
+             for $item in $data 
+                        (:let $query := $model("query")
+                        let $kwic:= string-join($item/@kwic/data(.),"")
+                        let $kwic := <p>{substring-before($kwic,$query)}<span class="hi">{$query}</span>{substring-after($kwic,$query)}</p>:)
+                        return <li><a href="{$helpers:app-root}/{$helpers:web-language}/{$item/@dir/data(.)}/{concat($item/@file/data(.),'?term=',$model("query"))}">{$item/@title/data(.)}</a>
+                            <p>{$item/@kwic/data(.)}</p>
+                        </li>                        
+            else for $item in $data 
+                        return <li><a href="{$helpers:app-root}/{$helpers:web-language}/{$item/@dir/data(.)}/{$item/@file/data(.)}">{$item/@title/data(.)}</a></li>                        
     else <p>{page:singleAttribute(doc('/db/apps/pessoa/data/lists.xml'),"search","no_results")}</p>
     else <p>Error</p>
 };
 
+declare function search:ResultToitem($hit,$query) {
+    if( contains(root($hit)/util:document-name(.),"BNP") or contains(root($hit)/util:document-name(.),"CP") ) then search:ResutlToItemDoc($hit,$query)
+    else search:ResultToItemPub($hit,$query)
+};
+
+declare function search:ResultToItemPub($hit,$query) {
+<item
+    dir="pub"
+    file = "{substring-before(root($hit)/util:document-name(.),".xml")}"
+    title="{$hit//tei:biblStruct/tei:analytic/tei:title[1]/data(.)}"
+    date="{search:datePub($hit)}"
+    kwic="{if($query!="") then search:kwic($hit)else ""}"
+/>
+};
+
+declare function search:datePub($pub) {
+    let $when := ($pub//tei:imprint/tei:date)[1]/@when/data(.)
+    let $from := ($pub//tei:imprint/tei:date)[1]/@from/data(.)
+    let $notBefore := ($pub//tei:imprint/tei:date)[1]/@notBefore/data(.)
+    let $notAfter := ($pub//tei:imprint/tei:date)[1]/@notAfter/data(.)
+   return if($when) then $when
+            else if($from) then $from
+            else if($notBefore) then $notBefore
+            else if($notAfter) then $notAfter
+            else "?"
+};
+
+declare function search:ResutlToItemDoc($hit,$query) {
+<item 
+    dir="doc"
+    file = "{substring-before(root($hit)/util:document-name(.),".xml")}"
+    title="{replace($hit//tei:msDesc/tei:msIdentifier/tei:idno[1]/data(.),"/E3","")}" 
+    date="{search:dateDoc($hit)}"
+    kwic="{if($query!="") then search:kwic($hit)else ""}"
+/>
+};
+
+declare function search:kwic($hit) {
+let $expanded := kwic:expand($hit)
+return <p>{kwic:get-summary($expanded,($expanded//exist:match)[1], <config width ="40"/>)}</p>
+};
+
+declare function search:dateDoc($doc) {
+    let $when := $doc//tei:origDate/@when/data(.)
+    let $from := $doc//tei:origDate/@from/data(.)
+    let $notBefore := $doc//tei:origDate/@notBefore/data(.)
+    let $notAfter := $doc//tei:origDate/@notAfter/data(.)
+   return if($when) then $when
+        else if($from) then $from
+        else if($notBefore) then $notBefore
+        else if($notAfter) then $notAfter
+        else "?"
+    };
 declare function search:result_union($model as node()*) as node()* {
  if (exists($model))
  then let $union := $model
@@ -337,15 +375,16 @@ declare %templates:wrap function search:your_search($node as node(), $model as m
      let $term := substring-before(substring-after($item,"/"),"=")
      let $param := substring-after($item,"=")
        let $build := switch($term)
-                            case("lang") return if(count(search:get-parameters("lang")) != 3) then (page:singleElement_xquery("search","language"), page:singleElementList_xquery("language",$param)) else ()
-                            case("lang_ao") return if(count(search:get-parameters("lang")) != 3) then (page:singleElement_xquery("search","language"), page:singleElement_xquery("search",$param)) else ()
+                            case("lang") return if($param != "" ) then  if(count(search:get-parameters("lang")) != 3) then (page:singleElement_xquery("search","language"), page:singleElementList_xquery("language",$param)) else () else ()
+                            case("lang_ao") return if($param != "") then if(count(search:get-parameters("lang")) != 3) then (page:singleElement_xquery("search","language"), page:singleElement_xquery("search",$param)) else () else ()
                             case("role") return (page:singleElement_xquery("roles","mentioned-as"),page:singleElement_xquery("roles",$param))
                             case("genre") return (page:singleElement_xquery("search","genre") , page:singleElementList_xquery("genres",$param))
                             case("person") return (page:singleElement_xquery("search","author") ,doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson[@type="authors"]/tei:person[@xml:id=$param]/tei:persName/data(.))
                             case("term") return if($param != "") then (page:singleElement_xquery("search","term"),$param) else ()
-                            case("release") return (page:singleElement_xquery("search","publicado"),  (if($param="all") then  page:singleElement_xquery("search",$param) 
+                            case("release") return if($param != "") then (page:singleElement_xquery("search","publicado"),  (if($param="all") then  page:singleElement_xquery("search",$param) 
                                                                                                                                                     else if ($param="published")  then page:singleElement_xquery("search","pub_yes") 
                                                                                                                                                     else page:singleElement_xquery("search","pub_no")))
+                                                                                                                                                        else ()
                             case("from") return if($param != "") then (page:singleElement_xquery("search",$term),$param) else ()
                             case("to") return if($param != "") then (page:singleElement_xquery("search",$term),$param) else ()
                             default return (page:singleElement_xquery("search",$term), page:singleElement_xquery("search",$param))
