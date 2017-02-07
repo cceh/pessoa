@@ -30,7 +30,8 @@
                    padding-right:150px;
                </xsl:if>
            </xsl:attribute>   
-               <xsl:apply-templates/>         
+               <xsl:apply-templates/>  
+           <xsl:apply-templates select="//msDesc[@type = 'prose']"/>
        </div>
     </xsl:template>
     
