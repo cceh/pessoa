@@ -15,7 +15,7 @@
     
 
    <!-- Trotz Aufhebung der lb's soll am Rand genug Platz für Notes bleiben --> 
-    <xsl:template match="text" mode="#default deletion">
+    <xsl:template match="text" mode="#default deletion addition">
        <div class="text">          
                <xsl:if test="@xml:id">
                    <xsl:attribute name="id">
