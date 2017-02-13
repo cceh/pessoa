@@ -385,13 +385,14 @@ declare function doc:getDocsForJournal($journal){
                $doc
          else()  
     let $amount := count($result)
-        for $a in (1 to $amount) 
-            let $link := substring-before(root($result[$a])/util:document-name(.),".xml")
-            let $label := replace($link,("BNP_E3_|CP"),"")
-            let $front := if(contains($label,"-")) then substring-before($label,"-") else $label
-            order by $front, xs:integer(replace($label, "^\d+[A-Z]?\d?-?([0-9]+).*$", "$1")) 
-        
-        return 
+    let $result := for $a in (1 to $amount) 
+                let $link := substring-before(root($result[$a])/util:document-name(.),".xml")
+                let $label := replace($link,("BNP_E3_|CP"),"")
+                let $front := if(contains($label,"-")) then substring-before($label,"-") else $label
+                order by $front, xs:integer(replace($label, "^\d+[A-Z]?\d?-?([0-9]+).*$", "$1"))         
+                return $result[$a]
+            return 
+            for $a in (1 to $amount) return 
             <span class="indexDoc">
                 <a style="color: #08298A;" href="{$helpers:app-root}/doc/{substring-before(replace(replace(($result[$a]//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{replace($result[$a]//tei:title[1]/data(.),"/E3","")} </a>
                 {if($a != $amount) then "," else ()}

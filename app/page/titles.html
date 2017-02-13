@@ -19,10 +19,11 @@
         width:90px;
         }
         .docList {
-        display:none
+        display:block
         }
         .docList span {
         display:block;
+        float:left;
         }
         .navigation a, .docListButton {
         color: #08298A !important;
@@ -50,30 +51,32 @@
     <div class="row-fluid">
         <div id="content" class="span12 main">  
             <div id="texts-content">
-                <h1 id="title-tool" class="page:singleElement?xmltype=index&amp;xmlid=title"/>
+                <h1 id="title-tool" class="page:singleElement?xmltype=index&amp;xmlid=titles"/>
                 <div id="textsList" class="span6">                     
-                    <div class="index:collectTexts">
+                    <map class="index:collectTexts">
                         <i class="index:printNavigation"/>
-                        <div class="helpers:invisibleEach?from=letters&amp;to=letter">
+                        <each class="helpers:invisibleEach?from=letters&amp;to=letter">
                             <div class="sub_Nav"><i class="index:printLetter"/></div>
-                            <div class="index:scanTexts">
+                            <map class="index:scanTexts">
                                 <div class="index-text">
-                                <div class="helpers:invisibleEach?from=scTexts&amp;to=text">
+                                <each data-template="helpers:invisibleEach" data-template-from="scTexts" data-template-to="text">
+                                    <get data-template="helpers:getValue" data-template-get="text"/>
                                     <span class="index-title"><i class="index:printDocOrPub"/></span>
-                                    <i class="index:printDocButton"/>
                                     <div class="docList">
-                                       <div class="index:scanDocs">
-                                        <div class="helpers:invisibleEach?from=refs&amp;to=ref">
-                                            <span><i data-template="index:printDocLinks" data-template-ref="ref"/></span>     
-                                        </div>
-                                        </div>
+                                       <map class="index:scanDocs">
+                                            <div data-template="helpers:invisibleEach" data-template-from="refs" data-template-to="ref">
+                                                <get data-template="helpers:getValue" data-template-get="ref"/>
+                                                <span><i data-template="index:printDocLinks" data-template-ref="ref"/></span>     
+                                            </div>
+                                           <div class="clear"/>
+                                        </map>
                                     </div>
-                                </div>
+                                </each>
                             </div>
-                            </div>
-                        </div>
+                            </map>
+                        </each>
                      <!--   <div><i class="helpers:getValue?get=newletter"/></div>-->
-                    </div>
+                    </map>
                 </div> 
             </div>
         </div>
