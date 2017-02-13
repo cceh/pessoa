@@ -129,6 +129,15 @@ declare function index:collectTexts($node as node(), $model as map(*)) {
     
     let $newletter := for $letter in $well/@well order by $letter return index:FindFirstLetter($letter,1)
     let $well := ($well, $pubs_title)
+    (:let $well := for $a in (1 to count($well)) 
+                                let $coma := if($a != count($well)) then "yes" else "no" 
+                                return <item 
+                                ref="{$well/@ref/data(.)}"
+                                title="{$well[$a]/@title/data(.)}" 
+                                well="{$well[$a]/@well/data(.)}" 
+                                type="{$well[$a]/@type/data(.)}" 
+                                letter="{$well[$a]/@letter/data(.)}" 
+                                coma="{$coma}"/>:)
     (:<item name="{$single}"  ref="{substring-before(root($text)/util:document-name(.),".xml")}"/>:)
     let $letters := for $letter in $well/@letter order by $letter return $letter
     let $letters := distinct-values($letters)
@@ -156,6 +165,7 @@ declare function index:scanDocs($node as node(), $model as map) {
              let $text := $model("text")
              let $aDocs := $model("allDocs")
              let $docs := for $doc in $aDocs where $doc/@name eq $text/@title  return <item link="{$doc/@ref/data(.)}" title="{$doc/@title/data(.)}"/>
+             let $docs := for $a in (1 to count($docs)) let $coma := if($a != count($docs)) then "yes" else "no" return <item link="{$docs[$a]/@link/data(.)}" title="{$docs[$a]/@title/data(.)}" coma="{$coma}"/>
              return map {"refs" := $docs}
         else ()
 };
