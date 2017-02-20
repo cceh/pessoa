@@ -229,10 +229,10 @@ declare function search:search_query($para as xs:string, $db as node()*) as node
 declare function search:author_build($db as node()*) as node()* {
 
          
-        let $roles :=  if(search:get-parameters("release") = "published" ) then "person"
+        let $roles :=  if(search:get-parameters("release") = "published" ) then "name"
                         else if (search:get-parameters("release") = "unpublished" and search:get-parameters("role") != "") then search:get-parameters("role")
-                       else if(search:get-parameters("role") != "" and search:get-parameters("release") = "all") then  (search:get-parameters("role"),"person")
-                       else  ("author","editor","translator","topic","person") 
+                       else if(search:get-parameters("role") != "" and search:get-parameters("release") = "all") then  (search:get-parameters("role"),"name")
+                       else  ("author","editor","translator","topic","name") 
                         
         for $person in search:get-parameters("person")
            for $role in $roles
@@ -264,7 +264,7 @@ declare function search:date_search($db as node()*,$para as xs:string,$date as x
 
 
 (: Profi Result :)
-declare function search:profiresult($node as node(), $model as map(*), $sel as xs:string, $orderBy as xs:string?) as node()+ {
+declare function search:profiresult($node as node(), $model as map(*), $sel as xs:string, $orderBy) as node()+ {
 if(exists($sel) and $sel = "union") 
     then
     if(exists($model(concat("r_",$sel))))    
@@ -480,8 +480,10 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
              <br/>
             <h6>{page:singleAttribute($doc,"search","free_search")}</h6>
              <input id="spezsearch" name="term" placeholder="{page:singleAttribute($doc,"search","term")}..." />
+
              <br />
              <br />
+
            <button id="spezsearchbutton">{page:singleAttribute($doc,"search","search_verb")}</button>
       
 </form>
@@ -559,4 +561,18 @@ declare function search:Search-MultiStats($db as node()*, $name as xs:string*, $
     let $search-build := concat("$db",$search-funk)
     return util:eval($search-build)
 
+};
+
+
+declare function search:printDateAlpha($node as node(), $model as map(*)) {
+ if(request:get-parameter("order","") eq  "date") then
+<span>
+    <input id="date" checked="checked" name="order" type="radio" value="no" onchange="recorder('date');setOrderBy('date');"></input><label for="date" class="" >{page:singleElement_xquery("order","chronological")}</label>   
+    <input id="alphab"  name="order" type="radio" value="yes" onchange="recorder('alphab');setOrderBy('alphab');"></input><label for="alphab" class="" >{page:singleElement_xquery("order","alphabetical")}</label>   
+</span>                     
+else 
+<span>
+    <input id="date" name="order" type="radio" value="no" onchange="recorder('date');setOrderBy('date');"></input><label for="date" class="" >{page:singleElement_xquery("order","chronological")}</label>   
+    <input id="alphab" checked="checked" name="order" type="radio" value="yes" onchange="recorder('alphab');setOrderBy('alphab');"></input><label for="alphab" class="" >{page:singleElement_xquery("order","alphabetical")}</label>   
+</span>
 };
