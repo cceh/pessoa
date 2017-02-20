@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -99,7 +100,7 @@
                         <label>2.</label>
                         <rs type="work" key="O3" style="a"><hi rend="underline"><rs type="name"
                                     key="RR" role="author">Ricardo Reis</rs></hi>: <rs type="title"
-                                >Odes (I a L)</rs></rs>
+                                >Odes (I a L)</rs>.</rs>
                     </item>
                     <item>
                         <label>3.</label>
@@ -110,7 +111,7 @@
                         <rs type="work" key="O3" style="a"><hi rend="underline"><rs type="name"
                                     key="RR" role="author">Ricardo Reis</rs></hi>: <rs type="title"
                                 >Novas Odes</rs></rs> (em quantidade). </item>
-                    <item>
+                    <item rend="indent-2">
                         <label>5.</label>
                         <hi rend="underline"><rs type="name" key="P1" style="a">Antonio
                             Móra</rs></hi>: <rs type="title">Fundamentos do <lb/> Paganismo</rs>.
@@ -118,7 +119,7 @@
                             >(Theoria do Dualismo<lb/> Absoluto).</del>
                     </item>
                 </list>
-                <metamark rend="line" function="end"/>
+                <metamark rend="line-44" function="end"/>
             </div>
         </body>
     </text>

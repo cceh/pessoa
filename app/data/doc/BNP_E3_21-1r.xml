@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -66,7 +67,8 @@
                     <history>
                         <origin>
                             <p>
-                                <origDate from="1917" to="1916" cert="medium">c. 1916-1917</origDate>
+                                <origDate from="1917" to="1916" cert="medium">c.
+                                    1916-1917</origDate>
                             </p>
                         </origin>
                     </history>
@@ -87,37 +89,37 @@
     <text>
         <body>
             <div>
-                <head><hi rend="underline red">Neo-Paganismo Portuguez.</hi></head>
+                <head><hi rend="underline">Neo-Paganismo Portuguez.</hi></head>
                 <list>
-                    <item>
+                    <item rend="indent-2">
                         <label>1.</label>
                         <rs type="work" key="O2" style="a"><rs type="name" key="AC" role="author"
                                 >Alberto Caeiro</rs> (1889-1915): <rs type="title">O Guardador de
-                                Rebanhos,<lb/> seguido de outros poemas e fragmentos</rs>.</rs>
+                                Rebanhos,<lb/> seguido de outros poemas e fragmentos</rs>.</rs><lb/>
                         (Abre o livro uma nota succinta dos parentes<lb/> do poeta, que publicam o
                         livro.) </item>
-                    <item>
+                    <item rend="indent-2">
                         <label>2.</label>
                         <rs type="work" key="O3" style="a"><rs type="name" key="RR" role="author"
                                 >Ricardo Reis</rs>: <rs type="title">Odes</rs></rs>. <lb/>(São
                         cincoenta. Abre o livro um curto prefa<pc>-</pc><lb/>cio do auctor.) </item>
-                    <item>
+                    <item rend="indent-2">
                         <label>3.</label>
                         <rs type="name" key="P1" style="a">Antonio Móra</rs>: <rs type="title">O
                             Regresso dos Deuses — Introducção<lb/>Geral ao Neo-Paganismo
                             Portuguez</rs>. </item>
-                    <metamark rend="line" function="distinct"><label place="right" rend="red">ao
-                            mesmo tempo.</label></metamark>
+                    <metamark rend="line-34" function="distinct"><label place="right">ao mesmo
+                            tempo.</label></metamark>
                     <item>
                         <label>4.</label>
                         <rs type="work" key="O3" style="a"><rs type="name" key="RR" role="author"
                                 >Ricardo Reis</rs>: <rs type="title">Novas Odes</rs></rs>. </item>
-                    <item>
+                    <item rend="indent-2">
                         <label>5.</label>
                         <rs type="name" key="P1" style="a">Antonio Móra</rs>: <rs type="title">Os
                             Fundamentos do Paganismo — Theoria<lb/>do Dualismo Objectivista</rs>. </item>
-                    <metamark rend="line" function="distinct"><label place="right" rend="red">ao
-                            mesmo tempo.</label></metamark>
+                    <metamark rend="line-34" function="distinct"><label place="right">ao mesmo
+                            tempo.</label></metamark>
                 </list>
                 <p rend="position-center"><rs type="title">O Movimento Neo-Pagão<lb/> Portuguez</rs>
                     compõe-se<lb/> d’estas cinco obras. </p>

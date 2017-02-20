@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -92,31 +93,30 @@
                 <head><hi rend="underline">"ASPECTOS".</hi></head>
                 <p>Prefacio geral.</p>
                 <list>
+                    <item rend="indent-2">
+                        <label>1.</label>&#x00A0;<rs type="work" key="O2" style="b"><rs type="name"
+                                key="AC" role="author">Alberto Caeiro</rs> (1889 — 1915) — <rs
+                                type="title">"O Guardador de Reba<pc>-</pc><lb/>nhos"</rs></rs> e
+                        outros poemas e fragmentos. </item>
                     <item>
-                        <label>1.</label>
-                        <rs type="work" key="O2" style="b"><rs type="name" key="AC" role="author"
-                                >Alberto Caeiro</rs> (1889 — 1915) — <rs type="title">"O Guardador de
-                                    Reba<pc>-</pc><lb/>nhos"</rs></rs> e outros poemas e fragmentos. </item>
+                        <label>2.</label>&#x00A0;<rs type="work" key="O3" style="b"><rs type="name"
+                                key="RR" role="author">Ricardo Reis</rs>: <rs type="title"
+                                >"Odes"</rs></rs>. </item>
+                    <item rend="indent-2">
+                        <label>3.</label>&#x00A0;<rs type="name" key="P1" style="b">Antonio
+                            Mora</rs>: <rs type="title">"<rs type="name" key="AC" role="topic"
+                                >Alberto Caeiro</rs> e a renovação do<lb/> paganismo"</rs>. </item>
                     <item>
-                        <label>2.</label>
-                        <rs type="work" key="O3" style="b"><rs type="name" key="RR" role="author"
-                                >Ricardo Reis</rs>: <rs type="title">"Odes"</rs></rs>. </item>
+                        <label>4.</label>&#x00A0;<rs type="work" key="O4" style="b"><rs type="name"
+                                key="AdC" role="author">Alvaro de Campos</rs>: <rs type="title"
+                                >"Arco de Triumpho", Poemas</rs></rs>. </item>
+                    <addSpan spanTo="#A1" n="2"/>
                     <item>
-                        <label>3.</label>
-                        <rs type="name" key="P1" style="b">Antonio Mora</rs>: <rs type="title">"<rs
-                                type="person" key="AC" role="topic">Alberto Caeiro</rs> e a
-                            renovação do<lb/> paganismo"</rs>. </item>
-                    <item>
-                        <label>4.</label>
-                        <rs type="work" key="O4" style="b"><rs type="name" key="AdC" role="author"
-                                >Alvaro de Campos</rs>: <rs type="title">"Arco do Triumpho",
-                                Poemas</rs></rs>. </item>
-                    <item>
-                        <label>5.</label>
-                        <rs type="name" key="P62">Vicente Guedes</rs>: <rs type="title">"Livro do
-                            Desasocego"</rs>. </item>
+                        <label>5.</label>&#x00A0;<rs type="name" key="P62">Vicente Guedes</rs>: <rs
+                            type="title">"Livro do Desasocego"</rs>. </item>
+                    <anchor xml:id="A1"/>
                 </list>
-                <metamark rend="line" function="distinct"/>
+                <metamark rend="line-44" function="distinct"/>
                 <gap reason="selection" unit="line" extent="35"/>
             </div>
         </body>

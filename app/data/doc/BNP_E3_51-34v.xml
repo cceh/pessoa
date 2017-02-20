@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -96,39 +97,40 @@
             <div>
                 <delSpan rend="overstrike" spanTo="#A1"/>
                 <list>
-                    <item>
-                        <label>1.</label>
-                        <rs type="work" key="O3-5"><rs type="title">Odes de <rs type="name"
-                                key="RR" role="author">Ricardo Reis</rs>.<lb/> Livro Primeiro</rs></rs>. </item>
-                    <metamark rend="line" function="distinct"/>
-                    <item>
-                        <label>2.</label>
-                        <rs type="work" key="O2" style="a"><rs type="title">Obras de <rs type="name" key="AC"
-                                role="author">Alberto Caeiro</rs>.<lb/> (1889-1915)</rs></rs>. <rs
-                                    type="text"><rs type="title">Re<pc>-</pc><lb/>censão de <rs type="name" key="RR"
-                                role="author">Ricardo <lb/>Reis</rs></rs>. I. <rs type="work" key="O2"
-                                    style="b">"<rs type="title">O Guarda<pc>-</pc><lb/>dor de
-                                    Rebanhos</rs>"</rs></rs><lb/> (1910-1912)</item>
-                    <metamark rend="line" function="distinct"/>
-                    <item>
-                        <label>3.</label>
-                        <rs type="work" key="O2" style="a"><rs type="title">Obras de <rs type="name" key="AC"
-                            role="author">Alberto Caeiro</rs>.<lb/> (1889-1915)</rs></rs>. <rs
-                                type="text"><rs type="title">Re<pc>-</pc><lb/>censão de <rs type="name" key="RR"
-                                role="author">Ricardo<lb/> Reis</rs>.</rs> — II. <rs type="work" key="O2"
-                                style="d"><rs type="title"><add>Os</add> Poemas<lb/>
-                                    inconjunctos. (1908-<lb/>1915)</rs></rs></rs>. </item>
-                    <metamark rend="line" function="distinct"/>
-                    <item>
-                        <label>4.</label><rs type="title">O Regresso dos Deuses</rs>,<lb/> por <rs type="name" key="P1"
-                            style="b">Antonio Mora</rs>
+                    <item rend="indent-2">
+                        <label>1.</label>&#x00A0;<rs type="work" key="O3-5"><rs type="title">Odes de
+                                    <rs type="name" key="RR" role="author">Ricardo Reis</rs>.<lb/>
+                                Livro Primeiro</rs></rs>. </item>
+                    <metamark rend="line-14" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>2.</label>&#x00A0;<rs type="work" key="O2" style="a"><rs type="title"
+                                >Obras de <rs type="name" key="AC" role="author">Alberto
+                                Caeiro</rs>.<lb/> (1889-1915)</rs></rs>. <rs type="title"
+                                >Re<pc>-</pc><lb/>censão de <rs type="name" key="RR" role="author"
+                                >Ricardo <lb/>Reis</rs></rs>. I. <rs type="work" key="O2" style="b"
+                                >"<rs type="title">O Guarda<pc>-</pc><lb/>dor de
+                            Rebanhos</rs>."</rs><lb/>
+                        <add n="2">(1910-1912)</add></item>
+                    <metamark rend="line-14" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>3.</label>&#x00A0;<rs type="work" key="O2" style="a">
+                            <rs type="title">Obras de <rs type="name" key="AC" role="author">Alberto
+                                    Caeiro</rs>.<lb/> (1889-1915)</rs></rs>. <rs type="title"
+                                >Re<pc>-</pc><lb/>censão de <rs type="name" key="RR" role="author"
+                                >Ricardo<lb/> Reis</rs>.</rs> — II. <rs type="work" key="O2"
+                            style="d"><rs type="title"><certainty locus="value" degree="0.5"
+                                    resp="FP">Os</certainty> Poemas<lb/> inconjunctos.
+                                (1908-<lb/>1915)</rs></rs>. </item>
+                    <metamark rend="line-14" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>4.</label>&#x00A0;<rs type="title">O Regresso dos Deuses</rs>,<lb/>
+                        por <rs type="name" key="P1" style="b">Antonio Mora</rs>
                     </item>
-                    <metamark rend="line" function="distinct"/>
-                    <item>
-                        <label>5.</label>
-                        <rs type="work" key="O3" style="a"><rs type="title">Odes de <rs
-                                type="person" key="RR" role="author">Ricardo Reis.</rs></rs><lb/>
-                        Livro Segundo</rs>. </item>
+                    <metamark rend="line-14" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>5.</label>&#x00A0;<rs type="work" key="O3" style="a"><rs type="title"
+                                >Odes de <rs type="name" key="RR" role="author">Ricardo
+                                Reis.</rs></rs><lb/> Livro Segundo</rs>. </item>
                 </list>
                 <anchor xml:id="A1"/>
             </div>

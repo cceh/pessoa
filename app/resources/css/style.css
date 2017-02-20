@@ -1291,6 +1291,9 @@ div.text span.grouping-right .label, div.text span.grouping-left .label {
     display: inline-block;
     vertical-align: middle;
 }
+div.text div.metamark {
+    position: relative;
+}
 div.text span.metamark.quotes.ditto {
     display: inline-block;
     width: 8%;
@@ -1301,6 +1304,11 @@ div.text span.label.rotate-right {
     position: relative;
     top: 30%;
     left: 30%;
+}
+div.text div.metamark span.label.right {
+    position: absolute;
+    right: 1em;
+    top: -1em;
 }
 div.text span.underline {
     text-decoration: underline;
@@ -1350,6 +1358,7 @@ div.text hr.line-18 {
 }
 div.text hr.line-14 {
     width: 25%;
+    margin-left: 2.5em;
 }
 div.text hr.line-14.center, div.text hr.line-24.center, div.text hr.line-34.center {
     margin: 1em auto 1em auto;

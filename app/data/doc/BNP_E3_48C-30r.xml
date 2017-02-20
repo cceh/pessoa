@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -88,28 +89,27 @@
         <body>
             <div>
                 <list>
-                    <item>
-                        <label><hi rend="red">1.</hi></label>
+                    <item rend="indent-2">
+                        <label>1.</label>
                         <rs type="name" key="P1" style="a"><hi rend="underline">Antonio
                             Móra</hi></rs> — <rs type="title">O Regresso dos Deuses</rs> —
                         Introducção<lb/> Geral ao Neo-Paganismo Portuguez. </item>
-                    <item>
-                        <label><hi rend="red">2.</hi></label>
+                    <item rend="indent-2">
+                        <label>2.</label>
                         <rs type="name" key="AC" role="author"><hi rend="underline">Alberto
                                 Caeiro</hi></rs> — 1889-1915 — <rs type="work" key="O2" style="b"
-                                ><rs type="title">O Guardador de Reba<pc>-</pc><lb/><seg
-                                    rend="indent">nhos, e outros poemas e
-                        fragmentos</seg></rs></rs>. </item>
-                    <item>
-                        <label><hi rend="red">3.</hi></label>
+                                ><rs type="title">O Guardador de Reba<pc>-</pc><lb/>nhos, e outros
+                                poemas e fragmentos</rs></rs>. </item>
+                    <item rend="indent-2">
+                        <label>3.</label>
                         <rs type="work" key="O3" style="b"><rs type="name" key="RR" role="author"
                                     ><hi rend="underline">Ricardo Reis</hi></rs> — <rs type="title"
                                 >Odes</rs></rs>. </item>
                 </list>
-                <metamark rend="line" function="distinct"/>
+                <metamark rend="line-44" function="distinct"/>
                 <p>English Translation (in one volume):</p>
                 <p><rs type="title"><hi rend="underline">The Portuguese Neo-Pagans</hi></rs>.</p>
-                <p><del rend="overtyped">The three works</del></p>
+                <p rend="indent-1"><del rend="overtyped">The three works</del></p>
             </div>
         </body>
     </text>

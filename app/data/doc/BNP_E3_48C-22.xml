@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -90,7 +91,7 @@
                 <list>
                     <head><hi rend="underline">Cadernos de Reacção Pagan:</hi></head>
                     <item>
-                        <note>✓</note>
+                        <note place="margin-left">✓</note>
                         <label>1.</label>
                         <rs type="work" key="O2" style="b"><rs type="title"><hi rend="underline">O
                                     Guardador de Rebanhos</hi></rs> — <rs type="name" key="AC"
@@ -100,19 +101,18 @@
                                     <expan>Alb<ex>erto</ex></expan>
                                 </choice> Caeiro</rs></rs>. </item>
                     <item>
-                        <note>✓</note>
+                        <note place="margin-left">✓</note>
                         <label>2.</label>
                         <rs type="title"><hi rend="underline">Prolegomenos</hi></rs> …… — <rs
-                            type="person" key="P1" style="a">Antonio Móra</rs>. </item>
-                    <note place="margin left">(ex)</note>
+                            type="name" key="P1" style="a">Antonio Móra</rs>. </item>
                     <item>
-                        <note>✓</note>
+                        <note place="margin-left">(ex) ✓</note>
                         <label>3.</label>
                         <rs type="work" key="O3" style="b"><rs type="title"><hi rend="underline"
-                                    >Odes</hi></rs> — <rs type="name" key="RR" role="author"
-                                >Ricardo Reis</rs></rs>. </item>
+                                    >Odes</hi></rs> — <rs type="name" key="RR" role="author">Ricardo
+                                Reis</rs></rs>. </item>
                     <item>
-                        <note>✓</note>
+                        <note place="margin-left">✓</note>
                         <label>4.</label>
                         <rs type="title"><hi rend="underline">Dissertação a favôr da <choice>
                                     <abbr>All<am>.</am></abbr>
@@ -122,7 +122,7 @@
                                 <expan>A<ex>ntonio</ex></expan>
                             </choice> Móra</rs>. </item>
                     <item>
-                        <note><hi rend="encircled">✓</hi></note>
+                        <note place="margin-left"><hi rend="circled">✓</hi></note>
                         <label>5.</label>
                         <rs type="title"><hi rend="underline">Origens do Christianismo</hi></rs> —
                             <rs type="name" key="P1" style="a">
@@ -131,23 +131,23 @@
                                 <expan>A<ex>ntonio</ex></expan>
                             </choice> Móra</rs>. </item>
                     <item>
-                        <note>✓</note>
+                        <note place="margin-left">✓</note>
                         <label>6.</label>
                         <rs type="work" key="O2" style="c"><rs type="title"><hi rend="underline">O
                                     pastor amoroso</hi></rs> — <rs type="name" key="AC"
                                 role="author">Alberto Caeiro</rs></rs>. </item>
-                    <metamark rend="line" function="distinct"/>
+                    <metamark rend="line-44" function="distinct"/>
                     <item>
-                        <note>+</note>
+                        <note place="margin-left">+</note>
                         <label>7.</label>
-                        <rs type="work" key="O4" style="b"><rs type="title">Arco de Triumpho</rs> —
-                                <rs type="name" key="AdC" role="author">Alvaro de
-                        Campos</rs></rs>.</item>
+                        <rs type="work" key="O4" style="b"><rs type="title"><hi rend="underline"
+                                    >Arco de Triumpho</hi></rs> — <rs type="name" key="AdC"
+                                role="author">Alvaro de Campos</rs></rs>.</item>
                     <item>
-                        <note>+</note>
+                        <note place="margin-left">+</note>
                         <label>8.</label>
                         <rs type="title"><hi rend="underline">Indicios de Oiro</hi></rs> — <rs
-                            type="person" key="P30">Mario de Sá-Carneiro</rs>. </item>
+                            type="name" key="P30">Mario de Sá-Carneiro</rs>. </item>
                 </list>
             </div>
         </body>

@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -87,17 +88,16 @@
     <text>
         <body>
             <div>
-                <head><hi rend="red">Obras autonymas:</hi></head>
+                <head>Obras autonymas:</head>
                 <list>
                     <head><hi rend="underline">Em Inglez:</hi></head>
                     <item><rs type="title">The Mad Fiddler – Poems</rs>.</item>
-                    <item><rs type="title">Five Poems – <hi rend="red">or</hi> Threes Unprintable
-                            Poems</rs>.</item>
+                    <item><rs type="title">Five Poems – or Threes Unprintable Poems</rs>.</item>
                     <item><rs type="title">Prometheus Revinctus</rs>.</item>
-                    <item><rs type="title">Fifty Sonnets <hi rend="red">or</hi> Seventy-One
-                            Sonnets</rs>.<lb/>(perhaps also another book)</item>
+                    <item><rs type="title">Fifty Sonnets or Seventy-One Sonnets</rs>.<lb/>(perhaps
+                        also another book)</item>
                 </list>
-                <metamark rend="line" function="distinct"/>
+                <metamark rend="line-44" function="distinct"/>
                 <list>
                     <head><hi rend="underline">Em Portuguez:</hi></head>
                     <item><rs type="work" key="O1" style="c"><rs type="title"
@@ -106,15 +106,15 @@
                     <item><rs type="title">Theatro Statico</rs>.</item>
                 </list>
             </div>
-            <metamark rend="line" function="distinct"/>
+            <metamark rend="line-44" function="distinct"/>
             <div>
-                <head><hi rend="red">Meio-autonymamente:</hi></head>
+                <head>Meio-autonymamente:</head>
                 <list>
-                    <item><rs type="work" key="O4" style="b"><rs type="name" key="AdC"
-                                role="author">Alvaro de Campos</rs>: <rs type="title">Arco de
-                                Triumpho</rs></rs>.</item>
+                    <item><rs type="work" key="O4" style="b"><rs type="name" key="AdC" role="author"
+                                >Alvaro de Campos</rs>: <rs type="title">Arco de
+                        Triumpho</rs></rs>.</item>
                 </list>
-                <metamark rend="line" function="end"/>
+                <metamark rend="line-14-center" function="end"/>
             </div>
         </body>
     </text>

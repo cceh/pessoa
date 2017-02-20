@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -88,7 +89,7 @@
         <body>
             <div>
                 <list>
-                    <head><hi rend="red">Opiniões da Nova Geração:</hi></head>
+                    <head>Opiniões da Nova Geração:</head>
                     <item>
                         <label>1.</label>
                         <rs type="title">O Saudosismo</rs>. (<rs type="name" key="P91">Leonardo
@@ -117,7 +118,7 @@
                         <label>7.</label>
                         <rs type="title">O Neo-Paganismo</rs>. (<rs type="name" key="P1" style="a"
                             >Antonio Móra</rs>). </item>
-                    <item>
+                    <item rend="indent-2">
                         <label>8.</label>
                         <rs type="title">O Classicismo</rs> ..... (algum poeta ou critico a
                             des<pc>-</pc><lb/>cobrir). </item>

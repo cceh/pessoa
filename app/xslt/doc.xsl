@@ -208,7 +208,10 @@
     
     <xsl:template match="metamark[@rend = 'line-34'][@function = ('distinct', 'end')]"
         mode="#default deletion addition">
-        <hr class="line line-34"/>
+        <div class="metamark">
+            <hr class="line line-34"/>
+            <xsl:apply-templates/>
+        </div>
     </xsl:template>
     <xsl:template match="metamark[@rend = 'line-34-center'][@function = ('distinct', 'end')]"
         mode="#default deletion addition">
@@ -309,8 +312,8 @@
     <xsl:template match="metamark/label" mode="#default deletion addition">
         <span>
             <xsl:choose>
-                <xsl:when test="@rend">
-                    <xsl:attribute name="class">label <xsl:value-of select="@rend"/></xsl:attribute>
+                <xsl:when test="@rend or @place">
+                    <xsl:attribute name="class">label <xsl:value-of select="string-join((@rend, @place), '')"/></xsl:attribute>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:attribute name="class">label</xsl:attribute>
@@ -498,6 +501,12 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
+    <xsl:template match="del[@rend = 'overstrike'][@place = 'above'] | seg[@rend = 'overstrike'][@place = 'above']"
+        mode="#default deletion addition" priority="2">
+        <span class="deletion overstrike above">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
     <xsl:template match="del[@rend = 'overtyped'] | seg[@rend = 'overtyped']"
         mode="#default deletion addition">
         <span class="deletion overtyped">
@@ -505,13 +514,27 @@
         </span>
     </xsl:template>
     
-    <!-- Choices -->
-    <xsl:template match="choice[seg[@n='1'] and seg[@n='2']]" mode="#default deletion addition">
+    
+    
+    <!-- Choices / Substs -->
+    <xsl:template match="choice[seg[@n='1'] and seg[@n='2']]" mode="#default deletion addition" priority="2">
         <span class="choice">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
     
+    <xsl:template match="choice|subst" mode="#default deletion addition">
+        <span class="choice">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+    
+    
+    
+    <!-- Certainty -->
+    <xsl:template match="certainty" mode="#default deletion addition">
+        <xsl:text>/</xsl:text><xsl:apply-templates/><xsl:text>/</xsl:text>
+    </xsl:template>
     
 
 </xsl:stylesheet>
