@@ -379,7 +379,7 @@ declare %templates:wrap function search:your_search($node as node(), $model as m
                             case("lang_ao") return if($param != "") then if(count(search:get-parameters("lang")) != 3) then (page:singleElement_xquery("search","language"), page:singleElement_xquery("search",$param)) else () else ()
                             case("role") return (page:singleElement_xquery("roles","mentioned-as"),page:singleElement_xquery("roles",$param))
                             case("genre") return (page:singleElement_xquery("search","genre") , page:singleElementList_xquery("genres",$param))
-                            case("person") return (page:singleElement_xquery("search","author") ,doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson[@type="authors"]/tei:person[@xml:id=$param]/tei:persName/data(.))
+                            case("person") return (page:singleElement_xquery("search","authors") ,doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson[@type="authors"]/tei:person[@xml:id=$param]/tei:persName/data(.))
                             case("term") return if($param != "") then (page:singleElement_xquery("search","term"),$param) else ()
                             case("release") return if($param != "") then (page:singleElement_xquery("search","publicado"),  (if($param="all") then  page:singleElement_xquery("search",$param) 
                                                                                                                                                     else if ($param="published")  then page:singleElement_xquery("search","pub_yes") 
@@ -565,14 +565,15 @@ declare function search:Search-MultiStats($db as node()*, $name as xs:string*, $
 
 
 declare function search:printDateAlpha($node as node(), $model as map(*)) {
- if(request:get-parameter("order","") eq  "date") then
+ if(request:get-parameter("order","") eq  "alphab") then
+       <span>
+    <input id="date" name="order" type="radio" value="no" onchange="recorder('date');setOrderBy('date');"></input><label for="date" class="" >{page:singleElement_xquery("order","chronological")}</label>   
+    <input id="alphab" checked="checked" name="order" type="radio" value="yes" onchange="recorder('alphab');setOrderBy('alphab');"></input><label for="alphab" class="" >{page:singleElement_xquery("order","alphabetical")}</label>   
+</span>            
+else 
 <span>
     <input id="date" checked="checked" name="order" type="radio" value="no" onchange="recorder('date');setOrderBy('date');"></input><label for="date" class="" >{page:singleElement_xquery("order","chronological")}</label>   
     <input id="alphab"  name="order" type="radio" value="yes" onchange="recorder('alphab');setOrderBy('alphab');"></input><label for="alphab" class="" >{page:singleElement_xquery("order","alphabetical")}</label>   
-</span>                     
-else 
-<span>
-    <input id="date" name="order" type="radio" value="no" onchange="recorder('date');setOrderBy('date');"></input><label for="date" class="" >{page:singleElement_xquery("order","chronological")}</label>   
-    <input id="alphab" checked="checked" name="order" type="radio" value="yes" onchange="recorder('alphab');setOrderBy('alphab');"></input><label for="alphab" class="" >{page:singleElement_xquery("order","alphabetical")}</label>   
-</span>
+</span>  
+
 };

@@ -284,7 +284,7 @@ else if (contains($exist:path, "/$shared/")) then
 else if (contains($exist:path, "search")) then
     if(request:get-parameter("orderBy", '') != "" ) 
     then 
-       let $orderBy := request:get-parameter("orderBy", 'alphab')
+       let $orderBy := request:get-parameter("orderBy", 'date')
        return( search:profiresult(<node />, search:profisearch(<node />, map {"test" := "test"}, request:get-parameter("term",'')), "union",$orderBy))
    else 
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
