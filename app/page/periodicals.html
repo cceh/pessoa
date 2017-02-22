@@ -5,14 +5,73 @@
         .indexDoc {
             padding: 0 5px;
         }
+        .olink, .tlink {
+        color: #08298A !important;
+        text-decoration:none;
+        cursor: pointer;   
+        }
+        .olink:hover, tlink:hover {
+        text-decoration:underline;
+        color: #08298A !important;
+        }
+        .doc {
+        
+        }
+        .olink {
+        margin-left: 20px;
+        }
+        .docListButton {
+        margin-left:10px;
+        width:90px;
+        }
+        .docList {
+        display:block
+        }
+        .docList span {
+        display:block;
+        float:left;
+        }
+        .navigation a, .docListButton {
+        color: #08298A !important;
+        cursor: pointer;   
+        text-decoration:none;
+        }
+        .navigation a:hover, .docListButton:hover {
+        text-decoration:underline;
+        color: #08298A !important;
+        }
+        .index-text {
+        margin-right:10px;
+        }
+        .index-title {
+        display:block;
+        }
     </style>
     
     <div class="row-fluid">
         <div id="content" class="span12 main">  
             <div id="persons-content">                                       
-                <h1 id="title-tool" class="page:singleElement?xmltype=index&amp;xmlid=periodicals"/>
-                <div id="personsList" class="span6">                              
-                    <p class="doc:getJournalIndex"/>                                     
+                <h1 id="title-tool" data-template="page:singleElement" data-template-xmltype="index" data-template-xmlid="periodicals"/>
+                <div id="personsList" class="span6">              
+                    <map data-template="index:collectJournals">
+                        <print data-template="index:printNavigation"/>
+                        <each data-template="helpers:invisibleEach" data-template-from="letters" data-template-to="letter">
+                            <div class="sub_Nav"><print class="index:printLetter"/></div>
+                            <map data-template="index:mapJournals">
+                                <each data-template="helpers:invisibleEach" data-template-from="journal" data-template-to="single">
+                                    <map data-template="index:mapSingleJournal">
+                                        <span class="index-title"><i class="index:printJournal"/></span>
+                                        <div class="docList">
+                                            <each data-template="helpers:invisibleEach" data-template-from="mentioned" data-template-to="doc">
+                                                <span><print data-template="index:printJournalLinks" data-template-ref="doc"/></span>
+                                            </each>
+                                        </div>
+                                        <div class="clear"/>
+                                    </map>
+                                </each>
+                            </map>
+                        </each>
+                    </map>
                 </div>
             </div>
         </div>

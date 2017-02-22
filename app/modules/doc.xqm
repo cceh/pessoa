@@ -334,69 +334,11 @@ let $script := <script type="text/javascript">
     return $script
 };
 
-(:        if ( window.addEventListener ) {{
-        addEventListener( "load", draw(100,100), false );
-        }} else {{
-        attachEvent( "onload", draw(100,100) );
-        }}
-        
-        :)
 
 declare function doc:getIndexTitle($node as node(), $model as map(*), $type as xs:string){
     let $lists := doc('/db/apps/pessoa/data/lists.xml')
     return 
     <h1>{page:singleElementList_xquery("navigation",$type)}</h1>
-    (:
-    <h1>{$lists//tei:list[@type='navigation']//tei:term[@xml:id=$type]}</h1>
-    :)
-};
-
-declare function doc:getJournalIndex($node as node(), $model as map(*)){
-     let $lists := doc('/db/apps/pessoa/data/lists.xml')
-     let $docs := collection("/db/apps/pessoa/data/doc/") 
-     let $journals := 
-        for $doc in $docs return
-        $doc//tei:text//tei:rs[@type='periodical']
-     let $journalKeys := $lists//tei:list[@type='periodical']//tei:item/@xml:id/data(.)   
-     let $journalNames := $lists//tei:list[@type='periodical']/tei:item
-     let $letters :=
-        for $name in $journalNames order by $name return substring($name,0,2)
-     let $letters := distinct-values($letters)
-     return 
-        (doc:getNavigation($letters),
-        for $letter in $letters order by $letter return
-            let $journalsWithLetter := 
-                for $name in $journalNames where (substring($name,0,2) = $letter) return $name    
-            return 
-             (<div class="sub_Nav"><h2 id="{$letter}">{$letter}</h2></div>,
-            for $journal in $journalsWithLetter order by $journal return
-            (<div class="indexItem">{$journal}</div>,           
-            <div class="indexDocs">{
-            doc:getDocsForJournal($journal)
-           }</div>)))    
-};
-
-declare function doc:getDocsForJournal($journal){
-    let $lists := doc('/db/apps/pessoa/data/lists.xml')
-    let $docs := collection("/db/apps/pessoa/data/doc/")
-    let $key := $lists//tei:list[@type='periodical']/tei:item/text()[contains(.,$journal)]/../@xml:id/data(.)
-    let $result := for $doc in $docs return
-        if($doc//tei:text//tei:rs[@type='periodical']/@key[contains(.,$key)]) then
-               $doc
-         else()  
-    let $amount := count($result)
-    let $result := for $a in (1 to $amount) 
-                let $link := substring-before(root($result[$a])/util:document-name(.),".xml")
-                let $label := replace($link,("BNP_E3_|CP"),"")
-                let $front := if(contains($label,"-")) then substring-before($label,"-") else $label
-                order by $front, xs:integer(replace($label, "^\d+[A-Z]?\d?-?([0-9]+).*$", "$1"))         
-                return $result[$a]
-            return 
-            for $a in (1 to $amount) return 
-            <span class="indexDoc">
-                <a style="color: #08298A;" href="{$helpers:app-root}/doc/{substring-before(replace(replace(($result[$a]//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{replace($result[$a]//tei:title[1]/data(.),"/E3","")} </a>
-                {if($a != $amount) then "," else ()}
-            </span>  
 };
 
 declare function doc:getTextIndex($node as node(), $model as map(*)){
@@ -499,30 +441,7 @@ declare function doc:getIndexTitle($node as node(), $model as map(*), $type as x
     
 };
 
-declare function doc:getJournalIndex($node as node(), $model as map(*)){
-     let $lists := doc('/db/apps/pessoa/data/lists.xml')
-     let $docs := collection("/db/apps/pessoa/data/doc/") 
-     let $journals := 
-        for $doc in $docs return
-        $doc//tei:text//tei:rs[@type='periodical']
-     let $journalKeys := $lists//tei:list[@type='periodical']//tei:item/@xml:id/data(.)   
-     let $journalNames := $lists//tei:list[@type='periodical']/tei:item
-     let $letters :=
-        for $name in $journalNames order by $name return substring($name,0,2)
-     let $letters := distinct-values($letters)
-     return 
-        (doc:getNavigation($letters),
-        for $letter in $letters order by $letter return
-            let $journalsWithLetter := 
-                for $name in $journalNames where (substring($name,0,2) = $letter) return $name    
-            return 
-             (<div class="sub_Nav"><h2 id="{$letter}">{$letter}</h2></div>,
-            for $journal in $journalsWithLetter order by $journal return
-            (<div class="indexItem">{$journal}</div>,           
-            <ul class="indexDocs">{
-            doc:getDocsForJournal($journal)
-           }</ul>)))    
-};
+
 
 declare function doc:getDocsForJournal($journal){
     let $lists := doc('/db/apps/pessoa/data/lists.xml')

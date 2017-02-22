@@ -3,6 +3,7 @@ module namespace index="http://localhost:8080/exist/apps/pessoa/index";
 import module namespace search="http://localhost:8080/exist/apps/pessoa/search" at "search.xqm";
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
 import module namespace obras="http://localhost:8080/exist/apps/pessoa/obras" at "obras.xqm";
+import module namespace doc="http://localhost:8080/exist/apps/pessoa/doc" at "doc.xqm";
 
 declare namespace request="http://exist-db.org/xquery/request";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
@@ -272,4 +273,66 @@ declare function index:plottAlpha($ndoe as node(), $mode as map(*)) {
         }
 };
 
+(:#### Periodicals / Journals #### :)
 
+declare function index:collectJournals($node as node(), $model as map(*)) {
+    let $journals := for $journal in  doc('/db/apps/pessoa/data/lists.xml')//tei:list[@type = "periodical"]/tei:item
+                                let $key := $journal/@xml:id/data(.)
+                                order by $journal/data(.)                                
+                                return <item key="{$key}" name="{$journal/data(.)}" letter="{substring($journal/data(.),1,1)}">
+                                                {for $item in index:FindJournalsEntrys($key)
+                                                    order by $item/@date/data(.)
+                                                    return $item
+                                                }
+                                            </item>
+    
+    let $nav := for $item in $journals return $item/@letter/data(.)
+    let $nav := distinct-values($nav)
+    return map {
+        "journals" := $journals,
+        "letters" := $nav
+    }
+};
+
+declare function index:FindJournalsEntrys($key as xs:string) {
+    ( for $item in search:search_range_simple("person",$key,collection("/db/apps/pessoa/data/doc/"))
+                        return <item title="{replace($item//tei:titleStmt/tei:title[1]/data(.),"/E3","")}" 
+                                               date="{search:dateDoc($item)}" 
+                                               ref="{concat("doc/",substring-before($item//tei:idno[@type="filename"]/data(.),".xml"))}"/>
+      ,
+     for $item in search:search_range_simple("journal",$key,collection("/db/apps/pessoa/data/pub/"))
+                        return <item title="{$item//tei:titleStmt/tei:title[1]/data(.)}"
+                                                date="{search:datePub($item)}"
+                                                ref="{concat("pub/",substring-before($item//tei:idno[@type="filename"]/data(.),".xml"))}"/>
+   )
+};
+
+declare function index:mapJournals($node as node(), $model as map(*)) {
+    let $letter := $model("letter")
+    let $journal := $model("journals")[@letter =$letter]    
+    return map {
+        "journal" := $journal
+    }
+};
+
+declare function index:mapSingleJournal($node as node(), $model as map(*)) {
+    let $mentoined := $model("single")/item
+    let $mentoined := for $a in (1 to count($mentoined))
+                                    let $coma := if($a != count($mentoined)) then "yes" else "no"
+                                    return <item title="{$mentoined[$a]/@title/data(.)}" date="{$mentoined[$a]/@date/data(.)}" ref="{$mentoined[$a]/@ref/data(.)}" coma="{$coma}"/>
+   return map {
+   "journal" := $model("single"),
+    "mentioned" := $mentoined
+   }
+};
+
+
+declare function index:printJournal($node as node(), $model as map(*)) {
+$model("journal")/@name/data(.)
+};
+
+declare function index:printJournalLinks($node as node(), $model as map(*),$ref) {
+    let $doc := $model($ref)
+    let $ref := concat($helpers:app-root,"/",$helpers:web-language,"/",$doc/@ref/data(.))
+    return <span><a href="{$ref}" class="olink">{$doc/@title/data(.)}</a>{if($doc/@coma/data(.) eq "yes") then "," else ()}</span>
+};
