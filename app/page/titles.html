@@ -51,16 +51,15 @@
     <div class="row-fluid">
         <div id="content" class="span12 main">  
             <div id="texts-content">
-                <h1 id="title-tool" class="page:singleElement?xmltype=index&amp;xmlid=titles"/>
+                <h1 id="title-tool" data-template="page:singleElement" data-template-xmltype="index" data-template-xmlid="titles"/>
                 <div id="textsList" class="span6">                     
-                    <map class="index:collectTexts">
-                        <i class="index:printNavigation"/>
-                        <each class="helpers:invisibleEach?from=letters&amp;to=letter">
+                    <map data-template="index:collectTexts">
+                        <print data-template="index:printNavigation"/>
+                        <each data-template="helpers:invisibleEach" data-template-from="letters" data-template-to="letter">
                             <div class="sub_Nav"><i class="index:printLetter"/></div>
                             <map class="index:scanTexts">
                                 <div class="index-text">
                                 <each data-template="helpers:invisibleEach" data-template-from="scTexts" data-template-to="text">
-                                    <get data-template="helpers:getValue" data-template-get="text"/>
                                     <span class="index-title"><i class="index:printDocOrPub"/></span>
                                     <div class="docList">
                                        <map class="index:scanDocs">

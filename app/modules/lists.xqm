@@ -4,6 +4,7 @@ module namespace lists="http://localhost:8080/exist/apps/pessoa/lists";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
+
 declare namespace ngram ="http://exist-db.org/xquery/ngram";
 
 declare function lists:get-navi-list($node as node(), $model as map(*), $type as text(), $indikator as xs:string?) as item()*{
