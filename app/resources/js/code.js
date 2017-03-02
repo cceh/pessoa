@@ -70,19 +70,18 @@ $(document).ready(function(){
                    
         });
         function fixDiv() {
-        var $cache = $('#openseadragon1');
-        
-        
-                 if ($(window).scrollTop() > 900)
-                   $cache.css({
-                   'position': 'fixed',
-                   'top': '10px'
-                   });
-                   else
-                   $cache.css({
-                   'position': 'relative',
-                   'top': 'auto'
-                   });
+            var $cache = $('#openseadragon1');
+            var pos = $("#indextab").position().top +100;        
+                     if ($(window).scrollTop() > pos )
+                       $cache.css({
+                       'position': 'fixed',
+                       'top': '10px'
+                       });
+                       else
+                       $cache.css({
+                       'position': 'relative',
+                       'top': 'auto'
+                       });
                    
                    }
                    
