@@ -432,7 +432,7 @@ let $lists := doc('/db/apps/pessoa/data/lists.xml')
 			
         
 			
-            var data = Timeline.DateTime.parseGregorianDateTime("Oct 02 1905")
+            var data = Timeline.DateTime.parseGregorianDateTime("Oct 02 1921")
             var bandInfos = [
                 Timeline.createBandInfo({{
                     width:          "3%",
