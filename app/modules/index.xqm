@@ -1,4 +1,4 @@
-
+xquery version "3.0";
 module namespace index="http://localhost:8080/exist/apps/pessoa/index";
 import module namespace search="http://localhost:8080/exist/apps/pessoa/search" at "search.xqm";
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
@@ -37,7 +37,45 @@ declare function index:FindFirstLetter($text as xs:string,$pos as xs:integer) {
         return $look
 };
 
+declare function index:FindFirstLetter-new($text as xs:string, $pos as xs:integer) {
+    if(matches(substring($text,$pos,1),'[A-z]')) then substring($text,$pos,1)
+    else if ($pos > string-length($text)) then concat("Error/",$pos)
+    else index:FindFirstLetter-new($text,$pos +1)
+};
 
+
+ (: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+ :)
+declare function index:highLetters($letter) {
+    switch($letter)
+            case "A" case "a" return("A")
+            case "B" case "b"return("B")
+            case "C" case "c"return("C")
+            case "D" case "d" return("D")
+            case "E" case "e" return("E")
+            case "F" case "f" return("F")
+            case "G" case "g" return("G")
+            case "H" case "h" return("H")
+            case "I" case "i" return("I")
+            case "J" case "j" return("J")
+            case "K" case "k" return("K")
+            case "L" case "l" return("L")
+            case "M" case "m" return("M")
+            case "N" case "n" return("N")
+            case "O" case "o" return("O")
+            case "P" case "p" return("P")
+            case "Q" case "q" return("Q")
+            case "R" case "r" return("R")
+            case "S" case "s" return("S")
+            case "T" case "t" return("T")
+            case "U" case "u" return("U")
+            case "V" case "v" return ("V")
+            case "W" case "w" return("W")
+            case "X" case "x" return("X")
+            case "Y" case "y" return("Y")
+            case "Z" case "z" return("Z")
+            default return $letter
+};
 
 (:### Genre Index ####:)
 
@@ -108,15 +146,19 @@ declare function index:collectTexts($node as node(), $model as map(*)) {
                             (:<item title="{$single}" well="{replace(replace(replace($single,'"',''),'“',''),'”','')}"/>:)
                             
    let $docs := for $doc in $texts
-                            return <item name="{$doc}"  ref="{substring-before(root($doc)/util:document-name(.),".xml")}" 
+                            return <item 
+                                                    name="{$doc}"  
+                                                    ref="{substring-before(root($doc)/util:document-name(.),".xml")}" 
                                                     title="{replace(doc(concat('/db/apps/pessoa/data/doc/',root($doc)/util:document-name(.)))//tei:title[1]/data(.),"/E3","")}"
                            />
     
     let $pubs := collection('/db/apps/pessoa/data/pub')
     let $pubs_title := for $hit in $pubs//tei:teiHeader/tei:fileDesc
-                                    return <item ref="{substring-before($hit//tei:publicationStmt/tei:idno[@type="filename"]/data(.),".xml")}" 
-                                    well="{$hit//tei:sourceDesc/tei:biblStruct/tei:analytic/tei:title[@level = "a"]/data(.)}" type="pub"
-                                    letter="{index:FindFirstLetter($hit//tei:sourceDesc/tei:biblStruct/tei:analytic/tei:title[@level = "a"]/data(.),1)}"/>
+                                    return <item 
+                                                        ref="{substring-before($hit//tei:publicationStmt/tei:idno[@type="filename"]/data(.),".xml")}" 
+                                                        well="{$hit//tei:sourceDesc/tei:biblStruct/tei:analytic/tei:title[@level = "a"]/data(.)}" 
+                                                        type="pub"
+                                                        letter="{index:FindFirstLetter($hit//tei:sourceDesc/tei:biblStruct/tei:analytic/tei:title[@level = "a"]/data(.),1)}"/>
     (:let $pubs_letters := for $letter in $pubs_title return substring($letter,1,1)
     :)
     let $names := distinct-values($texts)
@@ -126,7 +168,7 @@ declare function index:collectTexts($node as node(), $model as map(*)) {
                                                            return xs:boolean
                     
                     ) then substring($name,2) else $name :)
-                    return <item title="{$name}" well="{replace(replace(replace($name,'"',''),'“',''),'”','')}" type="doc"  letter="{index:FindFirstLetter($name,1)}"/>
+                    return <item title="{$name}" well="{replace(replace(replace($name,'"',''),'“',''),'”','')}" type="doc"  letter="{index:FindFirstLetter-new($name,1)}"/>
     
     let $newletter := for $letter in $well/@well order by $letter return index:FindFirstLetter($letter,1)
     let $well := ($well, $pubs_title)
@@ -142,15 +184,20 @@ declare function index:collectTexts($node as node(), $model as map(*)) {
     (:<item name="{$single}"  ref="{substring-before(root($text)/util:document-name(.),".xml")}"/>:)
     let $letters := for $letter in $well/@letter order by $letter return $letter
     let $letters := distinct-values($letters)
+    let $letters := for $letter in $letters return index:highLetters($letter)
+    
     return map {
         "texts" := $well,
         "allDocs" := $docs,
-        "letters" := $letters,
-        "newletter" := $newletter        
+        "letters" := $letters   
         }
 
 };
 
+(:
+,
+        "newletter" := $newletter     
+        :)
 
 declare function index:scanTexts($node as node(), $model as map(*)) {
     let $texts := for $text in $model("texts") where $text/@letter eq $model("letter") return $text 
