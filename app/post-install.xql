@@ -1,6 +1,7 @@
-xquery version "1.0";
+xquery version "3.0";
 import module namespace xmldb="http://exist-db.org/xquery/xmldb";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
+declare namespace util="http://exist-db.org/xquery/util";
 
 (: adapt config paths to remote system :)
 declare function local:adapt-conf(){
@@ -153,8 +154,123 @@ declare function  local:getCorrectDoc_nummeric($label as xs:string, $pos as xs:i
     return if (contains(substring($label, $pos, 1),xs:string($cut))) then xs:boolean("true") else  ()
 };
 
+declare function local:search_range_simple($para as xs:string,$hit as xs:string, $db as node()*) as node()* {
+ 
+     (:   let $para := if($para = "person")then  "author" else () :)
+        let $search_terms := concat('("',$para,'"),"',$hit,'"')
+        let $search_funk := concat("//range:field-eq(",$search_terms,")")
+        let $search_build := concat("$db",$search_funk)
+        return util:eval($search_build)
+};
+
+
+declare function local:saveTitleXML() {
+let $html := local:createTitleXML()
+return xmldb:store("/db/apps/pessoa/data","titlelist.xml",$html)
+};
+declare function local:createTitleXML() {
+    let $well := local:collectTexts()
+    let $well := for $item in $well order by $item/@well/data(.) return $item
+    let $letters := for $letter in $well/@letter order by $letter return $letter
+    let $letters := distinct-values($letters)
+    let $letters := for $letter in $letters return local:highLetters($letter)
+    let $letters := distinct-values($letters)
+    return <titles>
+                    { for $a in $letters return
+                    <list letter="{$a}">     {
+                        for $item in $well where $item/@letter eq $a return
+                           <item>
+                            <name type="{$item/@type/data(.)}" ref="{$item/@ref/data(.)}">{$item/@well/data(.)}</name>
+                            {if($item/@type eq "doc") then 
+                            for $hit in $item/item return
+                            <item ref="{$hit/@link/data(.)}">{$hit/@title/data(.)}</item> 
+                            else ()
+                            }
+                             </item>
+                            }
+                        </list>
+                    }
+                </titles>
+
+};
+
+
+
+declare function local:collectTexts() {
+    let $texts := for $text in  local:search_range_simple("type","title",collection('/db/apps/pessoa/data/doc'))
+                                for $single in $text//tei:rs[@type = "title"][not(child::tei:choice/tei:abbr)][not(child::tei:pc)]
+                                order by $single
+                            return $single
+                            
+   let $docs := for $doc in $texts
+                            return <item 
+                                                    name="{$doc}"  
+                                                    ref="{substring-before(root($doc)/util:document-name(.),".xml")}" 
+                                                    title="{replace(doc(concat('/db/apps/pessoa/data/doc/',root($doc)/util:document-name(.)))//tei:title[1]/data(.),"/E3","")}"
+                           />
+    
+    let $names := distinct-values($texts)
+    let $well := for $name in $names
+                    return <item title="{$name}" well="{replace(replace(replace($name,'"',''),'“',''),'”','')}" type="doc"  letter="{local:FindFirstLetter-new($name,1)}">
+                                {   local:scanDocs($name,$docs)
+                                }
+                                </item>
+    let $pubs := collection('/db/apps/pessoa/data/pub')
+    let $pubs_title := for $hit in $pubs//tei:teiHeader/tei:fileDesc
+                                    return <item 
+                                                        ref="{substring-before($hit//tei:publicationStmt/tei:idno[@type="filename"]/data(.),".xml")}" 
+                                                        well="{$hit//tei:sourceDesc/tei:biblStruct/tei:analytic/tei:title[@level = "a"]/data(.)}" 
+                                                        type="pub"
+                                                        letter="{local:FindFirstLetter-new($hit//tei:sourceDesc/tei:biblStruct/tei:analytic/tei:title[@level = "a"]/data(.),1)}"/>
+
+    let $well := ($well, $pubs_title)
+    return $well
+};
+
+declare function local:FindFirstLetter-new($text as xs:string, $pos as xs:integer) {
+    if(matches(substring($text,$pos,1),'[A-z]')) then substring($text,$pos,1)
+    else if ($pos > string-length($text)) then concat("Error/",$pos)
+    else local:FindFirstLetter-new($text,$pos +1)
+};
+
+declare function local:scanDocs($text, $aDocs) {
+             let $docs := for $doc in $aDocs where $doc/@name eq $text  return <item link="{$doc/@ref/data(.)}" title="{$doc/@title/data(.)}"/>
+             let $docs := for $a in (1 to count($docs)) let $coma := if($a != count($docs)) then "yes" else "no" return <item link="{$docs[$a]/@link/data(.)}" title="{$docs[$a]/@title/data(.)}" coma="{$coma}"/>
+             return $docs
+};
+declare function local:highLetters($letter) {
+    switch($letter)
+            case "A" case "a" return("A")
+            case "B" case "b"return("B")
+            case "C" case "c"return("C")
+            case "D" case "d" return("D")
+            case "E" case "e" return("E")
+            case "F" case "f" return("F")
+            case "G" case "g" return("G")
+            case "H" case "h" return("H")
+            case "I" case "i" return("I")
+            case "J" case "j" return("J")
+            case "K" case "k" return("K")
+            case "L" case "l" return("L")
+            case "M" case "m" return("M")
+            case "N" case "n" return("N")
+            case "O" case "o" return("O")
+            case "P" case "p" return("P")
+            case "Q" case "q" return("Q")
+            case "R" case "r" return("R")
+            case "S" case "s" return("S")
+            case "T" case "t" return("T")
+            case "U" case "u" return("U")
+            case "V" case "v" return ("V")
+            case "W" case "w" return("W")
+            case "X" case "x" return("X")
+            case "Y" case "y" return("Y")
+            case "Z" case "z" return("Z")
+            default return $letter
+};
 (
 local:adapt-conf(),
 local:move-index(),
-local:createXML()
+local:createXML(),
+local:saveTitleXML()
 )

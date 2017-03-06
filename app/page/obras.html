@@ -49,32 +49,7 @@
                             <th><i data-template="page:singleElement" data-template-xmltype="author-pages" data-template-xmlid="publications-and-documents"/></th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <!--<tr>
-                            <td class="Obras-Head">
-                                <i data-template="helpers:getValue" data-template-get="MainTitle" />
-                                
-                            </td>
-                            <td>
-                                <wrap data-template="helpers:invisibleEach" data-template-from="FirstRef" data-template-to="FR">
-                                    <a class="Obras-Ref-First" data-template="obras:PrintRef"  data-template-ref="FR" />                                    
-                                    <i data-template="obras:mentionedAs" data-template-ref="FR" data-template-dir="doc"/>,                                    
-                                </wrap>
-                                <a class="Obras-Ref-First" data-template="obras:PrintRef"  data-template-ref="LastRef" />                                    
-                                <i data-template="obras:mentionedAs" data-template-ref="LastRef" data-template-dir="doc"/>
-                            </td>
-                        </tr>
-                        <each data-template="helpers:invisibleEach" data-template-from="AltTitle" data-template-to="title">
-                            <tr>
-                                <td>
-                                    <i data-template="helpers:getValue" data-template-get="title"/>
-                                </td>
-                                <td>
-                                    
-                                </td>
-                            </tr>
-                        </each>-->
-                        
+                    <tbody>                        
                         <wrap data-template="helpers:invisibleEach" data-template-from="Works" data-template-to="work">
                             <!--<get data-template="helpers:getValue" data-template-get="work" />-->
                             <analytic data-template="obras:AnalyticObras" data-template-ref="work">              

@@ -41,28 +41,21 @@
             display:block;
         }
     </style>
-    <script>
-        $(document).ready(function(){ 
-        $(".docListButton").click(function() {
-        $(this).next("div").toggle("slow");
-        })
-        });
-    </script>
     <div class="row-fluid">
         <div id="content" class="span12 main">  
             <div id="texts-content">
                 <h1 id="title-tool" data-template="page:singleElement" data-template-xmltype="index" data-template-xmlid="titles"/>
-                <div id="textsList" class="span6">                     
+                <div id="textsList" class="span6">                  
                     <map data-template="index:collectTexts">
                         <print data-template="index:printNavigation"/>
                         <each data-template="helpers:invisibleEach" data-template-from="letters" data-template-to="letter">
                             <div class="sub_Nav"><i class="index:printLetter"/></div>
                             <map class="index:scanTexts">
-                                <div class="index-text">
+                                <!--<div class="index-text">
                                 <each data-template="helpers:invisibleEach" data-template-from="scTexts" data-template-to="text">
                                     <span class="index-title"><i class="index:printDocOrPub"/></span>
                                     <div class="docList">
-                                       <map class="index:scanDocs">
+                                        <map class="index:mapDocs">
                                             <div data-template="helpers:invisibleEach" data-template-from="refs" data-template-to="ref">
                                                 <get data-template="helpers:getValue" data-template-get="ref"/>
                                                 <span><i data-template="index:printDocLinks" data-template-ref="ref"/></span>     
@@ -71,10 +64,9 @@
                                         </map>
                                     </div>
                                 </each>
-                            </div>
+                            </div>-->
                             </map>
                         </each>
-                     <!--   <div><i class="helpers:getValue?get=newletter"/></div>-->
                     </map>
                 </div> 
             </div>
