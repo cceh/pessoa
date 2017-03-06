@@ -137,107 +137,41 @@ declare function index:collectGenre($node as node(), $model as map(*),$type as x
 
 
 (:####### TEXT INDEX #######:)
-
-declare function index:collectTexts($node as node(), $model as map(*)) {
-    let $texts := for $text in  search:search_range_simple("type","title",collection('/db/apps/pessoa/data/doc'))
-                                for $single in $text//tei:rs[@type = "title"][not(child::tei:choice/tei:abbr)][not(child::tei:pc)]
-                                order by $single
-                            return $single
-                            (:<item title="{$single}" well="{replace(replace(replace($single,'"',''),'“',''),'”','')}"/>:)
-                            
-   let $docs := for $doc in $texts
-                            return <item 
-                                                    name="{$doc}"  
-                                                    ref="{substring-before(root($doc)/util:document-name(.),".xml")}" 
-                                                    title="{replace(doc(concat('/db/apps/pessoa/data/doc/',root($doc)/util:document-name(.)))//tei:title[1]/data(.),"/E3","")}"
-                           />
-    
-    let $pubs := collection('/db/apps/pessoa/data/pub')
-    let $pubs_title := for $hit in $pubs//tei:teiHeader/tei:fileDesc
-                                    return <item 
-                                                        ref="{substring-before($hit//tei:publicationStmt/tei:idno[@type="filename"]/data(.),".xml")}" 
-                                                        well="{$hit//tei:sourceDesc/tei:biblStruct/tei:analytic/tei:title[@level = "a"]/data(.)}" 
-                                                        type="pub"
-                                                        letter="{index:FindFirstLetter($hit//tei:sourceDesc/tei:biblStruct/tei:analytic/tei:title[@level = "a"]/data(.),1)}"/>
-    (:let $pubs_letters := for $letter in $pubs_title return substring($letter,1,1)
-    :)
-    let $names := distinct-values($texts)
-    let $well := for $name in $names
-                  (:  let $wellformed := if(  for $let in (a to z) 
-                                                           where substring($name,1,1) eq $let 
-                                                           return xs:boolean
-                    
-                    ) then substring($name,2) else $name :)
-                    return <item title="{$name}" well="{replace(replace(replace($name,'"',''),'“',''),'”','')}" type="doc"  letter="{index:FindFirstLetter-new($name,1)}"/>
-    
-    let $newletter := for $letter in $well/@well order by $letter return index:FindFirstLetter($letter,1)
-    let $well := ($well, $pubs_title)
-    (:let $well := for $a in (1 to count($well)) 
-                                let $coma := if($a != count($well)) then "yes" else "no" 
-                                return <item 
-                                ref="{$well/@ref/data(.)}"
-                                title="{$well[$a]/@title/data(.)}" 
-                                well="{$well[$a]/@well/data(.)}" 
-                                type="{$well[$a]/@type/data(.)}" 
-                                letter="{$well[$a]/@letter/data(.)}" 
-                                coma="{$coma}"/>:)
-    (:<item name="{$single}"  ref="{substring-before(root($text)/util:document-name(.),".xml")}"/>:)
-    let $letters := for $letter in $well/@letter order by $letter return $letter
-    let $letters := distinct-values($letters)
-    let $letters := for $letter in $letters return index:highLetters($letter)
-    
-    return map {
-        "texts" := $well,
-        "allDocs" := $docs,
-        "letters" := $letters   
-        }
-
-};
-
-(:
-,
-        "newletter" := $newletter     
-        :)
-
-declare function index:scanTexts($node as node(), $model as map(*)) {
-    let $texts := for $text in $model("texts") where $text/@letter eq $model("letter") return $text 
-    (:substring($text/@well,1,1):)
-    return map {
-        "scTexts" := $texts
-        }
-    
-};
-
-declare function index:scanDocs($node as node(), $model as map) {
-    if($model("text")/@type/data(.) eq "doc") then
-             let $text := $model("text")
-             let $aDocs := $model("allDocs")
-             let $docs := for $doc in $aDocs where $doc/@name eq $text/@title  return <item link="{$doc/@ref/data(.)}" title="{$doc/@title/data(.)}"/>
-             let $docs := for $a in (1 to count($docs)) let $coma := if($a != count($docs)) then "yes" else "no" return <item link="{$docs[$a]/@link/data(.)}" title="{$docs[$a]/@title/data(.)}" coma="{$coma}"/>
-             return map {"refs" := $docs}
-        else ()
-};
-(:
-replace(replace(replace($single,' " ','' ),' “ ',' ' ),' ” ','')
-
-replace(replace(replace(replace($text," ",''),'"',''),'(',''),')','')
-:)
-declare function index:printDocOrPub($node as node(),$model as map(*)) {
-    if($model("text")/@type/data(.) eq "doc") then $model("text")/@well/data(.)
-    else <a href="{concat($helpers:app-root,"/",$helpers:web-language,"/pub/",$model("text")/@ref/data(.))}" class="tlink">{$model("text")/@well/data(.)}</a>
+    declare function index:collectTexts($node as node(), $model as map(*)) {
+        let $list := doc('/db/apps/pessoa/data/titlelist.xml')
+        let $letters := $list//list/@letter/data(.)     
+        return map {
+            "letters" := $letters 
+       }
+        
     };
-
-declare function index:printDocButton($node as node(), $model as map(*)) {
-    if($model("text")/@type/data(.) eq "doc") then <div class="docListButton">{helpers:singleElement_xquery("navigation","documentos")}</div>
-    else ()
-};
-
-declare function index:test($node as node(), $model as map(*),$get as xs:string) {
-        $model($get)/@well/data(.)
-
-};
-
-
+    
+    declare function index:scanTexts($node as node(), $model as map(*)) {
+    let $list := doc('/db/apps/pessoa/data/titlelist.xml')//list[@letter = $model("letter")]
+      return    <div class="index-text">
+                                { for $item in $list/item
+                                    return  (<span class="index-title">{if($item/name/@type eq"pub") then 
+                                                            <a href="{concat($helpers:app-root,"/",$helpers:web-language,"/pub/",$item/name/@ref/data(.))}" class="tlink">
+                                                            {$item/name/data(.)}
+                                                            </a>
+                                                            else 
+                                                            $item/name/data(.) }</span>,
+                                                            if($item/name/@type eq "doc") then
+                                                            <div class="docList">
+                                                                {for $hit in $item/item return <span><a href="{concat($helpers:app-root,"/",$helpers:web-language,"/doc/",$hit/@ref/data(.))}" class="olink">{$hit/data(.)}</a>
+                                                                {if(index-of($item/item,$hit) < count($item/item)) then "," else ()}
+                                                                </span>}
+                                                                <div class="clear"/>
+                                                            </div>
+                                                            
+                                                            else ()
+                                                            
+                                                    
+                                                    )
+                                }
+                                    
+                            </div>
+    };
 
 (:######## PERSON INDEX #######:)
 
