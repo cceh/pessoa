@@ -29,7 +29,7 @@ declare function doc:get-title($node as node(), $model as map(*), $id as xs:stri
 declare function doc:get-indexes($node as node(), $model as map(*), $id as xs:string) as item()+{
     let $xml := doc:get-xml($id)
     let $stylesheet := doc("/db/apps/pessoa/xslt/lists.xsl")
-    return transform:transform($xml, $stylesheet, (<parameters><param name="lang" value="{$helpers:web-language}" /></parameters>))
+    return transform:transform($xml, $stylesheet, (<parameters><param name="lang" value="{$helpers:web-language}" /><param name="host" value="{$helpers:app-root}"/></parameters>))
 };
 
 declare function doc:createLink($node as node(), $model as map(*),$id as xs:string, $type as xs:string) {
