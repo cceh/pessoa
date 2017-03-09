@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -47,12 +48,18 @@
                 <idno type="filename">BNP_E3_22-77v.xml</idno>
             </publicationStmt>
             <sourceDesc>
-                <msDesc xml:id="M1" type="structured">
+                <msDesc>
                     <msIdentifier>
                         <institution>Biblioteca Nacional de Portugal</institution>
                         <idno>BNP/E3 22-77v</idno>
                     </msIdentifier>
                     <msContents>
+                        <summary>
+                            <p> Lista manuscrita, publicada em <hi rend="italic">Sensacionismo e
+                                    Outros Ismos</hi> (2009, 33). Na mesma folha encontra-se um
+                                poema que começa por «Deus sabe melhor do que eu», datado «4-2-1915»
+                                (cf. PFP-I, 25). </p>
+                        </summary>
                         <msItemStruct>
                             <author>
                                 <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -72,12 +79,6 @@
                         </origin>
                     </history>
                 </msDesc>
-                <msDesc corresp="#M1" type="prose">
-                    <msIdentifier/>
-                    <p> Lista manuscrita, publicada em <hi rend="italic">Sensacionismo e Outros
-                            Ismos</hi> (2009, 33). Na mesma folha encontra-se um poema que começa
-                        por «Deus sabe melhor do que eu», datado «4-2-1915» (cf. PFP-I, 25). </p>
-                </msDesc>
             </sourceDesc>
         </fileDesc>
     </teiHeader>
@@ -89,8 +90,8 @@
     <text>
         <body>
             <div>
-                <ab rend="right"><hi rend="underline"><rs type="periodical" key="J35"
-                    >Europa</rs>.</hi></ab>
+                <head rend="right"><hi rend="underline"><rs type="periodical" key="J35"
+                        >Europa</rs>.</hi></head>
                 <list>
                     <item>
                         <label>1.</label>
@@ -106,12 +107,11 @@
                         <rs type="title">As Cinco Chagas de <rs type="name" key="P50"
                             >Christo</rs></rs>. </item>
                     <item>
-                        <label>5.</label> (<rs type="name" key="P37">Côrtes-Rodrigues</rs>).
-                    </item>
+                        <label>5.</label> (<rs type="name" key="P37">Côrtes-Rodrigues</rs>). </item>
                 </list>
-                <metamark rend="line" function="distinct"/>
+                <metamark rend="line-14-center" function="distinct"/>
                 <ab> ((<rs type="name" key="AdC" role="author">Alvaro de Campos</rs>)). </ab>
-                <metamark rend="line" function="end"/>
+                <metamark rend="line-14-center" function="end"/>
                 <gap reason="selection" unit="line" extent="9"/>
             </div>
         </body>

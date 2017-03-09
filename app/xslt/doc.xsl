@@ -17,11 +17,11 @@
         <div class="text">
             <xsl:apply-templates/>
         </div>
-        <xsl:apply-templates select="//msDesc[@type = 'prose']"/>
+        <xsl:apply-templates select="//summary"/>
     </xsl:template>
 
     <!-- Editorial notes and interventions -->
-    <xsl:template match="msDesc[@type = 'prose']" mode="#default deletion addition">
+    <xsl:template match="summary" mode="#default deletion addition">
         <div class="editorial-note">
             <xsl:apply-templates/>
         </div>

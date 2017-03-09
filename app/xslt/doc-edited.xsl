@@ -16,6 +16,12 @@
     (Abkürzungen anzeigen oder nicht) -->
     <xsl:param name="abbr" />
     
+    <xsl:template match="p[@rend='position-center']" mode="#default deletion addition">
+        <p>
+            <xsl:apply-templates/>
+        </p>
+    </xsl:template>
+    
     <!-- Choices -->
     <!-- Abkürzungen und Auflösungen: Darstellung der aufgelösten Form -->
     <xsl:template match="choice[abbr and expan[ex]]" mode="#default deletion addition">

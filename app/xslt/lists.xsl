@@ -132,7 +132,8 @@
     </xsl:template>
     
     <xsl:template match="text()">
-        <xsl:value-of select="replace(.,'^[.“”]*(.+?)[.“”]*$','$1')"/>
+        <xsl:variable name="str1" select="replace(.,'^[.“”]*(.+?)[.“”]*$','$1')" />
+        <xsl:value-of select="replace($str1, '[“”]', '')" />
     </xsl:template>
     
 </xsl:stylesheet>

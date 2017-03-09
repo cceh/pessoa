@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -36,12 +37,16 @@
                 <idno type="filename">BNP_E3_14B-16_e_16av.xml</idno>
             </publicationStmt>
             <sourceDesc>
-                <msDesc xml:id="M1" type="structured">
+                <msDesc>
                     <msIdentifier>
                         <institution>Biblioteca Nacional de Portugal</institution>
                         <idno>BNP/E3 14B-16 e 16av</idno>
                     </msIdentifier>
                     <msContents>
+                        <summary>
+                            <p> Lista manuscrita, publicada em Sepúlveda, <hi rend="italic">O livro
+                                    de Caeiro</hi> (2010, 406-407). </p>
+                        </summary>
                         <msItemStruct>
                             <author>
                                 <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -61,11 +66,6 @@
                         </origin>
                     </history>
                 </msDesc>
-                <msDesc corresp="#M1" type="prose">
-                    <msIdentifier/>
-                    <p> Lista manuscrita, publicada em Sepúlveda, <hi rend="italic">O livro de
-                            Caeiro</hi> (2010, 406-407). </p>
-                </msDesc>
             </sourceDesc>
         </fileDesc>
     </teiHeader>
@@ -76,20 +76,20 @@
             url="bn-acpc-e-e3-14b-1-73_JPG_24-C-R0150/bn-acpc-e-e3-14b-1-73_0034_16v-16av_t24-C-R0150.jpg"
         />
     </facsimile>
-    <text xml:id="bnp-e3-14b-16-e-16av">
+    <text>
         <body>
             <div>
-                <head>
-                    <hi rend="underline center">Um grande poeta materialista<lb/> (<rs type="name"
-                            key="AC" role="topic">Alberto Caeiro</rs>)</hi></head>
+                <head rend="center">
+                    <hi rend="underline">Um grande poeta materialista<lb/> (<rs
+                                type="name" key="AC" role="topic">Alberto
+                    Caeiro</rs>)</hi></head>
                 <p>
                     <del rend="overstrike">A enthusiasthica all</del>
-                    <supplied resp="PS" reason="omitted-in-original"/>
                 </p>
                 <p>Entre o grande numero de casos<lb/> curiosos que existem na literatura,<lb/> o
                     caso de <rs type="name" key="AC" role="topic">Alberto Caeiro</rs> é dos
                     <lb/>mais curiosos.</p>
-                <metamark rend="line" function="distinct"/>
+                <metamark rend="line-14-center" function="distinct"/>
                 <list>
                     <head>
                         <rs type="name" key="AC" role="topic">Alberto Caeiro</rs>:</head>
@@ -101,7 +101,7 @@
                                 </abbr>
                                 <expan>art<ex>igo</ex>
                                 </expan>
-                            </choice>do <rs type="name" key="P30">Sá-Carneiro</rs></rs>. </item>
+                            </choice> do <rs type="name" key="P30">Sá-Carneiro</rs></rs>. </item>
                     <item>
                         <rs type="periodical" key="J15">
                             <hi rend="underline">Montanha</hi>
@@ -110,7 +110,7 @@
                                 </abbr>
                                 <expan>art<ex>igo</ex>
                                 </expan>
-                            </choice>do <rs type="name" key="P35">Ribeiro Lopes</rs></rs> (?) </item>
+                            </choice> do <rs type="name" key="P35">Ribeiro Lopes</rs></rs> (?) </item>
                     <item>
                         <rs type="periodical" key="J16">
                             <hi rend="underline">El Tea</hi>
@@ -119,8 +119,7 @@
                                     </abbr>
                                     <expan resp="UH">A<ex>lfredo</ex>
                                     </expan>
-                                </choice>
-                                <choice>
+                                </choice>&#x00A0;<choice>
                                     <abbr>P<am>.</am>
                                     </abbr>
                                     <expan resp="UH">P<ex>edro</ex>
@@ -135,7 +134,7 @@
                                 </abbr>
                                 <expan>art<ex>igo</ex>
                                 </expan>
-                            </choice>do <rs type="name" key="P37">Côrtes-Rodrigues</rs></rs>. </item>
+                            </choice> do <rs type="name" key="P37">Côrtes-Rodrigues</rs></rs>. </item>
                     <item>
                         <rs type="periodical" key="J18">
                             <hi rend="underline">Economia</hi>
@@ -144,7 +143,7 @@
                                 </abbr>
                                 <expan>art<ex>igo</ex>
                                 </expan>
-                            </choice>do <rs type="name" key="P38">Carvalho Mourão</rs></rs>
+                            </choice> do <rs type="name" key="P38">Carvalho Mourão</rs></rs>
                         (?)</item>
                     <item>
                         <rs type="periodical" key="J5">
@@ -154,7 +153,7 @@
                                 </abbr>
                                 <expan>art<ex>igo</ex>
                                 </expan>
-                            </choice>de <rs type="name" key="FP" role="author" style="b">
+                            </choice> de <rs type="name" key="FP" role="author" style="b">
                                 <choice>
                                     <abbr>F<am>.</am>
                                     </abbr>
@@ -177,8 +176,8 @@
                 </list>
                 <p>(<rs type="name" key="P40">
                         <hi rend="underline">Torres de Abreu</hi>
-                    </rs> talvez consiga<lb/> qualquér cousa. Se <rs type="name" key="P41"
-                        >Albertino da <lb/>Silva</rs> pudesse fallar, mesmo que <lb/>atacasse!)</p>
+                    </rs> talvez consiga<lb/> qualquér cousa. Se <rs type="name" key="P41">Albertino
+                        da <lb/>Silva</rs> pudesse fallar, mesmo que <lb/>atacasse!)</p>
                 <pb n="3"/>
                 <list>
                     <head>
@@ -186,7 +185,7 @@
                     </head>
                     <item/>
                 </list>
-                <metamark rend="line" function="end"/>
+                <metamark rend="line-14-center" function="end"/>
                 <pb n="2"/>
                 <list>
                     <head>In England:</head>
@@ -211,7 +210,7 @@
                         </rs> – <rs type="title">big article</rs></item>
                     <item><rs type="title">Preface to translation</rs>
                     </item>
-                    <metamark rend="underline" function="distinct"/>
+                    <metamark rend="line-14-center" function="distinct"/>
                 </list>
                 <list>
                     <head>
@@ -235,7 +234,7 @@
                             </choice> to translation.</rs>
                     </item>
                 </list>
-                <metamark rend="underline" function="distinct"/>
+                <metamark rend="line-14-center" function="distinct"/>
                 <list>
                     <head>
                         <hi rend="underline">Spanish:</hi>
@@ -243,19 +242,18 @@
                     <item>(through <rs type="name" key="P36">
                             <hi rend="underline">Guisado</hi>
                         </rs>)<lb/>
-                        <choice>
-                            <abbr>&amp;</abbr>
-                            <expan resp="PS">and</expan>
-                        </choice> perhaps <rs type="periodical" key="J22">
+                        &amp; perhaps <rs type="periodical" key="J22">
                             <hi rend="underline">Renacimento</hi>
                         </rs>. </item>
                 </list>
-                <metamark rend="underline" function="distinct"/>
+                <metamark rend="line-14-center" function="distinct"/>
                 <list>
                     <head>
                         <hi rend="underline">Italian:</hi>
                     </head>
-                    <item/>
+                    <item>
+                        <supplied reason="omitted-in-original" resp="PS"/>
+                    </item>
                 </list>
             </div>
         </body>

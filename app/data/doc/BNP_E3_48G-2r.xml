@@ -44,12 +44,16 @@
             <idno type="filename">BNP_E3_48G-2r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc xml:id="M1" type="structured">
+            <msDesc>
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 48G-2r</idno>
                </msIdentifier>
                <msContents>
+                  <summary>
+                     <p> Lista datilografada, publicada em Teixeira, <hi rend="italic">Fernando
+                           Pessoa e o Ideal Neo-Pagão</hi> (1996, 91-92). </p>
+                  </summary>
                   <msItemStruct>
                      <author>
                         <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -68,11 +72,6 @@
                   </origin>
                </history>
             </msDesc>
-            <msDesc corresp="#M1" type="prose">
-               <msIdentifier/>
-               <p> Lista datilografada, publicada em Teixeira, <hi rend="italic">Fernando Pessoa e o
-                     Ideal Neo-Pagão</hi> (1996, 91-92). </p>
-            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -82,33 +81,51 @@
    </facsimile>
    <text>
       <body>
-         <div><head><hi rend="underline">Materia Controversa:</hi></head>
-         <list>
-            <item><label>1.</label><rs type="title">O Ultimatum de <rs type="name" key="AdC" role="author">Alvaro
-               de Campos</rs></rs>. (1917).</item>
-            <item><label>2.</label><rs type="title">O artigo “Athena”</rs>.</item>
-            <item><label>3.</label>“<rs type="title">O que é a Metaphysica?</rs>”, de <rs type="name" key="AdC"
-                  role="author">Alvaro de Campos. </rs></item>
-            <item><label>4.</label>“<rs type="title">Apontamentos para uma Esthetica não-aristotelica</rs>”. (<rs
-                  type="person" key="AdC" role="author">Alvaro de Campos. </rs>)</item>
-            <item><label>5.</label>“<rs type="title">Apontamentos sobre os Apontamentos...</rs>” (<rs type="name" key="P107">Mario
-                  Saa</rs>).</item>
-            <item><label>6.</label><rs type="title">O Regresso dos Deuses</rs>. (<rs type="name" key="RR" role="author"
-                  >Ricardo Reis </rs>)</item>
-            <item><label>7.</label><rs type="title">O Conceito de Occidentalidade</rs> (<choice>
-                  <abbr>F<am>.</am></abbr>
-                  <expan>F<ex>ernando</ex></expan>
-               </choice>
-               <choice>
-                  <abbr>P<am>.</am></abbr>
-                  <expan>P<ex>essoa</ex></expan>
-               </choice>.</item>
-            <item><label>8.</label><supplied resp="PS" reason="omitted-in-original"/></item>
-         </list>
-         <p>Estes documentos, separados alguns por bastante tempo, mas ligados todos por um intimo
-            fio polemico, são aqui renidos porque nelles reside a unica discussão, ou posição,
-            superiormente intellectual que se tenha dado em Portugal em bre dias recentes, para não
-            dizer mais. </p></div>
+         <div>
+            <head><hi rend="underline">Materia Controversa:</hi></head>
+            <list>
+               <item>
+                  <label>1.</label>
+                  <rs type="title">O Ultimatum de <rs type="name" key="AdC" role="author">Alvaro de
+                        Campos</rs></rs>. (1917). </item>
+               <item>
+                  <label>2.</label>
+                  <rs type="title">O artigo “Athena”</rs>. </item>
+               <item>
+                  <label>3.</label> “<rs type="title">O que é a Metaphysica?</rs>”, de <rs
+                     type="name" key="AdC" role="author">Alvaro de Campos.</rs>
+               </item>
+               <item rend="indent-2">
+                  <label>4.</label> “<rs type="title">Apontamentos para uma Esthetica
+                     não-aristotelica</rs>”.<lb/> (<rs type="name" key="AdC" role="author">Alvaro de
+                     Campos. </rs>) </item>
+               <item>
+                  <label>5.</label> “<rs type="title">Apontamentos sobre os Apontamentos...</rs>”
+                     (<rs type="name" key="P107">Mario Saa</rs>). </item>
+               <item>
+                  <label>6.</label>
+                  <rs type="title">O Regresso dos Deuses</rs>. (<rs type="name" key="RR"
+                     role="author">Ricardo Reis </rs>) </item>
+               <item>
+                  <label>7.</label>
+                  <rs type="title">O Conceito de Occidentalidade</rs> (<choice>
+                     <abbr>F<am>.</am></abbr>
+                     <expan>F<ex>ernando</ex></expan>
+                  </choice>
+                  <choice>
+                     <abbr>P<am>.</am></abbr>
+                     <expan>P<ex>essoa</ex></expan>
+                  </choice>. </item>
+               <item>
+                  <label>8.</label>
+                  <supplied resp="PS" reason="omitted-in-original"/>
+               </item>
+            </list>
+            <p>Estes documentos, separados alguns por bastante tempo, mas ligados todos por um
+               intimo fio polemico, são aqui renidos porque nelles reside a unica discussão, ou
+               posição, superiormente intellectual que se tenha dado em Portugal em bre dias
+               recentes, para não dizer mais. </p>
+         </div>
       </body>
    </text>
 </TEI>

@@ -6,7 +6,7 @@ default namespace tei = "http://www.tei-c.org/ns/1.0"
 namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2017-01-20T10:45:28Z. .
+# Schema generated from ODD source 2017-03-09T14:22:43Z. .
 # TEI Edition: Version 3.1.0. Last updated on
 #	15th December 2016, revision d3f5e70
 # TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.1.0/
@@ -739,7 +739,7 @@ tei_model.pPart.edit =
   tei_model.pPart.editorial | tei_model.pPart.transcriptional
 tei_model.ptrLike = tei_ref
 tei_model.lPart = notAllowed
-tei_model.global.meta = notAllowed
+tei_model.global.meta = tei_certainty
 tei_model.milestoneLike = tei_pb | tei_lb | tei_anchor
 tei_model.gLike = notAllowed
 tei_model.oddDecl = notAllowed
@@ -817,9 +817,9 @@ tei_model.placeStateLike_sequenceRepeatable =
   tei_model.placeNamePart_sequenceRepeatable+
 tei_model.publicationStmtPart.agency = tei_publisher
 tei_model.publicationStmtPart.detail =
-  tei_date | tei_idno | tei_availability
+  tei_date | tei_pubPlace | tei_idno | tei_availability
 tei_model.availabilityPart = tei_licence
-tei_model.certLike = notAllowed
+tei_model.certLike = tei_certainty
 tei_model.descLike = notAllowed
 tei_model.quoteLike = tei_quote | tei_cit
 tei_model.quoteLike_alternation = tei_quote | tei_cit
@@ -843,7 +843,7 @@ tei_model.divBottomPart = tei_trailer | tei_signed
 tei_model.divBottom = tei_model.divWrapper | tei_model.divBottomPart
 tei_model.choicePart =
   tei_abbr | tei_expan | tei_ex | tei_am | tei_supplied | tei_seg
-tei_model.imprintPart = tei_publisher | tei_biblScope
+tei_model.imprintPart = tei_publisher | tei_biblScope | tei_pubPlace
 tei_model.addressLike = notAllowed
 tei_model.addressLike_alternation = notAllowed
 tei_model.addressLike_sequence = empty
@@ -1538,6 +1538,19 @@ tei_lb =
   ## (line break) marks the start of a new (typographic) line in some edition or version of a text. [3.10.3. Milestone
   ## Elements 7.2.5. Speech Contents]
   element lb { empty, tei_att.global.source.attribute.source, empty }
+tei_analytic =
+  
+  ## (analytic level) contains bibliographic elements describing an item (e.g. an article or poem) published within a monograph or journal and not as an independent publication. [3.11.2.1. Analytic, Monographic, and Series Levels]
+  element analytic {
+    (tei_author
+     | tei_respStmt
+     | tei_title
+     | tei_model.ptrLike
+     | tei_date
+     | tei_textLang
+     | tei_idno
+     | tei_availability)*
+  }
 tei_monogr =
   
   ## (monographic level) contains bibliographic elements describing an item (e.g. a book or journal) published as an independent item (i.e. as a separate physical object). [3.11.2.1. Analytic, Monographic, and Series Levels]
@@ -1639,6 +1652,10 @@ tei_biblScope =
     }?,
     empty
   }
+tei_pubPlace =
+  
+  ## (publication place) contains the name of the place where a bibliographic item was published. [3.11.2.4. Imprint, Size of a Document, and Reprint Information]
+  element pubPlace { tei_macro.phraseSeq }
 tei_bibl =
   
   ## (bibliographic citation) contains a loosely-structured bibliographic citation of which the sub-components may or may not be explicitly tagged. [3.11.1. Methods of Encoding Bibliographic References and Lists of References 2.2.7. The Source Description 15.3.2. Declarable Elements]
@@ -1659,7 +1676,9 @@ tei_biblStruct =
   
   ## (structured bibliographic citation) contains a structured bibliographic citation, in which only bibliographic sub-elements appear and in a specified order. [3.11.1. Methods of Encoding Bibliographic References and Lists of References 2.2.7. The Source Description 15.3.2. Declarable Elements]
   element biblStruct {
-    (tei_monogr+, (tei_model.noteLike | tei_model.ptrLike)*),
+    (tei_analytic*,
+     tei_monogr+,
+     (tei_model.noteLike | tei_model.ptrLike)*),
     tei_att.global.attributes,
     tei_att.declarable.attributes,
     tei_att.typed.attributes,
@@ -2171,7 +2190,7 @@ tei_msContents =
   ## (manuscript contents) describes the intellectual content of a manuscript or manuscript part, either as a series of paragraphs or as a series of structured manuscript items. [10.6. Intellectual Content]
   element msContents {
     (tei_model.pLike+
-     | (tei_textLang?, (tei_msItemStruct)*)),
+     | (tei_summary?, tei_textLang?, (tei_msItemStruct)*)),
     tei_att.global.source.attribute.source,
     empty
   }
@@ -2191,11 +2210,15 @@ tei_msItemStruct =
     tei_att.global.source.attribute.source,
     empty
   }
+tei_summary =
+  
+  ## contains an overview of the available information concerning some aspect of an item (for example, its intellectual content, history, layout, typography etc.) as a complement or alternative to the more detailed information carried by more specific elements. [10.6. Intellectual Content]
+  element summary { tei_macro.specialPara }
 tei_history =
   
   ## groups elements describing the full history of a manuscript or manuscript part. [10.8. History]
   element history {
-    (tei_model.pLike+ | tei_origin?),
+    (tei_model.pLike+ | (tei_summary?, tei_origin?)),
     tei_att.global.source.attribute.source,
     empty
   }
@@ -2743,9 +2766,42 @@ tei_cell =
       list {
         (
          ##
-         "vertical-middle")+
+         "vertical-middle"
+         | 
+           ##
+           "right")+
       }
     }?,
+    empty
+  }
+tei_certainty =
+  
+  ## indicates the degree of certainty associated with some aspect of the text markup. [21.1.2. Structured Indications of Uncertainty]
+  element certainty {
+    (tei_model.descLike | tei_model.certLike)*,
+    tei_att.global.responsibility.attribute.resp,
+    
+    ## indicates more exactly the aspect concerning which certainty is being expressed: specifically, whether the markup is correctly located, whether the correct element or attribute name has been used, or whether the content of the element or attribute is correct, etc.
+    attribute locus {
+      
+      ## uncertainty concerns whether the name of the element or attribute used is correctly applied.
+      "name"
+      | 
+        ## uncertainty concerns whether the start of the element is correctly identified.
+        "start"
+      | 
+        ## uncertainty concerns whether the end of the element is correctly identified.
+        "end"
+      | 
+        ## uncertainty concerns both the start and the end of the element.
+        "location"
+      | 
+        ## uncertainty concerns the content (for an element) or the value (for an attribute)
+        "value"
+    },
+    
+    ## indicates the degree of confidence assigned to the aspect of the markup named by the locus attribute.
+    attribute degree { xsd:double }?,
     empty
   }
 start = tei_TEI
