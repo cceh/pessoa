@@ -6,7 +6,9 @@
     version="2.0">
     
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
+    
     <xsl:param name="lang">pt</xsl:param>
+    <xsl:param name="host">http://pessoadigital.pt</xsl:param>
     
     <xsl:template match="/">
         <xsl:apply-templates select=".//body"/>
@@ -65,12 +67,12 @@
                             <xsl:when test="@style">
                                 <xsl:for-each-group select="current-group()" group-by="@style">
                                     <xsl:variable name="name" select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//listPerson/person[@xml:id=$key or substring-after(@corresp,'#')=$key]/persName[@type=current-grouping-key()]"/>
-                                    <li onmouseenter="highlight('person {$key}');" onmouseleave="clearH('{$key}');"><xsl:value-of select="$name"/> <a href="../../page/persons#{$name}" title="{$title}"><img class="indexImg" src="http://www.pessoadigital.pt/resources/images/glyphicons-35-old-man.png"/></a></li>
+                                    <li onmouseenter="highlight('person {$key}');" onmouseleave="clearH('{$key}');"><xsl:value-of select="$name"/> <a href="../../page/persons#{$name}" title="{$title}"><img class="indexImg" src="{string-join(($host,resources/images/glyphicons-35-old-man.png),'/')}"/></a></li>
                                 </xsl:for-each-group>
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:variable name="name" select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//listPerson/person[@xml:id=$key]/persName"/>
-                                <li onmouseenter="highlight('person {$key}');" onmouseleave="clearH('{$key}');"><xsl:value-of select="$name"/> <a href="../../page/persons#{$name}" title="{$title}"><img class="indexImg" src="http://www.pessoadigital.pt/resources/images/glyphicons-35-old-man.png"/></a></li>
+                                <li onmouseenter="highlight('person {$key}');" onmouseleave="clearH('{$key}');"><xsl:value-of select="$name"/> <a href="../../page/persons#{$name}" title="{$title}"><img class="indexImg" src="{string-join(($host,resources/images/glyphicons-35-old-man.png),'/')}"/></a></li>
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:for-each-group>
@@ -91,7 +93,7 @@
                     <xsl:for-each select=".//rs[@type='title']">
                         <xsl:sort select="replace(.,'[“”()]','')"/>
                         <xsl:variable name="key" select="replace(.,'[“”.\s()]','')"/>
-                        <li onmouseenter="highlight('text {$key}');" onmouseleave="clearH('{$key}');"><xsl:apply-templates /> <a href="../../page/texts#{.}" title="{$title}"><img class="indexImg typeB" src="http://www.pessoadigital.pt/resources/images/glyphicons-40-notes.png"/></a></li>
+                        <li onmouseenter="highlight('text {$key}');" onmouseleave="clearH('{$key}');"><xsl:apply-templates /> <a href="../../page/texts#{.}" title="{$title}"><img class="indexImg typeB" src="{string-join(($host,resources/images/glyphicons-40-notes.png),'/')}"/></a></li>
                     </xsl:for-each>
                 </ul>
             </xsl:if>
@@ -110,7 +112,7 @@
                     <xsl:for-each-group select=".//rs[@type='periodical']" group-by="@key">
                         <xsl:sort select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type='periodical']/item[@xml:id=current-grouping-key()]"/>
                         <xsl:variable name="name"  select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type='periodical']/item[@xml:id=current-grouping-key()]"/>
-                        <li onmouseenter="highlight('journal {current-grouping-key()}');" onmouseleave="clearH('{current-grouping-key()}');"><xsl:value-of select="$name"/> <a href="../../page/journals#{$name}" title="{$title}"><img class="indexImg" src="http://www.pessoadigital.pt/resources/images/glyphicons-609-newspaper.png"/></a></li>
+                        <li onmouseenter="highlight('journal {current-grouping-key()}');" onmouseleave="clearH('{current-grouping-key()}');"><xsl:value-of select="$name"/> <a href="../../page/journals#{$name}" title="{$title}"><img class="indexImg" src="{string-join(($host,resources/images/glyphicons-609-newspaper.png),'/')}"/></a></li>
                     </xsl:for-each-group>
                 </ul>
             </xsl:if>
@@ -130,7 +132,7 @@
     </xsl:template>
     
     <xsl:template match="text()">
-        <xsl:value-of select="replace(.,'[“”.]','')"/>
+        <xsl:value-of select="replace(.,'^[.“”]*(.+?)[.“”]*$','$1')"/>
     </xsl:template>
     
 </xsl:stylesheet>
