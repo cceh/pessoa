@@ -19,13 +19,24 @@
         <xsl:apply-templates select="seg[@n='2']"/>
     </xsl:template>
     
+    <xsl:template match="subst[del][add]">
+        <xsl:apply-templates select="add"/>
+    </xsl:template>
+    
     <xsl:template match="lb">
         <xsl:text> </xsl:text>
     </xsl:template>
     
+    <xsl:template match="pc"/>
+    
+    <xsl:template match="rs[@type=('place','work','name','periodical')]|hi|del|add|abbr|am|seg">
+        <xsl:apply-templates/>
+    </xsl:template>
+    
     <xsl:template match="text()">
         <xsl:variable name="str1" select="replace(.,'^[.“”]*(.+?)[.“”]*$','$1')" />
-        <xsl:value-of select="replace($str1, '[“”]', '')" />
+        <xsl:variable name="str2" select="replace($str1, '[“”]', '')"/>
+        <xsl:value-of select="normalize-space($str2)" />
     </xsl:template>
     
     

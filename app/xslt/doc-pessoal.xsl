@@ -31,7 +31,7 @@
                </xsl:if>
            </xsl:attribute>   
                <xsl:apply-templates/>  
-           <xsl:apply-templates select="//msDesc[@type = 'prose']"/>
+           <xsl:apply-templates select="//summary"/>
        </div>
     </xsl:template>
     
