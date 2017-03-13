@@ -1,5 +1,6 @@
 xquery version "3.0";
 import module namespace xmldb="http://exist-db.org/xquery/xmldb";
+declare namespace transform="http://exist-db.org/xquery/transform";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare namespace util="http://exist-db.org/xquery/util";
 
@@ -189,8 +190,23 @@ declare function local:createTitleXML() {
                              </item>
                             }
                         </list>
-                    }
+                    }                    
                 </titles>
+
+};
+
+declare function local:titleTest() {
+for $text in  local:search_range_simple("type","title",collection('/db/apps/pessoa/data/doc'))
+                                for $single in $text//tei:rs[@type = "title"]
+                                order by $single
+                            return  local:transformTitle($single)
+};
+
+
+
+declare function local:transformTitle($title as node()) {
+    let $stylesheet := doc("/db/apps/pessoa/xslt/title.xsl")
+    return transform:transform($title, $stylesheet, (<parameters/>))
 
 };
 
@@ -198,21 +214,24 @@ declare function local:createTitleXML() {
 
 declare function local:collectTexts() {
     let $texts := for $text in  local:search_range_simple("type","title",collection('/db/apps/pessoa/data/doc'))
-                                for $single in $text//tei:rs[@type = "title"][not(child::tei:choice/tei:abbr)][not(child::tei:pc)]
+                                for $single in $text//tei:rs[@type = "title"]
                                 order by $single
-                            return $single
+                            return <item name="{local:transformTitle($single)}" ref="{substring-before(root($single)/util:document-name(.),".xml")}"/>
                             
    let $docs := for $doc in $texts
                             return <item 
-                                                    name="{$doc}"  
-                                                    ref="{substring-before(root($doc)/util:document-name(.),".xml")}" 
-                                                    title="{replace(doc(concat('/db/apps/pessoa/data/doc/',root($doc)/util:document-name(.)))//tei:title[1]/data(.),"/E3","")}"
+                                                    name="{$doc/@name/data(.)}"  
+                                                    ref="{$doc/@ref/data(.)}" 
+                                                    title="{replace(doc(concat('/db/apps/pessoa/data/doc/',$doc/@ref/data(.),".xml"))//tei:title[1]/data(.),"/E3","")}"
                            />
-    
-    let $names := distinct-values($texts)
+    let $docs := $docs | $docs                       
+    let $names :=$texts/@name/data(.)
+    let $names := distinct-values($names)
     let $well := for $name in $names
-                    return <item title="{$name}" well="{replace(replace(replace($name,'"',''),'“',''),'”','')}" type="doc"  letter="{local:FindFirstLetter-new($name,1)}">
-                                {   local:scanDocs($name,$docs)
+                    return <item title="{$name}" well="{$name}" type="doc"  letter="{local:FindFirstLetter-new($name,1)}">
+                                {  let $ref :=   local:scanDocs($name,$docs)
+                                    let $ref := distinct-values($ref)
+                                    return for $item in $ref return <item link="{$item}" title="{replace(doc(concat('/db/apps/pessoa/data/doc/',$item,".xml"))//tei:title[1]/data(.),"/E3","")}"/>
                                 }
                                 </item>
     let $pubs := collection('/db/apps/pessoa/data/pub')
@@ -234,9 +253,10 @@ declare function local:FindFirstLetter-new($text as xs:string, $pos as xs:intege
 };
 
 declare function local:scanDocs($text, $aDocs) {
-             let $docs := for $doc in $aDocs where $doc/@name eq $text  return <item link="{$doc/@ref/data(.)}" title="{$doc/@title/data(.)}"/>
+            (: let $docs := for $doc in $aDocs where $doc/@name eq $text  return <item link="{$doc/@ref/data(.)}" title="{$doc/@title/data(.)}"/>
              let $docs := for $a in (1 to count($docs)) let $coma := if($a != count($docs)) then "yes" else "no" return <item link="{$docs[$a]/@link/data(.)}" title="{$docs[$a]/@title/data(.)}" coma="{$coma}"/>
-             return $docs
+             return $docs:)
+             for $doc in $aDocs where $doc/@name eq $text  return $doc/@ref/data(.)
 };
 declare function local:highLetters($letter) {
     switch($letter)
