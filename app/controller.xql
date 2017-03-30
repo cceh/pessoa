@@ -23,12 +23,17 @@ if ($exist:path eq "/") then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <redirect url="{$helpers:web-language}/index.html"/>
     </dispatch>
-  
-  else  if ( $exist:path eq "") then
+else if ( $exist:path eq "") then
     (: forward root path to index.xql :)
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <redirect url="pessoa/{$helpers:web-language}/index.html"/>
     </dispatch>
+else if (contains($exist:path, "events")) then
+    let $language := $helpers:web-language
+    return 
+        transform:transform((collection("/db/apps/pessoa/data/doc"), collection("/db/apps/pessoa/data/pub"))//tei:TEI, doc("/db/apps/pessoa/xslt/events.xsl"), <parameters><param name="language" value="{$language}"/><param name="basepath" value="{$exist:controller}"></param></parameters>)
+else if ($exist:resource = "tei-odd") then
+    doc("/db/apps/pessoa/data/schema/pessoaTEI.html")
 (: Language Notation :)
 else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
@@ -339,11 +344,6 @@ else if(contains($exist:path, "download")) then
 			<forward url="{$exist:controller}/modules/view.xql"/>
 		</error-handler>
 	</dispatch>) 
-    else if (contains($exist:path, "events")) then
-    let $language := $helpers:web-language (: request:get-parameter("lang", "pt"):)
-    return 
-        transform:transform((collection("/db/apps/pessoa/data/doc"), collection("/db/apps/pessoa/data/pub"))//tei:TEI, doc("/db/apps/pessoa/xslt/events.xsl"), <parameters><param name="language" value="{$language}"/><param name="basepath" value="{$exist:controller}"></param></parameters>)
-    
 else
     (: everything else is passed through :)
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">

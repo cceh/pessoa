@@ -115,5 +115,10 @@
     <!-- Gelöschtes nicht anzeigen -->
     <xsl:template match="del[@n='2']|del" mode="#default deletion addition"/>
     
+    <!-- Certainty -->
+    <xsl:template match="certainty" mode="#default deletion addition">
+        <xsl:apply-templates/>
+    </xsl:template>
+    
 </xsl:stylesheet>
     

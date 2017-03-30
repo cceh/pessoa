@@ -31,8 +31,8 @@
                </xsl:if>
            </xsl:attribute>   
                <xsl:apply-templates/>  
-           <xsl:apply-templates select="//summary"/>
        </div>
+        <xsl:apply-templates select="//summary"/>
     </xsl:template>
     
     <!-- Anzeige von Zeilenumbrüchen -->

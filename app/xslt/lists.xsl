@@ -128,12 +128,16 @@
     </xsl:template>
     
     <xsl:template match="lb">
-        <xsl:text> </xsl:text>
+            <xsl:if test="not(preceding-sibling::*[1][name() = 'pc'])">
+                <xsl:text> </xsl:text>
+            </xsl:if>
     </xsl:template>
+    
+    <xsl:template match="pc|del"/>
     
     <xsl:template match="text()">
         <xsl:variable name="str1" select="replace(.,'^[.“”]*(.+?)[.“”]*$','$1')" />
-        <xsl:value-of select="replace($str1, '[“”]', '')" />
+        <xsl:value-of select="$str1" />
     </xsl:template>
     
 </xsl:stylesheet>
