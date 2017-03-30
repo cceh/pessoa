@@ -30,6 +30,7 @@
     <xsl:template match="ptr">
         <xsl:variable name="doc" select="@target"/>
         <div class="tei-odd simple" id="TOP">
+            <iframe src="{concat($res, @url)}"></iframe>
             <!--<xsl:copy-of select="doc($doc)//xhtml:link[@rel='stylesheet']"/>-->
             <xsl:copy-of select="doc($doc)//xhtml:body/child::*"/>
         </div>
