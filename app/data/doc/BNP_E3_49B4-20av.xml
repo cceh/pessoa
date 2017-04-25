@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -48,12 +49,22 @@
                 <idno type="filename">BNP_E3_49B4-20av.xml</idno>
             </publicationStmt>
             <sourceDesc>
-                <msDesc xml:id="M1" type="structured">
+                <msDesc>
                     <msIdentifier>
                         <institution>Biblioteca Nacional de Portugal</institution>
                         <idno>BNP/E3 49B4-20av</idno>
                     </msIdentifier>
                     <msContents>
+                        <summary>
+                            <p> Lista datilografada, publicada em <hi rend="italic">Obras de António
+                                Mora</hi> (2002, 161-162). Trata-se de um quarto de folha que inclui
+                                outras três partes (BNP 49B<hi rend="superscript">4</hi>-20<hi
+                                    rend="superscript">r</hi>, 20<hi rend="superscript">r</hi>e 20<hi
+                                        rend="superscript">v</hi>), que contêm um testemunho preparatório do
+                                poema <hi rend="italic">Antinous</hi>, publicado em 1918, possuindo data de
+                                «6-5-1915», indicada em BNP 49A<hi rend="superscript">4</hi>-19<hi
+                                    rend="superscript">r</hi>. </p>
+                        </summary>
                         <msItemStruct>
                             <author>
                                 <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -71,17 +82,6 @@
                             </p>
                         </origin>
                     </history>
-                </msDesc>
-                <msDesc corresp="#M1" type="prose">
-                    <msIdentifier/>
-                    <p> Lista datilografada, publicada em <hi rend="italic">Obras de António
-                            Mora</hi> (2002, 161-162). Trata-se de um quarto de folha que inclui
-                        outras três partes (BNP 49B<hi rend="superscript">4</hi>-20<hi
-                            rend="superscript">r</hi>, 20<hi rend="superscript">r</hi>e 20<hi
-                            rend="superscript">v</hi>), que contêm um testemunho preparatório do
-                        poema <hi rend="italic">Antinous</hi>, publicado em 1918, possuindo data de
-                        «6-5-1915», indicada em BNP 49A<hi rend="superscript">4</hi>-19<hi
-                            rend="superscript">r</hi>. </p>
                 </msDesc>
             </sourceDesc>
         </fileDesc>

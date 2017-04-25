@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -26,7 +27,8 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2016</date>
                 <availability>
@@ -41,6 +43,10 @@
                         <idno>BNP/E3 48C-28r</idno>
                     </msIdentifier>
                     <msContents>
+                        <summary>
+                            <p>Lista datilografada, publicada em <hi rend="italic">Pessoa por
+                                    Conhecer</hi> (1990, 354).</p>
+                        </summary>
                         <msItemStruct>
                             <author>
                                 <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -64,7 +70,9 @@
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic url="bn-acpc-e-e3-48c-1-50_JPG_24-C-R0150/bn-acpc-e-e3-48c-1-50_0067_28_t24-C-R0150.jpg"/>
+        <graphic
+            url="bn-acpc-e-e3-48c-1-50_JPG_24-C-R0150/bn-acpc-e-e3-48c-1-50_0067_28_t24-C-R0150.jpg"
+        />
     </facsimile>
     <text>
         <body>
@@ -73,53 +81,61 @@
                     <item>
                         <list>
                             <head>
-                                <rs type="title">O REGRESSO DOS DEUSES</rs> — I. <rs type="work" key="O2" style="a"><rs type="title">POEMAS COMPLETOS DE <rs type="name" key="AC" role="author">ALBERTO<lb/> CAEIRO</rs> (1889-1915)</rs></rs>.</head>
+                                <rs type="title">O REGRESSO DOS DEUSES</rs> — I. <rs type="work"
+                                    key="O2" style="a"><rs type="title">POEMAS COMPLETOS DE <rs
+                                            type="name" key="AC" role="author">ALBERTO<lb/>
+                                            CAEIRO</rs> (1889-1915)</rs></rs>.</head>
                             <metamark rend="line" function="distinct"/>
                             <item>
-                                <label>1.</label>
-                                Nota dos Editores.
-                            </item>
+                                <label>1.</label> Nota dos Editores. </item>
                             <item>
                                 <label>2.</label>
-                                <rs type="title">Prefacio do <rs type="name" key="RR" role="author">Dr. Ricardo Reis</rs></rs>.
-                            </item>
+                                <rs type="title">Prefacio do <rs type="name" key="RR" role="author"
+                                        >Dr. Ricardo Reis</rs></rs>. </item>
                             <item>
                                 <label>3.</label>
-                                <rs type="title">Poemas Completos de <rs type="name" key="AC" role="author">Alberto Caeiro</rs>
-                                </rs>:
-                                <list>
+                                <rs type="title">Poemas Completos de <rs type="name" key="AC"
+                                        role="author">Alberto Caeiro</rs>
+                                </rs>: <list>
                                     <item>
                                         <label>I.</label>
-                                        <rs type="work" key="O2" style="b"><rs type="title">O Guardador de Rebanhos</rs></rs>
+                                        <rs type="work" key="O2" style="b"><rs type="title">O
+                                                Guardador de Rebanhos</rs></rs>
                                     </item>
                                     <item>
                                         <label>II.</label>
-                                        <rs type="work" key="O2" style="c"><rs type="title">O Pastor Amoroso</rs></rs>
+                                        <rs type="work" key="O2" style="c"><rs type="title">O Pastor
+                                                Amoroso</rs></rs>
                                     </item>
                                     <item>
                                         <label>III.</label>
-                                        <rs type="work" key="O2" style="d"><rs type="title">Poemas Inconjunctos</rs></rs>
+                                        <rs type="work" key="O2" style="d"><rs type="title">Poemas
+                                                Inconjunctos</rs></rs>
                                     </item>
                                 </list>
                             </item>
                             <item>
                                 <label>4.</label>
-                                <rs type="title">Natividade de <rs type="name" key="AC" role="topic">Alberto Caeiro</rs>
-                                </rs>, por <rs type="name" key="FP" role="author" style="b">Fernando Pessoa</rs>.
-                            </item>
+                                <rs type="title">Natividade de <rs type="name" key="AC" role="topic"
+                                        >Alberto Caeiro</rs>
+                                </rs>, por <rs type="name" key="FP" role="author" style="b">Fernando
+                                    Pessoa</rs>. </item>
                             <item>
                                 <label>5.</label>
-                                <rs type="title">Notas para a recordação do meu mestre <rs type="name" key="AC" role="topic">Caeiro</rs>
-                                </rs>,<lb/> por <rs type="name" key="AdC" role="author">Alvaro de Campos</rs>.
-                            </item>
+                                <rs type="title">Notas para a recordação do meu mestre <rs
+                                        type="name" key="AC" role="topic">Caeiro</rs>
+                                </rs>,<lb/> por <rs type="name" key="AdC" role="author">Alvaro de
+                                    Campos</rs>. </item>
                         </list>
                     </item>
                     <metamark rend="line" function="distinct"/>
                     <item>
                         <list>
                             <head>
-                                <rs type="title">O REGRESSO DOS DEUSES</rs> - II. <rs type="work" key="O3" style="b"><rs type="title">
-                                    <rs type="name" key="RR" role="author">RICARDO REIS</rs>, ODES, LIV. <lb/>I-III</rs></rs>.</head>
+                                <rs type="title">O REGRESSO DOS DEUSES</rs> - II. <rs type="work"
+                                    key="O3" style="b"><rs type="title">
+                                        <rs type="name" key="RR" role="author">RICARDO REIS</rs>,
+                                        ODES, LIV. <lb/>I-III</rs></rs>.</head>
                             <item/>
                         </list>
                     </item>
@@ -127,8 +143,10 @@
                     <item>
                         <list>
                             <head>
-                                <rs type="title">O REGRESSO DOS DEUSES</rs> - III. <rs type="work" key="O4" style="c"><rs type="title">ACCESSORIOS, POEMAS DE<lb/>
-                                    <rs type="name" key="AdC" role="author">ALVARO DE CAMPOS</rs></rs></rs>
+                                <rs type="title">O REGRESSO DOS DEUSES</rs> - III. <rs type="work"
+                                    key="O4" style="c"><rs type="title">ACCESSORIOS, POEMAS DE<lb/>
+                                        <rs type="name" key="AdC" role="author">ALVARO DE
+                                            CAMPOS</rs></rs></rs>
                             </head>
                             <item/>
                         </list>

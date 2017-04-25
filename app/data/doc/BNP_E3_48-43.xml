@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>BNP/E3 48-43</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Transcrição, Edição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação, Modelagem de dados</resp>
+                    <name>Ulrike Henny</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">BNP_E3_48-43.xml</idno>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <institution>Biblioteca Nacional de Portugal</institution>
+                        <idno>BNP/E3 48-43</idno>
+                    </msIdentifier>
+                    <msContents>
+                        <summary>
+                            <p>Lista manuscrita.</p>
+                        </summary>
+                        <msItemStruct>
+                            <author>
+                                <rs type="name" key="FP">Fernando Pessoa</rs>
+                            </author>
+                            <note type="genre">
+                                <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                                <rs type="genre" key="plano_editorial">Plano editorial</rs>
+                            </note>
+                            <textLang mainLang="pt"/>
+                        </msItemStruct>
+                    </msContents>
+                    <history>
+                        <origin>
+                            <p>
+                                <origDate when="1919" cert="medium">c. 1919</origDate>
+                            </p>
+                        </origin>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic
+            url="bn-acpc-e-e3-48-1-56_JPG_24-C-R0150/bn-acpc-e-e3-48-1-56_0085_43_t24-C-R0150.jpg"/>
+    </facsimile>
+    <text>
+        <body>
+            <div>
+                <head><hi rend="underline">A Quinzena Portugueza.</hi></head>
+                <list>
+                    <item>
+                        <label>A.</label> – um artigo de “fundo”. (ou artigos) <note
+                            place="margin-right" type="addition">{ ou - artigo de fundo<lb/> - <choice>
+                                <abbr>art<am>.</am></abbr>
+                                <expan>art<ex>igos</ex></expan>
+                            </choice> especiaes. </note>
+                    </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>B.</label> – <subst>
+                            <del rend="overstrike">A Quinzena.</del>
+                            <add place="below"><hi rend="underline">Portugal</hi></add>
+                        </subst> – <list>
+                            <item>Finanças do Estado — <subst>
+                                    <add place="above">Vida do Estado</add>
+                                    <del rend="overstrike">O Estado</del>
+                                </subst>.</item>
+                            <item>Finanças Geraes. <note>Vida Financeira.</note></item>
+                            <item>Commercio Interno.</item>
+                            <item xml:id="I1">Commercio de Importação.</item>
+                            <item xml:id="I2">Resumos e Commercio de Exportação. <note
+                                    place="margin-left" type="addition" rend="rotate-right">
+                                    <metamark rend="line-44" function="distinct"/> Resumos e <lb/>
+                                    noticias sol<pc>-</pc><lb/>tas <metamark rend="line-44"
+                                        function="distinct"/>
+                                </note>
+                                <note place="margin-right" type="addition" target="range(I1,I3)">
+                                    <metamark rend="curly-bracket" function="grouping">
+                                        <label>Vida<lb/>Comercial</label>
+                                    </metamark>
+                                </note>
+                            </item>
+                            <item xml:id="I3">Commercio de Reexportação.</item>
+                            <item><note place="margin-left"><del rend="overstrike">(?)
+                                    -</del></note>
+                                <del rend="overstrike">Colonias.</del></item>
+                            <item>Industria. <note>– Vida Industrial</note></item>
+                            <item><note place="margin-left">(?) –</note> Cambios.</item>
+                            <item><note place="margin-left">(?) –</note> Bolsa.</item>
+                        </list>
+                    </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>C.</label> – Os Mercados – Productos por ordem alphabetica. </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>D.</label> – Tratados Commerciais e Pautas Aduaneiras<lb/> (por
+                        paizes)
+                    </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item rend="indent-2">
+                        <label>E.</label> – Indicações Commerciais Varias<lb/> (por paizes ?)
+                        Concursos<lb/> Firmas <choice>
+                            <abbr>q</abbr>
+                            <expan>q<ex>ue</ex></expan>
+                        </choice> podem responder, etc. 
+                        <note place="margin-right" type="addition" rend="rotate-left"> D –
+                            Colonias<lb/> E – Estrangeiro </note>
+                    </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label>F. (ou G)</label> – Novos Processos e Invenções </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item rend="indent-2">
+                        <label><subst>
+                                <del rend="overstrike">G</del>
+                                <add place="after">H</add>
+                            </subst></label> – Estatística de Importação, Exportação e <lb/>
+                        Reexportação - da quinzena. <note>(tabellas)</note>
+                    </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label><subst>
+                                <del rend="overstrike">H</del>
+                                <add place="after">I</add>
+                            </subst></label> – Cambios Bolsa da Quinzena. <note>(tabellas)</note>
+                    </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label><subst>
+                                <del rend="overstrike">I e J</del>
+                                <add place="after">G ?</add>
+                            </subst></label> Dois artigos especiaes <note>(reclames)</note>
+                        <note>Publicidade em artigos</note>
+                    </item>
+                    <metamark rend="line-44" function="distinct"/>
+                    <item>
+                        <label><subst>
+                                <del rend="overstrike">J</del>
+                                <add place="after">K</add>
+                            </subst></label> – Navegação (portos portuguezes, etc). </item>
+                </list>
+            </div>
+        </body>
+    </text>
+</TEI>

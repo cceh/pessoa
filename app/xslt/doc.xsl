@@ -352,7 +352,8 @@
     </xsl:template>
     
     <xsl:template name="note-margin-right">
-        <span class="note margin-right">
+        <span>
+            <xsl:attribute name="class">note margin-right <xsl:value-of select="@rend"/></xsl:attribute>
             <xsl:if test="@target[contains(., 'range')]">
                 <xsl:variable name="target" select="@target"/>
                 <xsl:variable name="items"
@@ -377,10 +378,10 @@
                         select="number(substring-after($items[2], 'I')) - number(substring-after($items[1], 'I')) + 1"/>
                     <xsl:attribute name="style"> top: -<xsl:value-of select="$range"/>em;
                     </xsl:attribute>
-                    <xsl:attribute name="class">note margin-left range</xsl:attribute>
+                    <xsl:attribute name="class">note margin-left range <xsl:value-of select="@rend"/></xsl:attribute>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:attribute name="class">note margin-left</xsl:attribute>
+                    <xsl:attribute name="class">note margin-left <xsl:value-of select="@rend"/></xsl:attribute>
                 </xsl:otherwise>
             </xsl:choose>
             <xsl:apply-templates/>

@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
@@ -40,12 +41,15 @@
             <idno type="filename">BNP_E3_55E-94v.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc xml:id="M1" type="structured">
+            <msDesc>
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 55E-94v</idno>
                </msIdentifier>
                <msContents>
+                  <summary>
+                     <p> Lista manuscrita. </p>
+                  </summary>
                   <msItemStruct>
                      <author>
                         <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -63,10 +67,6 @@
                      </p>
                   </origin>
                </history>
-            </msDesc>
-            <msDesc corresp="#M1" type="prose">
-               <msIdentifier/>
-               <p> Lista manuscrita. </p>
             </msDesc>
          </sourceDesc>
       </fileDesc>

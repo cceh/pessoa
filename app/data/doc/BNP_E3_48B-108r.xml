@@ -40,12 +40,18 @@
             <idno type="filename">BNP_E3_48B-108r.xml</idno>
          </publicationStmt>
          <sourceDesc>
-            <msDesc xml:id="M1" type="structured">
+            <msDesc>
                <msIdentifier>
                   <institution>Biblioteca Nacional de Portugal</institution>
                   <idno>BNP/E3 48B-108r</idno>
                </msIdentifier>
                <msContents>
+                  <summary>
+                     <p> Lista manuscrita no verso de papel impresso de «Sobre um manifesto de
+                        estudantes», panfleto publicado em 1923. Publicada em Sepúlveda e Uribe, <hi
+                           rend="italic">O planeamento editorial de Fernando Pessoa</hi> (2016,
+                        166-167). </p>
+                  </summary>
                   <msItemStruct>
                      <author>
                         <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -64,11 +70,6 @@
                   </origin>
                </history>
             </msDesc>
-            <msDesc corresp="#M1" type="prose">
-               <msIdentifier/>
-               <p> Lista manuscrita no verso de papel impresso de «Sobre um manifesto de
-                  estudantes», panfleto publicado em 1923. </p>
-            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -82,18 +83,19 @@
          <div>
             <list>
                <item><rs type="work"><rs type="title"><hi rend="underline"> O Corvo</hi>.</rs>
-                  <rs type="name" key="P87" role="author">Edgar Poe</rs>.</rs></item>
+                     <rs type="name" key="P87" role="author">Edgar Poe</rs>.</rs></item>
 
                <item><rs type="work"><rs type="title"><hi rend="underline"> Ode.</hi></rs><rs
-                  type="name" role="author" key="P161">O’Shaughnessy</rs>.</rs>
+                        type="name" role="author" key="P161">O’Shaughnessy</rs>.</rs>
                </item>
                <item><rs type="name" key="P103">Omar Khayyam</rs>.</item>
                <item><rs type="title">Os <hi rend="underline"> Vedas</hi>.</rs></item>
                <item><rs type="work">Canções de <rs type="name" role="author" key="P65"
-                  >Shakespeare.</rs></rs></item>
+                        >Shakespeare.</rs></rs></item>
                <item><gap reason="illegible" extent="2" unit="character"/></item>
-               <item><rs type="work"><rs type="name" role="author"><rs type="name" key="P267">Browning</rs></rs>. <rs type="title"
-                           ><hi rend="underline">Last Ride.</hi></rs></rs></item>
+               <item><rs type="work"><rs type="name" role="author"><rs type="name" key="P267"
+                           >Browning</rs></rs>. <rs type="title"><hi rend="underline">Last
+                           Ride.</hi></rs></rs></item>
                <item><metamark rend="line" function="ditto"/>
                   <hi rend="underline"><rs type="title">Prospice</rs>.</hi></item>
                <item><metamark rend="line" function="ditto"/>
@@ -102,14 +104,17 @@
                   <hi rend="underline"><rs type="title">Love among the Ruins</rs>.</hi></item>
                <item>Cantiga <gap reason="illegible" extent="3" unit="character"/></item>
                <item><rs type="work"><rs type="title">Maria Manuela.</rs> (<rs type="name"
-                  role="author" key="P125">Molarinho</rs>)</rs></item>
+                        role="author" key="P125">Molarinho</rs>)</rs></item>
                <item><rs type="work"><rs type="title"><hi rend="underline">Sonetos.</hi></rs><rs
-                  type="person" role="author"><rs type="name" key="P80">Angelo de Lima</rs>.</rs></rs></item>
+                        type="person" role="author"><rs type="name" key="P80">Angelo de
+                        Lima</rs>.</rs></rs></item>
                <item><rs type="name" key="P81">Manuel da Veiga.</rs></item>
                <item><rs type="work"><rs type="name"><choice>
                            <abbr>J<am>.</am></abbr>
                            <expan>J<ex>osé</ex></expan>
-               </choice> <rs type="name" key="P24">Anastacio</rs> </rs>– <rs type="title"><choice>
+                        </choice>
+                        <rs type="name" key="P24">Anastacio</rs>
+                     </rs>– <rs type="title"><choice>
                            <abbr>Dol<am>.</am></abbr>
                            <expan>Dol <ex>orosa</ex></expan>
                         </choice> Doença</rs></rs></item>
@@ -135,8 +140,8 @@
                            <abbr> Q<am>.</am></abbr>
                            <expan>Q<ex>uadrante</ex></expan>
                         </choice>.</rs></rs></item>
-               <item><rs type="work"><rs type="name" role="author" key="P186">Garret</rs> – <rs type="title"
-                        >Lyrica do fim.</rs></rs></item>
+               <item><rs type="work"><rs type="name" role="author" key="P186">Garret</rs> – <rs
+                        type="title">Lyrica do fim.</rs></rs></item>
                <item><rs type="work"><rs type="name" role="author" key="P172"><choice>
                            <abbr>J<am>.</am></abbr>
                            <expan>J<ex>oão </ex></expan>
@@ -153,8 +158,8 @@
                         </choice></rs><rs type="title"><hi rend="underline">
                   Gladio</hi></rs></rs></item>
                <item><rs type="work"><rs type="name" role="author" key="P30">Sá-Carneiro</rs> – <rs
-                  type="text"><hi rend="underline"><rs
-                     type="title">Apice</rs></hi></rs></rs></item>
+                        type="text"><hi rend="underline"><rs type="title"
+                  >Apice</rs></hi></rs></rs></item>
                <item><rs type="work"><rs type="name" role="author"><metamark rend="line"
                            function="ditto"/></rs> –<rs type="title"> Caranguejola</rs></rs></item>
                <item><rs type="name" role="author" key="RR">Ricardo Reis</rs>.</item>
