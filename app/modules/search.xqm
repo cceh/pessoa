@@ -20,7 +20,9 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare %templates:wrap function search:profisearch($node as node(), $model as map(*), $term as xs:string?) as map(*) {
         (: Erstellung der Kollektion, sortiert ob "Publiziert" oder "Nicht Publiziert" :)
         let $db := search:set_db()
-        let $dbase :=  if($term != "" ) then collection($db)//tei:TEI[ft:query(.,$term)]
+        let $dbase :=  if($term != "" ) then collection($db)//tei:TEI[ft:query(.,$term,<options>
+                                                                                                                                                <default-operator>and</default-operator>
+                                                                                                                                            </options>)]
                        else if(search:get-parameters("lang_ao") = "or") 
                        then search:lang_or($db)
                        else search:lang_and($db)

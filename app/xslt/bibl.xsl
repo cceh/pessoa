@@ -5,7 +5,7 @@
 	<xsl:output method="html"/>
 
 	<xsl:param name="listNo_string"/>
-	<xsl:variable name="listNo" select="number($listNo_string)"></xsl:variable>
+	<xsl:variable name="listNo" select="xs:integer($listNo_string)"></xsl:variable>
 	<xsl:variable name="title">
 		<xsl:value-of select="/TEI/teiHeader/fileDesc/titleStmt/title[1]/text()"/>
 	</xsl:variable>
