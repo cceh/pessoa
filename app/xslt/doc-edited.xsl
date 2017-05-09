@@ -80,7 +80,7 @@
     -->
     <xsl:template match="lb[not(preceding-sibling::*[1][local-name()='pc'])][not(ancestor::add)]" mode="#default deletion addition">
         <xsl:choose>
-            <xsl:when test="$lb = 'yes' or ancestor::body//note[@place='margin-right']">
+            <xsl:when test="$lb = 'yes' or ancestor::note[@place='margin-right']">
                 <br />
             </xsl:when>
             <xsl:otherwise>
@@ -89,7 +89,7 @@
         </xsl:choose>
     </xsl:template>
     <xsl:template match="lb[preceding-sibling::*[1][local-name()='pc']]" mode="#default deletion addition">
-        <xsl:if test="$lb = 'yes' or ancestor::body//note[@place='margin-right']">
+        <xsl:if test="$lb = 'yes' or ancestor::note[@place='margin-right']">
             <br />
         </xsl:if>
     </xsl:template>
