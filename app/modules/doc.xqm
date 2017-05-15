@@ -234,7 +234,7 @@ declare %templates:wrap function doc:docControll($node as node(), $model as map(
 declare function doc:footerfilter($node as node(), $model as map(*), $id as xs:string,$dir as xs:string) {
              map {
                 "xmllink" := <a class="filter-a" href="{$helpers:app-root}/{$dir}/{$id}/xml" target="_blank">XML</a>,
-                "footercitar" := concat($helpers:app-root,"/",$id)
+                "footercitar" := replace(helpers:singleElement_xquery("cite","cite-tx"),"#LINK#",concat('"',doc(concat("/db/apps/pessoa/data/",$dir,"/",$id,".xml"))//tei:titleStmt/tei:title[1],'."'))
             }
 };
 
