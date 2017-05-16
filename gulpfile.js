@@ -11,6 +11,7 @@ var	gulp = require('gulp'),
 var secrets = require('./exist-secrets.json');
 
 var sourceDir = 'app/';
+var dataDir = 'app/data/';
 
 var buildDest = 'build/';
 
@@ -66,6 +67,16 @@ gulp.task('local-upload', ['build'], function() {
 		.pipe(localExist.newer({target: "/db/apps/pessoa/"}))
 		.pipe(localExist.dest({
 			target: "/db/apps/pessoa",
+			permissions: permissions
+		}));
+});
+
+gulp.task('local-upload-data', function() {
+
+	return gulp.src(dataDir + '**/*', {base: dataDir})
+		.pipe(localExist.newer({target: "/db/apps/pessoa/data/"}))
+		.pipe(localExist.dest({
+			target: "/db/apps/pessoa/data",
 			permissions: permissions
 		}));
 });
