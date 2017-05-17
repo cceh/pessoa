@@ -27,12 +27,12 @@
         </a>
     </xsl:template>
     
-    <xsl:template match="ptr">
+    <!--<xsl:template match="ptr">
         <xsl:variable name="doc" select="@target"/>
         <div class="tei-odd simple" id="TOP">
             <iframe src="{concat($res, @target)}" width="100%" height="auto"></iframe>
         </div>
-    </xsl:template>
+    </xsl:template>-->
 
     <xsl:template match="graphic[not(parent::figure)]">
         <img src="{concat($res,@url)}" class="logos" title="{child::desc/text()}"
