@@ -501,6 +501,9 @@ let $lists := doc('/db/apps/pessoa/data/lists.xml')
 };
 
 
-(: ########### Mehrsprachigkeit ##############:)
 
+(: ########### Zitation ##############:)
+declare function page:cite($node as node(), $model as map(*), $source as xs:string?) {
+    <span id="p-cite">{replace(helpers:singleElement_xquery("cite","cite-sd"),"#URL#",concat("<",$helpers:app-root,$source,">"))}</span>
+};
 

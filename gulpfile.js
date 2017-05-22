@@ -20,7 +20,7 @@ var buildDest = 'build/';
 // ------ Copy (and compile) sources and assets to build dir ----------
 
 gulp.task('copy', function() {
-	return gulp.src(sourceDir + '**/*')
+	return gulp.src([sourceDir + '**/*',"!**/data/**/*.xml"])
 		   	.pipe(newer(buildDest))
 		   	.pipe(gulp.dest(buildDest))
 });
@@ -85,7 +85,7 @@ gulp.task('local-post-install', ['local-upload'], function() {
 	return gulp.src('app/post-install.xql')
 		.pipe(localExist.query());
 });
-gulp.task('deploy-local',['local-upload']);
+gulp.task('deploy-local',['local-upload','local-upload-data']);
 
 gulp.task('remote-upload', ['build'], function() {
 
