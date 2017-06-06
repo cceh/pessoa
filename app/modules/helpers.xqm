@@ -126,6 +126,13 @@ declare function helpers:singleElement_xquery($type as xs:string,$id as xs:strin
      return $entry/data(.)
 };
 
+declare function helpers:singleElementNode_xquery($type as xs:string,$id as xs:string)  {
+    let $doc := doc('/db/apps/pessoa/data/lists.xml')   
+    let $entry := if($helpers:web-language = "pt") 
+                  then $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @xml:id=$id]
+                  else $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @corresp=concat("#",$id)]
+     return $entry
+};
 declare function helpers:singleElementList_xquery($type as xs:string,$id as xs:string) as xs:string? {
     let $doc := doc('/db/apps/pessoa/data/lists.xml')   
     let $entry := if($helpers:web-language = "pt") 

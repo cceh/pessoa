@@ -234,9 +234,28 @@ declare %templates:wrap function doc:docControll($node as node(), $model as map(
 declare function doc:footerfilter($node as node(), $model as map(*), $id as xs:string,$dir as xs:string) {
              map {
                 "xmllink" := <a class="filter-a" href="{$helpers:app-root}/{$dir}/{$id}/xml" target="_blank">XML</a>,
-                "footercitar" := replace(helpers:singleElement_xquery("cite","cite-tx"),"#LINK#",concat('"',doc(concat("/db/apps/pessoa/data/",$dir,"/",$id,".xml"))//tei:titleStmt/tei:title[1],'."'))
+                "footercitar" := "test"
+                                            
+                
             }
 };
+
+declare function doc:cite($node as node(), $model as map(*),$id as xs:string, $dir as xs:string) {
+<span>{
+                for $elem in helpers:singleElementNode_xquery("cite","cite-tx")/tei:span
+                                            return 
+                                            switch($elem/@type)
+                                            case "web" return <i>{helpers:singleElement_xquery("cite","cite-web")}</i>
+                                            case "link" return concat(' <',doc(concat("/db/apps/pessoa/data/",$dir,"/",$id,".xml"))//tei:titleStmt/tei:title[1],'.> ')
+                                            default return $elem
+                                            }</span>
+};
+(:
+(
+                                            :)
+
+                (:
+                replace(helpers:singleElement_xquery("cite","cite-tx"),"#LINK#",concat('"',doc(concat("/db/apps/pessoa/data/",$dir,"/",$id,".xml"))//tei:titleStmt/tei:title[1],'."')):)
 
 declare  function doc:get-recorder($node as node(), $model as map(*)) as node() {
     let $script := <script type="text/javascript">

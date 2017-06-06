@@ -504,6 +504,15 @@ let $lists := doc('/db/apps/pessoa/data/lists.xml')
 
 (: ########### Zitation ##############:)
 declare function page:cite($node as node(), $model as map(*), $source as xs:string?) {
-    <span id="p-cite">{replace(helpers:singleElement_xquery("cite","cite-sd"),"#URL#",concat("<",$helpers:app-root,$source,">"))}</span>
+       <span id="p-cite"> {for $elem in helpers:singleElementNode_xquery("cite","cite-sd")/tei:span
+       return 
+       switch($elem/@type)
+       case "web" return <i>{helpers:singleElement_xquery("cite","cite-web")}</i>
+       case "url" return <a href="{concat($helpers:app-root,$source)}">{concat("<",$helpers:app-root,$source,">")}</a>
+       default return $elem
+       }</span>
 };
 
+
+       (:
+       {replace(replace(helpers:singleElement_xquery("cite","cite-sd"),"#URL#",concat("<",$helpers:app-root,$source,">")),"#WEB#",$web)}:)
