@@ -6,6 +6,7 @@
     <!-- Authors: Ulrike Henny, Alena Geduldig -->
 
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
+    <xsl:strip-space elements="choice"/>
 
     <xsl:template match="/">
         <xsl:apply-templates/>

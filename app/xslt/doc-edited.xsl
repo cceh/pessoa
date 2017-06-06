@@ -84,7 +84,12 @@
                 <br />
             </xsl:when>
             <xsl:otherwise>
-                <xsl:text xml:space="preserve"> </xsl:text>
+                <xsl:choose>
+                    <xsl:when test="preceding-sibling::text()[ends-with(.,'-')]"></xsl:when>
+                    <xsl:otherwise>
+                        <xsl:text xml:space="preserve"> </xsl:text>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
@@ -118,6 +123,11 @@
     <!-- Certainty -->
     <xsl:template match="certainty" mode="#default deletion addition">
         <xsl:apply-templates/>
+    </xsl:template>
+    
+    <!-- Gaps -->
+    <xsl:template match="gap[@reason = 'selection']" mode="#default deletion addition">
+        <xsl:text>[...]</xsl:text>
     </xsl:template>
     
 </xsl:stylesheet>

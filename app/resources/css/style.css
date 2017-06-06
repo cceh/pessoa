@@ -1252,6 +1252,7 @@ div.text span.note.margin-right {
     line-height: normal;
     white-space: nowrap;
     text-indent: 0;
+    font-size: 0.8em;
 }
 div.text div.list.inline span.note.margin-right {
     right: -100px;
@@ -1265,7 +1266,7 @@ div.text div.item span.note.margin-left.range {
 }
 div.text div.item span.note.margin-left {
     position: absolute;
-    left: -3em;
+    left: -3.5em;
     top: 5px;
     line-height: normal;
     white-space: nowrap;
@@ -1281,6 +1282,9 @@ div.text > span.note.margin-left {
     text-align: center;
     position: relative;
     left: -4em;
+}
+div.text span.note.margin-left span.grouping-left {
+    right: -0.7em;
 }
 div.text div.note.center {
     text-align: center;
