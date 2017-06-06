@@ -65,13 +65,14 @@ declare function local:pubItems($indikator) {
     where contains($hit,$indikator)
     return <item label="{$hit}" indi="{$indikator}"/>
 };
-
 declare function local:createDocXML() {
 let $items := for $indikator in ("1-9", "10","20","30","40","50","60","70","80","90","100","CP")  return local:docItems($indikator)
 let $items := for $item in $items 
                         let $title := substring-before(replace($item/@label,("BNP_E3_|CP"),""),".xml")
                          let $front := if(contains($title,"-")) then substring-before($title,"-") else $title
-                        order by local:anaIndi($item/@indi/data(.)),$front, xs:integer(replace($title, "^\d+[A-Z]?\d?-?([0-9]+).*$", "$1")) 
+                         let $end := xs:string(xs:integer(replace($title, "^\d+[A-Z]?\d?-?([0-9]+).*$", "$1")))
+                         let $end := substring-after($title,$end)
+                        order by local:anaIndi($item/@indi/data(.)),$front, xs:integer(replace($title, "^\d+[A-Z]?\d?-?([0-9]+).*$", "$1")),$end 
                         return <item label="{$item/@label/data(.)}"  indi="{$item/@indi/data(.)}"/>
 return $items
 };
