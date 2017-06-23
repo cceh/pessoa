@@ -33,10 +33,14 @@
     </xsl:template>
     
     <!-- addSpan -->
-    <xsl:template match="addSpan[@n='2']"/>
+    <xsl:template match="addSpan[@n='2']" mode="#default deletion addition"/>
     
     <!-- add -->
-    <xsl:template match="add[@n='2']"/>
+    <xsl:template match="add[@n='2']" mode="#default deletion addition"/>
+    
+    <xsl:template match="mod[@n='2']" mode="#default deletion addition">
+        <xsl:apply-templates/>
+    </xsl:template>
     
     <!-- Ergänzung von Pessoa selbst
     (alternativ: nichts  - das Hinzugefügte)

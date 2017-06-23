@@ -38,6 +38,7 @@
         <xsl:apply-templates select="text()"/>
     </xsl:template>
     
+    
     <!-- Ersetzung von Pessoa selbst: etwas wird gelöscht, etwas anderes hinzugefügt
     hier: Anzeigen des Hinzugefügten -->
     <xsl:template match="subst[del and add/@n]" mode="#default deletion addition">

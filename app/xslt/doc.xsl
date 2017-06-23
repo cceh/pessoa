@@ -472,6 +472,14 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
+    
+    <xsl:template match="mod[@n='2']" mode="#default deletion addition">
+        <xsl:if test="@rend">
+            <span class="mod {@rend}">
+                <xsl:apply-templates/>
+            </span>
+        </xsl:if>
+    </xsl:template>
 
 
     <!-- Deletions -->
