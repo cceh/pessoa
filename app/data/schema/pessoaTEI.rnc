@@ -6,7 +6,7 @@ default namespace tei = "http://www.tei-c.org/ns/1.0"
 namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2017-03-09T14:22:43Z. .
+# Schema generated from ODD source 2017-06-24T21:50:05Z. .
 # TEI Edition: Version 3.1.0. Last updated on
 #	15th December 2016, revision d3f5e70
 # TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.1.0/
@@ -724,17 +724,18 @@ tei_model.pPart.editorial_sequenceOptionalRepeatable =
   tei_choice*, tei_abbr*, tei_expan*, tei_ex*, tei_am*, tei_subst*
 tei_model.pPart.editorial_sequenceRepeatable =
   tei_choice+, tei_abbr+, tei_expan+, tei_ex+, tei_am+, tei_subst+
-tei_model.pPart.transcriptional = tei_add | tei_del | tei_supplied
+tei_model.pPart.transcriptional =
+  tei_add | tei_del | tei_supplied | tei_mod
 tei_model.pPart.transcriptional_alternation =
-  tei_add | tei_del | tei_supplied
+  tei_add | tei_del | tei_supplied | tei_mod
 tei_model.pPart.transcriptional_sequence =
-  tei_add, tei_del, tei_supplied
+  tei_add, tei_del, tei_supplied, tei_mod
 tei_model.pPart.transcriptional_sequenceOptional =
-  tei_add?, tei_del?, tei_supplied?
+  tei_add?, tei_del?, tei_supplied?, tei_mod?
 tei_model.pPart.transcriptional_sequenceOptionalRepeatable =
-  tei_add*, tei_del*, tei_supplied*
+  tei_add*, tei_del*, tei_supplied*, tei_mod*
 tei_model.pPart.transcriptional_sequenceRepeatable =
-  tei_add+, tei_del+, tei_supplied+
+  tei_add+, tei_del+, tei_supplied+, tei_mod+
 tei_model.pPart.edit =
   tei_model.pPart.editorial | tei_model.pPart.transcriptional
 tei_model.ptrLike = tei_ref
@@ -1027,7 +1028,10 @@ tei_p =
            "indent-2"
          | 
            ##
-           "indent-1")+
+           "indent-1"
+         | 
+           ##
+           "indent-13")+
       }
     }?,
     empty
@@ -1044,16 +1048,19 @@ tei_hi =
       list {
         (
          ##
-         "underline"
+         "circled"
          | 
            ##
-           "circled"
+           "italic"
+         | 
+           ##
+           "subscript"
          | 
            ##
            "superscript"
          | 
            ##
-           "italic")+
+           "underline")+
       }
     }?,
     empty
@@ -2524,12 +2531,44 @@ tei_metamark =
         "placeholder"
       | 
         ##
+        "sum"
+      | 
+        ##
         "switching"
     }?,
     
     ## identifies one or more elements to which the metamark applies.
     attribute target {
       list { xsd:anyURI+ }
+    }?,
+    empty
+  }
+tei_mod =
+  
+  ## represents any kind of modification identified within a single document. [11.3.4.1. Generic Modification]
+  element mod {
+    tei_macro.paraContent,
+    
+    ## (number) gives a number (or other label) for an element, which is not necessarily unique within the document.
+    attribute n {
+      
+      ##
+      "1"
+      | 
+        ##
+        " 2"
+    }?,
+    
+    ## (rendition) indicates how the element in question was rendered or presented in the source text.
+    attribute rend {
+      list {
+        (
+         ##
+         "circled"
+         | 
+           ##
+           " framed")+
+      }
     }?,
     empty
   }
@@ -2766,10 +2805,13 @@ tei_cell =
       list {
         (
          ##
-         "vertical-middle"
+         "center"
          | 
            ##
-           "right")+
+           "right"
+         | 
+           ##
+           "vertical-middle")+
       }
     }?,
     empty

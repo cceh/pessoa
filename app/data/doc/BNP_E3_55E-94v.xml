@@ -79,73 +79,95 @@
    <text>
       <body>
          <div>
-            <list>
-               <item>
-                  <label>I —</label>
-                  <list>
-                     <item>
-                        <label>1.</label> <rs type="title">Prefacio</rs>. — <note place="right"><subst>
-                              <del n="1" rend="overstrike">3 a 4 </del>
-                              <add n="2">4</add>
-                           </subst></note>
-                     </item>
-                     <item>
-                        <label>2.</label>
-                        <rs type="work" key="O1-2"><rs type="title">Gladio</rs></rs>. — <note
-                           place="right">
-                           <subst>
-                              <del n="1" rend="overstrike">1</del>
-                              <add n="2">1</add>
-                           </subst>
-                        </note>
-                     </item>
-                     <item>
-                        <label>3.</label>
-                        <rs type="title">Auto do Circo</rs>. — <supplied resp="PS"
-                           reason="omitted-in-original"/>
-                     </item>
-                     <item>
-                        <note place="left">(?) —</note>
-                        <label>4.</label>
-                        <rs type="title">Theoria da Orthographia<lb/> Portugueza</rs> — <supplied
-                           resp="PS" reason="omitted-in-original"/>
-                     </item>
-                     <item>
-                        <label>5.</label>
-                        <rs type="title">O Corvo</rs> (<rs type="name" key="P87">Poe</rs>) — <note
-                           place="right">3</note>
-                     </item>
-                     <item>
-                        <label>6.</label>
-                        <rs type="title">Epigramas</rs> — <note place="right">4</note>
-                     </item>
-                     <item>
-                        <label>7.</label>
-                        <rs type="title">Uma Entrevista</rs>. — <note place="right">3</note>
-                     </item>
-                     <item>
-                        <label>8.</label><rs type="title">
-                        <abbr>Merc<am>.</am></abbr> Acephalo</rs> — <note place="right">1</note>
-                     </item>
-                  </list>
-               </item>
-            </list>
-            <metamark rend="line" function="distinct"/>
+            <table>
+               <row>
+                  <cell>I —</cell>
+                  <cell>
+                     <label>1.</label>
+                     <rs type="title">Prefacio</rs>. — </cell>
+                  <cell>
+                     <subst>
+                        <del n="1" rend="overstrike">3 a 4</del>
+                        <add n="2">4</add>
+                     </subst>
+                  </cell>
+               </row>
+               <row>
+                  <cell/>
+                  <cell>
+                     <label>2.</label>
+                     <rs type="work" key="O1-2"><rs type="title">Gladio</rs></rs>. — </cell>
+                  <cell>
+                     <subst>
+                        <del n="1" rend="overstrike">1</del>
+                        <add n="2">1</add>
+                     </subst>
+                  </cell>
+               </row>
+               <row>
+                  <cell/>
+                  <cell>
+                     <label>3.</label>
+                     <rs type="title">Auto do Circo</rs>. — </cell>
+                  <cell>
+                     <supplied resp="PS" reason="omitted-in-original"/>
+                  </cell>
+               </row>
+               <row>
+                  <cell>(?) —</cell>
+                  <cell>
+                     <label>4.</label>
+                     <rs type="title">Theoria da Orthographia<lb/> Portugueza</rs> — </cell>
+                  <cell>
+                     <supplied resp="PS" reason="omitted-in-original"/>
+                  </cell>
+               </row>
+               <row>
+                  <cell/>
+                  <cell>
+                     <label>5.</label>
+                     <rs type="title">O Corvo</rs> (<rs type="name" key="P87">Poe</rs>) — </cell>
+                  <cell>3</cell>
+               </row>
+               <row>
+                  <cell/>
+                  <cell>
+                     <label>6.</label>
+                     <rs type="title">Epigramas</rs> — </cell>
+                  <cell>4</cell>
+               </row>
+               <row>
+                  <cell/>
+                  <cell>
+                     <label>7.</label>
+                     <rs type="title">Uma Entrevista</rs>. — </cell>
+                  <cell>3</cell>
+               </row>
+               <row>
+                  <cell/>
+                  <cell>
+                     <label>8.</label>
+                     <rs type="title"><abbr>Merc<am>.</am></abbr> Acephalo</rs> — </cell>
+                  <cell>1</cell>
+               </row>
+            </table>
+            <metamark rend="line-24-center" function="distinct"/>
             <div rend="left">
-               <list>
-                  <item>
-                     <label>II —</label>
-                     <hi rend="underline">Antidoto</hi>. </item>
-               </list>
+               <table>
+                  <row>
+                     <cell>II —</cell>
+                     <cell><hi rend="underline">Antidoto</hi>.</cell>
+                  </row>
+               </table>
             </div>
-            <metamark rend="vertical-lign" function="distinct"/>
+            <metamark rend="line-vertical" function="distinct"/>
             <div rend="right">
                <table>
                   <row>
                      <cell>1.</cell>
                      <cell>
                         <choice>
-                           <abbr><metamark rend="line" function="placeholder"/></abbr>
+                           <abbr><metamark rend="line-14" function="placeholder"/></abbr>
                            <expan><rs type="title">Prefacio</rs>.</expan>
                         </choice>
                      </cell>
@@ -157,7 +179,7 @@
                      <cell>2.</cell>
                      <cell>
                         <choice>
-                           <abbr><metamark rend="line" function="placeholder"/></abbr>
+                           <abbr><metamark rend="line-14" function="placeholder"/></abbr>
                            <expan>Gladio.</expan>
                         </choice>
                      </cell>
@@ -167,7 +189,7 @@
                      <cell>3.</cell>
                      <cell>
                         <choice>
-                           <abbr><metamark rend="line" function="placeholder"/></abbr>
+                           <abbr><metamark rend="line-14" function="placeholder"/></abbr>
                            <expan>Auto do Circo.</expan>
                         </choice>
                      </cell>
@@ -177,7 +199,7 @@
                      <cell>4.</cell>
                      <cell>
                         <choice>
-                           <abbr><metamark rend="line" function="placeholder"/></abbr>
+                           <abbr><metamark rend="line-14" function="placeholder"/></abbr>
                            <expan>Theoria da Orthographia Portugueza.</expan>
                         </choice>
                      </cell>
@@ -186,7 +208,7 @@
                      <cell>5.</cell>
                      <cell>
                         <choice>
-                           <abbr><metamark rend="line" function="placeholder"/></abbr>
+                           <abbr><metamark rend="line-14" function="placeholder"/></abbr>
                            <expan>O Corvo (Poe)</expan>
                         </choice>
                      </cell>
@@ -198,7 +220,7 @@
                      <cell>6.</cell>
                      <cell>
                         <choice>
-                           <abbr><metamark rend="line" function="placeholder"/></abbr>
+                           <abbr><metamark rend="line-14" function="placeholder"/></abbr>
                            <expan>Epigramas</expan>
                         </choice>
                      </cell>
@@ -208,7 +230,7 @@
                      <cell>7.</cell>
                      <cell>
                         <choice>
-                           <abbr><metamark rend="line" function="placeholder"/></abbr>
+                           <abbr><metamark rend="line-14" function="placeholder"/></abbr>
                            <expan>Uma Entrevista.</expan>
                         </choice>
                      </cell>
@@ -220,7 +242,7 @@
                      <cell>8.</cell>
                      <cell>
                         <choice>
-                           <abbr><metamark rend="line" function="placeholder"/></abbr>
+                           <abbr><metamark rend="line-14" function="placeholder"/></abbr>
                            <expan><rs type="title">Merc. Acephalo</rs></expan>
                         </choice>
                      </cell>
@@ -230,13 +252,13 @@
                      <cell cols="2"/>
                      <cell>total</cell>
                      <cell>
-                        <metamark rend="line" function="sum"/> 7<hi rend="subscript">2</hi>
+                        <metamark rend="line-14" function="sum"/> 7<hi rend="subscript">2</hi>
                      </cell>
                   </row>
                   <row>
                      <cell cols="3"/>
                      <cell>
-                        <metamark rend="line" function="sum"/> 9 </cell>
+                        <metamark rend="line-14" function="sum"/> 9 </cell>
                   </row>
                   <row>
                      <cell cols="3"/>
