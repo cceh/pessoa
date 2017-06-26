@@ -97,9 +97,13 @@ gulp.task('remote-upload', ['build'], function() {
 		}));
 });
 
-gulp.task('remote-post-install', ['remote-upload'], function() {
+gulp.task('remote-post-install', ['remote-post-redirect','remote-upload'], function() {
 	return gulp.src('app/post-install.xql')
 		.pipe(remoteExist.query());
+});
+gulp.task('remote-post-redirect', function() {
+    return gulp.src('app/post-redirect.xql')
+        .pipe(remoteExist.query());
 });
 
 gulp.task('deploy-remote', ['remote-upload', 'remote-post-install']);

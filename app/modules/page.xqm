@@ -161,12 +161,6 @@ declare function page:createThirdNavTab($type as xs:string) as node()* {
             <ul class="nav_sub_tabs">        
            {page:createThirdNavContent($type,$indikator)}
         </ul></div>
-         (:  
-        else if ($type = "obras") then for $indikator in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="works"]/tei:item/attribute() return
-        <div  id="{concat("nav_",$type,"_sub_",$indikator)}" style="display:none"> 
-            <ul class="nav_sub_tabs">        
-           {page:createThirdNavContent($type,$indikator)}
-        </ul></div> :)
      else if($type= "publicacoes") then for $indikator in doc("/db/apps/pessoa/data/lists.xml")//tei:listPerson[@type="authors"]/tei:person/attribute() return
         <div  id="{concat("nav_",$type,"_sub_",$indikator)}" style="display:none"> 
             <ul class="nav_sub_tabs">        
