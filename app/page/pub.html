@@ -7,7 +7,10 @@
         <div id="article">
             <div class="doc:docControll" id="scrollline"></div>
             <div id="text-div"><div class="pub:get-text"></div></div>
-            <div id="img-div"><div class="pub:get-image"></div></div>
+            <div id="img-div">
+                <div id="indextab"/>
+                <div class="pub:get-image"></div>
+            </div>
             <map data-template="doc:footerfilter" data-template-dir="pub">
                 <div id="cite" title="Citar" style="display:none;border:solid">
                     <p>
@@ -48,11 +51,10 @@
             </map>
             <script type="text/javascript">
                 $(document).ready(function() {               
-                calcFacsimilie();           
-                fixDiv();
+                calcFacsimilie();
+                    fixDiv();
                 $(window).scroll(fixDiv);
                 });
-                
                 $("#zitat").click(function() {
                 $( "#cite" ).toggle();
                 });

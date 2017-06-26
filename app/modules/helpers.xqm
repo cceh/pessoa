@@ -19,7 +19,7 @@ declare variable $helpers:app-root := $config:webapp-root;
 declare variable $helpers:request-path := $config:request-path;
 declare variable $helpers:webfile-path := $config:webfile-path;
 declare variable $helpers:web-language := if(contains($config:request-path,"/en/")) then "en"
-                                            else if(contains($config:request-path,"/de")) then "de"
+                                            else if(contains($config:request-path,"/de/")) then "de"
                                             else "pt";
 (:
 declare variable $helpers:web-language := ();

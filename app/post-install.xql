@@ -281,18 +281,10 @@ declare function local:highLetters($letter) {
             default return $letter
 };
 
-declare function local:generateODD(){
-    let $odd := transform:transform(doc("/db/apps/pessoa/data/schema/pessoaTEI.odd"), doc("/db/apps/pessoa/xslt/odds/odd2odd.xsl"), ())
-    let $store-odd := xmldb:store("/db/apps/pessoa/data/schema", "pessoaTEIodd.xml", $odd)
-    let $html := transform:transform(doc("/db/apps/pessoa/data/schema/pessoaTEIodd.xml"), doc("/db/apps/pessoa/xslt/odds/odd2html.xsl"), ())
-    let $store-html := xmldb:store("/db/apps/pessoa/data/schema", "pessoaTEI.html", $html)
-    return ()
-};
-
 
 (
 local:move-index(),
 local:createXML(),
-local:saveTitleXML(),
-local:generateODD()
+local:saveTitleXML()
+
 )

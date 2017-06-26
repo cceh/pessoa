@@ -50,20 +50,6 @@ $(document).ready(function(){
                 
                 
         });
-        
-        /*
-        function jsBlockStrikeThrough(block) {
-				var backgrWidth = document.getElementById(block).offsetWidth;
-				var backgrHeight = document.getElementById(block).offsetHeight;
-				var newSize = '';
-
-				newSize = newSize.concat(backgrWidth, 'px' , ' ', backgrHeight, 'px');
-
-				document.getElementById(block).style.backgroundImage = "url('../images/Kreuz.png')";
-				document.getElementById(block).style.backgroundSize = newSize;
-			}
-        */
-         
                    
                    
                    
@@ -71,7 +57,7 @@ $(document).ready(function(){
         });
         function fixDiv() {
             var $cache = $('#openseadragon1');
-            var pos = $("#indextab").position().top +100;        
+            var pos = $("#indextab").position().top +100;
                      if ($(window).scrollTop() > pos )
                        $cache.css({
                        'position': 'fixed',
@@ -83,7 +69,7 @@ $(document).ready(function(){
                        'top': 'auto'
                        });
                    
-                   }
+                   };
                    
         function calcImage() {
         var height = $(".header-image").width()  * 0.75;
@@ -177,48 +163,6 @@ $(document).ready(function(){
              var height = height_img > height_text ? height_img : height_text;
             $("#text-div").css({"height" : height});            
         };
- /*
- function draw(w, h) {
- 
- /\*
-  if(is.firefox() == true) {
-      var  ctx1= document.getElementsByClassName("delSpan");
-        var canvas = ctx1.getContext("2d");
-        var  ctx2= document.getElementsByClassName("verticalLine");
-        var canvas2 = ctx2.getContext("2d");
-        var  ctx3= document.getElementsByClassName("circled");
-        var canvas3 = ctx3.getContext("2d");
-  } 
-  else {
-      var canvas = document.getCSSCanvasContext("2d", "lines", w, h); 
-      var canvas2 = document.getCSSCanvasContext("2d", "verticalLine", w, h);
-      var canvas3 = document.getCSSCanvasContext("2d", "circle", w, h);
-  }
- *\/
-            var canvas = document.getCSSCanvasContext("2d", "lines", w, h); 
-      var canvas2 = document.getCSSCanvasContext("2d", "verticalLine", w, h);
-      var canvas3 = document.getCSSCanvasContext("2d", "circle", w, h);
-            canvas.strokeStyle = "rgb(0,0,0)";
-            canvas.beginPath();
-            canvas.moveTo( 0,0);
-            canvas.lineTo( w, h );
-            canvas.stroke();
-            
-            
-            canvas2.strokeStyle = "rgb(0,0,0)";
-            canvas2.beginPath();
-            canvas2.moveTo( 0,0);
-            canvas2.lineTo( 10,60 );
-            canvas2.stroke();
-            
-            
-            canvas3.strokeStyle = "rgb(0,0,0)";
-            canvas3.beginPath();
-            canvas3.arc(12,12,12,0,2*Math.PI);
-            canvas3.stroke();
-            };
- */
-
 function printContent() {
             if( $("div#text-div").children("ul").children("li").hasClass("selected") ) { 
             var id = $("div#text-div").children("ul").children("li.selected").children("div").attr("id");  
@@ -227,7 +171,7 @@ function printContent() {
             var id = "text-div";
             }
             var headerContent = $("div#titleline").children("div").html();
-            var zitatContent =  $("div#dialog").html();
+            var zitatContent =  $("div#cite").html();
             var htmlContents = document.getElementById(id).innerHTML;
             
             var printContents = zitatContent+headerContent+htmlContents;
