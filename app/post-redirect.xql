@@ -13,4 +13,15 @@ declare function local:adapt-conf(){
 update replace $conf-file//request-path with <request-path>/apps/pessoa</request-path>
 )
 };
-(local:adapt-conf())
+
+
+declare function local:generateODD(){
+let $odd := transform:transform(doc("/db/apps/pessoa/data/schema/pessoaTEI.odd"), doc("/db/apps/pessoa/xslt/odds/odd2odd.xsl"), ())
+let $store-odd := xmldb:store("/db/apps/pessoa/data/schema", "pessoaTEIodd.xml", $odd)
+let $html := transform:transform(doc("/db/apps/pessoa/data/schema/pessoaTEIodd.xml"), doc("/db/apps/pessoa/xslt/odds/odd2html.xsl"), ())
+let $store-html := xmldb:store("/db/apps/pessoa/data/schema", "pessoaTEI.html", $html)
+return ()
+};
+
+(local:adapt-conf(),
+local:generateODD())
