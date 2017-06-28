@@ -5,7 +5,7 @@
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     version="2.0">
     
-    <!-- Author: Ulrike Henny -->
+    <!-- Author: Ulrike Henny-Krahmer, Alena Geduldig -->
     
     <xsl:import href="doc.xsl"/>
     
@@ -80,7 +80,7 @@
     -->
     <xsl:template match="lb[not(preceding-sibling::*[1][local-name()='pc'])][not(ancestor::add)]" mode="#default deletion addition">
         <xsl:choose>
-            <xsl:when test="$lb = 'yes' or ancestor::note[@place='margin-right']">
+            <xsl:when test="$lb = 'yes' or ancestor::note[@place='margin-right'] or ancestor::note[@place='margin-left']">
                 <br />
             </xsl:when>
             <xsl:otherwise>
@@ -94,7 +94,7 @@
         </xsl:choose>
     </xsl:template>
     <xsl:template match="lb[preceding-sibling::*[1][local-name()='pc']]" mode="#default deletion addition">
-        <xsl:if test="$lb = 'yes' or ancestor::note[@place='margin-right']">
+        <xsl:if test="$lb = 'yes' or ancestor::note[@place='margin-right'] or ancestor::note[@place='margin-left']">
             <br />
         </xsl:if>
     </xsl:template>

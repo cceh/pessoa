@@ -3,7 +3,7 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0" version="2.0">
 
-    <!-- Authors: Ulrike Henny, Alena Geduldig -->
+    <!-- Authors: Ulrike Henny-Krahmer, Alena Geduldig -->
 
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
     <xsl:strip-space elements="choice"/>
@@ -15,7 +15,7 @@
     <!-- Header & Text -->
     <xsl:template match="teiHeader" mode="#default deletion addition"/>
     <xsl:template match="text" mode="#default deletion addition">
-        <div class="text">
+        <div class="text" id="{//idno[@type='filename']/substring-before(.,'.')}">
             <xsl:apply-templates/>
         </div>
         <xsl:apply-templates select="//summary"/>
@@ -136,6 +136,12 @@
             <xsl:if test="@rend">
                 <xsl:attribute name="class" select="@rend"/>
             </xsl:if>
+            <xsl:if test="@rows">
+                <xsl:attribute name="rowspan" select="@rows"/>
+            </xsl:if>
+            <xsl:if test="@cols">
+                <xsl:attribute name="colspan" select="@cols"/>
+            </xsl:if>
             <xsl:apply-templates/>
         </td>
     </xsl:template>
@@ -143,7 +149,7 @@
     <!-- Table structure for divs in columns / floating divs -->
     <xsl:template match="div[div[@rend = ('left', 'center', 'right')]]"
         mode="#default deletion addition">
-        <table>
+        <table class="float-table">
             <tr>
                 <xsl:for-each select="child::*">
                     <xsl:choose>
@@ -289,7 +295,7 @@
                             select="tokenize(substring-before(substring-after($target, 'range('), ')'), ',')"/>
                         <xsl:variable name="range"
                             select="number(substring-after($items[2], 'I')) - number(substring-after($items[1], 'I')) + 1"/>
-                        <xsl:attribute name="style"> font-size: <xsl:value-of select="$range * 2"
+                        <xsl:attribute name="style"> font-size: <xsl:value-of select="$range * 2.5"
                             />em; </xsl:attribute>
                     </xsl:if> }<xsl:apply-templates/>
                 </span>
@@ -302,12 +308,27 @@
                             select="tokenize(substring-before(substring-after($target, 'range('), ')'), ',')"/>
                         <xsl:variable name="range"
                             select="number(substring-after($items[2], 'I')) - number(substring-after($items[1], 'I')) + 1"/>
-                        <xsl:attribute name="style"> font-size: <xsl:value-of select="$range * 2"
+                        <xsl:attribute name="style"> font-size: <xsl:value-of select="$range * 2.5"
                             />em; </xsl:attribute>
                     </xsl:if>
                     <xsl:apply-templates/>{ </span>
             </xsl:when>
         </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template match="metamark[@rend = 'curly-bracket'][@function = 'sum']"
+        mode="#default deletion addition">
+            <span class="grouping-right sum">
+                <xsl:if test="@target[contains(., 'range')]">
+                    <xsl:variable name="target" select="@target"/>
+                    <xsl:variable name="items"
+                        select="tokenize(substring-before(substring-after($target, 'range('), ')'), ',')"/>
+                    <xsl:variable name="range"
+                        select="number(substring-after($items[2], 'R')) - number(substring-after($items[1], 'R')) + 1"/>
+                    <xsl:attribute name="style"> font-size: <xsl:value-of select="$range * 1.5"
+                    />em; </xsl:attribute>
+                </xsl:if> }<xsl:apply-templates/>
+            </span>
     </xsl:template>
 
     <xsl:template match="metamark/label" mode="#default deletion addition">
@@ -336,6 +357,12 @@
     <xsl:template match="note[@place = 'margin-left']" mode="#default deletion addition">
         <xsl:call-template name="note-margin-left"/>
     </xsl:template>
+    
+    <xsl:template match="note[@place = 'right']" mode="#default deletion addition">
+        <div class="note right">
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
 
     <xsl:template match="note[@place = 'center']" mode="#default deletion addition">
         <div class="note center">
@@ -361,7 +388,7 @@
                     select="tokenize(substring-before(substring-after($target, 'range('), ')'), ',')"/>
                 <xsl:variable name="range"
                     select="number(substring-after($items[2], 'I')) - number(substring-after($items[1], 'I')) + 1"/>
-                <xsl:attribute name="style"> top: -<xsl:value-of select="$range"/>em;
+                <xsl:attribute name="style"> top: -<xsl:value-of select="$range * 1.7"/>em;
                 </xsl:attribute>
             </xsl:if>
             <xsl:apply-templates/>
@@ -377,7 +404,7 @@
                         select="tokenize(substring-before(substring-after($target, 'range('), ')'), ',')"/>
                     <xsl:variable name="range"
                         select="number(substring-after($items[2], 'I')) - number(substring-after($items[1], 'I')) + 1"/>
-                    <xsl:attribute name="style"> top: -<xsl:value-of select="$range"/>em;
+                    <xsl:attribute name="style"> top: -<xsl:value-of select="$range * 1.7"/>em;
                     </xsl:attribute>
                     <xsl:attribute name="class">note margin-left range <xsl:value-of select="@rend"/></xsl:attribute>
                 </xsl:when>

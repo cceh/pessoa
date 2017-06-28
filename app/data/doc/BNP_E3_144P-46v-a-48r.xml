@@ -109,7 +109,9 @@
                   </choice> viagens, comboios, viagens <lb/>circulatorias, etc. </item>
                <item rend="indent-1">Montagem de escriptos.</item>
                <item xml:id="I5">
-                  <label>II.</label> Correspondencia commercial. </item>
+                  <label>II.</label>
+                  <metamark xml:id="M1" rend="arrow-left-curved-down" function="assignment"
+                     target="A1" n="2"/> Correspondencia commercial. </item>
                <item xml:id="I6" rend="indent-2">
                   <label>I (a)</label> Listas de <choice>
                      <abbr>export<hi rend="superscript">s</hi></abbr>
@@ -125,19 +127,20 @@
                   <label>III.</label> Buscas literarias etc. nas bibliothecas; rebusca<lb/> de
                   jornaes antigos. Pesquizas heraldi<pc>-</pc><lb/>cas e genealogicas. </item>
                <item xml:id="I9" rend="indent-2">
-                  <label>II.</label> Redacção correcta de cartas, circulares, <note type="addition"
-                     n="2"><label rend="circled">II</label></note><lb/> catalogos (em todas as
-                  linguas)</item>
+                  <label>II.</label>
+                  <anchor xml:id="A1"/> Redacção correcta de cartas, circulares, <note
+                     type="addition" n="2"><label rend="circled">II</label></note><lb/> catalogos
+                  (em todas as linguas)</item>
                <item rend="indent-2">
                   <label>III.</label> Revisão de provas typographicas, seguindo<lb/> a ortographia
                   antiga a moderna.</item>
                <item>
-                  <label>III.</label> Revisão ortographica.
-                  <note type="addition" n="2"><gap reason="illegible" unit="character" extent="3"/></note>
+                  <label>III.</label> Revisão ortographica. <note type="addition" n="2"><gap
+                        reason="illegible" unit="character" extent="3"/></note>
                </item>
-               <pb n="2"/>
-               <item><label>I.</label><gap reason="illegible" unit="character" extent="1"/> de
-                  jornaes, <choice>
+               <item>
+                  <label>I.</label>
+                  <gap reason="illegible" unit="character" extent="1"/> de jornaes, <choice>
                      <abbr>nac<am>.</am></abbr>
                      <expan>nac<ex>ionaes</ex></expan>
                   </choice> e estrangeiros. </item>
@@ -177,17 +180,25 @@
                      <expan>Edição</expan>
                   </choice> do <rs type="title"><hi rend="underline">“All about <rs type="place"
                            >Portugal</rs>”.</hi></rs>
+                  <note target="range(I22,I24)" place="margin-left" n="2" type="addition">
+                     <metamark rend="curly-bracket" function="grouping">
+                        <label>III</label>
+                     </metamark>
+                  </note>
                </item>
                <item xml:id="I24" rend="indent-2">
-                  <choice>
-                     <abbr><metamark rend="line-14" function="ditto"/></abbr>
-                     <expan>Edição</expan>
-                  </choice> de <rs type="periodical" key="J52">“A Semana”</rs> jornal <subst>
-                     <del rend="overstrike">dando noticias <lb/>de <rs type="place">Portugal</rs>
-                        para o <rs type="place">Brazil</rs>.</del>
-                     <add n="2" place="above">em principio</add>
-                     <add n="2" place="below"><gap reason="illegible" unit="word" extent="1"/></add>
-                  </subst>
+                  <certainty locus="value" degree="0.5" resp="FP">
+                     <choice>
+                        <abbr><metamark rend="line-14" function="ditto"/></abbr>
+                        <expan>Edição</expan>
+                     </choice> de <rs type="periodical" key="J52">“A Semana”</rs> jornal <subst>
+                        <del rend="overstrike">dando noticias <lb/>de <rs type="place">Portugal</rs>
+                           para o <rs type="place">Brazil</rs>.</del>
+                        <add n="2" place="above">em principio</add>
+                        <add n="2" place="below"><gap reason="illegible" unit="word" extent="1"
+                           /></add>
+                     </subst>
+                  </certainty>
                </item>
                <item rend="indent-2">
                   <label>II.</label> Traducções em todos os generos e de e para<lb/> todas as
@@ -202,8 +213,8 @@
                   <label>IV.</label> Annuncios em todos os jornaes de <rs type="place">Portugal</rs>
                   e<lb/> do estrangeiro. </item>
                <item rend="indent-2">
-                  <label>IV.</label> Especialidade em mandar vir livros do <lb/>estrangeiro e em
-                  manter quem quizer in <pc>-</pc><lb/>lbformado ácerca dos livros do seu
+                  <label>IV.</label> Especialidade em mandar vir livros do<lb/> estrangeiro e em
+                  manter quem quizer in<pc>-</pc><lb/>formado ácerca dos livros do seu
                   interesse<lb/> que vão sahindo. </item>
                <pb n="3"/>
                <item>
@@ -223,11 +234,11 @@
                      rend="underline">Hypothecas etc.) (?)</hi>
                </item>
                <item rend="indent-2">
-                  <label>I.</label> Informações em todas as repartições<lb/> do estado.
-                     <p>Photographias do que se deseje, <gap reason="illegible" unit="word"
-                        extent="1"/> o que ter photographia <del rend="overstrike">
-                        <gap reason="illegible" extent="1" unit="word"/>
-                     </del> propria.</p></item>
+                  <label>I.</label> Informações em todas as repartições<lb/> do estado.<lb/>
+                  Photographias do que se deseje, <gap reason="illegible" unit="word" extent="1"
+                  /><lb/> o que ter photographia <del rend="overstrike">
+                     <gap reason="illegible" extent="1" unit="word"/>
+                  </del> propria. </item>
                <item>
                   <label>IX.</label> Correspondencia para jornaes estrangeiros. </item>
                <item rend="indent-2">
@@ -236,33 +247,33 @@
                   de <rs type="place">Portugal</rs>. Investigações<lb/> historicas.</item>
                <item rend="indent-2">
                   <label>II.</label> Escreve-se annuncios e arranja-se<lb/> destes apto para elles
-                  ...<lb/> Dá-se opinião a respeito de papel-<lb/> timbrado, como deve ficar
+                  ...<lb/> Dá-se opinião a respeito de papel-<lb/>timbrado, como deve ficar
                   melhor</item>
                <pb n="4"/>
                <item rend="indent-2">
                   <label>II.</label> Circulares á machina, <gap reason="illegible" unit="word"
-                     extent="1"/>a 50 <choice>
+                     extent="1"/> a 50<choice>
                      <abbr>r</abbr>
                      <expan>r<ex>eis</ex></expan>
-                  </choice> cada e a a confecção de † a 500 <choice>
+                  </choice> cada<lb/> e a confecção de <gap reason="illegible" unit="word"
+                     extent="1"/> a 500<choice>
                      <abbr>r</abbr>
                      <expan>r<ex>eis</ex></expan>
-                  </choice>
-                  <lb/> Não a <gap reason="illegible" unit="word" extent="1"/> de mais de<lb/>
-                  <gap reason="selection" unit="character" extent="5"/> circular)</item>
+                  </choice><lb/> Não a <gap reason="illegible" unit="word" extent="1"/> de mais de<lb/>
+                  <gap reason="illegible" unit="word" extent="12"/> circular) </item>
                <item rend="indent-2">
                   <label>II.</label> Bilhetes postaes illustrados de estrangeiros,<lb/> escriptos de
                   lá... (Fornecer-se citações — <choice>
                      <abbr>Dict<am>.</am></abbr>
                      <expan>Dict<ex>ionary</ex></expan>
-                  </choice> of Quotations).</item>
+                  </choice> of Quotations). </item>
                <item rend="indent-2">
                   <label>II.</label> Ideas para nomes de marcas, ex libris,<lb/> nomes de firmas,
-                  etc.</item>
+                  etc. </item>
                <item rend="indent-2">
-                  <label>II.</label> Projectos de <hi rend="underline">decorações de montra</hi>, de
-                  <lb/>construção e decoração de estabeleci <pc/><lb/> mentos (por um architecto
-                  distante) </item>
+                  <label>II.</label> Projectos de <hi rend="underline">decorações de montra</hi>,
+                  de<lb/> construção e decoração de estabeleci<pc>-</pc><lb/>mentos (por um
+                  architecto distante) </item>
             </list>
             <list>
                <item>“Como se arranja uma montra” <metamark rend="space" function="distinct"/>
@@ -271,7 +282,7 @@
                   linguas.</item>
                <item rend="indent-2">On the back of notas-de-cambio an <lb/>advertisement.</item>
                <item>A <gap reason="selection" unit="line" extent="2"/></item>
-               <item>1 annuncio simples, <hi rend=" underline">bem</hi> feito — 500 reis</item>
+               <item>1 annuncio simples, <hi rend="underline">bem</hi> feito — 500 reis</item>
                <item>1 <gap reason="illegible" unit="word" extent="1"/> de <gap reason="illegible"
                      unit="word" extent="1"/>, estudada — 10000 reis</item>
             </list>
