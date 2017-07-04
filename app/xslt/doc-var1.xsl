@@ -47,7 +47,6 @@
     <xsl:template match="add[@n = '2']" mode="#default deletion addition"/>
 
     <xsl:template match="mod[@n = '2']" mode="#default deletion addition">
-        <xsl:apply-templates/>
     </xsl:template>
 
     <!-- Ergänzung von Pessoa selbst

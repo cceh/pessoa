@@ -75,11 +75,24 @@
                     <item>
                         <label>A.</label> – um artigo de “fundo”. <note type="addition" n="2">(ou
                             artigos)</note>
-                        <note place="margin-right" type="addition" n="2">{ ou - artigo de fundo<lb/>
-                            - <choice>
-                                <abbr>art<am>.</am></abbr>
-                                <expan>art<ex>igos</ex></expan>
-                            </choice> especiaes. </note>
+                        <note place="margin-right" type="addition" n="2">
+                            <note place="margin-left" target="range(I1,I2)">
+                                <metamark rend="curly-bracket" function="grouping"/>
+                            </note>
+                            <list>
+                                <item xml:id="I1">
+                                    <label>ou</label>
+                                    - artigo de fundo</item>
+                                <item xml:id="I2" rend="indent-2">
+                                    - <choice>
+                                        <abbr>art<am>.</am></abbr>
+                                        <expan>art<ex>igos</ex></expan>
+                                    </choice> especiaes.</item>
+                            </list>
+                            <note place="margin-right" target="range(I1,I2)">
+                                <metamark rend="curly-bracket" function="grouping"/>
+                            </note>
+                        </note>
                     </item>
                     <metamark rend="line-44" function="distinct"/>
                     <item rend="indent-2">

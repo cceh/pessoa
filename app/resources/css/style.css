@@ -1397,7 +1397,7 @@ div.text span.italic, div.editorial-note span.italic {
 }
 div.text span.choice {
     position: relative;
-    vertical-align: middle;
+    vertical-align: unset;
 }
 div.text span.anchor {
     position: relative;
@@ -1417,6 +1417,9 @@ div.text span.below {
     bottom: -1.4em;
     left: 0;
     white-space: nowrap;
+}
+div.text span.underline span.below {
+    bottom: -1.8em;
 }
 div.text span.supplied {
     bottom: 1px;
@@ -1464,12 +1467,69 @@ div#text-div .signed.indent-13 {
 
 
 /* STYLES FÜR INDIVIDUELLE LISTEN */
+
+/* BNP_E3_48-43 */
 div.text#BNP_E3_48-43 #I2 span.note.margin-right {
     padding-left: 3em;
+    margin-left: 1em;
+}
+div.text#BNP_E3_48-43 #I2 span.note.margin-right span.grouping-right {
+    font-size: 9em;
+    top: -0.7em;
 }
 div.text#BNP_E3_48-43 #I2 span.note.margin-left {
     left: -22%;
 }
+div.text#BNP_E3_48-43 #I5 span.note.margin-right span.grouping-right {
+    font-size: 3em;
+    top: -0.7em;
+    right: -1.5em;
+}
+
+
+div.text#BNP_E3_48-43 span.note.margin-right span.note.margin-left span.grouping-left {
+    font-size: 3.5em;
+    right: -1.3em;
+    top: -0.5em;
+}
+div.text#BNP_E3_48-43 span.note.margin-right span.note.margin-right span.grouping-right {
+    font-size: 3.5em;
+    right: -2.8em;
+    top: -1.5em;
+}
+
+div.text#BNP_E3_48-43 div.list div.item:first-child span.note.margin-right {
+    margin-left: 1em;
+}
+div.text#BNP_E3_48-43 div.list div.item:first-child span.note.margin-right div.list {
+    position: relative;
+    top: -1em;
+    padding-left: 0;
+    margin: 0;
+}
+
+/* BNP_E3_48-7r */
 div.text#BNP_E3_48-7r span.note.margin-right {
     top: -20px;
 }
+
+/* BNP_E3_55E-94v */
+div.text#BNP_E3_55E-94v td[rowspan="2"] span.grouping-right.sum {
+    font-size: 2em;
+    top: 0.3em;
+    white-space: nowrap;
+}
+
+/* BNP_E3_133F-34r */
+div.text#BNP_E3_133F-34r hr.line-14 {
+    width: 10%;
+    vertical-align: bottom;
+}
+
+/* BNP_E3_133H-82r */
+div.text#BNP_E3_133H-82r span.note.margin-left span.grouping-left {
+    font-size: 6em;
+    top: -0.7em;
+    right: -0.3em;
+}
+

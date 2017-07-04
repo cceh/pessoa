@@ -289,7 +289,7 @@
         <xsl:choose>
             <xsl:when test="parent::note[@place = 'margin-right']">
                 <span class="grouping-right">
-                    <xsl:if test="parent::note[@target[contains(., 'range')]]">
+                    <!--<xsl:if test="parent::note[@target[contains(., 'range')]]">
                         <xsl:variable name="target" select="parent::note/@target"/>
                         <xsl:variable name="items"
                             select="tokenize(substring-before(substring-after($target, 'range('), ')'), ',')"/>
@@ -297,12 +297,12 @@
                             select="number(substring-after($items[2], 'I')) - number(substring-after($items[1], 'I')) + 1"/>
                         <xsl:attribute name="style"> font-size: <xsl:value-of select="$range * 2.5"
                             />em; </xsl:attribute>
-                    </xsl:if> }<xsl:apply-templates/>
+                    </xsl:if>--> }<xsl:apply-templates/>
                 </span>
             </xsl:when>
             <xsl:when test="parent::note[@place = 'margin-left']">
                 <span class="grouping-left">
-                    <xsl:if test="parent::note[@target[contains(., 'range')]]">
+                    <!--<xsl:if test="parent::note[@target[contains(., 'range')]]">
                         <xsl:variable name="target" select="parent::note/@target"/>
                         <xsl:variable name="items"
                             select="tokenize(substring-before(substring-after($target, 'range('), ')'), ',')"/>
@@ -310,7 +310,7 @@
                             select="number(substring-after($items[2], 'I')) - number(substring-after($items[1], 'I')) + 1"/>
                         <xsl:attribute name="style"> font-size: <xsl:value-of select="$range * 2.5"
                             />em; </xsl:attribute>
-                    </xsl:if>
+                    </xsl:if>-->
                     <xsl:apply-templates/>{ </span>
             </xsl:when>
         </xsl:choose>
@@ -319,7 +319,7 @@
     <xsl:template match="metamark[@rend = 'curly-bracket'][@function = 'sum']"
         mode="#default deletion addition">
             <span class="grouping-right sum">
-                <xsl:if test="@target[contains(., 'range')]">
+                <!--<xsl:if test="@target[contains(., 'range')]">
                     <xsl:variable name="target" select="@target"/>
                     <xsl:variable name="items"
                         select="tokenize(substring-before(substring-after($target, 'range('), ')'), ',')"/>
@@ -327,7 +327,7 @@
                         select="number(substring-after($items[2], 'R')) - number(substring-after($items[1], 'R')) + 1"/>
                     <xsl:attribute name="style"> font-size: <xsl:value-of select="$range * 1.5"
                     />em; </xsl:attribute>
-                </xsl:if> }<xsl:apply-templates/>
+                </xsl:if>--> }<xsl:apply-templates/>
             </span>
     </xsl:template>
 
@@ -382,7 +382,7 @@
     <xsl:template name="note-margin-right">
         <span>
             <xsl:attribute name="class">note margin-right <xsl:value-of select="@rend"/></xsl:attribute>
-            <xsl:if test="@target[contains(., 'range')]">
+            <!--<xsl:if test="@target[contains(., 'range')]">
                 <xsl:variable name="target" select="@target"/>
                 <xsl:variable name="items"
                     select="tokenize(substring-before(substring-after($target, 'range('), ')'), ',')"/>
@@ -390,7 +390,7 @@
                     select="number(substring-after($items[2], 'I')) - number(substring-after($items[1], 'I')) + 1"/>
                 <xsl:attribute name="style"> top: -<xsl:value-of select="$range * 1.7"/>em;
                 </xsl:attribute>
-            </xsl:if>
+            </xsl:if>-->
             <xsl:apply-templates/>
         </span>
     </xsl:template>
@@ -399,13 +399,13 @@
         <span>
             <xsl:choose>
                 <xsl:when test="@target[contains(., 'range')]">
-                    <xsl:variable name="target" select="@target"/>
+                    <!--<xsl:variable name="target" select="@target"/>
                     <xsl:variable name="items"
                         select="tokenize(substring-before(substring-after($target, 'range('), ')'), ',')"/>
                     <xsl:variable name="range"
                         select="number(substring-after($items[2], 'I')) - number(substring-after($items[1], 'I')) + 1"/>
                     <xsl:attribute name="style"> top: -<xsl:value-of select="$range * 1.7"/>em;
-                    </xsl:attribute>
+                    </xsl:attribute>-->
                     <xsl:attribute name="class">note margin-left range <xsl:value-of select="@rend"/></xsl:attribute>
                 </xsl:when>
                 <xsl:otherwise>
@@ -501,11 +501,18 @@
     </xsl:template>
     
     <xsl:template match="mod[@n='2']" mode="#default deletion addition">
-        <xsl:if test="@rend">
-            <span class="mod {@rend}">
-                <xsl:apply-templates/>
-            </span>
-        </xsl:if>
+        <xsl:choose>
+            <xsl:when test="@rend">
+                <span class="mod {@rend}">
+                    <xsl:apply-templates/>
+                </span>
+            </xsl:when>
+            <xsl:otherwise>
+                <span class="mod">
+                    <xsl:apply-templates/>
+                </span>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 
 

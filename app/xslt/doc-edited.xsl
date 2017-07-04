@@ -61,6 +61,7 @@
         <xsl:apply-templates/>
     </xsl:template>
     
+    
     <xsl:template match="abbr" mode="#default deletion addition">
         <xsl:choose>
             <xsl:when test="parent::choice"/>
