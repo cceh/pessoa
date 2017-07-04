@@ -73,6 +73,8 @@
                 <include name="xslt/doc-edited.xsl"/>
                 <include name="xslt/doc-var1.xsl"/>
                 <include name="xslt/doc-var2.xsl"/>
+                <include name="resources/js/code.js"/>
+                <include name="data/webpage.xml"/>
             </fileset>
         </xdb:store>
         <xdb:xquery uri="${uri}" queryfile="app/post-redirect.xql" user="${user}" password="${password}"/>
