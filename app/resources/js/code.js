@@ -116,7 +116,6 @@ $(document).ready(function(){
  
  
  function DocHide() {
-            
            var path = $(location).attr('href');
            
            if(path.search("/en/") != -1) {
@@ -184,7 +183,6 @@ function printContent() {
 
 function printPub() {
 
-
     if( $("div#text-div").children("ul").children("li").hasClass("selected") ) {
         var id = $("div#text-div").children("ul").children("li.selected").children("div").attr("id");
     }
@@ -192,7 +190,7 @@ function printPub() {
         var id = "text-div";
     }
     var headerContent = $("div#titleline").children().html();
-    var pubDate = $("div#titleline").children("#t_add_1").html() + $("div#titleline").children("#t_add_2").html() + $("div#titleline").children("#t_add_3").html() ;
+    var pubDate = $("div#titleline").children("#t_add_1").html()+" " + $("div#titleline").children("#t_add_2").html() + " <b>"+$("div#titleline").children("#t_add_3").html()+"</b>" ;
     var zitatContent =  $("div#cite").html();
     var htmlContents = document.getElementById(id).innerHTML;
 
