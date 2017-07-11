@@ -42,7 +42,7 @@
                     </table>
                 </div>
                 <div id="filter">
-                    <a class="filter-a" onclick="printContent()"><lang data-template="helpers:singleElementHidden" data-template-xmltype="footer" data-template-xmlid="print"  /></a>
+                    <a class="filter-a" id="print"><lang data-template="helpers:singleElementHidden" data-template-xmltype="footer" data-template-xmlid="print"  /></a>
                     <get data-template="helpers:getValue" data-template-get="xmllink"/>
                     <a class="filter-a" id="zitat" ><lang data-template="helpers:singleElementHidden" data-template-xmltype="footer" data-template-xmlid="cite"/></a>
                     <a class="filter-a" id="symbols"><lang data-template="helpers:singleElementHidden" data-template-xmltype="footer" data-template-xmlid="symbols"/></a>
@@ -53,6 +53,9 @@
                 $(document).ready(function() {               
                 calcFacsimilie();
                     fixDiv();
+                    $("#print").click(function() {
+                        printPub();
+                    });
                 $(window).scroll(fixDiv);
                 });
                 $("#zitat").click(function() {
