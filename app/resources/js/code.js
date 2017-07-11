@@ -116,7 +116,6 @@ $(document).ready(function(){
  
  
  function DocHide() {
-            
            var path = $(location).attr('href');
            
            if(path.search("/en/") != -1) {
@@ -180,15 +179,30 @@ function printContent() {
                  newWindow.document.write (printContents);
                  newWindow.print();                 
                  newWindow.close();
-                 
-            /*
-            document.body.innerHTML = printContents;
-                window.print();
-                document.body.innerHTML = originalContents;
-              */
-            }; 
- 
- function SearchHide() {
+            };
+
+function printPub() {
+
+    if( $("div#text-div").children("ul").children("li").hasClass("selected") ) {
+        var id = $("div#text-div").children("ul").children("li.selected").children("div").attr("id");
+    }
+    else {
+        var id = "text-div";
+    }
+    var headerContent = $("div#titleline").children().html();
+    var pubDate = $("div#titleline").children("#t_add_1").html()+" " + $("div#titleline").children("#t_add_2").html() + " <b>"+$("div#titleline").children("#t_add_3").html()+"</b>" ;
+    var zitatContent =  $("div#cite").html();
+    var htmlContents = document.getElementById(id).innerHTML;
+
+    var printContents = zitatContent+pubDate+htmlContents;
+    var originalContents = document.body.innerHTML;
+    var newWindow = window.open("","newWindow");
+    newWindow.document.write (printContents);
+    newWindow.print();
+    newWindow.close();
+};
+
+function SearchHide() {
     $("div.tab").click(function() {
        var id1 = $(this).attr("id");
            var id2 = id1.substring(3)
