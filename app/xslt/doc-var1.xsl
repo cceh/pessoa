@@ -1,7 +1,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0" version="2.0">
-    
+
     <!-- Authors: Ulrike Henny-Krahmer, Alena Geduldig -->
 
     <xsl:import href="doc-edited.xsl"/>
@@ -47,6 +47,9 @@
     <xsl:template match="add[@n = '2']" mode="#default deletion addition"/>
 
     <xsl:template match="mod[@n = '2']" mode="#default deletion addition">
+        <span class="mod">
+            <xsl:apply-templates/>
+        </span>
     </xsl:template>
 
     <!-- Ergänzung von Pessoa selbst
@@ -65,10 +68,8 @@
         mode="#default deletion addition"/>
 
 
-    <!-- special case MN246 -->
-    <xsl:template match="text[@xml:id = 'mn246']//choice[seg[@n]]" mode="#default deletion addition">
-        <xsl:value-of select="seg[1]"/>
-    </xsl:template>
 
+    <!-- metamarks -->
+    <xsl:template match="metamark[@n = '2']" mode="#default deletion addition"/>
 
 </xsl:stylesheet>

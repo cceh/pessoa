@@ -127,7 +127,7 @@
     </xsl:template>
     
     <!-- Gaps -->
-    <xsl:template match="gap[@reason = 'selection']" mode="#default deletion addition">
+    <xsl:template match="gap[@reason='selection']" mode="#default deletion addition">
         <xsl:text>[...]</xsl:text>
     </xsl:template>
     

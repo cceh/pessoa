@@ -36,10 +36,6 @@
     hier: das Hinzugefügte anzeigen -->
     
     
-    <xsl:template match="mod[@n = '2']" mode="#default deletion addition">
-        <xsl:apply-templates/>
-    </xsl:template>
-    
     <xsl:template match="seg/add[@n = '2']" mode="#default deletion addition">
         <xsl:apply-templates/>
     </xsl:template>
