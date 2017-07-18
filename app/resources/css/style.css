@@ -1254,10 +1254,12 @@ div.text .border {
 div.text div.item.indent-2 *, div.text div.item.indent-2-label * {
     text-indent: 0;
 }
-div.text span.note.circled {
+div.text span.note circled, div.text span.circled {
     border: 1px solid black;
-    border-radius: 10px;
-    padding: 5px;
+    border-radius: 15px;
+    padding: 5px 10px;
+    left: 10px;
+    position: relative;
 }
 div.text span.label.circled {
     border: 1px solid black;
@@ -1289,10 +1291,6 @@ div.text div.item span.mod.framed {
     border: 1px solid black;
     padding: 4px;
     display: inline-block;
-}
-div.text span.note circled {
-    border: 1px solid black;
-    border-radius: 15px;
 }
 div.text span.note.margin-right {
     display: inline-block;
@@ -1468,6 +1466,9 @@ div.text hr.line-14.inline, div.text hr.line-24.inline, div.text hr.line-34.inli
     display: inline-block;
     margin: 0 0.5em 0.25em 0;
 }
+div.text table hr.sum, div.text table hr.end {
+    margin: 0;
+}
 /* STYLES FÜR DIE XSLT-TRANSFORMATION DER PUBLIKATONEN */
 div#text-div .signed.indent-13 {
     text-indent: 30%;
@@ -1621,4 +1622,19 @@ div.text#BNP_E3_137D-3 span.note.margin-left.circled {
     text-align: center;
     left: -2em;
     padding: 0.1em;
+}
+/* BNP_E3_188-1r */
+div.text#BNP_E3_188-1r span.note.margin-right span.grouping-right {
+    left: 1.5em;
+    top: -0.1em;
+    font-size: 9em;
+}
+/* BNP_E3_49B6-19v */
+div.text#BNP_E3_49B6-19v span.note.margin-right span.grouping-right {
+    font-size: 13em;
+    left: 1.2em;
+    top: -0.1em;
+}
+div.text#BNP_E3_49B6-19v table td + td {
+    width: 25%;
 }

@@ -187,51 +187,51 @@
 
     <!-- Metamarks -->
     <!-- Lines -->
-    <xsl:template match="metamark[@rend = 'line-14'][@function = ('distinct', 'end')]"
+    <xsl:template match="metamark[@rend = 'line-14'][@function = ('distinct', 'end', 'sum')]"
         mode="#default deletion addition">
-        <hr class="line line-14"/>
+        <hr class="line line-14 {@function}"/>
     </xsl:template>
-    <xsl:template match="metamark[@rend = 'line-14-center'][@function = ('distinct', 'end')]"
+    <xsl:template match="metamark[@rend = 'line-14-center'][@function = ('distinct', 'end', 'sum')]"
         mode="#default deletion addition">
-        <hr class="line line-14 center"/>
+        <hr class="line line-14 center {@function}"/>
     </xsl:template>
     <xsl:template match="metamark[@rend = 'line-14'][@function = ('placeholder')]"
         mode="#default deletion addition">
         <hr class="line line-14 inline"/>
     </xsl:template>
     
-    <xsl:template match="metamark[@rend = 'line-24'][@function = ('distinct', 'end')]"
+    <xsl:template match="metamark[@rend = 'line-24'][@function = ('distinct', 'end', 'sum')]"
         mode="#default deletion addition">
-        <hr class="line line-24"/>
+        <hr class="line line-24 {@function}"/>
     </xsl:template>
-    <xsl:template match="metamark[@rend = 'line-24-center'][@function = ('distinct', 'end')]"
+    <xsl:template match="metamark[@rend = 'line-24-center'][@function = ('distinct', 'end', 'sum')]"
         mode="#default deletion addition">
-        <hr class="line line-24 center"/>
+        <hr class="line line-24 center {@function}"/>
     </xsl:template>
     <xsl:template match="metamark[@rend = 'line-24'][@function = ('placeholder')]"
         mode="#default deletion addition">
         <hr class="line line-24 inline"/>
     </xsl:template>
     
-    <xsl:template match="metamark[@rend = 'line-34'][@function = ('distinct', 'end')]"
+    <xsl:template match="metamark[@rend = 'line-34'][@function = ('distinct', 'end', 'sum')]"
         mode="#default deletion addition">
         <div class="metamark">
-            <hr class="line line-34"/>
+            <hr class="line line-34 {@function}"/>
             <xsl:apply-templates/>
         </div>
     </xsl:template>
-    <xsl:template match="metamark[@rend = 'line-34-center'][@function = ('distinct', 'end')]"
+    <xsl:template match="metamark[@rend = 'line-34-center'][@function = ('distinct', 'end', 'sum')]"
         mode="#default deletion addition">
-        <hr class="line line-34 center"/>
+        <hr class="line line-34 center {@function}"/>
     </xsl:template>
     <xsl:template match="metamark[@rend = 'line-34'][@function = ('placeholder')]"
         mode="#default deletion addition">
         <hr class="line line-34 inline"/>
     </xsl:template>
     
-    <xsl:template match="metamark[@rend = 'line-44'][@function = ('distinct', 'end')]"
+    <xsl:template match="metamark[@rend = 'line-44'][@function = ('distinct', 'end', 'sum')]"
         mode="#default deletion addition">
-        <hr class="line line-44"/>
+        <hr class="line line-44 {@function}"/>
     </xsl:template>
     <xsl:template match="metamark[@rend = 'line-44'][@function = ('placeholder')]"
         mode="#default deletion addition">
@@ -281,6 +281,12 @@
     </xsl:template>
     <xsl:template match="metamark[@rend = 'space-14'][@function = 'ditto']"
         mode="#default deletion addition"> &#x2003; &#x2003; &#x2003; &#x2003; &#x2003;
+    </xsl:template>
+    <xsl:template match="metamark[@rend = 'space-vertical'][@function = 'distinct'][ancestor::table]"
+        mode="#default deletion addition"> 
+        <tr>
+            <td><br/></td>
+        </tr>
     </xsl:template>
 
     <!-- Brackets -->

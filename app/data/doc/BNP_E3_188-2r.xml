@@ -76,50 +76,75 @@
    <text>
       <body>
          <div>
-            <head><hi rend="underline">
-                  <choice>
-                     <abbr>G<am>.</am></abbr>
-                     <expan>G<ex>remio</ex></expan>
-                  </choice>de <choice>
-                     <abbr>C<am>.</am></abbr>
-                     <expan>C<ex>ultura</ex></expan>
-                  </choice><choice>
-                     <abbr> P<am>.</am></abbr>
-                     <expan> P<ex>ortugueza</ex></expan>
+            <head><hi rend="underline"><choice>
+                     <abbr>GCP<am>.</am></abbr>
+                     <expan>G<ex>remio</ex>
+                        <ex>de</ex> C<ex>ultura</ex> P<ex>ortugueza</ex></expan>
                   </choice></hi></head>
-            <list>
-               <head>Subscripções para o Gremio:</head>
-               <item> Por <choice>
+            <p>Subscripções para o Gremio:</p>
+            <list rend="indent">
+               <item>Por <choice>
                      <abbr>nu<am>.</am></abbr>
                      <expan>nu<ex>mero</ex></expan>
                   </choice>: 1$00.</item>
-               <item> Doações de ahi para cima, de quem<lb/> sympathisar com a attitude do
-                  Gremio.</item>
+               <item rend="indent-2">Doações de ahi para cima, de quem<lb/> sympathisar com a
+                  attitude do Gremio.</item>
             </list>
-            <list>
-               <head><hi rend="underline">Despezas do Gremio:</hi></head>
-               <item> Renda mensal: 40$00.</item>
-               <item>Empregado: 10$00.</item>
-               <item>Prestação da mobilia: 60$00.</item>
-               <item> Outras despezas: 40$00</item>
-               <note place="right"><metamark rend="line" function="distinct"/></note>
-               <item><note place="right">150$00</note></item>
-               <note place="right"><metamark rend="line" function="end"/></note>
-            </list>
-            <list>
-               <head><hi rend="underline">Select a printing office:</hi></head>
-               <item>17.00 copies of <choice>
-                     <abbr>Th<am>.</am></abbr>
-                  </choice><choice>
-                     <abbr>Sr<am>.</am></abbr>
-                  </choice><lb/>(each † Acção) = 1.020$00 </item>
-               <item>Sold at 50 c/ each = </item>
-               <item> from at 200 $ = 1.700$00</item>
-               <note place="right"><metamark rend="line" function="distinct"/></note>
-               <item><note place="right">150$00</note></item>
-               <item><note place="right">Profit = 680$00</note></item>
-               <note place="right"><metamark rend="line" function="end"/></note>
-            </list>
+         </div>
+         <div>
+            <head><hi rend="underline">Despezas do Gremio</hi>:</head>
+            <table>
+               <row>
+                  <cell rend="right">Renda mensal:</cell>
+                  <cell rend="right">40$00.</cell>
+               </row>
+               <row>
+                  <cell rend="right">Empregado:</cell>
+                  <cell rend="right">10$00.</cell>
+               </row>
+               <row>
+                  <cell rend="right">Prestação da mobilia:</cell>
+                  <cell rend="right">60$00.</cell>
+               </row>
+               <row>
+                  <cell rend="right">Outras despezas:</cell>
+                  <cell rend="right">40$00</cell>
+               </row>
+               <row>
+                  <cell/>
+                  <cell rend="right">
+                     <metamark rend="line-44" function="sum"/> 150$00 <metamark rend="line-44"
+                        function="end"/>
+                  </cell>
+               </row>
+            </table>
+         </div>
+         <div>
+            <head><hi rend="underline">Select a printing office</hi>:</head>
+            <p>17.00 copies of <abbr>Th<am>.</am></abbr>
+               <abbr>Sr<am>.</am></abbr></p>
+            <table>
+               <row>
+                  <cell rend="right">(each <gap reason="illegible" extent="1" unit="word"/> Acção)
+                     =</cell>
+                  <cell rend="right">1.020$00</cell>
+               </row>
+               <row>
+                  <cell rend="right">Sold at 50 c/ each =</cell>
+                  <cell/>
+               </row>
+               <row>
+                  <cell rend="right">from at 200 $ =</cell>
+                  <cell rend="right">1.700$00</cell>
+               </row>
+               <row>
+                  <cell rend="right">Profit =</cell>
+                  <cell rend="right">
+                     <metamark rend="line-44" function="sum"/> 680$00 <metamark rend="line-44"
+                        function="end"/>
+                  </cell>
+               </row>
+            </table>
          </div>
       </body>
    </text>

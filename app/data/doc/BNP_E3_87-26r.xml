@@ -55,8 +55,9 @@
                </msIdentifier>
                <msContents>
                   <summary>
-                     <p> Lista manuscrita numa folha com timbre de «A Brazileira | Lisboa», publicada em
-                        <hi rend="italic">Sensacionismo e outros Ismos</hi> (2009, 82). </p>
+                     <p> Lista manuscrita numa folha com timbre de «A Brazileira | Lisboa»,
+                        publicada em <hi rend="italic">Sensacionismo e outros Ismos</hi> (2009, 82).
+                     </p>
                   </summary>
                   <msItemStruct>
                      <author>
@@ -87,42 +88,87 @@
       <body>
          <div>
             <head><hi rend="underline"><rs type="periodical" key="J12">Orpheu</rs> 3 e 4</hi></head>
-            <list>
-               <item><rs type="name" key="P30">Mario de Sá-Carneiro</rs>: <seg rend="right"
-                     >16</seg></item>
-               <item><rs type="name" key="P106">Albino de Menzes</rs>: <add n="2">#</add>
-                  <seg rend="right">6</seg></item>
-               <item><rs type="name" key="P89">José Coelho Pacheco</rs>: <seg rend="right"
-                  >8</seg></item>
-               <item><rs type="name" key="P107">Mario da Cunha e Sá</rs>: <add n="2">#</add>
-                  <seg rend="right">8</seg></item>
-               <item>
-                  <subst>
-                     <del rend="overstrike" n="1">AN Fernando</del>
-                     <add place="above" n="2"><rs type="name" key="P108">Silva Tavares</rs></add>
-                  </subst>
-                  <seg rend="right">8</seg>
-               </item>
-               <item><rs type="name" key="P56">José de Almada-Negreiros</rs>: <seg rend="right"
-                     >18</seg></item>
-               <item><rs type="name" key="P109">Augusto Ferreira Gomes</rs>: <seg rend="right"
-                     >10</seg></item>
-               <item><rs type="name" key="P110">M. Fernando de Carvalho</rs>: <seg rend="right"
-                     >10</seg></item>
-               <item><rs type="name" key="P111">Barradas Telles D’Aviz</rs>: <add n="2">#</add>
-                  <seg rend="right">6</seg></item>
-               <item><rs type="name" key="FP" role="author" style="b">Fernando Pessoa</rs>: <seg
-                     rend="right">8</seg></item>
-               <item><rs type="name" key="P86">Castello de Moraes</rs>: <seg rend="right"
-                  >12</seg></item>
-               <item><rs type="name" key="AdC" role="author">Alvaro de Campos</rs>: <seg
-                     rend="right">12</seg></item>
-               <item>Indice do 1º Volume. <seg rend="right">6</seg></item>
-               <item>
-                  <metamark rend="line" function="sum" place="right"/>
-                  <seg rend="right"><hi rend="underline">128</hi> pp.</seg>
-               </item>
-            </list>
+            <table>
+               <row>
+                  <cell><rs type="name" key="P30">Mario de Sá-Carneiro</rs>:</cell>
+                  <cell/>
+                  <cell rend="right">16</cell>
+               </row>
+               <row>
+                  <cell><rs type="name" key="P106">Albino de Menzes</rs>:</cell>
+                  <cell><add n="2">#</add></cell>
+                  <cell rend="right">6</cell>
+               </row>
+               <row>
+                  <cell><rs type="name" key="P89">José Coelho Pacheco</rs>:</cell>
+                  <cell/>
+                  <cell rend="right">8</cell>
+               </row>
+               <row>
+                  <cell><rs type="name" key="P107">Mario da Cunha e Sá</rs>:</cell>
+                  <cell><add n="2">#</add></cell>
+                  <cell rend="right">8</cell>
+               </row>
+               <row>
+                  <cell>
+                     <subst>
+                        <add place="above" n="2"><rs type="name" key="P108">Silva Tavares</rs></add>
+                        <del rend="overstrike" n="1">AN Fernando</del>
+                     </subst>: </cell>
+                  <cell/>
+                  <cell rend="right">8</cell>
+               </row>
+               <row>
+                  <cell><rs type="name" key="P56">José de Almada-Negreiros</rs>:</cell>
+                  <cell/>
+                  <cell rend="right">18</cell>
+               </row>
+               <row>
+                  <cell><rs type="name" key="P109">Augusto Ferreira Gomes</rs>:</cell>
+                  <cell/>
+                  <cell rend="right">10</cell>
+               </row>
+               <row>
+                  <cell><rs type="name" key="P110">M. Fernando de Carvalho</rs>:</cell>
+                  <cell/>
+                  <cell rend="right">10</cell>
+               </row>
+               <row>
+                  <cell><rs type="name" key="P111">Barradas Telles D’Aviz</rs>:</cell>
+                  <cell><add n="2">#</add></cell>
+                  <cell rend="right">6</cell>
+               </row>
+               <row>
+                  <cell><rs type="name" key="FP" role="author" style="b">Fernando
+                     Pessoa</rs>:</cell>
+                  <cell/>
+                  <cell rend="right">8</cell>
+               </row>
+               <row>
+                  <cell><rs type="name" key="P86">Castello de Moraes</rs>:</cell>
+                  <cell/>
+                  <cell rend="right">12</cell>
+               </row>
+               <row>
+                  <cell><rs type="name" key="AdC" role="author">Alvaro de Campos</rs>:</cell>
+                  <cell/>
+                  <cell rend="right">12</cell>
+               </row>
+               <metamark rend="space-vertical" function="distinct"/>
+               <row>
+                  <cell>Indice do 1º Volume.</cell>
+                  <cell/>
+                  <cell rend="right">6</cell>
+               </row>
+               <row>
+                  <cell/>
+                  <cell/>
+                  <cell rend="right">
+                     <metamark rend="line-44" function="sum"/> 128 pp. <metamark rend="line-44"
+                        function="end"/>
+                  </cell>
+               </row>
+            </table>
          </div>
       </body>
    </text>

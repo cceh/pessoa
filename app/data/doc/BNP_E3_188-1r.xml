@@ -77,49 +77,72 @@
       <body>
          <div>
             <head><hi rend="underline"><choice>
-                     <abbr>G<am>.</am></abbr>
-                     <expan>G<ex>remio</ex></expan>
-                  </choice>
-                  <supplied resp="PS" reason="omitted-in-original">de</supplied><choice>
-                     <abbr>C<am>.</am></abbr>
-                     <expan>C<ex>ultura</ex></expan>
-                  </choice>
-                  <choice>
-                     <abbr>P<am>.</am></abbr>
-                     <expan>P<ex>ortugueza</ex></expan>
-                  </choice>
-               </hi></head>
-            <p><rs type="periodical" key="J54">“Portugal” </rs>— revista <del rend="overstrike">de commercio, de
-                  industria</del><add place="above"> de vida portugueza para o </add><lb/>
-               estrangeiro. </p>
+                     <abbr>GCP<am>.</am></abbr>
+                     <expan>G<ex>remio</ex>
+                        <ex>de</ex> C<ex>ultura</ex> P<ex>ortugueza</ex></expan>
+                  </choice></hi></head>
+            <div>
+               <p rend="indent-2"><rs type="periodical" key="J54">“Portugal”</rs> — revista <subst>
+                     <add place="above" n="2">de vida portugueza para o</add>
+                     <del rend="overstrike" n="1">de commercio, de industria</del>
+                  </subst>
+                  <lb/> estrangeiro.</p>
+            </div>
             <metamark rend="line-44" function="distinct"/>
-            <p>Edição commercial em inglez.</p>
+            <div>
+               <p>Edição commercial em inglez.</p>
+            </div>
             <metamark rend="line-44" function="distinct"/>
-            <list>
-               <head><hi rend="underline"> Advertisements. </hi></head>
-               <item xml:id="I1"> page: 120$00 </item>
-               <item xml:id="I2">1/2 page: 65$00</item>
-               <item xml:id="I3">1/4 page: 35$00 </item>
-               <item xml:id="I4">1/8 page: 20$00</item>
-               <item xml:id="I5">1/16 page: 12$00</item>
-            </list>
-            <note target="range(I1,I5)" place="right" type="addition"><add place="center right">
-                  inalteraveis</add>
-               <metamark rend="curly-bracket" function="grouping"/></note>
+            <div>
+               <head>Advertisements.</head>
+               <table>
+                  <row xml:id="C1">
+                     <cell rend="right">page:</cell>
+                     <cell rend="right">120$00</cell>
+                  </row>
+                  <row xml:id="C2">
+                     <cell rend="right">1/2 page:</cell>
+                     <cell rend="right">65$00</cell>
+                  </row>
+                  <row xml:id="C3">
+                     <cell rend="right">1/4 page:</cell>
+                     <cell rend="right">35$00</cell>
+                     <note target="range(C1,C5)" place="margin-right" type="addition">
+                        <metamark rend="curly-bracket" function="grouping">
+                           <label>inalteraveis</label>
+                        </metamark>
+                     </note>
+                  </row>
+                  <row xml:id="C4">
+                     <cell rend="right">1/8 page:</cell>
+                     <cell rend="right">20$00</cell>
+                  </row>
+                  <row xml:id="C5">
+                     <cell rend="right">1/16 page:</cell>
+                     <cell rend="right">12$00</cell>
+                  </row>
+               </table>
+            </div>
             <metamark rend="line-44" function="distinct"/>
-            <list>
+            <div>
                <head><hi rend="underline">
-                     <gap reason="illegible" unit="character" extent="1"/> number: </hi></head>
-               <item> A Man’s Death — <gap reason="illegible" unit="character" extent="2"/> — <gap
-                     reason="illegible" unit="character" extent="1"/><lb/>
-                  <rs type="place">Portugal</rs> of <gap reason="illegible" unit="character"
-                     extent="1"/><choice>
-                     <abbr>S<am>.</am></abbr>
-                     <expan>S<ex>idonio</ex></expan>
-                  </choice> Paes.</item>
-            </list>
-            <note place="center"><hi rend="underline">shall this start now?</hi>
-            </note>
+                     <gap reason="illegible" unit="word" extent="1"/> number</hi>:</head>
+               <list>
+                  <item>A Man’s Death — <gap reason="illegible" unit="word" extent="2"/> — <gap
+                        reason="illegible" unit="word" extent="1"/>
+                  </item>
+                  <item>
+                     <rs type="place">Portugal</rs> of <gap reason="illegible" unit="word"
+                        extent="1"/>
+                     <choice>
+                        <abbr>S<am>.</am></abbr>
+                        <expan>S<ex>idonio</ex></expan>
+                     </choice> Paes.</item>
+               </list>
+               <note place="center" n="2" type="addition">shall this start
+                     now?</note>
+               <metamark rend="line-14-center" function="end"/>
+            </div>
          </div>
       </body>
    </text>
