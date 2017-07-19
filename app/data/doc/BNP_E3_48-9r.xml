@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
@@ -37,7 +38,7 @@
             <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
                (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
-            <date>2016</date>
+            <date>2017</date>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/3.0/"/>
             </availability>
@@ -52,7 +53,7 @@
                <msContents>
                   <summary>
                      <p> Lista manuscrita, publicada em <hi rend="italic">Sensacionismo e outros
-                        Ismos</hi> (2009, 429-430). </p>
+                           Ismos</hi> (2009, 429-430). </p>
                   </summary>
                   <msItemStruct>
                      <author>
@@ -83,18 +84,18 @@
    <text>
       <body>
          <div>
-            <head><hi rend="red">Sensationist Anthology.</hi></head>
-            <head><hi rend="red">compiled and prefaced by <rs type="name" key="P55">SHER
-                     HENAY</rs>.</hi></head>
+            <head>Sensationist Anthology.</head>
+            <head rend="indent">compiled and prefaced by <rs type="name" key="P55">SHER
+               HENAY</rs>.</head>
             <list>
                <item>
                   <label>1.</label>
-                  <hi rend="underline"><rs type="name" key="P56">José de
-                     Almada-Negreiros</rs>:</hi>
-                  <list>
+                  <hi rend="underline"><rs type="name" key="P56">José de Almada-Negreiros</rs>:</hi>
+                  <list rend="indent">
                      <item><rs type="title">Frisos</rs>.</item>
-                     <item><rs type="title">Coastline</rs>. <rs type="title">The Blue
-                        Square</rs>.</item>
+                     <item><rs type="title">Coastline</rs>. <metamark rend="space-14"
+                           function="distinct"/>
+                        <rs type="title">The Blue Square</rs>.</item>
                      <item><rs type="title">Scene of Hatred</rs>.</item>
                      <item><rs type="title">Portuguese Poems</rs>.</item>
                   </list>
@@ -103,7 +104,7 @@
                   <label>2.</label>
                   <hi rend="underline"><rs type="name" key="FP" role="author" style="b">Fernando
                         Pessoa</rs>:</hi>
-                  <list>
+                  <list rend="indent">
                      <item><rs type="title">The Sailor</rs>.</item>
                      <item><rs type="title">Slanting Rain</rs>.</item>
                      <item><rs type="title">Beyond God</rs>.</item>
@@ -112,7 +113,7 @@
                <item>
                   <label>3.</label>
                   <hi rend="underline"><rs type="name" key="P30">Mario de Sá-Carneiro</rs>:</hi>
-                  <list>
+                  <list rend="indent">
                      <item><rs type="title">Alem</rs>.</item>
                      <item><rs type="title">Bailado</rs>.</item>
                      <item><rs type="title">Selections from the tales</rs>.</item>
@@ -122,23 +123,23 @@
                <item>
                   <label>4.</label>
                   <hi rend="underline"><rs type="name" key="P57">Pedro de Menezes</rs>:</hi>
-                  <list>
+                  <list rend="indent">
                      <item>several poems.</item>
                   </list>
                </item>
                <item>
                   <label>5.</label>
                   <hi rend="underline"><rs type="name" key="P37">Côrtes-Rodrigues</rs>:</hi>
-                  <list>
+                  <list rend="indent">
                      <item>several poems.</item>
                   </list>
                </item>
-               <item>
+               <item rend="indent-2">
                   <label>6.</label>
-                  <hi rend="underline"><rs type="name" key="P58">Violante de Cysneiros</rs>:</hi>
+                  <hi rend="underline"><rs type="name" key="P58">Violante de Cysneiros</rs>:</hi><lb/>
                   <note>(certainly a pseudonym, but I have not been able to find<lb/> whose)
                      (?)</note>
-                  <list>
+                  <list rend="indent">
                      <item>some poems.</item>
                   </list>
                </item>

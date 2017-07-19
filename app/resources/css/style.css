@@ -1251,9 +1251,6 @@ div.text .border {
     border: 1px solid black;
     padding: 5px;
 }
-div.text div.item.indent-2 *, div.text div.item.indent-2-label * {
-    text-indent: 0;
-}
 div.text span.note circled, div.text span.circled {
     border: 1px solid black;
     border-radius: 15px;
@@ -1599,11 +1596,6 @@ div.text#BNP_E3_133I-23r div.item#I4 .label {
     min-width: 1.6em;
     right: 0.2em;
 }
-/* BNP_E3_133M-30r */
-div.text#BNP_E3_133M-30r span.note.margin-right.circled {
-    margin: 0 1em;
-    padding: 0.5em 1.5em;
-}
 
 /* BNP_E3_136-57v */
 div.text#BNP_E3_136-57v span.note.margin-right {
@@ -1634,7 +1626,45 @@ div.text#BNP_E3_49B6-19v span.note.margin-right span.grouping-right {
     font-size: 13em;
     left: 1.2em;
     top: -0.1em;
+    font-family: sans-serif;
+}
+div.text#BNP_E3_49B6-19v span.note.margin-right span.grouping-right span.label {
+    position: relative;
+    right: 2em;
 }
 div.text#BNP_E3_49B6-19v table td + td {
     width: 25%;
+}
+/* CP246 */
+div.text#CP246 span.note.margin-right {
+    top: 1em;
+}
+div.text#CP246 #I4 span.note.margin-right, div.text#CP246 #I5 span.note.margin-right {
+    right: -9.5em;
+}
+div.text#CP246 div.list > span.note.margin-right {
+    top: 0.1em;
+    font-size: 17em;
+    font-family: sans-serif;
+    left: 0.1em;
+}
+/* CP786 */
+div.text#CP786 span.note.margin-right {
+    right: 1em;
+    top: 8em;
+}
+/* CP908 */
+div.text#CP908 span.note.margin-left span.grouping-left {
+    font-size: 5em;
+    top: -0.5em;
+    right: -0.5em;
+    left: initial;
+    font-family: sans-serif;
+}
+div.text#CP908 span.note.margin-left {
+    left: -5em;
+}
+/* BNP_E3_20-65r */
+div.text#BNP_E3_20-65r hr.line-14 {
+    margin-left: 0.5em;
 }
