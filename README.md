@@ -7,7 +7,7 @@ This is the Github repository accompanying the Digital Edition of Fernando Pesso
 
 Resulting from a collaboration between researchers of the Estranging Pessoa research project, based in IELT (Institute for the Study of Literature and Tradition), New University of Lisbon, and the CCeH (Cologne Center for eHumanities), University of Cologne, the digital edition aims at offering a unique access to the documents of Fernando Pessoa’s work.
 
-The results of this work will be published on http://pessoadigital.pt in June 2017.
+The results of this work will be published on http://pessoadigital.pt in 2017.
 
 
 <!-- MarkdownTOC -->
