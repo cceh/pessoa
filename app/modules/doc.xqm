@@ -240,14 +240,15 @@ declare function doc:footerfilter($node as node(), $model as map(*), $id as xs:s
             }
 };
 
-declare function doc:cite($node as node(), $model as map(*),$id as xs:string, $dir as xs:string) {
+declare function doc:cite($node as node(), $model as map(*),$id as xs:string, $dir as xs:string, $type) {
 <span>{
                 for $elem in helpers:singleElementNode_xquery("cite","cite-tx")/tei:span
                                             return 
                                             switch($elem/@type)
                                             case "web" return <i>{helpers:singleElement_xquery("cite","cite-web")}</i>
-                                            case "link" return concat(' <',doc(concat("/db/apps/pessoa/data/",$dir,"/",$id,".xml"))//tei:titleStmt/tei:title[1],'.> ')
-                                            default return $elem
+                                            case "link" return concat(' "',doc(concat("/db/apps/pessoa/data/",$dir,"/",$id,".xml"))//tei:titleStmt/tei:title[1],'." ')
+                                            case "url" return <a style="color: #08298a;" href="{concat($helpers:app-root,'/',$id,'/',$type)}">{concat(' <',$helpers:app-root,'/',$id,'/',$type),'>'}</a>
+                                                default return $elem
                                             }</span>
 };
 (:
