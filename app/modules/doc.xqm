@@ -550,5 +550,9 @@ declare function doc:getNavigation($letters){
     </div>
 };
 
+declare function doc:notaButton($node as node(), $model as map(*)) {
+    <script>
+        DocHide("{helpers:singleElement_xquery("buttons","note")}")
+    </script>
 
-
+};
