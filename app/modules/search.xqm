@@ -579,3 +579,11 @@ else
 </span>  
 
 };
+
+declare function search:printTipps($node as node(), $model as map(*)) {
+    <ul> {
+        for $item in helpers:singleElementNode_xquery("search", "search_tips")/tei:span
+        return if ($item/@type = "head") then <li id="tips_head">{$item}</li> else <li>{$item}</li>
+    }
+    </ul>
+};

@@ -635,13 +635,13 @@ font-size: 14px;
 
 .search_filter{
     width:21%;
-    margin: 5px 0 10px 140px;
+    margin: 5px 0 10px 90px;
     /* border-right: 1px solid #000; */
     display: inline-block;
     float: left; 
 }       
 .search_resultList{
-    width:50%;
+    width:45%;
     display: inline-block;
     float:left;
     margin: 10px 30px;   
@@ -649,7 +649,19 @@ font-size: 14px;
 .search_resultList a{
     color:#fff;
 }
-                
+
+#search_tips {
+    display:inline-block;
+    float:left;
+    width:19%;
+}
+
+#search_tips ul {
+    list-style: none;
+}
+#search_tips li#tips_head {
+    text-decoration: underline;
+}
 .tab{
     background-color:#990000; 
     color: #fff;

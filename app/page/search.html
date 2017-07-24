@@ -20,7 +20,7 @@
             
              <div class="search:profisearch" id="suche">
                  
-                 <span class="search:search-page"><!-- Funktionsaufruf --></span>
+                 <span data-template="search:search-page"><!-- Funktionsaufruf --></span>
                  
                  <div class="search_resultList">
                      <div id="tabline">    
@@ -42,6 +42,9 @@
                      </div>
                      <div class="clear"></div>
                     </div>
+                 <div id="search_tips">
+                     <get data-template="search:printTipps"/>
+                 </div>
                 </div>
             </div>
         </div>
