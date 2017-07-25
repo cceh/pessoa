@@ -6,7 +6,7 @@ default namespace tei = "http://www.tei-c.org/ns/1.0"
 namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2017-07-25T12:00:19Z. 2017.
+# Schema generated from ODD source 2017-07-25T12:41:03Z. 2017.
 # TEI Edition: Version 3.2.0. Last updated on
 #	10th July 2017, revision 0fcf651
 # TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.2.0/
@@ -1561,6 +1561,7 @@ tei_note =
   ## contains a note or annotation. [3.8.1. Notes and Simple Annotation 2.2.6. The Notes Statement 3.11.2.8. Notes and Statement of Language 9.3.5.4. Notes within Entries]
   element note {
     tei_macro.specialPara,
+    tei_att.global.attribute.xmlid,
     tei_att.pointing.attribute.target,
     tei_att.written.attributes,
     
@@ -1572,6 +1573,24 @@ tei_note =
       | 
         ##
         "2"
+    }?,
+    
+    ## (rendition) indicates how the element in question was rendered or presented in the source text.
+    attribute rend {
+      list {
+        (
+         ##
+         "circled"
+         | 
+           ##
+           "framed"
+         | 
+           ##
+           "rotate-right"
+         | 
+           ##
+           "rotate-left")+
+      }
     }?,
     
     ## specifies where this item is placed.
