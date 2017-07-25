@@ -75,6 +75,8 @@
                 <include name="xslt/doc-var2.xsl"/>
                 <include name="resources/js/code.js"/>
                 <include name="data/webpage.xml"/>
+                <include name="data/lists.xml"/>
+                <include name="data/bibl.xml"/>
             </fileset>
         </xdb:store>
         <xdb:xquery uri="${uri}" queryfile="app/post-redirect.xql" user="${user}" password="${password}"/>
