@@ -14,12 +14,12 @@
     }<xsl:if test="position() != last()">,</xsl:if>
   </xsl:for-each>
 ],
-,
 "links": [
   <xsl:for-each select="doc('network-basis.xml')/persons/person">
       <xsl:if test="documents/document/person">
           <xsl:variable name="position-person" select="position()"/>
-          <xsl:for-each-group select=".//person" group-by="id">
+          <xsl:variable name="curr" select="current()"/>
+          <xsl:for-each-group select=".//person[empty(index-of($curr/preceding-sibling::person/id, id))]" group-by="id">
               {
               "source": <xsl:value-of select="$position-person"/>,
               "target": <xsl:value-of select="count(//persons/person[id = current-grouping-key()]/preceding-sibling::person) + 1"/>,
@@ -27,7 +27,10 @@
               }
               <xsl:if test="position() != last()">,</xsl:if>
           </xsl:for-each-group>
-          
+          <!-- das allerletzte Komma muss im Moment ggf. noch händisch gelöscht werden, falls es für die Person an der letzten 
+          Position keine neuen Relationen mehr gibt (dann ist nämlich die letzte Person mit neuen Relationen nicht die letzte
+          in der Liste) -->
+          <xsl:if test=".//person[empty(index-of($curr/preceding-sibling::person/id, id))] and position() != last()">,</xsl:if>
       </xsl:if>
   </xsl:for-each>
 ]}
