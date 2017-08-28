@@ -142,3 +142,11 @@ declare function helpers:singleElementList_xquery($type as xs:string,$id as xs:s
                   else $doc//tei:list[@type=$type and @xml:lang=$helpers:web-language]/tei:item[@corresp=concat("#",$id)]
      return $entry/data(.)
 };
+
+declare function helpers:index-of-node
+( $nodes as node()* ,
+        $nodeToFind as node() )  as xs:integer* {
+
+    for $seq in (1 to count($nodes))
+    return $seq[$nodes[$seq] is $nodeToFind]
+} ;

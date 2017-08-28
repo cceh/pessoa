@@ -42,32 +42,62 @@
     <div class="row-fluid">
         <div id="content" class="span12 main">  
             <div id="persons-content">
-                <h1 id="title-tool" class="page:singleElement?xmltype=index&amp;xmlid=names"/>          
-                <div id="personsList" class="span6"> 
-                    <div class="index:plottAlpha">
-                        <i class="index:printNavigation"/>
-                        <div class="helpers:invisibleEach?from=letters&amp;to=letter">
+                <h1 id="title-tool" data-template="page:singleElement" data-template-xmltype="index" data-template-xmlid="names"/>
+                <div id="personsList" class="span6">
+                    <map data-template="index:getPersonIndex">
+                        <get class="index:printNavigation"/>
+                        <each data-template="helpers:invisibleEach" data-template-from="letters" data-template-to="letter">
                             <div>
-                                <div class="sub_Nav"><i class="index:printLetter"/></div>
-                                <div class="index:getPersonIndex">
-                                    <div class="helpers:invisibleEach?from=keys&amp;to=key">
-                                        <div class="index:ScanDB">
+                                <div class="sub_Nav">
+                                    <get data-template="index:printLetter"/>
+                                </div>
+                                <map data-template="index:getPerson">
+                                    <each data-template="helpers:invisibleEach" data-template-from="sort" data-template-to="pers">
+                                        <map data-template="index:createPerson">
                                             <div class="person">
-                                                <i class="index:printAuthor"/>
+                                                <get data-template="index:printAuthor"/>
                                                 <div class="docList">
-                                                    <each class="helpers:invisibleEach?from=docs&amp;to=ref">
-                                                        <i data-template="index:printDocLinks" data-template-ref="ref"/>
+                                                    <each data-template="helpers:invisibleEach" data-template-from="docs" data-template-to="ref">
+                                                        <get data-template="index:printDocLinks" data-template-ref="ref"/>
+                                                    </each>
+                                                </div>
+                                                <div class="clear"/>
+                                            </div>
+                                        </map>
+                                    </each>
+                                </map>
+                            </div>
+                        </each>
+
+                    </map>
+                    <!--
+                    <map data-template="index:plottAlpha">
+                        <get class="index:printNavigation"/>
+                        <each data-template="helpers:invisibleEach" data-template-from="letters" data-template-to="letter">
+                            <div>
+                                <div class="sub_Nav">
+                                    <get data-template="index:printLetter"/>
+                                </div>
+                                <map data-template="index:getPersonIndex">
+                                    <each data-template="helpers:invisibleEach" data-template-from="keys" data-template-to="key">
+                                        <map class="index:ScanDB">
+                                            <div class="person">
+                                                <get data-template="index:printAuthor"/>
+                                                <div class="docList">
+                                                    <each data-template="helpers:invisibleEach" data-template-from="docs" data-template-to="ref">
+                                                        <get data-template="index:printDocLinks" data-template-ref="ref"/>
                                                     </each>                                                    
                                                 </div>
                                                 <div class="clear"/>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                        </map>
+                                    </each>
+                                </>
                             </div>
-                        </div>
-                    </div>
-                </div> 
+                        </each>
+                    </map>
+                    -->
+                </div>
             </div>
             <div id="footer2">
                 <get data-template="page:cite" data-template-source="/names"/>
