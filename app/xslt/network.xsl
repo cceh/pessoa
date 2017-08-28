@@ -21,8 +21,8 @@
           <xsl:variable name="curr" select="current()"/>
           <xsl:for-each-group select=".//person[empty(index-of($curr/preceding-sibling::person/id, id))]" group-by="id">
               {
-              "source": <xsl:value-of select="$position-person"/>,
-              "target": <xsl:value-of select="count(//persons/person[id = current-grouping-key()]/preceding-sibling::person) + 1"/>,
+              "source": <xsl:value-of select="$position-person - 1"/>,
+              "target": <xsl:value-of select="count(//persons/person[id = current-grouping-key()]/preceding-sibling::person)"/>,
               "value": <xsl:value-of select="count(current-group())"/>
               }
               <xsl:if test="position() != last()">,</xsl:if>
