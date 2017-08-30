@@ -67,12 +67,12 @@
                             <xsl:when test="@style">
                                 <xsl:for-each-group select="current-group()" group-by="@style">
                                     <xsl:variable name="name" select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//listPerson/person[@xml:id=$key or substring-after(@corresp,'#')=$key]/persName[@type=current-grouping-key()]"/>
-                                    <li onmouseenter="highlight('person {$key}');" onmouseleave="clearH('{$key}');"><xsl:value-of select="$name"/> <a href="../../page/persons#{$name}" title="{$title}"><img class="indexImg" src="{string-join(($host,'resources/images/glyphicons-35-old-man.png'),'/')}"/></a></li>
+                                    <li onmouseenter="highlight('person {$key}');" onmouseleave="clearH('{$key}');"><xsl:value-of select="$name"/> <a href="../../page/names#{$name}" title="{$title}"><img class="indexImg" src="{string-join(($host,'resources/images/glyphicons-35-old-man.png'),'/')}"/></a></li>
                                 </xsl:for-each-group>
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:variable name="name" select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//listPerson/person[@xml:id=$key]/persName"/>
-                                <li onmouseenter="highlight('person {$key}');" onmouseleave="clearH('{$key}');"><xsl:value-of select="$name"/> <a href="../../page/persons#{$name}" title="{$title}"><img class="indexImg" src="{string-join(($host,'resources/images/glyphicons-35-old-man.png'),'/')}"/></a></li>
+                                <li onmouseenter="highlight('person {$key}');" onmouseleave="clearH('{$key}');"><xsl:value-of select="$name"/> <a href="../../page/names#{$name}" title="{$title}"><img class="indexImg" src="{string-join(($host,'resources/images/glyphicons-35-old-man.png'),'/')}"/></a></li>
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:for-each-group>
