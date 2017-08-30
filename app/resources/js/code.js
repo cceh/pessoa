@@ -316,7 +316,7 @@ function drawArrowsEach() {
         svg.appendChild(defs);
 
 
-        svg.setAttribute('style', 'position:absolute; top:0px; left:0px; width:'+w+'px; height:'+h+'px; display:block;');
+        svg.setAttribute('style', 'position:absolute; top:0px; left:0px; width:'+w+'px; height:'+h+'px; display:block; z-index:0;');
         svg.setAttribute('id','svg1');
 
     for(var i = 1; $('#M'+i).index() != -1;i++) drawArrows(svg,("M"+i),("A"+i),anker.top,anker.left)
@@ -338,7 +338,7 @@ function drawArrowsEach() {
         var x2 = el2.left - l + 10;
         var y2 = el2.top - t;
         var path = document.createElementNS(svgNS,'path');
-        path.setAttribute('d', 'M ' + x1 + ' ' + y1 + ' A 10 55 0 1 1 ' + x2 + ' ' + y2);
+        path.setAttribute('d', 'M ' + x1 + ' ' + y1 + ' A 10 10 0 1 1 ' + x2 + ' ' + y2);
         path.setAttribute('stroke', '#000000');
         path.setAttribute('fill', 'transparent');
         path.setAttribute('marker-end', 'url(#arr1)');

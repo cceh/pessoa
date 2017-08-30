@@ -72,11 +72,11 @@ declare function page:createMainNav() as node()* {
 declare function page:HighlightPage($target) {
     let $pagename :=   switch($target)
         case "autores" return "author"
-        case "publicacoes" return "pub"
-        case "obras" return "obras"
-        case "genero" return "genre"
+        case "publicacoes" return "pub/"
+        case "obras" return "obras/"
+        case "genero" return "genre/"
         case "index" return ("bibliografia","names","titles","periodicals")
-        case "documentos" return "doc"
+        case "documentos" return "doc/"
         case "projeto" return ("about","team","documentation","download")
         default return "nothin"
     return for $page in $pagename  where contains($helpers:request-path,$page) return "highlight"
@@ -105,7 +105,11 @@ declare function page:createSubNavTabs($tab as xs:string) as node()* {
 declare function page:createContent($type as xs:string) as node()* {
     if($type != "documentos" and $type != "cronologia"  and $type != "publicacoes" and $type != "index") then
         for $item in page:createItem($type,"")
-        return <li class="{concat("nav_",$type,"_tab")}" ><a href="{$item/@ref/data(.)}">{$item/@label/data(.)}</a></li>
+        return <a href="{$item/@ref/data(.)}">
+                    <li class="{concat("nav_",$type,"_tab")}" >
+                        {$item/@label/data(.)}
+                    </li>
+                </a>
     else  let $result := page:createThirdNav($type)
     return $result
 };
@@ -142,10 +146,12 @@ declare function page:createThirdNav($type as xs:string) as node()* {
             return  if(contains($indexies/attribute()[2],"bibliografia")) then   <li class="{concat("nav_",$type,"_tab")}" id="navtab_{$type}_sub_{$id}">
                 {$indexies/data(.)}
             </li>
-            else <li class="{concat("nav_",$type,"_tab")}"><a href="{concat($helpers:app-root,"/",$helpers:web-language,"/page/",$id)}">
-                    {$indexies/data(.)}
+            else <a href="{concat($helpers:app-root,"/",$helpers:web-language,"/page/",$id)}">
+                    <li class="{concat("nav_",$type,"_tab")}">
+                        {$indexies/data(.)}
+                    </li>
                 </a>
-                </li>
+
             else ()
 };
 
