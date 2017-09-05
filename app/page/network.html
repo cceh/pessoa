@@ -1,0 +1,140 @@
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Pessoa network</title>
+    <meta charset="utf-8" />
+
+    <link class="helpers:app-root" rel="stylesheet" type="text/css" href="resources/css/jquery-ui.css"/>
+    <link class="helpers:app-root" rel="stylesheet" type="text/css" href="resources/css/jquery-ui.structure.css"/>
+    <link class="helpers:app-root" rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css"/>
+
+    <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery-1.11.2.js"/>
+    <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery-ui.js"/>
+    <script class="helpers:app-root" type="text/javascript" src="resources/js/bootstrap.min.js"/>
+
+
+    <script class="helpers:app-root" type="text/javascript" src="resources/js/d3.min.js">/* v.3.5 */</script>
+    <script class="helpers:app-root" type="text/javascript" src="resources/js/network.js">/* Function Libary */</script>
+    <style>
+        .link {
+            stroke: #777;
+            stroke-opacity: 0.3;
+        }
+
+
+        circle.emptyNode {
+            z-index:0;
+            opacity: 0.2;
+        }
+
+        text.emptyNode{
+            opacity: 0.2;
+            font-style: italic;
+            cursor:default;
+        }
+
+        circle.node {
+            stroke-width: 3.5px;
+            cursor:pointer;
+            z-index:1;
+        }
+
+        text {
+            z-index:0;
+            font: 10px sans-serif;
+        }
+
+        circle.node:hover {
+            fill: #990000;
+
+        }
+        text.node {
+            cursor:pointer;
+        }
+        text.node:hover {
+            display: inline !important;
+        }
+
+        .cell {
+            fill: none;
+            pointer-events: all;
+        }
+        #menue {
+            position: fixed;
+            display:none;
+            left:25px;
+            font-size:23px;
+            color:#990000;
+            cursor:pointer;
+        }
+
+        #menue:hover {
+            color:#08298A;
+        }
+
+        .shown {
+            position: fixed;
+            left:50px;
+        }
+        #footer2 a {
+            color:#08298A;
+        }
+    </style>
+</head>
+<body>
+    <div id="network" class="content">
+        <span style="font-size:28px;margin-right:250px;">Pessoa network</span>
+        <div id="menue">
+            <i class="glyphicon glyphicon-menu-hamburger"/>
+        </div>
+        <div id="options">
+            <div class="options">
+                <label>Year selection: </label>
+                <select id="year">
+                    <option value="network" selected="selected">all</option>
+                    <option value="1913">1913</option>
+                    <option value="1914">1914</option>
+                    <option value="1915">1915</option>
+                    <option value="1916">1916</option>
+                    <option value="1917">1917</option>
+                    <option value="1918">1918</option>
+                    <option value="1919">1919</option>
+                    <option value="1920">1920</option>
+                    <option value="1921">1921</option>
+                    <option value="1922">1922</option>
+                    <option value="1923">1923</option>
+                    <option value="1924">1924</option>
+                    <option value="1925">1925</option>
+                    <option value="1926">1926</option>
+                    <option value="1927">1927</option>
+                    <option value="1928">1928</option>
+                    <option value="1929">1929</option>
+                    <option value="1930">1930</option>
+                    <option value="1931">1931</option>
+                    <option value="1932">1932</option>
+                    <option value="1933">1933</option>
+                    <option value="1934">1934</option>
+                    <option value="1935">1935</option>
+                </select>
+            </div>
+            <div class="options">
+                <label>Display : </label>
+                <select id="zoomOfLayout">
+                    <option value="300" selected="selected">very tight</option>
+                    <option value="500">tight</option>
+                    <option value="800">spatious</option>
+                    <option value="1200">very spatious</option>
+                </select>
+            </div>
+            <div class="options">
+                <label>Show labels<button id="onName">yes</button></label>
+            </div>
+            <div class="options">
+                <label>Show empty nodes<button id="emptyNodes">yes</button></label>
+            </div>
+        </div>
+        <div id="view"></div>
+        <footer id="footer2">
+            Force Layout with Mouseover  Labels Mike Bostock. Released under the  <a href="https://opensource.org/licenses/GPL-3.0">GNU General Public License, version 3</a> - Modified by Sviatoslav Drach &amp; Ben Bigalke - <a href="https://bl.ocks.org/mbostock/1212215">Original source</a> </footer>
+    </div>
+</body>
+</html>

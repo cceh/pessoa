@@ -34,6 +34,10 @@ else if (contains($exist:path, "events")) then
         transform:transform((collection("/db/apps/pessoa/data/doc"), collection("/db/apps/pessoa/data/pub"))//tei:TEI, doc("/db/apps/pessoa/xslt/events.xsl"), <parameters><param name="language" value="{$language}"/><param name="basepath" value="{$exist:controller}"></param></parameters>)
 else if ($exist:resource = "tei-odd") then
     doc("/db/apps/pessoa/data/schema/pessoaTEI.html")
+        else if (contains($exist:resource,".json")) then
+                <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+                    <forward url="{$exist:controller}/data/network/{$exist:resource}"/>
+                </dispatch>
 (: Language Notation :)
 else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
@@ -302,6 +306,8 @@ else if (contains($exist:path, "search")) then
             <forward url="{$exist:controller}/modules/view.xql"/>
         </error-handler>
     </dispatch>
+
+
 else if(contains($exist:path, "download")) then 
      <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <forward url="{$exist:controller}/data/{$exist:resource}" />
@@ -343,7 +349,7 @@ else if(contains($exist:path, "download")) then
 			<forward url="{$exist:controller}/error-page.html" method="get"/>
 			<forward url="{$exist:controller}/modules/view.xql"/>
 		</error-handler>
-	</dispatch>) 
+	</dispatch>)
 else
     (: everything else is passed through :)
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
