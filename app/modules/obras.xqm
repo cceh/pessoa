@@ -152,11 +152,12 @@ if(exists($model($ref))) then (
          
         let $refs := for $doc in $docs 
                           let $ref := doc(concat("/db/apps/pessoa/data/doc/",$doc/@doc/data(.),".xml"))
+
                         where $ref//tei:rs[@type = "work" and @key = $data/@id/data(.) and @style=$data/@style/data(.)]
                                             return <item
                                                             doc="{$doc/@doc/data(.)}"
                                                             dir="doc"
-                                                            title="{$ref//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[1]/data(.)}"
+                                                            title="{replace($ref//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[1]/data(.),"/E3","")}"
                                                             jump="{$data}"/>
         let $Arefs := for $a in (1 to (count($refs ) -1)) return $refs[$a]
         let $Brefs := $refs[count($refs)]
