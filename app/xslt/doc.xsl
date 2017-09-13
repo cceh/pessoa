@@ -565,6 +565,65 @@
     </xsl:template>
     
     
+    <!-- einzublendende Pfeile -->
+    <xsl:template match="metamark[@rend = 'arrow-right-curved-up'][@n = '2']"
+        mode="#default deletion addition">
+        <span id="{@xml:id}" class="anchor invisible arrow-right-curvep-up">x</span>
+    </xsl:template>
+    
+    <xsl:template match="metamark[@rend = 'arrow-right-curved-down'][@n = '2']"
+        mode="#default deletion addition">
+        <span id="{@xml:id}" class="anchor invisible arrow-right-curved-down">x</span>
+    </xsl:template>
+    
+    <xsl:template match="metamark[@rend = 'arrow-left-curved-up'][@n = '2']"
+        mode="#default deletion addition">
+        <span id="{@xml:id}" class="anchor invisible arrow-left-curved-up">x</span>
+    </xsl:template>
+    
+    <xsl:template match="metamark[@rend = 'arrow-left-curved-down'][@n = '2']"
+        mode="#default deletion addition">
+        <span id="{@xml:id}" class="anchor invisible arrow-left-curved-down">x</span>
+    </xsl:template>
+    
+    <xsl:template match="metamark[@rend = 'arrow-left-down'][@n = '2']"
+        mode="#default deletion addition">
+        <span id="{@xml:id}" class="anchor invisible arrow-left-down">x</span>
+    </xsl:template>
+    
+    <xsl:template match="metamark[@rend = 'arrow-left-up'][@n = '2']"
+        mode="#default deletion addition">
+        <span id="{@xml:id}" class="anchor invisible arrow-left-up">x</span>
+    </xsl:template>
+    
+    <xsl:template match="metamark[@rend = 'arrow-right-down'][@n = '2']"
+        mode="#default deletion addition">
+        <span id="{@xml:id}" class="anchor invisible arrow-right-down">x</span>
+    </xsl:template>
+    
+    <xsl:template match="metamark[@rend = 'arrow-right-up'][@n = '2']"
+        mode="#default deletion addition">
+        <span id="{@xml:id}" class="anchor invisible arrow-right-up">x</span>
+    </xsl:template>
+    
+    <xsl:template match="metamark[@rend = 'arrow-down'][@n = '2']"
+        mode="#default deletion addition">
+        <span id="{@xml:id}" class="anchor invisible arrow-down">x</span>
+    </xsl:template>
+    
+    <xsl:template match="metamark[@rend = 'arrow-up'][@n = '2']"
+        mode="#default deletion addition">
+        <span id="{@xml:id}" class="anchor invisible arrow-up">x</span>
+    </xsl:template>
+    
+    
+    
+    
+    <xsl:template match="anchor[. = ''][@xml:id]" mode="#default deletion addition">
+        <span id="{@xml:id}" class="anchor invisible">x</span>
+    </xsl:template>
+    
+    
     
     <!-- Choices / Substs -->
     <xsl:template match="choice[seg[@n='1'] and seg[@n='2']]" mode="#default deletion addition" priority="2">

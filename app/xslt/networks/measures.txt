@@ -1,0 +1,34 @@
+CENTRALITY
+---
+degree centrality: The degree centrality for a node v is the fraction of nodes it is connected to.
+---
+closeness centrality: Closeness centrality [1] of a node u is the reciprocal of the sum of the shortest path distances from u to all n-1 other nodes. Since the sum of distances depends on the number of nodes in the graph, closeness is normalized by the sum of minimum possible distances n-1.
+
+C(u) = \frac{n - 1}{\sum_{v=1}^{n-1} d(v, u)},
+
+where d(v, u) is the shortest-path distance between v and u, and n is the number of nodes in the graph.
+Notice that higher values of closeness indicate higher centrality.
+---
+betweenness centrality:
+
+Compute the shortest-path betweenness centrality for nodes.
+
+Betweenness centrality of a node v is the sum of the fraction of all-pairs shortest paths that pass through v:
+
+c_B(v) =\sum_{s,t \in V} \frac{\sigma(s, t|v)}{\sigma(s, t)}
+
+where V is the set of nodes, \sigma(s, t) is the number of shortest (s, t)-paths, and \sigma(s, t|v) is the number of those paths passing through some node v other than s, t. If s = t, \sigma(s, t) = 1, and if v \in {s, t}, \sigma(s, t|v) = 0 [2].
+---
+eigenvector centrality:
+Compute the eigenvector centrality for the graph G.
+
+Eigenvector centrality computes the centrality for a node based on the centrality of its neighbors. The eigenvector centrality for node i is
+
+\mathbf{Ax} = \lambda \mathbf{x}
+
+where A is the adjacency matrix of the graph G with eigenvalue \lambda. By virtue of the Perron–Frobenius theorem, there is a unique and positive solution if \lambda is the largest eigenvalue associated with the eigenvector of the adjacency matrix A ([2]).
+---
+DENSITY
+---
+CLIQUE ANALYSIS
+Clique: Gruppe von mind. 3 Personen, die vollständig miteinander verbunden sind
