@@ -79,6 +79,7 @@
                 <include name="data/webpage.xml"/>
                 <include name="data/lists.xml"/>
                 <include name="data/bibl.xml"/>
+                <include name="controller.xql"/>
             </fileset>
         </xdb:store>
         <xdb:xquery uri="${uri}" queryfile="app/post-redirect.xql" user="${user}" password="${password}"/>

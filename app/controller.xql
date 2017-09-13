@@ -249,9 +249,9 @@ else if (contains($exist:path,"timeline")) then
     </dispatch>
         
  )
- else if (ends-with($exist:resource, ".html") and contains($exist:path,"page/")) then
+ else if (ends-with($exist:resource, ".html") and contains($exist:path, "page/")) then
      <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-                 <forward url="{$exist:controller}/page/{substring-after($exist:path,"page/")}"/>
+        <forward url="{$exist:controller}/page/{substring-after($exist:path, "page/")}"/>
         <view>
             <forward url="{$exist:controller}/modules/view.xql"/>
         </view>
@@ -271,9 +271,17 @@ else if (ends-with($exist:resource, ".html")) then
 			<forward url="{$exist:controller}/modules/view.xql"/>
 		</error-handler>
     </dispatch>
-    else if ( contains($exist:path,"page/") and not(ends-with($exist:resource,".html"))) then
+else if (contains($exist:path, "page/") and not(ends-with($exist:path, "/"))) then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-                 <forward url="{$exist:controller}/page/{substring-after($exist:path,"page/")}.html"/>
+        <redirect url="{$config:webapp-root}/page/{substring-after($exist:path, "page/")}/"/>
+		<error-handler>
+			<forward url="{$exist:controller}/error-page.html" method="get"/>
+			<forward url="{$exist:controller}/modules/view.xql"/>
+		</error-handler>
+    </dispatch>
+else if (contains($exist:path, "page/") and not(ends-with($exist:resource, ".html"))) then
+    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <forward url="{$exist:controller}/page/{substring-before(substring-after($exist:path, "page/"), "/")}.html"/>
         <view>
             <forward url="{$exist:controller}/modules/view.xql"/>
         </view>
