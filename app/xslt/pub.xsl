@@ -117,4 +117,16 @@
         </i>
     </xsl:template>
     
+    <xsl:template match="hi[@rend='bold']">
+        <strong>
+            <xsl:apply-templates/>
+        </strong>
+    </xsl:template>
+    
+    <xsl:template match="lb">
+        <br/>
+    </xsl:template>
+    
+    
+    
 </xsl:stylesheet>
