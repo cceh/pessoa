@@ -13,7 +13,7 @@
     
     
     <xsl:template name="network-years">
-        <xsl:variable name="years" select="for $i in 1916 to 1935 return xs:string($i)"/><!-- 1913 to 1935 -->
+        <xsl:variable name="years" select="for $i in 1913 to 1935 return xs:string($i)"/><!-- 1913 to 1935 -->
         
         <xsl:for-each select="$years">
             <xsl:result-document href="networks/{.}.json">
