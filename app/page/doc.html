@@ -5,7 +5,14 @@
     <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery-ui.min.js"></script>
     <link class="helpers:app-root" rel="stylesheet" href="resources/css/jquery-ui.min.css" type="text/css" />
     <link class="helpers:app-root" rel="stylesheet" href="resources/css/jquery-ui.structure.min.css" type="text/css" />
-    
+
+    <style>
+        .delLine {
+            stroke:black;
+            stroke-width:4;
+        }
+    </style>
+
     <script type="text/javascript">
         $(document).ready(function(){
         
@@ -138,7 +145,6 @@
     <script type="text/javascript">
         $(document).ready(function() {
 
-        jsBlockStrikeThrough();
         calcFacsimilie();
         fixDiv();
         $(window).scroll(fixDiv);

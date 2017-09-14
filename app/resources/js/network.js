@@ -1,6 +1,9 @@
 
 $(document).ready(function() {
 
+
+
+
     $(window).scroll(function(){
         if ($(this).scrollTop() > 100) {
             $('#menue').show();
@@ -18,21 +21,59 @@ $(document).ready(function() {
         else $("#options").hide();
     });
 
-    var BNodes = true;
-    var BNames = true;
-    var select = false;
 
-    $("#emptyNodes").click(function() {
-        if(BNodes == true) { $(this).html("no");  BNodes = false; }
-        else { $(this).html("yes"); BNodes = true; }
+    $("#docu").click(function() {
+        $("#docu-con").css("width","100%");
+    });
+
+    $(".closebtn").click(function() {
+        $("#docu-con").css("width","0%");
+    });
+
+    var BNodes = true,
+     BNames = true,
+     select = false,
+    synopse = false;
+
+    $("#emptyNodes").children("label").change(function() {
+        if(BNodes == true) { BNodes = false; }
+        else { BNodes = true; }
         shownElements();
     });
 
-    $("#onName").click(function() {
-        if(BNames == true) { $(this).html("no"); BNames = false; }
-        else { $(this).html("yes"); BNames = true; }
+    $("#onName").children("label").change(function() {
+        if(BNames == true) {BNames = false; }
+        else {BNames = true; }
         shownElements();
     });
+
+    function synopsing() {
+
+        $("svg").remove();
+        var viewport = $("#viewport");
+
+        var width = viewport.width(),
+            height = screen.availHeight;
+        if(synopse == false) {
+            drawing(width,height,"view");
+        }
+        else {
+            viewport.append("<div id='view2'/>");
+            width = width/2 - 50;
+            drawing(width,height,"view");
+            drawing(width,height,"view2");
+        }
+
+
+    };
+
+    $("#synopse").click(function() {
+        if(synopse == true) {synopse = false; }
+        else {synopse = true; }
+        synopsing();
+    });
+
+
 function innerNet() {
     $(".node").dblclick(function() {
         var source = $(this).attr("source");
@@ -43,6 +84,7 @@ function innerNet() {
             $("circle").hide();
             connectionShown(source,true)
             select = true;
+            shownElements();
         }
         else {
             $(".link").css("stroke","#777");
@@ -67,6 +109,8 @@ function innerNet() {
 
     function shownElements() {
         if(select == false) {
+            $("#emptyNodes").show();
+            $("#onName").show();
             if(BNodes == true) {
                 $(".emptyNode").show();
             }
@@ -82,6 +126,10 @@ function innerNet() {
                 $("text.node").hide();
                 if (BNodes == true) $("text.emptyNode").hide();
             }
+        }
+        else {
+            $("#emptyNodes").hide();
+            $("#onName").hide();
         }
     };
 
@@ -136,39 +184,69 @@ function innerNet() {
             });
     };
 
-/*
-    function innerNet() {
-        var source = $(this).attr("source");
 
-        if(select == false) {
-            $(".link").hide();
-            $("text").hide();
-            $("circle").hide();
-            connectionShown(source,true)
-            select = true;
-        }
-        else {
-            $(".link").css("stroke","#777");
-            select = false;
-            $(".link").show();
-            $("text").show();
-            $("circle").show();
+    function createSliderYear(ele) {
+        var select = $( "#"+ele );
+        var max = select.children("option").length;
+            select.change( function() {
+                yearSelection(select);
 
-            shownElements();
-        }
+            });
+        var slider = $( "<div class='oSlider'></div>" ).insertAfter( select.next() ).slider({
+            min: 1,
+            max: max,
+            range: "min",
+            value: select[ 0 ].selectedIndex + 1,
+            slide: function( event, ui ) {
+                select[ 0 ].selectedIndex = ui.value - 1;
+                yearSelection(select);
+            }
+        });
+        $( "#"+ele ).on( "change", function() {
+            slider.slider( "value", this.selectedIndex + 1 );
+
+        });
+    }
+
+    function createSlider(ele) {
+        var select = $( "#"+ele );
+        var max = select.children("option").length;
+        select.change( function() {
+            synopsing();
+
+        });
+        var slider = $( "<div class='oSlider'></div>" ).insertAfter( select.next() ).slider({
+            min: 1,
+            max: max,
+            range: "min",
+            value: select[ 0 ].selectedIndex + 1,
+            slide: function( event, ui ) {
+                select[ 0 ].selectedIndex = ui.value - 1;
+                synopsing();
+            }
+        });
+        $( "#"+ele ).on( "change", function() {
+            slider.slider( "value", this.selectedIndex + 1 );
+
+        });
+    }
+
+    synopsing();
+    createSlider("zoomOfLayout");
+    createSliderYear("year");
+    createSliderYear("year2");
+    createSliderYear("year3");
+
+    $(".slideBarEnter").click(function() {
+        $(this).next().toggle();
+    });
+
+
+    function yearSelection(el) {
+        $(".yearSelect").removeClass("yearSelect");
+        el.addClass("yearSelect");
+        synopsing();
     };
-*/
-
-    drawing();
-
-    $("#zoomOfLayout").change( function() {
-        $("svg").remove();
-        drawing();
-    });
-    $("#year").change( function() {
-        $("svg").remove();
-        drawing();
-    });
 
 function myColor (chooseColor)
 { switch(chooseColor){
@@ -185,31 +263,31 @@ function classes(size) {
 }
 
 
-function drawing() {
+function drawing(width,height,ank) {
     var myZoom = $("#zoomOfLayout").children("option:selected").attr("value");
-    var year = $("#year").children("option:selected").attr("value");
+    var year = $(".yearSelect").children("option:selected").attr("value");
     var file = "network/"+year+".json";
 
 
     function sizing(size) {
+        if(size == 0) return 2 ;
+        else return  Math.round(Math.log2(size)) +2;
+        /*
         if (year != "network") {
             if (size == 0) return 2
-            else if (size <= 10) return size + 2
-            else if (10 < size < 20) return size + 1
-            else if (size > 20) return size
-            else return size + 2;
+            else return size +2;
         }
         else {
             if(size < 10) return 2
             else return size/10*2;
         }
+        */
     }
 
     //d3
-    var width = 3000,
-        height = 2000;
 
-    var svg = d3.select("#view").append("svg")
+
+    var svg = d3.select("#"+ank).append("svg")
         .attr("width", width)
         .attr("height", height);
 
@@ -312,5 +390,9 @@ function drawing() {
 
 }
 
+
+    $("#options").accordion({
+        heightStyle: "content"
+    });
 
 });

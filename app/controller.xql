@@ -18,6 +18,7 @@ declare variable $exist:prefix external;
 declare variable $exist:root external;
 
 
+
 if ($exist:path eq "/") then 
     (: forward root path to index.xql :)
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
@@ -249,6 +250,18 @@ else if (contains($exist:path,"timeline")) then
     </dispatch>
         
  )
+ else if ( contains($exist:resource, "network") and not(contains($exist:resource,".js"))) then
+                                                    (session:clear(),
+               <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+               <forward url="{$exist:controller}/page/network.html"/>
+               <view>
+                                                            <forward url="{$exist:controller}/modules/view.xql"/>
+                                                        </view>
+                                                        <error-handler>
+                                                            <forward url="{$exist:controller}/error-page.html" method="get"/>
+                                                            <forward url="{$exist:controller}/modules/view.xql"/>
+                                                        </error-handler>
+                                                    </dispatch>)
  else if (ends-with($exist:resource, ".html") and contains($exist:path, "page/")) then
      <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <forward url="{$exist:controller}/page/{substring-after($exist:path, "page/")}"/>
