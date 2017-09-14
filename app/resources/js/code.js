@@ -251,41 +251,8 @@ function ObrasControl() {
             $(this).next("ul").toggle();
             $(this).toggleClass("selected");
         });
-/*
-        $("div.Obras-SubNav").next("div").css("display","block");
-        
-        $("div.Obras-WorkName").click(function() {
-            $(this).nextAll("div").toggle("blind","slow");
-            
-            if(!$(this).hasClass("selected")) {
-                $(this).addClass("selected");
-            }
-            else {
-                $(this).removeClass("selected");
-            }
-        });
-        
-        $("div.Obras-SubNav").click(function() {
-            $(this).next("div").children("div").toggle("blind","slow");
-            
-            if(!$(this).hasClass("selected")) {
-                $(this).addClass("selected");
-            }
-            else {
-                $(this).removeClass("selected");
-            }
-           
-        });
-*/
-        
-        /*
-        $("a.down").click(function(){
-            $(this).toggleClass("LinkSelected");
-         //   $(this).next("a").toggleClass("clink-show");
-            $(this).next("span").toggle("blind","slow");
-        });
-        */
     };
+
 
 function drawArrowsEach() {
     $('#svg1').remove();
@@ -319,29 +286,68 @@ function drawArrowsEach() {
         svg.setAttribute('style', 'position:absolute; top:0px; left:0px; width:'+w+'px; height:'+h+'px; display:block; z-index:0;');
         svg.setAttribute('id','svg1');
 
-    for(var i = 1; $('#M'+i).index() != -1;i++) drawArrows(svg,("M"+i),("A"+i),anker.top,anker.left)
+    jsBlockStrikeThrough(svg,anker.top,anker.left,w,h);
+    for(var i = 1; $('#M'+i).index() != -1;i++) drawArrows(svg,("M"+i),("A"+i),anker.top,anker.left);
 
     a.append(svg);
 
 
+
 };
-  
+
+function jsBlockStrikeThrough(svg,t,l,w,h) {
+    var svgNS = svg.namespaceURI;
+    var span = $(".delSpan");
+
+     span.each( function() {
+         var el = $(this).offset();
+         var x1 = el.left - l +5;
+         var y1 = el.top - t;
+         var x2 = w;
+         var y2 = h;
+         var line1 = document.createElementNS(svgNS,'line');
+                 line1.setAttribute("x1",x1);
+                 line1.setAttribute("y1",y1);
+                 line1.setAttribute("x2",x2);
+                 line1.setAttribute("y2",y2);
+                line1.setAttribute("class","delLine");
+
+             svg.appendChild(line1);
+
+         var line2 = document.createElementNS(svgNS,'line');
+                 line2.setAttribute("x1",x2);
+                 line2.setAttribute("y1",y1);
+                 line2.setAttribute("x2",x1);
+                 line2.setAttribute("y2",y2);
+                 line2.setAttribute("class","delLine");
+                 svg.appendChild(line2);
+     })
+
+
+}
+
+
     function drawArrows(svg,el1,el2,t,l) {
         var svgNS = svg.namespaceURI;
 
+        el1 = $("#"+el1);
+        el2 = $("#"+el2);
+        var direction = el1.attr("class");
+        var  a = pathMove(direction.substring(17,direction.length));
 
-        var el1 = $("#"+el1).offset();
+
+        el1 = el1.offset();
         var x1 = el1.left - l +5;
         var y1 = el1.top - t;
 
-        var el2 = $("#"+el2).offset();
+        el2 = el2.offset();
         var x2 = el2.left - l + 10;
         var y2 = el2.top - t;
         var path = document.createElementNS(svgNS,'path');
-        path.setAttribute('d', 'M ' + x1 + ' ' + y1 + ' A 10 10 0 1 1 ' + x2 + ' ' + y2);
-        path.setAttribute('stroke', '#000000');
-        path.setAttribute('fill', 'transparent');
-        path.setAttribute('marker-end', 'url(#arr1)');
+                    path.setAttribute('d', 'M ' + x1 + ' ' + y1 + ' A '+ a + x2 + ' ' + y2);
+                    path.setAttribute('stroke', '#000000');
+                    path.setAttribute('fill', 'transparent');
+                    path.setAttribute('marker-end', 'url(#arr1)');
 
         svg.appendChild(path);
     
@@ -349,3 +355,22 @@ function drawArrowsEach() {
         
         };
     
+
+    function pathMove(direction) {
+        var a = "";
+        switch(direction) {
+            case "arrow-right-curved-up": case "arrow-right-curvep-up": a = "10 10 0 1 0"; break; //  geht von unten nach oben, nach rechts gekrümmt)
+            case "arrow-right-curved-down":  a = "10 10 0 1 1"; break; // (= geht von oben nach unten, nach rechts gekrümmt)
+            case "arrow-left-curved-up":  a = "10 10 0 1 1"; break; // (=geht von unten nach oben, nach links gekrümmt)
+            case "arrow-left-curved-down":  a = "10 10 0 1 0"; break;// (=geht von oben nach unten, nach links gekrümmt)
+            case "arrow-left-down":    //(=nach links ausgerichteter Pfeil, der gerade, nicht gekrümmt, nach unten geht)
+            case "arrow-left-up":   //(=nach links ausgerichteter Pfeil, der gerade nach oben geht)
+            case "arrow-right-down":   // (=nach rechts ausgerichteter Pfeil, der gerade nach unten geht)
+            case "arrow-right-up":   //(=nach rechts ausgerichteter Pfeil, der gerade nach oben geht)
+            case "arrow-up":  //(=Pfeil, der gerade nach oben geht, ohne links oder rechts; vermutlich sind die gerade Pfeile technisch alle gleich zu behandeln, halt von A nach B ohne Krümmung, im TEI macht die Unterscheidung aber noch inhaltlich Sinn)
+            case "arrow-down":  a = "0 0 0 1 1"; break; //(=Pfeil, der gerade nach unten geht)
+            default: return a = "10 10 0 1 1";break;
+
+        }
+        return a;
+    }

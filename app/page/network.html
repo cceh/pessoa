@@ -67,7 +67,7 @@
             cursor:pointer;
         }
 
-        #menue:hover {
+        #menue:hover, .slideBarEnter:hover {
             color:#08298A;
         }
 
@@ -75,66 +75,305 @@
             position: fixed;
             left:50px;
         }
-        #footer2 a {
+        .shown div {
+
+            float:none;
+        }
+        a {
             color:#08298A;
+            cursor:pointer;
+        }
+        a:hover {
+            color: #990000;
+        }
+        .options{
+            float:left;
+        }
+
+        #options h3 {
+            width: 300px;
+            margin-left: 10px;
+            color: #fff;
+            background-color: #990000 !important;
+            cursor:pointer;
+        }
+
+
+
+        .oSlider {
+            background-color:grey;
+            display: none;
+            margin:5px 2px;
+        }
+        .oSlider span {
+            background-color:red;
+            cursor:pointer !important;
+        }
+        .oSlider div {
+            background-color:lightgrey;
+        }
+        .slideBarEnter {
+            display:none;
+            font-size:20px;
+            color:#990000;
+            cursor:pointer;
+        }
+        .shown .slideBarEnter {
+            display:inline-block;
+
+        }
+
+        /* The switch - the box around the slider */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width:32px;
+            height: 20px;
+
+            margin-bottom:0 !important;
+        }
+
+        /* Hide default HTML checkbox */
+        .switch input {display:none;}
+
+        /* The slider */
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 13px;
+            width: 13px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(13px);
+            -ms-transform: translateX(13px);
+            transform: translateX(13px);
+        }
+        .overlay {
+            height: 100%;
+            width: 0;
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            background-color: rgb(0,0,0); /* Black fallback color */
+            background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+            overflow-x: hidden; /* Disable horizontal scroll */
+            transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+        }
+        .overlay-content {
+            position: relative;
+            top: 25%; /* 25% from the top */
+            width: 100%; /* 100% width */
+            text-align: center; /* Centered text/links */
+            margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+            color:white;
+        }
+        /* The navigation links inside the overlay */
+        .overlay a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: #818181;
+            display: block; /* Display block instead of inline */
+            transition: 0.3s; /* Transition effects on hover (color) */
+        }
+
+        /* When you mouse over the navigation links, change their color */
+        .overlay a:hover, .overlay a:focus {
+            color: #f1f1f1;
+        }
+
+        /* Position the close button (top right corner) */
+        .overlay .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+        }
+
+        #viewport {
+            width:100%;
+        }
+
+        #viewport div {
+            float:left;
+            border:1px solid;
+            margin:5px 10px;
+        }
+        .clear {
+            clear:both;
         }
     </style>
 </head>
 <body>
     <div id="network" class="content">
-        <span style="font-size:28px;margin-right:250px;">Pessoa network</span>
+        <span style="font-size:28px;margin-right:250px;">
+            <get data-template="helpers:singleElementInList" data-template-type="network" data-template-id="network-title"/>
+        </span>
+
         <div id="menue">
             <i class="glyphicon glyphicon-menu-hamburger"/>
         </div>
         <div id="options">
-            <div class="options">
-                <label>Year selection: </label>
-                <select id="year">
-                    <option value="network" selected="selected">all</option>
-                    <option value="1913">1913</option>
-                    <option value="1914">1914</option>
-                    <option value="1915">1915</option>
-                    <option value="1916">1916</option>
-                    <option value="1917">1917</option>
-                    <option value="1918">1918</option>
-                    <option value="1919">1919</option>
-                    <option value="1920">1920</option>
-                    <option value="1921">1921</option>
-                    <option value="1922">1922</option>
-                    <option value="1923">1923</option>
-                    <option value="1924">1924</option>
-                    <option value="1925">1925</option>
-                    <option value="1926">1926</option>
-                    <option value="1927">1927</option>
-                    <option value="1928">1928</option>
-                    <option value="1929">1929</option>
-                    <option value="1930">1930</option>
-                    <option value="1931">1931</option>
-                    <option value="1932">1932</option>
-                    <option value="1933">1933</option>
-                    <option value="1934">1934</option>
-                    <option value="1935">1935</option>
-                </select>
+            <h3>Year Selection</h3>
+            <div>
+                <div class="options">
+                    <label> <get data-template="helpers:singleElementInList" data-template-type="network" data-template-id="option-years"/> : </label>
+                    <select id="year" class="yearSelect">
+                        <option value="network" selected="selected">all</option>
+                        <option value="1913">1913</option>
+                        <option value="1914">1914</option>
+                        <option value="1915">1915</option>
+                        <option value="1916">1916</option>
+                        <option value="1917">1917</option>
+                        <option value="1918">1918</option>
+                        <option value="1919">1919</option>
+                        <option value="1920">1920</option>
+                        <option value="1921">1921</option>
+                        <option value="1922">1922</option>
+                        <option value="1923">1923</option>
+                        <option value="1924">1924</option>
+                        <option value="1925">1925</option>
+                        <option value="1926">1926</option>
+                        <option value="1927">1927</option>
+                        <option value="1928">1928</option>
+                        <option value="1929">1929</option>
+                        <option value="1930">1930</option>
+                        <option value="1931">1931</option>
+                        <option value="1932">1932</option>
+                        <option value="1933">1933</option>
+                        <option value="1934">1934</option>
+                        <option value="1935">1935</option>
+                    </select>
+                    <span class="slideBarEnter">
+                        <i class="glyphicon glyphicon-option-vertical"/>
+                    </span>
+                </div>
+                <div class="options">
+                    <label> <get data-template="helpers:singleElementInList" data-template-type="network" data-template-id="option-periodization-1"/> : </label>
+                    <select id="year2">
+                        <option value="1913-1918">1913 - 1918</option>
+                        <option value="1919-1927">1919 - 1927</option>
+                        <option value="1928-1935">1928 - 1935</option>
+                    </select>
+                    <span class="slideBarEnter">
+                        <i class="glyphicon glyphicon-option-vertical"/>
+                    </span>
+                </div>
+                <div class="options">
+                    <label> <get data-template="helpers:singleElementInList" data-template-type="network" data-template-id="option-periodization-2"/> : </label>
+                    <select id="year3">
+                        <option value="1913-1915">1913 - 1915</option>
+                        <option value="1916-1919">1916 - 1919</option>
+                        <option value="1920-1927">1920 - 1927</option>
+                        <option value="1928-1935">1928 - 1935</option>
+                    </select>
+                    <span class="slideBarEnter">
+                        <i class="glyphicon glyphicon-option-vertical"/>
+                    </span>
+                </div>
             </div>
-            <div class="options">
-                <label>Display : </label>
-                <select id="zoomOfLayout">
-                    <option value="300" selected="selected">very tight</option>
-                    <option value="500">tight</option>
-                    <option value="800">spatious</option>
-                    <option value="1200">very spatious</option>
-                </select>
-            </div>
-            <div class="options">
-                <label>Show labels<button id="onName">yes</button></label>
-            </div>
-            <div class="options">
-                <label>Show empty nodes<button id="emptyNodes">yes</button></label>
+            <h3>View Options</h3>
+            <div>
+                <div class="options">
+                    <label>
+                        <get data-template="helpers:singleElementInList" data-template-type="network" data-template-id="option-display"/> :
+                    </label>
+                    <select id="zoomOfLayout">
+                        <option value="300" selected="selected">
+                            <get data-template="helpers:singleElementInList" data-template-type="network" data-template-id="option-display-very-tight"/>
+                        </option>
+                        <option value="500">
+                            <get data-template="helpers:singleElementInList" data-template-type="network" data-template-id="option-display-tight"/>
+                        </option>
+                        <option value="800">
+                            <get data-template="helpers:singleElementInList" data-template-type="network" data-template-id="option-display-spatious"/>
+                        </option>
+                        <option value="1200">
+                            <get data-template="helpers:singleElementInList" data-template-type="network" data-template-id="option-display-very-spatious"/>
+                            </option>
+                    </select>
+                    <div class="slideBarEnter">
+                        <i class="glyphicon glyphicon-option-vertical"/>
+                    </div>
+                </div>
+                <div class="options">
+                    <label id="onName">
+                        <label class="switch" >
+                            <input type="checkbox" checked="checked"/>
+                            <span class="slider"></span>
+                        </label>
+                        <get data-template="helpers:singleElementInList" data-template-type="network" data-template-id="option-labels"/>
+                    </label>
+                </div>
+                <div class="options">
+                    <label id="emptyNodes">
+                        <label class="switch">
+                            <input type="checkbox" checked="checked"/>
+                            <span class="slider"></span>
+                        </label>
+                        <get data-template="helpers:singleElementInList" data-template-type="network" data-template-id="option-empty-nodes"/>
+                    </label>
+                </div>
+                <div class="options">
+                    <a id="docu">
+                        <span>
+                            <get data-template="helpers:singleElementInList" data-template-type="network" data-template-id="option-documentation"/>
+                        </span>
+                    </a>
+                </div>
+                <div class="options">
+                    <a id="synopse">
+                    <span>
+                        Synopse
+                    </span>
+                    </a>
+                </div>
             </div>
         </div>
-        <div id="view"></div>
+
+
+        <div id="viewport">
+            <div id="view"></div>
+
+        </div>
+        <div class="clear"/>
         <footer id="footer2">
-            Force Layout with Mouseover  Labels Mike Bostock. Released under the  <a href="https://opensource.org/licenses/GPL-3.0">GNU General Public License, version 3</a> - Modified by Sviatoslav Drach &amp; Ben Bigalke - <a href="https://bl.ocks.org/mbostock/1212215">Original source</a> </footer>
+            Force Layout with Mouseover  Labels Mike Bostock. Released under the  <a href="https://opensource.org/licenses/GPL-3.0">GNU General Public License, version 3</a> - Modified by Sviatoslav Drach &amp; Ben Bigalke - <a href="https://bl.ocks.org/mbostock/1212215">Original source</a>
+        </footer>
+    </div>
+    <div id="docu-con" class="overlay">
+        <a class="closebtn">X</a>
+        <div class="overlay-content" >
+            <p>
+                <i class="app:MultiPage?xmlid=network-documentation"/></p>
+        </div>
     </div>
 </body>
 </html>
