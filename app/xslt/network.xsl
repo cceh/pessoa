@@ -6,14 +6,14 @@
 
     <xsl:template match="/">
         
-        <!--<xsl:call-template name="network-all"/>-->
-        <xsl:call-template name="network-years"/>
+        <xsl:call-template name="network-all"/>
+        <!--<xsl:call-template name="network-years"/>-->
         
     </xsl:template>
     
     
     <xsl:template name="network-years">
-        <xsl:variable name="years" select="for $i in 1913 to 1935 return xs:string($i)"/><!-- 1913 to 1935 -->
+        <xsl:variable name="years" select="for $i in 1921 to 1935 return xs:string($i)"/><!-- 1913 to 1935 -->
         
         <xsl:for-each select="$years">
             <xsl:result-document href="networks/{.}.json">
