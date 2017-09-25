@@ -1,24 +1,27 @@
 
 $(document).ready(function() {
 
-
-
+/*
 
     $(window).scroll(function(){
+        var options = $("#options");
         if ($(this).scrollTop() > 100) {
             $('#menue').show();
-            if(!$("#options").hasClass("shown")) $('#options').hide();
+            options.removeClass("onTop")
+            options.addClass("onLeft");
+            if(!options.hasClass("shown")) options.hide();
         } else {
             $('#menue').hide();
-            $('#options').show();
-            $('#options').removeClass("shown");
+
+            options.show();
+            options.removeClass("onLeft");
+            options.addClass("onTop");
+
         }
     });
-
+*/
     $("#menue").click(function() {
-       $("#options").toggleClass("shown");
-       if($("#options").hasClass("shown")) $("#options").show();
-        else $("#options").hide();
+       $("#options").toggle();
     });
 
 
@@ -31,9 +34,12 @@ $(document).ready(function() {
     });
 
     var BNodes = true,
-     BNames = true,
-     select = false,
-    synopse = false;
+        BNames = true,
+        select = false,
+        synopse = false;
+
+    if($("#emptyNodes").children().children().prop("checked"))  BNodes = true; else  BNodes = false;
+    if($("#onName").children().children().prop("checked"))  BNames = true; else  BNames = false;
 
     $("#emptyNodes").children("label").change(function() {
         if(BNodes == true) { BNodes = false; }
@@ -50,10 +56,14 @@ $(document).ready(function() {
     function synopsing() {
 
         $("svg").remove();
+        /*
         var viewport = $("#viewport");
 
         var width = viewport.width(),
             height = screen.availHeight;
+            */
+        var width = 3000,
+            height = 2000;
         if(synopse == false) {
             drawing(width,height,"view");
         }
@@ -109,8 +119,8 @@ function innerNet() {
 
     function shownElements() {
         if(select == false) {
-            $("#emptyNodes").show();
-            $("#onName").show();
+            $("#emptyNodes").parent().show();
+            $("#onName").parent().show();
             if(BNodes == true) {
                 $(".emptyNode").show();
             }
@@ -128,8 +138,8 @@ function innerNet() {
             }
         }
         else {
-            $("#emptyNodes").hide();
-            $("#onName").hide();
+            $("#emptyNodes").parent().hide();
+            $("#onName").parent().hide();
         }
     };
 
@@ -187,12 +197,14 @@ function innerNet() {
 
     function createSliderYear(ele) {
         var select = $( "#"+ele );
-        var max = select.children("option").length;
-            select.change( function() {
-                yearSelection(select);
+        select.change( function() {
+            yearSelection(select);
 
-            });
-        var slider = $( "<div class='oSlider'></div>" ).insertAfter( select.next() ).slider({
+        });
+        /*
+        var max = select.children("option").length;
+
+        var slider = $( "<div class='oSlider'></div>" ).insertAfter( select ).slider({
             min: 1,
             max: max,
             range: "min",
@@ -206,16 +218,24 @@ function innerNet() {
             slider.slider( "value", this.selectedIndex + 1 );
 
         });
+        */
+        $(".yearSelectionButton").click(function() {
+            $(".yearSelect").removeClass("yearSelect");
+            $(this).parent().addClass("yearSelect");
+
+        });
     }
 
     function createSlider(ele) {
         var select = $( "#"+ele );
-        var max = select.children("option").length;
         select.change( function() {
             synopsing();
 
         });
-        var slider = $( "<div class='oSlider'></div>" ).insertAfter( select.next() ).slider({
+        /*
+        var max = select.children("option").length;
+
+        var slider = $( "<div class='oSlider'></div>" ).insertAfter( select ).slider({
             min: 1,
             max: max,
             range: "min",
@@ -229,9 +249,11 @@ function innerNet() {
             slider.slider( "value", this.selectedIndex + 1 );
 
         });
+        */
     }
 
     synopsing();
+
     createSlider("zoomOfLayout");
     createSliderYear("year");
     createSliderYear("year2");
@@ -243,8 +265,6 @@ function innerNet() {
 
 
     function yearSelection(el) {
-        $(".yearSelect").removeClass("yearSelect");
-        el.addClass("yearSelect");
         synopsing();
     };
 
@@ -265,23 +285,13 @@ function classes(size) {
 
 function drawing(width,height,ank) {
     var myZoom = $("#zoomOfLayout").children("option:selected").attr("value");
-    var year = $(".yearSelect").children("option:selected").attr("value");
+    var year = $(".yearSelect").children("select").children("option:selected").attr("value");
     var file = "network/"+year+".json";
 
 
     function sizing(size) {
         if(size == 0) return 2 ;
         else return  Math.round(Math.log2(size)) +2;
-        /*
-        if (year != "network") {
-            if (size == 0) return 2
-            else return size +2;
-        }
-        else {
-            if(size < 10) return 2
-            else return size/10*2;
-        }
-        */
     }
 
     //d3
@@ -388,11 +398,37 @@ function drawing(width,height,ank) {
 
     };
 
+    $("#fullscreen").click(function(){
+        fullscreen();
+    });
+
+
+
+    function fullscreen() {
+        $("#view").addClass("fullscreen");
+        $("svg").remove();
+        var zooom = 1;
+         var viewport = $("#viewport");
+
+         var width = viewport.width(),
+            height = screen.availHeight;
+         drawing(width,height,"view");
+
+        $(".fullscreen").mousewheel(function() {
+            zooom = zooom +0.1;
+            zoomView(zooom)
+        });
+        $(".fullscreen").unmousewheel(function() {
+            zooom = zooom - 0.1;
+            zoomView(zooom)
+        });
+        function zoomView(zooom) {
+            $(".fullscreen").children("svg").css("transform", "scale(" + zooom + ")");
+        };
+    };
+
 }
 
 
-    $("#options").accordion({
-        heightStyle: "content"
-    });
 
 });

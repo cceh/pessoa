@@ -250,7 +250,7 @@ else if (contains($exist:path,"timeline")) then
     </dispatch>
         
  )
- else if ( contains($exist:resource, "network") and not(contains($exist:resource,".js"))) then
+ else if ( contains($exist:resource, "network") and not(contains($exist:resource,".js")) and not(contains($exist:resource,".css"))) then
                                                     (session:clear(),
                <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
                <forward url="{$exist:controller}/page/network.html"/>

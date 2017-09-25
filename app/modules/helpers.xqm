@@ -155,3 +155,12 @@ declare function helpers:index-of-node
     for $seq in (1 to count($nodes))
     return $seq[$nodes[$seq] is $nodeToFind]
 } ;
+
+declare function helpers:switchLang($node as node(), $model as map(*)) {
+    let $request-path := if($config:request-path != "") then $config:request-path else "index.html"
+    let $page :=     if(contains($config:request-path,concat("/",$helpers:web-language,"/"))) then substring-after($request-path,concat("/",$helpers:web-language,"/")) else substring-after($request-path,"pessoa//")
+
+    return <script>
+            function switchlang(value){{location.href="{$helpers:app-root}/"+value+"/{$page}";}}
+        </script>
+};
