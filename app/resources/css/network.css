@@ -1,0 +1,297 @@
+.link {
+    stroke: #777;
+    stroke-opacity: 0.3;
+}
+
+
+circle.emptyNode {
+    z-index:0;
+    opacity: 0.2;
+}
+
+text.emptyNode{
+    opacity: 0.2;
+    font-style: italic;
+    cursor:default;
+}
+
+circle.node {
+    stroke-width: 3.5px;
+    cursor:pointer;
+    z-index:1;
+}
+
+text {
+    z-index:0;
+    font: 10px sans-serif;
+}
+
+circle.node:hover {
+    fill: #990000;
+
+}
+text.node {
+    cursor:pointer;
+}
+text.node:hover {
+    display: inline !important;
+}
+
+.cell {
+    fill: none;
+    pointer-events: all;
+}
+#title {
+    margin-left:20px;
+}
+
+#menue {
+    position: fixed;
+    display:block;
+    left:25px;
+    font-size:23px;
+    color:#990000;
+    cursor:pointer;
+    z-index:2;
+}
+
+#menue:hover, .slideBarEnter:hover {
+    color:#08298A;
+}
+
+.onLeft {
+    position: fixed;
+    left:50px;
+    min-width:280px;
+}
+.shown div {
+
+    float:none;
+}
+a, #onName, #emptyNodes {
+    color:#08298A;
+    cursor:pointer;
+}
+a:hover, #onName:hover, #emptyNodes:hover {
+    color: #990000;
+}
+
+#options a {
+    font-weight:700;
+}
+#options {
+    margin-left:10px;
+    z-index: 2;
+}
+
+.onTop > div {
+    float:left;
+    margin:5px 15px;
+}
+
+#lang {
+    margin-left:10px;
+}
+
+#options select, #options label > label {
+    position:absolute;
+    right:0px;
+}
+
+#years label, #onName, #emptyNodes {
+    cursor:pointer;
+
+}
+
+
+
+#years label:hover {
+    color:#08298A;
+}
+
+.yearSelect label {
+    color:#990000 !important;
+}
+#years label {
+    color:grey;
+}
+
+#years select, #years .oSlider  {
+    display:none;
+}
+
+#years .yearSelect select  {
+    display:inline-block;
+}
+#years .yearSelect .oSlider {
+    display: block;
+}
+
+.options {
+    height: 30px;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    padding: 1px 0px;
+}
+
+/** Slider **/
+
+.oSlider {
+    background-color:#08298A;
+    display: block;
+    margin:5px 2px;
+}
+.oSlider span {
+    background-color:#990000;
+    cursor:pointer !important;
+}
+.oSlider div {
+    background-color: #0841f3;
+}
+/*
+.slideBarEnter {
+    display:none;
+    font-size:20px;
+    color:#990000;
+    cursor:pointer;
+}
+*/
+/*
+.onTop .slideBarEnter, .onTop .oSlider {
+    display:none !important;
+}
+*/
+
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width:22px;
+    height: 16px;
+
+    margin-bottom:0 !important;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* Slider Buttons */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 9px;
+    width: 9px;
+    left: 2px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #990000;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #990000;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    transform: translateX(10px);
+}
+
+/** Doku Ansicht **/
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 3; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+.overlay-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+    color:white;
+}
+/* The navigation links inside the overlay */
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+#viewport {
+    width:100%;
+    height:100%;
+    display:block;
+}
+
+#viewport div {
+    float:left;
+    margin:5px 10px;
+}
+.clear {
+    clear:both;
+}
+
+#title h3 {
+    font-size:28px;margin-right:250px;
+}
+#title h4 {
+    font-size:12px;
+}
+
+.fullscreen {
+    position:fixed;
+    display:block;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    background-color:white;
+    z-index:1;
+}
+
+.fullscreen svg {
+    overflow:auto !important;
+}
