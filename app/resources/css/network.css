@@ -43,6 +43,7 @@ text.node:hover {
 }
 #title {
     margin-left:20px;
+    margin-bottom:40px;
 }
 
 #menue {
@@ -95,7 +96,7 @@ a:hover, #onName:hover, #emptyNodes:hover {
 
 #options select, #options label > label {
     position:absolute;
-    right:0px;
+    right:-10px;
 }
 
 #years label, #onName, #emptyNodes {
@@ -231,21 +232,40 @@ input:checked + .slider:before {
 }
 .overlay-content {
     position: relative;
-    top: 25%; /* 25% from the top */
-    width: 100%; /* 100% width */
-    text-align: center; /* Centered text/links */
+    top: 15%; /* 25% from the top */
+    width: 50%; /* 100% width */
+    text-align: left; /* Centered text/links */
     margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
     color:white;
+    margin: 0 auto 15% auto;
 }
 /* The navigation links inside the overlay */
 .overlay a {
-    padding: 8px;
+    padding: 0px;
     text-decoration: none;
-    font-size: 36px;
-    color: #818181;
-    display: block; /* Display block instead of inline */
+    font-size: inherit;
+    color: #99ccff;
+    font-weight: bold;
+    display: inline; /* Display block instead of inline */
     transition: 0.3s; /* Transition effects on hover (color) */
 }
+
+.overlay .figure {
+    text-align: center;
+    margin: 20px;
+}
+.overlay p.figure-desc {
+    width: 60%;
+    font-size: 9pt;
+    margin: 10px auto;
+}
+.overlay h4 {
+    margin: 20px 0;
+}
+.overlay p.trailer {
+    margin: 40px 0;
+}
+
 
 /* When you mouse over the navigation links, change their color */
 .overlay a:hover, .overlay a:focus {

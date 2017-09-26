@@ -55,32 +55,14 @@
         <xdb:xquery uri="${uri}" queryfile="app/pre-install.xql" user="${user}" password="${password}"/>
         <xdb:store uri="${uri}" createcollection="true" createsubcollections="true" user="${user}" password="${password}">
             <fileset dir="./app/">
-                <!--<include name="**/*.*"/>
+                <include name="**/*.*"/>
                 <exclude name="build/"/>
                 <exclude name="modules/admin.xqm"/>
                 <exclude name="**/*.properties"/>
                 <exclude name="**/*.tmpl"/>
                 <exclude name="**/*.md"/>
                 <exclude name="*.xpr"/>
-                <exclude name="**/.gitignore"/>-->
-                <!-- temporär -->
-                <include name="data/doc/*.xml"/>
-                <include name="data/pub/*.xml"/>
-                <include name="data/network/*.json"/>
-                <include name="SUCHE_doc-collection.xconf"/>
-                <include name="SUCHE_pub-collection.xconf"/>
-                <include name="resources/css/style.css"/>
-                <include name="xslt/doc.xsl"/>
-                <include name="xslt/doc-edited.xsl"/>
-                <include name="xslt/doc-var1.xsl"/>
-                <include name="xslt/doc-var2.xsl"/>
-                <include name="xslt/bibl.xsl"/>
-                <include name="xslt/pub.xsl"/>
-                <include name="resources/js/code.js"/>
-                <include name="data/webpage.xml"/>
-                <include name="data/lists.xml"/>
-                <include name="data/bibl.xml"/>
-                <include name="controller.xql"/>
+                <exclude name="**/.gitignore"/>
             </fileset>
         </xdb:store>
         <xdb:xquery uri="${uri}" queryfile="app/post-redirect.xql" user="${user}" password="${password}"/>

@@ -46,13 +46,34 @@
                     <xsl:attribute name="width" select="@width"/>
                 </xsl:if>
             </img>
+            <xsl:if test="desc">
+                <p class="figure-desc"><xsl:apply-templates select="desc"/></p>
+            </xsl:if>
         </div>
     </xsl:template>
 
-    <xsl:template match="head">
+    <xsl:template match="body/div/head">
         <h1>
             <xsl:apply-templates/>
         </h1>
+    </xsl:template>
+    
+    <xsl:template match="body/div/div/head">
+        <h2>
+            <xsl:apply-templates/>
+        </h2>
+    </xsl:template>
+    
+    <xsl:template match="body/div/div/div/head">
+        <h3>
+            <xsl:apply-templates/>
+        </h3>
+    </xsl:template>
+    
+    <xsl:template match="body/div/div/div/div/head">
+        <h4>
+            <xsl:apply-templates/>
+        </h4>
     </xsl:template>
 
     <xsl:template match="head[@type = 'sub']">
@@ -78,17 +99,31 @@
         </li>
     </xsl:template>
 
-    <xsl:template match="label[not(ancestor::list[@type = 'ordered'])]">
+    <xsl:template match="label[not(ancestor::list[@type = 'ordered'])][not(ancestor::text[@xml:id='network-documentation'])]">
         <seg style="display: inline-block; width: 40px;">
             <xsl:apply-templates/>
         </seg>
     </xsl:template>
+    
+    <xsl:template match="label[ancestor::text[@xml:id='network-documentation']]">
+        <p>
+            <strong><xsl:apply-templates/></strong>
+        </p>
+    </xsl:template>
+    
     <xsl:template match="label[ancestor::list[@type = 'ordered']]"/>
+
 
     <xsl:template match="seg[@rend = 'smaller']">
         <span style="font-size: smaller;">
             <xsl:apply-templates/>
         </span>
+    </xsl:template>
+    
+    <xsl:template match="seg[@rend = 'bold']">
+        <strong>
+            <xsl:apply-templates/>
+        </strong>
     </xsl:template>
 
     <xsl:template match="seg[@rend = 'italic']">
@@ -103,6 +138,12 @@
 
     <xsl:template match="p">
         <p>
+            <xsl:apply-templates/>
+        </p>
+    </xsl:template>
+    
+    <xsl:template match="trailer">
+        <p class="trailer">
             <xsl:apply-templates/>
         </p>
     </xsl:template>
