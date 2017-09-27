@@ -18,6 +18,21 @@ declare variable $exist:prefix external;
 declare variable $exist:root external;
 
 
+declare function local:login() as xs:boolean {
+    let $loginuser := request:get-parameter('user',())
+    let $loginpassword := request:get-parameter('pass',())
+    return
+        if ($loginuser and $loginpassword) then
+            xmldb:login('/db',$loginuser,$loginpassword)
+        else
+            false()
+};
+
+declare function local:logged-in() as xs:boolean {
+    if (xmldb:get-user-groups(xmldb:get-current-user()) = ("pessoa") ) then true() else false()
+};
+
+(:#### Der öffentlich zugängliche Bereich:)
 
 if ($exist:path eq "/") then 
     (: forward root path to index.xql :)
@@ -29,16 +44,6 @@ else if ( $exist:path eq "") then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <redirect url="pessoa/{$helpers:web-language}/index.html"/>
     </dispatch>
-else if (contains($exist:path, "events")) then
-    let $language := $helpers:web-language
-    return 
-        transform:transform((collection("/db/apps/pessoa/data/doc"), collection("/db/apps/pessoa/data/pub"))//tei:TEI, doc("/db/apps/pessoa/xslt/events.xsl"), <parameters><param name="language" value="{$language}"/><param name="basepath" value="{$exist:controller}"></param></parameters>)
-else if ($exist:resource = "tei-odd") then
-    doc("/db/apps/pessoa/data/schema/pessoaTEI.html")
-        else if (contains($exist:resource,".json")) then
-                <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-                    <forward url="{$exist:controller}/data/network/{$exist:resource}"/>
-                </dispatch>
 (: Language Notation :)
 else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
@@ -48,6 +53,57 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
         </view>
     </dispatch>   
     (:    return doc:get-text-pessoal(<node />, map {"test" := "test"}, $id, $lb, $abbr, $version):)
+     else if ( (contains($exist:resource, "network") or contains($exist:path,"network"))
+                and not(helpers:contains-any-of($exist:resource,(".js",".css",".json")))) then
+         (session:clear(),
+               <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+               <forward url="{$exist:controller}/page/network.html"/>
+               <view>
+                   <forward url="{$exist:controller}/modules/view.xql"/>
+               </view>
+               <error-handler>
+                   <forward url="{$exist:controller}/error-page.html" method="get"/>
+                   <forward url="{$exist:controller}/modules/view.xql"/>
+               </error-handler>
+               </dispatch>)
+    else if (contains($exist:resource,".json")) then
+                <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+                    <forward url="{$exist:controller}/data/network/{$exist:resource}"/>
+                </dispatch>
+    else if(contains($exist:resource,"logout")) then(
+                  let $logout :=  xmldb:login("/db","guest","guest")
+                      return
+                          (  session:invalidate(),
+                    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+                        <redirect url="index.html"/>
+                    </dispatch>
+                          )
+                )
+    else if(contains($exist:resource,"login")) then (
+                        if(local:login()) then
+                            if(local:logged-in()) then
+                            <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+                                <redirect url="index.html"/>
+                            </dispatch>
+                            else
+                                <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+                                <redirect url="index.html"/>
+                            </dispatch>
+                        else
+                            <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+                                <redirect url="index.html"/>
+                            </dispatch>
+                    )
+
+
+ else if(local:logged-in()) then (
+  if (contains($exist:path, "events")) then
+    let $language := $helpers:web-language
+    return
+        transform:transform((collection("/db/apps/pessoa/data/doc"), collection("/db/apps/pessoa/data/pub"))//tei:TEI, doc("/db/apps/pessoa/xslt/events.xsl"), <parameters><param name="language" value="{$language}"/><param name="basepath" value="{$exist:controller}"></param></parameters>)
+else if ($exist:resource = "tei-odd") then
+    doc("/db/apps/pessoa/data/schema/pessoaTEI.html")
+
 else if (contains($exist:path,  "/doc/")) then
     if ($exist:resource = "xml") then
     let $id := substring-before(substring-after($exist:path, "/doc/"), "/xml")
@@ -250,18 +306,7 @@ else if (contains($exist:path,"timeline")) then
     </dispatch>
         
  )
- else if ( contains($exist:resource, "network") and not(contains($exist:resource,".js")) and not(contains($exist:resource,".css"))) then
-                                                    (session:clear(),
-               <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-               <forward url="{$exist:controller}/page/network.html"/>
-               <view>
-                                                            <forward url="{$exist:controller}/modules/view.xql"/>
-                                                        </view>
-                                                        <error-handler>
-                                                            <forward url="{$exist:controller}/error-page.html" method="get"/>
-                                                            <forward url="{$exist:controller}/modules/view.xql"/>
-                                                        </error-handler>
-                                                    </dispatch>)
+
  else if (ends-with($exist:resource, ".html") and contains($exist:path, "page/")) then
      <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <forward url="{$exist:controller}/page/{substring-after($exist:path, "page/")}"/>
@@ -304,12 +349,7 @@ else if (contains($exist:path, "page/") and not(ends-with($exist:resource, ".htm
 		</error-handler>
     </dispatch>
 (: Resource paths starting with $shared are loaded from the shared-resources app :)
-else if (contains($exist:path, "/$shared/")) then
-    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-        <forward url="{$exist:controller}/../shared-resources/{substring-after($exist:path, '/$shared/')}">
-            <set-header name="Cache-Control" value="max-age=3600, must-revalidate"/>
-        </forward>
-    </dispatch>
+
     (:Suche:)
 else if (contains($exist:path, "search")) then
     if(request:get-parameter("orderBy", '') != "" ) 
@@ -327,8 +367,6 @@ else if (contains($exist:path, "search")) then
             <forward url="{$exist:controller}/modules/view.xql"/>
         </error-handler>
     </dispatch>
-
-
 else if(contains($exist:path, "download")) then 
      <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <forward url="{$exist:controller}/data/{$exist:resource}" />
@@ -371,8 +409,25 @@ else if(contains($exist:path, "download")) then
 			<forward url="{$exist:controller}/modules/view.xql"/>
 		</error-handler>
 	</dispatch>)
-else
-    (: everything else is passed through :)
+                                                          else (: everything else is passed through :)
+                                                              <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+                                                                  <cache-control cache="yes"/>
+                                                              </dispatch>
+)
+  else if (contains($exist:path, "/$shared/")) then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-        <cache-control cache="yes"/>
+        <forward url="{$exist:controller}/../shared-resources/{substring-after($exist:path, '/$shared/')}">
+            <set-header name="Cache-Control" value="max-age=3600, must-revalidate"/>
+        </forward>
+    </dispatch>
+    else if(contains($exist:path,"resources")) then
+                                    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+                                        <cache-control cache="yes"/>
+                                    </dispatch>
+else
+
+    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+    <!--    <redirect url="/exist/apps/{$exist:controller}/{$helpers:web-language}/index.html?l=f"/>
+-->
+        <redirect url="{$config:webapp-root}/{$helpers:web-language}/index.html?l=f"/>
     </dispatch>

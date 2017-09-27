@@ -164,3 +164,9 @@ declare function helpers:switchLang($node as node(), $model as map(*)) {
             function switchlang(value){{location.href="{$helpers:app-root}/"+value+"/{$page}";}}
         </script>
 };
+
+declare function helpers:contains-any-of( $arg as xs:string?, $searchStrings as xs:string* )  as xs:boolean {
+
+    some $searchString in $searchStrings
+    satisfies contains($arg,$searchString)
+} ;

@@ -108,3 +108,10 @@ declare function config:app-info($node as node(), $model as map(*)) {
             </tr>
         </table>
 };
+
+declare function config:showUser($node as node(), $model as map(*)) {
+    ( xmldb:get-current-user(),
+    request:get-parameter("login","none")
+    )
+
+};

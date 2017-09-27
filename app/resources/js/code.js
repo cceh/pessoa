@@ -1,5 +1,8 @@
 /*"autores","documentos","publicacoes","genero","cronologia","bibliografia","projeto" */
 $(document).ready(function(){
+
+
+    if(GetURLParameter('l') == "f") $('#login-modal').modal('show');
             $("ul#navi_elements li.mainNavTab").click(function() {
                 if(!$(this).hasClass("active")) {
                     $("ul#navi_elements li.active").removeClass("active");
@@ -374,3 +377,13 @@ function jsBlockStrikeThrough(svg,t,l,w,h) {
         }
         return a;
     }
+    function GetURLParameter(sParam){
+        var sPageURL = window.location.search.substring(1);
+        var sURLVariables = sPageURL.split('&');
+        for (var i = 0; i < sURLVariables.length; i++) {
+            var sParameterName = sURLVariables[i].split('=');
+            if (sParameterName[0] == sParam) {
+                return sParameterName[1];
+            }
+        }
+            }
