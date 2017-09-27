@@ -25,6 +25,12 @@ gulp.task('copy', function() {
 		   	.pipe(gulp.dest(buildDest))
 });
 
+gulp.task('copy-net', function() {
+    return gulp.src(["network/" + '**/*',"!**/data/**/*.xml"])
+        .pipe(newer("build-network/"))
+        .pipe(gulp.dest("build-network/"))
+});
+
 gulp.task('build', ['copy']);
 
 
@@ -69,6 +75,15 @@ gulp.task('local-upload', ['build'], function() {
 			target: "/db/apps/pessoa",
 			permissions: permissions
 		}));
+});
+gulp.task('network-upload', ['copy-net'], function() {
+
+    return gulp.src("build-network/" + '**/*', {base: "build-network/"})
+        .pipe(localExist.newer({target: "/db/apps/pessoa/"}))
+        .pipe(localExist.dest({
+            target: "/db/apps/pessoa",
+            permissions: permissions
+        }));
 });
 
 gulp.task('local-upload-data', function() {
@@ -167,6 +182,15 @@ gulp.task('watch-main', function() {
 	.pipe(plumber())
 	.pipe(localExist.dest({target: "/db/apps/pessoa"}))
 });
+gulp.task('watch-network', function() {
+    return watch("build-network/", {
+        ignoreInitial: true,
+        base: "build-network/",
+        name: 'Network Watcher'
+    })
+        .pipe(plumber())
+        .pipe(localExist.dest({target: "/db/apps/pessoa"}))
+});
 
 gulp.task('watch-copy', function() {
 	gulp.watch([
@@ -174,6 +198,12 @@ gulp.task('watch-copy', function() {
 				], ['copy']);
 });
 
-
+gulp.task('watch-copy-net', function() {
+    gulp.watch([
+        "network/" + '**/*'
+    ], ['copy-net']);
+});
 
 gulp.task('watch', ['watch-copy', 'watch-main']);
+
+gulp.task('watch-net', ['watch-copy-net', 'watch-network']);
