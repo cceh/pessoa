@@ -95,6 +95,9 @@
 
     <xsl:template match="item">
         <li>
+            <xsl:if test="@xml:id">
+                <xsl:attribute name="id" select="@xml:id"/>
+            </xsl:if>
             <xsl:apply-templates/>
         </li>
     </xsl:template>
