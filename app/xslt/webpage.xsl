@@ -76,7 +76,7 @@
         </h4>
     </xsl:template>
 
-    <xsl:template match="head[@type = 'sub']">
+    <xsl:template match="head[@type = 'sub' and preceding-sibling::head]" priority="1">
         <h3>
             <xsl:apply-templates/>
         </h3>
