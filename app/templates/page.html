@@ -64,7 +64,55 @@
                 <img  src="resources/images/pessoa2.jpg" class="helpers:app-root header-image"/>
                 <img  src="resources/images/pessoa2.jpg" class="helpers:app-root header-image"/>
             </div>
-            <div id="navi" class="page:construct"/>
+          <!--  <div id="navi" class="page:construct"/>
+            -->
+            <div id="navi">
+                <map data-template="page:construct">
+                    <div id="NAVI_main">
+                        <ul id="NAVI_elements">
+                            <each data-template="helpers:invisibleEach" data-template-from="sites" data-template-to="misc">
+                                <li class="NAVI_mainNavTab" data-template="page:catchSiteHead" data-template-container="misc" active="1">
+                                        <map data-template="helpers:createValueMap" data-template-container="misc" data-template-key="sub" data-template-name="sub1">
+                                            <div>
+                                                <ul class="NAVI_subNav">
+                                                    <each data-template="helpers:invisibleEach" data-template-from="sub1" data-template-to="tsc">
+                                                        <li class="NAVI_subNavTab" data-template="page:catchSiteHead" data-template-container="tsc" active="2">
+                                                            <map data-template="helpers:createValueMap" data-template-container="tsc" data-template-key="sub" data-template-name="sub2">
+                                                                <div>
+                                                                    <ul class="NAVI_thirdNav">
+                                                                        <each data-template="helpers:invisibleEach" data-template-from="sub2" data-template-to="tsh">
+                                                                            <li class="NAVI_thirdNavTab" data-template="page:catchSiteHead" data-template-container="tsh" active="3">
+                                                                                <map data-template="helpers:createValueMap" data-template-container="tsh" data-template-key="sub" data-template-name="sub3">
+                                                                                    <div>
+                                                                                        <ul class="NAVI_quadNav">
+                                                                                            <each data-template="helpers:invisibleEach" data-template-from="sub3" data-template-to="tsd">
+                                                                                                <li class="NAVI_quadNavTab" data-template="page:catchSiteHead" data-template-container="tsd"></li>
+                                                                                            </each>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </map>
+                                                                            </li>
+                                                                        </each>
+                                                                    </ul>
+                                                                </div>
+                                                            </map>
+                                                        </li>
+                                                    </each>
+
+                                                </ul>
+                                            </div>
+                                        </map>
+                                </li>
+                            </each>
+                            <li>
+                                <a href="#" class="glyphicon glyphicon-search" id="search_button" role="tab" data-toggle="tab"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </map>
+                    <get data-template="page:construct_search"/>
+
+            </div>
             <div class="clear"/>
             <div id="content" class="container"/>
             <div class="whiteBorder ScrollToTop">

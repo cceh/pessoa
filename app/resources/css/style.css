@@ -214,9 +214,8 @@ label{
 
 /* Navigation */
 
-.mainNavTab
+.NAVI_mainNavTab
 {
-    cursor: pointer; 
 }
 
 #navi{
@@ -229,6 +228,16 @@ label{
  position: relative;
 }
 
+#NAVI_elements div {
+    width:824px;
+    background: #990000;
+    display:none;
+    position:absolute;
+    left:0px;
+}
+#navi span {
+    cursor:pointer;
+}
 .nav-cont{
 list-style: none; 
 display: inline-block;
@@ -239,19 +248,121 @@ display: inline-block;
      font-size: 15px;
     }
 
-#navi_elements{
+#NAVI_elements{
         padding:0px 0px 7px 9px;    
         z-index:1;          
 }
-    #navi_elements li{
-        color: #fff; 
+#NAVI_elements li {
+    color: #fff;
+    display: inline-block;
+}
+    #NAVI_elements > li{
+        color: #fff;
         display: inline-block;
         padding: 16px 10px 6px 9px;
         font-size: 16px; 
     }
-    
-/*Details der Navi*/
+.NAVI_mainNavTab.active1 > span {
+    text-decoration: underline;
+}
+.NAVI_mainNavTab > span:hover {
+    text-decoration: underline;
+}
+.NAVI_mainNavTab.active1 > div {
+    display:block;
+}
 
+.NAVI_subNav {
+    background: #222;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    width:100%;
+}
+
+
+.NAVI_subNavTab {
+    padding: 3px 3px;
+    margin:0 auto;
+}
+.NAVI_subNavTab > span , .NAVI_subNavTab > a > span{
+    width:100%;
+    padding:3px 10px;
+
+}
+.NAVI_subNavTab > span:hover, .NAVI_subNavTab > a > span:hover {
+    background-color: #4E4E4E;
+}
+
+.NAVI_subNavTab.active2 > span {
+    background-color: #4E4E4E;
+    text-decoration: underline;
+}
+
+.NAVI_subNavTab.active2 > div {
+    display:block;
+}
+
+.NAVI_thirdNav {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    width:100%;
+}
+
+.NAVI_thirdNavTab {
+    text-align:center;
+    min-width:18%;
+}
+.NAVI_quadNavTab {
+    min-width:18%;
+}
+.NAVI_thirdNavTab > span , .NAVI_thirdNavTab > a > span {
+    background: #222;
+    margin:3px 5px;
+    display:inline-block;
+    padding:5px;
+    text-align:center;
+    width:100%;
+}
+.NAVI_thirdNavTab > span:hover, .NAVI_thirdNavTab > a > span:hover {
+    background-color: #4E4E4E;
+}
+
+.NAVI_thirdNavTab.active3 > span {
+    background-color: #4E4E4E;
+    text-decoration: underline;
+}
+
+.NAVI_thirdNavTab.active3 > div {
+    display:block;
+}
+
+.NAVI_quadNavTab > span , .NAVI_quadNavTab > a > span {
+    background: #222;
+    margin:3px 5px;
+    display:inline-block;
+    padding:5px;
+    text-align:center;
+    width:100%;
+}
+.NAVI_quadNavTab > span:hover, .NAVI_quadNavTab > a > span:hover {
+    background-color: #4E4E4E;
+}
+
+#searchbox > a {
+    display:block;
+}
+
+.restricted {
+    color:grey !important;
+}
+.restricted > span {
+    cursor: not-allowed !important;
+}
+.restricted > span:hover {
+
+}
+/*Details der Navi*/
+/*
 .nav_tabs{
     background-color: #222;
     text-decoration:none;
@@ -331,7 +442,7 @@ display: inline-block;
     background-color: #4E4E4E  !important;
     text-decoration:none;
     }
-
+*/
 .doc_nav {
 background-color:green;
     

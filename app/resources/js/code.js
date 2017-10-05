@@ -3,7 +3,64 @@ $(document).ready(function(){
 
 
     if(GetURLParameter('l') == "f") $('#login-modal').modal('show');
-            $("ul#navi_elements li.mainNavTab").click(function() {
+
+    $(".button").children("span").click(function() {
+        var par = $(this).parent();
+        var acN = par.attr("active");
+        var active = "active"+acN;
+        var chil = par.children("div");
+        if(!par.hasClass(active)) {
+            for(var i = acN; i <= 3; i++) {
+                var actC = "active"+i;
+                var act = $("."+actC);
+                act.children("div").hide();
+                act.removeClass(actC);
+            }
+            par.addClass(active);
+            chil.show();
+        }
+        else {
+            $("."+active).children("div").hide();
+            $("."+active).removeClass(active);
+        }
+    });
+
+    /*
+
+        $("ul#NAVI_elements li.NAVI_mainNavTab.button").children("span").click(function() {
+
+           if(!$(this).parent().hasClass("active")) {
+
+               $(".active").children("div").hide();
+               $(".active").removeClass("active");
+               $(".active2").children("div").hide();
+               $(".active2").removeClass("active2");
+               $(this).parent().addClass("active");
+               $(this).parent().children("div").show();
+           }
+           else {
+               $(".active").children("div").hide();
+               $(".active").removeClass("active");
+               $(".active2").children("div").hide();
+               $(".active2").removeClass("active2");
+           }
+        });
+    $("li.NAVI_subNavTab.button").children("span").click(function() {
+        if(!$(this).parent().hasClass("active2")) {
+            $(".active2").children("div").hide();
+            $(".active2").removeClass("active2");
+            $(this).parent().addClass("active2");
+            $(this).parent().children("div").show();
+        }
+        else {
+            $(".active2").children("div").hide();
+            $(".active2").removeClass("active2");
+
+        }
+    });
+    */
+
+        /*    $("ul#navi_elements li.mainNavTab").click(function() {
                 if(!$(this).hasClass("active")) {
                     $("ul#navi_elements li.active").removeClass("active");
                     $(this).addClass("active");
@@ -52,7 +109,7 @@ $(document).ready(function(){
                 }
                 
                 
-        });
+        });*/
                    
                    
                    

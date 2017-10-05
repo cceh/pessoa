@@ -32,127 +32,146 @@
             </list>
             <!-- ################# NAVIGATION ######################## -->
             <list type="navigation">
-                <item>
-                    <term xml:lang="pt" xml:id="autores">Autores</term>
-                    <term xml:lang="en" corresp="#autores">Authors</term>
-                    <term xml:lang="de" corresp="#autores">Autoren</term>
+                <item xml:id="autores" published="false" type="button" corresp="authors" dir="author">
+                    <term xml:lang="pt">Autores</term>
+                    <term xml:lang="en">Authors</term>
+                    <term xml:lang="de">Autoren</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="documentos">Documentos</term>
-                    <term xml:lang="en" corresp="#documentos">Documents</term>
-                    <term xml:lang="de" corresp="#documentos">Dokumente</term>
+                <item xml:id="documentos" published="false" type="button" linked="doclist">
+                    <term xml:lang="pt">Documentos</term>
+                    <term xml:lang="en">Documents</term>
+                    <term xml:lang="de">Dokumente</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="publicacoes">Publicações</term>
-                    <term xml:lang="en" corresp="#publicacoes">Publications</term>
-                    <term xml:lang="de" corresp="#publicacoes">Publikationen</term>
+                <item xml:id="publicacoes" published="true" type="button" linked="doclist">
+                    <term xml:lang="pt">Publicações</term>
+                    <term xml:lang="en">Publications</term>
+                    <term xml:lang="de">Publikationen</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="obras">Obras</term>
-                    <term xml:lang="en" corresp="#obras">Works</term>
-                    <term xml:lang="de" corresp="#obras">Werke</term>
+                <item xml:id="obras" published="false" type="button" linked="works" dir="obras">
+                    <term xml:lang="pt">Obras</term>
+                    <term xml:lang="en">Works</term>
+                    <term xml:lang="de">Werke</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="genero">Géneros</term>
-                    <term xml:lang="en" corresp="#genero">Genres</term>
-                    <term xml:lang="de" corresp="#genero">Genres</term>
+                <item xml:id="genero" published="false"  type="button" corresp="genres" dir="genre">
+                    <term xml:lang="pt">Géneros</term>
+                    <term xml:lang="en">Genres</term>
+                    <term xml:lang="de">Genres</term>
                     <!-- einzelne Genres siehe oben list type genres -->
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="cronologia">Cronologia</term>
-                    <term xml:lang="en" corresp="#cronologia">Chronology</term>
-                    <term xml:lang="de" corresp="#cronologia">Chronologie</term>
+                <item xml:id="cronologia" published="false" type="button">
+                    <term xml:lang="pt">Cronologia</term>
+                    <term xml:lang="en">Chronology</term>
+                    <term xml:lang="de">Chronologie</term>
                     <list type="cronologia">
-                        <item>
-                            <term xml:lang="pt" xml:id="timeline">Linha do tempo</term>
-                            <term xml:lang="en" corresp="#timeline">Timeline</term>
-                            <term xml:lang="de" corresp="#timeline">Zeitleiste</term>
+                        <item xml:id="D13_15" published="false" type="button" corresp="date">
+                            <term xml:lang="pt">1913-1915</term>
+                            <term xml:lang="en">1913-1915</term>
+                            <term xml:lang="de">1913-1915</term>
+                        </item>
+                        <item xml:id="D16_19" published="false" type="button" corresp="date">
+                            <term xml:lang="pt">1916-1919</term>
+                            <term xml:lang="en">1916-1919</term>
+                            <term xml:lang="de">1916-1919</term>
+                        </item>
+                        <item xml:id="D20_27" published="false" type="button" corresp="date">
+                            <term xml:lang="pt">1920-1927</term>
+                            <term xml:lang="en">1920-1927</term>
+                            <term xml:lang="de">1920-1927</term>
+                        </item>
+                        <item xml:id="D28_35" published="false" type="button" corresp="date">
+                            <term xml:lang="pt">1927-1935</term>
+                            <term xml:lang="en">1927-1935</term>
+                            <term xml:lang="de">1927-1935</term>
+                        </item>
+                        <item xml:id="timeline" published="false" type="link">
+                            <term xml:lang="pt">Linha do tempo</term>
+                            <term xml:lang="en">Timeline</term>
+                            <term xml:lang="de">Zeitleiste</term>
                         </item>
                     </list>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="index">Índices</term>
-                    <term xml:lang="en" corresp="#index">Indexes</term>
-                    <term xml:lang="de" corresp="#index">Indices</term>
+                <item xml:id="index" published="false" type="button">
+                    <term xml:lang="pt">Índices</term>
+                    <term xml:lang="en">Indexes</term>
+                    <term xml:lang="de">Indices</term>
                     <list type="index">
-                        <item>
-                            <term xml:lang="pt" xml:id="bibliografia">Bibliografia</term>
-                            <term xml:lang="en" corresp="#bibliografia">Bibliography</term>
-                            <term xml:lang="de" corresp="#bibliografia">Bilbiographie</term>
+                        <item xml:id="bibliografia" published="false" type="button">
+                            <term xml:lang="pt">Bibliografia</term>
+                            <term xml:lang="en">Bibliography</term>
+                            <term xml:lang="de">Bilbiographie</term>
                             <list type="bibliografia">
-                                <item>
-                                    <term xml:lang="pt" xml:id="bib1">Obras de Fernando
+                                <item xml:id="bib1" published="false" type="link" dir="bibliografia" >
+                                    <term xml:lang="pt">Obras de Fernando
                                         Pessoa</term>
-                                    <term xml:lang="en" corresp="#bib1">Works of Fernando
+                                    <term xml:lang="en">Works of Fernando
                                         Pessoa</term>
-                                    <term xml:lang="de" corresp="#bib1">Werke von Fernando
-                                        Pessoa</term>
-                                </item>
-                                <item>
-                                    <term xml:lang="pt" xml:id="bib2">Sobre a obra de Fernando
-                                        Pessoa</term>
-                                    <term xml:lang="en" corresp="#bib2">About the work of Fernando
-                                        Pessoa</term>
-                                    <term xml:lang="de" corresp="#bib2">Über das Werk von Fernando
+                                    <term xml:lang="de">Werke von Fernando
                                         Pessoa</term>
                                 </item>
-                                <item>
-                                    <term xml:lang="pt" xml:id="bib3">Outras fontes da obra de
+                                <item  xml:id="bib2" published="false" type="link" dir="bibliografia">
+                                    <term xml:lang="pt">Sobre a obra de Fernando
+                                        Pessoa</term>
+                                    <term xml:lang="en">About the work of Fernando
+                                        Pessoa</term>
+                                    <term xml:lang="de">Über das Werk von Fernando
+                                        Pessoa</term>
+                                </item>
+                                <item  xml:id="bib3" published="false" type="link" dir="bibliografia">
+                                    <term xml:lang="pt">Outras fontes da obra de
                                         Fernando Pessoa</term>
-                                    <term xml:lang="en" corresp="#bib3">Other sources of the work of
+                                    <term xml:lang="en">Other sources of the work of
                                         Fernando Pessoa</term>
-                                    <term xml:lang="de" corresp="#bib3">Andere Quellen zum Werk von
+                                    <term xml:lang="de">Andere Quellen zum Werk von
                                         Fernando Pessoa</term>
                                 </item>
                             </list>
                         </item>
-                        <item>
-                            <term xml:lang="pt" xml:id="names">Nomes</term>
-                            <term xml:lang="en" corresp="#names">Names</term>
-                            <term xml:lang="de" corresp="#names">Namen</term>
+                        <item xml:id="names" published="false" type="link" dir="page">
+                            <term xml:lang="pt">Nomes</term>
+                            <term xml:lang="en">Names</term>
+                            <term xml:lang="de">Namen</term>
                         </item>
-                        <item>
-                            <term xml:lang="pt" xml:id="titles">Títulos</term>
-                            <term xml:lang="en" corresp="#titles">Titles</term>
-                            <term xml:lang="de" corresp="#titles">Titel</term>
+                        <item xml:id="titles" published="false" type="link" dir="page">
+                            <term xml:lang="pt">Títulos</term>
+                            <term xml:lang="en">Titles</term>
+                            <term xml:lang="de">Titel</term>
                         </item>
-                        <item>
-                            <term xml:lang="pt" xml:id="periodicals">Periódicos</term>
-                            <term xml:lang="en" corresp="#periodicals">Periodicals</term>
-                            <term xml:lang="de" corresp="#periodicals">Zeitschriften</term>
+                        <item xml:id="periodicals" published="false" type="link" dir="page">
+                            <term xml:lang="pt">Periódicos</term>
+                            <term xml:lang="en">Periodicals</term>
+                            <term xml:lang="de">Zeitschriften</term>
                         </item>
                     </list>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="projeto">Projeto</term>
-                    <term xml:lang="en" corresp="#projeto">Project</term>
-                    <term xml:lang="de" corresp="#projeto">Projekt</term>
+                <item  xml:id="projeto" published="true" type="button">
+                    <term xml:lang="pt">Projeto</term>
+                    <term xml:lang="en">Project</term>
+                    <term xml:lang="de">Projekt</term>
                     <list type="projeto">
-                        <item>
-                            <term xml:lang="pt" xml:id="about">Sobre o projeto</term>
-                            <term xml:lang="en" corresp="#about">About</term>
-                            <term xml:lang="de" corresp="#about">Über das Projekt</term>
+                        <item xml:id="about" published="true" type="link" dir="page">
+                            <term xml:lang="pt">Sobre o projeto</term>
+                            <term xml:lang="en">About</term>
+                            <term xml:lang="de">Über das Projekt</term>
                         </item>
-                        <item>
-                            <term xml:lang="pt" xml:id="team">Equipa</term>
-                            <term xml:lang="en" corresp="#team">Team</term>
-                            <term xml:lang="de" corresp="#team">Team</term>
+                        <item xml:id="team" published="true" type="link" dir="page">
+                            <term xml:lang="pt">Equipa</term>
+                            <term xml:lang="en">Team</term>
+                            <term xml:lang="de">Team</term>
                         </item>
-                        <item>
-                            <term xml:lang="pt" xml:id="documentation">Documentação</term>
-                            <term xml:lang="en" corresp="#documentation">Documentation</term>
-                            <term xml:lang="de" corresp="#documentation">Dokumentation</term>
+                        <item xml:id="documentation" published="true" type="link" dir="page">
+                            <term xml:lang="pt">Documentação</term>
+                            <term xml:lang="en">Documentation</term>
+                            <term xml:lang="de">Dokumentation</term>
                         </item>
-                        <item>
-                            <term xml:lang="pt" xml:id="dissemination">Disseminação</term>
-                            <term xml:lang="en" corresp="#dissemination">Dissemination</term>
-                            <term xml:lang="de" corresp="#dissemination">Publikationen &amp;
-                                Vorträge</term>
+                        <item xml:id="dissemination" published="true" type="link" dir="page">
+                            <term xml:lang="pt" >Disseminação</term>
+                            <term xml:lang="en">Dissemination</term>
+                            <term xml:lang="de">Publikationen &amp; Vorträge</term>
                         </item>
-                        <item>
-                            <term xml:lang="pt" xml:id="download">Downloads</term>
-                            <term xml:lang="en" corresp="#download">Downloads</term>
-                            <term xml:lang="de" corresp="#download">Downloads</term>
+                        <item xml:id="download" published="true" type="link" dir="page">
+                            <term xml:lang="pt">Downloads</term>
+                            <term xml:lang="en">Downloads</term>
+                            <term xml:lang="de">Downloads</term>
                         </item>
                     </list>
                 </item>
@@ -258,12 +277,35 @@
             </list>
 
             <!-- ############## GENRES ###################### -->
-            <list type="genres" xml:lang="pt">
+            <list type="genres">
+                <item xml:id="lista_editorial">
+                    <term xml:lang="pt">Lista editorial</term>
+                    <term xml:lang="en">Editorial list</term>
+                    <term xml:lang="de">Editorische Liste</term>
+                </item>
+                <item xml:id="nota_editorial">
+                    <term xml:lang="pt">Nota editorial</term>
+                    <term xml:lang="en">Editorial note</term>
+                    <term xml:lang="de">Editorische Notiz</term>
+                </item>
+                <item xml:id="plano_editorial">
+                    <term xml:lang="pt">Plano editorial</term>
+                    <term xml:lang="en">Editorial plan</term>
+                    <term xml:lang="de">Editorischer Plan</term>
+                </item>
+                <item xml:id="poesia">
+                    <term xml:lang="pt">Poesia</term>
+                    <term xml:lang="en">Poetry</term>
+                    <term xml:lang="de">Dichtung</term>
+                </item>
+            </list>
+            <!--
+            <list type="genres" xml:lang="pt">-->
                 <!-- géneros de documentos e publicaçoes -->
                 <!-- <item xml:id="carta">Carta</item>
                 <item xml:id="diario">Diário</item>
                 <item xml:id="ensaio">Ensaio</item> Diese bitte erstmal ganz rausnehmen! -->
-                <item xml:id="lista_editorial">Lista editorial</item>
+         <!--       <item xml:id="lista_editorial">Lista editorial</item>
                 <item xml:id="nota_editorial">Nota editorial</item>
                 <item xml:id="plano_editorial">Plano editorial</item>
                 <item xml:id="poesia">Poesia</item>
@@ -280,6 +322,7 @@
                 <item corresp="#plano_editorial">Editorischer Plan</item>
                 <item corresp="#poesia">Dichtung</item>
             </list>
+            -->
             <list type="language" xml:lang="pt">
                 <item xml:id="pt">Português</item>
                 <item xml:id="en">Inglês</item>
@@ -476,6 +519,10 @@
                     <term xml:lang="de">Erstellt von Ben Bigalke, Sviatoslav Drach, Ulrike
                         Henny-Krahmer, Pedro Sepúlveda und Christian Theisen. Köln / Lissabon / Würzburg
                         2017.</term>
+                </item>
+                <item xml:id="navigation">
+                    <term xml:lang="en">Options</term>
+                    <term xml:lang="de">Optionen</term>
                 </item>
                 <item xml:id="network-options">
                     <term xml:lang="en">Network options</term>

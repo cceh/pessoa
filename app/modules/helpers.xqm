@@ -69,7 +69,22 @@ declare function helpers:copy-all-class($node as node()) {
 declare function helpers:getValue($node as node(), $model as map(*), $get as xs:string) {
         $model($get)
 };
+declare function helpers:getValueMap($node as node(), $model as map(*),$container as xs:string,$key as xs:string) {
 
+    $model($container)($key)
+};
+
+declare function helpers:createValueMap($node as node(), $model as map(*), $container as xs:string, $key as xs:string,$name as xs:string) {
+    if(exists($model($container)) and exists($model($container)($key))) then
+    map:new(($model, map:entry($name, $model($container)($key))))
+    else()
+};
+
+declare function helpers:createValueMapEach($node as node(), $model as map(*), $container as xs:string, $key as xs:string,$name as xs:string) {
+    for $item in $model($container)($key)
+    return
+        templates:process($node/node(),map:new(($model, map:entry($name, $item))))
+};
 (:~
  : Eine each Funktion zur Verwendung in views, identisch mit templates:each, 
  : aber ohne %templates:wrap Annotation, also ohne zusätzliches umschließendes
@@ -144,6 +159,11 @@ declare function helpers:singleElementList_xquery($type as xs:string,$id as xs:s
 };
 
 declare function helpers:singleElementInList($node as node(), $model as map(*), $type as xs:string, $id as xs:string) as xs:string?{
+    doc('/db/apps/pessoa/data/lists.xml')//tei:list[@type = $type]/tei:item[@xml:id=$id]/tei:term[@xml:lang = $helpers:web-language]/data(.)
+
+};
+
+declare function helpers:singleElementInList_xQuery($type as xs:string, $id as xs:string) as xs:string?{
     doc('/db/apps/pessoa/data/lists.xml')//tei:list[@type = $type]/tei:item[@xml:id=$id]/tei:term[@xml:lang = $helpers:web-language]/data(.)
 
 };

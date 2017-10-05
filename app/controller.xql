@@ -331,7 +331,10 @@ else if (ends-with($exist:resource, ".html")) then
     </dispatch>
 else if (contains($exist:path, "page/") and not(ends-with($exist:path, "/"))) then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-        <redirect url="{$config:webapp-root}/page/{substring-after($exist:path, "page/")}/"/>
+        <forward url="{$exist:controller}/page/{substring-after($exist:path, "page/")}.html"/>
+        <view>
+            <forward url="{$exist:controller}/modules/view.xql"/>
+        </view>
 		<error-handler>
 			<forward url="{$exist:controller}/error-page.html" method="get"/>
 			<forward url="{$exist:controller}/modules/view.xql"/>
