@@ -63,7 +63,7 @@ text.node:hover {
 .onLeft {
     position: fixed;
     left:50px;
-    min-width:280px;
+    min-width:300px;
 }
 .shown div {
 
@@ -83,6 +83,16 @@ a:hover, #onName:hover, #emptyNodes:hover {
 #options {
     margin-left:10px;
     z-index: 2;
+    background-color:rgba(210,210,210,0.2);
+    padding: 5px 10px;
+    margin-top: 30px;
+}
+
+#menue > h3 {
+    margin-top: 3px;
+    margin-left: 15px;
+    font-size:22px;
+    float:right;
 }
 
 .onTop > div {
@@ -96,7 +106,7 @@ a:hover, #onName:hover, #emptyNodes:hover {
 
 #options select, #options label > label {
     position:absolute;
-    right:-10px;
+    right:5px;
 }
 
 #years label, #onName, #emptyNodes {
@@ -129,10 +139,14 @@ a:hover, #onName:hover, #emptyNodes:hover {
 }
 
 .options {
-    height: 30px;
+    height: 35px;
     margin-top: 3px;
-    margin-bottom: 5px;
     padding: 1px 0px;
+    border-bottom:1px solid #d5d5d5;
+}
+
+#links .options:nth-last-child(1) {
+    border-bottom:none;
 }
 
 /** Slider **/

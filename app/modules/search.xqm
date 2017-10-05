@@ -380,7 +380,7 @@ declare %templates:wrap function search:your_search($node as node(), $model as m
                             case("lang") return if($param != "" ) then  if(count(search:get-parameters("lang")) != 3) then (page:singleElement_xquery("search","language"), page:singleElementList_xquery("language",$param)) else () else ()
                             case("lang_ao") return if($param != "") then if(count(search:get-parameters("lang")) != 3) then (page:singleElement_xquery("search","language"), page:singleElement_xquery("search",$param)) else () else ()
                             case("role") return (page:singleElement_xquery("roles","mentioned-as"),page:singleElement_xquery("roles",$param))
-                            case("genre") return (page:singleElement_xquery("search","genre") , page:singleElementList_xquery("genres",$param))
+                            case("genre") return (page:singleElement_xquery("search","genre") , helpers:singleElementInList_xQuery("genres",$param))
                             case("person") return (page:singleElement_xquery("search","authors") ,doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson[@type="authors"]/tei:person[@xml:id=$param]/tei:persName/data(.))
                             case("term") return if($param != "") then (page:singleElement_xquery("search","term"),$param) else ()
                             case("release") return if($param != "") then (page:singleElement_xquery("search","publicado"),  (if($param="all") then  page:singleElement_xquery("search",$param) 
@@ -457,7 +457,7 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
                 </div>
                     <div class="selection" id="se_genre">
                         <select class="selectsearch" name="genre" size="7" multiple="multiple">
-                        {page:createOption("genres",("lista_editorial","nota_editorial","plano_editorial","poesia"),$doc)}
+                        {page:createOption_new("genres",("lista_editorial","nota_editorial","plano_editorial","poesia"),$doc)}
                         </select>
                         <p class="small_text">{page:singleAttribute($doc,"search","multiple_entries")}</p>
                     </div>

@@ -43,7 +43,7 @@ declare function author:getTabs($node as node(), $model as map(*), $textType as 
 
 
 declare function author:getTabContent($node as node(), $model as map(*), $textType, $author, $orderBy) {
-    let $authorKey := if($author = "pessoa") then "FP" else if($author ="reis") then "RR" else if($author ="caeiro") then "AC" else if($author="campos") then "AdC" else ()
+    let $authorKey := $author (:)if($author = "pessoa") then "FP" else if($author ="reis") then "RR" else if($author ="caeiro") then "AC" else if($author="campos") then "AdC" else ():)
     let $folders :=  switch($textType) 
                             case "all" return ("doc","pub")
                             case "documents" return "doc"

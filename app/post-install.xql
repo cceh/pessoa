@@ -24,13 +24,17 @@ declare function local:createXML() {
     let $Sdocs := count($docs)
     let $docs := <docs dir="doc">
                                 {for $a in (1 to $Sdocs)
-                                    return <doc pos="{$a}" indi="{$docs[$a]/@indi/data(.)}" id="{substring-before($docs[$a]/@label/data(.),".xml")}">{$docs[$a]/@label/data(.)}</doc>}
+                                    let $doc := doc(concat("/db/apps/pessoa/data/doc/",$docs[$a]/@label/data(.)))
+                                    let $date := $doc//tei:origDate
+                                    return <doc from="{local:getDateDoc("from",$date)}" to="{local:getDateDoc("to",$date)}" availability="{$doc//tei:availability/@status}" pos="{$a}" indi="{$docs[$a]/@indi/data(.)}" id="{substring-before($docs[$a]/@label/data(.),".xml")}" >{$docs[$a]/@label/data(.)}</doc>}
                             </docs>
     let $pub := local:createPubXML()
     let $Spub := count($pub)
     let $pub := <docs dir="pub">
                                 {for $a in (1 to $Spub)
-                                    return <doc pos="{$a}" indi="{$pub[$a]/@indi/data(.)}" id="{substring-before($pub[$a]/@label/data(.),".xml")}">{$pub[$a]/@label/data(.)}</doc>}
+                                let $doc := doc(concat("/db/apps/pessoa/data/pub/",$pub[$a]/@label/data(.)))
+                                let $date := $doc//tei:imprint/tei:date
+                                    return <doc from="{local:getDateDoc("from",$date)}" to="{local:getDateDoc("to",$date)}" availability="{$doc//tei:availability/@status}" pos="{$a}" indi="{$pub[$a]/@indi/data(.)}" id="{substring-before($pub[$a]/@label/data(.),".xml")}">{$pub[$a]/@label/data(.)}</doc>}
                             </docs>
     
     let $input := <list>
@@ -44,11 +48,40 @@ declare function local:createXML() {
     let $input := $input
     return xmldb:store("/db/apps/pessoa/data","doclist.xml",$input)
 };
+(:)"date_when","date_notBefore","date_notAfter","date_from","date_to:)
+
+declare function local:getDateDoc($set,$doc) {
+    let $tags := ("when","notBefore","notAfter","from","to")
+    let $date := for $tag in $tags
+                   return switch($tag)
+                                    case "when" return $doc/@when
+                                    case "notBefore" return $doc/@notBefore
+                                    case "notAfter" return $doc/@notAfter
+                                    case "from" return $doc/@from
+                                    case "to" return $doc/@to
+                                    default return "Error"
+
+    let $date := for $d in $date return if(contains($d,"-")) then substring-before($d,"-") else $d
+
+    let $date := for $d in $date order by $d return $d
+    let $date := if(count($date) != 0) then $date  else (99,99)
+    return if($set = "from") then $date[1] else $date[count($date)]
+};
+
 declare function local:createPubXML() {
-  let $items := for $indikator in ("Pessoa","Caiero","Campos","Reis") return local:pubItems($indikator)
+  let $items := for $indikator in ("Pessoa","Caeiro","Campos","Reis") return local:pubItems($indikator)
   let $items := for $item in $items order by local:anaIndi($item/@indi/data(.))
-                        return <item label="{$item/@label/data(.)}"  indi="{$item/@indi/data(.)}"/>
+                        return <item label="{$item/@label/data(.)}"  indi="{local:getAuthorShort($item/@indi/data(.))}"/>
   return $items
+};
+
+declare function local:getAuthorShort($indi as xs:string) {
+    switch($indi)
+        case "Pessoa" return "FP"
+        case "Caeiro" return "AC"
+        case "Campos" return "AdC"
+        case "Reis" return "RR"
+        default return "UH"
 };
 
 declare function local:pubItems($indikator) {
@@ -71,7 +104,7 @@ return $items
 
 declare function local:anaIndi($indi) {
     if($indi = "1-9" or $indi = "Pessoa") then 1
-    else if($indi = "10" or $indi = "Caiero" ) then 2
+    else if($indi = "10" or $indi = "Caeiro" ) then 2
     else if($indi = "20" or $indi = "Campos") then 3
     else if($indi = "30" or $indi = "Reis") then 4
     else if($indi = "40") then 5

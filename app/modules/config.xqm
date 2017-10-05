@@ -115,3 +115,7 @@ declare function config:showUser($node as node(), $model as map(*)) {
     )
 
 };
+
+declare function config:logged-in() as xs:boolean {
+    if (xmldb:get-user-groups(xmldb:get-current-user()) = ("pessoa") ) then true() else false()
+};

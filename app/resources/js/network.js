@@ -23,7 +23,12 @@ $(document).ready(function() {
     $("#menue").click(function() {
        $("#options").toggle();
     });
-
+    $("#menue").mouseover( function() {
+        if($("#options").css("display") == "none")$(this).children("h3").show();
+    }).mouseleave(
+        function() {
+            if($("#options").css("display") == "none") $(this).children("h3").hide();
+        });
 
     $("#docu").click(function() {
         $("#docu-con").css("width","100%");

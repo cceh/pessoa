@@ -13,22 +13,23 @@ import module namespace search="http://localhost:8080/exist/apps/pessoa/search" 
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare namespace request="http://exist-db.org/xquery/request";
 
-declare %templates:wrap function page:construct($node as node(), $model as map(*)) as node()* {
-    let $MainNav :=
-        <div id="navi_main">
-            <ul id="navi_elements" >
-                {page:createMainNav()}
-                <li>
-                    <a href="#" class="glyphicon glyphicon-search" id="search_button" role="tab" data-toggle="tab"></a>
-                </li>
-            </ul>
-        </div>
-    let $SubNav := page:createSubNav()
-    let $ExtNav := page:createExtNav()
-    let $return := ($MainNav,page:construct_search() ,$SubNav, $ExtNav)
-    return $return
+declare function page:construct($node as node(), $model as map(*)){
+    let $list := doc("/db/apps/pessoa/data/lists.xml")
+    let $sites := for $item in $list//tei:list[@type="navigation"]/tei:item
+                    return map {
+                                "site" := $item/tei:term[@xml:lang = $helpers:web-language]/data(.),
+                                "publ" := $item/@published/data(.),
+                                "type" := $item/@type/data(.),
+                                "id" := $item/@xml:id/data(.),
+                                "sub" := page:catchSub($list,$item)
+                            }
+    return map {
+            "sites" := $sites
+    }
+
 };
-declare function page:construct_search() as node()* {
+
+declare function page:construct_search($node as node(), $model as map(*)) as node()* {
     let $search := <div class="container-4" id="searchbox" style="display:none">
         <input type="search" id="search" placeholder="{concat(page:singleAttribute(doc("/db/apps/pessoa/data/lists.xml"),"search","term"),"....")}" />
         <span class="icon2" id="nav_searchButton" onclick="search()">{page:singleAttribute(doc("/db/apps/pessoa/data/lists.xml"),"search","search_verb")}</span>
@@ -58,275 +59,174 @@ declare function page:search_SwitchLang() as xs:string {
     return $return
 };
 
-declare function page:createMainNav() as node()* {
-    let $type := ("autores","documentos","publicacoes","obras","genero","cronologia","index","projeto")
-    let $doc := doc("/db/apps/pessoa/data/lists.xml")
-    for $target in $type
-    let $name := if($helpers:web-language = "pt") then $doc//tei:term[@xml:lang = $helpers:web-language and @xml:id= $target]
-    else $doc//tei:term[@xml:lang = $helpers:web-language and @corresp= concat("#",$target)]
+declare function page:catchSub($list as node(),$item as node()) as map(*)* {
+    if(exists($item/@corresp)) then
+        if($item/@corresp eq "authors") then
+            for $per in $list//tei:listPerson[@type="authors"]/tei:person
+                return map {
+                            "site" := $per/tei:persName/data(.),
+                            "publ" := $item/@published,
+                            "type" := "link",
+                            "id" := $per/@xml:id/data(.),
+                            "link" := concat("author/",$per/@xml:id/data(.),"/all")
+                        }
+        else if($item/@corresp eq "date") then page:DATEmapping($item/@xml:id/data(.),$item/@published/data(.))
+        else
+            for $el in $list//tei:list[@type=$item/@corresp]/tei:item
+                        return map {
+                                    "site" := $el/tei:term[@xml:lang = $helpers:web-language]/data(.),
+                                    "publ" := $item/@published/data(.),
+                                    "type" := "link",
+                                    "id" := $el/@xml:id/data(.),
+                                    "link" := concat($item/@corresp,"/",$el/@xml:id/data(.))
 
-    return <li class="mainNavTab {page:HighlightPage($target)}" id="navMain_{$target}">{$name/data(.)}</li>
-};
+                                    }
+    else if(exists($item/@linked)) then
+        if($item/@linked eq "doclist") then
+            let $dir := if($item/@xml:id eq "documentos") then "doc" else "pub"
+                let $docs := doc("/db/apps/pessoa/data/doclist.xml")//docs[@dir = $dir]
+                let $indis := distinct-values(for $doc in $docs/doc return $doc/@indi)
+                    return for $indi in $indis
+                            let $site := if($dir eq "pub") then $list//tei:listPerson/tei:person[@xml:id=$indi]/tei:persName/data(.) else $indi
+                            let $sub := page:DOCmapping($docs,$indi,$dir)
+                            let $publ := if(contains(string-join(distinct-values(for $s in $sub return $s("publ")),"-"),"free")) then "true" else "false"
+                                    return map {
+                                                    "site" := $site,
+                                                    "publ" := $publ,
+                                                    "type" := "button",
+                                                    "id" := $indi,
+                                                    "sub" := $sub
+                                                }
 
-
-declare function page:HighlightPage($target) {
-    let $pagename :=   switch($target)
-        case "autores" return "author"
-        case "publicacoes" return "pub/"
-        case "obras" return "obras/"
-        case "genero" return "genre/"
-        case "index" return ("bibliografia","names","titles","periodicals")
-        case "documentos" return "doc/"
-        case "projeto" return ("about","team","documentation","download")
-        default return "nothin"
-    return for $page in $pagename  where contains($helpers:request-path,$page) return "highlight"
-};
-
-declare function page:createSubNav() as node()* {
-    let $lists := doc("/db/apps/pessoa/data/lists.xml")
-    for $tab in  $lists//tei:list[@type="navigation"]/tei:item/tei:term[@xml:lang="pt"]/attribute()[2]
-    return page:createSubNavTabs($tab)
-};
-
-declare function page:createSubNavTabs($tab as xs:string) as node()* {
-    let $SubNav :=
-        <div class="navbar" id="{concat("nav_",$tab)}"  style="display:none">
-            <ul class="nav_tabs">
-                {page:createContent($tab)}
-            </ul>
-        </div>
-    let $ThirdNav := if($tab = "documentos" or $tab = "cronologia" or $tab ="publicacoes" or $tab = "index") then
-        <div class="navbar" id="{concat("nav_",$tab,"_sub")}" style="display:none" >
-            {page:createThirdNavTab($tab)}
-        </div>
-    else ()
-    return ($SubNav,$ThirdNav)
-};
-declare function page:createContent($type as xs:string) as node()* {
-    if($type != "documentos" and $type != "cronologia"  and $type != "publicacoes" and $type != "index") then
-        for $item in page:createItem($type,"")
-        return <a href="{$item/@ref/data(.)}">
-                    <li class="{concat("nav_",$type,"_tab")}" >
-                        {$item/@label/data(.)}
-                    </li>
-                </a>
-    else  let $result := page:createThirdNav($type)
-    return $result
-};
-
-
-declare function page:createThirdNav($type as xs:string) as node()* {
-    if($type ="documentos") then
-        for $nr in ("1-9", "10","20","30","40","50","60","70","80","90","100","CP")
-        return if( $nr != "1-9") then <li  class="{concat("nav_",$type,"_tab")}" id="navtab_{$type}_sub_{$nr}">
-            {$nr}
-        </li>
-        else <li  class="{concat("nav_",$type,"_tab")}" id="navtab_{$type}_sub_{$nr}">
-                1 - 9
-            </li>
-    else if ($type = "cronologia") then
-        let $time := ("1913-1915","1916-1919","1920-1927","1928-1935")
-        (:     let $time := ("1902-1912","1913-1915","1916-1919","1920-1927","1928-1935") :)
-        for $date in ($time, (doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item/tei:list[@type="cronologia"]/tei:item/tei:term[@xml:lang=$helpers:web-language]/data(.)))
-        return if (contains($date, "1") != xs:boolean("true") ) then
-            <li class="{concat("nav_",$type,"_tab")}"> <span class="step">|</span>
-                <a href="{concat($helpers:app-root,"/",$helpers:web-language,"/timeline")}" target="_blank">
-                    {$date}
-                </a></li>
-        else if(substring-after($date,"19")!= "") then  <li class="{concat("nav_",$type,"_tab")}"  id="navtab_{$type}_sub_{index-of(($time,(doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item/tei:list[@type="cronologia"]/tei:item/tei:term[@xml:lang=$helpers:web-language]/data(.))),$date)-1}">
-                {$date}</li>
-            else ()
-    else if ($type ="publicacoes") then for $authors in doc("/db/apps/pessoa/data/lists.xml")//tei:listPerson[@type="authors"]/tei:person
-        return <li class="{concat("nav_",$type,"_tab")}" id="navtab_{$type}_sub_{$authors/attribute()}">
-            {$authors/tei:persName/data(.)}
-        </li>
-        else if($type = "index") then for $indexies in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="index"]/tei:item/tei:term[@xml:lang=$helpers:web-language]
-            let $id := if( contains($indexies/attribute()[2],"#")) then substring-after($indexies/attribute()[2],"#")
-            else $indexies/attribute()[2]
-            return  if(contains($indexies/attribute()[2],"bibliografia")) then   <li class="{concat("nav_",$type,"_tab")}" id="navtab_{$type}_sub_{$id}">
-                {$indexies/data(.)}
-            </li>
-            else <a href="{concat($helpers:app-root,"/",$helpers:web-language,"/page/",$id)}">
-                    <li class="{concat("nav_",$type,"_tab")}">
-                        {$indexies/data(.)}
-                    </li>
-                </a>
-
-            else ()
-};
-
-declare function page:createThirdNavTab($type as xs:string) as node()* {
-    if ($type = "documentos") then for $indikator in ("1-9", "10","20","30","40","50","60","70","80","90","100","CP") return
-        <div  id="{concat("nav_",$type,"_sub_",$indikator)}" style="display:none">
-            <ul class="nav_sub_tabs">
-                {page:createThirdNavContent($type,$indikator)}
-            </ul>   </div>
-    else if ($type = "cronologia") then for $indikator in (0 to 3) return
-    (:     else if ($type = "cronologia") then for $indikator in (0 to 4) return  :)
-        <div  id="{concat("nav_",$type,"_sub_",$indikator)}" style="display:none">
-            <ul class="nav_sub_tabs">
-                {page:createThirdNavContent($type,$indikator)}
-            </ul></div>
-    else if($type= "publicacoes") then for $indikator in doc("/db/apps/pessoa/data/lists.xml")//tei:listPerson[@type="authors"]/tei:person/attribute() return
-            <div  id="{concat("nav_",$type,"_sub_",$indikator)}" style="display:none">
-                <ul class="nav_sub_tabs">
-                    {page:createThirdNavContent($type,$indikator)}
-                </ul></div>
-        else if ($type ="index") then
-                <div  id="{concat("nav_",$type,"_sub_bibliografia")}" style="display:none">
-                    <ul class="nav_sub_tabs">
-                        {page:createThirdNavContent("bibliografia","")}
-                    </ul></div>
-            else ()
-};
-
-declare function page:createThirdNavContent($type as xs:string, $indikator as xs:string) as node()* {
-    if ($type = "documentos") then for $item in page:createItem($type, $indikator)
-    let $title :=
-        for $elem in doc(concat("/db/apps/pessoa/data/doc/",$item/@label/data(.)))//tei:titleStmt/tei:title/node() return
-            if(exists($elem/node()))
-            then <span class="doc_superscript">{$elem/node()/data(.)}</span>
-            else (
-                if(contains($elem,"BNP/E3")) then replace($elem,"BNP/E3 ","")
-                else if(contains($elem,"CP")) then replace($elem,"CP ","")
-                else $elem
-            )
-    let $title := ($title,<span class="doc_superscript"/>)
-    let $label := substring-before(replace($item/@label,("BNP_E3_|CP"),""),".xml")
-    let $front := if(contains($label,"-")) then substring-before($label,"-") else $label
-    order by $front, xs:integer(replace($label, "^\d+[A-Z]?\d?-?([0-9]+).*$", "$1"))
-    return <a href="{$item/@ref/data(.)}"><li class="{concat("nav_",$type,"_sub_tab")}" >{$title}</li></a>
-    else if ($type = "cronologia" ) then
-        let $field := (13,16,20,28,15,19,27,35)
-        (:        let $field := (2,13,16,20,28,12,15,19,27,35) :)
-        let $indi := sum(xs:integer($indikator)+1)
-        for $nr in ($field[$indi] to $field[sum($indi + 4)])
-        (:        for $nr in ($field[$indi] to $field[sum($indi + 4)]) :)
-        let $nr := if($nr < 10) then concat(0,$nr) else $nr
-        return   if( page:createItem("cronologia",$nr)  ) then
-            <li class="{concat("nav_",$type,"_sub_tab")}" id="exttab_cro_{$nr}">{concat("'",$nr)}</li>
-        else <li class="{concat("nav_",$type,"_sub_tab")} emptyTab" id="exttab_cro_{concat($indikator,$nr)}">{concat("'",$indikator,$nr)}</li>
-    (:
-    else if ($type = "cronologia" and $indikator = "3") then for $nr in (0 to 5)
-            return <li class="{concat("nav_",$type,"_sub_tab")}"  id="exttab_cro_{concat($indikator,$nr)}">{concat("'",$indikator,$nr)}</li>
-      :)
-    (:
-       else if ($type = "obras") then for $item in page:createItem($type, $indikator)
-            return <a href="{$item/@ref/data(.)}"><li class="{concat("nav_",$type,"_sub_tab")}">{$item/@label/data(.)}</li></a>
-            :)
-    else if ($type = "publicacoes") then for $item in page:createItem($type, $indikator)
-        return <a href="{$item/@ref/data(.)}"><li class="{concat("nav_",$type,"_sub_tab")}">{$item/@label/data(.)}</li></a>
-        else if ($type = "bibliografia") then for $item in page:createItem($type, "")
-            return <a href="{$item/@ref/data(.)}"><li class="{concat("nav_",$type,"_sub_tab")}">{$item/@label/data(.)}</li></a>
-            else ()
-};
-
-
-declare function page:createExtNav() {
-    let $type := "cronologia"
-    return <div class="navbar" id="{concat("nav_",$type,"_sub_ext")}"  style="display:none">
-        {page:createExtNavTab($type)}
-    </div>
-};
-
-declare function page:createExtNavTab($type as xs:string) as node()* {
-    if($type = "cronologia")then for $indikator in (0 to 3)
-    for $nr in (0 to 9) return if($indikator != 3) then
-        <div id="{concat("nav_",$type,"_sub_ext_",$indikator,$nr)}" style="display:none">
-            <ul class="nav_sub_tabs">
-                {page:createExtendedTabsContent($type, concat($indikator,$nr))}
-            </ul></div>
-    else if($indikator = 3 and $nr <=5) then
-            <div id="{concat("nav_",$type,"_sub_ext_",$indikator,$nr)}" style="display:none">
-                <ul class="nav_sub_tabs">
-                    {page:createExtendedTabsContent($type, concat($indikator,$nr))}
-                </ul></div>
-        else ()
-    else ()
-
-};
-
-declare function page:createExtendedTabsContent($type as xs:string, $indikator as xs:string) as node()* {
-    if($type = "cronologia") then
-        for $item in page:createItem($type,$indikator)
-        return <a href="{$item/@ref/data(.)}"><li class="{concat("nav_",$type,"_sub_ext_tab")}">{$item/@label/data(.)}</li></a>
-    else ()
-};
-
-declare function page:createItem($type as xs:string, $indikator as xs:string?) as item()* {
-    if($type ="autores")
-    then for $pers in doc("/db/apps/pessoa/data/lists.xml")//tei:listPerson[@type="authors"]/tei:person/tei:persName/data(.)
-    order by $pers collation "?lang=pt"
-    return <item label="{$pers}" ref="{concat($helpers:app-root,'/',$helpers:web-language)}/author/{tokenize(lower-case($pers), '\s')[last()]}/all" />
-    else if($type = "genero")
-    then for $genre in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="genres"][@xml:lang=$helpers:web-language]/tei:item
-        let $label :=$genre/data(.)
-        let $ref := if($helpers:web-language = "pt") then $genre/attribute()
-        else substring-after($genre/attribute(), "#")
-        order by $genre collation "?lang=pt"
-        return <item label="{$label}"  ref="{concat($helpers:app-root,'/',$helpers:web-language)}/genre/{$ref}" />
-    else if($type = "documentos") then
-            for $item in doc("/db/apps/pessoa/data/doclist.xml")//docs[@dir = "doc"]/doc[@indi = $indikator]
-            return <item label="{$item/data(.)}" ref="{concat($helpers:app-root,'/',$helpers:web-language, "/doc/", $item/@id/data(.))}"/>
-        else if($type = "cronologia")
-            then let $date := concat("19",$indikator)
-                for $para in ("date","date_when","date_notBefore","date_notAfter","date_from","date_to")
-                let $db := collection("/db/apps/pessoa/data/doc","/db/apps/pessoa/data/pub")
-                let $result := search:result_union(search:date_search($db,$para,$date))
-                for $hit in $result
-                let $label := if(substring-after(root($hit)/util:document-name(.), "BNP") != "") then
-                    substring-after(replace(substring-before(root($hit)/util:document-name(.), ".xml"), "_", " "), "E3")
-                else if(substring-after(root($hit)/util:document-name(.),"CP") != "") then
-                        substring-after(replace(substring-before(root($hit)/util:document-name(.), ".xml"), "_", " "), "CP")
-                    else if(page:clearPublikation($hit) != "") then page:clearPublikation($hit)
-                        else ()
-                let $ref := if(substring-after(root($hit)/util:document-name(.),"BNP")!= "" or substring-after(root($hit)/util:document-name(.),"CP")!= "")
-                then  concat($helpers:app-root,'/',$helpers:web-language, "/doc/", substring-before(root($hit)/util:document-name(.), ".xml"))
-                else concat($helpers:app-root,'/',$helpers:web-language, "/pub/", substring-before(root($hit)/util:document-name(.), ".xml"))
-                return <item label="{$label}" ref="{$ref}"/>
-            else if ($type ="bibliografia")
-                then for $bibl in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="bibliografia"]/tei:item/tei:term[@xml:lang=$helpers:web-language]
-                    let $label := $bibl/data(.)
-                    let $ref := if($helpers:web-language = "pt") then $bibl/attribute()[2]
-                    else substring-after($bibl/attribute()[2],"#")
-                    return <item label="{$label}"  ref="{concat($helpers:app-root,'/',$helpers:web-language)}/page/bibliografia/{$ref}" />
-                else if ($type = "projeto")
-                    then for $projeto in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]/tei:item/tei:list[@type="projeto"]/tei:item/tei:term[@xml:lang=$helpers:web-language]
-                        let $label := $projeto/data(.)
-                        let $ref := if($helpers:web-language = "pt") then $projeto/attribute()[2]
-                        else substring-after($projeto/attribute()[2],"#")
-                        return <item label="{$label}"  ref="{concat($helpers:app-root,'/',$helpers:web-language)}/page/{$ref}" />
-                    else if ($type = "obras")
-                        then for $works in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="works"]/tei:item
-                            let $label := $works/tei:title[1]/data(.)
-                            return <item label="{$label}" ref="{concat($helpers:app-root,'/',$helpers:web-language)}/obras/{$works/tei:title[1]/data(.)}"/>
-                        (:return <item label="{$label}" ref="{concat($helpers:app-root,'/',$helpers:web-language)}/page/obras/ {$works/attribute()}"/>:)
-                        else if($type ="publicacoes")
-                            then for $hit in xmldb:get-child-resources("/db/apps/pessoa/data/pub")
-                                let $label :=  doc(concat("/db/apps/pessoa/data/pub/",$hit))//tei:fileDesc/tei:titleStmt/tei:title/data(.)
-                                order by $label
-                                return if(doc(concat("/db/apps/pessoa/data/pub/",$hit))//tei:author/tei:rs[@key=$indikator])
-                                then <item label="{$label}" ref="{concat($helpers:app-root,'/',$helpers:web-language)}/pub/{substring-before($hit,".xml")}" />
-                                else ()
-                            else for $a in "10" return <item label="nothin" ref="#"/>
+            else if($item/@linked eq "works") then
+                let $works := doc("/db/apps/pessoa/data/works.xml")//list[@type="works"]
+                return for $work in $works/item return map {
+                                "site" := $work/title[@type="main"]/data(.),
+                                "publ" := $item/@published,
+                                "type" := "link",
+                                "id" := $work/@xml:id,
+                                "link" := concat("obras/",$work/title[@type="main"]/data(.))
+                }
+        else()
+    else for $el in $item/tei:list/tei:item return page:mapping($el)
 };
 
 
 
-declare function page:clearPublikation($pub as node()) as xs:string {
-    for $author in ("Caeiro","Pessoa","Campos","Reis")
-    return   if(substring-after(root($pub)/util:document-name(.),$author) != "")
-    then substring-after(replace(replace(substring-before(root($pub)/util:document-name(.),".xml"),"-", " "),"_"," "),$author)
-    else ()
+
+declare function page:mapping($item as node()) as map(*){
+    let $return :=
+                map {
+                    "site" := $item/tei:term[@xml:lang = $helpers:web-language]/data(.),
+                    "publ" := $item/@published/data(.),
+                    "type" := $item/@type/data(.),
+                    "id" := $item/@xml:id/data(.)
+
+                }
+    let $return := if(exists($item/tei:list) or exists($item/@corresp)) then map:new(($return,map {"sub" := page:catchSub(doc("/db/apps/pessoa/data/lists.xml"),$item)})) else $return
+    let $return := if(exists($item/@dir)) then map:new(($return,map {"link" := concat($item/@dir/data(.),"/",$item/@xml:id/data(.))})) else $return
+    return $return
 };
 
+declare function page:DOCmapping($docs as node(), $indi as xs:string,$dir as xs:string) as map(*)* {
+   for $doc in $docs/doc where $doc/@indi eq $indi
+   let $name := $doc/data(.)
+   let $name := if(contains($name,"BNP") or contains($name,"CP")) then
+               let $title :=
+                   for $elem in doc(concat("/db/apps/pessoa/data/doc/",$name))//tei:titleStmt/tei:title/node() return
+                       if(exists($elem/node()))
+                       then <span class="doc_superscript">{$elem/node()/data(.)}</span>
+                       else (
+                           if(contains($elem,"BNP/E3")) then replace($elem,"BNP/E3 ","")
+                           else if(contains($elem,"CP")) then replace($elem,"CP ","")
+                           else $elem
+                       )
+               let $title := ($title,<span class="doc_superscript"/>)
+               let $label := substring-before(replace($name,("BNP_E3_|CP"),""),".xml")
+               let $front := if(contains($label,"-")) then substring-before($label,"-") else $label
+               order by $front, xs:integer(replace($label, "^\d+[A-Z]?\d?-?([0-9]+).*$", "$1"))
+               return $title
+                else doc(concat("/db/apps/pessoa/data/pub/",$name))//tei:fileDesc/tei:titleStmt/tei:title/data(.)
+   return map {
+            "site" := $name,
+            "publ" := $doc/@availability,
+            "type" := "link",
+            "id" := $doc/@id,
+            "link" :=concat($dir,"/",$doc/@id)
+   }
+};
+declare function page:DATEmapping($indi as xs:string, $pub as xs:string) {
+    let $from := xs:integer(substring-after(substring-before($indi,"_"),"D"))
+    let $to := xs:integer(substring-after($indi,"_"))
+    for $date in ($from to $to) return map {
+            "site" := concat("'",$date),
+            "publ" := $pub,
+            "type" := "button",
+            "id" := $date,
+            "sub" := page:DATEDOCmapping($date,$pub)
 
-declare function page:getPath() {
-    let $path := <div id="path">{ substring-after( $helpers:request-path,$helpers:web-language)}</div>
-    return $path
+    }
+
 };
 
+declare function page:DATEDOCmapping($date as xs:integer,$pub) {
+let $docs :=
+    for $doc in doc("/db/apps/pessoa/data/doclist.xml")//doc
+                for $d in (xs:integer($doc/@from) to xs:integer($doc/@to))
+                where  $d eq xs:integer(concat("19",$date))
+                return $doc
+let $mapping := for $doc in $docs
+                    let $name := $doc/data(.)
+                    let $dir := if(contains($name,"BNP") or contains($name,"CP")) then "doc" else "pub"
+                    let $title := if(contains($name,"BNP") or contains($name,"CP")) then
+                        for $elem in doc(concat("/db/apps/pessoa/data/doc/",$name))//tei:titleStmt/tei:title/node() return
+                            if(exists($elem/node()))
+                                then <span class="doc_superscript">{$elem/node()/data(.)}</span>
+                            else (
+                                if(contains($elem,"BNP/E3")) then replace($elem,"BNP/E3 ","")
+                                else if(contains($elem,"CP")) then replace($elem,"CP ","")
+                                else $elem
+                            )
+                        else replace(replace(substring-before($name,".xml"),("Caeiro|Pessoa|Campos|Reis"),""),("-| |_")," ")
+                    return map {
+                    "site" := ($title,<span class="doc_superscript"/>),
+                    "publ" := $pub,
+                    "type" := "link",
+                    "id" := $doc/@id,
+                    "link" :=concat($dir, "/", $doc/@id)
+                    }
 
+
+return $mapping
+};
+
+declare function page:catchSiteHead($node as node(), $model as map(*), $container as xs:string) {
+    let $site := $model($container)
+        return
+        if($site("publ") eq "free" or $site("publ") eq "true" or config:logged-in()) then
+                if($site("type") eq "link") then
+                <li>
+                    {attribute class {($node/@class),($site("type"))}}
+                    {attribute published {$site("publ")}}
+                    <a href="{concat($helpers:app-root,"/",$helpers:web-language,"/",$site("link"))}"><span>{$site("site")}</span></a>
+                    {templates:process($node/node(), $model)}
+                </li>
+                else
+                <li>
+                    {attribute class {($node/@class),($site("type"))}}
+                    {attribute active {$node/@active}}
+                    {attribute published {$site("publ")}}
+                    <span>{$site("site")}</span>
+                    {templates:process($node/node(), $model)}
+                </li>
+        else
+                <li>
+                    {attribute class {($node/@class),("restricted")}}
+                    {attribute active {$node/@active}}
+                    <span>{$site("site")}</span>
+                    {templates:process($node/node(), $model)}
+                </li>
+};
 
 (:###### CALL LIST ELEMENTS ######:)
 
@@ -396,7 +296,12 @@ declare function page:createOption($xmltype as xs:string, $value as xs:string*,$
     then $doc//tei:list[@type=$xmltype and @xml:lang=$helpers:web-language]/tei:item[@xml:id=$id]/data(.)
     else $doc//tei:list[@type=$xmltype and @xml:lang=$helpers:web-language]/tei:item[@corresp=concat("#",$id)]/data(.)
     return <option value="{$id}">{$entry}</option>
+};
 
+declare function page:createOption_new($xmltype as xs:string, $value as xs:string*,$doc as node()) as node()* {
+    for $id in $value
+        let $entry:= helpers:singleElementInList_xQuery($xmltype,$id)
+        return <option value="{$id}">{$entry}</option>
 };
 
 (:###### TIMELINE ######:)

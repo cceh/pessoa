@@ -20,7 +20,7 @@ var buildDest = 'build/';
 // ------ Copy (and compile) sources and assets to build dir ----------
 
 gulp.task('copy', function() {
-	return gulp.src([sourceDir + '**/*',"!**/data/**/*.xml"])
+	return gulp.src([sourceDir + '**/*',"!**/data/*{pub,doc}/*.xml"])
 		   	.pipe(newer(buildDest))
 		   	.pipe(gulp.dest(buildDest))
 });
@@ -41,12 +41,6 @@ var localExist = exist.createClient({
 		port: 8080,
 		path: "/exist/xmlrpc",
 		basic_auth: secrets.local
-		// permissions: {
-		// 	"controller.xql": "rwxr-xr-x"
-		// },
-		// mime_types: {
-		// 	'.rng': "text/xml"
-		// }
 	});
 
 var remoteExist = exist.createClient({
@@ -54,12 +48,6 @@ var remoteExist = exist.createClient({
 		port: 8080,
 		path: "/xmlrpc",
 		basic_auth: secrets.remote
-		// permissions: {
-		// 	"controller.xql": "rwxr-xr-x"
-		// },
-		// mime_types: {
-		// 	'.rng': "text/xml"
-		// }
 });
 
 exist.defineMimeTypes({ 'text/xml': ['rng'] });
