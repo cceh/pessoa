@@ -138,30 +138,32 @@ declare function page:mapping($item as node()) as map(*){
 
 declare function page:DOCmapping($docs as node(), $indi as xs:string,$dir as xs:string) as map(*)* {
    for $doc in $docs/doc where $doc/@indi eq $indi
-   let $name := $doc/data(.)
-   let $name := if(contains($name,"BNP") or contains($name,"CP")) then
-               let $title :=
-                   for $elem in doc(concat("/db/apps/pessoa/data/doc/",$name))//tei:titleStmt/tei:title/node() return
-                       if(exists($elem/node()))
-                       then <span class="doc_superscript">{$elem/node()/data(.)}</span>
-                       else (
-                           if(contains($elem,"BNP/E3")) then replace($elem,"BNP/E3 ","")
-                           else if(contains($elem,"CP")) then replace($elem,"CP ","")
-                           else $elem
-                       )
-               let $title := ($title,<span class="doc_superscript"/>)
-               let $label := substring-before(replace($name,("BNP_E3_|CP"),""),".xml")
-               let $front := if(contains($label,"-")) then substring-before($label,"-") else $label
-               order by $front, xs:integer(replace($label, "^\d+[A-Z]?\d?-?([0-9]+).*$", "$1"))
-               return $title
-                else doc(concat("/db/apps/pessoa/data/pub/",$name))//tei:fileDesc/tei:titleStmt/tei:title/data(.)
-   return map {
-            "site" := $name,
-            "publ" := $doc/@availability,
-            "type" := "link",
-            "id" := $doc/@id,
-            "link" :=concat($dir,"/",$doc/@id)
-   }
+   return
+       let $name := $doc/data(.)
+       let $name := if(contains($name,"BNP") or contains($name,"CP")) then
+                   let $title :=
+                       for $elem in doc(concat("/db/apps/pessoa/data/doc/",$name))//tei:titleStmt/tei:title/node() return
+                           if(exists($elem/node()))
+                           then <span class="doc_superscript">{$elem/node()/data(.)}</span>
+                           else (
+                               if(contains($elem,"BNP/E3")) then replace($elem,"BNP/E3 ","")
+                               else if(contains($elem,"CP")) then replace($elem,"CP ","")
+                               else $elem
+                           )
+                   let $title := ($title,<span class="doc_superscript"/>)
+                   let $label := substring-before(replace($name,("BNP_E3_|CP"),""),".xml")
+                   let $front := if(contains($label,"-")) then substring-before($label,"-") else $label
+                   order by $front, xs:integer(replace($label, "^\d+[A-Z]?\d?-?([0-9]+).*$", "$1"))
+                   return $title
+                    else doc(concat("/db/apps/pessoa/data/pub/",$name))//tei:fileDesc/tei:titleStmt/tei:title/data(.)
+
+       return map {
+                "site" := $name,
+                "publ" := $doc/@availability,
+                "type" := "link",
+                "id" := $doc/@id,
+                "link" :=concat($dir,"/",$doc/@id)
+       }
 };
 
 declare function page:DATEmapping($indi as xs:string) {

@@ -208,20 +208,25 @@ declare %templates:wrap function doc:docControll($node as node(), $model as map(
       let $libary :=      if(contains($helpers:request-path,"BNP") or contains($helpers:request-path,"CP")) then "doc" 
                          else "pub"
     let $db := doc('/db/apps/pessoa/data/doclist.xml')            
-    let $list := $db//docs[@dir=$libary]
+    let $list := $db//docs[@dir=$libary]/doc[@availability eq "free"]
+    let $doc := $list[@id = $id]
+    let $sum := count($list)
+    let $pos := helpers:index-of-node($list,$doc)
+(:)
     let $pos := xs:integer($list//doc[@id = $id]/@pos/data(.))         
     let $sum := xs:integer($db//meta/sum[@id=$libary]/data(.))
+    :)
     let $forward := if($pos != $sum) then $pos+1 else 1
     let $backward := if($pos != 1) then ($pos) -1 else $sum
   
 
     let $arrows := <div>
-                            <a href="{concat($helpers:app-root,'/',$helpers:web-language,'/',$libary,'/',$list//doc[@pos = $backward]/@id/data(.))}">
+                            <a href="{concat($helpers:app-root,'/',$helpers:web-language,'/',$libary,'/',$list[$backward]/@id/data(.))}">
                                 <span id="back"> 
                                     {page:singleAttribute(doc('/db/apps/pessoa/data/lists.xml'),"buttons","previous")}
                                 </span>
                             </a>
-                            <a href="{concat($helpers:app-root,'/',$helpers:web-language,'/',$libary,'/',$list//doc[@pos = $forward]/@id/data(.))}">
+                            <a href="{concat($helpers:app-root,'/',$helpers:web-language,'/',$libary,'/',$list[$forward]/@id/data(.))}">
                                 <span id="forward">
                                     {page:singleAttribute(doc('/db/apps/pessoa/data/lists.xml'),"buttons","next")}
                                 </span>
