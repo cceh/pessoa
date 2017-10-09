@@ -38,7 +38,7 @@ declare function local:Restriction() as xs:boolean{
     let $sites := ($exist:sites,"doc","pub","search","timeline","BNP","CP","network")
     let $path := substring-after($exist:path,concat($helpers:web-language,"/"))
     let $path := if(contains($path,"/")) then substring-before($path,"/") else $path
-    let $path := if(contains($exist:path,"BNP|CP")) then "doc" else $path
+    let $path := if(contains($path,"BNP|CP")) then "doc" else $path
     return if(helpers:contains-any-of($exist:path,$sites)) then
                 switch($path)
                     case "doc" return local:resRestritction()
@@ -56,7 +56,7 @@ declare function local:Restriction() as xs:boolean{
 
 declare function local:resRestritction() as xs:boolean {
     if( contains($exist:path,"BNP|CP")) then
-        if(contains($exist:path,"BNP|CP")) then
+        if(contains($exist:resource,"BNP|CP")) then
             if(doc(concat("/db/apps/pessoa/data/doc/",$exist:resource,".xml"))//tei:availability/@status eq "free")
                 then true()
                 else false()
