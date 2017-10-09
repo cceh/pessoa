@@ -20,7 +20,7 @@ declare namespace request = "http://exist-db.org/xquery/request";
 declare variable $config:conf-file := doc("/db/apps/pessoa/conf.xml");
 declare variable $config:webapp-root := $config:conf-file//webapp-root/data(.);
 (: declare variable $config:file-path := "" :)
-declare variable $config:request-path := concat($config:webapp-root, "/", substring-after(request:get-uri(), $config:conf-file//request-path/data(.)));
+declare variable $config:request-path := concat($config:webapp-root, substring-after(request:get-uri(), $config:conf-file//request-path/data(.)));
 declare variable $config:webfile-path := $config:conf-file//webfile-path/data(.);
 
 (: Determine the application root collection from the current module load path. :)
