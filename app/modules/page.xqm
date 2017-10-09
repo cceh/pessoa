@@ -16,12 +16,14 @@ declare namespace request="http://exist-db.org/xquery/request";
 declare function page:construct($node as node(), $model as map(*)){
     let $list := doc("/db/apps/pessoa/data/lists.xml")
     let $sites := for $item in $list//tei:list[@type="navigation"]/tei:item
+                    let $sub := page:catchSub($list,$item)
+                    let $publ := if(contains(string-join(distinct-values(for $s in $sub return $s("publ")),"-"),"true")) then "true" else "false"
                     return map {
                                 "site" := $item/tei:term[@xml:lang = $helpers:web-language]/data(.),
-                                "publ" := $item/@published/data(.),
+                                "publ" := $publ,
                                 "type" := $item/@type/data(.),
                                 "id" := $item/@xml:id/data(.),
-                                "sub" := page:catchSub($list,$item)
+                                "sub" := $sub
                             }
     return map {
             "sites" := $sites
@@ -70,7 +72,7 @@ declare function page:catchSub($list as node(),$item as node()) as map(*)* {
                             "id" := $per/@xml:id/data(.),
                             "link" := concat("author/",$per/@xml:id/data(.),"/all")
                         }
-        else if($item/@corresp eq "date") then page:DATEmapping($item/@xml:id/data(.),$item/@published/data(.))
+        else if($item/@corresp eq "date") then page:DATEmapping($item/@xml:id/data(.))
         else
             for $el in $list//tei:list[@type=$item/@corresp]/tei:item
                         return map {
@@ -125,6 +127,12 @@ declare function page:mapping($item as node()) as map(*){
                 }
     let $return := if(exists($item/tei:list) or exists($item/@corresp)) then map:new(($return,map {"sub" := page:catchSub(doc("/db/apps/pessoa/data/lists.xml"),$item)})) else $return
     let $return := if(exists($item/@dir)) then map:new(($return,map {"link" := concat($item/@dir/data(.),"/",$item/@xml:id/data(.))})) else $return
+    let $return := if(map:contains($return,"sub")) then
+                        let $publ := if(contains(string-join(distinct-values(for $s in $return("sub") return $s("publ")),"-"),"true"))
+                                        then "true" else "false"
+                        let $new := map:remove($return,"publ")
+                        return map:new(($new,map {"publ":=$publ}))
+                    else $return
     return $return
 };
 
@@ -155,21 +163,25 @@ declare function page:DOCmapping($docs as node(), $indi as xs:string,$dir as xs:
             "link" :=concat($dir,"/",$doc/@id)
    }
 };
-declare function page:DATEmapping($indi as xs:string, $pub as xs:string) {
+
+declare function page:DATEmapping($indi as xs:string) {
     let $from := xs:integer(substring-after(substring-before($indi,"_"),"D"))
     let $to := xs:integer(substring-after($indi,"_"))
-    for $date in ($from to $to) return map {
+    for $date in ($from to $to)
+    let $sub := page:DATEDOCmapping($date)
+    let $publ := if(contains(string-join(distinct-values(for $s in $sub return $s("publ")),"-"),"free")) then "true" else "false"
+    return map {
             "site" := concat("'",$date),
-            "publ" := $pub,
+            "publ" := $publ,
             "type" := "button",
             "id" := $date,
-            "sub" := page:DATEDOCmapping($date,$pub)
+            "sub" := $sub
 
     }
 
 };
 
-declare function page:DATEDOCmapping($date as xs:integer,$pub) {
+declare function page:DATEDOCmapping($date as xs:integer) {
 let $docs :=
     for $doc in doc("/db/apps/pessoa/data/doclist.xml")//doc
                 for $d in (xs:integer($doc/@from) to xs:integer($doc/@to))
@@ -190,7 +202,7 @@ let $mapping := for $doc in $docs
                         else replace(replace(substring-before($name,".xml"),("Caeiro|Pessoa|Campos|Reis"),""),("-| |_")," ")
                     return map {
                     "site" := ($title,<span class="doc_superscript"/>),
-                    "publ" := $pub,
+                    "publ" := $doc/@availability,
                     "type" := "link",
                     "id" := $doc/@id,
                     "link" :=concat($dir, "/", $doc/@id)

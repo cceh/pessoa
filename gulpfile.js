@@ -88,6 +88,8 @@ gulp.task('local-post-install', ['local-upload'], function() {
 	return gulp.src('app/post-install.xql')
 		.pipe(localExist.query());
 });
+
+
 gulp.task('deploy-local',['local-upload','local-upload-data','local-post-install']);
 
 gulp.task('remote-upload', ['build'], function() {

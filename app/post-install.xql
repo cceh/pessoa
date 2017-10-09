@@ -42,8 +42,8 @@ declare function local:createXML() {
                                 <sum id="doc">{$Sdocs}</sum>
                                 <sum id="pub">{$Spub}</sum>
                          </meta>
-                            {$docs}
                             {$pub}
+                            {$docs}
                         </list>
     let $input := $input
     return xmldb:store("/db/apps/pessoa/data","doclist.xml",$input)
