@@ -55,7 +55,7 @@ declare function local:Restriction() as xs:boolean{
 
 
 declare function local:resRestritction() as xs:boolean {
-    if(contains($exist:path,"BNP|CP")) then
+    if( contains($exist:path,"BNP|CP")) then
         if(contains($exist:resource,"BNP|CP")) then
             if(doc(concat("/db/apps/pessoa/data/doc/",$exist:resource,".xml"))//tei:availability/@status eq "free")
                 then true()
@@ -66,7 +66,7 @@ declare function local:resRestritction() as xs:boolean {
                     else false()
             )
     else (
-        if(doc(concat("/db/apps/pessoa/data/pub/",$exist:resource,".xml"))//tei:availability/@status eq "restricted")
+        if(doc(concat("/db/apps/pessoa/data/pub/",$exist:resource,".xml"))//tei:availability/@status eq "free")
             then true()
             else false()
     )

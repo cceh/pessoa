@@ -361,6 +361,20 @@ display: inline-block;
 .restricted > span:hover {
 
 }
+
+#nav_searchButton {
+    text-decoration:none;
+    display:inline-block;
+    margin: 3px 5px;
+    padding: 5px;
+    background: #222;
+    min-width: 18%;
+    text-align: center;
+}
+#nav_searchButton:hover {
+    background-color: #4E4E4E;
+    text-decoration: underline;
+}
 /*Details der Navi*/
 /*
 .nav_tabs{
@@ -1135,7 +1149,7 @@ li.itabs.selected span{
     background-color: white;
     margin-left: 0px; 
     padding: 10px;
-    position: absolute;
+    position: relative;
     width: auto;
     
 }
