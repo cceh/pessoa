@@ -252,7 +252,7 @@ declare function doc:cite($node as node(), $model as map(*),$id as xs:string, $d
                                             switch($elem/@type)
                                             case "web" return <i>{helpers:singleElement_xquery("cite","cite-web")}</i>
                                             case "link" return concat(' "',doc(concat("/db/apps/pessoa/data/",$dir,"/",$id,".xml"))//tei:titleStmt/tei:title[1],'." ')
-                                            case "url" return <a style="color: #08298a;" href="{concat($helpers:app-root,'/',$id,'/',$type)}">{concat(' <',$helpers:app-root,'/',$id,'/',$type),'>'}</a>
+                                            case "url" return <a style="color: #08298a;" href="{concat($helpers:app-root,'/',$id,'/',$type)}">{concat(' <',$helpers:app-root,'/',$id,'/',replace($type," ",""),'>')}</a>
                                                 default return $elem
                                             }</span>
 };
