@@ -48,7 +48,8 @@ declare function local:Restriction() as xs:boolean{
                     case "network" return true()
                     default return
                         if(doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]//tei:item[@dir eq $path and @xml:id eq $exist:resource]/@published eq "true")
-                            then true() else false()
+                            then true()
+                            else false()
         else false()
 };
 
@@ -56,18 +57,18 @@ declare function local:Restriction() as xs:boolean{
 declare function local:resRestritction() as xs:boolean {
     if(contains($exist:path,"BNP|CP")) then
         if(contains($exist:resource,"BNP|CP")) then
-            if(doc(concat("/db/apps/pessoa/data/doc/",$exist:resource,".xml"))//tei:availability/@status eq "restricted")
-                then false()
-                else true()
+            if(doc(concat("/db/apps/pessoa/data/doc/",$exist:resource,".xml"))//tei:availability/@status eq "free")
+                then true()
+                else false()
             else (
-                if(doc(concat("/db/apps/pessoa/data/doc/",substring-after("/",substring-before($exist:path,concat("/",$exist:resource))),".xml"))//tei:availability/@status eq "restricted")
-                    then false()
-                    else true()
+                if(doc(concat("/db/apps/pessoa/data/doc/",substring-after(substring-before($exist:path,concat("/",$exist:resource)),"/"),".xml"))//tei:availability/@status eq "free")
+                    then true()
+                    else false()
             )
     else (
         if(doc(concat("/db/apps/pessoa/data/pub/",$exist:resource,".xml"))//tei:availability/@status eq "restricted")
-            then false()
-            else true()
+            then true()
+            else false()
     )
 };
 
