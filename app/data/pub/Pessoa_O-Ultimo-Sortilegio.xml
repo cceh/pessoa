@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -29,10 +30,11 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
-                <date>2016</date>
-                <availability status="restricted">
+                <date>2017</date>
+                <availability status="free">
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_O-Ultimo-Sortilegio.xml</idno>
@@ -52,7 +54,7 @@
                     <monogr>
                         <title level="j"><rs type="periodical" key="J1">Presença</rs></title>
                         <imprint>
-                            <pubPlace></pubPlace>
+                            <pubPlace/>
                             <date when="1930-12">Dezembro de 1930</date>
                         </imprint>
                         <biblScope unit="issue">29</biblScope>
@@ -60,7 +62,7 @@
                     <note type="genre">
                         <rs type="genre" key="poesia">Poesia</rs>
                     </note>
-                    <note></note>
+                    <note/>
                 </biblStruct>
             </sourceDesc>
         </fileDesc>

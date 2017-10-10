@@ -32,7 +32,15 @@
             </list>
             <!-- ################# NAVIGATION ######################## -->
             <list type="navigation">
-                <item xml:id="autores" published="false" type="button" corresp="authors" dir="author">
+                <!--<item xml:id="autores" rend="button" corresp="authors">
+                    <term xml:lang="pt">Autores</term>
+                    <term xml:lang="en">Authors</term>
+                    <term xml:lang="de">Autoren</term>
+                    <note type="published">false</note>
+                    <note type="directory">author</note>
+                </item>-->
+                <item xml:id="autores" published="false" type="button" corresp="authors"
+                    dir="author">
                     <term xml:lang="pt">Autores</term>
                     <term xml:lang="en">Authors</term>
                     <term xml:lang="de">Autoren</term>
@@ -52,7 +60,7 @@
                     <term xml:lang="en">Works</term>
                     <term xml:lang="de">Werke</term>
                 </item>
-                <item xml:id="genero" published="false"  type="button" corresp="genres" dir="genre">
+                <item xml:id="genero" published="false" type="button" corresp="genres" dir="genre">
                     <term xml:lang="pt">Géneros</term>
                     <term xml:lang="en">Genres</term>
                     <term xml:lang="de">Genres</term>
@@ -100,29 +108,23 @@
                             <term xml:lang="en">Bibliography</term>
                             <term xml:lang="de">Bilbiographie</term>
                             <list type="bibliografia">
-                                <item xml:id="bib1" published="true" type="link" dir="bibliografia" >
-                                    <term xml:lang="pt">Obras de Fernando
-                                        Pessoa</term>
-                                    <term xml:lang="en">Works of Fernando
-                                        Pessoa</term>
-                                    <term xml:lang="de">Werke von Fernando
-                                        Pessoa</term>
+                                <item xml:id="bib1" published="true" type="link" dir="bibliografia">
+                                    <term xml:lang="pt">Obras de Fernando Pessoa</term>
+                                    <term xml:lang="en">Works of Fernando Pessoa</term>
+                                    <term xml:lang="de">Werke von Fernando Pessoa</term>
                                 </item>
-                                <item  xml:id="bib2" published="true" type="link" dir="bibliografia">
-                                    <term xml:lang="pt">Sobre a obra de Fernando
-                                        Pessoa</term>
-                                    <term xml:lang="en">About the work of Fernando
-                                        Pessoa</term>
-                                    <term xml:lang="de">Über das Werk von Fernando
-                                        Pessoa</term>
+                                <item xml:id="bib2" published="true" type="link" dir="bibliografia">
+                                    <term xml:lang="pt">Sobre a obra de Fernando Pessoa</term>
+                                    <term xml:lang="en">About the work of Fernando Pessoa</term>
+                                    <term xml:lang="de">Über das Werk von Fernando Pessoa</term>
                                 </item>
-                                <item  xml:id="bib3" published="true" type="link" dir="bibliografia">
-                                    <term xml:lang="pt">Outras fontes da obra de
-                                        Fernando Pessoa</term>
-                                    <term xml:lang="en">Other sources of the work of
-                                        Fernando Pessoa</term>
-                                    <term xml:lang="de">Andere Quellen zum Werk von
-                                        Fernando Pessoa</term>
+                                <item xml:id="bib3" published="true" type="link" dir="bibliografia">
+                                    <term xml:lang="pt">Outras fontes da obra de Fernando
+                                        Pessoa</term>
+                                    <term xml:lang="en">Other sources of the work of Fernando
+                                        Pessoa</term>
+                                    <term xml:lang="de">Andere Quellen zum Werk von Fernando
+                                        Pessoa</term>
                                 </item>
                             </list>
                         </item>
@@ -143,7 +145,7 @@
                         </item>
                     </list>
                 </item>
-                <item  xml:id="projeto" published="true" type="button">
+                <item xml:id="projeto" published="true" type="button">
                     <term xml:lang="pt">Projeto</term>
                     <term xml:lang="en">Project</term>
                     <term xml:lang="de">Projekt</term>
@@ -164,7 +166,7 @@
                             <term xml:lang="de">Dokumentation</term>
                         </item>
                         <item xml:id="dissemination" published="true" type="link" dir="projeto">
-                            <term xml:lang="pt" >Disseminação</term>
+                            <term xml:lang="pt">Disseminação</term>
                             <term xml:lang="en">Dissemination</term>
                             <term xml:lang="de">Publikationen &amp; Vorträge</term>
                         </item>
@@ -301,11 +303,11 @@
             </list>
             <!--
             <list type="genres" xml:lang="pt">-->
-                <!-- géneros de documentos e publicaçoes -->
-                <!-- <item xml:id="carta">Carta</item>
+            <!-- géneros de documentos e publicaçoes -->
+            <!-- <item xml:id="carta">Carta</item>
                 <item xml:id="diario">Diário</item>
                 <item xml:id="ensaio">Ensaio</item> Diese bitte erstmal ganz rausnehmen! -->
-         <!--       <item xml:id="lista_editorial">Lista editorial</item>
+            <!--       <item xml:id="lista_editorial">Lista editorial</item>
                 <item xml:id="nota_editorial">Nota editorial</item>
                 <item xml:id="plano_editorial">Plano editorial</item>
                 <item xml:id="poesia">Poesia</item>
@@ -480,27 +482,45 @@
                     <term xml:lang="de" corresp="#pub_no">nein</term>
                 </item>
                 <item>
-                    <term xml:lang="pt" xml:id="search_tips"> </term>
+                    <term xml:lang="pt" xml:id="search_tips">
+                        <span type="head">Ajuda à Pesquisa</span>
+                        <span>Fazendo uma pesquisa por vários termos, que ocorram num mesmo
+                            documento ou publicação, mas não necessariamente juntos, estes podem ser
+                            simplesmente indicados em sequência, podendo também ser utilizado o
+                            sinal +: termo1 termo2, alternativamente +termo1 +termo2.</span>
+                        <span>Fazendo uma pesquisa alternativa por vários termos, que não ocorram
+                            necessariamente num mesmo documento ou publicação, estes devem ser
+                            combinados com OR: termo1 OR termo2.</span>
+                        <span>Fazendo uma pesquisa por vários termos, que ocorram numa certa ordem
+                            juntos num mesmo documento ou publicação, estes devem ser colocados
+                            entre aspas: "termo1 termo2".</span>
+                    </term>
                     <term xml:lang="en" corresp="#search_tips">
                         <span type="head">Search tips</span>
-                        <span>Several search terms are combined with OR.</span>
-                        <span>The plus sign '+' can be used for an AND-search: '+term1
-                            +term2'.</span>
-                        <span>'-' excludes certain parts from the search: '-term1 +term2' searches
-                            for results in which only term 2 is present, but not term 1.</span>
-                        <span>"term1 term2" in quotation marks searches for the exact sequence of
-                            search terms.</span>
+                        <span>A search for several terms that should occur together in a document or
+                            a publication but do not need to occur in the exact order can be done as
+                            follows: term1 term2 or, alternatively, +term1 +term2.</span>
+                        <span>A search for several terms that should each occur in a document or a
+                            publication, but not together in the same one, can be done as follows:
+                            term1 OR term2.</span>
+                        <span>A search for several terms that should occur in the exact order in a
+                            document or publication can be done as follows: "term1 term2".</span>
                     </term>
                     <term xml:lang="de" corresp="#search_tips">
                         <span type="head">Suchhinweise</span>
-                        <span>Mehrere Suchbegriffe werden mit ODER verknüpft.</span>
-                        <span>Für eine UND-Suche kann das '+' verwendet werden: '+Begriff1
-                            +Begriff2'.</span>
-                        <span>'-' schließt bestimmte Teile bei der Suche aus: '-Begriff1 +Begriff2'
-                            sucht nach Treffern, in denen nur Begriff 2, nicht aber Begriff 1
-                            vorkommt.</span>
-                        <span>"Begriff1 Begriff2" in Anführungszeichen sucht nach genau dieser
-                            Abfolge.</span>
+                        <span>Soll nach mehreren Begriffen gesucht werden, die zusammen in einem
+                            Dokument oder einer Publikation vorkommen sollen, aber nicht unbedingt
+                            direkt nacheinander stehen müssen, können diese Begriffe einfach
+                            nacheinander eingegeben werden oder kann das Pluszeichen verwendet
+                            werden: Begriff1 Begriff2, alternativ +Begriff1 +Begriff2.</span>
+                        <span>Soll alternativ nach mehreren Suchbegriffen gesucht werden, die
+                            jeweils aber nicht unbedingt zusammen in einem Dokument oder einer
+                            Publikation vorkommen, können die Begriffe mit OR kombiniert werden:
+                            Begriff1 OR Begriff2.</span>
+                        <span>Soll nach mehreren Begriffen gesucht werden, die in einer bestimmten
+                            Reihenfolge direkt nacheinander in einem Dokument oder eine Publikation
+                            vorkommen, müssen diese in Anführungszeichen gesetzt werden: "Begriff1
+                            Begriff2".</span>
                     </term>
                 </item>
             </list>
@@ -517,8 +537,8 @@
                         Henny-Krahmer, Pedro Sepúlveda and Christian Theisen.
                         Cologne/Lisbon/Würzburg 2017.</term>
                     <term xml:lang="de">Erstellt von Ben Bigalke, Sviatoslav Drach, Ulrike
-                        Henny-Krahmer, Pedro Sepúlveda und Christian Theisen. Köln / Lissabon / Würzburg
-                        2017.</term>
+                        Henny-Krahmer, Pedro Sepúlveda und Christian Theisen. Köln / Lissabon /
+                        Würzburg 2017.</term>
                 </item>
                 <item xml:id="navigation">
                     <term xml:lang="en">Options</term>
@@ -862,6 +882,9 @@
                     <title type="alt" subtype="b">Cancioneiro</title>
                     <title type="alt" subtype="c">Itinerario</title>
                     <list>
+                        <item xml:id="O1-0">
+                            <title>A casa branca nau preta</title>
+                        </item>
                         <item xml:id="O1-1">
                             <title>Abdicação</title>
                         </item>
@@ -961,6 +984,9 @@
                         <item xml:id="O1-26">
                             <title>Natal</title>
                             <title type="alt">“Natal. Na provincia neva”</title>
+                        </item>
+                        <item xml:id="O1-26b">
+                            <title>Névoa</title>
                         </item>
                         <item xml:id="O1-27">
                             <title>O Andaime</title>

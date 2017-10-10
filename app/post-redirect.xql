@@ -10,8 +10,8 @@ declare function local:adapt-conf(){
     return
         (
             update replace $conf-file//webapp-root with <webapp-root>http://www.pessoadigital.pt</webapp-root>,
-update replace $conf-file//request-path with <request-path>/apps/pessoa</request-path>
-)
+            update replace $conf-file//request-path with <request-path>/apps/pessoa</request-path>
+        )
 };
 
 
