@@ -265,7 +265,7 @@ declare function local:collectTexts() {
                                                         ref="{substring-before($hit//tei:publicationStmt/tei:idno[@type="filename"]/data(.),".xml")}" 
                                                         well="{$hit//tei:sourceDesc/tei:biblStruct/tei:analytic/tei:title[@level = "a"]/data(.)}" 
                                                         type="pub"
-                                                        letter="{local:FindFirstLetter-new($hit//tei:sourceDesc/tei:biblStruct/tei:analytic/tei:title[@level = "a"]/data(.),1)}"/>
+                                                        letter="{local:FindFirstLetter-new($hit//tei:sourceDesc/tei:biblStruct/tei:analytic/tei:title[@level = "a"][1]/data(.),1)}"/>
 
     let $well := ($well, $pubs_title)
     return $well

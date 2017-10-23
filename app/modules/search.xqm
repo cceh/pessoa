@@ -16,6 +16,10 @@ declare namespace text="http://exist-db.org/xquery/text";
 declare namespace request="http://exist-db.org/xquery/request";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 
+
+declare function search:test($node as node(), $model as map(*),$pathi) {
+   $pathi
+};
 (:  Profi Suche :)
 declare %templates:wrap function search:profisearch($node as node(), $model as map(*), $term as xs:string?) as map(*) {
         (: Erstellung der Kollektion, sortiert ob "Publiziert" oder "Nicht Publiziert" :)
@@ -429,7 +433,7 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
     let $doc := doc('/db/apps/pessoa/data/lists.xml')
     let $filter := 
      <div class="search_filter">
-                       <form class="/helpers:app-root" action="search" method="post" id="search">
+                       <form class="" action="{$helpers:app-root}/{$helpers:web-language}/search" method="post" id="search">
                             <!-- Nachher mit class="search:profisearch austauschen -->
             <div class="tab" id="ta_author"><h6>{page:singleAttribute($doc,"search","authors")}</h6>
             </div>

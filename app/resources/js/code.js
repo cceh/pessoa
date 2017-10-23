@@ -9,6 +9,7 @@ $(document).ready(function(){
         var acN = par.attr("active");
         var active = "active"+acN;
         var chil = par.children("div");
+
         if(!par.hasClass(active)) {
             for(var i = acN; i <= 3; i++) {
                 var actC = "active"+i;
@@ -18,6 +19,8 @@ $(document).ready(function(){
             }
             par.addClass(active);
             chil.show();
+           // alert(par.parent("ul").height());
+            if(chil.children("ul").hasClass("NAVI_quadNav")) chil.css("top",par.parent("ul").height() +20);
         }
         else {
             $("."+active).children("div").hide();
@@ -184,45 +187,6 @@ function SearchHide() {
  
  
  /*############## Obras Control ############*/
- 
- function ObrasHide() {
-           $("span.ObLink").click(function() {
-           var id1 = $(this).attr("id");
-           var id2 = id1.substring(5)
-           if(!$(this).hasClass("active")) {
-               $(this).addClass("active");
-               $("#"+id2).show("slow");
-            }
-           else {
-               $(this).removeClass("active");
-                $("#"+id2).hide("slow");
-             }
-           });
-};
-
-
-function ObrasControl() {
-        $("div#Obras-DocLinkList").click(function() {
-            $(this).next("ul").toggle("blind","slow"); 
-            $(this).toggleClass("selected");
-        });
-        
-        $("span.Obras-WorkName").click(function() {
-            $(this).next("div").toggle();
-             $(this).toggleClass("selected");
-        });
-        
-        $("div.Obras-SubNav-Publicacao").click(function() {
-            $(this).next("span").toggle();
-            $(this).toggleClass("selected");
-        });
-        
-        
-        $("div.Obras-SubNav-Publication").click(function() {
-            $(this).next("ul").toggle();
-            $(this).toggleClass("selected");
-        });
-    };
 
 
 function drawArrowsEach() {
