@@ -102,43 +102,44 @@
                 </div>
             </div>
             <map data-template="doc:footerfilter" data-template-dir="doc">
-                <div id="cite" title="Citar" style="display:none;">
-                    <p>
-                        <get data-template="doc:cite" data-template-dir="doc"/>
-                    </p>
-                </div>
-                <div id="symboliga" title="Symboliga" style="display:none">
-                    <table>
-                        <tr>
-                            <td>□</td>
-                            <td><lang data-template="helpers:singleElementHidden" data-template-xmltype="symbols" data-template-xmlid="blank_space"/></td>
-                        </tr>
-                        <tr>
-                            <td>*</td>
-                            <td><lang data-template="helpers:singleElementHidden" data-template-xmltype="symbols" data-template-xmlid="conjectural"/></td>
-                        </tr>
-                        <tr>
-                            <td>/ /</td>
-                            <td><lang data-template="helpers:singleElementHidden" data-template-xmltype="symbols" data-template-xmlid="segment"/></td>
-                        </tr>
-                        <tr>
-                            <td>†</td>
-                            <td><lang data-template="helpers:singleElementHidden" data-template-xmltype="symbols" data-template-xmlid="illegible"/></td>
-                        </tr>
-                        <tr>
-                            <td>[ ]</td>
-                            <td><lang data-template="helpers:singleElementHidden" data-template-xmltype="symbols" data-template-xmlid="expanded"/></td>
-                        </tr>                        
-                    </table>
-                </div>
-                <div id="filter">
-                    <a class="filter-a" onclick="printContent()"><lang data-template="helpers:singleElementHidden" data-template-xmltype="footer" data-template-xmlid="print"  /></a>
-                    <get data-template="helpers:getValue" data-template-get="xmllink"/>
-                    <a class="filter-a" id="zitat" ><lang data-template="helpers:singleElementHidden" data-template-xmltype="footer" data-template-xmlid="cite"/></a>
-                    <a class="filter-a" id="symbols"><lang data-template="helpers:singleElementHidden" data-template-xmltype="footer" data-template-xmlid="symbols"/></a>
+                <div id="footerFilter">
+                    <div id="cite" title="Citar" style="display:none;">
+                        <p>
+                            <get data-template="doc:cite" data-template-dir="doc"/>
+                        </p>
+                    </div>
+                    <div id="symboliga" title="Symboliga" style="display:none">
+                        <table>
+                            <tr>
+                                <td>□</td>
+                                <td><lang data-template="helpers:singleElementHidden" data-template-xmltype="symbols" data-template-xmlid="blank_space"/></td>
+                            </tr>
+                            <tr>
+                                <td>*</td>
+                                <td><lang data-template="helpers:singleElementHidden" data-template-xmltype="symbols" data-template-xmlid="conjectural"/></td>
+                            </tr>
+                            <tr>
+                                <td>/ /</td>
+                                <td><lang data-template="helpers:singleElementHidden" data-template-xmltype="symbols" data-template-xmlid="segment"/></td>
+                            </tr>
+                            <tr>
+                                <td>†</td>
+                                <td><lang data-template="helpers:singleElementHidden" data-template-xmltype="symbols" data-template-xmlid="illegible"/></td>
+                            </tr>
+                            <tr>
+                                <td>[ ]</td>
+                                <td><lang data-template="helpers:singleElementHidden" data-template-xmltype="symbols" data-template-xmlid="expanded"/></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="filter">
+                        <a class="filter-a" onclick="printContent()"><lang data-template="helpers:singleElementHidden" data-template-xmltype="footer" data-template-xmlid="print"  /></a>
+                        <get data-template="helpers:getValue" data-template-get="xmllink"/>
+                        <a class="filter-a" id="zitat" ><lang data-template="helpers:singleElementHidden" data-template-xmltype="footer" data-template-xmlid="cite"/></a>
+                        <a class="filter-a" id="symbols"><lang data-template="helpers:singleElementHidden" data-template-xmltype="footer" data-template-xmlid="symbols"/></a>
+                    </div>
                 </div>
             </map>
-            
         </div>
     </div>
     <i data-template="doc:notaButton"/>

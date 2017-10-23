@@ -17,7 +17,8 @@ declare variable $exist:controller external;
 declare variable $exist:prefix external;
 declare variable $exist:root external;
 
-declare variable $exist:sites := (distinct-values(doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]//tei:item/@dir));
+declare variable $exist:sites := (distinct-values(doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]//tei:item/tei:note[@type='directory']/data(.)));
+declare variable $exist:authors := (doc("/db/apps/pessoa/data/lists.xml")//tei:listPerson[@type="authors"]/tei:person/@xml:id,'Pessoa','Caeiro','Campos','Reis');
 declare variable $exist:permission := if(local:logged-in()) then true() else local:Restriction();
 
 declare function local:login() as xs:boolean {
@@ -36,40 +37,63 @@ declare function local:logged-in() as xs:boolean {
 
 declare function local:Restriction() as xs:boolean{
     let $sites := ($exist:sites,"doc","pub","search","timeline","BNP","CP","network")
-    let $path := substring-after($exist:path,concat($helpers:web-language,"/"))
-    let $path := if(contains($path,"/")) then substring-before($path,"/") else $path
-    let $path := if(contains($path,"BNP|CP")) then "doc" else $path
+    let $path := if(contains($exist:path,$helpers:web-language))
+                    then substring-after($exist:path,concat($helpers:web-language,"/"))
+                else if(contains($exist:path,'data'))
+                    then substring-after(substring-after($exist:path,"data/"),"/")
+                else substring-after($exist:path,'/')
+    let $path := if(contains($path,"/"))
+                    then substring-before($path,"/")
+                    else $path
     return if(helpers:contains-any-of($exist:path,$sites)) then
                 switch($path)
                     case "doc" return local:resRestritction()
                     case "pub" return local:resRestritction()
-                    case "search" return false()
+                    case "search" return true()
                     case "timeline" return false()
                     case "network" return true()
                     default return
-                        if(doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]//tei:item[@dir eq $path and @xml:id eq $exist:resource]/@published eq "true")
+                        let $doc := doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]//tei:item[@xml:id eq $exist:resource]
+                            return
+                        if($doc/tei:note[@type='directory']/data(.) eq $path and $doc/tei:note[@type='published']/data(.) eq "true")
                             then true()
                             else false()
         else false()
 };
 
 
+declare function local:pathi() {
+    let $sites := ($exist:sites,"doc","pub","search","timeline","BNP","CP","network")
+    let $path := if(contains($exist:path,$helpers:web-language))
+                    then substring-after($exist:path,concat($helpers:web-language,"/"))
+                else if(contains($exist:path,'data'))
+                    then substring-after(substring-after($exist:path,"data/"),"/")
+                else substring-after($exist:path,'/')
+
+    let $path := if(contains($path,"/"))
+                    then substring-before($path,"/")
+                    else $path
+    let $path := if(helpers:contains-any-of($path,("BNP","CP")))
+                    then "doc"
+                    else if(helpers:contains-any-of($path,$exist:authors))
+                        then "pub"
+                    else $path
+
+    return $path
+};
+
 declare function local:resRestritction() as xs:boolean {
-    if( contains($exist:path,"BNP|CP")) then
-        if(contains($exist:resource,"BNP|CP")) then
-            if(doc(concat("/db/apps/pessoa/data/doc/",$exist:resource,".xml"))//tei:availability/@status eq "free")
+    let $path := if(contains($exist:path,concat($helpers:web-language,'/')))
+                    then substring-before(substring-after($exist:path,concat($helpers:web-language,'/')),'/')
+                else substring-before(substring-after($exist:path,'/'),'/')
+    let $res := if(contains($exist:resource,".xml"))
+                    then $exist:resource
+                else if(contains($exist:path,'/xml'))
+                    then concat(substring-after(substring-before($exist:path,'/xml'),concat($path,'/')),'.xml')
+                else concat($exist:resource,".xml")
+    return if(doc(concat("/db/apps/pessoa/data/",$path,"/",$res))//tei:availability/@status eq "free")
                 then true()
                 else false()
-            else (
-                if(doc(concat("/db/apps/pessoa/data/doc/",substring-after(substring-before($exist:path,concat("/",$exist:resource)),"/"),".xml"))//tei:availability/@status eq "free")
-                    then true()
-                    else false()
-            )
-    else (
-        if(doc(concat("/db/apps/pessoa/data/pub/",$exist:resource,".xml"))//tei:availability/@status eq "free")
-            then true()
-            else false()
-    )
 };
 
 
@@ -152,7 +176,7 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
                                             <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
                                                 <forward url="{$exist:controller}/data/doc/{$id}.xml"/>
                                             </dispatch>
-                                    else if (contains($exist:path,"transcricao-diplomatica") or contains($exist:path,"primeira-versao") or contains($exist:path,"versao-final"))
+                                    else if (helpers:contains-any-of($exist:path,("transcricao-diplomatica","primeira-versao","versao-final")))
                                     then
                                         let $id := substring-before(substring-after($exist:path,"doc/"),"/")
                                         return
@@ -403,8 +427,6 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
                                                                                         <forward url="{$exist:controller}/modules/view.xql"/>
                                                                                     </error-handler>
                                                                                 </dispatch>
-                                                                        (: Resource paths starting with $shared are loaded from the shared-resources app :)
-
                                                                         (:Suche:)
                                                                         else if (contains($exist:path, "search")) then
                                                                                 if(request:get-parameter("orderBy", '') != "" )
@@ -412,6 +434,7 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
                                                                                     let $orderBy := request:get-parameter("orderBy", 'date')
                                                                                     return( search:profiresult(<node />, search:profisearch(<node />, map {"test" := "test"}, request:get-parameter("term",'')), "union",$orderBy))
                                                                                 else
+                                                                                    (session:clear(),
                                                                                     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
                                                                                         <forward url="{$exist:controller}/page/search.html" />
                                                                                         <view>
@@ -422,6 +445,7 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
                                                                                             <forward url="{$exist:controller}/modules/view.xql"/>
                                                                                         </error-handler>
                                                                                     </dispatch>
+                                                                                    )
                                                                             else if(contains($exist:path, "download")) then
                                                                                     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
                                                                                         <forward url="{$exist:controller}/data/{$exist:resource}" />
@@ -431,9 +455,7 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
                                                                                         </error-handler>
                                                                                     </dispatch>
                                                                                 else if ( not(contains(substring-after($exist:path,"pessoa/"),"/")) and not(contains($exist:resource,".")) ) then
-
-                                                                                    (: ( (not(contains($exist:path,"pub")) or not(contains($exist:path,"doc")) or not(contains($exist:path,"resources")) or not(contains($exist:path,"page")) ) (: and search:singleDocument($exist:resource) = fn:true() :)) then
-   :) if( contains($exist:resource,"CP") or contains($exist:resource,"BNP")) then
+                                                                                         if( contains($exist:resource,"CP") or contains($exist:resource,"BNP")) then
                                                                                             let $id := $exist:resource
                                                                                             return
                                                                                                 (session:set-attribute("id", $id),
@@ -475,12 +497,12 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
                                         <set-header name="Cache-Control" value="max-age=3600, must-revalidate"/>
                                     </forward>
                                 </dispatch>
-                            else if(contains($exist:path,"resources")) then
+                            else if(contains($exist:path,"resources") or contains($exist:path,'templates')) then
                                     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
                                         <cache-control cache="yes"/>
                                     </dispatch>
                                 else
 
                                     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-                                        <redirect url="{$config:webapp-root}/{$helpers:web-language}/index.html?l=f"/>
+                                        <redirect url="{$config:webapp-root}/{$helpers:web-language}/index.html?l=f&amp;p={local:pathi()}"/>
                                     </dispatch>

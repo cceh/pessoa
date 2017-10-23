@@ -1143,8 +1143,14 @@ li.itabs.selected span{
 }
 
 
+#footerFilter {
+    position:relative;
+}
 
-#cite {    margin-top: -79px;    width: 38% !important;  }
+#cite {
+    width: 38% !important;
+    bottom:35px;
+}
 #cite p{font-size:14px; margin: 0;}
 
   
@@ -1155,12 +1161,13 @@ li.itabs.selected span{
     background-color: white;
     margin-left: 0px; 
     padding: 10px;
-    position: relative;
+    position: absolute;
     width: auto;
+    z-index:2;
     
 }
 #symboliga {
-    margin-top: -139px;
+    bottom:35px;
 }
 
 #symboliga table tr td {

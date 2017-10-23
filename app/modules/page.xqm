@@ -21,7 +21,7 @@ declare function page:construct($node as node(), $model as map(*)){
                     return map {
                                 "site" := $item/tei:term[@xml:lang = $helpers:web-language]/data(.),
                                 "publ" := $publ,
-                                "type" := $item/@type/data(.),
+                                "type" := $item/@rend/data(.),
                                 "id" := $item/@xml:id/data(.),
                                 "sub" := $sub
                             }
@@ -67,7 +67,7 @@ declare function page:catchSub($list as node(),$item as node()) as map(*)* {
             for $per in $list//tei:listPerson[@type="authors"]/tei:person
                 return map {
                             "site" := $per/tei:persName/data(.),
-                            "publ" := $item/@published,
+                            "publ" := $item/tei:note[@type='published']/data(.),
                             "type" := "link",
                             "id" := $per/@xml:id/data(.),
                             "link" := concat("author/",$per/@xml:id/data(.),"/all")
@@ -77,14 +77,14 @@ declare function page:catchSub($list as node(),$item as node()) as map(*)* {
             for $el in $list//tei:list[@type=$item/@corresp]/tei:item
                         return map {
                                     "site" := $el/tei:term[@xml:lang = $helpers:web-language]/data(.),
-                                    "publ" := $item/@published/data(.),
+                                    "publ" := $item/tei:note[@type='published']/data(.),
                                     "type" := "link",
                                     "id" := $el/@xml:id/data(.),
                                     "link" := concat($item/@corresp,"/",$el/@xml:id/data(.))
 
                                     }
-    else if(exists($item/@linked)) then
-        if($item/@linked eq "doclist") then
+    else if(exists($item/tei:note[@type='linked'])) then
+        if($item/tei:note[@type='linked'] eq "doclist") then
             let $dir := if($item/@xml:id eq "documentos") then "doc" else "pub"
                 let $docs := doc("/db/apps/pessoa/data/doclist.xml")//docs[@dir = $dir]
                 let $indis := distinct-values(for $doc in $docs/doc return $doc/@indi)
@@ -100,11 +100,11 @@ declare function page:catchSub($list as node(),$item as node()) as map(*)* {
                                                     "sub" := $sub
                                                 }
 
-            else if($item/@linked eq "works") then
+            else if($item/tei:note[@type='linked'] eq "works") then
                 let $works := doc("/db/apps/pessoa/data/works.xml")//list[@type="works"]
                 return for $work in $works/item return map {
                                 "site" := $work/title[@type="main"]/data(.),
-                                "publ" := $item/@published,
+                                "publ" := $item/tei:note[@type='published'],
                                 "type" := "link",
                                 "id" := $work/@xml:id,
                                 "link" := concat("obras/",$work/title[@type="main"]/data(.))
@@ -120,13 +120,13 @@ declare function page:mapping($item as node()) as map(*){
     let $return :=
                 map {
                     "site" := $item/tei:term[@xml:lang = $helpers:web-language]/data(.),
-                    "publ" := $item/@published/data(.),
-                    "type" := $item/@type/data(.),
+                    "publ" := $item/tei:note[@type='published']/data(.),
+                    "type" := $item/@rend/data(.),
                     "id" := $item/@xml:id/data(.)
 
                 }
     let $return := if(exists($item/tei:list) or exists($item/@corresp)) then map:new(($return,map {"sub" := page:catchSub(doc("/db/apps/pessoa/data/lists.xml"),$item)})) else $return
-    let $return := if(exists($item/@dir)) then map:new(($return,map {"link" := concat($item/@dir/data(.),"/",$item/@xml:id/data(.))})) else $return
+    let $return := if(exists($item/tei:note[@type='directory'])) then map:new(($return,map {"link" := concat($item/tei:note[@type='directory']/data(.),"/",$item/@xml:id/data(.))})) else $return
     let $return := if(map:contains($return,"sub")) then
                         let $publ := if(contains(string-join(distinct-values(for $s in $return("sub") return $s("publ")),"-"),"true"))
                                         then "true" else "false"

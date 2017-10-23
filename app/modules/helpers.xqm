@@ -159,7 +159,7 @@ declare function helpers:singleElementList_xquery($type as xs:string,$id as xs:s
 };
 
 declare function helpers:singleElementInList($node as node(), $model as map(*), $type as xs:string, $id as xs:string) as xs:string?{
-    doc('/db/apps/pessoa/data/lists.xml')//tei:list[@type = $type]/tei:item[@xml:id=$id]/tei:term[@xml:lang = $helpers:web-language]/data(.)
+    helpers:singleElementInList_xQuery($type,$id)
 
 };
 

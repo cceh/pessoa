@@ -39,141 +39,183 @@
                     <note type="published">false</note>
                     <note type="directory">author</note>
                 </item>-->
-                <item xml:id="autores" published="false" type="button" corresp="authors"
-                    dir="author">
+                <item xml:id="autores" rend="button" corresp="authors">
                     <term xml:lang="pt">Autores</term>
                     <term xml:lang="en">Authors</term>
                     <term xml:lang="de">Autoren</term>
+                    <note type="published">false</note>
+                    <note type="directory">author</note>
                 </item>
-                <item xml:id="documentos" published="false" type="button" linked="doclist">
+                <item xml:id="documentos"  rend="button">
                     <term xml:lang="pt">Documentos</term>
                     <term xml:lang="en">Documents</term>
                     <term xml:lang="de">Dokumente</term>
+                    <note type="published">false</note>
+                    <note type="linked">doclist</note>
                 </item>
-                <item xml:id="publicacoes" published="false" type="button" linked="doclist">
+                <item xml:id="publicacoes"  rend="button">
                     <term xml:lang="pt">Publicações</term>
                     <term xml:lang="en">Publications</term>
                     <term xml:lang="de">Publikationen</term>
+                    <note type="published">false</note>
+                    <note type="linked">doclist</note>
                 </item>
-                <item xml:id="obras" published="false" type="button" linked="works" dir="obras">
+                <item xml:id="obras"  rend="button">
                     <term xml:lang="pt">Obras</term>
                     <term xml:lang="en">Works</term>
                     <term xml:lang="de">Werke</term>
+                    <note type="published">false</note>
+                    <note type="directory">obras</note>
+                    <note type="linked">works</note>
                 </item>
-                <item xml:id="genero" published="false" type="button" corresp="genres" dir="genre">
+                <item xml:id="genero"  rend="button" corresp="genres">
                     <term xml:lang="pt">Géneros</term>
                     <term xml:lang="en">Genres</term>
                     <term xml:lang="de">Genres</term>
+                    <note type="published">false</note>
+                    <note type="directory">genre</note>
                     <!-- einzelne Genres siehe oben list type genres -->
                 </item>
-                <item xml:id="cronologia" published="false" type="button">
+                <item xml:id="cronologia"  rend="button">
                     <term xml:lang="pt">Cronologia</term>
                     <term xml:lang="en">Chronology</term>
                     <term xml:lang="de">Chronologie</term>
+                    <note type="published">false</note>
                     <list type="cronologia">
-                        <item xml:id="D13_15" published="false" type="button" corresp="date">
+                        <item xml:id="D13_15"  rend="button" corresp="date">
                             <term xml:lang="pt">1913-1915</term>
                             <term xml:lang="en">1913-1915</term>
                             <term xml:lang="de">1913-1915</term>
+                            <note type="published">false</note>
                         </item>
-                        <item xml:id="D16_19" published="false" type="button" corresp="date">
+                        <item xml:id="D16_19"  rend="button" corresp="date">
                             <term xml:lang="pt">1916-1919</term>
                             <term xml:lang="en">1916-1919</term>
                             <term xml:lang="de">1916-1919</term>
+                            <note type="published">false</note>
                         </item>
-                        <item xml:id="D20_27" published="false" type="button" corresp="date">
+                        <item xml:id="D20_27"  rend="button" corresp="date">
                             <term xml:lang="pt">1920-1927</term>
                             <term xml:lang="en">1920-1927</term>
                             <term xml:lang="de">1920-1927</term>
+                            <note type="published">false</note>
                         </item>
-                        <item xml:id="D28_35" published="false" type="button" corresp="date">
+                        <item xml:id="D28_35"  rend="button" corresp="date">
                             <term xml:lang="pt">1927-1935</term>
                             <term xml:lang="en">1927-1935</term>
                             <term xml:lang="de">1927-1935</term>
+                            <note type="published">false</note>
                         </item>
-                        <item xml:id="timeline" published="false" type="link">
+                        <item xml:id="timeline"  rend="link">
                             <term xml:lang="pt">Linha do tempo</term>
                             <term xml:lang="en">Timeline</term>
                             <term xml:lang="de">Zeitleiste</term>
+                            <note type="published">false</note>
                         </item>
                     </list>
                 </item>
-                <item xml:id="index" published="false" type="button">
+                <item xml:id="index"  rend="button">
                     <term xml:lang="pt">Índices</term>
                     <term xml:lang="en">Indexes</term>
                     <term xml:lang="de">Indices</term>
+                    <note type="published">false</note>
                     <list type="index">
-                        <item xml:id="bibliografia" published="true" type="button">
+                        <item xml:id="bibliografia" rend="button">
                             <term xml:lang="pt">Bibliografia</term>
                             <term xml:lang="en">Bibliography</term>
                             <term xml:lang="de">Bilbiographie</term>
+                            <note type="published">true</note>
                             <list type="bibliografia">
-                                <item xml:id="bib1" published="true" type="link" dir="bibliografia">
+                                <item xml:id="bib1" published="true" rend="link" >
                                     <term xml:lang="pt">Obras de Fernando Pessoa</term>
                                     <term xml:lang="en">Works of Fernando Pessoa</term>
                                     <term xml:lang="de">Werke von Fernando Pessoa</term>
+                                    <note type="published">true</note>
+                                    <note type="directory">bibliografia</note>
                                 </item>
-                                <item xml:id="bib2" published="true" type="link" dir="bibliografia">
+                                <item xml:id="bib2" published="true" rend="link" >
                                     <term xml:lang="pt">Sobre a obra de Fernando Pessoa</term>
                                     <term xml:lang="en">About the work of Fernando Pessoa</term>
                                     <term xml:lang="de">Über das Werk von Fernando Pessoa</term>
+                                    <note type="published">true</note>
+                                    <note type="directory">bibliografia</note>
                                 </item>
-                                <item xml:id="bib3" published="true" type="link" dir="bibliografia">
+                                <item xml:id="bib3" published="true" rend="link" >
                                     <term xml:lang="pt">Outras fontes da obra de Fernando
                                         Pessoa</term>
                                     <term xml:lang="en">Other sources of the work of Fernando
                                         Pessoa</term>
                                     <term xml:lang="de">Andere Quellen zum Werk von Fernando
                                         Pessoa</term>
+                                    <note type="published">true</note>
+                                    <note type="directory">bibliografia</note>
                                 </item>
                             </list>
                         </item>
-                        <item xml:id="names" published="false" type="link" dir="index">
+                        <item xml:id="names"  rend="link" >
                             <term xml:lang="pt">Nomes</term>
                             <term xml:lang="en">Names</term>
                             <term xml:lang="de">Namen</term>
+                            <note type="published">false</note>
+                            <note type="directory">index</note>
                         </item>
-                        <item xml:id="titles" published="false" type="link" dir="index">
+                        <item xml:id="titles"  rend="link" >
                             <term xml:lang="pt">Títulos</term>
                             <term xml:lang="en">Titles</term>
                             <term xml:lang="de">Titel</term>
+                            <note type="published">false</note>
+                            <note type="directory">index</note>
                         </item>
-                        <item xml:id="periodicals" published="false" type="link" dir="index">
+                        <item xml:id="periodicals"  rend="link" >
                             <term xml:lang="pt">Periódicos</term>
                             <term xml:lang="en">Periodicals</term>
                             <term xml:lang="de">Zeitschriften</term>
+                            <note type="published">false</note>
+                            <note type="directory">index</note>
                         </item>
                     </list>
                 </item>
-                <item xml:id="projeto" published="true" type="button">
+                <item xml:id="projeto" published="true" rend="button">
                     <term xml:lang="pt">Projeto</term>
                     <term xml:lang="en">Project</term>
                     <term xml:lang="de">Projekt</term>
+                    <note type="published">true</note>
+                    <note type="directory">author</note>
                     <list type="projeto">
-                        <item xml:id="about" published="true" type="link" dir="projeto">
+                        <item xml:id="about" published="true" rend="link" >
                             <term xml:lang="pt">Sobre o projeto</term>
                             <term xml:lang="en">About</term>
                             <term xml:lang="de">Über das Projekt</term>
+                            <note type="published">true</note>
+                            <note type="directory">projeto</note>
                         </item>
-                        <item xml:id="team" published="true" type="link" dir="projeto">
+                        <item xml:id="team" published="true" rend="link" >
                             <term xml:lang="pt">Equipa</term>
                             <term xml:lang="en">Team</term>
                             <term xml:lang="de">Team</term>
+                            <note type="published">true</note>
+                            <note type="directory">projeto</note>
                         </item>
-                        <item xml:id="documentation" published="false" type="link" dir="projeto">
+                        <item xml:id="documentation"  rend="link" >
                             <term xml:lang="pt">Documentação</term>
                             <term xml:lang="en">Documentation</term>
                             <term xml:lang="de">Dokumentation</term>
+                            <note type="published">false</note>
+                            <note type="directory">projeto</note>
                         </item>
-                        <item xml:id="dissemination" published="true" type="link" dir="projeto">
+                        <item xml:id="dissemination" published="true" rend="link" >
                             <term xml:lang="pt">Disseminação</term>
                             <term xml:lang="en">Dissemination</term>
                             <term xml:lang="de">Publikationen &amp; Vorträge</term>
+                            <note type="published">true</note>
+                            <note type="directory">projeto</note>
                         </item>
-                        <item xml:id="download" published="false" type="link" dir="projeto">
+                        <item xml:id="download"  rend="link" >
                             <term xml:lang="pt">Downloads</term>
                             <term xml:lang="en">Downloads</term>
                             <term xml:lang="de">Downloads</term>
+                            <note type="published">false</note>
+                            <note type="directory">projeto</note>
                         </item>
                     </list>
                 </item>

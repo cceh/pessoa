@@ -9,6 +9,8 @@ import module namespace author="http://localhost:8080/exist/apps/pessoa/author" 
 import module namespace page="http://localhost:8080/exist/apps/pessoa/page" at "page.xqm";
 import module namespace app="http://localhost:8080/exist/apps/pessoa/templates" at "app.xql";
 import module namespace search="http://localhost:8080/exist/apps/pessoa/search" at "search.xqm";
+import module namespace config="http://localhost:8080/exist/apps/pessoa/config" at "config.xqm";
+
 
 
 declare namespace request="http://exist-db.org/xquery/request";
@@ -207,20 +209,35 @@ declare function doc:get-xml($id){
 declare %templates:wrap function doc:docControll($node as node(), $model as map(*), $id as xs:string) {
       let $libary :=      if(contains($helpers:request-path,"BNP") or contains($helpers:request-path,"CP")) then "doc" 
                          else "pub"
-    let $db := doc('/db/apps/pessoa/data/doclist.xml')            
-    let $list := $db//docs[@dir=$libary]/doc[@availability eq "free"]
+    let $db := doc('/db/apps/pessoa/data/doclist.xml')
+      let $loged := config:logged-in()
+    let $list := if($loged) then $db else  $db//docs[@dir=$libary]/doc[@availability eq "free"]
     let $doc := $list[@id = $id]
-    let $sum := count($list)
-    let $pos := helpers:index-of-node($list,$doc)
+    let $sum := if($loged) then xs:integer($db//meta/sum[@id=$libary]/data(.)) else count($list)
+    let $pos := if($loged) then xs:integer($list//doc[@id = $id]/@pos/data(.))  else helpers:index-of-node($list,$doc)
 (:)
     let $pos := xs:integer($list//doc[@id = $id]/@pos/data(.))         
     let $sum := xs:integer($db//meta/sum[@id=$libary]/data(.))
     :)
     let $forward := if($pos != $sum) then $pos+1 else 1
     let $backward := if($pos != 1) then ($pos) -1 else $sum
-  
 
-    let $arrows := <div>
+
+    let $arrows := if($loged) then
+        <div>
+            <a href="{concat($helpers:app-root,'/',$helpers:web-language,'/',$libary,'/',$list[@pos = $backward]/@id/data(.))}">
+                <span id="back">
+                    {page:singleAttribute(doc('/db/apps/pessoa/data/lists.xml'),"buttons","previous")}
+                </span>
+            </a>
+            <a href="{concat($helpers:app-root,'/',$helpers:web-language,'/',$libary,'/',$list[@pos = $forward]/@id/data(.))}">
+                <span id="forward">
+                    {page:singleAttribute(doc('/db/apps/pessoa/data/lists.xml'),"buttons","next")}
+                </span>
+            </a>
+            <div class="clear"></div>
+        </div>
+        else <div>
                             <a href="{concat($helpers:app-root,'/',$helpers:web-language,'/',$libary,'/',$list[$backward]/@id/data(.))}">
                                 <span id="back"> 
                                     {page:singleAttribute(doc('/db/apps/pessoa/data/lists.xml'),"buttons","previous")}
