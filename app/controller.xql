@@ -50,7 +50,7 @@ declare function local:Restriction() as xs:boolean{
                     case "doc" return local:resRestritction()
                     case "pub" return local:resRestritction()
                     case "search" return true()
-                    case "timeline" return false()
+                    case "timeline" return true()
                     case "network" return true()
                     default return
                         let $doc := doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]//tei:item[@xml:id eq $exist:resource]
@@ -159,17 +159,17 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
                                 <redirect url="index.html"/>
                             </dispatch>
                     )
+                      else  if (contains($exist:path, "events")) then
+                            let $language := $helpers:web-language
+                            return
+                                transform:transform((collection("/db/apps/pessoa/data/doc"), collection("/db/apps/pessoa/data/pub"))//tei:TEI, doc("/db/apps/pessoa/xslt/events.xsl"), <parameters><param name="language" value="{$language}"/><param name="basepath" value="{$exist:controller}"></param></parameters>)
+                        else if ($exist:resource = "tei-odd") then
+                            doc("/db/apps/pessoa/data/schema/pessoaTEI.html")
 
 
                     else if($exist:permission) then (
-                            if (contains($exist:path, "events")) then
-                                let $language := $helpers:web-language
-                                return
-                                    transform:transform((collection("/db/apps/pessoa/data/doc"), collection("/db/apps/pessoa/data/pub"))//tei:TEI, doc("/db/apps/pessoa/xslt/events.xsl"), <parameters><param name="language" value="{$language}"/><param name="basepath" value="{$exist:controller}"></param></parameters>)
-                            else if ($exist:resource = "tei-odd") then
-                                doc("/db/apps/pessoa/data/schema/pessoaTEI.html")
 
-                            else if (contains($exist:path,  "/doc/")) then
+                             if (contains($exist:path,  "/doc/")) then
                                     if ($exist:resource = "xml") then
                                         let $id := substring-before(substring-after($exist:path, "/doc/"), "/xml")
                                         return
