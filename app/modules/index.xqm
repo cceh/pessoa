@@ -17,7 +17,8 @@ declare function index:printLetter($node as node(), $model as map(*)) {
 };
 
 declare function index:printNavigation($node as node(), $model as map(*)) {
-<div class="navigation">{for $letter in $model("letters") return ( <a href="#{$letter}">{$letter}</a>,<span>|</span>)}</div>
+<div class="navigation">{for $letter in $model("letters")
+let $letters := $model("letters")return ( <a href="#{$letter}">{$letter}</a>,if( index-of($letters,$letter) != count($letters) ) then <span>|</span> else ())}</div>
 
 };
 
