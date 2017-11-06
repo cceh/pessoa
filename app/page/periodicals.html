@@ -51,8 +51,10 @@
     <div class="row-fluid">
         <div id="content" class="span12 main">  
             <div id="persons-content">                                       
-                <h1 id="title-tool" data-template="page:singleElement" data-template-xmltype="index" data-template-xmlid="periodicals"/>
-                <div id="personsList" class="span6">              
+                <h1 id="title-tool">
+                    <get data-template="helpers:singleElementInList" data-template-type="index" data-template-id="periodicals"/>
+                </h1>
+                <div id="personsList" class="span6">
                     <map data-template="index:collectJournals">
                         <print data-template="index:printNavigation"/>
                         <each data-template="helpers:invisibleEach" data-template-from="letters" data-template-to="letter">
@@ -75,7 +77,7 @@
                 </div>
             </div>
             <div id="footer2">
-                <get data-template="page:cite" data-template-source="/periodicals"/>
+                <get data-template="page:cite" data-template-source="/index/periodicals"/>
             </div>
         </div>
     </div>

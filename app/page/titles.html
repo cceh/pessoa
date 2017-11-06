@@ -44,7 +44,8 @@
     <div class="row-fluid">
         <div id="content" class="span12 main">  
             <div id="texts-content">
-                <h1 id="title-tool" data-template="page:singleElement" data-template-xmltype="index" data-template-xmlid="titles"/>
+                <h1 id="title-tool"> <get data-template="helpers:singleElementInList" data-template-type="index" data-template-id="titles"/>
+                </h1>
                 <div id="textsList" class="span6">                  
                     <map data-template="index:collectTexts">
                         <print data-template="index:printNavigation"/>
@@ -71,7 +72,7 @@
                 </div> 
             </div>
             <div id="footer2">
-                <get data-template="page:cite" data-template-source="/titels"/>
+                <get data-template="page:cite" data-template-source="/index/titels"/>
             </div>
         </div>
     </div>
