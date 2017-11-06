@@ -185,8 +185,8 @@ declare function index:getPersonIndex($node as node(), $model as map(*)) {
                             for $pers in $person/tei:persName
                                 let $type := if(exists($pers/@type)) then $pers/@type else "none"
                                 let $name := $pers/data(.)
-                                order by $name
-                                return <item id="{$id}" letter="{substring($name,1,1)}" name="{$name}">
+                                order by $name collation '?lang=pt'
+                                return <item id="{$id}" letter="{translate(substring($name,1,1),'Á','A')}" name="{$name}">
                                             {
                                             let $name := if($type != "none") then ("type","person","style") else ("type","person")
                                             let $case := if($type != "none") then ("eq","eq","eq") else ("eq","eq")
@@ -199,12 +199,10 @@ declare function index:getPersonIndex($node as node(), $model as map(*)) {
                                         </item>
     let $letters := for $let in $person return $let/@letter/data(.)
     let $letters := distinct-values($letters)
-
     return map {
         "persons" := $person,
         "letters" := $letters
     }
-
 };
 
 declare function index:getPerson($node as node(), $model as map(*)) {
