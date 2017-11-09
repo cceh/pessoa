@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
@@ -34,7 +35,7 @@
                (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2017</date>
-            <availability status="restricted">
+            <availability status="free">
                <licence target="http://creativecommons.org/licenses/by/3.0/"/>
             </availability>
             <idno type="filename">BNP_E3_15B4-48v.xml</idno>
@@ -46,10 +47,8 @@
                   <idno>BNP/E3 15B4-48v</idno>
                </msIdentifier>
                <msContents>
-                  <summary>
-                     Lista manuscrita. No verso encontra-se um excerto datilografado do livro «A
-                     Hereditariedade», de Opitz, com indicação de data de 1922.
-                  </summary>
+                  <summary> Lista manuscrita. No verso encontra-se um excerto datilografado do livro
+                     «A Hereditariedade», de Opitz, com indicação de data de 1922. </summary>
                   <msItemStruct>
                      <author>
                         <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -90,7 +89,7 @@
                <item><rs type="title">Artigo “De Theatro”</rs>.</item>
                <item><rs type="name" key="P138">Santa Rita</rs>.</item>
                <item>Passar a limpo <rs type="name" key="P30"><choice>
-                        <abbr type="name">M<am>.</am></abbr>
+                        <abbr>M<am>.</am></abbr>
                         <expan>M<ex>ario</ex></expan>
                      </choice> Saa</rs>.</item>
             </list>
