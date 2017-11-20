@@ -350,8 +350,6 @@ declare  function page:createTimelineHeader($node as node(), $model as map(*)) a
 
 
 
-
-
         var data = Timeline.DateTime.parseGregorianDateTime("Oct 02 1921")
         var bandInfos = [
         Timeline.createBandInfo({{
@@ -412,7 +410,7 @@ declare  function page:createTimelineHeader($node as node(), $model as map(*)) a
 
 
         tl = Timeline.create(document.getElementById("my-timeline"), bandInfos, Timeline.HORIZONTAL);
-        tl.loadXML("../events.xml", function(xml, url) {{
+        tl.loadXML("../events.xml?lang={$helpers:web-language}", function(xml, url) {{
         eventSource.loadXML(xml, url);
         }});
         }}

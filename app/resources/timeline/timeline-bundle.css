@@ -1,68 +1,4 @@
- <!-- Similet timeline  --> 
 
-<html xmlns="http://www.w3.org/1999/xhtml" >
-    <head>        
-        <title>Linha do tempo</title>
-        <!--<meta  charset="utf-8" content=""> -->
-        <link  class ="helpers:app-root"  type="text/css" rel="stylesheet"  href="resources/css/timeline.css" media="all"/>  
-        
-            <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700" rel="stylesheet" type="text/css" />
-            <style type="text/css">
-
-         body {
-         
-         font-size: 9pt;
-		 
-         }
-	
-	.timeline-event-tape {
-	opacity:0.2 !important;
-	padding: 2px 0 !important;
-	}
-	
-	.timeline-event-icon {
-	margin-top:-3px !important;
-	margin-left:-4px !important;   
-	}
-	.timeline-event-icon.special_event {
-margin-top: -2px !important;	}
-	
-	.timeline-event-icon img {
-	height:14px;
-	}
- #my-timeline {
- overflow: no;
- height: 1500px;
-border: 3px solid #AAA;
-border-radius: 10px;
-background-color: #fff !important;
- }
-.tape-special_event {  margin-top: 12px;  }
-.simile {
-width: 1800px;
-}
-
-
-
-
-
-
-
-/* neue */
-body {
-     font-family: 'Open Sans', sans-serif;  
-
-}
-h1
-{
-padding: 10px;
-margin-bottom: 0px;
-background-color: rgb(153, 0, 0);
-color: rgb(255, 255, 255);
-border-radius: 5px;
-}
-
-/* ende neue */
 
 /*------------------- Horizontal / Vertical lines ----------------*/
 
@@ -133,7 +69,7 @@ border-radius: 5px;
 .timeline-date-label {
   position: absolute;
   border: solid #aaa;
-  color: #000;
+  color: #aaa;
   width: 5em;
   height: 1.5em;}
 .timeline-date-label-em {color: #000;}
@@ -159,13 +95,12 @@ border-radius: 5px;
 .timeline-event-icon, .timeline-event-label,.timeline-event-tape{
 	position:absolute;
 	cursor:pointer;
-	color: #000;     /*Farbe von Labels*/
 }
 
 .timeline-event-tape,
 .timeline-small-event-tape,
 .timeline-small-event-icon{
-	background-color:#fff;/*	Farbe von DurationEvents*/
+	background-color:#58A0DC;
 	overflow:hidden;
 }
 
@@ -179,9 +114,9 @@ border-radius: 5px;
   
 /*--------------------------------- TIMELINE-------------------------*/
 .timeline-ether-bg{width:100%; height:100%;}
-.timeline-band-0 .timeline-ether-bg{background-color:#F1F1D4} /*	Farbe von Bands oben*/
-.timeline-band-1 .timeline-ether-bg{background-color:#ddd} /*	Farbe von Bands Mitte*/
-.timeline-band-2 .timeline-ether-bg{background-color:#ccc} /*	Farbe von Bands Unten*/
+.timeline-band-0 .timeline-ether-bg{background-color:#eee}
+.timeline-band-1 .timeline-ether-bg{background-color:#ddd}
+.timeline-band-2 .timeline-ether-bg{background-color:#ccc}
 .timeline-band-3 .timeline-ether-bg{background-color:#aaa}
 .timeline-duration-event {
     position: absolute;
@@ -205,11 +140,6 @@ border-radius: 5px;
     font-weight: bold;
     border-bottom: 1px solid #888;
     margin-bottom: 0.5em;
-
-}
-
-.timeline-event-bubble-title a {
-    color:#08298a;
 }
 
 .timeline-event-bubble-body {
@@ -225,8 +155,7 @@ border-radius: 5px;
 }
 
 .timeline-event-bubble-time {
-    color: #fff;/*	Farbe von Time. Soll weiss sein?*/
-	font-size: 0em;
+    color: #aaa;
 }
 
 .timeline-event-bubble-image {
@@ -276,7 +205,7 @@ border-radius: 5px;
 }
 
 .timeline-band-input {
-    position:   static !important;
+    position:   absolute;
     width:      1em;
     height:     1em;
     overflow:   hidden;
@@ -298,18 +227,3 @@ border-radius: 5px;
     height:     100%;
 }
 
-
-      </style>
-
-            
-            
-            <script src="resources/timeline/timeline-api.js?bundle=true" type="text/javascript"></script>
-                <script class="page:createTimelineHeader" type="text/javascript"  ></script>
-</head>
-    <body onload="onLoad();" onresize="onResize();">
-        <h1 class="page:singleElement?xmltype=timeline&amp;xmlid=timeline_title"></h1>
-        <div id="my-timeline" style="height: 1500px; border: 1px solid #aaa; border-radius: 10px;" ></div>
-    
-</body>
-   
-</html>     
