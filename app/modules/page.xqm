@@ -337,6 +337,16 @@ declare %templates:wrap function page:createTimelineBody($node as node(), $model
 
 declare  function page:createTimelineHeader($node as node(), $model as map(*)) as node()* {
     let $lists := doc('/db/apps/pessoa/data/lists.xml')
+        let $script1:=
+        <script>
+        Timeline_ajax_url="{$helpers:app-root}/resources/timeline/timeline_ajax/simile-ajax-api.js";
+        Timeline_urlPrefix='{$helpers:app-root}/resources/timeline/timeline_js/';
+        Timeline_parameters='bundle=true';
+        </script>
+    let $script2 :=
+        <script src="{concat($helpers:app-root,'/resources/timeline/timeline_js/timeline-api.js')}"
+         type="text/javascript">
+       </script>
     let $script3 := <script type="text/javascript">
         var tl;
         function onLoad() {{
@@ -347,8 +357,6 @@ declare  function page:createTimelineHeader($node as node(), $model as map(*)) a
         theme.event.bubble.height = 150;
         theme.event.tape.height = 10;
         theme.event.track.gap = -7;
-
-
 
 
 
@@ -412,12 +420,12 @@ declare  function page:createTimelineHeader($node as node(), $model as map(*)) a
 
 
         tl = Timeline.create(document.getElementById("my-timeline"), bandInfos, Timeline.HORIZONTAL);
-        tl.loadXML("../events.xml", function(xml, url) {{
+        tl.loadXML("../events.xml?lang={$helpers:web-language}", function(xml, url) {{
         eventSource.loadXML(xml, url);
         }});
         }}
     </script>
-    return $script3
+    return ($script1,$script2,$script3)
 };
 
 

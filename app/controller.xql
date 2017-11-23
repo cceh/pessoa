@@ -160,7 +160,7 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
                             </dispatch>
                     )
                       else  if (contains($exist:path, "events")) then
-                            let $language := $helpers:web-language
+                            let $language := request:get-parameter("lang",'pt')
                             return
                                 transform:transform((collection("/db/apps/pessoa/data/doc"), collection("/db/apps/pessoa/data/pub"))//tei:TEI, doc("/db/apps/pessoa/xslt/events.xsl"), <parameters><param name="language" value="{$language}"/><param name="basepath" value="{$exist:controller}"></param></parameters>)
                         else if ($exist:resource = "tei-odd") then
