@@ -88,14 +88,13 @@ declare function local:resRestritction() as xs:boolean {
                 else substring-before(substring-after($exist:path,'/'),'/')
     let $res := if(contains($exist:resource,".xml"))
                     then $exist:resource
-                else if(contains($exist:path,'/xml'))
-                    then concat(substring-after(substring-before($exist:path,'/xml'),concat($path,'/')),'.xml')
+                else if(helpers:contains-any-of($exist:path,('/xml','/primeira-versao','/versao-final','/versao-pessoal')))
+                    then concat(substring-after(substring-before($exist:path,concat('/',$exist:resource)),concat($path,'/')),'.xml')
                 else concat($exist:resource,".xml")
     return if(doc(concat("/db/apps/pessoa/data/",$path,"/",$res))//tei:availability/@status eq "free")
                 then true()
                 else false()
 };
-
 
 (:#### Der öffentlich zugängliche Bereich:)
 
