@@ -85,12 +85,27 @@ declare function local:pathi() {
 declare function local:resRestritction() as xs:boolean {
     let $path := if(contains($exist:path,concat($helpers:web-language,'/')))
                     then substring-before(substring-after($exist:path,concat($helpers:web-language,'/')),'/')
+                else if(helpers:contains-any-of($exist:path,('BNP','CP'))) then
+                    'doc'
+                else if(helpers:contains-any-of($exist:path,('/Caeiro_','/Pessoa_','/Campos_','/Reis_'))) then
+                    'pub'
                 else substring-before(substring-after($exist:path,'/'),'/')
     let $res := if(contains($exist:resource,".xml"))
                     then $exist:resource
-                else if(helpers:contains-any-of($exist:path,('/xml','/primeira-versao','/versao-final','/versao-pessoal')))
-                    then concat(substring-after(substring-before($exist:path,concat('/',$exist:resource)),concat($path,'/')),'.xml')
-                else concat($exist:resource,".xml")
+                else if(contains($exist:path,'/doc/')) then
+                    let $path := substring-after($exist:path,'/doc/')
+                    let $de :=
+                        if(contains($path,'/')) then substring-before($path,'/')
+                        else $path
+                    return concat($de,'.xml')
+                else if(contains($exist:path,'/xml')) then concat(substring-after(substring-before($exist:path,concat('/',$exist:resource)),concat($path,'/')),'.xml')
+                else if(helpers:contains-any-of($exist:path,('/primeira-versao','/versao-final','/versao-pessoal','/transcricao-diplomatica')))
+                    then (:) concat(substring-after(substring-before($exist:path,concat('/',$exist:resource)),concat($path,'/')),'.xml') :)
+                    let $pa := if(contains($exist:path,'BNP')) then substring-before($exist:path,'/BNP')
+                                else substring-before($exist:path,'/CP')
+                    let $p := substring-before(substring-after($exist:path,concat($pa,'/')),'/')
+                    return concat($p,'.xml')
+                        else concat($exist:resource,".xml")
     return if(doc(concat("/db/apps/pessoa/data/",$path,"/",$res))//tei:availability/@status eq "free")
                 then true()
                 else false()
