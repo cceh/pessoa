@@ -314,7 +314,6 @@ let $script := <script type="text/javascript">
             var i = url.lastIndexOf("/");
             var j = url.lastIndexOf("#");
             var id = url.substring(i+1,j);
-           
             var toLoad = "{$helpers:app-root}/{$helpers:web-language}/doc/{$id}/versao-pessoal?case=div";
             if ($("#lb").is(":checked"))
             {{
