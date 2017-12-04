@@ -24,11 +24,36 @@
                             <xsl:text>false</xsl:text>
                         </xsl:attribute>
                     </xsl:if>
-                    <xsl:if test="(.//origDate/@from and .//origDate/@to) or (.//imprint/date/@from and .//imprint/date/@to)">
-                        <xsl:attribute name="classname">
-                            <xsl:text>special_event</xsl:text>
-                        </xsl:attribute>
-                    </xsl:if>
+                    <xsl:choose>
+                        <xsl:when test="(.//origDate/@from and .//origDate/@to) or (.//imprint/date/@from and .//imprint/date/@to)">
+                            <xsl:choose>
+                                <xsl:when test="starts-with(//idno[@type='filename'],'BNP') or starts-with(//idno[@type='filename'], 'CP')">
+                                    <xsl:attribute name="classname">
+                                        <xsl:text>special_event document</xsl:text>
+                                    </xsl:attribute>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="classname">
+                                        <xsl:text>special_event publication</xsl:text>
+                                    </xsl:attribute>     
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:choose>
+                                <xsl:when test="starts-with(//idno[@type='filename'],'BNP') or starts-with(//idno[@type='filename'], 'CP')">
+                                    <xsl:attribute name="classname">
+                                        <xsl:text>document</xsl:text>
+                                    </xsl:attribute>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:attribute name="classname">
+                                        <xsl:text>publication</xsl:text>
+                                    </xsl:attribute>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:otherwise>
+                    </xsl:choose>
                     <xsl:attribute name="caption">
                         <xsl:value-of select=".//origDate | .//imprint/date"/>
                     </xsl:attribute>
