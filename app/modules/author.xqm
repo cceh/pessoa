@@ -8,15 +8,7 @@ import module namespace search="http://localhost:8080/exist/apps/pessoa/search" 
 import module namespace page="http://localhost:8080/exist/apps/pessoa/page" at "page.xqm";
 
 declare function author:getTitle($node as node(), $model as map(*), $author){
-    if($author = "pessoa") then
-        <h1>Fernando Pessoa</h1>
-    else if($author="reis") then
-        <h1>Ricardo Reis</h1>
-    else if($author="caeiro") then
-        <h1>Alberto Caeiro</h1>
-    else if($author="campos") then
-        <h1>Álvaro de Campos</h1>
-    else ()
+    <h1>{doc("/db/apps/pessoa/data/lists.xml")//tei:listPerson[@type='authors']/tei:person[@xml:id=$author]/tei:persName}</h1>
         };
 
 declare function author:reorder($node as node(), $model as map(*),$orderBy, $textType, $author){
@@ -24,21 +16,44 @@ declare function author:reorder($node as node(), $model as map(*),$orderBy, $tex
 };
 
 declare function author:getTabs($node as node(), $model as map(*), $textType as xs:string?, $author as xs:string?){
-    let $lists := doc('/db/apps/pessoa/data/lists.xml')
+    let $url := concat($helpers:app-root,'/author/',$author)
+    return <ul id="tabs">
+        {for $type in ('all','documents','publications')
+            let $t := if($type eq "all") then "publications-and-documents" else $type
+            let $a := <a href='{$url}/{$type}'>{helpers:singleElementInList_xQuery('author-pages',$t)}</a>
+            return if($type eq $textType) then
+                    <li class='selected'>
+                        {$a}
+                    </li>
+                else  <li>
+                        {$a}
+                    </li>
+        }
+    </ul>
+    (:)
     return
     if ($textType = "all") then
-        <ul id="tabs"><li class="selected"><a href="{$helpers:app-root}/author/{$author}/all">{page:singleAttribute($lists,"author-pages", "publications-and-documents")}</a></li>
+        <ul id="tabs"><li class="selected"><a href="{$helpers:app-root}/author/{$author}/all">
+            {page:singleAttribute($lists,"author-pages", "publications-and-documents")}</a></li>
         <li><a href="{$helpers:app-root}/author/{$author}/documents">{page:singleAttribute($lists, "author-pages","documents")}</a></li>
         <li><a href="{$helpers:app-root}/author/{$author}/publications">{page:singleAttribute($lists, "author-pages","publications")}</a></li></ul>                
     else if($textType = "documents") then 
-        <ul id="tabs"><li><a href="{$helpers:app-root}/author/{$author}/all">{page:singleAttribute($lists, "author-pages","publications-and-documents")}</a></li>
-        <li class="selected"><a href="{$helpers:app-root}/author/{$author}/documents">{page:singleAttribute($lists, "author-pages","documents")}</a></li>
+        <ul id="tabs">
+            <li>
+                <a href="{$helpers:app-root}/author/{$author}/all">
+                    {page:singleAttribute($lists, "author-pages","publications-and-documents")}
+                </a>
+            </li>
+        <li class="selected"><a href="{$helpers:app-root}/author/{$author}/documents">
+            {page:singleAttribute($lists, "author-pages","documents")}
+        </a></li>
         <li><a href="{$helpers:app-root}/author/{$author}/publications">{page:singleAttribute($lists, "author-pages","publications")}</a></li></ul> 
     else if($textType ="publications") then
         <ul id="tabs"><li><a href="{$helpers:app-root}/author/{$author}/all">{page:singleAttribute($lists, "author-pages","publications-and-documents")}</a></li>
         <li><a href="{$helpers:app-root}/author/{$author}/documents">{page:singleAttribute($lists, "author-pages","documents")}</a></li>
         <li class ="selected"><a href="{$helpers:app-root}/author/{$author}/publications">{page:singleAttribute($lists, "author-pages","publications")}</a></li></ul>         
-    else()                   
+    else()
+            :)
 };
 
 

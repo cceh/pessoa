@@ -21,6 +21,7 @@ declare variable $helpers:webfile-path := $config:webfile-path;
 declare variable $helpers:web-language := if(contains($config:request-path,"/en/")) then "en"
                                             else if(contains($config:request-path,"/de/")) then "de"
                                             else "pt";
+declare variable $helpers:lists := doc('/db/apps/pessoa/data/lists.xml');
 (:
 declare variable $helpers:web-language := ();
 
@@ -144,18 +145,15 @@ declare function helpers:singleElement_xquery($type as xs:string,$id as xs:strin
 };
 
 declare function helpers:singleElementNode_xquery($type as xs:string,$id as xs:string)  {
-    let $doc := doc('/db/apps/pessoa/data/lists.xml')   
-    let $entry := if($helpers:web-language = "pt") 
-                  then $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @xml:id=$id]
-                  else $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @corresp=concat("#",$id)]
+    let $entry:= if($helpers:web-language = "pt")
+                  then $helpers:lists//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @xml:id=$id]
+                  else $helpers:lists//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @corresp=concat("#",$id)]
      return $entry
 };
 declare function helpers:singleElementList_xquery($type as xs:string,$id as xs:string) as xs:string? {
-    let $doc := doc('/db/apps/pessoa/data/lists.xml')   
-    let $entry := if($helpers:web-language = "pt") 
-                  then $doc//tei:list[@type=$type and @xml:lang=$helpers:web-language]/tei:item[@xml:id=$id]
-                  else $doc//tei:list[@type=$type and @xml:lang=$helpers:web-language]/tei:item[@corresp=concat("#",$id)]
-     return $entry/data(.)
+    if($helpers:web-language = "pt")
+                  then $helpers:lists//tei:list[@type=$type and @xml:lang=$helpers:web-language]/tei:item[@xml:id=$id]
+                  else $helpers:lists//tei:list[@type=$type and @xml:lang=$helpers:web-language]/tei:item[@corresp=concat("#",$id)]
 };
 
 declare function helpers:singleElementInList($node as node(), $model as map(*), $type as xs:string, $id as xs:string) as xs:string?{
@@ -164,7 +162,7 @@ declare function helpers:singleElementInList($node as node(), $model as map(*), 
 };
 
 declare function helpers:singleElementInList_xQuery($type as xs:string, $id as xs:string) as xs:string?{
-    doc('/db/apps/pessoa/data/lists.xml')//tei:list[@type = $type]/tei:item[@xml:id=$id]/tei:term[@xml:lang = $helpers:web-language]/data(.)
+    $helpers:lists//tei:list[@type = $type]/tei:item[@xml:id=$id]/tei:term[@xml:lang = $helpers:web-language]/data(.)
 };
 
 declare function helpers:index-of-node

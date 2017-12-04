@@ -52,13 +52,13 @@ declare function doc:catch-text($node as node(), $model as map(*),$id as xs:stri
                 case "versao-final" return doc:get-text-var2($xml)
                 case "versao-pessoal" return (<form method="get">
                                 <div id="DivPessoal-1" class="DivPessoal">
-                                    <input id ="lb" name="lb" type="checkbox" checked="checked" value="yes" onchange="versaoPessoal();"></input> <label for="lb">{helpers:singleElement_xquery("personal-version","line-breaks")}</label><br/>
-                                    <input id="abbr" name="abbr" type="checkbox" checked="checked" value="yes" onchange="versaoPessoal();"></input> <label for="abbr">{helpers:singleElement_xquery("personal-version","abbreviations")}</label><br/>  
+                                    <input id ="lb" name="lb" type="checkbox" checked="checked" value="yes" onchange="versaoPessoal();"></input> <label for="lb">{helpers:singleElementInList_xQuery("personal-version","line-breaks")}</label><br/>
+                                    <input id="abbr" name="abbr" type="checkbox" checked="checked" value="yes" onchange="versaoPessoal();"></input> <label for="abbr">{helpers:singleElementInList_xQuery("personal-version","abbreviations")}</label><br/>
                                 </div>
                                 <div id="DivPessoal-2" class="DivPessoal">
-                                    <input id ="diplomatic" name="version" type="radio" checked="checked" value="yes" onchange="versaoPessoal();"></input> <label for="diplomatic">{helpers:singleElement_xquery("personal-version","diplomatic-version")}</label><br/> 
-                                    <input id ="first" name="version" type="radio" value="yes" onchange="versaoPessoal();"></input> <label for="first">{helpers:singleElement_xquery("personal-version","first-version")}</label><br/> 
-                                    <input id ="last" name="version" type="radio" value="yes" onchange="versaoPessoal();"></input> <label for="last">{helpers:singleElement_xquery("personal-version","last-version")}</label><br/> 
+                                    <input id ="diplomatic" name="version" type="radio" checked="checked" value="yes" onchange="versaoPessoal();"></input> <label for="diplomatic">{helpers:singleElementInList_xQuery("personal-version","diplomatic-version")}</label><br/>
+                                    <input id ="first" name="version" type="radio" value="yes" onchange="versaoPessoal();"></input> <label for="first">{helpers:singleElementInList_xQuery("personal-version","first-version")}</label><br/>
+                                    <input id ="last" name="version" type="radio" value="yes" onchange="versaoPessoal();"></input> <label for="last">{helpers:singleElementInList_xQuery("personal-version","last-version")}</label><br/>
                                 </div>
                             </form>,
                             <div class="clear"/>,                            
@@ -297,13 +297,8 @@ declare  function doc:get-recorder($node as node(), $model as map(*)) as node() 
     return $script
 };
 
-declare function doc:get-genre_type($node as node(), $model as map(*)) as node() {
-    let $type := substring-after($helpers:request-path,"genre/")
-   
-    let $title := if($helpers:web-language = "pt") 
-        then data(doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="genres"][@xml:lang=$helpers:web-language]/tei:item[@xml:id=$type])
-        else data(doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="genres"][@xml:lang=$helpers:web-language]/tei:item[@corresp=concat("#",$type)])
-    return <h1>{ $title}</h1>
+declare function doc:get-genre_type($node as node(), $model as map(*),$type as xs:string) as node() {
+    <h1>{ helpers:singleElementInList_xQuery("genres",$type)}</h1>
 };
 
 declare function doc:get-versaoPessoal($node as node(), $model as map(*), $id as xs:string) as node() {
