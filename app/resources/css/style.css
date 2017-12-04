@@ -1517,6 +1517,10 @@ div.text span.note circled, div.text span.circled {
     left: 10px;
     position: relative;
 }
+div.text span.note framed, div.text span.framed {
+    border: 1px solid black;
+    display: inline-block;
+}
 div.text span.label.circled {
     border: 1px solid black;
     border-radius: 20px;
@@ -1866,7 +1870,11 @@ div.text#BNP_E3_136-57v span.note.margin-right {
 }
 div.text#BNP_E3_136-57v span.note.margin-right.circled {
     margin: 0 1em;
-    padding: 0.2em;
+    padding: 0;
+    display: block;
+    width: 5%;
+    left: 80%;
+    bottom: 30%;
 }
 
 /* BNP_E3_137D-3 */

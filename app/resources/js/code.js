@@ -268,16 +268,17 @@ function jsBlockStrikeThrough(svg,t,l,w,h) {
         el1 = $("#"+el1);
         el2 = $("#"+el2);
         var direction = el1.attr("class");
-        var  a = pathMove(direction.substring(17,direction.length));
-
+        var a = pathMove(direction.substring(17,direction.length));
+        
+        var off = getOffset(direction.substring(17,direction.length));
 
         el1 = el1.offset();
-        var x1 = el1.left - l +5;
-        var y1 = el1.top - t;
+        var x1 = el1.left - l + parseInt(off[0]);
+        var y1 = el1.top - t + parseInt(off[2]);
 
         el2 = el2.offset();
-        var x2 = el2.left - l + 10;
-        var y2 = el2.top - t;
+        var x2 = el2.left - l + parseInt(off[1]);
+        var y2 = el2.top - t + parseInt(off[3]);
         var path = document.createElementNS(svgNS,'path');
                     path.setAttribute('d', 'M ' + x1 + ' ' + y1 + ' A '+ a + x2 + ' ' + y2);
                     path.setAttribute('stroke', '#000000');
@@ -290,25 +291,45 @@ function jsBlockStrikeThrough(svg,t,l,w,h) {
         
         };
     
+    function getOffset(direction){
+      var off = new Array();
+      var ox1,ox2,oy1,oy2;
+      switch(direction) {
+            case "arrow-right-curved-up": ox1 = 0; ox2 = 10; oy1 = 10; oy2 = 20; break; //  geht von unten nach oben, nach rechts gekrümmt)
+            case "arrow-right-curved-down":  ox1 = 0; ox2 = 0; oy1 = 0; oy2 = 0; break; // (= geht von oben nach unten, nach rechts gekrümmt)
+            case "arrow-left-curved-up":  ox1 = 0; ox2 = 0; oy1 = 0; oy2 = 0; break; // (=geht von unten nach oben, nach links gekrümmt)
+            case "arrow-left-curved-down":  ox1 = 0; ox2 = 0; oy1 = 10; oy2 = 10; break;// (=geht von oben nach unten, nach links gekrümmt)
+            case "arrow-left-down":  ox1 = 10; ox2 = 10; oy1 = 10; oy2 = 0; break; //(=nach links ausgerichteter Pfeil, der gerade, nicht gekrümmt, nach unten geht)
+            case "arrow-left-up":   //(=nach links ausgerichteter Pfeil, der gerade nach oben geht)
+            case "arrow-right-down": ox1 = 0; ox2 = 0; oy1 = 10; oy2 = 0; break; // (=nach rechts ausgerichteter Pfeil, der gerade nach unten geht)
+            case "arrow-right-up":   //(=nach rechts ausgerichteter Pfeil, der gerade nach oben geht)
+            case "arrow-up":  //(=Pfeil, der gerade nach oben geht, ohne links oder rechts; vermutlich sind die gerade Pfeile technisch alle gleich zu behandeln, halt von A nach B ohne Krümmung, im TEI macht die Unterscheidung aber noch inhaltlich Sinn)
+            case "arrow-down":  ox1 = 0; ox2 = 0; oy1 = 0; oy2 = 0; break; //(=Pfeil, der gerade nach unten geht)
+            default: return ox1 = 0; ox2 = 0; oy1 = 0; oy2 = 0; break;
+
+        }
+      return off = [ox1,ox2,oy1,oy2];
+    };
 
     function pathMove(direction) {
         var a = "";
         switch(direction) {
-            case "arrow-right-curved-up": case "arrow-right-curvep-up": a = "10 10 0 1 0"; break; //  geht von unten nach oben, nach rechts gekrümmt)
-            case "arrow-right-curved-down":  a = "10 10 0 1 1"; break; // (= geht von oben nach unten, nach rechts gekrümmt)
-            case "arrow-left-curved-up":  a = "10 10 0 1 1"; break; // (=geht von unten nach oben, nach links gekrümmt)
-            case "arrow-left-curved-down":  a = "10 10 0 1 0"; break;// (=geht von oben nach unten, nach links gekrümmt)
+            case "arrow-right-curved-up": a = "10 15 0 1 0"; break; //  geht von unten nach oben, nach rechts gekrümmt)
+            case "arrow-right-curved-down":  a = "10 15 0 1 1"; break; // (= geht von oben nach unten, nach rechts gekrümmt)
+            case "arrow-left-curved-up":  a = "10 15 0 1 1"; break; // (=geht von unten nach oben, nach links gekrümmt)
+            case "arrow-left-curved-down":  a = "10 15 0 1 0"; break;// (=geht von oben nach unten, nach links gekrümmt)
             case "arrow-left-down":    //(=nach links ausgerichteter Pfeil, der gerade, nicht gekrümmt, nach unten geht)
             case "arrow-left-up":   //(=nach links ausgerichteter Pfeil, der gerade nach oben geht)
             case "arrow-right-down":   // (=nach rechts ausgerichteter Pfeil, der gerade nach unten geht)
             case "arrow-right-up":   //(=nach rechts ausgerichteter Pfeil, der gerade nach oben geht)
             case "arrow-up":  //(=Pfeil, der gerade nach oben geht, ohne links oder rechts; vermutlich sind die gerade Pfeile technisch alle gleich zu behandeln, halt von A nach B ohne Krümmung, im TEI macht die Unterscheidung aber noch inhaltlich Sinn)
             case "arrow-down":  a = "0 0 0 1 1"; break; //(=Pfeil, der gerade nach unten geht)
-            default: return a = "10 10 0 1 1";break;
+            default: return a = "10 10 0 1 1"; break;
 
         }
         return a;
-    }
+    };
+    
     function GetURLParameter(sParam){
         var sPageURL = window.location.search.substring(1);
         var sURLVariables = sPageURL.split('&');
