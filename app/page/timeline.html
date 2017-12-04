@@ -7,6 +7,37 @@
         <link  class ="helpers:app-root"  type="text/css" rel="stylesheet"  href="resources/css/timeline.css" media="all"/>  
         
             <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700" rel="stylesheet" type="text/css" />
+            <link class="helpers:app-root" rel="stylesheet" type="text/css" href="resources/css/jquery-ui.css"/>
+            <link class="helpers:app-root" rel="stylesheet" type="text/css" href="resources/css/jquery-ui.structure.css"/>
+            <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery-1.11.2.js"/>
+            <script class="helpers:app-root" type="text/javascript" src="resources/js/code.js"/>
+            <script class="helpers:app-root" type="text/javascript" src="resources/js/jquery-ui.js"/>
+            <script>
+                $(document).ready(function(){
+                   $('#radios').find('input').click(function() {
+                       var i =  $(this).attr('id');
+                       var time = $('#my-timeline').find('.timeline-band-layer-inner').children();
+                       if(i == 'doc') {
+                            time.each(function() {
+                                if($(this).hasClass('document')) $(this).show();
+                                if($(this).hasClass('publication')) $(this).hide();
+                            })
+                       }
+                       if(i == 'pub') {
+                           time.each(function() {
+                               if($(this).hasClass('document')) $(this).hide();
+                               if($(this).hasClass('publication')) $(this).show();
+                           })
+                       }
+                       if(i == 'all') {
+                           time.each(function() {
+                               if($(this).hasClass('document')) $(this).show();
+                               if($(this).hasClass('publication')) $(this).show();
+                           })
+                       }
+                   });
+                });
+            </script>
             <style type="text/css">
 
          body {
@@ -307,7 +338,27 @@ border-radius: 5px;
 
     </head>
     <body onload="onLoad();" onresize="onResize();">
-        <h1 class="page:singleElement?xmltype=timeline&amp;xmlid=timeline_title"></h1>
+        <div>
+            <h1>
+                <get data-template="helpers:singleElementInList" data-template-type="timeline" data-template-id="timeline_title"/>
+            </h1>
+            <div id="radios">
+                <form>
+                    <input type="radio" name="select" id="all" checked="checked"/>
+                    <label for="all">
+                        <get data-template="helpers:singleElementInList" data-template-type="author-pages" data-template-id="publications-and-documents"/>
+                    </label>
+                    <input type="radio" name="select" id="doc"/>
+                    <label for="doc">
+                        <get data-template="helpers:singleElementInList" data-template-type="author-pages" data-template-id="documents"/>
+                    </label>
+                    <input type="radio" name="select" id="pub"/>
+                    <label for="pub">
+                        <get data-template="helpers:singleElementInList" data-template-type="author-pages" data-template-id="publications"/>
+                    </label>
+                </form>
+            </div>
+        </div>
         <div id="my-timeline" style="height: 1500px; border: 1px solid #aaa; border-radius: 10px;" ></div>
     
 </body>
