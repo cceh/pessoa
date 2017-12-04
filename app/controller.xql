@@ -17,10 +17,10 @@ declare variable $exist:controller external;
 declare variable $exist:prefix external;
 declare variable $exist:root external;
 
-declare variable $exist:sites := (distinct-values(doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]//tei:item/tei:note[@type='directory']/data(.)));
-declare variable $exist:authors := (doc("/db/apps/pessoa/data/lists.xml")//tei:listPerson[@type="authors"]/tei:person/@xml:id,'Pessoa','Caeiro','Campos','Reis');
+declare variable $exist:lists := doc("/db/apps/pessoa/data/lists.xml");
+declare variable $exist:sites := (distinct-values($exist:lists//tei:list[@type="navigation"]//tei:item/tei:note[@type='directory']/data(.)));
+declare variable $exist:authors := ($exist:lists//tei:listPerson[@type="authors"]/tei:person/@xml:id,'Pessoa','Caeiro','Campos','Reis');
 declare variable $exist:permission := if(local:logged-in()) then true() else local:Restriction();
-
 declare function local:login() as xs:boolean {
     let $loginuser := request:get-parameter('user',())
     let $loginpassword := request:get-parameter('pass',())
@@ -52,15 +52,33 @@ declare function local:Restriction() as xs:boolean{
                     case "search" return true()
                     case "timeline" return true()
                     case "network" return true()
+                    case "genre" return local:DirRestriction("genero")
+                    case "author" return local:DirRestriction("autores")
                     default return
-                        let $doc := doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="navigation"]//tei:item[@xml:id eq $exist:resource]
-                            return
-                        if($doc/tei:note[@type='directory']/data(.) eq $path and $doc/tei:note[@type='published']/data(.) eq "true")
-                            then true()
-                            else false()
+                        local:PathRestriction($sites)
         else false()
 };
 
+declare function local:PathRestriction($sites) as xs:boolean {
+    if(helpers:contains-any-of($exist:path,$sites)) then
+        for $s in $sites where contains($exist:path,$s) return
+            if($s eq $exist:resource) then
+                let $n := $exist:lists//tei:list[@type="navigation"]//tei:item[@xml:id eq $s]/tei:note[@type='published']/data(.)
+                return if($n eq 'true') then true() else false()
+                (:)
+            else if(exists($exist:lists//tei:list[@type="navigation"]/tei:item/tei:note[@type='directory'])) then
+                for $n in  $exist:lists//tei:list[@type="navigation"]/tei:item
+                    where $n/tei:note[@type='directory']/data(.) eq $s
+                    return if($n/tei:note[@type='published']/data(.) eq 'true') then true() else false()
+                    :)
+            else false()
+    else false()
+};
+
+declare function local:DirRestriction($id) as xs:boolean {
+    let $n := $exist:lists//tei:list[@type="navigation"]//tei:item[@xml:id eq $id]/tei:note[@type='published']/data(.)
+    return if($n eq 'true') then true() else false()
+};
 
 declare function local:pathi() {
     let $sites := ($exist:sites,"doc","pub","search","timeline","BNP","CP","network")

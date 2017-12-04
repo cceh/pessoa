@@ -70,7 +70,7 @@ declare function page:catchSub($list as node(),$item as node()) as map(*)* {
                             "publ" := $item/tei:note[@type='published']/data(.),
                             "type" := "link",
                             "id" := $per/@xml:id/data(.),
-                            "link" := concat("author/",$per/@xml:id/data(.),"/all")
+                            "link" := concat($item/tei:note[@type='directory']/data(.),"/",$per/@xml:id/data(.),"/all")
                         }
         else if($item/@corresp eq "date") then page:DATEmapping($item/@xml:id/data(.))
         else
@@ -80,7 +80,7 @@ declare function page:catchSub($list as node(),$item as node()) as map(*)* {
                                     "publ" := $item/tei:note[@type='published']/data(.),
                                     "type" := "link",
                                     "id" := $el/@xml:id/data(.),
-                                    "link" := concat($item/@corresp,"/",$el/@xml:id/data(.))
+                                    "link" := concat($item/tei:note[@type='directory']/data(.),"/",$el/@xml:id/data(.))
 
                                     }
     else if(exists($item/tei:note[@type='linked'])) then
