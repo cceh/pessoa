@@ -123,7 +123,6 @@ declare function page:mapping($item as node()) as map(*){
                     "publ" := $item/tei:note[@type='published']/data(.),
                     "type" := $item/@rend/data(.),
                     "id" := $item/@xml:id/data(.)
-
                 }
     let $return := if(exists($item/tei:list) or exists($item/@corresp)) then map:new(($return,map {"sub" := page:catchSub(doc("/db/apps/pessoa/data/lists.xml"),$item)})) else $return
     let $return := if(exists($item/tei:note[@type='directory'])) then map:new(($return,map {"link" := concat($item/tei:note[@type='directory']/data(.),"/",$item/@xml:id/data(.))})) else $return
