@@ -36,7 +36,7 @@ declare function local:logged-in() as xs:boolean {
 };
 
 declare function local:Restriction() as xs:boolean{
-    let $sites := ($exist:sites,"doc","pub","search","timeline","BNP","CP","network","projeto","index")
+    let $sites := ($exist:sites,"doc","pub","search","timeline","BNP","CP","network")
     let $path := if(contains($exist:path,$helpers:web-language))
                     then substring-after($exist:path,concat($helpers:web-language,"/"))
                 else if(contains($exist:path,'data'))
@@ -54,8 +54,6 @@ declare function local:Restriction() as xs:boolean{
                     case "network" return true()
                     case "genre" return local:DirRestriction("genero")
                     case "author" return local:DirRestriction("autores")
-                    case "projeto" return true()
-                    case "index" return true()
                     default return
                         local:PathRestriction($sites)
         else false()
@@ -73,7 +71,9 @@ declare function local:PathRestriction($sites) as xs:boolean {
                     where $n/tei:note[@type='directory']/data(.) eq $s
                     return if($n/tei:note[@type='published']/data(.) eq 'true') then true() else false()
                     :)
-            else false()
+            else
+                let $n := $exist:lists//tei:list[@type="navigation"]//tei:item[@xml:id eq $exist:resource]/tei:note[@type='published']/data(.)
+                return if($n eq 'true') then true() else false()
     else false()
 };
 
