@@ -126,7 +126,7 @@ declare function page:mapping($item as node()) as map(*){
                 }
     let $return := if(exists($item/tei:list) or exists($item/@corresp)) then map:new(($return,map {"sub" := page:catchSub(doc("/db/apps/pessoa/data/lists.xml"),$item)})) else $return
     let $return := if(exists($item/tei:note[@type='directory'])) then map:new(($return,map {"link" := concat($item/tei:note[@type='directory']/data(.),"/",$item/@xml:id/data(.))})) else $return
-    let $return := if($item/@xml:id/data(.) = "timeline") then map:new(($return,map {"link" := $item/@xml:id/data(.)})) else $return
+    let $return := if($item/@xml:id/data(.) = "timeline" or $item/@xml:id/data(.) = "network") then map:new(($return,map {"link" := $item/@xml:id/data(.)})) else $return
 
     let $return := if(map:contains($return,"sub")) then
                         let $publ := if(contains(string-join(distinct-values(for $s in $return("sub") return $s("publ")),"-"),"true"))
@@ -136,6 +136,7 @@ declare function page:mapping($item as node()) as map(*){
                     else $return
     return $return
 };
+
 
 declare function page:DOCmapping($docs as node(), $indi as xs:string,$dir as xs:string) as map(*)* {
    for $doc in $docs/doc where $doc/@indi eq $indi
