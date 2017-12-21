@@ -290,7 +290,7 @@ if(exists($sel) and $sel = "union")
                         </li>                        
             else for $item in $data 
                         return <li><a href="{$helpers:app-root}/{$helpers:web-language}/{$item/@dir/data(.)}/{$item/@file/data(.)}">{$item/@title/data(.)}</a></li>                        
-    else <p>{page:singleAttribute(doc('/db/apps/pessoa/data/lists.xml'),"search","no_results")}</p>
+    else <p>{helpers:singleElementInList_xQuery("search","no_results")}</p>
     else <p>Error</p>
 };
 
@@ -322,10 +322,10 @@ declare function search:datePub($pub) {
 };
 
 declare function search:ResutlToItemDoc($hit,$query) {
-<item 
+<item
     dir="doc"
     file = "{substring-before(root($hit)/util:document-name(.),".xml")}"
-    title="{replace($hit//tei:msDesc/tei:msIdentifier/tei:idno[1]/data(.),"/E3","")}" 
+    title="{replace($hit//tei:msDesc/tei:msIdentifier/tei:idno[1]/data(.),"/E3","")}"
     date="{search:dateDoc($hit)}"
     kwic="{if($query!="") then search:kwic($hit)else ""}"
 />
@@ -354,7 +354,7 @@ declare function search:result_union($model as node()*) as node()* {
 else ()
 };
 declare function search:highlight-matches($node as node(), $model as map(*), $term as xs:string?, $sel as xs:string, $file as xs:string?) as node() {
-if($term and $file and $sel and $sel="text","head","lang") 
+if($term and $file and $sel and $sel="text","head","lang")
     then
         let $result := if ($sel = "text")
         then doc(concat("/db/apps/pessoa/data/doc/",$file))//tei:text[ft:query(.,$term)]
@@ -373,31 +373,31 @@ if($term and $file and $sel and $sel="text","head","lang")
 
 
 declare %templates:wrap function search:your_search($node as node(), $model as map(*)) as node()* {
-        let $head := <h4> {page:singleElement_xquery("search","search_was")}</h4>
+        let $head := <h4> {helpers:singleElementInList_xQuery("search","search_was")}</h4>
      return   if (search:get-parameters("term") != "" or search:get-parameters("lang") != "")  then
-      (   $head, 
+      (   $head,
        for $item in  search:mergeParameters_xquery("xquery")
-     
+
      let $term := substring-before(substring-after($item,"/"),"=")
      let $param := substring-after($item,"=")
        let $build := switch($term)
-                            case("lang") return if($param != "" ) then  if(count(search:get-parameters("lang")) != 3) then (page:singleElement_xquery("search","language"), page:singleElementList_xquery("language",$param)) else () else ()
-                            case("lang_ao") return if($param != "") then if(count(search:get-parameters("lang")) != 3) then (page:singleElement_xquery("search","language"), page:singleElement_xquery("search",$param)) else () else ()
-                            case("role") return (page:singleElement_xquery("roles","mentioned-as"),page:singleElement_xquery("roles",$param))
-                            case("genre") return (page:singleElement_xquery("search","genre") , helpers:singleElementInList_xQuery("genres",$param))
-                            case("person") return (page:singleElement_xquery("search","authors") ,doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson[@type="authors"]/tei:person[@xml:id=$param]/tei:persName/data(.))
-                            case("term") return if($param != "") then (page:singleElement_xquery("search","term"),$param) else ()
-                            case("release") return if($param != "") then (page:singleElement_xquery("search","publicado"),  (if($param="all") then  page:singleElement_xquery("search",$param) 
-                                                                                                                                                    else if ($param="published")  then page:singleElement_xquery("search","pub_yes") 
-                                                                                                                                                    else page:singleElement_xquery("search","pub_no")))
+                            case("lang") return if($param != "" ) then  if(count(search:get-parameters("lang")) != 3) then (helpers:singleElementInList_xQuery("search","language"), helpers:singleElementInList_xQuery("language",$param)) else () else ()
+                            case("lang_ao") return if($param != "") then if(count(search:get-parameters("lang")) != 3) then (helpers:singleElementInList_xQuery("search","language"), helpers:singleElementInList_xQuery("search",$param)) else () else ()
+                            case("role") return (helpers:singleElementInList_xQuery("roles","mentioned-as"),helpers:singleElementInList_xQuery("roles",$param))
+                            case("genre") return (helpers:singleElementInList_xQuery("search","genre") , helpers:singleElementInList_xQuery("genres",$param))
+                            case("person") return (helpers:singleElementInList_xQuery("search","authors") ,doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson[@type="authors"]/tei:person[@xml:id=$param]/tei:persName/data(.))
+                            case("term") return if($param != "") then (helpers:singleElementInList_xQuery("search","term"),$param) else ()
+                            case("release") return if($param != "") then (helpers:singleElementInList_xQuery("search","publicado"),  (if($param="all") then  helpers:singleElementInList_xQuery("search",$param)
+                                                                                                                                                    else if ($param="published")  then helpers:singleElementInList_xQuery("search","pub_yes")
+                                                                                                                                                    else helpers:singleElementInList_xQuery("search","pub_no")))
                                                                                                                                                         else ()
-                            case("from") return if($param != "") then (page:singleElement_xquery("search",$term),$param) else ()
-                            case("to") return if($param != "") then (page:singleElement_xquery("search",$term),$param) else ()
-                            default return (page:singleElement_xquery("search",$term), page:singleElement_xquery("search",$param))
+                            case("from") return if($param != "") then (helpers:singleElementInList_xQuery("search",$term),$param) else ()
+                            case("to") return if($param != "") then (helpers:singleElementInList_xQuery("search",$term),$param) else ()
+                            default return (helpers:singleElementInList_xQuery("search",$term), helpers:singleElementInList_xQuery("search",$param))
           let $result := if($build != "") then concat("<span class='search_your_list'>",$build[1], ": ",$build[2] ,"</span>") else ()
        return  if($result != "") then util:eval($result)  else () )
        else ()
-       
+
 };
 
 declare function search:search-function() as node() {
@@ -415,27 +415,27 @@ declare function search:search-function() as node() {
 declare function search:recorder() as node() {
   let $search := if(request:get-parameter("search",'') != "") then request:get-parameter("search",'') else ""
   let $term := if(request:get-parameter("term",'') != "") then request:get-parameter("term",'') else ""
-  let $parameters := search:mergeParameters("html") 
+  let $parameters := search:mergeParameters("html")
  (:let $sort := if(request:get-parameter("sort",'') != "") then request:get-parameter("term",'') else "alpha":)
-  let $code := if($search != "" and $term != "") then 
+  let $code := if($search != "" and $term != "") then
     <script> function recorder(sort) {{
     $('#result').load('{$helpers:request-path}?term={$term}&amp;search={$search}&amp;orderBy='+sort);
   }}
   </script>
-  else 
+  else
   <script> function recorder(sort) {{
         $('#result').load('{$helpers:request-path}?orderBy='+sort+'{$parameters}');
-       
+
   }}</script>
   return $code
 };
 declare function search:search-page($node as node(), $model as map(*)) as node()* {
     let $doc := doc('/db/apps/pessoa/data/lists.xml')
-    let $filter := 
+    let $filter :=
      <div class="search_filter">
                        <form class="" action="{$helpers:app-root}/{$helpers:web-language}/search" method="post" id="search">
                             <!-- Nachher mit class="search:profisearch austauschen -->
-            <div class="tab" id="ta_author"><h6>{page:singleAttribute($doc,"search","authors")}</h6>
+            <div class="tab" id="ta_author"><h6>{helpers:singleElementInList_xQuery("search","autores")}</h6>
             </div>
             <div class="selection" id="se_author">
              <!--
@@ -445,53 +445,52 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
                 <select name="person" class="selectsearch" size="5" multiple="multiple">
                     {search:page_createOption_authors("authors",("FP","AC","AdC","RR"),$doc)}
                 </select>
-                <p class="small_text">{page:singleAttribute($doc,"search","multiple_entries")}</p>
-               
-                <p class="small_text">{page:singleAttribute($doc,"search","mentioned_as")}:</p>
-                {page:createInput_term("roles","checkbox","role",("author","editor","translator","topic"),$doc,"")}
+                <p class="small_text">{helpers:singleElementInList_xQuery("search","multiple_entries")}</p>
+
+                <p class="small_text">{helpers:singleElementInList_xQuery("search","mentioned_as")}:</p>
+                {helpers:createInput_term("roles","checkbox","role",("author","editor","translator","topic"),"")}
                 </div>
-                <div class="tab" id="ta_release"><h6>{page:singleAttribute($doc,"search","published")} &amp; {page:singleAttribute($doc,"search","unpublished")}</h6>
+                <div class="tab" id="ta_release"><h6>{helpers:singleElementInList_xQuery("search","published")} &amp; {helpers:singleElementInList_xQuery("search","unpublished")}</h6>
                 </div>
                 <div class="selection" id="se_release">
-                {page:createInput_term("search","radio","release",("published","unpublished"),$doc, "")}
+                {helpers:createInput_term("search","radio","release",("published","unpublished"),"")}
                 <input class="release_input-box" type="radio" name="release" value="all" id="either" checked="checked"/>
-                <label class="release_input-label" for="either"> {page:singleAttribute($doc,"search","all")}</label>
+                <label class="release_input-label" for="either"> {helpers:singleElementInList_xQuery("search","all")}</label>
                 </div>
-                <div class="tab" id="ta_genre"><h6>{page:singleAttribute($doc,"search","genre")}</h6>
+                <div class="tab" id="ta_genre"><h6>{helpers:singleElementInList_xQuery("search","genero")}</h6>
                 </div>
                     <div class="selection" id="se_genre">
                         <select class="selectsearch" name="genre" size="7" multiple="multiple">
-                        {page:createOption_new("genres",("lista_editorial","nota_editorial","plano_editorial","poesia"),$doc)}
+                        {helpers:createOption_new("genres",("editorial_list","editorial_note","editorial_plan","poetry"))}
                         </select>
-                        <p class="small_text">{page:singleAttribute($doc,"search","multiple_entries")}</p>
+                        <p class="small_text">{helpers:singleElementInList_xQuery("search","multiple_entries")}</p>
                     </div>
-                  <div class="tab" id="ta_date"><h6>{page:singleAttribute($doc,"search","date")}</h6></div>
-                            <div class="selection" id="se_date">    
+                  <div class="tab" id="ta_date"><h6>{helpers:singleElementInList_xQuery("search","date")}</h6></div>
+                            <div class="selection" id="se_date">
                                 <div id="datum">
-                                    <input type="datum" class="date_field" name="from" placeholder="{page:singleAttribute($doc,"search","from")}"/>
-                                    <input type="datum" class="date_field" name="to" placeholder="{page:singleAttribute($doc,"search","to")}"/>
+                                    <input type="datum" class="date_field" name="from" placeholder="{helpers:singleElementInList_xQuery("search","from")}"/>
+                                    <input type="datum" class="date_field" name="to" placeholder="{helpers:singleElementInList_xQuery("search","to")}"/>
                                 </div>
-                    </div>  
-                    <div class="tab" id="ta_lang"><h6>{page:singleAttribute($doc,"search","language")}</h6></div>
+                    </div>
+                    <div class="tab" id="ta_lang"><h6>{helpers:singleElementInList_xQuery("search","language")}</h6></div>
                             <div class="selection" id="se_lang">
-                                {search:page_createInput_item_lang("language","checkbox","lang",("pt","en","fr"),$doc)}
+                                {helpers:createInput_term("language","checkbox","lang",("pt","en","fr"),'')}
                                 <br/>
                                 <input class="lang_input-box" type="radio" name="lang_ao" value="and" id="and"/>
-                                    <label class="lang_input-label" for="and">{page:singleAttribute($doc,"search","and")}</label>
+                                    <label class="lang_input-label" for="and">{helpers:singleElementInList_xQuery("search","and")}</label>
                                 <input class="lang_input-box" type="radio" name="lang_ao" value="or" id="or" checked="checked"/>
-                                    <label class="lang_input-label" for="or">{page:singleAttribute($doc,"search","or")}</label>
+                                    <label class="lang_input-label" for="or">{helpers:singleElementInList_xQuery("search","or")}</label>
                             </div>
-                     <!--<h6>{page:singleAttribute($doc,"search","free_search")}</h6>
-                     <input name="term" placeholder="{page:singleAttribute($doc,"search","search_term")}..." /> -->
+                     <!--<h6>{helpers:singleElementInList_xQuery("search","free_search")}</h6>
+                     <input name="term" placeholder="{helpers:singleElementInList_xQuery("search","search_term")}..." /> -->
              <br/>
-            <h6>{page:singleAttribute($doc,"search","free_search")}</h6>
-             <input id="spezsearch" name="term" placeholder="{page:singleAttribute($doc,"search","term")}..." />
+            <h6>{helpers:singleElementInList_xQuery("search","free_search")}</h6>
+             <input id="spezsearch" name="term" placeholder="{helpers:singleElementInList_xQuery("search","term")}..." />
 
              <br />
              <br />
 
-           <button id="spezsearchbutton">{page:singleAttribute($doc,"search","search_verb")}</button>
-      
+           <button id="spezsearchbutton">{helpers:singleElementInList_xQuery("search","search_verb")}</button>
 </form>
 </div>
     return (search:recorder(),$filter)
@@ -499,16 +498,6 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
 
 
 
-declare function search:page_createInput_item_lang($xmltype as xs:string,$btype as xs:string, $name as xs:string, $value as xs:string*,$doc as node()) as node()* {
-    for $id in $value
-        let $entry := if($helpers:web-language = "pt")
-                      then $doc//tei:list[@type=$xmltype and @xml:lang=$helpers:web-language]/tei:item[@xml:id=$id]/data(.)
-                      else $doc//tei:list[@type=$xmltype and @xml:lang=$helpers:web-language]/tei:item[@corresp=concat("#",$id)]/data(.)
-        let $input := <input class="{concat($name,"_input-box")}" type="{$btype}" name="{$name}" value="{$id}" id="{$id}" checked="checked"/>
-        let $label := <label class="{concat($name,"_input-label")}" for="{$id}">{$entry}</label>
-        let $breaked := <br />
-        return ($input,$label,$breaked)
-};
 declare function search:page_createOption_authors($xmltype as xs:string, $value as xs:string*, $doc as node()) as node()* {
     for $id in $value
         let $entry := $doc//tei:listPerson[@type=$xmltype]/tei:person[@xml:id=$id]/tei:persName/data(.)
@@ -573,13 +562,13 @@ declare function search:Search-MultiStats($db as node()*, $name as xs:string*, $
 declare function search:printDateAlpha($node as node(), $model as map(*)) {
  if(request:get-parameter("order","") eq  "alphab") then
        <span>
-    <input id="date" name="order" type="radio" value="no" onchange="recorder('date');setOrderBy('date');"></input><label for="date" class="" >{page:singleElement_xquery("order","chronological")}</label>   
-    <input id="alphab" checked="checked" name="order" type="radio" value="yes" onchange="recorder('alphab');setOrderBy('alphab');"></input><label for="alphab" class="" >{page:singleElement_xquery("order","alphabetical")}</label>   
+    <input id="date" name="order" type="radio" value="no" onchange="recorder('date');setOrderBy('date');"></input><label for="date" class="" >{helpers:singleElementInList_xQuery("order","chronological")}</label>   
+    <input id="alphab" checked="checked" name="order" type="radio" value="yes" onchange="recorder('alphab');setOrderBy('alphab');"></input><label for="alphab" class="" >{helpers:singleElementInList_xQuery("order","alphabetical")}</label>   
 </span>            
 else 
 <span>
-    <input id="date" checked="checked" name="order" type="radio" value="no" onchange="recorder('date');setOrderBy('date');"></input><label for="date" class="" >{page:singleElement_xquery("order","chronological")}</label>   
-    <input id="alphab"  name="order" type="radio" value="yes" onchange="recorder('alphab');setOrderBy('alphab');"></input><label for="alphab" class="" >{page:singleElement_xquery("order","alphabetical")}</label>   
+    <input id="date" checked="checked" name="order" type="radio" value="no" onchange="recorder('date');setOrderBy('date');"></input><label for="date" class="" >{helpers:singleElementInList_xQuery("order","chronological")}</label>   
+    <input id="alphab"  name="order" type="radio" value="yes" onchange="recorder('alphab');setOrderBy('alphab');"></input><label for="alphab" class="" >{helpers:singleElementInList_xQuery("order","alphabetical")}</label>   
 </span>  
 
 };

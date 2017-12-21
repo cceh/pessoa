@@ -17,22 +17,22 @@
     <text>
         <body>
             <list type="site-title">
-                <item>
-                    <term xml:lang="pt" xml:id="site-title">Edição Digital de Fernando Pessoa</term>
-                    <term xml:lang="en" corresp="#site-title">Digital Edition of Fernando
+                <item xml:id="site-title">
+                    <term xml:lang="pt">Edição Digital de Fernando Pessoa</term>
+                    <term xml:lang="en">Digital Edition of Fernando
                         Pessoa</term>
-                    <term xml:lang="de" corresp="#site-title">Fernando Pessoa – Digitale
+                    <term xml:lang="de">Fernando Pessoa – Digitale
                         Edition</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="site-subtitle">Projetos e Publicações</term>
-                    <term xml:lang="en" corresp="#site-subtitle">Projects and Publications</term>
-                    <term xml:lang="de" corresp="#site-subtitle">Projekte und Publikationen</term>
+                <item  xml:id="site-subtitle">
+                    <term xml:lang="pt">Projetos e Publicações</term>
+                    <term xml:lang="en">Projects and Publications</term>
+                    <term xml:lang="de">Projekte und Publikationen</term>
                 </item>
             </list>
             <!-- ################# NAVIGATION ######################## -->
             <list type="navigation">
-                <item xml:id="author" rend="button" corresp="authors">
+                <item xml:id="authors" rend="button" corresp="authors">
                     <term xml:lang="pt">Autores</term>
                     <term xml:lang="en">Authors</term>
                     <term xml:lang="de">Autoren</term>
@@ -272,30 +272,30 @@
             <!-- ################## ROLES #################
              person roles (bitte auch in dieser Reihenfolge in der Suchmaske) -->
             <list type="roles">
-                <item>
-                    <term xml:lang="pt" xml:id="author">autor</term>
-                    <term xml:lang="en" corresp="#author">author</term>
-                    <term xml:lang="de" corresp="#author">Autor</term>
+                <item  xml:id="author">
+                    <term xml:lang="pt">autor</term>
+                    <term xml:lang="en">author</term>
+                    <term xml:lang="de">Autor</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="editor">editor</term>
-                    <term xml:lang="en" corresp="#editor">editor</term>
-                    <term xml:lang="de" corresp="#editor">Herausgeber</term>
+                <item  xml:id="editor">
+                    <term xml:lang="pt">editor</term>
+                    <term xml:lang="en">editor</term>
+                    <term xml:lang="de">Herausgeber</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="translator">tradutor</term>
-                    <term xml:lang="en" corresp="#translator">translator</term>
-                    <term xml:lang="de" corresp="#translator">Übersetzer</term>
+                <item  xml:id="translator">
+                    <term xml:lang="pt">tradutor</term>
+                    <term xml:lang="en">translator</term>
+                    <term xml:lang="de">Übersetzer</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="topic">tema</term>
-                    <term xml:lang="en" corresp="#topic">topic</term>
-                    <term xml:lang="de" corresp="#topic">Thema</term>
+                <item  xml:id="topic">
+                    <term xml:lang="pt">tema</term>
+                    <term xml:lang="en">topic</term>
+                    <term xml:lang="de">Thema</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="mentioned-as">mencionado como</term>
-                    <term xml:lang="en" corresp="#mentioned-as">mentioned as</term>
-                    <term xml:lang="de" corresp="#mentioned-as">erwähnt als</term>
+                <item  xml:id="mentioned-as">
+                    <term xml:lang="pt">mencionado como</term>
+                    <term xml:lang="en">mentioned as</term>
+                    <term xml:lang="de">erwähnt als</term>
                 </item>
             </list>
 
@@ -326,6 +326,24 @@
                     <note type="range">poesia</note>
                 </item>
             </list>
+            <list type="language">
+                <item xml:id="pt">
+                    <term xml:lang="pt">Português</term>
+                    <term xml:lang="en">Portuguese</term>
+                    <term xml:lang="de">Portugiesisch</term>
+                </item>
+                <item xml:id="en">
+                    <term xml:lang="pt">Inglês</term>
+                    <term xml:lang="en">English</term>
+                    <term xml:lang="de">Englisch</term>
+                </item>
+                <item xml:id="fr">
+                    <term xml:lang="pt">Francês</term>
+                    <term xml:lang="en">French</term>
+                    <term xml:lang="de">Französisch</term>
+                </item>
+            </list>
+            <!--
             <list type="language" xml:lang="pt">
                 <item xml:id="pt">Português</item>
                 <item xml:id="en">Inglês</item>
@@ -341,146 +359,147 @@
                 <item corresp="#en">Englisch</item>
                 <item corresp="#fr">Französisch</item>
             </list>
+            -->
             <!-- ################# SEARCH ############################ -->
             <list type="search">
-                <item>
-                    <term xml:lang="pt" xml:id="search_noun">Pesquisa</term>
-                    <term xml:lang="en" corresp="#search_noun">Search</term>
-                    <term xml:lang="de" corresp="#search_noun">Suche</term>
+                <item xml:id="search_noun">
+                    <term xml:lang="pt">Pesquisa</term>
+                    <term xml:lang="en">Search</term>
+                    <term xml:lang="de">Suche</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="search_verb">pesquisar</term>
-                    <term xml:lang="en" corresp="#search_verb">search</term>
-                    <term xml:lang="de" corresp="#search_verb">suchen</term>
+                <item xml:id="search_verb">
+                    <term xml:lang="pt">pesquisar</term>
+                    <term xml:lang="en">search</term>
+                    <term xml:lang="de">suchen</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="search_noun_ext">pesquisa avançada</term>
-                    <term xml:lang="en" corresp="#search_noun_ext">extended search</term>
-                    <term xml:lang="de" corresp="#search_noun_ext">erweiterte Suche</term>
+                <item  xml:id="search_noun_ext">
+                    <term xml:lang="pt">pesquisa avançada</term>
+                    <term xml:lang="en">extended search</term>
+                    <term xml:lang="de">erweiterte Suche</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="results">Resultados:</term>
-                    <term xml:lang="en" corresp="#results">Results:</term>
-                    <term xml:lang="de" corresp="#results">Treffer:</term>
+                <item  xml:id="results">
+                    <term xml:lang="pt">Resultados:</term>
+                    <term xml:lang="en">Results:</term>
+                    <term xml:lang="de">Treffer:</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="no_results">A sua pesquisa não obteve nenhums
+                <item  xml:id="no_results">
+                    <term xml:lang="pt">A sua pesquisa não obteve nenhums
                         resultados.</term>
-                    <term xml:lang="en" corresp="#no_results">No results.</term>
-                    <term xml:lang="de" corresp="#no_results">Keine Treffer.</term>
+                    <term xml:lang="en">No results.</term>
+                    <term xml:lang="de">Keine Treffer.</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="search_term">termo de pesquisa</term>
-                    <term xml:lang="en" corresp="#search_term">search term</term>
-                    <term xml:lang="de" corresp="#search_term">Suchbegriff</term>
+                <item  xml:id="search_term">
+                    <term xml:lang="pt">termo de pesquisa</term>
+                    <term xml:lang="en">search term</term>
+                    <term xml:lang="de">Suchbegriff</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="term">termo</term>
-                    <term xml:lang="en" corresp="#term">term</term>
-                    <term xml:lang="de" corresp="#term">Begriff</term>
+                <item  xml:id="term">
+                    <term xml:lang="pt">termo</term>
+                    <term xml:lang="en">term</term>
+                    <term xml:lang="de">Begriff</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="free_search">pesquisa aberta</term>
-                    <term xml:lang="en" corresp="#free_search">free search</term>
-                    <term xml:lang="de" corresp="#free_search">Volltextsuche</term>
+                <item  xml:id="free_search">
+                    <term xml:lang="pt">pesquisa aberta</term>
+                    <term xml:lang="en">free search</term>
+                    <term xml:lang="de">Volltextsuche</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="multiple_entries">prima a tecla Ctrl/CMD para
+                <item xml:id="multiple_entries">
+                    <term xml:lang="pt" >prima a tecla Ctrl/CMD para
                         seleccionar várias entradas</term>
-                    <term xml:lang="en" corresp="#multiple_entries">hold the Ctrl/CMD key to select
+                    <term xml:lang="en">hold the Ctrl/CMD key to select
                         multiple entries</term>
-                    <term xml:lang="de" corresp="#multiple_entries">Ctrl/CMD/Strg-Taste gedrückt
+                    <term xml:lang="de">Ctrl/CMD/Strg-Taste gedrückt
                         halten, um mehrere Einträge auszuwählen</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="authors">autores</term>
-                    <term xml:lang="en" corresp="#authors">authors</term>
-                    <term xml:lang="de" corresp="#authors">Autoren</term>
+                <item  xml:id="autores">
+                    <term xml:lang="pt">autores</term>
+                    <term xml:lang="en">authors</term>
+                    <term xml:lang="de">Autoren</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="mentioned">mencionado</term>
-                    <term xml:lang="en" corresp="#mentioned">mentioned</term>
-                    <term xml:lang="de" corresp="#mentioned">erwähnt</term>
+                <item  xml:id="mentioned">
+                    <term xml:lang="pt">mencionado</term>
+                    <term xml:lang="en">mentioned</term>
+                    <term xml:lang="de">erwähnt</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="mentioned_as">mencionado como</term>
-                    <term xml:lang="en" corresp="#mentioned_as">mentioned as</term>
-                    <term xml:lang="de" corresp="#mentioned_as">erwähnt als</term>
+                <item  xml:id="mentioned_as">
+                    <term xml:lang="pt">mencionado como</term>
+                    <term xml:lang="en">mentioned as</term>
+                    <term xml:lang="de">erwähnt als</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="published">publicado</term>
-                    <term xml:lang="en" corresp="#published">published</term>
-                    <term xml:lang="de" corresp="#published">veröffentlicht</term>
+                <item  xml:id="published">
+                    <term xml:lang="pt">publicado</term>
+                    <term xml:lang="en">published</term>
+                    <term xml:lang="de">veröffentlicht</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="unpublished">não publicado</term>
-                    <term xml:lang="en" corresp="#unpublished">unpublished</term>
-                    <term xml:lang="de" corresp="#unpublished">unveröffentlicht</term>
+                <item  xml:id="unpublished">
+                    <term xml:lang="pt">não publicado</term>
+                    <term xml:lang="en">unpublished</term>
+                    <term xml:lang="de">unveröffentlicht</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="all">tudo</term>
-                    <term xml:lang="en" corresp="#all">all</term>
-                    <term xml:lang="de" corresp="#all">alles</term>
+                <item  xml:id="all">
+                    <term xml:lang="pt">tudo</term>
+                    <term xml:lang="en" >all</term>
+                    <term xml:lang="de" >alles</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="genre">género</term>
-                    <term xml:lang="en" corresp="#genre">genre</term>
-                    <term xml:lang="de" corresp="#genre">Genre</term>
+                <item xml:id="genero">
+                    <term xml:lang="pt" >género</term>
+                    <term xml:lang="en">genre</term>
+                    <term xml:lang="de">Genre</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="date">data</term>
-                    <term xml:lang="en" corresp="#date">date</term>
-                    <term xml:lang="de" corresp="#date">Datum</term>
+                <item  xml:id="date">
+                    <term xml:lang="pt">data</term>
+                    <term xml:lang="en">date</term>
+                    <term xml:lang="de">Datum</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="language">língua</term>
-                    <term xml:lang="en" corresp="#language">language</term>
-                    <term xml:lang="de" corresp="#language">Sprache</term>
+                <item  xml:id="language">
+                    <term xml:lang="pt">língua</term>
+                    <term xml:lang="en">language</term>
+                    <term xml:lang="de">Sprache</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="and">e</term>
-                    <term xml:lang="en" corresp="#and">and</term>
-                    <term xml:lang="de" corresp="#and">und</term>
+                <item  xml:id="and">
+                    <term xml:lang="pt">e</term>
+                    <term xml:lang="en">and</term>
+                    <term xml:lang="de">und</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="or">ou</term>
-                    <term xml:lang="en" corresp="#or">or</term>
-                    <term xml:lang="de" corresp="#or">oder</term>
+                <item  xml:id="or">
+                    <term xml:lang="pt">ou</term>
+                    <term xml:lang="en">or</term>
+                    <term xml:lang="de">oder</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="from">de (aaaa)</term>
-                    <term xml:lang="en" corresp="#from">from (yyyy)</term>
-                    <term xml:lang="de" corresp="#from">von (jjjj)</term>
+                <item  xml:id="from">
+                    <term xml:lang="pt">de (aaaa)</term>
+                    <term xml:lang="en">from (yyyy)</term>
+                    <term xml:lang="de">von (jjjj)</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="to">até (aaaa)</term>
-                    <term xml:lang="en" corresp="#to">to (yyyy)</term>
-                    <term xml:lang="de" corresp="#to">bis (jjjj)</term>
+                <item  xml:id="to">
+                    <term xml:lang="pt">até (aaaa)</term>
+                    <term xml:lang="en">to (yyyy)</term>
+                    <term xml:lang="de">bis (jjjj)</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="search_was">A sua pesquisa foi:</term>
-                    <term xml:lang="en" corresp="#search_was">Your search was:</term>
-                    <term xml:lang="de" corresp="#search_was">Ihre Suche war:</term>
+                <item  xml:id="search_was">
+                    <term xml:lang="pt">A sua pesquisa foi:</term>
+                    <term xml:lang="en">Your search was:</term>
+                    <term xml:lang="de">Ihre Suche war:</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="person">pessoa</term>
-                    <term xml:lang="en" corresp="#person">person</term>
-                    <term xml:lang="de" corresp="#person">Person</term>
+                <item  xml:id="person">
+                    <term xml:lang="pt">pessoa</term>
+                    <term xml:lang="en">person</term>
+                    <term xml:lang="de">Person</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="publicado">publicado</term>
-                    <term xml:lang="en" corresp="#publicado">published</term>
-                    <term xml:lang="de" corresp="#publicado">veröffentlicht</term>
+                <item  xml:id="publicado">
+                    <term xml:lang="pt">publicado</term>
+                    <term xml:lang="en">published</term>
+                    <term xml:lang="de">veröffentlicht</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="pub_yes">sim</term>
-                    <term xml:lang="en" corresp="#pub_yes">yes</term>
-                    <term xml:lang="de" corresp="#pub_yes">ja</term>
+                <item  xml:id="pub_yes">
+                    <term xml:lang="pt">sim</term>
+                    <term xml:lang="en">yes</term>
+                    <term xml:lang="de">ja</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="pub_no">não</term>
-                    <term xml:lang="en" corresp="#pub_no">no</term>
-                    <term xml:lang="de" corresp="#pub_no">nein</term>
+                <item  xml:id="pub_no">
+                    <term xml:lang="pt">não</term>
+                    <term xml:lang="en">no</term>
+                    <term xml:lang="de">nein</term>
                 </item>
                 <item xml:id="search_tips">
                     <term xml:lang="pt" >
@@ -858,15 +877,15 @@
                     <term xml:lang="de">Fernando Pessoas editorische
                         Projekte und Publikationen über die Zeit</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="birth">nascimento</term>
-                    <term xml:lang="en" corresp="#birth">birth</term>
-                    <term xml:lang="de" corresp="#birth">Geburt</term>
+                <item  xml:id="birth">
+                    <term xml:lang="pt">nascimento</term>
+                    <term xml:lang="en">birth</term>
+                    <term xml:lang="de">Geburt</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="death">morte</term>
-                    <term xml:lang="en" corresp="#death">death</term>
-                    <term xml:lang="de" corresp="#death">Tod</term>
+                <item  xml:id="death">
+                    <term xml:lang="pt">morte</term>
+                    <term xml:lang="en">death</term>
+                    <term xml:lang="de">Tod</term>
                 </item>
             </list>
             <!-- ####################### TEXTS ############################ -->
@@ -883,20 +902,20 @@
             </list>
             <!-- ####################### OBRAS ######################-->
             <list type="obras">
-                <item>
-                    <term xml:lang="pt" xml:id="publication">Publicação</term>
-                    <term xml:lang="en" corresp="#publication">Publication</term>
-                    <term xml:lang="de" corresp="#publication">Publikation</term>
+                <item xml:id="publication">
+                    <term xml:lang="pt">Publicação</term>
+                    <term xml:lang="en">Publication</term>
+                    <term xml:lang="de">Publikation</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="alternative_titles">Títulos alternativos</term>
-                    <term xml:lang="en" corresp="#alternative_titles">Alternative Titles</term>
-                    <term xml:lang="de" corresp="#alternative_titles">Alternative Titel</term>
+                <item  xml:id="alternative_titles">
+                    <term xml:lang="pt">Títulos alternativos</term>
+                    <term xml:lang="en">Alternative Titles</term>
+                    <term xml:lang="de">Alternative Titel</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="title_of_obras">Título de obra</term>
-                    <term xml:lang="en" corresp="#title_of_obras">Titel of Work</term>
-                    <term xml:lang="de" corresp="#title_of_obras">Werktitel</term>
+                <item xml:id="title_of_obras">
+                    <term xml:lang="pt">Título de obra</term>
+                    <term xml:lang="en">Titel of Work</term>
+                    <term xml:lang="de">Werktitel</term>
                 </item>
             </list>
             <!-- ####################### WORKS ############################ -->

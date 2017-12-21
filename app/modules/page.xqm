@@ -39,9 +39,9 @@ declare function page:construct($node as node(), $model as map(*)){
 
 declare function page:construct_search($node as node(), $model as map(*)) as node()* {
     let $search := <div class="container-4" id="searchbox" style="display:none">
-        <input type="search" id="search" placeholder="{concat(page:singleAttribute(doc("/db/apps/pessoa/data/lists.xml"),"search","term"),"....")}" />
-        <span class="icon2" id="nav_searchButton" onclick="search()">{page:singleAttribute(doc("/db/apps/pessoa/data/lists.xml"),"search","search_verb")}</span>
-        <a class="small_text" id="search-link" href="{$helpers:app-root}/{$helpers:web-language}/search">{page:singleAttribute(doc("/db/apps/pessoa/data/lists.xml"),"search","search_noun_ext")}</a>
+        <input type="search" id="search" placeholder="{concat(helpers:singleElementInList_xQuery("search","term"),"....")}" />
+        <span class="icon2" id="nav_searchButton" onclick="search()">{helpers:singleElementInList_xQuery("search","search_verb")}</span>
+        <a class="small_text" id="search-link" href="{$helpers:app-root}/{$helpers:web-language}/search">{helpers:singleElementInList_xQuery("search","search_noun_ext")}</a>
     </div>
     let $clear :=  <div class="clear"></div>
     let $request-path := if($config:request-path != "") then $config:request-path else "index.html"
@@ -263,84 +263,9 @@ declare function page:catchSiteHead($node as node(), $model as map(*), $containe
 
 (:###### CALL LIST ELEMENTS ######:)
 
-declare %templates:wrap function page:singleElement($node as node(), $model as map(*),$xmltype as xs:string,$xmlid as xs:string) as xs:string? {
-    let $doc := doc('/db/apps/pessoa/data/lists.xml')
-    return page:singleAttribute($doc,$xmltype,$xmlid)
-};
-
-declare function page:singleElement_xquery($type as xs:string,$id as xs:string) as xs:string? {
-    let $doc := doc('/db/apps/pessoa/data/lists.xml')
-    let $entry := if($helpers:web-language = "pt")
-    then $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @xml:id=$id]
-    else $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @corresp=concat("#",$id)]
-    return $entry/data(.)
-};
-
-declare function page:singleElementList_xquery($type as xs:string,$id as xs:string) as xs:string? {
-    let $doc := doc('/db/apps/pessoa/data/lists.xml')
-    let $entry := if($helpers:web-language = "pt")
-    then $doc//tei:list[@type=$type and @xml:lang=$helpers:web-language]/tei:item[@xml:id=$id]
-    else $doc//tei:list[@type=$type and @xml:lang=$helpers:web-language]/tei:item[@corresp=concat("#",$id)]
-    return $entry/data(.)
-};
-
-declare function page:singleAttribute($doc as node(),$type as xs:string,$id as xs:string) as xs:string? {
-    let $entry := if($helpers:web-language = "pt")
-    then $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @xml:id=$id]
-    else $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @corresp=concat("#",$id)]
-    return $entry/data(.)
-};
-
-
-(:
-declare function page:page_singeAttribute_term($doc as node(),$type as xs:string,$id as xs:string, $lang as xs:string) as node()? {
-    let $entry := if($lang = "pt")
-                  then $doc//tei:list[@type=$type]/tei:term[@xml:lang=$lang and @xml:id=$id]
-                  else $doc//tei:list[@type=$type]/tei:term[@xml:lang=$lang and @corresp=concat("#",$id)]
-     return $entry
-};
-:)
-declare function page:createInput_item($xmltype as xs:string,$btype as xs:string, $name as xs:string, $value as xs:string*,$doc as node()) as node()* {
-    for $id in $value
-    let $entry := if($helpers:web-language = "pt")
-    then $doc//tei:list[@type=$xmltype and @xml:lang=$helpers:web-language]/tei:item[@xml:id=$id]/data(.)
-    else $doc//tei:list[@type=$xmltype and @xml:lang=$helpers:web-language]/tei:item[@corresp=concat("#",$id)]/data(.)
-    let $input := <input class="{concat($name,"_input-box")}" type="{$btype}" name="{$name}" value="{$id}" id="{$id}"/>
-    let $label := <label class="{concat($name,"_input-label")}" for="{$id}">{$entry}</label>
-    let $breaked := <br />
-    return ($input,$label,$breaked)
-};
-
-declare function page:createInput_term($xmltype as xs:string, $btype as xs:string, $name as xs:string, $value as xs:string*,$doc as node(), $checked as xs:string?) as node()* {
-    for $id in $value
-    let $entry := if($helpers:web-language = "pt")
-    then $doc//tei:list[@type=$xmltype]/tei:item/tei:term[@xml:lang=$helpers:web-language and @xml:id=$id]/data(.)
-    else $doc//tei:list[@type=$xmltype]/tei:item/tei:term[@xml:lang=$helpers:web-language and @corresp=concat("#",$id)]/data(.)
-    let $input := if($checked = "checked") then <input class="{concat($name,"_input-box")}" type="{$btype}" name="{$name}" value="{$id}" id="{$id}" checked="checked"/>
-    else <input class="{concat($name,"_input-box")}" type="{$btype}" name="{$name}" value="{$id}" id="{$id}" />
-    let $label := <label class="{concat($name,"_input-label")}" for="{$id}">{$entry}</label>
-    let $breaked := <br />
-    return ($input,$label,$breaked)
-};
-
-declare function page:createOption($xmltype as xs:string, $value as xs:string*,$doc as node()) as node()* {
-    for $id in $value
-    let $entry := if($helpers:web-language = "pt")
-    then $doc//tei:list[@type=$xmltype and @xml:lang=$helpers:web-language]/tei:item[@xml:id=$id]/data(.)
-    else $doc//tei:list[@type=$xmltype and @xml:lang=$helpers:web-language]/tei:item[@corresp=concat("#",$id)]/data(.)
-    return <option value="{$id}">{$entry}</option>
-};
-
-declare function page:createOption_new($xmltype as xs:string, $value as xs:string*,$doc as node()) as node()* {
-    for $id in $value
-        let $entry:= helpers:singleElementInList_xQuery($xmltype,$id)
-        return <option value="{$id}">{$entry}</option>
-};
-
 (:###### TIMELINE ######:)
 declare %templates:wrap function page:createTimelineBody($node as node(), $model as map(*)) as node()* {
-    let $lists := doc('/db/apps/pessoa/data/lists.xml')
-    let $headline := page:singleAttribute($lists,"timeline","timeline_title")
+    let $headline := helpers:singleElementInList_xQuery("timeline","timeline_title")
 
 
     let $body := <body onload="onLoad();" onresize="onResize();">
@@ -426,8 +351,8 @@ declare  function page:createTimelineHeader($node as node(), $model as map(*)) a
         new Timeline.SpanHighlightDecorator({{
         startDate:  "Jun 13 1888 ",
         endDate:    "Nov 30 1935 ",
-        startLabel: "{page:singleAttribute($lists,"timeline","birth")}",
-        endLabel:   "{page:singleAttribute($lists,"timeline","death")}",
+        startLabel: "{helpers:singleElementInList_xQuery("timeline","birth")}",
+        endLabel:   "{helpers:singleElementInList_xQuery("timeline","death")}",
         color:      "#B8B8E6",
         opacity:    50,
         theme:      theme

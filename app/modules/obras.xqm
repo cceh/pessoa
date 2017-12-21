@@ -67,7 +67,7 @@ declare function obras:mentionedAs($node as node(), $model as map(*), $ref as xs
         let $workn := $doc//tei:rs[@type="work" and @key=$model("xmlid")]/@style/data(.)
         let $list :=  $model("listEntry")
          let $mentioned := $list/tei:title[@subtype=$workn]/data(.)
-        return if(exists($mentioned)) then <span class="Obras-DocList-Mention"> ({page:singleElement_xquery("roles","mentioned-as")}: <i>{string-join($mentioned,", ")})</i>,</span> 
+        return if(exists($mentioned)) then <span class="Obras-DocList-Mention"> ({helpers:singleElementInList_xQuery("roles","mentioned-as")}: <i>{string-join($mentioned,", ")})</i>,</span>
                                 else ()
 };
 

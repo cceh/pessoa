@@ -97,7 +97,7 @@ declare function author:getTabContent($node as node(), $model as map(*), $textTy
                                                              <a href="{$helpers:app-root}/{$item/@folder/data(.)}/{$item/@doc/data(.)}">
                                                                  {$item/@title/data(.)}
                                                              </a> 
-                                                              {if($item/@folder/data(.) eq "doc") then <i>{concat(" (",page:singleElement_xquery("roles","mentioned-as"),":",page:singleElement_xquery("roles","author"),")")}</i> else ()}
+                                                              {if($item/@folder/data(.) eq "doc") then <i>{concat(" (",helpers:singleElementInList_xQuery("roles","mentioned-as"),":",helpers:singleElementInList_xQuery("roles","author"),")")}</i> else ()}
                                                                 
                                                        </div>
                                                 )
