@@ -1,5 +1,10 @@
 xquery version "3.0";
-
+(:~
+: Hautpmodul zur kontrolle der URL Weiterleitung und der Zugriffskontrolle von vorhandenen Resourcen
+:
+: @author Ben Bigalke
+: @version 1.0
+:)
 
 import module namespace doc="http://localhost:8080/exist/apps/pessoa/doc" at "modules/doc.xqm";
 import module namespace author="http://localhost:8080/exist/apps/pessoa/author" at "modules/author.xqm";
@@ -19,8 +24,16 @@ declare variable $exist:root external;
 
 declare variable $exist:lists := doc("/db/apps/pessoa/data/lists.xml");
 declare variable $exist:sites := (distinct-values($exist:lists//tei:list[@type="navigation"]//tei:item/tei:note[@type='directory']/data(.)));
-declare variable $exist:authors := ($exist:lists//tei:listPerson[@type="authors"]/tei:person/@xml:id,'Pessoa','Caeiro','Campos','Reis');
+declare variable $exist:authors := ($exist:lists//tei:listPerson[@type="authors"]/tei:person/tei:note[@type='link']/data(.),'Pessoa','Caeiro','Campos','Reis');
+(:~
+:Variable zur Abfrage ob ein Nutzer eingeloggt ist, wenn nicht, weiterleitung zur Zugriffssteuerung
+: @see controller/local:Restriction
+:)
 declare variable $exist:permission := if(local:logged-in()) then true() else local:Restriction();
+
+(:~
+:
+:)
 declare function local:login() as xs:boolean {
     let $loginuser := request:get-parameter('user',())
     let $loginpassword := request:get-parameter('pass',())
@@ -36,7 +49,7 @@ declare function local:logged-in() as xs:boolean {
 };
 
 declare function local:Restriction() as xs:boolean{
-    let $sites := ($exist:sites,"doc","pub","search","timeline","BNP","CP","network")
+    let $sites := for $s in ($exist:sites,"doc","pub","search","timeline","BNP","CP","network") return concat('/',$s)
     let $path := if(contains($exist:path,$helpers:web-language))
                     then substring-after($exist:path,concat($helpers:web-language,"/"))
                 else if(contains($exist:path,'data'))
@@ -52,8 +65,8 @@ declare function local:Restriction() as xs:boolean{
                     case "search" return true()
                     case "timeline" return true()
                     case "network" return true()
-                    case "genre" return local:DirRestriction("genero")
-                    case "author" return local:DirRestriction("autores")
+                    case "genre" return local:DirRestriction($path)
+                    case "author" return local:DirRestriction($path)
                     default return
                         local:PathRestriction($sites)
         else false()
@@ -65,12 +78,6 @@ declare function local:PathRestriction($sites) as xs:boolean {
             if($s eq $exist:resource) then
                 let $n := $exist:lists//tei:list[@type="navigation"]//tei:item[@xml:id eq $s]/tei:note[@type='published']/data(.)
                 return if($n eq 'true') then true() else false()
-                (:)
-            else if(exists($exist:lists//tei:list[@type="navigation"]/tei:item/tei:note[@type='directory'])) then
-                for $n in  $exist:lists//tei:list[@type="navigation"]/tei:item
-                    where $n/tei:note[@type='directory']/data(.) eq $s
-                    return if($n/tei:note[@type='published']/data(.) eq 'true') then true() else false()
-                    :)
             else
                 let $n := $exist:lists//tei:list[@type="navigation"]//tei:item[@xml:id eq $exist:resource]/tei:note[@type='published']/data(.)
                 return if($n eq 'true') then true() else false()
@@ -119,8 +126,8 @@ declare function local:resRestritction() as xs:boolean {
                         else $path
                     return concat($de,'.xml')
                 else if(contains($exist:path,'/xml')) then concat(substring-after(substring-before($exist:path,concat('/',$exist:resource)),concat($path,'/')),'.xml')
-                else if(helpers:contains-any-of($exist:path,('/primeira-versao','/versao-final','/versao-pessoal','/transcricao-diplomatica')))
-                    then (:) concat(substring-after(substring-before($exist:path,concat('/',$exist:resource)),concat($path,'/')),'.xml') :)
+                else if(helpers:contains-any-of($exist:path,('/diplomatic-transcription','/first-version','/last-version','/customized-version')))
+                    then
                     let $pa := if(contains($exist:path,'BNP')) then substring-before($exist:path,'/BNP')
                                 else substring-before($exist:path,'/CP')
                     let $p := substring-before(substring-after($exist:path,concat($pa,'/')),'/')
@@ -202,7 +209,7 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
 
 
                     else if($exist:permission) then (
-
+                                    session:clear(),
                              if (contains($exist:path,  "/doc/")) then
                                     if ($exist:resource = "xml") then
                                         let $id := substring-before(substring-after($exist:path, "/doc/"), "/xml")
@@ -210,26 +217,26 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
                                             <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
                                                 <forward url="{$exist:controller}/data/doc/{$id}.xml"/>
                                             </dispatch>
-                                    else if (helpers:contains-any-of($exist:path,("transcricao-diplomatica","primeira-versao","versao-final")))
-                                    then
-                                        let $id := substring-before(substring-after($exist:path,"doc/"),"/")
-                                        return
-                                            (session:set-attribute("id", $id),
-                                            session:set-attribute("type", $exist:resource),
-                                            <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-                                                <forward url="{$exist:controller}/page/doc.html">
-                                                    <add-parameter name="id" value="{$id}" />
-                                                    <add-parameter name="type" value="{$exist:resource}" />
-                                                </forward>
-                                                <view>
-                                                    <forward url="{$exist:controller}/modules/view.xql"/>
-                                                </view>
-                                                <error-handler>
-                                                    <forward url="{$exist:controller}/error-page.html" method="get"/>
-                                                    <forward url="{$exist:controller}/modules/view.xql"/>
-                                                </error-handler>
-                                            </dispatch>)
-                                    else if (contains($exist:path,"versao-pessoal") ) then
+                                    else if (helpers:contains-any-of($exist:path,("diplomatic-transcription","first-version","last-version")))
+                                        then
+                                            let $id := substring-before(substring-after($exist:path,"doc/"),"/")
+                                            return
+                                                (session:set-attribute("id", $id),
+                                                session:set-attribute("type", $exist:resource),
+                                                <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+                                                    <forward url="{$exist:controller}/page/doc.html">
+                                                        <add-parameter name="id" value="{$id}" />
+                                                        <add-parameter name="type" value="{$exist:resource}" />
+                                                    </forward>
+                                                    <view>
+                                                        <forward url="{$exist:controller}/modules/view.xql"/>
+                                                    </view>
+                                                    <error-handler>
+                                                        <forward url="{$exist:controller}/error-page.html" method="get"/>
+                                                        <forward url="{$exist:controller}/modules/view.xql"/>
+                                                    </error-handler>
+                                                </dispatch>)
+                                    else if (contains($exist:path,"customized-version") ) then
                                             let $lb := request:get-parameter("lb", "yes")
                                             let $abbr := request:get-parameter("abbr", "yes")
                                             let $version := request:get-parameter("version","diplomatic")
@@ -262,11 +269,11 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
 
                                         else
                                             (session:set-attribute("id", $exist:resource),
-                                            session:set-attribute("type", "transcricao-diplomatica"),
+                                            session:set-attribute("type", "diplomatic-transcription"),
                                             <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
                                                 <forward url="{$exist:controller}/page/doc.html">
                                                     <add-parameter name="id" value="{$exist:resource}" />
-                                                    <add-parameter name="type" value="transcricao-diplomatica" />
+                                                    <add-parameter name="type" value="diplomatic-transcription" />
                                                 </forward>
                                                 <view>
                                                     <forward url="{$exist:controller}/modules/view.xql"/>
@@ -303,7 +310,7 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
                                     else if (contains($exist:path, "/author/")) then
                                             if (request:get-parameter("orderBy","")!="") then
                                                 let $orderBy := request:get-parameter("orderBy", "alphab")
-                                                let $author := substring-before(substring-after($exist:path, '/page/author/'), '/')
+                                                let $author := substring-before(substring-after($exist:path, '/author/'), '/')
                                                 let $textType := $exist:resource
                                                 return
                                                     author:reorder(<node />, map {"test" := "test"},$orderBy, $textType, $author)
@@ -345,12 +352,12 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
                                                         </error-handler>
                                                     </dispatch>
                                                 )
-                                            else if(contains($exist:path,"bibliografia")) then
+                                            else if(contains($exist:path,"bibliography")) then
                                                     let $type :=$exist:resource
                                                     return (
                                                         session:set-attribute("type",$type),
                                                         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-                                                            <forward url="{$exist:controller}/page/bibliografia.html" />
+                                                            <forward url="{$exist:controller}/page/bibliography.html" />
                                                             <add-parameter name="type" value="{$type}" />
                                                             <view>
                                                                 <forward url="{$exist:controller}/modules/view.xql"/>

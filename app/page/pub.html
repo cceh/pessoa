@@ -21,31 +21,40 @@
                     <table>
                         <tr>
                             <td>□</td>
-                            <td><lang data-template="helpers:singleElementHidden" data-template-xmltype="symbols" data-template-xmlid="blank_space"/></td>
+                            <td><get data-template="helpers:singleElementInList" data-template-ListType="symbols" data-template-ListId="blank_space"/></td>
                         </tr>
                         <tr>
                             <td>*</td>
-                            <td><lang data-template="helpers:singleElementHidden" data-template-xmltype="symbols" data-template-xmlid="conjectural"/></td>
+                            <td><get data-template="helpers:singleElementInList" data-template-ListType="symbols" data-template-ListId="conjectural"/></td>
                         </tr>
                         <tr>
                             <td>/ /</td>
-                            <td><lang data-template="helpers:singleElementHidden" data-template-xmltype="symbols" data-template-xmlid="segment"/></td>
+                            <td><get data-template="helpers:singleElementInList" data-template-ListType="symbols" data-template-ListId="segment"/></td>
                         </tr>
                         <tr>
                             <td>†</td>
-                            <td><lang data-template="helpers:singleElementHidden" data-template-xmltype="symbols" data-template-xmlid="illegible"/></td>
+                            <td><get data-template="helpers:singleElementInList" data-template-ListType="symbols" data-template-ListId="illegible"/></td>
                         </tr>
                         <tr>
                             <td>[ ]</td>
-                            <td><lang data-template="helpers:singleElementHidden" data-template-xmltype="symbols" data-template-xmlid="expanded"/></td>
-                        </tr>                        
+                            <td>
+                                <get data-template="helpers:singleElementInList" data-template-ListType="symbols" data-template-ListId="expanded"/>
+                            </td>
+                        </tr>
                     </table>
                 </div>
                 <div id="filter">
-                    <a class="filter-a" id="print"><lang data-template="helpers:singleElementHidden" data-template-xmltype="footer" data-template-xmlid="print"  /></a>
+                    <a class="filter-a" onclick="printContent()">
+                        <get data-template="helpers:singleElementInList" data-template-ListType="footer" data-template-ListId="print"/>
+                    </a>
                     <get data-template="helpers:getValue" data-template-get="xmllink"/>
-                    <a class="filter-a" id="zitat" ><lang data-template="helpers:singleElementHidden" data-template-xmltype="footer" data-template-xmlid="cite"/></a>
-                    <a class="filter-a" id="symbols"><lang data-template="helpers:singleElementHidden" data-template-xmltype="footer" data-template-xmlid="symbols"/></a>
+                    <a class="filter-a" id="zitat" >
+                        <get data-template="helpers:singleElementInList" data-template-ListType="footer" data-template-ListId="cite"/>
+
+                    </a>
+                    <a class="filter-a" id="symbols">
+                        <get data-template="helpers:singleElementInList" data-template-ListType="footer" data-template-ListId="symbols"/>
+                    </a>
                 </div>
                 
             </map>

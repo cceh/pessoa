@@ -18,9 +18,9 @@ declare variable $helpers:app-root := $config:webapp-root;
 (: declare variable $helpers:file-path := $config:file-path; :)
 declare variable $helpers:request-path := $config:request-path;
 declare variable $helpers:webfile-path := $config:webfile-path;
-declare variable $helpers:web-language := if(contains($config:request-path,"/en/")) then "en"
+declare variable $helpers:web-language := if(contains($config:request-path,"/pt/")) then "pt"
                                             else if(contains($config:request-path,"/de/")) then "de"
-                                            else "pt";
+                                            else "en";
 declare variable $helpers:lists := doc('/db/apps/pessoa/data/lists.xml');
 (:
 declare variable $helpers:web-language := ();
@@ -107,7 +107,7 @@ declare function helpers:invisibleEach($node as node(), $model as map(*), $from 
     return
         templates:process($node/node(), map:new(($model, map:entry($to, $item))))
 };
-
+(:)
 declare function helpers:lettersOfTheAlphabet() {
     ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z')
 };
@@ -115,27 +115,29 @@ declare function helpers:lettersOfTheAlphabet() {
 declare function helpers:lettersOfTheAlphabeHight() {
 ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z')
 };
-
+:)
+(:)
 declare %templates:wrap function helpers:singleElement($node as node(), $model as map(*),$xmltype as xs:string,$xmlid as xs:string) as xs:string? {
-    let $doc := doc('/db/apps/pessoa/data/lists.xml')    
-    return helpers:singleAttribute($doc,$xmltype,$xmlid)     
+    let $doc := doc('/db/apps/pessoa/data/lists.xml')
+    return helpers:singleAttribute($doc,$xmltype,$xmlid)
 };
 
 declare function helpers:singleElementHidden($node as node(), $model as map(*),$xmltype as xs:string,$xmlid as xs:string) as xs:string? {
-    let $doc := doc('/db/apps/pessoa/data/lists.xml')    
-    return helpers:singleAttribute($doc,$xmltype,$xmlid)     
+    let $doc := doc('/db/apps/pessoa/data/lists.xml')
+    return helpers:singleAttribute($doc,$xmltype,$xmlid)
 };
 
 
 
 declare function helpers:singleAttribute($doc as node(),$type as xs:string,$id as xs:string) as xs:string? {
-    let $entry := if($helpers:web-language = "pt") 
+    let $entry := if($helpers:web-language = "pt")
                   then $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @xml:id=$id]
                   else $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @corresp=concat("#",$id)]
      return $entry/data(.)
 };
+:)
 
-
+(:)
 declare function helpers:singleElement_xquery($type as xs:string,$id as xs:string) as xs:string? {
     let $doc := doc('/db/apps/pessoa/data/lists.xml')   
     let $entry := if($helpers:web-language = "pt") 
@@ -143,26 +145,24 @@ declare function helpers:singleElement_xquery($type as xs:string,$id as xs:strin
                   else $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @corresp=concat("#",$id)]
      return $entry/data(.)
 };
-
-declare function helpers:singleElementNode_xquery($type as xs:string,$id as xs:string)  {
-    let $entry:= if($helpers:web-language = "pt")
-                  then $helpers:lists//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @xml:id=$id]
-                  else $helpers:lists//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @corresp=concat("#",$id)]
-     return $entry
+:)
+declare function helpers:singleElementNode_xquery($ListType as xs:string, $ListId as xs:string)  {
+    $helpers:lists//tei:list[@type=$ListType]/tei:item[@xml:id=$ListId]/tei:term[@xml:lang=$helpers:web-language]
 };
-declare function helpers:singleElementList_xquery($type as xs:string,$id as xs:string) as xs:string? {
+(:)
+declare function helpers:singleElementList_xquery($ListType as xs:string,$ListId as xs:string) as xs:string? {
     if($helpers:web-language = "pt")
-                  then $helpers:lists//tei:list[@type=$type and @xml:lang=$helpers:web-language]/tei:item[@xml:id=$id]
-                  else $helpers:lists//tei:list[@type=$type and @xml:lang=$helpers:web-language]/tei:item[@corresp=concat("#",$id)]
+                  then $helpers:lists//tei:list[@type=$ListType and @xml:lang=$helpers:web-language]/tei:item[@xml:id=$ListId]
+                  else $helpers:lists//tei:list[@type=$ListType and @xml:lang=$helpers:web-language]/tei:item[@corresp=concat("#",$ListId)]
+};
+:)
+declare function helpers:singleElementInList($node as node(), $model as map(*), $ListType as xs:string, $ListId as xs:string){
+    helpers:singleElementInList_xQuery($ListType,$ListId)
+
 };
 
-declare function helpers:singleElementInList($node as node(), $model as map(*), $type as xs:string, $id as xs:string) as xs:string?{
-    helpers:singleElementInList_xQuery($type,$id)
-
-};
-
-declare function helpers:singleElementInList_xQuery($type as xs:string, $id as xs:string) as xs:string?{
-    $helpers:lists//tei:list[@type = $type]/tei:item[@xml:id=$id]/tei:term[@xml:lang = $helpers:web-language]/data(.)
+declare function helpers:singleElementInList_xQuery($ListType as xs:string, $ListId as xs:string) as xs:string?{
+    $helpers:lists//tei:list[@type = $ListType]/tei:item[@xml:id=$ListId]/tei:term[@xml:lang = $helpers:web-language]
 };
 
 declare function helpers:index-of-node

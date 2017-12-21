@@ -1,15 +1,7 @@
 xquery version "3.0";
 
-(:module namespace app="http://projects.cceh.uni-koeln.de:8080/apps/pessoa/templates";:)
 module namespace app="http://localhost:8080/exist/apps/pessoa/templates";
 import module namespace templates="http://exist-db.org/xquery/templates" at "templates.xql";
-(:
-import module namespace config="http://projects.cceh.uni-koeln.de:8080/apps/pessoa/config" at "config.xqm";
-import module namespace lists="http://projects.cceh.uni-koeln.de:8080/apps/pessoa/lists" at "lists.xqm";
-import module namespace doc="http://projects.cceh.uni-koeln.de:8080/apps/pessoa/doc" at "doc.xqm";
-import module namespace helpers="http://projects.uni-koeln.de:8080/apps/pessoa/helpers" at "helpers.xqm";
-
-:)
 import module namespace config="http://localhost:8080/exist/apps/pessoa/config" at "config.xqm";
 import module namespace lists="http://localhost:8080/exist/apps/pessoa/lists" at "lists.xqm";
 import module namespace doc="http://localhost:8080/exist/apps/pessoa/doc" at "doc.xqm";
@@ -25,11 +17,10 @@ import module namespace obras="http://localhost:8080/exist/apps/pessoa/obras" at
 import module namespace kwic="http://exist-db.org/xquery/kwic";
 declare namespace util="http://exist-db.org/xquery/util";
 declare namespace text="http://exist-db.org/xquery/text";
-
 declare namespace request="http://exist-db.org/xquery/request";
 
 declare namespace tei="http://www.tei-c.org/ns/1.0";
-(:declare namespace range="http://exist-db.org/xquery/range";:)
+
 
 
 (:~
@@ -49,7 +40,13 @@ declare function app:test($node as node(), $model as map(*),$path) {
 declare function app:get-bibl($node as node(), $model as map(*), $type as xs:string)as item()* {
     let $xml := doc("/db/apps/pessoa/data/bibl.xml")
     let $stylesheet := doc("/db/apps/pessoa/xslt/bibl.xsl")
-    let $typ := substring-after($type,"bib")
+    let $typ :=
+        switch($type)
+            case "Works_of_Fernando_Pessoa" return "1"
+            case 'About_the_work_of_Fernando_Pessoa' return "2"
+            case 'Other_sources_of_the_work_of_Fernando_Pessoa' return "3"
+            default return "1"
+
     return  transform:transform($xml, $stylesheet,(<parameters><param name="listNo_string" value="{$typ}"/></parameters>))
 
 };
@@ -123,4 +120,3 @@ declare function app:validate($doc as node()*) {
     let $schema := "/db/apps/pessoa/data/schema/pessoaTEI.rng"
     return validation:validate($doc,$schema)
 };
-

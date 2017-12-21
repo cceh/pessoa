@@ -64,6 +64,16 @@ gulp.task('local-upload', ['build'], function() {
 			permissions: permissions
 		}));
 });
+
+
+gulp.task('local-hard-upload', ['build'], function() {
+
+    return gulp.src(buildDest + '**/*', {base: buildDest})
+        .pipe(localExist.dest({
+            target: "/db/apps/pessoa",
+            permissions: permissions
+        }));
+});
 gulp.task('network-upload', ['copy-net'], function() {
 
     return gulp.src("build-network/" + '**/*', {base: "build-network/"})

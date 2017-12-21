@@ -7,8 +7,15 @@ import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers
 import module namespace search="http://localhost:8080/exist/apps/pessoa/search" at "search.xqm";
 import module namespace page="http://localhost:8080/exist/apps/pessoa/page" at "page.xqm";
 
+
+declare function author:getAuthorId($author as xs:string) {
+    for $at in $helpers:lists//tei:listPerson[@type='authors']/tei:person
+            where $at/tei:note[@type='link'] eq $author
+            return $at/@xml:id/data(.)
+};
+
 declare function author:getTitle($node as node(), $model as map(*), $author){
-    <h1>{doc("/db/apps/pessoa/data/lists.xml")//tei:listPerson[@type='authors']/tei:person[@xml:id=$author]/tei:persName}</h1>
+    <h1>{$helpers:lists//tei:listPerson[@type='authors']/tei:person[@xml:id=author:getAuthorId($author)]/tei:persName/data(.)}</h1>
         };
 
 declare function author:reorder($node as node(), $model as map(*),$orderBy, $textType, $author){
@@ -30,36 +37,12 @@ declare function author:getTabs($node as node(), $model as map(*), $textType as 
                     </li>
         }
     </ul>
-    (:)
-    return
-    if ($textType = "all") then
-        <ul id="tabs"><li class="selected"><a href="{$helpers:app-root}/author/{$author}/all">
-            {page:singleAttribute($lists,"author-pages", "publications-and-documents")}</a></li>
-        <li><a href="{$helpers:app-root}/author/{$author}/documents">{page:singleAttribute($lists, "author-pages","documents")}</a></li>
-        <li><a href="{$helpers:app-root}/author/{$author}/publications">{page:singleAttribute($lists, "author-pages","publications")}</a></li></ul>                
-    else if($textType = "documents") then 
-        <ul id="tabs">
-            <li>
-                <a href="{$helpers:app-root}/author/{$author}/all">
-                    {page:singleAttribute($lists, "author-pages","publications-and-documents")}
-                </a>
-            </li>
-        <li class="selected"><a href="{$helpers:app-root}/author/{$author}/documents">
-            {page:singleAttribute($lists, "author-pages","documents")}
-        </a></li>
-        <li><a href="{$helpers:app-root}/author/{$author}/publications">{page:singleAttribute($lists, "author-pages","publications")}</a></li></ul> 
-    else if($textType ="publications") then
-        <ul id="tabs"><li><a href="{$helpers:app-root}/author/{$author}/all">{page:singleAttribute($lists, "author-pages","publications-and-documents")}</a></li>
-        <li><a href="{$helpers:app-root}/author/{$author}/documents">{page:singleAttribute($lists, "author-pages","documents")}</a></li>
-        <li class ="selected"><a href="{$helpers:app-root}/author/{$author}/publications">{page:singleAttribute($lists, "author-pages","publications")}</a></li></ul>         
-    else()
-            :)
 };
 
 
 declare function author:getTabContent($node as node(), $model as map(*), $textType, $author, $orderBy) {
-    let $authorKey := $author (:)if($author = "pessoa") then "FP" else if($author ="reis") then "RR" else if($author ="caeiro") then "AC" else if($author="campos") then "AdC" else ():)
-    let $folders :=  switch($textType) 
+    let $authorKey := author:getAuthorId($author)
+    let $folders :=  switch($textType)
                             case "all" return ("doc","pub")
                             case "documents" return "doc"
                             case "publications" return "pub"
@@ -143,6 +126,7 @@ declare function author:formatDocID($id){
     else $id 
 };
 
+(:)
 declare function author:getRoles($doc, $authorKey){
     let $roles := $doc//tei:text//tei:rs[@type = 'name' and @key=$authorKey]/@role/data(.)
     let $uniqueRoles := fn:distinct-values($roles)
@@ -157,7 +141,7 @@ declare function author:getYearOrTitle($text, $orderBy){
     else if($doc) then $doc
     else ()
 };
-
+:)
 declare function author:getYearOrTitleOfDocument($doc, $orderBy){
     let $when := $doc//tei:origDate/@when/data(.)
     let $from := $doc//tei:origDate/@from/data(.)
@@ -198,11 +182,11 @@ let $script :=
         
         if ($("#date").is(":checked"))
         {{
-        $("#tab").load("{$helpers:app-root}/{$helpers:web-language}/page/author/{$author}/{$textType}?orderBy=date");
+        $("#tab").load("{$helpers:app-root}/{$helpers:web-language}/author/{$author}/{$textType}?orderBy=date");
         
         }}
         else{{
-        $("#tab").load("{$helpers:app-root}/{$helpers:web-language}/page/author/{$author}/{$textType}?orderBy=alphab"); 
+        $("#tab").load("{$helpers:app-root}/{$helpers:web-language}/author/{$author}/{$textType}?orderBy=alphab");
         }}
         }}
     </script> 

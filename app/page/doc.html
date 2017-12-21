@@ -48,7 +48,7 @@
     </script>
     
     
-    <script class="doc:get-versaoPessoal"></script>
+    <script data-template="doc:get-versaoPessoal"></script>
     <div class="contet" id="doc">
         <div id="titleline">
             <p class="doc:get-title"></p>
@@ -56,7 +56,7 @@
         <div id="article">
             <div>
                 
-                <div class="doc:docControll" id="scrollline"></div>
+                <div data-template="doc:docControll" id="scrollline"></div>
                 
                 <div id="tabline">
                     <ul id="tabs">
@@ -76,12 +76,12 @@
                     <ul id="indextabs">
                         <li class="itabs selected"  title="facsimile">
                             <a href="#facsimile">
-                                <span class="page:singleElement?xmltype=buttons&amp;xmlid=facsimile"/>
+                                <get data-template="helpers:singleElementInList" data-template-ListType="buttons" data-template-ListId="facsimile"/>
                             </a>
                         </li>
                         <li class="itabs"  title="index">
                             <a href="#index">
-                                <span class="page:singleElement?xmltype=buttons&amp;xmlid=bindex"/>                                
+                                <get data-template="helpers:singleElementInList" data-template-ListType="buttons" data-template-ListId="bindex"/>
                             </a>
                         </li>
                     </ul>
@@ -90,12 +90,12 @@
                     <ul id="indextab">
                         <li class="selected" id="facsimile">
                             <div >
-                                <p class="doc:get-image">facsimile</p>
+                                <get data-template="doc:get-image">facsimile</get>
                             </div>
                         </li>
                         <li id="index">
-                            <div >
-                                <p class="doc:get-indexes">indexes</p>
+                            <div>
+                                <get data-template="doc:get-indexes">indexes</get>
                             </div>
                         </li>
                     </ul>
@@ -112,31 +112,40 @@
                         <table>
                             <tr>
                                 <td>□</td>
-                                <td><lang data-template="helpers:singleElementHidden" data-template-xmltype="symbols" data-template-xmlid="blank_space"/></td>
+                                <td><get data-template="helpers:singleElementInList" data-template-ListType="symbols" data-template-ListId="blank_space"/></td>
                             </tr>
                             <tr>
                                 <td>*</td>
-                                <td><lang data-template="helpers:singleElementHidden" data-template-xmltype="symbols" data-template-xmlid="conjectural"/></td>
+                                <td><get data-template="helpers:singleElementInList" data-template-ListType="symbols" data-template-ListId="conjectural"/></td>
                             </tr>
                             <tr>
                                 <td>/ /</td>
-                                <td><lang data-template="helpers:singleElementHidden" data-template-xmltype="symbols" data-template-xmlid="segment"/></td>
+                                <td><get data-template="helpers:singleElementInList" data-template-ListType="symbols" data-template-ListId="segment"/></td>
                             </tr>
                             <tr>
                                 <td>†</td>
-                                <td><lang data-template="helpers:singleElementHidden" data-template-xmltype="symbols" data-template-xmlid="illegible"/></td>
+                                <td><get data-template="helpers:singleElementInList" data-template-ListType="symbols" data-template-ListId="illegible"/></td>
                             </tr>
                             <tr>
                                 <td>[ ]</td>
-                                <td><lang data-template="helpers:singleElementHidden" data-template-xmltype="symbols" data-template-xmlid="expanded"/></td>
+                                <td>
+                                    <get data-template="helpers:singleElementInList" data-template-ListType="symbols" data-template-ListId="expanded"/>
+                                </td>
                             </tr>
                         </table>
                     </div>
                     <div id="filter">
-                        <a class="filter-a" onclick="printContent()"><lang data-template="helpers:singleElementHidden" data-template-xmltype="footer" data-template-xmlid="print"  /></a>
+                        <a class="filter-a" onclick="printContent()">
+                            <get data-template="helpers:singleElementInList" data-template-ListType="footer" data-template-ListId="print"/>
+                        </a>
                         <get data-template="helpers:getValue" data-template-get="xmllink"/>
-                        <a class="filter-a" id="zitat" ><lang data-template="helpers:singleElementHidden" data-template-xmltype="footer" data-template-xmlid="cite"/></a>
-                        <a class="filter-a" id="symbols"><lang data-template="helpers:singleElementHidden" data-template-xmltype="footer" data-template-xmlid="symbols"/></a>
+                        <a class="filter-a" id="zitat" >
+                            <get data-template="helpers:singleElementInList" data-template-ListType="footer" data-template-ListId="cite"/>
+
+                        </a>
+                        <a class="filter-a" id="symbols">
+                            <get data-template="helpers:singleElementInList" data-template-ListType="footer" data-template-ListId="symbols"/>
+                        </a>
                     </div>
                 </div>
             </map>
