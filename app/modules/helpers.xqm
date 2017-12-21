@@ -165,6 +165,35 @@ declare function helpers:singleElementInList_xQuery($ListType as xs:string, $Lis
     $helpers:lists//tei:list[@type = $ListType]/tei:item[@xml:id=$ListId]/tei:term[@xml:lang = $helpers:web-language]
 };
 
+
+
+declare function helpers:createInput_item($xmltype as xs:string,$btype as xs:string, $name as xs:string, $value as xs:string*) as node()* {
+    for $id in $value
+        let $entry := helpers:singleElementInList_xQuery($xmltype,$id)
+        let $input := <input class="{concat($name,"_input-box")}" type="{$btype}" name="{$name}" value="{$id}" id="{$id}"/>
+        let $label := <label class="{concat($name,"_input-label")}" for="{$id}">{$entry}</label>
+        let $breaked := <br />
+        return ($input,$label,$breaked)
+};
+
+declare function helpers:createInput_term($xmltype as xs:string, $btype as xs:string, $name as xs:string, $value as xs:string*, $checked as xs:string?) as node()* {
+    for $id in $value
+    let $entry := helpers:singleElementInList_xQuery($xmltype,$id)
+    let $input := if($checked = "checked") then <input class="{concat($name,"_input-box")}" type="{$btype}" name="{$name}" value="{$id}" id="{$id}" checked="checked"/>
+    else <input class="{concat($name,"_input-box")}" type="{$btype}" name="{$name}" value="{$id}" id="{$id}" />
+    let $label := <label class="{concat($name,"_input-label")}" for="{$id}">{$entry}</label>
+    let $breaked := <br />
+    return ($input,$label,$breaked)
+};
+
+
+declare function helpers:createOption_new($xmltype as xs:string, $value as xs:string*) as node()* {
+    for $id in $value
+    let $entry:= helpers:singleElementInList_xQuery($xmltype,$id)
+    return <option value="{$id}">{$entry}</option>
+};
+
+
 declare function helpers:index-of-node
 ( $nodes as node()* ,
         $nodeToFind as node() )  as xs:integer* {

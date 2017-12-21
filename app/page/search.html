@@ -3,7 +3,10 @@
     data-template="templates:surround" data-template-with="templates/page.html" data-template-at="content">
     <div class="row-fluid">
         <div id="content" class="span12 main">
-            <h1 class="page:singleElement?xmltype=search&amp;xmlid=search_noun"></h1>
+            <h1>
+                <get data-template="helpers:singleElementInList" data-template-ListType="search" data-template-ListId="search_noun"/>
+            </h1>
+
    
             <script type="text/javascript">
                 function hide(id) {
@@ -30,7 +33,7 @@
                      <div><h2  id="resultados"><get data-template="helpers:singleElementInList" data-template-ListType="search" data-template-ListId="results"/>
                          <i class="helpers:getValue?get=r_count"/></h2></div>
                      <form method="get" class="OrderForm">
-                         <span class="page:singleElement?xmltype=order&amp;xmlid=order"></span>
+                         <get data-template="helpers:singleElementInList" data-template-ListType="order" data-template-ListId="order"></get>
                          <get data-template="search:printDateAlpha"/>
                      </form>
                      <div id="result">
