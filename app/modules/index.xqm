@@ -28,7 +28,7 @@ declare function index:printDocLinks($node as node(), $model as map(*),$ref) {
     return <span><a href="{$ref}" class="olink">{$doc/@title/data(.)}</a>{if($doc/@coma/data(.) eq "yes") then "," else ()}</span>
 };
 
-
+(:
 declare function index:FindFirstLetter($text as xs:string,$pos as xs:integer) {
     for $a in (helpers:lettersOfTheAlphabet(),helpers:lettersOfTheAlphabeHight())
       let $pos :=  if($a eq "Z") then $pos +1
@@ -43,10 +43,11 @@ declare function index:FindFirstLetter-new($text as xs:string, $pos as xs:intege
     else if ($pos > string-length($text)) then concat("Error/",$pos)
     else index:FindFirstLetter-new($text,$pos +1)
 };
-
+:)
 
  (: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
  :)
+(:
 declare function index:highLetters($letter) {
     switch($letter)
             case "A" case "a" return("A")
@@ -77,10 +78,11 @@ declare function index:highLetters($letter) {
             case "Z" case "z" return("Z")
             default return $letter
 };
-
+:)
 (:### Genre Index ####:)
 
 declare function index:collectGenre($node as node(), $model as map(*),$type as xs:string,$orderBy as xs:string) {
+    let $type := $helpers:lists//tei:list[@type='genres']/tei:item[@xml:id= $type]/tei:note[@type='range']/data(.)
     let $items := for $fold in ("doc","pub")                                 
                                 let $db := search:search_range_simple("genre",$type,collection(concat("/db/apps/pessoa/data/",$fold,"/")))
                                  for $doc in $db 
@@ -146,7 +148,7 @@ declare function index:collectGenre($node as node(), $model as map(*),$type as x
        }
         
     };
-    
+
     declare function index:scanTexts($node as node(), $model as map(*)) {
     let $list := doc('/db/apps/pessoa/data/titlelist.xml')//list[@letter = $model("letter")]
       return    <div class="index-text">

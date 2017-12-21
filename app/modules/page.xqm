@@ -1,5 +1,11 @@
 xquery version "3.0";
-
+(:~
+: Modul zur generierung der Navigation
+; Beinhaltet allgemeine Funktionen
+:
+: @author Ben Bigalke
+: @version 1.1
+:)
 module namespace page="http://localhost:8080/exist/apps/pessoa/page";
 
 import module namespace templates="http://exist-db.org/xquery/templates" at "templates.xql";
@@ -70,7 +76,7 @@ declare function page:catchSub($list as node(),$item as node()) as map(*)* {
                             "publ" := $item/tei:note[@type='published']/data(.),
                             "type" := "link",
                             "id" := $per/@xml:id/data(.),
-                            "link" := concat($item/tei:note[@type='directory']/data(.),"/",$per/@xml:id/data(.),"/all")
+                            "link" := concat($item/tei:note[@type='directory']/data(.),"/",$per/tei:note[@type='link']/data(.),"/all")
                         }
         else if($item/@corresp eq "date") then page:DATEmapping($item/@xml:id/data(.))
         else
@@ -107,7 +113,7 @@ declare function page:catchSub($list as node(),$item as node()) as map(*)* {
                                 "publ" := $item/tei:note[@type='published'],
                                 "type" := "link",
                                 "id" := $work/@xml:id,
-                                "link" := concat("obras/",$work/title[@type="main"]/data(.))
+                                "link" := concat("works/",$work/title[@type="main"]/data(.))
                 }
         else()
     else for $el in $item/tei:list/tei:item return page:mapping($el)
@@ -126,7 +132,7 @@ declare function page:mapping($item as node()) as map(*){
                 }
     let $return := if(exists($item/tei:list) or exists($item/@corresp)) then map:new(($return,map {"sub" := page:catchSub(doc("/db/apps/pessoa/data/lists.xml"),$item)})) else $return
     let $return := if(exists($item/tei:note[@type='directory'])) then map:new(($return,map {"link" := concat($item/tei:note[@type='directory']/data(.),"/",$item/@xml:id/data(.))})) else $return
-    let $return := if($item/@xml:id/data(.) = "timeline" or $item/@xml:id/data(.) = "network") then map:new(($return,map {"link" := $item/@xml:id/data(.)})) else $return
+    let $return := if($item/@rend/data(.) = 'newlink') then map:new(($return,map {"link" := $item/@xml:id/data(.)})) else $return
 
     let $return := if(map:contains($return,"sub")) then
                         let $publ := if(contains(string-join(distinct-values(for $s in $return("sub") return $s("publ")),"-"),"true"))
@@ -221,20 +227,31 @@ declare function page:catchSiteHead($node as node(), $model as map(*), $containe
         return
         if($site("publ") eq "free" or $site("publ") eq "true" or config:logged-in()) then
                 if($site("type") eq "link") then
-                <li>
-                    {attribute class {($node/@class),($site("type"))}}
-                    {attribute published {$site("publ")}}
-                    <a href="{concat($helpers:app-root,"/",$helpers:web-language,"/",$site("link"))}"><span>{$site("site")}</span></a>
-                    {templates:process($node/node(), $model)}
-                </li>
+                    <li>
+                        {attribute class {($node/@class),($site("type"))}}
+                        {attribute published {$site("publ")}}
+                        <a href="{concat($helpers:app-root,"/",$helpers:web-language,"/",$site("link"))}">
+                            <span>{$site("site")}</span>
+                        </a>
+                        {templates:process($node/node(), $model)}
+                    </li>
+                else if($site("type") eq "newlink") then
+                    <li>
+                        {attribute class {($node/@class),($site("type"))}}
+                        {attribute published {$site("publ")}}
+                        <a href="{concat($helpers:app-root,"/",$helpers:web-language,"/",$site("link"))}" target='_blank'>
+                            <span>{$site("site")}</span>
+                        </a>
+                        {templates:process($node/node(), $model)}
+                    </li>
                 else
-                <li>
-                    {attribute class {($node/@class),($site("type"))}}
-                    {attribute active {$node/@active}}
-                    {attribute published {$site("publ")}}
-                    <span>{$site("site")}</span>
-                    {templates:process($node/node(), $model)}
-                </li>
+                    <li>
+                        {attribute class {($node/@class),($site("type"))}}
+                        {attribute active {$node/@active}}
+                        {attribute published {$site("publ")}}
+                        <span>{$site("site")}</span>
+                        {templates:process($node/node(), $model)}
+                    </li>
         else
                 <li>
                     {attribute class {($node/@class),("restricted")}}
@@ -431,12 +448,19 @@ declare  function page:createTimelineHeader($node as node(), $model as map(*)) a
 
 
 (: ########### Zitation ##############:)
-declare function page:cite($node as node(), $model as map(*), $source as xs:string?) {
-    <span id="p-cite"> {for $elem in helpers:singleElementNode_xquery("cite","cite-sd")/tei:span
+declare function page:cite($node as node(), $model as map(*), $source as xs:string?, $type as xs:string?, $author as xs:string?) {
+    let $link := if($source eq '/project') then concat($helpers:app-root,'/',$helpers:web-language,$source)
+        else concat($helpers:app-root,$source)
+    let $link := if($type != "") then concat($link,'/',$type)
+                else if($author != "") then concat($link,'/',$author)
+                else $link
+        return
+            <span id="p-cite"> {for $elem in helpers:singleElementNode_xquery("cite","cite-sd")/tei:span
     return
         switch($elem/@type)
-            case "web" return <i>{helpers:singleElement_xquery("cite","cite-web")}</i>
-            case "url" return <a href="{concat($helpers:app-root,$source)}">{concat("<",$helpers:app-root,$source,">")}</a>
+            case "web" return <i>{helpers:singleElementInList_xQuery("cite","cite-web")}</i>
+            case "url" return <a href="{$link}">{concat("<",$link,">")
+            }</a>
             default return $elem
     }</span>
 };

@@ -32,7 +32,7 @@
             </list>
             <!-- ################# NAVIGATION ######################## -->
             <list type="navigation">
-                <item xml:id="autores" rend="button" corresp="authors">
+                <item xml:id="author" rend="button" corresp="authors">
                     <term xml:lang="pt">Autores</term>
                     <term xml:lang="en">Authors</term>
                     <term xml:lang="de">Autoren</term>
@@ -53,15 +53,15 @@
                     <note type="published">false</note>
                     <note type="linked">doclist</note>
                 </item>
-                <item xml:id="obras"  rend="button">
+                <item xml:id="works"  rend="button">
                     <term xml:lang="pt">Obras</term>
                     <term xml:lang="en">Works</term>
                     <term xml:lang="de">Werke</term>
                     <note type="published">false</note>
-                    <note type="directory">obras</note>
+                    <note type="directory">works</note>
                     <note type="linked">works</note>
                 </item>
-                <item xml:id="genero"  rend="button" corresp="genres">
+                <item xml:id="genre"  rend="button" corresp="genres">
                     <term xml:lang="pt">Géneros</term>
                     <term xml:lang="en">Genres</term>
                     <term xml:lang="de">Genres</term>
@@ -99,13 +99,13 @@
                             <term xml:lang="de">1927-1935</term>
                             <note type="published">false</note>
                         </item>
-                        <item xml:id="timeline"  rend="link">
+                        <item xml:id="timeline"  rend="newlink">
                             <term xml:lang="pt">Linha do tempo</term>
                             <term xml:lang="en">Timeline</term>
                             <term xml:lang="de">Zeitleiste</term>
                             <note type="published">true</note>
                         </item>
-                        <item xml:id="network"  rend="link">
+                        <item xml:id="network"  rend="newlink">
                             <term xml:lang="pt">Rede</term>
                             <term xml:lang="en">Network</term>
                             <term xml:lang="de">Netzwerk</term>
@@ -119,27 +119,27 @@
                     <term xml:lang="de">Indices</term>
                     <note type="published">false</note>
                     <list type="index">
-                        <item xml:id="bibliografia" rend="button">
-                            <term xml:lang="pt">Bibliografia</term>
+                        <item xml:id="bibliography" rend="button">
+                            <term xml:lang="pt">bibliography</term>
                             <term xml:lang="en">Bibliography</term>
                             <term xml:lang="de">Bibliographie</term>
                             <note type="published">true</note>
-                            <list type="bibliografia">
-                                <item xml:id="bib1" rend="link" >
+                            <list type="bibliography">
+                                <item xml:id="Works_of_Fernando_Pessoa" rend="link" >
                                     <term xml:lang="pt">Obras de Fernando Pessoa</term>
                                     <term xml:lang="en">Works of Fernando Pessoa</term>
                                     <term xml:lang="de">Werke von Fernando Pessoa</term>
                                     <note type="published">true</note>
-                                    <note type="directory">bibliografia</note>
+                                    <note type="directory">bibliography</note>
                                 </item>
-                                <item xml:id="bib2" rend="link" >
+                                <item xml:id="About_the_work_of_Fernando_Pessoa" rend="link" >
                                     <term xml:lang="pt">Sobre a obra de Fernando Pessoa</term>
                                     <term xml:lang="en">About the work of Fernando Pessoa</term>
                                     <term xml:lang="de">Über das Werk von Fernando Pessoa</term>
                                     <note type="published">true</note>
-                                    <note type="directory">bibliografia</note>
+                                    <note type="directory">bibliography</note>
                                 </item>
-                                <item xml:id="bib3" rend="link" >
+                                <item xml:id="Other_sources_of_the_work_of_Fernando_Pessoa" rend="link" >
                                     <term xml:lang="pt">Outras fontes da obra de Fernando
                                         Pessoa</term>
                                     <term xml:lang="en">Other sources of the work of Fernando
@@ -147,7 +147,7 @@
                                     <term xml:lang="de">Andere Quellen zum Werk von Fernando
                                         Pessoa</term>
                                     <note type="published">true</note>
-                                    <note type="directory">bibliografia</note>
+                                    <note type="directory">bibliography</note>
                                 </item>
                             </list>
                         </item>
@@ -179,48 +179,48 @@
                     <term xml:lang="en">Project</term>
                     <term xml:lang="de">Projekt</term>
                     <note type="published">true</note>
-                    <list type="projeto">
+                    <list type="project">
                         <item xml:id="about" rend="link" >
                             <term xml:lang="pt">Sobre o projeto</term>
                             <term xml:lang="en">About</term>
                             <term xml:lang="de">Über das Projekt</term>
                             <note type="published">true</note>
-                            <note type="directory">projeto</note>
+                            <note type="directory">project</note>
                         </item>
                         <item xml:id="team" rend="link" >
                             <term xml:lang="pt">Equipa</term>
                             <term xml:lang="en">Team</term>
                             <term xml:lang="de">Team</term>
                             <note type="published">true</note>
-                            <note type="directory">projeto</note>
+                            <note type="directory">project</note>
                         </item>
                         <item xml:id="documentation"  rend="link" >
                             <term xml:lang="pt">Documentação</term>
                             <term xml:lang="en">Documentation</term>
                             <term xml:lang="de">Dokumentation</term>
                             <note type="published">false</note>
-                            <note type="directory">projeto</note>
+                            <note type="directory">project</note>
                         </item>
                         <item xml:id="dissemination" rend="link" >
                             <term xml:lang="pt">Disseminação</term>
                             <term xml:lang="en">Dissemination</term>
                             <term xml:lang="de">Publikationen &amp; Vorträge</term>
                             <note type="published">true</note>
-                            <note type="directory">projeto</note>
+                            <note type="directory">project</note>
                         </item>
                         <item xml:id="download"  rend="link" >
                             <term xml:lang="pt">Downloads</term>
                             <term xml:lang="en">Downloads</term>
                             <term xml:lang="de">Downloads</term>
                             <note type="published">false</note>
-                            <note type="directory">projeto</note>
+                            <note type="directory">project</note>
                         </item>
                         <item xml:id="licenses"  rend="link" >
                             <term xml:lang="pt">Licenças</term>
                             <term xml:lang="en">Licenses</term>
                             <term xml:lang="de">Lizenzen</term>
                             <note type="published">true</note>
-                            <note type="directory">projeto</note>
+                            <note type="directory">project</note>
                         </item>
                     </list>
                 </item>
@@ -230,50 +230,24 @@
                 <person xml:id="FP">
                     <persName>Fernando Pessoa</persName>
                     <note type="ontological-status">real</note>
+                    <note type="link">Fernando</note>
                 </person>
                 <person xml:id="AC">
                     <persName>Alberto Caeiro</persName>
                     <note type="ontological-status">ficticious</note>
+                    <note type="link">Alberto</note>
                 </person>
                 <person xml:id="AdC">
                     <persName>Álvaro de Campos</persName>
                     <note type="ontological-status">ficticious</note>
+                    <note type="link">Álvaro</note>
                 </person>
                 <person xml:id="RR">
                     <persName>Ricardo Reis</persName>
                     <note type="ontological-status">ficticious</note>
+                    <note type="link">Ricardo</note>
                 </person>
             </listPerson>
-            <!-- ################ VERSAO PESSOAL ################### -->
-            <list type="personal-version">
-                <item xml:id="diplomatic-version">
-                    <term xml:lang="pt" >versão diplomática</term>
-                    <term xml:lang="en">diplomatic version</term>
-                    <term xml:lang="de">diplomatische
-                        Transkription</term>
-                </item>
-                <item xml:id="first-version">
-                    <term xml:lang="pt" >primeira versão</term>
-                    <term xml:lang="en">first version</term>
-                    <term xml:lang="de">erste Fassung</term>
-                </item>
-                <item xml:id="last-version">
-                    <term xml:lang="pt" >última versão</term>
-                    <term xml:lang="en">last version</term>
-                    <term xml:lang="de">letzte Fassung</term>
-                </item>
-                <item xml:id="abbreviations">
-                    <term xml:lang="pt" >desenvolvimento de
-                        abreviaturas</term>
-                    <term xml:lang="en">expand abbreviations</term>
-                    <term xml:lang="de">Abkürzungen auflösen</term>
-                </item>
-                <item  xml:id="line-breaks">
-                    <term xml:lang="pt">quebras de linha</term>
-                    <term xml:lang="en">line breaks</term>
-                    <term xml:lang="de">Zeilenumbrüche anzeigen</term>
-                </item>
-            </list>
             <!-- ################ AUTHOR-Pages #################### -->
             <list type="author-pages">
                 <item xml:id="publications-and-documents">
@@ -327,25 +301,29 @@
 
             <!-- ############## GENRES ###################### -->
             <list type="genres">
-                <item xml:id="lista_editorial">
+                <item xml:id="editorial_list">
                     <term xml:lang="pt">Lista editorial</term>
                     <term xml:lang="en">Editorial list</term>
                     <term xml:lang="de">Editorische Liste</term>
+                    <note type="range">lista_editorial</note>
                 </item>
-                <item xml:id="nota_editorial">
+                <item xml:id="editorial_note">
                     <term xml:lang="pt">Nota editorial</term>
                     <term xml:lang="en">Editorial note</term>
                     <term xml:lang="de">Editorische Notiz</term>
+                    <note type="range">nota_editorial</note>
                 </item>
-                <item xml:id="plano_editorial">
+                <item xml:id="editorial_plan">
                     <term xml:lang="pt">Plano editorial</term>
                     <term xml:lang="en">Editorial plan</term>
                     <term xml:lang="de">Editorischer Plan</term>
+                    <note type="range">plano_editorial</note>
                 </item>
-                <item xml:id="poesia">
+                <item xml:id="poetry">
                     <term xml:lang="pt">Poesia</term>
                     <term xml:lang="en">Poetry</term>
                     <term xml:lang="de">Dichtung</term>
+                    <note type="range">poesia</note>
                 </item>
             </list>
             <list type="language" xml:lang="pt">
@@ -504,8 +482,8 @@
                     <term xml:lang="en" corresp="#pub_no">no</term>
                     <term xml:lang="de" corresp="#pub_no">nein</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="search_tips">
+                <item xml:id="search_tips">
+                    <term xml:lang="pt" >
                         <span type="head">Ajuda à Pesquisa</span>
                         <span>Fazendo uma pesquisa por vários termos, que ocorram num mesmo
                             documento ou publicação, mas não necessariamente juntos, estes podem ser
@@ -518,7 +496,7 @@
                             juntos num mesmo documento ou publicação, estes devem ser colocados
                             entre aspas: "termo1 termo2".</span>
                     </term>
-                    <term xml:lang="en" corresp="#search_tips">
+                    <term xml:lang="en">
                         <span type="head">Search tips</span>
                         <span>A search for several terms that should occur together in a document or
                             a publication but do not need to occur in the exact order can be done as
@@ -529,7 +507,7 @@
                         <span>A search for several terms that should occur in the exact order in a
                             document or publication can be done as follows: "term1 term2".</span>
                     </term>
-                    <term xml:lang="de" corresp="#search_tips">
+                    <term xml:lang="de">
                         <span type="head">Suchhinweise</span>
                         <span>Soll nach mehreren Begriffen gesucht werden, die zusammen in einem
                             Dokument oder einer Publikation vorkommen sollen, aber nicht unbedingt
@@ -650,200 +628,224 @@
             </list>
             <!-- ####################### TABS ############################# -->
             <list type="tabs">
-                <item>
-                    <term xml:lang="pt" xml:id="transcricao-diplomatica">transcrição
-                        diplomática</term>
-                    <term xml:lang="en" corresp="#transcricao-diplomatica">diplomatic
-                        transcription</term>
-                    <term xml:lang="de" corresp="#transcricao-diplomatica">Diplomatische
-                        Transkription</term>
+                <item xml:id="diplomatic-transcription">
+                    <term xml:lang="pt">transcrição diplomática</term>
+                    <term xml:lang="en">diplomatic transcription</term>
+                    <term xml:lang="de">Diplomatische Transkription</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="primeira-versao">primeira versão</term>
-                    <term xml:lang="en" corresp="#primeira-versao">first version</term>
-                    <term xml:lang="de" corresp="#primeira-versao">Erste Fassung</term>
+                <item xml:id="first-version">
+                    <term xml:lang="pt">primeira versão</term>
+                    <term xml:lang="en">first version</term>
+                    <term xml:lang="de">Erste Fassung</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="versao-final">última versão</term>
-                    <term xml:lang="en" corresp="#versao-final">last version</term>
-                    <term xml:lang="de" corresp="#versao-final">Letzte Fassung</term>
+                <item xml:id="last-version">
+                    <term xml:lang="pt">última versão</term>
+                    <term xml:lang="en">last version</term>
+                    <term xml:lang="de">Letzte Fassung</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="versao-pessoal">versão pessoal</term>
-                    <term xml:lang="en" corresp="#versao-pessoal">customized version</term>
-                    <term xml:lang="de" corresp="#versao-pessoal">Eigene Fassung</term>
+                <item xml:id="customized-version">
+                    <term xml:lang="pt">versão pessoal</term>
+                    <term xml:lang="en">customized version</term>
+                    <term xml:lang="de">Eigene Fassung</term>
                 </item>
             </list>
             <!-- ####################### TABS CITATION ############################# -->
             <list type="tabs-citation">
-                <item>
-                    <term xml:lang="pt" xml:id="transcricao-diplomatica-citation">Transcrição
-                        diplomática</term>
-                    <term xml:lang="en" corresp="#transcricao-diplomatica-citation">Diplomatic
-                        transcription</term>
-                    <term xml:lang="de" corresp="#transcricao-diplomatica-citation">Diplomatische
-                        Transkription</term>
+                <item xml:id="diplomatic-transcription-citation">
+                    <term xml:lang="pt">Transcrição diplomática</term>
+                    <term xml:lang="en">Diplomatic transcription</term>
+                    <term xml:lang="de">Diplomatische Transkription</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="primeira-versao-citation">Primeira versão</term>
-                    <term xml:lang="en" corresp="#primeira-versao-citation">First version</term>
-                    <term xml:lang="de" corresp="#primeira-versao-citation">Erste Fassung</term>
+                <item xml:id="first-version-citation">
+                    <term xml:lang="pt">Primeira versão</term>
+                    <term xml:lang="en">First version</term>
+                    <term xml:lang="de">Erste Fassung</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="versao-final-citation">Última versão</term>
-                    <term xml:lang="en" corresp="#versao-final-citation">Last version</term>
-                    <term xml:lang="de" corresp="#versao-final-citation">Letzte Fassung</term>
+                <item xml:id="last-version-citation">
+                    <term xml:lang="pt">Última versão</term>
+                    <term xml:lang="en">Last version</term>
+                    <term xml:lang="de">Letzte Fassung</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="versao-pessoal-citation">Versão pessoal</term>
-                    <term xml:lang="en" corresp="#versao-pessoal-citation">Customized version</term>
-                    <term xml:lang="de" corresp="#versao-pessoal-citation">Eigene Fassung</term>
+                <item xml:id="customized-version-citation">
+                    <term xml:lang="pt">Versão pessoal</term>
+                    <term xml:lang="en">Customized version</term>
+                    <term xml:lang="de">Eigene Fassung</term>
+                </item>
+            </list>
+
+            <!-- ################ VERSAO PESSOAL ################### -->
+            <list type="personal-version">
+                <item xml:id="pv-diplomatic-version">
+                    <term xml:lang="pt" >versão diplomática</term>
+                    <term xml:lang="en">diplomatic version</term>
+                    <term xml:lang="de">diplomatische Transkription</term>
+                </item>
+                <item xml:id="pv-first-version">
+                    <term xml:lang="pt" >primeira versão</term>
+                    <term xml:lang="en">first version</term>
+                    <term xml:lang="de">erste Fassung</term>
+                </item>
+                <item xml:id="pv-last-version">
+                    <term xml:lang="pt" >última versão</term>
+                    <term xml:lang="en">last version</term>
+                    <term xml:lang="de">letzte Fassung</term>
+                </item>
+                <item xml:id="pv-abbreviations">
+                    <term xml:lang="pt" >desenvolvimento de
+                        abreviaturas</term>
+                    <term xml:lang="en">expand abbreviations</term>
+                    <term xml:lang="de">Abkürzungen auflösen</term>
+                </item>
+                <item  xml:id="pv-line-breaks">
+                    <term xml:lang="pt">quebras de linha</term>
+                    <term xml:lang="en">line breaks</term>
+                    <term xml:lang="de">Zeilenumbrüche anzeigen</term>
                 </item>
             </list>
             <!-- ####################### ORDER ################################### -->
             <list type="order">
-                <item>
-                    <term xml:lang="pt" xml:id="chronological">cronológico</term>
-                    <term xml:lang="en" corresp="#chronological">chronological</term>
-                    <term xml:lang="de" corresp="#chronological">chronologisch</term>
+                <item xml:id="chronological">
+                    <term xml:lang="pt">cronológico</term>
+                    <term xml:lang="en">chronological</term>
+                    <term xml:lang="de">chronologisch</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="alphabetical">alfabético</term>
-                    <term xml:lang="en" corresp="#alphabetical">alphabetical</term>
-                    <term xml:lang="de" corresp="#alphabetical">alphabetisch</term>
+                <item xml:id="alphabetical">
+                    <term xml:lang="pt">alfabético</term>
+                    <term xml:lang="en">alphabetical</term>
+                    <term xml:lang="de">alphabetisch</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="order">Ordem: </term>
-                    <term xml:lang="en" corresp="#order">Order: </term>
-                    <term xml:lang="de" corresp="#order">Reihenfolge: </term>
+                <item  xml:id="order">
+                    <term xml:lang="pt">Ordem: </term>
+                    <term xml:lang="en">Order: </term>
+                    <term xml:lang="de">Reihenfolge: </term>
                 </item>
             </list>
             <!-- ####################### Buttons ######################### -->
             <list type="buttons">
-                <item>
-                    <term xml:lang="pt" xml:id="previous">Anterior</term>
-                    <term xml:lang="en" corresp="#previous">Previous</term>
-                    <term xml:lang="de" corresp="#previous">Zurück</term>
+                <item xml:id="previous">
+                    <term xml:lang="pt">Anterior</term>
+                    <term xml:lang="en">Previous</term>
+                    <term xml:lang="de">Zurück</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="next">Próximo</term>
-                    <term xml:lang="en" corresp="#next">Next</term>
-                    <term xml:lang="de" corresp="#next">Vor</term>
+                <item  xml:id="next">
+                    <term xml:lang="pt">Próximo</term>
+                    <term xml:lang="en">Next</term>
+                    <term xml:lang="de">Vor</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="bindex">Índices</term>
-                    <term xml:lang="en" corresp="#bindex">Indexes</term>
-                    <term xml:lang="de" corresp="#bindex">Indices</term>
+                <item xml:id="bindex">
+                    <term xml:lang="pt">Índices</term>
+                    <term xml:lang="en">Indexes</term>
+                    <term xml:lang="de">Indices</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="relations">Relações</term>
-                    <term xml:lang="en" corresp="#relations">Relations</term>
-                    <term xml:lang="de" corresp="#relations">Beziehungen</term>
+                <item xml:id="relations">
+                    <term xml:lang="pt">Relações</term>
+                    <term xml:lang="en">Relations</term>
+                    <term xml:lang="de">Beziehungen</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="facsimile">Fac-símile</term>
-                    <term xml:lang="en" corresp="#facsimile">Facsimile</term>
-                    <term xml:lang="de" corresp="#facsimile">Faksimile</term>
+                <item xml:id="facsimile">
+                    <term xml:lang="pt">Fac-símile</term>
+                    <term xml:lang="en">Facsimile</term>
+                    <term xml:lang="de">Faksimile</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="note">Nota</term>
-                    <term xml:lang="en" corresp="#note">Note</term>
-                    <term xml:lang="de" corresp="#note">Kommentar</term>
+                <item xml:id="note">
+                    <term xml:lang="pt">Nota</term>
+                    <term xml:lang="en">Note</term>
+                    <term xml:lang="de">Kommentar</term>
                 </item>
             </list>
             <!-- ####################### Footer ######################### -->
             <list type="footer">
-                <item>
-                    <term xml:lang="pt" xml:id="print">Imprimir</term>
-                    <term xml:lang="en" corresp="#print">Print</term>
-                    <term xml:lang="de" corresp="#print">Drucken</term>
+                <item xml:id="print">
+                    <term xml:lang="pt">Imprimir</term>
+                    <term xml:lang="en">Print</term>
+                    <term xml:lang="de">Drucken</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="cite">Citar</term>
-                    <term xml:lang="en" corresp="#cite">Cite</term>
-                    <term xml:lang="de" corresp="#cite">Zitieren</term>
+                <item xml:id="cite">
+                    <term xml:lang="pt">Citar</term>
+                    <term xml:lang="en">Cite</term>
+                    <term xml:lang="de">Zitieren</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="symbols">Simbologia</term>
-                    <term xml:lang="en" corresp="#symbols">Symbols</term>
-                    <term xml:lang="de" corresp="#symbols">Legende</term>
+                <item xml:id="symbols">
+                    <term xml:lang="pt">Simbologia</term>
+                    <term xml:lang="en">Symbols</term>
+                    <term xml:lang="de">Legende</term>
                 </item>
             </list>
             <list type="cite">
-                <item>
-                    <term xml:lang="pt" xml:id="cite-tx"><span>Sepúlveda, Pedro e Henny-Krahmer,
+                <item xml:id="cite-tx">
+                    <term xml:lang="pt"><span>Sepúlveda, Pedro e Henny-Krahmer,
                             Ulrike (eds.).</span><span type="link"/><span type="web"/><span>.
                             Coordenação editorial por Pedro Sepúlveda, coordenação técnica por
                             Ulrike Henny-Krahmer. Lisboa e Colónia: IELT, Universidade Nova de
                             Lisboa e CCeH, Universidade de Colónia 2017.</span><span type="url"
                         /></term>
-                    <term xml:lang="en" corresp="#cite-tx"><span>Sepúlveda, Pedro and Henny-Krahmer,
+                    <term xml:lang="en"><span>Sepúlveda, Pedro and Henny-Krahmer,
                             Ulrike (eds.).</span><span type="link"/><span type="web"/><span>.
                             Editorial coordination by Pedro Sepúlveda, technical coordination by
                             Ulrike Henny-Krahmer. Lisbon and Cologne: IELT, New University of Lisbon
                             and CCeH, University of Cologne 2017.</span><span type="url"/></term>
-                    <term xml:lang="de" corresp="#cite-tx"><span>Sepúlveda, Pedro und Henny-Krahmer,
+                    <term xml:lang="de"><span>Sepúlveda, Pedro und Henny-Krahmer,
                             Ulrike (Hrsg.).</span><span type="link"/><span type="web"/><span>.
                             Editorische Leitung Pedro Sepúlveda, technische Leitung Ulrike
                             Henny-Krahmer. Lissabon und Köln: IELT, Neue Universität Lissabon und
                             CCeH, Universität zu Köln 2017.</span><span type="url"/></term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="cite-sd"><span>Sepúlveda, Pedro e Henny-Krahmer,
+                <item xml:id="cite-sd">
+                    <term xml:lang="pt"><span>Sepúlveda, Pedro e Henny-Krahmer,
                             Ulrike (eds.). </span><span type="web"/><span>. Coordenação editorial
                             por Pedro Sepúlveda, coordenação técnica por Ulrike Henny-Krahmer.
                             Lisboa e Colónia: IELT, Universidade Nova de Lisboa e CCeH, Universidade
                             de Colónia 2017. </span><span type="url"/></term>
-                    <term xml:lang="en" corresp="#cite-sd"><span>Sepúlveda, Pedro and Henny-Krahmer,
+                    <term xml:lang="en"><span>Sepúlveda, Pedro and Henny-Krahmer,
                             Ulrike (eds.). </span><span type="web"/><span>. Editorial coordination
                             by Pedro Sepúlveda, technical coordination by Ulrike Henny-Krahmer.
                             Lisbon and Cologne: IELT, New University of Lisbon and CCeH, University
                             of Cologne 2017. </span><span type="url"/></term>
-                    <term xml:lang="de" corresp="#cite-sd"><span>Sepúlveda, Pedro und Henny-Krahmer,
+                    <term xml:lang="de"><span>Sepúlveda, Pedro und Henny-Krahmer,
                             Ulrike (Hrsg.). </span><span type="web"/><span>. Editorische Leitung
                             Pedro Sepúlveda, technische Leitung Ulrike Henny-Krahmer. Lissabon und
                             Köln: IELT, Neue Universität Lissabon und CCeH, Universität zu Köln
                             2017. </span><span type="url"/></term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="cite-web">Edição Digital de Fernando Pessoa.
+                <item xml:id="cite-web">
+                    <term xml:lang="pt">Edição Digital de Fernando Pessoa.
                         Projetos e Publicações</term>
-                    <term xml:lang="en" corresp="#cite-web">Digital Edition of Fernando Pessoa.
+                    <term xml:lang="en">Digital Edition of Fernando Pessoa.
                         Projects and Publications</term>
-                    <term xml:lang="de" corresp="#cite-web">Fernando Pessoa – Digitale Edition.
+                    <term xml:lang="de">Fernando Pessoa – Digitale Edition.
                         Projekte und Publikationen</term>
                 </item>
             </list>
 
             <!-- ####################### Symbols ######################### -->
             <list type="symbols">
-                <item>
-                    <term xml:lang="pt" xml:id="blank_space">espaço deixado em branco pelo
+                <item xml:id="blank_space">
+                    <term xml:lang="pt" >espaço deixado em branco pelo
                         autor</term>
-                    <term xml:lang="en" corresp="#blank_space">blank space left by the author</term>
-                    <term xml:lang="de" corresp="#blank_space">vom Autor frei gelassene
+                    <term xml:lang="en">blank space left by the author</term>
+                    <term xml:lang="de">vom Autor frei gelassene
                         Stelle</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="conjectural">leitura conjecturada</term>
-                    <term xml:lang="en" corresp="#conjectural">conjectural reading</term>
-                    <term xml:lang="de" corresp="#conjectural">Konjektur</term>
+                <item  xml:id="conjectural">
+                    <term xml:lang="pt">leitura conjecturada</term>
+                    <term xml:lang="en">conjectural reading</term>
+                    <term xml:lang="de">Konjektur</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="segment">trecho dubitado pelo autor</term>
-                    <term xml:lang="en" corresp="#segment">segment questioned by the author</term>
-                    <term xml:lang="de" corresp="#segment">vom Autor in Frage gestellter
+                <item  xml:id="segment">
+                    <term xml:lang="pt">trecho dubitado pelo autor</term>
+                    <term xml:lang="en">segment questioned by the author</term>
+                    <term xml:lang="de">vom Autor in Frage gestellter
                         Abschnitt</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="illegible">palavra ilegível</term>
-                    <term xml:lang="en" corresp="#illegible">illegible word</term>
-                    <term xml:lang="de" corresp="#illegible">unleserliches Wort</term>
+                <item  xml:id="illegible">
+                    <term xml:lang="pt">palavra ilegível</term>
+                    <term xml:lang="en">illegible word</term>
+                    <term xml:lang="de">unleserliches Wort</term>
                 </item>
-                <item>
-                    <term xml:lang="pt" xml:id="expanded">desenvolvimento de abreviaturas</term>
-                    <term xml:lang="en" corresp="#expanded">abbreviations expanded</term>
-                    <term xml:lang="de" corresp="#expanded">aufgelöste Abkürzung</term>
+                <item  xml:id="expanded">
+                    <term xml:lang="pt">desenvolvimento de abreviaturas</term>
+                    <term xml:lang="en">abbreviations expanded</term>
+                    <term xml:lang="de">aufgelöste Abkürzung</term>
                 </item>
             </list>
             <!-- ####################### TIMELINE ######################### -->

@@ -27,13 +27,12 @@
              
                      </div>
                      <div class="clear"></div>
-                     <div><h2  id="resultados"><i class="helpers:singleElementHidden?xmltype=search&amp;xmlid=results"/><i class="helpers:getValue?get=r_count"/></h2></div>
+                     <div><h2  id="resultados"><get data-template="helpers:singleElementInList" data-template-ListType="search" data-template-ListId="results"/>
+                         <i class="helpers:getValue?get=r_count"/></h2></div>
                      <form method="get" class="OrderForm">
                          <span class="page:singleElement?xmltype=order&amp;xmlid=order"></span>
                          <get data-template="search:printDateAlpha"/>
-                         <!--<input id="date" name="order" type="radio" value="no" onchange="recorder('date');"></input><label for="date" class="page:singleElement?xmltype=order&amp;xmlid=chronological" />   
-                         <input id="alphab" checked="checked" name="order" type="radio" value="yes" onchange="recorder('alphab');"></input><label for="alphab" class="page:singleElement?xmltype=order&amp;xmlid=alphabetical" />   
-                     --></form>
+                     </form>
                      <div id="result">
                         <p data-template="search:profiresult" data-template-sel="union" data-template-orderBy="date"></p>
                      </div>

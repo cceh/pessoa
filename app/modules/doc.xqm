@@ -12,8 +12,6 @@ import module namespace search="http://localhost:8080/exist/apps/pessoa/search" 
 import module namespace config="http://localhost:8080/exist/apps/pessoa/config" at "config.xqm";
 
 
-
-declare namespace request="http://exist-db.org/xquery/request";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 
@@ -35,11 +33,11 @@ declare function doc:get-indexes($node as node(), $model as map(*), $id as xs:st
 };
 
 declare function doc:createLink($node as node(), $model as map(*),$id as xs:string, $type as xs:string) {
-    let $types := ("transcricao-diplomatica","primeira-versao","versao-final","versao-pessoal")
+    let $types := ("diplomatic-transcription","first-version","last-version","customized-version")
     let $links := for $typ in $types 
                             return 
-                           if($typ eq $type) then <li class="selected tabs"><span>{helpers:singleElement_xquery("tabs",$typ)}</span></li>
-                           else <li class="tabs"><a href="{$helpers:app-root}/{$helpers:web-language}/doc/{$id}/{$typ}"><span>{helpers:singleElement_xquery("tabs",$typ)}</span></a></li>
+                           if($typ eq $type) then <li class="selected tabs"><span>{helpers:singleElementInList_xQuery("tabs",$typ)}</span></li>
+                           else <li class="tabs"><a href="{$helpers:app-root}/{$helpers:web-language}/doc/{$id}/{$typ}"><span>{helpers:singleElementInList_xQuery("tabs",$typ)}</span></a></li>
   return $links
                             
 };
@@ -47,18 +45,18 @@ declare function doc:createLink($node as node(), $model as map(*),$id as xs:stri
 declare function doc:catch-text($node as node(), $model as map(*),$id as xs:string, $type as xs:string,$lb as xs:string?, $abbr as xs:string?, $version as xs:string?) as item()+ {
         let $xml := doc:get-xml($id)
         return switch($type) 
-                case "transcricao-diplomatica" return doc:get-text($xml)
-                case "primeira-versao" return doc:get-text-var1($xml)
-                case "versao-final" return doc:get-text-var2($xml)
-                case "versao-pessoal" return (<form method="get">
+                case "diplomatic-transcription" return doc:get-text($xml)
+                case "first-version" return doc:get-text-var1($xml)
+                case "last-version" return doc:get-text-var2($xml)
+                case "customized-version" return (<form method="get">
                                 <div id="DivPessoal-1" class="DivPessoal">
-                                    <input id ="lb" name="lb" type="checkbox" checked="checked" value="yes" onchange="versaoPessoal();"></input> <label for="lb">{helpers:singleElementInList_xQuery("personal-version","line-breaks")}</label><br/>
-                                    <input id="abbr" name="abbr" type="checkbox" checked="checked" value="yes" onchange="versaoPessoal();"></input> <label for="abbr">{helpers:singleElementInList_xQuery("personal-version","abbreviations")}</label><br/>
+                                    <input id ="lb" name="lb" type="checkbox" checked="checked" value="yes" onchange="versaoPessoal();"></input> <label for="lb">{helpers:singleElementInList_xQuery("personal-version","pv-line-breaks")}</label><br/>
+                                    <input id="abbr" name="abbr" type="checkbox" checked="checked" value="yes" onchange="versaoPessoal();"></input> <label for="abbr">{helpers:singleElementInList_xQuery("personal-version","pv-abbreviations")}</label><br/>
                                 </div>
                                 <div id="DivPessoal-2" class="DivPessoal">
-                                    <input id ="diplomatic" name="version" type="radio" checked="checked" value="yes" onchange="versaoPessoal();"></input> <label for="diplomatic">{helpers:singleElementInList_xQuery("personal-version","diplomatic-version")}</label><br/>
-                                    <input id ="first" name="version" type="radio" value="yes" onchange="versaoPessoal();"></input> <label for="first">{helpers:singleElementInList_xQuery("personal-version","first-version")}</label><br/>
-                                    <input id ="last" name="version" type="radio" value="yes" onchange="versaoPessoal();"></input> <label for="last">{helpers:singleElementInList_xQuery("personal-version","last-version")}</label><br/>
+                                    <input id ="diplomatic" name="version" type="radio" checked="checked" value="yes" onchange="versaoPessoal();"></input> <label for="diplomatic">{helpers:singleElementInList_xQuery("personal-version","pv-diplomatic-version")}</label><br/>
+                                    <input id ="first" name="version" type="radio" value="yes" onchange="versaoPessoal();"></input> <label for="first">{helpers:singleElementInList_xQuery("personal-version","pv-first-version")}</label><br/>
+                                    <input id ="last" name="version" type="radio" value="yes" onchange="versaoPessoal();"></input> <label for="last">{helpers:singleElementInList_xQuery("personal-version","pv-last-version")}</label><br/>
                                 </div>
                             </form>,
                             <div class="clear"/>,                            
@@ -108,52 +106,6 @@ declare function doc:get-text-pessoal($node as node(),$model as map(*),$id as xs
         else
             transform:transform($xml, $stylesheet, (<parameters><param name="lb" value="no"/><param name="abbr" value="no"/></parameters>))
             return $text
-};
-
-declare function doc:get-genre($node as node(), $model as map(*), $type as xs:string, $orderBy as xs:string) as item()*{  
-    let $i := if($orderBy = "alphab") then 2 else 5
-    let $docs := 
-        for $doc in (collection("/db/apps/pessoa/data/doc/"),collection("/db/apps/pessoa/data/pub/")) where ($doc//tei:rs[@type ="genre" and @key =$type])
-        return $doc
-    let $years :=
-        for $doc in $docs 
-        return fn:substring(author:getYearOrTitle($doc,$orderBy),0,$i) 
-    let $years := fn:distinct-values($years)
-    return (doc:getNavigation($years, $type),
-    for $year in $years 
-        let $docsInYear :=  
-            for $doc in $docs where(fn:substring(author:getYearOrTitle($doc,$orderBy),0,$i) = $year) return $doc
-    order by $year       
-    return (<div class="sub_Nav"><h2 id="{$year}">{if ($year = "B") then "BNP" else if ($year = "M") then "CP" else if ($year = "?") then "?" else $year}</h2></div>,
-     for $doc in $docsInYear 
-     order by (author:getYearOrTitle($doc,$orderBy))
-     return
-        if ($doc//tei:sourceDesc/tei:msDesc)
-                    then  ( <div class="doctabelcontent"><a href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{($doc//tei:title)[1]/data(.)}</a></div>)                              
-                    else (<div class="doctabelcontent"><a href="{$helpers:app-root}/{substring-before(substring-after(document-uri($doc),"/db/apps/pessoa/data"),".xml")}">{($doc//tei:sourceDesc[1]/tei:biblStruct[1]/tei:analytic/tei:title)[1]/data(.)}</a></div>)           
-    ) )     
-};
-
-declare function doc:getNavigation($years, $type){
-    let $years := for $year in $years order by $year 
-    return 
-    if ($year = 'B') then "BNP"
-    else
-    if($year = 'M') then "CP"
-    else
-    $year
-    return
-    <div class="navigation"> 
-        {for $year at $i in $years
-        order by $year
-            return if ($i = count($years)) then
-                <a href="#{$year}">{$year}</a>
-                else
-                (<a href="#{$year}">{$year}</a>,<span>|</span>)
-        }  
-        <br/>
-        <br/>
-    </div>
 };
 
 
@@ -227,25 +179,25 @@ declare %templates:wrap function doc:docControll($node as node(), $model as map(
         <div>
             <a href="{concat($helpers:app-root,'/',$helpers:web-language,'/',$libary,'/',$list[@pos = $backward]/@id/data(.))}">
                 <span id="back">
-                    {page:singleAttribute(doc('/db/apps/pessoa/data/lists.xml'),"buttons","previous")}
+                    {helpers:singleElementInList_xQuery('buttons',"previous")}
                 </span>
             </a>
             <a href="{concat($helpers:app-root,'/',$helpers:web-language,'/',$libary,'/',$list[@pos = $forward]/@id/data(.))}">
                 <span id="forward">
-                    {page:singleAttribute(doc('/db/apps/pessoa/data/lists.xml'),"buttons","next")}
+                    {helpers:singleElementInList_xQuery('buttons','next')}
                 </span>
             </a>
             <div class="clear"></div>
         </div>
         else <div>
                             <a href="{concat($helpers:app-root,'/',$helpers:web-language,'/',$libary,'/',$list[$backward]/@id/data(.))}">
-                                <span id="back"> 
-                                    {page:singleAttribute(doc('/db/apps/pessoa/data/lists.xml'),"buttons","previous")}
+                                <span id="back">
+                                    {helpers:singleElementInList_xQuery('buttons',"previous")}
                                 </span>
                             </a>
                             <a href="{concat($helpers:app-root,'/',$helpers:web-language,'/',$libary,'/',$list[$forward]/@id/data(.))}">
                                 <span id="forward">
-                                    {page:singleAttribute(doc('/db/apps/pessoa/data/lists.xml'),"buttons","next")}
+                                    {helpers:singleElementInList_xQuery('buttons','next')}
                                 </span>
                             </a>
                             <div class="clear"></div>
@@ -267,9 +219,16 @@ declare function doc:cite($node as node(), $model as map(*),$id as xs:string, $d
                 for $elem in helpers:singleElementNode_xquery("cite","cite-tx")/tei:span
                                             return 
                                             switch($elem/@type)
-                                            case "web" return <i>{helpers:singleElement_xquery("cite","cite-web")}</i>
+                                            case "web" return <i>{helpers:singleElementInList_xQuery("cite","cite-web")}</i>
                                             case "link" return concat(' "',doc(concat("/db/apps/pessoa/data/",$dir,"/",$id,".xml"))//tei:titleStmt/tei:title[1],'." ')
-                                            case "url" return <a style="color: #08298a;" href="{concat($helpers:app-root,'/',$id,'/',$type)}">{concat(' <',$helpers:app-root,'/',$id,'/',replace($type," ",""),'>')}</a>
+                                            case "url" return
+                                                <a style="color: #08298a;" href="{concat($helpers:app-root,'/',$id,'/',$type)}">
+                                                    {if($dir eq 'doc') then
+                                                        concat(' <',$helpers:app-root,'/',$id,'/',replace($type," ",""),'>')
+                                                    else
+                                                        concat(' <',$helpers:app-root,'/',$id,'/diplomatic-transcription>')
+                                                    }
+                                                </a>
                                                 default return $elem
                                             }</span>
 };
@@ -309,7 +268,7 @@ let $script := <script type="text/javascript">
             var i = url.lastIndexOf("/");
             var j = url.lastIndexOf("#");
             var id = url.substring(i+1,j);
-            var toLoad = "{$helpers:app-root}/{$helpers:web-language}/doc/{$id}/versao-pessoal?case=div";
+            var toLoad = "{$helpers:app-root}/{$helpers:web-language}/doc/{$id}/customized-version?case=div";
             if ($("#lb").is(":checked"))
             {{
                toLoad = toLoad.concat("&amp;lb=yes");
@@ -352,207 +311,9 @@ let $script := <script type="text/javascript">
         
     return $script
 };
-
-
-declare function doc:getIndexTitle($node as node(), $model as map(*), $type as xs:string){
-    let $lists := doc('/db/apps/pessoa/data/lists.xml')
-    return 
-    <h1>{page:singleElementList_xquery("navigation",$type)}</h1>
-};
-
-declare function doc:getTextIndex($node as node(), $model as map(*)){
-    let $lists := doc('/db/apps/pessoa/data/lists.xml')
-    let $docs := collection("/db/apps/pessoa/data/doc/")   
-    let $texts := 
-        for $doc in $docs return
-            $doc//tei:text//tei:rs[@type='text'][not(child::tei:choice/tei:abbr)][not(child::tei:pc)]
-    let $texts := distinct-values($texts) 
-    let $letters := 
-        for $text in $texts order by replace(replace(replace($text,'"',''),'“',''),'”','') return
-            upper-case(fn:substring(replace(replace(replace($text,'"',''),'“',''),'”',''),0,2))
-    let $letters := distinct-values($letters)
-    return (doc:getNavigation($letters),
-        for $letter in $letters 
-            let $textsWithLetter := 
-                for $text in $texts where (upper-case(substring(replace(replace(replace($text,'"',''),'“',''),'”',''),0,2))=$letter) return $text
-        order by upper-case($letter)
-        return 
-            (<div class="sub_Nav"><h2 id="{$letter}">{$letter}</h2></div>,
-            for $text in $textsWithLetter order by upper-case(replace(replace(replace($text,'"',''),'“',''),'”','')) return
-            (<div class="indexItem">{replace(replace(replace($text,'"',''),'“',''),'”','')}</div>,<ul class="indexDocs">{
-            doc:getDocsForText($text)}</ul>)))           
-};
-
-declare function doc:getDocsForText($text){
-    let $lists := doc('/db/apps/pessoa/data/lists.xml')
-    let $docs := collection("/db/apps/pessoa/data/doc/")
-    for $doc in $docs return
-    if($doc//tei:text//tei:rs[@type='text'][not(child::tei:choice/tei:abbr)][not(child::tei:pc)] = $text) then
-        <li class="indexDoc">
-        <a style="color: #08298A;" href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{($doc//tei:title)[1]/data(.)} </a>
-        </li>     
-     else()  
-};
-
-
-declare function doc:getPersonIndex($node as node(), $model as map(*)){
-    let $lists := doc('/db/apps/pessoa/data/lists.xml')
-    let $docs := collection("/db/apps/pessoa/data/doc/") 
-    let $personKeys := distinct-values($doc//tei:text//tei:rs[@type='name']/@key/text())
-    let $personNames := $lists//tei:listPerson/tei:person[@xml:id = $personKeys]/tei:persName 
-    let $letters := 
-        for $person in $personNames order by $person return
-            fn:substring($person,1,2)
-    let $letters := distinct-values($letters)
-    return (doc:getNavigation($letters),
-        for $letter in $letters 
-            let $personsWithLetter := 
-                for $person in $personNames where (substring($person,1,2) = $letter) return $person
-        order by upper-case($letter)
-        return 
-            (<div class="sub_Nav"><h2 id="{$letter}">{$letter}</h2></div>,
-            for $person in $personsWithLetter order by $person return
-            (<div class="indexItem">
-                {$person} {let $persInList := $lists//tei:listPerson/tei:person[tei:persName = $person]
-                           return
-                              if ($persInList[tei:persName[2]])
-                              then let $psName := 
-                                     if ($persInList[tei:persName[1] = $person])
-                                     then $persInList/tei:persName[2]/data(.) 
-                                     else $persInList/tei:persName[1]/data(.)
-                                   return <span style="font-size:smaller;"> (ver também <a href="{$psName}">{$psName}</a>)</span>
-                              else ()}
-             </div>,<ul class="indexDocs">{
-            doc:getDocsForPerson($person)}</ul>)))
-};
-
-declare function doc:getDocsForPerson($item){
-    let $docs := collection("/db/apps/pessoa/data/doc/")   
-    let $lists := doc('/db/apps/pessoa/data/lists.xml')
-    (: $docs[.//tei:text//tei:rs[@type='person']/@key = $lists//tei:listPerson/tei:person[tei:persName = $item]/@xml:id] :)
-    for $doc in search:search_range_simple("person",$item,$docs)
-(:        for $doc in search:search_range_simple("person","P48",$docs)
-:)
-    let $cota := ($doc//tei:title)[1]/data(.)
-    where if ($lists//tei:listPerson/tei:person[tei:persName = $item][tei:persName[2]]) 
-          then $doc[.//tei:text//tei:rs[@type="name"][@key = $lists//tei:listPerson/tei:person[tei:persName = $item]/@xml:id][@style = $lists//tei:listPerson/tei:person/tei:persName[. = $item]/@type]]
-          else true()
-    order by xs:integer(replace($cota, "(BNP/E3|CP)\s?([0-9]+)([^0-9]+.*)?", "$2"))
-    return 
-        <li class="indexDoc" id="{$cota}">
-          <a style="color: #08298A;" href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{$cota}</a>
-        </li>
-};
-
-declare function doc:getNavigation($letters){
-    <div class="navigation">
-        {for $letter at $i in $letters order by $letter return
-        if($i = count($letters)) then <a style="color: #08298A;" href="#{$letter}">{$letter}</a> else
-        (<a style="color: #08298A;" href="#{$letter}">{$letter}</a>,<span>|</span>)}
-    </div>
-};
-
-
-declare function doc:getIndexTitle($node as node(), $model as map(*), $type as xs:string){
-    let $lists := doc('/db/apps/pessoa/data/lists.xml')
-    return 
-    <h1>{$lists//tei:list[@type='index']//tei:term[@xml:id=$type]}</h1>
-    
-};
-
-
-
-declare function doc:getDocsForJournal($journal){
-    let $lists := doc('/db/apps/pessoa/data/lists.xml')
-    let $docs := collection("/db/apps/pessoa/data/doc/")
-    let $key := $lists//tei:list[@type='journal']/tei:item/text()[contains(.,$journal)]/../@xml:id/data(.)
-    for $doc in $docs return
-    if($doc//tei:text//tei:rs[@type='periodical']/@key[contains(.,$key)]) then
-        <li class="indexDoc">
-        <a style="color: #08298A;" href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{($doc//tei:title)[1]/data(.)} </a>
-        </li>     
-     else()  
-};
-
-declare function doc:getTextIndex($node as node(), $model as map(*)){
-    let $lists := doc('/db/apps/pessoa/data/lists.xml')
-    let $docs := collection("/db/apps/pessoa/data/doc/")   
-    let $texts := 
-        for $doc in $docs return
-            $doc//tei:text//tei:rs[@type='text'][not(child::tei:choice/tei:abbr)][not(child::tei:pc)]
-    let $texts := distinct-values($texts) 
-    let $letters := 
-        for $text in $texts order by replace(replace(replace($text,'"',''),'“',''),'”','') return
-            upper-case(fn:substring(replace(replace(replace($text,'"',''),'“',''),'”',''),0,2))
-    let $letters := distinct-values($letters)
-    return (doc:getNavigation($letters),
-        for $letter in $letters 
-            let $textsWithLetter := 
-                for $text in $texts where (upper-case(substring(replace(replace(replace($text,'"',''),'“',''),'”',''),0,2))=$letter) return $text
-        order by upper-case($letter)
-        return 
-            (<div class="sub_Nav"><h2 id="{$letter}">{$letter}</h2></div>,
-            for $text in $textsWithLetter order by upper-case(replace(replace(replace($text,'"',''),'“',''),'”','')) return
-            (<div class="indexItem">{replace(replace(replace($text,'"',''),'“',''),'”','')}</div>,<ul class="indexDocs">{
-            doc:getDocsForText($text)}</ul>)))           
-};
-
-declare function doc:getDocsForText($text){
-    let $lists := doc('/db/apps/pessoa/data/lists.xml')
-    let $docs := collection("/db/apps/pessoa/data/doc/")
-    for $doc in $docs return
-    if($doc//tei:text//tei:rs[@type='title'][not(child::tei:choice/tei:abbr)][not(child::tei:pc)] = $text) then
-        <li class="indexDoc">
-        <a style="color: #08298A;" href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{($doc//tei:title)[1]/data(.)} </a>
-        </li>     
-     else()  
-};
-
-
-declare function doc:getPersonIndex($node as node(), $model as map(*)){
-    let $lists := doc('/db/apps/pessoa/data/lists.xml')
-    let $docs := collection("/db/apps/pessoa/data/doc/")   
-    let $persons := 
-        for $doc in $docs return
-            $doc//tei:text//tei:rs[@type='name'][not(child::tei:choice/tei:abbr)][not(child::tei:pc)]
-    let $persons := distinct-values($persons) 
-    let $letters := 
-        for $person in $persons order by $person return
-            fn:substring($person,0,2)
-    let $letters := distinct-values($letters)
-    return (doc:getNavigation($letters),
-        for $letter in $letters 
-            let $personsWithLetter := 
-                for $person in $persons where (substring($person,0,2) = $letter) return  $person
-        order by upper-case($letter)
-        return 
-            (<div class="sub_Nav"><h2 id="{$letter}">{$letter}</h2></div>,
-            for $person in $personsWithLetter order by $person return
-            (<div class="indexItem">{$person}</div>,<ul class="indexDocs">{
-            doc:getDocsForPerson($person)}</ul>)))
-};
-
-declare function doc:getDocsForPerson($item){
-    let $docs := collection("/db/apps/pessoa/data/doc/")   
-    for $doc in $docs return 
-    if($doc//tei:text//tei:rs[@type='name'][not(child::tei:choice/tei:abbr)][not(child::tei:pc)]= $item) then
-    <li class="indexDoc">
-    <a style="color: #08298A;" href="{$helpers:app-root}/doc/{substring-before(replace(replace(($doc//tei:idno)[1]/data(.), "/","_")," ", "_"),".xml")}">{($doc//tei:title)[1]/data(.)} </a>
-    </li>
-    else()
-};
-
-declare function doc:getNavigation($letters){
-    <div class="navigation">
-        {for $letter at $i in $letters order by $letter return
-        if($i = count($letters)) then <a style="color: #08298A;" href="#{$letter}">{$letter}</a> else
-        (<a style="color: #08298A;" href="#{$letter}">{$letter}</a>,<span>|</span>)}
-    </div>
-};
-
 declare function doc:notaButton($node as node(), $model as map(*)) {
     <script>
-        DocHide("{helpers:singleElement_xquery("buttons","note")}")
+        DocHide("{helpers:singleElementInList_xQuery("buttons","note")}")
     </script>
 
 };
