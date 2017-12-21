@@ -224,9 +224,9 @@ declare function doc:cite($node as node(), $model as map(*),$id as xs:string, $d
                                             case "url" return
                                                 <a style="color: #08298a;" href="{concat($helpers:app-root,'/',$id,'/',$type)}">
                                                     {if($dir eq 'doc') then
-                                                        concat(' <',$helpers:app-root,'/',$id,'/',replace($type," ",""),'>')
+                                                        concat(' <',$helpers:app-root,'/doc/',$id,'/',replace($type," ",""),'>')
                                                     else
-                                                        concat(' <',$helpers:app-root,'/',$id,'/diplomatic-transcription>')
+                                                        concat(' <',$helpers:app-root,'/pub/',$id,'/diplomatic-transcription>')
                                                     }
                                                 </a>
                                                 default return $elem

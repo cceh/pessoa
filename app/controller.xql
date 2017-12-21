@@ -49,7 +49,7 @@ declare function local:logged-in() as xs:boolean {
 };
 
 declare function local:Restriction() as xs:boolean{
-    let $sites := for $s in ($exist:sites,"doc","pub","search","timeline","BNP","CP","network") return concat('/',$s)
+    let $sites := ($exist:sites,"doc","pub","search","timeline","network")
     let $path := if(contains($exist:path,$helpers:web-language))
                     then substring-after($exist:path,concat($helpers:web-language,"/"))
                 else if(contains($exist:path,'data'))
@@ -66,7 +66,7 @@ declare function local:Restriction() as xs:boolean{
                     case "timeline" return true()
                     case "network" return true()
                     case "genre" return local:DirRestriction($path)
-                    case "author" return local:DirRestriction($path)
+                    case "authors" return local:DirRestriction($path)
                     default return
                         local:PathRestriction($sites)
         else false()
@@ -307,15 +307,15 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
                                             </dispatch>)
 
 
-                                    else if (contains($exist:path, "/author/")) then
+                                    else if (contains($exist:path, "/authors/")) then
                                             if (request:get-parameter("orderBy","")!="") then
                                                 let $orderBy := request:get-parameter("orderBy", "alphab")
-                                                let $author := substring-before(substring-after($exist:path, '/author/'), '/')
+                                                let $author := substring-before(substring-after($exist:path, '/authors/'), '/')
                                                 let $textType := $exist:resource
                                                 return
                                                     author:reorder(<node />, map {"test" := "test"},$orderBy, $textType, $author)
                                             else
-                                                let $author := substring-before(substring-after($exist:path, '/author/'), '/')
+                                                let $author := substring-before(substring-after($exist:path, '/authors/'), '/')
                                                 let $textType := $exist:resource
                                                 return
                                                     (session:set-attribute("textType", $textType),
