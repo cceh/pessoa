@@ -186,6 +186,10 @@
     </xsl:template>
 
     <!-- Metamarks -->
+    <xsl:template match="metamark[@rend = 'dashes']"
+        mode="#default deletion addition">
+        <xsl:for-each select="1 to @n">- </xsl:for-each>
+    </xsl:template>
     <!-- Lines -->
     <xsl:template match="metamark[@rend = 'line-14'][@function = ('distinct', 'end', 'sum', 'assignment')]"
         mode="#default deletion addition">
