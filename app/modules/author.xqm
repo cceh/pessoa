@@ -23,11 +23,11 @@ declare function author:reorder($node as node(), $model as map(*),$orderBy, $tex
 };
 
 declare function author:getTabs($node as node(), $model as map(*), $textType as xs:string?, $author as xs:string?){
-    let $url := concat($helpers:app-root,'/author/',$author)
+    let $url := concat($helpers:app-root,'/',$helpers:web-language,'/authors/',$author)
     return <ul id="tabs">
         {for $type in ('all','documents','publications')
             let $t := if($type eq "all") then "publications-and-documents" else $type
-            let $a := <a href='{$url}/{$type}'>{helpers:singleElementInList_xQuery('author-pages',$t)}</a>
+            let $a := <a href='{$url}/{substring($type,1,3)}'>{helpers:singleElementInList_xQuery('author-pages',$t)}</a>
             return if($type eq $textType) then
                     <li class='selected'>
                         {$a}
@@ -42,11 +42,13 @@ declare function author:getTabs($node as node(), $model as map(*), $textType as 
 
 declare function author:getTabContent($node as node(), $model as map(*), $textType, $author, $orderBy) {
     let $authorKey := author:getAuthorId($author)
-    let $folders :=  switch($textType)
+    let $folders := if($textType eq "all") then ("doc","pub") else $textType
+        (:)switch($textType)
                             case "all" return ("doc","pub")
                             case "documents" return "doc"
                             case "publications" return "pub"
                             default return ()
+                            :)
     let $items := for $fold in $folders                              
                                 let $name := if($fold eq "doc") then ("person","role") else "person"
                                 let $case := if($fold eq "doc") then ("eq","eq") else "eq"
@@ -182,25 +184,13 @@ let $script :=
         
         if ($("#date").is(":checked"))
         {{
-        $("#tab").load("{$helpers:app-root}/{$helpers:web-language}/author/{$author}/{$textType}?orderBy=date");
+        $("#tab").load("{$helpers:app-root}/{$helpers:web-language}/authors/{$author}/{$textType}?orderBy=date");
         
         }}
         else{{
-        $("#tab").load("{$helpers:app-root}/{$helpers:web-language}/author/{$author}/{$textType}?orderBy=alphab");
+        $("#tab").load("{$helpers:app-root}/{$helpers:web-language}/authors/{$author}/{$textType}?orderBy=alphab");
         }}
         }}
     </script> 
     return $script
 };
-
-(:
-var author = ""
-        var textType = ""
-        var url = window.location.href;
-        var i = url.lastIndexOf("/");
-        var substr = url.substring(0,i);
-        i = substr.lastIndexOf("/");
-        var author = substr.substring(i+1,substr.length);
-        var textType = url.substring(url.lastIndexOf("/")+1,url.length);
-        
-:)

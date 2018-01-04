@@ -24,7 +24,7 @@ declare variable $exist:root external;
 
 declare variable $exist:lists := doc("/db/apps/pessoa/data/lists.xml");
 declare variable $exist:sites := (distinct-values($exist:lists//tei:list[@type="navigation"]//tei:item/tei:note[@type='directory']/data(.)));
-declare variable $exist:authors := ($exist:lists//tei:listPerson[@type="authors"]/tei:person/tei:note[@type='link']/data(.),'Pessoa','Caeiro','Campos','Reis');
+declare variable $exist:authors := $exist:lists//tei:listPerson[@type="authors"]/tei:person/tei:note[@type='link']/data(.);
 (:~
 :Variable zur Abfrage ob ein Nutzer eingeloggt ist, wenn nicht, weiterleitung zur Zugriffssteuerung
 : @see controller/local:Restriction
@@ -49,27 +49,23 @@ declare function local:logged-in() as xs:boolean {
 };
 
 declare function local:Restriction() as xs:boolean{
-    let $sites := ($exist:sites,"doc","pub","search","timeline","network")
-    let $path := if(contains($exist:path,$helpers:web-language))
-                    then substring-after($exist:path,concat($helpers:web-language,"/"))
-                else if(contains($exist:path,'data'))
-                    then substring-after(substring-after($exist:path,"data/"),"/")
-                else substring-after($exist:path,'/')
-    let $path := if(contains($path,"/"))
-                    then substring-before($path,"/")
-                    else $path
+    let $sites :=  ((for $s in ($exist:sites,"doc","pub") return concat($s,'/')),"search","timeline","network","events.xml")
     return if(helpers:contains-any-of($exist:path,$sites)) then
-                switch($path)
-                    case "doc" return local:resRestritction()
-                    case "pub" return local:resRestritction()
-                    case "search" return true()
-                    case "timeline" return true()
-                    case "network" return true()
-                    case "genre" return local:DirRestriction($path)
-                    case "authors" return local:DirRestriction($path)
-                    default return
-                        local:PathRestriction($sites)
-        else false()
+        for $s in $sites
+            let $p := replace($s,'/','')
+            where contains($exist:path,$s)
+            return switch($p)
+                case "doc" return local:resRestritction()
+                case "pub" return local:resRestritction()
+                case "search" return true()
+                case "timeline" return true()
+                case "events.xml" return true()
+                case "network" return true()
+                case "genre" return local:DirRestriction($p)
+                case "authors" return local:DirRestriction($p)
+                default return
+                    local:PathRestriction($sites)
+    else false()
 };
 
 declare function local:PathRestriction($sites) as xs:boolean {
@@ -108,6 +104,7 @@ declare function local:pathi() {
 
     return $path
 };
+
 
 declare function local:resRestritction() as xs:boolean {
     let $path := if(contains($exist:path,concat($helpers:web-language,'/')))
@@ -321,7 +318,7 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
                                                     (session:set-attribute("textType", $textType),
                                                     session:set-attribute("author", $author),
                                                     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-                                                        <forward url="{$exist:controller}/page/author.html" />
+                                                        <forward url="{$exist:controller}/page/authors.html" />
                                                         <view>
                                                             <forward url="{$exist:controller}/modules/view.xql"/>
                                                         </view>
@@ -369,7 +366,7 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
                                                         </dispatch>
                                                     )
 
-                                                else if (contains($exist:path,"timeline")) then
+                                                else if (contains($exist:path,"timeline") and not(contains($exist:path,'resources'))) then
                                                         (
                                                             if( not(contains($exist:path,$helpers:web-language))) then
                                                                 (
@@ -545,5 +542,5 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
                                 else
 
                                     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-                                        <redirect url="{$config:webapp-root}/{$helpers:web-language}/index.html?l=f&amp;p={local:pathi()}"/>
+                                        <redirect url="{$config:webapp-root}/{$helpers:web-language}/index.html?l=f&amp;p={$exist:path}"/>
                                     </dispatch>
