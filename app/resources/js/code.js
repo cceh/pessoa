@@ -8,13 +8,13 @@ $(document).ready(function(){
         var par = $(this).parent();
         var acN = par.attr("active");
         var active = "active"+acN;
-        var chil = par.children("div");
+        var chil = par.children("div").attr('active','true');
 
         if(!par.hasClass(active)) {
             for(var i = acN; i <= 3; i++) {
                 var actC = "active"+i;
                 var act = $("."+actC);
-                act.children("div").hide();
+                act.children("div").attr('active','false').hide();
                 act.removeClass(actC);
             }
             par.addClass(active);
@@ -23,10 +23,16 @@ $(document).ready(function(){
             if(chil.children("ul").hasClass("NAVI_quadNav")) chil.css("top",par.parent("ul").height() +20);
         }
         else {
-            $("."+active).children("div").hide();
+            $("."+active).children("div").attr('active','false').hide();
             $("."+active).removeClass(active);
         }
         if(!($("#searchbox").css("display") == "none")) $("#searchbox").hide();
+        var h = 42;
+        $('#navi').find('div[active="true"]').each(function() {
+            h = h + $(this).height();
+        });
+        console.log(h);
+        $('#content.container').css('margin-top',h);
     });
         });
         function fixDiv() {
@@ -69,22 +75,19 @@ $(document).ready(function(){
 		$('html, body').animate({scrollTop : 0},800);
 		return false;
 	});
+    $("a#search_button").click(function() {
+
+        if(!$(this).hasClass("active")) {
+            $(this).addClass("active");
+            $("div#searchbox").show();
+        }
+        else {
+            $(this).removeClass("active");
+            $("div#searchbox").hide();
+        }
+    });
 });
 
-$(document).ready(function(){ 
-    /*$("div#searchbox").hide();*/
-    $("a#search_button").click(function() {
-           
-           if(!$(this).hasClass("active")) {
-               $(this).addClass("active");
-               $("div#searchbox").show();
-            }
-           else {
-               $(this).removeClass("active");
-                $("div#searchbox").hide();
-             }
-           });
-});
 
 
  

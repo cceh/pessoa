@@ -60,7 +60,7 @@
                     <xsl:attribute name="link">
                         <xsl:variable name="filename" select=".//idno[@type='filename']"/>
                         <xsl:choose>
-                            <xsl:when test="starts-with($filename, 'MN') or starts-with($filename, 'BNP')">
+                            <xsl:when test="starts-with($filename, 'CP') or starts-with($filename, 'BNP')">
                                 <xsl:value-of select="concat(substring-before($basepath,'/pessoa'), '/', $language, '/doc/', substring-before($filename,'.xml'))"/>
                             </xsl:when>
                             <xsl:otherwise>
