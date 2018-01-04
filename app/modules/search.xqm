@@ -50,7 +50,7 @@ declare %templates:wrap function search:profisearch($node as node(), $model as m
         let $dbase := $r_real                
      :)
         (: Datumssuche :)
-        let $r_date := if(search:get-parameters("to") != "" or search:get-parameters("from") != "") then search:date_build($dbase)
+        let $r_date := if(search:get-parameters("SE_to") != "" or search:get-parameters("SE_from") != "") then search:date_build($dbase)
                         else $dbase
         let $dbase := $r_date
         (: Volltext Suche :)                
@@ -86,8 +86,8 @@ declare function search:get-parameters($key as xs:string) as xs:string* {
 declare function search:mergeParameters ($type as xs:string) as xs:string {
     let $code := if($type = "html") then "&amp;" else "/"
     let $term := concat($code,"term=",search:get-parameters("term"))
-    let $after := concat($code,"from=",search:get-parameters("from"))
-    let $before := concat($code,"to=",search:get-parameters("to"))
+    let $after := concat($code,"from=",search:get-parameters("SE_from"))
+    let $before := concat($code,"to=",search:get-parameters("SE_to"))
     let $lang := for $slang in search:get-parameters("lang") return
                 concat($code,"lang=", $slang)
     let $lang_ao := concat($code,"lang_ao=",search:get-parameters("lang_ao"))
@@ -104,8 +104,8 @@ declare function search:mergeParameters ($type as xs:string) as xs:string {
 declare function search:mergeParameters_xquery ($type as xs:string) as xs:string* {
     let $code := if($type = "html") then "&amp;" else "/"
     let $term := concat($code,"term=",search:get-parameters("term"))
-    let $after := concat($code,"from=",search:get-parameters("from"))
-    let $before := concat($code,"to=",search:get-parameters("to"))
+    let $after := concat($code,"from=",search:get-parameters("SE_from"))
+    let $before := concat($code,"to=",search:get-parameters("SE_to"))
     let $lang := for $slang in search:get-parameters("lang") return
                 concat($code,"lang=", $slang)
     let $lang_ao := concat($code,"lang_ao=",search:get-parameters("lang_ao"))
@@ -250,8 +250,8 @@ declare function search:author_build($db as node()*) as node()* {
 
 (: Suche nach Datumsbereich :)
 declare function search:date_build($db as node()*) as node()* {
-     let $start := if(search:get-parameters("from") ="") then xs:integer("1900") else xs:integer(search:get-parameters("from"))
-     let $end := if( search:get-parameters("to") = "") then xs:integer("1935") else xs:integer(search:get-parameters("to"))
+     let $start := if(search:get-parameters("SE_from") ="") then xs:integer("1900") else xs:integer(search:get-parameters("SE_from"))
+     let $end := if( search:get-parameters("SE_to") = "") then xs:integer("1935") else xs:integer(search:get-parameters("SE_to"))
      let $paras := ("date","date_when","date_notBefore","date_notAfter","date_from","date_to")
      for $date in ($start to $end)
         for $para in $paras
@@ -434,14 +434,11 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
     let $filter :=
      <div class="search_filter">
                        <form class="" action="{$helpers:app-root}/{$helpers:web-language}/search" method="post" id="search">
-                            <!-- Nachher mit class="search:profisearch austauschen -->
+
             <div class="tab" id="ta_author"><h6>{helpers:singleElementInList_xQuery("search","autores")}</h6>
             </div>
+
             <div class="selection" id="se_author">
-             <!--
-             {page:createInput_term("search","checkbox","notional",("real","mentioned"),$doc,"checked")}
-                             <br/>
-                -->
                 <select name="person" class="selectsearch" size="5" multiple="multiple">
                     {search:page_createOption_authors("authors",("FP","AC","AdC","RR"),$doc)}
                 </select>
@@ -450,6 +447,7 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
                 <p class="small_text">{helpers:singleElementInList_xQuery("search","mentioned_as")}:</p>
                 {helpers:createInput_term("roles","checkbox","role",("author","editor","translator","topic"),"")}
                 </div>
+
                 <div class="tab" id="ta_release"><h6>{helpers:singleElementInList_xQuery("search","published")} &amp; {helpers:singleElementInList_xQuery("search","unpublished")}</h6>
                 </div>
                 <div class="selection" id="se_release">
@@ -457,21 +455,26 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
                 <input class="release_input-box" type="radio" name="release" value="all" id="either" checked="checked"/>
                 <label class="release_input-label" for="either"> {helpers:singleElementInList_xQuery("search","all")}</label>
                 </div>
+
+
                 <div class="tab" id="ta_genre"><h6>{helpers:singleElementInList_xQuery("search","genero")}</h6>
                 </div>
+
                     <div class="selection" id="se_genre">
                         <select class="selectsearch" name="genre" size="7" multiple="multiple">
                         {helpers:createOption_new("genres",("editorial_list","editorial_note","editorial_plan","poetry"))}
                         </select>
                         <p class="small_text">{helpers:singleElementInList_xQuery("search","multiple_entries")}</p>
                     </div>
+
                   <div class="tab" id="ta_date"><h6>{helpers:singleElementInList_xQuery("search","date")}</h6></div>
                             <div class="selection" id="se_date">
                                 <div id="datum">
-                                    <input type="datum" class="date_field" name="from" placeholder="{helpers:singleElementInList_xQuery("search","from")}"/>
-                                    <input type="datum" class="date_field" name="to" placeholder="{helpers:singleElementInList_xQuery("search","to")}"/>
+                                    <input type="datum" class="date_field" name="SE_from" placeholder="{helpers:singleElementInList_xQuery("search","from")}"/>
+                                    <input type="datum" class="date_field" name="SE_to" placeholder="{helpers:singleElementInList_xQuery("search","to")}"/>
                                 </div>
                     </div>
+
                     <div class="tab" id="ta_lang"><h6>{helpers:singleElementInList_xQuery("search","language")}</h6></div>
                             <div class="selection" id="se_lang">
                                 {helpers:createInput_term("language","checkbox","lang",("pt","en","fr"),'')}
@@ -481,9 +484,8 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
                                 <input class="lang_input-box" type="radio" name="lang_ao" value="or" id="or" checked="checked"/>
                                     <label class="lang_input-label" for="or">{helpers:singleElementInList_xQuery("search","or")}</label>
                             </div>
-                     <!--<h6>{helpers:singleElementInList_xQuery("search","free_search")}</h6>
-                     <input name="term" placeholder="{helpers:singleElementInList_xQuery("search","search_term")}..." /> -->
              <br/>
+
             <h6>{helpers:singleElementInList_xQuery("search","free_search")}</h6>
              <input id="spezsearch" name="term" placeholder="{helpers:singleElementInList_xQuery("search","term")}..." />
 

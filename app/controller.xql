@@ -409,7 +409,22 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
                                                                 </dispatch>
 
                                                             )
-
+                                                 else if (contains($exist:path, "search")) then
+                                                         if(request:get-parameter("orderBy", '') != "" )
+                                                         then
+                                                             let $orderBy := request:get-parameter("orderBy", 'date')
+                                                             return( search:profiresult(<node />, search:profisearch(<node />, map {"test" := "test"}, request:get-parameter("term",'')), "union",$orderBy))
+                                                         else
+                                                             <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+                                                                 <forward url="{$exist:controller}/page/search.html" />
+                                                                 <view>
+                                                                     <forward url="{$exist:controller}/modules/view.xql"/>
+                                                                 </view>
+                                                                 <error-handler>
+                                                                     <forward url="{$exist:controller}/error-page.html" method="get"/>
+                                                                     <forward url="{$exist:controller}/modules/view.xql"/>
+                                                                 </error-handler>
+                                                             </dispatch>
                                                         else if (ends-with($exist:resource, ".html") and contains($exist:path, "page/")) then
                                                                 <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
                                                                     <forward url="{$exist:controller}/page/{substring-after($exist:path, "page/")}"/>
@@ -466,24 +481,7 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
                                                                                     </error-handler>
                                                                                 </dispatch>
                                                                         (:Suche:)
-                                                                        else if (contains($exist:path, "search")) then
-                                                                                if(request:get-parameter("orderBy", '') != "" )
-                                                                                then
-                                                                                    let $orderBy := request:get-parameter("orderBy", 'date')
-                                                                                    return( search:profiresult(<node />, search:profisearch(<node />, map {"test" := "test"}, request:get-parameter("term",'')), "union",$orderBy))
-                                                                                else
-                                                                                    (session:clear(),
-                                                                                    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-                                                                                        <forward url="{$exist:controller}/page/search.html" />
-                                                                                        <view>
-                                                                                            <forward url="{$exist:controller}/modules/view.xql"/>
-                                                                                        </view>
-                                                                                        <error-handler>
-                                                                                            <forward url="{$exist:controller}/error-page.html" method="get"/>
-                                                                                            <forward url="{$exist:controller}/modules/view.xql"/>
-                                                                                        </error-handler>
-                                                                                    </dispatch>
-                                                                                    )
+
                                                                             else if(contains($exist:path, "download")) then
                                                                                     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
                                                                                         <forward url="{$exist:controller}/data/{$exist:resource}" />
