@@ -21,6 +21,8 @@
                 }
             </script>
              <div class="search:profisearch" id="suche">
+
+
                  <span data-template="search:search-page"><!-- Funktionsaufruf --></span>
                  <div class="search_resultList">
                      <div id="tabline">    
@@ -36,14 +38,18 @@
                          <get data-template="helpers:singleElementInList" data-template-ListType="order" data-template-ListId="order"></get>
                          <get data-template="search:printDateAlpha"/>
                      </form>
+
                      <div id="result">
                         <p data-template="search:profiresult" data-template-sel="union" data-template-orderBy="date"></p>
                      </div>
+
                      <div class="clear"></div>
                     </div>
+
                  <div id="search_tips">
                      <get data-template="search:printTipps"/>
                  </div>
+
                 </div>
             </div>
         </div>
