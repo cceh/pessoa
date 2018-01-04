@@ -36,7 +36,12 @@ declare function app:test($node as node(), $model as map(*),$path) {
 };
 
 
-
+(:~
+: Funktion für die Anzeige der Bibliographischen Einträge
+: Öffnet bibl.xml und wandelt es mithilfe von bibl.xsl um
+: @param $type Parameter zur erkennung welcher Bibliographischer Eintrag angezeigt werden soll
+: @return Wellformed HTML
+:)
 declare function app:get-bibl($node as node(), $model as map(*), $type as xs:string)as item()* {
     let $xml := doc("/db/apps/pessoa/data/bibl.xml")
     let $stylesheet := doc("/db/apps/pessoa/xslt/bibl.xsl")
@@ -51,6 +56,12 @@ declare function app:get-bibl($node as node(), $model as map(*), $type as xs:str
 
 };
 
+(:~
+: Generelle Funktion zur Anzeige von Texten auf verschiedenen Seiten (u.a. Team, Docu, etc.)
+: Öffnet webpage.xml um sie anschließend mithilfe von webpage.xsl zu verarbeiten und in eine Leserliche Form zu bringen
+: @param $xmlid Welche Eintrag innerhalb von webpage.xml verarbeitet werden
+: @return Wellformed HTML
+:)
 declare   function app:MultiPage($node as node(), $model as map(*),$xmlid as xs:string) {
 let $doc := doc("/db/apps/pessoa/data/webpage.xml")
 let $stylesheet := doc("/db/apps/pessoa/xslt/webpage.xsl")
@@ -58,7 +69,7 @@ let $text := $doc/tei:TEI/tei:text/tei:group/tei:text[@xml:id=$xmlid]/tei:group/
 return  transform:transform($text, $stylesheet, (<parameters><param name="res" value="{$helpers:app-root}"/></parameters>))
 };
 
-(:~Collect all Documents from the folders "doc" and "pub":)
+(:~ Collect all Documents from the folders "doc" and "pub":)
 declare function app:collections($node as node(), $model as map(*)) {
     let $docs := collection("/db/apps/pessoa/data/doc")
     let $pubs := collection("/db/apps/pessoa/data/pub")
@@ -78,9 +89,9 @@ declare function app:checkDocuments($node as node(), $model as map(*)) {
     let $dateout := if(not(contains($date/@check, "false")) ) then <u style="color:green">{$date/@date/data(.)} | {$date/@att/data(.)}</u> else <u style="color:red">{$date/@date/data(.)} | {$date/@att/data(.)}</u>
     let $clear := validation:clear-grammar-cache()
     return map {
-    "name" := $doc,
-    "valid" := $valid,
-    "date" := $dateout
+        "name" := $doc,
+        "valid" := $valid,
+        "date" := $dateout
     }
 };
 
@@ -115,7 +126,7 @@ declare function app:checkDateDoc($doc as node()*) {
     return <item check="{$check}" date="{$date/tei:origDate}" att="{$att}"/>
 };
 
-(:~Document Validtion :)
+(:~ Document Validtion :)
 declare function app:validate($doc as node()*) {    
     let $schema := "/db/apps/pessoa/data/schema/pessoaTEI.rng"
     return validation:validate($doc,$schema)

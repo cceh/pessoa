@@ -19,6 +19,11 @@ import module namespace search="http://localhost:8080/exist/apps/pessoa/search" 
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare namespace request="http://exist-db.org/xquery/request";
 
+(:~
+ : Funktion welche mehrdimensionale Maps erzeugt, indem es mehrfach die Funktion page:catchSub aufruft.
+ : Anhand der Informationen die in lists.xml stehen, werden diese durch eine for Schleife an page:catchSub weitergegeben, welche weitere ebenen innerhalb der Maps erstellt
+ : @return Mehrdimensionale Map
+:)
 declare function page:construct($node as node(), $model as map(*)){
     let $list := doc("/db/apps/pessoa/data/lists.xml")
     let $sites := for $item in $list//tei:list[@type="navigation"]/tei:item
@@ -36,7 +41,10 @@ declare function page:construct($node as node(), $model as map(*)){
     }
 
 };
-
+(:~
+: Erstellt das Fenster innerhalb der Navigation für die Suche, beinhaltet aber auch die Javascript Funktion, womit der USER die Sprache auf der Website ändern kann
+: @return  HTML Content
+:)
 declare function page:construct_search($node as node(), $model as map(*)) as node()* {
     let $search := <div class="container-4" id="searchbox" style="display:none">
         <input type="search" id="search" placeholder="{concat(helpers:singleElementInList_xQuery("search","term"),"....")}" />
@@ -44,24 +52,9 @@ declare function page:construct_search($node as node(), $model as map(*)) as nod
         <a class="small_text" id="search-link" href="{$helpers:app-root}/{$helpers:web-language}/search">{helpers:singleElementInList_xQuery("search","search_noun_ext")}</a>
     </div>
     let $clear :=  <div class="clear"></div>
-    (:)
-    let $request-path := if($config:request-path != "") then $config:request-path else "index.html"
-    :)
-    let $page := if(contains($helpers:request-path,concat('/',$helpers:web-language,'/'))) then substring-after($helpers:request-path,concat($helpers:web-language,'/')) else substring-after($helpers:request-path,concat($helpers:app-root,'/'))
-        (:)if(contains($config:request-path,concat("/",$helpers:web-language,"/"))) then substring-after($config:request-path,concat("/",$helpers:web-language,"/")) else substring-after($request-path,"pessoa//")
-
-
-    let $switchlang := if(contains($config:request-path,"search")) then
-        <script>
-            function switchlang(value){{
-
-            location.href="{$config:request-path}{$helpers:app-root}/"+value+"/{$page}{page:search_SwitchLang()}";
-            }}
-        </script>
-    else <script>
-            function switchlang(value){{location.href="{$helpers:app-root}/"+value+"/{$page}";}}
-        </script>
-        :)
+    let $page := if(contains($helpers:request-path,concat('/',$helpers:web-language,'/')))
+                    then substring-after($helpers:request-path,concat($helpers:web-language,'/'))
+                    else substring-after($helpers:request-path,concat($helpers:app-root,'/'))
     let $switchlang := if(contains($helpers:request-path,"search")) then
         <script>
             function switchlang(value){{
@@ -83,6 +76,10 @@ declare function page:search_SwitchLang() as xs:string {
     return $return
 };
 
+(:~
+: Erstellt individuel die Maps die für die generierung der Navigation verantwortlich sind
+: Prüft welchen Type die node() aus der lists.xml hat und verlinkt innerhalb der Website die erforderlichen Daten
+:)
 declare function page:catchSub($list as node(),$item as node()) as map(*)* {
     if(exists($item/@corresp)) then
         if($item/@corresp eq "authors") then

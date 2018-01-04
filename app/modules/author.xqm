@@ -1,5 +1,9 @@
 xquery version "3.0";
-
+(:~
+: Modul zur Anzeige der Authoren
+: @author Ben Bigalke
+: @version 1.0
+:)
 module namespace author="http://localhost:8080/exist/apps/pessoa/author";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 
@@ -39,16 +43,18 @@ declare function author:getTabs($node as node(), $model as map(*), $textType as 
     </ul>
 };
 
-
+(:~
+: Funktion zur erstellung der Liste welche dem Nutzer angezeigt wird.
+: Fragt den textTypen ab, welcher Aussagt ob die Resourcen entweder Dokumente oder Publikationen sind, bzw. ob alle Resourcen durchsucht werden sollen
+:
+: @param $textType Auswählter textType (all,doc,pub)
+: @param $author Name des Authoren
+: @param $orderBy Sortierungs form chronolgisch | alphabetisch
+: @return Wellformed HTML Content
+:)
 declare function author:getTabContent($node as node(), $model as map(*), $textType, $author, $orderBy) {
     let $authorKey := author:getAuthorId($author)
     let $folders := if($textType eq "all") then ("doc","pub") else $textType
-        (:)switch($textType)
-                            case "all" return ("doc","pub")
-                            case "documents" return "doc"
-                            case "publications" return "pub"
-                            default return ()
-                            :)
     let $items := for $fold in $folders                              
                                 let $name := if($fold eq "doc") then ("person","role") else "person"
                                 let $case := if($fold eq "doc") then ("eq","eq") else "eq"
@@ -128,22 +134,6 @@ declare function author:formatDocID($id){
     else $id 
 };
 
-(:)
-declare function author:getRoles($doc, $authorKey){
-    let $roles := $doc//tei:text//tei:rs[@type = 'name' and @key=$authorKey]/@role/data(.)
-    let $uniqueRoles := fn:distinct-values($roles)
-    return
-    $uniqueRoles
-};
-
-declare function author:getYearOrTitle($text, $orderBy){
-    let $pub := author:getYearOrTitleOfPublication($text,$orderBy)
-    let $doc := author:getYearOrTitleOfDocument($text, $orderBy)
-    return if($pub) then $pub
-    else if($doc) then $doc
-    else ()
-};
-:)
 declare function author:getYearOrTitleOfDocument($doc, $orderBy){
     let $when := $doc//tei:origDate/@when/data(.)
     let $from := $doc//tei:origDate/@from/data(.)
@@ -177,6 +167,7 @@ declare function author:getYearOrTitleOfPublication($pub, $orderBy){
       $title[1]/data(.)
     else()  
 };
+
 declare function author:getrecorder($node as node(), $model as map(*),$author,$textType){
 let $script := 
 <script type="text/javascript">        
