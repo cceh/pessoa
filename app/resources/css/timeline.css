@@ -1,16 +1,52 @@
 
-/* neue */
 body {
-     font-family: 'Open Sans', sans-serif;  
+
+    font-size: 9pt;
+    font-family: 'Open Sans', sans-serif;
 
 }
+
+.timeline-event-tape {
+    opacity:0.2 !important;
+    padding: 2px 0 !important;
+}
+
+.timeline-event-icon {
+    margin-top:-3px !important;
+    margin-left:-4px !important;
+}
+.timeline-event-icon.special_event {
+    margin-top: -2px !important;	}
+
+.timeline-event-icon img {
+    height:14px;
+}
+#my-timeline {
+    overflow: no;
+    height: 1500px;
+    border: 3px solid #AAA;
+    border-radius: 10px;
+    background-color: #fff !important;
+}
+.tape-special_event {  margin-top: 12px;  }
+.simile {
+    width: 1800px;
+}
+
+
+
+
+
+
+
+/* neue */
 h1
 {
-padding: 10px;
-margin-bottom: 0px;
-background-color: rgb(153, 0, 0);
-color: rgb(255, 255, 255);
-border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 0px;
+    background-color: rgb(153, 0, 0);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
 }
 
 /* ende neue */
@@ -26,8 +62,8 @@ border-radius: 5px;
 
 /*---------------- Weekends ---------------------------*/
 .timeline-ether-weekends{
-	position:absolute;
-	background-color:#FFFFE0;
+    position:absolute;
+    background-color:#FFFFE0;
 }
 
 .timeline-vertical .timeline-ether-weekends{left:0;width:100%;}
@@ -38,22 +74,22 @@ border-radius: 5px;
 /* Used for decorators, not used for Timeline Highlight              */
 .timeline-highlight-decorator,
 .timeline-highlight-point-decorator{
-	position:absolute;
-	overflow:hidden;
+    position:absolute;
+    overflow:hidden;
 }
 
 /* Width of horizontal decorators and Height of vertical decorators is
    set in the decorator function params */
 .timeline-horizontal .timeline-highlight-point-decorator,
 .timeline-horizontal .timeline-highlight-decorator{
-	top:0;
-  height:100%;
+    top:0;
+    height:100%;
 }
 
 .timeline-vertical .timeline-highlight-point-decorator,
 .timeline-vertical .timeline-highlight-decorator{
-	width:100%;
-	left:0;
+    width:100%;
+    left:0;
 }
 
 .timeline-highlight-decorator{background-color:#FFC080;}
@@ -62,8 +98,8 @@ border-radius: 5px;
 
 /*---------------------------- LABELS -------------------------*/
 .timeline-highlight-label {
-  position:absolute; overflow:hidden; font-size:200%;
-  font-weight:bold; color:#999; }
+    position:absolute; overflow:hidden; font-size:200%;
+    font-weight:bold; color:#999; }
 
 
 /*---------------- VERTICAL LABEL -------------------*/
@@ -82,11 +118,11 @@ border-radius: 5px;
 
 /*-------------------------------- DATE LABELS --------------------------------*/
 .timeline-date-label {
-  position: absolute;
-  border: solid #aaa;
-  color: #000;
-  width: 5em;
-  height: 1.5em;}
+    position: absolute;
+    border: solid #aaa;
+    color: #000;
+    width: 5em;
+    height: 1.5em;}
 .timeline-date-label-em {color: #000;}
 
 /* horizontal */
@@ -108,26 +144,26 @@ border-radius: 5px;
 
 /*------------------------------ EVENTS ------------------------------------*/
 .timeline-event-icon, .timeline-event-label,.timeline-event-tape{
-	position:absolute;
-	cursor:pointer;
-	color: #000;     /*Farbe von Labels*/
+    position:absolute;
+    cursor:pointer;
+    color: #000;     /*Farbe von Labels*/
 }
 
 .timeline-event-tape,
 .timeline-small-event-tape,
 .timeline-small-event-icon{
-	background-color:#fff;/*	Farbe von DurationEvents*/
-	overflow:hidden;
+    background-color:#fff;/*	Farbe von DurationEvents*/
+    overflow:hidden;
 }
 
 .timeline-small-event-tape,
 .timeline-small-event-icon{
-	position:absolute;
+    position:absolute;
 }
 
 .timeline-small-event-icon{width:1px; height:6px;}
 
-  
+
 /*--------------------------------- TIMELINE-------------------------*/
 .timeline-ether-bg{width:100%; height:100%;}
 .timeline-band-0 .timeline-ether-bg{background-color:#F1F1D4} /*	Farbe von Bands oben*/
@@ -156,6 +192,11 @@ border-radius: 5px;
     font-weight: bold;
     border-bottom: 1px solid #888;
     margin-bottom: 0.5em;
+
+}
+
+.timeline-event-bubble-title a {
+    color:#08298a;
 }
 
 .timeline-event-bubble-body {
@@ -172,7 +213,7 @@ border-radius: 5px;
 
 .timeline-event-bubble-time {
     color: #fff;/*	Farbe von Time. Soll weiss sein?*/
-	font-size: 0em;
+    font-size: 0em;
 }
 
 .timeline-event-bubble-image {
@@ -180,9 +221,9 @@ border-radius: 5px;
     padding-left: 5px;
     padding-bottom: 5px;
 }.timeline-container {
-    position: relative;
-    overflow: hidden;
-}
+     position: relative;
+     overflow: hidden;
+ }
 
 .timeline-copyright {
     position: absolute;
@@ -243,4 +284,3 @@ border-radius: 5px;
     width:      100%;
     height:     100%;
 }
-

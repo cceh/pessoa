@@ -44,12 +44,28 @@ declare function page:construct_search($node as node(), $model as map(*)) as nod
         <a class="small_text" id="search-link" href="{$helpers:app-root}/{$helpers:web-language}/search">{helpers:singleElementInList_xQuery("search","search_noun_ext")}</a>
     </div>
     let $clear :=  <div class="clear"></div>
+    (:)
     let $request-path := if($config:request-path != "") then $config:request-path else "index.html"
-    let $page :=     if(contains($config:request-path,concat("/",$helpers:web-language,"/"))) then substring-after($request-path,concat("/",$helpers:web-language,"/")) else substring-after($request-path,"pessoa//")
+    :)
+    let $page := if(contains($helpers:request-path,concat('/',$helpers:web-language,'/'))) then substring-after($helpers:request-path,concat($helpers:web-language,'/')) else substring-after($helpers:request-path,concat($helpers:app-root,'/'))
+        (:)if(contains($config:request-path,concat("/",$helpers:web-language,"/"))) then substring-after($config:request-path,concat("/",$helpers:web-language,"/")) else substring-after($request-path,"pessoa//")
+
 
     let $switchlang := if(contains($config:request-path,"search")) then
         <script>
             function switchlang(value){{
+
+            location.href="{$config:request-path}{$helpers:app-root}/"+value+"/{$page}{page:search_SwitchLang()}";
+            }}
+        </script>
+    else <script>
+            function switchlang(value){{location.href="{$helpers:app-root}/"+value+"/{$page}";}}
+        </script>
+        :)
+    let $switchlang := if(contains($helpers:request-path,"search")) then
+        <script>
+            function switchlang(value){{
+
             location.href="{$helpers:app-root}/"+value+"/{$page}{page:search_SwitchLang()}";
             }}
         </script>
@@ -158,10 +174,10 @@ declare function page:DOCmapping($docs as node(), $indi as xs:string,$dir as xs:
                                else if(contains($elem,"CP")) then replace($elem,"CP ","")
                                else $elem
                            )
-                   let $title := ($title,<span class="doc_superscript"/>)
-                   let $label := substring-before(replace($name,("BNP_E3_|CP"),""),".xml")
-                   let $front := if(contains($label,"-")) then substring-before($label,"-") else $label
-                   order by $front, xs:integer(replace($label, "^\d+[A-Z]?\d?-?([0-9]+).*$", "$1"))
+                           let $title := ($title,<span class="doc_superscript"/>)
+                           let $label := substring-before(replace($name,("BNP_E3_|CP"),""),".xml")
+                           let $front := if(contains($label,"-")) then substring-before($label,"-") else $label
+                           order by $front, xs:integer(replace($label, "^\d+[A-Z]?\d?-?([0-9]+).*$", "$1"))
                    return $title
                     else doc(concat("/db/apps/pessoa/data/pub/",$name))//tei:fileDesc/tei:titleStmt/tei:title/data(.)
 
@@ -279,6 +295,7 @@ declare %templates:wrap function page:createTimelineBody($node as node(), $model
 
 declare  function page:createTimelineHeader($node as node(), $model as map(*)) as node()* {
     let $lists := doc('/db/apps/pessoa/data/lists.xml')
+
         let $script1:=
         <script>
         Timeline_ajax_url="{$helpers:app-root}/resources/timeline/timeline_ajax/simile-ajax-api.js";
@@ -373,11 +390,13 @@ declare  function page:createTimelineHeader($node as node(), $model as map(*)) a
 
 
 (: ########### Zitation ##############:)
-declare function page:cite($node as node(), $model as map(*), $source as xs:string?, $type as xs:string?, $author as xs:string?) {
+declare function page:cite($node as node(), $model as map(*), $source as xs:string?, $type as xs:string?, $author as xs:string?,$textType as xs:string?) {
     let $link := if($source eq '/project') then concat($helpers:app-root,'/',$helpers:web-language,$source)
         else concat($helpers:app-root,$source)
     let $link := if($type != "") then concat($link,'/',$type)
-                else if($author != "") then concat($link,'/',$author)
+                else if($author != "") then
+                    if($textType != 'all') then concat($link,'/',$author,'/',$textType)
+                    else concat($link,'/',$author)
                 else $link
         return
             <span id="p-cite"> {for $elem in helpers:singleElementNode_xquery("cite","cite-sd")/tei:span

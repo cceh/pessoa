@@ -70,7 +70,7 @@ declare function local:getDateDoc($set,$doc) {
 
 declare function local:createPubXML() {
   let $items := for $indikator in ("Pessoa","Caeiro","Campos","Reis") return local:pubItems($indikator)
-  let $items := for $item in $items order by local:anaIndi($item/@indi/data(.))
+  let $items := for $item in $items order by local:anaIndi($item/@indi/data(.)),$item/@label/data(.)
                         return <item label="{$item/@label/data(.)}"  indi="{local:getAuthorShort($item/@indi/data(.))}"/>
   return $items
 };
