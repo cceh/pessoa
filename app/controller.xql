@@ -49,7 +49,7 @@ declare function local:logged-in() as xs:boolean {
 };
 
 declare function local:Restriction() as xs:boolean{
-    let $sites :=  ((for $s in ($exist:sites,"doc","pub") return concat($s,'/')),"search","timeline","network","events.xml")
+    let $sites :=  ((for $s in ($exist:sites,"doc","pub") return concat($s,'/')),"search","timeline","network","events.xml",'validation')
     return if(helpers:contains-any-of($exist:path,$sites)) then
         for $s in $sites
             let $p := replace($s,'/','')
@@ -63,6 +63,7 @@ declare function local:Restriction() as xs:boolean{
                 case "network" return true()
                 case "genre" return local:DirRestriction($p)
                 case "authors" return local:DirRestriction($p)
+                case "validation" return true()
                 default return
                     local:PathRestriction($sites)
     else false()
@@ -206,8 +207,12 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
 
 
                     else if($exist:permission) then (
-                                    session:clear(),
-                             if (contains($exist:path,  "/doc/")) then
+                                    session:remove-attribute('type'),
+                                    session:remove-attribute('author'),
+                                    session:remove-attribute('textType'),
+                                    session:remove-attribute('source'),
+
+                                    if (contains($exist:path,  "/doc/")) then
                                     if ($exist:resource = "xml") then
                                         let $id := substring-before(substring-after($exist:path, "/doc/"), "/xml")
                                         return
@@ -393,11 +398,11 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
                                                                         </error-handler>
                                                                     </dispatch>)
                                                         )
-                                                    else if (contains($exist:path,"obras")) then
+                                                    else if (contains($exist:path,"works")) then
                                                             (
                                                                 session:set-attribute("id",$exist:resource),
                                                                 <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-                                                                    <forward url="{$exist:controller}/page/obras.html" />
+                                                                    <forward url="{$exist:controller}/page/works.html" />
                                                                     <add-parameter name="id" value="{$exist:resource}" />
                                                                     <view>
                                                                         <forward url="{$exist:controller}/modules/view.xql"/>

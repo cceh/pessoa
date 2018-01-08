@@ -76,11 +76,14 @@ declare function author:getTabContent($node as node(), $model as map(*), $textTy
                                         let $date :=    if($date eq "?") then "?"  
                                                                 else ( if(contains($date,"-")) then substring-before($date,"-") else $date )                                                   
                                         let $refer := substring-before(root($doc)/util:document-name(.),".xml") 
-                                        let $first := if($fold eq "doc") then (
+                                        let $first := substring($doc//tei:titleStmt/tei:title/data(.),1,1)
+        (:)
+                                            if($fold eq "doc") then (
                                                             if(substring($doc//tei:titleStmt/tei:title/data(.),1,1) eq "B") then "BNP"
                                                             else "CP"
                                                             )
-                                                            else substring($doc//tei:titleStmt/tei:title/data(.),1,1)                     
+                                                            else substring($doc//tei:titleStmt/tei:title/data(.),1,1)
+                                                                          :)
                                        let $crit := if ($orderBy = "alphab") then $first else $date
                                       order by $crit
                                       return <item folder="{$fold}" doc="{$refer}"  title="{replace($doc//tei:titleStmt/tei:title/data(.),"/E3","")}" crit="{$crit}"/>   
@@ -101,11 +104,12 @@ declare function author:getTabContent($node as node(), $model as map(*), $textTy
                                             {for $crit in $criteria 
                                                 return (<div class="sub_Nav"><h2 id="{$crit}">{$crit}</h2></div>,
                                                         for $item in $items where $item/@crit eq $crit
+                                                        order by $item/@title/data(.)
                                                         return <div class="doctabelcontent">
                                                              <a href="{$helpers:app-root}/{$item/@folder/data(.)}/{$item/@doc/data(.)}">
                                                                  {$item/@title/data(.)}
                                                              </a> 
-                                                              {if($item/@folder/data(.) eq "doc") then <i>{concat(" (",helpers:singleElementInList_xQuery("roles","mentioned-as"),":",helpers:singleElementInList_xQuery("roles","author"),")")}</i> else ()}
+                                                              {if($item/@folder/data(.) eq "doc") then <i>{concat(" (",helpers:singleElementInList_xQuery("roles","mentioned-as"),": ",helpers:singleElementInList_xQuery("roles","author"),")")}</i> else ()}
                                                                 
                                                        </div>
                                                 )

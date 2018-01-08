@@ -53,7 +53,7 @@ declare function page:construct_search($node as node(), $model as map(*)) as nod
     </div>
     let $clear :=  <div class="clear"></div>
     let $page := if(contains($helpers:request-path,concat('/',$helpers:web-language,'/')))
-                    then substring-after($helpers:request-path,concat($helpers:web-language,'/'))
+                    then substring-after($helpers:request-path,concat('/',$helpers:web-language,'/'))
                     else substring-after($helpers:request-path,concat($helpers:app-root,'/'))
     let $switchlang := if(contains($helpers:request-path,"search")) then
         <script>
