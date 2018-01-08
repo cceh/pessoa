@@ -15,6 +15,7 @@ import module namespace request="http://exist-db.org/xquery/request";
 import module namespace repo="http://exist-db.org/xquery/repo"; 
 import module namespace session="http://exist-db.org/xquery/session";
 import module namespace util="http://exist-db.org/xquery/util";
+import module namespace config="http://localhost:8080/exist/apps/pessoa/config" at "config.xqm";
 
 declare namespace expath="http://expath.org/ns/pkg"; 
 
@@ -695,4 +696,20 @@ declare function templates:copy-node($node as element(), $model as item()*) {
         $node/@*,
         templates:process($node/*, $model)
     }
+};
+
+
+declare function templates:getErrorPage($node as node(), $model as map(*)) {
+    if(config:logged-in()) then
+        let $input := templates:get-configuration($model, "templates:form-control")($templates:CONFIG_PARAM_RESOLVER)("org.exist.forward.error")
+        return
+            element { node-name($node) } {
+                $node/@*,
+                try {
+                    util:parse($input)//message/string()
+                } catch * {
+                    $input
+                }
+            }
+    else <span>Sorry, no Error for you</span>
 };
