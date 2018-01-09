@@ -55,16 +55,20 @@
         <xdb:xquery uri="${uri}" queryfile="app/pre-install.xql" user="${user}" password="${password}"/>-->
         <xdb:store uri="${uri}" createcollection="true" createsubcollections="true" user="${user}" password="${password}">
             <fileset dir="./app/">
-                <include name="data/**/*.*"/>
-                <include name="*.xconf"/>
-                <!--
+                
+                <include name="**/*.*"/>
                 <exclude name="build/"/>
                 <exclude name="modules/admin.xqm"/>
                 <exclude name="**/*.properties"/>
                 <exclude name="**/*.tmpl"/>
                 <exclude name="**/*.md"/>
                 <exclude name="*.xpr"/>
-                <exclude name="**/.gitignore"/>-->
+                <exclude name="**/.gitignore"/>
+                
+                <!-- nur Daten:
+                <include name="data/**/*.*"/>
+                <include name="*.xconf"/>
+                -->
             </fileset>
         </xdb:store>
         <xdb:xquery uri="${uri}" queryfile="app/post-redirect.xql" user="${user}" password="${password}"/>
