@@ -32,10 +32,13 @@ $(document).ready(function() {
 
     $("#docu").click(function() {
         $("#docu-con").css("width","100%");
+        $(".closebtn").show();
     });
 
     $(".closebtn").click(function() {
         $("#docu-con").css("width","0%");
+        $(".closebtn").hide();
+
     });
 
     var BNodes = true,

@@ -131,3 +131,12 @@ declare function app:validate($doc as node()*) {
     let $schema := "/db/apps/pessoa/data/schema/pessoaTEI.rng"
     return validation:validate($doc,$schema)
 };
+
+
+declare function app:startDocu($node as node(), $model as map(*),$docu as xs:string?) {
+    if($docu eq 'true') then
+    <script type="text/javascript">
+        $("#docu-con").css("width","100%");
+    </script>
+    else ()
+};
