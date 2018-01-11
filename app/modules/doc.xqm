@@ -159,21 +159,16 @@ declare function doc:get-xml($id){
 
 
 declare %templates:wrap function doc:docControll($node as node(), $model as map(*), $id as xs:string) {
-      let $libary :=      if(contains($helpers:request-path,"BNP") or contains($helpers:request-path,"CP")) then "doc" 
+      let $libary :=      if(helpers:contains-any-of($id,('BNP','CP'))) then "doc"
                          else "pub"
     let $db := doc('/db/apps/pessoa/data/doclist.xml')
       let $loged := config:logged-in()
-    let $list := if($loged) then $db else  $db//docs[@dir=$libary]/doc[@availability eq "free"]
+    let $list := if($loged) then $db//docs[@dir=$libary]/doc else  $db//docs[@dir=$libary]/doc[@availability eq "free"]
     let $doc := $list[@id = $id]
-    let $sum := if($loged) then xs:integer($db//meta/sum[@id=$libary]/data(.)) else count($list)
-    let $pos := if($loged) then xs:integer($list//doc[@id = $id]/@pos/data(.))  else helpers:index-of-node($list,$doc)
-(:)
-    let $pos := xs:integer($list//doc[@id = $id]/@pos/data(.))         
-    let $sum := xs:integer($db//meta/sum[@id=$libary]/data(.))
-    :)
+    let $sum := count($list)
+    let $pos := if($loged) then xs:integer($doc/@pos/data(.))  else helpers:index-of-node($list,$doc)
     let $forward := if($pos != $sum) then $pos+1 else 1
     let $backward := if($pos != 1) then ($pos) -1 else $sum
-
 
     let $arrows := if($loged) then
         <div>

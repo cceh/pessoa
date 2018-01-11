@@ -160,6 +160,21 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
     else if ( (contains($exist:resource, "network") or contains($exist:path,"network"))
                 and not(helpers:contains-any-of($exist:resource,(".js",".css",".json")))) then
             (session:clear(),
+            if(contains($exist:resource,'documentation')) then  (
+                session:set-attribute('docu','true'),
+                <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+                    <forward url="{$exist:controller}/page/network.html"/>
+                    <add-parameter name="docu" value="true" />
+                    <view>
+                        <forward url="{$exist:controller}/modules/view.xql"/>
+                    </view>
+                    <error-handler>
+                        <forward url="{$exist:controller}/error-page.html" method="get"/>
+                        <forward url="{$exist:controller}/modules/view.xql"/>
+                    </error-handler>
+                </dispatch>
+            )
+            else
             <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
                 <forward url="{$exist:controller}/page/network.html"/>
                 <view>
