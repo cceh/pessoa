@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2017-12-04T16:49:50Z. 2017.
+Schema generated from ODD source 2018-01-15T11:22:36Z. 2017.
 TEI Edition: Version 3.2.0. Last updated on
 	10th July 2017, revision 0fcf651
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.2.0/
@@ -1352,6 +1352,7 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
    </define>
    <define name="tei_model.milestoneLike">
       <choice>
+         <ref name="tei_milestone"/>
          <ref name="tei_pb"/>
          <ref name="tei_lb"/>
          <ref name="tei_anchor"/>
@@ -2089,6 +2090,8 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
                         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                         <value>indent-1</value>
                         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                        <value>margin-vertical</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                         <value>position-center</value>
                         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                         <value>text-center</value>
@@ -2702,6 +2705,36 @@ Sample values include: 1] circled</a:documentation>
          </zeroOrMore>
          <ref name="tei_att.global.source.attribute.source"/>
          <ref name="tei_att.resourced.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_milestone">
+      <element name="milestone">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">marks a boundary point separating any kind of section of a text, typically but not necessarily indicating a point at which some part of a standard reference system changes, where the change is not represented by a structural element. [3.10.3. Milestone
+Elements]</a:documentation>
+         <empty/>
+         <attribute name="rend">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(rendition) indicates how the element in question was rendered or presented in the source text.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <choice>
+                     <value>asterisk</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                     <value> asterisks</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                     <value> square</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  </choice>
+               </oneOrMore>
+            </list>
+         </attribute>
+         <attribute name="unit">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides a conventional name for the kind of section changing at this milestone.</a:documentation>
+            <choice>
+               <value>section</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            </choice>
+         </attribute>
          <empty/>
       </element>
    </define>
