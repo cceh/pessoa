@@ -31,12 +31,11 @@
             <h4>
                 <get data-template="helpers:singleElementInList" data-template-ListType="network" data-template-ListId="network-description"/>
             </h4>
+            <div id="lang">
+                <a class="link" onclick="switchlang('en')">English</a> | <a class="link">Português</a> | <a class="link" onclick="switchlang('de')">Deutsch</a>
+            </div>
         </div>
-        <!--
-        <div id="lang">
-            <a class="link" onclick="switchlang('en')">English</a>|<a class="link">Português</a>|<a class="link" onclick="switchlang('de')">Deutsch</a>
-        </div>
-        -->
+
         <div id="menue">
             <i class="glyphicon glyphicon-menu-hamburger"/>
             <h3><get data-template="helpers:singleElementInList" data-template-ListType="network" data-template-ListId="navigation"/></h3>
@@ -193,7 +192,7 @@
         -->
     </div>
     <div id="docu-con" class="overlay">
-        <a class="closebtn">X</a>
+        <span class="closebtn">X</span>
         <div class="overlay-content" >
             <p>
                 <i class="app:MultiPage?xmlid=network-documentation"/></p>

@@ -1,6 +1,5 @@
 
 $(document).ready(function() {
-
 /*
 
     $(window).scroll(function(){
@@ -32,13 +31,12 @@ $(document).ready(function() {
 
     $("#docu").click(function() {
         $("#docu-con").css("width","100%");
-        $(".closebtn").show();
+        $(".closebtn").css("display",'inline-block');
     });
 
     $(".closebtn").click(function() {
         $("#docu-con").css("width","0%");
-        $(".closebtn").hide();
-
+        $(".closebtn").css("display",'none');
     });
 
     var BNodes = true,
