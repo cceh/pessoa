@@ -137,6 +137,7 @@ declare function app:startDocu($node as node(), $model as map(*),$docu as xs:str
     if($docu eq 'true') then
     <script type="text/javascript">
         $("#docu-con").css("width","100%");
+        $(".closebtn").css('display','inline-block');
     </script>
     else ()
 };

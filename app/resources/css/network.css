@@ -295,7 +295,12 @@ input:checked + .slider:before {
 }
 
 .closebtn {
-    display:none !important;
+    display:none;
+    cursor:pointer;
+}
+.closebtn:hover {
+    color: #f1f1f1;
+
 }
 
 #viewport {
