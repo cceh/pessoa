@@ -410,6 +410,7 @@ function drawing(width,height,ank) {
             mY = $(document).height();
         var aX = $(window).width(),
             aY = $(window).height();
+        $("#swapSort").off("change");
         $("#swapSort").change(function(){
             createLists($("#swapSort").children("input:checked").attr("id"));
         });
@@ -432,7 +433,7 @@ function drawing(width,height,ank) {
 
                 var valti = jQuery.parseJSON(newAr);
                 var values;
-                if(sort === "size") values = valti.nodes.sort(dynamicSortMultiple("-size", "name")); else values = valti.nodes.sort(dynamicSortMultiple("name"));
+                if(sort === "size") values = valti.nodes.sort(dynamicSortMultiple("-size" )); else values = valti.nodes.sort(dynamicSortMultiple("name"));
 
                /* $("#lists").append($("#swapSort").clone().css("display", "block").click(function () {
                     if(sort === "size") createLists("alpha"); else createLists("size");
