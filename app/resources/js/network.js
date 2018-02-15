@@ -273,10 +273,6 @@ function drawing(width,height,ank) {
         $("#stopForce").children("label").children("input").prop("checked",bForce);
 
     };
-    $(document).keypress(function(event) {
-        if(event.which === 32 || event.which === 115) stopForce(false);
-
-    });
     $("#stopForce").children("label").change(function() {
         stopForce(false);
     });
@@ -313,7 +309,10 @@ function drawing(width,height,ank) {
         node = svg.selectAll(".node");
 
     d3.json(file, function (error, json) {
+        $(document).off("keypress");
         $(document).keypress(function(event) {
+            if(event.which === 32 || event.which === 115) stopForce(false);
+
             if(event.which === 100) {
                 var lis = json.links,
                     lis_sum = 0,
