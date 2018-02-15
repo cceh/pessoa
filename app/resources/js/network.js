@@ -1,27 +1,6 @@
 
 $(document).ready(function() {
 
-
-/*
-
-    $(window).scroll(function(){
-        var options = $("#options");
-        if ($(this).scrollTop() > 100) {
-            $('#menue').show();
-            options.removeClass("onTop")
-            options.addClass("onLeft");
-            if(!options.hasClass("shown")) options.hide();
-        } else {
-            $('#menue').hide();
-
-            options.show();
-            options.removeClass("onLeft");
-            options.addClass("onTop");
-
-        }
-    });
-*/
-
     $("#myInput").on("keyup", function() {
         var value = $(this).val().toLowerCase();
         $("#lists ul li").filter(function() {
@@ -302,17 +281,9 @@ function drawing(width,height,ank) {
         stopForce(false);
     });
     function dynamicSortMultiple() {
-        /*
-         * save the arguments object as it will be overwritten
-         * note that arguments object is an array-like object
-         * consisting of the names of the properties to sort by
-         */
         var props = arguments;
         return function (obj1, obj2) {
             var i = 0, result = 0, numberOfProperties = props.length;
-            /* try getting a different result from 0 (equal)
-             * as long as we have extra properties to compare
-             */
             while(result === 0 && i < numberOfProperties) {
                 result = dynamicSort(props[i])(obj1, obj2);
                 i++;
@@ -337,15 +308,24 @@ function drawing(width,height,ank) {
         .linkDistance(myZoom)
         .size([width, height])
         .on("tick", tick);
-    /**
-     var drag = force.drag()
-     .on("dragstart", test);
-     **/
 
     var link = svg.selectAll(".link"),
         node = svg.selectAll(".node");
 
     d3.json(file, function (error, json) {
+        $(document).keypress(function(event) {
+            if(event.which === 100) {
+                var lis = json.links,
+                    lis_sum = 0,
+                    nodes = json.nodes.length,
+                    links = lis.length;
+                $.each(lis, function (key, val) {
+                    lis_sum = lis_sum + parseInt(val.value);
+                });
+                alert("Aktuell gibt es  \n"+nodes+" Nodes \n"+links+" Links\n"+lis_sum+" Summierte Links")
+            }
+        });
+
         if (error) throw error;
         force
             .nodes(json.nodes)
@@ -468,20 +448,6 @@ function drawing(width,height,ank) {
                             scrollTop: vY,
                             scrollLeft: vX
                         });
-                        /*
-                        force.stop();
-                        var h = force.nodes()[source];
-                        console.log("1# "+h.x+"/"+h.y);
-                      //  h.x = mX; h.y = mY; h.fixed = true;
-                        h.x = mX; h.y = mY;
-                        console.log("2# "+h.x+"/"+h.y);
-                        h.fixed = true;
-                        tick();
-                        bForce = false;
-                        h.x = mX; h.y = mY;
-                        */
-
-
                     }).dblclick(function () {
                         if (select === false) {
                             $(".link").hide();
