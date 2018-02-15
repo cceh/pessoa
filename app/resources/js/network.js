@@ -309,10 +309,11 @@ function drawing(width,height,ank) {
         node = svg.selectAll(".node");
 
     d3.json(file, function (error, json) {
+
         $(document).off("keypress");
         $(document).keypress(function(event) {
-            if(event.which === 32 || event.which === 115) stopForce(false);
-
+            if(event.which === 32 ) stopForce(false);
+/*
             if(event.which === 100) {
                 var lis = json.links,
                     lis_sum = 0,
@@ -323,7 +324,9 @@ function drawing(width,height,ank) {
                 });
                 alert("Aktuell gibt es  \n"+nodes+" Nodes \n"+links+" Links\n"+lis_sum+" Summierte Links")
             }
+            */
         });
+
 
         if (error) throw error;
         force
