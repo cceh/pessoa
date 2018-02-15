@@ -9,7 +9,7 @@
                 <title>Notas para recordação do meu mestre Caeiro</title>
                 <author>
                     <rs type="name" key="AC">Alberto Caiero</rs>
-                    <!-- the @key is to identify Caeiro.
+                    <!-- JU: The author of this text is Campos <rs type="name" key="AdC">Álvaro de Campos // (the @key is to identify Caeiro.  </rs>
                             You can find other persons IDs in the file lists.xml in the data folder. In that file, 
                             look for the sublist listPerson, currently beginning at line 1522. You can also add
                             new persons there, just be careful to always update your changes with GitHub, because 
@@ -42,13 +42,13 @@
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Caeiro_Notas_para_a_recordacao.xml</idno>
-                <!-- please follow this file name pattern for other files -->
+                <!-- JU: author of the piece: Campos // please follow this file name pattern for other files -->
             </publicationStmt>
             <sourceDesc>
                 <list type="work-index">
                     <item><rs type="work" key="O2-X">Notas para recordação do meu mestre
                         Caeiro</rs></item>
-                    <!-- @key: contains the index of this WORK. 
+                    <!-- JU: Also in this case, it should be Campos // @key: contains the index of this WORK. 
         (to be defined in the central work index, O2 = Caeiro, X -> will be a number)
         This can be left as is in the beginning.
     -->
@@ -59,7 +59,7 @@
                         <title level="a">Notas para recordação do meu mestre Caeiro</title>
                         <author>
                             <rs type="name" key="AC">Alberto
-                            Caeiro</rs><!-- the @key is to identify Caeiro.
+                                Caeiro</rs><!-- JU: If this is to identify the author, it also should be changed to Campos, Caeiro is only a reference in the title <Topic??>// the @key is to identify Caeiro.
                             (see the comment above) -->
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
@@ -82,6 +82,7 @@
                     </monogr>
                     <note type="genre">
                         <rs type="genre" key="poesia">Prosa</rs>
+                        <!-- JU: I'm not sure I understand this part: is it always necessary to mark "poesia" -->
                     </note>
                 </biblStruct>
             </sourceDesc>
@@ -89,7 +90,7 @@
     </teiHeader>
     <facsimile>
         <graphic url="prosa/IMAGE-FILE-NAME"/>
-        <!-- if there is a facsimile, the image file name goes here.
+        <!-- JU: I'm sending you the images in an e-mail// if there is a facsimile, the image file name goes here.
         several images can be several graphic-elements. All files must be sent to the CCeH to be processed for the image
         viewer and to be stored on the image server. If there is no image please leave this as is. -->
     </facsimile>
@@ -142,7 +143,8 @@
                 <p rend="indent-first">Meu mestre, meu mestre, perdido tão cêdo! Revejo-o na sombra
                     que sou em mim, na memória que conservo do que sou de morto...</p>
                 <p rend="indent-first">Foi durante a nossa primeira conversa... Como foi não sei, e
-                    êle disse: «Está aqui um rapaz Ricardo Reis que há de gostar de conhecer: êle é
+                    êle disse: «Está aqui um rapaz <rs type="name" role="topic" key="RR">Ricardo Reis</rs> 
+                    que há de gostar de conhecer: êle é
                     muito diferente de si». E depois acrescentou, «Tudo é diferente de nós, e por
                     isso é que tudo existe».</p>
                 <p rend="indent-first">Esta frase, dita como se fôsse um axioma da terra, seduziu-me
