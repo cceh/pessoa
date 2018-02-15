@@ -21,6 +21,13 @@ $(document).ready(function() {
         }
     });
 */
+
+    $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#lists ul li").filter(function() {
+            $(this).toggle($(this).attr("name").toLowerCase().indexOf(value) > -1)
+        });
+    });
     $("#menue").click(function() {
        $("#options").toggle();
     });
