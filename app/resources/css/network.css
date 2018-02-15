@@ -32,6 +32,7 @@ circle.node:hover {
 }
 text.node {
     cursor:pointer;
+    font-size:12px;
 }
 text.node:hover {
     display: inline !important;
@@ -69,11 +70,11 @@ text.node:hover {
 
     float:none;
 }
-a, #onName, #emptyNodes {
+a, #onName, #emptyNodes, #showList, #stopForce {
     color:#08298A;
     cursor:pointer;
 }
-a:hover, #onName:hover, #emptyNodes:hover {
+a:hover, #onName:hover, #emptyNodes:hover, #showList:hover, #stopForce:hover {
     color: #990000;
 }
 
@@ -337,4 +338,43 @@ input:checked + .slider:before {
 
 .fullscreen svg {
     overflow:auto !important;
+}
+
+#lists {
+    display: none;
+    position: fixed;
+    z-index: 5;
+    top: 10px;
+    right: 10px;
+    overflow-y: auto;
+    height: 100%;
+}
+
+#lists ul {
+    list-style: none;
+
+}
+
+#lists li, #lists label {
+    color:#08298A;
+    cursor:pointer;
+
+
+}
+#lists li:hover, #lists label:hover {
+    color:#990000;
+
+}
+
+#lists li span:nth-child(odd) {
+    width: 25px;
+    display: inline-block;
+    border-right: 1px solid black;
+    margin-right: 5px;
+    text-align: right;
+    padding-right: 5px;
+}
+
+#lists li span:nth-child(even) {
+    width:330px;
 }

@@ -148,6 +148,24 @@
                         </label>
                     </label>
                 </div>
+                <div class="options">
+                    <label id="showList">
+                        <get data-template="helpers:singleElementInList" data-template-ListType="network" data-template-ListId="option-showLists"/>
+                        <label class="switch">
+                            <input type="checkbox" checked="checked"/>
+                            <span class="slider"></span>
+                        </label>
+                    </label>
+                </div>
+                <div class="options">
+                    <label id="stopForce">
+                        <get data-template="helpers:singleElementInList" data-template-ListType="network" data-template-ListId="option-stopForce"/>
+                        <label class="switch">
+                            <input type="checkbox" checked="checked"/>
+                            <span class="slider"></span>
+                        </label>
+                    </label>
+                </div>
             </div>
             <div id="links">
                 <div class="options">
@@ -157,6 +175,7 @@
                         </span>
                     </a>
                 </div>
+
                 <!--
                 <div class="options">
                     <a id="synopse">
@@ -182,9 +201,24 @@
 
         <div id="viewport">
             <div id="view"></div>
-
         </div>
         <div class="clear"/>
+
+        <div id="lists">
+            <div id="swapSort">
+                <input id="size" checked="checked" name="order" type="radio" value="no"/><label for="size">
+                <get data-template="helpers:singleElementInList" data-template-ListType="order" data-template-ListId="size"/>
+            </label>
+                <input id="alpha"  name="order" type="radio" value="yes"/><label for="alpha">
+                <get data-template="helpers:singleElementInList" data-template-ListType="order" data-template-ListId="alphabetical"/>
+            </label>
+            </div>
+            <input id="myInput" type="text" placeholder="Search.."/>
+            <ul>
+
+            </ul>
+        </div>
+
         <!--
         <footer id="footer2">
             Force Layout with Mouseover  Labels Mike Bostock. Released under the  <a href="https://opensource.org/licenses/GPL-3.0">GNU General Public License, version 3</a> - Modified by Sviatoslav Drach &amp; Ben Bigalke - <a href="https://bl.ocks.org/mbostock/1212215">Original source</a>

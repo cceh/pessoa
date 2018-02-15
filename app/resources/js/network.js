@@ -1,24 +1,12 @@
 
 $(document).ready(function() {
-/*
 
-    $(window).scroll(function(){
-        var options = $("#options");
-        if ($(this).scrollTop() > 100) {
-            $('#menue').show();
-            options.removeClass("onTop")
-            options.addClass("onLeft");
-            if(!options.hasClass("shown")) options.hide();
-        } else {
-            $('#menue').hide();
-
-            options.show();
-            options.removeClass("onLeft");
-            options.addClass("onTop");
-
-        }
+    $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#lists ul li").filter(function() {
+            $(this).toggle($(this).attr("name").toLowerCase().indexOf(value) > -1)
+        });
     });
-*/
     $("#menue").click(function() {
        $("#options").toggle();
     });
@@ -42,11 +30,18 @@ $(document).ready(function() {
     var BNodes = true,
         BNames = true,
         select = false,
-        synopse = false;
+        synopse = false,
+        lists = false;
 
     if($("#emptyNodes").children().children().prop("checked"))  BNodes = true; else  BNodes = false;
     if($("#onName").children().children().prop("checked"))  BNames = true; else  BNames = false;
+    if($("#showList").children().children().prop("checked"))  lists = true; else lists  = false;
 
+    $("#showList").children("label").change(function() {
+        if(lists == true) { lists = false; }
+        else { lists = true; }
+        shownElements();
+    });
     $("#emptyNodes").children("label").change(function() {
         if(BNodes == true) { BNodes = false; }
         else { BNodes = true; }
@@ -58,6 +53,10 @@ $(document).ready(function() {
         else {BNames = true; }
         shownElements();
     });
+
+
+
+
 
     function synopsing() {
 
@@ -114,14 +113,6 @@ function innerNet() {
     });
 };
 
-/*
-
-    var voronoi = d3.geom.voronoi()
-        .x(function(d) { return d.x; })
-        .y(function(d) { return d.y; })
-        .clipExtent([[0, 0], [width, height]]);
-  */
-
 
     function shownElements() {
         if(select == false) {
@@ -147,6 +138,9 @@ function innerNet() {
             $("#emptyNodes").parent().hide();
             $("#onName").parent().hide();
         }
+        if(lists === true) $("#lists").show();
+            else $("#lists").hide();
+
     };
 
     function connectionShown(source,sta) {
@@ -207,24 +201,6 @@ function innerNet() {
             yearSelection(select);
 
         });
-        /*
-        var max = select.children("option").length;
-
-        var slider = $( "<div class='oSlider'></div>" ).insertAfter( select ).slider({
-            min: 1,
-            max: max,
-            range: "min",
-            value: select[ 0 ].selectedIndex + 1,
-            slide: function( event, ui ) {
-                select[ 0 ].selectedIndex = ui.value - 1;
-                yearSelection(select);
-            }
-        });
-        $( "#"+ele ).on( "change", function() {
-            slider.slider( "value", this.selectedIndex + 1 );
-
-        });
-        */
         $(".yearSelectionButton").click(function() {
             $(".yearSelect").removeClass("yearSelect");
             $(this).parent().addClass("yearSelect");
@@ -238,24 +214,6 @@ function innerNet() {
             synopsing();
 
         });
-        /*
-        var max = select.children("option").length;
-
-        var slider = $( "<div class='oSlider'></div>" ).insertAfter( select ).slider({
-            min: 1,
-            max: max,
-            range: "min",
-            value: select[ 0 ].selectedIndex + 1,
-            slide: function( event, ui ) {
-                select[ 0 ].selectedIndex = ui.value - 1;
-                synopsing();
-            }
-        });
-        $( "#"+ele ).on( "change", function() {
-            slider.slider( "value", this.selectedIndex + 1 );
-
-        });
-        */
     }
 
     synopsing();
@@ -290,18 +248,51 @@ function classes(size) {
 
 
 function drawing(width,height,ank) {
+    var bForce = false;
+
     var myZoom = $("#zoomOfLayout").children("option:selected").attr("value");
     var year = $(".yearSelect").children("select").children("option:selected").attr("value");
     var file = "network/"+year+".json";
 
+    function dynamicSort(property) {
+        var sortOrder = 1;
+        if(property[0] === "-") {
+            sortOrder = -1;
+            property = property.substr(1);
+        }
+        return function (a,b) {
+            if(property === "size") var result = (parseInt(a[property]) < parseInt(b[property])) ? -1 : (parseInt(a[property]) > parseInt(b[property])) ? 1 : 0;
+                    else var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+            return result * sortOrder;
+        }
+    };
 
+    function stopForce(chang){
+        if(chang) bForce = false;
+        if(bForce) {force.stop(); bForce = false} else { force.start(); bForce = true;}
+        $("#stopForce").children("label").children("input").prop("checked",bForce);
+
+    };
+    $("#stopForce").children("label").change(function() {
+        stopForce(false);
+    });
+    function dynamicSortMultiple() {
+        var props = arguments;
+        return function (obj1, obj2) {
+            var i = 0, result = 0, numberOfProperties = props.length;
+            while(result === 0 && i < numberOfProperties) {
+                result = dynamicSort(props[i])(obj1, obj2);
+                i++;
+            }
+            return result;
+        }
+    }
     function sizing(size) {
         if(size == 0) return 2 ;
         else return  Math.round(Math.log2(size)) +2;
     }
 
     //d3
-
 
     var svg = d3.select("#"+ank).append("svg")
         .attr("width", width)
@@ -313,15 +304,30 @@ function drawing(width,height,ank) {
         .linkDistance(myZoom)
         .size([width, height])
         .on("tick", tick);
-    /**
-     var drag = force.drag()
-     .on("dragstart", test);
-     **/
 
     var link = svg.selectAll(".link"),
         node = svg.selectAll(".node");
 
     d3.json(file, function (error, json) {
+
+        $(document).off("keypress");
+        $(document).keypress(function(event) {
+            if(event.which === 32 ) stopForce(false);
+/*
+            if(event.which === 100) {
+                var lis = json.links,
+                    lis_sum = 0,
+                    nodes = json.nodes.length,
+                    links = lis.length;
+                $.each(lis, function (key, val) {
+                    lis_sum = lis_sum + parseInt(val.value);
+                });
+                alert("Aktuell gibt es  \n"+nodes+" Nodes \n"+links+" Links\n"+lis_sum+" Summierte Links")
+            }
+            */
+        });
+
+
         if (error) throw error;
         force
             .nodes(json.nodes)
@@ -341,6 +347,9 @@ function drawing(width,height,ank) {
                 return d.target.index;
             });
 
+        var drag = force.drag()
+            .on("dragstart", dragstart);
+
         circle = node.data(json.nodes)
             .enter().append("circle")
             .attr("class", function (d) {
@@ -356,7 +365,7 @@ function drawing(width,height,ank) {
             .attr("source", function (d) {
                 return d.index;
             })
-            .call(force.drag);
+            .call(drag);
 
         label = node.data(json.nodes)
             .enter().append("text")
@@ -378,6 +387,93 @@ function drawing(width,height,ank) {
         makeLine();
         innerNet();
         shownElements();
+
+
+
+        function dragstart(d) {
+            d3.select(this).classed("fixed", d.fixed = true);
+            stopForce(true);
+        }
+
+        var mX = $(document).width(),
+            mY = $(document).height();
+        var aX = $(window).width(),
+            aY = $(window).height();
+        $("#swapSort").off("change");
+        $("#swapSort").change(function(){
+            createLists($("#swapSort").children("input:checked").attr("id"));
+        });
+        function createLists(sort) {
+            $("#lists").children("ul").children("li").remove();
+
+            $.getJSON(file, function (data) {
+                var newAr = new Object();
+                $.each(data.nodes, function (key, val) {
+                    if (key === 0) {
+                        newAr = '{"name":"' + val.name + '","size":"' + val.size + '","source":"' + key + '"},';
+                    }
+                    else if (key <= data.nodes.length - 2) newAr = newAr + '{"name":"' + val.name + '","size":"' + val.size + '","source":"' + key + '"},';
+
+                    else
+                        newAr = newAr + '{"name":"' + val.name + '","size":"' + val.size + '","source":"' + key + '"}';
+
+                });
+                newAr = '{"nodes":[' + newAr + ']}';
+
+                var valti = jQuery.parseJSON(newAr);
+                var values;
+                if(sort === "size") values = valti.nodes.sort(dynamicSortMultiple("-size" )); else values = valti.nodes.sort(dynamicSortMultiple("name"));
+
+               /* $("#lists").append($("#swapSort").clone().css("display", "block").click(function () {
+                    if(sort === "size") createLists("alpha"); else createLists("size");
+                }));*/
+                $.each(values, function (key, val) {
+                    if (val.size > 0) $("#lists").children("ul").append('<li source="' + val.source + '"  size="' + val.size + '" name="' + val.name + '" class="listsli"><span>' + val.size + '</span><span>' + val.name + '</span></li>');
+                });
+
+
+                $("#lists ul").children().each(function() {
+                    var source = $(this).attr("source");
+                    var nod = $("circle.node[source='" + source + "']");
+
+                    $(this).mouseover(function () {
+                        $("text.node[source='" + source + "']").css("text-decoration", "underline").css("font-size","14px");
+                        nod.css("stroke-width", (nod.attr("r") + "px"));
+                    }).mouseleave(function () {
+                        $("text.node[source='" + source + "']").css("text-decoration", "none").css("font-size","12px");
+                        nod.css("stroke-width", "3.5px");
+                    }).click(function () {
+                        var vX = parseInt(nod.attr("cx"))+mX-width-aX/2;
+                        var vY = parseInt(nod.attr("cy"))+mY-height-aY/2;
+                        console.log("x:"+vX+" / y:"+vY);
+                        $('html, body').animate({
+                            scrollTop: vY,
+                            scrollLeft: vX
+                        });
+                    }).dblclick(function () {
+                        if (select === false) {
+                            $(".link").hide();
+                            $("text").hide();
+                            $("circle").hide();
+                            connectionShown(source, true);
+                            select = true;
+                        }
+                        else {
+                            $(".link").css("stroke", "#777").show();
+                            select = false;
+                            $("text").show();
+                            $("circle").show();
+                        }
+                        shownElements();
+
+                    });
+
+
+                });
+            });
+        };
+        createLists($("#swapSort").children("input:checked").attr("id"));
+        stopForce(false);
     });
 
 
@@ -388,20 +484,36 @@ function drawing(width,height,ank) {
          .attr("d", function(d) { return d.length ? "M" + d.join("L") : null; });
          */
         link
-            .attr("x1", function(d) { return d.source.x; })
-            .attr("y1", function(d) { return d.source.y; })
-            .attr("x2", function(d) { return d.target.x; })
-            .attr("y2", function(d) { return d.target.y; });
+            .attr("x1", function (d) {
+                return d.source.x;
+            })
+            .attr("y1", function (d) {
+                return d.source.y;
+            })
+            .attr("x2", function (d) {
+                return d.target.x;
+            })
+            .attr("y2", function (d) {
+                return d.target.y;
+            });
 
         circle
-            .attr("cx", function(d) { return d.x; })
-            .attr("cy", function(d) { return d.y; })
+            .attr("cx", function (d) {
+                return d.x;
+            })
+            .attr("cy", function (d) {
+                return d.y;
+            })
         ;
 
         label
-            .attr("x", function(d) { return d.x + 8; })
-            .attr("y", function(d) { return d.y; });
-
+            .attr("x", function (d) {
+                return d.x + 8;
+            })
+            .attr("y", function (d) {
+                return d.y;
+            });
+            bForce = true;
     };
 
     $("#fullscreen").click(function(){
