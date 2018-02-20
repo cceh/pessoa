@@ -292,7 +292,8 @@ input:checked + .slider:before {
     position: fixed;
     top: 20px;
     right: 45px;
-    font-size: 60px;
+    font-size: 60px;    color: #f1f1f1;
+
 }
 
 .closebtn {
@@ -300,7 +301,8 @@ input:checked + .slider:before {
     cursor:pointer;
 }
 .closebtn:hover {
-    color: #f1f1f1;
+    color: #08298A;
+
 
 }
 
@@ -343,7 +345,7 @@ input:checked + .slider:before {
 #lists {
     display: none;
     position: fixed;
-    z-index: 5;
+    z-index: 2;
     top: 10px;
     right: 10px;
     overflow-y: auto;
