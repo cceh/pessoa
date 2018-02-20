@@ -1,6 +1,7 @@
 
 $(document).ready(function() {
 
+
     $("#myInput").on("keyup", function() {
         var value = $(this).val().toLowerCase();
         $("#lists ul li").filter(function() {
@@ -247,6 +248,7 @@ function classes(size) {
 }
 
 
+
 function drawing(width,height,ank) {
     var bForce = false;
 
@@ -270,7 +272,9 @@ function drawing(width,height,ank) {
     function stopForce(chang){
         if(chang) bForce = false;
         if(bForce) {force.stop(); bForce = false} else { force.start(); bForce = true;}
-        $("#stopForce").children("label").children("input").prop("checked",bForce);
+        var seti;
+        if(bForce) seti = false; else seti = true;
+        $("#stopForce").children("label").children("input").prop("checked",seti);
 
     };
     $("#stopForce").children("label").change(function() {
@@ -288,8 +292,9 @@ function drawing(width,height,ank) {
         }
     }
     function sizing(size) {
-        if(size == 0) return 2 ;
-        else return  Math.round(Math.log2(size)) +2;
+            if(size == 0) return 2 ;
+            else return  Math.round(Math.log2(size)) +2;
+
     }
 
     //d3

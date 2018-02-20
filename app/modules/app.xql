@@ -141,3 +141,8 @@ declare function app:startDocu($node as node(), $model as map(*),$docu as xs:str
     </script>
     else ()
 };
+
+
+declare function app:networkSearch($node as node(), $model as map(*)) {
+    <input id="myInput" name="term" placeholder="{helpers:singleElementInList_xQuery("search","term")}..." />
+};

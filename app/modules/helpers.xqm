@@ -211,6 +211,15 @@ declare function helpers:switchLang($node as node(), $model as map(*)) {
         </script>
 };
 
+declare function helpers:switchLangNetwork($node as node(), $model as map(*)) {
+    let $request-path := if($config:request-path != "") then $config:request-path else "index.html"
+    let $page :=     if(contains($config:request-path,concat("/",$helpers:web-language,"/"))) then substring-after($request-path,concat("/",$helpers:web-language,"/")) else substring-after($request-path,"pessoa//")
+
+    return <script>
+        function switchlang(value){{location.href="{$helpers:app-root}/"+value+"/network/{$page}";}}
+    </script>
+};
+
 declare function helpers:contains-any-of( $arg as xs:string?, $searchStrings as xs:string* )  as xs:boolean {
 
     some $searchString in $searchStrings
