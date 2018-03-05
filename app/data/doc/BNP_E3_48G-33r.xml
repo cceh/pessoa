@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -55,7 +56,7 @@
                     <msContents>
                         <summary>
                             <p> Lista datilografada, publicada em <hi rend="italic">Obras de António
-                                Mora</hi> (2002, 164). </p>
+                                    Mora</hi> (2002, 164). </p>
                         </summary>
                         <msItemStruct>
                             <author>
@@ -86,73 +87,81 @@
     <text>
         <body>
             <div>
-                <head><rs type="periodical" key="J2"><hi rend="red">ATHENA</hi></rs> — Cadernos de
-                    Reconstrucção Pagã.</head>
-                <table rows="2" cols="2">
+                <head><rs type="periodical" key="J2">ATHENA</rs> — Cadernos de Reconstrucção
+                    Pagã.</head>
+                <table rend="indent">
                     <row>
                         <cell>Cada caderno de 64 a 128 paginas.</cell>
                         <cell>Preço: 300 reis (?)</cell>
                     </row>
                     <row>
-                        <cell>Director: <rs type="name" key="P1" style="a">Antonio
-                            Móra</rs>.</cell>
+                        <cell>Director: <rs type="name" key="P1" style="a">Antonio Móra</rs>.</cell>
                         <cell>Publicação irregular.</cell>
                     </row>
                 </table>
-                <metamark rend="line" function="distinct"/>
-                <list>
-                    <head><hi rend="red">Primeiro Caderno:</hi></head>
-                    <item>
-                        <rs type="title">Prefacio</rs> — <rs type="name" key="P1" style="a">Antonio
-                            Móra</rs>. </item>
-                    <item>
-                        <rs type="work" key="O2" style="b"><rs type="title">O Guardador de
-                                Rebanhos</rs> — Poemas — <rs type="name" key="AC" role="author"
-                                >Alberto Caeiro</rs>.</rs>
-                    </item>
-                    <item>
-                        <rs type="work" key="O3" style="b"><rs type="title">Odes — <choice>
-                                    <abbr>Liv<am>.</am></abbr>
-                                    <expan>Liv<ex>ros</ex></expan>
-                                </choice> I e II.</rs> — <rs type="name" role="author" key="RR"
-                                >Ricardo Reis</rs></rs>. </item>
-                    <item>
-                        <rs type="title">O Regresso dos Deuses</rs> — Estudo — <rs type="name"
-                            >Antonio Móra</rs>. </item>
-                </list>
-                <metamark rend="line" function="distinct"/>
-                <list>
-                    <head><hi rend="red">Segundo Caderno:</hi></head>
-                    <item>
-                        <rs type="title">Introducção ao Estudo da Metaphysica</rs> — <rs type="name"
-                            key="P1" style="a">Antonio Móra</rs>. </item>
-                </list>
-                <metamark rend="line" function="distinct"/>
-                <list>
-                    <head><hi rend="red">Terceiro Caderno:</hi></head>
-                    <item>
-                        <rs type="work" key="O2" style="c"><rs type="title">O Pastor Amoroso</rs> —
-                            Poemas — <rs type="name" key="AC" role="author">Alberto
-                            Caeiro</rs></rs>. </item>
-                    <item>
-                        <rs type="work" key="O3" style="b"><rs type="title">Odes — <choice>
-                                    <abbr>Liv<am>.</am></abbr>
-                                    <expan>Liv<ex>ros</ex></expan>
-                                </choice> III.</rs> — <rs type="name" key="RR" role="author"
-                                >Ricardo Reis</rs></rs>. </item>
-                    <item>
-                        <rs type="title"><rs type="name" key="P84">Milton</rs> Superior a <rs
-                                type="person" key="P65">Shakespeare</rs></rs> — <rs type="name"
-                            key="P1" style="a">Antonio Móra</rs>. </item>
-                    <metamark rend="line" function="distinct"/>
-                </list>
-                <list>
-                    <head><hi rend="red">Quarto Caderno:</hi></head>
-                    <item>
-                        <rs type="title">Ensaio sobre a Disciplina</rs> — <rs type="name" key="P1"
-                            style="a">Antonio Móra</rs>. </item>
-                    <metamark rend="line" function="end"/>
-                </list>
+                <metamark rend="line-44" function="distinct"/>
+                <div>
+                    <head>Primeiro Caderno:</head>
+                    <list rend="indent">
+                        <item>
+                            <rs type="title">Prefacio</rs> — <rs type="name" key="P1" style="a"
+                                >Antonio Móra</rs>. </item>
+                        <item>
+                            <rs type="work" key="O2" style="b"><rs type="title">O Guardador de
+                                    Rebanhos</rs> — Poemas — <rs type="name" key="AC" role="author"
+                                    >Alberto Caeiro</rs>.</rs>
+                        </item>
+                        <item>
+                            <rs type="work" key="O3" style="b"><rs type="title">Odes — <choice>
+                                        <abbr>Liv<am>.</am></abbr>
+                                        <expan>Liv<ex>ros</ex></expan>
+                                    </choice> I e II.</rs> — <rs type="name" role="author" key="RR"
+                                    >Ricardo Reis</rs></rs>. </item>
+                        <item>
+                            <rs type="title">O Regresso dos Deuses</rs> — Estudo — <rs type="name"
+                                >Antonio Móra</rs>. </item>
+                    </list>
+                </div>
+                <metamark rend="line-44" function="distinct"/>
+                <div>
+                    <head>Segundo Caderno:</head>
+                    <list rend="indent">
+                        <item>
+                            <rs type="title">Introducção ao Estudo da Metaphysica</rs> — <rs
+                                type="name" key="P1" style="a">Antonio Móra</rs>. </item>
+                    </list>
+                </div>
+                <metamark rend="line-44" function="distinct"/>
+                <div>
+                    <head>Terceiro Caderno:</head>
+                    <list rend="indent">
+                        <item>
+                            <rs type="work" key="O2" style="c"><rs type="title">O Pastor
+                                    Amoroso</rs> — Poemas — <rs type="name" key="AC" role="author"
+                                    >Alberto Caeiro</rs></rs>. </item>
+                        <item>
+                            <rs type="work" key="O3" style="b"><rs type="title">Odes — <choice>
+                                        <abbr>Liv<am>.</am></abbr>
+                                        <expan>Liv<ex>ro</ex></expan>
+                                    </choice> III.</rs> — <rs type="name" key="RR" role="author"
+                                    >Ricardo Reis</rs></rs>. </item>
+                        <item>
+                            <rs type="title"><rs type="name" key="P84">Milton</rs> Superior a <rs
+                                    type="name" key="P65">Shakespeare</rs></rs> — <rs type="name"
+                                key="P1" style="a">Antonio Móra</rs>. </item>
+
+                    </list>
+                </div>
+                <metamark rend="line-44" function="distinct"/>
+                <div>
+                    <head>Quarto Caderno:</head>
+                    <list rend="indent">
+                        <item>
+                            <rs type="title">Ensaio sobre a Disciplina</rs> — <rs type="name"
+                                key="P1" style="a">Antonio Móra</rs>. </item>
+                    </list>
+                </div>
+                <metamark rend="line-44" function="end"/>
             </div>
         </body>
     </text>

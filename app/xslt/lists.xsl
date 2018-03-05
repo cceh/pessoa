@@ -52,11 +52,13 @@
                 <xsl:variable name="title">
                     <xsl:choose>
                         <xsl:when test="$lang='en'">name index</xsl:when>
+                        <xsl:when test="$lang='de'">Index Namen</xsl:when>
                         <xsl:otherwise>índice de nomes</xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
                 <h2><xsl:choose>
                     <xsl:when test="$lang='en'">Names</xsl:when>
+                    <xsl:when test="$lang='de'">Namen</xsl:when>
                     <xsl:otherwise>Nomes</xsl:otherwise>
                 </xsl:choose></h2>
                 <ul>
@@ -82,11 +84,13 @@
                 <xsl:variable name="title">
                     <xsl:choose>
                         <xsl:when test="$lang='en'">index of titles</xsl:when>
+                        <xsl:when test="$lang='de'">Index Titel</xsl:when>
                         <xsl:otherwise>índice de títulos</xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
                 <h2><xsl:choose>
                     <xsl:when test="$lang='en'">Titles</xsl:when>
+                    <xsl:when test="$lang='de'">Titel</xsl:when>
                     <xsl:otherwise>Títulos</xsl:otherwise>
                 </xsl:choose></h2>
                 <ul>
@@ -101,11 +105,13 @@
                 <xsl:variable name="title">
                     <xsl:choose>
                         <xsl:when test="$lang='en'">index of periodicals</xsl:when>
+                        <xsl:when test="$lang='de'">Index Zeitschriften</xsl:when>
                         <xsl:otherwise>índice de periódicos</xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
                 <h2><xsl:choose>
                     <xsl:when test="$lang='en'">Periodicals</xsl:when>
+                    <xsl:when test="$lang='de'">Zeitschriften</xsl:when>
                     <xsl:otherwise>Periódicos</xsl:otherwise>
                 </xsl:choose></h2>
                 <ul>

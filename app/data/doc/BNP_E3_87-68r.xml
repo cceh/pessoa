@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -54,8 +55,9 @@
                     </msIdentifier>
                     <msContents>
                         <summary>
-                            <p> Lista datilografada, publicada em <hi rend="italic">Obras de <rs type="name" key="P1">António
-                                Mora</rs></hi> (2002, 168). </p>
+                            <p> Lista datilografada, publicada em <hi rend="italic">Obras de <rs
+                                        type="name" key="P1">António Mora</rs></hi> (2002, 168).
+                            </p>
                         </summary>
                         <msItemStruct>
                             <author>
@@ -87,59 +89,62 @@
     <text>
         <body>
             <div>
-                <head><hi rend="red"><rs type="periodical" key="J2">ATHENA</rs> — cadernos de cultura
-                        superior.</hi></head>
-                <metamark rend="line red" function="distinct"/>
+                <head><rs type="periodical" key="J2">ATHENA</rs> — cadernos de cultura
+                    superior.</head>
+                <metamark rend="line-14-center" function="distinct"/>
                 <ab rend="right">(type “Mercure”)</ab>
                 <list>
-                    <head><hi rend="underline red">No.I:</hi></head>
-                    <item>
+                    <head><hi rend="underline">No.I:</hi></head>
+                    <item rend="indent-2">
                         <label>1.</label>
                         <rs type="title">Manifesto em favôr da <rs type="place">Allemanha</rs>, e do
                             seu<lb/>procedimento na guerra presente........</rs><lb/>— <rs
                             type="name" key="P1" style="a">Antonio Móra</rs>. </item>
-                    <item>
+                    <item rend="indent-2">
                         <label>2.</label>
-                        <rs type="work" key="O2"><rs type="title" style="b">O Guardador de Rebanhos —
-                                poemas</rs> — <rs type="name" key="AC" role="author">Alberto
+                        <rs type="work" key="O2" style="b"><rs type="title">O Guardador de Rebanhos
+                                — poemas</rs> — <rs type="name" key="AC" role="author">Alberto
                                 <lb/>Caeiro</rs></rs>. </item>
-                    <item>
+                    <item rend="indent-2">
                         <label>3.</label>
                         <rs type="title">Introducção ao estudo do problema nacional</rs><lb/> — <rs
-                            type="person" key="FP" role="author" style="a">Fernando Pessôa</rs>. </item>
-                    <item>
+                            type="name" key="FP" role="author" style="a">Fernando Pessôa</rs>. </item>
+                    <item rend="indent-2">
                         <label>4.</label>
                         <rs type="title">Eschylo — Prometheu Preso</rs> — vertido do
-                        gre<pc>-</pc><lb/>go por — <rs type="name" key="RR" role="translator"
-                            >Ricardo Reis</rs>. </item>
+                        gre<pc>-</pc><lb/>go por <rs type="name" key="RR" role="translator">Ricardo
+                            Reis</rs>. </item>
                     <item>
                         <label>5.</label> Notas e commentarios. </item>
                 </list>
-                <metamark rend="line" function="distinct"/>
+                <metamark rend="line-44" function="distinct"/>
                 <list>
-                    <head><hi rend="underline-red">No.2:</hi></head>
-                    <item>
+                    <head><hi rend="underline">No.2:</hi></head>
+                    <item rend="indent-2">
                         <label>1.</label>
-                        <rs type="title">A Guerra — estudo sociologico</rs> — — <rs type="name"
+                        <rs type="title">A Guerra — estudo sociologico</rs> — <rs type="name"
                             key="FP" role="author" style="a">Fernando <lb/>Pessôa</rs>.</item>
                     <item>
                         <label>2.</label>
-                        <rs type="work" key="O3" style="b"><rs type="title">Odes — livros I e II</rs>
-                            — <rs type="name" key="RR" role="author">Ricardo Reis</rs></rs>. </item>
+                        <rs type="work" key="O3" style="b"><rs type="title">Odes — livros I e
+                                II</rs> — <rs type="name" key="RR" role="author">Ricardo
+                            Reis</rs></rs>. </item>
                     <item>
                         <label>3.</label>
-                        <metamark rend="line" function="placeholder"/>
-                        <hi rend="red">(some new collaborator)</hi>
-                    </item>
+                        <choice>
+                            <abbr><metamark rend="line-14" function="placeholder"/></abbr>
+                            <expan><supplied resp="PS" reason="omitted-in-original"/></expan>
+                        </choice> (some new collaborator) </item>
                     <item>
                         <label>4.</label>
-                        <metamark rend="line" function="placeholder"/>
-                        <hi rend="red">(some translation)</hi>
-                    </item>
+                        <choice>
+                            <abbr><metamark rend="line-14" function="placeholder"/></abbr>
+                            <expan><supplied resp="PS" reason="omitted-in-original"/></expan>
+                        </choice> (some translation) </item>
                     <item>
                         <label>5.</label> Notas e commentarios. </item>
                 </list>
-                <metamark rend="line" function="distinct"/>
+                <metamark rend="line-44" function="distinct"/>
             </div>
         </body>
     </text>

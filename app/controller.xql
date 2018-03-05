@@ -1,6 +1,6 @@
 xquery version "3.0";
 (:~
-: Hautpmodul zur kontrolle der URL Weiterleitung und der Zugriffskontrolle von vorhandenen Resourcen
+: Hautpmodul zur Kontrolle der URL-Weiterleitung und der Zugriffskontrolle von vorhandenen Resourcen
 :
 : @author Ben Bigalke
 : @version 1.0
@@ -49,7 +49,7 @@ declare function local:logged-in() as xs:boolean {
 };
 
 declare function local:Restriction() as xs:boolean{
-    let $sites :=  ((for $s in ($exist:sites,"doc","pub") return concat($s,'/')),"search","timeline","network","events.xml",'validation')
+    let $sites :=  ((for $s in ($exist:sites,"doc","pub") return concat($s,'/')),"search","timeline-caeiro","timeline","network","events.xml","events-caeiro.xml",'validation')
     return if(helpers:contains-any-of($exist:path,$sites)) then
         for $s in $sites
             let $p := replace($s,'/','')
@@ -58,8 +58,10 @@ declare function local:Restriction() as xs:boolean{
                 case "doc" return local:resRestritction()
                 case "pub" return local:resRestritction()
                 case "search" return true()
+                case "timeline-caeiro" return true()
                 case "timeline" return true()
                 case "events.xml" return true()
+                case "events-caeiro.xml" return true()
                 case "network" return true()
                 case "genre" return local:DirRestriction($p)
                 case "authors" return local:DirRestriction($p)
@@ -87,7 +89,7 @@ declare function local:DirRestriction($id) as xs:boolean {
 };
 
 declare function local:pathi() {
-    let $sites := ($exist:sites,"doc","pub","search","timeline","BNP","CP","network")
+    let $sites := ($exist:sites,"doc","pub","search","timeline-caeiro","timeline","BNP","CP","network")
     let $path := if(contains($exist:path,$helpers:web-language))
                     then substring-after($exist:path,concat($helpers:web-language,"/"))
                 else if(contains($exist:path,'data'))
@@ -213,6 +215,11 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
                                 <redirect url="index.html"/>
                             </dispatch>
                     )
+                    else  if (contains($exist:path, "events-caeiro")) then
+                            let $language := request:get-parameter("lang",'pt')
+                            return
+                                transform:transform((collection("/db/apps/pessoa/data/doc"), collection("/db/apps/pessoa/data/pub"))//tei:TEI, doc("/db/apps/pessoa/xslt/events-caeiro.xsl"), <parameters><param name="language" value="{$language}"/><param name="basepath" value="{$exist:controller}"></param></parameters>)
+                     
                       else  if (contains($exist:path, "events")) then
                             let $language := request:get-parameter("lang",'pt')
                             return
@@ -385,7 +392,33 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
                                                             </error-handler>
                                                         </dispatch>
                                                     )
-
+                                           else if (contains($exist:path,"timeline-caeiro") and not(contains($exist:path,'resources'))) then
+                                                        (
+                                                            if( not(contains($exist:path,$helpers:web-language))) then
+                                                                (
+                                                                    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+                                                                        <redirect url="{$config:app-root}/{$helpers:web-language}/timeline-caeiro" />
+                                                                        <view>
+                                                                            <forward url="{$exist:controller}/modules/view.xql"/>
+                                                                        </view>
+                                                                        <error-handler>
+                                                                            <forward url="{$exist:controller}/error-page.html" method="get"/>
+                                                                            <forward url="{$exist:controller}/modules/view.xql"/>
+                                                                        </error-handler>
+                                                                    </dispatch>)
+                                                            else
+                                                                (
+                                                                    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+                                                                        <forward url="{$exist:controller}/page/timeline-caeiro.html" />
+                                                                        <view>
+                                                                            <forward url="{$exist:controller}/modules/view.xql"/>
+                                                                        </view>
+                                                                        <error-handler>
+                                                                            <forward url="{$exist:controller}/error-page.html" method="get"/>
+                                                                            <forward url="{$exist:controller}/modules/view.xql"/>
+                                                                        </error-handler>
+                                                                    </dispatch>)
+                                                        )
                                                 else if (contains($exist:path,"timeline") and not(contains($exist:path,'resources'))) then
                                                         (
                                                             if( not(contains($exist:path,$helpers:web-language))) then

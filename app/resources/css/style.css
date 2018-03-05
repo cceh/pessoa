@@ -204,6 +204,9 @@ label{
     padding-left: 0px;
 }
 
+
+
+
 /* MATCH HIGHLIGTING */
 .hi{
     background-color: #bbbbbb;
@@ -1409,6 +1412,9 @@ div.text div.list {
     z-index:1;
     position:relative;
 }
+div.text div.list.indent, div.text table.indent {
+    margin-left: 3em;
+}
 div.text p {
     padding-left: 1.1em;
     margin: 1em 0;
@@ -1486,6 +1492,9 @@ div.text div.item span.label {
 }
 div.text div.item sup {
     vertical-align: middle;
+}
+div.text p.center {
+    text-align: center;
 }
 div.text p.right {
     text-align: right;
@@ -1945,4 +1954,11 @@ div.text#BNP_E3_20-65r hr.line-14 {
 div.text#BNP_E3_48B-8r span.above {
     left: 4em;
 }
-
+/* BNP_E3_48-27r */
+div.text#BNP_E3_48-27r .item#I7 .label {
+    width: 3.8em;
+}
+/* BNP_E3_71A-2v */
+div.text#BNP_E3_71A-2v .metamark.quotes.ditto {
+    width: 100px;
+}

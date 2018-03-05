@@ -290,7 +290,7 @@ declare %templates:wrap function page:createTimelineBody($node as node(), $model
     return  $body
 };
 
-declare  function page:createTimelineHeader($node as node(), $model as map(*)) as node()* {
+declare function page:createTimelineHeader($node as node(), $model as map(*)) as node()* {
     let $lists := doc('/db/apps/pessoa/data/lists.xml')
 
         let $script1:=
@@ -313,8 +313,6 @@ declare  function page:createTimelineHeader($node as node(), $model as map(*)) a
         theme.event.bubble.height = 150;
         theme.event.tape.height = 10;
         theme.event.track.gap = -7;
-
-
 
         var data = Timeline.DateTime.parseGregorianDateTime("Oct 02 1921")
         var bandInfos = [
@@ -354,10 +352,6 @@ declare  function page:createTimelineHeader($node as node(), $model as map(*)) a
         theme:      theme
         }});
 
-
-
-
-
         bandInfos[0].syncWith = 2;
         bandInfos[1].syncWith = 2;
         bandInfos[1].highlight = false;
@@ -373,8 +367,6 @@ declare  function page:createTimelineHeader($node as node(), $model as map(*)) a
         }})
         ];
 
-
-
         tl = Timeline.create(document.getElementById("my-timeline"), bandInfos, Timeline.HORIZONTAL);
         tl.loadXML("../events.xml?lang={$helpers:web-language}", function(xml, url) {{
         eventSource.loadXML(xml, url);
@@ -384,6 +376,92 @@ declare  function page:createTimelineHeader($node as node(), $model as map(*)) a
     return ($script1,$script2,$script3)
 };
 
+(: ########### Special timeline: Caeiro ##############:)
+declare function page:createTimelineHeader_Caeiro($node as node(), $model as map(*)) as node()* {
+    let $lists := doc('/db/apps/pessoa/data/lists.xml')
+
+        let $script1:=
+        <script>
+        Timeline_ajax_url="{$helpers:app-root}/resources/timeline/timeline_ajax/simile-ajax-api.js";
+        Timeline_urlPrefix='{$helpers:app-root}/resources/timeline/timeline_js/';
+        Timeline_parameters='bundle=true';
+        </script>
+    let $script2 :=
+        <script src="{concat($helpers:app-root,'/resources/timeline/timeline_js/timeline-api.js')}"
+         type="text/javascript">
+       </script>
+    let $script3 := <script type="text/javascript">
+        var tl;
+        function onLoad() {{
+        var eventSource = new Timeline.DefaultEventSource(0);
+
+        var theme = Timeline.ClassicTheme.create();
+        theme.event.bubble.width = 300;
+        theme.event.bubble.height = 150;
+        theme.event.tape.height = 20;
+        theme.event.track.gap = -7;
+
+        var data = Timeline.DateTime.parseGregorianDateTime("Oct 02 1917")
+        var bandInfos = [
+        Timeline.createBandInfo({{
+        width:          "5%",
+        intervalUnit:   Timeline.DateTime.DECADE,
+        intervalPixels: 2000,
+        date:           data,
+        showEventText:  false,
+        theme:          theme
+        }}),
+
+        Timeline.createBandInfo({{
+        width:          "5%",
+        intervalUnit:   Timeline.DateTime.YEAR,
+        intervalPixels: 200,
+        date:           data,
+        showEventText:  false,
+        theme:          theme
+
+        }}),
+
+        Timeline.createBandInfo({{
+        width:          "85%",
+        intervalUnit:   Timeline.DateTime.YEAR,
+        intervalPixels: 200,
+        eventSource:    eventSource,
+        date:           data,
+        position:       false,
+        theme:          theme
+
+        }})
+        ];
+        bandInfos[0].etherPainter = new Timeline.YearCountEtherPainter({{
+        startDate:  "Jun 13 1888",
+        multiple:   1,
+        theme:      theme
+        }});
+
+        bandInfos[0].syncWith = 2;
+        bandInfos[1].syncWith = 2;
+        bandInfos[1].highlight = false;
+        bandInfos[0].decorators = [
+        new Timeline.SpanHighlightDecorator({{
+        startDate:  "Jun 13 1888",
+        endDate:    "Nov 30 1935",
+        startLabel: "{helpers:singleElementInList_xQuery("timeline","birth")}",
+        endLabel:   "{helpers:singleElementInList_xQuery("timeline","death")}",
+        color:      "#B8B8E6",
+        opacity:    50,
+        theme:      theme
+        }})
+        ];
+
+        tl = Timeline.create(document.getElementById("my-timeline"), bandInfos, Timeline.HORIZONTAL);
+        tl.loadXML("../events-caeiro.xml?lang={$helpers:web-language}", function(xml, url) {{
+        eventSource.loadXML(xml, url);
+        }});
+        }}
+    </script>
+    return ($script1,$script2,$script3)
+};
 
 
 (: ########### Zitation ##############:)

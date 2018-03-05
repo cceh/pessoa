@@ -54,9 +54,9 @@
                             </xsl:choose>
                         </xsl:otherwise>
                     </xsl:choose>
-                    <xsl:attribute name="caption">
+                    <!--<xsl:attribute name="caption">
                         <xsl:value-of select=".//origDate | .//imprint/date"/>
-                    </xsl:attribute>
+                    </xsl:attribute>-->
                     <xsl:attribute name="link">
                         <xsl:variable name="filename" select=".//idno[@type='filename']"/>
                         <xsl:choose>
@@ -71,30 +71,43 @@
                     <xsl:attribute name="icon">
                         <xsl:text>resources/images/circle_event.png</xsl:text>
                     </xsl:attribute>
-                    <xsl:text>Fernando Pessoa, </xsl:text>
-                    <xsl:value-of select=".//origDate | .//imprint/date"/>
-                    <xsl:text>, </xsl:text>
+                    <xsl:value-of select="(.//author)[1]/rs"/><xsl:text>, </xsl:text>
+                    <xsl:value-of select=".//origDate | .//imprint/date"/><xsl:text>, </xsl:text>
                     <xsl:choose>
                         <xsl:when test="$language='pt'">
                             <xsl:value-of select="string-join(.//note[@type='genre']/rs, '/')"/>
                         </xsl:when>
-                        <xsl:when test="$language='en'">
-                            <xsl:if test=".//note[@type='genre']/rs[@key='lista_editorial'] ">
-                                <xsl:value-of select="substring-after(doc('/db/apps/pessoa/data/lists.xml')//list[@type='genres' and @xml:lang='en']/item[@corresp='#lista_editorial'],'#lista_editorial')"/>
+                        <xsl:when test="$language='de'">
+                            <xsl:if test=".//note[@type='genre']/rs[@key='lista_editorial']">
+                                <xsl:value-of select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type='genres']/item[@xml:id='editorial_list']/term[@xml:lang='de']"/>
                             </xsl:if>
                             <xsl:if test=".//note[@type='genre']/rs[@key='nota_editorial']">
-                                <xsl:value-of select="substring-after(doc('/db/apps/pessoa/data/lists.xml')//list[@type='genres' and @xml:lang='en']/item[@corresp='#nota_editorial'],'#nota_editorial')"/>
+                                <xsl:value-of select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type='genres']/item[@xml:id='editorial_note']/term[@xml:lang='de']"/>
                             </xsl:if>
                             <xsl:if test=".//note[@type='genre']/rs[@key='plano_editorial']">
-                                <xsl:value-of select="substring-after(doc('/db/apps/pessoa/data/lists.xml')//list[@type='genres' and @xml:lang='en']/item[@corresp='#plano_editorial'],'#plano_editorial')"/>
+                                <xsl:value-of select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type='genres']/item[@xml:id='editorial_plan']/term[@xml:lang='de']"/>
                             </xsl:if>
                             <xsl:if test=".//note[@type='genre']/rs[@key='poesia']">
-                                <xsl:value-of select="substring-after(doc('/db/apps/pessoa/data/lists.xml')//list[@type='genres' and @xml:lang='en']/item[@corresp='#poesia'], '#poesia')"/>
+                                <xsl:value-of select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type='genres']/item[@xml:id='poetry']/term[@xml:lang='de']"/>
+                            </xsl:if>
+                        </xsl:when>
+                        <xsl:when test="$language='en'">
+                            <xsl:if test=".//note[@type='genre']/rs[@key='lista_editorial']">
+                                <xsl:value-of select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type='genres']/item[@xml:id='editorial_list']/term[@xml:lang='en']"/>
+                            </xsl:if>
+                            <xsl:if test=".//note[@type='genre']/rs[@key='nota_editorial']">
+                                <xsl:value-of select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type='genres']/item[@xml:id='editorial_note']/term[@xml:lang='en']"/>
+                            </xsl:if>
+                            <xsl:if test=".//note[@type='genre']/rs[@key='plano_editorial']">
+                                <xsl:value-of select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type='genres']/item[@xml:id='editorial_plan']/term[@xml:lang='en']"/>
+                            </xsl:if>
+                            <xsl:if test=".//note[@type='genre']/rs[@key='poesia']">
+                                <xsl:value-of select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type='genres']/item[@xml:id='poetry']/term[@xml:lang='en']"/>
                             </xsl:if>
                         </xsl:when>
                         <xsl:otherwise>
                         </xsl:otherwise>
-                    </xsl:choose>
+                    </xsl:choose><xsl:text>.</xsl:text>
                 </events>
             </xsl:for-each>
         </data>

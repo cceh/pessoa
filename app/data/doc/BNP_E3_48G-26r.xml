@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -54,8 +55,8 @@
                     </msIdentifier>
                     <msContents>
                         <summary>
-                            <p> Lista manuscrita, publicada em <hi rend="italic">Obras de António Mora
-                            </hi>(2002, 163). </p>
+                            <p> Lista manuscrita, publicada em <hi rend="italic">Obras de António
+                                    Mora</hi> (2002, 163). </p>
                         </summary>
                         <msItemStruct>
                             <author>
@@ -88,22 +89,22 @@
             <div>
                 <gap reason="selection" unit="line" extent="5"/>
                 <list>
-                    <head>
+                    <head rend="center">
                         <hi rend="underline"><rs type="periodical" key="J2">ATHENA</rs>:</hi><seg
                             rend="right">100 reis</seg><lb/> Cadernos (quinzenaes) de
                             cultura<lb/><seg rend="right">superior</seg>
                     </head>
-                    <item>
+                    <item rend="indent-2">
                         <label>1.</label>
                         <rs type="name" key="P1" style="a"><hi rend="underline">Antonio
                             Móra</hi></rs>: <rs type="title">A Attitude da <rs type="place"
                                     >Alle<pc>-</pc><lb/>manha</rs></rs>. </item>
-                    <item>
+                    <item rend="indent-2">
                         <label>2.</label>
                         <rs type="work" key="O2" style="b"><rs type="name" key="AC" role="author"
                                     ><hi rend="underline">Alberto Caeiro</hi></rs>: <rs type="title"
                                 >O Guardador de <lb/>Rebanhos</rs></rs>. </item>
-                    <item>
+                    <item rend="indent-2">
                         <label>3.</label>
                         <rs type="name" key="FP" role="author" style="a"><hi rend="underline"
                                 >Fernando Pessôa</hi></rs>: <rs type="title">Introducção ao<lb/>
@@ -118,8 +119,9 @@
                         <rs type="name" key="P1" style="a"><hi rend="underline">Antonio
                             Móra</hi></rs>: <rs type="title">Prolegomenos</rs>. </item>
                 </list>
-                <metamark rend="line" function="distinct"/>
-                <ab rend="right">Compendio de politica<lb/> positiva<lb/> (sociologia politica).</ab>
+                <metamark rend="line-44" function="distinct"/>
+                <ab rend="center">Compendio de politica<lb/> positiva<lb/> (sociologia
+                    politica).</ab>
             </div>
         </body>
     </text>

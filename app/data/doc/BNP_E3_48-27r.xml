@@ -55,8 +55,8 @@
                     </msIdentifier>
                     <msContents>
                         <summary>
-                            <p> Lista manuscrita, publicada em <hi rend="italic">Alberto Caeiro</hi>. <hi
-                                rend="italic">Poesia</hi> (2001, 203-204). </p>
+                            <p> Lista manuscrita, publicada em <hi rend="italic">Alberto
+                                Caeiro</hi>. <hi rend="italic">Poesia</hi> (2001, 203-204). </p>
                         </summary>
                         <msItemStruct>
                             <author>
@@ -89,14 +89,14 @@
                 <list>
                     <head>
                         <hi rend="underline">
-                            <rs type="work" key="O2" style="a"><rs type="name" key="AC"
+                            <rs type="work" key="O2" style="g"><rs type="name" key="AC"
                                     role="author">Alberto Caeiro:</rs></rs>
                         </hi>
                     </head>
                     <item>
                         <label>1.</label>
                         <rs type="work" key="O2-1"><rs type="title">Eu nunca guardei
-                            rebanhos...</rs></rs>
+                                rebanhos...</rs></rs>
                     </item>
                     <item>
                         <label>2.</label>
@@ -123,7 +123,7 @@
                         <rs type="work" key="O2-6"><rs type="title">Pensar em Deus é desobedecer a
                                 Deus...</rs></rs>
                     </item>
-                    <item>
+                    <item xml:id="I7">
                         <label>7 a 33</label> (several). </item>
                     <item>
                         <label>34.</label>
@@ -142,7 +142,7 @@
                     </item>
                     <item>
                         <label>37.</label>
-                        <rs type="work" key="O2-37"><rs type="title">Num dia excessivamente
+                        <rs type="work" key="O2-37"><rs type="title">N'um dia excessivamente
                                 nitido...</rs></rs>
                     </item>
                     <item>
@@ -155,7 +155,7 @@
                         <rs type="work" key="O2-39"><subst>
                                 <del n="1" rend="overstrike"><rs type="title">Estas 4 canções
                                         escrevi-as estando doente</rs>.</del>
-                                <add n="2"><rs type="title">On his poetry</rs>.</add>
+                                <add><rs type="title">On his poetry</rs>.</add>
                             </subst></rs>
                     </item>
                     <item>
@@ -187,11 +187,12 @@
                         <supplied resp="PS" reason="omitted-in-original"/>
                     </item>
                 </list>
-                <ab rend="centered">(perhaps there are more than these).</ab>
-                <ab rend="centered">(Try to reach 50, or, at the <lb/> very least, 45)<lb/> or 49
-                    (44, 45, 46, 47, 48,49) </ab>
-                <metamark rend="line" function="distinct"/>
-                <list>
+                <ab rend="center">(perhaps there are more than these).</ab>
+                <ab rend="center">(Try to reach 50, or, at the <lb/> very least, 45)</ab>
+                <ab rend="right"><note n="2">or 49 (44,
+                    45, 46, 47, 48,49)</note></ab>
+                <metamark rend="line-44" function="distinct"/>
+                <div>
                     <head>
                         <hi rend="underline">
                             <rs type="name" key="AC" role="author">
@@ -206,23 +207,30 @@
                             </rs>
                         </hi>
                     </head>
-                    <item>
-                        <label>1.</label>
-                        <rs type="work" key="O2" style="b"><rs type="title">O Guardador de
-                                Rebanhos</rs></rs>. <note>1911-1912</note>
-                    </item>
-                    <item>
-                        <label>2.</label>
-                        <rs type="title">Cinco Odes Futuristas</rs>. <note>(1913)-1914</note>
-                    </item>
-                    <item>
-                        <label>3.</label>
-                        <rs type="work" key="O1-9"><rs type="title">Chuva Obliqua</rs></rs>
-                        <note>1914</note>.<lb/> (<rs type="title">Poemas <choice>
-                                <abbr>Inters</abbr>
-                                <expan>Inters<ex>eccionistas</ex></expan>
-                            </choice></rs>) </item>
-                </list>
+                    <table>
+                        <row>
+                            <cell>1.</cell>
+                            <cell><rs type="work" key="O2" style="b"><rs type="title">O Guardador de
+                                        Rebanhos</rs></rs>.</cell>
+                            <cell>1911-1912</cell>
+                        </row>
+                        <row>
+                            <cell>2.</cell>
+                            <cell><rs type="title">Cinco Odes Futuristas</rs>.</cell>
+                            <cell>(1913)-1914</cell>
+                        </row>
+                        <row>
+                            <cell>3.</cell>
+                            <cell>
+                                <rs type="work" key="O1-9"><rs type="title">Chuva Obliqua</rs></rs>
+                                    (<rs type="title">Poemas <choice>
+                                        <abbr>Inters</abbr>
+                                        <expan>Inters<ex>eccionistas</ex></expan>
+                                    </choice></rs>). </cell>
+                            <cell>1914.</cell>
+                        </row>
+                    </table>
+                </div>
             </div>
         </body>
     </text>
