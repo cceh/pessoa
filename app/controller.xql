@@ -49,7 +49,7 @@ declare function local:logged-in() as xs:boolean {
 };
 
 declare function local:Restriction() as xs:boolean{
-    let $sites :=  ((for $s in ($exist:sites,"doc","pub") return concat($s,'/')),"search","timeline-caeiro","timeline","network","events.xml","events-caeiro.xml",'validation')
+    let $sites :=  ((for $s in ($exist:sites,"doc","pub") return concat($s,'/')),"search","timeline-caeiro","timeline","network","events.xml","events-caeiro.xml", "events-collections.xml",'validation')
     return if(helpers:contains-any-of($exist:path,$sites)) then
         for $s in $sites
             let $p := replace($s,'/','')
@@ -215,6 +215,11 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
                                 <redirect url="index.html"/>
                             </dispatch>
                     )
+                    else  if (contains($exist:path, "events-collections")) then
+                            let $language := request:get-parameter("lang",'pt')
+                            return
+                                transform:transform((collection("/db/apps/pessoa/data/doc"), collection("/db/apps/pessoa/data/pub"))//tei:TEI, doc("/db/apps/pessoa/xslt/events-collections.xsl"), <parameters><param name="language" value="{$language}"/><param name="basepath" value="{$exist:controller}"></param></parameters>)
+                   
                     else  if (contains($exist:path, "events-caeiro")) then
                             let $language := request:get-parameter("lang",'pt')
                             return

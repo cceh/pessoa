@@ -669,5 +669,9 @@
         <xsl:text>/</xsl:text><xsl:apply-templates/><xsl:text>/</xsl:text>
     </xsl:template>
     
+    <!-- Unclear -->
+    <xsl:template match="unclear" mode="#default deletion addition">
+        <xsl:text>*</xsl:text><xsl:apply-templates/>
+    </xsl:template>
 
 </xsl:stylesheet>

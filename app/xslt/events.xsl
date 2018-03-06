@@ -2,6 +2,9 @@
     <xsl:param name="language"/>
     <xsl:param name="basepath"/>
     <xsl:output method="xml"/>
+    
+    <!-- author: Ulrike Henny -->
+    
     <xsl:template match="/">
         <data>
             <xsl:for-each select="//TEI">

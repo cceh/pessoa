@@ -7,6 +7,8 @@
     
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
     
+    <!-- author: Ulrike Henny -->
+    
     <xsl:param name="lang">pt</xsl:param>
     <xsl:param name="host">http://pessoadigital.pt</xsl:param>
     

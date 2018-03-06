@@ -394,11 +394,12 @@ declare function page:createTimelineHeader_Caeiro($node as node(), $model as map
         var tl;
         function onLoad() {{
         var eventSource = new Timeline.DefaultEventSource(0);
+        var eventSource2 = new Timeline.DefaultEventSource(0);
 
         var theme = Timeline.ClassicTheme.create();
         theme.event.bubble.width = 300;
-        theme.event.bubble.height = 150;
-        theme.event.tape.height = 20;
+        theme.event.bubble.height = 50;
+        theme.event.tape.height = 10;
         theme.event.track.gap = -7;
 
         var data = Timeline.DateTime.parseGregorianDateTime("Oct 02 1917")
@@ -423,7 +424,18 @@ declare function page:createTimelineHeader_Caeiro($node as node(), $model as map
         }}),
 
         Timeline.createBandInfo({{
-        width:          "85%",
+        width:          "10%",
+        intervalUnit:   Timeline.DateTime.YEAR,
+        intervalPixels: 200,
+        eventSource:   eventSource2,
+        date:           data,
+        position:       false,
+        theme:          theme
+
+        }}),
+        
+        Timeline.createBandInfo({{
+        width:          "75%",
         intervalUnit:   Timeline.DateTime.YEAR,
         intervalPixels: 200,
         eventSource:    eventSource,
@@ -432,6 +444,8 @@ declare function page:createTimelineHeader_Caeiro($node as node(), $model as map
         theme:          theme
 
         }})
+        
+        
         ];
         bandInfos[0].etherPainter = new Timeline.YearCountEtherPainter({{
         startDate:  "Jun 13 1888",
@@ -439,8 +453,9 @@ declare function page:createTimelineHeader_Caeiro($node as node(), $model as map
         theme:      theme
         }});
 
-        bandInfos[0].syncWith = 2;
-        bandInfos[1].syncWith = 2;
+        bandInfos[0].syncWith = 3;
+        bandInfos[1].syncWith = 3;
+        bandInfos[2].syncWith = 3;
         bandInfos[1].highlight = false;
         bandInfos[0].decorators = [
         new Timeline.SpanHighlightDecorator({{
@@ -456,7 +471,10 @@ declare function page:createTimelineHeader_Caeiro($node as node(), $model as map
 
         tl = Timeline.create(document.getElementById("my-timeline"), bandInfos, Timeline.HORIZONTAL);
         tl.loadXML("../events-caeiro.xml?lang={$helpers:web-language}", function(xml, url) {{
-        eventSource.loadXML(xml, url);
+            eventSource.loadXML(xml, url);
+        }});
+        tl.loadXML("../events-collections.xml?lang={$helpers:web-language}", function(xml, url) {{
+            eventSource2.loadXML(xml, url);
         }});
         }}
     </script>
