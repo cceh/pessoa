@@ -470,10 +470,19 @@ declare function page:createTimelineHeader_Caeiro($node as node(), $model as map
         ];
 
         tl = Timeline.create(document.getElementById("my-timeline"), bandInfos, Timeline.HORIZONTAL);
+        /*
         tl.loadXML("../events-caeiro.xml?lang={$helpers:web-language}", function(xml, url) {{
             eventSource.loadXML(xml, url);
         }});
         tl.loadXML("../events-collections.xml?lang={$helpers:web-language}", function(xml, url) {{
+            eventSource2.loadXML(xml, url);
+        }});
+        */
+        // load static data:
+        tl.loadXML("../data/timelines/events-caeiro.xml", function(xml, url) {{
+            eventSource.loadXML(xml, url);
+        }});
+        tl.loadXML("../data/timelines/events-collections.xml", function(xml, url) {{
             eventSource2.loadXML(xml, url);
         }});
         }}

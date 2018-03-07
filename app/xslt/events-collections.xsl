@@ -118,14 +118,15 @@
                         <xsl:value-of select="$doc-title"/>
                     </xsl:attribute>
                     <xsl:attribute name="icon">
-                        <xsl:text>resources/images/circle_event.png</xsl:text>
+                        <xsl:value-of
+                            select="concat($host, '/resources/images/circle_event.png')"/>
                     </xsl:attribute> &lt;a href="<xsl:value-of select="$link"/>"&gt;<xsl:value-of
                         select="$doc-title"/>&lt;/a&gt;&lt;br/&gt; <xsl:value-of
                         select="(ancestor::TEI//author)[1]/rs"/><xsl:text>, </xsl:text>
                     <xsl:value-of select="$origDate | $imprintDate"/><xsl:text>, </xsl:text>
                     <xsl:choose>
                         <xsl:when test="$language = 'pt'">
-                            <xsl:value-of select="string-join(.//note[@type = 'genre']/rs, '/')"/>
+                            <xsl:value-of select="string-join($genre, '/')"/>
                         </xsl:when>
                         <xsl:when test="$language = 'de'">
                             <xsl:for-each select="$genre">
@@ -182,7 +183,7 @@
                             </xsl:for-each>
                         </xsl:when>
                         <xsl:otherwise> </xsl:otherwise>
-                    </xsl:choose><xsl:text>.</xsl:text> &lt;br/&gt; <xsl:if
+                    </xsl:choose><xsl:text>.</xsl:text> &lt;br/&gt; <!--<xsl:if
                         test="ancestor::TEI//rs[@type = 'name']"> &lt;p&gt;<xsl:choose>
                             <xsl:when test="$language = 'de'">Erwähnte Namen:</xsl:when>
                             <xsl:when test="$language = 'en'">Mencioned names:</xsl:when>
@@ -250,7 +251,7 @@
                             class="timelineImg" src="<xsl:value-of
                                 select="string-join(($host, 'resources/images/glyphicons-609-newspaper.png'), '/')"
                             />"/&gt;&lt;/a&gt;&lt;/li&gt; </xsl:for-each-group> &lt;/ul&gt;
-                    </xsl:if>
+                    </xsl:if>-->
                 </events>
             </xsl:for-each>
         </data>
