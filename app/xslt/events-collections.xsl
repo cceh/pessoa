@@ -19,6 +19,8 @@
                     select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'collections']/item[@xml:id = $coll-id]/ptr[@type = 'title']/substring-after(@target, '#')"/>
                 <xsl:variable name="coll-title"
                     select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'titles']/item[@xml:id = $title-id]/title/text()"/>
+                <xsl:variable name="journal-id" select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'collections']/item[@xml:id = $coll-id]/ptr[@type = 'journal']/substring-after(@target, '#')"/>
+                <xsl:variable name="journal-title" select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'periodical']/item[@xml:id = $journal-id]"/>
                 <xsl:variable name="origDate" select="ancestor::TEI//origDate"/>
                 <xsl:variable name="imprintDate" select="ancestor::TEI//imprint/date"/>
                 <xsl:variable name="filename" select="ancestor::TEI//idno[@type = 'filename']"/>
@@ -61,7 +63,7 @@
                 </xsl:variable>
                 <events>
                     <xsl:attribute name="title">
-                        <xsl:value-of select="$coll-title"/>
+                        <xsl:value-of select="if ($coll-title) then $coll-title else $journal-title"/>
                     </xsl:attribute>
                     <xsl:for-each select="$origDate | $imprintDate">
                         <xsl:attribute name="start">

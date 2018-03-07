@@ -372,6 +372,7 @@
         
     </xsl:template>-->
     
+    
     <xsl:template match="note[@place = 'margin-right']" mode="#default deletion addition">
         <xsl:call-template name="note-margin-right"/>
     </xsl:template>

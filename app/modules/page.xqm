@@ -424,7 +424,7 @@ declare function page:createTimelineHeader_Caeiro($node as node(), $model as map
         }}),
 
         Timeline.createBandInfo({{
-        width:          "10%",
+        width:          "20%",
         intervalUnit:   Timeline.DateTime.YEAR,
         intervalPixels: 200,
         eventSource:   eventSource2,
@@ -435,7 +435,7 @@ declare function page:createTimelineHeader_Caeiro($node as node(), $model as map
         }}),
         
         Timeline.createBandInfo({{
-        width:          "75%",
+        width:          "65%",
         intervalUnit:   Timeline.DateTime.YEAR,
         intervalPixels: 200,
         eventSource:    eventSource,

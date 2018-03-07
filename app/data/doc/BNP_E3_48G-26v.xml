@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -55,7 +56,7 @@
                     <msContents>
                         <summary>
                             <p> Lista manuscrita, publicada em <hi rend="italic">Pessoa por Conhecer
-                            </hi>(1990, II, 491). </p>
+                                </hi>(1990, II, 491). </p>
                         </summary>
                         <msItemStruct>
                             <author>
@@ -89,36 +90,46 @@
             <div>
                 <gap reason="selection" unit="line" extent="2"/>
                 <list>
-                    <head><hi rend="underline"><rs type="periodical" key="J2">ATHENA</rs></hi>
-                        (suppondo que é revista, como o <hi rend="underline"><rs type="periodical"
-                                key="J6">Mercure</rs></hi>): (500 <choice>
+                    <head><hi rend="underline"><rs type="collection" key="C3"><rs type="periodical"
+                                    key="J2">ATHENA</rs></rs></hi> (suppondo que é revista, como o
+                            <hi rend="underline"><rs type="periodical" key="J6">Mercure</rs></hi>):
+                        (500 <choice>
                             <abbr>rs</abbr>
                             <expan>r<ex>ei</ex>s</expan>
                         </choice>)</head>
                     <item>
                         <label>1.</label>
-                        <rs type="name" key="P1" style="a"><hi rend="underline">Antonio
-                            Móra</hi></rs> — <rs type="title"><rs type="place">Allemanha</rs></rs>
+                        <rs type="work" key="W56"><rs type="name" key="P1" style="a"><hi
+                                    rend="underline">Antonio Móra</hi></rs> — <rs type="title"
+                                key="T75"><rs type="place">Allemanha</rs></rs></rs>
+                        <choice>
+                            <abbr><metamark rend="line-14" function="placeholder"/></abbr>
+                            <expan><supplied resp="PS" reason="omitted-in-original"/></expan>
+                        </choice>
                     </item>
                     <item>
                         <label>2.</label>
-                        <rs type="work" key="O2" style="b"><rs type="name" key="AC" role="author"
-                                    ><hi rend="underline">Alberto Caeiro</hi></rs> — <rs type="title"
-                                >O <choice>
+                        <rs type="work" key="W18"><rs type="name" key="AC" role="author"><hi
+                                    rend="underline">Alberto Caeiro</hi></rs> — <rs type="title"
+                                key="T18">O <choice>
                                     <abbr>G<am>.</am></abbr>
                                     <expan>G<ex>uardador</ex></expan>
                                 </choice> de <choice>
                                     <abbr>R<am>.</am></abbr>
                                     <expan>R<ex>ebanhos</ex></expan>
                                 </choice></rs></rs>
+                        <choice>
+                            <abbr><metamark rend="line-14" function="placeholder"/></abbr>
+                            <expan><supplied resp="PS" reason="omitted-in-original"/></expan>
+                        </choice>
                     </item>
                     <item>
-                        <label>3.</label> (<rs type="name" key="P91">Leonardo Coimbra</rs> — <rs
-                            type="text"><rs
-                                type="title">O Pensamento Criacionista</rs></rs>). </item>
+                        <label>3.</label> (<rs type="work" key="W57"><rs type="name" key="P91"
+                                >Leonardo Coimbra</rs> — <rs type="title" key="T76">O Pensamento
+                                Criacionista</rs></rs>). </item>
                     <item>
-                        <label>4.</label> (<rs type="title">Literatura da guerra</rs>) </item>
-                    <metamark rend="line" function="end"/>
+                        <label>4.</label> (<rs type="title" key="T77">Literatura da guerra</rs>) </item>
+                    <metamark rend="line-44" function="end"/>
                 </list>
                 <p>Estas paginas são destinadas a reunir todos os elementos<lb/> dispersos da
                     cultura nacional superior. São abertas a<lb/> todas as theorias, logo que estas
