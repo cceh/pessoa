@@ -1531,6 +1531,8 @@ div.text span.note circled, div.text span.circled {
 div.text span.note framed, div.text span.framed {
     border: 1px solid black;
     display: inline-block;
+    text-indent: 0;
+    padding: 3px;
 }
 div.text span.label.circled {
     border: 1px solid black;
@@ -1968,7 +1970,31 @@ div.text#BNP_E3_48G-26r .framed {
     padding: 3px;
 }
 div.text#BNP_E3_48G-26r p.right {
-    position: absolute;
-    top: 0;
-    right: 10px;
+
+/* BNP_E3_48-18-e-19 */}
+div.text#BNP_E3_48-18-e-19 #I2 .grouping-left {
+    font-size: 8em;
+    right: -0.2em;
+    top: -0.4em;
+}
+div.text#BNP_E3_48-18-e-19 #I5 .grouping-left {
+    font-size: 3em;
+}
+div.text#BNP_E3_48-18-e-19 #I9 .grouping-left {
+    font-size: 4em;
+}
+div.text#BNP_E3_48-18-e-19 #I9 .grouping-right {
+    font-size: 4em;
+    right: 1.5em;
+    top: 0.1em;
+}
+div.text#BNP_E3_48-18-e-19 #I11 .note.margin-right {
+    top: -2.5em;
+}
+div.text#BNP_E3_48-18-e-19 #I11 .note.margin-right .grouping-left {
+    left: 2em;
+    font-size: 2em;
+}
+div.text#BNP_E3_48-18-e-19 #I12 .list {
+    font-size: small;
 }

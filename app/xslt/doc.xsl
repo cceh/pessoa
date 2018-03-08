@@ -166,6 +166,12 @@
             </tr>
         </table>
     </xsl:template>
+    
+    <xsl:template match="div[@rend='text-center']" mode="#default deletion addition">
+        <div class="text-center">
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
 
     <xsl:template match="p" mode="#default deletion addition">
         <p>
@@ -588,6 +594,13 @@
     
     
     <!-- einzublendende Pfeile -->
+    <xsl:template match="metamark[@rend='arrow-right-14']" mode="#default deletion addition">
+        <span class="arrow-right-14">⟶</span>
+    </xsl:template>
+    <xsl:template match="metamark[@rend='arrow-left-14']" mode="#default deletion addition">
+        <span class="arrow-left-14">⟵</span>
+    </xsl:template>
+    
     <xsl:template match="metamark[@rend = 'arrow-right-curved-up'][@n = '2']"
         mode="#default deletion addition">
         <span id="{@xml:id}" class="anchor invisible arrow-right-curved-up">x</span>
