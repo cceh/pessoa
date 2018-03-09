@@ -49,8 +49,9 @@
                     <msContents>
                         <summary>
                             <p>Lista manuscrita no caderno com a cota 144G (cf. <ref
-                                target="http://purl.pt/13883">http://purl.pt/13883</ref>), publicada em
-                                <hi rend="italic">Escritos sobre Génio e Loucura</hi> (2006, 549).</p>
+                                    target="http://purl.pt/13883">http://purl.pt/13883</ref>),
+                                publicada em <hi rend="italic">Escritos sobre Génio e Loucura</hi>
+                                (2006, 549).</p>
                         </summary>
                         <msItemStruct>
                             <author>
@@ -81,8 +82,13 @@
         <body>
             <div>
                 <list>
-                    <item xml:id="I1"><rs type="title">Primeiro Fausto</rs></item>
-                    <item xml:id="I2"><rs type="title">Segundo Fausto</rs>
+                    <item xml:id="I1">
+                        <rs type="title">Primeiro Fausto</rs>
+                        <metamark rend="line-14" function="assignment"/>
+                    </item>
+                    <item xml:id="I2">
+                        <rs type="title">Segundo Fausto</rs>
+                        <metamark rend="line-14" function="assignment"/>
                         <note place="margin-right" target="range(I1,I3)">
                             <metamark function="grouping" rend="curly-bracket">
                                 <label>
@@ -92,7 +98,10 @@
                             </metamark>
                         </note>
                     </item>
-                    <item xml:id="I3"><rs type="title">Terceiro Fausto</rs></item>
+                    <item xml:id="I3">
+                        <rs type="title">Terceiro Fausto</rs>
+                        <metamark rend="line-14" function="assignment"/>
+                    </item>
                     <item><rs type="title"><rs type="name" key="P21">D. Sebastião</rs></rs>.</item>
                     <item><rs type="title">Ligéa (poema dramatico)</rs>.</item>
                     <item><rs type="title">Trilogia dos Gigantes</rs>: <list rend="inline">
@@ -111,7 +120,8 @@
                         <note place="margin-left">(E)</note>
                         <rs type="title">The Ship of Fools</rs>. </item>
                     <item><rs type="name" key="AC">Alberto Caeiro</rs>
-                        <note type="addition" n="2">– I vol.</note><anchor xml:id="A1"/></item>
+                        <note type="addition" n="2">– <rs type="work" key="144"><rs type="title"
+                                    key="T182">I vol.</rs></rs></note><anchor xml:id="A1"/></item>
                     <item><rs type="name" key="RR">Ricardos Reis</rs>
                         <note type="addition" n="2">– I ou 2 v.</note></item>
                     <item><rs type="name" key="AdC">Alvaro de Campos</rs>

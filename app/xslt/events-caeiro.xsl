@@ -11,7 +11,7 @@
     <xsl:template match="/">
         <data>
             <xsl:for-each select="//TEI//rs[@type = 'work']">
-                <xsl:sort select="string-join(text(),'')"/>
+                <xsl:sort select="string-join(text(), '')"/>
                 <xsl:variable name="work-id" select="@key"/>
                 <!-- check if it is the right author -->
                 <xsl:if
@@ -127,8 +127,7 @@
                         <xsl:value-of select="$origDate | $imprintDate"/><xsl:text>, </xsl:text>
                         <xsl:choose>
                             <xsl:when test="$language = 'pt'">
-                                <xsl:value-of select="string-join($genre, '/')"
-                                />
+                                <xsl:value-of select="string-join($genre, '/')"/>
                             </xsl:when>
                             <xsl:when test="$language = 'de'">
                                 <xsl:for-each select="$genre">
@@ -187,7 +186,7 @@
                                 </xsl:for-each>
                             </xsl:when>
                             <xsl:otherwise> </xsl:otherwise>
-                        </xsl:choose><xsl:text>.</xsl:text> &lt;br/&gt; <!--<xsl:if
+                        </xsl:choose><xsl:text>.</xsl:text> <!--&lt;br/&gt; <xsl:if
                             test="ancestor::TEI//rs[@type = 'name']"> &lt;p&gt;<xsl:choose>
                                 <xsl:when test="$language = 'de'">Erwähnte Namen:</xsl:when>
                                 <xsl:when test="$language = 'en'">Mencioned names:</xsl:when>
@@ -203,24 +202,20 @@
                                             group-by="@style">
                                             <xsl:variable name="name"
                                                 select="doc('/db/apps/pessoa/data/lists.xml')//listPerson/person[@xml:id = $key or substring-after(@corresp, '#') = $key]/persName[@type = current-grouping-key()]"
-                                            /> &lt;li&gt;<xsl:value-of select="$name/text()"/> &lt;a
-                                                href="../../index/names#<xsl:value-of
+                                            /> &lt;li&gt;&lt;a href="../../index/names#<xsl:value-of
                                                 select="$name/text()"/>" title="<xsl:value-of
-                                                select="$title-names"/>"&gt;&lt;img
-                                            class="timelineImg" src="<xsl:value-of
-                                                select="string-join(($host, 'resources/images/glyphicons-35-old-man.png'), '/')"
-                                            />"/&gt;&lt;/a&gt;&lt;/li&gt; </xsl:for-each-group>
+                                                select="$title-names"/>"&gt;<xsl:value-of
+                                                select="$name/text()"/>&lt;/a&gt;&lt;/li&gt;
+                                        </xsl:for-each-group>
                                     </xsl:when>
                                     <xsl:otherwise>
                                         <xsl:variable name="name"
                                             select="doc('/db/apps/pessoa/data/lists.xml')//listPerson/person[@xml:id = $key]/persName"
-                                        /> &lt;li&gt;<xsl:value-of select="$name/text()"/> &lt;a
-                                            href="../../index/names#<xsl:value-of
+                                        /> &lt;li&gt;&lt;a href="../../index/names#<xsl:value-of
                                             select="$name/text()"/>" title="<xsl:value-of
-                                            select="$title-names"/>"&gt;&lt;img class="timelineImg"
-                                            src="<xsl:value-of
-                                            select="string-join(($host, 'resources/images/glyphicons-35-old-man.png'), '/')"
-                                        />"/&gt;&lt;/a&gt;&lt;/li&gt; </xsl:otherwise>
+                                            select="$title-names"/>"&gt;<xsl:value-of
+                                            select="$name/text()"/>&lt;/a&gt;&lt;/li&gt;
+                                    </xsl:otherwise>
                                 </xsl:choose>
                             </xsl:for-each-group> &lt;/ul&gt; </xsl:if>
                         <xsl:if test="ancestor::TEI//rs[@type = 'title']"> &lt;p&gt;<xsl:choose>
@@ -234,12 +229,10 @@
                                 <xsl:variable name="key" select="current-grouping-key()"/>
                                 <xsl:variable name="title"
                                     select="doc('/db/apps/pessoa/data/lists.xml')//list[@type = 'titles']/item[@xml:id = $key]/title/text()"
-                                /> &lt;li&gt;<xsl:value-of select="$title"/> &lt;a
-                                    href="../../index/titles#<xsl:value-of select="$title"/>"
-                                    title="<xsl:value-of select="$title-titles"/>"&gt;&lt;img
-                                class="timelineImg" src="<xsl:value-of
-                                    select="string-join(($host, 'resources/images/glyphicons-40-notes.png'), '/')"
-                                />"/&gt;&lt;/a&gt;&lt;/li&gt; </xsl:for-each-group> &lt;/ul&gt; </xsl:if>
+                                /> &lt;li&gt;&lt;a href="../../index/titles#<xsl:value-of
+                                    select="$title"/>" title="<xsl:value-of select="$title-titles"
+                                    />"&gt;<xsl:value-of select="$title"/>&lt;/a&gt;&lt;/li&gt;
+                            </xsl:for-each-group> &lt;/ul&gt; </xsl:if>
                         <xsl:if test="ancestor::TEI//rs[@type = 'periodical']"> &lt;p&gt;<xsl:choose>
                                 <xsl:when test="$language = 'de'">Erwähnte Zeitschriften:</xsl:when>
                                 <xsl:when test="$language = 'en'">Mencioned periodicals:</xsl:when>
@@ -252,13 +245,11 @@
                                 <xsl:variable name="key" select="current-grouping-key()"/>
                                 <xsl:variable name="periodical"
                                     select="doc('/db/apps/pessoa/data/lists.xml')//list[@type = 'periodical']/item[@xml:id = $key]/text()"
-                                /> &lt;li&gt;<xsl:value-of select="$periodical"/> &lt;a
-                                    href="../../index/names#<xsl:value-of select="$periodical"/>"
-                                    title="<xsl:value-of select="$title-periodicals"/>"&gt;&lt;img
-                                class="timelineImg" src="<xsl:value-of
-                                    select="string-join(($host, 'resources/images/glyphicons-609-newspaper.png'), '/')"
-                                />"/&gt;&lt;/a&gt;&lt;/li&gt; </xsl:for-each-group> &lt;/ul&gt;
-                        </xsl:if>-->
+                                /> &lt;li&gt;&lt;a href="../../index/names#<xsl:value-of
+                                    select="$periodical"/>" title="<xsl:value-of
+                                    select="$title-periodicals"/>"&gt;<xsl:value-of
+                                    select="$periodical"/>&lt;/a&gt;&lt;/li&gt;
+                            </xsl:for-each-group> &lt;/ul&gt; </xsl:if>-->
                     </events>
                 </xsl:if>
             </xsl:for-each>

@@ -7,6 +7,12 @@
     <xsl:import href="doc-edited.xsl"/>
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
 
+    <xsl:template match="text" mode="#default deletion addition">
+        <div class="text last" id="{//idno[@type='filename']/substring-before(.,'.')}">
+            <xsl:apply-templates/>
+        </div>
+        <xsl:apply-templates select="//summary"/>
+    </xsl:template>
 
     <!-- choices -->
     <!-- Alternativen von Pessoa selbst 
@@ -75,13 +81,6 @@
     <xsl:template match="note[@place = 'margin-left'][@n = '2']" mode="#default deletion addition">
         <xsl:call-template name="note-margin-left"/>
     </xsl:template>
-
-
-    
-
-
-
-
 
 
 </xsl:stylesheet>
