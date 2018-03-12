@@ -49,7 +49,7 @@ declare function local:logged-in() as xs:boolean {
 };
 
 declare function local:Restriction() as xs:boolean{
-    let $sites :=  ((for $s in ($exist:sites,"doc","pub") return concat($s,'/')),"search","timeline-caeiro","timeline","network","events.xml","events-caeiro.xml", "events-collections.xml",'validation')
+    let $sites :=  ((for $s in ($exist:sites,"doc","pub") return concat($s,'/')),"search","timeline","network","events",'validation','works')
     return if(helpers:contains-any-of($exist:path,$sites)) then
         for $s in $sites
             let $p := replace($s,'/','')
@@ -58,11 +58,10 @@ declare function local:Restriction() as xs:boolean{
                 case "doc" return local:resRestritction()
                 case "pub" return local:resRestritction()
                 case "search" return true()
-                case "timeline-caeiro" return true()
                 case "timeline" return true()
-                case "events.xml" return true()
-                case "events-caeiro.xml" return true()
+                case "events" return true()
                 case "network" return true()
+                case "works" return true()
                 case "genre" return local:DirRestriction($p)
                 case "authors" return local:DirRestriction($p)
                 case "validation" return true()
@@ -215,6 +214,7 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
                                 <redirect url="index.html"/>
                             </dispatch>
                     )
+                    (:)
                     else  if (contains($exist:path, "events-collections")) then
                             let $language := request:get-parameter("lang",'pt')
                             return
@@ -224,11 +224,13 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
                             let $language := request:get-parameter("lang",'pt')
                             return
                                 transform:transform((collection("/db/apps/pessoa/data/doc"), collection("/db/apps/pessoa/data/pub"))//tei:TEI, doc("/db/apps/pessoa/xslt/events-caeiro.xsl"), <parameters><param name="language" value="{$language}"/><param name="basepath" value="{$exist:controller}"></param></parameters>)
-                     
+                     :)
                       else  if (contains($exist:path, "events")) then
                             let $language := request:get-parameter("lang",'pt')
+                            let $events := concat("events",substring-before(substring-after($exist:path,"/events"),".xml"))
+                            let $style := concat("/db/apps/pessoa/xslt/",$events,".xsl")
                             return
-                                transform:transform((collection("/db/apps/pessoa/data/doc"), collection("/db/apps/pessoa/data/pub"))//tei:TEI, doc("/db/apps/pessoa/xslt/events.xsl"), <parameters><param name="language" value="{$language}"/><param name="basepath" value="{$exist:controller}"></param></parameters>)
+                                transform:transform((collection("/db/apps/pessoa/data/doc"), collection("/db/apps/pessoa/data/pub"))//tei:TEI, doc($style), <parameters><param name="language" value="{$language}"/><param name="basepath" value="{$exist:controller}"></param></parameters>)
                         else if ($exist:resource = "tei-odd") then
                             doc("/db/apps/pessoa/data/schema/pessoaTEI.html")
 
@@ -397,6 +399,7 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
                                                             </error-handler>
                                                         </dispatch>
                                                     )
+                                                    (:)
                                            else if (contains($exist:path,"timeline-caeiro") and not(contains($exist:path,'resources'))) then
                                                         (
                                                             if( not(contains($exist:path,$helpers:web-language))) then
@@ -424,12 +427,17 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
                                                                         </error-handler>
                                                                     </dispatch>)
                                                         )
+                                                        :)
                                                 else if (contains($exist:path,"timeline") and not(contains($exist:path,'resources'))) then
                                                         (
+                                                            let $timeline := concat("timeline",substring-after($exist:path,"/timeline"))
+
+                                                                return
+
                                                             if( not(contains($exist:path,$helpers:web-language))) then
                                                                 (
                                                                     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-                                                                        <redirect url="{$config:app-root}/{$helpers:web-language}/timeline" />
+                                                                        <redirect url="{$config:app-root}/{$helpers:web-language}/{$timeline}" />
                                                                         <view>
                                                                             <forward url="{$exist:controller}/modules/view.xql"/>
                                                                         </view>
@@ -441,7 +449,7 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
                                                             else
                                                                 (
                                                                     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-                                                                        <forward url="{$exist:controller}/page/timeline.html" />
+                                                                        <forward url="{$exist:controller}/page/{$timeline}.html" />
                                                                         <view>
                                                                             <forward url="{$exist:controller}/modules/view.xql"/>
                                                                         </view>
