@@ -385,7 +385,7 @@ declare %templates:wrap function search:your_search($node as node(), $model as m
      let $param := substring-after($item,"=")
        let $build := switch($term)
                             case("lang") return if($param != "" ) then  if(count(search:get-parameters("lang")) != 3) then (helpers:singleElementInList_xQuery("search","language"), helpers:singleElementInList_xQuery("language",$param)) else () else ()
-                            case("lang_ao") return if($param != "") then if(count(search:get-parameters("lang")) != 3) then (helpers:singleElementInList_xQuery("search","language"), helpers:singleElementInList_xQuery("search",$param)) else () else ()
+                            (:) case("lang_ao") return if($param != "") then if(count(search:get-parameters("lang")) != 3) then (helpers:singleElementInList_xQuery("search","language"), helpers:singleElementInList_xQuery("search",$param)) else () else () :)
                             case("role") return (helpers:singleElementInList_xQuery("roles","mentioned-as"),helpers:singleElementInList_xQuery("roles",$param))
                             case("genre") return (helpers:singleElementInList_xQuery("search","genero") , helpers:singleElementInList_xQuery("genres",search:encryptGenre($param)))
                             case("person") return (helpers:singleElementInList_xQuery("search","autores") ,doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson[@type="authors"]/tei:person[@xml:id=$param]/tei:persName/data(.))
