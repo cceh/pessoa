@@ -24,7 +24,7 @@ let $letters := $model("letters")return ( <a href="#{$letter}">{$letter}</a>,if(
 
 declare function index:printDocLinks($node as node(), $model as map(*),$ref) {
     let $doc := $model($ref)
-    let $ref := concat($helpers:app-root,"/",$helpers:web-language,"/doc/",$doc/@link/data(.))
+    let $ref := concat($helpers:app-root,"/",$helpers:web-language,"/",$doc/@link/data(.))
     return <span>
         {if($doc/@published/data() eq "free") then
             <a href="{$ref}" class="olink">{$doc/@title/data(.)}</a>
@@ -32,57 +32,6 @@ declare function index:printDocLinks($node as node(), $model as map(*),$ref) {
         {if($doc/@coma/data(.) eq "yes") then "," else ()}</span>
 };
 
-(:
-declare function index:FindFirstLetter($text as xs:string,$pos as xs:integer) {
-    for $a in (helpers:lettersOfTheAlphabet(),helpers:lettersOfTheAlphabeHight())
-      let $pos :=  if($a eq "Z") then $pos +1
-        else $pos
-        let $look := substring($text,$pos,1)
-        where $look eq $a
-        return $look
-};
-
-declare function index:FindFirstLetter-new($text as xs:string, $pos as xs:integer) {
-    if(matches(substring($text,$pos,1),'[A-z]')) then substring($text,$pos,1)
-    else if ($pos > string-length($text)) then concat("Error/",$pos)
-    else index:FindFirstLetter-new($text,$pos +1)
-};
-:)
-
- (: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
- :)
-(:
-declare function index:highLetters($letter) {
-    switch($letter)
-            case "A" case "a" return("A")
-            case "B" case "b"return("B")
-            case "C" case "c"return("C")
-            case "D" case "d" return("D")
-            case "E" case "e" return("E")
-            case "F" case "f" return("F")
-            case "G" case "g" return("G")
-            case "H" case "h" return("H")
-            case "I" case "i" return("I")
-            case "J" case "j" return("J")
-            case "K" case "k" return("K")
-            case "L" case "l" return("L")
-            case "M" case "m" return("M")
-            case "N" case "n" return("N")
-            case "O" case "o" return("O")
-            case "P" case "p" return("P")
-            case "Q" case "q" return("Q")
-            case "R" case "r" return("R")
-            case "S" case "s" return("S")
-            case "T" case "t" return("T")
-            case "U" case "u" return("U")
-            case "V" case "v" return ("V")
-            case "W" case "w" return("W")
-            case "X" case "x" return("X")
-            case "Y" case "y" return("Y")
-            case "Z" case "z" return("Z")
-            default return $letter
-};
-:)
 (:### Genre Index ####:)
 
 declare function index:collectGenre($node as node(), $model as map(*),$type as xs:string,$orderBy as xs:string) {
@@ -185,7 +134,8 @@ declare function index:collectGenre($node as node(), $model as map(*),$type as x
 
 declare function index:getPersonIndex($node as node(), $model as map(*)) {
     let $lists := doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson[2]
-    let $coll:= collection("/db/apps/pessoa/data/doc/")
+    let $docs:= collection("/db/apps/pessoa/data/doc/")
+    let $pubs:= collection("/db/apps/pessoa/data/pub/")
     let $person := for $person in $lists/tei:person
                         let $id := $person/attribute()/data(.)
                         let $id := if(contains($id,"#")) then substring-after($id,"#") else $id
@@ -195,13 +145,23 @@ declare function index:getPersonIndex($node as node(), $model as map(*)) {
                                 order by $name collation '?lang=pt'
                                 return <item id="{$id}" letter="{translate(substring($name,1,1),'Á','A')}" name="{$name}">
                                             {
-                                            let $name := if($type != "none") then ("type","person","style") else ("type","person")
-                                            let $case := if($type != "none") then ("eq","eq","eq") else ("eq","eq")
-                                            let $content := if($type != "none") then ("name",$id,$type) else ("name",$id)
-                                            for $item in search:Search-MultiStats($coll,$name,$case,$content)
-                                                let $title := $item//tei:title[1]/data(.)
+                                            let $name-a := if($type != "none") then ("type","person","style") else ("type","person")
+                                            let $case-a := if($type != "none") then ("eq","eq","eq") else ("eq","eq")
+                                            let $content-a := if($type != "none") then ("name",$id,$type) else ("name",$id)
+                                            let $a :=
+                                                for $item in search:Search-MultiStats($docs,$name-a,$case-a,$content-a)
+                                                let $title := $item//tei:titleStmt/tei:title[1]/data(.)
                                                 let $link := substring-before($item//tei:idno[@type="filename"]/data(.),".xml")
-                                                return <item title="{$title}" link="{$link}" published="{$item//tei:availability/@status/data(.)}"/>
+                                                return <item title="{$title}" link="doc/{$link}" published="{$item//tei:availability/@status/data(.)}"/>
+                                            let $name-b := ("type","person")
+                                            let $case-b := ("eq","eq")
+                                            let $content-b := ("name",$id)
+                                            let $b :=
+                                                for $item in search:Search-MultiStats($pubs,$name-b,$case-b,$content-b)
+                                                let $title := $item//tei:titleStmt/tei:title[1]/data(.)
+                                                let $link := substring-before($item//tei:idno[@type="filename"]/data(.),".xml")
+                                                return <item title="{$title}" link="pub/{$link}" published="{$item//tei:availability/@status/data(.)}"/>
+                                            return for $se in ($a,$b) order by $se/@title/data(.) collation '?lang=pt' return $se
                                             }
                                         </item>
     let $letters := for $let in $person return $let/@letter/data(.)
@@ -236,90 +196,10 @@ declare function index:createPerson($node as node(), $model as map(*)) {
         "docs" := $docs
         }
 };
-(:)
-declare function index:getPersonIndex($node as node(), $model as map(*)) {
-    let $letter :=  $model("letter")
-    let $lists := doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson[2]
-    let $keys := for $hit in $lists/tei:person
-                            let $id := $hit/attribute()/data(.)
-                            order by $hit/tei:persName[1]
-                         return 
-                         if( exists($hit/tei:persName[2]))
-                                then for $name in $hit/tei:persName
-                                    where substring($name/data(.),1,1) eq $letter
-                                        
-                                    return <item id="{$id}" style="{$name/@type/data(.)}"/>
-                                    else if(substring($hit/tei:persName/data(.),1,1) eq $letter) then <item id="{$id}"/>
-                                    else ()
-                               
-     return map {
-     "keys" := $keys 
-     }
-
-};
-:)
-(:
-declare function index:ScanDB($node as node(), $model as map(*)) {
-    let $coll:= collection("/db/apps/pessoa/data/doc/") 
-    let $lists := doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson[2]
-    let $db := $model("key")
-    let $letter := $model("letter")
-    let $name := if(exists($db/@style)) then 
-                                 if(contains($db/@id,"#")) then 
-                                    $lists/tei:person[@corresp=$db/@id]/tei:persName[@type=$db/@style]/data(.)
-                                 else
-                                    $lists/tei:person[@xml:id=$db/@id]/tei:persName[@type=$db/@style]/data(.)
-                            else 
-                                if(contains($db/@id,"#")) then 
-                                   $lists/tei:person[@corresp=$db/@id]/tei:persName/data(.)
-                               else 
-                                   $lists/tei:person[@xml:id=$db/@id]/tei:persName/data(.)
-
-    let $id := if(contains($db/@id,"#")) then substring-after($db/@id,"#") else $db/@id
-    let $docs := if(exists($db/@style)) then 
-                                for $doc in search:searchRange_ex_two($coll,"person","style",$id,$db/@style) where $doc//tei:rs[@type = "name" and  @key = $id and @style=$db/@style] return $doc
-                                else
-                                for $doc in search:search_range_simple("person",$id,$coll) where $doc//tei:rs[@type = "name" and  @key = $id] return $doc
-    
-    let $res := for $doc in $docs
-                                let $cota := ($doc//tei:title)[1]/data(.)
-                                let $link := substring-before(root($doc)/util:document-name(.),".xml")
-                          (:     let $cota2 := if(contains($cota,"-")) then replace(substring-before($cota,"-"), "(BNP/E3|CP)\s?([0-9]+)([^0-9]+.*)?", "$2")
-                                                        else replace($cota, "(BNP/E3|CP)\s?([0-9]+)([^0-9]+.*)?", "$2")
-                                      :)
-                                (:
-                                      let $label := replace($link,("BNP_E3_|CP"),"")
-                                    let $front := if(contains($label,"-")) then substring-before($label,"-") else $label
-                                order by $front, xs:integer(replace($label, "^\d+[A-Z]?\d?-?([0-9]+).*$", "$1"))
-                                :)
-                                return <item link="{$link}" title="{replace($cota,"/E3","")}"/>
-                                
-                                
-   let $ref_amount := count($res)
-    let $ADocs := for $ref in (1 to $ref_amount -1) return <item link="{$res[$ref]/@link}" title="{$res[$ref]/@title}" coma="yes"/>     
-    let $BDocs := if($ref_amount != 0) then <item link="{$res[$ref_amount]/@link}" title="{$res[$ref_amount]/@title}" coma="no"/> else ()(:$res[$ref_amount] :)                            
-    
-    return map {
-       "docs" := ($ADocs,$BDocs),
-        "name" := $name,
-        "id" := $id
-    }
-};
-:)
 
 declare function index:printAuthor($node as node(), $model as map(*)) {
     <span id="{$model("id")}">{$model("name")}</span>
 };
-(:
-declare function index:plottAlpha($ndoe as node(), $mode as map(*)) {
-        let $lists := doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson[2]/tei:person
-        let $letters := for $person in  $lists/tei:persName order by $person return fn:substring($person,1,1)
-        let $letters := distinct-values($letters)
-        return map {
-            "letters" := $letters
-        }
-};
-:)
 (:#### Periodicals / Journals #### :)
 
 declare function index:collectJournals($node as node(), $model as map(*)) {
