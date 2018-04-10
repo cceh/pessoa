@@ -25,8 +25,8 @@ declare %templates:wrap function search:profisearch($node as node(), $model as m
         (: Erstellung der Kollektion, sortiert ob "Publiziert" oder "Nicht Publiziert" :)
         let $db := search:set_db()
         let $dbase :=  if($term != "" ) then collection($db)//tei:TEI[ft:query(.,$term,<options>
-                                                                                                                                                <default-operator>and</default-operator>
-                                                                                                                                            </options>)]
+            <default-operator>and</default-operator>
+                                                             </options>)]
                        else if(search:get-parameters("lang_ao") = "or") 
                        then search:lang_or($db)
                        else search:lang_and($db)
@@ -131,6 +131,9 @@ declare function search:lang_or_term($db as node()*) as node()* {
 
 (: UND FUNKTION : Filtert die Sprache, TERM:)
 
+declare variable $search:lang_terms := if(search:get-parameters("lang") != "") then search:get-parameters("lang") else ("pt","en","fr");
+
+
 declare function search:lang_and_term($db as node()*, $step as xs:string) as node()* {
         if(search:get-parameters("release")="unpublished" and $step = "unpublished") then
             for $match in search:lang_build_para_doc("lang")
@@ -138,7 +141,7 @@ declare function search:lang_and_term($db as node()*, $step as xs:string) as nod
                 let $build_search := concat("$db",$build_funk) 
                 return util:eval($build_search) 
         else if (search:get-parameters("release")="published" and $step = "published") then 
-            for $match in search:get-parameters("lang")
+            for $match in $search:lang_terms
             let $build_funk := concat("//range:field-contains('lang','",$match,"')")
             let $build_search := concat("$db",$build_funk)
             return util:eval($build_search)  
@@ -158,7 +161,7 @@ declare function search:lang_or ($db as xs:string+) as node()*{
 
 declare function search:lang_filter_or($db as xs:string, $step as xs:string?) as node()* {
     if(search:get-parameters("release")="unpublished" or $step = "unpublished") then
-        for $hit in search:get-parameters("lang")
+        for $hit in $search:lang_terms
             let $para := ("mainLang","otherLang")
             for $match in $para
                 let $search_terms := concat('("',$match,'"),"',$hit,'"')
@@ -166,7 +169,7 @@ declare function search:lang_filter_or($db as xs:string, $step as xs:string?) as
                 let $search_build := concat("collection($db)",$search_funk)
             return util:eval($search_build) 
         else if (search:get-parameters("release")="published" or $step = "published") then 
-            for $hit in search:get-parameters("lang")
+            for $hit in $search:lang_terms
                 let $search_terms := concat('("lang"),"',$hit,'"')
                 let $search_funk := concat("//range:field-contains(",$search_terms,")")
                 let $search_build := concat("collection($db)",$search_funk)
@@ -207,7 +210,7 @@ declare function search:lang_build_para_doc ($para as xs:string) as xs:string* {
         let $result := concat('("',
         string-join(search:lang_build_para_doc_ex(search:get-parameters($para),$hit),
         '","'),'"),"',
-        string-join(search:get-parameters("lang"),'","'),'"')
+        string-join($search:lang_terms,'","'),'"')
         return $result
 };
 
@@ -384,8 +387,8 @@ declare %templates:wrap function search:your_search($node as node(), $model as m
                             case("lang") return if($param != "" ) then  if(count(search:get-parameters("lang")) != 3) then (helpers:singleElementInList_xQuery("search","language"), helpers:singleElementInList_xQuery("language",$param)) else () else ()
                             case("lang_ao") return if($param != "") then if(count(search:get-parameters("lang")) != 3) then (helpers:singleElementInList_xQuery("search","language"), helpers:singleElementInList_xQuery("search",$param)) else () else ()
                             case("role") return (helpers:singleElementInList_xQuery("roles","mentioned-as"),helpers:singleElementInList_xQuery("roles",$param))
-                            case("genre") return (helpers:singleElementInList_xQuery("search","genre") , helpers:singleElementInList_xQuery("genres",$param))
-                            case("person") return (helpers:singleElementInList_xQuery("search","authors") ,doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson[@type="authors"]/tei:person[@xml:id=$param]/tei:persName/data(.))
+                            case("genre") return (helpers:singleElementInList_xQuery("search","genero") , helpers:singleElementInList_xQuery("genres",search:encryptGenre($param)))
+                            case("person") return (helpers:singleElementInList_xQuery("search","autores") ,doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson[@type="authors"]/tei:person[@xml:id=$param]/tei:persName/data(.))
                             case("term") return if($param != "") then (helpers:singleElementInList_xQuery("search","term"),$param) else ()
                             case("release") return if($param != "") then (helpers:singleElementInList_xQuery("search","publicado"),  (if($param="all") then  helpers:singleElementInList_xQuery("search",$param)
                                                                                                                                                     else if ($param="published")  then helpers:singleElementInList_xQuery("search","pub_yes")
@@ -398,6 +401,10 @@ declare %templates:wrap function search:your_search($node as node(), $model as m
        return  if($result != "") then util:eval($result)  else () )
        else ()
 
+};
+
+declare function search:encryptGenre($val) {
+    $helpers:lists//tei:item[./tei:note[@type="range"]/data(.) = $val]/@xml:id/data(.)
 };
 
 declare function search:search-function() as node() {
