@@ -153,7 +153,7 @@ declare function index:getPersonIndex($node as node(), $model as map(*)) {
                                                 let $title := $item//tei:titleStmt/tei:title[1]/data(.)
                                                 let $link := substring-before($item//tei:idno[@type="filename"]/data(.),".xml")
                                                 return <item title="{$title}" link="doc/{$link}" published="{$item//tei:availability/@status/data(.)}"/>
-                                            let $name-b := ("type","person")
+                                            let $name-b := ("role","person")
                                             let $case-b := ("eq","eq")
                                             let $content-b := ("name",$id)
                                             let $b :=

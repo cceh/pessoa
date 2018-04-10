@@ -23,7 +23,6 @@
         <field name="date_when" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct/tei:monogr/tei:imprint/tei:date/@when" type="xs:string"/>
         <field name="date_from" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct/tei:monogr/tei:imprint/tei:date/@from" type="xs:string"/>
         <field name="date_to" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct/tei:monogr/tei:imprint/tei:date/@to" type="xs:string"/>
-        <field name="type" match="tei:teiHeader/tei:fileDesc//tei:titleStmt/tei:author/tei:rs/@type" type="xs:string" />
         <field name="work-index" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:list/tei:item/tei:rs/@key" type="xs:string"/>
         <field name="work-index-div" match="tei:text/tei:body//tei:div/@corresp" type="xs:string"/>
         <field name="journal" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct/tei:monogr/tei:title/tei:rs/@key" type="xs:string"/>
