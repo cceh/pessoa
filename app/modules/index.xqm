@@ -25,7 +25,11 @@ let $letters := $model("letters")return ( <a href="#{$letter}">{$letter}</a>,if(
 declare function index:printDocLinks($node as node(), $model as map(*),$ref) {
     let $doc := $model($ref)
     let $ref := concat($helpers:app-root,"/",$helpers:web-language,"/doc/",$doc/@link/data(.))
-    return <span><a href="{$ref}" class="olink">{$doc/@title/data(.)}</a>{if($doc/@coma/data(.) eq "yes") then "," else ()}</span>
+    return <span>
+        {if($doc/@published/data() eq "free") then
+            <a href="{$ref}" class="olink">{$doc/@title/data(.)}</a>
+        else <span class="link-res">{$doc/@title/data(.)}</span>}
+        {if($doc/@coma/data(.) eq "yes") then "," else ()}</span>
 };
 
 (:
@@ -197,7 +201,7 @@ declare function index:getPersonIndex($node as node(), $model as map(*)) {
                                             for $item in search:Search-MultiStats($coll,$name,$case,$content)
                                                 let $title := $item//tei:title[1]/data(.)
                                                 let $link := substring-before($item//tei:idno[@type="filename"]/data(.),".xml")
-                                                return <item title="{$title}" link="{$link}"/>
+                                                return <item title="{$title}" link="{$link}" published="{$item//tei:availability/@status/data(.)}"/>
                                             }
                                         </item>
     let $letters := for $let in $person return $let/@letter/data(.)
@@ -224,7 +228,7 @@ declare function index:createPerson($node as node(), $model as map(*)) {
     let $docs := $pers/item
     let $docs := for $doc in $docs
             let $coma := if(helpers:index-of-node($docs,$doc) != count($docs)) then "yes" else "no"
-            return <item title="{$doc/@title/data(.)}" link="{$doc/@link/data(.)}" coma="{$coma}"/>
+            return <item title="{$doc/@title/data(.)}" link="{$doc/@link/data(.)}" coma="{$coma}" published="{$doc/@published/data(.)}"/>
     return
         map {
         "name" := $pers/@name/data(.),
@@ -341,12 +345,14 @@ declare function index:FindJournalsEntrys($key as xs:string) {
     ( for $item in search:search_range_simple("person",$key,collection("/db/apps/pessoa/data/doc/"))
                         return <item title="{replace($item//tei:titleStmt/tei:title[1]/data(.),"/E3","")}" 
                                                date="{search:dateDoc($item)}" 
-                                               ref="{concat("doc/",substring-before($item//tei:idno[@type="filename"]/data(.),".xml"))}"/>
+                                               ref="{concat("doc/",substring-before($item//tei:idno[@type="filename"]/data(.),".xml"))}"
+                                                published="{$item//tei:availability/@status/data(.)}"/>
       ,
      for $item in search:search_range_simple("journal",$key,collection("/db/apps/pessoa/data/pub/"))
                         return <item title="{$item//tei:titleStmt/tei:title[1]/data(.)}"
                                                 date="{search:datePub($item)}"
-                                                ref="{concat("pub/",substring-before($item//tei:idno[@type="filename"]/data(.),".xml"))}"/>
+                                                ref="{concat("pub/",substring-before($item//tei:idno[@type="filename"]/data(.),".xml"))}"
+                                                published="{$item//tei:availability/@status/data(.)}"/>
    )
 };
 
@@ -362,7 +368,7 @@ declare function index:mapSingleJournal($node as node(), $model as map(*)) {
     let $mentoined := $model("single")/item
     let $mentoined := for $a in (1 to count($mentoined))
                                     let $coma := if($a != count($mentoined)) then "yes" else "no"
-                                    return <item title="{$mentoined[$a]/@title/data(.)}" date="{$mentoined[$a]/@date/data(.)}" ref="{$mentoined[$a]/@ref/data(.)}" coma="{$coma}"/>
+                                    return <item title="{$mentoined[$a]/@title/data(.)}" date="{$mentoined[$a]/@date/data(.)}" ref="{$mentoined[$a]/@ref/data(.)}" coma="{$coma}" published="{$mentoined[$a]/@published/data(.)}"/>
    return map {
    "journal" := $model("single"),
     "mentioned" := $mentoined
@@ -377,5 +383,9 @@ $model("journal")/@name/data(.)
 declare function index:printJournalLinks($node as node(), $model as map(*),$ref) {
     let $doc := $model($ref)
     let $ref := concat($helpers:app-root,"/",$helpers:web-language,"/",$doc/@ref/data(.))
-    return <span><a href="{$ref}" class="olink">{$doc/@title/data(.)}</a>{if($doc/@coma/data(.) eq "yes") then "," else ()}</span>
+    return <span>{if($doc/@published/data(.) eq "free") then
+        <a href="{$ref}" class="olink">{$doc/@title/data(.)}</a>
+    else <span class="link-res">{$doc/@title/data(.)}</span>
+    }
+        {if($doc/@coma/data(.) eq "yes") then "," else ()}</span>
 };

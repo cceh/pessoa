@@ -186,11 +186,11 @@ declare function helpers:createInput_term($xmltype as xs:string, $btype as xs:st
     return ($input,$label,$breaked)
 };
 
-
 declare function helpers:createOption_new($xmltype as xs:string, $value as xs:string*) as node()* {
     for $id in $value
-    let $entry:= helpers:singleElementInList_xQuery($xmltype,$id)
-    return <option value="{$id}">{$entry}</option>
+        let $entry:= helpers:singleElementInList_xQuery($xmltype,$id)
+        let $val := if(exists($helpers:lists//tei:list[@type = $xmltype]/tei:item[@xml:id=$id]/tei:note[@type="range"])) then $helpers:lists//tei:list[@type = $xmltype]/tei:item[@xml:id=$id]/tei:note[@type="range"]/data(.) else $id
+    return <option value="{$val}">{$entry}</option>
 };
 
 
