@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Do livro "Mensagem"</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="free">
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Pessoa_Do_livro_Mensagem.xml</idno>
+            </publicationStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work">O Infante</rs></item>
+                    <item><rs type="work">O Mostrengo</rs></item>
+                    <item><rs type="work">Prece</rs></item>
+                    <item><rs type="work">Mensagem</rs></item>
+                </list>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Do livro "Mensagem"</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J80">Diário de Lisboa</rs></title>
+                        <imprint>
+                            <date when="1934-12-14">14 de Dezembro de 1934</date>
+                        </imprint>
+                        <biblScope unit="page">5</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="poesia">Poesia</rs>
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+    </facsimile>
+    <text>
+        <body>
+            <div>
+                <head>Do livro “MENSAGEM” de FERNANDO PESSOA</head>
+                <ab rend="right">transcrevem-se 3 poemas com</ab>
+                <ab rend="right">3 ilustrações ineditas de ALMADA</ab>
+                <div type="poem">
+                    <head rend="indent">1.</head>
+                    <head rend="indent">O INFANTE</head>
+                    <lg>
+                        <l>Deus quer, o homem sonha, a obra nasce.</l>
+                        <l>Deus quis que a terra fosse toda uma,</l>
+                        <l>Que o mar unisse, já não separasse.</l>
+                        <l>Sagrou-te, e foste desvendando a espuma,</l>
+                    </lg>
+                    <lg>
+                        <l>E a orla branca foi de ilha em continente.</l>
+                        <l>Clareou, correndo, até ao fim do mundo,</l>
+                        <l>E viu-se a terra inteira, de repente,</l>
+                        <l>Surgir, redonda, do azul profundo.</l>
+                    </lg>
+                    <lg>
+                        <l>Quem te sagrou creou-te portuguez.</l>
+                        <l>Do mar e nós em ti nos deu signal.</l>
+                        <l>Cumpriu-se o Mar, e o Imperio se desfez.</l>
+                        <l>Senhor, falta cumprir-se Portugal!</l>
+                    </lg>
+                </div>
+                <div type="poem">
+                    <head rend="indent">2.</head>
+                    <head rend="indent">>O MOSTRENGO</head>
+                    <lg>
+                        <l>O mostrengo que está no fim do mar</l>
+                        <l>Na noite de breu ergueu-se a voar;</l>
+                        <l>Á roda da nau voou trez vezes,</l>
+                        <l>Voou trez vezes a chiar,</l>
+                        <l>E disse: «Quem é que ousou entrar</l>
+                        <l>Nas minhas cavernas que não desvendo,</l>
+                        <l>Meus tectos negros do fim do mundo?»</l>
+                        <l>E o homem do leme disse, tremendo:</l>
+                        <l rend="indent">«El-Rei D. João Segundo!»</l>
+                    </lg>
+                    <lg>
+                        <l>«De quem são as velas onde me roço?</l>
+                        <l>De quem as quilhas que vejo e ouço?»</l>
+                        <l>Disse o mostrengo, e rodou trez vezes.</l>
+                        <l>Trez vezes rodou immundo e grosso,</l>
+                        <l>«Quem vem poder o que só eu posso,</l>
+                        <l>Que moro onde nunca ninguem me visse</l>
+                        <l>E escorro os medos do mar sem fundo?»</l>
+                        <l>E o homem do leme tremeu, e disse,</l>
+                        <l rend="indent">«El-Rei D. João Segundo!»</l>
+                    </lg>
+                    <lg>
+                        <l>Trez vezes do leme as mãos ergueu,</l>
+                        <l>Trez vezes ao leme as reprendeu,</l>
+                        <l>E disse no fim de temer trez vezes:</l>
+                        <l>«Aqui ao leme sou mais do que eu:</l>
+                        <l>Sou um Povo que quer o mar que é teu;</l>
+                        <l>E mais que o mostrengo, que me a alma teme</l>
+                        <l>E roda nas trevas do fim do mundo,</l>
+                        <l>Manda a vontade, que me ata ao leme,</l>
+                        <l rend="indent">De El-Rei D. João Segundo!»</l>
+                    </lg>
+                </div>
+                <div type="poem">
+                    <head rend="indent">3.</head>
+                    <head rend="indent">PRECE</head>
+                    <lg>
+                        <l>Senhor, a noite veio e a alma é vil.</l>
+                        <l>Tanta foi a tormenta e a vontade!</l>
+                        <l>Restam-nos hoje, no silencio hostil,</l>
+                        <l>O mar universal e a saudade.</l>
+                    </lg>
+                    <lg>
+                        <l>Mas a chamma, que a vida em nós creou,</l>
+                        <l>Se ainda ha vida ainda não é finda.</l>
+                        <l>O frio morto em cinzas a occultou:</l>
+                        <l>A mão do vento pode erguel-a ainda.</l>
+                    </lg>
+                    <lg>
+                        <l>Dá o sopro, a aragem — ou desgraça ou ancia —,</l>
+                        <l>Com que a chamma do exforço se remoça,</l>
+                        <l>E outra vez conquistemos a Distancia —</l>
+                        <l>Do mar ou outra, mas que seja nossa!</l>
+                    </lg>
+                </div>
+            </div>
+        </body>
+    </text>
+</TEI>
