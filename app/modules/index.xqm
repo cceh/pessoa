@@ -26,7 +26,7 @@ declare function index:printDocLinks($node as node(), $model as map(*),$ref) {
     let $doc := $model($ref)
     let $ref := concat($helpers:app-root,"/",$helpers:web-language,"/",$doc/@link/data(.))
     return <span>
-        {if($doc/@published/data() eq "free") then
+        {if($doc/@published/data(.) eq "free") then
             <a href="{$ref}" class="olink">{$doc/@title/data(.)}</a>
         else <span class="link-res">{$doc/@title/data(.)}</span>}
         {if($doc/@coma/data(.) eq "yes") then "," else ()}</span>
