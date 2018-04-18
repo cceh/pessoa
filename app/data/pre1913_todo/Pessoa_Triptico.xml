@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Tríptico</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="free">
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Pessoa_Triptico.xml</idno>
+            </publicationStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work">Tríptico</rs></item>
+                    <item><rs type="work">O Infante D. Henrique</rs></item>
+                    <item><rs type="work">D. João O Segundo</rs></item>
+                    <item><rs type="work">Afonso de Albuquerque</rs></item>
+                    <item><rs type="work">Mensagem</rs></item>
+                </list>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Tríptico</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J79">O Mundo Português</rs></title>
+                        <imprint>
+                            <date when="1934-07">Julho-Agosto de 1934</date>
+                        </imprint>
+                        <biblScope unit="page">249-252</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="poesia">Poesia</rs>
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+    </facsimile>
+    <text>
+        <body>
+            <div>
+                <head>TRÍPTICO</head>
+                <div type="poem">
+                    <head rend="indent">I</head>
+                    <head rend="indent">O INFANTE D.HENRIQUE</head>
+                <lg>
+                    <l>Em seu trono entre o brilho das esferas,</l>
+                    <l>Com seu manto de noite e solidão,</l>
+                    <l>Tem aos pés o mar novo e as mortas eras —</l>
+                    <l>O único imperador que tem, deveras,</l>
+                    <l>O globo mundo em sua mão.</l>
+                </lg>
+                </div>
+                <div type="poem">
+                        <head rend="indent">II</head>
+                        <head rend="indent">>D.JOÃO O SEGUNDO</head>
+                <lg>
+                    <l>Braços cruzados, fita além do mar.</l>
+                    <l>Parece em promontório uma alta serra —</l>
+                    <l>O limite da terra a dominar</l>
+                    <l>O mar que possa haver além da terra.</l>
+                </lg>
+                <lg>
+                    <l>Seu formidável vulto solitário</l>
+                    <l>Enche de estar presente o mar e o céu;</l>
+                    <l>E parece temer o mundo vário</l>
+                    <l>Que êle abra os braços e lhe rasgue o véu.</l>
+                </lg>
+                </div>
+                <div type="poem">
+                    <head rend="indent">III</head>
+                    <head rend="indent">AFONSO DE ALBUQUERQUE</head>
+                    <lg>
+                        <l>Passa um gigante pela vasta terra.</l>
+                        <l>Seu duro passo faz tremer o solo.</l>
+                        <l>Seu pensamento todo o mundo encerra,</l>
+                        <l>Régio de fôrça e desconsôlo,</l>
+                    </lg>
+                    <lg>
+                        <l>Seu vulto augusto é grave de sinais;</l>
+                        <l>Seu grande olhar esta visão revela:</l>
+                        <l>Mais vale o império do que a glória, e mais</l>
+                        <l>Que a gratidão o merecê-la.</l>
+                    </lg>
+                    <lg>
+                        <l>Não há corôa em sua fronte altiva,</l>
+                        <l>Cetro nenhum em suas mãos está:</l>
+                        <l>Grande demais para o que a hora viva</l>
+                        <l>A quem é só da hora dá.</l>
+                    </lg>
+                    </div>
+                <signed>FERNANDO PESSOA</signed>
+            </div>
+        </body>
+    </text>
+</TEI>
+
+
+
+
