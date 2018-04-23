@@ -16,6 +16,18 @@
                 div.ab-right {text-align: right;}
             </style>
             <xsl:apply-templates select="//text" />
+            <xsl:call-template name="summary">
+                <xsl:with-param name="summary" select="//note[@type='summary']"/>
+            </xsl:call-template>
+        </div>
+    </xsl:template>
+    
+    <!-- Editorial notes -->
+    <xsl:template match="note[@type='summary']" mode="#default deletion addition"/>
+    <xsl:template name="summary">
+        <xsl:param name="summary"/>
+        <div class="editorial-note">
+            <xsl:apply-templates/>
         </div>
     </xsl:template>
     
