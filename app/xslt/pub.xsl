@@ -31,6 +31,26 @@
         </div>
     </xsl:template>
     
+    <xsl:template match="ref[@target]">
+        <a class="link">
+            <xsl:attribute name="href">
+                <xsl:choose>
+                    <xsl:when test="starts-with(@target, 'http://')">
+                        <xsl:value-of select="@target"/>
+                    </xsl:when>
+                    <xsl:otherwise>../data/doc/<xsl:value-of select="@target"/></xsl:otherwise>
+                </xsl:choose>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+        </a>
+    </xsl:template>
+    
+    <xsl:template match="p">
+        <p>
+            <xsl:apply-templates />
+        </p>
+    </xsl:template>
+    
     
     <xsl:template match="head">
         <h2>
