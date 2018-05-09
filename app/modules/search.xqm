@@ -107,7 +107,7 @@ declare function search:mergeParameters_xquery ($type as xs:string) as xs:string
     let $after := concat($code,"from=",search:get-parameters("SE_from"))
     let $before := concat($code,"to=",search:get-parameters("SE_to"))
     let $lang := for $slang in search:get-parameters("lang") return
-                concat($code,"lang=", $slang)
+        concat($code,"lang=", $slang)
     let $lang_ao := concat($code,"lang_ao=",search:get-parameters("lang_ao"))
     let $person := for $sperson in search:get-parameters("person") return
                 concat($code,"person=",$sperson)
@@ -374,16 +374,49 @@ if($term and $file and $sel and $sel="text","head","lang")
     else $node
 };
 
+declare function search:mergeParameters_xquery_map () as map(*) {
+    map {
+    "term":=    search:get-parameters("term"),
+    "from":=    search:get-parameters("SE_from"),
+    "to"  :=    search:get-parameters("SE_to"),
+    "lang":=    search:get-parameters("lang"),
+    "lang_ao":= search:get-parameters("lang_ao"),
+    "person" := search:get-parameters("person"),
+    "genre" :=  search:get-parameters("genre"),
+    "role" :=   search:get-parameters("role"),
+    "release":= search:get-parameters("release")
+    }
+};
 
 declare %templates:wrap function search:your_search($node as node(), $model as map(*)) as node()* {
         let $head := <h4> {helpers:singleElementInList_xQuery("search","search_was")}</h4>
-     return   if (search:get-parameters("term") != "" or search:get-parameters("lang") != "")  then
+        let $seas := search:mergeParameters_xquery_map()
+     return   if ($seas("term") != "" or $seas("lang") != "" or ($seas("from") != "" and $seas("to") != ""))  then
       (   $head,
-       for $item in  search:mergeParameters_xquery("xquery")
+      for $item in map:keys($seas)
+     let $param := $seas($item)
+      let $build := if($param != "") then (
+      switch($item)
+          case("lang") return  if(count($param) != 3) then (helpers:singleElementInList_xQuery("search","language"),  string-join((for $i in $param return helpers:singleElementInList_xQuery("language",$i)),concat(" ",helpers:singleElementInList_xQuery("search",$seas("lang_ao"))," "))) else()
+          case("lang_ao") return () (:if($param != "") then if(count(search:get-parameters("lang")) != 3) then (helpers:singleElementInList_xQuery("search","language"), helpers:singleElementInList_xQuery("search",$param)) else () else () :)
+          case("role") return (helpers:singleElementInList_xQuery("roles","mentioned-as"),string-join(for $i in $param return helpers:singleElementInList_xQuery("roles",$i),", "))
+          case("genre") return (helpers:singleElementInList_xQuery("search","genero") , string-join(for $i in $param return helpers:singleElementInList_xQuery("genres",search:encryptGenre($i)),", "))
+          case("person") return (helpers:singleElementInList_xQuery("search","autores") , string-join(for $i in $param return doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson[@type="authors"]/tei:person[@xml:id=$i]/tei:persName/data(.),", "))
+          case("term") return (helpers:singleElementInList_xQuery("search","term"),$param)
+          case("release") return if($param != "all") then (helpers:singleElementInList_xQuery("search","publicado"),  (if($param="all") then  helpers:singleElementInList_xQuery("search",$param)
+          else if ($param="published")  then helpers:singleElementInList_xQuery("search","pub_yes")
+              else helpers:singleElementInList_xQuery("search","pub_no"))) else ()
 
-     let $term := substring-before(substring-after($item,"/"),"=")
-     let $param := substring-after($item,"=")
-       let $build := switch($term)
+          case("from") return  (helpers:singleElementInList_xQuery("search",$item),$param)
+          case("to") return  (helpers:singleElementInList_xQuery("search",$item),$param)
+          default return (helpers:singleElementInList_xQuery("search",$item), helpers:singleElementInList_xQuery("search",$param))
+
+      ) else ()
+      let $result := if($build != "") then concat("<span class='search_your_list'>",$build[1], ": ", string-join(for $i in (2 to count($build)) return $build[$i]," ") ,"</span>") else ()
+
+
+      (:
+       let $build := switch($item)
                             case("lang") return if($param != "" ) then  if(count(search:get-parameters("lang")) != 3) then (helpers:singleElementInList_xQuery("search","language"), helpers:singleElementInList_xQuery("language",$param)) else () else ()
                             (:) case("lang_ao") return if($param != "") then if(count(search:get-parameters("lang")) != 3) then (helpers:singleElementInList_xQuery("search","language"), helpers:singleElementInList_xQuery("search",$param)) else () else () :)
                             case("role") return (helpers:singleElementInList_xQuery("roles","mentioned-as"),helpers:singleElementInList_xQuery("roles",$param))
@@ -398,7 +431,10 @@ declare %templates:wrap function search:your_search($node as node(), $model as m
                             case("to") return if($param != "") then (helpers:singleElementInList_xQuery("search",$term),$param) else ()
                             default return (helpers:singleElementInList_xQuery("search",$term), helpers:singleElementInList_xQuery("search",$param))
           let $result := if($build != "") then concat("<span class='search_your_list'>",$build[1], ": ",$build[2] ,"</span>") else ()
-       return  if($result != "") then util:eval($result)  else () )
+          :)
+       return  if($result != "") then util:eval($result) else ()
+      )
+
        else ()
 
 };
