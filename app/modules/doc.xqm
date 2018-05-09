@@ -214,19 +214,19 @@ declare function doc:cite($node as node(), $model as map(*),$id as xs:string, $d
                 for $elem in helpers:singleElementNode_xquery("cite","cite-tx")/tei:span
                                             return 
                                             switch($elem/@type)
-                                            case "web" return <i>{helpers:singleElementInList_xQuery("cite","cite-web")}</i>
-                                            case "link" return concat(' "',doc(concat("/db/apps/pessoa/data/",$dir,"/",$id,".xml"))//tei:titleStmt/tei:title[1],'." ')
-                                            case "url" return
-                                                <a style="color: #08298a;" href="{concat($helpers:app-root,'/',$id,'/',$type)}">
-                                                    {if($dir eq 'doc') then
-                                                        concat(' <',$helpers:app-root,'/doc/',$id,'/',replace($type," ",""),'>')
-                                                    else
-                                                        concat(' <',$helpers:app-root,'/pub/',$id,'/diplomatic-transcription>')
-                                                    }
-                                                </a>
+                                                case "web" return <i>{helpers:singleElementInList_xQuery("cite","cite-web")}</i>
+                                                case "link" return concat(' "',doc(concat("/db/apps/pessoa/data/",$dir,"/",$id,".xml"))//tei:titleStmt/tei:title[1],'." ')
+                                                case "url" return
+                                                    <a class="olink" href="{concat($helpers:app-root,'/',$id,'/',$type)}">
+                                                        {if($dir eq 'doc') then
+                                                            concat(' <',$helpers:app-root,'/doc/',$id,'/',replace($type," ",""),'>')
+                                                        else
+                                                            concat(' <',$helpers:app-root,'/pub/',$id,'/diplomatic-transcription>')
+                                                        }
+                                                    </a>
+                                                case "doi" return <a id="tx-doi" class="olink" href="https://dx.doi.org/{$elem/data(.)}">DOI: {$elem/data(.)}</a>
                                                 default return $elem
-                                            }</span>
-};
+                                            }</span>};
 (:
 (
                                             :)
