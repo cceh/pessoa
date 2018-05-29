@@ -303,11 +303,16 @@ function drawing(width,height,ank) {
         .attr("width", width)
         .attr("height", height);
 
+     var viewport = $("#viewport");
+
+     var Mwidth = viewport.width(),
+        Mheight = screen.availHeight;
+
     var force = d3.layout.force()
         .gravity(0.1)
         .charge(-120)
         .linkDistance(myZoom)
-        .size([width, height])
+        .size([Mwidth, Mheight])
         .on("tick", tick);
 
     var link = svg.selectAll(".link"),

@@ -144,5 +144,5 @@ declare function app:startDocu($node as node(), $model as map(*),$docu as xs:str
 
 
 declare function app:networkSearch($node as node(), $model as map(*)) {
-    <input id="myInput" name="term" placeholder="{helpers:singleElementInList_xQuery("search","term")}..." />
+    <input id="myInput" name="term" placeholder="{helpers:singleElementInList_xQuery("network","network-name")}..." />
 };

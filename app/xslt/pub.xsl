@@ -6,8 +6,12 @@
     
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
     
-    <xsl:template match="/">
+    <xsl:template match="teiHeader"/>
+    <xsl:template match="text">
         <div>
+            <xsl:if test="@corresp">
+                <xsl:attribute name="id" select="substring-after(@corresp,'#')"/>
+            </xsl:if>
             <style type="text/css">
                 .lg {margin: 15px 0;}
                 h2.center {text-align: center;}
@@ -15,21 +19,38 @@
                 p.indent {display: inline-block; text-indent: 1em; margin: 0;}
                 div.ab-right {text-align: right;}
             </style>
-            <xsl:apply-templates select="//text" />
-            <xsl:call-template name="summary">
-                <xsl:with-param name="summary" select="//note[@type='summary']"/>
-            </xsl:call-template>
+            <xsl:apply-templates />
+            <xsl:apply-templates select="//note[@type='summary']"/>
         </div>
     </xsl:template>
     
     <!-- Editorial notes -->
-    <xsl:template match="note[@type='summary']" mode="#default deletion addition"/>
-    <xsl:template name="summary">
-        <xsl:param name="summary"/>
+    <xsl:template match="note[@type='summary']">
         <div class="editorial-note">
             <xsl:apply-templates/>
         </div>
     </xsl:template>
+    
+    <xsl:template match="ref[@target]">
+        <a class="link">
+            <xsl:attribute name="href">
+                <xsl:choose>
+                    <xsl:when test="starts-with(@target, 'http://')">
+                        <xsl:value-of select="@target"/>
+                    </xsl:when>
+                    <xsl:otherwise>../data/doc/<xsl:value-of select="@target"/></xsl:otherwise>
+                </xsl:choose>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+        </a>
+    </xsl:template>
+    
+    <xsl:template match="p">
+        <p>
+            <xsl:apply-templates />
+        </p>
+    </xsl:template>
+    
     
     <xsl:template match="head">
         <h2>
@@ -49,14 +70,6 @@
         </xsl:choose>
     </xsl:template>
     
-    <xsl:template match="text">
-        <div>
-            <xsl:if test="@corresp">
-                <xsl:attribute name="id" select="substring-after(@corresp,'#')"/>
-            </xsl:if>
-            <xsl:apply-templates/>
-        </div>
-    </xsl:template>
     
     <xsl:template match="div[@type='poem']">
         <div class="poem">
