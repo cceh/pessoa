@@ -98,7 +98,10 @@ gulp.task('local-post-install', ['local-upload'], function() {
 	return gulp.src('app/post-install.xql')
 		.pipe(localExist.query());
 });
-
+gulp.task('local-zip-install', function() {
+    return gulp.src('app/zip.xql')
+        .pipe(localExist.query());
+});
 
 gulp.task('deploy-local',['local-upload','local-upload-data','local-post-install']);
 
