@@ -3,8 +3,6 @@
 function searching(data, state) {
     $(document).ready(function() {
         if (state === "insert") {
-            console.log(data);
-            console.log(data.term);
             $("#spezsearch").val(data.term);
             $.each(data.person, function (i, item) {
                 $(".selectsearch[name='person']").children("option[value='" + item + "']").attr("selected", "selected");
@@ -33,7 +31,6 @@ function searching(data, state) {
 
         }
         else {
-            console.log("Clear");
             $("#spezsearch").val("");
             $(".date_field[name='SE_from']").val(data.from);
             $(".date_field[name='SE_to']").val(data.to);
