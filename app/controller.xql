@@ -12,6 +12,7 @@ import module namespace search="http://localhost:8080/exist/apps/pessoa/search" 
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "modules/helpers.xqm";
 import module namespace config="http://localhost:8080/exist/apps/pessoa/config" at "modules/config.xqm";
 import module namespace index="http://localhost:8080/exist/apps/pessoa/index" at "modules/index.xqm";
+import module namespace ownZip="http://localhost:8080/exist/apps/pessoa/zip" at "modules/zip.xq";
 
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 
@@ -233,9 +234,11 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
                                 transform:transform((collection("/db/apps/pessoa/data/doc"), collection("/db/apps/pessoa/data/pub"))//tei:TEI, doc($style), <parameters><param name="language" value="{$language}"/><param name="basepath" value="{$exist:controller}"></param></parameters>)
                         else if ($exist:resource = "tei-odd") then
                             doc("/db/apps/pessoa/data/schema/pessoaTEI.html")
+                            else  if (contains($exist:resource,".zip") ) then ownZip:compress(substring-before($exist:resource,".zip"))
 
 
-                    else if($exist:permission) then (
+
+                                else if($exist:permission) then (
                                     session:remove-attribute('type'),
                                     session:remove-attribute('author'),
                                     session:remove-attribute('textType'),

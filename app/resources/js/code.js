@@ -1,6 +1,51 @@
 /*"autores","documentos","publicacoes","genero","cronologia","bibliografia","projeto" */
+
+function searching(data, state) {
+    $(document).ready(function() {
+        if (state === "insert") {
+            $("#spezsearch").val(data.term);
+            $.each(data.person, function (i, item) {
+                $(".selectsearch[name='person']").children("option[value='" + item + "']").attr("selected", "selected");
+            });
+            $.each(data.genre, function (i, item) {
+                $(".selectsearch[name='genre']").children("option[value='" + item + "']").attr("selected", "selected");
+            });
+
+            $.each(data.role, function (i, item) {
+                $("#" + item).attr("checked", "checked");
+            });
+            $.each(data.lang, function (i, item) {
+                $("#" + item).attr("checked", "checked");
+            });
+
+            $(".date_field[name='SE_from']").val(data.from);
+            $(".date_field[name='SE_to']").val(data.to);
+            $(".release_input-box[value='" + data.release + "']").attr("checked", "checked");
+            $(".lang_input-box[value='" + data.lang_ao + "']").attr("checked", "checked");
+
+            if(data.person.length > 0 ||data.role.length > 0 ) {$("#se_author").show(); $("#ta_author").addClass("active");};
+            if(data.genre.length > 0) {$("#se_genre").show(); $("#ta_genre").addClass("active");};
+            if(data.lang.length > 0 || data.lang_ao != "or") {$("#se_lang").show(); $("#ta_lang").addClass("active");};
+            if(data.from != "" || data.to != ""){$("#se_date").show(); $("#ta_date").addClass("active");};
+            if(data.release != "all"){$("#se_release").show(); $("#ta_release").addClass("active");};
+
+        }
+        else {
+            $("#spezsearch").val("");
+            $(".date_field[name='SE_from']").val(data.from);
+            $(".date_field[name='SE_to']").val(data.to);
+            $("option:selected").prop("selected", false);
+            $("input:checked").prop("checked", false);
+
+            $(".release_input-box[value='all']").prop("checked", true);
+            $(".lang_input-box[value='or']").prop("checked", true);
+        }
+    });
+
+}
 $(document).ready(function(){
 
+    $("#clearing").click(function() {searching("","clear");});
 
     if(GetURLParameter('l') == "f") $('#login-modal').modal('show');
 
@@ -173,7 +218,7 @@ function printPub() {
 function SearchHide() {
     $("div.tab").click(function() {
        var id1 = $(this).attr("id");
-           var id2 = id1.substring(3)
+           var id2 = id1.substring(3);
            
            if(!$(this).hasClass("active")) {
                $(this).addClass("active");

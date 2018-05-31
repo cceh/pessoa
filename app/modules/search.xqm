@@ -101,6 +101,25 @@ declare function search:mergeParameters ($type as xs:string) as xs:string {
     return string-join(($term,$after,$before,$lang,$lang_ao,$person,$genre,$role,$release),'')
 };
 
+declare function search:mergeParametersJSON($node as node(), $model as map(*)) {
+    let $code := ""
+    let $term := concat($code,'"term":"',search:get-parameters("term"),'"')
+    let $after := concat($code,"'from':'",search:get-parameters("SE_from"),"'")
+    let $before := concat($code,"'to':'",search:get-parameters("SE_to"),"'")
+    let $lang := concat($code,"'lang':['",string-join(search:get-parameters("lang"),"','"),"']")
+    let $lang_ao := concat($code,"'lang_ao':'",search:get-parameters("lang_ao"),"'")
+    let $person := concat($code,"'person':['",string-join(search:get-parameters("person"),"','"),"']")
+    let $genre :=  concat($code,"'genre':['",string-join(search:get-parameters("genre"),"','"),"']")
+    let $role := concat($code,"'role':['",string-join(search:get-parameters("role"),"','"),"']")
+    let $release := concat($code,"'release':'",search:get-parameters("release"),"'")
+    let $string := string-join(($term,$after,$before,$lang,$lang_ao,$person,$genre,$role,$release),",")
+    return
+        <script type="text/javascript">
+            searching({concat("{",$string,"}")},"insert");
+        </script>
+
+};
+
 declare function search:mergeParameters_xquery ($type as xs:string) as xs:string* {
     let $code := if($type = "html") then "&amp;" else "/"
     let $term := concat($code,"term=",search:get-parameters("term"))
@@ -536,7 +555,10 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
              <br />
 
            <button id="spezsearchbutton">{helpers:singleElementInList_xQuery("search","search_verb")}</button>
-</form>
+
+
+                       </form>
+         <button id="clearing">{helpers:singleElementInList_xQuery("search","search_clear")}</button>
 </div>
     return (search:recorder(),$filter)
 };
