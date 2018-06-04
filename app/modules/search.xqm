@@ -67,7 +67,6 @@ declare %templates:wrap function search:profisearch($node as node(), $model as m
 
 
 
-
 declare function search:set_db() as xs:string+ {
         let $result :=       if(search:get-parameters("release") = "unpublished")    then "/db/apps/pessoa/data/doc"
                              else if(search:get-parameters("release") = "published" )  then "/db/apps/pessoa/data/pub"
@@ -98,7 +97,7 @@ declare function search:mergeParameters ($type as xs:string) as xs:string {
     let $role := for $srole in search:get-parameters("role") return
                 concat($code,"role=",$srole)
     let $release := concat($code,"release=",search:get-parameters("release"))
-    return string-join(($term,$after,$before,$lang,$lang_ao,$person,$genre,$role,$release),'')
+    return string-join((for $item in ($term,$after,$before,$lang,$lang_ao,$person,$genre,$role,$release) where substring-after($item,"=") != "" return $item),'')
 };
 
 declare function search:mergeParametersJSON($node as node(), $model as map(*)) {
@@ -555,10 +554,9 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
              <br />
 
            <button id="spezsearchbutton">{helpers:singleElementInList_xQuery("search","search_verb")}</button>
-
+                           <span id="clearing" class="tab">{helpers:singleElementInList_xQuery("search","search_clear")}</span>
 
                        </form>
-         <button id="clearing">{helpers:singleElementInList_xQuery("search","search_clear")}</button>
 </div>
     return (search:recorder(),$filter)
 };

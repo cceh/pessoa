@@ -68,11 +68,13 @@ declare function page:construct_search($node as node(), $model as map(*)) as nod
     return ($search,$clear,$switchlang, search:search-function())
 };
 
-declare function page:search_SwitchLang() as xs:string {
+declare function page:search_SwitchLang() as xs:string? {
+    let $merged := search:mergeParameters("html")
     let $return :=
         if(  request:get-parameter("search",'') = "simple") then
             string-join(("?term=",search:get-parameters("term"),"&amp;search=simple"),'')
-        else string-join(("?term",substring-after(search:mergeParameters("html"),"term")),'')
+        else if($merged != "") then concat("?",substring-after($merged,"&amp;"))
+        else ()
     return $return
 };
 
@@ -506,8 +508,8 @@ declare function page:cite($node as node(), $model as map(*), $source as xs:stri
     return
         switch($elem/@type)
             case "web" return <i>{helpers:singleElementInList_xQuery("cite","cite-web")}</i>
-            case "url" return <a href="{$link}">{concat("<",$link,">")
-            }</a>
+            case "url" return <a href="{$link}">{concat("<",$link,">")}</a>
+            case "doi" return (" DOI: ",<a id="tx-doi" class="doilink" href="https://dx.doi.org/{$elem/data(.)}">{$elem/data(.)}</a>)
             default return $elem
     }</span>
 };

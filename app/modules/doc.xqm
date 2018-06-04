@@ -224,7 +224,7 @@ declare function doc:cite($node as node(), $model as map(*),$id as xs:string, $d
                                                             concat(' <',$helpers:app-root,'/pub/',$id,'/diplomatic-transcription>')
                                                         }
                                                     </a>
-                                                case "doi" return (" DOI: ",<a id="tx-doi" class="olink" href="https://dx.doi.org/{$elem/data(.)}">{$elem/data(.)}</a>)
+                                                case "doi" return (" DOI: ",<a id="tx-doi" class="doilink" href="https://dx.doi.org/{$elem/data(.)}">{$elem/data(.)}</a>)
                                                 default return $elem
                                             }</span>};
 (:
