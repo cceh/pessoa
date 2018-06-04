@@ -40,12 +40,13 @@ function searching(data, state) {
             $(".release_input-box[value='all']").prop("checked", true);
             $(".lang_input-box[value='or']").prop("checked", true);
         }
+        $("#clearing").click(function() {searching("","clear");});
+
     });
 
 }
 $(document).ready(function(){
 
-    $("#clearing").click(function() {searching("","clear");});
 
     if(GetURLParameter('l') == "f") $('#login-modal').modal('show');
 
