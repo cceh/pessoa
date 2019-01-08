@@ -240,6 +240,7 @@ declare function local:transformTitle($title as node()) {
 declare function local:collectTexts() {
     let $texts := for $text in  local:search_range_simple("type","title",collection('/db/apps/pessoa/data/doc'))
                                 for $single in $text//tei:rs[@type = "title"]
+                                where $text//tei:availability/@status/data(.) eq "free"
                                 order by $single
                             return <item name="{local:transformTitle($single)}" ref="{substring-before(root($single)/util:document-name(.),".xml")}"/>
                             
