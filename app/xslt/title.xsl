@@ -12,7 +12,19 @@
     </xsl:template>
     
     <xsl:template match="choice[abbr][expan]">
-        <xsl:apply-templates select="expan"/>
+        <xsl:text> </xsl:text><xsl:apply-templates select="expan"/><xsl:text> </xsl:text>
+    </xsl:template>
+    
+    <xsl:template match="ex">
+        <xsl:apply-templates/><xsl:text> </xsl:text>
+    </xsl:template>
+    
+    <xsl:template match="abbr[not(parent::choice)]">
+        <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text> </xsl:text>
+    </xsl:template>
+    
+    <xsl:template match="am[not(parent::choice)]">
+        <xsl:apply-templates/>
     </xsl:template>
     
     <xsl:template match="choice[seg[@n='1'] and seg[@n='2']]">
@@ -23,14 +35,16 @@
         <xsl:apply-templates select="add"/>
     </xsl:template>
     
-    <xsl:template match="lb">
+    <xsl:template match="lb[preceding-sibling::*[1][name()='pc']]"/>
+    
+    <xsl:template match="lb[not(preceding-sibling::*[1][name()='pc'])]">
         <xsl:text> </xsl:text>
     </xsl:template>
     
     <xsl:template match="pc"/>
     
     <xsl:template match="rs[@type=('place','work','name','periodical')]|hi|del|add|abbr|am|seg">
-        <xsl:apply-templates/>
+        <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text> </xsl:text>
     </xsl:template>
     
     <xsl:template match="text()">
