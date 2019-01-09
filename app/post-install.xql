@@ -3,7 +3,21 @@ import module namespace xmldb="http://exist-db.org/xquery/xmldb";
 declare namespace transform="http://exist-db.org/xquery/transform";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare namespace util="http://exist-db.org/xquery/util";
+declare namespace functx = "http://www.functx.com";
 
+declare function functx:distinct-nodes
+( $nodes as node()* )  as node()* {
+
+    for $seq in (1 to count($nodes))
+    return $nodes[$seq][not(functx:is-node-in-sequence(
+            .,$nodes[position() < $seq]))]
+} ;
+declare function functx:is-node-in-sequence
+( $node as node()? ,
+        $seq as node()* )  as xs:boolean {
+
+    some $nodeInSeq in $seq satisfies $nodeInSeq is $node
+} ;
 (: move search index to system :)
 declare function local:move-index(){
 	let $app-path := "/db/apps/pessoa"
@@ -196,28 +210,18 @@ return xmldb:store("/db/apps/pessoa/data","titlelist.xml",$html)
 };
 declare function local:createTitleXML() {
     let $well := local:collectTexts()
-    let $well := for $item in $well order by $item/@well/data(.) return $item
-    let $letters := for $letter in $well/@letter order by $letter return $letter
-    let $letters := distinct-values($letters)
-    let $letters := for $letter in $letters return local:highLetters($letter)
-    let $letters := distinct-values($letters)
-    return <titles>
-                    { for $a in $letters return
-                    <list letter="{$a}">     {
-                        for $item in $well where $item/@letter eq $a return
-                           <item>
-                            <name type="{$item/@type/data(.)}" ref="{$item/@ref/data(.)}">{$item/@well/data(.)}</name>
-                            {if($item/@type eq "doc") then 
-                            for $hit in $item/item return
-                            <item ref="{$hit/@link/data(.)}">{$hit/@title/data(.)}</item> 
-                            else ()
-                            }
-                             </item>
-                            }
-                        </list>
-                    }                    
-                </titles>
-
+    return <titels>{
+        for $le in distinct-values($well/@letter)
+        order by $le
+        return
+            <list letter="{$le}">
+                {
+                    for $a in $well
+                    where $a/@letter eq $le
+                    order by $a/name
+                    return $a
+                }</list>
+    }</titels>
 };
 
 declare function local:titleTest() {
@@ -235,42 +239,46 @@ declare function local:transformTitle($title as node()) {
 
 };
 
-
-
 declare function local:collectTexts() {
-    let $texts := for $text in  local:search_range_simple("type","title",collection('/db/apps/pessoa/data/doc'))
-                                for $single in $text//tei:rs[@type = "title"]
-                                where $text//tei:availability/@status/data(.) eq "free"
-                                order by $single
-                            return <item name="{local:transformTitle($single)}" ref="{substring-before(root($single)/util:document-name(.),".xml")}"/>
-                            
-   let $docs := for $doc in $texts
-                            return <item 
-                                                    name="{$doc/@name/data(.)}"  
-                                                    ref="{$doc/@ref/data(.)}" 
-                                                    title="{replace(doc(concat('/db/apps/pessoa/data/doc/',$doc/@ref/data(.),".xml"))//tei:title[1]/data(.),"/E3","")}"
-                           />
-    let $docs := $docs | $docs                       
-    let $names :=$texts/@name/data(.)
-    let $names := distinct-values($names)
+    let $texts  := local:search_range_simple("type","title",collection('/db/apps/pessoa/data/doc'))
+     let $texts := functx:distinct-nodes($texts)
+     let $texts := for $single in $texts
+                    where $single//tei:availability/@status/data(.) eq "free"
+                    return
+                    for $title in $single//tei:rs[@type = 'title']
+                        let $well := fn:normalize-space(local:transformTitle($title))
+                        order by $well
+                        return <item
+                                    name="{$well}"
+                                    ref="{substring-before(root($single)/util:document-name(.),".xml")}"/>
+    let $names := distinct-values($texts/@name/data(.))
+
     let $well := for $name in $names
-                    return <item title="{$name}" well="{$name}" type="doc"  letter="{local:FindFirstLetter-new($name,1)}">
-                                {  let $ref :=   local:scanDocs($name,$docs)
-                                    let $ref := distinct-values($ref)
-                                    return for $item in $ref return <item link="{$item}" title="{replace(doc(concat('/db/apps/pessoa/data/doc/',$item,".xml"))//tei:title[1]/data(.),"/E3","")}"/>
-                                }
-                                </item>
+    return  <item letter="{local:highLetters(local:FindFirstLetter-new($name,1))}">
+        <name type="doc">{$name}</name>
+        { let $ref :=   local:scanDocs($name,$texts)
+        let $ref := distinct-values($ref)
+        return
+            for $item in $ref
+            return <item ref="{$item}">{replace(doc(concat('/db/apps/pessoa/data/doc/',$item,".xml"))//tei:title[1]/data(.),"/E3","")}</item>}
+
+    </item>
+
     let $pubs := collection('/db/apps/pessoa/data/pub')
     let $pubs_title := for $hit in $pubs//tei:teiHeader/tei:fileDesc
-                                    return <item 
-                                                        ref="{substring-before($hit//tei:publicationStmt/tei:idno[@type="filename"]/data(.),".xml")}" 
-                                                        well="{$hit//tei:sourceDesc/tei:biblStruct/tei:analytic/tei:title[@level = "a"]/data(.)}" 
-                                                        type="pub"
-                                                        letter="{local:FindFirstLetter-new($hit//tei:sourceDesc/tei:biblStruct/tei:analytic/tei:title[@level = "a"][1]/data(.),1)}"/>
+     let $title :=    $hit//tei:sourceDesc/tei:biblStruct/tei:analytic/tei:title[@level = "a"]
+    return <item
 
-    let $well := ($well, $pubs_title)
-    return $well
-};
+    letter="{local:highLetters(local:FindFirstLetter-new($title[1]/data(.),1))}">
+        <name ref="{substring-before($hit//tei:publicationStmt/tei:idno[@type="filename"]/data(.),".xml")}" type="pub">
+            {$title/data(.)}
+        </name>
+
+    </item>
+
+
+    return ($well,$pubs_title)
+   };
 
 declare function local:FindFirstLetter-new($text as xs:string, $pos as xs:integer) {
     if(matches(substring($text,$pos,1),'[A-z]')) then substring($text,$pos,1)
