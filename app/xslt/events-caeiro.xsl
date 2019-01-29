@@ -7,12 +7,15 @@
     <xsl:output method="xml"/>
 
     <!-- author: Ulrike Henny -->
-
+    
     <xsl:template match="/">
         <data>
             <xsl:for-each select="//TEI//rs[@type = 'work']">
-                <xsl:sort select="string-join(text(), '')"/>
+                
+                <xsl:sort select="if (@n) then @n else normalize-space(string-join(text(), ''))" data-type="number"/>
+                <xsl:sort select="if (not(@n)) then normalize-space(string-join(text(), '')) else ()" data-type="text"/>
                 <xsl:variable name="work-id" select="@key"/>
+                
                 <!-- check if it is the right author -->
                 <xsl:if
                     test="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'works']/item[@xml:id = $work-id]/ptr[@type = 'author'][@target = '#AC']">

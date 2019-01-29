@@ -215,23 +215,12 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
                                 <redirect url="index.html"/>
                             </dispatch>
                     )
-                    (:)
-                    else  if (contains($exist:path, "events-collections")) then
-                            let $language := request:get-parameter("lang",'pt')
-                            return
-                                transform:transform((collection("/db/apps/pessoa/data/doc"), collection("/db/apps/pessoa/data/pub"))//tei:TEI, doc("/db/apps/pessoa/xslt/events-collections.xsl"), <parameters><param name="language" value="{$language}"/><param name="basepath" value="{$exist:controller}"></param></parameters>)
-                   
-                    else  if (contains($exist:path, "events-caeiro")) then
-                            let $language := request:get-parameter("lang",'pt')
-                            return
-                                transform:transform((collection("/db/apps/pessoa/data/doc"), collection("/db/apps/pessoa/data/pub"))//tei:TEI, doc("/db/apps/pessoa/xslt/events-caeiro.xsl"), <parameters><param name="language" value="{$language}"/><param name="basepath" value="{$exist:controller}"></param></parameters>)
-                     :)
-                      else  if (contains($exist:path, "events")) then
+                    else if (contains($exist:path, "events")) then
                             let $language := request:get-parameter("lang",'pt')
                             let $events := concat("events",substring-before(substring-after($exist:path,"/events"),".xml"))
                             let $style := concat("/db/apps/pessoa/xslt/",$events,".xsl")
                             return
-                                transform:transform((collection("/db/apps/pessoa/data/doc"), collection("/db/apps/pessoa/data/pub"))//tei:TEI, doc($style), <parameters><param name="language" value="{$language}"/><param name="basepath" value="{$exist:controller}"></param></parameters>)
+                                transform:transform((collection("/db/apps/pessoa/data/doc")//tei:TEI | collection("/db/apps/pessoa/data/pub")//tei:TEI), doc($style), <parameters><param name="language" value="{$language}"/><param name="basepath" value="{$exist:controller}"></param></parameters>)
                         else if ($exist:resource = "tei-odd") then
                             doc("/db/apps/pessoa/data/schema/pessoaTEI.html")
                             else  if (contains($exist:resource,".zip") ) then ownZip:compress(substring-before($exist:resource,".zip"))
