@@ -133,7 +133,7 @@ declare function index:collectGenre($node as node(), $model as map(*),$type as x
 
 
 declare function index:getPersonIndex($node as node(), $model as map(*)) {
-    let $lists := doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson[2]
+    let $lists := doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson[@type = 'all']
     let $docs:= collection("/db/apps/pessoa/data/doc/")
     let $pubs:= collection("/db/apps/pessoa/data/pub/")
     let $person := for $person in $lists/tei:person
