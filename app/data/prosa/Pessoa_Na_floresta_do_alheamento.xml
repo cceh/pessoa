@@ -6,16 +6,10 @@
             <!-- this is a comment... here they are used for documentation and to give hints. In new files, 
         please just use them to comment on if something is unclear -->
             <titleStmt>
-                <title>XXXXXX</title>
+                <title>Na Floresta do Alheamento</title>
                 <author>
-                    <rs type="name" key="AdC">XXXXXXX</rs>
-                    <!-- JU: The author of this text is Campos <rs type="name" key="AdC">Álvaro de Campos // (the @key is to identify Caeiro.  </rs>
-                            You can find other persons IDs in the file lists.xml in the data folder. In that file, 
-                            look for the sublist listPerson, currently beginning at line 1522. You can also add
-                            new persons there, just be careful to always update your changes with GitHub, because 
-                            we all work on that lists.xml file -->
+                    <rs type="name" key="FP">Fernando Pessoa</rs>                 
                 </author>
- 
                 <respStmt>
                     <resp>Edição, Transcrição, Codificação</resp>
                     <name>Jorge Uribe</name>
@@ -38,50 +32,32 @@
                     <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
-                <idno type="filename">Campos_Notas_para_a_recordacao.xml</idno>
-                <!-- JU: author of the piece: Campos // please follow this file name pattern for other files -->
+                <idno type="filename">Pessoa_Na_Floresta_do_Alheamento.xml</idno>               
             </publicationStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O4-X">Notas para recordação do meu mestre
-                        Caeiro</rs></item>
-                    <!-- JU: Also in this case, it should be Campos // @key: contains the index of this WORK. 
-        (to be defined in the central work index, O2 = Caeiro, X -> will be a number)
-        This can be left as is in the beginning.
-    -->
+                    <item><rs type="work" key="O1-X">Na Floresta do Alheamento</rs></item>
                 </list>
                 <biblStruct>
                     <!-- here goes the bibliographical reference for the source publication -->
                     <analytic>
-                        <title level="a">XXXXXXXXXXXX</title>
+                        <title level="a">Na Floresta do Alheamento</title>
                         <author>
-                            <rs type="name" key="AdC">XXXXX
-                                XXXXXX</rs><!-- JU: If this is to identify the author, it also should be changed to Campos, Caeiro is only a reference in the title <Topic??>// the @key is to identify Caeiro.
-                            (see the comment above) -->
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
                         <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
-                        <title level="j"><rs type="periodical" key="J1">Presença</rs></title>
-                        <!-- @key is to identify the periodical. You can find other periodicals IDs in the file 
-                            lists.xml in the data folder. In that file, 
-                        look for the sublist <list type="periodical">, currently beginning at line 1450. You can also add
-                        new periodicals there -->
+                        <title level="j"><rs type="periodical" key="J5">A Águia</rs></title>
                         <imprint>
-                            <date when="1931-01">Janeiro de 1931</date>
-                            <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
+                            <date when="1913-08">Agosto de 1913</date>                          
                         </imprint>
-                        <biblScope unit="issue">30</biblScope>
-                        <biblScope unit="page">11 e 15</biblScope>
+                        <biblScope unit="issue">20</biblScope>
+                        <biblScope unit="page">38 a 42</biblScope>
                     </monogr>
                     <note type="genre">
                         <rs type="genre" key="prosa">Prosa</rs>
-                        <!-- JU: I'm not sure I understand this part: is it always necessary to mark "poesia" 
-                        UH: you are right, the category prosa still had to be created (it was just that we
-                        did no have any prose before)-->
                     </note>
                 </biblStruct>
             </sourceDesc>
@@ -93,7 +69,7 @@
         several images can be several graphic-elements. All files must be sent to the CCeH to be processed for the image
         viewer and to be stored on the image server. If there is no image please leave this as is. -->
     </facsimile>
-    <text corresp="#O4-X">
+    <text corresp="#O1-X">
         <!-- @corresp: contains the index of this WORK. 
         (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
         This can be left as is in the beginning.
@@ -309,8 +285,8 @@
                 <p rend="indent-first">Cubramos, ó Silenciosa, com um lençol de linho fino o perfil 
                     hirto e morto da nossa Imperfeição...</p>
                 
-                <p rend="indent-first">Do <rs type="title">«Livro do Desasocego»</rs></p>
-                <p rend="indent-first">em preparação</p>
+                <p rend="margin-vertical">Do <rs type="title">«Livro do Desasocego»</rs></p> 
+                <p>em preparação</p>
                 <signed>Fernando Pessôa</signed>
                 </div>
                 </body>
