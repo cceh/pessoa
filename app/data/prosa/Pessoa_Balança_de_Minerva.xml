@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>         
+            <titleStmt>
+                <title>Balança de Minerva - Aferição</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                    </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="restricted">
+                    <!-- @status will be set to "free" once the document is ready to be published -->
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Pessoa_Balança_de_Minerva.xml</idno>               
+            </publicationStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="O1-X">Balança de Minerva - Aferição</rs></item>
+                    <!-- JU: Also in this case, it should be Campos // @key: contains the index of this WORK. 
+        (to be defined in the central work index, O2 = Caeiro, X -> will be a number)
+        This can be left as is in the beginning.
+    -->
+                </list>
+                <biblStruct>
+                    <!-- here goes the bibliographical reference for the source publication -->
+                    <analytic>
+                        <title level="a">Balança de Minerva - Aferição</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs><!-- JU: If this is to identify the author, it also should be changed to Campos, Caeiro is only a reference in the title <Topic??>// the @key is to identify Caeiro.
+                            (see the comment above) -->
+                        </author>
+                        <textLang mainLang="pt" otherLangs="en"/>
+                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J7">Teatro - Jornal de Arte</rs></title>
+                        <!-- @key is to identify the periodical. You can find other periodicals IDs in the file 
+                            lists.xml in the data folder. In that file, 
+                        look for the sublist <list type="periodical">, currently beginning at line 1450. You can also add
+                        new periodicals there -->
+                        <imprint>
+                            <date when="1913-11">Novembro de 1913</date>
+                            <!-- in case it is not a single date, but from-to, it 
+                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
+                            there is just a year: when="1931" -->
+                        </imprint>
+                        <biblScope unit="issue">X</biblScope>
+                        <biblScope unit="page">X</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="prosa">Prosa</rs>
+                        <!-- JU: I'm not sure I understand this part: is it always necessary to mark "poesia" 
+                        UH: you are right, the category prosa still had to be created (it was just that we
+                        did no have any prose before)-->
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="prosa/IMAGE-FILE-NAME"/>
+        <!-- JU: I'm sending you the images in an e-mail// if there is a facsimile, the image file name goes here.
+        several images can be several graphic-elements. All files must be sent to the CCeH to be processed for the image
+        viewer and to be stored on the image server. If there is no image please leave this as is. -->
+    </facsimile>
+    <text corresp="#O4-X">
+        <!-- @corresp: contains the index of this WORK. 
+        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
+        This can be left as is in the beginning.
+    -->
+        <body>
+            <div>
+                <head>Balança de Minerva</head>        
+                <head type="sub">AFERIÇÃO</head>
+                <p rend="indent-first"> Destina-se esta secção á critica dos maus livros e especialmente á critica d’aquelles maus 
+                    livros que toda a gente considera bons. O livro, consagrado por qualidades que não tem, do homem consagrado por 
+                    qualidades com que outros o pintaram; o livro d’aquelle que, tendo creado fama, se deitou a fingir que dormia; o 
+                    livro do que entrou no palacio das Musas pela janella ou colheu a maçã da sabedoria com o auxilio d’um escadote – 
+                    tudo isto se pesará na Balança de Minerva.</p> 
+                    <p rend="indent-first"> Claro que a razão do titulo <hi rend="italic">Balança de Minerva</hi> é a circunstância de 
+                        Minerva não ter balança nenhuma. Vagamente absurdo, leva este titulo em si a definição d’um modo-de-ver que 
+                        escolhe o onde oppor-se a todos para ter razão inutilmente. A consciencia do esforço inutil e do trabalho perdido 
+                        ainda é uma das grandes emoções estheticas que restam a quem se preocupa com as cousas que ainda restam.</p>
+                        <p rend="indent-first"> A critica, de resto, é apenas a forma suprema e artistica da maledicencia. É preferível 
+                            que seja justa, mas não é absolutamente necessário que o seja. A injustiça, aliás, é a justiça dos fortes. No 
+                            fundo isto é tudo bondade. Dizer mal d’um livro é o único modo de dizer bem d’elle. Se é mau, faz-lhe justiça; 
+                            se é bom põe-o na evidencia que os livros bons merecem. E, no fim de tudo, nada d’isto tem importancia, porque 
+                            os livros bons leva-os a Historia ao collo para casa. E quanto aos maus – criticar é apenas abrir-lhes a cova e 
+                            resar-lhes em cima da ultima descida o latim que fallava <rs type="name" key="P460">Juvenal</rs>. Ás vezes é com 
+                            sete pás de elogios que esta justiça mortal melhor se sella.</p>
+                        <p rend="indent-first">A justificação ultima da critica assim bem entendida é o satisfazer a função natural de 
+                            desdenhar, função tão natural como a de comer e que é de boa hygiene de espirito satisfazer cuidadosamente. 
+                            Quem sente vontade de desdenhar não deve atar-se á cobardia de julgar isso feio, nem vender-se á infamia de ir 
+                            desdenhar o que os outros desdenham, abdicando assim da sua individualidade, gregario.</p>
+                        <p rend="indent-first">As horas passam devagar e pesa em tedio a consciencia d’ellas. Buscar o conforto no desprezo 
+                            é não só o nosso dever para com o desprezo, mas tambem o nosso dever para com nós-proprios. Espetar alfinetes 
+                            na alma alheia, dispondo esses alfinetes em desenhos que aprazam á nossa atenção futilmente concentrada, para 
+                            que o nosso tédio se vá esvaindo – eis um passatempo deliciosamente de critico, e ao qual juramos fidelidade.</p>
+                        <p rend="indent-first">Traduzindo isto para a metaphora que dá cor a esta secção, pretendemos dar a entender que o 
+                            nosso uso da Balança de Minerva limitar-se-ha, na maioria dos casos, a dar com ella – pesos e tudo – na cabeça 
+                            do criticado. Isso, de resto, não deve preocupar ninguem. Quem tiver de ser immortal pode sel-o mesmo com a 
+                            cabeça partida. O ser immortal é a unica das preocupações anti-sociaes que não faz mal a ninguem. E visto que 
+                            o futuro raras vezes dá por ella, não é demais que o presente algumas vezes dê n’ella.</p>
+                        <signed>Fernando Pessoa.</signed>
+                </div>
+            </body>
+        </text>
+    </TEI>
+                        

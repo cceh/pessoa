@@ -64,10 +64,7 @@
                         <biblScope unit="page">137 e 144</biblScope>
                     </monogr>
                     <note type="genre">
-                        <rs type="genre" key="prosa">Prosa</rs>
-                        <!-- JU: I'm not sure I understand this part: is it always necessary to mark "poesia" 
-                        UH: you are right, the category prosa still had to be created (it was just that we
-                        did no have any prose before)-->
+                        <rs type="genre" key="prosa">Prosa</rs>                      
                     </note>
                 </biblStruct>
             </sourceDesc>
@@ -79,19 +76,15 @@
         several images can be several graphic-elements. All files must be sent to the CCeH to be processed for the image
         viewer and to be stored on the image server. If there is no image please leave this as is. -->
     </facsimile>
-    <text corresp="#O4-X">
-        <!-- @corresp: contains the index of this WORK. 
-        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
-        This can be left as is in the beginning.
-    -->
+    <text corresp="#O1-X">
         <body>
             <div>
                 <!-- <head> is for headings. <rs type="name"> is to mark mentioned names. In @key: please use the identifier
                 for the person that you find in lists.xml. @role is only available for the four heteronyms: Pessoa, Caeiro, 
                 Campos, Reis. It can be: author, editor, translator, topic. -->
                 <head>REINCIDINDO... </head>
-                <div>
-                    <head rend="indent">I</head>
+                <div>    
+                <head rend="indent">I</head>
                     <p rend="indent-first"><hi rend="bold">N’o Dia</hi>, de 24 de abril, o autor de uma 
                         <hi rend="italic">Carta de Coimbra</hi>, entitulada <hi rend="italic">A literatura e o futuro</hi>,
                         faz sobre o nosso anterior artigo considerações adversamente críticas. Em si, 
@@ -109,7 +102,7 @@
                         e todas as outras alegrias.
                         </p>
                     <p rend="indent-first">Importa, porém, declarar, antes de tudo, que nem para nós, autor dele, 
-                        oferece o nosso anterior escrito <!-- Here it will be nice to freate an internal reference to the document 
+                        oferece o nosso anterior escrito <!-- Here it will be nice to create an internal reference to the document 
                             A nova poesia portugueza sociologicamente considerada--> 
                         cousa que se pareça com perfeição 
                         em materia racionativa. Em sete paginas não se pode claramente e completamente pôr uma argumentação
@@ -119,7 +112,8 @@
                         ocasionaes como-que-falhas dialecticas –  esses dogmatismos e pressas citados – não nos sejam 
                         registados em desprimôr de sinceridade ou certeza, ou de possibilidade, que em nós haja, de 
                         irrefutabilisar, desenvolvido que possa ser o raciocinio, as conclusões últimas da nossa analise 
-                        construtiva.</p>
+                        construtiva.</p>               
+                </div>
                     <div>
                         <head rend="indent">II</head>
                         <p rend="indent-first"> Qualquer corrente literaria tira os caracteristicos que o raciocinador lhe 
@@ -418,7 +412,7 @@
                                             <rs type="name" key="P18">Anthero</rs> teve co-precursores de mais valor que os 
                                             contemporaneos (co-precursores) de <rs type="name" key="P434">Rousseau</rs> e de 
                                             <rs type="name" key="P433">Chaucer</rs>. No que respeita ao primeiro estadio, o poema 
-                                            supremo do nosso, a <!-- TITLE NOT YET CREATED--><rs type="title">Patria</rs>, de 
+                                            supremo do nosso, a <!-- TITLE NOT CREATED--><rs type="title">Patria</rs>, de 
                                             <rs type="name" key="P25">Junqueiro</rs>, escusa de se acanhar na comparação com 
                                             <rs type="name" key="P438">Châteaubriand</rs>-poeta, ou mesmo com a 
                                             <rs type="title">Faerie Queene</rs>, de <rs type="name" key="P241">Spenser</rs>. 
@@ -532,8 +526,7 @@
                                             
                     </div>
                             <signed><hi rend="italic">Fernando Pêssoa</hi>.</signed>
-                                </div>
-                </div>
+            </div>
      </body>
     </text>
 </TEI>
