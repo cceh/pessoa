@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>         
+            <titleStmt>
+                <title>3</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="restricted">
+                    <!-- @status will be set to "free" once the document is ready to be published -->
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Pessoa_3.xml</idno>               
+            </publicationStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="O1-X">3</rs></item>
+                    <!-- JU: Also in this case, it should be Campos // @key: contains the index of this WORK. 
+        (to be defined in the central work index, O2 = Caeiro, X -> will be a number)
+        This can be left as is in the beginning.
+    -->
+                </list>
+                <biblStruct>
+                    <!-- here goes the bibliographical reference for the source publication -->
+                    <analytic>
+                        <title level="a">3</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs><!-- JU: If this is to identify the author, it also should be changed to Campos, Caeiro is only a reference in the title <Topic??>// the @key is to identify Caeiro.
+                            (see the comment above) -->
+                        </author>
+                        <textLang mainLang="pt" otherLangs="en"/>
+                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J7">Teatro - Revista de Critica</rs></title>
+                        <!-- @key is to identify the periodical. You can find other periodicals IDs in the file 
+                            lists.xml in the data folder. In that file, 
+                        look for the sublist <list type="periodical">, currently beginning at line 1450. You can also add
+                        new periodicals there -->
+                        <!-- We may consider to create a different Journal name for "Teatro-Revista de Cr"i"tica", note it is "Teatro -Jornal D'arte"-->
+                        <imprint>
+                            <date when="1913-03-25">25 de Março de 1913</date>
+                            <!-- in case it is not a single date, but from-to, it 
+                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
+                            there is just a year: when="1931" -->
+                        </imprint>
+                        <biblScope unit="issue">X</biblScope>
+                        <biblScope unit="page">2</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="prosa">Prosa</rs>
+                        <!-- JU: I'm not sure I understand this part: is it always necessary to mark "poesia" 
+                        UH: you are right, the category prosa still had to be created (it was just that we
+                        did no have any prose before)-->
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="prosa/IMAGE-FILE-NAME"/>
+        <!-- JU: I'm sending you the images in an e-mail// if there is a facsimile, the image file name goes here.
+        several images can be several graphic-elements. All files must be sent to the CCeH to be processed for the image
+        viewer and to be stored on the image server. If there is no image please leave this as is. -->
+    </facsimile>
+    <text corresp="#O4-X">
+        <!-- @corresp: contains the index of this WORK. 
+        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
+        This can be left as is in the beginning.
+    -->
+        <body>
+            <div>
+                <head rend="indent"><hi rend="bold">3</hi></head>
+                
+                <p rend="indent-first">Tres publicações, afóra a nossa, nasceram ha pouco para a pretensão de serem lidas.</p>
+                <p rend="indent-first">Uma é a «revista de arte» <rs type="title">Teatralia</rs>, outra a de «literatura e arte» 
+                    <rs type="title">Gente Moça</rs>, e ha tambem um periodico <rs type="title">O Talassa</rs>, semanario, ao que parece, e 
+                    humoristico, consoante, por analogia de aspecto com outras publicações do parece-que-mesmo genero, feitas aí por 1880, sem 
+                    grande dificuldade se conclue. A primeira e a terceira destas consequencias de Gutemberg adornam Lisboa; pela segunda é 
+                    responsavel o Porto. </p>
+                <p rend="indent-first">Unjamo-las do nosso acolhimento.</p>
+                <p rend="indent-first">A primeira é especialmente adoravel.</p>
+                <p rend="indent-first">É proveniente da iniciativa dos alunos da Escola da Arte de Representar. E é ante-simpatica ao mero 
+                    ainda-não leitor dela porque nos enreda logo com uma vantagem – que os alunos da dita escola emquanto escrevem não representam.</p>
+                <p rend="indent-first"> O conhecimento da revista é, porém, um pouco ensombrador desta vantagem antevista. É talvez, e apezar de 
+                    tudo, melhor que os alunos representem.</p>
+                <p rend="indent-first">Não queremos dizer com isto que a Teatralia se imponha como má. Mas tem claras pretensões a se-lo. Não ha 
+                    duvida que temos de nos apear para a tolerancia. Revista de pre-actores, não lhe podemos querer encontrar instinto literario ou 
+                    intuição artistica. Mas – que diabo! – eles não são actores ainda. Sempre se podìa esperar que nos dessem alguma cousa de 
+                    circumlegivel.</p>
+                <p rend="indent-first">Com tolerancia pre-estabelecida, porém, sempre se ha de conseguir elogiar. Vamos que um ou outro do 
+                    colaboradores mostra esperanças de envelhecer para inteligente.</p>
+                <p rend="indent-first">O Aluno <rs type="name" key="PXXX">F. Adolfo Coelho</rs>, por exemplo, oferece-nos um estudo que revela um 
+                    grave conhecimiento pelo menos de algumas passagens dos tragicos gregos e de uns córos de <rs type="title">Castro</rs> de 
+                    <rs type="name" key="PXXX">Antonio Ferreira</rs>. Se é ainda muito novo, talvez venha a conseguir, com o deixar de ser muito 
+                    novo, alguma cousa em materia de exposição erudita. Por emquanto vê-se bem a sua inexperiencia nisto de transmitir erudição. 
+                    Porque não é assim que se <hi rend="italic"> ensina</hi>. É preciso mais leveza, mais cingir de perto a alma do assunto, mais 
+                    poder vibrante de interessar e comunicar. E o modo-de-expor do sr. <rs type="name" key="PXXX">F. A. Coelho</rs> dá-nos a 
+                    impressão de nos estarem esfregando nas costas [u]m remedio para uso interno... Mas esta nossa critica pouco quer morder. Que 
+                    apenas dizer que o Sr. <rs type="name" key="PXXX">F. A. Coelho</rs> não tem geito para professor. Para outras cousas póde ser 
+                    que o tenha.</p>
+                <p rend="indent-first">O aluno <rs type="name" key="PXXX">Manuel de Sousa Pinto</rs> (cujo nome nos não sõa desconhecido) distribue 
+                    uns raciocinios um pouco palidos mas interessantes por paginas que sofrem duma lamentavel incompatibilidade pessoal entre o 
+                    gravador e o impressor.</p>
+                <p rend="indent-first">Ha um artigo sobre «marcação», do aluno <rs type="name" key="PXXX">Antonio Pinheiro</rs>. Incompetentes para 
+                    saber se ele é bom ou mau, limitamo-nos, para dar idéa do seu i[n]teresse, a transcrever lhe o paragrafo final:</p>
+                <p rend="indent-first"><hi rend="italic">As diferentes portas ou aposentos são designados por letras, e algumas vezes, E – quer 
+                    dizer esquerda</hi>, D – <hi rend="italic">direita</hi>, F <hi rend="italic">fundo</hi>, B – <hi rend="italic">baixa e
+                    </hi> A – <hi rend="italic">alta</hi>.</p>
+                <p rend="indent-first">Os alunos <rs type="name" key="PXXX">Julio Dantas</rs>, <rs type="name" key="PXXX">Luiz Barreto</rs> e 
+                    <rs type="name" key="PXXX">Bento Mantua</rs> tambem navegam nestas aguas. Os dois ultimos teem transbordo para o numero 
+                    seguinte.</p>
+                <p rend="indent-first">Uns cachos de uvas na capa da revista parecem-nos insuficientemente dionisiacos por desvergonhadamente da 
+                    fundição da Impresa Nacional.</p>
+                
+                <milestone rend="square" unit="section"/><!-- It's not a square -->
+                
+                <p rend="indent-first">A revista do Porto <rs type="title">Gente Moça</rs> não tem por onde se lhe queira pegar. No emtanto não é 
+                    desagradavel folheal-a. O caso é não a lêr. Motiva a ausencia de desagrado um artista que nela colabora, inevitavelmente 
+                    anonimo. É o chefe da Tipografia do <rs type="title">Porto Medico</rs>.</p>
+                <p rend="indent-first">Mas como literatura aquilo é tão nada que o melhor seria dizer sobre ele, calando-nos, tanto quanto ele vale. 
+                    Para dizer alguma cousa porém note-se que nesta revista se fazem córtes á materia a publicar, como se fosse um jornal[.] 
+                    Cortaram toda a inspiração ao poeta Lebre e Lima para ele poder caber ali.</p>
+                
+                <milestone rend="square" unit="section"/><!-- It's not a square -->
+                
+                <p rend="indent-first">O semanario <rs type="title">O Talassa</rs> faz lembrar um pouco <rs type="name" key="PXXX">Bordalo Pinheiro</rs>, 
+                    pela modernidade.</p>
+                <p rend="indent-first">É uma publicação perfeitamente inoffensiva politicamente[.] Recomedamol-a sem hesitação aos seus atacados e 
+                    caricaturados.</p>
+                <p rend="indent-first">A cousa que tem de mais flagrantemente interessante é a <hi rend="italic">blague</hi> da dua confecção. 
+                    É a de os dsenhos serem feitos pelo sr. <rs type="name" key="PXXX">Crispim</rs> e a prosa pelo sr. 
+                    <rs type="name" key="PXXX">Jorge Colaço</rs>, como sem custo se deduz dum exame perspicaz deles e dela.</p>
+                <p rend="indent-first">Tem duas outras novidades interessantes, como seja a de descobrir para assunto de piada que o sr. 
+                    <rs type="name" key="PXXX">Brito Camacho</rs> é porco, e a de iniciar, com respetio ao sr. 
+                    <rs type="name" key="PXXX">Antonio José d’Almeida</rs>, um novo genero de caricatura, que consiste em nos fazer crêr que 
+                    aquele politico não é parecido consigo proprio.</p>
+                
+                <milestone rend="square" unit="section"/><!-- It's not a square -->
+                
+                <p rend="indent-first">Desejamos ás três publicações as prosperidades que merecem.</p>
+                
+                <signed>Fernando Pessoa.</signed> 
+                
+            </div>
+        </body>
+    </text>
+</TEI>
+                
