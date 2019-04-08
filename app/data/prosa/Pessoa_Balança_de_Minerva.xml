@@ -35,10 +35,6 @@
             <sourceDesc>
                 <list type="work-index">
                     <item><rs type="work" key="O1-X">Balança de Minerva - Aferição</rs></item>
-                    <!-- JU: Also in this case, it should be Campos // @key: contains the index of this WORK. 
-        (to be defined in the central work index, O2 = Caeiro, X -> will be a number)
-        This can be left as is in the beginning.
-    -->
                 </list>
                 <biblStruct>
                     <!-- here goes the bibliographical reference for the source publication -->
@@ -52,11 +48,11 @@
                         <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
-                        <title level="j"><rs type="periodical" key="J7">Teatro - Jornal de Arte</rs></title>
+                        <title level="j"><rs type="periodical" key="J59">Teatro - Jornal de Arte</rs></title>
                         <!-- @key is to identify the periodical. You can find other periodicals IDs in the file 
                             lists.xml in the data folder. In that file, 
                         look for the sublist <list type="periodical">, currently beginning at line 1450. You can also add
-                        new periodicals there -->
+                        new periodicals there JU: I created this Journal, please confirm if it works -->
                         <imprint>
                             <date when="1913-11-22">22 de Novembro de 1913</date>
                             <!-- in case it is not a single date, but from-to, it 
@@ -68,9 +64,6 @@
                     </monogr>
                     <note type="genre">
                         <rs type="genre" key="prosa">Prosa</rs>
-                        <!-- JU: I'm not sure I understand this part: is it always necessary to mark "poesia" 
-                        UH: you are right, the category prosa still had to be created (it was just that we
-                        did no have any prose before)-->
                     </note>
                 </biblStruct>
             </sourceDesc>
@@ -78,9 +71,6 @@
     </teiHeader>
     <facsimile>
         <graphic url="prosa/IMAGE-FILE-NAME"/>
-        <!-- JU: I'm sending you the images in an e-mail// if there is a facsimile, the image file name goes here.
-        several images can be several graphic-elements. All files must be sent to the CCeH to be processed for the image
-        viewer and to be stored on the image server. If there is no image please leave this as is. -->
     </facsimile>
     <text corresp="#O4-X">
         <!-- @corresp: contains the index of this WORK. 

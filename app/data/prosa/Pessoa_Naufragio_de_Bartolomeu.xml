@@ -35,29 +35,19 @@
             <sourceDesc>
                 <list type="work-index">
                     <item><rs type="work" key="O1-X">Naufragio de Bartholomeu</rs></item>
-                    <!-- JU: Also in this case, it should be Campos // @key: contains the index of this WORK. 
-        (to be defined in the central work index, O2 = Caeiro, X -> will be a number)
-        This can be left as is in the beginning.
-    -->
                 </list>
                 <biblStruct>
                     <!-- here goes the bibliographical reference for the source publication -->
                     <analytic>
                         <title level="a">Naufragio de Bartholomeu</title>
                         <author>
-                            <rs type="name" key="FP">Fernando Pessoa</rs><!-- JU: If this is to identify the author, it also should be changed to Campos, Caeiro is only a reference in the title <Topic??>// the @key is to identify Caeiro.
-                            (see the comment above) -->
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
                         <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
                         <title level="j"><rs type="periodical" key="J7">Teatro - Jornal de Arte</rs></title>
-                        <!-- @key is to identify the periodical. You can find other periodicals IDs in the file 
-                            lists.xml in the data folder. In that file, 
-                        look for the sublist <list type="periodical">, currently beginning at line 1450. You can also add
-                        new periodicals there -->
-                        <!-- We may consider to create a different Journal name for "Teatro-Revista de Cr"i"tica", note it is "Teatro -Jornal D'arte"-->
                         <imprint>
                             <date when="1913-03-01">1 de Março de 1913</date>
                             <!-- in case it is not a single date, but from-to, it 
@@ -69,9 +59,6 @@
                     </monogr>
                     <note type="genre">
                         <rs type="genre" key="prosa">Prosa</rs>
-                        <!-- JU: I'm not sure I understand this part: is it always necessary to mark "poesia" 
-                        UH: you are right, the category prosa still had to be created (it was just that we
-                        did no have any prose before)-->
                     </note>
                 </biblStruct>
             </sourceDesc>
@@ -79,9 +66,6 @@
     </teiHeader>
     <facsimile>
         <graphic url="prosa/IMAGE-FILE-NAME"/>
-        <!-- JU: I'm sending you the images in an e-mail// if there is a facsimile, the image file name goes here.
-        several images can be several graphic-elements. All files must be sent to the CCeH to be processed for the image
-        viewer and to be stored on the image server. If there is no image please leave this as is. -->
     </facsimile>
     <text corresp="#O4-X">
         <!-- @corresp: contains the index of this WORK. 
@@ -92,10 +76,10 @@
             <div>
                 <head><hi rend="bold">Naufragio de Bartholomeu</hi></head>
                 <p rend="indent-first">Nenhum livro para creanças deve ser escrito para creanças. Escrever de cousas simples com simplicidade é 
-                    quanto se exige d’aquela especie de adido á pedagogia que o sr. <rs type="name" key="PXXX">Lopes-Vieira</rs> quer ser. Assim, 
+                    quanto se exige d’aquela especie de adido á pedagogia que o sr. <rs type="name" key="P140">Lopes-Vieira</rs> quer ser. Assim, 
                     <rs type="name" key="PXXX">João de Deus</rs> não escreveu a <rs type="title">Engeitadinha</rs> senão com o escrupulo de ser simples. 
                     E porque o assumpto era tambem simples, as creanças comprehendem-o. Se quizesse ser infantil, acontecia-lhe isto – seria 
-                    infantil. O sr. <rs type="name" key="PXXX">Lopes-Vieira</rs> quer escrever para creanças mediante intuição da alma infantil, 
+                    infantil. O sr. <rs type="name" key="P140">Lopes-Vieira</rs> quer escrever para creanças mediante intuição da alma infantil, 
                     como uma creança, escrevendo para creanças. Mesmo que se saisse bem d’isto, não se sahia bem d’isto. Porque as creanças não 
                     escrevem. Escrever como uma creança, é toleravel sendo creança, porque o ser creança o torna toleravel. Mas o que uma creança 
                     escreve, ou não se publica, ou se publica para adultos, psycologos. E que interesse tem para creanças esta baba pedagogica? 
@@ -109,17 +93,17 @@
                     do <rs type="title">Ar Livre</rs> e de <rs type="title">O Poeta Saudade </rs>. Como estes fenomenos de combustão-em-asneira 
                     incontrassem uma atmosfera de elogios propicia, a chama augmentou até vir queimar a critica para fóra da indiferença. 
                     Esse fenomeno de elogios – esse sim é que era merecedor de uma analise de quimica psycologica.</p>
-                <p rend="indent-first">A fama que o sr. <rs type="name" key="PXXX">Lopes-Vieira</rs> tem, ex-ganhou-a dignamente, porque foi com 
+                <p rend="indent-first">A fama que o sr. <rs type="name" key="P140">Lopes-Vieira</rs> tem, ex-ganhou-a dignamente, porque foi com 
                     uma obra bella, e por vezes grande, que se enfameceu. Foi com moeda de lei que adquiriu o incenso com que se estonteou. 
                     Como muitos outros, e em parte pela mesma razão thuribular, creou fama e deitou-se a dormir. E visto que estes livros para 
                     creanças e parte de outros, recentes, são o seu somno, bem se pode dizer que dorme como uma bêsta.</p>
                 <p rend="indent-first">Mas voltemos, accusadoramente, ao caso.</p>
-                <p rend="indent-first">O sr. <rs type="name" key="PXXX">Lopes-Vieira</rs> é um criminoso. É-o por trez razões. Está estragando, 
+                <p rend="indent-first">O sr. <rs type="name" key="P140">Lopes-Vieira</rs> é um criminoso. É-o por trez razões. Está estragando, 
                     com o seu gato-por-lebre de simplicidade, o rudimentar senso estetico de creanças, que, mesmo que sejam só duas, são 
                     classificaveis de inumeras, ante o horror do crime. – Está tornando ridiculos assumptos que conviria tratar com uma decencia 
                     que a estupidez[,] mesmo quando involuntaria, nunca tem. Pobres cães nossos amigos tinhosos de 
-                    <rs type="name" key="PXXX">Lopes-Vieira</rs>!. Pobre <rs type="name" key="PXXX">Bartholomeu Dias</rs>, tão embobecido de 
-                    pedagogia! – E, por ultimo, para tudo de nocivo ser, o sr. <rs type="name" key="PXXX">Lopes-Vieira</rs> é até antipedagogico, 
+                    <rs type="name" key="P140">Lopes-Vieira</rs>!. Pobre <rs type="name" key="P477">Bartholomeu Dias</rs>, tão embobecido de 
+                    pedagogia! – E, por ultimo, para tudo de nocivo ser, o sr. <rs type="name" key="P140">Lopes-Vieira</rs> é até antipedagogico, 
                     porque quem escreve</p>
                 
                 
@@ -127,13 +111,13 @@
                     <p rend="indent-first"><hi rend="italic">Onde os meninos tinham medo de ir</hi></p>
                     
                     <p rend="margin-vertical">merece uma inquisição de professores.</p>
-                    <p rend="indent-first">Educados na estupidez pela leitura das obras infantis do sr. Lopes-Vieira, levados ao 
+                    <p rend="indent-first">Educados na estupidez pela leitura das obras infantis do sr. <rs type="name" key="140">Lopes-Vieira, levados ao 
                       anti-patriotismo pelo inevitavel desdem que um livro como o <rs type="title">Bartholomeu Marinheiro</rs> leva
                     a ter pelo navegador que ali aparece vestido de bébé de Carnaval, cheios de fobias por lhes terem sido metaforisadas na infancia 
                       cousas como que um quarto escuro é logicamente terrivel, os homens de Portugal de amanhã (adoptados escolarmente, como tudo 
-                      o que dizemos n´este artigo leva a crer que sejam, os livros do sr. <rs type="name" key="PXXX">Lopes-Vieira</rs>) terão por 
-                           <rs type="name" key="PXXX">Shakespeare</rs> o sr. <rs type="name" key="PXXX">Julio Dantas</rs>, por
-                                <rs type="name" key="PXXX">Shelley</rs> o sr. <rs type="name" key="PXXX">Lopes-Vieira</rs>... e serão hespanhoes.</p>
+                      o que dizemos n´este artigo leva a crer que sejam, os livros do sr. <rs type="name" key="P140">Lopes-Vieira</rs>) terão por 
+                           <rs type="name" key="P65">Shakespeare</rs> o sr. <rs type="name" key="P467">Julio Dantas</rs>, por
+                                <rs type="name" key="P175">Shelley</rs> o sr. <rs type="name" key="P140">Lopes-Vieira</rs>... e serão hespanhoes.</p>
                         
                     <p rend="indent-first">Porque em que diabo pode vir a dar uma nação de parvos, de anti-patriotas e de panofobicos senão em deixar 
                             de ser nação?</p>
