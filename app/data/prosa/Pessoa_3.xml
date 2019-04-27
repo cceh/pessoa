@@ -35,10 +35,6 @@
             <sourceDesc>
                 <list type="work-index">
                     <item><rs type="work" key="O1-X">3</rs></item>
-                    <!-- JU: Also in this case, it should be Campos // @key: contains the index of this WORK. 
-        (to be defined in the central work index, O2 = Caeiro, X -> will be a number)
-        This can be left as is in the beginning.
-    -->
                 </list>
                 <biblStruct>
                     <!-- here goes the bibliographical reference for the source publication -->
@@ -70,22 +66,20 @@
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic url="prosa/IMAGE-FILE-NAME"/>
+        <graphic url="prosa/Teatro_3"/>
     </facsimile>
-    <text corresp="#O4-X">
+    <text corresp="#O1-X">
         <!-- @corresp: contains the index of this WORK. 
         (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
         This can be left as is in the beginning.
     -->
         <body>
             <div>
-                <head rend="center"><hi rend="bold">3</hi></head>
+                <head rend="center">3</head>
                 
                 <p rend="indent-first">Tres publicações, afóra a nossa, nasceram ha pouco para a pretensão de serem lidas.</p>
-                <p rend="indent-first">Uma é a «revista de arte» <rs type="periodical">Teatralia</rs><!-- JU: this is the name of a Magazine, where Pessoa did not publish 
-                    but refers to it in this article, I created in the lists. document, but I'm not that the right thing to do, or should we think of it as just 
-                a title (there are two more maganzines metioned in this article)-->, outra a de «literatura e arte» 
-                    <rs type="periodical">Gente Moça</rs>, e ha tambem um periodico <rs type="periodical">O Talassa</rs>, semanario, ao que parece, e 
+                <p rend="indent-first">Uma é a «revista de arte» <rs type="periodical" key="J81">Teatralia</rs>, outra a de «literatura e arte» 
+                    <rs type="periodical" key="J82">Gente Moça</rs>, e ha tambem um periodico <rs type="periodical" key="J83">O Talassa</rs>, semanario, ao que parece, e 
                     humoristico, consoante, por analogia de aspecto com outras publicações do parece-que-mesmo genero, feitas aí por 1880, sem 
                     grande dificuldade se conclue. A primeira e a terceira destas consequencias de <rs type="name" key="463">Gutemberg</rs> adornam Lisboa; pela segunda é 
                     responsavel o Porto. </p>
@@ -95,7 +89,7 @@
                     ainda-não leitor dela porque nos enreda logo com uma vantagem – que os alunos da dita escola emquanto escrevem não representam.</p>
                 <p rend="indent-first"> O conhecimento da revista é, porém, um pouco ensombrador desta vantagem antevista. É talvez, e apezar de 
                     tudo, melhor que os alunos representem.</p>
-                <p rend="indent-first">Não queremos dizer com isto que a Teatralia se imponha como má. Mas tem claras pretensões a se-lo. Não ha 
+                <p rend="indent-first">Não queremos dizer com isto que a <rs type="periodical" key="J81">Teatralia</rs> se imponha como má. Mas tem claras pretensões a se-lo. Não ha 
                     duvida que temos de nos apear para a tolerancia. Revista de pre-actores, não lhe podemos querer encontrar instinto literario ou 
                     intuição artistica. Mas – que diabo! – eles não são actores ainda. Sempre se podìa esperar que nos dessem alguma cousa de 
                     circumlegivel.</p>
@@ -126,16 +120,16 @@
                 
                 <milestone rend="asterisks" unit="section"/><!-- It's not a square, but three asteriks -->
                 
-                <p rend="indent-first">A revista do Porto<rs type="title">Gente Moça</rs> não tem por onde se lhe queira pegar. No emtanto não é 
+                <p rend="indent-first">A revista do Porto <rs type="periodical" key="J82">Gente Moça</rs> não tem por onde se lhe queira pegar. No emtanto não é 
                     desagradavel folheal-a. O caso é não a lêr. Motiva a ausencia de desagrado um artista que nela colabora, inevitavelmente 
                     anonimo. É o chefe da Tipografia do <rs type="title">Porto Medico</rs>.</p>
                 <p rend="indent-first">Mas como literatura aquilo é tão nada que o melhor seria dizer sobre ele, calando-nos, tanto quanto ele vale. 
                     Para dizer alguma cousa porém note-se que nesta revista se fazem córtes á materia a publicar, como se fosse um jornal[.] 
                     Cortaram toda a inspiração ao poeta <rs type="name" key="470">Lebre e Lima</rs> para ele poder caber ali.</p>
                 
-                <milestone rend="asterisk" unit="section"/><!-- It's not a square, but three asteriks -->
+                <milestone rend="asterisks" unit="section"/><!-- It's not a square, but three asteriks -->
                 
-                <p rend="indent-first">O semanario <rs type="title">O Talassa</rs> faz lembrar um pouco <rs type="name" key="P461">Bordalo Pinheiro</rs>, 
+                <p rend="indent-first">O semanario <rs type="periodical" key="J83">O Talassa</rs> faz lembrar um pouco <rs type="name" key="P461">Bordalo Pinheiro</rs>, 
                     pela modernidade.</p>
                 <p rend="indent-first">É uma publicação perfeitamente inoffensiva politicamente[.] Recomedamol-a sem hesitação aos seus atacados e 
                     caricaturados.</p>
@@ -147,7 +141,7 @@
                     <rs type="name" key="P448">Antonio José d’Almeida</rs>, um novo genero de caricatura, que consiste em nos fazer crêr que 
                     aquele politico não é parecido consigo proprio.</p>
                 
-                <milestone rend="asterisk" unit="section"/><!-- It's not a square -->
+                <milestone rend="asterisks" unit="section"/><!-- It's not a square but three asteriks -->
                 
                 <p rend="indent-first">Desejamos ás três publicações as prosperidades que merecem.</p>
                 
