@@ -31,7 +31,6 @@
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
                 <availability status="restricted">
-                    <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename"
@@ -43,7 +42,6 @@
                             Considerada</rs></item>
                 </list>
                 <biblStruct>
-                    <!-- here goes the bibliographical reference for the source publication -->
                     <analytic>
                         <title level="a">A Nova Poesia Portugueza Sociologicamente
                             Considerada</title>
@@ -51,15 +49,11 @@
                             <rs type="name" key="FP"> Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
                         <title level="j"><rs type="periodical" key="J5">A Águia</rs></title>
                         <imprint>
                             <date when="1912-04">Abril de 1912</date>
-                            <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                         </imprint>
                         <biblScope unit="issue">4</biblScope>
                         <biblScope unit="page">101-107</biblScope>
@@ -72,21 +66,18 @@
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic url="prosa/IMAGE-FILE-NAME"/>
+        <graphic url="prosa/A_Nova_Sociologicamente_101.jpg"/>
+        <graphic url="prosa/A_Nova_Sociologicamente_102.jpg"/>
+        <graphic url="prosa/A_Nova_Sociologicamente_103.jpg"/>
+        <graphic url="prosa/A_Nova_Sociologicamente_104.jpg"/>
+        <graphic url="prosa/A_Nova_Sociologicamente_105.jpg"/>
+        <graphic url="prosa/A_Nova_Sociologicamente_106.jpg"/>
+        <graphic url="prosa/A_Nova_Sociologicamente_107.jpg"/>
     </facsimile>
     <text corresp="#O1-X">
-        <!-- @corresp: contains the index of this WORK. 
-        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
-        This can be left as is in the beginning.
-    -->
         <body>
             <div>
-                <!-- <head> is for headings. <rs type="name"> is to mark mentioned names. In @key: please use the identifier
-                for the person that you find in lists.xml. @role is only available for the four heteronyms: Pessoa, Caeiro, 
-                Campos, Reis. It can be: author, editor, translator, topic. -->
                 <head>A Nova Poesia Portugueza Sociologicamente Considerada</head>
-                <!-- p is for paragraphs, @rend for <p> can be "indent-first" when the first line of the paragraph is indented. 
-                    <hi> if something is highlighted, @rend for <hi> can be "bold", "italic", "underline", for example -->
                 <div>
                     <head rend="indent">I</head>
                     <p rend="indent-first"><hi rend="bold">Ao movimento</hi> litterario
@@ -174,8 +165,8 @@
                         U: you can mark that as a quote. @source could be used to indicate the source of the quote.
                         I have to add @source to the schema, so that there will be no error. 
                         Would you like to give the work that the quote comes from as the source, or just the author?
-                        (I am not sure if it is usual to just indicate the author, I will find out) JU: I think the author will be ok, what did you find out about this?
-                        -->,
+                        (I am not sure if it is usual to just indicate the author, I will find out) 
+                        JU: I think the author will be ok, but in any case the title of the work is Le chemin de velours: nouvelles dissociations d'idées-->,
                         ao raciocinador ideal bastaria, visto que o systema do universo se acha
                         logicamente contido no <hi rend="italic">brin de paille</hi>, analysal-o
                         bem, a elle <hi rend="italic">brin de paille</hi>, para deduzir o systema do
@@ -235,10 +226,9 @@
                         incorrectamente. De então para cá, em seguida ao periodo (de 1871 a 1881
                         pouco mais ou menos) de lenta consolidação republicana, vem o terceiro
                         periodo, aquelle a que caracterizam o realismo, o symbolismo e outros
-                        anti-romantismos (1)
-                        <!-- in this case we have a footnote "Uma analyse impossivel aqui, por demorada, mostraria 
-                        como é socilogicamente certa esta divisão, em apparecencia anti-historica ao ponto de ser
-                        de todo absurda - esta divisão e a que, de periodos politicos, vae a seguir. --></p>
+                        anti-romantismos <note n="1">Uma analyse impossivel aqui, por demorada, mostraria 
+                            como é socilogicamente certa esta divisão, em apparecencia anti-historica ao ponto de ser
+                            de todo absurda - esta divisão e a que, de periodos politicos, vae a seguir.</note></p>
                     <p rend="indent-first">Vejamos agora como se nos mostram os correspondentes
                         periodos politicos. O primeiro, <hi rend="italic">ancien régime</hi>, foi um
                         periodo em que a França nada creou <hi rend="italic">para a
