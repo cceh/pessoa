@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <!-- this is a comment... here they are used for documentation and to give hints. In new files, 
+        please just use them to comment on if something is unclear -->
+            <titleStmt>
+                <title>O Banqueiro Anarchista</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="restricted">
+                    <!-- @status will be set to "free" once the document is ready to be published -->
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Pessoa_O_Banqueiro_Anarquista.xml</idno>
+            </publicationStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="O1-X">O Marinheiro. Drama Estático Em Um Quadro</rs></item>
+                </list>
+                <biblStruct>
+                    <!-- here goes the bibliographical reference for the source publication -->
+                    <analytic>
+                        <title level="a">O Banqueiro Anarchista</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt" otherLangs="en"/>
+                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J11">Contemporânea</rs></title>
+                        <!-- @key is to identify the periodical. You can find other periodicals IDs in the file 
+                            lists.xml in the data folder. In that file, 
+                        look for the sublist <list type="periodical">, currently beginning at line 1450. You can also add
+                        new periodicals there -->
+                        <imprint>
+                            <date when="1922-05">Maio de 1922</date>
+                            <!-- in case it is not a single date, but from-to, it 
+                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
+                            there is just a year: when="1931" -->
+                        </imprint>
+                        <biblScope unit="issue">1</biblScope>
+                        <biblScope unit="page">5-21</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="prosa">Prosa</rs>                     
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="prosa/Banqueiro_1"/>
+        <graphic url="prosa/Banqueiro_2"/>
+        <graphic url="prosa/Banqueiro_3"/>
+        <graphic url="prosa/Banqueiro_4"/>
+        <graphic url="prosa/Banqueiro_5"/>
+        <graphic url="prosa/Banqueiro_6"/>
+        <graphic url="prosa/Banqueiro_7"/>
+        <graphic url="prosa/Banqueiro_8"/>
+        <graphic url="prosa/Banqueiro_9"/>
+        <graphic url="prosa/Banqueiro_10"/>
+        <graphic url="prosa/Banqueiro_11"/>
+        <graphic url="prosa/Banqueiro_12"/>
+        <graphic url="prosa/Banqueiro_13"/>
+        <graphic url="prosa/Banqueiro_14"/>
+        <graphic url="prosa/Banqueiro_15"/>
+        <graphic url="prosa/Banqueiro_16"/>
+        <graphic url="prosa/Banqueiro_17"/>
+    </facsimile>
+    <text corresp="#O1-X">
+        <!-- @corresp: contains the index of this WORK. 
+        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
+        This can be left as is in the beginning.-->
+        <body>
+            <div>
+                <head rend="center">O BANQUEIRO ANARCHISTA</head>
+                <head type= "sub" rend="center">POR</head>
+                    <head type= "sub" rend="center"><rs type="name" key="#FP">FERNANDO PESSOA</rs></head>
+                        
+                        <p rend="indent-first"><hi rend="bold">TINHAMOS</hi> acabado de jantar. Defronte de mim o meu amigo, o banqueiro, grande 
+                            commerciante e açambarcador notavel, fumava como quem não pensa. A conversa, que fôra amortecendo, jazia morta entre nós. 
+                            Procurei reanimal-a, ao acaso, servindo-me de uma idéa que me passou pela meditação. Voltei-me para elle, sorrindo.</p>
+                        <p rend="indent-first">— É verdade: disseram-me ha dias que v. em tempos foi anarchista…</p>
+                        <p rend="indent-first">— Fui, não: fui e sou. Não mudei a esse respeito. <hi rend="italic">Sou</hi> anarchista.</p>
+                        <p rend="indent-first">— Essa é boa! V. anarchista! Em que é que v. é anarchista?... Só se V. dá á palavra qualquer sentido 
+                            differente...</p>
+                        <p rend="indent-first">— Do vulgar? Não; não dou. Emprégo a palavra no sentído vulgar.</p>
+                        <p rend="indent-first">— Quer V. dizer, então, que é anarchista exactamente no mesmo sentído em que são anarchistas esses typos 
+                            das organizações operarias? Então entre V. e esses typos da bomba e dos syndicatos não ha differença nenhuma?</p>
+                        <p rend="indent-first">— Differença, differença, ha... Evidentemente que ha differença. Mas não é a que V. julga. V. duvida 
+                            talvez que as minhas theorias sociaes sejam eguais ás d’elles?...</p>
+                        <p rend="indent-first">— Ah, já percebo! V., quanto ás theorias, é anarchista; quanto á práctica... </p>
+                        <p rend="indent-first">— Quanto á práctica sou tão anarchista como quanto ás theorias. E quanto á práctica sou mais, sou muito 
+                            mais, anarchista que esses typos que V. citou. Toda a minha vida o mostra.</p>
+                        <p rend="indent-first">— Hein?!</p>
+                        <p rend="indent-first">— Toda a minha vida o mostra, filho. V. é que nunca deu a estas cousas uma attenção lucida. Por isso 
+                            lhe parece que estou dizendo uma asneira, ou então que estou brincando comsigo.</p>
+                        <p rend="indent-first">— Ó homem, eu não percebo nada!... A não ser..., a não ser que V. julgue a sua vida dissolvente e 
+                            anti-social e dê esse sentido ao anarchismo...</p>
+                        <p rend="indent-first">— Já lhe disse que não – isto é, já lhe disse que não dou á palavra anarchismo um sentido differente do 
+                            vulgar.</p>
+                        <p rend="indent-first">— Está bem... Continúo sem perceber... Ó homem, V. quer-me dizer que não ha differença entre as suas 
+                            theorias verdadeiramente anarchistas e a práctica da sua vida – a prática da sua vida como ella é agora? V. quer que eu 
+                            acredite que V. tem uma vida exactamente egual á dos typos que vulgarmente são anarchistas?</p>
+                        <p rend="indent-first">— Não; não é isso. O que quero dizer é que entre as minhas theorias e a práctica da minha vida não ha 
+                            divergencia nenhuma, mas uma conformidade absoluta. Lá que não [FIM IMAGEM 1] tenho uma vida como a dos typos dos 
+                            sindicatos e das bombas – isso é verdade. Mas é a vida d’eles que está fóra do anarchismo, fóra dos ideaes d’elles. 
+                            A minha não. Em mim – sim, em mim, banqueiro, grande commerciante, açambarcador se v. quizer –, em mim a theoria e a 
+                            practica do anarchismo estão conjunctas e ambas certas. V. comparou-me a esses parvos dos syndicatos e das bombas para 
+                            indicar que sou differente d’elles. Sou, mas a differença é esta: elles (sim, elles e não eu) são anarchistas só na 
+                            theoria; eu sou-o na theoria e na práctica. Elles são anarchistas e estupidos, eu anarchista e intelligente. Isto é, 
+                            meu velho, eu é que sou o verdadeiro anarchista. Elles – os dos syndicatos e das bombas (eu tambem lá estive e sahi 
+                            de lá exactamente pelo meu verdadeiro anarchismo) – elles são o lixo do anarchismo, os femeas da grande doutrina libertaria.</p>
+                        <p rend="indent-first">— Essa nem ao díabo a ouviram! Isso é espantoso! Mas como concilia v. a sua vida –quero dizer a 
+                            sua vida bancaria e commercial – com as theorias anarchistas? Como o concilia v., se diz que por theorias anarchistas 
+                            entende exactamente o que os anarchistas vulgares entendem? E v., ainda por cima, me diz que é differente deles por 
+                            ser <hi rend="italic">mais</hi> anarchista do que elles – não é verdade?</p>
+                        <p rend="indent-first">— Exactamente.</p>
+                        <p rend="indent-first">— Não percebo nada.</p>
+                        <p rend="indent-first">— Mas v. tem empenho em perceber?</p>
+                        <p rend="indent-first">— Todo o empenho.</p>
+                        <p rend="indent-first">Elle tirou da boca o charuto, que se apagára; reaccendeu-o lentamente; fitou o phosphoro que se extinguia; 
+                            depol-o ao de leve ao cinzeiro; depois, erguendo a cabeça, um momento abaixada, disse:</p>
+                        
+                        <p rend="indent-first margin-vertical">— Oiça. Eu nasci do povo e na classe operaria da cidade. De bom não herdei, como pode imaginar, 
+                            nem a condição, nem as circumstancias. Apenas me aconteceu ter uma intelligencia naturalmente lucida e uma vontade um tanto ou quanto 
+                            forte. Mas esses eram dons naturaes, que o meu baixo nascimento me não podia tirar.</p>
+                        <p rend="indent-first">«Fui operário, trabalhei, vivi uma vida apertada; fui, em resumo, o que a maioria da gente é naquelle meio. 
+                            Não digo que absolutamente passasse fome, mas andei lá perto. De resto, podia tel-a passado, que isso não alterava nada do que se 
+                            seguiu, ou do que lhe vou expor, nem do que foi a minha vida, nem do que ella é agora.</p>
+                        <p rend="indent-first">«Fui um operario vulgar, em summa; como todos, trabalhava porque tinha que trabalhar, e trabalhava o menos possivel. 
+                            O que eu era, era intelligente. Sempre que podia, lia coisas, discutia coisas e, como não era tolo, nasceu-me uma grande insatisfacção 
+                            e uma grande revolta contra o meu destino e contra as condições sociaes que o faziam assim. Já lhe disse que, em boa verdade, o meu 
+                            destino podia ter sido pior do que era; mas naquella altura parecia-me a mim que eu era um ente a quem a Sorte tinha feito todas as 
+                            injustiças juntas, e que se tinha servido das convenções sociaes para m’as fazer. Isto era ahi pelos meus vinte annos – vinte e um 
+                            o maximo – que foi quando me tornei anarchista.</p>
+                        <p rend="indent-first">Parou um momento. Voltou-se um pouco mais para mim. Continuou, inclinando-se mais um pouco.</p>
+                        <p rend="indent-first">— Fui sempre mais ou menos lucido. Sentia-me revoltado. Quiz perceber a minha revolta. Tornei-me anarchista 
+                            consciente e convicto – o anarchista consciente e convicto que hoje sou.</p>
+                        <p rend="indent-first">— E a theoria, que v. tem hoje, é a mesma que tinha nessa altura?</p>
+                        <p rend="indent-first">— A mesma. A theoria anarchista, a verdadeira theoria, é só uma. Tenho a que sempre tive, desde que me tornei 
+                            anarchista. V. já vae ver... Ia eu dizendo que, como era lúcido por natureza, me tornei anarchista consciente. Ora o que é um 
+                            anarchista? É um revoltado contra a injustiça de nascermos desiguaes <hi rend="italic">socialmente</hi> – no fundo é só isto. E de 
+                            ahi resulta, como é de ver, a revolta contra as convenções sociaes que tornam essa desegual <!--[FIM IMAGEM 1]--> dade possivel. O que 
+                            lhe estou indicando agora é o caminho psychologico, isto é, como é que a gente se torna anarchista; já vamos á parte theorica 
+                            do assumpto. Por agora, comprehenda v. bem qual seria a revolta de um typo intelligente nas minhas circunstancias. O que é que elle vê 
+                            pelo mundo? Um nasce filho de um milionario, protegido desde o berço contra aquelles infortunios – e não são poucos – que o dinheiro 
+                            pode evitar ou attenuar; outro nasce miseravel, a ser, quando creança, uma bocca a mais numa familia onde as boccas são de sobra para 
+                            o comer que pode haver. Um nasce conde ou marquez, e tem por isso a consideração de toda a gente, faça elle o que fizer; outro nasce 
+                            assim como eu, e tem que andar direitinho como um prumo para ser ao menos tratado como gente. Uns nascem em taes condições que podem 
+                            estudar, viajar, instruir-se – tornar-se (pode-se dizer) mais intelligentes que outros que naturalmente o são mais. E assim por adeante, 
+                            e em tudo...</p>
+                        <p rend="indent-first">«As injustiças da Natureza, vá: não as podemos evitar. Agora as da sociedade e das suas convenções – essas, por 
+                            que não evital-as? Acceito – não tenho mesmo outro remedio – que um homem seja superior a mim por o que a Natureza lhe deu – o talento, 
+                            a força, a energia; não acceito que elle seja meu superior por qualidades postiças, com que não sahiu do ventre da mãe, mas que lhe 
+                            aconteceram por bamburrio logo que elle appareceu cá fóra – a riqueza, a posição social, a vida facilitada, etc. Foi da revolta que
+                            lhe estou figurando por estas considerações que nasceu o meu anarchismo de então – o anarchismo que, já lhe disse, mantenho hoje sem 
+                            alteração nenhuma.</p>
+                        <p rend="indent-first">Parou outra vez um momento, como a pensar como prosseguiria. Fumou e soprou o fumo lentamente, para o lado opposto 
+                            ao meu. Voltou-se, e ia a prosseguir. Eu, porém interrompi-o.</p>
+                        <p rend="indent-first">— Uma pergunta, por curiosidade... Porque é que v. se tornou propriamente anarchista? V. podia ter-se tornado 
+                            socialista, ou qualquer outra cousa avançada que não fôsse tão longe. Tudo isso estava dentro da sua revolta... Deduzo do que v. disse 
+                            que por anarchismo v. entende (e acho que está bem como definição do anarchismo) a revolta contra todas as convenções e formulas sociaes 
+                            e o desejo e exforço para a abolição de todas...</p>
+                        <p rend="indent-first">— Isso mesmo.</p>
+                        <p rend="indent-first">— Por que escolheu v. essa formula extrema e não se decidiu por qualquer das outras... das intermedias?...</p>
+                        <p rend="indent-first">— Eu lhe digo. Eu meditei tudo isso. É claro que nos folhetos que eu lia via todas essas theorias. Escolhi a theoria
+                            anarchista – a theoria extrema, como v. muito bem diz – pelas razões que lhe vou dizer em duas palavras.</p>
+                        <p rend="indent-first">Fitou um momento cousa nenhuma. Depois voltou-se para mim.</p>
+                        
+                        <p rend="indent-first margin-vertical">— O mal verdadeiro, o unico mal, são as convenções e as ficções sociaes, que se sobrepõem ás 
+                            realidades naturaes – tudo, desde a familia ao dinheiro, desde a religião ao estado. A gente nasce homem ou mulher – quero dizer, 
+                            nasce para ser, em adulto, homem ou mulher; não nasce, em boa justiça natural, nem para ser marido, nem para ser rico ou pobre, 
+                            como tambem não nasce para ser catholico ou protestante, ou portuguez ou inglez. É todas estas coisas em virtude das ficções sociaes. 
+                            Ora essas ficções sociaes são más porquê? <hi rend="italic">Porque são ficções, porque não são naturaes</hi>. Tão mau é o dinheiro como 
+                            o estado, a constituição da familia como as religiões. Se houvesse outras, que não fôssem estas, seriam egualmente más, 
+                            <hi rend="italic">porque tambem seriam ficções</hi>, porque tambem se sobreporiam e estorvariam as realidades naturaes. Ora qualquer 
+                            systema que não seja o puro systema anarchista, que quer a abolição todas as ficções e de cada uma d’ellas completamente, 
+                            <hi rend="italic">é uma ficção tambem</hi>. Empregar todo o nosso desejo, todo o nosso exforço, toda a nossa intelligencia para 
+                            implantar, ou contribuir para implantar, uma ficção social em vez de outra, é um absurdo, <!--[FIM IMAGEM 3]-->  quando não seja mesmo 
+                            um crime, <hi rend="italic">porque é fazer uma perturbação social com o fim expresso de deixar tudo na mesma</hi>. Se achamos injustas as 
+                            ficções sociaes, porque esmagam e opprimem o que é natural no homem, para que empregar o nosso exforço em substituir-lhes outras ficções, 
+                            se o podemos empregar para as destruir a todas?</p>
+                        <p rend="indent-first">«Isto parece-me que é concludente. Mas supponhamos que o não é; supponhamos que nos objectam que isto tudo estará muito 
+                            certo, mas que o sistema anarchista não é realizavel na práctica. Vamos lá a examinar essa parte do problema.</p>
+                        <p rend="indent-first">«Porque é que o systema anarchista não seria realizavel? Nós partimos, todos os avançados, do principio, não só de 
+                            que o actual systema é injusto, mas de que ha vantagem, porque ha justiça, em substituil-o por outro mais justo. Se não pensamos assim, 
+                            não somos avançados, mas burguezes. Ora de onde vem esse criterio de <hi rend="italic">justiça</hi>? Do que <hi rend="italic">é natural 
+                                e verdadeiro</hi>, em opposição ás ficções sociaes e ás mentiras da convenção, Ora o que é natural é o que é inteiramente natural, 
+                            não o que é metade, ou um-quarto, ou um-oitavo de natural. Muito bem. Ora, de duas coisas, uma: ou o natural é realizavel socialmente 
+                            ou não é; em outras palavras, ou a sociedade pode ser natural, ou a sociedade é essencialmente ficção e não pode ser natural de maneira 
+                            nenhuma. Se a sociedade pode ser natural, então pode haver a sociedade anarchista, ou livre, e deve haver, porque é ella a sociedade 
+                            inteiramente natural. Se a sociedade não pode ser natural, se (por qualquer razão que não importa) tem por força que ser ficção, então 
+                            do mal o menos; façamol-a dentro d’essa ficção inevitavel, o mais natural possível, para que seja, por isso mesmo, o mais justa possível. 
+                            Qual é a ficção mais natural? Nenhuma é natural em si, porque é ficção; a mais natural, neste nosso caso, será aquella que 
+                            <hi rend="italic">pareça</hi> mais natural, que <hi rend="italic">se sinta</hi> como mais natural. Qual é a que parece mais natural, 
+                            ou que sintamos mais natural? É aquella a que estamos habituados. (V. comprehende: o que é natural é o que é do instincto; é o que, 
+                            não sendo instincto, se parece em tudo com o instincto é o habito. Fumar não é natural, não é uma necessidade do instincto; mas se 
+                            nos habituámos a fumar, passa a ser-nos natural, passa a ser sentido como uma necessidade do instincto). Ora qual é a nossa ficção 
+                            social que constitui um habito nosso? É o actual systema, o systema burguez. Temos pois, em boa logica, que ou achamos possivel a 
+                            sociedade natural, e seremos defensores do anarchismo; ou não a julgamos possivel, e seremos defensores do regimen burguez. Não ha 
+                            hypothese intermedia. Percebeu?...</p>
+                        <p rend="indent-first">— Sim, senhor; isso é concludente.</p>
+                        <p rend="indent-first">— Ainda não é bem concludente... Ainda ha uma outra objecção, do mesmo genero, a liquidar... Pode concordar-se 
+                            que o sistema anarchista é realizavel, mas pode duvidar-se que elle seja realizavel <hi rend="italic">de chofre</hi> – isto é, que 
+                            se possa passar da sociedade burgueza para a sociedade livre sem haver um ou mais estados ou regimes intermedios. Quem fizer esta 
+                            objecção aceita como boa, e como realizavel, a sociedade anarchista; mas palpita-lhe que tem que haver um estado qualquer de transição 
+                            entre a sociedade burgueza e ella.</p>
+                        <p rend="indent-first">«Ora muito bem. Supponhamos que assim é. O que é esse estado intermedio? O nosso fim é a sociedade anarchista, ou 
+                            livre; esse estado intermédio só pode ser, portanto, um estado de preparação da humanidade para a sociedade livre. Essa preparação 
+                            ou é material, ou é simplesmente mental; isto é, ou é uma série de realizações materiaes ou sociaes que vão adaptando a humanidade á 
+                            sociedade livre, ou é simples propaganda gradualmente crescente e influente, que a vae preparando <hi rend="italic">mentalmente</hi> 
+                            a desejal-a ou a acceital-a.</p>
+                        <p rend="indent-first">«Vamos ao primeiro caso, a adaptação gradual e material da humanidade á sociedade livre. É impossivel; é mais que 
+                            impossivel: é absurdo. Não ha adaptação material senão a uma cousa <hi rend="italic">que já ha</hi>. Nenhum de nós se pode adaptar 
+                            materialmente ao meio social do seculo vinte e trez, mesmo que saiba o que elle será; e não se pode adaptar materialmente porque o 
+                            seculo vinte e trez e o seu meio social não existem <hi rend="italic">materialmente</hi> ainda. Assim, chegamos á conclusão que, na 
+                            passagem da sociedade burgueza para a sociedade livre, a unica parte que pode haver de adaptação, de evolução ou de transição é 
+                            <hi rend="italic">mental</hi>, é a gra[FIM IMAGEM 4]dual adaptação dos espiritos á idéa da sociedade livre... Em todo o caso, no 
+                            campo da adaptação material, ainda ha uma hypothese...</p>
+                        <p rend="indent-first">— Irra com tanta hypothese! ...</p>
+                        <p rend="indent-first">— Ó filho, o homem lucido tem que examinar todas as objecções possiveis e de as refutar, antes de se poder dizer 
+                            seguro da sua doutrina. E, de mais a mais, isto tudo é em resposta a uma pergunta, que v. me fez...</p>
+                        <p rend="indent-first">— Está bem.</p>
+                        <p rend="indent-first">— No campo da adaptação material, dizia eu, ha em todo o caso uma outra hypothese. É a da dictadura revolucionaria.</p>
+                        <p rend="indent-first">— Da dictadura revolucionaria como?</p>
+                        <p rend="indent-first">— Como eu lhe expliquei, não pode haver adaptação material a uma coisa que não existe, materialmente, ainda. 
+                            Mas se, por um movimento brusco, se fizer a revolução social, fica implantada já, não a sociedade livre (porque para essa não pode a 
+                            humanidade ter ainda preparação), mas uma dictadura daqueles que querem implantar a sociedade livre. Mas existe já, ainda que em esboço 
+                            ou em começo, existe já <hi rend="italic">materialmente</hi> qualquer coisa da sociedade livre. Ha já portanto uma coisa material, 
+                            a que a humanidade se adapte. É este o argumento com que as bestas que defendem a «dictadura do proletariado» a defenderiam se 
+                            fossem capazes de argumentar ou de pensar. O argumento, é claro, não é d’elles: é meu. Ponho-o, como objecção, a mim-mesmo. E, como
+                            lhe vou mostrar..., é falso.</p>
+                        <p rend="indent-first">«Um regime revolucionario, enquanto existe, e seja qual fôr o fim a que visa ou a ideia que o conduz, é 
+                            <hi rend="italic">materialmente</hi> só uma coisa – um regimen revolucionario. Ora um regimen revolucionário quer dizer uma dictadura
+                            de guerra, ou, nas verdadeiras palavras, um regimen militar despotico, porque o estado de guerra é imposto á sociedade por uma parte 
+                            d’ella – aquella parte que assumiu revolucionariamente o poder. O que é que resulta? Resulta que quem se adaptar a esse regimen, como 
+                            a unica coisa que elle é <hi rend="italic">materialmente</hi>, <hi rend="italic">immediatamente</hi>, é um regimen militar despotico, 
+                            adapta-se a um regime militar despotico. A idéa, que conduziu os revolucionários, o fim, a que visaram, desapareceu por completo da 
+                            <hi rend="italic">realidade</hi> social, que é occupada exclusivamente pelo phenomeno guerreiro. De modo que o que sahe de uma 
+                            ditadura revolucionaria – e tanto mais completamente sahirá, quanto mais tempo essa dictadura durar – é uma sociedade guerreira de 
+                            typo dictatorial, isto é, um despotismo militar. Nem mesmo podia ser outra coisa. E foi sempre assim. Eu não sei muita historia, 
+                            mas o que sei acerta com isto; nem podia deixar de acertar. O que sahiu das agitações de Roma? O imperio romano e o seu despotismo 
+                            militar. O que sahiu da Revolução Franceza? Napoleão e o seu despotismo militar. E v. verá o que sahe da Revolução Russa... Qualquer 
+                            coisa que vae atrazar dezenas de annos a realização da sociedade livre... Tambem o que era de esperar de um povo de analphabetos 
+                            e de mysticos?...</p>
+                        <p rend="indent-first">«Emfim, isto já está fóra da conversa... V. percebeu o meu argumento?</p>
+                        <p rend="indent-first">— Percebi perfeitamente.</p>
+                        <p rend="indent-first">— V. comprehende portanto que eu cheguei a esta conclusão: Fim: a sociedade anarchista, a sociedade livre; 
+                            meio: a passagem, <hi rend="italic">sem transição</hi>, da sociedade burgueza para a sociedade livre. Esta passagem seria preparada 
+                            e tornada possivel por uma propaganda intensa, completa, absorvente, de modo a predispôr todos os espiritos e enfraquecer todas 
+                            as resistencias. É claro que por «propaganda» não entendo só a pela palavra escripta e fallada: entendo tudo, acção indirecta ou 
+                            directa, quanto pode predispôr para a sociedade livre e enfraquecer a resistencia á sua vinda. Assim, não tendo quasi resistencias 
+                            nenhumas que vencer, a revolução social, quando viesse, seria rapida, facil, e não teria que estabelecer nenhuma dictadura 
+                            revolucionaria, por não ter contra quem applical-a. Se isto não pode ser assim, é que o anarchismo é irrealizavel; e, se o anarchismo 
+                            é irrealizavel, só é defensavel e justa, como já lhe provei, a sociedade burgueza.</p>
+                        <p rend="indent-first">«Ora ahi tem v. porquê e como eu me tornei anarchista, e porquê e como rejeitei, como falsas e anti-naturaes, 
+                            as outras doutrinas sociaes de menor ousadia.</p><!--[FIM IMAGEM 5]-->
+                        <p rend="indent-first">«E prompto... Vamos lá a continuar a minha historia.
+                            Fez explodir um phosphoro, e accendeu lentamente o charuto. Concentrou-se, e de ahi a pouco prosseguiu.</p>
+                        
+                        <p rend="indent-first margin-vertical">«— Havia varios outros rapazes com as mesmas opiniões que eu. A maioria era de operarios, 
+                            mas havia um ou outro que o não era; o que todos éramos era pobres, e, que me lembre, não éramos muito estupidos. A gente tinha 
+                            uma certa vontade de se instruir, de saber coisas, e ao mesmo tempo uma vontade de propaganda, de espalhar as nossas idéas. 
+                            Queriamos para nós e para os outros – para a humanidade inteira – uma sociedade nova, livre d’estes preconceitos todos, que fazem 
+                            os homens deseguaes artificialmente e lhes impõem inferioridades, soffrimentos, estreitezas, que a Natureza lhes não tinha imposto. 
+                            Por mim, o que eu lia confirmava-me nestas opiniões. Em livros libertarios baratos – os que havia ao tempo, e eram já bastantes – 
+                            li quasi tudo. Fui a conferencias e comicios dos propagandistas do tempo. Cada livro e cada discurso me convencia mais da certeza e 
+                            da justiça das minhas idéas. O que eu pensava então – repito-lhe, meu amigo – é o que penso hoje; a unica differença é que então 
+                            pensava-o só, e hoje penso-o e pratico-o.</p>
+                        <p rend="indent-first">— Pois sim; isto, até onde vae, está muito bem. Está muito certo que V. se tornasse anarchista assim, e 
+                            vejo perfeitamente que V. era anarchista. Não preciso mais provas d’isso. O que eu quero saber é como é que de ahi sahiu o 
+                            banqueiro..., como é que sahiu de ahi sem contradicção... Isto é, mais ou menos já calculo...</p>
+                        <p rend="indent-first">— Não, não calcula nada... Eu sei o que V. quer dizer...V. baseia-se nos argumentos que me acaba de ouvir, e 
+                            julga que eu acheí o anarchismo irrealizavel e por isso, como lhe disse, só defensavel e justa a sociedade burgueza – não é?</p>
+                        <p rend="indent-first">— Sim, calculei que fôsse mais ou menos isso...</p>
+                        <p rend="indent-first">— Mas como o podia ser, se desde o principio da conversa lhe tenho dito e repetido que <hi rend="italic">sou</hi> 
+                            anarchista, que não só o fui mas o continúo sendo? Se eu me tivesse tomado banqueiro e commerciante pela razão que V. julga, eu não era 
+                            anarchista, era burguez.</p>
+                        <p rend="indent-first">— Sim, você tem razão... Mas então como diabo...? Vá lá, vá dizendo...</p>
+                        <p rend="indent-first">— Como lhe disse, eu era (fui sempre) mais ou menos lucido, e tambem um homem de acção. Essas são qualidades 
+                            naturaes; não m’as puzeram no berço (se é que eu tive berço), eu é que as levei para lá. Pois bem. Sendo anarchista, eu achava 
+                            insupportavel ser anarchista só passivamente, só para ir ouvir discurso e fallar nisso com os amigos. Não: era preciso fazer qualquer 
+                            coisa! Era preciso trabalhar e luctar pela causa dos opprimidos e das victimas das convenções sociaes! Decidi metter hombros a isso, 
+                            conforme pudesse. Puz-me a pensar como é que eu poderia ser util á causa libertaria. Puz-me a traçar o meu plano de acção.</p>
+                        <p rend="indent-first">«O que quer o anarchista? A liberdade – a liberdade para si e para os outros, para a humanidade inteira. Quer estar 
+                            livre da influencia ou da pressão das ficções sociaes; quer ser livre tal qual nasceu e appareceu no mundo, que é como em justiça deve 
+                            ser; e quer essa liberdade para si e para todas os mais. Nem todos podem ser eguais perante a Natureza: uns nascem altos, outros baixos; 
+                            uns fortes, outros fracos; uns mais intelligentes, outros menos... Mas todos podem ser eguais de ahi em diante; só as ficções sociaes o 
+                            evitam. Essas ficções sociaes é que era preciso destruir.</p>
+                        <p rend="indent-first">«Era preciso destruil-as... Mas não me escapou uma coisa, era preciso destruil-as <hi rend="italic">mas em proveito 
+                            da liberdade</hi>, e tendo sempre em vista a creação da sociedade livre. Porque isso de destruir as ficções sociaes tanto pode ser 
+                            para crear liberdade, ou preparar o caminho da liberdade, como para estabelecer outras ficções sociaes differentes, egualmente más 
+                            porque egualmente ficções. Aqui é que era preciso cuidado. Era preciso acertar com um processo de acção, qualquer que fôsse a sua 
+                            violencia ou a sua não-violencia (porque contra as injustiças sociaes tudo era legitimo), pelo qual se contribuisse para destruir as 
+                            ficções sociaes sem, ao mesmo tempo, estorvar a creação da liberdade futura; creando já mesmo, caso fôsse possivel, alguma coisa da 
+                            liberdade futura.</p><!-- [FIM IMAGEM 6]-->
+                        <p rend="indent-first">«É claro que esta liberdade, que deve haver cuidado em não estorvar, é <hi rend="italic">a liberdade futura</hi> e, 
+                            no presente, <hi rend="italic">a liberdade dos opprimidos pelas ficções sociaes</hi>. Claro está que não temos que olhar a não estorvar 
+                            a «liberdade» dos poderosos, dos bem-situados, de todos que representam as ficções sociaes e teem vantagem nellas. Essa não é liberdade; 
+                            é a liberdade de tyrannizar, que é o contrario da liberdade. Essa, pelo contrario, é o que mais deviamos pensar em estorvar e em combater. 
+                            Parece-me que isto está claro...</p>
+                        <p rend="indent-first">— Está clarissimo. Continue...</p>
+                        <p rend="indent-first">— Para quem quer o anarchista a liberdade? Para a humanidade inteira. Qual é a maneira de conseguir a liberdade 
+                            para a humanidade inteira? Destruir por completo todas as ficções sociaes? Já lhe anticipei a explicação, quando, por causa da sua 
+                            pergunta, discuti os outros systemas avançados e lhe expliquei como e porque era anarchista... V. lembra-se da minha conclusão?...</p>
+                        <p rend="indent-first">— Lembro...</p>
+                        <p rend="indent-first">— ... Uma revolução social subita, brusca, esmagadora, fazendo a sociedade passar, de um salto, do regime burguez 
+                            para a sociedade livre. Esta revolução social preparada por um trabalho intenso e continuo, de acção directa e indirecta, tendente a 
+                            dispôr todos os espiritos para a vinda da sociedade livre, e a enfraquecer até ao estado comatoso todas as resistencias da burguezia. 
+                            Excuso de lhe repetir as razões que levam inevitavelmente a esta conclusão, a dentro do anarchismo; já lh’as expuz e V. já as percebeu.</p>
+                        <p rend="indent-first">— Sim.</p>
+                        <p rend="indent-first">— Essa revolução seria preferivelmente mundial, simultanea em todos os pontos, ou os pontos importantes do mundo; 
+                            ou, não sendo assim, partindo rapidamente de uns para outros, mas, em todo o caso, em cada ponto, isto é, em cada nação, fulminante e 
+                            completa.</p>
+                        <p rend="indent-first">«Muito bem. O que poderia <hi rend="italic">eu</hi> fazer para esse fim? Só por mim, não a poderia fazer a ella, á 
+                            revolução mundial, nem mesmo poderia fazer a revolução completa na parte referente ao paiz onde estava. O que podia era trabalhar, na 
+                            inteira medida do meu exforço, para fazer a preparação para essa revolução. Já lhe expliquei como: combatendo, por todos os meios 
+                            accessiveis, as ficções sociaes, não estorvando nunca ao fazer esse combate ou a propaganda da sociedade livre, nem a liberdade futura, 
+                            nem a liberdade presente dos opprimidos; creando já, sendo possivel, qualquer coisa da futura liberdade.</p>
+                        <p rend="indent-first">Puxou fumo; fez uma leve pausa; recomeçou.</p>
+                        
+                        <p rend="indent-first margin-vertical">— Ora aqui, meu amigo, puz eu a minha lucidez em acção. Trabalhar para o futuro, está bem, pensei eu; 
+                            trabalhar para os outros terem liberdade, está certo. Mas então eu? eu não sou ninguém? Se eu fôsse christão, trabalhava alegremente pelo 
+                            futuro dos outros, porque lá tinha a minha recompensa no céu; mas tambem, se eu fôsse christão, não era anarchista, porque então as 
+                            taes desegualdades sociaes não tinham importancia na nossa curta vida: eram só condições da nossa provação, e lá seriam compensadas na 
+                            vida eterna. Mas eu não era christão, como não sou, e perguntava-me: mas por quem é que eu me vou sacrificar nisto tudo? Mais ainda: 
+                            <hi rend="italic">porque</hi> é que eu me vou sacrificar?</p>
+                        <p rend="indent-first">«Vieram-me momentos de descrença; e V. comprehende que era justificada... Sou materialista, pensava eu; não tenho 
+                            mais vida que esta; para que hei-de ralar-me com propagandas e desegualdades sociaes, e outras historias, quando posso gosar e 
+                            entreter-me muito mais se não me preocupar com isso? Quem tem só esta vida, quem não crê na vida eterna, quem não admite lei senão a 
+                            Natureza, quem se oppõe ao estado porque elle não é natural, ao casamento porque elle não é natural, ao dinheiro porque elle não é 
+                            natural, a todas as ficções sociaes porque ellas não são naturaes, porque carga d’agua é que defende o altruismo e o sacrifício 
+                            pelos outros, ou pela humanidade, se o altruismo e o sacrificio tambem não são naturaes? Sim, a mesma logica que me mostra que um 
+                            homem não nasce para ser casado, ou para ser portuguez, ou para ser rico ou pobre, mostra-me tambem que <!--[FIM IMAGEM 7]--> elle 
+                            não nasce para ser <hi rend="italic">solidario</hi>, que elle não nasce senão para ser elle-proprio, e portanto o contrario de 
+                            altruista e solidario, e portanto exclusivamente egoista.</p>
+                        <p rend="indent-first">«Eu discuti a situação commigo mesmo. Repara tu, dizia eu para mim, que nascemos pertencentes á especie humana, e 
+                            que temos o dever de ser solidarios com todos os homens. Mas a idéa de «dever» era natural? De onde é que vinha esta idéa de «dever»? 
+                            Se esta idéa de dever me obrigava a sacrificar o meu bem-estar, a minha commodidade, o meu instincto de conservação e outros meus 
+                            instinctos naturaes, em que divergia a acção d’essa idéa da acção de qualquer ficção social, que produz em nós exactamente o mesmo 
+                            effeito?</p>
+                        <p rend="indent-first">«Esta idéa de dever, isto de solidariedade humana, só podia considerar-se natural <hi rend="italic">se trouxesse 
+                            comsigo uma compensação egoista</hi>, porque então, embora em principio contrariasse o egoismo natural, se dava a esse egoismo uma 
+                            compensação, sempre, no fim de contas, o não contrariava. Sacrificar um prazer, simplesmente sacrifical-o, não é natural; sacrificar 
+                            um prazer a outro, é que já está dentro da Natureza: é, entre duas cousas naturaes que se não podem ter ambas, escolher uma, o que 
+                            está bem. Ora que compensação egoista, ou natural, podia dar-me a dedicação á causa da sociedade livre e da futura felicidade humana? 
+                            Só a consciencia do dever cumprido, do exforço para um fim bom; e nenhuma d’estas coisas é uma compensação egoísta, nenhuma d’estas 
+                            coisas é um prazer em si, mas um prazer, se o é, nascido de uma ficção, como pode ser o prazer de ser immensamente rico, ou o prazer 
+                            de ter nascido em uma boa posição social.</p>
+                        <p rend="indent-first">«Confesso-lhe, meu velho, que me vieram momentos de descrença... Senti-me desleal á minha doutrina, traidor a 
+                            ella... Mas em breve passei sobre tudo isto. A idéa de justiça cá estava, dentro de mim, pensei eu. Eu sentia-a natural. Eu sentia 
+                            que havia um dever superior á preocupação só cá do meu destino. E fui para diante na minha intenção.</p>
+                        <p rend="indent-first">— Não me parece que essa decisão revelasse uma grande lucidez da sua parte... V. não resolveu a difficuldade... V. 
+                            foi para diante por um impulso absolutamente sentimental...</p>
+                        <p rend="indent-first">— Sem dúvida. Mas o que lhe estou contando agora é a história de como me tornei anarchista, e de como o 
+                            continuei sendo, e continúo. Vou-lhe expondo lealmente as hesitações e as difficuldades que tive, e como as venci. Concordo que, 
+                            naquelle momento, venci a difficuldade logica com o sentimento, e não com o raciocinio. Mas v. ha de ver que, mais tarde, quando 
+                            cheguei á plena comprehensão da doutrina anarchista, esta difficuldade, até então logicamente sem resposta, teve a sua solução 
+                            completa e absoluta.</p>
+                        <p rend="indent-first">— É curioso...</p>
+                        <p rend="indent-first">— É... Agora deixe-me continuar na minha historia. Tive esta difficuldade, e resolvi-a, se bem que mal, como 
+                            lhe disse. Logo a seguir, e na linha dos meus pensamentos, surgiu-me outra difficuldade que tambem me atrapalhou bastante.</p>
+                        <p rend="indent-first">«Estava bem – vamos lá – que estivesse disposto a sacrificar-me, sem recompensa nenhuma propriamente pessoal, 
+                            isto é, sem recompensa nenhuma verdadeiramente <hi rend="italic">natural</hi>. Mas supponhamos que a sociedade futura não dava em 
+                            nada do que eu esperava, que nunca havia a sociedade livre, a que diabo é que eu, nesse caso, me estava sacrificando? Sacrificar-me 
+                            a uma idéa sem recompensa pessoal, sem eu ganhar nada com o meu exforço por essa idéa, vá; mas sacrificar-me sem ao menos ter a 
+                            certeza de que aquillo, para que eu trabalhava, existiria um dia, <hi rend="italic">sem que a propria idéa ganhasse com o meu 
+                                exforço</hi> – isso era um pouco mais forte... Desde já lhe digo que resolvi a dificuldade pelo mesmo processo sentimental por 
+                            que resolvi a outra; mas advirto o tambem que, do mesmo modo que a outra, resolvi esta pela logica, automaticamente, quando cheguei 
+                            ao estado plenamente consciente do meu anarchismo... V. depois verá... Na altura do que lhe estou contando, sahi-me do apuro com uma 
+                            ou duas phrases ôcas. «Eu fazia o meu dever para com o futuro; o futuro que fizesse o seu para commigo»... Isto, ou cousa que o 
+                            valha...</p>
+                        <p rend="indent-first">«Expuz esta conclusão, ou, antes, estas conclusões, aos camaradas, e elles concordaram todos commigo; 
+                            concordaram todos que era preciso ir prá frente e fazer tudo pela [FIM IMAGEM 8] sociedade livre. É verdade que um ou outro, dos 
+                            mais intelligentes, ficaram um pouco abalados com a exposição, não porque concordassem, mas porque nunca tinham visto as coisas 
+                            assim claras, nem os bicos que estas coisas teem... Mas emfim, concordaram todos... Iríamos todos trabalhar pela grande revolução 
+                            social, pela sociedade livre, quer o futuro nos justificasse, quer não! Formámos um grupo, entre gente certa, e começámos uma grande 
+                            propaganda –  grande, é claro, dentro dos limites do que podiamos fazer. Durante bastante tempo, no meio de difficuldades, 
+                            embrulhadas, e por vezes perseguições, lá fomos trabalhando pelo ideal anarchista.</p>
+                        <p rend="indent-first">O banqueiro, chegado aqui, fez uma pausa um pouco mais longa. Não accendeu o charuto, que estava outra vez apagado. 
+                            De repente teve um leve sorriso, e, com o ar de quem chega ao ponto importante, fitou-me com mais insistencia e prosseguiu, 
+                            clarificando mais a voz e accentuando mais as palavras.</p>
+                        
+                        <p rend="indent-first margin-vertical">— Nesta altura, disse elle, appareceu uma coisa nova. «Nesta altura» é modo de dizer. Quero 
+                            dizer que, depois de alguns mezes d’esta propaganda, comecei a reparar numa nova complicação, e esta é que era a mais séria de todas, 
+                            esta é que era séria a valer…</p>
+                        <p rend="indent-first">«V. recorda-se, não é verdade? d’aquillo em que eu, por um raciocinio rigoroso, assentei que devia ser o 
+                            processo de acção dos anarchistas… Um processo, ou processos, quaesquer pelo qual se contribuisse para destruir as ficções 
+                            sociaes sem, ao mesmo tempo, estorvar a creação da liberdade futura, sem, portanto, estorvar em coisa nenhuma a pouca liberdade 
+                            dos actuaes opprimidos pelas ficções sociaes; um processo que, sendo possivel, creasse já alguma coisa da liberdade futura…</p>
+                        <p rend="indent-first">«Pois bem: uma vez assente este criterio, nunca mais deixei de o ter presente… Ora, na altura da nossa propaganda 
+                            em que lhe estou fallando, descobri uma coisa. No grupo de propaganda – não eramos muitos; eramos uns quarenta, salvo erro – 
+                            dava-se este caso: <hi rend="italic">creava-se tyrannia</hi>.</p>
+                        <p rend="indent-first">— Creava-se tyrannia?… Creava-se tyrannia como?</p>
+                        <p rend="indent-first">— Da seguinte maneira… Uns mandavam em outros e levavam-os para onde queriam; uns impunham-se a outros e 
+                            obrigavam-os a ser o que elles queriam; uns arrastavam outros por manhas e por artes para onde elles queriam. Não digo que 
+                            fizessem isto em coisas graves; mesmo, não havia coisas graves alli em que o fizessem. Mas o facto é que isto acontecia sempre e 
+                            todos os dias, e dava-se não só em assumptos relacionados com a propaganda, como fóra d’elles, em assumptos vulgares da vida. Uns 
+                            iam insensivelmente para chefes, outros insensivelmente para subordinados. Uns eram chefes por imposição; outros eram chefes por
+                            manha. No facto mais simples isto se via. Por exemplo: dois dos rapazes iam juntos por uma rua fóra; chegavam ao fim da rua, e 
+                            um tinha que ir para a direita e outro para a esquerda; cada um tinha conveniencia em ir para seu lado. Mas o que ia para a esquerda 
+                            dizia para o outro, «venha v. commigo por aqui»; o outro respondia, e era verdade, «Homem, não posso; tenho que ir por alli» por 
+                            esta ou aquella razão… Mas afinal, contra sua vontade e sua conveniencia, lá ia com o outro para a esquerda… Isto era uma vez por 
+                            persuasão, outra vez por simples insistencia, uma terceira vez por um outro motivo qualquer assim… Isto é, nunca era por uma razão 
+                            logica; havia sempre nesta imposição e nesta subordinação qualquer coisa de espontaneo, de como que instinctivo… E como neste caso 
+                            simples, em todos os outros casos; desde os menos até aos mais importantes… V. vê bem o caso?</p>
+                        <p rend="indent-first">— Vejo. Mas que diabo ha de extranho nisso? Isso é tudo quanto ha de mais natural!…</p>
+                        <p rend="indent-first">— Será. Já vamos a isso. O que lhe peço que note é que é <hi rend="italic">exactamente o contrario da 
+                            doutrina anarchista</hi>. Repare bem que isto se passava num grupo pequeno, num grupo sem influencia nem importancia, num grupo 
+                            a quem não estava confiada a solução de nenhuma questão grave ou a decisão sobre qualquer assumpto de vulto. E repare que se passava 
+                            num <!--[FIM IMAGEM 9]--> grupo de gente que se unira especialmente para fazer o que pudesse para o fim anarchista – isto é, 
+                            para combater, tanto quanto possivel, as ficções sociaes, e crear, tanto quanto possivel, a liberdade futura. V. Reparou bem 
+                            nestes dois pontos?</p>
+                        <p rend="indent-first">— Reparei.</p>
+                        <p rend="indent-first">— Veja agora bem o que isso representa… Um grupo pequeno, de gente sincera (garanto-lhe que era sincera!), 
+                            estabelecido e unido expressamente para trabalhar pela causa da liberdade, tinha, no fim de uns mezes, conseguido só uma coisa de 
+                            positivo e concreto – <hi rend="italic">a creação entre si de tyrannia</hi>. E repare que tyrannia… Não era uma tyrannia derivada 
+                            da acção das ficções sociaes, que, embora lamentavel, seria desculpavel, até certo ponto, ainda que menos em nós, que combatiamos 
+                            essas ficções, que em outras pessoas; mas emfim, viviamos em meio de uma sociedade baseada nessas ficções e não era inteiramente 
+                            culpa nossa se não pudessemos de todo fugir á sua acção. Mas não era isso. Os que mandavam nos outros, ou os levavam para onde 
+                            queriam, não faziam isso pela força do dinheiro, ou da posição social, ou de qualquer authoridade de natureza ficticia, que se 
+                            arrogassem; faziam-o por uma acção de qualquer especie fóra das ficções sociaes. Quer dizer, esta tyrannia era, relativamente ás 
+                            ficções sociaes, <hi rend="italic">uma tyrannia nova</hi>. E era uma tyrannia exercida sobre gente essencialmente opprimida já 
+                            pelas ficções sociaes. Era, ainda por cima, tyrannia exercida entre si por gente cujo intuito sincero não era senão destruir tyrannia 
+                            e crear liberdade.</p>
+                        <p rend="indent-first">«Agora ponha o caso num grupo muito maior, muito mais influente, tratando já de questões importantes e de 
+                            decisões de caracter fundamental. Ponha esse grupo a encaminhar os seus exforços, como o nosso, para a formação de uma sociedade 
+                            livre. E agora diga-me se atravez d’esse carregamento de tyranias entrecruzadas v. entrevé qualquer sociedade futura que se pareça 
+                            com uma sociedade livre ou com uma humanidade digna de si propria…</p>
+                        <p rend="indent-first">— Sim: isso é muito curioso…</p>
+                        <p rend="indent-first">— É curioso, não é?… E olhe que ha pontos secundários tambem muito curiosos… Por exemplo: a tyrannia do auxilio…</p>
+                        <p rend="indent-first">— A quê?</p>
+                        <p rend="indent-first">— A tyrannia do auxílio. Havia entre nós quem, em vez de mandar nos outros, em vez de se impôr aos outros, 
+                            pelo contrario os auxiliava em tudo quanto podia. Parece o contrario, não é verdade? Pois olhe que é o mesmo. É a mesma tyrannia 
+                            nova. É do mesmo modo ir contra os principios anarchistas.</p>
+                        <p rend="indent-first">— Essa é boa! Em quê?</p>
+                        <p rend="indent-first">— Auxiliar alguem, meu amigo, é tomar alguem por incapaz; se esse alguem não é incapaz, é ou fazel-o tal, ou 
+                            suppol-o tal, e isto é, no primeiro caso uma tyrannia, e no segundo um desprezo. Num caso cerceia-se a liberdade de outrem; no 
+                            outro caso parte-se, pelo menos inconscientemente, do princípio de que outrem é desprezivel e indigno ou incapaz de liberdade.</p>
+                        <p rend="indent-first">«Voltemos ao nosso caso… V. vê bem que este ponto era gravissimo. Vá que trabalhassemos pela sociedade futura 
+                            sem esperarmos que ella nos agradecesse, ou arriscando-nos, mesmo, a que ella nunca viesse. Tudo isso, vá. Mas o que era de mais
+                            era estarmos trabalhando para um futuro de liberdade e não fazermos, de positivo, mais que crear tyrannia, e não só tyrannia, 
+                            mas tyrannia nova, e tyrannia exercida por nós, os opprimidos, uns sobre os outros. Ora isto é que não podia ser…</p>
+                        <p rend="indent-first">«Puz-me a pensar. Aqui havia um erro, um desvio qualquer. Os nossos intuitos eram bons; as nossas doutrinas 
+                            pareciam certas; seriam errados os nossos processos? Com certeza que deveriam ser. Mas onde diabo estava o erro? Puz-me a 
+                            pensar nisso e ia dando em doido. Um dia, de repente, como acontece sempre nestas coisas, dei com a solução. Foi o grande dia 
+                            das minhas theorias anarchistas; o dia em que descobri, por assim dizer, a technica do anarchismo.</p>
+                        <p rend="indent-first">Olhou-me um momento sem me olhar. Depois continuou, no mesmo tom.</p><!--[FIM IMAGEM 10]-->
+                        <p rend="indent-first">— Pensei assim… Temos aqui uma tyrannia nova, uma tyrannia que não é derivada das ficções sociaes. Então 
+                            de onde é ella derivada? Será derivada das qualidades naturaes? Se é, adeus sociedade livre! Se uma sociedade onde estão em 
+                            operação apenas as qualidades naturaes dos homens – aquellas qualidades com que elles nascem, que devem só á Natureza, e sobre 
+                            as quaes não temos poder nenhum –, se uma sociedade onde estão em operação apenas essas qualidades é um amontoado de tyrannias, 
+                            quem é que vae mexer o dedo minimo para contribuir para a vinda d’essa sociedade? Tyrannia por tyrannia, fique a que está, que 
+                            ao menos é aquella a que estamos habituados, e que por isso fatalmente sentimos menos que sentiriamos uma tyrannia nova, e com o 
+                            caracter terrivel de todas as coisas tyrannicas que são directamente da Natureza – o não haver revolta possivel contra ella, 
+                            como não ha revolução contra ter que morrer, ou contra nascer baixo quando se preferia ter nascido alto. Mesmo, eu já lhe provei 
+                            que, se por qualquer razão não é realizavel a sociedade anarchista, então deve existir, por ser mais natural que qualquer outra 
+                            salvo aquella, a sociedade burgueza. </p>
+                        <p rend="indent-first">«Mas seria esta tyrannia, que nascia assim entre nós, realmente derivada das qualidades naturaes? Ora o que são 
+                            as qualidades naturaes? São o grau de intelligencia, de imaginação, de vontade, etc., com que cada um nasce – isto no campo mental, 
+                            é claro, porque as qualidades naturaes physicas não veem para o caso. Ora um typo que, sem ser por uma razão derivada das ficções 
+                            sociaes, manda noutro, por força que o faz por lhe ser superior em uma ou outra das qualidades naturaes. Domina-o pelo emprego das 
+                            suas qualidades naturaes. Mas ha uma coisa a ver: esse emprego das qualidades naturaes será legitimo, isto é, será 
+                            <hi rend="italic"> natural</hi>?</p>
+                        <p rend="indent-first">«Ora qual é o emprego natural das nossas qualidades naturaes? O servir os fins naturaes da nossa personalidade. 
+                            Ora dominar alguem será um fim natural da nossa personalidade? Pode sel-o; ha um caso em que pode sel-o: é quando esse alguem 
+                            está para nós num lugar de inimigo. Para o anarchista, é claro, quem está no lugar de inimigo, é qualquer representante das 
+                            ficções sociaes e da sua tyrannia; mais ninguém, porque todos os outros homens são homens como elle e camaradas naturaes. 
+                            Ora, v. bem vê, o caso da tyrannia que tinhamos estado creando entre nós não era este; a tyrannia, que tinhamos estado creando, 
+                            era exercida sobre homens como nós, camaradas naturaes, e, mais ainda, sobre homens duas vezes nossos camaradas, porque o 
+                            eram tambem pela communhão no mesmo ideal. Conclusão: esta nossa tyrannia, se não era derivada das ficções sociaes, tambem 
+                            não era derivada das qualidades naturaes; era derivada d’uma applicação errada, d’uma perversão, das qualidades naturaes. 
+                            E essa perversão, de onde é que provinha?</p>
+                        <p rend="indent-first">«Tinha que provir de uma de duas cousas: ou de o homem ser naturalmente mau, e portanto todas as 
+                            qualidades naturaes serem <hi rend="italic">naturalmente pervertidas</hi>; ou de uma perversão resultante da longa permanencia 
+                            da humanidade numa atmosphera de ficções sociaes, todas ellas creadoras de tyrannia, e tendente, portanto, a tornar já 
+                            instinctivamente tyrannico o uso mais natural das qualidades mais naturaies. Ora, d’estas duas hypotheses, qual é que seria 
+                            a verdadeira? De um modo satisfactorio – isto é, rigorosamente logico ou scientifico – era impossivel determinar. O raciocinio 
+                            não pode entrar com o problema, porque elle é de ordem historica, ou scientifica, e depende do conhecimento de 
+                            <hi rend="italic">factos</hi>. Por seu lado, a sciencia tambem nos não ajuda, porque, por mais longe que recuemos na historia, 
+                            encontramos sempre o homem vivendo sob um ou outro systema de tyrannia social, e portanto sempre num estado que nos não permite 
+                            averiguar como é o homem quando vive em circumstancias pura e inteiramente naturaes. Não havendo maneira de determinar ao certo, 
+                            temos que pender para o lado da maior probabilidade; e a maior probabilidade está na segunda hypothese. É mais natural suppôr 
+                            que a longuissima permanencia da humanidade em ficções sociaes creadoras de tyrannia faça cada homem nascer já com as suas 
+                            qualidades naturaes pervertidas no sentido de tyrannizar espontaneamente, mesmo em quem não pretenda tyrannizar, do que suppôr 
+                            que qualidades naturaes podem ser naturalmente pervertidas, o <!--[FIM IMAGEM 11]--> que, de certo modo, representa uma contradicção. 
+                            Porisso o pensador decide-se, como eu me decidi, com uma quasi absoluta segurança, pela segunda hypothese.</p>
+                        <p rend="indent-first">«Temos, pois, que uma coisa é evidente… No estado social presente não é possivel um grupo de homens, por 
+                            bem intencionados que estejam todos, por preoccupados que estejam todos só em combater as ficções sociaes e em trabalhar pela 
+                            liberdade, trabalharem juntos sem que espontaneamente criem entre si tyrannia, sem crear entre si uma tyrannia nova, 
+                            supplementar á das ficções sociaes, sem destruir na práctica tudo quanto querem na theoria, sem involuntariamente estorvar o 
+                            mais possivel o proprio intuito que querem promover. O que ha a fazer? É muito simples… É trabalharmos todos para o mesmo 
+                            fim, <hi rend="italic">mas separados</hi>.</p>
+                        <p rend="indent-first">— Separados?!</p>
+                        <p rend="indent-first">— Sim. V. não seguiu o meu argumento?</p>
+                        <p rend="indent-first">— Segui.</p>
+                        <p rend="indent-first">— E não acha logica, não acha fatal esta conclusão?</p>
+                        <p rend="indent-first">— Acho, sim, acho… O que não vejo bem é como isso…</p>
+                        <p rend="indent-first">— Já vou esclarecer… Disse eu: trabalharmos todos para o mesmo fim, mas separados. Trabalhando todos para 
+                            o mesmo fim anarchista, cada um contribue com o seu exforço para a destruição das ficções sociaes, que é para onde o dirige, 
+                            e para a creação da sociedade livre do futuro; e trabalhando separados não podemos, <hi rend="italic">de modo nenhum</hi>, crear 
+                            tyrannia nova, porque nenhum tem acção sobre outro, e não pode portanto, nem, dominando-o, diminuir-lhe a liberdade, nem, 
+                            auxiliando-o, apagar-lh’a.</p>
+                        <p rend="indent-first">«Trabalhando assim separados e para o mesmo fim anarchista, temos as duas vantagens – a do exforço conjuncto, 
+                            e a da não-creação de tyrannia nova. Continuamos unidos, porque o estamos moralmente e trabalhamos do mesmo modo para o mesmo fim; 
+                            continuamos anarchistas, porque cada um trabalha para a sociedade livre; mas deixamos de ser traidores, voluntarios ou involuntarios, 
+                            á nossa causa, deixamos mesmo de poder sel-o, porque nos collocamos, pelo trabalho anarchista isolado, fóra da influencia deleteria 
+                            das ficções sociaes, no seu reflexo hereditario sobre as qualidades que a Natureza deu.</p>
+                        <p rend="indent-first">«É claro que toda esta tactica se applica ao que eu chamei o <hi rend="italic">periodo de preparação</hi> 
+                            para a revolução social. Arruinadas as defezas burguezas, e reduzida a sociedade inteira ao estado de acceitação das doutrinas 
+                            anarchistas, faltando só fazer a revolução social, então, para o golpe final, é que não pode continuar a acção separada. Mas, 
+                            nessa altura, já a sociedade livre estará virtualmente chegada; já as coisas serão de outra maneira. A tactica a que me refiro 
+                            só diz respeito á acção anarchista em meio da sociedade burgueza, como agora, como no grupo a que eu pertencia.</p>
+                        <p rend="indent-first">«Era esse – até que emfim! – o verdadeiro processo anarchista. Juntos, nada valiamos, que importasse, e, 
+                            ainda por cima, nos tyrannizavamos, e nos estorvavamos uns aos outros e ás nossas theorias. Separados, pouco tambem conseguiriamos, 
+                            mas ao menos não estorvavamos a liberdade, não creavamos tyrannia nova; o que conseguiamos, pouco que fôsse, era realmente 
+                            conseguido, sem desvantagem nem perda. E, de mais a mais, trabalhando assim separados, aprendiamos a confiar mais em nós-mesmos, 
+                            a não nos encostarmos uns aos outros, a tornarmo-nos mais livres já, a prepararmo-nos, tanto pessoalmente, como aos outros pelo
+                            nosso exemplo, para o futuro.</p>
+                        <p rend="indent-first">«Fiquei radiante com esta descoberta. Fui logo expol-a aos meus camaradas… Foi uma das poucas vezes 
+                            em que fui estupido na minha vida. Imagine v. que eu estava tão cheio da minha descoberta que esperava que elles concordassem!…</p>
+                        <p rend="indent-first">— Não concordaram, é claro…</p>
+                        <p rend="indent-first">— Repontaram, meu amigo, repontaram todos! Uns mais, outros menos, tudo protestou!… Não era isso!… Isso não 
+                            podia ser!… Mas ninguem dizia o que era ou o que é que havia de ser. Argumentei e argumentei, e, em resposta aos meus argumentos, 
+                            não obtive senão phrases, lixo, coisas como essas que os ministros respondem nas camaras <!--[FIM IMAGEM 12]--> quando não 
+                            teem resposta 
+                            nenhuma… Então é que eu vi com que bestas e com que cobardões estava metido! Desmascararam-se. Aquella corja tinha nascido para 
+                            escravos. Queriam ser anarchistas á custa alheia. Queriam a liberdade, logo que fôssem os outros que lh’a arranjassem, logo que 
+                            lhes fôsse dada como um rei dá um titulo! Quasi todos elles são assim, os grandes lacaios!</p>
+                        <p rend="indent-first">— E V., escamou-se?</p>
+                        <p rend="indent-first">— Se me escamei! Enfureci-me! Puz-me aos coices. Dei por paus e por pedras. Quasi que me peguei com dois 
+                            ou trez d’elles. E acabei por me vir embora. Isolei-me. Veio-me um nojo áquella carneirada toda, que V. não imagina! Quasi 
+                            que descri do anarchismo. Quasi que decidi não me importar mais com tudo aquillo. Mas, passados uns dias, voltei a mim. 
+                            Pensei que o ideal anarchista estava acima d’estas quesilias. Elles não queriam ser anarchistas? Sel-o-hia eu. Elles queriam 
+                            só brincar aos libertários? Não estava eu para brincar num caso d’esses. Elles não tinham força para combater senão encostados
+                            uns aos outros, e creando, entre si, um simulacro novo da tyrannia que diziam querer combater? Pois que o fizessem, os 
+                            parvos, se não serviam para mais. Eu é que não ia ser burguez por tão pouco.</p>
+                        <p rend="indent-first">«Estava estabelecido que, no verdadeiro anarchismo, cada um tem que, por suas proprias forças, crear 
+                            liberdade e combater as ficções sociaes. Pois por minhas proprias forças eu ia crear liberdade e combater as ficções sociaes. 
+                            Ninguem queria seguir-me no verdadeiro caminho anarchista? Seguiria eu por elle. Iria eu só, com os meus recursos, com a minha 
+                            fé, desacompanhado até do apoio mental dos que tinham sido meus camaradas, contra as ficções sociaes inteiras. Não digo que
+                            fôsse um bello gesto, nem um gesto heroico. Foi simplesmente um gesto natural. Se o caminho tinha que ser seguido por cada 
+                            um separadamente, eu não precisava de mais ninguém para o seguir. Bastava o meu ideal. Foi baseado nestes principios e 
+                            nestas circunstamcias que decidi, por mim só, combater as ficções sociaes.</p>
+                        <p rend="indent-first">Suspendeu um pouco o discurso, que se lhe tornára quente e fluido. Retomou-o de alli a pouco, com a voz 
+                            já mais socegada.</p>
+                        
+                        <p rend="indent-first margin-vertical">— É um estado de guerra, pensei eu, entre mim e as ficções sociaes. Muito bem. O que 
+                            posso eu fazer contra as ficções sociaes? Trabalho sózinho, para não poder, de modo nenhum, crear qualquer tyrannia. Como 
+                            posso eu collaborar sósinho na preparação da revolução social, na preparação da humanidade para a sociedade livre? Tenho 
+                            que escolher um de dois processos, dos dois processos que ha; caso, é claro, não possa servir-me de ambos. Os dois 
+                            processos são a acção indirecta, isto é, a propaganda, e a acção directa, de qualquer especie.</p>
+                        <p rend="indent-first">«Pensei primeiro  na acção indirecta, isto é, na propaganda. Que propaganda poderia eu fazer só por mim? 
+                            Á parte esta propaganda que sempre se vae fazendo em conversa, com este ou aquelle, ao acaso e servindo-nos de todas as 
+                            opportunidades, o que eu queria saber era se a acção indirecta era um caminho por onde eu pudesse encaminhar a minha 
+                            actividade de anarchista energicamente, isto é, de modo a produzir resultados sensiveis. Vi logo que não podia ser. Não 
+                            sou orador e não sou escriptor. Quero dizer: sou capaz de falar em publico, se fôr preciso, e sou capaz de escrever um 
+                            artigo de jornal; mas o que eu queria averiguar era se o meu feitio natural indicava que, especializando-me na acção 
+                            indirecta, de qualquer das duas especies ou em ambas, eu poderia obter resultados <hi rend="italic">mais positivos</hi> 
+                            para a ideia anarchista que especializando os meus esforços em qualquer outro sentido. Ora a acção é sempre mais proveitosa 
+                            que a propaganda, excepto para os individuos cujo feitio os indica essencialmente como propagandistas – os grandes oradores, 
+                            capazes de electrizar multidões e arrastal-as atraz de si, ou os grandes escriptores, capazes de fascinar e convencer com os 
+                            seus livros. Não me parece que eu seja muito vaidoso, mas, se o sou, não me dá, pelo menos, para me envaidecer d’aquellas 
+                            qualidades que não tenho. E, como lhe disse, nunca me deu p’ra me julgar orador ou escriptor. Porisso abandonei a idéa da 
+                            acção indirecta como caminho a dar á minha actividade de anarchista. Por exclusão de partes, era <!--[FIM IMAGEM 13]--> 
+                            forçado a escolher a acção directa, isto é, o esforço aplicado á prática da vida, á vida real. Não era a intelligencia, 
+                            mas a acção. Muito bem. Assim seria.</p>
+                        <p rend="indent-first">«Tinha eu pois que applicar á vida practica o processo fundamental de acção anarchista que eu já tinha 
+                            esclarecido – combater as ficções sociaes sem crear tyrannia nova, creando já, caso fôsse possivel, qualquer coisa da liberdade 
+                            futura. Ora como diabo se faz isso na práctica?</p>
+                        <p rend="indent-first">«Ora o que é combater na práctica? Combater na práctica é a guerra, é <hi rend="italic">uma</hi> guerra, pelo 
+                            menos. Como é que se faz guerra ás ficções sociaes? Antes de mais nada, como é que se faz guerra? Como é que se vence o inimigo 
+                            em qualquer guerra? De uma de duas maneiras: ou matando-o, isto é, destruindo-o; ou aprisionando-o, isto é, subjugando-o, 
+                            reduzindo-o á inactividade. <hi rend="italic">Destruir</hi> as ficções sociaes não podia eu fazer; <hi rend="italic">destruir</hi> 
+                            as ficções sociaes só o podia fazer a revolução social. Até alli, as ficções sociaes podiam estar abaladas, cambaleando, por um 
+                            fio; mas <hi rend="italic">destruidas</hi>, só o estariam com a vinda da sociedade livre e a queda positiva da sociedade burgueza. 
+                            O mais que eu poderia fazer nesse sentido era destruir – destruir no sentido physico de matar – um ou outro membro das classes 
+                            representativas da sociedade burgueza. Estudei o caso, e vi que era asneira. Supponha V. que eu matava um ou dois, ou uma duzia 
+                            de representantes da tyrannia das ficções sociaes… O resultado? As ficções sociaes ficavam mais abaladas? Não ficavam. As 
+                            ficções sociaes não são como uma situação politica que pode depender de um pequeno numero de homens, de um só homem por vezes. O 
+                            que ha de mau nas ficções sociaes são ellas, no seu conjuncto, e não os indivíduos que as representam senão por serem 
+                            representantes d’ellas. Depois, um attentado de ordem social produz sempre uma reacção; não só tudo fica na mesma, mas, as mais 
+                            das vezes, peora. E, ainda por cima, supponha, como é natural, que, depois de um attentado, eu era caçado; era caçado e liquidado, 
+                            de uma maneira ou outra. E supponha que eu tinha dado cabo de uma duzia de capitalistas. Em que vinha isso tudo dar, em resumo? 
+                            Com a minha liquidação, ainda que não por morte, mas por simples prisão ou degredo, a causa anarchista perdia um elemento de 
+                            combate; e os doze capitalistas, que eu teria estendido, não eram doze elementos que a sociedade burgueza tinha perdido, porque
+                            os elementos componentes da sociedade burgueza não são elementos de combate, mas elementos puramente passivos, pois que o «combate» 
+                            está, não nos membros da sociedade burgueza, mas no conjunto de ficções sociaes, em que essa sociedade assenta. Ora as ficções 
+                            sociaes não são gente, em quem se possa dar tiros… V. comprehende bem? Não era como o soldado de um exercito que mata doze soldados
+                            de um exercito contrario; era como um soldado que mata doze civis da nação do outro exercito. É matar estupidamente, porque não se
+                            elimina combatente nenhum… Eu não podia portanto pensar em <hi rend="italic">destruir</hi>, nem no todo nem em nenhuma parte, as 
+                            ficções sociaes. Tinha então que subjugal-as, que vencel-as subjugando-as, reduzindo-as á inactividade.</p>
+                        <p rend="indent-first">Apontou para mim o indicador direito súbito.</p>
+                        <p rend="indent-first">— Foi o que eu fiz!</p>
+                        <p rend="indent-first">Retirou logo o gesto, e continuou.</p>
+                        <p rend="indent-first">— Procurei ver qual era a primeira, a mais importante, das ficções sociaes. Seria a essa que me cumpria, mais 
+                            que a nenhuma outra, tentar subjugar, tentar reduzir á inactividade. A mais importante, da nossa epocha pelo menos, é o dinheiro. 
+                            Como subjugar o dinheiro, ou, em palavras mais precisas, a força, ou a tyrannia do dinheiro? Tornando-me livre da sua influencia, 
+                            da sua força, superior portanto á sua influencia, reduzindo-o á inactividade pelo que me dizia respeito a mim. Pelo que me dizia 
+                            respeito <hi rend="italic">a mim</hi>, comprehende V.?, porque <hi rend="italic">eu</hi> é que o combatia; se fosse reduzil-o á 
+                            inactividade pelo que respeita a toda a gente, isso não seria já subjugal-o, mas <hi rend="italic">destruil-o</hi>, porque seria 
+                            acabar de todo com a ficção dinheiro. Ora eu já lhe provei que qualquer ficção social só pode ser «destruida» pela revolução social, 
+                            arrastada com as outras na queda da sociedade burgueza.</p>
+                        <p rend="indent-first">«Como podia eu tornar-me superior á força do dinheiro? O processo mais simples era <!--[FIM IMAGEM 14]--> 
+                            afastar-me da esphera da sua influencia, isto é, da civilização; ir para um campo comer raizes e beber agua das nascentes; andar 
+                            nu e viver como um animal. Mas isto, mesmo que não houvesse difficuldade em fazel-o, não era combater uma ficção social; não era
+                            mesmo combater: era fugir. Realmente, quem se esquiva a travar um combate não é derrotado nele. Mas moralmente é derrotado, porque 
+                            não se bateu. O processo tinha que ser outro — um processo de combate e não de fuga. Como subjugar o dinheiro, combatendo-o? Como 
+                            furtar-me á sua influencia e tyrannia, não evitando o seu encontro? O processo era só um – <hi rend="italic">adquiril-o</hi>, 
+                            adquiril-o em quantidade bastante para lhe não sentir a influencia; e em quanto mais quantidade o adquirisse, tanto mais livre eu 
+                            estaria d’essa influencia. Foi quando vi isto claramente, com toda a força da minha convicção de anarchista, e toda a minha logica 
+                            de homem lucido, que entrei na phase actual – a commercial e bancaria, meu amigo – do meu anarchismo.</p>
+                        <p rend="indent-first">Descansou um momento da violencia, novamente crescente, do seu enthusiasmo pela sua exposição. Depois continuou, 
+                            ainda com um certo calor, a sua narrativa.</p>
+                        <p rend="indent-first">— Ora V. lembra-se d’aquellas duas difficuldades logicas que eu lhe disse que me haviam surgido no principio 
+                            da minha carreira de anarchista consciente?… E V. lembra-se de eu lhe dizer que naquella altura as resolvi artificialmente, pelo 
+                            sentimento e não pela logica? Isto é, V. mesmo notou, e muito bem, que eu não as tinha resolvido pela logica…</p>
+                        <p rend="indent-first">— Lembro-me, sim…</p>
+                        <p rend="indent-first">— E V. lembra-se de eu lhe dizer que mais tarde, quando acertei por fim com o verdadeiro processo anarchista, 
+                            as resolvi então de vez, isto é, pela logica?</p>
+                        <p rend="indent-first">— Sim.</p>
+                        <p rend="indent-first">— Ora veja como ficaram resolvidas… As difficuldades eram estas: não é <hi rend="italic">natural</hi> trabalhar 
+                            por qualquer coisa, seja o que fôr, sem uma compens[aç]ão <hi rend="italic">natural</hi>, isto é, egoista; e não é 
+                            <hi rend="italic">natural</hi> dar o nosso exforço a qualquer fim sem ter a compensação de saber <hi rend="italic">que esse fim 
+                                se attinge</hi>. As duas difficuldades eram estas; ora repare como ficam resolvidas pelo processo de trabalho anarchista que o 
+                            meu raciocinio me levou a descobrir como sendo o unico verdadeiro… O processo dá em resultado eu enriquecer; 
+                            <hi rend="italic">portanto</hi>, <hi rend="italic">compensação egoista</hi>. O processo visa ao conseguimento da liberdade; 
+                            ora eu, tornando-me superior á força do dinheiro, isto é, libertando-me d’ella, <hi rend="italic">consigo liberdade</hi>. 
+                            Consigo liberdade só para mim, é certo; mas é que como já lhe provei, a liberdade para todos só pode vir com a destruição das 
+                            ficções sociaes, pela revolução social, e eu, só por mim, não posso fazer a revolução social. O ponto concreto é este: viso 
+                            liberdade, consigo liberdade: consigo a liberdade que posso, porque, é claro, não posso conseguir a que não posso… E veja V.: 
+                            àparte o raciocinio que determina este processo anarchista como o unico verdadeiro, o facto que elle resolve automaticamente 
+                            as difficuldades logicas, que se podem oppôr a qualquer processo anarchista, mais prova que elle é o verdadeiro.</p>
+                        <p rend="indent-first">«Pois foi este o processo que eu segui. Metti hombros á empreza de subjugar a ficção dinheiro, enriquecendo. 
+                            Consegui. Levou um certo tempo, porque a lucta foi grande, mas consegui. Excuso de lhe contar o que foi e o que tem sido a minha 
+                            vida commercial e bancaria. Podia ser interessante, em certos pontos sobretudo, mas já não pertence ao assumpto. Trabalhei, luctei, 
+                            ganhei dinheiro; trabalhei mais, luctei mais, ganhei mais dinheiro; ganhei muito dinheiro porfim. Não olhei a processos – 
+                            confesso-lhe, meu amigo, que não olhei a processos; empreguei tudo quanto ha – o açambarcamento, o sophisma financeiro, a propria 
+                            concorrencia desleal. O quê?! Eu combatia as ficções sociaes, immoraes e antinaturaes por excellencia, e havia de olhar a 
+                            processos?! Eu trabalhava pela liberdade, e havia de olhar ás armas com que combatia a tyrannia?! O anarchista estupido, que 
+                            atira bombas e dá tiros, bem sabe que mata, e bem sabe que as suas doutrinas não incluem a pena de morte. Ataca uma immoralidade 
+                            com um crime, porque acha que essa immoralidade vale um crime para se destruir. Elle é estupido quanto ao processo, porque, 
+                            como já lhe mos<!---[FIM IMAGEM 15]-->trei, esse processo é errado e contraproducente <hi rend="italic">como processo anarchista</hi>; 
+                            agora quanto á moral do processo elle é intelligente. Ora o meu processo estava certo, e eu servia-me legitimamente, como 
+                            anarchista, de todos os meios para enriquecer. Hoje realizei o meu limitado sonho de anarchista práctico e lucido. Sou livre. 
+                            Faço o que quero, dentro, é claro, do que é possível fazer. O meu lemma de anarchista era a liberdade; pois bem, tenho a 
+                            liberdade, a liberdade que, por emquanto, na nossa sociedade imperfeita, é possível ter. Quiz combater as forças sociaes; 
+                            combati-as, e, o que é mais, venci-as.</p>
+                        <p rend="indent-first">— Alto lá! alto lá! disse eu. Isso estará tudo muito bem, mas há uma cousa que v. não viu. As condições 
+                            do seu processo eram, como v. provou, não só crear liberdade, mas tambem <hi rend="italic">não crear tyrannia</hi>. Ora v. 
+                            creou tyrannia. V. como açambarcador, como banqueiro, como financeiro sem escrupulos – v. desculpe, mas v. é que o disse, – v. 
+                            creou tyrannia. V. creou tanta tyrannia como qualquer outro representante das ficções sociaes, que v. diz que combate.</p>
+                        <p rend="indent-first">— Não, meu velho, v. engana-se. Eu não creei tyrannia. A tyrannia, que pode ter resultado da minha acção de 
+                            combate contra as ficções sociaes, é uma tyrannia que não parte de mim, que portanto eu não creei; <hi rend="italic">está nas 
+                                ficções sociaes, eu não a juntei a ellas</hi>. Essa tyrania <hi rend="italic">é a propria tyrannia das ficções sociaes</hi>; 
+                            e eu não podia, nem me propuz, <hi rend="italic">destruir</hi> as ficções sociaes. Pela centesima vez lhe repito: só a 
+                            revolução social pode <hi rend="italic">destruir</hi> as ficções sociaes; antes d’isso, a acção anarchista perfeita, como 
+                            a minha, só pode <hi rend="italic">subjugar</hi> as ficções sociaes, subjugal-as em relação só ao anarchista que põe esse 
+                            processo em practica, porque esse processo não permitte uma mais larga sujeição d’essas ficções. Não é de não crear tyrannia 
+                            que se trata: é de não crear <hi rend="italic">tyrannia nova</hi>, tyrannia <hi rend="italic">onde não estava</hi>. 
+                            Os anarchistas, trabalhando em conjuncto, influenciando-se uns aos outros como eu lhe disse, criam
+                            <hi rend="italic">entre si</hi>, fóra e áparte das ficções sociaes, uma tyrannia; <hi rend="italic">essa</hi> é que é uma 
+                            tyrannia nova. Essa, eu não a creei. Não a podia mesmo crear, <hi rend="italic">pelas proprias condições do meu processo</hi>. 
+                            Não, meu amigo; eu só creei liberdade. Libertei <hi rend="italic">um</hi>. Libertei-me a mim. É que o meu processo, que é,
+                            como lhe provei, o unico verdadeiro processo anarchista, me não permittiu libertar mais. O que pude libertar, libertei.</p>
+                        <p rend="indent-first">— Está bem… Concordo… Mas olhe que, por esse argumento, a gente quasi que é levada a crer que nenhum 
+                            representante das ficções sociaes exerce tyrannia…</p>
+                        <p rend="indent-first">— E não exerce. A tyrannia é das ficções sociaes e não dos homens que as incarnam; esses são, por assim 
+                            dizer, <hi rend="italic">os meios</hi> de que as ficções se servem para tyrannizar, como a faca é o meio de que se pode servir 
+                            o assassino. E v. decerto não julga que abolindo as facas abole os assassinos… Olhe… Destrua v. <hi rend="italic">todos</hi> os 
+                            capitalistas do mundo, mas <hi rend="italic"> sem destruir o capital</hi>… No dia seguinte o capital, já nas mãos de outros, continuará, por meio <hi rend="italic">d’esses</hi>, a sua tyrannia. Destrua, não os capitalistas, mas o capital; quantos capitalistas ficam?… Vê?…</p>
+                        <p rend="indent-first">— Sim; v. tem razão.</p>
+                        <p rend="indent-first">— Ó filho, o maximo, o maximo, o maximo que v. me pode accusar de fazer é de augmentar um pouco, – muito, 
+                            muito pouco – a tyrannia das ficções sociaes. O argumento é absurdo, porque como já lhe disse, a tyrannia que eu não devia crear, 
+                            e não creei, é outra. Mas tem mais um ponto fraco: é que, pelo mesmo raciocinio, v. pode accusar um general, que trava combate 
+                            pelo seu paiz, de causar ao seu paiz o prejuizo do numero de homens <hi rend="italic">do seu proprio exercito</hi> que teve de 
+                            sacrificar para vencer. Quem vae á guerra, dá e leva. Consiga-se o principal; o resto…</p>
+                        <p rend="indent-first">— Está muito bem… Mas olhe lá outra coisa… O verdadeiro anarchista quer a liberdade não só para si, mas tambem 
+                            para os outros… Parece-me que quer a liberdade para a humanidade inteira…</p>
+                        <p rend="indent-first">— Sem duvida. Mas eu já lhe disse que, pelo processo que descobri que era o unico processo anarchista, 
+                            cada um tem de libertar-se a si-proprio. Eu libertei-me a mim; fiz o meu dever simultaneamente para commigo e para com a 
+                            liberdade. Porque é que os outros, <!--[FIM IMAGEM 16]--> os meus camaradas, não fizeram o mesmo? Eu não os impedi. Esse é que teria 
+                            sido o crime, se eu os tivesse impedido. Mas eu nem sequer os impedi occultando-lhes o verdadeiro processo anarchista; logo que 
+                            descobri o processo, disse-o claramente a todos. O proprio processo me impedia de fazer mais. Que mais podia eu fazer? 
+                            Compellil-os a seguir o caminho? Mesmo que o pudesse fazer, não o faria, porque seria tirar-lhes a liberdade, e isso era contra 
+                            os meus principios anarchistas. Auxilial-os? Tambem não podia ser, pela mesma razão. Eu nunca ajudei, nem ajudo, ninguem, porque 
+                            isso, sendo diminuir a liberdade alheia, é tambem contra os meus principios. V. o que me está censurando é eu não ser mais gente 
+                            que uma pessoa só. Porque me censura o cumprimento do meu dever de libertar, até onde eu o podia cumprir? Porque não os censura 
+                            antes a elles por não terem cumprido o d’elles?</p>
+                        <p rend="indent-first">— Pois sim, homem. Mas esses homens não fizeram o que V. fez, naturalmente, porque eram menos intelligentes 
+                            que V., ou menos fortes de vontade, ou…</p>
+                        <p rend="indent-first">— Ah, meu amigo: essas são já as desegualdades naturaes, e não as sociaes… Com essas é que o anarchismo não 
+                            tem nada. O grau de intelligencia ou de vontade de um individuo é com elle e com a Natureza; as proprias ficções sociaes não 
+                            põem pr’ahi nem prego nem estopa. Ha qualidades naturaes, como eu já lhe disse, que se pode presumir que sejam pervertidas 
+                            pela longa permanencia da humanidade entre ficções sociaes; mas a perversão não está no <hi rend="italic">grau</hi> da qualidade, 
+                            que é absolutamente dado pela Natureza, mas na <hi rend="italic">applicação</hi> da qualidade. Ora uma questão de estupidez ou 
+                            de falta de vontade não tem que ver com a applicação d’essas qualidades, mas só com o grau d’ellas. Por isso lhe digo: essas são 
+                            já absolutamente as desegualdades naturaes, e sobre essas ninguem tem poder nenhum, nem ha modificação social que a modifique, 
+                            como não me pode tornar a mim alto ou a V. baixo…</p>
+                        <p rend="indent-first">«A não ser… A não ser que, no caso d’esses typos, a perversão hereditaria das qualidades naturaes vá tão longe 
+                            que attinja o proprio fundo do temperamento… Sim, que um typo nasça para escravo, nasça naturalmente escravo, e portanto incapaz 
+                            de qualquer esforço no sentido de se libertar… Mas nesse caso…, nesse caso…, que tem elles que vêr com a sociedade livre, ou com 
+                            a liberdade?… Se um homem nasceu para escravo, a liberdade, sendo contraria á sua indole, será para elle uma tyrannia.</p>
+                        <p rend="indent-first">Houve uma pequena pausa. De repente ri alto.</p>
+                        <p rend="indent-first">— Realmente, disse eu, V. é anarchista. Em todo o caso, dá vontade de rir, mesmo depois de o ter ouvido, 
+                            comparar o que V. é com o que são os anarchistas que pr’ahi ha…</p>
+                        <p rend="indent-first">— Meu amigo, eu já lh’o disse, já lh’o provei, e agora repito-lh’o… A differença é só esta: elles são 
+                            anarchistas só theoricos, eu sou theorico e práctico; elles são anarchistas mysticos, e eu scientifico; elles são anarchistas 
+                            que se agacham, eu sou um anarchista que combate e liberta… Em uma palavra: elles são pseudo-anarchistas, e eu sou anarchista.</p>
+                        <p rend="indent-first">E levantámo-nos da mesa.</p>
+                        
+                        <p rend="indent-2">Lisboa, Janeiro de 1922.</p>
+                </div>
+        </body>
+        </text>
+    </TEI>

@@ -6,9 +6,9 @@
             <!-- this is a comment... here they are used for documentation and to give hints. In new files, 
         please just use them to comment on if something is unclear -->
             <titleStmt>
-                <title>Notas para recordação do meu mestre Caeiro</title>
+                <title>Antonio Botto e o ideal esthetico em Portugal</title>
                 <author>
-                    <rs type="name" key="AdC">Álvaro de Campos</rs>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
                 </author>
                 <respStmt>
                     <resp>Edição, Transcrição, Codificação</resp>
@@ -32,76 +32,67 @@
                     <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
-                <idno type="filename">Campos_Notas_para_a_recordacao.xml</idno>
-                <!-- JU: author of the piece: Campos // please follow this file name pattern for other files -->
+                <idno type="filename">Pessoa_Antonio_Botto_e_o_ideal.xml</idno>
             </publicationStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O4-X">Notas para recordação do meu mestre
-                        Caeiro</rs></item>
-                    <!-- JU: Also in this case, it should be Campos // @key: contains the index of this WORK. 
-        (to be defined in the central work index, O2 = Caeiro, X -> will be a number)
-        This can be left as is in the beginning.
-    -->
+                    <item><rs type="work" key="O1-X">Antonio Botto e o ideal esthetico em Portugal</rs></item>
                 </list>
                 <biblStruct>
                     <!-- here goes the bibliographical reference for the source publication -->
                     <analytic>
-                        <title level="a">Notas para recordação do meu mestre Caeiro</title>
+                        <title level="a">Antonio Botto e o ideal esthetico em Portugal</title>
                         <author>
-                            <rs type="name" key="AdC">Álvaro 
-                                de Campos</rs><!-- JU: If this is to identify the author, it also should be changed to Campos, Caeiro is only a reference in the title <Topic??>// the @key is to identify Caeiro.
-                            (see the comment above) -->
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
                         <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
-                        <title level="j"><rs type="periodical" key="J1">Presença</rs></title>
+                        <title level="j"><rs type="periodical" key="J11">Contemporânea</rs></title>
                         <!-- @key is to identify the periodical. You can find other periodicals IDs in the file 
                             lists.xml in the data folder. In that file, 
                         look for the sublist <list type="periodical">, currently beginning at line 1450. You can also add
                         new periodicals there -->
                         <imprint>
-                            <date when="1931-01">Janeiro de 1931</date>
+                            <date when="1922-07">Julho de 1922</date>
                             <!-- in case it is not a single date, but from-to, it 
                             looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
                             there is just a year: when="1931" -->
                         </imprint>
-                        <biblScope unit="issue">30</biblScope>
-                        <biblScope unit="page">11-15</biblScope>
+                        <biblScope unit="issue">3</biblScope>
+                        <biblScope unit="page">121-126</biblScope>
                     </monogr>
                     <note type="genre">
                         <rs type="genre" key="prosa">Prosa</rs>
-                        <!-- JU: I'm not sure I understand this part: is it always necessary to mark "poesia" 
-                        UH: you are right, the category prosa still had to be created (it was just that we
-                        did no have any prose before)-->
                     </note>
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic url="prosa/IMAGE-FILE-NAME"/>
-        <!-- JU: I'm sending you the images in an e-mail// if there is a facsimile, the image file name goes here.
-        several images can be several graphic-elements. All files must be sent to the CCeH to be processed for the image
-        viewer and to be stored on the image server. If there is no image please leave this as is. -->
+        <graphic url="prosa/Antonio_Botto_Ideal_1.jpg"/>
+        <graphic url="prosa/Antonio_Botto_Ideal_2.jpg"/>
+        <graphic url="prosa/Antonio_Botto_Ideal_3.jpg"/>
+        <graphic url="prosa/Antonio_Botto_Ideal_4.jpg"/>
+        <graphic url="prosa/Antonio_Botto_Ideal_5.jpg"/>
+        <graphic url="prosa/Antonio_Botto_Ideal_6.jpg"/>
     </facsimile>
-    <text corresp="#O4-X">
+    <text corresp="#O1-X">
         <!-- @corresp: contains the index of this WORK. 
         (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
         This can be left as is in the beginning.
     -->
         <body>
             <div>
-                <head><rs type="name" key="PXXX">ANTONIO BOTTO</rs></head> 
+                <head><rs type="name" key="P17">ANTONIO BOTTO</rs></head> 
                 <head type="sub">E O IDEAL ESTHETICO EM PORTUGAL</head>
-                    <p><rs type="name" key="PXXX">ANTONIO BOTTO</rs> é o unico portuguez, dos que conhecidamente escrevem, a quem a designação de 
+                    <p><rs type="name" key="P17">ANTONIO BOTTO</rs> é o unico portuguez, dos que conhecidamente escrevem, a quem a designação de 
                         estheta se pode applicar sem dissonancia. Com um perfeito instincto elle segue o ideal a que se tem chamado esthetico, e que 
                         é uma das formas, se bem que a infima, do ideal hellenico. Segue-o, porém, a par de com o instincto, com uma perfeita 
                         intelligencia, porque os ideaes gregos, como são intellectuaes, não podem ser seguidos inconscientemente.</p>
                     <p rend="indent-first">A obra de <rs type="name" key="P17">Antonio Botto</rs>, no que realmente typica, resume-se, por ora, no 
-                        seu ultimo livro, <hi rend="italic">Canções</hi>. Que essa obra se distingue com facilidade da obra de qualquer outro poeta, 
+                        seu ultimo livro, <rs type="title">Canções</rs>. Que essa obra se distingue com facilidade da obra de qualquer outro poeta, 
                         portuguez ou estrangeiro – todos, que possam ver, o podem ver. Já não é tão facil explicar em que consiste, distinctivamente, 
                         essa differença. Algum interesse haverá em determinal-o.</p>
                     
@@ -122,7 +113,7 @@
                         imperfeito porque não é um corpo perfeito; toda a vida imperfeita porque, durando, não dura sempre; todo o prazer imperfeito 
                         porque o envelhece o cansaço; toda a comprehensão imperfeita porque, quanto mais se expande, em maiores fronteiras confina 
                         com o incomprehensivel que a cerca. Quem sente d’esta maneira a imperfeição da vida, quem assim a compara com ella-propria, 
-                        tendo-a por infiel á [FIM IMAGEM 1] sua propria natureza, força é que sinta como ideal um conceito de perfeição que se 
+                        tendo-a por infiel á sua propria natureza, força é que sinta como ideal um conceito de perfeição que se 
                         appoie na mesma vida. Este ideal de perfeição é o ideal hellenico, ou o que pode assim designar-se, por terem sido os gregos 
                         antigos quem mais distinctivamente o teve, quem, em verdade, o formou, de quem, porcerto, elle foi herdado pelas 
                         civilizações posteriores.</p>
@@ -222,7 +213,7 @@
                         de idéas metaphysicas, nem essa ausencia de moral uma ausencia de idéas moraes. Ha uma idéa que, sem ser metaphysica nem 
                         moral, faz, na obra do estheta, as vezes das idéas moraes e metaphysicas. O estheta substitue a idéa de belleza á idéa de 
                         verdade e á idéa de bem, porém dá, por isso mesmo, a essa idéa de belleza um alcance metaphysico e moral. A celebre 
-                        «Conclusão» da <hi rend="italic">Renascença</hi> de <rs type="name" key="P164">Pater</rs>, o maior dos esthetas europeus, é 
+                        «Conclusão» da <rs type="title">Renascença</rs> de <rs type="name" key="P164">Pater</rs>, o maior dos esthetas europeus, é 
                         o exemplo culminante d’esta attitude.</p>
                     <p rend="indent-first">Nisto se distingue a obra do estheta da obra do artista simples, em quem os elementos metaphysicos e 
                         moraes são ausentes, não por differença de ideal, senão por ausencia d’elle.</p>
@@ -240,9 +231,9 @@
                         pensado, tudo é critico e consciente. Não ha, porém, como seria de esperar de uma intelligencia tão constantemente 
                         empregada, metaphysica nenhuma, nem explicita nem implicita, interesse nenhum pelas idéas como taes. É uma intelligencia que 
                         dirige, porém não pensa; que comprehende, porém não aprofunda; que guia, porém não se preoccupa. Nem positivamente, nem 
-                        negativamente, <hi rend="italic">suggere</hi> o livro <hi rend="italic">Canções</hi> qualquer metaphysica. Duas idéas 
+                        negativamente, <hi rend="italic">suggere</hi> o livro <rs type="title">Canções</rs> qualquer metaphysica. Duas idéas 
                         centraes governam a inspiração do poeta, e lhe servem de metaphysica e de moral. São as idéas de belleza physica e de prazer. 
-                        A analyse do conteúdo d’essas duas idéas, taes quaes se nos apresentam nas <hi rend="italic">Canções</hi>, revelará o 
+                        A analyse do conteúdo d’essas duas idéas, taes quaes se nos apresentam nas <rs type="title">Canções</rs>, revelará o 
                         estheta inequivocamente. No modo como apresenta a primeira d’ellas, o poeta afasta-se de toda a especie de moralidade; no 
                         modo como apresenta a segunda, de toda a especie de immoralidade.</p>
                     
@@ -258,13 +249,13 @@
                         humano que mais elementos de belleza, dos poucos que ha, pode acumular.</p>
                     <p rend="indent-first">Foi assim que pensaram os gregos; foi esse pensamento que <rs type="name" key="P480">Winckelmann</rs>, 
                         fundador do esthetismo na Europa, descobrindo-o nelles, reproduziu, como no passo célebre que <rs type="name" key="P164">
-                            Pater</rs> transcreveu, e que parece feito para servir de prefacio a um livro como <hi rend="italic">Canções</hi>:</p>
+                            Pater</rs> transcreveu, e que parece feito para servir de prefacio a um livro como <rs type="title">Canções</rs>:</p>
                     <p rend="indent-first">«Como é confessadamente a belleza do homem que tem que ser concebida sob uma idéa geral, assim tenho 
                         notado que aquelles que observam a belleza só nas mulheres, e pouco ou nada se commovem com a belleza dos homens, raras 
                         vezes teem instinto imparcial, vital, innato da belleza na arte. A pessoas como essas a belleza da arte grega parecerá 
                         sempre falha, porque a sua belleza suprema é antes masculina que feminina».</p>
                     <p rend="indent-first">Ora é este conceito, puramente esthetico, da belleza physica que é, como todos sabem, porque 
-                        escandalizadamente se notou, uma das duas idéas inspiradoras das <hi rend="italic">Canções</hi>.</p><!--[FIM IMAGEM 4]-->
+                        escandalizadamente se notou, uma das duas idéas inspiradoras das <rs type="title">Canções</rs>.</p><!--[FIM IMAGEM 4]-->
                     <p rend="indent-first">Disse eu que <rs type="name" key="P17">Antonio Botto</rs> se afasta de toda a moralidade no modo por que 
                         canta a belleza physica, e que se afasta de toda a immoralidade no modo por que canta o prazer. De que modo canta elle o 
                         prazer? Que modo há de cantar o prazer que, sem ser moral (porque se o fôsse, estariamos fóra do caso esthetico), se afaste 
@@ -280,9 +271,9 @@
                         finalmente, ser acceite simplesmente como prazer, como, em sua essencia, nem alegre nem triste, porém a unica cousa que pode 
                         encher o vacuo absurdo da existencia. D’este conceito de prazer não se pode dizer que seja moral nem immoral, logo que se 
                         não esqueça que se está considerando o prazer só, isolando-o de qualquer outro elemento da vida.</p>
-                    <p rend="indent-first">Quem leia com attenção normal o livro <hi rend="italic">Canções</hi>, não tardará que veja que é este 
+                    <p rend="indent-first">Quem leia com attenção normal o livro <rs type="title">Canções</rs>, não tardará que veja que é este 
                         ultimo o conceito que <rs type="name" key="P17">Antonio Botto</rs> forma do prazer, que é neste sentido de comprehendel-o 
-                            que elle o canta. <hi rend="italic">Canções</hi> é um hymno ao prazer, porém não ao prazer como alegria, nem como raiva, 
+                            que elle o canta. <rs type="title">Canções</rs> é um hymno ao prazer, porém não ao prazer como alegria, nem como raiva, 
                             senão simplesmente como prazer. O prazer, como o poeta o canta, nem serve de dispertar a alegria da vida, nem de 
                             ministrar um antidoto a uma dôr substancial constante; serve apenas de encher um vacuo espiritual, a ser conceito de 
                             vida a quem não tem nenhum. Ha neste livro, sim, a intuição do fundo tragico do ideal hellenico, do fundo tragico de 
@@ -293,11 +284,11 @@
                             O prazer, porém, quando o concebemos fóra da relação essencial com a alegria ou com a dor, como o concebe o author 
                             d’este livro, esse, sim, quer eternidade; porém quer a eternidade num só momento.</p>
                     <p rend="indent-first">Resulta d’estas considerações, que me exforcei por fazer lucidas e concisas, a determinação exacta de que 
-                        <rs type="name" key="P17">Antonio Botto</rs>, no seu livro <hi rend="italic">Canções</hi>, se revela um dos typos mais 
+                        <rs type="name" key="P17">Antonio Botto</rs>, no seu livro <rs type="title">Canções</rs>, se revela um dos typos mais 
                         perfeitos e mais integros do estheta, que se podem imaginar.</p>
                     
                     <p rend="indent-first margin-vertical">Que importancia tem este facto? A de representar uma raridade. O typo perfeito do estheta 
-                        é rarissimo na civilização christã, ou de origem christã, e mais que raro, porque, até ás <hi rend="italic">Canções</hi>, 
+                        é rarissimo na civilização christã, ou de origem christã, e mais que raro, porque, até ás <rs type="title">Canções</rs>, 
                         desconhecido, em Portugal. A razão d’essa raridade, quer em toda a Europa, quer em Portugal, e o valor que nella haja, são 
                         relativamente faceis de comprehender.</p>
                     <p rend="indent-first">O ideal esthetico é, como se viu, uma das formas – a mais tenue e vazia – do ideal hellenico; mas, 
@@ -330,16 +321,16 @@
                         talento, porque o ideal esthetico, dada a sua estreiteza e vacuidade, representa já o senso esthetico isolado de todos 
                         os outros elementos psychicos, e, no caso de <rs type="name" key="P17">Antonio Botto</rs>, estheta simples, esse 
                         isolamento não se modifica, como no esthetismo culto, pelo reflexo nelle da multiplicidade dos objectos de cultura.</p>
-                    <p rend="indent-first">Temos, pois, por demonstração severamente conduzida, que o livro <hi rend="italic">Canções</hi> é uma 
+                    <p rend="indent-first">Temos, pois, por demonstração severamente conduzida, que o livro <rs type="title">Canções</rs> é uma 
                         obra de talento, tendo além d’esse, o valor acessorio e especial de ser o unico exemplo, que eu saiba, na litteratura 
                         europeia, do isolamento espontaneo e absoluto do ideal esthetico em toda a sua vazia integridade.</p>
                     <p rend="indent-first">Àparte este valor, que pertence áquella obra em absoluto, isto é, como obra e não como obra em portuguez, 
-                        o livro <hi rend="italic">Canções</hi> tem, para nós em Portugal, um outro aspecto de valor, já de ordem relativa. É que é o 
+                        o livro <rs type="title">Canções</rs> tem, para nós em Portugal, um outro aspecto de valor, já de ordem relativa. É que é o 
                         único exemplo em Portugal da realização litteraria, de qualquer especie, do ideal esthetico. Facilmente o verificará quem 
                         houver lido com attenção o que estabelecemos sobre os characteristicos do estheta. Artistas tem havido muitos em Portugal; 
-                        esthetas só o autor das <hi rend="italic">Canções</hi>.</p>
+                        esthetas só o autor das <rs type="title">Canções</rs>.</p>
                     
-                    <signed>FERNANDO PESSOA</signed>
+                    <signed rend="align-right">FERNANDO PESSOA</signed>
                     
                 </div>
             </body>
