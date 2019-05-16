@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>         
+            <titleStmt>
+                <title>Tábua Bibliográfica Fernando Pessoa</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="restricted">
+                    <!-- @status will be set to "free" once the document is ready to be published -->
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Pessoa_Tabua_Bibliografica_FPessoa.xml</idno>               
+            </publicationStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="O1-X">Tábua Bibliográfica Fernando Pessoa</rs></item>
+                </list>
+                <biblStruct>
+                    <!-- here goes the bibliographical reference for the source publication -->
+                    <analytic>
+                        <title level="a">Tábua Bibliográfica</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt" otherLangs="en"/>
+                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J1">Presença</rs></title>
+                        <imprint>
+                            <date when="1928-12">Dezembro de 1928</date>
+                            <!-- in case it is not a single date, but from-to, it 
+                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
+                            there is just a year: when="1931" -->
+                        </imprint>
+                        <biblScope unit="issue">17</biblScope>
+                        <biblScope unit="page">10</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="prosa">Prosa</rs>
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="prosa/IMAGE-FILE-NAME"/>
+    </facsimile>
+    <text corresp="#O4-X">
+        <!-- @corresp: contains the index of this WORK. 
+        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
+        This can be left as is in the beginning.
+    -->
+        <body>
+            <div>
+                <head rend="center"><hi rend="underline">As nossas entrevistas</hi></head>
+                
+                <head type= "sub">O escritor <rs type="name" key="#FP">Fernando Pessoa</rs> expõe-nos as suas ideias sobre os varios aspectos da arte e da literatura portuguesas</head>
+                
+                <p rend="indent-first">Entrevistar <rs type="name" key="#FP">Fernando Pessôa</rs> não é facil. Só é facil entrevistar os que não pensam, os que não se importam de jogar palavras, ao 
+                    acaso, atirando-as impudicamente ao vento.</p>
+                <p rend="indent-first"><rs type="name" key="#FP">Fernando Pessôa</rs>, quere como <rs type="name" key="#FP">Fernando Pessôa</rs>, quere como <rs type="name" key="#AdC">Alvaro de 
+                    Campos</rs>  – o engenheiro alucinado que comporta o seu segundo eu, e que aparece em toda a parte, enchendo a voz de louvores e raios para a Vida – 
+                    <hi rend="italic">raios partam a Vida e quem lá ande!</hi><!--reference to poem Soneto Já Antigo #04.15 --> – é sempre um voluptuoso do raciocinio, um amante da inteligencia, 
+                    podemos dizer: um creadôr duma nova Razão. Paradoxal? Sem duvida. Mas ha tantas maneiras de ser paradoxal!</p>
+                <p rend="indent-first">A entrevista que se segue, toda escripta por <rs type="name" key="#FP">Fernando Pessôa</rs> – nem podia deixar de ser[,] visto 
+                    <rs type="name" key="#FP">Fernando Pessôa</rs> possuir uma sintaxe propria para a logica propria dos seus pensamentos, mixto de seriedade e de ironia, vái decerto prender o 
+                    espirito dos leitores...</p>
+                <p rend="indent-first">Atenção! <rs type="name" key="#FP">Fernando Pessôa</rs> vai responder ás perguntas que lhe fizemos:</p>
+                <p rend="indent-first">– Que pensa da nossa crise? Dos seus aspectos – politico, moral e intellectual?</p>
+                <p rend="indent-first">– A nossa crise provém, essencialmente, do excesso de civilização dos incivilizaveis. Esta phrase, como todas que involvem uma contradição[,] não involve 
+                    contradicção nenhuma. Eu explico.</p>
+                <p rend="indent-first">Todo povo se compõe de uma aristocracia e de ele mesmo. Como o povo é um, esta aristocracia e este elle <!-- [FIM IMAGEM 1]--> mesmo teem uma substancia 
+                    identica; manifestam-se, porém, differentemente. A aristocracia manifesta-se como individuos, incluindo alguns individuos amadores; o povo revela-se como todo elle um individuo 
+                    só. Só collectivamente é que o povo não é collectivo.</p>
+                <p rend="indent-first">O povo portuguez é, essencialmente, cosmopolita. Nunca um verdadeiro portuguez foi portuguez: foi sempre tudo. Ora ser tudo em um individuo é ser tudo; ser 
+                    tudo em uma collectividade é cada um dos individuos não ser nada. Quando a atmosphera da civilização é cosmopolita, como na Renascença, o portuguez pode ser portuguez, pode 
+                    portanto ser individuo, pode portanto ter aristocracia. Quando a atmosphera da civilização não é cosmopolita – como no tempo entre o fim da Renascença e o principio, em que 
+                    estamos, de uma Renascença nova – o portuguez deixa de poder respírar individualmente. Passa a ser só portuguezes. Passa a não poder ter aristocracia. Passa a não passar. 
+                    (Garanto-lhe que estas phrases teem uma mathematica intima.)</p>
+                <p rend="indent-first">Ora um povo sem aristocracia não pode ser civilizado. A civilização, porém, não perdôa. Porisso esse povo civiliza-se com o que pode arranjar, que é o seu 
+                    conjuncto. E como o seu conjuncto é individualmente nada, passa a ser tradicionalista e a imitar o estrangeiro, que são as duas maneiras de não ser nada. É claro que o portuguez, 
+                    com a sua tendencia para ser tudo, forçosamente havia de ser nada de todas as maneiras possiveis. Foi neste vacuo de si-proprio que o portuguez abusou de civilizar-se. Está 
+                    nisto, como lhe disse, a essencia da nossa crise.</p>
+                <p rend="indent-first">As nossas crises particulares procedem d’esta crise geral. A nossa crise politica é o sermos governados por uma maioria que não ha. A nossa crise moral é que 
+                    desde 1580 – fim da Renascença em nós e de nós na Renascença – deixou de haver individuos em Portugal para haver só portuguezes. Porisso mesmo acabaram os portuguezes nessa 
+                    ocasião. Foi então que começou o portuguez á antiga portugueza, que é mais moderno que o portuguez, e é o resultado de estarem interrompidos os portuguezes. A nossa crise 
+                    intellectual é simplesmente o não termos consciencia d’isto.</p><!-- [FIM IMAGEM 2]-->
+                <p rend="indent-first">Respondi, creio, á sua pergunta. Se v. reparar bem para o que lhe disse, verá que tem um sentido. Qual, não me compete a mim dizer.</p>
+                <p rend="indent-first">– Que pensa dos nossos escriptores do momento, prosadores, poetas e dramaturgos?</p>
+                <p rend="indent-first">– Citar é ser injusto. Enumerar é esquecer. Não quero esquecer ninguem de quem me não lembre. Confio ao silencio a injustiça. A ansia de ser completo leva ao 
+                    desespero de o não poder ser. Não citarei ninguem. Julgue-se citado quem se julgue com direito a sel-o. Resolvo assim todos. Lavo as mãos, como Pilatos; lavo-as, porém, 
+                    inutilmente, porque é sempre inutilmente que se faz um gesto simplificador. Que sei eu do presente, salvo que elle é já o futuro? Quem são os meus contemporaneos? Só o futuro o 
+                    poderá dizer. Coexiste commigo muita gente que vive commigo apenas porque dura commigo. Esses são apenas os meus conterraneos no tempo; e eu não quero ser bairrista em materia 
+                    de immortalidade. Na duvida, repito, não citarei ninguem.</p>
+                <p rend="indent-first">– Estaremos em face de uma renascença espiritual?</p>
+                <p rend="indent-first">– Estamos tão desnacionalizados que devemos estar renascendo. Para os outros povos, na sua totalidade elles-proprios, o desnacionalizar-se é o perder-se. 
+                    Para nós, que não somos nacionaes, o desnacionalizar-se é o encontrar-se. Apezar dos grandes obstáculos á nossa regeneração – todas as doutrinas de regeneração – estamos no 
+                    inicio de tornar a começar a existir. Chegámos ao ponto em que collectivamente estamos fartos de tudo e individualmente fartos de estar fartos. Extraviámo-nos a tal ponto que 
+                    devemos estar no bom caminho. Os signaes do nosso resurgimento proximo estão patentes para os que não vêem o visivel. São o caminho de ferro de 
+                    <rs type="name" key="P18">Anthero</rs> a <rs type="name" key="P52">Pascoaes</rs> e a nova linha que está quasi construida. Fallo em termos de vida metallica porque a epocha 
+                        renasce nestes termos. O symbolo, porém, nasceu antes dos engenheiros.</p>
+                <p rend="indent-first">Nada ha a esperar, é certo, das classes dirigentes, porque não são dirigentes; e ainda menos da proletariagem, porque ser inferior não é uma superioridade. 
+                    Com razão lhes chamei eu, a estes, <hi rend="italic">sub-gente</hi> <!--aqui uma ref. Ao artigo Reincidindo do corpus-->, num artigo da <!-- [FIM IMAGEM 3]--> antiga 
+                    <rs type="periodical" key="J5">Aguia</rs> – da <rs type="periodical" key="J5">Aguia</rs> que voava. Só a burguezia, que é a ausencia da classe social, pode crear o futuro. Só de 
+                    uma classe que não ha pode nascer uma classe que não ha ainda. Seja como fôr, avancemos confiadamente. Todos os caminhos vão dar á ponte quando o rio não tem nenhuma.</p>
+                <p rend="indent-first">– O que se deve entender por arte portugueza? Concorda com este termo? Ha arte verdadeiramente portugueza?</p>
+                <p rend="indent-first">– Por arte portugueza deve entender-se uma arte de Portugal que nada tenha de portuguez, por nem sequer imitar o estrangeiro. Ser portuguez no sentido decente 
+                    da palavra, é ser europeu sem a má-creação de nacionalidad[e]. Arte portugueza será aquella em que a Europa – entendendo por Europa principalmente a Grecia antiga e o universo 
+                    inteiro – se mire e se reconheça sem se lembrar do espelho. Só duas nações – a Grecia passada e Portugal futuro – receberam dos deuses a concessão de serem não só ellas mas 
+                    tambem todas as outras. Chamo a sua attenção para o facto, mais importante que geographico, de que Lisboa e Athenas estão quasi na mesma latitude.</p>
+                <p rend="indent-first">– O regionalismo na litteratura e na pintura?</p>
+                <p rend="indent-first">– O regionalismo é uma degeneração gordurosa do nacionalismo, e o nacionalismo tambem. E como o nacionalismo é anti-portuguez (sendo bom, cá no Sul, só para 
+                    os povos latinos e ibericos), o regionalismo em Portugal é uma doença do que não ha. Amar a nossa terra não é gostar do nosso quintal. E isto de quintal tambem tem interpretações. 
+                    O meu quintal em Lisboa está ao mesmo tempo em Lisboa, em Portugal e na Europa. O bom regionalismo é amal-o por elle estar na Europa. Mas quando chego a este regionalismo, sou 
+                    já português, e já não penso no meu quintal. (O facto de o meu quintal ser inteiramente metaphorico não diminue a verdade de tudo isto: Deus, e o proprio universo, são 
+                    metaphoras tambem.)</p>
+                <p rend="indent-first">– Teriam existido em toda a nossa historia litteraria periodos de creação?</p>
+                <p rend="indent-first">– O nosso unico periodo de creação foi dedicado a crear um mundo. Não tivemos tempo para pensar nisso. <!-- [FIM IMAGEM 4]--> O proprio 
+                    <rs type="name" key="P15">Camões</rs> não foi mais que o que esqueceu fazer. <rs type="title">Os Lusiadas</rs> é grande, mas nunca se escreveu a valer. Litterariamente, o passado 
+                        de Portugal está no futuro. O Infante, Albuquerque e os outros semi-deuses da nossa gloria esperam ainda o seu cantor. Este poderá não fallar d’elles; basta que os valha em 
+                        seu canto, e fallará d’elles. <rs type="name" key="P15">Camões</rs> estava muito perto para poder sonhal-os. Nas faldas do Himalaya o Himalaya é só as faldas do Himalaya. É 
+                            na distancia, ou na memoria, ou na imaginação que o Himalaya é da sua altura, ou talvez um pouco mais alto. Ha só um periodo de creação na nossa historia litteraria: 
+                            não chegou ainda.</p>
+                <p rend="indent-first">– Continuará sendo o lyrismo a nossa feição litteraria predominante?</p>
+                <p rend="indent-first">– Ha duas feições litterarias – a epica e a dramatica. O lyrismo é a incapacidade commovida de ter qualquer d’ellas. O que é ser lyrico? É cantar as emoções 
+                    que se teem. Ora cantar as emoções que se teem faz-se até sem cantar. O que custa é cantar as emoções que se não teem. Sentir profundamente o que se não sente é a flamula de 
+                    almirante da inspiração. O poeta dramatico faz isto directamente; o poeta epico fal-o indirectamente, sentindo o conjuncto da obra mais que as partes d’ella, isto é, sentindo 
+                    exactamente aquelle elemento da obra de que não pode haver emoção nenhuma pessoal, porque é abstracto e porisso impessoal. Fomos esboçadamente epicos. Seremos inviolavelmente 
+                    dramaticos. Fomos lyricos quando não fomos nada. O lyrismo só continuará sendo a nossa feição predominante se não formos capazes de ter feição predominante.</p>
+                <p rend="indent-first">– O que calcula que seja o futuro da raça portugueza?</p>
+                <p rend="indent-first">– O Quinto Imperio. O futuro de Portugal – que não calculo mas <hi rend="italic">sei</hi> – está escripto já, para quem saiba lel-o, nas trovas do 
+                    <rs type="name" key="P259">Bandarra</rs>, e tambem nas quadras de <rs type="name" key="P259">Nostradamus</rs>. Esse futuro é sermos tudo. Quem, que seja portuguez, pode viver a 
+                    estreiteza de uma só personalidade, de uma só nação, de uma só fé? Que portuguez verdadeiro pode, por exemplo, viver a estreiteza esteril do catholicismo, quando fóra d’elle ha 
+                    que viver todos os <!--- [FIM IMAGEM 5]--> protestantismos, todos os credos orientaes, todos os paganismos mortos e vivos, fundindo-os portuguezmente no Paganismo Superior? Não 
+                    queiramos que fóra de nós fique um unico deus! Absorvamos os deuses todos! Conquistámos já o Mar: resta que conquistemos o Céu, ficando a terra para os Outros, os 
+                    eternamente Outros, os Outros de nascença, os europeus que não são europeus porque não são portuguezes. Ser tudo, de todas as maneiras, porque a verdade não pode estar em 
+                    faltar ainda alguma cousa! Creemos assim o Paganismo Superior, o Polytheismo Supremo! Na eterna mentira de todos os deuses, só os deuses todos são verdade.</p>
+                
+                <signed >Alves Martins.</signed>
+            </div>
+        </body>
+    </text>
+</TEI>
