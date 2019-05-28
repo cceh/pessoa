@@ -4,9 +4,9 @@
     <teiHeader>
         <fileDesc>         
             <titleStmt>
-                <title>Tábua Bibliográfica Fernando Pessoa</title>
+                <title>De Newcastle-On-Tyne - Álvaro de Campos escreve a Contemporânea</title>
                 <author>
-                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                    <rs type="name" key="AdC">Álvaro de Campos</rs>
                 </author>
                 <respStmt>
                     <resp>Edição, Transcrição, Codificação</resp>
@@ -30,32 +30,32 @@
                     <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
-                <idno type="filename">Pessoa_Tabua_Bibliografica_FPessoa.xml</idno>               
+                <idno type="filename">Campos_De_Newcastle.xml</idno>               
             </publicationStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O1-X">Tábua Bibliográfica Fernando Pessoa</rs></item>
+                    <item><rs type="work" key="O4-X">De Newcastle-On-Tyne - Álvaro de Campos escreve a Contemporânea</rs></item>
                 </list>
                 <biblStruct>
                     <!-- here goes the bibliographical reference for the source publication -->
                     <analytic>
-                        <title level="a">Tábua Bibliográfica</title>
+                        <title level="a">De Newcastle-On-Tyne - Álvaro de Campos escreve a Contemporânea</title>
                         <author>
-                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                            <rs type="name" key="AdC">Álvaro de Campos</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
                         <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
-                        <title level="j"><rs type="periodical" key="J1">Presença</rs></title>
+                        <title level="j"><rs type="periodical" key="J11">Contemporânea</rs></title>
                         <imprint>
-                            <date when="1928-12">Dezembro de 1928</date>
+                            <date when="1928-12">Outubro de 1922</date>
                             <!-- in case it is not a single date, but from-to, it 
                             looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
                             there is just a year: when="1931" -->
                         </imprint>
-                        <biblScope unit="issue">17</biblScope>
-                        <biblScope unit="page">10</biblScope>
+                        <biblScope unit="issue">4</biblScope>
+                        <biblScope unit="page">4</biblScope>
                     </monogr>
                     <note type="genre">
                         <rs type="genre" key="prosa">Prosa</rs>
@@ -65,7 +65,7 @@
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic url="prosa/IMAGE-FILE-NAME"/>
+        <graphic url="prosa/De_Newcastle_on_Tyne"/>
     </facsimile>
     <text corresp="#O4-X">
         <!-- @corresp: contains the index of this WORK. 
@@ -75,11 +75,11 @@
         <body>
             <div>
                 <head> DE NEWCASTLE-ON-TYNE
-                    <rs type="name" key="T51"><hi rend="bold">Alvaro de Campos</hi> </rs>
-                    ESCREVE Á “<rs type="title"> CONTEMPORANEA</rs>” </head>
+                    <rs type="name" key="T51">Alvaro de Campos</rs>
+                    ESCREVE Á “<rs type="periodical" key="J11">CONTEMPORANEA</rs>” </head>
                 
                 <p rend="indent-first"> Meu querido <rs type="name" key="P144">José Pacheco</rs>  : </p>
-                <p rend="indent-first"> Venho escrever-lhe para o felicitar pela sua <rs type="title"> <hi rend="italic">Contemporanea</hi></rs>, para lhe 
+                <p rend="indent-first"> Venho escrever-lhe para o felicitar pela sua <rs type="title"><hi rend="italic">Contemporanea</hi></rs>, para lhe 
                     dizer que não tenho escripto nada, e para pôr alguns embargos ao artigo <!--[LINK PARA AB E O IDEAL ESTÉTICO]--> do 
                     <rs type="name" key="#FP">Fernando Pessoa</rs>. </p>
                 <p rend="indent-first"> Quereria mandar-lhe tambem collaboração. Mas, como lhe disse, não escrevo. Fui em tempos poeta decadente; hoje creio 
@@ -87,7 +87,7 @@
                 <p rend="indent-first">Isto de mim, que é quem mais proximo está de mim, apezar de tudo. De si e de sua revista, tenho saudades do nosso 
                     <rs type="title"><hi rend="italic"> Orpheu</hi></rs>. V. continúa subrepticiamente, e ainda bem. Estamos, afinal, todos no mesmo logar. 
                     Parece que variamos só com a oscillação de quem se equilibra. Repito-lhe que o felicito. Julgava difficil fazer tanto bem aos olhos em 
-                    Portugal com uma coisa impressa. Julgo bom que julgasse mal. Auguro á <rs type="title"><hi rend="italic">Contemporanea</hi></rs> o futuro 
+                    Portugal com uma coisa impressa. Julgo bom que julgasse mal. Auguro á <rs type="periodical" key="J11"><hi rend="italic">Contemporanea</hi></rs> o futuro 
                     que lhe desejo.</p>
                 <p rend="indent-first">Agora o artigo do <rs type="name" key="#FP">Fernando</rs>. Com o intervallo entre a primeira palavra d’esta carta e a 
                     primeira palavra d’este paragrapho, já quasi me não lembra o que é que lhe queria dizer do artigo. Talvez pensasse em dizer exactamente 
@@ -113,34 +113,34 @@
                 <p rend="indent-first"> Li o livro do <rs type="name" key="P17">Botto</rs> e gosto d’elle. Gosto d’elle porque a arte do 
                     <rs type="name" key="P17">Botto</rs> é o contrario da minha. Se eu gostasse só da minha arte, nem da minha arte gostava, porque varío. </p>
                 <p rend="indent-first"> E, àparte gostar, porque gosto? É sempre mau perguntar, porque pode haver resposta. Mas pergunto – porque gosto? Ha 
-                    força, ha equilibrio de força, nas <rs type="title"> Canções</rs>? </p>
-                <p rend="indent-first"> Louvo nas <rs type="title"> Canções</rs> a força que lhes encontro. Essa força não vejo que tenha que ver com ideaes 
+                    força, ha equilibrio de força, nas <rs type="title"><hi rend="italic">Canções</hi></rs>? </p>
+                <p rend="indent-first"> Louvo nas <rs type="title"><hi rend="italic">Canções</hi></rs> a força que lhes encontro. Essa força não vejo que tenha que ver com ideaes 
                     nem com estheticas. Tem que ver com immoralidade. É a immoralidade absoluta, despida de duvidas. Assim ha direcção absoluta – força 
-                    portanto; e ha harmonia em não admittir condições a essa immoralidade. O<rs type="name" key="P17"> Botto</rs> tende com uma energia 
+                    portanto; e ha harmonia em não admittir condições a essa immoralidade. O<rs type="name" key="P17">Botto</rs> tende com uma energia 
                     tenaz para todo o immoral; e tem a harmonia de não tender para mais coisa alguma. Acho inutil metter os gregos no caso; grego se veria o 
                     <rs type="name" key="#FP">Fernando</rs> com elles se elles lhe apparecessem a pedir-lhe contas do sarilho de estheticas em que os 
                     metteu. Os gregos eram lá esthetas! Os gregos existiram. </p>
-                <p rend="indent-first"> A arte do <rs type="name" key="P17"> Botto</rs>  é integralmente immoral. Não ha cellula nella que esteja decente. 
-                    E isso é uma força porque é uma não-hypocrisia, uma não-complicação. <rs type="name" key="P32"> Wilde</rs> tergiversava constantemente. 
-                    <rs type="name" key="P479"> Baudelaire</rs>  formulou uma these moral da immoralidade; disse que o mau era bom por ser mau, e assim lhe 
+                <p rend="indent-first"> A arte do <rs type="name" key="P17">Botto</rs> é integralmente immoral. Não ha cellula nella que esteja decente. 
+                    E isso é uma força porque é uma não-hypocrisia, uma não-complicação. <rs type="name" key="P32">Wilde</rs> tergiversava constantemente. 
+                    <rs type="name" key="P479">Baudelaire</rs> formulou uma these moral da immoralidade; disse que o mau era bom por ser mau, e assim lhe 
                     chamou bom. O <rs type="name" key="P17"> Botto</rs> é mais forte: dá á sua immoralidade razões puramente immoraes, porque lhe não dá 
                     nenhumas. </p>
-                <p rend="indent-first"> O <rs type="name" key="P17"> Botto</rs> tem isto de forte e de firme: é que não dá desculpas. E eu acho, e deverei 
+                <p rend="indent-first"> O <rs type="name" key="P17">Botto</rs> tem isto de forte e de firme: é que não dá desculpas. E eu acho, e deverei 
                     talvez sempre achar, que não dar desculpas é melhor que ter razão. </p>
                 <p rend="indent-first"> Não lhe digo mais. Se continuasse, contradizer-me-hia. Seria abominavel, porque talvez fôsse uma maneira (a inversa) 
                     de ser logico. Quem sabe? </p>
-                <p rend="indent-first"> Relembro saudosamente – aqui do Norte improficuo – os nossos tempos do <rs type="title"><hi rend="italic"> Orpheu</hi></rs>
+                <p rend="indent-first"> Relembro saudosamente – aqui do Norte improficuo – os nossos tempos do <rs type="periodical" key="J12"><hi rend="italic">Orpheu</hi></rs>
                     , a antiga camaradagem, tudo em Lisboa de que eu gostava, e tudo em Lisboa de que eu não gostava – tudo com a mesma saudade. </p>
                 <p rend="indent-first"> Saúdo-o em Distancia Constellada. Esta carta leva-lhe a minha affeição pela sua revista; não lhe leva a minha amisade 
                     por si porque V. já ha muito tempo ahi a tem. </p>
-                <p rend="indent-first"> Diga ao<rs type="name" key="#FP">Fernando Pessoa</rs>  que não tenha razão. </p>
+                <p rend="indent-first">Diga ao<rs type="name" key="#FP">Fernando Pessoa</rs> que não tenha razão.</p>
                 
                 <lg>
                     <l>Um abraço do </l>
                     <l>camarada amigo </l>
                 </lg>
                 <signed> ALVARO DE CAMPOS
-<!--                <p rend="indent-first"> Newcastle-on-Tyne,</p>
+<!--              <p rend="indent-first"> Newcastle-on-Tyne,</p>
                 <p rend="indent-first">17 Outubro 1922</p> -->
                 </signed>
                 </div>
