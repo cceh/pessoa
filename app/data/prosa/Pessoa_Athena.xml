@@ -4,7 +4,7 @@
     <teiHeader>
         <fileDesc>         
             <titleStmt>
-                <title>Tábua Bibliográfica Fernando Pessoa</title>
+                <title>Athena</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
                 </author>
@@ -30,16 +30,16 @@
                     <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
-                <idno type="filename">Pessoa_Tabua_Bibliografica_FPessoa.xml</idno>               
+                <idno type="filename">Pessoa_Athena.xml</idno>               
             </publicationStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O1-X">Tábua Bibliográfica Fernando Pessoa</rs></item>
+                    <item><rs type="work" key="O1-X">Athena</rs></item>
                 </list>
                 <biblStruct>
                     <!-- here goes the bibliographical reference for the source publication -->
                     <analytic>
-                        <title level="a">Tábua Bibliográfica</title>
+                        <title level="a">Athena</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
@@ -47,15 +47,15 @@
                         <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
-                        <title level="j"><rs type="periodical" key="J1">Presença</rs></title>
+                        <title level="j"><rs type="periodical" key="J2">Athena</rs></title>
                         <imprint>
-                            <date when="1928-12">Dezembro de 1928</date>
+                            <date when="1928-12">Outubro de 1924</date>
                             <!-- in case it is not a single date, but from-to, it 
                             looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
                             there is just a year: when="1931" -->
                         </imprint>
-                        <biblScope unit="issue">17</biblScope>
-                        <biblScope unit="page">10</biblScope>
+                        <biblScope unit="issue">1</biblScope>
+                        <biblScope unit="page">5-8</biblScope>
                     </monogr>
                     <note type="genre">
                         <rs type="genre" key="prosa">Prosa</rs>
@@ -65,7 +65,10 @@
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic url="prosa/IMAGE-FILE-NAME"/>
+        <graphic url="prosa/Athena_1"/>
+        <graphic url="prosa/Athena_2"/>
+        <graphic url="prosa/Athena_3"/>
+        <graphic url="prosa/Athena_4"/>
     </facsimile>
     <text corresp="#O4-X">
         <!-- @corresp: contains the index of this WORK. 
@@ -74,7 +77,7 @@
     -->
         <body>
             <div>
-                <head><hi rend="bold">ATHENA</hi></head>
+                <head>ATHENA</head>
                     
                     <p rend="indent-first">Tem duas fórmas, ou modos, o que chamamos cultura. Não é a cultura senão o aperfeiçoamento subjectivo da vida. Esse aperfeiçoamento é directo ou indirecto; 
                         ao primeiro se chama arte, sciencia ao segundo. Pela arte nos aperfeiçoamos a nós; pela sciencia aperfeiçoamos em nós o nosso conceito, ou illusão, do mundo.</p>
@@ -158,11 +161,11 @@
                                             
                      <p rend="indent-first">Trez são os elementos abstractos que pode haver em qualquer arte, e que podem portanto nella sobresahir: a ordenação logica do todo em suas partes, o 
                          conhecimento objectivo da materia que ella informa, e a excedencia nella de um pensamento abstracto. Em qualquer arte é dado, em maior ou menor grau, manifestarem-se estes 
-                         elementos, ainda que só nas artes abstractas, e sobretudo na litteratura, que é a mais completa, possam manifestar-se inteiramente. </p>
+                         elementos, ainda que só nas artes abstractas, e sobretudo na litteratura, que é a mais completa, possam manifestar-se inteiramente.</p>
                                             
                      <p rend="indent-first">A mesma abstracção é tambem o estádio supremo da sciencia. Tende esta para ser mathematica, isto é, abstracta, á medida que se eleva e se aperfeiçôa. É pois 
                          no nivel da abstracção que a arte e a sciencia, ambas se alçando, se conjugam, como dois caminhos no pincaro para que ambos tendam. É este o império de Athena, cuja acção é a 
-                         harmonia. </p>
+                         harmonia.</p>
                                             
                      <p rend="indent-first">Como, porém, toda sciencia, se tende para a mathematica, tende, com isso, para uma abstracção concreta, applicavel á realidade e verificavel em seus 
                          movimentos physicos; assim toda arte, por mais que se eleve, não pode desprender-se do entendimento e da sensibilidade, em cuja fusão se creou e teve origem. Onde não houver 
@@ -170,7 +173,7 @@
                          harmonia do concreto e do abstracto. A arte suprema é o resultado da harmonia entre a particularidade da emoção e do entendimento, que são do homem e do tempo, e a 
                          universalidade da razão, que, para ser de todos os homens e tempos, é de homem, e de tempo, nenhum. O producto assim formado terá vida, como concreto; organização, como 
                          abstracto. Isto estabeleceu <rs type="name" key="P401">Aristoteles</rs>, uma vez para sempre, naquella sua phrase que é toda a esthetica: 
-                         <hi rend="italic">um poema</hi>, disse, <hi rend="italic">é um animal</hi>. </p>
+                         <hi rend="italic">um poema</hi>, disse, <hi rend="italic">é um animal</hi>.</p>
                                                 
                                  <milestone rend="square" unit="section"/> <!--It’s not a square-->
                                                 
@@ -178,12 +181,12 @@
                          a arte deve dar prazer ou alegria. Ninguem cuide, esquecendo os grandes fins d’ella, que a arte suprema deve dar-lhe alegria, ou, ainda quando o satisfaça, 
                          satisfacção. Se a arte ínfima tem por dever o entreter, se a média tem por mister o embellezar, elevar é o fim da suprema. Porisso toda arte superior é ao contrario 
                          das outras duas, profundamente triste. Elevar é deshumanizar, e o homem se não sente feliz onde se não sente já homem. É certo que a grande arte é humana; o homem, 
-                         porém, é mais humano que ella. </p>
+                         porém, é mais humano que ella.</p>
                                                 
                      <p rend="indent-first">Ainda per outra via a grande arte nos entristece. Constantemente ella nos aponta a nossa imperfeição: já porque, parecendo-nos perfeita, se oppõe ao que somos 
-                         de imperfeitos; já porque, nem ella sendo perfeita, é o signal maior da imperfeição que somos. </p>
+                         de imperfeitos; já porque, nem ella sendo perfeita, é o signal maior da imperfeição que somos.</p>
                      <p rend="indent-first">É poristo que os gregos, paes humanos da arte, eram um povo infantil e triste. E a arte não é porventura mais, em sua forma suprema, que a infancia triste de 
-                         um deus futuro, a desolação humana da immortalidade pressentida. </p>
+                         um deus futuro, a desolação humana da immortalidade pressentida.</p>
                                  <signed>FERNANDO PESSOA</signed>
             </div>
         </body>
