@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>         
+            <titleStmt>
+                <title>De Newcastle-On-Tyne - Álvaro de Campos escreve a Contemporânea</title>
+                <author>
+                    <rs type="name" key="AdC">Álvaro de Campos</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="restricted">
+                    <!-- @status will be set to "free" once the document is ready to be published -->
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Campos_De_Newcastle.xml</idno>               
+            </publicationStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="O4-X">De Newcastle-On-Tyne - Álvaro de Campos escreve a Contemporânea</rs></item>
+                </list>
+                <biblStruct>
+                    <!-- here goes the bibliographical reference for the source publication -->
+                    <analytic>
+                        <title level="a">De Newcastle-On-Tyne - Álvaro de Campos escreve a Contemporânea</title>
+                        <author>
+                            <rs type="name" key="AdC">Álvaro de Campos</rs>
+                        </author>
+                        <textLang mainLang="pt" otherLangs="en"/>
+                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J11">Contemporânea</rs></title>
+                        <imprint>
+                            <date when="1928-12">Outubro de 1922</date>
+                            <!-- in case it is not a single date, but from-to, it 
+                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
+                            there is just a year: when="1931" -->
+                        </imprint>
+                        <biblScope unit="issue">4</biblScope>
+                        <biblScope unit="page">4</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="prosa">Prosa</rs>
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="prosa/De_Newcastle_on_Tyne"/>
+    </facsimile>
+    <text corresp="#O4-X">
+        <!-- @corresp: contains the index of this WORK. 
+        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
+        This can be left as is in the beginning.
+    -->
+        <body>
+            <div>
+<head rend="center">DO 
+    LIVRO DO DESASSOSSÊGO</head>
+
+<head type="sub" rend="center">COMPOSTO POR <rs type="name" key="P393">BERNARDO SOARES</rs>, AJUDANTE DE GUARDA-LIVROS NA CIDADE DE LISBOA</head>
+
+<p rend="indent-first"><hi rend="bold">M</hi>UITOS têm definido o homem, e em geral o têm definido em contraste com os animais. Por isso, nas definições do homem, é freqüente o uso 
+    da frase "o homem é um animal..." e um adjectivo, ou "o homem é um animal que..." e diz-se o quê. "O homem é um animal doente", disse 
+    <rs type="name" role="topic" key="P434">Rousseau</rs>, e em parte é verdade. "O homem é um animal racional", diz a Igreja, e em parte é verdade. "O homem é um animal que usa de 
+    ferramenta", diz <rs type="name" role="topic" key="P493">Carlyle</rs>, e em parte é verdade. Mas estas definições, e outras como elas, são sempre imperfeitas e laterais. E a 
+    razão é muito simples: não é fácil distinguir o homem dos animais, não há critério seguro para distinguir o homem dos animais. As vidas humanas decorrem na mesma íntima 
+    inconsciência que as vidas dos animais. As mesmas leis profundas, que regem de fora os instinctos dos animais, regem, também de fora, a inteligência do homem, que parece não 
+    ser mais que um instinto em formação, tão inconsciente como todo instinto, menos perfeito porque ainda não formado.</p>
+
+<p rend="indent-first">"Tudo vem da sem-razão", diz-se na <rs type="title" key="TXXX">Antologia Grega</rs>. E, na verdade, tudo vem da sem-razão. Fora da matemática, que não tem que 
+    ver senão com números mortos e fórmulas vazias, e porisso pode ser perfeitamente lógica, a ciência não é senão um jôgo de crianças no crepúsculo, um querer apanhar sombras de 
+    aves e parar sombras de ervas ao vento.</p>
+
+<p rend="indent-first">E é curioso e estranho que, não sendo fácil encontrar palavras com que verdadeiramente se defina o homem como distinto dos animais, é todavia fácil encontrar 
+    maneira de diferençar o homem superior do homem vulgar.</p>
+
+<p rend="indent-first">Nunca me esqueceu aquela frase de <rs type="name" role="topic" key="P494">Haeckel</rs>, o biologista, que li na infância da inteligência, quando se lêem as 
+    divulgações científicas e as razões contra a religião. A frase é esta, ou quási esta: que muito mais longe está o homem superior (um 
+    <rs type="name" role="topic" key="P6">Kant</rs> ou um <rs type="name" role="topic" key="P198">Goethe</rs>, creio que diz) do homem vulgar que o homem vulgar do macaco. Nunca 
+    esqueci a frase porque ela é verdadeira. Entre mim, que pouco sou na ordem dos que pensam, e um camponês de Loures vai, sem dúvida, maior distância que entre êsse camponês e, 
+    já não digo um macaco, mas um gato ou um cão. Nenhum de nós, desde o gato até mim, conduz de facto a vida que lhe é imposta, ou o destino que lhe é dado; todos somos igualmente 
+    derivados de não sei quê, sombras de gestos feitos por outrém, efeitos encarnados, conseqüências que sentem. Mas entre mim e o camponês há uma diferença de qualidade, 
+    proveniente da existência em mim do pensamento abstracto e da emoção desinteressada; e entre êle e o gato não há, no espírito, mais que uma diferença de grau.</p>
+
+<p rend="indent-first">O homem superior difere do homem inferior, e dos animais irmãos dêste, pela simples qualidade da ironia. A ironia é o primeiro indício de que a consciência se 
+    tornou consciente. E a ironia atravessa dois estádios: o estádio marcado por <rs type="name" role="topic" key="P495">Sócrates</rs>, quando disse "sei só que nada sei", e o 
+    estádio marcado por <rs type="name" role="topic" key="P10">Sanches</rs>, quando disse "nem sei se nada sei". O primeiro passo chega àquele ponto em que duvidamos de nós 
+    dogmàticamente, e todo homem superior o dá e atinge. O segundo passo chega àquele ponto em que duvidamos de nós e da nossa dúvida, e poucos homens o têm atingido na curta 
+    extensão já tão longa do tempo que, humanidade, temos visto o sol e a noite sôbre a vária superfície da terra.</p>
+
+<p rend="indent-first">Conhecer-se é errar, e o oráculo que disse "Conhece-te" propôs uma tarefa maior que as de Hércules e um enigma mais negro que o da Esfinge. Desconhecer-se 
+    conscientemente, eis o caminho. E desconhecer-se conscientemente é o emprêgo activo da ironia. Nem conheço coisa maior, nem mais própria do homem que é deveras grande, que a 
+    análise paciente e expressiva dos modos de nos desconhecermos, o registro consciente da inconsciência das nossas consciências, a metafísica das sombras autónomas, a poesia do 
+    crepúsculo da desilusão.</p>
+
+<p rend="indent-first">Mas sempre qualquer coisa nos ilude, sempre qualquer análise se nos embota, sempre a verdade, ainda que falsa, está além da outra esquina. E é isto que cansa 
+    mais que a vida, quando ela cansa, e de que o conhecimento e meditação dela, que nunca deixam de cansar.</p>
+
+<p rend="indent-first">Ergo-me da cadeira de onde, fincado distraìdamente contra a mesa, me entretive a narrar para mim estas impressões irregulares. Ergo-me, ergo o corpo nêle 
+    mesmo, e vou até à janela, alta acima dos telhados, de onde posso ver a cidade ir a dormir num comêço lento de silêncio. A lua, grande e de um branco branco, elucida tristemente 
+    as diferenças socalcadas da casaria. E o luar parece iluminar àlgidamente todo o mistério do mundo. Parece mostrar tudo, e tudo é sombras com misturas de luz má, intervalos 
+    falsos, desnivelamentos absurdos, incoerências do visível. Não há brisa, e parece que o mistério é maior. Tenho náuseas no pensamento abstracto. Nunca escreverei uma página que 
+    me revele ou que revele alguma coisa. Uma nuvem muito leve paira vaga acima da lua, como um esconderijo. Ignoro, como êstes telhados. Falhei, como a natureza inteira.</p>
+
+<signed>FERNANDO PESSOA</signed>
+            </div>
+        </body>
+    </text>
+</TEI>
