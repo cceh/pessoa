@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>         
+            <titleStmt>
+                <title>Do "Livro do Desasocego"</title>
+                <author>
+                    <rs type="name" key="XXX">Bernardo Soares</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="restricted">
+                    <!-- @status will be set to "free" once the document is ready to be published -->
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Soares_LDD_Na_Perfeição_Nítida.xml</idno>               
+            </publicationStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="XX-X">Do "Livro do Desasocego"</rs></item>
+                </list>
+                <biblStruct>
+                    <!-- here goes the bibliographical reference for the source publication -->
+                    <analytic>
+                        <title level="a">Do "Livro do Desasocego"</title>
+                        <author>
+                            <rs type="name" key="XXX">Bernardo Soares</rs>
+                        </author>
+                        <textLang mainLang="pt" otherLangs="en"/>
+                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J4">Revista da Solução Editora</rs></title>
+                        <imprint>
+                            <date when="1928-12">Novembro de 1932</date>
+                            <!-- in case it is not a single date, but from-to, it 
+                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
+                            there is just a year: when="1931" -->
+                        </imprint>
+                        <biblScope unit="issue">4</biblScope>
+                        <biblScope unit="page">4</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="prosa">Prosa</rs>
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="prosa/De_Newcastle_on_Tyne"/>
+    </facsimile>
+    <text corresp="#XX-X">
+        <!-- @corresp: contains the index of this WORK. 
+        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
+        This can be left as is in the beginning.
+    -->
+        <body>
+            <div>
+               
+                <head>Do "Livro do Desasocego"</head>
+                <head type= "sub">COMPOSTO POR <rs type="name">BERNARDO SOARES</rs>
+                <!--we need to create Soares as an author-->, AJUDANTE DE GUARDA LIVROS NA CIDADE DE LISBOA</head>
+                    
+                <p rend= "indent-first"><hi rend= "italic">Na perfeição nítida do dia estagna contudo o ar cheio de sol. Não é a pressão 
+                    presente da trovoada futura, malestar dos corpos involuntários, vago baço do céo azul deveras. É o torpor sensivel da 
+                    insinuação do ócio, pluma roçando leve a face a adormecer. É estío mas verão. Apetece o campo até a quem não gosta dêle.</hi></p>
+                <p rend= "indent-first"> <hi rend= "italic">Se eu fôra outro, penso, êste seria para mim um dia feliz, pois o sentiria sem 
+                    pensar nêle. Concluiria com uma alegria de antecipação o meu trabalho normal — aquêle que me é monotonamente anormal todos 
+                    os dias. Tomaría o carro para Benfica, com amigos combinados. Jantariamos, em pleno fim de sol, entre hortas. A alegria em 
+                    que estaríamos seria parte da paisagem, e por todos, quantos nos vissem, reconhecida como de ali.</hi></p>
+                <p rend= "indent-first"> <hi rend= "italic">Como, porém, sou eu, goso um pouco o pouco que é imaginar-me êsse outro. Sim, logo 
+                    êle-eu, sob parreira ou árvore, comerá o dôbro do que sei comer, beberá o dobro do que ouso beber, rirá o dobro do que 
+                    posso pensar em rir. Logo êle, eu agora. Sim, um momento fui outro: vi, vivi, em outrem essa alegria humilde e humana de 
+                    existir como animal em mangas de camisa. Grande dia que me fez sonhar assim! É tudo azul e sublime no alto como o meu sonho 
+                    efémero de ser caixeiro de praça com saúde em não sei que férias de fim de día.</hi></p>
+                                <signed>FERNANDO PESSOA</signed>
+                                
+            </div>
+        </body>
+    </text>
+</TEI>
