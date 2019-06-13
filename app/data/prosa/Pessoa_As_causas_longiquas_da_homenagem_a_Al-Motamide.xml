@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>         
+            <titleStmt>
+                <title>As causas longiquas da homenagem a Al-Motamide</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="restricted">
+                    <!-- @status will be set to "free" once the document is ready to be published -->
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Pessoa_As_causas_longiquas_da_homenagem_a_Al-Motamide.xml</idno>               
+            </publicationStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="O1-X">As causas longiquas da homenagem a Al-Motamide</rs></item>
+                </list>
+                <biblStruct>
+                    <!-- here goes the bibliographical reference for the source publication -->
+                    <analytic>
+                        <title level="a">As causas longiquas da homenagem a Al-Motamide</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt" otherLangs="en"/>
+                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J9">O Notícias Ilustrado</rs></title>
+                        <imprint>
+                            <date when="1928-12">22 de Julho de 1928</date>
+                            <!-- in case it is not a single date, but from-to, it 
+                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
+                            there is just a year: when="1931" -->
+                        </imprint>
+                        <biblScope unit="issue">5</biblScope>
+                        <biblScope unit="page">15</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="prosa">Prosa</rs>
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="prosa/De_Newcastle_on_Tyne"/>
+    </facsimile>
+    <text corresp="#O1-X">
+        <!-- @corresp: contains the index of this WORK. 
+        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
+        This can be left as is in the beginning.
+    -->
+        <body>
+            <div>
+                <head><hi rend="italic">As causas longiquas da homenagem a Al-Motamide</hi></head>
+                
+                <p rend="indent-first">A proposito da noticia por nos publicada o breve descerramento, em Silves, da lapide a 
+                    <rs type="name" key="P498">Al-Motamide</rs>, recebemos a seguinte nota: </p>
+                <p rend="indent-first">«Em principios de 1914, veio a Portugal o Emissario especial do Concilio Pagão, com o fim de tratar, 
+                    com os Mestres da Ordem Sebastianista, de um Acordo Supremo, a que efectivamente se chegou. Desse acordo advieram varios 
+                    episodios, nacionaes e internacionaes, de diversa e oculta importancia, aos quaes não é lícito que nos referamos. Mas, 
+                    dado tudo isto, era de esperar que, mais tarde ou mais cedo, houvesse de ser «feita» uma «animação» do espirito arabe, 
+                    naquilo que era propriamente a transmissão do espirito pagão, e não na sua parte religiosa, inutil para qualquer das 
+                    Direcções concordantes.</p>
+                <p rend="indent-first">«A homenagem, claramente pagã, á memória de <rs type="name" key="P498">Al-Motamide</rs>, wali de Silves, 
+                    dispertará, nos poucos que já estão dispertos, a recordação do Grande Acordo de Março de 1914. Aparentemente, a ideia da 
+                    homenagem nasceu em Espanha. Mas tanto os D[e]spotas do Concillio Pagão, como os Mestres da Ordem do Encoberto, sabem os 
+                    caminhos que seguirão, e os atalhos por onde hão-de conduzir os outros.</p>
+                <p rend="indent-first">«Os acontecimentos provocados, que foram «enfeixados» á meia-noite de 29 de Maio de 1928, terão em 
+                    breve o seu termo oculto e o seu principio visivel. – O[rdem] S[ebastianista]»</p>
+                
+                <p rend="indent-first">A nota recebida, que acima damos á estampa, está, de facto, em acôrdo com o nosso entendimento. Aos 
+                    pontos versados não nos referimos, porém, em a local q[u]e publicamos, por não julgarmos que isso fôsse de interêsse para 
+                    o publico; mas, visto que tão espontaneamente os apresentam, eil-os publicados.</p>
+                
+                <signed rend= "align-right">A[ugusto] F[erreira] G[omes]</signed>
+            </div>
+        </body>
+    </text>
+</TEI>         

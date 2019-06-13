@@ -4,9 +4,9 @@
     <teiHeader>
         <fileDesc>         
             <titleStmt>
-                <title>TRECHO</title>
+                <title>DO “LIVRO DO DESASOCEGO” ("Amo pelas tardes demoradas de verão")</title>
                 <author>
-                    <rs type="name" key="XXX">Bernardo Soares</rs>
+                    <rs type="name" key="BS">Bernardo Soares</rs>
                 </author>
                 <respStmt>
                     <resp>Edição, Transcrição, Codificação</resp>
@@ -30,18 +30,18 @@
                     <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
-                <idno type="filename">Soeares_LDD_Amo_Pelas_Tardes.xml</idno>               
+                <idno type="filename">Soares_LDD_Amo_Pelas_Tardes.xml</idno>               
             </publicationStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="XX-X">Trecho</rs></item>
+                    <item><rs type="work" key="05-X">DO “LIVRO DO DESASOCEGO” ("Amo pelas tardes demoradas de verão")</rs></item>
                 </list>
                 <biblStruct>
                     <!-- here goes the bibliographical reference for the source publication -->
                     <analytic>
-                        <title level="a">Trecho</title>
+                        <title level="a">DO “LIVRO DO DESASOCEGO” ("Amo pelas tardes demoradas de verão")</title>
                         <author>
-                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                            <rs type="name" key="BS">Bernardo Soares</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
                         <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
@@ -54,8 +54,8 @@
                             looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
                             there is just a year: when="1931" -->
                         </imprint>
-                        <biblScope unit="issue">4</biblScope>
-                        <biblScope unit="page">4</biblScope>
+                        <biblScope unit="issue">29</biblScope>
+                        <biblScope unit="page">25</biblScope>
                     </monogr>
                     <note type="genre">
                         <rs type="genre" key="prosa">Prosa</rs>
@@ -67,16 +67,16 @@
     <facsimile>
         <graphic url="prosa/De_Newcastle_on_Tyne"/>
     </facsimile>
-    <text corresp="#XX-X">
+    <text corresp="#05-X">
         <!-- @corresp: contains the index of this WORK. 
         (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
         This can be left as is in the beginning.
     -->
         <body>
             <div>
-                <head>TRECHO</head>
+                <head rend="center">TRECHO</head>
                 
-                <head type= "sub">DO “LIVRO DO DESASOCEGO”, COMPOSTO POR <rs type= "name">BERNARDO SOARES</rs><!--we need to 
+                <head type= "sub" rend="center">DO “LIVRO DO DESASOCEGO”, COMPOSTO POR <rs type= "name">BERNARDO SOARES</rs><!--we need to 
                     create Soares as an author-->, AJUDANTE DE GUARDA-LIVROS NA CIDADE DE LISBOA</head>
                     
                 <p rend="indent-first"><hi rend="bold">AMO</hi>, pelas tardes demoradas de verão, o socego da cidade baixa, e sobretudo aquelle 

@@ -4,9 +4,9 @@
     <teiHeader>
         <fileDesc>         
             <titleStmt>
-                <title>Do "Livro do Desasocego"</title>
+                <title>Do "Livro do Desasocego" ("Na perfeição nítida do dia")</title>
                 <author>
-                    <rs type="name" key="XXX">Bernardo Soares</rs>
+                    <rs type="name" key="BS">Bernardo Soares</rs>
                 </author>
                 <respStmt>
                     <resp>Edição, Transcrição, Codificação</resp>
@@ -34,14 +34,14 @@
             </publicationStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="XX-X">Do "Livro do Desasocego"</rs></item>
+                    <item><rs type="work" key="05-X">Do "Livro do Desasocego" ("Na perfeição nítida do dia")</rs></item>
                 </list>
                 <biblStruct>
                     <!-- here goes the bibliographical reference for the source publication -->
                     <analytic>
-                        <title level="a">Do "Livro do Desasocego"</title>
+                        <title level="a">Do "Livro do Desasocego" ("Na perfeição nítida do dia")</title>
                         <author>
-                            <rs type="name" key="XXX">Bernardo Soares</rs>
+                            <rs type="name" key="BS">Bernardo Soares</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
                         <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
@@ -54,8 +54,8 @@
                             looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
                             there is just a year: when="1931" -->
                         </imprint>
-                        <biblScope unit="issue">4</biblScope>
-                        <biblScope unit="page">4</biblScope>
+                        <biblScope unit="issue">1</biblScope>
+                        <biblScope unit="page">8</biblScope>
                     </monogr>
                     <note type="genre">
                         <rs type="genre" key="prosa">Prosa</rs>
@@ -67,7 +67,7 @@
     <facsimile>
         <graphic url="prosa/De_Newcastle_on_Tyne"/>
     </facsimile>
-    <text corresp="#XX-X">
+    <text corresp="#05-X">
         <!-- @corresp: contains the index of this WORK. 
         (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
         This can be left as is in the beginning.
