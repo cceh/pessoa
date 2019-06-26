@@ -24,5 +24,9 @@ return ()
 };
 :)
 
+(:
 (local:adapt-conf(),
 local:generateODD())
+:)
+
+local:adapt-conf()
