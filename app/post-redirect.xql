@@ -14,7 +14,7 @@ declare function local:adapt-conf(){
         )
 };
 
-
+(:
 declare function local:generateODD(){
 let $odd := transform:transform(doc("/db/apps/pessoa/data/schema/pessoaTEI.odd"), doc("/db/apps/pessoa/xslt/odds/odd2odd.xsl"), ())
 let $store-odd := xmldb:store("/db/apps/pessoa/data/schema", "pessoaTEIodd.xml", $odd)
@@ -22,6 +22,7 @@ let $html := transform:transform(doc("/db/apps/pessoa/data/schema/pessoaTEIodd.x
 let $store-html := xmldb:store("/db/apps/pessoa/data/schema", "pessoaTEI.html", $html)
 return ()
 };
+:)
 
 (local:adapt-conf(),
 local:generateODD())
