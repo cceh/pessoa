@@ -4,7 +4,7 @@
     <teiHeader>
         <fileDesc>         
             <titleStmt>
-                <title>De Newcastle-On-Tyne - Álvaro de Campos escreve a Contemporânea</title>
+                <title>Apontamentos para uma esthetica não aristotelica</title>
                 <author>
                     <rs type="name" key="AdC">Álvaro de Campos</rs>
                 </author>
@@ -30,16 +30,16 @@
                     <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
-                <idno type="filename">Campos_De_Newcastle.xml</idno>               
+                <idno type="filename">Campos_Apontamentos_para_uma_Esthetica.xml</idno>               
             </publicationStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O4-X">De Newcastle-On-Tyne - Álvaro de Campos escreve a Contemporânea</rs></item>
+                    <item><rs type="work" key="O4-X">Apontamentos para uma esthetica não aristotelica</rs></item>
                 </list>
                 <biblStruct>
                     <!-- here goes the bibliographical reference for the source publication -->
                     <analytic>
-                        <title level="a">De Newcastle-On-Tyne - Álvaro de Campos escreve a Contemporânea</title>
+                        <title level="a">Apontamentos para uma esthetica não aristotelica</title>
                         <author>
                             <rs type="name" key="AdC">Álvaro de Campos</rs>
                         </author>
@@ -47,15 +47,15 @@
                         <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
-                        <title level="j"><rs type="periodical" key="J11">Contemporânea</rs></title>
+                        <title level="j"><rs type="periodical" key="J12">Athena</rs></title>
                         <imprint>
-                            <date when="1928-12">Outubro de 1922</date>
+                            <date from="1924-12" to="1925-01">Dezembro de 1924 e Janeiro de 1925</date>
                             <!-- in case it is not a single date, but from-to, it 
                             looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
                             there is just a year: when="1931" -->
                         </imprint>
-                        <biblScope unit="issue">4</biblScope>
-                        <biblScope unit="page">4</biblScope>
+                        <biblScope unit="issue">3 e 4</biblScope>
+                        <biblScope unit="page">3 e 4</biblScope>
                     </monogr>
                     <note type="genre">
                         <rs type="genre" key="prosa">Prosa</rs>
@@ -65,7 +65,13 @@
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic url="prosa/De_Newcastle_on_Tyne"/>
+        <graphic url="prosa/Apontamentos_para_1"/>
+        <graphic url="prosa/Apontamentos_para_2"/>
+        <graphic url="prosa/Apontamentos_para_3"/>
+        <graphic url="prosa/Apontamentos_para_4"/>
+        <graphic url="prosa/Apontamentos_para_5"/>
+        <graphic url="prosa/Apontamentos_para_6"/>
+        <graphic url="prosa/Apontamentos_para_7"/>
     </facsimile>
     <text corresp="#O4-X">
         <!-- @corresp: contains the index of this WORK. 
@@ -221,8 +227,8 @@
                 que se lhe não chame «arte», está bem. </p>
             <p rend="indent-first">De resto, até hoje, data em que apparece pela primeira vez uma authentica doutrina não-<rs type="name" key="P401">aristotelica</rs> da arte, só houve trez 
                 verdadeiras manifestações de arte não-<rs type="name" key="P401">aristotelica</rs>. A primeira está nos assombrosos poemas de <rs type="name" key="P216">Walt Whitman</rs>; a 
-                segunda está nos poemas mais que assombrosos do meu mestre <rs type="name" role="topic" key="AC"> Caeiro</rs>; a terceira está nas duas odes – a 
-                <hi rend="italic">Ode Triumphal</hi> e a <hi rend="italic"> Ode Maritima</hi> – que publiquei no <rs type="title"> Orpheu</rs>. Não pergunto se isto é immodestia. Affirmo que é 
+                segunda está nos poemas mais que assombrosos do meu mestre <rs type="name" role="topic" key="AC">Caeiro</rs>; a terceira está nas duas odes – a 
+                <hi rend="italic">Ode Triumphal</hi> e a <hi rend="italic">Ode Maritima</hi> – que publiquei no <rs type="periodical" key="J12">Orpheu</rs>. Não pergunto se isto é immodestia. Affirmo que é 
                 verdade. </p>
             
             <signed rend="align-right" > ALVARO DE CAMPOS</signed>
@@ -230,5 +236,4 @@
          </body>
     </text>
 </TEI>
-            <!-- (Finimagen7)-->
             
