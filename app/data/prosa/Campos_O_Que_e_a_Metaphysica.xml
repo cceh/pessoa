@@ -4,7 +4,7 @@
     <teiHeader>
         <fileDesc>         
             <titleStmt>
-                <title>De Newcastle-On-Tyne - Álvaro de Campos escreve a Contemporânea</title>
+                <title>O Que é a Metaphysica?</title>
                 <author>
                     <rs type="name" key="AdC">Álvaro de Campos</rs>
                 </author>
@@ -30,16 +30,16 @@
                     <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
-                <idno type="filename">Campos_De_Newcastle.xml</idno>               
+                <idno type="filename">Campos_O_que_e_a_Metaphysica.xml</idno>               
             </publicationStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O4-X">De Newcastle-On-Tyne - Álvaro de Campos escreve a Contemporânea</rs></item>
+                    <item><rs type="work" key="O4-X">O Que é a Metaphysica?</rs></item>
                 </list>
                 <biblStruct>
                     <!-- here goes the bibliographical reference for the source publication -->
                     <analytic>
-                        <title level="a">De Newcastle-On-Tyne - Álvaro de Campos escreve a Contemporânea</title>
+                        <title level="a">O Que é a Metaphysica?</title>
                         <author>
                             <rs type="name" key="AdC">Álvaro de Campos</rs>
                         </author>
@@ -47,15 +47,15 @@
                         <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
-                        <title level="j"><rs type="periodical" key="J11">Contemporânea</rs></title>
+                        <title level="j"><rs type="periodical" key="J2">Athena</rs></title>
                         <imprint>
-                            <date when="1928-12">Outubro de 1922</date>
+                            <date when="1924-11">Novembro de 1924</date>
                             <!-- in case it is not a single date, but from-to, it 
                             looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
                             there is just a year: when="1931" -->
                         </imprint>
-                        <biblScope unit="issue">4</biblScope>
-                        <biblScope unit="page">4</biblScope>
+                        <biblScope unit="issue">2</biblScope>
+                        <biblScope unit="page">59-60</biblScope>
                     </monogr>
                     <note type="genre">
                         <rs type="genre" key="prosa">Prosa</rs>
@@ -65,7 +65,10 @@
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic url="prosa/De_Newcastle_on_Tyne"/>
+        <graphic url="prosa/O_que_e_a_Metaphysica"/>
+        <graphic url="prosa/O_que_e_a_Metaphysica_2"/>
+        <graphic url="prosa/O_que_e_a_Metaphysica_3"/>
+        <graphic url="prosa/O_que_e_a_Metaphysica_4"/>
     </facsimile>
     <text corresp="#O4-X">
         <!-- @corresp: contains the index of this WORK. 
@@ -102,11 +105,29 @@
                 
                 <p rend="indent-first">Repare ainda <rs type="name" role="topic" key="#FP">Fernando Pessoa</rs> no facto – que aliás cita em outra connexão – de que a sciencia tende para ser 
                     mathematica á medida que se aperfeiçôa, para reduzir tudo a formulas «abstractas», precisas, onde é maxima a libertação das «equações pessoaes», isto é, dos erros de observação 
-                    e coordenação produzidos pela fallibilidade dos sentidos e do entendimento do observador*. Ora «formulas abstractas» é justamente o que a metaphysica procura. E a mathematica, 
-                    nos seus niveis «superiores», confina com a metaphysica, ou, pelo menos, com ideias metaphysicas. Tudo isto não quer dizer, é certo, que a metaphysica venha a ser mais que uma 
+                    e coordenação produzidos pela fallibilidade dos sentidos e do entendimento do observador*
+                    <note n="*">Convém que, para prevenção dos leigos, se faça uma observação, embora digressiva, a este respeito. 
+                            As sciencias, ao approximarem-se do estado «mathematico», 
+                    tornam-se <hi rend="italic">mais precisas</hi>: é porém duvidoso que, <hi rend="italic">por isso</hi>, se tornem 
+                            <hi rend="italic">mais certas</hi>. Tanto os puros mathematicos 
+                    como os leigos em mathematica tendem a attribuir a esta sciencia um character de «certeza» que não é necessariamente exacto. 
+                    A mathematica é uma linguagem perfeita, mais nada. 
+                    Ha a considerar a relatividade dos proprios principios mathematicos – não a simples relatividade condicional, conhecida ha muito 
+                    de todos que sabem que para muita applicação 
+                    practica, isto é, verdadeiramente scientifica, da mathematica, é preciso introduzir coefficientes de correcção; mas uma 
+                    relatividade mesmo incondicional, sobejamente demonstrada 
+                    já, por exemplo e para a geometria, pela existencia de geometrias não-euclideanas, tão «certas» na applicação como a «clássica». 
+                    Convém ainda avisar esses mesmos leigos que a 
+                    expressão «relatividade» é aqui empregada no seu sentido tradicional e logico, e não no sentido, aliás infeliz e absurdo, em que 
+                    se chama «da relatividade» á theoria de 
+                    <rs type="name" role="topic" key="P301">Einstein</rs>, que é simplesmente uma theoria, primeiro restricta, depois generalizada, do 
+                            <hi rend="italic">movimento relativo</hi>.</note>. Ora «formulas abstractas» é justamente o que a metaphysica procura. 
+                    E a mathematica, 
+                    nos seus niveis «superiores», confina com a metaphysica, ou, pelo menos, com ideias metaphysicas. Tudo isto não quer dizer, é certo, 
+                    que a metaphysica venha a ser mais que uma 
                     sciencia virtual, ou que não venha a ser mais. Quer dizer apenas que ella é effectivamente, não uma arte, mas uma sciencia virtual.</p>
                 
-                <p rend="indent-first">Pasmarão talvez d’estas considerações os que leram o meu <rs type="title">Ultimatum</rs>, no <rs type="periodical" key="J29"> Portugal Futurista</rs> (1917). 
+                <p rend="indent-first">Pasmarão talvez d’estas considerações os que leram o meu <rs type="title">Ultimatum</rs>, no <rs type="periodical" key="J29">Portugal Futurista</rs> (1917). 
                     Nesse <rs type="title"> Ultimatum</rs> lê-se sobre a philosophia uma opinião que parece, salvo que a precedeu, exactamente a mesma que a de 
                         <rs type="name" role="topic" key="#FP">Fernando Pessoa</rs>. Não é bem assim. A conclusão practica pode realmente ser identica, mas a conclusão theorica, que é a practica 
                         para uma theoria, é differente.</p>
@@ -157,16 +178,9 @@
                 <p rend="indent-first">É isto, em resumo, o que defendi no meu <rs type="title">Ultimatum</rs>. E as theorias, politica e esthetica, inteiramente originaes e novas, que proponho 
                     nessa proclamação, são, por uma razão logica, inteiramente irracionaes, exactamente como a vida.</p>
                 
-                <signed>Alvaro de Campos</signed>
+                <signed rend="align-right">Alvaro de Campos</signed>
                 
-                <!--<p rend="indent-first">* Convém que, para prevenção dos leigos, se faça uma observação, embora digressiva, a este respeito. As sciencias, ao approximarem-se do estado «mathematico», 
-                    tornam-se <hi rend="italic">mais precisas</hi>: é porém duvidoso que, <hi rend="italic">por isso</hi>, se tornem <hi rend="italic">mais certas</hi>. Tanto os puros mathematicos 
-                    como os leigos em mathematica tendem a attribuir a esta sciencia um character de «certeza» que não é necessariamente exacto. A mathematica é uma linguagem perfeita, mais nada. 
-                    Ha a considerar a relatividade dos proprios principios mathematicos – não a simples relatividade condicional, conhecida ha muito de todos que sabem que para muita applicação 
-                    practica, isto é, verdadeiramente scientifica, da mathematica, é preciso introduzir coefficientes de correcção; mas uma relatividade mesmo incondicional, sobejamente demonstrada 
-                    já, por exemplo e para a geometria, pela existencia de geometrias não-euclideanas, tão «certas» na applicação como a «clássica». Convém ainda avisar esses mesmos leigos que a 
-                    expressão «relatividade» é aqui empregada no seu sentido tradicional e logico, e não no sentido, aliás infeliz e absurdo, em que se chama «da relatividade» á theoria de 
-                    <rs type="name" role="topic" key="P301">Einstein</rs>, que é simplesmente uma theoria, primeiro restricta, depois generalizada, do <hi rend="italic">movimento relativo</hi>.</p>-->
+                
             </div>
         </body>
     </text>
