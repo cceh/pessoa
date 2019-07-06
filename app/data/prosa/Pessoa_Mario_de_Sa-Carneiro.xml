@@ -4,9 +4,9 @@
     <teiHeader>
         <fileDesc>         
             <titleStmt>
-                <title>De Newcastle-On-Tyne - Álvaro de Campos escreve a Contemporânea</title>
+                <title>Mário de Sá-Carneiro (1890-1916)</title>
                 <author>
-                    <rs type="name" key="AdC">Álvaro de Campos</rs>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
                 </author>
                 <respStmt>
                     <resp>Edição, Transcrição, Codificação</resp>
@@ -30,32 +30,32 @@
                     <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
-                <idno type="filename">Campos_De_Newcastle.xml</idno>               
+                <idno type="filename">Pessoa_Mário_de_SáCarneiro.xml</idno>               
             </publicationStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O4-X">De Newcastle-On-Tyne - Álvaro de Campos escreve a Contemporânea</rs></item>
+                    <item><rs type="work" key="O4-X">Mário de Sá-Carneiro (1890-1916)</rs></item>
                 </list>
                 <biblStruct>
                     <!-- here goes the bibliographical reference for the source publication -->
                     <analytic>
-                        <title level="a">De Newcastle-On-Tyne - Álvaro de Campos escreve a Contemporânea</title>
+                        <title level="a">Mário de Sá-Carneiro (1890-1916)</title>
                         <author>
-                            <rs type="name" key="AdC">Álvaro de Campos</rs>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
                         <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
-                        <title level="j"><rs type="periodical" key="J11">Contemporânea</rs></title>
+                        <title level="j"><rs type="periodical" key="J2">Athena</rs></title>
                         <imprint>
-                            <date when="1928-12">Outubro de 1922</date>
+                            <date when="1924-11">Novembro de 1924</date>
                             <!-- in case it is not a single date, but from-to, it 
                             looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
                             there is just a year: when="1931" -->
                         </imprint>
-                        <biblScope unit="issue">4</biblScope>
-                        <biblScope unit="page">4</biblScope>
+                        <biblScope unit="issue">2</biblScope>
+                        <biblScope unit="page">41-42</biblScope>
                     </monogr>
                     <note type="genre">
                         <rs type="genre" key="prosa">Prosa</rs>
@@ -65,19 +65,20 @@
         </fileDesc>
     </teiHeader>
     <facsimile>
-        <graphic url="prosa/De_Newcastle_on_Tyne"/>
+        <graphic url="prosa/Mário_de_SaCarneiro"/>
+        <graphic url="prosa/Mário_de_SaCarneiro_2"/>
     </facsimile>
-    <text corresp="#O4-X">
+    <text corresp="#O1-X">
         <!-- @corresp: contains the index of this WORK. 
         (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
         This can be left as is in the beginning.
     -->
         <body>
             <div>
-                <head>MARIO DE SÁ-CARNEIRO</head>
+                <head><rs type="name" key="P30">MARIO DE SÁ-CARNEIRO</rs></head>
                 <head type="sub">(1890-1916)</head>
-                <head type="sub">Atque in pepetuum, frate, ave atque vale!</head> <!--Note quotation-->
-                <head type="sub">CAT.</head> <!--Note quotation-->
+                <head type="sub" rend="right">Atque in perpetuum, frate, ave atque vale!</head> <!--Note quotation-->
+                <head type="sub" rend="right"><rs type="name" key="P499">CAT[ULO]</rs></head> <!--Note quotation-->
                     
                     <p rend="indent-first"><hi rend="italic">Morre jovem o que os Deuses amam</hi>, é um preceito da sabedoria antiga. E porcerto a imaginação, que figura novos mundos, e a arte, que em 
                         obras os finge, são os signaes notaveis d’esse amor divino. Não concedem os Deuses esses dons para que sejamos felizes, senão para que sejamos seus pares. Quem ama ama só a 
@@ -99,18 +100,18 @@
                         tornando-os creadores, deram a sua mesma essencia? Assim ao genio caberá, além da dor da morte da belleza alheia, e da magoa de conhecer a universal ignorancia, o soffrimento 
                         proprio, de se sentir par dos Deuses sendo homem, par dos homens sendo deus, exul ao mesmo tempo em duas terras.</p>
                                
-                    <p rend="indent-first">Genio na arte, não teve <rs type="name" role="topic" key="SC">Sá-Carneiro</rs> nem alegria nem felicidade nesta vida. Só a arte, que fez ou que sentiu, por 
+                <p rend="indent-first">Genio na arte, não teve <rs type="name" key="P30">Sá-Carneiro</rs> nem alegria nem felicidade nesta vida. Só a arte, que fez ou que sentiu, por 
                         instantes o turbou de consolação. São assim os que os Deuses fadaram seus. Nem o amor os quer, nem a esperança os busca, nem a gloria os acolhe. Ou morrem jovens, ou a si 
                         mesmos sobrevivem, incolas da incomprehensão ou da indifferença. Este morreu jovem, porque os Deuses lhe tiveram muito amor.</p>
                                     
-                    <p rend="indent-first">Mas para <rs type="name" role="topic" key="SC">Sá-Carneiro</rs>, genio não só da arte mas da innovação nella, junctou-se, á indifferença que circumda os genios, 
+                <p rend="indent-first">Mas para <rs type="name" key="P30">Sá-Carneiro</rs>, genio não só da arte mas da innovação nella, junctou-se, á indifferença que circumda os genios, 
                         o escarneo que persegue os innovadores, prophetas, como Cassandra, de verdades que todos teem por mentira. <hi rend="italic">In quâ scribebat, barbara terra fuit</hi>. Mas, se a 
                         terra fôra outra, não variára o destino. Hoje, mais que em outro tempo, qualquer privilegio é um castigo. Hoje, mais que nunca, se soffre a propria grandeza. As plebes de todas 
                         as classes cobrem, como uma maré morta, as ruinas do que foi grande e os alicerces desertos do que poderia sel-o. O circo, mais que em Roma que morria, é hoje a vida de todos; 
                         porém alargou os seus muros até os confins da terra. A gloria é dos gladiadores e dos mimos. Decide supremo qualquer soldado barbaro, que a guarda impoz imperador. Nada nasce de 
                         grande que não nasça maldicto, nem cresce de nobre que se não definhe, crescendo. Se assim é, assim seja! Os Deuses o quizeram assim.</p>
                                         
-                                        <signed>Fernando Pessoa</signed>
+                                        <signed rend="align-right">Fernando Pessoa</signed>
             </div>
         </body>
     </text>
