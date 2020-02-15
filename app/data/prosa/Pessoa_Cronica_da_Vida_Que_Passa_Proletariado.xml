@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>         
+            <titleStmt>
+                <title>CRÓNICA da vida que passa... Proletariado</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="restricted">
+                    <!-- @status will be set to "free" once the document is ready to be published -->
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Pessoa_Cronica_da_Vida_Que_Passa_Proletariado.xml</idno>               
+            </publicationStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="O1-X">CRÓNICA da vida que passa... Proletariado</rs></item>
+                </list>
+                <biblStruct>
+                    <!-- here goes the bibliographical reference for the source publication -->
+                    <analytic>
+                        <title level="a">CRÓNICA da vida que passa... Proletariado</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt" otherLangs="en"/>
+                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J45">O Jornal</rs></title>
+                        <imprint>
+                            <date when="1915-04-21">21 de Abril de 1915</date>
+                            <!-- in case it is not a single date, but from-to, it 
+                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
+                            there is just a year: when="1931" -->
+                        </imprint>
+                        <biblScope unit="page">1</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="prosa">Prosa</rs>
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="prosa/Cronica_da_Vida_Que_Passa_Proletariado.jpg"/>
+    </facsimile>
+    <text corresp="#O1-X">
+        <body>
+            <div>
+                <head>CRÓNICA   
+                    
+                    da vida que passa...</head> 
+                
+           <p rend="indent-first">O proletariado organiza-se. Inaugurou-se ha dias, em Lisboa, a Associação de Classe dos Monárquicos.</p> 
+                
+           <p rend="indent-first">Os operarios manuelistas merecem-me a mesma simpatia e consideração que os outros sempre me mereceram; 
+               e seria, da minha parte, tão cruel como indelicado fazer referencias menos bondosas a quem procura ganhar honradamente a 
+               vida e, achando cheias as profissões usuais, se aproveita da necessidade de uma nova profissão, e por isso, por vezes, a 
+               exerce incompetentemente.</p> 
+                
+           <p rend="indent-first">Quando surgiu a industria automobilista, foi preciso criar a classe dos  
+               <hi rend="italic">chauffeurs</hi>; ninguem, a não ser um ou outro atropelado mais plebeu, se revoltaria decerto contra a 
+               impericia inicial dos guiadores dos carros. Estavam aprendendo o ofício — o que é natural; e ganhando a sua vida — o que é 
+               respeitável. Depois ficaram sabendo da sua arte, e, embóra a maioria continue guiando mal, o facto é que são  
+               <hi rend="italic">chauffeurs</hi> definitivamente.</p> 
+                
+           <p rend="indent-first">Ora o criterio de humana tolerancia que se aplica aos  <hi rend="italic">chauffeurs</hi> — como a todas 
+               as outras classes operarias que o progresso vai tornando precisas, —  triste seria que o não quizessemos aplicar aos 
+               artistas monárquicos, excluindo-os assim, abusivamente, da grande familia proletaria, à qual tão dignamente pertencem.</p> 
+                
+           <p rend="indent-first">A maior prova de falta de espirito humanitario seria notar-lhes os defeitos da obra, como se se 
+               tratasse de um operariado com tradições. Assim, o facto do sr. Crispim, da Nação, nunca ter graça, não lhe deve ser levado 
+               a mal. Ele não a tem naturalmente. Tambem ninguem nasce  <hi rend="italic">chauffeur</hi> ou bailarino russo. Quem sabe o 
+               que a aplicação e boa vontade podem conseguir? Quem nos diz que não teremos um dia a surpresa do sr. Crispim nos aparecer 
+               com espirito?</p> 
+                
+           <p rend="indent-first">O que acontece com a graça do sr. Crispim acontece tambem, é claro, com o talento do 
+               <rs type="name">sr. José de Arruela</rs> e a logica do <rs type="name">sr. Cunha e Costa</rs>. E com respeito a esses 
+               outros artifices que se ocupam das partes mais técnicas da industria monárquica, tambem o desalento me parece prematuro. 
+               E´ o caso, por exemplo, do meu amigo <rs type="name">João do Amaral</rs> (não o especialiso se não para o saudar), do qual 
+               — um santo rapaz, e até inteligente — vê-se que, como os outros, não está ainda à vontade na técnologia da classe. Porque 
+               a gente vê que aquilo do  <hi rend="italic">El-Rei e Sumo Pontifice</hi> é ferramenta com que ainda não sabem lidar. 
+               Fica-nos sempre a impressão de que ha peças que saltam no rodar daqueles engenhos logicos, que ha laqueios, folgas e 
+               outras coisas feias nestas engrenagens da dialética integralista.</p> 
+                
+           <p rend="indent-first">Dos outros defeitos que a classe ostenta — a falta de cultura, a precipitação nas conclusões, a 
+               frequente grosseria nos ataques — seria quasi ignobil falar, dado que tais teem sempre sido, em toda a parte, as 
+               infelicidades de origem das agremiações plebeias.</p> 
+                
+                <signed>Fernando Pessoa.</signed> 
+            </div>
+        </body>
+    </text>
+</TEI>
