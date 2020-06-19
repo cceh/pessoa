@@ -29,7 +29,13 @@
                         <term xml:lang="de">Projekte und Publikationen</term>
                     </item>
                 </list>
-                <!-- ################# NAVIGATION ######################## -->
+                <!-- ################# NAVIGATION ######################## 
+                Explanations:
+                <note type="published">false|true</note>: are these items visible to all the users (true)
+                or just to users that are logged in (false)?
+                <note type="directory">: creates a submenu with items from a list with this id (e.g. 'authors', 'genres')
+                <note type="linked">: creates a submenu with the items of an index (e.g. 'doclist')
+                -->
                 <list type="navigation">
                     <item xml:id="authors" rend="button" corresp="authors">
                         <term xml:lang="pt">Autores</term>
@@ -51,7 +57,7 @@
                         <term xml:lang="en">Documents</term>
                         <term xml:lang="de">Dokumente</term>
                         <note type="published">false</note>
-                        <note type="linked">doclist</note>
+                        <note type="linked">doclist</note><!-- this is evaluated in page.xml, line 188 -->
                     </item>
                     <item xml:id="publicacoes" rend="button">
                         <term xml:lang="pt">Publicações</term>
@@ -354,13 +360,12 @@
                         <term xml:lang="de">Dichtung</term>
                         <note type="range">poesia</note>
                     </item>
-                    <!--
-                <item xml:id="prose">
-                    <term xml:lang="pt">Prosa</term>
-                    <term xml:lang="en">Prose</term>
-                    <term xml:lang="de">Prosa</term>
-                    <note type="range">prosa</note>
-                </item>-->
+                    <item xml:id="prose">
+                        <term xml:lang="pt">Prosa</term>
+                        <term xml:lang="en">Prose</term>
+                        <term xml:lang="de">Prosa</term>
+                        <note type="range">prosa</note>
+                    </item>
                 </list>
                 <list type="language">
                     <item xml:id="pt">
