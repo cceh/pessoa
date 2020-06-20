@@ -47,6 +47,7 @@
     
     <xsl:template match="p">
         <p>
+            <xsl:call-template name="rend" />
             <xsl:apply-templates />
         </p>
     </xsl:template>
@@ -66,6 +67,9 @@
             </xsl:when>
             <xsl:when test="@rend='center'">
                 <xsl:attribute name="class">center</xsl:attribute>
+            </xsl:when>
+            <xsl:when test="@rend='indent-first'">
+                <xsl:attribute name="class">indent-first</xsl:attribute>
             </xsl:when>
         </xsl:choose>
     </xsl:template>
