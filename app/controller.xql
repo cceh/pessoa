@@ -333,10 +333,10 @@ else if($exist:permission) then (
                         <view>
                             <forward url="{$exist:controller}/modules/view.xql"/>
                         </view>
-                        <!-- <error-handler>
+                        <error-handler>
                             <forward url="{$exist:controller}/error-page.html" method="get"/>
                             <forward url="{$exist:controller}/modules/view.xql"/>
-                        </error-handler> -->
+                        </error-handler>
                     </dispatch>)
                 (: default for publications: poesia :)
                 else

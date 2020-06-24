@@ -64,9 +64,16 @@
                 </div>
                 <div>
                     <head>Transcription of publications</head>
+                    <p>Bla bla bla ... <!-- Verweis auf Element-Definition (Text): --><specList><specDesc key="name"></specDesc></specList> blub blub blub.
+                    <!-- Siehe Kap. 22 Guidelines --></p>
+                    <p> Hier ein Beispiel:
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <rs type="name">Auszeichnung von Namen</rs>
+                        </egXML>
+                        und hier geht es weiter.
+                    </p>
                 </div>
             </div>
-            <p/>
         </body>
         <back>
             <div>
@@ -82,6 +89,10 @@
                     <moduleRef key="textstructure"
                         except="argument back byline closer div1 div2 div3 div4 div5 div6 div7 docAuthor docDate docEdition docImprint docTitle floatingText front group imprimatur opener postscript salute titlePage titlePart"/>
                     <elementSpec ident="rs" module="core" mode="change">
+                        <!-- die Standarddefinition überschreiben: -->
+                        <gloss>bla bla bla</gloss>
+                        <!-- Standard-Elementbeschreibung verändern (z.B. andere Sprache) -->
+                        <desc>bla bla bla</desc>
                         <attList>
                             <attDef ident="ana" mode="delete"/>
                             <attDef ident="cert" mode="delete"/>
@@ -151,6 +162,13 @@
                                 </valList>
                             </attDef>
                         </attList>
+                        <!-- Verwendungsbeispiel: -->
+                        <exemplum>
+                            <p>Bla bla bla</p>
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                <rs type="name">Auszeichnung von Namen</rs>
+                            </egXML>
+                        </exemplum>
                     </elementSpec>
                     <elementSpec ident="abbr" module="core" mode="change">
                         <attList>
