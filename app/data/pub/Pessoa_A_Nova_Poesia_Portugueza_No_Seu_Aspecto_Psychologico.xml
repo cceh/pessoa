@@ -1,0 +1,1055 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>A Nova Poesia Portugueza no seu aspecto Psychologico</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="restricted">
+                    <!-- @status will be set to "free" once the document is ready to be published -->
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename"
+                    >Pessoa_A_Nova_Poesia_Portugueza_No_Seu_Aspecto_Psychologico.xml</idno>
+            </publicationStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="O1-X">A Nova Poesia Portugueza no seu aspecto
+                            Psychologico</rs></item>
+                </list>
+                <biblStruct>
+                    <!-- here goes the bibliographical reference for the source publication -->
+                    <analytic>
+                        <title level="a">A Nova Poesia Portugueza No Seu Aspecto
+                            Psychologico</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt" otherLangs="en"/>
+                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J5">A Águia</rs></title>
+                        <imprint>
+                            <date from="1912-09" to="1912-12">Setembro, Novembro e Dezembro de
+                                1912</date>
+                        </imprint>
+                        <biblScope unit="issue">9, 11 e 12</biblScope>
+                        <biblScope unit="page">86-94; 153-157; 188-192</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="prosa">Prosa</rs>
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="prosa/A_Nova_Psychologico_86.jpg"/>
+        <graphic url="prosa/A_Nova_Psychologico_87.jpg"/>
+        <graphic url="prosa/A_Nova_Psychologico_88.jpg"/>
+        <graphic url="prosa/A_Nova_Psychologico_89.jpg"/>
+        <graphic url="prosa/A_Nova_Psychologico_90.jpg"/>
+        <graphic url="prosa/A_Nova_Psychologico_91.jpg"/>
+        <graphic url="prosa/A_Nova_Psychologico_92.jpg"/>
+        <graphic url="prosa/A_Nova_Psychologico_93.jpg"/>
+        <graphic url="prosa/A_Nova_Psychologico_94.jpg"/>
+        <graphic url="prosa/A_Nova_Psychologico_153.jpg"/>
+        <graphic url="prosa/A_Nova_Psychologico_154.jpg"/>
+        <graphic url="prosa/A_Nova_Psychologico_155.jpg"/>
+        <graphic url="prosa/A_Nova_Psychologico_156.jpg"/>
+        <graphic url="prosa/A_Nova_Psychologico_157.jpg"/>
+        <graphic url="prosa/A_Nova_Psychologico_188.jpg"/>
+        <graphic url="prosa/A_Nova_Psychologico_189.jpg"/>
+        <graphic url="prosa/A_Nova_Psychologico_190.jpg"/>
+        <graphic url="prosa/A_Nova_Psychologico_191.jpg"/>
+        <graphic url="prosa/A_Nova_Psychologico_192.jpg"/>
+    </facsimile>
+    <text corresp="#01-X">
+        <body>
+            <div>
+                <head><hi rend="bold">A Nova Poesia Portugueza no seu aspecto
+                    Psychologico</hi></head>
+                <div>
+                    <head rend="center">I</head>
+                    <p rend="indent-first"><hi rend="bold">Qualquér</hi> phenomeno literario –
+                        corrente, ou grupo, ou individualidade – é susceptivel de ser considerado
+                        sob trez aspectos e sob esses trez aspectos tem de ser considerado para ser
+                        completamente comprehendido. Esses trez pontos de vista são o psychologico,
+                        o litterario, e o sociologico. Isto é, qualquér phenomeno da literatura tem
+                        de ser estudado – 1.º, em si, directamente como produto de alma ou de almas;
+                        2.º, nas suas relações e filiação exclusivamente literarias, como producto
+                        literario e 3.º, na sua significação como producto social, como facto que se
+                        dá a dentro de, e por, uma sociedade, explicado por ella e explicando-a,
+                        lido, pois, como indicador sociologico. No estudo – supponha-se – de uma
+                        qualquér corrente literaria, importa pouco sob qual dos trez aspectos
+                        primeiro a examinarmos, logo que sob todos os trez aspectos sucessivamente e
+                        completamente o assumpto se raciocine. Como phenomeno literario, como
+                        phenomeno psychico, como phenomeno social successivamente analysada, os trez
+                        aspectos de uma corrente interexplicam-se e completam-se, fornece cada qual
+                        elementos especiaes e essenciaes para a interpretação synthetica e integral
+                        da corrente. Nem o estudo total, nem qualquér dos estudos parciaes, fica
+                        completo sem estarem completos, e coördenadamente completos, todos os
+                        trez.</p>
+                    <p rend="indent-first">Porisso a nossa analyse da actual corrente literaria
+                        portugueza – iniciada e feita sob o ponto de vista sociologico em dois
+                        anteriores artigos – só ficará completa, e esses artigos em toda a sua
+                        extensão logica comprehensiveis, quando, n’este escripto e em outro,
+                        juntarmos á analyse sociologica uma dupla analyse complementar, primeiro
+                        psycologica, e literaria depois.</p>
+                    <p rend="indent-first">Começámos pela analyse sociologica porquanto, sendo essa
+                        a mais involventemente explicativa das trez, de princípio ficava, posta ella
+                        inicialmente, abrangido em todo o seu valôr e superficie o movimento
+                        literario estudado. Levou-nos essa analyse sociologica a conclusões que não
+                        pareceriam extranhas, talvez, aos habituados a seguir raciocinios, mas que,
+                        ainda assim, eram de desorientar os de intelligencia menos affeita a lêr nas
+                        entrelinhas da concisão dialectica. O nosso anterior estudo, partindo de uma
+                        analyse dos periodos maximos das literaturas ingleza e franceza – tomados
+                        esses para exemplos – e da sua relação com as maximas, e – provou-se –
+                        homóchronas, epocas sociaes, veio, por uma approximação, detalhe a detalhe
+                        feita, a constatar a semelhança completa do nosso actual periodo, tomada a
+                        literatura como indicador sociologico, com aquellas grandes epocas, chamadas
+                        a depôr, do mesmo representativo modo, as literaturas suas. D’ahi as
+                        naturaes, referidas, conclusões sobre a vindoura grandeza lusitana. Esses
+                        detalhes, esses, por assim dizer, traços physionomicos por onde a parecença
+                        entre os trez periodos se colhia flagrante, eram do numero, completo, de
+                        nove; trez diziam respeito á relação entre os periodos literarios maximos e
+                        as epocas politicas, ou antecedentes, ou contemporaneas, ou subsequentes; e
+                        estes trez pontos eram os exclusivamente sociologicos. Os outros seis –
+                        summariamente então tratados por não serem para sociologia puramente –
+                        referiam-se á originalidade, á elevação, e á grandeza dos representantes <hi
+                            rend="italic">individuaes</hi> dos periodos, e á <hi rend="italic"
+                            >nacionalidade</hi>, <hi rend="italic">anti-tradicionalidade</hi> e <hi
+                            rend="italic">caracter não-popular</hi> dos mesmos.</p>
+                    <p rend="indent-first">Ficou, no artigo citado, esgottada e provada quanto
+                        possivel – dada a juvenilidade da nossa actual corrente literaria – a
+                        semelhança sociologica. Egualmente, no quarto capitulo, se provou que,
+                        constatadas que fôssem a <hi rend="italic">originalidade</hi>, a <hi
+                            rend="italic">elevação</hi> e a <hi rend="italic">grandeza</hi> de uma
+                        corrente literaria, a sua <hi rend="italic">anti-tradicionalidade</hi>
+                        ficava provada na sua <hi rend="italic">originalidade</hi> – como seria
+                        original se se baseasse em tradições? – a sua não-popularidade provada na
+                        sua elevação – como ser popular sendo espiritualmente e metaphysicamente
+                        complexa? –; e, provado isto, de si ficava tambem provada a <hi
+                            rend="italic">nacionalidade</hi>, o <hi rend="italic">caracter
+                            nacional</hi> da corrente, visto que, como alli mais cingentemente
+                        provámos, originalidade absoluta só da alma de uma raça pode subir á tona da
+                        sua literatura. Poesia <hi rend="italic">absolutamente</hi> original e
+                        poesia absolutamente <hi rend="italic">nacional</hi> são expressões
+                        interconvertiveis. </p>
+                    <p rend="indent-first">Tudo está agora, portanto, em provar a <hi rend="italic"
+                            >originalidade</hi>, a <hi rend="italic">elevação</hi> e a <hi
+                            rend="italic">grandeza das figuras individuaes</hi>. Compete isto em
+                        parte a uma analyse psychologica, e em parte a um estudo literario. Da
+                        analyse psychologica sahirá caracterizada a corrente literaria, e, assim
+                        sendo, a sua originalidade ou não-originalidade, a sua elevação ou
+                        não-elevação quedarão, <hi rend="italic">ipso facto</hi>, em relevo – relevo
+                        que o estudo propriamente literario accentuará, rebuscando a filiação
+                        exclusivamente literaria da corrente e a importancia d’essa filiação – se
+                        influencia nitida e constante, como a do estylo francez dos seculos
+                        dezessete e dezoito sobre as outras literaturas européas; se mera
+                        occasionação, mero ponto de partida, breve abandonado e excedido, como a da
+                        Renascença da Italia perante o estylo da epoca isabeliana em Inglaterra. –
+                        Esse mesmo estudo literario, analizando o grau da constructividade, de
+                        intensidade e de individualidade que se revelem nas obras da corrente, dirá
+                        da grandeza dos seus poetas.</p>
+                </div>
+                <div>
+                    <head rend="center">II</head>
+                    <p rend="indent-first">Sabido que uma corrente literaria é a expressão pela
+                        literatura de uma commum noção do mundo, da arte e da vida – posto de parte
+                        o que é individual, por individual precisamente – o estudo psychologico de
+                        qualquér corrente involve o destrinçar-lhe na alma a sua tripla unidade de
+                        attitudes. Que trez aspectos são esses do seu espirito uno? O primeiro é sua
+                            <hi rend="italic">metaphysica</hi> – isto é, o conceito do universo e
+                        das cousas que subjaz as manifestações d’essa corrente. O segundo é a sua
+                            <hi rend="italic">esthetica</hi> – curando bem que por isto se não quer
+                        dizer as suas theorias de arte (essas pertencem, como parte da sua theoria
+                        das cousas, á sua metaphysica), mas o seu modo de ser literario, a sua alma
+                        literaria. O terceiro é a sua <hi rend="italic">sociologia</hi>, e isto
+                        significa as theorias sociaes, 1.º, que constituem a aspiração da corrente;
+                        2.º, que, determinando-se, se alteram, na fixação directa em estudos já
+                        extra-literarios, propriamente sociólogicos; e 3.º, que, encontrando-se com
+                        realidades sociais, se synthetisam, realisando-se n’uma nova formula <hi
+                            rend="italic">vivída</hi>, perdendo ao realizar-se o que de impraticavel
+                        tivessem. Claro está que a parte ultima d’este estudo é puramente
+                        sociologica; mas isso inevitavel, dado que uma corrente literaria é
+                        basilarmente, e representativamente, uma corrente social; tanto assim que –
+                        como o temos indicado theoricamente já aqui, e praticamente na feição
+                        realizada do nosso anterior artigo – um estudo literario completo é, em
+                        grande parte – e maximo e ultimamente mesmo – um estudo sociologico.</p>
+                    <p rend="indent-first"> Posto isto, encaremos a methodologia d’esta analyse. O
+                        methodo analytico a empregar varia ligeiramente conforme qual dos trez
+                        aspectos do psychismo de uma corrente se investiga. Assim, no determinar a
+                            <hi rend="italic">esthetica</hi> da corrente, a analyse incide directa
+                        sobre as obras dos poetas, porque estes, representando o maximo de emoção e
+                        de requinte revelador de expressão, mais do que os prosadores são
+                        representativos do momento-alma da raça e dos processos mentaes que da
+                        inconsciencia divina do povo sobem, feitos arte e consciencia, para a
+                        interpretação estremecida dos seus versos. – Ao inquirir da <hi
+                            rend="italic">metaphysica</hi>, a analyse divide-se entre as obras de
+                        arte – destacando sempre, por sua superior representatividade, os poetas – e
+                        as que dão expressão directa-, racionada- e intencionalmente philosophica ao
+                        conceito-do-universo, caracteristico do momento racial. Reportarmo-nos,
+                        n’essa analyse, só ás obras metaphysicas, ou apenas ás obras literarias,
+                        seria – não diremos impossibilisar, mas por certo difficultar a
+                        investigação. É que – por estranho que de relance pareça – tanto o poeta
+                        como o philosopho ao interpretarem, cada um de seu modo, as intuições
+                        metaphysicas de uma epoca, ao mesmo tempo as revelam e as escondem.
+                        Revelam-as porque são poeta e philosopho, e, portanto, desdobradores em
+                        consciencia e raciocinio do que a raça e a hora accumulam no fundo das suas
+                        almas. Escondem-as – o poeta, porque a emoção, ainda que surgindo
+                        directamente do fundo intuitivo, é, de sua natureza, atraiçoadora da
+                        precisão intellectual; o philosopho, porque a actividade de raciocinio,
+                        vantajosa em tornar precisas as intuições fundamentaes que a raça lhe dá, é,
+                        de seu caracter, destruidora dos processos emotivos que, elles só, surgindo
+                        directamente do fundo occulto da alma, podem conservar a essas intuições
+                        fundamentaes a sua <hi rend="italic">côr</hi> primitiva, o seu preciso <hi
+                            rend="italic">tom</hi> intuicional. E, mais, tanto poeta como
+                        philosopho, sendo individualidades, acrescentam cada qual ao commum fundo de
+                        raça o seu especial temperamento, elemento esse que fatalmente desvirtuará
+                        uma interpretação exacta, superpessoal, do metaphysismo da epoca. A alma de
+                        uma epoca está em todos os seus poetas e philosophos, e em nenhum; é por
+                        isso que é em todos e em nenhum que a nossa analyse se encontra obrigada a
+                        procural-a. – Semelhante methodo tem de ser applicado no estudo da <hi
+                            rend="italic">sociologia</hi> da corrente, mais complexo, porém, aqui,
+                        porque a trez fontes, que não a duas, tem o raciocínio de ir beber. Os
+                        literatos, os philosophos e sociologos-theoristas, e os acontecimentos
+                        finaes e solucionaes do periodo são essas trez fontes. Como na nossa actual
+                        corrente não ha, por ser ainda cedo, sociologos-theoristas, e como os
+                        acontecimentos de creação social, que caracterizarão a epoca, só virão, como
+                        sempre, no fim do periodo, que ora avança apenas para o seu auge literario,
+                        releve-se-nos que não entremos em uma analyse inutilmente extensa da fórma
+                        como esta investigação deverá ser feita. Só temos um elemento – poetas –
+                        para essa deducção: veremos mais adeante o que, só com elle, se pode fazer,
+                        firmando-nos desde já na consciencia de que essa deducção fatalmente será
+                        incompletissima, uma simples intuição quasi, um mero vislumbre de adivinhar. </p>
+                    <p rend="indent-first"> Vejamos agora, reportando-nos á nossa já feita divisão
+                        dos maximos periodos em estadios, em que hora dos periodos temos de ir
+                        procurar esses poetas, esses philosophos que servem á nossa analyse para nos
+                        revelar a alma da corrente. Verifica-se, sem dificuldade, que a esthetica de
+                        uma corrente fica determinada (é natural) quando, ao entrar no seu segundo
+                        estadio, ella atinge a sua capacidade maxima de expressão. É o estadio-<rs
+                            type="name" key="P65">Shakespeare</rs> no periodo inglez, o estadio-<rs
+                            type="name" key="P292">Hugo</rs> no da França, logo que fica formado o
+                        estylo de <rs type="name" key="P65">Shakespeare</rs> e o de <rs type="name"
+                            key="P292">Victor Hugo</rs>. Attingida e fixada essa maxima capacidade
+                        de expressão, succede um alargamento de ideação que pouco depois chega ao
+                        auge, coincidentemente, pouco mais ou menos com o meio do segundo estadio e
+                        estendendo-se até ao principio do terceiro até que, variando, se prolonga
+                        por este dentro. É em coïncidencia com este auge ideativo da poesia que
+                        geralmente apparecem os philosophos do periodo. Quanto á sociologia da
+                        epoca, só nos poetas desde o auge ideativo do segundo, e pelo terceiro
+                        estadio, e nos philosophos e tratadistas do mesmo tempo se poderá trahir,
+                        posteriores um pouco, porém, os tratadistas e os philosophos. Os poetas do
+                        principio do estadio segundo só a um raciocinio muito pacientemente
+                        perscrutador de obscuras intuições inconscientemente propheticas poderão
+                        entresuggerir uma idéa do género d’essa futura realização social. </p>
+                    <p rend="indent-first">Como em anterior artigo mostrámos, a nova poesia
+                        portugueza desde a <rs type="name" key="T112">Oração á Luz</rs> que entrou
+                        no segundo estadio. Podemos, portanto, arrancar-lhe o segredo da sua
+                        esthetica, nitidamente; com menos nitidez, e aproximadamente, entrevêr a sua
+                        metaphysica: e, para que o estudo se não trunque, procurar dizer a côr dos
+                        longes vagos da sua sociologia ainda indecisos no horizonte da historia.
+                    </p>
+                </div>
+                <div>
+                    <head rend="center">III</head>
+                    <p rend="indent-first">Perscrutemos qual a <hi rend="italic">esthetica</hi> da
+                        nova poesia portugueza.</p>
+                    <p rend="indent-first">A primeira constatação analytica que o raciocinio faz
+                        ante a nossa poesia de hoje é que o seu arcaboiço espiritual é composto de
+                        trez elementos – <hi rend="italic">vago</hi>, <hi rend="italic"
+                            >subtileza</hi> e <hi rend="italic">complexidade</hi>. São <hi
+                            rend="italic">vagas</hi>, <hi rend="italic">subtis</hi> e <hi
+                            rend="italic">complexas</hi> as expressões características do seu verso,
+                        e a sua ideação é, portanto, do mesmo triplo caracter. Importa, porém,
+                        estabelecer, de modo absolutamente differencial, a significação d’aquelles
+                        termos definidores. Ideação <hi rend="italic">vaga</hi> é cousa que é
+                        escusado definir de exhaustivamente explicante que é de per si o mero
+                        adjectivo; urge, ainda assim, que se observe que ideação <hi rend="italic"
+                            >vaga</hi> não implica necessariamente ideação <hi rend="italic"
+                            >confusa</hi>, ou <hi rend="italic">confusamente expressa</hi> (o que
+                        aliás redunda, feita uma funda analyse psychologica, precisamente no mesmo).
+                        Implica simplesmente uma ideação que tem o que é vago ou indefinido por
+                        constante objecto e assumpto, ainda que nitidamente o exprima ou
+                        definidamente o trate; sendo comtudo evidente que quanto menos nitidamente o
+                        trate ou exprima mais classificavel de <hi rend="italic">vaga</hi> se
+                        tornará. Uma ideação obscura é, pelo contrario, apenas uma ideação fraca ou
+                        doentia. Vaga sem ser obscura é a ideação da nossa actual poesia; vaga e
+                        frequentemente – quasi caracteristicamente – obscura é a do symbolismo
+                        francez, cujo caracter pathologico mais adeante explicaremos. – Por ideação
+                            <hi rend="italic">subtil</hi> entendemos aquella que traduz uma sensação
+                        simples por uma expressão que a torna vívida, minuciosa, detalhada – mas
+                        detalhada não em elementos exteriores, de contornos ou outros, mas em
+                        elementos interiores, sensações –, sem comtudo lhe acrescentar elemento que
+                        se não encontre na directa sensação inicial. Assim <rs type="name"
+                            key="P425">Albert Samain</rs>, quando diz </p>
+                    <lg>
+                        <l>Je ne dis rien, et tu m'écoutes</l>
+                        <l>Sous tes immobiles cheveux,<note n="1">
+                                <rs type="title">Au Jardin de l’infante</rs> (<hi rend="italic"
+                                    >Heures d’été, VI)</hi>.</note></l>
+                    </lg>
+                    <p>desdobra a sensação directa de um silencio <hi rend="italic">á deux</hi>,
+                        oppressivo e nocturno, na tripla sensação de silencio, de almas que se
+                        fallam nesse silencio, e da immobilidade dos corpos, mas não dá outra
+                        impressão do que a, intensa, d’esse silencio. Do mesmo modo, nos versos de
+                            <rs type="name" key="P136">Mario Beirão</rs></p>
+                    <lg>
+                        <l>Charcos onde um torpor, vitreo torpor, se esquece,</l>
+                        <l>Nuvens roçando a areia, os longes baços...</l>
+                        <l>Paizagem como alguém que, ermo de amor, se desse,</l>
+                        <l> Corpo que estagna frio a beijos ou a abraços,<note n="2"><rs
+                                    type="title">Coimbra, ao ritmo da saudade.</rs></note></l>
+                    </lg>
+                    <p>ha simplesmente um desdobrar, como em leque, de uma sensação crepuscular, que
+                        cada termo maravilhosamente <hi rend="italic">intensifica</hi>, mas não
+                        alarga. – Finalmente, entendemos por ideação <hi rend="italic">complexa</hi>
+                        a que traduz uma impressão ou sensação simples por uma expressão que a
+                        complica acrescentando-lhe um elemento explicativo, que, extrahido d’ella,
+                        lhe dá um novo sentido. A expressão subtil <hi rend="italic"
+                            >intensifica</hi>, torna mais <hi rend="italic">nitido</hi>
+                        <note n="1">Interiormente nitido, não como cousa exterior.</note>; a
+                        expressão complexa <hi rend="italic">dilata</hi>, torna <hi rend="italic"
+                            >maior</hi>. A ideação <hi rend="italic">subtil</hi> involve ou uma
+                        directa intellectualização de uma idéa ou uma directa emocionalização de uma
+                        emoção: d’ahi o ficarem mais nitidas, a idéa por mais idéa, a emoção por
+                        mais emoção. A ideação <hi rend="italic">complexa</hi> suppõe sempre ou uma
+                        intellectualização de uma emoção, ou uma emocionalização de uma idéa: é
+                        d’esta heterogeneidade que a complexidade lhe vem. São da ideação complexa,
+                        por exemplo, os versos de <rs type="name" key="P136">Mário Beirão</rs>
+                    </p>
+                    <lg>
+                        <l>A boca, em morte e marmore esculpida,</l>
+                        <l>Sonha com as palavras que não diz; <note n="2"><rs type="title">O
+                                    Sonho.</rs></note>></l>
+                    </lg>
+                    <p> de <rs type="name" key="P52">Teixeira de Pascoaes</rs></p>
+                    <lg>
+                        <l>A folha que tombava</l>
+                        <l>Era alma que subia; <note n="3"><rs type="title">Elegia (Vida
+                                Etherea)..</rs>").</note>
+                            </l>
+                    </lg>
+                    <p>e expressões como <hi rend="italic">choupos d'alma</hi><note n="4"><rs
+                                type="title">Choupos na luz do luar.</rs></note>
+                        de <rs type="name" key="P135">Jayme Cortezão</rs> ou o <hi rend="italic"
+                            >ungido de universo</hi>
+                        <note n="5"><rs type="title">Oração á luz</rs></note>
+                        de <rs type="name" key="P25">Guerra Junqueiro</rs>
+                    </p>
+                    <p rend="indent-first"> Feita esta constatação, que nos leva ella a concluir?
+                        Subtileza e complexidade ideativas vêm a ser, como da anterior exposição se
+                        deprehende, modos analyticos da ideação: desdobrar uma sensação em outras –
+                        subtileza – é acto analytico, e acto analytico, ainda mais profundo, o de
+                        tomar uma sensação simples complexa por elementos espiritualizantes n’ella
+                        propria encontrados. Ora a analyse de sensações e de idéas é o
+                        caracteristico principal de uma vida interior. A poesia de que se trata é,
+                        portanto, uma poesia de vida interior, uma poesia de alma, uma poesia
+                        subjectiva. Será então uma nova espécie de simbolismo? Não é: é muito mais.
+                        Tem, de facto, de commum com o symbolismo o ser uma poesia subjectiva; mas,
+                        ao passo que o symbolismo é, não só exclusivamente subjectivo, mas
+                        incompletamente subjectivo também, a nossa poesia nova é completamente
+                        subjectiva e mais do que subjectiva. O symbolismo é vago e subtil; complexo,
+                        porém, não é. É-o a nossa actual poesia; é, por signal a poesia mais
+                        espiritualmente complexa que tem havido, excedendo, e de muito, a única
+                        outra poesia realmente complexa – a da Renascença, e, muito especialmente,
+                        do periodo isabeliano inglez. O caracteristico principal da ideação complexa
+                        – <hi rend="italic">o encontrar em tudo um além</hi> – é justamente a mais
+                        notável e original feição da nova poesia portugueza.</p>
+                    <p rend="indent-first">Mas a nossa poesia de hoje é, como acima dissémos, mais
+                        do que subjectiva. Absolutamente subjectivo é o symbolismo: d’ahi o seu
+                        desequilibrio, d’ahi o seu caracter degenerativo, ha muito notado por <rs
+                            type="name" key="P426">Nordau</rs>. A nova poesia portugueza, porém,
+                        apezar de mostrar todos os caracteristicos da poesia de alma, preocupa-se
+                        constantemente com a natureza, quasi exclusivamente, mesmo, na natureza se
+                        inspira. Por isso dizemos que ella é também uma poesia objectiva. Quaes são
+                        os caracteristicos psychicos da poesia objectiva? Facil é apontal-os. São
+                        trez, e a sua differença dos caracteristicos da poesia de alma assenta sobre
+                        isto – que, ao passo que a observação da alma implica analyse, a da
+                        natureza, a do exterior, involve synthese, visto que qualquér impressão do
+                        exterior é sempre uma synthese, e uma synthese complexa, de impressões
+                        secundarias, memorias, e obscuras e instantaneas associações de idéas. São
+                        trez, diziamos, os caracteristicos da poesia objectiva. O primeiro é a <hi
+                            rend="italic">nitidez</hi>, revelada na forma ideativa do <hi
+                            rend="italic">epigramma</hi>, chamando assim, convenientemente, á phrase
+                        synthetica, vincante, concisa: quando, exemplificando, dissermos que o tipo
+                        da poesia objectiva apenas epigrammatica é a dos séculos dezesete e dezoito,
+                        em França especial- e originantemente, teremos dado idéa clara do que por
+                            <hi rend="italic">nitidez</hi>, e <hi rend="italic">epigramma</hi> no
+                        caso presente entendemos. O epigramma, porém subjaz, como fórma ideativa,
+                        toda a poesia do exterior, assim como o seu contrario, o <hi rend="italic"
+                            >vago</hi>, é base de toda a poesia contraria, a de alma. Epigrammatica
+                        como nenhuma é a poesia de <rs type="name" key="P292">Victor Hugo</rs>, que
+                        é muito mais do que epigrammatica. Epigrammatica é – e este ponto é que urge
+                        notar – a nossa actual poesia, e por ser, ao mesmo tempo vaga e
+                        epigrammatica é que ella é grandemente, magnificamente equilibrada. A phrase
+                            <hi rend="italic">choupos de alma</hi>, por exemplo, sendo – como
+                        apontámos – complexa no que de poesia subjectiva, é epigrammatica no que de
+                        poesia objectiva; é mesmo typicamente epigrammatica, com a sua forma
+                        synthetica, de contraste. Da sua <hi rend="italic">complexidade</hi> intima
+                        vem a sua belleza espiritual; do seu epigrammatismo de forma nasce o seu
+                        perfeito equilíbrio e completa e perceptivel beleza. Do mesmo modo são
+                        epigrammaticas as frases citadas de <rs type="name" key="P136">Mario
+                            Beirão</rs>, o segundo trecho, e de <rs type="name" key="P52">Teixeira
+                            de Pascoaes</rs>. A actual poesia portugueza possue, portanto,
+                        equilibrando-lhe a inigualada intensidade e profundeza espiritual, o
+                        epigrammatismo sanificador da poesia objectiva. – Segundo caracteristico da
+                        objectividade poetica é aquillo a que podemos chamar a <hi rend="italic"
+                            >plasticidade</hi><note n="1">Importa muito notar que este termo é aqui
+                            usado com um sentido bastante diverso do usual, sentido que no texto se
+                            explica. Isto se nota para que não cause extranheza o lêr dada como <hi
+                                rend="italic">plastica</hi> de <rs type="name" key="P26">Cesario
+                                Verde</rs>.</note>; e entendemos por plasticidade a fixação
+                        expressiva do visto ou ouvido como <hi rend="italic">exterior</hi>, não como
+                        sensação, mas como visão ou audição. Plastica, n’este sentido, foi toda a
+                        poesia grega e romana, plastica a poesia dos parnasianos, plastica (além de
+                        epigrammatica e mais) a de <rs type="name" key="P292">Victor Hugo</rs>,
+                        plastica, de novo modo, a de <rs type="name" key="P26">Cesario Verde</rs>. A
+                        perfeição da poesia plastica consiste em dar a impressão exacta e nitida
+                        (sem ser exactamente epigrammatica) do exterior como exterior, o que não
+                        impede de, ao mesmo tempo, o dar como interior, como emocionado. É o que se
+                        dá nos quatro versos, em primeiro lugar citados, de <rs type="name"
+                            key="P136">Mario Beirão</rs> que a uma objectividade (plasticidade)
+                        perfeita unem uma perfeita subjectividade (subtileza). Outros exemplos se
+                        poderiam citar. Basta porém aquelle, que, por representativo, serve de prova
+                        de que a nossa actual poesia possue egualmente o segundo elemento
+                        caracteristico da poesia objectiva; elemento esse que é mais um a
+                        equilibrar-lhe a profunda espiritualidade. – Mais um caracteristico possue,
+                        e é o maximo, a poesia objectiva – é o a que poderemos chamar imaginação,
+                        tomando este termo no proximo sentido de pensar e sentir <hi rend="italic"
+                            >por imagens</hi>>; e isto dá á poesia objectiva d’este genero, quando
+                        intensamente inspirada, uma rapidez e um <hi rend="italic"
+                            >deslumbramento</hi>> que, em alto grau, enthusiasmando, deixam, quando
+                        sem elemento de pura espiritualidade, uma inquietante impressão de grandeza
+                        ôca. É o caso dos romanticos todos e, maximamente de <rs type="name"
+                            key="P292">Victor Hugo</rs> – é isto que, dissémos, elle tem além do
+                        epigrammatismo e da plasticidade – e d’ahi vem o phenomeno d’esse poeta dar
+                        a alguns uma impressão de desmedida grandeza, a outros de uma ôca
+                        grandiosidade: <hi rend="italic">cymbale</hi> lhe chamou, desdenhando, <rs
+                            type="name" key="P292">Renan</rs>, possuidor do <hi rend="italic"
+                            >vago</hi> tão desconhecido de <rs type="name" key="P292">Victor
+                            Hugo</rs>. A este maximo grau de objectividade não subiu ainda a nova
+                        poesia portugueza: prova-o ao ouvido o seu movimento geralmente lento,
+                        quando a <hi rend="italic">imaginação</hi>> imprime sempre ao verso uma
+                        rapidez inignoravel. A <rs type="name" key="T112">Oração á Luz</rs>, porém,
+                        obra maxima da nossa actual poesia, tem já vislumbres d’esse final elemento
+                        objectivo. A nossa poesia caminha para o seu auge: o grande Poeta
+                        proximamente vindouro, que incarnará esse auge, realizará o máximo
+                        equilibrio da subjectividade e da objectividade. Diga da sua grandeza esta
+                        suggestão para raciocinadores. Super-<rs type="name" key="P15" style="b"
+                            >Camões</rs> lhe chamámos, e lhe chamaremos, ainda que a comparação
+                        implicita, por muito que pareça favorecer, anteämesquinhe o seu génio, que
+                        será, não de <hi rend="italic">grau</hi> superior, mas mesmo de <hi
+                            rend="italic">ordem</hi> superior ao do nosso ainda-primeiro poeta.</p>
+                    <p rend="indent-first"> Ha mais uma observação a fazer para a completa
+                        caracterização psychologica da nossa nova poesia. Deduz-se do que se acha
+                        concluido ácerca da plena e inigualada subjectividade e da quasi-total
+                        objectividade d’essa poesia. Resultam d’este modo de sêr trez cousas. A
+                        primeira é o já-citado <hi rend="italic">equilibrio</hi> seu. A segunda é
+                        que, sendo ao mesmo tempo, e com quasi igual intensidade, poesia subjectiva
+                        e objectiva, poesia da alma e da natureza, cada um d’estes elementos penetra
+                        o outro; de modo que produz essa extranha e nitida originalidade da nossa
+                        actual poesia – <hi rend="italic">a espiritualização da Natureza</hi>> e, ao
+                        mesmo tempo, a <hi rend="italic">materialização do Espirito</hi>, a sua
+                        comunhão humilde no Todo, comunhão que é, já não puramente pantheista, mas,
+                        por essa citada espiritualização da Natureza, super-pantheista, dispersão do
+                        ser n’um exterior que não é <hi rend="italic">Natureza</hi>, mas <hi
+                            rend="italic">Alma</hi>. Decorre daqui uma terceira cousa. Esta
+                        interpretação das duas almas da sua alma una obriga a nova poesia portugueza
+                        a ser puramente e absorvidamente metaphysica: ser outra cousa seria para
+                        ella descer. Por isso não tem ella poetas de amôr, ou poetas “sociaes”, ou
+                        outros assim, de genero não-metaphysico. Na nova poesia portugueza todo o
+                        amor é além-amôr, como toda a Natureza é além-Natureza. Pode o amor, cantado
+                        por um dos nossos actuaes poetas, ser amor nas duas quadras de um soneto;
+                        nos tercetos é já oração. E assim com todo o outro genero de poesia
+                        geralmente sub-metaphysica. Quaesquér poemas da corrente podem servir de
+                        exemplo. De um canto á luz tira <rs type="name" key="P25">Junqueiro</rs> uma
+                        das maiores poesias metaphysicas do mundo, poesia que se pode comparar só a
+                            <rs type="title">Ode on the Intimations of Immortality</rs> de <rs
+                            type="name" key="P292">Wordsworth</rs>. Em um assumpto aparentemente
+                        amoroso <rs type="name" key="P52">Teixeira de Pascoaes</rs>, transcende logo
+                        o amor, torna-o degrau para a religiosidade; é da <rs type="title"
+                            >Elegia</rs> que se trata.</p>
+                    <p rend="indent-first">Ora, de ser a nossa nova poesia absorventemente
+                        metaphysica ha uma conclusão a tirar. Poesia metaphysica implica emoção
+                        metaphysica; emoção metaphysica é simplesmente synonymo de religiosidade. A
+                        actual poesia portugueza é pois uma poesia religiosa. Prova-o materialmente
+                        o seu uso de expressões tiradas do culto religioso – com outra religiosidade
+                        usadas, claro está – como <hi rend="italic">ungir</hi>, <hi rend="italic"
+                            >sagrar</hi>, etc. É de todo religioso o tom geral e imediatamente
+                        perceptível da nossa actual poesia. – Ha mais: a religiosidade da nossa
+                        actual poesia <hi rend="italic">é uma religiosidade nova</hi>, que não se
+                        parece com a de nenhuma outra poesia, nem com a de qualquer religião, antiga
+                        ou moderna. Contrasta-se n’isto com o symbolismo, que não tem religiosidade
+                        propria; e não a tem porque a que tem é catholica ou quasi-catholica;
+                        vem-lhe do passado, é morte – ponto de capital importancia, porque mostra
+                        nitidamente o caracter degenerativo e morbido do symbolismo.</p>
+                    <p rend="indent-first">Mas que religião nova é essa que se adivinha na nossa
+                        nova poesia? Não de todo, mas approximadamente, vae mostrar-nos a analyse,
+                        em que vamos entrar, da <hi rend="italic">metaphysica</hi> da nova poesia
+                        portugueza.</p>
+                </div>
+                <div>
+                    <head rend="center">IV</head>
+                    <p rend="indent-first"><hi rend="bold">Seguindo</hi> o methodo estabelecido na
+                        segunda secção d’este artigo, o nosso raciocinio, incidindo diréctamente
+                        sobre a obra dos nossos novos poetas, devia poder deduzir, com qualquér
+                        cousa como facilidade, as idéas metaphysicas organicas no seu espirito.
+                        Acontece, porém, que a intima complexidade e novidade da nossa actual poesia
+                        torna essa analyse dirécta extremamente difficil. A primeira constatação que
+                        o raciocinio faz na analyse de que se trata é de que a nossa poesia
+                        novissima é completamente e absorventemente metaphysica e religiosa; a
+                        segunda constatação é, porém, a da fluïdez, incerteza e caracter indefinido
+                        d’essa religiosidade e d’esse metaphysismo. É perto de impossivel encontrar
+                        os nossos novos poetas fixos sobre um ponto metaphysico qualquér: nem a
+                        ideia que fazem de Deus ou da Natureza se apresenta de principio nitida, nem
+                        sequér é deduzivel das suas obras se teem ou não idéas de algum modo
+                        definidas sobre, supponha-se, a immortalidade da alma ou a autodeterminação
+                        da vontade. A unica immediata constatação que a analyse póde sem custo fazer
+                        é que a poesia dos nossos novos poetas é (1) pantheista, (2)
+                        não-materialista, (3) diversa de qualquér poesia propriamente
+                        espiritualista, m as contendo elementos caracteristicos do espiritualismo.
+                        Para além d’esta quasi que visual constatação, o problema toma uma
+                        complexidade que desconcerta e perturba. </p>
+                    <p rend="indent-first"> Sendo isto assim, vemó-nos forçados, para elucidação do
+                        assumpto, a orientar de outro modo a nossa analyse. A difficuldade de a
+                        fazer de modo directo leva-nos a concluir que, com mais probabilidade de
+                        segurança, só a poderemos fazer differencialmente. Mas differencialmente
+                        como? Seguindo a linha evolutiva da poesia europêa no que metaphysica,
+                        destacando os periodos culminantes d’essa poesia, fixando a direcção
+                        metaphysica d’essa evolução e os caracteristicos metaphysicos do ultimo
+                        grande periodo, e depois, comparando a nossa nova poesia a essa, perante a
+                        qual ella se deve mostrar fatalmente ou uma decadencia, ou uma reacção, ou
+                        uma continuação superior, um novo estadio evolutivo. Autoriza-nos a esta
+                        analyse d’este modo differencial, em primeiro lugar o facto de, estando
+                        Portugal íntegrado na civilização europêa, a sua poesia o estar tambem
+                        inevitavelmente, e por isso a significação d’essa poesia só se poder obter,
+                        na sua essencia ultima, sociologica ou metaphysica, por uma comparação com o
+                        periodo literario importante que europêamente a precedeu – obtida
+                        preliminarmente a significação evolutiva d’esse periodo e, d’ahi, deduzindo,
+                        os provaveis caracteristicos do periodo literario que se lhe seguirá; para
+                        que, da coïncidencia ou incoïncidencia dos patentes caracteristicos
+                        metaphysicos da nossa nova poesia com a d’esse deduzido periodo, aptamente
+                        se avalie se esta poesia representa o estadio poetico europeu seguinte, ou
+                        se tem de ser relegada para o logar secundario e restrito de mera poesia ou
+                        de decadencia ou de reacção. – Esta analyse differencial é-nos, em segundo
+                        logar, autorizada e imposta pelo facto de, sendo uma corrente literaria, em
+                        sua essencia, a expressão de um novo conceito do universo, e um conceito do
+                        universo sendo simplesmente uma metaphysica, a analyse dos periodos
+                        literarios sob o ponto de vista metaphysico ser a analise do que n’elles é
+                        realmente typico e fundamental; donde se conclúe que esta, a analyse
+                        metaphysica e differencial da nossa nova poesia, mais do que outra qualquér
+                        analyse, que anteriormente fizessemos, porá em nudez e evidencia o que de
+                        fundamentalmente grande e novo a nossa nova poesia literariamente contenha e
+                        sociologicamente represente.</p>
+                    <p rend="indent-first"> Para ampla segurança d’esta analyse e natural preparação
+                        para a synthese ulterior, temos que (1) estabelecer quais sejam os periodos
+                        capitaes e evolutivamente marcantes da literatura europêa, (2) fixar,
+                        digressando, para podermos proceder com segura clareza, quantos e quaes
+                        sejam os systemas metaphysicos definidamente fundamentaes, (3) determinar,
+                        aplicando esta constatação áquela, quaes os sistemas metaphysicos
+                        intimamente e caracteristicamente almas de aquellas culminantes épocas de
+                        evolução, (4) concluir, comparando as metaphysicas d’essas epocas, de que
+                        systema para que systema, ou de que especie de systemas para que especie de
+                        systemas, evolue a metaphysica da poesia europêa, e, portanto, a alma da
+                        civilização da Europa, (5) deduzir – determinada essa linha de intima
+                        evolução espiritual, e fixado qual o ultimo grande periodo literario europeu
+                        e qual a sua metaphysica – qual deva ser a metaphysica do grande periodo que
+                        se lhe deve seguir, (6) comparar a metaphysica da nossa actual poesia,
+                        tornada nitida e classificada por um confrorto definidor com os systemas
+                        metaphysicos preliminarmente descobertos, com a metaphysica deduzivel como
+                        devendo ser a d’esse novo grande periodo da literatura da Europa. D’essa
+                        comparação sahira determínada, não só definitivamente qual a metaphysica da
+                        nossa nova poesia (o que immediatamente pretendemos saber), mas tambem qual
+                        a significação sociologica que haja em ter essa poesia a metaphysica que se
+                        descobrir que tem (o que é o fim imediato e ultimo de todos estes nossos
+                        artigos). Isto é, se se constatar que a Alma Portugueza está creando,
+                        atravez da sua actual Poesia, um novo conceito emocional – e portanto
+                        collectivo e nacional – do Universo e da Vida, e que esse conceito é aquelle
+                        que na linha evolutiva da alma europêa representa um novo estadio creador,
+                        ter-se-ha estabelecido uma analogia irrefutavel entre o actual periodo
+                        literario e os que, nos periodos maximos das nações maximamente creadoras de
+                        civilização, precedem um grande periodo de vida nacional socialmente
+                        creadora, e, de resto, <hi rend="italic">já são</hi> esse grande periodo na
+                        sua expressão poetica, isto é, na sua mais alta e permanente expressão. Por
+                        outras palavras – se aquillo se verificar, terá já começado a dilatação da
+                        alma europêa que representará uma Nova Renascença, ainda que essa dilatação
+                        exista, por emquanto, apenas na alma do paiz de onde essa Nova Renascença
+                        raiará para o que na Europa estiver acordado para a receber.</p>
+                </div>
+                <div>
+                    <head rend="center">V</head>
+                    <p rend="indent-first"> Precisamos, pois, antes de tudo fixármo-nos sobre quaes
+                        sejam os periodos capitaes da literatura da Europa. Não é difficil
+                        conhecel-os. N’um periodo literario tudo está ligado, e á grandeza do
+                        periodo – entendendo por grandeza o seu valôr creador de novos elementos
+                        espirituaes de civilização – corresponde infallivelmente a grandeza
+                        individual dos seus representantes. Escusamos, mesmo, de nos detêr no exame
+                        do <hi rend="italic">numero</hi> d’esses grandes representantes de cada
+                        periodo. Basta tomar conta intellectual do representante <hi rend="italic"
+                            >maximo</hi> de cada periodo, e comparal-o aos representantes maximos
+                        dos outros periodos. É uma questão de altitude espiritual. A grandeza de um
+                        periodo literario mede-se pela grandeza individual do seu maximo
+                        representante. Mas porquê? Por uma razão muito simples. Se a grandeza
+                        literaria de um periodo consiste no valôr do que elle é capaz de crear de
+                        espiritual, é evidente que uma das maneiras – a mais flagrante – de medir
+                        esse valôr é vêr o valor do que elle é capaz de crear de espiritual <hi
+                            rend="italic">dentro</hi> de si proprio>; isto é, a altura espiritual e
+                        creadora a que elle é capaz de elevar os seus proprios elementos
+                        espirituaes, isto é as individualidades que em si contém. Ora a altura e
+                        poder criador a que foi capaz de se elevar nas almas méde-se evidentemente
+                        pela altura e poder creador da alma que mais alto se elevar. Não temos,
+                        portanto, que medir o valôr creador de um periodo literario com outra cousa
+                        que não seja o valor do seu maximo literato – isto é, geralmente, porque a
+                        poesia é a mais alta manifestação do espirito, do seu maximo poeta. <rs
+                            type="name" key="P218">Homero</rs> e <rs type="name" key="P65"
+                            >Shakespeare</rs>, as duas culminancias da literatura, provam dos
+                        periodos a que pertencem que são – como todos admittem que são – os dois
+                        maiores e mais creadores na vida da humanidade. </p>
+                    <p rend="indent-first"> Guardemos, pois, d’esta analyse uma tripla constatação:
+                        (1) que um periodo literario é sociologicamente importante quando n’elle se
+                        notam figuras importantes de literatos, e, especialmente de poetas; (2) que
+                        a importancia sociologica de um periodo literario se mede pela sua <hi
+                            rend="italic">maxima</hi> figura; e (3) que, portanto, a humanidade só
+                        mostra em certo periodo, um <hi rend="italic">verdadeiro</hi> avanço
+                        espiritual – isto é, um augmento de poder creador – quando o maior poeta
+                        d’esse periodo é superior aos maximos poetas de <hi rend="italic">todos</hi>
+                        os periodos anteriores. Esta ultima, corollaria, constatação é iluminadora
+                        da historia. Assim na superioridade de <rs type="name" key="P218"
+                            >Homero</rs> a quantos poetas anteriores se divisem lê-se claramente o
+                        augmento de poder creador que a humanidade no seu periodo grego trahe sobre
+                        anteriores periodos; e assim como <rs type="name" key="P218">Homero</rs> é o
+                        primeiro maximo poeta de pleno e integral equilibrio, a Grecia Antiga é o
+                        primeiro povo plena-, lucida- e integralmente creador que na historia nos
+                        apparece. A inferioridade de <rs type="name" key="219" style="b">Vergilio</rs>
+                        a <rs type="name" key="P218">Homero</rs> mostra que da Grecia para Roma a
+                        humanidade não avançou, que nenhum novo e lemento espiritual lhe nasceu – o
+                        que nos indica nitidamente que Roma constituiu, não uma civilização, mas o
+                        prolongamento inferior e decadente da civilização grega. Só na Renascença
+                        nos apparece uma figura culminante, <rs type="name" key="P65"
+                            >Shakespeare</rs>, que accusa sobre <rs type="name" key="P218"
+                            >Homero</rs> alguma – não importa quanta superioridade. – Isto indica
+                        que a Renascença marca uma evolução real do espirito humano, o attingir de
+                        um grau já super-grego de poder creador. Como, desde a Renascença, ninguem
+                        ainda appareceu de quem se possa pretender que é superior, ou mesmo egual a
+                            <rs type="name" key="P65">Shakespeare</rs>, forçoso é que se conclúa que
+                        a humanidade, se entrou já em periodo de verdadeiro avanço espiritual sobre
+                        a Renascença, não chegou ainda á culminância d’esse periodo. </p>
+                    <p rend="indent-first"> Posto isto, ponhamos a nossa attenção no desenvolvimento
+                        da nossa analyse. Na literatura da Europa ha só dois periodos a que se pode
+                        chamar grandes sem escrupulos de adjéctivador. O primeiro é a Renascença, o
+                        movimento – para o nosso caso, apenas literario – que começou em <rs
+                            type="name" key="P220">Dante</rs>, culminou em <rs type="name" key="P65"
+                            >Shakespeare</rs> e acabou com <rs type="name" key="P84">Milton</rs>. –
+                        O segundo é o Romantismo, entendendo por Romantismo o movimento literario
+                        principiado na Allemanha, com a sua culminancia em <rs type="name"
+                            key="P198">Goethe</rs>, continuado na Inglaterra, com <rs type="name"
+                            key="P175">Shelley</rs> por figura maxima, e acabado em França, com <rs
+                            type="name" key="P292">Victor Hugo</rs> por poeta principal. O
+                        “romantismo” dos outros paizes é cousa, além de inferior e dependente
+                        d’estes, em alguns casos com outra significação. Isso não importa agora.
+                        Cinjamó-nos á corrente representativa e central.</p>
+                    <p rend="indent-first"> Estabeleçamos agora o valôr relativo da Renascença e do
+                        Romantismo. Pela nossa constatação de ha pouco, quanto ao modo de avaliar a
+                        grandeza dos periodos literarios, notamos sem hesitação que a Renascença é
+                        superior ao Romantismo. N’esse caso que valôr tem, ante a Renascença e como
+                        vindo após ella, o movimento romantico? Visto que o seu valôr é inferior,
+                        elle só pode ser uma de trez cousas: ou uma decadancia da Renascença, ou uma
+                        reacção contra a Renascença, ou o principio de uma Nova Renascença, que em
+                        sua culminancia será superior, mas que pode não o ser em seu inicio, como
+                            <rs type="name" key="P220">Dante</rs>, o maior poeta do inicio da
+                        Renascença, é inferior a <rs type="name" key="P218">Homero</rs>. – Vejamos.
+                        Partindo da constatação, que adeante se fará – e que é, de resto, tão
+                        evidente que quasi se pode dar como feita – de que o <hi rend="italic"
+                            >espiritualismo</hi> é a metaphysica da Renascença, torna-se evidente
+                        que, se o Romantismo é uma decadencia da Renascença, não pode a sua
+                        metaphysica ser senão uma decadencia do espiritualismo, e não poderá conter,
+                        portanto, elementos outros do que espiritualistas. Ora o Romantismo contém
+                        caracteristicamente um elemento pantheista – pouco importa por emquanto se
+                        puro ou não. Se tem um elemento a <hi rend="italic">mais</hi>, não pode ser
+                        uma decadencia da Renascença. Tampouco pode ser uma reacção contra a
+                        Renascença. Se o fosse, a sua metaphysica seria <hi rend="italic"
+                            >inteiramente opposta</hi> á da Renascença, isto é, seria <hi
+                            rend="italic">de todo</hi>> anti-espiritualista. Ora, como veremos, o
+                        elemento espiritualista encontra-se presente – com mais ou menos, e por
+                        vezes com grande, nitidez – na poesia representativa dos romanticos. Não é
+                        pois o Romantismo uma reacção contra a Renascença; involve, sim, uma
+                        reacção, mas é contra outra poesia claramente anti-espiritualista essa – a
+                        poesia do século dezoito. – Por exclusão de partes temos, portanto,
+                        infallivelmente que concluir que o Romantismo é, não já uma <hi
+                            rend="italic">epoca</hi>, mas o principio de uma <hi rend="italic"
+                            >epoca</hi>; não é a Nova Renascença, mas o movimento precursor d’essa
+                        Renascença Nova. Constatada a inferioridade do Romantismo á Renascença, não
+                        ha outra hypothese a admittir.</p>
+                    <div>
+                        <head rend="center">VI</head>
+                        <p rend="indent-first">
+                            <hi rend="bold">Na classificação</hi> dos systemas philosophicos temos a
+                            considerar duas cousas: a constituição do espirito e os fins a que tende
+                            na sua actividade metaphysica.</p>
+                        <p rend="indent-first"> O espirito humano, por sua propria natureza de
+                            duplamente – interiormente e exteriormente – percipiente, nunca pode
+                            pensar senão em termos de um dualismo qualquér; mesmo que se esforce por
+                            chegar, e até certo ponto chegue, a uma concepção altamente monistica,
+                            dentro d’essa concepção monistica ha um dualismo. Mesmo que dos dois
+                            elementos constitutivos da Experiencia – materia e espirito – se negue a
+                            realidade a um, não se lhe nega a existencia <hi rend="italic">como
+                                irrealidade</hi>,<hi rend="italic">como apparencia</hi> – o que
+                            transforma o dualismo espirito-materia em dualismo realidade-apparencia;
+                            mas realidade-apparencia é, para o espirito, um dualismo.</p>
+                        <p rend="indent-first"> O genero de dualismo, porém, depende de, é
+                            condicionado por, o que se considera a Realidade Absoluta, a realidade
+                            realmente real; e é a procura d’essa realidade que é o fim da
+                            especulação metaphysica. O espirito não pode admittir <hi rend="italic"
+                                >duas</hi> realidades: a idéa de realidade absoluta involve a idéa
+                            de unidade. Mesmo, portanto, que o espirito admitta, como em alguns
+                            systemas – e flagrantemente no espiritualismo classico – acontece, dois
+                            principios com egual objectividade reaes, é forçado a admittir que o
+                            género de realidade de um d’esses principios é superior ao da do
+                            outro.</p>
+                        <p rend="indent-first"> Temos, pois, que todo o systema philosophico involve
+                            um dualismo e um monismo. A constituição do espirito impõe-lhe, por mais
+                            que elle lhe queira fugir, que pense dualisticamente; a noção de
+                            realidade obriga-o a pensar monisticamente. O espirito não pode
+                            construir um systema pura- e integralmente monistico; e um systema
+                            puramente dualistico não seria um systema philosophico.</p>
+                        <p rend="indent-first"> Todo o systema philosophico sendo, portanto, a
+                            tentativa para reduzir a um monismo o dualismo essencial do nosso
+                            espirito, é de subentender que represente uma systematização de
+                            elementos da Experiencia em torno áquella parte da Experiencia – materia
+                            ou espirito – que o philosopho, por causas que, em sua essencia, são de
+                            temperamento, considera a Realidade. Temos, pois, que, consoante para o
+                            philosopho o espirito ou a materia se apresenta como a realidade
+                            essencial, um de dois systemas pode directamente surgir – o
+                            espiritualismo ou o materialismo. –Para o materialista a fórma essencial
+                            de realidade, seja ella especializadamente qual fôr no seu especial
+                            systema, é sempre uma realidade de que forma parte inalienavelmente um
+                            elemento ou espacial, ou, pelo menos, de <hi rend="italic"
+                                >inconsciencia</hi>. – Para o espiritualista, atravez das varias
+                            formas que pode tomar o espiritualismo, ha sempre de central e essencial
+                            um elemento, o elemento <hi rend="italic">consciencia</hi>, que é o que
+                            o espirito immediatamente concebe como sua base propria. D’aqui partem
+                            todas as theorias caracteristicas do espiritualismo – a immortalidade da
+                            alma (concebida impossibilidade de anular a consciencia), o
+                            livre-arbitrio (concebida superioridade do consciente sobre o
+                            inconsciente) e a existencia de um Deus clara- ou obscuramente tido como
+                            pessoal, isto é, como <hi rend="italic">consciente</hi>.</p>
+                        <p rend="indent-first"> A ideação metaphysica pode, porém, tentar monismo de
+                            outro modo mais queridamente absoluto. Não ha, é certo, outros elementos
+                            da Experiencia que não a materia e o espirito; o pensamento, porém, de
+                            certo modo tenta supprimir este dualismo. E de trez modos o pode fazer:
+                            1.º Negando toda a realidade objectiva a um dos elementos da
+                            Experiencia, isto é (consoante já <hi rend="italic">passim</hi> vimos),
+                            reduzindo o dualismo ao minimamente dualistico (ainda que
+                            impossivelmente de todo monistico) dualismo de realidade-apparencia.
+                            Conforme é o espirito ou a materia o elemento <hi rend="italic"
+                                >eliminado</hi>, temos o materialismo absoluto ou o espiritualismo
+                            absoluto. – 2.º Admittindo a realidade <hi rend="italic">egual</hi> de
+                            ambos os elementos da Experiencia; ora como isto resulta n’um absurdo de
+                            systema – dado que a existencia de <hi rend="italic">duas</hi>, <hi
+                                rend="italic">eguaes</hi>, realidades é impensavel –, fatalmente
+                            essa dupla realidade tira o seu carácter de realidade de ser,
+                            basilarmente, a dupla manifestação de qualquér cousa em sua essencia
+                            tida por nem matéria nem espirito, ainda que sómente existente e real
+                            n’aquellas suas manifestações. Se essa substancia as transcendesse, isto
+                            é, fosse outra cousa, existisse substancialmente àparte da sua
+                            manifestação atravez de materia e espirito, estariamos então peorados
+                            para trez realidades. – 3.º Negando a realidade a ambos elementos da
+                            Experiencia, considerando-os apenas como a manifestação, não <hi
+                                rend="italic">real</hi> mas <hi rend="italic">illusoria</hi>, de uma
+                            transcendente e verdadeira e só realidade. – Temos assim, além dos
+                            citados materialismo e espiritualismo absolutos, no segundo systema
+                            citado o pantheismo, e no terceiro o transcendentalismo.</p>
+                        <p rend="indent-first"> O leitor reparou que no primeiro genero de systemas
+                            acima expostos ha duas fórmas – uma materialista, outra espiritualista.
+                            O mesmo acontece ao pantheismo e ao transcendentalismo. É que, por mais
+                            que abstractamente ideêmos, realmente não temos outros modelos por onde
+                            idear senão espirito e materia. Mesmo portanto que concebâmos um
+                            Transcendente, inconscientemente e involuntariamente o teremos de
+                            conceber como feito á imagem da matéria ou á semelhança do espirito.
+                            Assim temos um pantheismo materialista e um pantheismo espiritualista. O
+                            primeiro – o de <rs type="name" key="P428">Spinoza</rs> – é o que
+                            encerra o que <rs type="name" key="P428">Spinoza</rs>, não se sabe
+                            porquê, chama Deus, nos seus attributos. Estes são como que o corpo de
+                            Deus; mas para alêm d’esse corpo Deus não é nada. É só o corpo de si
+                            proprio. Vê-se que o modelo é materialista; tanto quanto um pantheismo
+                            pode ser materialista, é-o o systema de <rs type="name" key="P428"
+                                >Spinoza</rs>. – O pantheismo espiritualista admitte Deus substancia
+                            de tudo, mas permanecendo Deus e diverso atravez da sua manifestação por
+                            seus attributos. Faça-se uma distinção subtil, que tem de ser
+                            subtilmente comprehendida: para o pantheista materialista tudo é Deus;
+                            para o pantheista espiritualista Deus é tudo. Se houvesse sido pensado
+                            coherentemente, e despidamente de influencias de estreita theologia,
+                            teria sido este o systema de <rs type="name" key="P429"
+                            >Malebranche</rs>.</p>
+                        <p rend="indent-first"> Com o transcendentalismo acontece o mesmo. Importa
+                            fixar bem a differença entre o pantheismo e o transcendentalismo, tanto
+                            mais que estabelecemos nós estes termos independentemente de como tenham
+                            sido usados antes, assim como, de resto, fazemos esta classificação de
+                            modo absolutamente original. – Para o pantheismo de qualquér das duas
+                            especies, materia e espirito são manifestações <hi rend="italic">
+                                reaes</hi> de Deus, exista elle (pantheismo espiritualista) ou não
+                            (pantheismo materialista) como Deus além das suas duas manifestações.
+                            Para o transcendentalista, materia e espirito são manifestações <hi
+                                rend="italic">irreaes</hi> de Deus, ou, antes, para não errarmos, do
+                            Transcendente, o Transcendente manifestando-se como a illusão, o sonho
+                            de si proprio. – Dos transcendentalistas, para o transcendentalista
+                            materialista (<rs type="name" key="P429">Schopenhauer</rs>), a essencia
+                            real, de que as cousas são a illusão, é qualquér cousa vaga cujo
+                            caracter essencial é ser <hi rend="italic">inconsciente</hi>; ora, como
+                            a consciencia é a base dos systemas espiritualistas, temos aqui um
+                            systema que, apesar de transcendentalista, o é anti-espiritualista-,
+                            isto é, materialisticamente. – É excusado definir o tanscendentalismo
+                            espiritualista, que representa a hypothese contraria. </p>
+                        <p rend="indent-first"> Um outro systema pode, porém, surgir, limite e
+                            cúpula da metaphysica. Supponha-se que a um transcendentalista qualquer
+                            esta objecção se faz: O Apparente (materia e espirito) é para vós <hi
+                                rend="italic">irreal</hi>, é uma manifestação irreal do Real. Como,
+                            porém, pode o Real manifestar-se irrealmente? Para que o irreal seja
+                            irreal é preciso que seja real: portanto o Apparente é uma <hi
+                                rend="italic">realidade irreal</hi>, ou uma <hi rend="italic"
+                                >irrealidade real</hi> – uma contradicção realisada. O Transcendente
+                            pois é e não é ao mesmo tempo, existe àparte e não-àparte da sua
+                            manifestação, é real e não-real n’essa manifestação. – Vê-se que este
+                            systema é, não o materialismo nem o espiritualismo, mas sim o
+                            pantheismo, transcendentalisado; chamemos-lhe pois o transcendentalismo
+                                <hi rend="italic">pantheista</hi>. Ha d’elle um exemplo unico e
+                            eterno. É essa cathedral do pensamento – a philosophia de <rs
+                                type="name" key="P429">Hegel</rs>.</p>
+                        <p rend="indent-first"> O transcendentalismo pantheista involve e transcende
+                            todos os systemas: materia e espirito são para elle reaes e irreaes ao
+                            mesmo tempo, Deus e não-Deus essencialmente. Tão verdade é dizer que a
+                            materia e o espirito existem como que não existem, porque existem e não
+                            existem ao mesmo tempo. A suprema verdade que se pode dizer de uma cousa
+                            é que ela é e não é ao mesmo tempo. Por isso, pois, que a essencia do
+                            universo é a contradicção – a irrealisação do Real, que é a mesma cousa
+                            que a realisação do Irreal –, uma affirmação é tanto mais verdadeira
+                            quanto maior contradicção involve. Dizer que a materia é material e o
+                            espirito espiritual não é falso; mas é mais verdade dizer que a materia
+                            é espiritual e o espirito material. E assim, complexa- e
+                            indefinidamente...</p>
+                        <p rend="indent-first"> Se um pouco nos alongámos na exposição do
+                            transcendentalismo pantheista, breve se verá que tinhamos razões para
+                            isso. De resto, o leitor que tenha bem em mente a orientação do nosso
+                            raciocinio e os caracteristicos, ainda que superficialmente lembrados,
+                            da nossa nova poesia, deve já suspeitar a que vem esta menos breve
+                            exposição no meio de umas breves considerações.</p>
+                    </div>
+                    <div>
+                        <head rend="center">VII</head>
+                        <p rend="indent-first"> Ao passar á analyse da philosophia dos dois grandes
+                            periodos literarios da Europa e perscrutação de qual a linha evolutiva
+                            d’essa philosophia, importa, antes de tudo, distinguir entre a
+                            “philosophia” <hi rend="italic">pensamento</hi> individual e a
+                            “philosophia” <hi rend="italic">sentimento</hi> poetico. – Tanto a
+                            philosophia do philosopho como a do poeta são questões de temperamento,
+                            mas ao passo que o temperamento do philosopho é intellectual, o do poeta
+                            é emocional; ora, o que é intellectual é essencialmente individual, e o
+                            que é emocional é essencialmente <hi rend="italic">collectivo</hi> e,
+                            portanto, quando se dá n’um individuo, representativo da collectividade
+                            a que elle pertence. É portanto a philosophia do poeta, e não a do
+                            philosopho, que representa a alma da raça a que elle pertence. Encarada
+                            a questão sob outro ponto de vista, isto ainda mais nitidamente se
+                            percebe. Na obra de philosophia a forma nada vale: a idéa é tudo. Na
+                            obra de poesia a idéa e a fórma estão ligadas n’uma dupla unidade,
+                            unidade <hi rend="italic">imaginativa</hi>, isto é, unidade que vém da
+                            fusão da emoção e da idéa que em sua essencia é o acto de <hi
+                                rend="italic">imaginar</hi>. Ora a imaginação depende da organisação
+                            dos sentidos do individuo; um visual imagina de modo inteiramente
+                            diverso que um auditivo, um individuo de intensa vida interior e pouca
+                            attenção ao mundo externo, de modo differente de ambos. De que depende a
+                            organisação dos sentidos? Sem duvida alguma, da hereditariedade. E a
+                            hereditariedade que é que mais transmite e grava? Os caracteristicos de
+                            raça. O acto de imaginar é o que, pois, em linha directa descende da
+                            alma da raça. E como o mais alto grau de imaginar é o do poeta, é na
+                            poesia que vamos buscar a alma da raça, e na philosophia d’essa poesia
+                            aquillo a que se pode chamar a philosophia da raça. — O espaço não
+                            permitte que nitidamente, ou mais argumentadamente, se exponha este
+                            problema. Para o nosso limitado caso, o pouco que aqui se expoz deve
+                            bastar.</p>
+                        <p rend="indent-first"> Consideremos pois qual a philosophia do primeiro
+                            grande periodo poetico da Europa – a Renascença. Constata-se sem
+                            difficuldade qual ella seja. É o espiritualismo puro e simples, em uma
+                            ou outra das suas duas fórmas. Occorrerá perguntar: mas não foi a
+                            Renascença inimiga do espiritualismo? Do da edade-media foi, mas esse
+                            era um espiritualismo inferior. Da fórma catholica e aristotelica foi
+                            inimiga a Renascença; mas foi para ser mais e mais puramente
+                            espiritualista, foi para se lançar no maior espiritualismo da Reforma e
+                            de <rs type="name" key="P432">Platão</rs>. Platonista foi, de resto,
+                            toda a poesia lyrica de algum valor da Renascença. É uma das provas, a
+                            mais flagrante.</p>
+                        <p rend="indent-first"> Como vimos, o espiritualismo é o systema que tem seu
+                            centro de realidade na <hi rend="italic">consciencia</hi>: logicamente,
+                            em seu temperamento, um espiritualista é um homem que dá attenção
+                            superiormente á vida interior e inferiormente á vida exterior. Toda a
+                            poesia da Renascença é de suppôr portanto que gire sobre assumptos <hi
+                                rend="italic">humanos</hi> e não da Natureza. Assim é: o que de
+                            supremo tem a poesia da Renascença é a poesia épica – isto é, de acção
+                            humana –, e a poesia dramatica (Renascença ingleza, culminando em <rs
+                                type="name" key="P65">Shakespeare</rs>), de acção humana mais
+                            essencialmente ainda. Com isto, fica tirada a prova real.</p>
+                        <p rend="indent-first">No Romantismo surge-nos immediatamente o contrario.
+                            Cessa, a não ser em arremêdo debil de influencias da Renascença, a
+                            poesia épica e dramatica; nasce a verdadeira poesia da Natureza, e
+                            apparece um novo genero de poesia amorosa. É commum a ambas um
+                            caracteristico basilar: perante a Natureza ou perante o amor, o
+                            individuo commove-se até perder a individualidade, <hi rend="italic"
+                                >entrega-se</hi>. Mas não se entrega como (no caso da poesia
+                            religiosa e amorosa, não da Natureza) por vezes o poeta na Renascença
+                            fazia, por humildade; aqui, no Romantismo, entrega-se <hi rend="italic"
+                                >para viver uma vida mais ampla</hi>. Ora, o individuo não se
+                            entrega – e menos então se entrega <hi rend="italic">para viver</hi> – a
+                            qualquer coisa exterior que não considere como <hi rend="italic"
+                                >real</hi>. Temos, pois, em ultima analyse, que o romantico
+                            representativo se sente parte de uma Natureza real, ainda que
+                            espiritualmente real. Estamos em pleno sentimento pantheista. Com
+                            effeito, desde o pantheismo materialista de <rs type="name" key="P198"
+                                >Goethe</rs> ao pantheismo espiritualista de <rs type="name"
+                                key="P175">Shelley</rs>, o romantismo nada é senão pantheismo.</p>
+                        <p rend="indent-first"> Posto isto, ficamos sabendo quaes as “philosophias”
+                            da Renascença e do Romantismo, e vendo qual a linha evolutiva da
+                            philosophia da poesia europêa, qual, portanto, a evolução da alma da
+                            civilisação da Europa. Evolue – o que de resto se podia ter concluido à
+                            priori, mas foi melhor que d’outro modo se concluisse – do mais simples
+                            para o mais complexo; parte do espiritualismo e avança até ao
+                            pantheismo, e d’ahi, inevitavelmente, subirá para a complexidade maxima
+                            do transcendentalismo, até chegar ao limite, o transcendentalismo
+                            pantheista.</p>
+                        <p rend="indent-first"> Por que caracteristicos, por assim dizer, exteriores
+                            se pode conhecer o sentimento transcendentalista? Nas duas fórmas menos
+                            complexas do transcendentalismo, o materialista e o espiritualista, o
+                            individuo sente-se, como o pantheista, parte de um Todo, mas com a
+                            diferença que, para elle, esse Todo é sentido como irreal, como
+                            illusorio. Decorre d’aqui que o poeta transcendentalista (materialista
+                            ou espiritualista) fatalmente será um poeta pessimista. Mesmo que,
+                            transcendentalista espiritualista, conceba como vagamente espiritual o
+                            Transcendente, esse Transcendente, por sua propria, concebida, natureza,
+                            é sentido como Mysterio, e mesmo onde levanta abate. — Percorrendo todo
+                            o Romantismo não encontramos este sentimento; apenas, em <rs type="name"
+                                key="P171">Alfred de Vigny</rs>, e nos seus descendentes, já
+                            post-romanticos, ha um vago arremêdo d’elle. Mas, ao attentar bem nos
+                            caracteristicos que deduzimos como devendo ser os da poesia
+                            transcendentalista, revela-se-nos imediatamente que estamos em Portugal
+                            e em plena descripção da poesia de <rs type="name" key="P18"
+                                >Anthero</rs>. Concluimos, pois, que especiaes condições de raça
+                            fazem do sentimento transcendentalista apanagio de Portugal. Se o
+                            transcendentalismo, sob fórma de emoção começou entre nós, entre nós
+                            deve continuar. Vejamos pois se a sua forma mais alta e complexa, o
+                            transcendentalismo pantheista, foi, acaso, attingida já.</p>
+                        <p rend="indent-first"> Não é preciso mais do que attentar na mera <hi
+                                rend="italic">expressão</hi> da nossa nova poesia para nos
+                            encontrarmos em pleno transcendentalismo pantheista. Logo no vestibulo
+                            da investigação nos apparece a caracteristica <hi rend="italic"
+                                >contradiccão</hi> d’este systema. “Materialisação do espirito”, e
+                            “espiritualisação da matéria”, “choupos d'alma”, quedas que são
+                            ascensões, folhas que tombam que são almas que sobem – não é preciso
+                            mais, repetimos. Eis, em seu pleno estado emotivo, o transcendentalismo
+                            pantheista. Quanto mais se analysa, mais claramente isto se revela. Para
+                            os nossos novos poetas, uma pedra é, ao mesmo tempo, realmente uma
+                            pedra, e realmente um espirito, isto é, irrealmente uma pedra... Mas
+                            para que continuar? A evidencia de certas provas, quando o que fica
+                            provado traz comsigo tudo em que pusemos a nossa esperança e a nossa fé,
+                            embriaga de alegria para além de se poder ficar com a lucidez intacta e
+                            o poder-de-exprimir em equilibrio.</p>
+                        <p rend="indent-first">E quaes são, enfim, as conclusões ultimas de quanto
+                            n’este artigo expuzémos? São aquellas em que atravez de todos os nossos
+                            artigos temos insistido. Se a alma portugueza, representada pelos seus
+                            poetas, encarna n’este momento a alma recemnada da futura civilização
+                            europêa, é que essa futura civilização europêa será uma civilização
+                            lusitana. Primeiro, porém, consoante todas as analogias nol-o impõem, a
+                            alma portugueza attingirá em poesia o grau correspondente á altura a que
+                            em philosophia já está erguida. Deve estar para muito breve portanto o
+                            apparecimento do poeta supremo da nossa raça, e, ousando tirar a
+                            verdadeira conclusão que se nos impõe, pelos argumentos que já o leitor
+                            viu, o poeta supremo da Europa, de todos os tempos. É um arrojo dizer
+                            isto? Mas o raciocínio assim o quér.</p>
+                    </div>
+                    <div>
+                        <head rend="center">VIII</head>
+                        <p rend="indent-first"> Feito assim o esboço psychologico da nossa actual
+                            poesia no que respeita á sua esthetica e á sua metaphysica, resta
+                            concluir approximadamente qual deva ser a resultante <hi rend="italic"
+                                >social</hi> das forças da Raça cujo primeiro assomo á tona da
+                            realidade ora e apenas se está fazendo, n’essa citada, poesia. Melhor
+                            dizendo, qual será a creação social a que vae chegar a alma da Raça, por
+                            emquanto no seu inicio de despertar e revelada apenas, por isso, na
+                            fórma directamente espiritual, a literatura?</p>
+                        <p rend="indent-first">Só muito informemente, por razões que já expusémos,
+                            essa creação social, em seu genero e especialidade, é antevisivel. Mas
+                            se é antevisivel de algum modo e até certo ponto, de que modo e até que
+                            ponto o é? — Determinada a metaphysica da nova corrente, queda revelado
+                            definitivamente, em sua essencia ultima e central, o que essa corrente
+                            espiritualmente é e representa. Vimos que essa corrente se traduz por um
+                            metaphysismo claramente definivel como transcendentalismo pantheista:
+                            resta saber o que dá o transcendentalismo pantheista <hi rend="italic"
+                                >posto em tendencia social</hi>. D’aqui não resultará claramente
+                            definida qual essa creação social – como ficar definida ao raciocinio se
+                            ainda se não definiu nas almas? – mas resultará ficar attingida na sua
+                            physionomia longinqua.</p>
+                        <p rend="indent-first">Sendo o transcendentalismo pantheista um systema
+                            essencialmente envolvedor de uma fusão de elementos absolutamente
+                            oppostos, segue-se que a creação resultante da nova alma lusitana deverá
+                            envolver, em seu resultado definitivo e ultimo, o estabelecimento de
+                            qualquér nova formula social onde uma fusão d’essas se dê. Uma rapida
+                            analyse, aqui eliminada, determina facilmente que o raciocínio permitte
+                            prophetisar que a futura creação social da Raça portugueza será qualquér
+                            cousa que seja ao mesmo tempo religiosa e politica, ao mesmo tempo
+                            democratica e aristocratica, ao mesmo tempo ligada á actual formula da
+                            civilização e a outra cousa nova. Inútil será apontar quão
+                            flagrantemente esta deducção vaga e precisa decorre da constatação já
+                            feita sobre o caracter fundamental, metaphysicamente patente, de alma
+                            lusitana. Egualmente inutil deve ser notar quanto essa futura formula
+                            deve distar do christianismo e, especialmente do catholicismo, em
+                            materia religiosa; da democracia moderna, em todas as suas formas, em
+                            materia politica; do commercialismo e materialismo radicaes na vida
+                            moderna, em materia civilizacional geral. E, finalmente, é da mesma
+                            inutilidade acrescentar, accentuando e especialisando a sua divergencia
+                            da democracia, que as formas extremas ou perturbadas desta – anarchismo,
+                            socialismo, etc. – serão varridas para fóra da realidade, mesmo do sonho
+                            nacional; os humanitarismos morrerão ante essa nova formula social, de
+                            portugueza origem, mais alta, provavelmente, em sentimento religioso do
+                            que outra qualquér que tenha havido, mais rude e cruel talvez em pratica
+                            social do que o mais rude militarismo commercialista. Console-nos isto
+                            desde já, no meio de vêr, de leste a oeste de Portugal, a nossa
+                            subhumanidade politica e a nossa proletariagem humanitariante. Tudo
+                            isso, que afinal é estrangeiro, morrerá de por si, ou á bocca dos
+                            canhões do nosso <rs type="name" key="P420">Cromwell</rs> futuro.</p>
+                        <p rend="indent-first">E a nossa grande Raca partirá em busca de uma India
+                            nova, que não existe no espaço, em naus que são construidas “d’aquillo
+                            de que os sonhos são feitos”. E o seu verdadeiro e supremo destino, de
+                            que a obra dos navegadores foi o obscuro e carnal ante-arremêdo,
+                            realisar-se-ha divinamente <note n="1">Por inutil para as conclusões
+                                sociologicas que unicamente buscamos n’esta serie de artigos,
+                                abandonamos a intenção de fazer o estudo exclusicamente literario da
+                                nova corrente poetica portugueza, estudo esse promettido no
+                                principio d’este artigo. Ninguem perde com isso.</note></p>
+                    </div>
+                    <signed>Fernando Pessôa.</signed>
+                </div>
+            </div>
+        </body>
+    </text>
+</TEI>

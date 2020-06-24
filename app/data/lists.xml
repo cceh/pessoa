@@ -2518,7 +2518,13 @@
                         <ptr type="author" target="#AC"/>
                         <ptr type="title" target="#T226"/>
                     </item>
+                    <!-- <item xml:id="W187">
+                        <ptr type="author" target="#FP"/>
+                        <ptr type="title" target="#T227"/>
+                    </item>
+                </list> JU: Im not sure this is rigth, this should be a referento to A Nova poesia portugueza sociologicamente considerada--> 
                 </list>
+                
                 <!--<list type="works">
                 <item xml:id="O1">
                     <title type="main" subtype="a">Poemas de Fernando Pessoa</title>
@@ -2664,6 +2670,10 @@
                         <item xml:id="O1-36">
                             <title>Trois Chansons mortes</title>
                         </item>
+                          <item xml:id="01-37">
+                        <title>A Nova Poesia Portugueza Sociologicamente
+                            Considerada</title>
+                    </item>
                     </list>
                 </item>
                 <item xml:id="O2">
@@ -3369,10 +3379,15 @@
                         <sex>male</sex>
                     </person>
                     <person xml:id="P36">
-                        <persName>Alfredo Pedro Guisado</persName>
+                        <persName type="a">Alfredo Pedro Guisado</persName>
                         <idno type="viaf">68549422</idno>
                         <note type="ontological-status">real</note>
                         <sex>male</sex>
+                         <persName type="b">Pedro de Menezes</persName>
+                            <idno type="viaf">40268806</idno>
+                            <note type="ontological-status">real</note>
+                            <sex>male</sex>
+                         <!-- It's importante to notice this is a pseudonym for Alfredo Pedro Guisado -->
                     </person>
                     <person xml:id="P37">
                         <persName>Armando Côrtes-Rodrigues</persName>
@@ -3491,12 +3506,7 @@
                         <note type="ontological-status">real</note>
                         <sex>male</sex>
                     </person>
-                    <person xml:id="P57">
-                        <persName>Pedro de Menezes</persName>
-                        <idno type="viaf">40268806</idno>
-                        <note type="ontological-status">real</note>
-                        <sex>male</sex>
-                    </person> <!-- It's importante to notice this is a pseudonym for Alfredo Pedro Guisado -->
+                  
                     <person xml:id="P58">
                         <persName>Violante de Cysneiros</persName>
                         <note type="ontological-status">real</note>
@@ -5843,7 +5853,12 @@
                         <persName>Catulo</persName>
                         <note type="ontological-status">real</note>
                         <sex>male</sex>
-                    </person>              
+                    </person>
+                    <person xml:id="P522">
+                        <persName>Rémy de Gourmont</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
                 </listPerson>
             </div>
         </body>
