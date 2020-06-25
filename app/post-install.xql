@@ -5,29 +5,25 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare namespace util="http://exist-db.org/xquery/util";
 declare namespace functx = "http://www.functx.com";
 
-declare function functx:distinct-nodes
-( $nodes as node()* )  as node()* {
-
+declare function functx:distinct-nodes($nodes as node()*) as node()* {
     for $seq in (1 to count($nodes))
-    return $nodes[$seq][not(functx:is-node-in-sequence(
-            .,$nodes[position() < $seq]))]
-} ;
-declare function functx:is-node-in-sequence
-( $node as node()? ,
-        $seq as node()* )  as xs:boolean {
+    return $nodes[$seq][not(functx:is-node-in-sequence(.,$nodes[position() < $seq]))]
+};
 
+declare function functx:is-node-in-sequence($node as node()?,$seq as node()*) as xs:boolean {
     some $nodeInSeq in $seq satisfies $nodeInSeq is $node
-} ;
-(: move search index to system :)
+};
+
+(: move search index to system and reindex :)
 declare function local:move-index(){
 	let $app-path := "/db/apps/pessoa"
 	let $conf-path := "/db/system/config/db/apps/pessoa/data"
 	return
     	(
-	xmldb:move($app-path, concat($conf-path, "/doc"), "SUCHE_doc-collection.xconf"),
-	xmldb:move($app-path, concat($conf-path, "/pub"), "SUCHE_pub-collection.xconf"),
-	xmldb:rename(concat($conf-path, "/doc"), "SUCHE_doc-collection.xconf", "collection.xconf"),
-	xmldb:rename(concat($conf-path, "/pub"), "SUCHE_pub-collection.xconf", "collection.xconf"),
+	xmldb:move($app-path, concat($conf-path, "/doc"), "collection_doc.xconf"),
+	xmldb:move($app-path, concat($conf-path, "/pub"), "collection_pub.xconf"),
+	xmldb:rename(concat($conf-path, "/doc"), "collection_doc.xconf", "collection.xconf"),
+	xmldb:rename(concat($conf-path, "/pub"), "collection_pub.xconf", "collection.xconf"),
 	xmldb:reindex(concat($app-path, "/data/doc")),
 	xmldb:reindex(concat($app-path, "/data/pub"))
 	)
@@ -37,43 +33,43 @@ declare function local:createXML() {
     let $docs := local:createDocXML()
     let $Sdocs := count($docs)
     let $docs := <docs dir="doc">
-                                {for $a in (1 to $Sdocs)
-                                    let $doc := doc(concat("/db/apps/pessoa/data/doc/",$docs[$a]/@label/data(.)))
-                                    let $date := $doc//tei:origDate
-                                    return <doc from="{local:getDateDoc("from",$date)}" to="{local:getDateDoc("to",$date)}" availability="{$doc//tei:availability/@status}" pos="{$a}" indi="{$docs[$a]/@indi/data(.)}" id="{substring-before($docs[$a]/@label/data(.),".xml")}" >{$docs[$a]/@label/data(.)}</doc>}
-                            </docs>
+                    {for $a in (1 to $Sdocs)
+                        let $doc := doc(concat("/db/apps/pessoa/data/doc/",$docs[$a]/@label/data(.)))
+                        let $date := $doc//tei:origDate
+                        return <doc from="{local:getDateDoc("from",$date)}" to="{local:getDateDoc("to",$date)}" availability="{$doc//tei:availability/@status}" pos="{$a}" indi="{$docs[$a]/@indi/data(.)}" id="{substring-before($docs[$a]/@label/data(.),".xml")}" >{$docs[$a]/@label/data(.)}</doc>}
+                </docs>
     let $pub := local:createPubXML()
     let $Spub := count($pub)
     let $pub := <docs dir="pub">
-                                {for $a in (1 to $Spub)
-                                let $doc := doc(concat("/db/apps/pessoa/data/pub/",$pub[$a]/@label/data(.)))
-                                let $date := $doc//tei:imprint/tei:date
-                                    return <doc from="{local:getDateDoc("from",$date)}" to="{local:getDateDoc("to",$date)}" availability="{$doc//tei:availability/@status}" pos="{$a}" indi="{$pub[$a]/@indi/data(.)}" id="{substring-before($pub[$a]/@label/data(.),".xml")}">{$pub[$a]/@label/data(.)}</doc>}
-                            </docs>
+                    {for $a in (1 to $Spub)
+                    let $doc := doc(concat("/db/apps/pessoa/data/pub/",$pub[$a]/@label/data(.)))
+                    let $date := $doc//tei:imprint/tei:date
+                        return <doc from="{local:getDateDoc("from",$date)}" to="{local:getDateDoc("to",$date)}" availability="{$doc//tei:availability/@status}" pos="{$a}" indi="{$pub[$a]/@indi/data(.)}" id="{substring-before($pub[$a]/@label/data(.),".xml")}">{$pub[$a]/@label/data(.)}</doc>}
+                </docs>
     
     let $input := <list>
-                            <meta>
-                                <sum id="doc">{$Sdocs}</sum>
-                                <sum id="pub">{$Spub}</sum>
-                         </meta>
-                            {$pub}
-                            {$docs}
-                        </list>
+                    <meta>
+                        <sum id="doc">{$Sdocs}</sum>
+                        <sum id="pub">{$Spub}</sum>
+                    </meta>
+                    {$pub}
+                    {$docs}
+                  </list>
     let $input := $input
-    return xmldb:store("/db/apps/pessoa/data","doclist.xml",$input)
+    return xmldb:store("/db/apps/pessoa/data", "doclist.xml", $input)
 };
-(:)"date_when","date_notBefore","date_notAfter","date_from","date_to:)
+
 
 declare function local:getDateDoc($set,$doc) {
     let $tags := ("when","notBefore","notAfter","from","to")
     let $date := for $tag in $tags
                    return switch($tag)
-                                    case "when" return $doc/@when
-                                    case "notBefore" return $doc/@notBefore
-                                    case "notAfter" return $doc/@notAfter
-                                    case "from" return $doc/@from
-                                    case "to" return $doc/@to
-                                    default return "Error"
+                            case "when" return $doc/@when
+                            case "notBefore" return $doc/@notBefore
+                            case "notAfter" return $doc/@notAfter
+                            case "from" return $doc/@from
+                            case "to" return $doc/@to
+                            default return "Error"
 
     let $date := for $d in $date return if(contains($d,"-")) then substring-before($d,"-") else $d
 
@@ -103,15 +99,16 @@ declare function local:pubItems($indikator) {
     where contains($hit,$indikator)
     return <item label="{$hit}" indi="{$indikator}"/>
 };
+
 declare function local:createDocXML() {
 let $items := for $indikator in ("1-9", "10","20","30","40","50","60","70","80","90","100","CP")  return local:docItems($indikator)
 let $items := for $item in $items 
-                        let $title := substring-before(replace($item/@label,("BNP_E3_|CP"),""),".xml")
-                         let $front := if(contains($title,"-")) then substring-before($title,"-") else $title
-                         let $end := xs:string(xs:integer(replace($title, "^\d+[A-Z]?\d?-?([0-9]+).*$", "$1")))
-                         let $end := substring-after($title,$end)
-                        order by local:anaIndi($item/@indi/data(.)),$front, xs:integer(replace($title, "^\d+[A-Z]?\d?-?([0-9]+).*$", "$1")),$end 
-                        return <item label="{$item/@label/data(.)}"  indi="{$item/@indi/data(.)}"/>
+                    let $title := substring-before(replace($item/@label,("BNP_E3_|CP"),""),".xml")
+                     let $front := if(contains($title,"-")) then substring-before($title,"-") else $title
+                     let $end := xs:string(xs:integer(replace($title, "^\d+[A-Z]?\d?-?([0-9]+).*$", "$1")))
+                     let $end := substring-after($title,$end)
+                    order by local:anaIndi($item/@indi/data(.)),$front, xs:integer(replace($title, "^\d+[A-Z]?\d?-?([0-9]+).*$", "$1")),$end 
+                    return <item label="{$item/@label/data(.)}"  indi="{$item/@indi/data(.)}"/>
 return $items
 };
 
@@ -134,20 +131,20 @@ declare function local:anaIndi($indi) {
 
 declare function local:docItems($indikator) {
     for $hit in collection("/db/apps/pessoa/data/doc")/tei:TEI/tei:teiHeader/tei:fileDesc/tei:publicationStmt/tei:idno[@type="filename"]/data(.)
-                let $label :=   if(substring-after($hit, "BNP_E3_") != "") then substring-after(replace(substring-before($hit, ".xml"), "_", " "), "BNP E3 ")
-                                else if(substring-after($hit,"CP") != "") then  substring-after(substring-before($hit, ".xml"),"CP")
-                                else ()
-                    let $title :=  $hit 
-                          return if( $indikator !="1-9" 
-                                            and local:getCorrectDoc($label, $indikator) = xs:boolean("true") 
-                                            and $indikator != "CP" and contains($hit,"BNP")) 
-                                                then <item label="{$title}" indi="{$indikator}"/>
-                                        else if ($indikator = "CP" and contains($hit,"CP")) 
-                                                then <item label="{$title}" indi="{$indikator}"/>
-                                        else if($indikator = "1-9" and local:getCorretDoc_alphabetical($label,2) = xs:boolean("true")) 
-                                                then <item label="{$title}" indi="{$indikator}"/>
-                                        else ()
-                                        };
+    let $label := if(substring-after($hit, "BNP_E3_") != "") then substring-after(replace(substring-before($hit, ".xml"), "_", " "), "BNP E3 ")
+                  else if(substring-after($hit,"CP") != "") then  substring-after(substring-before($hit, ".xml"),"CP")
+                  else ()
+    let $title :=  $hit 
+      return if( $indikator !="1-9" 
+                        and local:getCorrectDoc($label, $indikator) = xs:boolean("true") 
+                        and $indikator != "CP" and contains($hit,"BNP")) 
+                            then <item label="{$title}" indi="{$indikator}"/>
+                    else if ($indikator = "CP" and contains($hit,"CP")) 
+                            then <item label="{$title}" indi="{$indikator}"/>
+                    else if($indikator = "1-9" and local:getCorretDoc_alphabetical($label,2) = xs:boolean("true")) 
+                            then <item label="{$title}" indi="{$indikator}"/>
+                    else ()
+                    };
 
 
 declare function local:getCorrectDoc($label as xs:string, $indi as xs:string) as xs:boolean+ {
@@ -156,10 +153,9 @@ declare function local:getCorrectDoc($label as xs:string, $indi as xs:string) as
             then substring-before($label,"-") 
             else $label
         for $pos in ( 1 to string-length($c_label))
-            return if (local:getCorretDoc_alphabetical($c_label,$pos) = xs:boolean("true") 
-                            or $pos = string-length($c_label)) 
-                                then local:getCorrectDoc_Step2($label,$indi,$pos) else xs:boolean("false")
-    else xs:boolean("false")
+            return if (local:getCorretDoc_alphabetical($c_label,$pos) = xs:boolean("true") or $pos = string-length($c_label)) 
+                   then local:getCorrectDoc_Step2($label,$indi,$pos) else xs:boolean("false")
+                   else xs:boolean("false")
 };
 
 
@@ -208,6 +204,7 @@ declare function local:saveTitleXML() {
 let $html := local:createTitleXML()
 return xmldb:store("/db/apps/pessoa/data","titlelist.xml",$html)
 };
+
 declare function local:createTitleXML() {
     let $well := local:collectTexts()
     return <titels>{
@@ -225,13 +222,11 @@ declare function local:createTitleXML() {
 };
 
 declare function local:titleTest() {
-for $text in  local:search_range_simple("type","title",collection('/db/apps/pessoa/data/doc'))
-                                for $single in $text//tei:rs[@type = "title"]
-                                order by $single
-                            return  local:transformTitle($single)
+    for $text in local:search_range_simple("type","title",collection('/db/apps/pessoa/data/doc'))
+        for $single in $text//tei:rs[@type = "title"]
+        order by $single
+        return  local:transformTitle($single)
 };
-
-
 
 declare function local:transformTitle($title as node()) {
     let $stylesheet := doc("/db/apps/pessoa/xslt/title.xsl")
@@ -254,29 +249,23 @@ declare function local:collectTexts() {
     let $names := distinct-values($texts/@name/data(.))
 
     let $well := for $name in $names
-    return  <item letter="{local:highLetters(local:FindFirstLetter-new($name,1))}">
-        <name type="doc">{$name}</name>
-        { let $ref :=   local:scanDocs($name,$texts)
-        let $ref := distinct-values($ref)
-        return
-            for $item in $ref
-            return <item ref="{$item}">{replace(doc(concat('/db/apps/pessoa/data/doc/',$item,".xml"))//tei:title[1]/data(.),"/E3","")}</item>}
-
-    </item>
-
+            return  <item letter="{local:highLetters(local:FindFirstLetter-new($name,1))}">
+                <name type="doc">{$name}</name>
+                { let $ref :=   local:scanDocs($name,$texts)
+                let $ref := distinct-values($ref)
+                return
+                    for $item in $ref
+                    return <item ref="{$item}">{replace(doc(concat('/db/apps/pessoa/data/doc/',$item,".xml"))//tei:title[1]/data(.),"/E3","")}</item>}
+        
+            </item>
     let $pubs := collection('/db/apps/pessoa/data/pub')
     let $pubs_title := for $hit in $pubs//tei:teiHeader/tei:fileDesc
-     let $title :=    $hit//tei:sourceDesc/tei:biblStruct/tei:analytic/tei:title[@level = "a"]
-    return <item
-
-    letter="{local:highLetters(local:FindFirstLetter-new($title[1]/data(.),1))}">
-        <name ref="{substring-before($hit//tei:publicationStmt/tei:idno[@type="filename"]/data(.),".xml")}" type="pub">
-            {$title/data(.)}
-        </name>
-
-    </item>
-
-
+                    let $title := $hit//tei:sourceDesc/tei:biblStruct/tei:analytic/tei:title[@level = "a"]
+                    return <item letter="{local:highLetters(local:FindFirstLetter-new($title[1]/data(.),1))}">
+                                <name ref="{substring-before($hit//tei:publicationStmt/tei:idno[@type="filename"]/data(.),".xml")}" type="pub">
+                                    {$title/data(.)}
+                                </name>
+                            </item>
     return ($well,$pubs_title)
    };
 
@@ -292,11 +281,12 @@ declare function local:scanDocs($text, $aDocs) {
              return $docs:)
              for $doc in $aDocs where $doc/@name eq $text  return $doc/@ref/data(.)
 };
+
 declare function local:highLetters($letter) {
     switch($letter)
             case "A" case "a" return("A")
-            case "B" case "b"return("B")
-            case "C" case "c"return("C")
+            case "B" case "b" return("B")
+            case "C" case "c" return("C")
             case "D" case "d" return("D")
             case "E" case "e" return("E")
             case "F" case "f" return("F")
@@ -324,10 +314,8 @@ declare function local:highLetters($letter) {
 };
 
 
-
 (
 local:move-index(),
 local:createXML(),
 local:saveTitleXML()
-
 )

@@ -71,7 +71,6 @@
                 -->
             </fileset>
         </xdb:store>
-        <xdb:xquery uri="${uri}" queryfile="scripts/reindex.xql" user="${user}" password="${password}"/>
         <xdb:xquery uri="${uri}" queryfile="app/post-redirect.xql" user="${user}" password="${password}"/>
         <xdb:xquery uri="${uri}" queryfile="app/post-install.xql" user="${user}" password="${password}"/>
     </target>
