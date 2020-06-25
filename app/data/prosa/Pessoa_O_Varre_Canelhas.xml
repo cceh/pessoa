@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>CRÓNICA dos livros- O Varre Canelhas</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="free">
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename"
+                    >Pessoa_O_Varre_Canelhas.xml</idno>
+            </publicationStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="O1-37">CRÓNICA dos livros- O Varre Canelhas</rs></item>
+                    <!-- 
+                    UH: as we have a new structure for work identifers in lists.xml, you can add the work there
+                    and use the corresponding key here. For this, please first add the title to <list type="titles">
+                    in lists.xml, e.g. (just use the next free ID number):
+                    <item xml:id="T227">
+                        <title>A Nova Poesia Portugueza Sociologicamente
+                            Considerada</title>
+                    </item>
+                    then you add a work to <list type="works"> in lists.xml and indicate #FP as author, e.g.:
+                    <item xml:id="W187">
+                        <ptr type="author" target="#FP"/>
+                        <ptr type="title" target="#T227"/>
+                    </item>
+                    then you can use the ID W187 here as a key:
+                    <rs type="work" key="W187">A Nova Poesia Portugueza Sociologicamente
+                            Considerada</rs>
+                    See also below in the @corresp attribute of the <text> element.
+                    -->
+                </list>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">CRÓNICA dos livros- O Varre Canelhas</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt" otherLangs="en"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J45">O Jornal</rs></title>
+                        <imprint>
+                            <date when="1915-04-15">15 de Abril de 1915</date>
+                        </imprint>
+                        <biblScope unit="page">3</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="prosa">Prosa</rs>
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="prosa/O_Varre_Canelhas.jpg"/>
+    </facsimile>
+    <text corresp="#O1-X">
+        <!-- 
+        UH: you can use the ID W187 (or whatever ID you created for the work in lists.xml) here:
+        corresp="#W187"
+        please note that you need # here but not above because @corresp is for pointers and @key directly for IDs
+        -->
+        <body>
+            <div>
+                <head>CRÓNICA dos livros- O Varre Canelhas</head>
+                
+                    <head type="sub" rend="right">Novelo Transmontano por 
+                        <rs type="name" key="P74">Joaquim Leitão</rs></head>
+                <p rend="indent-first">A obra, se fôrmos a aquilata-la por um criterio esthetico superior, 
+                    resultará por certo de pouco relêvo e importancia. Mas, se a considerarmos dentro das 
+                    fronteiras do trabalho meramente inteligente e honesto, e por uma bitola fornecida, não diremos 
+                    pela benevolancia, mas pela compreensão do que se pode normalmente esperar, não teremos impulso 
+                    critico senão de dirigir ao autor o elogio sincero – se bem que, nas circumstancias, relativo – que 
+                    a realisação da novela nos parece merecer.</p>
+                <p rend="indent-first">Novela, propriamente, não a ha, pois que falte o nexo construtivo, nem haja artificio 
+                    de sintese que torne unidade e estrutura a dispersão impressionista d’estas paginas. 
+                    Tampouco a obra se salienta pelo cuidado intuitivo ou cauto na engrenagem entrepenetrada da ação e do 
+                    dialogo. O certo, porém, é que da leitura fica uma noção forte e dura da paisagem e do homem de 
+                    Traz-os-Montes, e que em certos trechos – como no terceiro capitulo da primeira parte – ha mais alguma cousa, 
+                    talvez, do que apenas isto. O facto de nunca termos estado em Traz-os-Montes investe-nos da precisa 
+                    competencia extra-critica para poder séntir isto. Pode ser que, se houvessemos errado por tal provincia, 
+                    achassemos falsa a impressão do autor desta novela. E’ mesmo certo que achariamos falsa, Mas, nem n’essa 
+                    hipotese, nem agora, isso teria, ou tem, importancia. Todas as impressões são falsas. Por isso basta que 
+                    sejam belas.</p>
+                <p rend="indent-first">No que respeita a estilistica, a novéla do sr. <rs type="name" key="P74">Joaquim Leitão</rs> 
+                    está escrita com aquela facilidade 
+                    e comunicabilidade simpática que a reportagem superior frequentemente radica nos seus práticos. Não se vá 
+                    lêr nisto que colocamos a obra o nivel intelectual do alto jornalismo. Corre nas veias da novéla melhor sangue<!-- no original "sagne" --> 
+                    espiritual do que esse.</p>
+                <signed rend="align-right">Fernando Pessoa</signed>
+                </div>
+        </body>
+    </text>
+</TEI>
+
