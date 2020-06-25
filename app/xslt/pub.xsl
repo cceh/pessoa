@@ -4,6 +4,8 @@
     exclude-result-prefixes="xs"
     version="2.0" xpath-default-namespace="http://www.tei-c.org/ns/1.0">
     
+    <!-- Author: Ulrike Henny-Krahmer -->
+    
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
     
     <xsl:template match="teiHeader"/>
@@ -71,6 +73,9 @@
             <xsl:when test="@rend='indent-first'">
                 <xsl:attribute name="class">indent-first</xsl:attribute>
             </xsl:when>
+            <xsl:when test="@rend='indent'">
+                <xsl:attribute name="class">indent</xsl:attribute>
+            </xsl:when>
         </xsl:choose>
     </xsl:template>
     
@@ -85,7 +90,19 @@
     </xsl:template>
     
     <xsl:template match="lg">
-        <div class="lg">
+        <div>
+            <xsl:choose>
+                <!-- center the whole block of lines -->
+                <xsl:when test="@rend='center'">
+                    <xsl:attribute name="class">lg center</xsl:attribute>
+                    <!-- estimate the width of the block -->
+                    <xsl:variable name="width" select="max(l/string-length(text())) * 0.5"/>
+                    <xsl:attribute name="style">width: <xsl:value-of select="$width"/>em;</xsl:attribute>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:attribute name="class">lg</xsl:attribute>
+                </xsl:otherwise>
+            </xsl:choose>
             <xsl:apply-templates />
         </div>
     </xsl:template>
@@ -150,6 +167,12 @@
         <strong>
             <xsl:apply-templates/>
         </strong>
+    </xsl:template>
+    
+    <xsl:template match="hi[@rend='superscript']">
+        <span class="superscript">
+            <xsl:apply-templates/>
+        </span>
     </xsl:template>
     
     <xsl:template match="lb">

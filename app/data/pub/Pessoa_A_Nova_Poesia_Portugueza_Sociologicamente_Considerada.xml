@@ -210,7 +210,23 @@
                         then you can use the work id here
                         :
                         <quote source="#W187">
-                        Ju: ok, I think it is enough if the name of the author is shown in brackets here and appears in the index-->
+                        Ju: ok, I think it is enough if the name of the author is shown in brackets here and appears in the index
+                        
+                        U: if you add text as the editor, please not just use typographical conventions as brackets, but TEI elements.
+                        If you prefer this, you could use <note> for a note that you added to the text, e.g.
+                        <note type="comment" resp="#JU"><rs type="name" key="P217">Rémy de Gourmont</rs></note> 
+                        Up to now, we have only used square brackets to output expansions of abbreviations in the HTML. We can 
+                        also use them to display editorial comments (although it is quite like one would do in a print 
+                        edition, not necessarily a digital edition). I would prefer something like a mouseover-effect, for example.
+                        Also, it would be good to make clear what the note belongs to. 
+                        If you add it inside of the <quote> instead of after it, it becomes clear that the note is about the quote:
+                        <quote><hi
+                                rend="italic">se pour expliquer un brin de paille il faut démonter
+                                tout le systéme de l'univers </hi>
+                                <note type="comment" resp="#JU"><rs type="name" key="P217">Rémy de Gourmont</rs></note>
+                                </quote>
+                        Then we will be able to mark the quote in the HTML as having a note.
+                        -->
                         [<rs type="name" key="P217">Rémy de Gourmont</rs>], ao raciocinador ideal bastaria, visto que o systema do
                         universo se acha logicamente contido no <hi rend="italic">brin de
                             paille</hi>, analysal-o bem, a elle <hi rend="italic">brin de

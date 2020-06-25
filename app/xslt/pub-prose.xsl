@@ -27,6 +27,45 @@
         </div>
     </xsl:template>
     
+    <!-- notes that are part of the text, show the content of the note as a tooltip -->
+    <xsl:template match="note[not(@type)]">
+        <span class="note">
+            <span class="label tooltip"><xsl:apply-templates select="label"/>
+                <span class="tooltiptext"><xsl:apply-templates select="child::*[name() != 'label'] | text()"/></span>
+            </span>
+        </span>
+    </xsl:template>
+    
+    <!-- Entities -->
+    <xsl:template match="rs[@type = 'name']">
+        <span class="person {@key}">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+    
+    <xsl:template match="rs[@type = 'place']">
+        <span class="place">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+    
+    <xsl:template match="rs[@type = 'periodical']">
+        <span class="journal {@key}">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+    
+    <xsl:template match="rs[@type = 'work']">
+        <span class="work {@key}">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+    <xsl:template match="rs[@type = 'title']">
+        <span class="text {replace(.,'[“”.\s]','')}">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+    
     
     
     

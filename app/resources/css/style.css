@@ -1390,7 +1390,7 @@ div.figure {
 
 /* ########################## ab hier Darstellung der Dokument- und Publikationsinhalte ############################# */
 
-/* STYLES FÜR DIE XSLT-TRANSFORMATION DER DOKUMENTE */
+/* STYLES FOR THE XSLT TRANSFORMATION OF DOCUMENTS */
 div.text {
     line-height: 1.8em;
     position: relative;
@@ -1778,14 +1778,41 @@ div.text hr.line-14.inline, div.text hr.line-24.inline, div.text hr.line-34.inli
 div.text table hr.sum, div.text table hr.end {
     margin: 0;
 }
-/* STYLES FÜR DIE XSLT-TRANSFORMATION DER PUBLIKATONEN */
+/* STYLES FOR THE XSLT TRANSFORMATION OF PUBLICATIONS */
 div#text-div .signed.indent-13 {
     text-indent: 30%;
 }
+div#text-div .lg.center {
+    margin: 15px auto;
+}
+div#text-div .superscript {
+    vertical-align: super;
+    font-size: small;
+}
+div#text-div .note .tooltip {
+    position: relative;
+    display: inline-block;
+    color: #990000;
+    border-bottom: 1px dotted #990000;
+    opacity: 1;
+}
+div#text-div .note .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #990000;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+}
+div#text-div .note .tooltip:hover .tooltiptext {
+    visibility: visible;
+}
 
 
-
-/* STYLES FÜR INDIVIDUELLE LISTEN */
+/* STYLES FOR INDIVIDUAL LISTS */
 
 /* BNP_E3_48-43 */
 div.text#BNP_E3_48-43 #I2 span.note.margin-right {

@@ -37,6 +37,8 @@
                 <list type="work-index">
                     <item><rs type="work" key="O1-X">A Nova Poesia Portugueza no seu aspecto
                             Psychologico</rs></item>
+                    <!-- U: please adapt the work key as explained in "A Nova Poesia Portugueza Sociologicamente
+                    Considerada" -->
                 </list>
                 <biblStruct>
                     <!-- here goes the bibliographical reference for the source publication -->
@@ -267,7 +269,7 @@
                         perscrutador de obscuras intuições inconscientemente propheticas poderão
                         entresuggerir uma idéa do género d’essa futura realização social. </p>
                     <p rend="indent-first">Como em anterior artigo mostrámos, a nova poesia
-                        portugueza desde a <rs type="name" key="T112">Oração á Luz</rs> que entrou
+                        portugueza desde a <rs type="name" key="T112">Oração á Luz</rs><!-- U: is this supposed to be @type="title" ? --> que entrou
                         no segundo estadio. Podemos, portanto, arrancar-lhe o segredo da sua
                         esthetica, nitidamente; com menos nitidez, e aproximadamente, entrevêr a sua
                         metaphysica: e, para que o estudo se não trunque, procurar dizer a côr dos
@@ -306,11 +308,17 @@
                         elementos interiores, sensações –, sem comtudo lhe acrescentar elemento que
                         se não encontre na directa sensação inicial. Assim <rs type="name"
                             key="P425">Albert Samain</rs>, quando diz </p>
-                    <lg>
+                    <lg rend="center">
+                        <!-- U: I added @rend="center" here, so that the whole line group gets centered. You could 
+                        do so for other line groups, as well. Please ignore that this is marked red for the moment, 
+                        the error will disappear once this new value is added to the schema -->
                         <l>Je ne dis rien, et tu m'écoutes</l>
-                        <l>Sous tes immobiles cheveux,<note n="1">
+                        <l>Sous tes immobiles cheveux,<note n="1"><label>(<hi rend="superscript">1</hi>)</label>
                                 <rs type="title">Au Jardin de l’infante</rs> (<hi rend="italic"
                                     >Heures d’été, VI)</hi>.</note></l>
+                        <!-- U: I added this part to the note: <label>(<hi rend="superscript">1</hi>)</label> to indicate
+                        how the note was labeled originally. This may be useful should other kinds of 
+                        note labels (e.g. "*") appear in other publications, so that they can be displayed in different ways -->
                     </lg>
                     <p>desdobra a sensação directa de um silencio <hi rend="italic">á deux</hi>,
                         oppressivo e nocturno, na tripla sensação de silencio, de almas que se
@@ -321,7 +329,7 @@
                         <l>Charcos onde um torpor, vitreo torpor, se esquece,</l>
                         <l>Nuvens roçando a areia, os longes baços...</l>
                         <l>Paizagem como alguém que, ermo de amor, se desse,</l>
-                        <l> Corpo que estagna frio a beijos ou a abraços,<note n="2"><rs
+                        <l>Corpo que estagna frio a beijos ou a abraços,<note n="2"><rs
                                     type="title">Coimbra, ao ritmo da saudade.</rs></note></l>
                     </lg>
                     <p>ha simplesmente um desdobrar, como em leque, de uma sensação crepuscular, que
@@ -344,7 +352,7 @@
                     <lg>
                         <l>A boca, em morte e marmore esculpida,</l>
                         <l>Sonha com as palavras que não diz; <note n="2"><rs type="title">O
-                                    Sonho.</rs></note>></l>
+                                    Sonho.</rs></note></l>
                     </lg>
                     <p> de <rs type="name" key="P52">Teixeira de Pascoaes</rs></p>
                     <lg>
@@ -644,7 +652,7 @@
                         anteriores periodos; e assim como <rs type="name" key="P218">Homero</rs> é o
                         primeiro maximo poeta de pleno e integral equilibrio, a Grecia Antiga é o
                         primeiro povo plena-, lucida- e integralmente creador que na historia nos
-                        apparece. A inferioridade de <rs type="name" key="219" style="b">Vergilio</rs>
+                        apparece. A inferioridade de <rs type="name" key="219" style="b">Vergilio</rs><!-- U: @key=P219 ? -->
                         a <rs type="name" key="P218">Homero</rs> mostra que da Grecia para Roma a
                         humanidade não avançou, que nenhum novo e lemento espiritual lhe nasceu – o
                         que nos indica nitidamente que Roma constituiu, não uma civilização, mas o
