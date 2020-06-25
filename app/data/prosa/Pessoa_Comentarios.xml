@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Comentarios</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="free">
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename"
+                    >Pessoa_Comentarios.xml</idno>
+            </publicationStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="O1-37">Comentarios</rs></item>
+                    <!-- 
+                    UH: as we have a new structure for work identifers in lists.xml, you can add the work there
+                    and use the corresponding key here. For this, please first add the title to <list type="titles">
+                    in lists.xml, e.g. (just use the next free ID number):
+                    <item xml:id="T227">
+                        <title>A Nova Poesia Portugueza Sociologicamente
+                            Considerada</title>
+                    </item>
+                    then you add a work to <list type="works"> in lists.xml and indicate #FP as author, e.g.:
+                    <item xml:id="W187">
+                        <ptr type="author" target="#FP"/>
+                        <ptr type="title" target="#T227"/>
+                    </item>
+                    then you can use the ID W187 here as a key:
+                    <rs type="work" key="W187">A Nova Poesia Portugueza Sociologicamente
+                            Considerada</rs>
+                    See also below in the @corresp attribute of the <text> element.
+                    -->
+                </list>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Comentarios</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt" otherLangs="en"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J37">Eh Real!</rs></title>
+                        <imprint>
+                            <date when="1915-05-13">13 de Maio de 1915</date>
+                        </imprint>
+                        <biblScope unit="page">16</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="prosa">Prosa</rs>
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="prosa/Comentarios.jpg"/>
+    </facsimile>
+    <text corresp="#O1-X">
+        <!-- 
+        UH: you can use the ID W187 (or whatever ID you created for the work in lists.xml) here:
+        corresp="#W187"
+        please note that you need # here but not above because @corresp is for pointers and @key directly for IDs
+        -->
+        <body>
+            <div>
+                <head>Comentarios</head>
+            </div>
+            <div>
+                <milestone rend="asterisks" unit="section"/>
+                <p rend="indent-first">Emquanto não incide sobre o nosso integralismo e as suas origens uma 
+                    critica mais apertada, póde o curioso ir entretendo os seus momentos com o livro de 
+                    D. <rs type="name" key="526">Parodi</rs> <hi rend="italic">Traditionalisme et démocratie</hi> 
+                    (Paris, Armand Colin, 1909). Aí as téses dos conservadores francezes (base, como se sabe, das 
+                    dos nossos integralistas), são rebatidas triunfantemente.</p>
+                <milestone rend="asterisks" unit="section"/>
+                <p rend="indent-first">... de modo que ele<!-- Most likely a reference to Alfredo Pimenta --> 
+                    acabará por implantar a Monarquia, 
+                    para consolidar a Republica... </p>
+            </div>
+        </body>
+    </text>
+</TEI>
