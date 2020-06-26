@@ -96,11 +96,11 @@
                     <xsl:otherwise>Títulos</xsl:otherwise>
                 </xsl:choose></h2>
                 <ul>
-                    <xsl:for-each select=".//rs[@type='title']">
-                        <xsl:sort select="replace(.,'[“”()]','')"/>
-                        <xsl:variable name="key" select="replace(.,'[“”.\s()]','')"/>
-                        <li onmouseenter="highlight('text {$key}');" onmouseleave="clearH('{$key}');"><xsl:apply-templates /> <a href="../../index/titles#{.}" title="{$title}"><img class="indexImg typeB" src="{string-join(($host,'resources/images/glyphicons-40-notes.png'),'/')}"/></a></li>
-                    </xsl:for-each>
+                    <xsl:for-each-group select=".//rs[@type='title']" group-by="normalize-space(replace(.,'[“”()]',''))">
+                        <xsl:sort select="current-grouping-key()"/>
+                        <xsl:variable name="key" select="current-grouping-key()"/>
+                        <li onmouseenter="highlight('text {$key}');" onmouseleave="clearH('{$key}');"><xsl:apply-templates select="current-group()[1]" /> <a href="../../index/titles#{$key}" title="{$title}"><img class="indexImg typeB" src="{string-join(($host,'resources/images/glyphicons-40-notes.png'),'/')}"/></a></li>
+                    </xsl:for-each-group>
                 </ul>
             </xsl:if>
             <xsl:if test=".//rs[@type='periodical']">
