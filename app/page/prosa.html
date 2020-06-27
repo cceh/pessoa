@@ -5,16 +5,21 @@
         
             $("li.itabs").click(function(e){
                 if (!$(this).hasClass("selected")) {
-                var tabNum = $(this).attr("title");
-                $("ul#indextabs .selected").removeClass("selected");
-                $(this).addClass("selected");
-                $("ul#indextab .selected").removeClass("selected");
-                $("ul#indextab li#"+tabNum).addClass("selected");
-                $("ul#indextab li#"+tabNum+" ul li").addClass("selected");
-                /*  $("ul#indextab :nth-child("+nthChild+")").addClass("active");
-                */
+                    var tabNum = $(this).attr("title");
+                    $("ul#indextabs .selected").removeClass("selected");
+                    $(this).addClass("selected");
+                    $("ul#indextab .selected").removeClass("selected");
+                    $("ul#indextab li#"+tabNum).addClass("selected");
+                    $("ul#indextab li#"+tabNum+" ul li").addClass("selected");
+                    /*  $("ul#indextab :nth-child("+nthChild+")").addClass("active");
+                    */
                 }
             });
+            
+            $(".note > .label").click(function(){
+                    $(this).next().toggle();
+                }
+            );
         
         });
     </script>

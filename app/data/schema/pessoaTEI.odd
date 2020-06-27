@@ -64,14 +64,12 @@
                 </div>
                 <div>
                     <head>Transcription of publications</head>
-                    <p>Bla bla bla ... <!-- Verweis auf Element-Definition (Text): --><specList><specDesc key="name"></specDesc></specList> blub blub blub.
-                    <!-- Siehe Kap. 22 Guidelines --></p>
-                    <p> Hier ein Beispiel:
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                            <rs type="name">Auszeichnung von Namen</rs>
-                        </egXML>
-                        und hier geht es weiter.
-                    </p>
+                    <p><specList>
+                            <specDesc key="name"/>
+                        </specList> blub blub blub. <!-- Siehe Kap. 22 Guidelines --> </p>
+                    <p> Hier ein Beispiel: <egXML xmlns="http://www.tei-c.org/ns/Examples"><rs
+                                type="name">Auszeichnung von Namen</rs></egXML> und hier geht es
+                        weiter. </p>
                 </div>
             </div>
         </body>
@@ -165,9 +163,8 @@
                         <!-- Verwendungsbeispiel: -->
                         <exemplum>
                             <p>Bla bla bla</p>
-                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                                <rs type="name">Auszeichnung von Namen</rs>
-                            </egXML>
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples"><rs type="name"
+                                    >Auszeichnung von Namen</rs></egXML>
                         </exemplum>
                     </elementSpec>
                     <elementSpec ident="abbr" module="core" mode="change">
@@ -876,6 +873,7 @@
                             <attDef ident="xml:space" mode="delete"/>
                             <attDef ident="rend" mode="change">
                                 <valList type="closed" mode="replace">
+                                    <valItem ident="center"/>
                                     <valItem ident="indent"/>
                                 </valList>
                             </attDef>
@@ -961,7 +959,6 @@
                                 </valList>
                             </attDef>
                             <attDef ident="rendition" mode="delete"/>
-                            <attDef ident="resp" mode="delete"/>
                             <attDef ident="sameAs" mode="delete"/>
                             <attDef ident="select" mode="delete"/>
                             <attDef ident="source" mode="delete"/>
@@ -987,6 +984,7 @@
                             <attDef ident="type" mode="change">
                                 <valList type="closed" mode="replace">
                                     <valItem ident="addition"/>
+                                    <valItem ident="comment"/>
                                     <valItem ident="genre"/>
                                     <valItem ident="summary"/>
                                 </valList>

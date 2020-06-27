@@ -1782,32 +1782,47 @@ div.text table hr.sum, div.text table hr.end {
 div#text-div .signed.indent-13 {
     text-indent: 30%;
 }
-div#text-div .lg.center {
+/* STYLES FOR PROSE PUBLICATIONS */
+div#text-div .text.prose .lg.center {
     margin: 15px auto;
 }
-div#text-div .superscript {
+div#text-div .text.prose .superscript {
     vertical-align: super;
     font-size: small;
 }
-div#text-div .note .tooltip {
+div#text-div .text.prose .note .text {
+    font-size: small;
+    display: none;
+}
+div#text-div .text.prose .note .label {
+    display: inline;
+    color: #990000;
+    position: relative;
+    cursor: pointer;
+}
+div#text-div .text.prose .tooltip {
     position: relative;
     display: inline-block;
     color: #990000;
-    border-bottom: 1px dotted #990000;
     opacity: 1;
+    text-indent: 0;
+    font-size: inherit;
+    cursor: pointer;
 }
-div#text-div .note .tooltiptext {
+div#text-div .text.prose .tooltiptext {
     visibility: hidden;
-    width: 200px;
+    width: auto;
     background-color: #990000;
     color: #fff;
     text-align: center;
-    padding: 5px;
+    padding: 10px;
     border-radius: 6px;
     position: absolute;
     z-index: 1;
+    font-size: small;
+    font-family: inherit;
 }
-div#text-div .note .tooltip:hover .tooltiptext {
+div#text-div .text.prose .tooltip:hover .tooltiptext {
     visibility: visible;
 }
 

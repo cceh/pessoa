@@ -27,18 +27,32 @@
         </div>
     </xsl:template>
     
-    <!-- notes that are part of the text, show the content of the note as a tooltip -->
+    
+    <!-- notes that are comments on quotes, made by the editor -->
+    <xsl:template match="quote[note[@type='comment'][@resp]]">
+        <span class="quote tooltip">
+            <xsl:apply-templates select="child::*[name() != 'note'] | text()"/>
+            <span class="tooltiptext"><xsl:apply-templates select="note"/></span>
+        </span>
+    </xsl:template>
+    
+    <xsl:template match="note[@type='comment'][@resp]">
+        <span class="note editor">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+    
+    <!-- notes that are part of the text (see the corresponding JavaScript in page/prosa.html) -->
     <xsl:template match="note[not(@type)]">
         <span class="note">
-            <span class="label tooltip"><xsl:apply-templates select="label"/>
-                <span class="tooltiptext"><xsl:apply-templates select="child::*[name() != 'label'] | text()"/></span>
-            </span>
+            <span class="label"><xsl:apply-templates select="label"/></span>
+            <span class="text"><xsl:apply-templates select="child::*[name() != 'label'] | text()"/></span>
         </span>
     </xsl:template>
     
     <!-- Entities -->
     <xsl:template match="rs[@type = 'name']">
-        <span class="person {@key}">
+        <span class="name {@key}">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
@@ -61,7 +75,7 @@
         </span>
     </xsl:template>
     <xsl:template match="rs[@type = 'title']">
-        <span class="text {replace(.,'[“”.\s]','')}">
+        <span class="title {replace(.,'[“”.\s]','')}">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
