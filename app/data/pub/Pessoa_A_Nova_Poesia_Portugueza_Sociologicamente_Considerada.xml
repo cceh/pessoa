@@ -34,26 +34,8 @@
             </publicationStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O1-37">A Nova Poesia Portugueza Sociologicamente
+                    <item><rs type="work" key="187">A Nova Poesia Portugueza Sociologicamente
                             Considerada</rs></item>
-                    <!-- 
-                    UH: as we have a new structure for work identifers in lists.xml, you can add the work there
-                    and use the corresponding key here. For this, please first add the title to <list type="titles">
-                    in lists.xml, e.g. (just use the next free ID number):
-                    <item xml:id="T227">
-                        <title>A Nova Poesia Portugueza Sociologicamente
-                            Considerada</title>
-                    </item>
-                    then you add a work to <list type="works"> in lists.xml and indicate #FP as author, e.g.:
-                    <item xml:id="W187">
-                        <ptr type="author" target="#FP"/>
-                        <ptr type="title" target="#T227"/>
-                    </item>
-                    then you can use the ID W187 here as a key:
-                    <rs type="work" key="W187">A Nova Poesia Portugueza Sociologicamente
-                            Considerada</rs>
-                    See also below in the @corresp attribute of the <text> element.
-                    -->
                 </list>
                 <biblStruct>
                     <analytic>
@@ -88,19 +70,12 @@
         <graphic url="prosa/A_Nova_Sociologicamente_106.jpg"/>
         <graphic url="prosa/A_Nova_Sociologicamente_107.jpg"/>
     </facsimile>
-    <text corresp="#O1-X">
-        <!-- 
-        UH: you can use the ID W187 (or whatever ID you created for the work in lists.xml) here:
-        corresp="#W187"
-        please note that you need # here but not above because @corresp is for pointers and @key directly for IDs
-        -->
+    <text corresp="#W187">     
         <body>
             <div>
                 <head rend="center">A Nova Poesia Portugueza Sociologicamente Considerada</head>
                 <div>
                     <head rend="center">I</head>
-                    <!-- U: I think rend="indent" is not needed here, it would be 
-                    better to use rend="center" ("indent" is just for small indents from the left margin) -->
                     <p rend="indent-first"><hi rend="bold">Ao movimento</hi> litterario
                         representativo e peculiar da nascente geração portugueza tem sido feito pela
                         opinião publica o favor de o não comprehender. E esse movimento que,
@@ -180,56 +155,6 @@
                                 tout le systéme de l'univers</hi>
                             <note type="comment" resp="#JU"><rs type="name" key="P217">Rémy de
                                     Gourmont</rs></note></quote>,
-                        <!-- This is a case of an implicit quotation of an author 
-                            that is going to be indexed [Rémy de Gourmont]
-                        
-                        U: you can mark that as a quote. @source could be used to indicate the source of the quote.
-                        I have to add @source to the schema, so that there will be no error. 
-                        Would you like to give the work that the quote comes from as the source, or just the author?
-                        (I am not sure if it is usual to just indicate the author, I will find out) 
-                        
-                        JU: I think the author will be ok, but in any case the title of the work is 
-                        Gourmont, Remy de, Le chemin de velours: nouvelles dissociations d'idées, 
-                        Paris: Sociéte du Mercure de France 1902, p. 8
-                        
-                        U: ok, there are two possible solutions for this:
-                        1st: you add the author as a person to lists.xml, then you can indicate his identifier here 
-                        (just assuming his ID would be P333 in lists.xml):
-                        <quote source="#P333">
-                        2nd: you add the author as a person plus 
-                        the work to lists.xml and indicate the work-id here. 
-                        For this you add the person to lists.xml, e.g. as P333.
-                        Then you add a title in lists.xml
-                        to the <list type="titles">, e.g.
-                        <item xml:id="T227">
-                            <title>Le chemin de velours: nouvelles dissociations d'idées</title>
-                        </item>
-                        and then a corresponding work item in <list type="works"> using both the person ID and the title ID, e.g.:
-                        <item xml:id="W187">
-                            <ptr type="author" target="#P333"/>
-                            <ptr type="title" target="#T227"/>
-                        </item>
-                        then you can use the work id here
-                        :
-                        <quote source="#W187">
-                        Ju: ok, I think it is enough if the name of the author is shown in brackets here and appears in the index
-                        
-                        U: if you add text as the editor, please not just use typographical conventions as brackets, but TEI elements.
-                        If you prefer this, you could use <note> for a note that you added to the text, e.g.
-                        <note type="comment" resp="#JU"><rs type="name" key="P217">Rémy de Gourmont</rs></note> 
-                        Up to now, we have only used square brackets to output expansions of abbreviations in the HTML. We can 
-                        also use them to display editorial comments (although it is quite like one would do in a print 
-                        edition, not necessarily a digital edition). I would prefer something like a mouseover-effect, for example.
-                        Also, it would be good to make clear what the note belongs to. 
-                        If you add it inside of the <quote> instead of after it, it becomes clear that the note is about the quote:
-                        <quote><hi
-                                rend="italic">se pour expliquer un brin de paille il faut démonter
-                                tout le systéme de l'univers </hi>
-                                <note type="comment" resp="#JU"><rs type="name" key="P217">Rémy de Gourmont</rs></note>
-                                </quote>
-                        Then we will be able to mark the quote in the HTML as having a note. JU: Thanks for all the options and info. I think I like the idea of the "mouseover", and we will have more cases. Show me how is done
-                        U: ok, I changed the code above. You can add more text to the note if you like (now it's just the name)
-                        -->
                         ao raciocinador ideal bastaria, visto que o systema do universo se acha
                         logicamente contido no <hi rend="italic">brin de paille</hi>, analysal-o
                         bem, a elle <hi rend="italic">brin de paille</hi>, para deduzir o systema do
@@ -295,7 +220,7 @@
                             por demorada, mostraria como é socilogicamente certa esta divisão, em
                             apparecencia anti-historica ao ponto de ser de todo absurda - esta
                             divisão e a que, de periodos politicos, vae a seguir.</note></p>
-                    <!-- U: I changed the code directly here so that you have one working example -->
+                   
                     <p rend="indent-first">Vejamos agora como se nos mostram os correspondentes
                         periodos politicos. O primeiro, <hi rend="italic">ancien régime</hi>, foi um
                         periodo em que a França nada creou <hi rend="italic">para a
@@ -437,13 +362,6 @@
                         corrente, e da nossa terra, porque fatalmente o Grande Poeta, que este
                         movimento gerará, deslocará para segundo plano a figura, até agora
                         primacial, de <rs type="name" key="P15" style="b">Camões</rs>
-                        <!-- I'm not sure if the diference in style needs 
-                                to me marked in this case
-                        
-                        U: It is good to do so, because in the general index of persons it will be differentiated by style
-                        (Pedro told me for which person names style differences are significant for interpretation for the 
-                        editorial lists, maybe not necessarily for the prose, as well (I don't know) :-) but I think we 
-                        should use the style attribute consistently throughout the genres) -->.
                         Quem sabe se não estará para um futuro muito proximo a ruidosa confirmação
                         d'este deduzidissimo asserto?</p>
                     <p rend="indent-first">Pode objectar-se, além de muita cousa desdenhavel n'um
@@ -452,10 +370,6 @@
                             <hi rend="italic">precisamente por isso</hi> que mais concluivel se nos
                         affigura o proximo apparecer de um supra-<rs type="name" key="P15" style="b"
                             >Camões</rs>
-                        <!-- I'm not sure if the diference in style needs 
-                                to me marked in this case
-                        
-                        U: see above, I think it's good to mark it -->
                         na nossa terra. É precisamente este detalhe que marca a completa analogia da
                         actual corrente litteraria portugueza com aquelas, franceza e ingleza, onde
                         o nosso raciocinio descobriu o acompanhamento litterario das grandes épocas

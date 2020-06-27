@@ -4,7 +4,8 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>A Nova Poesia Portugueza no seu aspecto Psychologico</title>
+                <title>A Nova Poesia Portugueza no seu aspecto
+                    Psychologico</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
                 </author>
@@ -27,7 +28,6 @@
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
                 <availability status="restricted">
-                    <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename"
@@ -35,21 +35,17 @@
             </publicationStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O1-X">A Nova Poesia Portugueza no seu aspecto
-                            Psychologico</rs></item>
-                    <!-- U: please adapt the work key as explained in "A Nova Poesia Portugueza Sociologicamente
-                    Considerada" -->
+                    <item><rs type="work" key="W189">A Nova Poesia Portugueza no seu aspecto
+                        Psychologico</rs></item>
                 </list>
                 <biblStruct>
-                    <!-- here goes the bibliographical reference for the source publication -->
                     <analytic>
-                        <title level="a">A Nova Poesia Portugueza No Seu Aspecto
+                        <title level="a">A Nova Poesia Portugueza no seu aspecto
                             Psychologico</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
                         <title level="j"><rs type="periodical" key="J5">A Águia</rs></title>
@@ -88,7 +84,7 @@
         <graphic url="prosa/A_Nova_Psychologico_191.jpg"/>
         <graphic url="prosa/A_Nova_Psychologico_192.jpg"/>
     </facsimile>
-    <text corresp="#01-X">
+    <text corresp="#W189">
         <body>
             <div>
                 <head><hi rend="bold">A Nova Poesia Portugueza no seu aspecto
@@ -246,7 +242,7 @@
                         como esta investigação deverá ser feita. Só temos um elemento – poetas –
                         para essa deducção: veremos mais adeante o que, só com elle, se pode fazer,
                         firmando-nos desde já na consciencia de que essa deducção fatalmente será
-                        incompletissima, uma simples intuição quasi, um mero vislumbre de adivinhar. </p>
+                        incompletissima, uma simples intuição quasi, um mero vislumbre de adivinhar.</p>
                     <p rend="indent-first"> Vejamos agora, reportando-nos á nossa já feita divisão
                         dos maximos periodos em estadios, em que hora dos periodos temos de ir
                         procurar esses poetas, esses philosophos que servem á nossa analyse para nos
@@ -269,7 +265,7 @@
                         perscrutador de obscuras intuições inconscientemente propheticas poderão
                         entresuggerir uma idéa do género d’essa futura realização social. </p>
                     <p rend="indent-first">Como em anterior artigo mostrámos, a nova poesia
-                        portugueza desde a <rs type="name" key="T112">Oração á Luz</rs><!-- U: is this supposed to be @type="title" ? JU: yes it is a Title by Guerra Junqueiro, I'm thinking maybe it is a good idea to idetified the author alos, I have some questions about the title/Works index--> que entrou
+                        portugueza desde a <rs type="name" key="T112">Oração á Luz</rs> que entrou
                         no segundo estadio. Podemos, portanto, arrancar-lhe o segredo da sua
                         esthetica, nitidamente; com menos nitidez, e aproximadamente, entrevêr a sua
                         metaphysica: e, para que o estudo se não trunque, procurar dizer a côr dos
@@ -309,16 +305,10 @@
                         se não encontre na directa sensação inicial. Assim <rs type="name"
                             key="P425">Albert Samain</rs>, quando diz </p>
                     <lg rend="center">
-                        <!-- U: I added @rend="center" here, so that the whole line group gets centered. You could 
-                        do so for other line groups, as well. Please ignore that this is marked red for the moment, 
-                        the error will disappear once this new value is added to the schema -->
                         <l>Je ne dis rien, et tu m'écoutes</l>
                         <l>Sous tes immobiles cheveux,<note n="1"><label>(<hi rend="superscript">1</hi>)</label>
                                 <rs type="title">Au Jardin de l’infante</rs> (<hi rend="italic"
                                     >Heures d’été, VI)</hi>.</note></l>
-                        <!-- U: I added this part to the note: <label>(<hi rend="superscript">1</hi>)</label> to indicate
-                        how the note was labeled originally. This may be useful should other kinds of 
-                        note labels (e.g. "*") appear in other publications, so that they can be displayed in different ways -->
                     </lg>
                     <p>desdobra a sensação directa de um silencio <hi rend="italic">á deux</hi>,
                         oppressivo e nocturno, na tripla sensação de silencio, de almas que se
@@ -351,17 +341,20 @@
                     </p>
                     <lg>
                         <l>A boca, em morte e marmore esculpida,</l>
-                        <l>Sonha com as palavras que não diz; <note n="2"><rs type="title">O
+                        <l>Sonha com as palavras que não diz; <note n="2"><label>(<hi rend="superscript">2</hi>)
+                        </label><rs type="title">O
                                     Sonho.</rs></note></l>
                     </lg>
                     <p> de <rs type="name" key="P52">Teixeira de Pascoaes</rs></p>
                     <lg>
                         <l>A folha que tombava</l>
-                        <l>Era alma que subia; <note n="3"><rs type="title">Elegia (Vida
+                        <l>Era alma que subia; <note n="3"><label>(<hi rend="superscript">3</hi>)</label>
+                            <rs type="title">Elegia (Vida
                                 Etherea)..</rs>").</note>
                             </l>
                     </lg>
-                    <p>e expressões como <hi rend="italic">choupos d'alma</hi><note n="4"><rs
+                    <p>e expressões como <hi rend="italic">choupos d'alma</hi><note n="4">
+                        <label>(<hi rend="superscript">4</hi>)</label><rs
                                 type="title">Choupos na luz do luar.</rs></note>
                         de <rs type="name" key="P135">Jayme Cortezão</rs> ou o <hi rend="italic"
                             >ungido de universo</hi>
@@ -541,7 +534,7 @@
                         não-materialista, (3) diversa de qualquér poesia propriamente
                         espiritualista, m as contendo elementos caracteristicos do espiritualismo.
                         Para além d’esta quasi que visual constatação, o problema toma uma
-                        complexidade que desconcerta e perturba. </p>
+                        complexidade que desconcerta e perturba.</p>
                     <p rend="indent-first"> Sendo isto assim, vemó-nos forçados, para elucidação do
                         assumpto, a orientar de outro modo a nossa analyse. A difficuldade de a
                         fazer de modo directo leva-nos a concluir que, com mais probabilidade de
@@ -652,7 +645,7 @@
                         anteriores periodos; e assim como <rs type="name" key="P218">Homero</rs> é o
                         primeiro maximo poeta de pleno e integral equilibrio, a Grecia Antiga é o
                         primeiro povo plena-, lucida- e integralmente creador que na historia nos
-                        apparece. A inferioridade de <rs type="name" key="219" style="b">Vergilio</rs><!-- U: @key=P219 ? JU: I'm not getting why you ask, thats what I see in lists, don't you?-->
+                        apparece. A inferioridade de <rs type="name" key="219" style="b">Vergilio</rs>
                         a <rs type="name" key="P218">Homero</rs> mostra que da Grecia para Roma a
                         humanidade não avançou, que nenhum novo e lemento espiritual lhe nasceu – o
                         que nos indica nitidamente que Roma constituiu, não uma civilização, mas o
