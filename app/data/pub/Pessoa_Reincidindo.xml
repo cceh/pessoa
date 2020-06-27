@@ -3,8 +3,6 @@
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
-            <!-- this is a comment... here they are used for documentation and to give hints. In new files, 
-        please just use them to comment on if something is unclear -->
             <titleStmt>
                 <title>Reincidindo...</title>
                 <author>
@@ -29,32 +27,26 @@
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
                 <availability status="restricted">
-                    <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_Reincidindo.xml</idno>
             </publicationStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O1-X">Reincidindo...</rs></item>
+                    <item><rs type="work" key="W188">Reincidindo...</rs></item>
                 </list>
                 <biblStruct>
-                    <!-- here goes the bibliographical reference for the source publication -->
                     <analytic>
                         <title level="a">Reincidindo...</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
                         <title level="j"><rs type="periodical" key="J5">A Águia</rs></title>
                         <imprint>
                             <date when="1912-05">Maio de 1912</date>
-                            <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                         </imprint>
                         <biblScope unit="issue">5</biblScope>
                         <biblScope unit="page">137 e 144</biblScope>
@@ -76,7 +68,7 @@
         <graphic url="prosa/Reincidindo_143.jpg"/>
         <graphic url="prosa/Reincidindo_144.jpg"/>
     </facsimile>
-    <text corresp="#O1-X">
+    <text corresp="#W188">
         <body>
             <div>
                 <head>REINCIDINDO... </head>
@@ -97,20 +89,11 @@
                         caminho, esperamos poder tornar, pela logica, mais proximo da possibilidade
                         de compreender, que concebivelmente entre bachareis haja, aquilo com que
                         terminava o nosso estudo — com “resurgimentos assombrosos”, “supra- <rs
-                            type="name" key="P15" style="b">Camões</rs>
-                        <!-- I'm not sure if the diference in style needs to be marked in this case-->”
+                            type="name" key="P15" style="b">Camões</rs>”
                         e todas as outras alegrias. </p>
                     <p rend="indent-first">Importa, porém, declarar, antes de tudo, que nem para
                         nós, autor dele, oferece o nosso anterior escrito<ref
                             target="Pessoa_A_Nova_Poesia_Portugueza_Sociologicamente_Considerada.xml"/>
-                        <!-- JU: Here it will be nice to create an internal reference to the document 
-                            A Nova Poesia Portugueza Sociologicamente considerada
-                        
-                        U: you could encode it like this:
-                        <ref target="http://www.pessoadigital.pt/pt/pub/Pessoa_A_Nova_Poesia_Portugueza_Sociologicamente_Considerada">o nosso anterior escrito</ref>
-                        then "o nosso anterior escrito" will carry the link. <ref> should be used surrounding
-                        some text that is going to be linked.
-                        -->
                         cousa que se pareça com perfeição em materia racionativa. Em sete paginas
                         não se pode claramente e completamente pôr uma argumentação analitica que,
                         para ser rigidamente exhaustiva, sem pressas que a carencia de tempo, ou
@@ -153,25 +136,16 @@
                         fins do periodo literario antecedente; outro, aquele que constitui
                         essencialmente a corrente; e, último, aquele em que se dissolve a <hi
                             rend="italic">alma</hi> desse periodo em elementos aurorealmente
-                        caracteristicos do periodo literario subsequente. – Assim, no periodoem<!-- U: seems like there is a space missing here -->
+                        caracteristicos do periodo literario subsequente. – Assim, no periodo em
                         questão, da Inglaterra temos o subperiodo precursor com a figura culminante
-                        tipica de<rs type="name" key="P433">Chaucer</rs><!-- U: space missing? --></p>
-                    <lg rend="center">
+                        tipica de <rs type="name" key="P433">Chaucer</rs></p>
+                    <quote><lg rend="center">
                         <l>... Dan <rs type="name" key="P433">Chaucer</rs>, whose sweet breath</l>
                         <l>Preluded those melodious bursts, that fill</l>
                         <l>The spacious times of great Elizabeth</l>
                         <l>With sounds that echo still;</l>
-                        <!-- This is a quote of "P146"Tennyson's poem "A Dream of Fair Women" let's see the mouseover option-->
-                    </lg>
-                    <!-- U: I suggest the following:
-                    <quote>
-                        <lg rend="center">
-                            <l>... etc.
-                        </lg>
-                        <note type="comment" resp="#JU"> ... this is a quote of <rs type="name" key="P146">Tennyson</rs>'s poem... </note>
-                    </quote>
-                    Like this you have marked the poem as a quote and the note explains more.
-                    -->
+                        <note type="comment" resp="#JU"> 
+                            <rs type="name" key="P146">Alfred Tennyson</rs>, "A Dream of Fair Women"</note></lg></quote>
                     <p>e neste o por onde ele se mostra precursor é mais o aparecer de figuras de
                         certa grandeza do que o surgir de figuras preindicadoras do <hi
                             rend="italic">espirito</hi> da corrente. O sinal da vindoura grandeza
@@ -216,10 +190,8 @@
                         incompletamente caracterisado com relação ao que se vai tornar no estadio
                         subsequente, mas amplamente tipico e grande no grande poeta <rs type="name"
                             key="P241">Spenser</rs>; em França, o de <rs type="name" key="P241"
-                            >André Chénier</rs> e de <rs type="name" key="P437"
+                            >André Chénier</rs> e de <rs type="name" key="P437" style="b"
                         >Châteaubriand</rs>-poeta
-                        <!-- U: in lists.xml you gave two variants (a,b) for this name. Please
-                        indicate the variant here with @style. -->
                         (tomada esta expressão no já-indicado sentido),
                         onde, com egual nitidez, se percebe a nacionalisada rutura com o periodo
                         anterior, num tom poetico inadivinhavel ainda em <rs type="name" key="P434"
@@ -315,25 +287,7 @@
                             rend="italic">na literatura</hi>, porque é n’este periodo que apparecem
                         os precursores do magno periodo literario que se vae seguir. Vivem n’este
                         periodo <rs type="name" key="P433">Chaucer</rs> em Inglaterra, <rs
-                            type="name" key="P434"> Rousseau</rs> 
-                        <!-- UH: in general, please make sure that you do not have initial or 
-                        final spaces in the elements like here: <rs> Rousseau, this should be
-                        <rs>Rousseau 
-                        
-                        You can look for such cases in individual XML files with Oxygen if you type
-                        the following into the "XPath"-box in the upper left corner of Oxygen (below
-                        the Menu):
-                        
-                        //rs[starts-with(.,' ')]
-                        
-                        To look for elements ending with whitespace, you can use:
-                        
-                        //rs[ends-with(.,' ')]
-                        
-                        If you press Enter then you get a list of the cases in a new window that opens at the
-                        bottom in Oxygen. You can click on the entries in that list to jump to the single
-                        cases. I'll send you a screenshot...
-                        -->
+                            type="name" key="P434">Rousseau</rs> 
                         em França. – Ora a actual corrente
                         literaria portugueza succede <hi rend="italic">á parte
                             pre-revolucionaria</hi> do nosso periodo constitucional, porquanto,
@@ -458,7 +412,7 @@
                         caracteristicos dos periodos francez e inglez e os do periodo actual
                         portuguez. Novidade, temos; o proprio critico de O Dia não a nega, antes se
                         confessa apavorado por ella. Basta comparar <rs type="title">Os
-                        Simples</rs>, a <rs type="title"> Patria</rs>, a <rs type="title" key="T112"
+                        Simples</rs>, a <rs type="title">Patria</rs>, a <rs type="title" key="T112"
                             >Oração á Luz</rs>, a <rs type="title">Vida Etherea</rs> e, de resto,
                         tudo mais quanto na nova corrente esteja, ao que haja em qualquer outra
                         corrente literaria nacional ou estrangeira, e de qualquér tempo, para vêr
@@ -501,16 +455,14 @@
                         versar sobre o primeiro estadio dos trez periodos, e, para mais auxilio,
                         sobre o subperiodo precursor. Quanto a este, <rs type="name" key="P18"
                             >Anthero de Quental</rs> nada tem de temer de <rs type="name" key="P434"
-                            > Rousseau</rs>-poeta, ou de <rs type="name" key="P433"> Chaucer</rs>
+                            >Rousseau</rs>-poeta, ou de <rs type="name" key="P433">Chaucer</rs>
                         mesmo, considerado tudo. E repare-se que <rs type="name" key="P18"
                             >Anthero</rs> teve co-precursores de mais valor que os contemporaneos
                         (co-precursores) de <rs type="name" key="P434">Rousseau</rs> e de <rs
                             type="name" key="P433">Chaucer</rs>. No que respeita ao primeiro
                         estadio, o poema supremo do nosso, a <rs type="title">Patria</rs>, de <rs
                             type="name" key="P25">Junqueiro</rs>, escusa de se acanhar na comparação
-                        com <rs type="name" key="P438">Châteaubriand</rs>-poeta,
-                        <!-- U: in lists.xml you gave two variants (a,b) for this name. Please
-                        indicate the variant here with @style. -->
+                        com <rs type="name" key="P438" style="b">Châteaubriand</rs>-poeta,
                         ou mesmo com a <rs
                             type="title">Faerie Queene</rs>, de <rs type="name" key="P241"
                             >Spenser</rs>. Com respeito ao primeiro, a superioridade do nosso poeta
@@ -665,7 +617,7 @@
                         republicanos. Suavemente, se puder ser, será a transformação feita, a
                         creação começada. Mas se assim não fôr, se esta gente de hoje não curar de
                         se tornar portugueza, confiemos, sem horror, que o <rs type="name"
-                            key="P420"> Cromwell</rs> vindouro os saberá afastar, aplicando-lhes,
+                            key="P420">Cromwell</rs> vindouro os saberá afastar, aplicando-lhes,
                         por triste necessidade, a <hi rend="italic">ultima ratio</hi> de <rs
                             type="name" key="P12" style="b">Napoleão</rs>, de <rs type="name"
                             key="P449">Cavaignac</rs>, e do <rs type="name" key="P450">Coronel Conde
