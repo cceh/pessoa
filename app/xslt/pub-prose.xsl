@@ -80,6 +80,14 @@
         </span>
     </xsl:template>
     
+    <xsl:template match="milestone[@unit='section']">
+        <xsl:choose>
+            <xsl:when test="@rend='asterisks'">
+                <p class="milestone section">* * *</p>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:template>
+    
     
     
     

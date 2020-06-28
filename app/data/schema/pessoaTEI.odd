@@ -75,6 +75,20 @@
             </div>
             <div xml:id="facsimiles">
                 <head>Facsimiles</head>
+                <p>The <gi>facsimile</gi> element is used to hold information about the image files
+                    that represent a facsimile of the text transcribed in the TEI body. The image
+                    files for the Pessoa edition are stored on the image server of the Cologne
+                    Center for eHumanities (CCeH). The link to the image server is given in the
+                    attribute <att>xml:base</att> on <gi>facsimile</gi>. In all the TEI files,
+                        <gi>facsimile</gi> contains one or more <gi>graphic</gi> elements, each
+                    indicating the path to individual image files in <att>url</att>. These paths are
+                    relative to the base URI for the images, for example:</p>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+                        <graphic url="prosa/Notas_para_a_recordacao_1.jpg"/>
+                        <graphic url="prosa/Notas_para_a_recordacao_2.jpg"/>
+                    </facsimile>
+                </egXML>
             </div>
             <div xml:id="transcriptions">
                 <head>Transcriptions</head>
