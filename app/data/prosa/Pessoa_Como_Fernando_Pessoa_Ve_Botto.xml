@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <!-- this is a comment... here they are used for documentation and to give hints. In new files, 
+        please just use them to comment on if something is unclear -->
+            <titleStmt>
+                <title>COMO FERNANDO PESSOA VÊ ANTONIO BOTTO</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="restricted">
+                    <!-- @status will be set to "free" once the document is ready to be published -->
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Pessoa_Como_Pessoa_Ve_Botto.xml</idno>
+            </publicationStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="O1-X">COMO FERNANDO PESSOA VÊ ANTONIO BOTTO</rs></item>
+                </list>
+                <biblStruct>
+                    <!-- here goes the bibliographical reference for the source publication -->
+                    <analytic>
+                        <title level="a">COMO FERNANDO PESSOA VÊ ANTONIO BOTTO</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt" otherLangs="en"/>
+                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J85">Suplemento Literário do Diário de Lisboa</rs></title>
+                        <!-- @key is to identify the periodical. You can find other periodicals IDs in the file 
+                            lists.xml in the data folder. In that file, 
+                        look for the sublist <list type="periodical">, currently beginning at line 1450. You can also add
+                        new periodicals there -->
+                        <imprint>
+                            <date when="1915-03-01">1 de Março de 1935</date>
+                            <!-- in case it is not a single date, but from-to, it 
+                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
+                            there is just a year: when="1931" -->
+                        </imprint>
+                        <biblScope unit="page">6</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="prosa">Prosa</rs>                     
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+        <graphic url="Como_Fernando_Pessoa_Ve_Antonio_Botto.jpg"/>
+    </facsimile>
+    <text corresp="#O1-X">
+        <!-- @corresp: contains the index of this WORK. 
+        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
+        This can be left as is in the beginning.-->
+        <body>
+            <div>
+                
+                <head>COMO FERNANDO PESSOA VÊ ANTONIO BOTTO</head> 
+                
+                <head type="sub">O seu lirismo e a sua paixão</head> 
+                    
+                    
+                    
+                <p rend="indent-first">O livro «Ciume» de  <rs type="name" key="P17">Antonio Botto</rs> representa uma nova fase da sua fase de sempre. 
+                    Certos elementos, dos que compõem a essencia dos seus poemas, emergem neste livro mais declarada ou distintivamente do que em seus 
+                    livros anteriores. E’ esta a diferença, que poderá ser tida por pequena ou por grande consoante a sensibilidade de cada um e a reacção 
+                    dessa sensibilidade perante uns e outros poemas – os da fase anterior e os da presente.</p> 
+                    
+                <p rend="indent-first">De um modo geral, ainda que concreto, pode dizer-se que a obra poetica de 
+                    <rs type="name" key="P17">Antonio Botto</rs> gira e se anima em torno de quatro idéas, ou estados mentais – a emoção sem paixão, a 
+                    inteligencia das superficies, o sentimento contraditorio, e a ironia emotiva. Estes quatro elementos não são, porém, diversos, 
+                    desconexos ou simplesmente juxta-postos: derivam de um mesmo fundo temperamental, que por todos eles igual e concordantemente se 
+                    manifesta.</p> 
+                    
+                <p rend="indent-first">Por emoção sem paixão entendo, como sem dificuldades entenderá qualquer, que os estados emotivos do poeta não 
+                    comportam, nem envolvem, nenhum aprofundamento ou intensificação. <rs type="name" key="P17">Antonio Botto</rs> não analisa 
+                    emotivamente as suas emoções, nem de tal modo nelas se concentra que automaticamente, se animem, aqueçam, se convertam em paixões.</p> 
+                    
+                <p rend="indent-first">Com analise emotiva das emoções–em oposição implicita á analise intelectual delas – quero significar aquele estado 
+                    em que o poeta, ou o homem, se concentra sonhadoramente no que sente, e assim o multiplica, o desdobra, o sente diversa e divididamente. 
+                    Tal estado merece o nome de paixão, não porque envolva intensidade, mas porque implica absorção. 
+                    <rs type="name" key="P17">Antonio Botto</rs> não se dá tal estado. As suas emoções são simples e directas, embora os seus sentimentos 
+                    – isto é, os prolongamentos temperamentais de essas emoções sejam porventura complicados. Isto, porém, é já outro assunto, de que mais 
+                    adiante se tratará.</p> 
+                    
+                <p rend="indent-first">Se não existe em <rs type="name" key="P17">Antonio Botto</rs> essa analise emotiva das emoções, tampouco existe, 
+                    ainda menos existe a paixão propriamente dita – aquela exaltação da emoção por meio da qual esta exclui todo outro elemento, e, 
+                    concentrandose num ponto ou fito, imprime ao espirito uma unidade emotiva.</p> 
+                  
+                <p rend="indent-first">Por inteligencia das superficies entendo, como é intuitivo, aquela inteligencia que se preocupa tam sómente com os 
+                    aspectos exteriores das coisas – quer os seres externos, a quec omumente chamamos coisas, quer aqueles seres internos, a que comumente 
+                    chamamos emoções. Se <rs type="name" key="P17">Antonio Botto</rs> pouco se preocupa com a analise emotiva das suas emoções, tam pouco 
+                    ou menos ainda se preocupa com a analise intelectual delas. Deixa-as passar e fita-as bem. Se por vezes lhes desdobra os mantos, 
+                    todavia, nunca as interroga. «Deixa-me vêr como és por fóra», diz ele a cada coisa que sente.</p> 
+                    
+                <p rend="indent-first">Isto ficará mais claro, ou, se se preferir, menos obscuro, se compararmos a acção da inteligencia das superficies 
+                    com a dos dois outros tipos de inteligencia, a que poderemos chamar a inteligencia de aprofundamento e a inteligencia de definição. A 
+                    primeira busca ir até ao fundo das coisas, á alma e essencia dos seres, e pode ser intuitiva e até, por isso mesmo, extra-intelectual. 
+                    A segunda, atenta ao mesmo fito, não pretende consegui-lo por um processo de sondagem, mais analogo á visão que ao entendimento: 
+                    procura antes, por uma analise paciente da superficie, deduzir dela o fundo, vêr nela não o que ela é, mas o que simbolisa ou figura. 
+                    Por isso, na exposição, a inteligencia de aprofundamento é normalmente gnomica ou analogica, a de definição normalmente raciocinada ou 
+                    discursiva. E’ que esta vive mais do processo do que do intuito dele.</p> 
+
+                <p rend="indent-first">É evidente que a inteligencia de definição de pouco ou de nada serve a um poeta:  seu ritmo é de natureza oposta ao 
+                    ritmo da emoção, em que a poesia assenta: dá-se uma interferencia de ondas, e portanto uma anulação de efeitos, como em 
+                    <rs type="name" key="P492">Boileau</rs> ou <rs type="name" key="P423">Pope</rs>, que são prosadores em verso. E a inteligencia de aprofundamento, se devéras pode 
+                    servi-lo, muitas vezes estorva com o que dá e confunde com o que afirma; são duas visões simultaneas – uma do fundo, outra da 
+                    superfície; só quando, o que é raro, exactamente se sobrepõem, surge, como no <rs type="title"><hi rend="italic">Kubla Khan</hi></rs> de 
+                    <rs type="name" key="P163">Coleridge</rs>, uma grande obra de arte, e então como que sobrenatural. Uma e outra valem mais, para o 
+                    poeta, nos seus reflexos do que nas suas presenças: servem-o desde que ele se não sirva delas. Assim 
+                    <rs type="name" key="P87">Poe</rs>, prodigioso raciocinador, escreveu poemas admiraveis, sem sombra de raciocinio, porque sabia 
+                    raciocinar: o raciocinio ausente está presente no facto de esses poemas não serem, como em substancia são, simples loucura. Assim 
+                    <rs type="name" key="P65">Shakespeare</rs>, prodigioso aprofundador, escreveu versos espantosos, sem sombra de aprofundamento, porque 
+                    sabia aprofundar: a frase, naturalmente natural, vive da luz que lhe ministra uma presença que lhe é estranha.</p> 
+
+                <p rend="indent-first">Por sentimento contraditorio quere dizer aquela subtileza da emoção consigo mesma, pela qual imediatamente 
+                    compreende que traz sempre em si dois elementos opostos. Toda emoção sentida é a diagonal de um paralelograma de forças: vive de ambas 
+                    e a ambas anula. Como toda a vida é, de um modo ou de outro, um sistema de atracção e repulsão, tudo quanto sentimos contém 
+                    obscuramente duas forças, essas duas forças; e ha certos estados de sentimento – entendendo este como a permaente, da emoção – em que 
+                    a diagonal se decompõe, talvez por fraquesa em sentir, nas duas forças de que se forma. Então o espirito toma consciencia de cada 
+                    emoção como dupla, de cada sentimento como a contradição de si mesmo. O homem sente que, ao sentir, é dois. E’ o <hi rend="italic">odi 
+                        et amo</hi> de <rs type="name" key="P423">Catulo</rs>.</p> 
+
+                <p rend="indent-first">Foi sempre esta uma das feições mais constantes e mais caracteristicas, da obra poetica ou outra, de 
+                    <rs type="name" key="P17">Antonio Botto</rs>. Sempre ele se mostrou sentindo o contrario do que estava a sentir. Sempre ele disse, ao 
+                    mesmo tempo o avesso do que dizia. O mesmo ritmo de todos os seus versos traz, no fluxo audivel, o sussurro implicito do refluxo que 
+                    se lhe vai seguir. </p> 
+
+                <p rend="indent-first">A ironia emotiva nasce naturalmente do sentimento contraditorio, desde que a paixão não intervenha, ou a 
+                    inteligencia não seja de aprofundar ou definir. Se a paixão intervem, a contradição do sentimento sofre-se com revolta. Se a 
+                    inteligencia aprofunda ou define, a contradição do sentimento repele-se com raiva. Se, como em 
+                    <rs type="name" key="P17">Antonio Botto</rs>, nem uma nem outra coisa se dá, a contradição do sentimento aceita-se com um sorriso–um 
+                    sorriso triste, talvez, mas um sorriso triste é, em si mesmo, uma contradição e uma ironia. </p> 
+
+                <p rend="indent-first">Que está, afinal, no fundo de tudo isto? Um temperamento conscientemente emotivo, que, por emotivo exclui tanto a 
+                    paixão como as formas intensas da inteligencia; que, por consciente, conhece as suas contradições e se alimenta da ironia delas. Em 
+                    resumo, <rs type="name" key="P17">Antonio Botto</rs> E assim o que a analise dividira em quatro, tem a mesma logica que reconhecer que 
+                    a vida reunira em um.</p> 
+
+                <p rend="indent-first">Em seus livros anteriores, <rs type="name" key="P17">Antonio Botto</rs> afirmara-se mais como só um emotivo sem 
+                    paixão e um contraditorio de sentimentos. Neste, melhor consigo, estabelece-se como tambem um inteligente das superficies e um ironista 
+                    das suas emoções. Em outras palavras, revela-se, agora, o total de si mesmo.</p> 
+
+                <p rend="indent-first">E isto, que se diz em poucas palavras, levou tantas para dizer que se ia dizer!</p> 
+                    
+                    <signed rend="align-right">FERNANDO PESSOA</signed> 
+
+            </div>
+        </body>
+    </text>
+</TEI>

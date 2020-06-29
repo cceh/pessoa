@@ -267,7 +267,7 @@ function drawArrowsEach() {
         svg.appendChild(defs);
 
 
-        svg.setAttribute('style', 'position:absolute; top:0px; left:0px; width:'+w+'px; height:'+h+'px; display:block; z-index:0;');
+        svg.setAttribute('style', 'position:absolute; top:0px; left:0px; width:'+w+'px; height:'+h+'px; display:block; z-index:-5;');
         svg.setAttribute('id','svg1');
 
     jsBlockStrikeThrough(svg,anker.top,anker.left,w,h);

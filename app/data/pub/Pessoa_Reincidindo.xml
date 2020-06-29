@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Reincidindo...</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="restricted">
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Pessoa_Reincidindo.xml</idno>
+            </publicationStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="W188">Reincidindo...</rs></item>
+                </list>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Reincidindo...</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt" otherLangs="en"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J5">A Águia</rs></title>
+                        <imprint>
+                            <date when="1912-05">Maio de 1912</date>
+                        </imprint>
+                        <biblScope unit="issue">5</biblScope>
+                        <biblScope unit="page">137 e 144</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="prosa">Prosa</rs>
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+        <graphic url="prosa/Reincidindo_137.jpg"/>
+        <graphic url="prosa/Reincidindo_138.jpg"/>
+        <graphic url="prosa/Reincidindo_139.jpg"/>
+        <graphic url="prosa/Reincidindo_140.jpg"/>
+        <graphic url="prosa/Reincidindo_141.jpg"/>
+        <graphic url="prosa/Reincidindo_142.jpg"/>
+        <graphic url="prosa/Reincidindo_143.jpg"/>
+        <graphic url="prosa/Reincidindo_144.jpg"/>
+    </facsimile>
+    <text corresp="#W188">
+        <body>
+            <div>
+                <head>REINCIDINDO... </head>
+                <div>
+                    <head rend="center">I</head>
+                    <p rend="indent-first"><hi rend="bold">N’o Dia</hi>, de 24 de abril, o autor de
+                        uma <hi rend="italic">Carta de Coimbra</hi>, entitulada <hi rend="italic">A
+                            literatura e o futuro</hi>, faz sobre o nosso anterior artigo
+                        considerações adversamente críticas. Em si, essa <hi rend="italic"
+                            >Carta</hi> que poderia ter sido mais oferenda a qualquer deus que o
+                        fosse da logica, não tem excepcional importancia similirefutatoria. Mas
+                        como, sobre dar expressão pelo menos publica, e até certo ponto lucida, a
+                        duvidas e pasmos que o nosso artigo, especialmente pelo modo-de-enunciar as
+                        conclusões, causou, a <hi rend="italic">Carta</hi> nos dá ensejo de, sem que
+                        num apice hajam de ser alteradas essas conclusões, clarificar uns pontos e
+                        intensificar outros, respondemos-lhe, e, ao mesmo tempo, continuando o nosso
+                        sumario estudo da grande corrente literaria, que entre nós começa a abrir
+                        caminho, esperamos poder tornar, pela logica, mais proximo da possibilidade
+                        de compreender, que concebivelmente entre bachareis haja, aquilo com que
+                        terminava o nosso estudo — com “resurgimentos assombrosos”, “supra- <rs
+                            type="name" key="P15" style="b">Camões</rs>” e todas as outras alegrias. </p>
+                    <p rend="indent-first">Importa, porém, declarar, antes de tudo, que nem para
+                        nós, autor dele, oferece o nosso anterior escrito<ref
+                            target="Pessoa_A_Nova_Poesia_Portugueza_Sociologicamente_Considerada.xml"/>
+                        <!--U: somehow, our comments on the link question here got lost, so I introduce them again:
+                            
+                            JU: Here it will be nice to create an internal reference to the document 
+                            A Nova Poesia Portugueza Sociologicamente considerada
+                        
+                        U: you could encode it like this:
+                        <ref target="http://www.pessoadigital.pt/pt/pub/Pessoa_A_Nova_Poesia_Portugueza_Sociologicamente_Considerada">o nosso anterior escrito</ref>
+                        then "o nosso anterior escrito" will carry the link. <ref> should be used surrounding
+                        some text that is going to be linked.
+                        -->
+                        cousa que se pareça com perfeição em materia racionativa. Em sete paginas
+                        não se pode claramente e completamente pôr uma argumentação analitica que,
+                        para ser rigidamente exhaustiva, sem pressas que a carencia de tempo, ou
+                        dogmatismos e axiomatismos que a escassez de espaço, impõe, tem de se deixar
+                        estender, em plena liberdade, por uma quási-centena de paginas. Notamos
+                        isto, ainda que mal pareça, para que ocasionaes como-que-falhas dialecticas
+                        – esses dogmatismos e pressas citados – não nos sejam registados em
+                        desprimôr de sinceridade ou certeza, ou de possibilidade, que em nós haja,
+                        de irrefutabilisar, desenvolvido que possa ser o raciocinio, as conclusões
+                        últimas da nossa analise construtiva.</p>
+                </div>
+                <div>
+                    <head rend="center">II</head>
+                    <!-- U: please avoid blank spaces at the beginning of paragraph text.
+                    You can check for them with XPath:
+                    //p[starts-with(.," ")]
+                    -->
+                    <p rend="indent-first"> Qualquer corrente literaria tira os caracteristicos que
+                        o raciocinador lhe pode encontrar, de uma tripla relacionação sociologica.
+                        Essa tripla relação revela-se á nossa analise como sendo; 1.º, com o
+                        movimento social da nação em que aparece; 2.º, com as outras correntes
+                        literarias, nacionaes ou estrangeiras, passadas ou antemporaneas; 3.º, com a
+                        alma do povo a que pertence. Exgotando, por uma analise minuciosa, os
+                        caracteristicos de uma corrente literaria em face destes tres elementos
+                        sociologicos, aqui logicamente normativos, tel-a-hemos caracterisado nitida–
+                        e diferencialmente. A analise esboçada no nosso anterior artigo, e feita
+                        sobre os periodos inglez e francez de maxima grandeza literaria e social,
+                        levou-nos a atribuir ao movimento literario, que corresponde a uma epoca
+                        creadora, tres caracteristicos – o preceder o movimento social creador, o
+                        ter novidade, e o ter nacionalidade. Isto é, como se vai vêr, incompleto,
+                        ainda que não erroneo. Vamos agora arrancar ás epocas creadoras, aos seus
+                        periodos literarios, o seu segredo sociologico, em tudo que a sua tripla
+                        relacionação sociologica, citada, possa envolver. Paralelamente, iremos
+                        apontando as coincidencias dos caracteristicos, que essas epocas nos fôrem
+                        revelando, com os caracteristicos, que <hi rend="italic">chemin faisant</hi>
+                        incontestabilisaremos, da nossa actual corrente literaria.</p>
+                    <p rend="indent-first">Preaclaremos, porém, a questão, resolvendo em seus
+                        elementos historicamente – isto é, chronologicamente – constitutivos, a
+                        corrente literaria caracteristica das epocas de maxima grandeza nacional.
+                        Colheremos assim, de começo, uma impressão <hi rend="italic">exterior</hi>
+                        desse movimento literario.</p>
+                    <p rend="indent-first">Toda a corrente literaria desta especie suprema é
+                        subdivisivel em tres subperiodos – um, <hi rend="italic">precursor</hi>, em
+                        fins do periodo literario antecedente; outro, aquele que constitui
+                        essencialmente a corrente; e, último, aquele em que se dissolve a <hi
+                            rend="italic">alma</hi> desse periodo em elementos aurorealmente
+                        caracteristicos do periodo literario subsequente. – Assim, no periodo em
+                        questão, da Inglaterra temos o subperiodo precursor com a figura culminante
+                        tipica de <rs type="name" key="P433">Chaucer</rs></p>
+                    <quote>
+                        <lg rend="center">
+                            <l>... Dan <rs type="name" key="P433">Chaucer</rs>, whose sweet
+                                breath</l>
+                            <l>Preluded those melodious bursts, that fill</l>
+                            <l>The spacious times of great Elizabeth</l>
+                            <l>With sounds that echo still;</l>
+                            <note type="comment" resp="#JU">
+                                <rs type="name" key="P146">Alfred Tennyson</rs>, "A Dream of Fair
+                                Women"</note>
+                        </lg>
+                    </quote>
+                    <p>e neste o por onde ele se mostra precursor é mais o aparecer de figuras de
+                        certa grandeza do que o surgir de figuras preindicadoras do <hi
+                            rend="italic">espirito</hi> da corrente. O sinal da vindoura grandeza
+                        nacional (literaria, primeiro) está apenas no valôr da precursora figura
+                        literaria. <rs type="name" key="P433">Chaucer</rs> é inegavelmente <hi
+                            rend="italic">inglez</hi>; mas não é completamente e tipicamente inglez,
+                        reconhecivel imediatamente como inglez, como depois, na corrente,
+                        propriamente, o serão <rs type="name" key="P241">Spenser</rs>, <rs
+                            type="name" key="P465">Shakespeare</rs>, e mesmo <rs type="name"
+                            key="P84">Milton</rs>. De resto, se essa figura precursora precontivesse
+                        elementos espiritualmente distintivos do <hi>periodo</hi> em si, o periodo
+                        teria já, <hi>ipso facto</hi>, começado, com ela. – Em França o subperiodo
+                        precursor trahe-se maximamente na figura de <rs type="name" key="P434"
+                            >Rousseau</rs>-poeta, expressão esta que não se explica por quaesquer
+                        versos que <rs type="name" key="P434">Rousseau</rs> (trata-se, é claro de
+                        Jean-Jacques) escrevesse, mas pelo elemento essencialmente <hi rend="italic"
+                            >poetico</hi> que a prosa de <rs type="name" key="P434">Rousseau</rs>
+                        contém, e que é , – como, compulsada, a mais malapreciadora história da
+                        literatura franceza revelará, – o que ha nele de, por envolver o principio
+                        do sentimento da natureza, alvorescentemente indicador do vindouro
+                        romantismo francez. <note n="1">Caso se objecte que <rs type="name"
+                                key="P434">Rousseau</rs> era suisso, contraobjecte-se desde já que
+                            ser suisso não é sociologicamente nada, e menos, então, naquele tempo.
+                            Importa não confundir um <hi rend="italic">povo</hi>, que é uma entidade
+                            social com alma propria, com uma <hi rend="italic">nação</hi>,
+                            aglomerado que pode ter tanta alma coletiva como uma sociedade
+                            comercial. – Repare-se tambem que uma analyse mais minuciosa poderia
+                            mostrar que não é sem significaçãoeste alvorecer em prosa do espírito
+                            poetico, mas, além de impossivel, é inutil aqui essa mais minuciosa
+                            analyse.</note></p>
+                    <!-- U: please add the note label here (see "... sociologicamente considerada with the example") -->
+                    <p rend="indent-first"> E se <rs type="name" key="P433">Chaucer</rs> está a mais
+                        distancia do principio do verdadeiro periodo inglez, do que <rs type="name"
+                            key="P434">Rousseau</rs> do francez, repare-se em quão mais lenta é a
+                        evolução social pre-isabeliana da Inglaterra do que a evolução
+                        pre-revolucionaria da França.</p>
+                    <p rend="indent-first">O periodo – o verdadeiro periodo – subdivide-se, por sua
+                        parte, em tres estadios, classificaveis de sua juventude, virilidade e
+                        velhice. O primeiro estadio é, em Inglaterra, o que vai de <rs type="name"
+                            key="P435">Wyatt</rs> e <rs type="name" key="P436">Surrey</rs> até <rs
+                            type="name" key="P241">Spenser</rs>, e onde aparece já o <hi
+                            rend="italic">tom</hi>, o <hi rend="italic">espírito</hi> da epoca,
+                        incompletamente caracterisado com relação ao que se vai tornar no estadio
+                        subsequente, mas amplamente tipico e grande no grande poeta <rs type="name"
+                            key="P241">Spenser</rs>; em França, o de <rs type="name" key="P241"
+                            >André Chénier</rs> e de <rs type="name" key="P437" style="b"
+                            >Châteaubriand</rs>-poeta (tomada esta expressão no já-indicado
+                        sentido), onde, com egual nitidez, se percebe a nacionalisada rutura com o
+                        periodo anterior, num tom poetico inadivinhavel ainda em <rs type="name"
+                            key="P434">Rousseau</rs>, em quem parece apenas pre-existir com uma
+                        tendenciada artificialidade. – O segundo estadio é aquele em que o espírito
+                        da epoca se intensifica, se alarga a toda a amplitude de que a sua alma é
+                        capaz, se torna mais <hi rend="italic">ele</hi>, e, por isso, gera os
+                        maximos poetas. É, em Inglaterra, o estadio- <rs type="name" key="P65"
+                            >Shakespeare</rs>. É, em França, o de <rs type="name" key="P65"
+                            >Lamartine</rs>, <rs type="name" key="P292">Hugo</rs>, <rs type="name"
+                            key="P65">Musset</rs>. – Finalmente, no terceiro estadio, o espírito da
+                        epoca como que se torna mais rigido, mais refletido, por mais cansado: a
+                        intensidade desce para meditatividade. É, em Inglaterra, o periodo de <rs
+                            type="name" key="P292">Milton</rs> e dos liricos jacobitas. Em França, é
+                        o estádio de <rs type="name" key="P441">Leconte de Lisle</rs>, de <rs
+                            type="name" key="P442">Sully-Prudhomme</rs>. – Por último, ha uma
+                        especie de sobrevivencia vaga do espírito da epoca, mas já sob a fórma
+                        essencial e espiritual da epoca subsequente. O que a epoca moribunda
+                        empresta a essa subsequencia proxima é um resto de vida, manifestado por uma
+                        intensidade e relativa grandeza nos poetas em que alvorece a epoca seguinte,
+                        que, por ter sido a outra a maxima, da nação, forçosamente lhe ha-de ser
+                        inferior. É o caso de <rs type="name" key="P217">Dryden</rs> e dos liristas
+                        carolinos que, ainda que se veja que são já o principio de um outro periodo,
+                        trahem ainda, numa certa grandeza e intensidade, a gloria de que são
+                        sucessores. É o caso de <rs type="name" key="P196">Verlaine</rs>, o mais
+                        notavel dos iniciadores da sua epoca poetica, dando ainda uma intensidade,
+                        que lhe vem do contacto que teve com o periodo anterior, á sua
+                        desnacionalisada obra lirica. – E se em França as epocas mais se sobrepõem,
+                        é facil vêr que a extraordinaria rapidez do movimento social moderno é a
+                        causa imixtora dos phenomenos.</p>
+                    <p rend="indent-first">Vejamos, agora, se, sob este ponto de vista exterior, a
+                        actual corrente literaria portugueza alguma analogia offerece com as outras
+                        correntes, que estudámos. Note-se, primeiro, quando a nossa corrente
+                        principia. O seu <hi rend="italic">tom</hi> especial e distinctivo, quando
+                        começa a apparecer? É fácil constatal-o. É com o <rs type="title">Só</rs> de
+                            <rs type="name" key="P53">Antonio Nobre</rs>, com aquela parte da obra
+                        de <rs type="name" key="P54">Eugenio de Castro</rs> que toma aspectos
+                        quinhentistas, e com <rs type="title">Os Simples</rs> de <rs type="name"
+                            key="P25">Guerra Junqueiro</rs>. Começa, portanto, pouco mais ou menos
+                        coincidentemente com o começo da última década do seculo dezanove. Fixado o
+                        inicio do periodo, procuremos o precursor. Continúa a não haver
+                        difficuldade: o precursor é <rs type="name" key="P18">Anthero de
+                            Quental</rs>. É exactamente analogo a <rs type="name" key="P433"
+                            >Chaucer</rs> e a <rs type="name" key="P434">Rousseau</rs>-poeta em, a
+                        par de não ter ainda nacionalidade (compare-se o seu <hi rend="italic"
+                            >tom</hi> com o de <rs type="name" key="P53">Antonio Nobre</rs>,
+                        inferior como poeta, mas superior como <hi>portuguez</hi>), ter já plena
+                        originalidade, isto é, ser já nacional por não ser inspirado em elemento
+                        algum poeticamente estrangeiro; originalidade que nem <rs type="name"
+                            key="P25">Junqueiro</rs>, na primeira phase, que é a coincidente com <rs
+                            type="name" key="P18">Anthero</rs>, nem outro qualquér – innacionalisado
+                        ainda aquelle por huguesco, os outros por huguismos, parnasianismos ou
+                        symbolismos – se pode considerar como tendo. – Egualmente marcado está o
+                        primeiro estadio da corrente literaria propriamente dita. Vimos em que obras
+                        começa: é facil vêr que vae desde ellas até á <rs type="title">Oração á
+                            Luz</rs> de <rs type="name" key="P25">Junqueiro</rs>, e á <rs
+                            type="title">Vida Etherea</rs> de <rs type="name" key="P52">Teixeira de
+                            Pascoaes</rs>, onde começa a apparecer já o segundo estadio, onde se vê
+                        a corrente, ao continuar-se, tomar um aspecto outro absolutamente. O modo de
+                        exprimir intensifica-se, complica-se de espiritualidade, o conteúdo
+                        sentimental e intelectual alarga-se até aos confins da consciencia e da
+                        intuição. A nova phase de <rs type="name" key="P302">Antonio Corrêa
+                            d’Oliveira</rs>, o apparecimento de novos poetas, escrevendo já no novo
+                        estylo, marcam nitidamente a existencia do segundo estadio. Como, por
+                        enquanto, a nossa corrente literaria não tem mais edade do que esta, a
+                        analogia não pode aspirar a abranger mais. No que abrange, porém, a analogia
+                        é perfeita. Exteriormente, o nosso actual movimento literario, até onde
+                        chega, assemelha-se ás maximas correntes literarias da França e da
+                        Inglaterra. Appliquemo-nos agora a esmiuçar se igual analogia, interior,
+                        justifica uma total aproximação sociologica.</p>
+                </div>
+                <div>
+                    <head rend="center">III</head>
+                    <p rend="indent-first">Retomemos a tripla relacionação, já notada, em que cada
+                        epoca literaria deve estar para com o movimento social, as correntes
+                        literarias, e a alma nacional. Do estudo d’essa relacionação constará o
+                        espirito da corrente. Um a um examinemos os trez elementos da questão.
+                        Comecemos pelo primeiro.</p>
+                    <p rend="indent-first">Em que relação está o movimento literario, correspondente
+                        ás grandes epocas creadoras, com o movimento social que ha n’essas, ou
+                        caracterisa essas epocas? Em trez relações especiaes se nos deve mostrar
+                        essa relação – com respeito aos caracteristicos sociaes; – 1.º, do periodo a
+                        que o periodo literario <hi rend="italic">succede</hi>; 2.º, do periodo com
+                        que <hi rend="italic">coincide</hi>; 3.º, do periodo que precede.</p>
+                    <p rend="indent-first">Vejamos a que especie de periodo social <hi rend="italic"
+                            >succedem</hi> as grandes epocas literarias ingleza e franceza. Esse
+                        periodo é, em Inglaterra, o periodo pre-Tudor; em França, é o fim do reinado
+                        de <rs type="name" key="P444">Luiz XV</rs>, e todo o de <rs type="name"
+                            key="P445">Luiz XVI</rs>. Que teem, de analogo, estes dois periodos
+                        sociaeis? São ambos periodos de apagada e esteril vida politica, de
+                        despotismo facil, de agitação nulla e como que servil, se agitação chega a
+                        haver – periodos onde se parece ter ficado n’uma estagnação social, paz ou
+                        guerra que haja. Do grande periodo subsequente só ha preindicação <hi
+                            rend="italic">na literatura</hi>, porque é n’este periodo que apparecem
+                        os precursores do magno periodo literario que se vae seguir. Vivem n’este
+                        periodo <rs type="name" key="P433">Chaucer</rs> em Inglaterra, <rs
+                            type="name" key="P434">Rousseau</rs> em França. – Ora a actual corrente
+                        literaria portugueza succede <hi rend="italic">á parte
+                            pre-revolucionaria</hi> do nosso periodo constitucional, porquanto,
+                        começando com a ultima década do seculo dezenove, a actual corrente
+                        literaria coincide no seu inicio com o movimento de 31 de janeiro.
+                        Politicamente esteril, infecunda – e servilmente agitado, nullo de grandezas
+                        e de utilidades, o nosso periodo constitucional é socialmente analogo
+                        áquelles da França e Inglaterra, que citámos. Basta, para lhe apontar a
+                        nulidade politica, indicar que foi um periodo constitucional que nem
+                        constitucional foi. O constitucionalismo nunca esteve implantado entre nós.
+                        Se houve no mundo periodo reles e mesquinho, foi reles e mesquinho esse. Até
+                        aqui está, portanto, a nossa corrente literaria em coincidencia com as
+                        outras, n’esta especial relacionação social. Continúa a haver coincidencia
+                        no que diz respeito ao vislumbrar <hi rend="italic">apenas literario</hi> do
+                        periodo que se segue. Foi no periodo constitucional pre-revolucionario que
+                        apareceu <rs type="name" key="P18">Anthero de Quental</rs>, em que já vimos
+                        o precursor da nossa corrente literaria.</p>
+                    <p rend="indent-first">Passe-se agora a considerar o periodo politico com que o
+                        periodo literario <hi rend="italic">coincide</hi>. O periodo literario
+                        inglez começa no reinado de <rs type="name" key="P446">Henrique VIII</rs>,
+                        de quem <rs type="name" key="P435">Wyatt</rs> e <rs type="name" key="P436"
+                            >Surrey</rs> são contemporaneos, e acaba em coincidencia approximada com
+                        a revolução, de substituição dynastica, de 1688. O periodo francez coincide
+                        com o periodo social que se estende desde a grande revolução até 1870, pouco
+                        mais ou menos. Que tem de distintivo o periodo social inglez que se nos
+                        revela coincidente com a magna corrente literaria ingleza? Que tem de
+                        analogamente distinctivo o periodo francez correspondente? A agitação
+                        revolucionaria ou transformadora é o que ambos teem de distinctivo. Do
+                        periodo francez 1789-1870 é inutil falar n’este respeito. Do periodo inglez
+                        note-se que começa com <rs type="name" key="P446">Henrique VIII</rs>, sob
+                        quem a Inglaterra rompeu com Roma e a religião catholica (primeiro facto
+                        indicador de uma transformação que se nota na historia da Inglaterra) e
+                        atravessa todo o periodo maximamente transformador que vae da ahi até <rs
+                            type="name" key="P420">Cromwell</rs>. Parallelamente, a corrente
+                        literaria portugueza rompe coincidentemente com o movimento de 31 de
+                        Janeiro, primeiro sinal de transformação politica, e vae acompanhando toda a
+                        agitação transformadora que é de hoje em Portugal e cujo segundo passo,
+                        vitoriosamente transformador este, foi o que poz ponto, em 5 de Outubro de
+                        1910, ao periodo <hi rend="italic">revolucionario</hi> (1891-1910) do
+                        constitucionalismo portuguez. Note-se bem: o que importa é que o periodo de
+                        1890 até ao, e através do, presente é um periodo transformativo; não vem por
+                        emquanto para o caso o valôr ou durabilidade que se queira attribuir ou não
+                        attribuir a essa transformação. Esse ponto pertence á parte final do artigo,
+                        é para quando hajam de ser tiradas as conclusões geraes. Depende,
+                        evidentemente, de se provar ou não a analogia absoluta entre o actual
+                        periodo social portuguez e os magnos periodos da historia da França e da
+                        Inglaterra. Se essa analogia se não provar, haverá azo para discussões e
+                        argumentos. Mas se se provar – veremos que se provará – a mais arguta
+                        especiosação monarchista nada valerá contra a valorisação – na hypothese,
+                        sociologicamente irrefutabilisada do movimento republicano portuguez.
+                        Repare-se, porém e ainda, em uma outra semelhança que approxima de todo o
+                        nosso periodo social e aquelles a que o estamos comparando: é que, a par de
+                        serem periodos de transformação politica, esses periodos, no estadio
+                        coincidente com aquele em que estamos, trahem uma assombrosa desmoralisação
+                        na vida nacional, desmoralisação que herdam de periodos anteriores, mas que
+                        n’elles se aggrava de uma anarchisação e tumultisação da vida politica que
+                        mesmo a quem de longe os estuda perturbam e entontecem. Comparem-se o
+                        periodo da Revolução Franceza e o periodo isabelliano com os periodos
+                        politicos respectivamente anteriores. – Levada a analyse até esta relativa
+                        minucia, a analogia torna-se flagrante para além de quanto se poderia
+                        esperar.</p>
+                    <p rend="indent-first">O terceiro ponto a analysar – o que diz respeito ao
+                        periodo politico que as grandes épocas literarias <hi rend="italic"
+                            >precedem</hi> – não offerece, é claro, interesse analogico, dado que
+                        não passámos ainda do principio do segundo estadio do periodo literario. Mas
+                        é bom fixar os caracteristicos d’esse periodo, para, caso a nossa epoca
+                        offereça analogia em todos os pontos analysaveis, se poder concluir que o
+                        futuro se encarregará, inevitavelmente, de n’este ponto tambem a mostrar
+                        análoga. Já no anterior artigo estudámos este ponto. Vimos que, depois do
+                        auge, ou segundo estadio, da corrente literaria, vém, coincidindo com o
+                        terceiro estadio, a época vincadamente e terminantemente creadora. Passada
+                        ella, e já em coincidencia com o principio do periodo literario seguinte,
+                        vem a fixação do systema politico creado – o constitucionalismo em
+                        Inglaterra, a republica em França, cada qual o systema em acordo com o
+                        caracter do povo a que pertence. A republica ingleza, e, em França, os
+                        varios constitucionalismos e republicanismos precursores, representam epocas
+                        de transição, maximamente creadoras por maximamente transformadoras e porque
+                        introduziram o elemento novo (o de <hi rend="italic">governo popular</hi> em
+                        Inglaterra, o de <hi rend="italic">democracia</hi> em França) que,
+                        equilibrado por fim com os elementos tradicionaes, fixaram o typo de governo
+                        novo e <hi rend="italic">nacional</hi> – em Inglaterra a monarchia liberal,
+                        em França a republica conservadora. Esta fixação final coincide, como já
+                        apontámos, com o fim do terceiro estadio do grande periodo literario e
+                        principio do periodo literario seguinte.</p>
+                </div>
+                <div>
+                    <head rend="center">IV</head>
+                    <p rend="indent-first">Analysemos agora, para o mesmo fim perscrutador de
+                        coincidencias, quaes os caracteres especiaes apresentados pelas correntes
+                        literarias, nacionaes ou estrangeiras.</p>
+                    <p rend="indent-first">Analysados, os periodos literarios inglez e francez que
+                        véem acompanhando o nosso estudo revelam, sob o aspecto exclusivamente
+                        literario ora em vista, trez elementos distinctivos – a <hi rend="italic"
+                            >novidade</hi> (ou <hi rend="italic">originalidade</hi>), a <hi
+                            rend="italic">elevação</hi>, e a <hi rend="italic">grandeza</hi>. Por
+                            <hi rend="italic">elevação</hi> entendemos o tom literario geral, por
+                            <hi rend="italic">grandeza</hi> o conter grandes figuras individuaes,
+                        grandes poetas. Todos os trez elementos são indispensaveis para a
+                        caracterisação inconfundivel do periodo. Se originalidade bastasse, faria
+                        candidatura a magno periodo literario um que podia ser original n’uma
+                        especie poetica secundaria, como um novo epigrammatismo, um novo genero de
+                        poesia artificial: está no caso a poesia dos trovadores provençaes. Por
+                        isso, sobre novidade, ha n’estes periodos elevação. Mas elevação só pode ser
+                        verdadeiramente e completamente elevação quando – ao contrario do que
+                        acontece com o symbolismo francez, que <hi rend="italic">não
+                            caracteriza</hi> um grande periodo creador – é universalisada,
+                        intensificada por poetas á altura d’essa elevação. A não ser assim,
+                        queda-se, como a citada corrente franceza, sempre proxima da mera
+                        exquisitice e extravagancia, do puro delirio ás vezes, constantemente
+                        imperfeita e deselevada da altura a que, em um ou outro verso, em rarissimas
+                        poesias, intermitentemente atinge. De modo que já um mero raciocinio <hi
+                            rend="italic">à priori</hi> nos dá como caracteristico indissoluvelmente
+                        triplo das correntes literarias supremas a originalidade, a elevação do <hi
+                            rend="italic"> tom</hi>, e a grandeza nos seus representantes
+                        individuaes. É inútil apontar quão novos, sob todos os pontos de vista, são,
+                        cada qual no seu tempo, o isabellianismo e o romantismo francez: desde o
+                        modo de pensar ante os homens e as cousas até ao modo de exprimir, tudo é
+                        original. De egual inutilidade é referir que o <hi rend="italic"> tom</hi>
+                        d’esses periodos literarios é elevado, e que ha n’elles grandes figuras de
+                        poetas.</p>
+                    <p rend="indent-first">Resta saber se aqui ha, também, coincidencia entre os
+                        caracteristicos dos periodos francez e inglez e os do periodo actual
+                        portuguez. Novidade, temos; o proprio critico de O Dia não a nega, antes se
+                        confessa apavorado por ella. Basta comparar <rs type="title">Os
+                        Simples</rs>, a <rs type="title">Patria</rs>, a <rs type="title" key="T112"
+                            >Oração á Luz</rs>, a <rs type="title">Vida Etherea</rs> e, de resto,
+                        tudo mais quanto na nova corrente esteja, ao que haja em qualquer outra
+                        corrente literaria nacional ou estrangeira, e de qualquér tempo, para vêr
+                        que ha entre nós um modo de pensar, de sentir, de exprimir tão
+                        inconfundivelmente original como o do romantismo francez ou o do
+                        isabellianismo, se não mais original ainda. E, quanto a elevação, basta
+                        reparar na altura inspiracional do tom poetico geral do nosso periodo, vêr
+                        como nos menos notaveis poetas da corrente a expressão tem uma feição, um
+                        relevo, extranhos e inconfundiveis. Ainda que o espaço seja para pouco, duas
+                        expressões, que qualquér ledor das cousas do tempo reconhecerá como
+                        probamente citaveis como representativas, podem aduzir-se aqui, para allivio
+                        de scepticos. Tomemos isto, de <rs type="name" key="P52">Teixeira de
+                            Pascoaes</rs>,</p>
+                    <lg rend="center">
+                        <l>A folha que tombava</l>
+                        <l>Era alma que subia,</l>
+                    </lg>
+                    <p>e isto, de <rs type="name" key="P135">Jayme Cortezão</rs>,</p>
+                    <lg rend="center">
+                        <l>E mal o luar os molha, </l>
+                        <l>Os choupos, na noite calma, </l>
+                        <l>Já não tem ramos nem folha, </l>
+                        <l>São apenas choupos d'Alma. </l>
+                    </lg>
+                    <p>Em nenhuma literatura do mundo atingiu nenhum poeta maior elevação do que
+                        estas expressões, e especialmente a extraordinaria primeira, conteem. E
+                        ellas são representativas. Citamol-as não só para comprovação da elevação,
+                        como tambem para indicação da originalidade do tom poetico, da nova poesia
+                        portugueza. Haverá, é claro, quem não sinta a elevação e a originalidade
+                        d’aquelles versos. O raciocinador, porém, limita-se a apresentar
+                        raciocinios. Não é obrigado a uma preliminar distribuição de
+                        intelligencia.</p>
+                    <p rend="indent-first">Resta o terceiro ponto: a grandeza. Haverá, aqui tambem,
+                        analogia? Tanto quanto a juvenilidade da nossa corrente literaria permitte a
+                        aproximação, a analogia não nos parece menos flagrante. A comparação só pode
+                        versar sobre o primeiro estadio dos trez periodos, e, para mais auxilio,
+                        sobre o subperiodo precursor. Quanto a este, <rs type="name" key="P18"
+                            >Anthero de Quental</rs> nada tem de temer de <rs type="name" key="P434"
+                            >Rousseau</rs>-poeta, ou de <rs type="name" key="P433">Chaucer</rs>
+                        mesmo, considerado tudo. E repare-se que <rs type="name" key="P18"
+                            >Anthero</rs> teve co-precursores de mais valor que os contemporaneos
+                        (co-precursores) de <rs type="name" key="P434">Rousseau</rs> e de <rs
+                            type="name" key="P433">Chaucer</rs>. No que respeita ao primeiro
+                        estadio, o poema supremo do nosso, a <rs type="title">Patria</rs>, de <rs
+                            type="name" key="P25">Junqueiro</rs>, escusa de se acanhar na comparação
+                        com <rs type="name" key="P438" style="b">Châteaubriand</rs>-poeta, ou mesmo
+                        com a <rs type="title">Faerie Queene</rs>, de <rs type="name" key="P241"
+                            >Spenser</rs>. Com respeito ao primeiro, a superioridade do nosso poeta
+                        é manifesta. Com respeito ao segundo, a questão de superioridade é caso para
+                        argumentos. Porque, se não ha duvida que em originalidade e exuberancia
+                        imaginativa o poema de <rs type="name" key="P241">Spenser</rs> sobreleva ao
+                        de <rs type="name" key="P25">Junqueiro</rs>, tambem se não pode negar que em
+                        intensidade lyrica, em espirito dramatico, em poder de construcção poetica,
+                        a <rs type="title">Patria</rs> domina a <rs type="title">Faerie
+                        Queene</rs>.</p>
+                    <p rend="indent-first">De modo que, se ha n’este mundo analogias e absolutos,
+                        entre a nossa actual corrente literaria e as maximas, que nos vêm servindo
+                        para a comparação, ha, nos pontos já analysados, uma analogia absoluta.</p>
+                </div>
+                <div>
+                    <head rend="center">V</head>
+                    <p rend="indent-first">Falta, agora, examinar os caracteristicos das magnas
+                        epocas literarias em face da alma do povo que as produz. A analyse é facil e
+                        será, por isso, rapida. O primeiro caracteristico, n’este respeito, d’estas
+                        correntes, é a sua <hi rend="italic">não-popularidade</hi>, o segundo a <hi
+                            rend="italic">anti-tradicionalidade</hi>, e o terceiro, mas o primacial
+                        e basilar, a <hi rend="italic">nacionalidade</hi>. Isto é, estas correntes
+                        interpretam completamente a alma nacional; como, porém, a interpretam com
+                        plena elevação – o que já sabemos quanto a elevação –, com total largueza
+                        espiritual, desdobrando-lhe as inconscientes tendencias philosophicas ou
+                        religiosas em detalhes intelectuaes e espirituaes, traduzindo a alma popular
+                        para arte suprema, forçosamente se collocam fóra da comprehensão popular,
+                        entendendo por comprehensão popular tudo quanto não seja a comprehensão de
+                        uma <hi rend="italic">élite</hi> ou aristocracia de intelligencia. D’ahi a
+                        sua <hi rend="italic">não-popularidade</hi>, maxima na epoca em que existem,
+                        por aggravada pela novidade do tom poetico, menor nas epocas subsequentes,
+                        mas anulada nunca. Redizendo, estas correntes, filiadas absolutamente na
+                        alma do povo, não a <hi rend="italic">exprimem</hi>: <hi rend="italic"
+                            >representam-a </hi>, <hi rend="italic">interpretam-a</hi>. Ninguem
+                        negará a absoluta <hi rend="italic">nacionalidade</hi> do isabelianismo,
+                        como inglez, e, como francez, do romantismo da França. Tampouco se pode
+                        negar a <hi rend="italic">não-popularidade</hi> das duas correntes, maxima
+                        na primeira, cuja mera fórma de expressar mesmo a um individuo culto fere
+                        como extremamente complexa e intelectualisada, menor na segunda, que ainda
+                        assim está longe de popularmente acessivel, tanto que a corrente é
+                        classificada por um critico francez como sendo <hi rend="italic">faite pour
+                            des cénacles et des coteries</hi>
+                        <note n="1"><rs type="name" key="P482">Lanson</rs>, <rs type="title"
+                                >Histoire de la littérature française</rs>.</note>
+                        <!-- U: please add the note label here -->
+                    </p>
+                    <p rend="indent-first">Ora, como estas correntes são as de maxima nacionalidade
+                        dos seus respectivos paizes; como, portanto, as correntes anteriores
+                        forçosamente haveriam sido, ou menos, ou nada, nacionaes, a plena
+                        nacionalidade das correntes maximas importa uma quebra com o espirito
+                        d’essas anteriores correntes, involve, pois, <hi rend="italic"
+                            >anti-tradicionalidade</hi>. Quando a corrente anterior é
+                        desnacionalisada, a quebra com ella é flagrantissima e consciente – e
+                        combativamente feita: é o caso do romantismo francez ante o chamado
+                        “classicismo” da epoca precedente. Quando a anterior corrente é, porém, não
+                        tanto desnacionalisada, mas antes incompletamente nacional, a quebra é feita
+                        inconscientemente, naturalmente, inagressivamente. É o caso do
+                        isabelianismo, que rompe com a simplicidade e incompleta nacionalidade do
+                        seu precursor <rs type="name" key="P433">Chaucer</rs>, unica quasi-tradição
+                        com que, aliás, podia romper, visto que, sobre ser o maximo periodo da
+                        literatura ingleza é – e é o que para o caso importa – o primeiro, no tempo,
+                        não tendo, portanto, epoca literaria anterior com cujo espirito
+                        quebrasse.</p>
+                    <p rend="indent-first">Retomemos a parte essencial e analogica do nosso estudo.
+                        A anti-tradicionalidade e não-popularidade do tom poetico do nosso actual
+                        periodo literario são flagrantes, flagrantissimas. Poucos movimentos
+                        literarios se teem colocado mais acima da compreensão geral, pela complexa
+                        intelectualisação ou misticisação do seu exprimir-se; poucos se afastaram
+                        tanto de toda a tradição literaria da sua terra. Resta saber se esses dois
+                        caracteristicos se devem a uma completa interpretação da alma nacional. É
+                        fácil provar que sim. Ha, porém, dois modos de o provar. Um – longo – é por
+                        uma analyse analogial da alma portugueza e dos caracteristicos espirituaes
+                        da nova corrente poetica. Ha outro metodo, mais simples, mais directo, e
+                        menos duvidoso. Vejamos. Os novos poetas portuguezes não tiram da tradição
+                        os elementos constitutivos do espírito da sua corrente – isto já vimos;
+                        tampouco tiram esses elementos de correntes literarias estrangeiras – já o
+                        verificámos quando foi preciso constatar a <hi rend="italic">novidade</hi>
+                        do tom poetico deste periodo. Então de onde os tiram? Tira-os cada poeta da
+                        sua propria alma, no que tem de individual e peculiar? Nesse caso não
+                        haveria corrente literaria, mas poetas isolados. Ora, como realmente ha
+                        corrente literaria, é forçoso admitir que o que a produz é o que nas almas
+                        ha de superindividual, o que elas teem de comum. E o que elas teem é uma de
+                        trez cousas – a <hi rend="italic">raça</hi>, o <hi rend="italic">meio
+                            nacional</hi>, ou o <hi rend="italic">meio civilisacional</hi>, isto é,
+                            <hi rend="italic">europeu</hi>. O meio europeu não é, porque então a
+                        corrente literaria basear-se-ia nas correntes literarias estrangeiras
+                        contemporaneas, o que não acontece, provada, como está, a sua <hi
+                            rend="italic">novidade</hi>. O meio nacional tambem não é, pois que
+                        então reproduziria o espírito do meio, que é ou nulamente, ou catolicamente,
+                        religioso: e ela é religiosa e não-catolica. Não ha senão que admitir,
+                        portanto, que reproduz a alma da raça. E como é anti-tradicional, não a
+                        reproduz misturando-lhe elementos passados; como é não-popular, não a
+                        reproduz misturando-lhe elementos pouco espirituaes ou pouco intelectuaes,
+                        populares no mau sentido do epiteto. Quer dizer, pois, que a nova corrente
+                        interpreta a alma nacional <hi rend="italic">directamente</hi>, <hi
+                            rend="italic">nuamente</hi> e <hi rend="italic">elevadamente</hi>. Quer
+                        dizer que é absolutamente identica ás grandes correntes literarias da França
+                        e da Inglaterra.</p>
+                    <p rend="indent-first">Resulta, portanto, provada, ponto por ponto, detalhe por
+                        detalhe, a analogia entre a nossa corrente literaria e as grandes correntes
+                        literarias precursoras dos grandes periodos creadores de civilização.</p>
+                </div>
+                <div>
+                    <head rend="center">VI</head>
+                    <p rend="indent-first"> Tirem-se, rapidamente, as tonicas conclusões finaes. São
+                        três. A primeira é que para Portugal se prepara um ressurgimento assombroso,
+                        um periodo de criação literaria e social como poucos o mundo tem tido.
+                        Durante o nosso raciocinio deve o leitor ter reparado que a analogia do
+                        nosso periodo é mais com o grande periodo inglez do que com o francez. Tudo
+                        indica, portanto, que o nosso será, como aquele, maximamente creador.
+                        Paralelamente se conclue o breve aparecimento na nossa terra do tal supra-
+                            <rs type="name" key="P15" style="b">Camões</rs>. Supra- <rs type="name"
+                            key="P15" style="b">Camões</rs>? A frase é humilde e acanhada. A
+                        analogia impõe mais. Diga-se “de um <rs type="name" key="P65"
+                            >Shakespeare</rs>” e dê-se por testemunha o raciocinio, já que não é
+                        citavel o futuro. – A segunda conclusão é que, tendo o movimento literario
+                        portuguez nascido com e acompanhado o movimento republicano, é dentro do
+                        republicanismo, e pelo republicanismo, que está, e será, o glorioso futuro,
+                        deduzido. São duas faces do mesmo fenómeno creador. Fixemos isto: ser
+                        monarchico é, hoje, em Portugal, ser traidor á alma nacional e ao futuro da
+                        Patria Portugueza. – A terceira conclusão é que o republicanismo que fará a
+                        gloria da nossa terra e por quem novos elementos civilizacionaes serão
+                        creados, não é o actual, desnacionalisado, idiota e corrupto, do tri-partido
+                        republicano. De modo que é bom fixar isto, tambem: que, se ser monarchico é
+                        ser traidor á alma nacional, ser correligionario do sr. <rs type="name"
+                            key="P65">Afonso Costa</rs> do sr. <rs type="name" key="P447">Brito
+                            Camacho</rs>, ou do sr. <rs type="name" key="P448">António José
+                            d’Almeida</rs>, assim como de varia horrorosa subgente syndicalistica,
+                        socialistica e outras cousas, representa paralela e equivalente traição. O
+                        espírito de tudo isso é absolutamente o contrario do espírito da nova
+                        corrente literaria. Tudo ali é importado do estrangeiro, tudo e sem elevação
+                        nem grandeza, popular com o que ha de mais Mouraria na popularidade. Para
+                        nada de <hi rend="italic">morte</hi> lhes faltar, nem anti-tradicionaes são:
+                        herdaram cuidadosamente os metodos de despotismo, de corrupção e de mentira
+                        que a monarchia tão como seus amou.</p>
+                    <p rend="indent-first">Não nos admire que isto assim seja. No reinado de <rs
+                            type="name" key="P449">Izabel</rs>, periodo da Inglaterra que
+                        corresponde ao nosso actual, ainda nada se vislumbrava do principio de <hi
+                            rend="italic">governo popular</hi> que havia de ser creação da epoca.
+                        Conservemo’-nos, por emquanto, absolutamente portuguezes, rigidamente
+                        republicanos, intransigentemente inimigos do republicanismo atual.
+                        Brevemente começará a raiar nas nossas almas a intuição politica do nosso
+                        futuro. Talvez o supra-<rs type="name" key="P15" style="b">Camões</rs> possa
+                        dizer alguma cousa sobre o assumpto. Esperemos, que ele não se demora. No
+                        entretanto, <hi rend="italic">sursum corda!</hi> Sabemos que o futuro será
+                        glorioso. Confiemos nele. Por emquanto abstenhamo-nos de agir, a não ser
+                        negativamente, para combater, e apenas pela palavra e pelo escrito, os
+                        portuguezes estrangeiros que nos desgovernam, e isso só se a indignação
+                        nol-o impuzér como desabafo. A hora da ação ainda não chegou. Primeiro, virá
+                        a teoria política da epoca. Depois virá o pôl-a em pratica. E quando a hora
+                        chegar, virá – não tenhamos duvida – o homem de força que a imporá,
+                        eliminando os obstaculos, que são esta gente de agora, monarchicos e
+                        republicanos. Suavemente, se puder ser, será a transformação feita, a
+                        creação começada. Mas se assim não fôr, se esta gente de hoje não curar de
+                        se tornar portugueza, confiemos, sem horror, que o <rs type="name"
+                            key="P420">Cromwell</rs> vindouro os saberá afastar, aplicando-lhes, por
+                        triste necessidade, a <hi rend="italic">ultima ratio</hi> de <rs type="name"
+                            key="P12" style="b">Napoleão</rs>, de <rs type="name" key="P449"
+                            >Cavaignac</rs>, e do <rs type="name" key="P450">Coronel Conde de
+                            Galliffet</rs>.</p>
+
+                </div>
+                <signed rend="align-right"><hi rend="italic">Fernando Pêssoa</hi>.</signed>
+            </div>
+        </body>
+    </text>
+</TEI>

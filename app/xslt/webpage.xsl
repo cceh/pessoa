@@ -3,6 +3,8 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    
+    <!-- author: Ulrike Henny-Krahmer -->
 
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
 
@@ -35,8 +37,8 @@
     </xsl:template>-->
 
     <xsl:template match="graphic[not(parent::figure)]">
-        <img src="{concat($res,@url)}" class="logos" title="{child::desc/text()}"
-            alt="{child::desc/text()}"/>
+        <img src="{concat($res,@url)}" class="logos" title="{child::desc/text()/normalize-space(.)}"
+            alt="{child::desc/text()/normalize-space(.)}"/>
     </xsl:template>
 
     <xsl:template match="figure/graphic">

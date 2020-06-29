@@ -51,11 +51,12 @@
         <property file="deploy-remote.properties"/>
         <!-- Generating zip files from the data -->
         <!--<zip destfile="./app/data/pub.zip" basedir="./app/data/pub/" excludes="dont*.*"/>
-        <zip destfile="./app/data/doc.zip" basedir="./app/data/doc/" excludes="dont*.*"/>--><!--
-        <xdb:xquery uri="${uri}" queryfile="app/pre-install.xql" user="${user}" password="${password}"/>-->
+        <zip destfile="./app/data/doc.zip" basedir="./app/data/doc/" excludes="dont*.*"/>-->
+        <!--<xdb:xquery uri="${uri}" queryfile="app/pre-install.xql" user="${user}" password="${password}"/>-->
         <xdb:store uri="${uri}" createcollection="true" createsubcollections="true" user="${user}" password="${password}">
             <fileset dir="./app/">
                 
+                <exclude name="data/pre1913/*.*"/>
                 <include name="**/*.*"/>
                 <exclude name="build/"/>
                 <exclude name="modules/admin.xqm"/>
@@ -65,6 +66,8 @@
                 <exclude name="*.xpr"/>
                 <exclude name="**/.gitignore"/>
                 
+                
+                
                 <!-- nur Daten:
                 <include name="data/**/*.*"/>
                 <include name="*.xconf"/>
@@ -73,6 +76,5 @@
         </xdb:store>
         <xdb:xquery uri="${uri}" queryfile="app/post-redirect.xql" user="${user}" password="${password}"/>
         <xdb:xquery uri="${uri}" queryfile="app/post-install.xql" user="${user}" password="${password}"/>
-        <xdb:xquery uri="${uri}" queryfile="scripts/reindex.xql" user="${user}" password="${password}"/>
     </target>
 </project>

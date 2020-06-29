@@ -27,7 +27,8 @@ declare function pub:get-title($node as node(), $model as map(*), $id as xs:stri
 
 declare function pub:get-text($node as node(), $model as map(*), $id as xs:string) as item()+{
     let $xml := pub:get-xml($id)
-    let $stylesheet := doc("/db/apps/pessoa/xslt/pub.xsl")
+    let $genre := $xml//tei:note[@type='genre']/tei:rs[@type="genre"]/@key
+    let $stylesheet := if ($genre = "prosa") then doc("/db/apps/pessoa/xslt/pub-prose.xsl") else doc("/db/apps/pessoa/xslt/pub.xsl")
     return transform:transform($xml, $stylesheet, ())
 };
 
@@ -65,4 +66,10 @@ declare function pub:get-image($node as node(), $model as map(*), $id as xs:stri
 
 declare function pub:get-image-xml-file($file-name){
     lower-case(substring-after(concat(substring-before($file-name, ".jpg"), ".xml"), "/"))
+};
+
+declare function pub:get-indexes($node as node(), $model as map(*), $id as xs:string) as item()+{
+    let $xml := pub:get-xml($id)
+    let $stylesheet := doc("/db/apps/pessoa/xslt/lists.xsl")
+    return transform:transform($xml, $stylesheet, (<parameters><param name="lang" value="{$helpers:web-language}" /><param name="host" value="{$helpers:app-root}"/></parameters>))
 };

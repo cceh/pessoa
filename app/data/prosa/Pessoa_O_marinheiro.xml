@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <!-- this is a comment... here they are used for documentation and to give hints. In new files, 
+        please just use them to comment on if something is unclear -->
+            <titleStmt>
+                <title>O Marinheiro. Drama Estático Em Um Quadro</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="restricted">
+                    <!-- @status will be set to "free" once the document is ready to be published -->
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Pessoa_O_Marinheiro.xml</idno>
+            </publicationStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="O1-X">O Marinheiro. Drama Estático Em Um Quadro</rs></item>
+                </list>
+                <biblStruct>
+                    <!-- here goes the bibliographical reference for the source publication -->
+                    <analytic>
+                        <title level="a">O Marinheiro. Drama Estático Em Um Quadro</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt" otherLangs="en"/>
+                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J12">Orpheu</rs></title>
+                        <!-- @key is to identify the periodical. You can find other periodicals IDs in the file 
+                            lists.xml in the data folder. In that file, 
+                        look for the sublist <list type="periodical">, currently beginning at line 1450. You can also add
+                        new periodicals there -->
+                        <imprint>
+                            <date when="1915-03">Março de 1915</date>
+                            <!-- in case it is not a single date, but from-to, it 
+                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
+                            there is just a year: when="1931" -->
+                        </imprint>
+                        <biblScope unit="issue">1</biblScope>
+                        <biblScope unit="page">28-39</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="prosa">Prosa</rs>                     
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+        <graphic url="prosa/O_Marinheiro_1.jpg"/>
+        <graphic url="prosa/O_Marinheiro_2.jpg"/>
+        <graphic url="prosa/O_Marinheiro_3.jpg"/>
+        <graphic url="prosa/O_Marinheiro_4.jpg"/>
+        <graphic url="prosa/O_Marinheiro_5.jpg"/>
+        <graphic url="prosa/O_Marinheiro_6.jpg"/>
+        <graphic url="prosa/O_Marinheiro_7.jpg"/>
+        <graphic url="prosa/O_Marinheiro_8.jpg"/>
+        <graphic url="prosa/O_Marinheiro_9.jpg"/>
+        <graphic url="prosa/O_Marinheiro_10.jpg"/>
+        <graphic url="prosa/O_Marinheiro_11.jpg"/>
+        <graphic url="prosa/O_Marinheiro_12.jpg"/>
+    </facsimile>
+    <text corresp="#O1-X">
+        <!-- @corresp: contains the index of this WORK. 
+        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
+        This can be left as is in the beginning.-->
+        <body>
+            <div>
+                <!-- <head> is for headings. <rs type="name"> is to mark mentioned names. In @key: please use the identifier
+                for the person that you find in lists.xml. @role is only available for the four heteronyms: Pessoa, Caeiro, 
+                Campos, Reis. It can be: author, editor, translator, topic. -->
+                <head rend="center">O MARINHEIRO</head>
+                <milestone rend="line" unit="section"/>
+                <head rend="center" type="sub"> DRAMA ESTÁTICO EM UM QUADRO</head>
+                   
+                <ab type="dedication" rend="right">a <rs type="name" key="P476">Carlos Franco. </rs></ab>  
+            </div>              
+                           <div rend="right"> 
+                               <p rend="indent-first">Um quarto que é sem duvida num castello antigo. Do quarto vê-se que é circular. 
+                            Ao centro ergue-se, sobre uma eça, um caixão com uma donzella, de branco. Quatro tochas aos cantos. Á direita, 
+                            quasi em frente a quem imagina o quarto, ha uma unica janella, alta e estreita, dando para onde só se vê, entre 
+                            dois montes longinquos, um pequeno espaço de mar. </p>
+                            <p rend="indent-first">Do lado da janella velam trez donzellas. A primeira está sentada em frente á janella, 
+                                de costas contra a tocha de cima da direita. As outras duas estão sentadas uma de cada lado da janella. </p>
+                            <p rend="indent-first">É noite e ha como que um resto vago de luar.</p> 
+                           </div>
+            <div>            
+                        <p rend="indent-first"><hi rend="bold">Primeira veladora.</hi>– Ainda não deu hora nenhuma.</p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – Não se podia ouvir. Não ha relogio aqui perto. Dentro em 
+                            pouco deve ser dia. </p>
+                        <p rend="indent-first"><hi rend="bold">Terceira.</hi> – Não: o horizonte é negro.</p>
+                        <p rend="indent-first"><hi rend="bold">Primeira. </hi> – Não desejaes, minha irmã, que nos entretenhamos contando o 
+                            que fômos? É bello e é sempre falso... </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – Não, não fallemos d’isso. De resto, fômos nós alguma cousa? </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira. </hi> – Talvez. Eu não sei. Mas, ainda assim, sempre é bello 
+                            fallar do passado... As horas teem cahido e nós temos guardado silencio. Por mim, tenho estado a olhar para a 
+                            chamma d’aquella vela. Ás vezes treme, outras torna-se mais amarella, outras vezes empallidece. Eu não sei 
+                            porque é que isso se dá. Mas sabemos nós, minhas irmãs, porque se dá qualquer cousa?... </p>
+                <p rend="position-center margin-vertical"> (uma pausa) </p> 
+                <p rend="indent-first margin-vertical"><hi rend="bold">A mesma. </hi> – Fallar do passado – isso deve ser bello, porque é inútil e 
+                            faz tanta pena... </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – Fallemos, se quizerdes, de um passado que não tivessemos 
+                            tido. </p>
+                        <p rend="indent-first"><hi rend="bold">Terceira. </hi> – Não. Talvez o tivessemos tido…</p>
+                        <p rend="indent-first"><hi rend="bold">Primeira. </hi> – Não dizeis senão palavras. É tão triste fallar! É um modo 
+                            tão falso de nos esquecermos!... Se passeassemos?... </p>
+                        <p rend="indent-first"><hi rend="bold">Terceira. </hi> – Onde? </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira. </hi> – Aqui, de um lado para o outro. Ás vezes isso vai buscar 
+                            sonhos. </p>
+                        <p rend="indent-first"><hi rend="bold">Terceira. </hi> – De quê? </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira. </hi> – Não sei . Porque o havia eu de saber? </p>
+                        
+                <p rend="margin-vertical position-center"> (uma pausa) </p>
+             
+                        <p rend="indent-first margin-vertical"><hi rend="bold">Segunda. </hi> – Todo este paiz é muito triste... Aquelle onde eu vivi 
+                            outr’ora era menos triste. Ao entardecer eu fiava, sentada á minha janella. A janella dava para o mar e ás 
+                            vezes havia uma ilha ao longe... Muitas vezes eu não fiava; olhava para o mar e esquecia-me de 
+                            viver. Não sei se era feliz. Já não tornarei a ser aquillo que talvez eu nunca fôsse... </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira. </hi> – Fóra de aqui, nunca vi o mar. Alli, d’aquella janella, que 
+                            é a unica de onde o mar se vê, vê-se tão pouco!... O mar de outras terras é bello? </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – Só o mar das outras terras é que é bello. Aquelle que nós 
+                            vemos dá-nos sempre saudades d’aquelle que não veremos nunca... </p>
+                        
+                <p rend="margin-vertical position-center"> (uma pausa) </p>
+                        
+                        <p rend="indent-first margin-vertical"><hi rend="bold">Primeira. </hi> – Não diziamos nós que iamos contar o nosso passado? </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – Não, não diziamos. </p>
+                        <p rend="indent-first"><hi rend="bold">Terceira. </hi> – Porque não haverá relogio neste quarto? </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – Não sei... Mas assim, sem o relogio, tudo é mais afastado e 
+                            mysterioso. A noite pertence mais a si-propria... Quem sabe se nós poderiamos fallar assim se soubessemos a 
+                            hora que é? </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira. </hi> – Minha irmã, em mim tudo é triste. Passo dezembros na 
+                            alma... Estou procurando não olhar para a janella.. Sei que de lá se vêem, ao longe, montes... Eu fui feliz 
+                            para além de montes, outr’ora... Eu era pequenina. Colhia flôres todo o dia e antes de adormecer pedia que não 
+                            m’as tirassem... Não sei o que isto tem de irreparavel que me dá vontade de chorar... Foi longe d’aqui que isto 
+                            pôde ser... Quando virá o dia?... </p>
+                        <p rend="indent-first"><hi rend="bold">Terceira. </hi> – Que importa? Elle vem sempre da mesma maneira... sempre, 
+                            sempre, sempre... </p>
+                        
+                <p rend="margin-vertical position-center">(uma pausa)</p>
+                        
+                        <p rend="indent-first margin-vertical"><hi rend="bold">Segunda.</hi> – Contemos contos umas ás outras... 
+                            Eu não sei contos nenhuns, mas isso não faz mal... Só viver é que faz mal... Não rocemos pela vida 
+                            nem a orla das nossas vestes... Não, 
+                            não vos levanteis. Isso seria um gesto, e cada gesto interrompe um sonho... Neste momento eu não tinha sonho 
+                            nenhum, mas é-me suave pensar que o podia estar tendo... Mas o passado – porque não fallâmos nós d’elle? </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira.</hi> – Decidimos não o fazer... Breve raiará o dia e 
+                            arrepender-nos-hemos... Com a luz os sonhos adormecem... O passado não é senão um sonho... De resto, nem sei o 
+                            que não é sonho... Se ólho para o presente com muita attenção, parece-me que elle já passou... O que é qualquer 
+                            cousa? Como é que ella passa? Como é por dentro o modo como ella passa?... Ah, fallemos, minhas irmãs, fallemos 
+                            alto, fallemos todas juntas... O silencio começa a tomar corpo, começa a ser cousa... Sinto-o envolver-me como 
+                            uma nevoa... Ah, fallae, fallae!... </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – Para quê?... Fito-vos a ambas e não vos vejo logo... 
+                            Parece-me que entre nós se augmentaram abysmos... Tenho que cançar a idéa de que vos posso ver para poder chegar 
+                            a ver-vos... Este ar quente é frio por dentro, naquella parte que toca na alma... Eu devia agora sentir mãos 
+                            impossiveis passarem-me pelos cabelos... As mãos pelos cabellos –é o gesto com que fallam das 
+                            sereias... <hi rend="italic">(Cruza as mãos sobre os joelhos. Pausa.)</hi> Ainda ha pouco, quando eu não pensava 
+                            em nada, estava pensando no meu passado... </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira.</hi> – Eu tambem devia ter estado a pensar no meu... </p>
+                        <p rend="indent-first"><hi rend="bold">Terceira. </hi> – Eu já não sei em que pensava... No passado dos outros 
+                            talvez..., no passado de gente maravilhosa que nunca existiu... Ao pé da casa de minha mãe corria um riacho... 
+                            Porque é que correria, e porque é que não correria mais longe, ou mais perto?... Ha alguma razão para qualquer 
+                            cousa ser o que é? Ha para isso qualquer razão verdadeira e real como as minhas mãos?... </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – As mãos não são verdadeiras nem reaes... São mysterios que 
+                            habitam na nossa vida... Ás vezes, quando fito as minhas mãos, tenho medo de Deus... Não ha vento que mova as 
+                            chammas das velas, e olhae, ellas movem-se... Para onde se inclinam ellas?... Que pena se alguem pudesse 
+                            responder!... Sinto-me desejosa de ouvir musicas barbaras que devem agora estar tocando em palacios de outros 
+                            continentes... É sempre longe na minha alma... Talvez porque, quando creança, corri atraz das ondas á beira-mar. 
+                            Levei a vida pela mão entre rochedos, maré-baixa, quando o mar parece ter cruzado as mãos sobre o peito e ter 
+                            adormecido como uma estatua de anjo para que nunca mais ninguem olhasse... </p>
+                        <p rend="indent-first"><hi rend="bold">Terceira. </hi> – As vossas phrases lembram-me a minha alma... </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – É talvez por não serem verdadeiras... Mal sei que as digo... 
+                            Repito-as seguindo uma voz que não ouço que m’as está segredando... Mas eu devo ter vivido realmente á 
+                            beira-mar... Sempre que uma cousa ondeia, eu amo-a... Ha ondas na minha alma... Quando ando embalo-me... Agora 
+                            eu gostaria de andar... Não o faço porque não vale nunca a pena fazer nada, sobretudo o que se quer fazer... 
+                            Dos montes é que eu tenho medo...E impossivel que elles sejam tão parados e grandes... Devem ter um segredo de 
+                            pedra que se recusam a saber que teem... Se d’esta janella, debruçando-me, eu pudesse deixar de ver montes, 
+                            debruçar-se-hia um momento da minha alma alguem em quem eu me sentisse feliz... </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira. </hi> – Por mim, amo os montes... Do lado de cá de todos os montes 
+                            é que a vida é sempre feia... Do lado de lá, onde mora minha mãe, costumavamos sentarmo’nos á sombra dos 
+                            tamarindos e fallar de ir ver outras terras... Tudo alli era longo e feliz como o canto de duas aves, uma de 
+                            cada lado do caminho... A floresta não tinha outras clareiras senão os nossos pensamentos... E os nossos sonhos 
+                            eram de que as arvores projectassem no chão outra calma que não as suas sombras... Foi decerto assim que alli 
+                            vivemos, eu e não sei se mais alguem... Dizei-me que isto foi verdade para que eu não tenha de chorar... </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – Eu vivi entre rochedos e espreitava o mar... A orla da minha 
+                            saia era fresca e salgada batendo nas minhas pernas nuas... Eu era pequena e barbara... Hoje tenho medo de ter 
+                            sido... O presente parece-me que durmo... Fallae-me das fadas. Nunca ouvi fallar d’ellas a ninguem... O mar era 
+                            grande demais para fazer pensar nellas... Na vida aquece ser pequeno... Ereis feliz minha irmã? </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira. </hi> – Começo neste momento a tel-o sido outr’ora... De 
+                            resto, tudo aquillo se passou na sombra... As arvores viveram-o mais do que eu... Nunca chegou 
+                            quem eu mal esperava... E vós, irmã, porque não fallaes? </p>
+                        <p rend="indent-first"><hi rend="bold">Terceira. </hi> – Tenho horror a de aqui a pouco vos ter já dito o que vos 
+                            vou dizer. As minhas palavras presentes, mal eu as diga, pertencerão logo ao passado, ficarão fóra de mim, não 
+                            sei onde, rigidas e fataes... Fallo, e penso nisto na minha garganta, e as minhas palavras parecem-me gente... 
+                            Tenho um medo maior do que eu. Sinto na minha mão, não sei como, a chave de uma porta desconhecida. E toda eu 
+                            sou um amuleto ou um sacrario que estivesse com consciencia de si-proprio. É poristo que me apavora ir, como 
+                            por uma floresta escura, atravez do mysterio de fallar... E, afinal, quem sabe se eu sou assim e se é isto sem 
+                            duvida que sinto?... </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira. </hi> – Custa tanto saber o que se sente quando reparamos em 
+                            nós!... Mesmo viver sabe a custar tanto quando se dá por isso... Fallae portanto, sem reparardes que existis... 
+                            Não nos ieis dizer quem ereis? </p>
+                        <p rend="indent-first"><hi rend="bold">Terceira. </hi> – O que eu era outr’ora já não se lembra de quem sou... 
+                            Pobre da feliz que eu fui!... Eu vivi entre as sombras dos ramos, e tudo na minha alma é folhas que estremecem. 
+                            Quando ando ao sol a minha sombra é fresca. Passei a fuga dos meus dias ao lado de fontes, onde eu molhava, quando 
+                            sonhava de viver, as pontas tranquillas dos meus dedos... Ás vezes, á beira dos lagos, debruçava-me e fitava-me... 
+                            Quando eu sorria, os meus dentes eram mysteriosos na agua... Tinham um sorriso só d’elles, independente do meu... 
+                            Era sempre sem razão que eu sorria... Fallae me da morte, do fim de tudo, para que eu sinta uma razão p’ra 
+                            recordar... </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira. </hi> – Não fallemos de nada, de nada... Está mais frio, mas porque 
+                            é que está mais frio? Não ha razão para estar mais frio. Não é bem mais frio que está... Para que é que havemos 
+                            de fallar?... É melhor cantar, não sei porquê... O canto, quando a gente canta de noite, é uma pessoa alegre e 
+                            sem medo que entra de repente no quarto e o aquece a consolar-nos... Eu podia cantar-vos uma canção que 
+                            cantavamos em casa de meu passado. Porque é que não quereis que vol-a cante? </p>
+                        <p rend="indent-first"><hi rend="bold">Terceira. </hi> – Não vale a pena, minha irmã... Quando alguem canta, eu não 
+                            posso estar commigo. Tenho que não poder recordar-me. E depois todo o meu passado torna-se outro e eu chóro uma 
+                            vida morta que trago commigo e que não vivi nunca. É sempre tarde de mais para cantar, assim como é sempre 
+                            tarde de mais para não cantar... </p>
+                        
+                <p rend="margin-vertical position-center"> (uma pausa) </p>
+                        
+                        <p rend="indent-first margin-vertical"><hi rend="bold">Primeira. </hi> – Breve será dia... Guardemos silencio... A vida assim o 
+                            quer... Ao pé da minha casa natal havia um lago. Eu ia lá e assentava-me á beira d’elle, sobre um tronco de 
+                            arvore que cahira quasi dentro de agua... Sentava-me na ponta e molhava na agua os pés, esticando para baixo os 
+                            dedos. Depois olhava excessivamente para as pontas dos pés, mas não era para as ver... Não sei porquê, mas 
+                            parece-me d’este lago que elle nunca existiu... Lembrar-me d’elle é como não me poder lembrar de 
+                            nada... Quem sabe porque é que eu digo isto e se fui eu que vivi o que recordo?... </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – Á beira-mar somos tristes quando sonhamos... Não podemos 
+                            ser o que queremos ser, porque o que queremos ser queremol-o sempre ter sido no passado... Quando a onda se 
+                            espalha e a espuma chia, parece que ha mil vozes minimas a fallar. A espuma só parece ser fresca a quem a julga 
+                            uma... Tudo é muito e nós não sabemos nada... Quereis que vos conte o que eu sonhava á beira-mar? </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira. </hi> – Podeis contal-o, minha irmã, mas nada em nós tem 
+                            necessidade de que nol-o conteis... Se é bello, tenho já pena de vir a tel-o ouvido. E se não é bello, 
+                            esperae..., contae o só depois de o alterardes... </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – Vou dizer-vol-o. Não é inteiramente falso, porque sem 
+                            duvida nada é inteiramente falso. Deve ter sido assim... Um dia que eu dei por mim recostada no cimo frio de um 
+                            rochedo, e que eu tinha esquecido que tinha pae e mãe e que houvera em mim infancia e outros dias – nesse dia 
+                            vi ao longe, como uma cousa que eu só pensasse em ver, a passagem vaga de uma vela... Depois ella cessou... 
+                            Quando reparei para mim, vi que já tinha esse meu sonho... Não sei onde elle teve principio... E nunca tornei a 
+                            ver outra vela... Nenhuma das velas dos navios que sahem aqui de um porto se parece com aquella, mesmo quando é 
+                            lua e os navios passam longe devagar... </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira.</hi> – Vejo pela janella um navio ao longe. É talvez aquelle que 
+                            vistes... </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda.</hi> – Não, minha irmã; esse que vêdes busca sem duvida um porto 
+                            qualquér... Não podia ser que aquelle que eu vi buscasse qualquér porto... </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira.</hi> – Porque é que me respondestes?... Pode ser... Eu não vi navio 
+                            nenhum pela janella... Desejava ver um e fallei-vos d’elle para não ter pena... Contae nos agora o que foi que 
+                            sonhastes á beira-mar... </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda.</hi> – Sonhava de um marinheiro que se houvesse perdido numa ilha 
+                            longinqua. Nessa ilha havia palmeiras hirtas, poucas, e aves vagas passavam por ellas... Não vi se alguma vez 
+                            pousavam... Desde que, naufragado, se salvára, o marinheiro vivia alli... Como elle não tinha meio de voltar á 
+                            patria, e cada vez que se lembrava d’ella soffria, poz-se a sonhar uma patria que nunca tivesse tido; poz-se a 
+                            fazer ter sido sua uma outra patria, uma outra especie de paiz, com outras especies de paysagens, e outra gente, 
+                            e outro feitio de passarem pelas ruas e de se debruçarem das janellas... Cada hora elle construía em sonho esta 
+                            falsa patria, e elle nunca deixava de sonhar, de dia á sombra curta das grandes palmeiras, que se recortava, 
+                            orlada de bicos, no chão areento e quente; de noite, estendido na praia, de costas, e não reparando nas 
+                            estrellas. </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira.</hi> – Não ter havido uma arvore que mosqueasse sobre as minhas 
+                            mãos estendidas a sombra de um sonho como esse!... </p>
+                        <p rend="indent-first"><hi rend="bold">Terceira. </hi> – Deixae-a fallar... Não a interrompaes... Ella conhece 
+                            palavras que as sereias lhe ensinaram... Adormeço para a poder escutar... Dizei, minha irmã, 
+                            dizei... Meu coração doe-me de não ter sido vós quando sonhaveis á beira-mar... </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – Durante annos e annos, dia a dia o marinheiro erguia num 
+                            sonho contínuo a sua nova terra natal... Todos os dias punha uma pedra de sonho nesse edificio impossivel... 
+                            Breve elle ia tendo um paiz que já tantas vezes havia percorrido. Milhares de horas lembrava-se já de ter 
+                            passado ao longo de suas costas. Sabia de que côr soiam ser os crepusculos numa bahia do norte, e como era 
+                            suave entrar, noite alta, e com a alma recostada no murmurio da agua que o navio abria, num grande porto do sul 
+                            onde elle passára outr’ora, feliz talvez, das suas mocidades a supposta... </p>
+                        
+                <p rend="margin-vertical position-center"> (uma pausa) </p>
+                        
+                        <p rend="indent-first margin-vertical"><hi rend="bold">Primeira.</hi> – Minha irmã, porque é que vos calaes? </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – Não se deve fallar demasiado... A vida espreita-nos 
+                            sempre... Toda a hora é materna para os sonhos, mas é preciso não o saber... Quando fallo de mais começo a 
+                            separar-me de mim e a ouvir-me fallar. Isso faz com que me compadeça de mim-propria e sinta demasiadamente o 
+                            coração. Tenho então uma vontade lacrimosa de o ter nos braços para o poder embalar como a um filho... Vêde: o 
+                            horizonte empallideceu... O dia não póde já tardar... Será preciso que eu vos falle ainda mais do meu sonho? </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira. </hi> – Contae sempre, minha irmã, contae sempre... Não pareis de 
+                            contar, nem repareis em que dias raiam... O dia nunca raia para quem encosta a cabeça no seio das horas 
+                            sonhadas... Não torçaes as mãos. Isso faz um ruido como o de uma serpente furtiva... Fallae-nos muito mais do 
+                            vosso sonho. Elle é tão verdadeiro que não tem sentido nenhum. Só pensar em ouvir-vos me toca musica na alma…</p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – Sim, fallar-vos-hei mais d’elle. Mesmo eu preciso de vol-o 
+                            contar. À medida que o vou contando, é a mim tambem que o conto... São trez a escutar... 
+                            <hi rend="italic"> (De repente, olhando para o caixão, e estremecendo.) </hi> Trez não... Não sei... Não sei 
+                            quantas... </p>
+                        <p rend="indent-first"><hi rend="bold">Terceira. </hi> – Não falleis assim... Contae depressa, contae outra vez... 
+                            Não falleis em quantos podem ouvir... Nós nunca sabemos quantas cousas realmente vivem e vêem e escutam... 
+                            Voltae ao vosso sonho... O marinheiro... O que sonhava o marinheiro?... </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda </hi> - <hi rend="italic"> (mais baixo, numa voz muito lenta).</hi> 
+                            — Ao principio elle creou as paysagens; depois creou as cidades; creou depois as ruas e as travessas, uma a uma, 
+                            cinzelando-as na materia da sua alma – uma a uma as ruas, bairro a bairro, até ás muralhas dos caes d’onde elle 
+                            creou depois os portos... Uma a uma as ruas, e a gente que as percorria e que olhava sobre ellas das janellas... 
+                            Passou a conhecer certa gente, como quem a reconhece apenas... Ia-lhes conhecendo as vidas passadas e as 
+                            conversas, e tudo isto era como quem sonha apenas paysagens e as vae vendo... Depois viajava, recordando, 
+                            atravez do paiz que creara... E assim foi construindo o seu passado... Breve tinha uma outra vida anterior... 
+                            Tinha já, nessa nova patria, um logar onde nascera, os logares onde passara a juventude, os portos onde 
+                            embarcara... Ia tendo tido os companheiros da infancia e depois os amigos e inimigos da sua edade viril... 
+                            Tudo era differente de como elle o tivera – nem o paiz, nem a gente, nem o seu passado proprio se pareciam com 
+                            o que haviam sido... Exigís que eu continue?... Causa-me tanta pena fallar d’isto!... Agora, porque vos fallo 
+                            d’isto, aprazia-me mais estar-vos fallando de outros sonhos... </p>
+                        <p rend="indent-first"><hi rend="bold">Terceira. </hi> – Continuae, ainda que não saibaes porquê... Quanto mais vos 
+                            ouço, mais me não pertenço... </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira. </hi> – Será bom realmente que continueis? Deve qualquer historia 
+                            ter fim? Em todo o caso fallae... Importa tão pouco o que dizemos ou não dizemos... Velamos as horas que 
+                            passam... O nosso mister é inutil como a Vida... </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – Um dia, que chovêra muito, e o horizonte estava mais 
+                            incerto, o marinheiro cançou-se de sonhar... Quiz então recordar a sua patria verdadeira..., mas viu que não se 
+                            lembrava de nada, que ella não existia para elle... Meninice de que se lembrasse, era a na sua patria de sonho; 
+                            adolescencia que recordasse, era aquella que se creara... Toda a sua vida tinha sido a sua vida que sonhara... 
+                            E elle viu que não podia ser que outra vida tivesse existido... Se elle nem de uma rua, nem de uma figura, nem 
+                            de um gesto materno se lembrava... E da vida que lhe parecia ter sonhado, tudo era real e tinha sido... Nem 
+                            sequer podia sonhar outro passado, conceber que tivesse tido outro, como todos, um momento, podem crer... Ó 
+                            minhas irmãs, minhas irmãs... Ha qualquer cousa, que não sei o que é, que vos não disse... , qualquer cousa que 
+                            explicaria isto tudo... A minha alma esfria-me... Mal sei se tenho estado a fallar... Fallae-me, gritae-me, 
+                            para que eu acorde, para que eu saiba que estou aqui ante vós e que ha cousas que são apenas sonhos... </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira </hi> <hi rend="italic"> (numa voz muito baixa). </hi> — Não sei 
+                            que vos diga... Não ouso olhar para as cousas... Esse sonho como continúa?... </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – Não sei como era o resto.... Mal sei como era o resto... 
+                            Porque é que haverá mais?... </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira. </hi> – E o que aconteceu depois? </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – Depois? Depois de quê? Depois é alguma cousa?... Veiu um 
+                            dia um barco... Veiu um dia um barco... — Sim sim... só podia ter sido assim... – Veiu um dia um barco, e 
+                            passou por essa ilha, e não estava lá o marinheiro...</p>
+                        <p rend="indent-first"><hi rend="bold">Terceira. </hi> – Talvez tivesse regressado á patria... Mas a qual? </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira. </hi> – Sim, a qual? E o que teriam feito ao marinheiro? 
+                            Sabel-o-hia alguem? </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – Porque é que m’o perguntaes? Ha resposta para alguma cousa? </p>
+                        
+                <p rend="margin-vertical position-center"> (uma pausa) </p>
+                        
+                        <p rend="indent-first margin-vertical"><hi rend="bold">Terceira. </hi> – Será absolutamente necessario, mesmo dentro do vosso sonho, 
+                            que tenha havido esse marinheiro e essa ilha? </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – Não, minha irmã; nada é absolutamente necessario. </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira. </hi> – Ao menos, como acabou o sonho? </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – Não acabou... Não sei... Nenhum sonho acaba... Sei eu ao 
+                            certo se o não continúo sonhando, se o não sonho sem o saber, se o sonhal-o não é esta cousa vaga 
+                            a que eu chamo a minha vida?.. Não me falleis mais... Principío a estar certa de qualquer cousa, que não sei o 
+                            que é... Avançam para mim, por uma noite que não é esta, os passos de um horror que desconheço... Quem teria eu 
+                            ido despertar com o sonho meu que vos contei?... Tenho um medo disforme de que Deus tivesse prohibido o meu 
+                            sonho... Elle é sem duvida mais real do que Deus permitte... Não estejaes silenciosas... Dizei-me ao menos que 
+                            a noite vae passando, embora eu o saiba... Vêde, começa a ir ser dia.. Vêde: vae haver o dia real... Paremos... 
+                            Não pensemos mais... Não tentemos seguir nesta aventura interior... Quem sabe o que está no fim d’ella?.... 
+                            Tudo isto, minhas irmãs, passou-se na noite... Não fallemos mais d’isto, nem a nós proprias... É humano e 
+                            conveniente que tomemos, cada qual a sua attitude de tristeza. </p>
+                        <p rend="indent-first"><hi rend="bold">Terceira. </hi> – Foi-me tão bello escutar-vos... Não digaes que não... Bem 
+                            sei que não valeu a pena... É porisso que o achei bello... Não foi porisso, mas deixae que eu o diga... De 
+                            resto, a musica da vossa voz, que escutei ainda mais que as vossas palavras, deixa-me, talvez só por ser musica, 
+                            descontente... </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – Tudo deixa descontente, minha irmã... Os homens que pensam 
+                            cançam-se de tudo, porque tudo muda. Os homens que passam provam-o, porque mudam com tudo... De eterno e bello 
+                            ha apenas o sonho... Porque estamos nós fallando ainda?... </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira. </hi> – Não sei... <hi rend="italic"> (olhando para o caixão, em 
+                            voz mais baixa) </hi> — Porque é que se morre? </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – Talvez por não se sonhar bastante... </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira. </hi> – É possivel... Não valeria então a pena fecharmo’-nos no 
+                            sonho e esquecer a vida, para que a morte nos esquecesse?... </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – Não, minha irmã: nada vale a pena... </p>
+                        <p rend="indent-first"><hi rend="bold">Terceira. </hi> – Minhas irmãs, é já dia... Vêde, a linha dos montes 
+                            maravilha-se... Porque não choramos nós?... Aquella que finge estar alli era bella, e nova como nós, e sonhava 
+                            tambem... Estou certa que o sonho d’ella era o mais bello de todos... Ella de que sonharia?... </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira. </hi> – Fallae mais baixo. Ella escuta-nos talvez, e já sabe para 
+                            que servem os sonhos... </p>
+                        
+                <p rend="margin-vertical position-center"> (uma pausa) </p>
+                        <p rend="indent-first margin-vertical"><hi rend="bold">Segunda. </hi> – Talvez nada d’isto seja verdade... Todo este silencio, e 
+                            esta morta, e este dia que começa não são talvez senão um sonho... Olhae bem para tudo isto... Parece-vos que 
+                            pertence á vida?... </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira. </hi> – Não sei. Não sei como se é da vida... Ah, como vós estaes 
+                            parada! E os vossos olhos tão tristes, parece que o estão inutilmente... </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – Não vale a pena estar triste de outra maneira... Não 
+                            desejaes que nos calemos? É tão extranho estar a viver... Tudo o que acontece é inacreditavel, tanto na ilha do 
+                            marinheiro como neste mundo... Vêde, o céu é já verde... O horizonte sorri ouro... Sinto que me ardem os olhos, 
+                            de eu ter pensado em chorar... </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira. </hi> – Chorastes, com effeito, minha irmã. </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – Talvez... Não importa... Que frio é este?... O que é isto? 
+                            Ah, é agora... é agora... Dizei-me isto... Dizei-me uma cousa ainda... Porque não será a unica cousa real nisto 
+                            tudo o marinheiro, e nós e tudo isto aqui apenas um sonho d’elle?... </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira. </hi> – Não falleis mais, não falleis mais... Isso é tão extranho 
+                            que deve ser verdade... Não continueis... O que ieis dizer não sei o que é, mas deve ser de mais para a alma o 
+                            poder ouvir… Tenho medo do que não chegastes a dizer... Vêde, vêde, é dia já… Vêde o dia... Fazei tudo por 
+                            reparardes só no dia, no dia real, alli fóra... Vêde-o, vêde-o... Elle consola... Não penseis, não olheis para 
+                            o que pensaes... Vêde-o a vir, o dia... Elle brilha como ouro numa terra de prata. As leves nuvens arredondam-se 
+                            á medida que se coloram... Se nada existisse, minhas irmãs?... Se tudo fosse, qualquer modo, absolutamente cousa 
+                            nenhuma?... Porque olhastes assim?... </p>
+                        
+                <p rend="margin-vertical position-center"> (Não lhe respondem. E ninguem olhara de nenhuma maneira.) </p>
+                        
+                        <p rend="indent-first margin-vertical"><hi rend="bold">A mesma. </hi> – Que foi isso que dissestes e que me apavorou?... Senti-o 
+                            tanto que mal vi o que era... Dizei-me o que foi, para que eu, ouvindo-o segunda vez, já não tenha tanto mêdo 
+                            como d’antes... Não, não... Não digaes nada... Não vos pergunto isto para que me respondaes, mas para fallar 
+                            apenas, para me não deixar pensar... Tenho medo de me poder lembrar do que foi... Mas foi qualquer cousa de 
+                            grande e pavoroso como o haver Deus... Deviamos já ter acabado de fallar… Ha tempo já que a nossa conversa 
+                            perdeu o sentido... O que ha entre nós que nos faz fallar prolonga-se demasiadamente... Ha mais presenças aqui 
+                            do que as nossas almas.. O dia devia ter já raiado.. Deviam já ter acordado... Tarda qualquer cousa... Tarda 
+                            tudo... O que é que se está dando nas cousas de accordo com o nosso horror?... Ah, não me abandoneis... Fallae 
+                            commigo, fallae commigo... Fallae ao mesmo tempo do que eu para não deixardes sosinha a minha voz... Tenho 
+                            menos medo á minha voz do que á idéa da minha voz, dentro de mim, se fôr reparar que estou fallando... </p>
+                        <p rend="indent-first"><hi rend="bold">Terceira. </hi> – Que voz é essa com que fallaes?... É de outra... Vem de 
+                            uma especie de longe... </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira. </hi> – Não sei... Não me lembreis isso... Eu devia estar fallando 
+                            com a voz aguda e tremida do mêdo... Mas já não sei como é que se falla... Entre mim e a minha voz abriu-se um 
+                            abysmo... Tudo isto, toda esta conversa, e esta noite, e este mêdo – tudo isto devia ter acabado, devia ter 
+                            acabado de repente, depois do horror que nos dissestes... Começo a sentir que o esqueço, a isso que dissestes, 
+                            e que me fez pensar que eu devia gritar de uma maneira nova para exprimir um horror de aquelles... </p>
+                        <p rend="indent-first"><hi rend="bold">Terceira. </hi> – <hi rend="italic"> (para a Segunda) </hi> – Minha irmã, 
+                            não nos devieis ter contado essa historia. Agora extranho-me viva com mais horror. Contaveis e eu tanto me 
+                            distrahia que ouvia o sentido das vossas palavras e o seu som separadamente. E parecia-me que vós, e a vossa 
+                            voz, e o sentido do que dizieis eram trez entes differentes, como trez creaturas que fallam e andam. </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – São realmente trez entes differentes, com vida propria e 
+                            real. Deus talvez saiba porquê... Ah, mas porque é que fallamos? Quem é que nos faz continuar fallando? Porque 
+                            fallo eu sem querer fallar? Porque é que já não reparamos que é dia?... </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira. </hi> – Quem pudesse gritar para despertarmos! Estou a ouvir-me a 
+                            gritar dentro de mim, mas já não sei o caminho da minha vontade para a minha garganta. Sinto uma necessidade 
+                            feroz de ter mêdo de que alguem possa agora bater àquella porta. Porque não bate alguem á porta? Seria 
+                            impossivel e eu tenho necessidade de ter mêdo d’isso, de saber de que é que tenho mêdo... Que extranha que me 
+                            sinto!... Parece-me já não ter a minha voz… Parte de mim adormeceu e ficou a vêr... O meu pavôr cresceu mas eu 
+                            já não sei sentil-o... Já não sei em que parte da alma é que se sente... Puzeram ao meu sentimento do meu corpo 
+                            uma mortalha de chumbo... Para que foi que nos contastes a vossa historia? </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – Já não me lembro... Já mal me lembro que a contei... 
+                            Parece ter sido já ha tanto tempo!... Que somno, que somno absorve o meu modo de olhar para as cousas!... O que 
+                            é que nós queremos fazer? o que é que nos temos idéa de fazer? – já não sei se é fallar ou não fallar... </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira. </hi> – Não fallemos mais. Por mim, cança-me o esforço que fazeis 
+                            para fallar... Dóe-me o intervallo que ha entre o que pensaes e o que dizeis... A minha consciencia boia á tona 
+                            da somnolencia apavorada dos meus sentidos pela minha pelle... Não sei o que é isto, mas é o que sinto... 
+                            Preciso dizer phrases confusas, um pouco longas, que custem a dizer... Não sentis tudo isto como uma aranha 
+                            enorme que nos tece de alma a alma uma teia negra que nos prende? </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – Não sinto nada... Sinto as minhas sensações como uma cousa 
+                            que se não sente... Quem é que eu estou sendo?... Quem é que está fallando com a minha voz?... Ah, escutae... </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira  e Terceira. </hi> – Quem foi? </p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – Nada. Não ouvi nada... Quiz fingir que ouvia para que vós 
+                            suppozesseis que ouvieis e eu pudesse crêr que havia alguma cousa a ouvir... Oh, que horror, que horror intimo 
+                            nos desata a voz da alma, e as sensações dos pensamentos, e nos faz fallar e sentir e pensar quando tudo em nós 
+                            pede o silencio e o dia e a inconsciencia da vida... Quem é a quinta pessoa neste quarto que estende o braço e 
+                            nos interrompe sempre que vamos a sentir?... </p>
+                        <p rend="indent-first"><hi rend="bold">Primeira. </hi> – Para quê tentar apavorar-me?... Não cabe mais terror 
+                            dentro de mim... Peso excessivamente ao collo de me sentir. Afundei-me toda no lodo morno do que supponho que 
+                            sinto. Entra-me por todos os sentidos qualquer cousa que m’os pega e m’os vela. Pesam as palpebras a todas as 
+                            minhas sensações. Prende-se a lingua a todos os meus sentimentos. Um somno fundo colla uma ás outras as idéas 
+                            de todos os meus gestos... Porque foi que olhastes assim?... </p>
+                        <p rend="indent-first"><hi rend="bold">Terceira. </hi> – <hi rend="italic"> (numa voz muito lenta e apagada) 
+                        </hi> — Ah, é agora, é agora... Sim, acordou alguem... Ha gente que acorda... Quando entrar alguem tudo isto 
+                            acabará... Até lá façamos por crêr que todo este horror foi um longo somno que fomos dormindo... 
+                            É dia já... Vae acabar tudo... E de tudo isto fica, minha irmã, que só vós sois feliz, porque acreditaes no 
+                            sonho…</p>
+                        <p rend="indent-first"><hi rend="bold">Segunda. </hi> – Porque é que m’o perguntaes? Porque eu o disse? Não, não 
+                            acredito... </p>
+                <div rend="right"> <p rend="indent-first">Um gallo canta. A luz, como que subitamente, augmenta. As trez veladoras quedam-se 
+                    silenciosas e sem olharem umas para as outras. </p>
+                    <p rend="indent-first">Não muito longe, por uma estrada, um vago carro geme e chia. </p> 
+                </div>
+                         <div>
+                        <p rend="indent-first"><hi rend="italic">11/12 Outubro, 1913.</hi></p>
+                </div>        
+                        <signed rend="align-right">Fernando Pessôa</signed>
+               </div>
+            </body>
+        </text>
+    </TEI>
+
+

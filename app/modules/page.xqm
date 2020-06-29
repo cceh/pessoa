@@ -505,12 +505,12 @@ declare function page:cite($node as node(), $model as map(*), $source as xs:stri
                 else $link
         return
             <span id="p-cite"> {for $elem in helpers:singleElementNode_xquery("cite","cite-sd")/tei:span
-    return
-        switch($elem/@type)
-            case "web" return <i>{helpers:singleElementInList_xQuery("cite","cite-web")}</i>
-            case "url" return <a href="{$link}">{concat("<",$link,">")}</a>
-            case "doi" return (" DOI: ",<a id="tx-doi" class="doilink" href="https://dx.doi.org/{$elem/data(.)}">{$elem/data(.)}</a>)
-            default return $elem
+                return
+                    switch($elem/@type)
+                        case "web" return (" ", <i>{helpers:singleElementInList_xQuery("cite","cite-web")}</i>)
+                        case "url" return (" ", <a href="{$link}">{concat("<",$link,">")}</a>, ".")
+                        case "doi" return (" DOI: ",<a id="tx-doi" class="doilink" href="https://dx.doi.org/{$elem/data(.)}">{$elem/data(.)}</a>, ".")
+                        default return $elem
     }</span>
 };
 

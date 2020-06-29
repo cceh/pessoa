@@ -29,7 +29,13 @@
                         <term xml:lang="de">Projekte und Publikationen</term>
                     </item>
                 </list>
-                <!-- ################# NAVIGATION ######################## -->
+                <!-- ################# NAVIGATION ######################## 
+                Explanations:
+                <note type="published">false|true</note>: are these items visible to all the users (true)
+                or just to users that are logged in (false)?
+                <note type="directory">: creates a submenu with items from a list with this id (e.g. 'authors', 'genres')
+                <note type="linked">: creates a submenu with the items of an index (e.g. 'doclist')
+                -->
                 <list type="navigation">
                     <item xml:id="authors" rend="button" corresp="authors">
                         <term xml:lang="pt">Autores</term>
@@ -51,7 +57,8 @@
                         <term xml:lang="en">Documents</term>
                         <term xml:lang="de">Dokumente</term>
                         <note type="published">false</note>
-                        <note type="linked">doclist</note>
+                        <note type="linked"
+                        >doclist</note><!-- this is evaluated in page.xml, line 188 -->
                     </item>
                     <item xml:id="publicacoes" rend="button">
                         <term xml:lang="pt">Publicações</term>
@@ -274,6 +281,11 @@
                         <note type="ontological-status">ficticious</note>
                         <note type="link">Reis</note>
                     </person>
+                    <person xml:id="BS">
+                        <persName>Bernardo Soares</persName>
+                        <note type="ontological-status">ficticious</note>
+                        <note type="link">Soares</note>
+                    </person>
                 </listPerson>
                 <!-- ################ AUTHOR-Pages #################### -->
                 <list type="author-pages">
@@ -349,13 +361,12 @@
                         <term xml:lang="de">Dichtung</term>
                         <note type="range">poesia</note>
                     </item>
-                    <!--
-                <item xml:id="prose">
-                    <term xml:lang="pt">Prosa</term>
-                    <term xml:lang="en">Prose</term>
-                    <term xml:lang="de">Prosa</term>
-                    <note type="range">prosa</note>
-                </item>-->
+                    <item xml:id="prose">
+                        <term xml:lang="pt">Prosa</term>
+                        <term xml:lang="en">Prose</term>
+                        <term xml:lang="de">Prosa</term>
+                        <note type="range">prosa</note>
+                    </item>
                 </list>
                 <list type="language">
                     <item xml:id="pt">
@@ -875,44 +886,59 @@
                 </list>
                 <list type="cite">
                     <item xml:id="cite-tx">
-                        <term xml:lang="pt"><span>Sepúlveda, Pedro e Henny-Krahmer, Ulrike
-                                (eds.).</span><span type="link"/><span type="web"/><span>.
-                                Coordenação editorial por Pedro Sepúlveda, coordenação técnica por
-                                Ulrike Henny-Krahmer. Lisboa e Colónia: IELT, Universidade Nova de
-                                Lisboa e CCeH, Universidade de Colónia 2017.</span><span type="url"
-                                /><span type="doi">10.18716/cceh/pessoa</span></term>
-                        <term xml:lang="en"><span>Sepúlveda, Pedro and Henny-Krahmer, Ulrike
-                                (eds.).</span><span type="link"/><span type="web"/><span>. Editorial
-                                coordination by Pedro Sepúlveda, technical coordination by Ulrike
-                                Henny-Krahmer. Lisbon and Cologne: IELT, New University of Lisbon
-                                and CCeH, University of Cologne 2017.</span><span type="url"/><span
-                                type="doi">10.18716/cceh/pessoa</span></term>
-                        <term xml:lang="de"><span>Sepúlveda, Pedro und Henny-Krahmer, Ulrike
-                                (Hrsg.).</span><span type="link"/><span type="web"/><span>.
-                                Editorische Leitung Pedro Sepúlveda, technische Leitung Ulrike
-                                Henny-Krahmer. Lissabon und Köln: IELT, Neue Universität Lissabon
-                                und CCeH, Universität zu Köln 2017.</span><span type="url"/><span
-                                type="doi">10.18716/cceh/pessoa</span></term>
+                        <term xml:lang="pt"><span>Sepúlveda, Pedro, Ulrike Henny-Krahmer e Jorge
+                                Uribe (eds).</span>
+                            <span type="link"/>
+                            <span type="web"/><span>. Coordenação editorial por Pedro Sepúlveda,
+                                coordenação técnica por Ulrike Henny-Krahmer. Lisboa e Colónia:
+                                IELT, Universidade Nova de Lisboa e CCeH, Universidade de Colónia
+                                2017ff.</span>
+                            <span type="url"/>
+                            <span type="doi">10.18716/cceh/pessoa</span></term>
+                        <term xml:lang="en"><span>Sepúlveda, Pedro, Ulrike Henny-Krahmer, and Jorge
+                                Uribe (eds).</span>
+                            <span type="link"/>
+                            <span type="web"/><span>. Editorial coordination by Pedro Sepúlveda,
+                                technical coordination by Ulrike Henny-Krahmer. Lisbon and Cologne:
+                                IELT, New University of Lisbon and CCeH, University of Cologne
+                                2017ff.</span>
+                            <span type="url"/>
+                            <span type="doi">10.18716/cceh/pessoa</span></term>
+                        <term xml:lang="de"><span>Sepúlveda, Pedro, Ulrike Henny-Krahmer und Jorge
+                                Uribe (Hrsg).</span>
+                            <span type="link"/>
+                            <span type="web"/><span>. Editorische Leitung Pedro Sepúlveda,
+                                technische Leitung Ulrike Henny-Krahmer. Lissabon und Köln: IELT,
+                                Neue Universität Lissabon und CCeH, Universität zu Köln
+                                2017ff.</span>
+                            <span type="url"/>
+                            <span type="doi">10.18716/cceh/pessoa</span></term>
                     </item>
                     <item xml:id="cite-sd">
-                        <term xml:lang="pt"><span>Sepúlveda, Pedro e Henny-Krahmer, Ulrike (eds.).
-                                </span><span type="web"/><span>. Coordenação editorial por Pedro
-                                Sepúlveda, coordenação técnica por Ulrike Henny-Krahmer. Lisboa e
-                                Colónia: IELT, Universidade Nova de Lisboa e CCeH, Universidade de
-                                Colónia 2017. </span><span type="url"/><span type="doi"
-                                >10.18716/cceh/pessoa</span></term>
-                        <term xml:lang="en"><span>Sepúlveda, Pedro and Henny-Krahmer, Ulrike (eds.).
-                                </span><span type="web"/><span>. Editorial coordination by Pedro
-                                Sepúlveda, technical coordination by Ulrike Henny-Krahmer. Lisbon
-                                and Cologne: IELT, New University of Lisbon and CCeH, University of
-                                Cologne 2017. </span><span type="url"/><span type="doi"
-                                >10.18716/cceh/pessoa</span></term>
-                        <term xml:lang="de"><span>Sepúlveda, Pedro und Henny-Krahmer, Ulrike
-                                (Hrsg.). </span><span type="web"/><span>. Editorische Leitung Pedro
-                                Sepúlveda, technische Leitung Ulrike Henny-Krahmer. Lissabon und
-                                Köln: IELT, Neue Universität Lissabon und CCeH, Universität zu Köln
-                                2017. </span><span type="url"/><span type="doi"
-                                >10.18716/cceh/pessoa</span></term>
+                        <term xml:lang="pt"><span>Sepúlveda, Pedro, Ulrike Henny-Krahmer e Jorge
+                                Uribe (eds).</span>
+                            <span type="web"/><span>. Coordenação editorial por Pedro Sepúlveda,
+                                coordenação técnica por Ulrike Henny-Krahmer. Lisboa e Colónia:
+                                IELT, Universidade Nova de Lisboa e CCeH, Universidade de Colónia
+                                2017ff.</span>
+                            <span type="url"/>
+                            <span type="doi">10.18716/cceh/pessoa</span></term>
+                        <term xml:lang="en"><span>Sepúlveda, Pedro, Ulrike Henny-Krahmer, and Jorge
+                                Uribe (eds).</span>
+                            <span type="web"/><span>. Editorial coordination by Pedro Sepúlveda,
+                                technical coordination by Ulrike Henny-Krahmer. Lisbon and Cologne:
+                                IELT, New University of Lisbon and CCeH, University of Cologne
+                                2017ff.</span>
+                            <span type="url"/>
+                            <span type="doi">10.18716/cceh/pessoa</span></term>
+                        <term xml:lang="de"><span>Sepúlveda, Pedro, Ulrike Henny-Krahmer und Jorge
+                                Uribe (Hrsg).</span>
+                            <span type="web"/><span>. Editorische Leitung Pedro Sepúlveda,
+                                technische Leitung Ulrike Henny-Krahmer. Lissabon und Köln: IELT,
+                                Neue Universität Lissabon und CCeH, Universität zu Köln
+                                2017ff.</span>
+                            <span type="url"/>
+                            <span type="doi">10.18716/cceh/pessoa</span></term>
                     </item>
                     <item xml:id="cite-web">
                         <term xml:lang="pt">Edição Digital de Fernando Pessoa. Projetos e
@@ -1702,6 +1728,32 @@
                     <item xml:id="T226">
                         <title>Se, depois de eu morrer, quizerem escrever a minha
                             biographia,</title>
+                    </item>
+                    <item xml:id="T227">
+                        <title>A Nova Poesia Portugueza Sociologicamente Considerada</title>
+                    </item>
+                    <item xml:id="T228">
+                        <title>Reincidindo...</title>
+                    </item>
+                    <item xml:id="T229">
+                        <title>A Nova Poesia Portugueza no seu aspecto
+                            Psychologico</title>
+                    </item>
+                    <item xml:id="T230">
+                        <title>Naufragio de Bartholomeu</title>
+                    </item>
+                    <item xml:id="T231">
+                        <title>Coisas estiliticas que aconteceram a um gomil cinzelado, 
+                            que se dizia ter sido batido no ceu, em tempos da velha fabula, por um deus amoroso</title>
+                    </item>
+                    <item xml:id="T232">
+                        <title>3</title>
+                    </item>
+                    <item xml:id="T233">
+                        <title>As Caricaturas de Almada Negreiros</title>
+                    </item>
+                    <item xml:id="T234">
+                        <title>Na Floresta do Alheamento</title>
                     </item>
                 </list>
                 <list type="collections">
@@ -2508,7 +2560,41 @@
                         <ptr type="author" target="#AC"/>
                         <ptr type="title" target="#T226"/>
                     </item>
+                    <item xml:id="W187">
+                        <ptr type="author" target="#FP"/>
+                        <ptr type="title" target="#T227"/>
+                    </item>
+                    <item xml:id="W188">
+                        <ptr type="author" target="#FP"/>
+                        <ptr type="title" target="#T228"/>
+                    </item>
+                    <item xml:id="W189">
+                        <ptr type="author" target="#FP"/>
+                        <ptr type="title" target="#T229"/>
+                    </item>
+                    <item xml:id="W190">
+                        <ptr type="author" target="#FP"/>
+                        <ptr type="title" target="#T230"/>
+                    </item>
+                    <item xml:id="W191">
+                        <ptr type="author" target="#FP"/>
+                        <ptr type="title" target="#T231"/>
+                    </item>
+                    <item xml:id="W192">
+                        <ptr type="author" target="#FP"/>
+                        <ptr type="title" target="#T232"/>
+                    </item>
+                    <item xml:id="W193">
+                        <ptr type="author" target="#FP"/>
+                        <ptr type="title" target="#T233"/>
+                    </item>
+                    <item xml:id="W194">
+                        <ptr type="author" target="#FP"/>
+                        <ptr type="title" target="#T234"/>
+                    </item>
                 </list>
+              
+
                 <!--<list type="works">
                 <item xml:id="O1">
                     <title type="main" subtype="a">Poemas de Fernando Pessoa</title>
@@ -2654,6 +2740,10 @@
                         <item xml:id="O1-36">
                             <title>Trois Chansons mortes</title>
                         </item>
+                          <item xml:id="01-37">
+                        <title>A Nova Poesia Portugueza Sociologicamente
+                            Considerada</title>
+                    </item>
                     </list>
                 </item>
                 <item xml:id="O2">
@@ -3045,9 +3135,9 @@
                     <item xml:id="J4">Revista da Solução Editora</item>
                     <item xml:id="J5">A Aguia</item>
                     <item xml:id="J6">Mercure de France</item>
-                    <item xml:id="J7">Teatro</item>
+                    <item xml:id="J7">Teatro - Revista de Critica</item>
                     <item xml:id="J8">T.P.'s Weekly</item>
-                    <item xml:id="J9">O Notícias Ilustrado</item>
+                    <item xml:id="J9">O "Notícias" Ilustrado</item>
                     <item xml:id="J10">Sol</item>
                     <item xml:id="J11">Contemporânea</item>
                     <item xml:id="J12">Orpheu</item>
@@ -3096,7 +3186,8 @@
                     <item xml:id="J56">Vida Portugueza</item>
                     <item xml:id="J57">Heraldo de Faro</item>
                     <item xml:id="J58">Acção</item>
-                    <!-- freie IDs: J59-J67 -->
+                    <item xml:id="J59">Teatro - Jornal D'arte</item>
+                    <!-- freie IDs: J60-J67 -->
                     <item xml:id="J68">Povo de Aveiro</item>
                     <item xml:id="J69">Norma</item>
                     <item xml:id="J70">Exilio</item>
@@ -3110,6 +3201,15 @@
                     <item xml:id="J78">Diário dos Açores</item>
                     <item xml:id="J79">O Mundo Português</item>
                     <item xml:id="J80">Diário de Lisboa</item>
+                    <item xml:id="J81">Teatralia</item>
+                    <item xml:id="J82">Gente Moça</item>
+                    <item xml:id="J83">O Talassa</item>
+                    <item xml:id="J84">O Debate</item>
+                    <item xml:id="J85">Suplemento Literário do Diário de Lisboa</item>
+                    <item xml:id="J86">A Capital</item>
+                    <item xml:id="J87">Fama</item>
+                    <item xml:id="J88">Quarterly Review</item>
+
                 </list>
                 <!-- ####################### PERSONS ############################ -->
                 <listPerson type="all">
@@ -3135,6 +3235,12 @@
                     </person>
                     <person corresp="#RR">
                         <persName>Ricardo Reis</persName>
+                        <idno type="viaf">29010497</idno>
+                        <note type="ontological-status">ficticious</note>
+                        <sex>male</sex>
+                    </person>
+                    <person corresp="#BS">
+                        <persName>Bernardo Soares</persName>
                         <idno type="viaf">29010497</idno>
                         <note type="ontological-status">ficticious</note>
                         <sex>male</sex>
@@ -3344,8 +3450,10 @@
                         <sex>male</sex>
                     </person>
                     <person xml:id="P36">
-                        <persName>Alfredo Pedro Guisado</persName>
+                        <persName type="a">Alfredo Pedro Guisado</persName>
+                        <persName type="b">Pedro de Menezes</persName>
                         <idno type="viaf">68549422</idno>
+                        <idno type="viaf">40268806</idno>
                         <note type="ontological-status">real</note>
                         <sex>male</sex>
                     </person>
@@ -3379,7 +3487,7 @@
                         <sex>male</sex>
                     </person>
                     <person xml:id="P42">
-                        <persName>Alberto da Cunha Dias</persName>
+                        <persName>Alberto </persName>
                         <idno type="viaf">58260808</idno>
                         <note type="ontological-status">real</note>
                         <sex>male</sex>
@@ -3466,12 +3574,7 @@
                         <note type="ontological-status">real</note>
                         <sex>male</sex>
                     </person>
-                    <person xml:id="P57">
-                        <persName>Pedro de Menezes</persName>
-                        <idno type="viaf">40268806</idno>
-                        <note type="ontological-status">real</note>
-                        <sex>male</sex>
-                    </person>
+                    <!-- free: P57 -->
                     <person xml:id="P58">
                         <persName>Violante de Cysneiros</persName>
                         <note type="ontological-status">real</note>
@@ -3699,7 +3802,7 @@
                     </person>
                     <person xml:id="P98">
                         <persName>Orpheu</persName>
-                        <note type="ontological-status">real</note>
+                        <note type="ontological-status">ficticious</note>
                         <sex>male</sex>
                     </person>
                     <person xml:id="P99">
@@ -4339,6 +4442,8 @@
                     </person>
                     <person xml:id="P219">
                         <persName>Virgilio</persName>
+                        <persName type="a">Virgilio</persName>
+                        <persName type="b">Vergilio</persName>
                         <idno type="viaf">315524569</idno>
                         <note type="ontological-status">real</note>
                         <sex>male</sex>
@@ -4726,7 +4831,9 @@
                         <sex>male</sex>
                     </person>
                     <person xml:id="P295">
-                        <persName>Eça de Queiroz</persName>
+                        <persName>Eça de Queirós</persName>
+                        <persName type="a">Eça de Queiroz</persName>
+                        <persName type="b">Eça de Queirós</persName>
                         <note type="ontological-status">real</note>
                         <sex>male</sex>
                     </person>
@@ -4926,6 +5033,7 @@
                     </person>
                     <person xml:id="P335">
                         <persName>Day</persName>
+                        <!-- JU: What is this? -->
                         <note type="ontological-status">real</note>
                         <sex>male</sex>
                     </person>
@@ -5439,7 +5547,6 @@
                         <sex>male</sex>
                     </person>
                     <person xml:id="P438">
-                        <persName>François-Rene de Chateaubriand</persName>
                         <persName type="a">François-Rene de Chateaubriand</persName>
                         <persName type="b">François-Rene de Châteaubriand</persName>
                         <note type="ontological-status">real</note>
@@ -5486,7 +5593,7 @@
                         <sex>male</sex>
                     </person>
                     <person xml:id="P447">
-                        <persName>Brito Camacho</persName>
+                        <persName>Manuel de Brito Camacho</persName>
                         <note type="ontological-status">real</note>
                         <sex>male</sex>
                     </person>
@@ -5502,6 +5609,342 @@
                     </person>
                     <person xml:id="P450">
                         <persName>Gaston de Galliffet</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P460">
+                        <persName>Juvenal</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P461">
+                        <persName>Bordalo Pinheiro</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P462">
+                        <persName>Adolpho Coelho</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P463">
+                        <persName>Johannes Gutenberg</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P464">
+                        <persName>António Ferreira</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P465">
+                        <persName>Manuel de Sousa Pinto</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P466">
+                        <persName>António Pinheiro</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P467">
+                        <persName>Júlio Dantas</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P468">
+                        <persName>Luiz Barreto</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P469">
+                        <persName>Bento Mantua</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P470">
+                        <persName>João de Lebre e Lima</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P471">
+                        <persName>Jorge Colaço</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P472">
+                        <persName>Crispim do Amaral</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P473">
+                        <persName>João de Barros</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P474">
+                        <persName>Ferdinand Brunetière</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P475">
+                        <persName>Joaquim Manso</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P476">
+                        <persName>Carlos Franco</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P477">
+                        <persName>Bartolomeu Dias</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P478">
+                        <persName>João Cabral do Nascimento</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P479">
+                        <persName>Charles Baudelaire</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P480">
+                        <persName>Johann Joachin Winckelmann</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P481">
+                        <persName>Pindaro</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P482">
+                        <persName>Gustave Lanson</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P483">
+                        <persName>Francisco Manuel Cabral Metello</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P484">
+                        <persName>Henry Sumner Maine</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P485">
+                        <persName>Joseph Justus Scaliger</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P486">
+                        <persName>Erasmo de Roterdão</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P487">
+                        <persName>Infante D. Henrique</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P488">
+                        <persName>Afonso de Albuquerque</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P489">
+                        <persName>Poncio Pilatos</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P490">
+                        <persName>Euclides</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P491">
+                        <persName>Bernhard Riemann</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P492">
+                        <persName>Nicolas Boileau</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P493">
+                        <persName>Thomas Carlyle</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P494">
+                        <persName>Ernst Haeckel</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P495">
+                        <persName>Sócrates</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P496">
+                        <persName>Anatole France</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P497">
+                        <persName>Rei Salomão</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P498">
+                        <persName>Al-Motamide</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P499">
+                        <persName>Cátulo</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P500">
+                        <persName>Edward Alexander Crowley</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P501">
+                        <persName>James Douglas</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P502">
+                        <persName>Horatio Bottomley</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P503">
+                        <persName>Auguste Rodin</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P504">
+                        <persName>Alexandrino de Albuquerque</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P505">
+                        <persName>Hanni Larissa Jaeger</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P506">
+                        <persName>Joaquim Marques</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P507">
+                        <persName>Paulino de Oliveira</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P508">
+                        <persName>Joaquim de Carvalho</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P509">
+                        <persName>Theophilo Braga</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P510">
+                        <persName>Virgem Maria</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>female</sex>
+                    </person>
+                    <person xml:id="P511">
+                        <persName>Antonio Lopes Ribeiro</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P512">
+                        <persName>Vasco Reis</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P513">
+                        <persName>Ronald de Carvalho</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P514">
+                        <persName>Eduardo Guimarães</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P515">
+                        <persName>S. Francisco de Assis</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P516">
+                        <persName>Guilherme de Santa-Rita</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P517">
+                        <persName>Francesco Petrarca</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P518">
+                        <persName>John Allan</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P519">
+                        <persName>Virginia Eliza Clemm</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>female</sex>
+                    </person>
+                    <person xml:id="P520">
+                        <persName>Julio Verne</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P521">
+                        <persName>Catulo</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P522">
+                        <persName>Rémy de Gourmont</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P523">
+                        <persName style="a">Elizabeth Tudor</persName>
+                        <persName style="b">Izabel</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P524">
+                        <persName>Anibal Barca</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P525">
+                        <persName>Auguste Comte</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P526">
+                        <persName>Dominique Parodi</persName>
                         <note type="ontological-status">real</note>
                         <sex>male</sex>
                     </person>

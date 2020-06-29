@@ -380,10 +380,10 @@ if($term and $file and $sel and $sel="text","head","lang")
         let $result := if ($sel = "text")
         then doc(concat("/db/apps/pessoa/data/doc/",$file))//tei:text[ft:query(.,$term)]
         else ()
-        let $css := doc("/db/apps/pessoa/highlight-matches.xsl")
+        let $xsl := doc("/db/apps/pessoa/xslt/highlight-matches.xsl")
         let $exp := if (exists($result)) then kwic:expand($result[1]) else ()
         let $exptrans := if (exists($exp))
-                         then transform:transform($exp, $css, ())
+                         then transform:transform($exp, $xsl, ())
                          else ()
         return
             if (exists($exptrans))

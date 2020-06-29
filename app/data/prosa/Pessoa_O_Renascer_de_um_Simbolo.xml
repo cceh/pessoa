@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>         
+            <titleStmt>
+                <title>O Renascer de um símbolo: Al-Motamide o iniciador</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <author>
+                    <rs type="name" key="P109">Augusto Ferreira Gomes</rs> <!-- This is a case where infact de authorships is shared, would this work? -->
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="restricted">
+                    <!-- @status will be set to "free" once the document is ready to be published -->
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Pessoa_O_Renascer_de_um_Simbolo.xml</idno>               
+            </publicationStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="O1-X">O Renascer de um símbolo: Al-Motamide o iniciador</rs></item>
+                </list>
+                <biblStruct>
+                    <!-- here goes the bibliographical reference for the source publication -->
+                    <analytic>
+                        <title level="a">O Renascer de um simbolo: Al-Motamide o iniciador</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt" otherLangs="en"/>
+                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J9">O "Notícias" Ilustrado</rs></title>
+                        <imprint>
+                            <date when="1928-07-15">15 de Julho de 1928</date>
+                            <!-- in case it is not a single date, but from-to, it 
+                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
+                            there is just a year: when="1931" -->
+                        </imprint>
+                        <biblScope unit="page">22</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="prosa">Prosa</rs>
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+        <graphic url="prosa/O_Renascer_de_um_simbolo.jpg"/>
+    </facsimile>
+    <text corresp="#O1-X">
+        <!-- @corresp: contains the index of this WORK. 
+        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
+        This can be left as is in the beginning.
+    -->
+        <body>
+            <div>
+                <head><hi rend="bold">O RENASCER DE UM SIMBOLO: Al-Motamide o iniciador</hi></head>
+                <p><hi rend="bold">SILVES</hi> vae, dentro de breves dias, prestar homenagem ao seu «wal», o poeta extraordinario que foi o 
+                    moiro <rs type="name" key="P498">Al-Motamide</rs>! E essa homenagem, gravada com versos seus em pedra simples, é como o 
+                    signal de um renascimento que se opera embora veladamente – num sentido de dar ligação aos sonhos do ultimo rei de Sevilha, 
+                    o amante da peregrina Silves, a Chelb das muralhas firmes e dos hortos sempre em verdejante luz.</p>
+                <p rend="indent-first">A figura do poeta aparece-nos entre sonhos de beleza e intuições extraordinárias. Ha, em volta da sua 
+                    obra, um nimbo de visão que, através [de] um lucido lirismo, dá, nos nossos dias, uma directriz animica à sonolencia fatal 
+                    dos nossos tempos.</p>
+                <p rend="indent-first"><rs type="name" key="P498">Al-Motamide</rs> pressente qualquer coisa que hoje já se desenha e que está 
+                    escripto – para quem o souber lêr – nas quadras de <rs type="name" key="P259">Bandarra</rs>.</p>
+                <p rend="indent-first">Mas, afora este nosso conceito, só como poeta ele vale a homenagem.</p>
+                <p rend="indent-first">E Silves, assim, fazendo-a, pagará uma divida. E quem paga o que deve a mais não é obrigado.</p>
+                <p rend="indent-first">O resto fica com os Deuses: Quando fôr a Hora, ha de soar a Hora. Entretanto vivamos todos os signaes 
+                    que ante os olhos vão surgindo, desde os minimos – os que mesmo se não notam ou não são notados por todos – aos maiores, 
+                    mais nitidos e mais amplos.</p>
+                <p rend="indent-first">Que a memoria de <rs type="name" key="P498">Al-Motamide</rs> fique gravada não só nas letras da lápide 
+                    mas tambem nos ventos que a levem pelo Atlantico, em aroma, mares alem. E que nós, os portuguêses, vivamos essa memoria, 
+                    tambem, como um signal da Hora que os Deuses guardam para gloria dos Poetas, dos Santos e dos Herois.</p>
+                
+                <signed rend="align-right">A[ugusto] F[erreira] G[omes]</signed>
+            </div>
+        </body>
+    </text>
+</TEI>  

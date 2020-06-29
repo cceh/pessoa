@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>         
+            <titleStmt>
+                <title>DO “LIVRO DO DESASOCEGO” ("Amo pelas tardes demoradas de verão")</title>
+                <author>
+                    <rs type="name" key="BS">Bernardo Soares</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="restricted">
+                    <!-- @status will be set to "free" once the document is ready to be published -->
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Soares_LDD_Amo_Pelas_Tardes.xml</idno>               
+            </publicationStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="05-X">DO “LIVRO DO DESASOCEGO” ("Amo pelas tardes demoradas de verão")</rs></item>
+                </list>
+                <biblStruct>
+                    <!-- here goes the bibliographical reference for the source publication -->
+                    <analytic>
+                        <title level="a">DO “LIVRO DO DESASOCEGO” ("Amo pelas tardes demoradas de verão")</title>
+                        <author>
+                            <rs type="name" key="BS">Bernardo Soares</rs>
+                        </author>
+                        <textLang mainLang="pt" otherLangs="en"/>
+                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J4">Revista da Solução Editora</rs></title>
+                        <imprint>
+                            <date when="1929-03">Março de 1929</date>
+                            <!-- in case it is not a single date, but from-to, it 
+                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
+                            there is just a year: when="1931" -->
+                        </imprint>
+                        <biblScope unit="issue">2</biblScope>
+                        <biblScope unit="page">25</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="prosa">Prosa</rs>
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+        <graphic url="prosa/LDD_Amo.jpg"/>
+    </facsimile>
+    <text corresp="#05-X">
+        <!-- @corresp: contains the index of this WORK. 
+        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
+        This can be left as is in the beginning.
+    -->
+        <body>
+            <div>
+                <head rend="center">TRECHO</head>
+                
+                <head type= "sub" rend="center">DO “LIVRO DO DESASOCEGO”, COMPOSTO POR <rs type= "name">BERNARDO SOARES</rs><!--we need to 
+                    create Soares as an author-->, AJUDANTE DE GUARDA-LIVROS NA CIDADE DE LISBOA</head>
+                    
+                <p rend="indent-first"><hi rend="bold">AMO</hi>, pelas tardes demoradas de verão, o socego da cidade baixa, e sobretudo aquelle 
+                    socego que o contraste accentua na parte que o dia mergulha em mais bulicio. A Rua do Arsenal, a Rua da Alfandega, o 
+                    prolongamento das ruas tristes que se alastram para leste desde que a da Alfandega cessa, toda a linha separada dos caes 
+                    quedos — tudo isso me conforta de tristeza, se me insiro, por essas tardes, na solidão do seu conjuncto. Vivo uma era 
+                    anterior áquela em que vivo; goso de sentir me coevo de <rs type="name" key="P26">Cesario Verde</rs>, e tenho em mim, não 
+                    outros versos como os d'elle, mas a substancia egual à dos versos que fôram d'elle. Por alli arrasto, até haver noite, 
+                    uma sensação de vida parecida com a d'essas ruas. De dia ellas são cheias de um bulicio que não quere dizer nada; de noite 
+                    são cheias de uma falta de bulicio que não quere dizer nada. Eu de dia sou nullo, e de noite sou eu. Não ha differença 
+                    entre mim e as ruas para o lado da Alfandega, salvo elas serem ruas e eu ser alma, o que pode ser que nada valha ante o 
+                    que é a essencia das cousas. Ha um destino egual, porque é abstracto, para os homens e para as cousas — uma designação 
+                    egualmente indifferente na algebra do mysterio.</p>
+                        
+                <p rend="indent-first">Mas ha mais alguma cousa... Nessas horas lentas e vazias, sobe-me da alma á mente uma tristeza de todo 
+                    o ser, a amargura de tudo ser ao mesmo tempo uma sensação minha e uma cousa externa, que não está em meu poder alterar. 
+                    Ah, quantas vezes os meus proprios sonhos se me erguem em cousas, não para me substituirem a realidade, mas para se me 
+                    confessarem seus pares em eu os não querer, em me surgirem de fóra, como o electrico que dá a volta na curva extrema da 
+                    rua, ou a voz do apregoador nocturno, de não sei que cousa, que se destaca, toada arabe, como um repuxo subito, da 
+                    monotonia do entardecer! </p>
+                            
+                            <signed rend="align-right">FERNANDO PESSOA</signed>
+                
+            </div>
+        </body>
+    </text>
+</TEI>                         

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml" class="templates:surround?with=templates/page.html&amp;at=content">
+    <script type="text/javascript">
+        $(document).ready(function(){
+        
+            $("li.itabs").click(function(e){
+                if (!$(this).hasClass("selected")) {
+                    var tabNum = $(this).attr("title");
+                    $("ul#indextabs .selected").removeClass("selected");
+                    $(this).addClass("selected");
+                    $("ul#indextab .selected").removeClass("selected");
+                    $("ul#indextab li#"+tabNum).addClass("selected");
+                    $("ul#indextab li#"+tabNum+" ul li").addClass("selected");
+                    /*  $("ul#indextab :nth-child("+nthChild+")").addClass("active");
+                    */
+                }
+            });
+            
+            $(".note > .label").click(function(){
+                    $(this).next().toggle();
+                }
+            );
+        
+        });
+    </script>
+    <div id="pub" class="content">
+        <div id="titleline">
+            <p class="pub:get-title"></p>
+        </div>
+        <div id="article">
+            <div class="doc:docControll" id="scrollline"></div>
+            <div id="text-div"><div class="pub:get-text"></div></div>
+            <div id="img-div">
+                <div id="indexline">
+                    <ul id="indextabs">
+                        <li class="itabs selected"  title="facsimile">
+                            <a href="#facsimile">
+                                <span>
+                                    <get data-template="helpers:singleElementInList" data-template-ListType="buttons" data-template-ListId="facsimile"/>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="itabs"  title="index">
+                            <a href="#index">
+                                <span>
+                                    <get data-template="helpers:singleElementInList" data-template-ListType="buttons" data-template-ListId="bindex"/>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul id="indextab">
+                        <li class="selected" id="facsimile">
+                            <div >
+                                <get data-template="pub:get-image">facsimile</get>
+                            </div>
+                        </li>
+                        <li id="index">
+                            <div>
+                                <get data-template="pub:get-indexes">indexes</get>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <map data-template="doc:footerfilter" data-template-dir="pub">
+                <div id="footerFilter">
+
+                <div id="cite" title="Citar" style="display:none;border:solid">
+                    <p>
+                        <get data-template="doc:cite" data-template-dir="pub"/>
+                    </p>
+                </div>
+                <div id="symboliga" title="Symboliga" style="display:none;border:solid">
+                    <table>
+                        <tr>
+                            <td>□</td>
+                            <td><get data-template="helpers:singleElementInList" data-template-ListType="symbols" data-template-ListId="blank_space"/></td>
+                        </tr>
+                        <tr>
+                            <td>*</td>
+                            <td><get data-template="helpers:singleElementInList" data-template-ListType="symbols" data-template-ListId="conjectural"/></td>
+                        </tr>
+                        <tr>
+                            <td>/ /</td>
+                            <td><get data-template="helpers:singleElementInList" data-template-ListType="symbols" data-template-ListId="segment"/></td>
+                        </tr>
+                        <tr>
+                            <td>†</td>
+                            <td><get data-template="helpers:singleElementInList" data-template-ListType="symbols" data-template-ListId="illegible"/></td>
+                        </tr>
+                        <tr>
+                            <td>[ ]</td>
+                            <td>
+                                <get data-template="helpers:singleElementInList" data-template-ListType="symbols" data-template-ListId="expanded"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="filter">
+                    <a class="filter-a" onclick="printContent()">
+                        <get data-template="helpers:singleElementInList" data-template-ListType="footer" data-template-ListId="print"/>
+                    </a>
+                    <get data-template="helpers:getValue" data-template-get="xmllink"/>
+                    <a class="filter-a" id="zitat" >
+                        <get data-template="helpers:singleElementInList" data-template-ListType="footer" data-template-ListId="cite"/>
+
+                    </a>
+                    <a class="filter-a" id="symbols">
+                        <get data-template="helpers:singleElementInList" data-template-ListType="footer" data-template-ListId="symbols"/>
+                    </a>
+                </div>
+                </div>
+            </map>
+            <i data-template="doc:notaButton"/>
+            <script type="text/javascript">
+                $(document).ready(function() {               
+                calcFacsimilie();
+                    fixDiv();
+                    $("#print").click(function() {
+                        printPub();
+                    });
+                    $(window).scroll(fixDiv);
+                    $("#zitat").click(function() {
+                        $( "#cite" ).toggle();
+                    });
+                    $("#symbols").click(function() {
+                        $( "#symboliga" ).toggle();
+                    });
+                    $("html, body").animate({ scrollTop: $('#titleline').offset().top }, 1000);
+
+                });
+                
+            </script>
+        </div>
+    </div>
+</div>

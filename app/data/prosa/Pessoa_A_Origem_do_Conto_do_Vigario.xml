@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>         
+            <titleStmt>
+                <title>A Origem do Conto do Vigario</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="restricted">
+                    <!-- @status will be set to "free" once the document is ready to be published -->
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Pessoa_A_Origem_do_Conto_do_Vigario.xml</idno>               
+            </publicationStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="O1-X">A Origem do Conto do Vigario</rs></item>
+                </list>
+                <biblStruct>
+                    <!-- here goes the bibliographical reference for the source publication -->
+                    <analytic>
+                        <title level="a">A Origem do Conto do Vigario</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt" otherLangs="en"/>
+                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J9">O "Notícias" Ilustrado</rs></title>
+                        <imprint>
+                            <date when="1929-08-18">18 de Agosto de 1929</date>
+                            <!-- in case it is not a single date, but from-to, it 
+                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
+                            there is just a year: when="1931" -->
+                        </imprint>
+                        <biblScope unit="pages">4-5 e 7</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="prosa">Prosa</rs>
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+        <graphic url="prosa/A_origem_do_conto_do_viagario_1.jpg"/>
+        <graphic url="prosa/A_origem_do_conto_do_viagario_2.jpg"/>
+        <graphic url="prosa/A_origem_do_conto_do_viagario_3.jpg"/>
+    </facsimile>
+    <text corresp="#O1-X">
+        <!-- @corresp: contains the index of this WORK. 
+        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
+        This can be left as is in the beginning.
+    -->
+        <body>
+            <div>
+                <head>A Origem do Conto do Vigario</head>
+                
+                <p>Como scena eminentemente lisboeta, para o filme «Lisboa», Gil Ferreira, Alfredo Ruas e Holbeche Bastos interpretam o «Conto do 
+                    Vigario», bem conhecido: Um alemtejano que desembarca. Um dos vigaristas deixa  cair uma corrente falsa. O alemtejano apanha-a, o 
+                    outro vigarista que vem no encalço porpõe-lhe dividirem o achado ao meio – e vão ver se é de oiro. Para isso tiram a «argolinha» e 
+                    vão ver. Essa é claro, é de oiro. O «pacovio» conclue que toda a corrente é de oiro e dá ao vigarista a maquia que ele lhe pede. É 
+                    claro que aqui «alemtejano» é um simbolo – pois bem pode suceder que o «pacóvio» seja de outro sitio e o «vigarista esperto» seja 
+                    de Evora.</p>
+                
+                <milestone rend="asterisk" unit="section"/>
+                
+                <p rend="indent-first"><hi rend="italic">O nosso colaborador <rs type="name" key="#FP">Fernando Pessoa</rs>, explica, a seguir, a origem do termo «Conto do Vigario»</hi>...</p>
+                
+                </div>
+            
+            <div>
+                <p rend="indent-first">VIVIA, ha já bastantes anos, algures num concelho do Ribatejo, um pequeno lavrador e negociante de gado 
+                    chamado <rs type="name" key="P370">Manuel Peres Vigario</rs>.</p>
+                
+                <p rend="indent-first">Chegou uma vez ao pé dêle um fabricante de notas falsas e disse-lhe: «Sr. <rs type="name" key="P370">Vigario</rs>, 
+                    ainda tenho aqui umas notasínhas de cem mil reis que me falta passar. O sr. quere? Largo-lhas por vinte mil reis cada uma.»</p>
+                
+                <p rend="indent-first">«Deixe ver», disse o <rs type="name" key="P370">Vigario</rs>; e depois, reparando logo que eram imperfeitissimas, 
+                    rejeitou-as: «Para que quero eu isso?», disse; «isso nem a cegos se passa.»</p>
+                
+                <p rend="indent-first">O outro, porém, insistiu; <rs type="name" key="P370">Vigario</rs>, regateando, cedeu um pouco. Por fim fez-se 
+                    negocio de vinte notas, a dez mil reis cada uma.</p>
+                
+                <p rend="indent-first">Sucedeu que dalí a dias tinha o <rs type="name" key="P370">Vigario</rs> que pagar a dois irmãos, negociantes de 
+                    gado como êle, o saldo de uma conta, no valor certo de um conto de reis. No primeiro dia da feira, em que se deveria efectuar o 
+                    pagamento, estavam os dois irmãos jantando numa taberna obscura da localidade, quando surgiu á porta, cambaleante de bebado, o 
+                    <rs type="name" key="P370">Manuel 
+                    Peres Vigario</rs>. Sentou-se á mesa dêles e pediu vinho. Daí a um tempo, depois de alguma conversa, pouco inteligivel da sua parte, 
+                    lembrou que tinha um pagamento a fazer-lhes. E, puxando da carteira, perguntou se se importavam de receber tudo em notas de cinquenta 
+                    mil reis. Os irmãos disseram que não se importavam; mas, como nêsse momento a carteira se entréabrisse, o mais vigilante dos dois 
+                    chamou, com um olhar rapido, a atenção do irmão para as nota[s]», que se via que eram de cem mil reis. Houve então uma troca de 
+                    olhares entre os dois irmãos.</p>
+                <p rend="indent-first">O <rs type="name" key="P370">Manuel Peres</rs> contou tremulamente vinte notas, que entregou. Um dos irmãos 
+                    guardou-as logo, tendo-as visto contar, nem perdeu tempo em olhar para elas. O <rs type="name" key="P370">Vigario</rs> continuou a 
+                    conversar, e, varias vezes, pediu e bebeu mais vinho. Depois, por natural efeito da bebedeira progressiva, disse que queria um recibo. 
+                    Não era costume mas nenhum dos irmãos fez questão. O <rs type="name" key="P370">Manuel Peres</rs> disse que queria ditar o recibo, 
+                    para as coisas ficarem todas certas. Os outros anuiram a este capricho de bebado. Então o <rs type="name" key="P370">Manuel Peres</rs> 
+                    ditou como em tal dia, a tais horas, na taberna de fulano «estando nós a jantar» (e por ali fóra com toda a prolixidade estupida do 
+                    bebado), tinham êles recebido de <rs type="name" key="P370">Manuel Peres Vigario</rs>, do lugar de qualquer coisa, a quantia de um 
+                    conto de reis, em notas de cinquenta mil réis. O recibo foi datado, selado e assinado. O <rs type="name" key="P370">Vigario</rs> 
+                    meteu-o na carteira, demorou-se mais um pouco, bebeu ainda mais vinho, e por fim foi-se embora.</p>
+                
+                <p rend="indent-first">Quando, no dia seguinte, houve ocasião de se trocar a primeira nota de cem mil reis, o individuo, que ia a 
+                    recebê-la, rejeitou-a logo por falsissima. Rejeitou do mesmo modo a segunda e a terceira. E os dois irmãos, olhando então bem para 
+                    as notas, verificaram que nem a cegos se poderiam passar.</p>
+                
+                <p rend="indent-first">Queixaram-se à polícia, e foi chamado o <rs type="name" key="P370">Manuel Peres</rs>, que, ouvindo atónito o caso, 
+                    ergueu as mãos ao céu em graças da bebedeira que o havia colhido providencialmente no dia do pagamento e o havia feito exigir um 
+                    recibo estupido.</p>
+                
+                <p rend="indent-first">Lá o dizia o recibo: «um conto de réis “em notas de ciquenta mil reis”[»]. Se os dois irmãos tinham notas de cem, 
+                    não era dêle, <rs type="name" key="P370">Vigario</rs>, que as tinham recibido. Ele lembrava-se bem, apesar de bebado, de ter pago 
+                    vinte notas, e os irmãos não eram (dizia o <rs type="name" key="P370">Manuel Peres</rs>) homens que lhe fôssem aceitar notas de cem 
+                    por notas de cinquenta, porque eram homens honrados e de bom nome em todo o concelho.</p>
+                
+                <p rend="indent-first">E, como era de justiça, o <rs type="name" key="P370">Manuel Peres Vigario</rs> foi mandado em paz.</p>
+                
+                <p rend="indent-first">O caso, porém, não podia ficar secreto. Por um lado ou por outro, começou a contar-se, e espalhou-se. E a historia 
+                    do «conto de reis do <rs type="name" key="P370">Manuel Peres Vigario</rs>», passou a ser uma expressão corrente na lingua portuguesa.</p>
+                
+                <signed rend="align-right">F[ernando] P[essoa]</signed>
+            </div>
+        </body>
+    </text>
+</TEI>

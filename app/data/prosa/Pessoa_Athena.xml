@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>         
+            <titleStmt>
+                <title>Athena</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="restricted">
+                    <!-- @status will be set to "free" once the document is ready to be published -->
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Pessoa_Athena.xml</idno>               
+            </publicationStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="O1-X">Athena</rs></item>
+                </list>
+                <biblStruct>
+                    <!-- here goes the bibliographical reference for the source publication -->
+                    <analytic>
+                        <title level="a">Athena</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt" otherLangs="en"/>
+                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J2">Athena</rs></title>
+                        <imprint>
+                            <date when="1924-10">Outubro de 1924</date>
+                            <!-- in case it is not a single date, but from-to, it 
+                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
+                            there is just a year: when="1931" -->
+                        </imprint>
+                        <biblScope unit="issue">1</biblScope>
+                        <biblScope unit="page">5-8</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="prosa">Prosa</rs>
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+        <graphic url="prosa/Athena_1.jpg"/>
+        <graphic url="prosa/Athena_2.jpg"/>
+        <graphic url="prosa/Athena_3.jpg"/>
+        <graphic url="prosa/Athena_4.jpg"/>
+    </facsimile>
+    <text corresp="#O1-X">
+        <!-- @corresp: contains the index of this WORK. 
+        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
+        This can be left as is in the beginning.
+    -->
+        <body>
+            <div>
+                <head>ATHENA</head>
+                    
+                    <p rend="indent-first">Tem duas fórmas, ou modos, o que chamamos cultura. Não é a cultura senão o aperfeiçoamento 
+                        subjectivo da vida. Esse aperfeiçoamento é directo ou indirecto; 
+                        ao primeiro se chama arte, sciencia ao segundo. Pela arte nos aperfeiçoamos a nós; pela sciencia aperfeiçoamos 
+                        em nós o nosso conceito, ou illusão, do mundo.</p>
+                    
+                    <p rend="indent-first">Como, porém, o nosso conceito do mundo comprehende o que fazemos de nós mesmos, e, por outra parte, 
+                        no conceito, que de nós formamos, se contém o que 
+                        formamos das sensações, pelas quaes o mundo nos é dado; succede que em seus fundamentos subjectivos, e portanto na sua maior 
+                        perfeição em nós – que não é senão a sua maior 
+                        conformidade com esses mesmos fundamentos –, a arte se mixtura com a sciencia, a sciencia se confunde com a arte.</p>
+                    
+                    <p rend="indent-first">Com tal assiduidade e estudo se empregam os summos artistas no conhecimento das materias, de que hão de 
+                        servir-se, que antes parecem sabios do que imaginam, 
+                        que apprendizes da sua imaginação. Nem escasseiam, assim nas obras como nos dizeres dos grandes sabedores, lucilações 
+                        logicas do sublime; em a licção d’elles se inventou o 
+                        dicto, <hi rend="italic">o bello é o esplendor do vero</hi>, que a tradição, exemplarmente erronea, attribuiu a 
+                        <rs type="name" key="P432">Platão</rs>. E na acção 
+                        mais perfeita que nos figuramos – a dos que chamamos deuses – aúnamos por instincto as duas fórmas da cultura: figuramol-os 
+                        creando como artistas, sabendo como sabios, porém em 
+                        um só acto; pois o que criam, o criam inteiramente, como verdade, que não como creação; e o que sabem, o sabem inteiramente, 
+                        porque o não descobriram mas crearam.</p>
+                        
+                          <milestone rend="asterisk" unit="section"/> 
+                
+                    <p rend="indent-first">Se é lícito que acceitemos que a alma se divide em duas partes – uma como material, a outra puro espirito –, 
+                        diremos, de qualquer conjuncto ou homem hoje 
+                        civilizado, que deve a primeira á nação [de] que é ou em que nasceu, a segunda á Grecia antiga. <hi rend="italic">Exceptas as 
+                            forças cegas da Natureza</hi>, disse 
+                            <rs type="name" key="P484">Sumner Maine</rs>, <hi rend="italic">tudo, quanto neste mundo se move, é grego em sua 
+                                origem</hi>.</p>
+                            
+                    <p rend="indent-first">Estes gregos, que ainda nos governam de além dos proprios tumulos desfeitos, figuraram em dois deuses 
+                        a producção da arte, cujas fórmas todas lhes devemos e 
+                        de que só não crearam a necessidade e a imperfeição. Figuraram em o deus Apollo a liga instinctiva da sensibilidade com o 
+                        entendimento, em cuja acção a arte tem origem como 
+                        belleza. Figuraram em a deusa Athena a união da arte e da sciencia, em cujo effeito a arte (como tambem a sciencia) tem 
+                        origem como perfeição. Sob o influxo do deus nasce o 
+                        poeta, entendendo nós por poesia, como outros, o <hi rend="italic">principio animador de todas as artes</hi>; com o auxilio 
+                        da deusa se fórma o artista.</p>
+                                
+                    <p rend="indent-first">Com esta ordem de symbolos – e assim nesta materia como em outras – ensinaram os gregos que tudo é de 
+                        origem divina, isto é, extranho ao nosso entendimento, 
+                        e alheio á nossa vontade. Somos só o que nos fizeram ser, e dormimos com sonhos, servos orgulhosos nelles da liberdade que 
+                        nem nelles temos. Porisso o 
+                        <hi rend="italic">nascitur</hi>, que se diz do poeta, se applica tambem a metade do artista. Não se apprende a ser artista; 
+                        apprende-se porém a saber sel-o. Em certo modo, 
+                        comtudo, quanto maior o artista nato, maior a sua capacidade para ser mais que o artista nato. Cada um tem o Apollo que 
+                        busca, e terá a Athena que buscar. Tanto o que temos, 
+                        porém, como o que teremos, já nos está dado, porque tudo é lógico. <hi rend="italic">Deus geometriza</hi>, disse 
+                        <rs type="name" key="P432">Platão</rs>.</p>
+                                    
+                         <milestone rend="asterisk" unit="section"/> 
+                                    
+                                    
+                    <p rend="indent-first">Da sensibilidade, da personalidade distincta que ella determina, nasce a arte per o que se chama a inspiração – o segredo que ninguem fallou, a sesame dicta 
+                        por acaso, o eco em nós do encantamento distante.</p>
+                                    
+                    <p rend="indent-first">A só sensibilidade, porém, não gera a arte; é tãosómente a sua condição, como o desejo o é do proposito. Ha mistér que ao que a sensibilidade ministra se 
+                        ajuncte o que o entendimento lhe nega. Assim se estabelece um equilibrio; e o equilibrio é o fundamento da vida. A arte é a expressão de um equilíbrio entre a subjectividade 
+                        da emoção e a objectividade do entendimento, que, como emoção e entendimento, e como subjectiva e objectivo, se entreoppõem, e porisso, conjugando-se, se equilibram.</p>
+                                    
+                    <p rend="indent-first">Tem a arte, para nascer, que ser de um individuo; para não morrer, que ser como extranha a elle. Deve nascer no individuo per, que não em, o que elle tem de 
+                        individual. No artista nato a sensibilidade, subjectiva e pessoal, é, ao sel-o, objectiva e impessoal tambem. Poronde se vê que em tal sensibilidade se contém já, como 
+                        instincto, o entendimento; que ha portanto fusão, que não só conjugação, d’aquelles dois elementos do espirito.</p>
+                                    
+                    <p rend="indent-first">A sensibilidade conduz normalmente á acção, o entendimento á contemplação. A arte, em que estes dois elementos se fundem, é uma contemplação activa, uma 
+                        acção parada. É esta fusão, composta em sua origem, simples em seu resultado, que os gregos figuraram em Apollo, cuja acção é a melodia. Não tem porém valia como arte essa 
+                        dupla unidade senão com seus elementos não só unidos mas equivalentes.</p>
+                                    
+                    <p rend="indent-first">Pobre de sensibilidade e de pessoa, a arte é uma mathematica sem verdade. Por muito que um homem 
+                        apprenda, nunca apprende a ser quem não é; se não fôr 
+                        artista, não será artista, e da arte que finge se dirá o que <rs type="name" key="P485">Scaliger</rs> disse da de 
+                        <rs type="name" key="P486">Erasmo</rs>: 
+                            <hi rend="italic">ex alieno ingenio poeta, ex suo versificator</hi> – poeta pelo ingenho alheio, versificador pelo proprio.</p>
+                                        
+                    <p rend="indent-first">Pobre de entendimento, porém, e da objectividade que ha nelle, no genio sobresahe a loucura, em que se funda; 
+                        no talento a extranheza, em que se fundamenta; 
+                        no ingenho a singularidade, em que tem origem. O individuo mata a individualidade.</p>
+                                        
+                        <milestone rend="asterisk" unit="section"/> 
+                                        
+                     <p rend="indent-first">Na arte buscamos para nós um aperfeiçoamento directo; podemos buscal-o temporario, ou constante, ou permanente. Nossa indole, e as circumstancias, 
+                         determinarão a especie, que é tambem o grau, de nossa escolha. </p>
+                                        
+                     <p rend="indent-first">Aperfeiçoamento temporario, não o ha senão o do esquecimento; porque, como forçosamente o que temos de mau está em nós, o aperfeiçoarmo-nos temporariamente, 
+                         isto é, sem aperfeiçoamento, não pode ser mais que o esquecermo-nos de nós, e da imperfeição que somos. Ministram por natureza este esquecimento as artes inferiores – a dança, 
+                         o canto, a representação –, cujo fim especial é o de distrahir e de entreter, e que, se excedem esse fim, tambem a si mesmas se excedem. </p>
+                                        
+                     <p rend="indent-first">Aperfeiçoamento constante quer dizer, não o aperfeiçoamento, senão a presença constante de estimulos para elle. Não ha estimulos, porém, senão exteriores; 
+                         serão tanto mais fortes, quanto mais exteriores; serão tanto mais exteriores, quanto mais physicos e concretos. Ministram por natureza este estimulo constante as artes 
+                         superiores concretas – a pintura, a esculptura, a architectura –, cujo fim especial é o de adornar e de embellezar. Constantes como aperfeiçoamento, são porém permanentes como 
+                         estimulos d’elle; de ahi o serem superiores. Podem ellas, comtudo, admittir, como todo concreto, uma animação do abstracto; na proporção em que, sem desertarem de seu fito, o 
+                         fizerem, a si mesmas se excederão. </p>
+                                        
+                     <p rend="indent-first">O aperfeiçoamento permanente não pode dar-se senão per aquillo que no homem é já mais permanente e mais aperfeiçoado. Operando e animando nesse elemento do 
+                         espirito se fará o homem viver cada vez mais nelle, se o fará viver uma vida cada vez mais perfeita. É a abstracção o ultimo effeito da evolução do cerebro, a ultima revelação 
+                         que em nós o destino fez de si mesmo. É ainda a abstracção substancialmente permanente; nella, e na operação d’ella a que chamamos razão, não vive o homem servo de si, como na 
+                         sensibilidade, nem pensa superficial do ambiente, como com o entendimento: vive e pensa <hi rend="italic">sub specie aeternitatis</hi>, desprendido e profundo. Nella, pois, e 
+                             per ella, se deve effectuar o aperfeiçoamento permanente do homem. As artes que por natureza ministram tal aperfeiçoamento são as artes superiores abstractas – a musica e a 
+                             litteratura, e ainda a philosophia, que abusivamente se colloca entre as sciencias, como se ella fôra mais que o exercicio do espirito em se figurar mundos impossiveis. </p>
+                                            
+                     <p rend="indent-first">Assim, porém, como qualquer das artes superiores pode descer ao nivel da infima, quando se dê o fito que naturalmente convém áquella, assim tambem as 
+                         inferiores e as concretas podem, em certo modo, alçar-se ao da suprema. Assim é que toda arte, seja qual fôr seu lugar natural, deve tender para a abstracção das artes maiores. </p>
+                                            
+                     <p rend="indent-first">Trez são os elementos abstractos que pode haver em qualquer arte, e que podem portanto nella sobresahir: a ordenação logica do todo em suas partes, o 
+                         conhecimento objectivo da materia que ella informa, e a excedencia nella de um pensamento abstracto. Em qualquer arte é dado, em maior ou menor grau, manifestarem-se estes 
+                         elementos, ainda que só nas artes abstractas, e sobretudo na litteratura, que é a mais completa, possam manifestar-se inteiramente.</p>
+                                            
+                     <p rend="indent-first">A mesma abstracção é tambem o estádio supremo da sciencia. Tende esta para ser mathematica, isto é, abstracta, á medida que se eleva e se aperfeiçôa. É pois 
+                         no nivel da abstracção que a arte e a sciencia, ambas se alçando, se conjugam, como dois caminhos no pincaro para que ambos tendam. É este o império de Athena, cuja acção é a 
+                         harmonia.</p>
+                                            
+                     <p rend="indent-first">Como, porém, toda sciencia, se tende para a mathematica, tende, com isso, para uma abstracção concreta, applicavel á realidade e verificavel em seus 
+                         movimentos physicos; assim toda arte, por mais que se eleve, não pode desprender-se do entendimento e da sensibilidade, em cuja fusão se creou e teve origem. Onde não houver 
+                         harmonia, equilibrio de elementos oppostos, não haverá sciencia nem arte, porque nem haverá vida. Representa Apollo o equilibrio do subjectivo e do objectivo; figura Athena a 
+                         harmonia do concreto e do abstracto. A arte suprema é o resultado da harmonia entre a particularidade da emoção e do entendimento, que são do homem e do tempo, e a 
+                         universalidade da razão, que, para ser de todos os homens e tempos, é de homem, e de tempo, nenhum. O producto assim formado terá vida, como concreto; organização, como 
+                         abstracto. Isto estabeleceu <rs type="name" key="P401">Aristoteles</rs>, uma vez para sempre, naquella sua phrase que é toda a esthetica: 
+                         <hi rend="italic">um poema</hi>, disse, <hi rend="italic">é um animal</hi>.</p>
+                                                
+                                 <milestone rend="asterisk" unit="section"/>
+                                                
+                     <p rend="indent-first">Existe ainda o preconceito, nascido ou de se attender só ás fórmas inferiores da arte, ou de se attender inferiormente a qualquer d’ellas, de que 
+                         a arte deve dar prazer ou alegria. Ninguem cuide, esquecendo os grandes fins d’ella, que a arte suprema deve dar-lhe alegria, ou, ainda quando o satisfaça, 
+                         satisfacção. Se a arte ínfima tem por dever o entreter, se a média tem por mister o embellezar, elevar é o fim da suprema. Porisso toda arte superior é ao contrario 
+                         das outras duas, profundamente triste. Elevar é deshumanizar, e o homem se não sente feliz onde se não sente já homem. É certo que a grande arte é humana; o homem, 
+                         porém, é mais humano que ella.</p>
+                                                
+                     <p rend="indent-first">Ainda per outra via a grande arte nos entristece. Constantemente ella nos aponta a nossa imperfeição: já porque, parecendo-nos perfeita, se oppõe ao que somos 
+                         de imperfeitos; já porque, nem ella sendo perfeita, é o signal maior da imperfeição que somos.</p>
+                     <p rend="indent-first">É poristo que os gregos, paes humanos da arte, eram um povo infantil e triste. E a arte não é porventura mais, em sua forma suprema, que a infancia triste de 
+                         um deus futuro, a desolação humana da immortalidade pressentida.</p>
+                                 <signed rend="align-right">FERNANDO PESSOA</signed>
+            </div>
+        </body>
+    </text>
+</TEI>
