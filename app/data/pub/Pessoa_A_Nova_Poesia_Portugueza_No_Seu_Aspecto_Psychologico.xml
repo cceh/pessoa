@@ -63,7 +63,7 @@
             </sourceDesc>
         </fileDesc>
     </teiHeader>
-    <facsimile>
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/A_Nova_Psychologico_86.jpg"/>
         <graphic url="prosa/A_Nova_Psychologico_87.jpg"/>
         <graphic url="prosa/A_Nova_Psychologico_88.jpg"/>
@@ -89,6 +89,7 @@
             <div>
                 <head><hi rend="bold">A Nova Poesia Portugueza no seu aspecto
                     Psychologico</hi></head>
+                <!-- U: you could add rend="center" to this heading as well -->
                 <div>
                     <head rend="center">I</head>
                     <p rend="indent-first"><hi rend="bold">Qualquér</hi> phenomeno literario –
@@ -315,12 +316,18 @@
                         fallam nesse silencio, e da immobilidade dos corpos, mas não dá outra
                         impressão do que a, intensa, d’esse silencio. Do mesmo modo, nos versos de
                             <rs type="name" key="P136">Mario Beirão</rs></p>
-                    <lg>
+                    <lg><!-- U: center this, as well? -->
                         <l>Charcos onde um torpor, vitreo torpor, se esquece,</l>
                         <l>Nuvens roçando a areia, os longes baços...</l>
                         <l>Paizagem como alguém que, ermo de amor, se desse,</l>
+<<<<<<< HEAD
                         <l>Corpo que estagna frio a beijos ou a abraços,</l><note n="1"><label>(<hi rend="superscript">1</hi>)
                         </label><rs type="title">Coimbra, ao ritmo da saudade.</rs></note>
+=======
+                        <l>Corpo que estagna frio a beijos ou a abraços,<note n="2"><rs
+                                    type="title">Coimbra, ao ritmo da saudade.</rs></note></l>
+                        <!-- U: please add the <label> to this note (see the example for the first note above) -->
+>>>>>>> 3730e8ccff0e19999c77ab3a53072512318b9f72
                     </lg>
                     <p>ha simplesmente um desdobrar, como em leque, de uma sensação crepuscular, que
                         cada termo maravilhosamente <hi rend="italic">intensifica</hi>, mas não
@@ -329,8 +336,13 @@
                         complica acrescentando-lhe um elemento explicativo, que, extrahido d’ella,
                         lhe dá um novo sentido. A expressão subtil <hi rend="italic"
                             >intensifica</hi>, torna mais <hi rend="italic">nitido</hi>
+<<<<<<< HEAD
                         <note n="1"><label>(<hi
                             rend="superscript">1</hi>).</label>Interiormente nitido, não como cousa exterior.</note>; a
+=======
+                        <note n="1">Interiormente nitido, não como cousa exterior.</note>;
+                        <!-- U: please add the <label> to this note --> a
+>>>>>>> 3730e8ccff0e19999c77ab3a53072512318b9f72
                         expressão complexa <hi rend="italic">dilata</hi>, torna <hi rend="italic"
                             >maior</hi>. A ideação <hi rend="italic">subtil</hi> involve ou uma
                         directa intellectualização de uma idéa ou uma directa emocionalização de uma
@@ -340,27 +352,40 @@
                         d’esta heterogeneidade que a complexidade lhe vem. São da ideação complexa,
                         por exemplo, os versos de <rs type="name" key="P136">Mário Beirão</rs>
                     </p>
-                    <lg>
+                    <lg><!-- U: center this, as well? -->
                         <l>A boca, em morte e marmore esculpida,</l>
                         <l>Sonha com as palavras que não diz; <note n="2"><label>(<hi rend="superscript">2</hi>)
                         </label><rs type="title">O
                                     Sonho.</rs></note></l>
                     </lg>
                     <p> de <rs type="name" key="P52">Teixeira de Pascoaes</rs></p>
-                    <lg>
+                    <lg><!-- U: center this, as well? -->
                         <l>A folha que tombava</l>
                         <l>Era alma que subia; <note n="3"><label>(<hi rend="superscript">3</hi>)</label>
                             <rs type="title">Elegia (Vida
                                 Etherea)..</rs>").</note>
                             </l>
                     </lg>
-                    <p>e expressões como <hi rend="italic">choupos d'alma</hi><note n="4">
+                    <p>e expressões como <hi rend="italic">choupos d'alma</hi><!-- U: please note that 
+                    a space between the text and the parenthesis of the note will only be shown in the 
+                    HTML if you put one here between the two elements (all spaces inside of paragraph 
+                    elements have significance for the output)
+                    
+                    I changed the rendering of these notes a bit (to superscript), because in cases 
+                    like the one here where the text continues after the note, I think it helps to 
+                    see the difference between notes and surrounding text. Is it ok?
+                    --><note n="4">
                         <label>(<hi rend="superscript">4</hi>)</label><rs
                                 type="title">Choupos na luz do luar.</rs></note>
                         de <rs type="name" key="P135">Jayme Cortezão</rs> ou o <hi rend="italic"
                             >ungido de universo</hi>
+<<<<<<< HEAD
                         <note n="5"><label>(<hi
                             rend="superscript">5</hi>).</label><rs type="title" key="T112">Oração á luz</rs></note>
+=======
+                        <note n="5"><rs type="title" key="T112">Oração á luz</rs></note>
+                        <!-- U: please add the <label> to this note -->
+>>>>>>> 3730e8ccff0e19999c77ab3a53072512318b9f72
                         de <rs type="name" key="P25">Guerra Junqueiro</rs>
                     </p>
                     <p rend="indent-first"> Feita esta constatação, que nos leva ella a concluir?
@@ -426,7 +451,9 @@
                             usado com um sentido bastante diverso do usual, sentido que no texto se
                             explica. Isto se nota para que não cause extranheza o lêr dada como <hi
                                 rend="italic">plastica</hi> de <rs type="name" key="P26">Cesario
-                                Verde</rs>.</note>; e entendemos por plasticidade a fixação
+                                Verde</rs>.</note>; 
+                        <!-- U: please add the <label> to this note -->
+                        e entendemos por plasticidade a fixação
                         expressiva do visto ou ouvido como <hi rend="italic">exterior</hi>, não como
                         sensação, mas como visão ou audição. Plastica, n’este sentido, foi toda a
                         poesia grega e romana, plastica a poesia dos parnasianos, plastica (além de
@@ -1050,7 +1077,9 @@
                                 sociologicas que unicamente buscamos n’esta serie de artigos,
                                 abandonamos a intenção de fazer o estudo exclusicamente literario da
                                 nova corrente poetica portugueza, estudo esse promettido no
-                                principio d’este artigo. Ninguem perde com isso.</note></p>
+                                principio d’este artigo. Ninguem perde com isso.</note>
+                            <!-- U: please add the <label> to this note -->
+                        </p>
                     </div>
                     <signed rend="align-right">Fernando Pessôa.</signed>
                 </div>

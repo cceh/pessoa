@@ -1793,6 +1793,7 @@ div#text-div .text.prose .superscript {
 div#text-div .text.prose .note .text {
     font-size: small;
     display: none;
+    vertical-align: super;
 }
 div#text-div .text.prose .note .label {
     display: inline;
@@ -1825,7 +1826,9 @@ div#text-div .text.prose .tooltiptext {
 div#text-div .text.prose .tooltip:hover .tooltiptext {
     visibility: visible;
 }
-
+div#text-div .text.prose .milestone.section {
+    text-align: center;
+}
 
 /* STYLES FOR INDIVIDUAL LISTS */
 

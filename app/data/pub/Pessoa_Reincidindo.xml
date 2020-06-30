@@ -58,7 +58,7 @@
             </sourceDesc>
         </fileDesc>
     </teiHeader>
-    <facsimile>
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/Reincidindo_137.jpg"/>
         <graphic url="prosa/Reincidindo_138.jpg"/>
         <graphic url="prosa/Reincidindo_139.jpg"/>
@@ -89,11 +89,20 @@
                         caminho, esperamos poder tornar, pela logica, mais proximo da possibilidade
                         de compreender, que concebivelmente entre bachareis haja, aquilo com que
                         terminava o nosso estudo — com “resurgimentos assombrosos”, “supra- <rs
-                            type="name" key="P15" style="b">Camões</rs>”
-                        e todas as outras alegrias. </p>
+                            type="name" key="P15" style="b">Camões</rs>” e todas as outras alegrias. </p>
                     <p rend="indent-first">Importa, porém, declarar, antes de tudo, que nem para
                         nós, autor dele, oferece o nosso anterior escrito<ref
                             target="Pessoa_A_Nova_Poesia_Portugueza_Sociologicamente_Considerada.xml"/>
+                        <!--U: somehow, our comments on the link question here got lost, so I introduce them again:
+                            
+                            JU: Here it will be nice to create an internal reference to the document 
+                            A Nova Poesia Portugueza Sociologicamente considerada
+                        
+                        U: you could encode it like this:
+                        <ref target="http://www.pessoadigital.pt/pt/pub/Pessoa_A_Nova_Poesia_Portugueza_Sociologicamente_Considerada">o nosso anterior escrito</ref>
+                        then "o nosso anterior escrito" will carry the link. <ref> should be used surrounding
+                        some text that is going to be linked.
+                        -->
                         cousa que se pareça com perfeição em materia racionativa. Em sete paginas
                         não se pode claramente e completamente pôr uma argumentação analitica que,
                         para ser rigidamente exhaustiva, sem pressas que a carencia de tempo, ou
@@ -107,6 +116,10 @@
                 </div>
                 <div>
                     <head rend="center">II</head>
+                    <!-- U: please avoid blank spaces at the beginning of paragraph text.
+                    You can check for them with XPath:
+                    //p[starts-with(.," ")]
+                    -->
                     <p rend="indent-first"> Qualquer corrente literaria tira os caracteristicos que
                         o raciocinador lhe pode encontrar, de uma tripla relacionação sociologica.
                         Essa tripla relação revela-se á nossa analise como sendo; 1.º, com o
@@ -139,6 +152,7 @@
                         caracteristicos do periodo literario subsequente. – Assim, no periodo em
                         questão, da Inglaterra temos o subperiodo precursor com a figura culminante
                         tipica de <rs type="name" key="P433">Chaucer</rs></p>
+<<<<<<< HEAD
                     <quote><lg rend="center">
                         <l>... Dan <rs type="name" key="P433">Chaucer</rs>, whose sweet breath</l>
                         <l>Preluded those melodious bursts, that fill</l>
@@ -146,6 +160,20 @@
                         <l>With sounds that echo still;</l></lg>
                         <note type="comment" resp="#JU"> 
                             <rs type="name" key="P146">Alfred Tennyson</rs>, "A Dream of Fair Women"</note></quote>
+=======
+                    <quote>
+                        <lg rend="center">
+                            <l>... Dan <rs type="name" key="P433">Chaucer</rs>, whose sweet
+                                breath</l>
+                            <l>Preluded those melodious bursts, that fill</l>
+                            <l>The spacious times of great Elizabeth</l>
+                            <l>With sounds that echo still;</l>
+                            <note type="comment" resp="#JU">
+                                <rs type="name" key="P146">Alfred Tennyson</rs>, "A Dream of Fair
+                                Women"</note>
+                        </lg>
+                    </quote>
+>>>>>>> 3730e8ccff0e19999c77ab3a53072512318b9f72
                     <p>e neste o por onde ele se mostra precursor é mais o aparecer de figuras de
                         certa grandeza do que o surgir de figuras preindicadoras do <hi
                             rend="italic">espirito</hi> da corrente. O sinal da vindoura grandeza
@@ -177,6 +205,7 @@
                             mostrar que não é sem significaçãoeste alvorecer em prosa do espírito
                             poetico, mas, além de impossivel, é inutil aqui essa mais minuciosa
                             analyse.</note></p>
+                    <!-- U: please add the note label here (see "... sociologicamente considerada with the example") -->
                     <p rend="indent-first"> E se <rs type="name" key="P433">Chaucer</rs> está a mais
                         distancia do principio do verdadeiro periodo inglez, do que <rs type="name"
                             key="P434">Rousseau</rs> do francez, repare-se em quão mais lenta é a
@@ -192,36 +221,36 @@
                         subsequente, mas amplamente tipico e grande no grande poeta <rs type="name"
                             key="P241">Spenser</rs>; em França, o de <rs type="name" key="P241"
                             >André Chénier</rs> e de <rs type="name" key="P437" style="b"
-                        >Châteaubriand</rs>-poeta
-                        (tomada esta expressão no já-indicado sentido),
-                        onde, com egual nitidez, se percebe a nacionalisada rutura com o periodo
-                        anterior, num tom poetico inadivinhavel ainda em <rs type="name" key="P434"
-                            >Rousseau</rs>, em quem parece apenas pre-existir com uma tendenciada
-                        artificialidade. – O segundo estadio é aquele em que o espírito da epoca se
-                        intensifica, se alarga a toda a amplitude de que a sua alma é capaz, se
-                        torna mais <hi rend="italic">ele</hi>, e, por isso, gera os maximos poetas.
-                        É, em Inglaterra, o estadio- <rs type="name" key="P65">Shakespeare</rs>. É,
-                        em França, o de <rs type="name" key="P65">Lamartine</rs>, <rs type="name"
-                            key="P292">Hugo</rs>, <rs type="name" key="P65">Musset</rs>. –
-                        Finalmente, no terceiro estadio, o espírito da epoca como que se torna mais
-                        rigido, mais refletido, por mais cansado: a intensidade desce para
-                        meditatividade. É, em Inglaterra, o periodo de <rs type="name" key="P292"
-                            >Milton</rs> e dos liricos jacobitas. Em França, é o estádio de <rs
-                            type="name" key="P441">Leconte de Lisle</rs>, de <rs type="name"
-                            key="P442">Sully-Prudhomme</rs>. – Por último, ha uma especie de
-                        sobrevivencia vaga do espírito da epoca, mas já sob a fórma essencial e
-                        espiritual da epoca subsequente. O que a epoca moribunda empresta a essa
-                        subsequencia proxima é um resto de vida, manifestado por uma intensidade e
-                        relativa grandeza nos poetas em que alvorece a epoca seguinte, que, por ter
-                        sido a outra a maxima, da nação, forçosamente lhe ha-de ser inferior. É o
-                        caso de <rs type="name" key="P217">Dryden</rs> e dos liristas carolinos que,
-                        ainda que se veja que são já o principio de um outro periodo, trahem ainda,
-                        numa certa grandeza e intensidade, a gloria de que são sucessores. É o caso
-                        de <rs type="name" key="P196">Verlaine</rs>, o mais notavel dos iniciadores
-                        da sua epoca poetica, dando ainda uma intensidade, que lhe vem do contacto
-                        que teve com o periodo anterior, á sua desnacionalisada obra lirica. – E se
-                        em França as epocas mais se sobrepõem, é facil vêr que a extraordinaria
-                        rapidez do movimento social moderno é a causa imixtora dos phenomenos.</p>
+                            >Châteaubriand</rs>-poeta (tomada esta expressão no já-indicado
+                        sentido), onde, com egual nitidez, se percebe a nacionalisada rutura com o
+                        periodo anterior, num tom poetico inadivinhavel ainda em <rs type="name"
+                            key="P434">Rousseau</rs>, em quem parece apenas pre-existir com uma
+                        tendenciada artificialidade. – O segundo estadio é aquele em que o espírito
+                        da epoca se intensifica, se alarga a toda a amplitude de que a sua alma é
+                        capaz, se torna mais <hi rend="italic">ele</hi>, e, por isso, gera os
+                        maximos poetas. É, em Inglaterra, o estadio- <rs type="name" key="P65"
+                            >Shakespeare</rs>. É, em França, o de <rs type="name" key="P65"
+                            >Lamartine</rs>, <rs type="name" key="P292">Hugo</rs>, <rs type="name"
+                            key="P65">Musset</rs>. – Finalmente, no terceiro estadio, o espírito da
+                        epoca como que se torna mais rigido, mais refletido, por mais cansado: a
+                        intensidade desce para meditatividade. É, em Inglaterra, o periodo de <rs
+                            type="name" key="P292">Milton</rs> e dos liricos jacobitas. Em França, é
+                        o estádio de <rs type="name" key="P441">Leconte de Lisle</rs>, de <rs
+                            type="name" key="P442">Sully-Prudhomme</rs>. – Por último, ha uma
+                        especie de sobrevivencia vaga do espírito da epoca, mas já sob a fórma
+                        essencial e espiritual da epoca subsequente. O que a epoca moribunda
+                        empresta a essa subsequencia proxima é um resto de vida, manifestado por uma
+                        intensidade e relativa grandeza nos poetas em que alvorece a epoca seguinte,
+                        que, por ter sido a outra a maxima, da nação, forçosamente lhe ha-de ser
+                        inferior. É o caso de <rs type="name" key="P217">Dryden</rs> e dos liristas
+                        carolinos que, ainda que se veja que são já o principio de um outro periodo,
+                        trahem ainda, numa certa grandeza e intensidade, a gloria de que são
+                        sucessores. É o caso de <rs type="name" key="P196">Verlaine</rs>, o mais
+                        notavel dos iniciadores da sua epoca poetica, dando ainda uma intensidade,
+                        que lhe vem do contacto que teve com o periodo anterior, á sua
+                        desnacionalisada obra lirica. – E se em França as epocas mais se sobrepõem,
+                        é facil vêr que a extraordinaria rapidez do movimento social moderno é a
+                        causa imixtora dos phenomenos.</p>
                     <p rend="indent-first">Vejamos, agora, se, sob este ponto de vista exterior, a
                         actual corrente literaria portugueza alguma analogia offerece com as outras
                         correntes, que estudámos. Note-se, primeiro, quando a nossa corrente
@@ -288,8 +317,7 @@
                             rend="italic">na literatura</hi>, porque é n’este periodo que apparecem
                         os precursores do magno periodo literario que se vae seguir. Vivem n’este
                         periodo <rs type="name" key="P433">Chaucer</rs> em Inglaterra, <rs
-                            type="name" key="P434">Rousseau</rs> 
-                        em França. – Ora a actual corrente
+                            type="name" key="P434">Rousseau</rs> em França. – Ora a actual corrente
                         literaria portugueza succede <hi rend="italic">á parte
                             pre-revolucionaria</hi> do nosso periodo constitucional, porquanto,
                         começando com a ultima década do seculo dezenove, a actual corrente
@@ -427,21 +455,17 @@
                         probamente citaveis como representativas, podem aduzir-se aqui, para allivio
                         de scepticos. Tomemos isto, de <rs type="name" key="P52">Teixeira de
                             Pascoaes</rs>,</p>
-
                     <lg rend="center">
                         <l>A folha que tombava</l>
                         <l>Era alma que subia,</l>
                     </lg>
-
                     <p>e isto, de <rs type="name" key="P135">Jayme Cortezão</rs>,</p>
-
                     <lg rend="center">
                         <l>E mal o luar os molha, </l>
                         <l>Os choupos, na noite calma, </l>
                         <l>Já não tem ramos nem folha, </l>
                         <l>São apenas choupos d'Alma. </l>
                     </lg>
-
                     <p>Em nenhuma literatura do mundo atingiu nenhum poeta maior elevação do que
                         estas expressões, e especialmente a extraordinaria primeira, conteem. E
                         ellas são representativas. Citamol-as não só para comprovação da elevação,
@@ -463,9 +487,8 @@
                             type="name" key="P433">Chaucer</rs>. No que respeita ao primeiro
                         estadio, o poema supremo do nosso, a <rs type="title">Patria</rs>, de <rs
                             type="name" key="P25">Junqueiro</rs>, escusa de se acanhar na comparação
-                        com <rs type="name" key="P438" style="b">Châteaubriand</rs>-poeta,
-                        ou mesmo com a <rs
-                            type="title">Faerie Queene</rs>, de <rs type="name" key="P241"
+                        com <rs type="name" key="P438" style="b">Châteaubriand</rs>-poeta, ou mesmo
+                        com a <rs type="title">Faerie Queene</rs>, de <rs type="name" key="P241"
                             >Spenser</rs>. Com respeito ao primeiro, a superioridade do nosso poeta
                         é manifesta. Com respeito ao segundo, a questão de superioridade é caso para
                         argumentos. Porque, se não ha duvida que em originalidade e exuberancia
@@ -506,10 +529,17 @@
                         assim está longe de popularmente acessivel, tanto que a corrente é
                         classificada por um critico francez como sendo <hi rend="italic">faite pour
                             des cénacles et des coteries</hi>
+<<<<<<< HEAD
                         <note n="1"><label>(<hi rend="superscript">1</hi>)</label>
                             <rs type="name" key="P482">Lanson</rs>, <rs type="title"
                                 >Histoire de la littérature française</rs>.</note></p>
                     
+=======
+                        <note n="1"><rs type="name" key="P482">Lanson</rs>, <rs type="title"
+                                >Histoire de la littérature française</rs>.</note>
+                        <!-- U: please add the note label here -->
+                    </p>
+>>>>>>> 3730e8ccff0e19999c77ab3a53072512318b9f72
                     <p rend="indent-first">Ora, como estas correntes são as de maxima nacionalidade
                         dos seus respectivos paizes; como, portanto, as correntes anteriores
                         forçosamente haveriam sido, ou menos, ou nada, nacionaes, a plena
@@ -619,11 +649,11 @@
                         republicanos. Suavemente, se puder ser, será a transformação feita, a
                         creação começada. Mas se assim não fôr, se esta gente de hoje não curar de
                         se tornar portugueza, confiemos, sem horror, que o <rs type="name"
-                            key="P420">Cromwell</rs> vindouro os saberá afastar, aplicando-lhes,
-                        por triste necessidade, a <hi rend="italic">ultima ratio</hi> de <rs
-                            type="name" key="P12" style="b">Napoleão</rs>, de <rs type="name"
-                            key="P449">Cavaignac</rs>, e do <rs type="name" key="P450">Coronel Conde
-                            de Galliffet</rs>.</p>
+                            key="P420">Cromwell</rs> vindouro os saberá afastar, aplicando-lhes, por
+                        triste necessidade, a <hi rend="italic">ultima ratio</hi> de <rs type="name"
+                            key="P12" style="b">Napoleão</rs>, de <rs type="name" key="P449"
+                            >Cavaignac</rs>, e do <rs type="name" key="P450">Coronel Conde de
+                            Galliffet</rs>.</p>
 
                 </div>
                 <signed rend="align-right"><hi rend="italic">Fernando Pêssoa</hi>.</signed>
