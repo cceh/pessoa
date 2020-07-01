@@ -1801,6 +1801,9 @@ div#text-div .text.prose .note .label {
     position: relative;
     cursor: pointer;
 }
+div#text-div .text.prose .quote.tooltip {
+    display: block;
+}
 div#text-div .text.prose .tooltip {
     position: relative;
     display: inline-block;
@@ -1809,6 +1812,7 @@ div#text-div .text.prose .tooltip {
     text-indent: 0;
     font-size: inherit;
     cursor: pointer;
+    font-family: inherit;
 }
 div#text-div .text.prose .tooltiptext {
     visibility: hidden;
