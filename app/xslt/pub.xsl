@@ -76,6 +76,12 @@
             <xsl:when test="@rend='indent'">
                 <xsl:attribute name="class">indent</xsl:attribute>
             </xsl:when>
+            <xsl:when test="@rend='small'">
+                <xsl:attribute name="class">small</xsl:attribute>
+            </xsl:when>
+            <xsl:when test="@rend='small indent'">
+                <xsl:attribute name="class">small indent</xsl:attribute>
+            </xsl:when>
         </xsl:choose>
     </xsl:template>
     

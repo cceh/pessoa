@@ -1826,12 +1826,16 @@ div#text-div .text.prose .tooltiptext {
     z-index: 1;
     font-size: small;
     font-family: inherit;
+    min-width: 100px;
 }
 div#text-div .text.prose .tooltip:hover .tooltiptext {
     visibility: visible;
 }
 div#text-div .text.prose .milestone.section {
     text-align: center;
+}
+div#text-div .text.prose p.small {
+    font-size: small;
 }
 
 /* STYLES FOR INDIVIDUAL LISTS */

@@ -18,7 +18,6 @@
                 .lg {margin: 15px 0;}
                 h2.center {text-align: center;}
                 div.poem {margin: 20px 0;}
-                p.indent {display: inline-block; text-indent: 1em; margin: 0;}
                 div.ab-right {text-align: right;}
                 div.prose {padding-right: 20px;}
             </style>
@@ -80,16 +79,38 @@
         </span>
     </xsl:template>
     
+    <!-- milestones -->
     <xsl:template match="milestone[@unit='section']">
         <xsl:choose>
             <xsl:when test="@rend='asterisks'">
                 <p class="milestone section">* * *</p>
             </xsl:when>
+            <xsl:when test="@rend='space'">
+                <p class="milestone section">&#x00A0;</p>
+            </xsl:when>
         </xsl:choose>
     </xsl:template>
     
+    <!-- blocks -->
+    <xsl:template match="ab">
+        <p>
+            <xsl:call-template name="rend" />
+            <xsl:apply-templates />
+        </p>
+    </xsl:template>
     
-    
+    <!-- choice, corr, sic -->
+    <xsl:template match="choice[sic and corr]">
+        <span class="corr tooltip">
+            <xsl:apply-templates select="corr"/>
+            <span class="tooltiptext">
+                <strong>sic:</strong>&#x00A0;
+                <em><xsl:apply-templates select="sic"/></em> <br/>
+                <strong>corr:</strong>&#x00A0;
+                <em><xsl:apply-templates select="corr"/></em>
+            </span>
+        </span>
+    </xsl:template>
     
     
 </xsl:stylesheet>

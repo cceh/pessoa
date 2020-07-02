@@ -2,7 +2,7 @@
 <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc>         
+        <fileDesc>
             <titleStmt>
                 <title>Para a memoria de Antonio Nobre</title>
                 <author>
@@ -29,7 +29,7 @@
                 <availability status="restricted">
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
-                <idno type="filename">Pessoa_Para_A_Memoria_de_Antonio_Nobre.xml</idno>               
+                <idno type="filename">Pessoa_Para_A_Memoria_de_Antonio_Nobre.xml</idno>
             </publicationStmt>
             <sourceDesc>
                 <list type="work-index">
@@ -63,42 +63,79 @@
     <text corresp="#W197">
         <body>
             <div>
-                <head rend="center">PARA A MEMORIA DE <rs type="name" key="P53">ANTONIO NOBRE</rs></head> 
-
-                <p rend="indent-first">QUANDO a hora do <hi rend="italic">ultimatum</hi> abriu em Portugal, para não mais se fecharem, as portas do templo 
-                    de Jano, o deus bifronte revelou-se na litteratura nas duas maneiras correspondentes á dupla direcção do seu olhar. 
-                    <hi rend="italic"><rs type="name" key="P25">Junqueiro</rs></hi> – o de <hi rend="italic"><rs type="title" key="TXXX">Patria</rs></hi> e 
-                    <hi rend="italic"><rs type="title" key="TXXX">Finis Patriaem</rs></hi> – foi a face que olha 
-                    para o Futuro e se exalta. <rs type="name" key="P53">Antonio Nobre</rs> foi a face que olha para o Passado, e se entristece.</p>  
-    
-                <p rend="indent-first">De <rs type="name" key="P53">Antonio Nobre</rs> partem todas as palavras com sentido lusitano que de então para cá 
-                    teem sido pronunciadas. Teem subido a um sentido mais alto e divino do que elle balbuciou. Mas elle foi o primeiro a pôr em europeu 
-                    este sentimento portuguez das almas e das cousas, que tem pena, de que umas não sejam corpos, para lhe poder fazer festas, e de que as 
-                    outras não sejam gente, para poder fallar com ellas. O ingenuo pantheismo da Raça, que tem carinhos de expontanea phrase para com as 
-                    arvores e as pedras, desabrochou n’elle melancolicamente. Elle veio no outomno e pelo crepusculo. Pobre de quem o comprehende e ama!</p> 
-     
-                <p rend="indent-first">O sublime n’elle é humilde, o orgulho ingenuo, e ha um sabôr a infancia triste no mais adulto horror de seus tedios 
-                    e das suas desesperanças. Não o encontramos senão entre o desfolhar das rosas e nos jardins desertos. Os seus braços esqueceram a 
-                    alegria do gesto, e o seu sorriso é o rumor de uma festa longinqua, em que nada de nós toma parte, salvo a imaginação.</p> 
-  
-                <p rend="indent-first">Dos seus versos não se tira, felizmente, ensinamento nenhum. Roça rente a muros nocturnos e desgraça das suas emoções. 
-                    Esconde-se de alheios olhos o proprio esplendor do seu desespero. A’s vezes, entre o principio e o fim de um seu verso, intercala-se um 
-                    cansaço, um encolher de hombros, uma angustia ao mundo. O exercito dos seus sentimentos perdeu as bandeiras n’uma batalha que nunca 
-                    ousou travar.</p> 
-   
-                <p rend="indent-first">As suas ternuras amuadas por si-proprio: as suas pequenas corridas, de creança mal-ousada, até os portões da quinta, 
-                    para retroceder, esperando que ninguem houvesse visto: as suas meditações no limiar;... e as aguas correntes no nosso ouvido: a longa 
-                    convalescencia febril ainda por todos os sentidos: e as tardes, os tanques da quinta, os caminhos onde o vento já não ergue a poeira, o 
-                    regresso de romarias, as ferias que se desmancham, taboa a taboa, e o guardar nas gavetas secretas das cartas que nunca se mandaram... 
-                    A que sonhos de que Musa exilada pertenceu aquella vida de Poeta?...</p> 
-
-                <p rend="indent-first">Quando elle nasceu, nascemos todos nós. A tristeza que cada um de nós traz comsigo, mesmo no sentido da sua alegria, 
-                    é elle ainda, e a vida d’elle, nunca perfeitamente real nem com certeza vivida, é, afinal, a summula da vida que vivemos – orphãos de 
-                    pae e de màe, perdidos de Deus no meio da floresta, e chorando, chorando inutilmente, sem outra consolação do que essa, infantil, de 
-                    sabermos que é inutilmente que choramos.</p> 
-         
+                <head rend="center">PARA A MEMORIA DE <rs type="name" key="P53">ANTONIO
+                    NOBRE</rs></head>
+                <p rend="indent-first">QUANDO a hora do <hi rend="italic">ultimatum</hi> abriu em
+                    Portugal, para não mais se fecharem, as portas do templo de Jano, o deus
+                    bifronte revelou-se na litteratura nas duas maneiras correspondentes á dupla
+                    direcção do seu olhar. <hi rend="italic"><rs type="name" key="P25"
+                            >Junqueiro</rs></hi> – o de <hi rend="italic"><rs type="title"
+                            key="TXXX">Patria</rs></hi>
+                    <!-- U: I am not sure how to proceed with the title keys. If you add 
+                    something as a "work" the key is necessary. If you just have <rs type="title">
+                    you could leave it like this without a key (the old system of referencing titles)
+                    or add a key (new system of referencing titles). I'd suggest you decide what you prefer and 
+                    do it the same way in all the prose files (I think in the other prose files 
+                    before you did not use @key for titles.)
+                    
+                    I try to explain what the difference is between the "old" and the "new" systems...
+                    "old" system: the titles are just marked as titles the way they appear in the documents/publications.
+                    <rs type="title">Rebanho</rs> and <rs type="title">Rebanhos</rs> (just inventing) would be 
+                    treated as two separate items because the system does not now what is "the same". Using a key
+                    you can tell the system that two variants of a title are the same.
+                    
+                    Right now, the central/main index of titles at http://www.pessoadigital.pt/en/index/titles 
+                    is based on the old system. This will be the case until all documents have been changed 
+                    to the new system. (this will still be a lot of work for all the editorial lists...)
+                    
+                    Still, if you use the new system with keys, the titles also work with the old index. So giving 
+                    them keys doesn't cause problems, but would prepare the prose texts for the new system.
+                    
+                    Please decide what you prefer, I'd just say it would be good to do it in the same way for all 
+                    the prose texts. (you could also leave the title-key-thing for later or just add keys where you
+                    have added a title to the work list / used a work from the work list in lists.xml anyway)
+                    
+                    I hope this is not too confusing.
+                    -->
+                    e <hi rend="italic"><rs type="title" key="TXXX">Finis Patriaem</rs></hi> – foi a
+                    face que olha para o Futuro e se exalta. <rs type="name" key="P53">Antonio
+                        Nobre</rs> foi a face que olha para o Passado, e se entristece.</p>
+                <p rend="indent-first">De <rs type="name" key="P53">Antonio Nobre</rs> partem todas
+                    as palavras com sentido lusitano que de então para cá teem sido pronunciadas.
+                    Teem subido a um sentido mais alto e divino do que elle balbuciou. Mas elle foi
+                    o primeiro a pôr em europeu este sentimento portuguez das almas e das cousas,
+                    que tem pena, de que umas não sejam corpos, para lhe poder fazer festas, e de
+                    que as outras não sejam gente, para poder fallar com ellas. O ingenuo pantheismo
+                    da Raça, que tem carinhos de expontanea phrase para com as arvores e as pedras,
+                    desabrochou n’elle melancolicamente. Elle veio no outomno e pelo crepusculo.
+                    Pobre de quem o comprehende e ama!</p>
+                <p rend="indent-first">O sublime n’elle é humilde, o orgulho ingenuo, e ha um sabôr
+                    a infancia triste no mais adulto horror de seus tedios e das suas desesperanças.
+                    Não o encontramos senão entre o desfolhar das rosas e nos jardins desertos. Os
+                    seus braços esqueceram a alegria do gesto, e o seu sorriso é o rumor de uma
+                    festa longinqua, em que nada de nós toma parte, salvo a imaginação.</p>
+                <p rend="indent-first">Dos seus versos não se tira, felizmente, ensinamento nenhum.
+                    Roça rente a muros nocturnos e desgraça das suas emoções. Esconde-se de alheios
+                    olhos o proprio esplendor do seu desespero. A’s vezes, entre o principio e o fim
+                    de um seu verso, intercala-se um cansaço, um encolher de hombros, uma angustia
+                    ao mundo. O exercito dos seus sentimentos perdeu as bandeiras n’uma batalha que
+                    nunca ousou travar.</p>
+                <p rend="indent-first">As suas ternuras amuadas por si-proprio: as suas pequenas
+                    corridas, de creança mal-ousada, até os portões da quinta, para retroceder,
+                    esperando que ninguem houvesse visto: as suas meditações no limiar;... e as
+                    aguas correntes no nosso ouvido: a longa convalescencia febril ainda por todos
+                    os sentidos: e as tardes, os tanques da quinta, os caminhos onde o vento já não
+                    ergue a poeira, o regresso de romarias, as ferias que se desmancham, taboa a
+                    taboa, e o guardar nas gavetas secretas das cartas que nunca se mandaram... A
+                    que sonhos de que Musa exilada pertenceu aquella vida de Poeta?...</p>
+                <p rend="indent-first">Quando elle nasceu, nascemos todos nós. A tristeza que cada
+                    um de nós traz comsigo, mesmo no sentido da sua alegria, é elle ainda, e a vida
+                    d’elle, nunca perfeitamente real nem com certeza vivida, é, afinal, a summula da
+                    vida que vivemos – orphãos de pae e de màe, perdidos de Deus no meio da
+                    floresta, e chorando, chorando inutilmente, sem outra consolação do que essa,
+                    infantil, de sabermos que é inutilmente que choramos.</p>
                 <signed rend="align-right">Fernando Pessoa</signed>
             </div>
         </body>
     </text>
-</TEI>        
+</TEI>
