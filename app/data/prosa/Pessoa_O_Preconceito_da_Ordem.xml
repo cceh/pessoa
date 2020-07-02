@@ -34,25 +34,7 @@
             </publicationStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O1-37">O Preconceito da Ordem</rs></item>
-                    <!-- 
-                    UH: as we have a new structure for work identifers in lists.xml, you can add the work there
-                    and use the corresponding key here. For this, please first add the title to <list type="titles">
-                    in lists.xml, e.g. (just use the next free ID number):
-                    <item xml:id="T227">
-                        <title>A Nova Poesia Portugueza Sociologicamente
-                            Considerada</title>
-                    </item>
-                    then you add a work to <list type="works"> in lists.xml and indicate #FP as author, e.g.:
-                    <item xml:id="W187">
-                        <ptr type="author" target="#FP"/>
-                        <ptr type="title" target="#T227"/>
-                    </item>
-                    then you can use the ID W187 here as a key:
-                    <rs type="work" key="W187">A Nova Poesia Portugueza Sociologicamente
-                            Considerada</rs>
-                    See also below in the @corresp attribute of the <text> element.
-                    -->
+                    <item><rs type="work" key="W">O Preconceito da Ordem</rs></item>
                 </list>
                 <biblStruct>
                     <analytic>
@@ -72,6 +54,10 @@
                     <note type="genre">
                         <rs type="genre" key="prosa">Prosa</rs>
                     </note>
+                    <note type="summary" resp="#JU">O texto foi republicado em 
+                        <rs type="periodical" key="J89">Portugal - Semanário Republicano</rs>, 12 de Dezembro de 1915, p. 11, 
+                        com algumas alteraçóes significativas, é possível que a republicaçáo corrija 
+                        Publicamos as respetivas imagens.</note>
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
@@ -80,13 +66,9 @@
         <graphic url="prosa/O_Preconceito_da_Ordem_1.jpg"/>
         <graphic url="prosa/O_Preconceito_da_Ordem_2.jpg"/>
         <graphic url="prosa/O_Preconceito_da_Ordem_3.jpg"/>
+        <graphic url="prosa/O_Preconceito_da_Ordem_Rep.jpg"/><!-- JU: I added this image to the same paste -->
     </facsimile>
-    <text corresp="#O1-X">
-        <!-- 
-        UH: you can use the ID W187 (or whatever ID you created for the work in lists.xml) here:
-        corresp="#W187"
-        please note that you need # here but not above because @corresp is for pointers and @key directly for IDs
-        -->
+    <text corresp="#W200">
         <body>
             <div>
                 <head>O PRECONCEITO DA ORDEM</head>
@@ -97,9 +79,9 @@
                     e ostensiva, aquela que a policia guarda. Entendem a ordem nos espíritos também, a disciplina intima de 
                     onde resulta o bom funcionamento, fisico como psiquico, da engrenagem social. Eles compreendem, 
                     de resto, que não há ordem só material, que é nos espiritos que a ordem começa.</p>
-                <p rend="indent-first"> Posto isto, porém, ha ainda a reparar que o conceito de ordem pode ser tomado em dois sentidos, 
+                <p rend="indent-first">Posto isto, porém, ha ainda a reparar que o conceito de ordem pode ser tomado em dois sentidos, 
                     consoante se entenda que ela existe, ou essencialmente na propria intima constituição das forças sociais, ou 
-                    essencialmente apenas no modo de essas forças se manifestarem. </p>
+                    essencialmente apenas no modo de essas forças se manifestarem.</p>
                 <p rend="indent-first">Se se entende que a ordem existe tanto mais perfeitamente quanto mais perfeita 
                     conformidade basica ha nos animos, quanto mais intima e real a submissão á orientação geral da sociedade 
                     em que se vive, chega-se, como conclusão rigorosa, a êste resultado: que o ideal social dos defensores da 
@@ -116,7 +98,7 @@
                     simplesmente representam e <hi>dirigem</hi> uma orientação social geral, teremos este absurdo: 
                         individualidades superiores, e portanto acentuadas, que só pensam em se subordinar e se apagar; 
                         dirigentes e mandantes com a mentalidade tipica dos mandados e dos dirigidos. A este repugnante 
-                        igualitarismo nos arrasta o conceito da ordem, na primeira das suas duas fórmas possiveis. </p>
+                        igualitarismo nos arrasta o conceito da ordem, na primeira das suas duas fórmas possiveis.</p>
                 <p rend="indent-first">Mas não é esta, porventura, a «ordem» que os neo-monarquicos cantam. É no segundo dos dois 
                     sentidos apontados que tomam a palavra. A ordem existirá, portanto, não numa servil 
                     uniformização das orientações sociais, 
@@ -140,7 +122,7 @@
                     que representa. Donde se conclue que a preocupação da ordem, num partido politico, eleva ao rubro as suas 
                     paixões; e que, portanto, num paiz onde todos os partidos tenham a constante preocupação da ordem, se estará 
                     em constante desordem e anarquia. É este, mesmo, o unico modo de se chegar ao estado de anarquia social. 
-                    Esse estado provém da excessiva preocupação da ordem. </p>
+                    Esse estado provém da excessiva preocupação da ordem.</p>
                 <p rend="indent-first">Queda assim feito em farrapos o preconceito da ordem, rôto por todos os lados o papel em que 
                     os neo-monarquicos embrulham as suas teorias de contrabando. Mas isto, com certeza, embora oriente, não satisfará 
                     o leitor. Ele quererá saber, sem duvida, qual seja, sobre este ponto, a verdadeira noção sociologica. É facil 
@@ -154,7 +136,7 @@
                     Na sociedade, semelhantemente: quando aparece a desordem, a sociedade sã procura logo, não manter a ordem, que 
                     pode ser provisori[a] ou aparente, mas atacar o mal que produziu a desordem. A exclusiva preocupação da ordem é 
                     um morfinismo social.</p>
-                <p rend="indent-first">Levemos até ao fim esta justíssima analogia. No individuo, a constante preocupação da saúde 
+                <p rend="indent-first">Levemos até ao fim esta justíssima<!-- JU: Notar injustíssima na republicaçáo  --> analogia. No individuo, a constante preocupação da saúde 
                     é um sintóma de neurastenía, ou de males psiquicos mais graves ainda. Na sociedade, paralelamente, a preocupação 
                     da ordem, é uma doença de espirito coléctivo. Se os argumentos que acima expus não bastaram para insinuar esta 
                     conclusão no animo do leitor, ele pode verificar de todo a hipótese, reportando-se ás circunstancias sociais em 
@@ -162,10 +144,8 @@
                 <p rend="indent-first">Apareceu ela num periodo perturbado e anormal da politica franceza e em plena vigencia da 
                     doença chamada romantismo. É, caracterizadamente, uma idéa romantica. </p>
                 <p rend="indent-first">O seu criador filosófico, o infelís chamado <rs type="name" key="525">Augusto Comte</rs>, 
-                    toda a vida sofreu de alienação mental. </p>
-                   
-               
-                <signed rend="align-right">Fernando Pessoa</signed>
+                    toda a vida sofreu de alienação mental.</p>
+                <signed rend="align-right">Fernando Pessoa.</signed>
             </div>
         </body>
     </text>
