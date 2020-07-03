@@ -85,6 +85,9 @@
             <xsl:when test="@rend='asterisks'">
                 <p class="milestone section">* * *</p>
             </xsl:when>
+            <xsl:when test="@rend='asterisk'">
+                <p class="milestone section">*</p>
+            </xsl:when>
             <xsl:when test="@rend='space'">
                 <p class="milestone section">&#x00A0;</p>
             </xsl:when>

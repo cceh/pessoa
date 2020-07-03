@@ -102,7 +102,7 @@
                 <xsl:when test="@rend='center'">
                     <xsl:attribute name="class">lg center</xsl:attribute>
                     <!-- estimate the width of the block -->
-                    <xsl:variable name="width" select="max(l//string-length(string-join(text()[not(ancestor::note)],' '))) * 0.5"/>
+                    <xsl:variable name="width" select="max(//l//string-length(string-join(text()[not(ancestor::note)],' '))) * 0.5"/>
                     <xsl:attribute name="style">width: <xsl:value-of select="$width"/>em;</xsl:attribute>
                 </xsl:when>
                 <xsl:otherwise>
