@@ -27,36 +27,26 @@
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
                 <availability status="restricted">
-                    <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_Movimento_Sensacionista.xml</idno>               
             </publicationStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O1-X">Movimento Sensacionista</rs></item>
+                    <item><rs type="work" key="W202">Movimento Sensacionista</rs></item>
                 </list>
                 <biblStruct>
-                    <!-- here goes the bibliographical reference for the source publication -->
                     <analytic>
                         <title level="a">Movimento Sensacionista</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
                         <title level="j"><rs type="periodical" key="J70">Exilio: Revista Mensal de Arte, Lettras e Sciencias</rs></title>
-                        <!-- @key is to identify the periodical. You can find other periodicals IDs in the file 
-                            lists.xml in the data folder. In that file, 
-                        look for the sublist <list type="periodical">, currently beginning at line 1450. You can also add
-                        new periodicals there JU: I created this Journal, please confirm if it works -->
                         <imprint>
                             <date when="1916-04">Abril de 1916</date>
-                            <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                         </imprint>
                         <biblScope unit="issue">1</biblScope>
                         <biblScope unit="page">46-48</biblScope>
@@ -73,24 +63,20 @@
         <graphic url="prosa/Movimento_Sensacionista_2.jpg"/>
         <graphic url="prosa/Movimento_Sensacionista_3.jpg"/>
     </facsimile>
-    <text corresp="#O1-X">
-        <!-- @corresp: contains the index of this WORK. 
-        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
-        This can be left as is in the beginning.
-    -->
+    <text corresp="#W202">
         <body>
             <div>
                 <head rend="center">BIBLIOGRAPHIA</head>
                 <head rend="center" type="sub"><hi rend="bold">MOVIMENTO SENSACIONISTA</hi></head>
-                <div rend="right">   <p><hi rend="bold"><hi rend="italic"> <rs type="title">Elogio da paisagem,</rs></hi>
-                </hi> sonetos de <rs type="name" key="P36" style="b">Pedro de Menezes</rs><!-- JU: I think this should reference directly the real name 
-                    of the author or both P36 and P57  -->.
-                    Lisboa, Livraria Brazileira, 1915.</p>                     </div>
+                <div rend="right"><p><hi rend="bold"><hi rend="italic"> <rs type="title">Elogio da paisagem,</rs></hi>
+                </hi> sonetos de <rs type="name" key="P36" style="b">Pedro de Menezes</rs>
+                    Lisboa, Livraria Brazileira, 1915.</p>                     
+                </div>
                 <div rend="right"> <p><hi rend="bold"><hi rend="italic"><rs type="title">As tres princezas mortas num palacio em ruinas,</rs></hi>
-                </hi> poemas de <rs type="name" key="P478">João Cabral de Nascimento</rs>, Lisboa, 1916.</p></div>
-                        
-                <div>
-                        <p rend="indent-first">Apesar de a sua tarefa ser a da reconstrucção da literatura e da mentalidade nacionaes, 
+                </hi> poemas de <rs type="name" key="P478">João Cabral de Nascimento</rs>, Lisboa, 1916.</p>
+                </div>
+                 <div>
+                     <p rend="indent-first">Apesar de a sua tarefa ser a da reconstrucção da literatura e da mentalidade nacionaes, 
                             o Movimento Sensacionista vae dia a dia colhendo fôrça, rasgando caminho, florindo em novos adeptos e sensibilidades 
                             acordadas.</p>
                         <p rend="indent-first">Desde a data, gloriosa para as nossas lettras, em que, com a publicação de 
@@ -113,18 +99,19 @@
                             <p rend="indent-first">O Sensacionismo surgiu, pois, como primeira manifestação de um Portugal-Europa, como a unica 
                                 «grande arte» literaria que em Portugal se tem revelado, livre da estreiteza chronica que tem prendido no seu 
                                 leito de Procrustes todos os nossos impulsos estheticos, desde a tisica espiritualidade que subjaz o 
-                                pseudo-petrarchismo <!-- this is a ref- to Petrarcha--> dos tristes poetas da nossa Renascença, até á secca 
-                                commotividade em torno á qual nucleou o neo-huguismo <!--This is a reference to Victor Hugo--> (grande embora) 
+                                pseudo-petrarchismo dos tristes poetas da nossa Renascença, até á secca 
+                                commotividade em torno á qual nucleou o neo-huguismo (grande embora) 
                                 do actual chefe honorario da intellectualidade portugueza.</p>
                             <p rend="indent-first">Synthetico assim, o Sensacionismo triumphou. Primeiro pelo escandalo, que outro não podia 
                                 ser o triumpho entre os feirantes que ergueram barracas no terreno desoccupado da nossa critica. O nosso meio 
-                                jornalistico e «literario», acostumado ou a ser latoeiramente estrangeiro, ou a ser nacional no nivel da 
-                                <!-- [FIM IMAGEM 1]--> Praça da Figueira, deu a <rs type="periodical" key="J12">«Orpheu»</rs> a unica honra que 
+                                jornalistico e «literario», acostumado ou a ser latoeiramente estrangeiro, ou a ser nacional no nivel da Praça da Figueira, deu a <rs type="periodical" key="J12">«Orpheu»</rs> a unica honra que 
                                 em taes almas cabia conferir – a da sua invertebradamente espontanea, surprehendentemente sincera aversão. Assim, 
                                 no que facto publico, se <hi rend="italic">lançou</hi> o Sensacionismo. A unica propaganda que se fez foi não se 
                                 fazer propaganda nenhuma. Gratis lhe fez esse frete a amabilidade involuntaria dos criticos.</p> 
                              <p rend="indent-first">Depois, seguro e certo como uma maré que sobe, começou o triumpho nos espiritos. De alma a 
-                                    alma, das aproveitaveis, o Sensacionismo correu. Chegou, viram-o, e venceu[.] E este muito é o pouco que são 
+                                    alma, das aproveitaveis, o Sensacionismo correu. Chegou, viram-o, e 
+                                 <choice><sic>venceu</sic><corr>venceu.</corr></choice>  
+                                        E este muito é o pouco que são 
                                     todos os principios. Hoje é já uma victoria; amanhã será uma nacionalidade.</p>
                                 
                                 <milestone rend="asterisk" unit="section"/>
@@ -132,8 +119,7 @@
                                 <p rend="indent-first">Servem estas palavras de introdução á breve critica, que vamos fazer, das duas 
                                     plaquettes sensacionistas, cujos titulos encimam este artigo.</p>
                                 <p rend="indent-first">A breve e magistral colheita de sonetos, que o sr. 
-                                    <rs type="name" key="P36" style="b">Pedro de Menezes</rs><!-- JU: I think this should reference directly the real name 
-                    of the author or both P36 and P57  --> fez para o seu publico, marca bem a individualidade definida, 
+                                    <rs type="name" key="P36" style="b">Pedro de Menezes</rs> fez para o seu publico, marca bem a individualidade definida, 
                                     que elle tem a dentro do Sensacionismo. A exhuberancia abstracto-concreta das imagens, a riqueza de suggestão 
                                     na associação d’ellas, a profunda intuição metaphysica que socleia tanto os versos culminantes dos sonetos 
                                     d’esta plaquette, como, bastas vezes, a direccção animica de certos sonetos integralmente – tantas são algumas 
@@ -142,7 +128,8 @@
                                     esmiuçal-a mais e fazer transcripções que, no lance, nada adeantariam. Basta que se aponte como são bellos – 
                                     acima dos outros, que são todos bellos – os sonetos III (I.º), V, XIII (I.º) e, mais do que todos, o 
                                     assombroso <rs type="title">Horas Mortas</rs>, que não conseguimos não transcrever:</p>
-                                
+                             
+                    <lg rend="center">   
                                 <l>Princesas a passar nos olhos meus.</l>
                                 <l>Hora-curvas de dedos mais esguios.</l>
                                 <l>Rios sem outra margem. Sempre rios...</l>
@@ -160,12 +147,12 @@
                                 <l>Todas as pontes iam dar a Deus...</l>
                                 <l>Passei-as todas p’ra atingir os céus</l>
                                 <l>E a minha Alma era sempre a derradeira.</l>
-                                
-                    <p rend="indent-first">Comvém não omittir que o sr. <rs type="name" key="P36" style="b">Pedro de Menezes</rs><!-- JU: I think this should reference directly the real name 
-                    of the author or both P36 and P57  --> junta ás 
+                        </lg>                  
+                    <p rend="indent-first">Comvém não omittir que o sr. <rs type="name" key="P36" style="b">Pedro de Menezes</rs> junta ás 
                                     suas grandes qualidades dois defeitos, que, não chegando a empanal-as, certo é que não deixam que ellas 
                                     tenham o relevo a que teem jus. O primeiro defeito é uma certa deficiencia – por vezes accentuadamente 
-                                    notavel – de musicalidade, de suggestão puramente syllabica, de seducção rhytmica pura. O[s] seus versos 
+                                    notavel – de musicalidade, de suggestão puramente syllabica, de seducção rhytmica pura. 
+                        <choice><sic>O</sic><corr>Os</corr></choice> seus versos 
                                     teem, frequentemente, elementos de dureza e rectilineidade. No propiro grande soneto, que se citou, semelhante 
                                     jaça é flagrante.</p>
                                 <p rend="indent-first">O seu outro defeito é menos frequente e, onde está, é, em geral, menos sensivel. É que por 
@@ -173,7 +160,7 @@
                                     juxtapõe imagens que, sendo, quasi sempre, cada uma d’ellas bella, não se fundem em belleza, não se synthetisam 
                                     suggestivamente no espirito. E é n’estes raros pontos que a fraqueza rhythmica, associando-se a ess’outra falha, consegue que 
                                     a belleza escasseie no effeito poetico que resulta. O proprio soneto <rs type="title">Horas Mortas</rs>, com ser grande, 
-                                    não deixa de permittir que nelle se colha o exemplo que é bom não sonegar. <!--[FIM IMAGEM 2]--> Repare-se no primeiro terceto, 
+                                    não deixa de permittir que nelle se colha o exemplo que é bom não sonegar. Repare-se no primeiro terceto, 
                                     evoque-se bem a suggestão imaginativa que elle impõe, e mida-se depois como essa intromissão de figuras historicas (por poeticas 
                                     que se possam crêr) nesta successão de imagens ou indefinidas ou abstractas põe um solavanco inesperado no estado de sonho que o 
                                     soneto provoca. O erro psychologico culmina na juxtaposição 
@@ -181,12 +168,10 @@
                                 
                                 <milestone rend="asterisk" unit="section"/>
                                 
-                                <p rend="indent-first">Os elementos componenetes da inspiração sensacionista estão ainda inharmonicos e 
+                                <p rend="indent-first">Os elementos componentes da inspiração sensacionista estão ainda inharmonicos e 
                                     inindividualisados na, aliás interessantissima, pequena obra do sr. 
                                     <rs type="name" key="P478">Cabral do Nascimento</rs>. É singular que o defeito capital d’esta plaquette 
-                                    é precisamente aquelle que ultimo apontámos na do sr. <rs type="name" key="P36">Pedro de Menezes</rs><!-- JU: I think 
-                                        this should reference directly the real name 
-                    of the author or both P36 and P57  -->. 
+                                    é precisamente aquelle que ultimo apontámos na do sr. <rs type="name" key="P36">Pedro de Menezes</rs>.
                                     Aqui, porém, visto que o author, embora de verdade um poeta, seja ainda um principiante, o defeito tem um 
                                     relevo muito maior, constitue, mesmo, o peccado original do livro.</p>
                                 <p rend="indent-first">Fóra isso, e aquella ligeira e indefinivel incerteza que ha em todos os primeiros 
@@ -204,7 +189,7 @@
                                     tomará a de o tornar um mau poeta.</p>
                                 <p rend="indent-first">O resto é a literatura portugueza.</p>
                                 
-                                <signed rend="align-right">FERNANDO PESSÔA.<lb/>    
+                                <signed rend="align-right">Fernando Pessôa.<lb/>    
                                 Sensacionista.</signed>
                 </div>
                 </div>
