@@ -27,32 +27,26 @@
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
                 <availability status="restricted">
-                    <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Campos_Ambiente.xml</idno>               
             </publicationStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O4-X">Ambiente</rs></item>
+                    <item><rs type="work" key="W204">Ambiente</rs></item>
                 </list>
                 <biblStruct>
-                    <!-- here goes the bibliographical reference for the source publication -->
                     <analytic>
                         <title level="a">Ambiente</title>
                         <author>
                             <rs type="name" key="AdC">Álvaro de Campos</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
                         <title level="j"><rs type="periodical" key="J11">Presença</rs></title>
                         <imprint>
                             <date when="1927-06-04">4 de Junho de 1927</date>
-                            <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                         </imprint>
                         <biblScope unit="issue">5</biblScope>
                         <biblScope unit="page">3</biblScope>
@@ -67,20 +61,16 @@
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/Ambiente.jpg"/>
     </facsimile>
-    <text corresp="#O4-X">
-        <!-- @corresp: contains the index of this WORK. 
-        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
-        This can be left as is in the beginning.
-    -->
+    <text corresp="#W204">
         <body>
             <div>
-                <head>AMBIENTE</head> 
+                <head rend="center">AMBIENTE</head> 
                 
                 <p rend="indent-first"><hi rend="bold">NENHUMA</hi> época transmite a outra a sua sensibililidade; 
                     transmite-lhe apenas a inteligência que teve dessa sensibilidade. Pela emoção 
                     somos nós; pela inteligência somos alheios. A inteligência dispersa-nos; por isso é através do que nos 
                     dispersa que nos sobrevivemos. Cada época entrega às seguintes apenas 
-                    aquilo que não foi. </p>
+                    aquilo que não foi.</p>
                 
                 <p rend="indent-first"><hi rend="bold">UM</hi>  deus, no sentido pagão, isto é, verdadeiro, não é mais que a 
                     inteligência que um ente tem de si próprio, pois essa inteligência, que 
@@ -88,24 +78,23 @@
                     formamos um deus de nós próprios. Raros, porém, formam de si 
                     próprios um conceito intelectual, porque a inteligência é essencialmente objectiva. Mesmo entre os grandes 
                     génios são raros os que existiram para si próprios com plena 
-                    objectividade. </p>
+                    objectividade.</p>
                 
                 <p rend="indent-first"><hi rend="bold">VIVER</hi> é pertencer a outrem. Morrer é pertencer a outrem. Viver e morrer são 
                     a mesma coisa. Mas viver é pertencer a outrem 
                     <hi rend="italic">de fora</hi>, e morrer é pertencer a outrem <hi rend="italic">de dentro</hi>. As duas coisas 
                     assemelham-se, mas a vida é o lado de fora da morte. Por isso a 
                     vida é a vida e a morte a morte, pois o lado de fora é sempre mais verdadeiro que o lado de dentro, tanto que 
-                    é o lado de fora que se vê. </p>
+                    é o lado de fora que se vê.</p>
                 
                 <p rend="indent-first"><hi rend="bold">TODA</hi> a emoção verdadeira é mentira na inteligência, pois se não dá nela. 
                     Toda a emoção verdadeira tem portanto uma expressão falsa. 
-                    Exprimir-se é dizer o que não se sente. </p>
+                    Exprimir-se é dizer o que não se sente.</p>
                 
                 <p rend="indent-first"><hi rend="bold">OS</hi> cavalos da cavalaria é que formam a cavalaria. Sem as montadas, 
                     os cavaleiros seriam peões. O logar é que faz a localidade. Estar é 
-                    ser. </p>
-                <p rend="indent-first"><hi rend="bold">FINGIR</hi>  é conhecer-se. </p>
-                
+                    ser.</p>
+                <p rend="indent-first"><hi rend="bold">FINGIR</hi> é conhecer-se.</p>
                 <signed rend="align-right">Alvaro de Campos</signed> 
             </div>
         </body>

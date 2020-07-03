@@ -3,8 +3,6 @@
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
-            <!-- this is a comment... here they are used for documentation and to give hints. In new files, 
-        please just use them to comment on if something is unclear -->
             <titleStmt>
                 <title>Antonio Botto e o ideal esthetico em Portugal</title>
                 <author>
@@ -29,36 +27,26 @@
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
                 <availability status="restricted">
-                    <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_Antonio_Botto_e_o_ideal.xml</idno>
             </publicationStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O1-X">Antonio Botto e o ideal esthetico em Portugal</rs></item>
+                    <item><rs type="work" key="W205">Antonio Botto e o ideal esthetico em Portugal</rs></item>
                 </list>
                 <biblStruct>
-                    <!-- here goes the bibliographical reference for the source publication -->
                     <analytic>
                         <title level="a">Antonio Botto e o ideal esthetico em Portugal</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
                         <title level="j"><rs type="periodical" key="J11">Contemporânea</rs></title>
-                        <!-- @key is to identify the periodical. You can find other periodicals IDs in the file 
-                            lists.xml in the data folder. In that file, 
-                        look for the sublist <list type="periodical">, currently beginning at line 1450. You can also add
-                        new periodicals there -->
                         <imprint>
                             <date when="1922-07">Julho de 1922</date>
-                            <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                         </imprint>
                         <biblScope unit="issue">3</biblScope>
                         <biblScope unit="page">121-126</biblScope>
@@ -78,11 +66,7 @@
         <graphic url="prosa/Antonio_Botto_Ideal_5.jpg"/>
         <graphic url="prosa/Antonio_Botto_Ideal_6.jpg"/>
     </facsimile>
-    <text corresp="#O1-X">
-        <!-- @corresp: contains the index of this WORK. 
-        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
-        This can be left as is in the beginning.
-    -->
+    <text corresp="#W245">
         <body>
             <div>
                 <head><rs type="name" key="P17">ANTONIO BOTTO</rs></head> 
@@ -95,8 +79,8 @@
                         seu ultimo livro, <rs type="title"><hi rend="italic">Canções</hi></rs>. Que essa obra se distingue com facilidade da obra de qualquer outro poeta, 
                         portuguez ou estrangeiro – todos, que possam ver, o podem ver. Já não é tão facil explicar em que consiste, distinctivamente, 
                         essa differença. Algum interesse haverá em determinal-o.</p>
-                    
-                    <p rend="indent-first margin-vertical">Nasce o ideal da nossa consciencia da imperfeição da vida. Tantos, portanto, serão os 
+                <milestone rend="space" unit="section"/>
+                    <p rend="indent-first">Nasce o ideal da nossa consciencia da imperfeição da vida. Tantos, portanto, serão os 
                         ideaes possiveis, quantos forem os modos por que é possivel ter a vida por imperfeita. A cada modo de a ter por imperfeita 
                         corresponderá, por contraste e similhança, um conceito de perfeição. É a esse conceito de perfeição que se dá o nome de 
                         ideal.</p>
@@ -135,8 +119,8 @@
                         este ideal apparece, com formas e applicações diversas, nos espiritualistas symbolicos, ou occultistas, de quasi todas as 
                         confissões. Como, porém, foi na India que as manifestações formaes d’elle distinctivamente appareceram, poderemos ser 
                         imprecisos, porém não seremos inexactos, se dermos a este ideal, por conveniencia, o nome de ideal indio.</p>
-                    
-                    <p rend="indent-first margin-vertical">Pela propria natureza do seu ideal, é a civilização hellenica essencialmente a 
+                <milestone rend="space" unit="section"/>
+                    <p rend="indent-first">Pela propria natureza do seu ideal, é a civilização hellenica essencialmente a 
                         civilização artistica. Fazer arte é querer tornar o mundo mais bello, porque a obra de arte, uma vez feita, constitue 
                         belleza objectiva, belleza accrescentada á que ha no mundo. Para que esta actividade lembre e preoccupe, é mister haver um 
                         criterio objectivo de belleza ou de perfeição. Ora, dos trez criterios de perfeição só o dos gregos tem objectividade. Que 
@@ -147,8 +131,8 @@
                         mais da imperfeição estrutural e formal da arte india, se não fosse que o hellenismo é um elemento componente do christismo, 
                         e que a arte dos povos christãos, tendo a dos gregos por exemplar, se guia, nas suas manifestações superiores, pelos 
                         principios assentes como fundamentaes pelo preceito e exemplo dos classicos.</p>
-                    
-                    <p rend="indent-first margin-vertical">Ha, porém, uma outra razão, esta mais emotiva e profunda, para que o ideal hellenico seja, 
+                <milestone rend="space" unit="section"/>
+                    <p rend="indent-first">Ha, porém, uma outra razão, esta mais emotiva e profunda, para que o ideal hellenico seja, 
                         de todos, o que mais directamente conduz á creação artistica.</p>
                     <p rend="indent-first">O christão é metaphysicamente feliz. Tem os olhos da alma postos naquella perfeição divina em que não ha 
                         mudança nem cessação. Pesa-lhe pouco a vileza do mundo: viver e ver são para elle um mal-estar transitorio. Ao indio nada 
@@ -159,8 +143,8 @@
                         aquella belleza suprema, pela qual anseia, anseia tambem por essa belleza nos homens. «A raça dos deuses e dos homens é uma 
                         só», disse <rs type="name" key="P481">Pindaro</rs>; a uns deve pertencer o que aos outros pertence. Porisso, dos trez 
                         idealistas, é o helleno o único que não pode rejeitar aquella vida a que chama imperfeita. O seu ideal é, portanto, 
-                        humanamente o mais tragico e profundo.</p><!--[FIM IMAGEM 2]-->
-                    <p rend="indent-first">De aqui o que resulta? A carencia de uma fé religiosa, de uma confiança, moral ou metaphysica, no Além[,] 
+                        humanamente o mais tragico e profundo.</p>
+                    <p rend="indent-first">De aqui o que resulta? A carencia de uma fé religiosa, de uma confiança, moral ou metaphysica, no Além 
                         reduz as almas vis ou á materialidade animal, ou á esteril ficção de um millenio do estomago – o socialismo, o anarquismo, e 
                         todos os plutocratismos invertidos que se lhes assemelham; porisso os mais scepticos dos gregos e dos romanos nunca 
                         pretenderam que se destruisse a fé religiosa das plebes, por estulta e irrisoria que a julgassem. Se é este, porém, o 
@@ -174,8 +158,8 @@
                     <p rend="indent-first">A calma, o equilibrio, a harmonia, characteristicos distinctivos, com outros, que os não contradizem, da 
                         arte grega, provam bem que não é abusiva a attribuição d’esta intima direcção logica ao caminho do instincto hellenico para 
                         o ideal esthetico absoluto.</p>
-                    
-                    <p rend="indent-first margin-vertical">Quando o helleno pretende pôr em arte o seu ideal, isto é, quando o ideal hellenico 
+                <milestone rend="space" unit="section"/>
+                    <p rend="indent-first">Quando o helleno pretende pôr em arte o seu ideal, isto é, quando o ideal hellenico 
                         assume o aspecto creador ou activo, são trez as formas de manifestação por que se revela.</p>
                     <p rend="indent-first">Na primeira, e mais alta, d’essas formas, o helleno, vendo que a vida é imperfeita, busca crear, elle, a 
                         perfeição, substituindo a arte á vida; e busca incluir em cada obra, para que a substituição seja perfeita, ou toda a vida 
@@ -195,8 +179,8 @@
                         passagem, a sentimos perfeita. É esta a forma sensual do ideal esthetico absoluto; forma debil, porque não a energiza uma 
                         reacção da intelligencia, vazia, porque a emoção lhe não dá corpo, mas por isso mesmo, porque é esthetica e mais nada, 
                         propriamente classificavel de ideal esthetico, sem qualificação.</p>
-                    
-                    <p rend="indent-first margin-vertical">De que maneira, por que processo reconheceremos o estheta, propriamente tal, na sua obra? 
+                <milestone rend="space" unit="section"/>
+                    <p rend="indent-first">De que maneira, por que processo reconheceremos o estheta, propriamente tal, na sua obra? 
                         Quaes são os signaes necessarios da applicação do ideal estético? Como distinguiremos, se se trata de poetas, o estheta do 
                         poeta simples, que canta simplesmente o prazer e a vida, porque lhe não cabe mais na alma? Como distinguiremos o estheta do 
                         christão revoltado, que procura o peccado só porque é peccado, e blasphema, embora subtilmente, só para ter a consciencia da 
@@ -207,7 +191,7 @@
                         momento feliz, a nossa sensação d’ella, força é que essa consideração não attinja um alto grau de absorpção metaphysica ou 
                         moral; porque, se fôr altamente metaphysica haverá consciencia de mais para poder haver illusão, e, se fôr altamente moral, 
                         haverá dôr de sobra para que a illusão possa agradar.</p>
-                    <p rend="indent-first">O primeiro characteristico da arte do estheta é pois a ausencia de elementos metaphy<!--[FIM IMAGEM 3]-->
+                    <p rend="indent-first">O primeiro characteristico da arte do estheta é pois a ausencia de elementos metaphy
                         sicos e moraes na substancia da sua ideação. Como, porém, os ideaes hellenicos procedem todos de uma aplicação directamente 
                         critica da intelligencia á vida, e da sensibilidade ao conteudo d’ella, essa ausencia de metaphysica não será uma ausencia 
                         de idéas metaphysicas, nem essa ausencia de moral uma ausencia de idéas moraes. Ha uma idéa que, sem ser metaphysica nem 
@@ -222,8 +206,8 @@
                         sceptico nem immoral; o proposito de ser sceptico revela uma preoccupação metaphysica, o de ser immoral uma preoccupação 
                         ethica, e o character negativo de ambas as preoccupações não as torna menos preoccupações. Nisto claramente se distingue o 
                         estheta do mau christão decadente, como <rs type="name" key="479">Baudelaire</rs> ou <rs type="name" key="P32">Wilde</rs>.</p>
-                    
-                    <p rend="indent-first margin-vertical">Se tivermos presentes estas considerações na analyse do livro 
+                <milestone rend="space" unit="section"/>
+                    <p rend="indent-first">Se tivermos presentes estas considerações na analyse do livro 
                         de <rs type="name" key="P17">Antonio Botto</rs>, não nos será difficil determinar que esse livro representa uma das 
                             revelações mais raras e perfeitas do ideal esthetico, que se podem imaginar.</p>
                     <p rend="indent-first">Que a substancia do livro é altamente intellectual, revela-o o estudo cuidado da forma e rhythmo, a 
@@ -236,14 +220,17 @@
                         A analyse do conteúdo d’essas duas idéas, taes quaes se nos apresentam nas <rs type="title"><hi rend="italic">Canções</hi></rs>, revelará o 
                         estheta inequivocamente. No modo como apresenta a primeira d’ellas, o poeta afasta-se de toda a especie de moralidade; no 
                         modo como apresenta a segunda, de toda a especie de immoralidade.</p>
-                    
-                    <p rend="indent-first margin-vertical">Das trez formas, que podemos conceber, da belleza physica – a graça, a força e a 
+                <milestone rend="space" unit="section"/>
+                    <p rend="indent-first">Das trez formas, que podemos conceber, da belleza physica – a graça, a força e a 
                         perfeição –, o corpo feminino tem só a primeira, porque não pode ter a belleza da força sem quebra da sua feminilidade, 
                         isto é, sem perda do seu character proprio; o corpo masculino pode, sem quebra da sua masculinidade, reunir a graça e a 
                         força; a perfeição só aos corpos dos deuses, se existem, é dado tel-a. Um homem, se se guiar pelo instinto sexual, e não 
                         pelo instinto esthetico, cantará, como poeta, só o corpo feminino. Essa attitude representa uma preoccupação exclusivamente 
                         moral. O instinto sexual, normalmente tendente para o sexo opposto, é o mais rudimentar dos instinctos moraes. A sexualidade 
-                        é uma ethica animal, a primeira e a mais instinctiva das ethicas[.] Como, porém, o esteta canta a belleza sem preoccupação 
+                        é uma ethica animal, a primeira e a mais instinctiva das <choice>
+                            <sic>ethicas</sic>
+                            <corr resp="#JU">ethicas.</corr>
+                        </choice> Como, porém, o esteta canta a belleza sem preoccupação 
                         ethica, segue que a cantará onde mais a encontre, e não onde suggestões externas á esthetica, como a suggestão sexual, o 
                         façam procural-a. Como se guia, pois, só pela belleza, o esteta canta de preferência o corpo masculino, por ser o corpo 
                         humano que mais elementos de belleza, dos poucos que ha, pode acumular.</p>
@@ -255,7 +242,7 @@
                         vezes teem instinto imparcial, vital, innato da belleza na arte. A pessoas como essas a belleza da arte grega parecerá 
                         sempre falha, porque a sua belleza suprema é antes masculina que feminina».</p>
                     <p rend="indent-first">Ora é este conceito, puramente esthetico, da belleza physica que é, como todos sabem, porque 
-                        escandalizadamente se notou, uma das duas idéas inspiradoras das <rs type="title"><hi rend="italic">Canções</hi></rs>.</p><!--[FIM IMAGEM 4]-->
+                        escandalizadamente se notou, uma das duas idéas inspiradoras das <rs type="title"><hi rend="italic">Canções</hi></rs>.</p>
                     <p rend="indent-first">Disse eu que <rs type="name" key="P17">Antonio Botto</rs> se afasta de toda a moralidade no modo por que 
                         canta a belleza physica, e que se afasta de toda a immoralidade no modo por que canta o prazer. De que modo canta elle o 
                         prazer? Que modo há de cantar o prazer que, sem ser moral (porque se o fôsse, estariamos fóra do caso esthetico), se afaste 
@@ -286,8 +273,8 @@
                     <p rend="indent-first">Resulta d’estas considerações, que me exforcei por fazer lucidas e concisas, a determinação exacta de que 
                         <rs type="name" key="P17">Antonio Botto</rs>, no seu livro <rs type="title"><hi rend="italic">Canções</hi></rs>, se revela um dos typos mais 
                         perfeitos e mais integros do estheta, que se podem imaginar.</p>
-                    
-                    <p rend="indent-first margin-vertical">Que importancia tem este facto? A de representar uma raridade. O typo perfeito do estheta 
+                <milestone rend="space" unit="section"/>
+                    <p rend="indent-first">Que importancia tem este facto? A de representar uma raridade. O typo perfeito do estheta 
                         é rarissimo na civilização christã, ou de origem christã, e mais que raro, porque, até ás <rs type="title">Canções</rs>, 
                         desconhecido, em Portugal. A razão d’essa raridade, quer em toda a Europa, quer em Portugal, e o valor que nella haja, são 
                         relativamente faceis de comprehender.</p>
@@ -305,17 +292,21 @@
                         <rs type="name" key="480">Winckelmann</rs> e de <rs type="name" key="P164">Pater</rs>, quasi, em verdade, os unicos typos 
                         exactos do estheta que a civilização europeia pode apresentar. Como, pórem, este esthetismo tem uma base cultural, resulta 
                         que tem a plenitude e a largueza que distinguem todos os productos culturaes, em contraposição aos naturaes seus similhantes, 
-                        e porisso de algum modo transcende a estreiteza especifica do ideal esthetico, sem todavia deixar de lhe pertencer.</p><!--[FIM IMAGEM 5]-->
+                        e porisso de algum modo transcende a estreiteza especifica do ideal esthetico, sem todavia deixar de lhe pertencer.</p>
                     <p rend="indent-first">Como os elementos culturaes são inteiramente negativos na obra de 
                         <rs type="name" key="P17">Antonio Botto</rs>, vemo-nos forçados a assentar em que o seu esthetismo nasce de um simples 
                         desvio pathologico, sem sollicitação cultural efficiente. Este processo de ser estheta apresenta uma singularidade notavel: 
                         é um desvio pathologico sem desequilibrio, porque todos os ideaes gregos (e portanto o esthetico, que é um d’elles) são 
                         essencialmente equilibrados e harmonicos. Ora um desvio pathologico equilibrado é uma de duas cousas – ou o genio ou o 
                         talento. Ambos estes phenomenos são desvios pathologicos, porque, biologicamente considerados, são anormaes; porém não são 
-                        só anormaes, porque teem uma acceitação exterior, tendo, portanto, um equilibrio. A esse desvio equilibrado chamar-se[-]ha 
+                        só anormaes, porque teem uma acceitação exterior, tendo, portanto, um equilibrio. A esse desvio equilibrado 
+                        <choice>
+                            <sic>chamar-se ha</sic>
+                            <corr resp="#JU">chamar-se-ha</corr>
+                        </choice> 
                         genio quando é synthetico, talento quando é analytico; genio quando resulta da fusão original de varios elementos, talento 
                         quando procede do isolamento original de um só elemento.</p>
-                    <p rend="indent-first">A dentro do idéal esthetico, os casos de <rs type="name" key="P480">Winckelmann</rs> e de 
+                    <p rend="indent-first">A dentro do ideal esthetico, os casos de <rs type="name" key="P480">Winckelmann</rs> e de 
                         <rs type="name" key="P164">Pater</rs> representam o genio, porque a tendencia para a realização cultural immanente no seu 
                         esthetismo ingenito é, por sua natureza, synthetica, o caso de <rs type="name" key="P17">Antonio Botto</rs> representa o 
                         talento, porque o ideal esthetico, dada a sua estreiteza e vacuidade, representa já o senso esthetico isolado de todos 
@@ -329,9 +320,7 @@
                         único exemplo em Portugal da realização litteraria, de qualquer especie, do ideal esthetico. Facilmente o verificará quem 
                         houver lido com attenção o que estabelecemos sobre os characteristicos do estheta. Artistas tem havido muitos em Portugal; 
                         esthetas só o autor das <rs type="title"><hi rend="italic">Canções</hi></rs>.</p>
-                    
                     <signed rend="align-right">FERNANDO PESSOA</signed>
-                    
                 </div>
             </body>
         </text>
