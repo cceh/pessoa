@@ -9,16 +9,12 @@
                     <rs type="name" key="FP">Fernando Pessoa</rs>
                 </author>
                 <respStmt>
-                    <resp>Edição, Transcrição</resp>
+                    <resp>Edição, Transcrição, Codificação</resp>
                     <name>Pedro Sepúlveda</name>
                 </respStmt>
                 <respStmt>
                     <resp>Modelagem de dados, Codificação</resp>
                     <name>Ulrike Henny-Krahmer</name>
-                </respStmt>
-                <respStmt>
-                    <resp>Codificação</resp>
-                    <name>Pedro Sepúlveda</name>
                 </respStmt>
                 <respStmt>
                     <resp>Consultoria</resp>
@@ -51,7 +47,7 @@
                     <item><rs type="work">Prece</rs></item>
                     <item><rs type="work">Mensagem</rs></item>
                 </list>
-                <biblStruct>
+                <biblStruct xml:id="Pub1">
                     <analytic>
                         <title level="a">Mar Portuguez</title>
                         <author>
@@ -81,20 +77,26 @@
                             poema IV é aí publicado sob o título “O Mostrengo”, apresentando
                             variantes em diversos versos. A sequência “Mar Portuguez” foi
                             republicada, sob o mesmo título, com diferenças ortográficas e de
-                            pontuação, em <hi rend="italic">Leitura para todos – Revista mensal illustrada</hi>, 
-                            n.º 83, Rio de Janeiro, Junho de 1926 e em
-                            <hi rend="italic">Revolução</hi>, 16 de Junho de 1933.
-                            Apresentamos as imagens do primeiro jornal e aguardamos a disponibilização das imagens do segundo.
-                            Foi ainda
-                            republicada no livro <hi rend="italic">Mensagem</hi> (Lisboa: Parceria
-                            António Maria Pereira, 1934), com variações ortográficas, de pontuação e
-                            conteúdo dos poemas. O poema “Ironia” não foi incluído no livro, sendo
-                            substituído por “Os Colombos”.</p></note>
+                            pontuação, em <hi rend="italic">Leitura para todos – Revista mensal
+                                illustrada</hi>, n.º 83, Rio de Janeiro, Junho de 1926 e em <hi
+                                rend="italic">Revolução</hi>, 16 de Junho de 1933. Apresentamos as
+                            imagens do primeiro jornal e aguardamos a disponibilização das imagens
+                            do segundo. Foi ainda republicada no livro <hi rend="italic"
+                                >Mensagem</hi> (Lisboa: Parceria António Maria Pereira, 1934), com
+                            variações ortográficas, de pontuação e conteúdo dos poemas. O poema
+                            “Ironia” não foi incluído no livro, sendo substituído por “Os
+                            Colombos”.</p></note>
+                </biblStruct>
+                <biblStruct xml:id="Pub2">
+                    <!-- U: this needs to be filled. -->
+                    <monogr>
+                        <imprint/>
+                    </monogr>
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
     </teiHeader>
-    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/" corresp="#Pub1">
         <graphic url="pub/mar_portuguez.jpg"/>
         <graphic url="pub/mar_portuguezII.jpg"/>
         <graphic url="pub/mar_portuguezIII.jpg"/>
@@ -102,6 +104,13 @@
         <graphic url="pub/mar_portuguezV.jpg"/>
         <graphic url="pub/mar_portuguezVI.jpg"/>
         <graphic url="pub/prece.jpg"/>
+    </facsimile>
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/" corresp="#Pub2">
+        <graphic url="pub/Mar_Portuguez-Leitura_para_todos_RJ.jpg"/>
+        <graphic url="pub/Mar_Portuguez-Leitura_para_todos_RJ_2.jpg"/>
+        <graphic url="pub/Mar_Portuguez-Leitura_para_todos_RJ_3.jpg"/>
+        <graphic url="pub/Mar_Portuguez-Leitura_para_todos_RJ_4.jpg"/>
+        <graphic url="pub/Mar_Portuguez-Leitura_para_todos_RJ_5.jpg"/>
     </facsimile>
     <text>
         <body>
