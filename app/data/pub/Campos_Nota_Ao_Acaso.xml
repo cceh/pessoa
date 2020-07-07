@@ -27,32 +27,26 @@
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
                 <availability status="restricted">
-                    <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Campos_Nota_Ao_Acaso.xml</idno>               
             </publicationStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O4-X">Nota ao Acaso</rs></item>
+                    <item><rs type="work" key="W207">Nota ao Acaso</rs></item>
                 </list>
                 <biblStruct>
-                    <!-- here goes the bibliographical reference for the source publication -->
                     <analytic>
                         <title level="a">NOTA AO ACASO</title>
                         <author>
                             <rs type="name" key="AdC">Álvaro de Campos</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
                         <title level="j"><rs type="periodical" key="J30">Sudoeste, Cadernos de Almada Negreiros</rs></title>
                         <imprint>
                             <date when="1935-11">Novembro de 1935</date>
-                            <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                         </imprint>
                         <biblScope unit="issue">3</biblScope>
                         <biblScope unit="page">3</biblScope>
@@ -67,14 +61,10 @@
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/Nota_Ao_Acaso.jpg"/>
     </facsimile>
-    <text corresp="#O4-X">
-        <!-- @corresp: contains the index of this WORK. 
-        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
-        This can be left as is in the beginning.
-    -->
+    <text corresp="#W207">
         <body>
             <div>
-                <head>NOTA AO ACASO</head> 
+                <head rend="center">NOTA AO ACASO</head> 
 
                 <p rend="indent-first">O poeta superior diz o que efectivamente sente. O poeta médio diz o que decide sentir. O poeta inferior diz o que 
                     julga que deve sentir.</p> 
@@ -86,7 +76,7 @@
                     mais que uns quatro ou cinco poetas que disessessem o que verdadeiramente, e não só efectivamente, sentiam. Há alguns, muito grandes, 
                     que nunca o disseram, que foram sempre incapazes de o dizer. Quando muito há, em certos poetas, momentos em que dizem o que sentem. 
                     Aqui e ali o disse <rs type="name" key="P162">Wordsworth</rs>. Uma ou duas vezes o disse <rs type="name" key="P163">Coleridge</rs>: 
-                    pois a  <rs type="title"><hi rend="italic">Rima do Velho Nauta</hi></rs> e <rs type="title"><hi rend="italic">Kubla Khan </hi></rs> são mais sinceros que todo o <rs type="name" key="P84">Milton</rs>, 
+                    pois a  <rs type="title"><hi rend="italic">Rima do Velho Nauta</hi></rs> e <rs type="title"><hi rend="italic">Kubla Khan</hi></rs> são mais sinceros que todo o <rs type="name" key="P84">Milton</rs>, 
                     direi mesmo que todo o <rs type="name" key="P65">Shakespeare</rs>. Há apenas uma reserva com respeito a 
                     <rs type="name" key="P65">Shakespeare</rs>: é que <rs type="name" key="P65">Shakespeare</rs> era essencial e estruturalmente factício; 
                     e por isso a sua constante insinceridade chega a ser uma constante sinceridade, de onde a sua grande grandeza.</p> 
@@ -98,10 +88,8 @@
                     encontrado uma fórma nova, palavras novas – tudo menos o soneto e o verso de dez sílabas. Mas não: usou o soneto em decasílabos como 
                     usaria luto na vida.</p> 
 
-                <p rend="indent-first">O meu mestre <rs type="name" key="#AC">Caeiro</rs> foi o único poeta inteiramente sincero do mundo.</p> 
-
-                <signed rend="align-right">ALVARO DE CAMPOS </signed> 
-
+                <p rend="indent-first">O meu mestre <rs type="name" key="AC">Caeiro</rs> foi o único poeta inteiramente sincero do mundo.</p> 
+                <signed rend="align-right">ALVARO DE CAMPOS</signed> 
             </div>
         </body>
     </text>

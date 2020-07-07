@@ -3,17 +3,10 @@
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
-            <!-- this is a comment... here they are used for documentation and to give hints. In new files, 
-        please just use them to comment on if something is unclear -->
             <titleStmt>
                 <title>Notas para recordação do meu mestre Caeiro</title>
                 <author>
                     <rs type="name" key="AdC">Álvaro de Campos</rs>
-                    <!-- // (the @key is to identify Caeiro.  </rs>
-                            You can find other persons IDs in the file lists.xml in the data folder. In that file, 
-                            look for the sublist listPerson, currently beginning at line 1522. You can also add
-                            new persons there, just be careful to always update your changes with GitHub, because 
-                            we all work on that lists.xml file -->
                 </author>
                 <respStmt>
                     <resp>Edição, Transcrição</resp>
@@ -38,18 +31,16 @@
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
                 <availability status="restricted">
-                    <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Campos_Notas_para_a_recordacao.xml</idno>
             </publicationStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O4-X">Notas para recordação do meu mestre
+                    <item><rs type="work" key="W208">Notas para recordação do meu mestre
                         Caeiro</rs></item>
                 </list>
                 <biblStruct>
-                    <!-- here goes the bibliographical reference for the source publication -->
                     <analytic>
                         <title level="a">Notas para recordação do meu mestre Caeiro</title>
                         <author>
@@ -57,19 +48,11 @@
                                 de Campos</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
                         <title level="j"><rs type="periodical" key="J1">Presença</rs></title>
-                        <!-- @key is to identify the periodical. You can find other periodicals IDs in the file 
-                            lists.xml in the data folder. In that file, 
-                        look for the sublist <list type="periodical">, currently beginning at line 1450. You can also add
-                        new periodicals there -->
                         <imprint>
                             <date when="1931-01">Janeiro de 1931</date>
-                            <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                         </imprint>
                         <biblScope unit="issue">30</biblScope>
                         <biblScope unit="page">11-15</biblScope>
@@ -84,30 +67,17 @@
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/Notas_para_a_recordacao_1.jpg"/>
         <graphic url="prosa/Notas_para_a_recordacao_2.jpg"/>
-        <!-- if there is a facsimile, the image file name goes here.
-        several images can be several graphic-elements. All files must be sent to the CCeH to be processed for the image
-        viewer and to be stored on the image server. If there is no image please leave this as is. -->
     </facsimile>
-    <text corresp="#O4-X">
-        <!-- @corresp: contains the index of this WORK. 
-        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
-        This can be left as is in the beginning.
-    -->
+    <text corresp="#W208">
         <body>
             <div>
-                <!-- <head> is for headings. <rs type="name"> is to mark mentioned names. In @key: please use the identifier
-                for the person that you find in lists.xml. @role is only available for the four heteronyms: Pessoa, Caeiro, 
-                Campos, Reis. It can be: author, editor, translator, topic. -->
-                <head>notas para a recordação do meu mestre <rs type="name" role="topic" key="AC"
+                <head rend="center">notas para a recordação do meu mestre <rs type="name" role="topic" key="AC"
                         >Caeiro</rs></head>
-                <head type="sub">(algumas delas)</head>
-                <!-- p is for paragraphs, @rend for <p> can be "indent-first" when the first line of the paragraph is indented. 
-                    <hi> if something is highlighted, 
-                    @rend for <hi> can be "bold", "italic", "underline", for example -->
+                <head type="sub" rend="center">(algumas delas)</head>
                 <p rend="indent-first"><hi rend="bold">C</hi>onheci o meu mestre <rs type="name"
                         role="topic" key="AC">Caeiro</rs> em circunstâncias excepcionais – como
                     tôdas as circunstâncias da vida, e sobretudo as que, não sendo nada em si
-                    mesmas, hão de vir a ser tudo nos resultados.</p>
+                    mesmas, hão de vir a ser tudo nos resultados.</p> 
                 <p rend="indent-first">Deixei em quási três-quartos o meu curso escocês de
                     engenharia naval; parti numa viagem ao Oriente; no regresso, desembarcando em
                     Marselha, e sentindo um grande tédio de seguir, vim por terra até Lisboa. Um
@@ -150,7 +120,7 @@
                     caracteriza a sensibilidade de <rs type="name" role="topic" key="AC"
                     >Caeiro</rs>, citei-lhe, com perversidade amiga, que <rs type="name" key="P162"
                         >Wordsworth</rs> designa um insensivel pela expressão:</p>
-                <lg>
+                <lg rend="center">
                     <l>A primrose by the river’s brim</l>
                     <l>A yellow primrose was to him</l>
                     <l>And it was nothing more.</l>
@@ -161,7 +131,6 @@
                 <p rend="indent-first">O meu mestre <rs type="name" role="topic" key="AC"
                         >Caeiro</rs> riu. «Êsse simples via bem: uma flor amarela não é realmente
                     senão uma flor amarela».</p>
-                <!-- @rend = margin-vertical if the paragraph has more space to the top and bottom as usual -->
                 <p rend="margin-vertical">Mas, de repente, pensou.</p>
                 <p>«Há uma diferença», acrescentou. «Depende se se considera a flor amarela como uma
                     das várias flores amarelas, ou como aquela flor amarela só».</p>
@@ -179,11 +148,8 @@
                         >Caeiro</rs> não era um pagão: era o paganismo. O <rs type="name"
                         role="topic" key="RR">Ricardo Reis</rs> é um pagão, o <rs type="name"
                         key="P1" style="a">António Móra</rs>
-                    <!-- in case of some names, there are different styles (you find them in lists.xml), 
-                    depending on how the name is written. For Mora, there is Móra vs. Mora, style a vs. b -->
                     é um pagão, eu sou um pagão; o próprio <rs type="name" role="topic" key="FP"
                         style="b">Fernando Pessoa</rs>
-                    <!-- in case of Pessoa, style a = Pessôa; style b = Pessoa --> seria um pagão,
                     se não fôsse um novêlo embrulhado para o lado de dentro. Mas o <rs type="name"
                         role="topic" key="RR">Ricardo Reis</rs> é um pagão por carácter, o <rs
                         type="name" key="P1" style="a">António Móra</rs> é um pagão por
@@ -286,7 +252,7 @@
                     própria ideia do nada – a mais pavorosa de tôdas se se pensa com a sensibilidade
                     – tem, na obra e na recordação do meu mestre querido, qualquer cousa de luminoso
                     e de alto, como o sol sôbre as neves dos píncaros inatingíveis.</p>
-                <signed>ALVARO DE CAMPOS.</signed>
+                <signed rend="center">ALVARO DE CAMPOS.</signed>
             </div>
         </body>
     </text>
