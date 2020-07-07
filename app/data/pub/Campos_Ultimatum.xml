@@ -33,7 +33,7 @@
             </publicationStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="W203">Ultimatum</rs></item>
+                    <item><rs type="work" key="W202">Ultimatum</rs></item>
                 </list>
                 <biblStruct>
                     <analytic>
@@ -70,13 +70,12 @@
         <graphic url="prosa/Ultimatum_PF_4.jpg"/>
         <graphic url="prosa/Ultimatum_PF_5.jpg"/>
     </facsimile>
-    <text corresp="#W203">
+    <text corresp="#W202">
         <body>
             <div>
                 <head><hi rend="underline">Ultimatum</hi></head>
-                <head type="sub" rend="center">de <rs type="name" role="author">Alvaro de
-                        Campos</rs><!-- U: @rend="align-right" rather than "center"?
-                        the @key is missing here for the name --></head>
+                <head type="sub" rend="right">de <rs type="name" role="author" key="AdC">Alvaro de
+                        Campos</rs></head>
                 <p rend="indent-first">Mandado de despejo aos mandarins da Europa! Fóra.</p>
                 <p rend="indent-first">Fóra tu, <rs type="name" key="P496">Anatole France</rs>, <rs
                         type="name" key="P529">Epicuro</rs> de pharmacopeia homeopathica,
@@ -122,7 +121,8 @@
                     canto!</p>
                 <p rend="indent-first">Tirem isso tudo da minha frente!</p>
                 <p rend="indent-first">Fóra com isso tudo! Fóra!</p>
-                <!-- U: <milestone rend="space" unit="section"/> ? -->
+                
+                <milestone rend="space" unit="section"/>
                 <p rend="indent-first">Ahi! Que fazes tu na celebridade, <rs type="name" key="P538"
                         >Guilherme Segundo da Allemanha</rs>, canhoto maneta do braço esquerdo, <rs
                         type="name" key="P539">Bismarck</rs> sem tampa a estorvar o lume?!</p>
@@ -303,19 +303,21 @@
                     que balas, de mais intelligencia que bombas!</p>
                 <p rend="indent-first">Que esta é a equação-lama da infamia do cosmopolitismo de
                     tiros:</p>
+                
                 <!--(VON BISSING/BELGICA)=(JONNART/GRECIA) JU: how should we represent this formula
                 U: do you need to encode it further inside? (the names?) if not, we could use
                 <p><formula>VON BISSING/BELGICA = JONNART/GRECIA</formula></p>
                 If yes:
-                <ab type="formula"><rs type="name" key="P...">VON BISSING</rs>/BELGICA = <rs type="name" key="...">JONNART</rs>/GRECIA</ab>
+                <ab type="formula"><rs type="name" key="P562">VON BISSING</rs>/BELGICA = <rs type="name" key="P563">JONNART</rs>/GRECIA</ab>
                 (because the TEI does not allow child elements in <formula> by default)
                 in either case I will have to deal with how this is converted to HTML to look like in the facsimile
+                JU: It will have to be option B, I created the names and added de keys 
                 -->
                 <p rend="indent-first">Proclamem bem alto que ninguem combate pela Liberdade ou pelo
                     Direito! Todos combatem por medo dos outros ! Não tem mais metros que estes
                     millimetros a estatura das suas direcções!</p>
-                <p rend="indent-first">Lixo guerreiro-palavroso! Esterco <rs type="name" key="PXXX"
-                        >Joffre</rs>-Hindenburguesco! <!-- U: why is the key PXXX? --> Sentina
+                <p rend="indent-first">Lixo guerreiro-palavroso! Esterco <rs type="name" key="P564"
+                        >Joffre</rs>-Hindenburguesco! Sentina
                     europeia de Os Mesmos em scisão balofa!</p>
                 <p rend="indent-first">Quem acredita nelles?</p>
                 <p rend="indent-first">Quem acredita nos outros?</p>
@@ -332,15 +334,12 @@
                 <p rend="indent-first">Fallencia de todos por causa de tudo!</p>
                 <p rend="indent-first">De um modo completo, de um modo total, de um modo
                     integral:</p>
-            </div>
-            <div>
-                <head rend="center"><hi rend="bold">MERDA!</hi></head>
-                <!-- consider type sides
-                U: what do you mean with "type sides"?
-                I this really a heading? and does it belong into an own textual division (<div>)?
-                Or is it just an emphasized word? if the latter, I would suggest the following:
+       
                 <p rend="center"><hi rend="bold"><hi rend="big">MERDA!</hi></hi></p>
-                -->
+                <!-- JU: Not sure if is better <p rend="center" or <lg... This is not  a title but just a higlight, 
+                    the first part of the text ends here, a second one goes 
+                up to <p rend="indent-first">Proclamo, em primeiro logar,</p> including Atenção! (another higlight) / 
+                "big seems a good solution -->
             </div>
             <div>
                 <p rend="indent-first">A Europa tem sêde de que se crie, tem fome de Futuro!</p>
@@ -392,14 +391,10 @@
                     anoitece em vós!</p>
                 <p rend="indent-first">Eu, ao menos, sou bastante para indicar o Caminho!</p>
                 <p rend="indent-first">Vou indicar o caminho!</p>
+                <p rend="center"><hi rend="bold"><hi rend="big">ATENÇÃO!</hi></hi></p>
+                <p rend="indent-first">Proclamo, em primeiro logar,</p>  
             </div>
             <div>
-                <head rend="center"><hi rend="bold">ATENÇÃO!</hi></head>
-                <!--consider type sides
-                U: see comment above; <p rend="center"><hi rend="bold"><hi rend="big">ATENÇÃO!</hi></hi></p> ?-->
-            </div>
-            <div>
-                <p rend="indent-first">Proclamo, em primeiro logar,</p>
                 <p><hi rend="bold">A Lei de <rs type="name" key="P560">Malthus</rs> da
                         Sensibilidade</hi></p>
                 <p rend="indent-first"><hi rend="italic">Os estimulos da sensibilidade augmentam em
@@ -432,7 +427,7 @@
                     grandes valores deriva dessa desadaptação.</p>
                 <p rend="indent-first">A desadaptação não foi grande no primeiro periodo da nossa
                     civilização, da Renascença ao seculo XVIII, em que os estimulos da sensibilidade
-                    eram sobretudo de ordem cultural, porque esses estimulos,<!--[FIM IMAGEM 3]-->
+                    eram sobretudo de ordem cultural, porque esses estimulos,
                     por sua propria natureza, eram de progresso lento, e attingiam a principio
                     apenas as camadas superiores da sociedade. Accentuou-se a desadaptação no
                     segundo períiodo, que parte da Revolução para o seculo XIX, e em que os
@@ -453,10 +448,8 @@
             <div>
                 <head rend="center"><hi rend="bold">A Necessidade da Adaptação
                     Artificial</hi></head>
-            </div>
             <!-- U: <p rend="center"><hi rend="bold"><hi rend="big">A Necessidade da Adaptação
-                    Artificial</hi></hi></p> ? -->
-            <div>
+                    Artificial</hi></hi></p> ?JU: In this case "big" will not be needed -->
                 <p rend="indent-first">O que é a adaptação artificial?</p>
                 <p rend="indent-first">É um acto de cirurgia sociológica. É a transformação violenta
                     da sensibilidade de modo a tornar-se apta a acompanhar pelo menos por algum
@@ -495,9 +488,8 @@
                 <head rend="center"><hi rend="bold">A intervenção cirúrgica anti-cristã</hi></head>
                 <!-- U: looking at the text, I am not entirely sure how to treat these... 
                 is it a heading of a subsection of the text after all? But then you would have to close the </div>
-                not here but after the section to which this heading refers... maybe we have to talk about this -->
-            </div>
-            <div>
+                not here but after the section to which this heading refers... maybe we have to talk about this 
+                JU: Thats correct this are sub sections in the text with titles-->
                 <p rend="indent-first">Resolve-se ella, como é de ver, na eliminação dos trez
                     preconceitos, dogmas, ou attitudes, que o christianismo fez que se infiltrassem
                     na propria substancia da psyque humana.</p>
@@ -592,7 +584,8 @@
                 It could make sense to introduce:
                 <ab type="formula"><seg type="dividend">a+b+c+d+e</seg>/<seg type="divisor">5</seg></formula>
                 so that it is clear that the parenthesis which mark the group are not there in the facsimile.
-                So maybe <ab> is more flexible for us because there can be child elements.
+                So maybe <ab> is more flexible for us because there can be child elements. 
+                JU: Following the previous example: option b
                 -->
 
                 <p>No futuro cada individuo deve tender para realisar em si esta media. Tendencia,
@@ -632,7 +625,9 @@
                     como metaphysica-sciencia. Desapparecimento de todas as fórmas do sentimento
                     religioso (desde o christianismo ao humanitarismo revolucionario) por não
                     representarem uma Media.</p>
-                <milestone rend="space" unit="section"/>
+                </div> <!-- JU: here ends previous subsection -->
+            <div>    
+            <milestone rend="space" unit="section"/>
                 <p rend="indent-first">Mas qual o Methodo, o feitio da operação collectiva que ha de
                     organizar, nos homens do futuro, esses resultados? Qual o Methodo operatorio
                     inicial?</p>
@@ -655,19 +650,21 @@
                 <p rend="indent-first">E proclamo tambem: Primeiro:</p>
                 <!-- U: the following three proclamas:
                 <p rend="center"><hi rend="bold"><hi rend="big">O Super-homem será, não o mais forte, mas o
-                        mais completo!</hi></hi></p> ? -->
-                <p rend="indent-first"><hi rend="bold">O Super-homem será, não o mais forte, mas o
+                        mais completo!</hi></hi></p> ? JU: It's better to use Big only in "Merda" and "Atenção", 
+                        because those are tipographic "screams", these are just text higlights -->
+                <p rend="center"><hi rend="bold">O Super-homem será, não o mais forte, mas o
                         mais completo!</hi></p>
                 <p rend="indent-first">E proclamo tambem: Segundo:</p>
-                <p rend="indent-first"><hi rend="bold">O Superhomem será, não o mais duro, mas o
+                <p rend="center"><hi rend="bold">O Superhomem será, não o mais duro, mas o
                         mais complexo!</hi></p>
                 <p rend="indent-first">E proclamo tambem: Terceiro:</p>
-                <p rend="indent-first"><hi rend="bold">O Super-homem será, não o mais livre, mas o
+                <p rend="center"><hi rend="bold">O Super-homem será, não o mais livre, mas o
                         mais harmonico!</hi></p>
                 <p rend="indent-first">Proclamo isto bem alto e bem no auge, na barra do Tejo, de
                     costas pra a Europa, braços erguidos, fitando o Atlantico e saudando
                     abstractamente o Infinito.</p>
                 <signed rend="align-right">Alvaro de Campos.</signed>
+                
             </div>
         </body>
     </text>
