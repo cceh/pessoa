@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Gladio</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="free">
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Pessoa_Gladio.xml</idno>
+            </publicationStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="O1-2">Gladio</rs></item>
+                </list>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Gladio</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J2">Cancioneiro do 1º Salão dos
+                            Independentes</rs></title>
+                        <imprint>
+                            <date when="1930">1930</date>
+                        </imprint>
+                        <biblScope unit="page">21-22</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="poesia">Poesia</rs>
+                    </note>
+                    <note type="summary"><p>O poema “Gladio“ foi publicado anteriormente em
+                        <ref target="http://www.pessoadigital.pt/pt/pub/Pessoa_Alguns-Poemas"
+                            >“Alguns Poemas” (Sacadura Cabral, Gladio, De um Cancioneiro), <hi rend="italic">Athena</hi>, n.º 3, Dezembro de 1924, pp. 81-88.</ref> 
+                        Para além de diferenças ortográficas, esta publicação apresenta a correção de uma gralha da
+                            primeira, lendo-se no início do terceiro verso da segunda estrofe “E
+                            esta febre de Além”.</p>
+                    </note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+        <graphic url="pub/gladioii.jpg"/>
+        <graphic url="pub/gladio.jpg"/>
+    </facsimile>
+    <text>
+        <body>
+            <div>
+                    <head>GLADIO</head>
+                    <ab rend="right" type="dedication"><hi rend="italic">ao Alberto Da Cunha
+                            Dias.</hi></ab>
+                    <lg>
+                        <l>Deu-me Deus o Seu gladio, porque eu faça</l>
+                        <l>A sua santa guerra.</l>
+                        <l>Sagrou-me Seu em genio e em desgraça</l>
+                        <l>Ás horas em que um frio vento passa</l>
+                        <l>Por sôbre a fria terra.</l>
+                    </lg>
+                    <lg>
+                        <l>Poz-me as mãos sôbre os hombros, e dourou-me</l>
+                        <l>A fronte com o olhar;</l>
+                        <l>E esta febre de Além, que me consome,</l>
+                        <l>E este querer-justiça são Seu nome</l>
+                        <l>Dentro em mim a vibrar.</l>
+                    </lg>
+                    <lg>
+                        <l>E eu vou, e a luz do gladio erguido dá</l>
+                        <l>Em minha face calma.</l>
+                        <l>Cheio de Deus, não temo o que virá,</l>
+                        <l>Pois, venha o que vier, nunca será</l>
+                        <l>Maior do que a minha alma!</l>
+                    </lg>
+            </div>
+        </body>
+    </text>
+</TEI>

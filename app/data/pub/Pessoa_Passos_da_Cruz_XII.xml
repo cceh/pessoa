@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Passos da Cruz, XII</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Pedro Sepúlveda</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="free">
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Pessoa_Passos_da_Cruz_XII.xml</idno>
+            </publicationStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="O1-32">Passos da Cruz</rs></item>
+                </list>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Passos da Cruz, XII</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J24">O “Notícias” Ilustrado</rs></title>
+                        <imprint>
+                            <pubPlace/>
+                            <date when="1929-04-28">28 Abril de 1929</date>
+                        </imprint>
+                        <biblScope unit="page">11</biblScope>
+                    </monogr>
+                    <note type="genre">
+                        <rs type="genre" key="poesia">Poesia</rs>
+                    </note>
+                    <note type="summary">Este soneto foi anteriormente incluído no conjunto <ref
+                        target="http://www.pessoadigital.pt/pt/pub/Pessoa_Passos-da-Cruz"
+                        >“Passos da Cruz” (Centauro número único, Dezembro de 1916, pp.62-76)</ref>, com
+                        diferenças ortográficas e opção pela maiúscula inicial nos terceiros versos dos tercetos.</note>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+        <graphic url="pub/passos_da_cruz.jpg"/>
+    </facsimile>
+    <text corresp="#O1-32">
+        <body>
+            <div>
+                <head>Passos da Cruz</head>
+                <head type="sub">XII</head>
+                    <lg>
+                        <l>Ella ia, tranquila pastorinha,</l>
+                        <l>Pela estrada da minha imperfeição.</l>
+                        <l>Seguia-a, como um gesto de perdão,</l>
+                        <l>O seu rebanho, a saudade minha...</l>
+                    </lg>
+                    <lg>
+                        <l>«Em longes terras hás de ser rainha»</l>
+                        <l>Um dia lhe disseram, mas em vão...</l>
+                        <l>Seu vulto perde-se na escuridão...</l>
+                        <l>Só sua sombra ante meus pés caminha...</l>
+                    </lg>
+                    <lg>
+                        <l>Deus te dê lyrios em vez desta hora,</l>
+                        <l>E em terras longe do que eu hoje sinto</l>
+                        <l>serás, rainha não, mas só pastora —</l>
+                    </lg>
+                    <lg>
+                        <l>Só sempre a mesma pastorinha a ir,</l>
+                        <l>E eu serei teu regresso, esse indistincto</l>
+                        <l>abysmo entre o meu sonho e o meu porvir...</l>
+                    </lg>
+            <signed><hi rend="italic">FERNANDO PESSOA.</hi></signed>
+            </div>
+        </body>
+    </text>
+</TEI>
