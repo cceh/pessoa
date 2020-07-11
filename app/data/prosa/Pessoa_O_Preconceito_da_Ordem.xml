@@ -1,6 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc><titleStmt>
+        <fileDesc>
+            <titleStmt>
                 <title>O Preconceito da Ordem</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -17,7 +19,8 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt><publicationStmt>
+            </titleStmt>
+            <publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -26,110 +29,149 @@
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_O_Preconceito_da_Ordem.xml</idno>
-            </publicationStmt><notesStmt><note type="summary" resp="#JU">O texto foi republicado em 
-                        <rs type="periodical" key="J89">Portugal - Semanário Republicano</rs>, 12 de Dezembro de 1915, p. 11, 
-                        com algumas alteraçóes significativas, é possível que a republicaçáo corrija 
-                        Publicamos as respetivas imagens.</note><note type="genre">
-                        <rs type="genre" key="prosa">Prosa</rs>
-                    </note></notesStmt><sourceDesc><list type="work-index">
+            </publicationStmt>
+            <notesStmt>
+                <note type="summary" resp="#JU">O texto foi republicado em <rs type="periodical"
+                        key="J89">Portugal - Semanário Republicano</rs>, 12 de Dezembro de 1915, p.
+                    11, com algumas alteraçóes significativas, é possível que a republicaçáo corrija
+                    Publicamos as respetivas imagens.</note>
+                <note type="genre">
+                    <rs type="genre" key="prosa">Prosa</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
                     <item><rs type="work" key="W">O Preconceito da Ordem</rs></item>
-                </list><biblStruct><analytic>
+                </list>
+                <biblStruct>
+                    <analytic>
                         <title level="a">O Preconceito da Ordem</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                    </analytic><monogr>
+                    </analytic>
+                    <monogr>
                         <title level="j"><rs type="periodical" key="J37">Eh Real!</rs></title>
                         <imprint>
                             <date when="1915-05-13">13 de Maio de 1915</date>
                         </imprint>
                         <biblScope unit="page">7-9</biblScope>
-                    </monogr></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/O_Preconceito_da_Ordem_1.jpg"/>
         <graphic url="prosa/O_Preconceito_da_Ordem_2.jpg"/>
         <graphic url="prosa/O_Preconceito_da_Ordem_3.jpg"/>
-        <graphic url="prosa/O_Preconceito_da_Ordem_Rep.jpg"/><!-- JU: I added this image to the same paste -->
+        <graphic url="prosa/O_Preconceito_da_Ordem_Rep.jpg"/>
+        <!-- JU: I added this image to the same paste -->
     </facsimile>
     <text corresp="#W200">
         <body>
             <div>
                 <head>O PRECONCEITO DA ORDEM</head>
-                
-                <p rend="indent-first">Entre os vários preconceitos que salpicam as theses dos neo-monarquicos, avulta, 
-                    como grande mancha, o preconceito comtista da Ordem.</p>
-                <p rend="indent-first">Evidentemente que por «ordem» os seus defensores não entendem a méra ordem material 
-                    e ostensiva, aquela que a policia guarda. Entendem a ordem nos espíritos também, a disciplina intima de 
-                    onde resulta o bom funcionamento, fisico como psiquico, da engrenagem social. Eles compreendem, 
-                    de resto, que não há ordem só material, que é nos espiritos que a ordem começa.</p>
-                <p rend="indent-first">Posto isto, porém, ha ainda a reparar que o conceito de ordem pode ser tomado em dois sentidos, 
-                    consoante se entenda que ela existe, ou essencialmente na propria intima constituição das forças sociais, ou 
+
+                <p rend="indent-first">Entre os vários preconceitos que salpicam as theses dos
+                    neo-monarquicos, avulta, como grande mancha, o preconceito comtista da
+                    Ordem.</p>
+                <p rend="indent-first">Evidentemente que por «ordem» os seus defensores não entendem
+                    a méra ordem material e ostensiva, aquela que a policia guarda. Entendem a ordem
+                    nos espíritos também, a disciplina intima de onde resulta o bom funcionamento,
+                    fisico como psiquico, da engrenagem social. Eles compreendem, de resto, que não
+                    há ordem só material, que é nos espiritos que a ordem começa.</p>
+                <p rend="indent-first">Posto isto, porém, ha ainda a reparar que o conceito de ordem
+                    pode ser tomado em dois sentidos, consoante se entenda que ela existe, ou
+                    essencialmente na propria intima constituição das forças sociais, ou
                     essencialmente apenas no modo de essas forças se manifestarem.</p>
-                <p rend="indent-first">Se se entende que a ordem existe tanto mais perfeitamente quanto mais perfeita 
-                    conformidade basica ha nos animos, quanto mais intima e real a submissão á orientação geral da sociedade 
-                    em que se vive, chega-se, como conclusão rigorosa, a êste resultado: que o ideal social dos defensores da 
-                    ordem é uma sociedade absolutamente nivelada, de onde não possam emergir valores nem aristocracias. 
-                    Porque esses valores e aristocracias ou hão de agir no sentido da orientação geral d’essa sociedade, ou 
-                    em sentido contrario. Se agem em sentido contrario, são, perante o conceito da ordem que examinamos, 
-                    creadores de anarquia e de dissolução. E se agem no sentido da orientação social, ou agem creando-a, 
-                    ou representando-a. Se agem creando-a, pressupõe-se que a maioria dessa sociedade é uma massa inerte e 
-                    morta, incapaz de esboçar uma orientação social – e, nesse caso, como puderam surgir esses valores e 
-                    aristocracias, e o poder creador que se lhes supõe? como, se a sociedade onde, por hipótese, existem é 
-                    uma sociedade onde, pela mesma hipótese, não poderiam existir? A hipótese só é admissível se essa 
-                    «aristocracia» fôr de estrangeiros: mas não é, por certo, uma «ordem» imposta por estrangeiros que os 
-                    nacionalistas querem defender. – Se, por outra, esses valores e aristocracias não criam, mas 
-                    simplesmente representam e <hi>dirigem</hi> uma orientação social geral, teremos este absurdo: 
-                        individualidades superiores, e portanto acentuadas, que só pensam em se subordinar e se apagar; 
-                        dirigentes e mandantes com a mentalidade tipica dos mandados e dos dirigidos. A este repugnante 
-                        igualitarismo nos arrasta o conceito da ordem, na primeira das suas duas fórmas possiveis.</p>
-                <p rend="indent-first">Mas não é esta, porventura, a «ordem» que os neo-monarquicos cantam. É no segundo dos dois 
-                    sentidos apontados que tomam a palavra. A ordem existirá, portanto, não numa servil 
-                    uniformização das orientações sociais, 
-                    mas numa preocupação em que as manifestações delas sejam ordeiras. Isto é, cada partido político deve incluir, 
-                    tácita ou expressamente, a preocupação da ordem no seu programa.</p>
-                <p rend="indent-first">Mediram bem os neo-monárquicos as consequências sociáis terriveis que resultariam 
-                    de tal orientação?</p>
-                <p rend="indent-first">Repare-se em que iriamos cair. Um partido politico qualquer teria, além da preocupação das 
-                    teorias politicas que o fazem tal, a preocupação da ordem. Tem de ter as duas preocupações com igual 
-                    intensidade. Porque se está pronto a sacrificar a ordem á realização das suas teorias politicas, não tem, 
-                    realmente, a preocupação da ordem. E se está pronto a sacrificar á ordem as suas teorias políticas, não é 
-                    propriamente um partido politico; pois que, tendo tais teorias, teem-nas por certo por essenciais á Patria ou 
-                    á Humanidade, e não vái sacrificar a Patria ou a Humanidade á Ordem, que, em qualquer hipótese, só pode ter 
-                    valor secundariamente á Humanidade ou á Patria. – Mas, se um partido politico tem com igual intensidade 
-                    determinadas teorias e a preocupação da ordem, ele, porque tem tais teorias e não outras, é fatalmente levado 
-                    a crêr que a verdadeira realização da ordem só pode ser obtida pela verdadeira realização dessas teorias. 
-                    Porque não é de supôr que um partido, que se preocupe com a ordem, julgue que os seus principios partidarios 
-                    estão em desacordo com ela; nesse caso, ou não existia, ou seria um outro partido. – Segue que a preocupação 
-                    da ordem dará a um partido político uma vontade de dominar e de se impor absolutamente violenta, visto que é 
-                    sentido como impreterivelmente necessário, para a manutenção da ordem, o seu domínio, o dominio dos principios 
-                    que representa. Donde se conclue que a preocupação da ordem, num partido politico, eleva ao rubro as suas 
-                    paixões; e que, portanto, num paiz onde todos os partidos tenham a constante preocupação da ordem, se estará 
-                    em constante desordem e anarquia. É este, mesmo, o unico modo de se chegar ao estado de anarquia social. 
+                <p rend="indent-first">Se se entende que a ordem existe tanto mais perfeitamente
+                    quanto mais perfeita conformidade basica ha nos animos, quanto mais intima e
+                    real a submissão á orientação geral da sociedade em que se vive, chega-se, como
+                    conclusão rigorosa, a êste resultado: que o ideal social dos defensores da ordem
+                    é uma sociedade absolutamente nivelada, de onde não possam emergir valores nem
+                    aristocracias. Porque esses valores e aristocracias ou hão de agir no sentido da
+                    orientação geral d’essa sociedade, ou em sentido contrario. Se agem em sentido
+                    contrario, são, perante o conceito da ordem que examinamos, creadores de
+                    anarquia e de dissolução. E se agem no sentido da orientação social, ou agem
+                    creando-a, ou representando-a. Se agem creando-a, pressupõe-se que a maioria
+                    dessa sociedade é uma massa inerte e morta, incapaz de esboçar uma orientação
+                    social – e, nesse caso, como puderam surgir esses valores e aristocracias, e o
+                    poder creador que se lhes supõe? como, se a sociedade onde, por hipótese,
+                    existem é uma sociedade onde, pela mesma hipótese, não poderiam existir? A
+                    hipótese só é admissível se essa «aristocracia» fôr de estrangeiros: mas não é,
+                    por certo, uma «ordem» imposta por estrangeiros que os nacionalistas querem
+                    defender. – Se, por outra, esses valores e aristocracias não criam, mas
+                    simplesmente representam e <hi>dirigem</hi> uma orientação social geral, teremos
+                    este absurdo: individualidades superiores, e portanto acentuadas, que só pensam
+                    em se subordinar e se apagar; dirigentes e mandantes com a mentalidade tipica
+                    dos mandados e dos dirigidos. A este repugnante igualitarismo nos arrasta o
+                    conceito da ordem, na primeira das suas duas fórmas possiveis.</p>
+                <p rend="indent-first">Mas não é esta, porventura, a «ordem» que os neo-monarquicos
+                    cantam. É no segundo dos dois sentidos apontados que tomam a palavra. A ordem
+                    existirá, portanto, não numa servil uniformização das orientações sociais, mas
+                    numa preocupação em que as manifestações delas sejam ordeiras. Isto é, cada
+                    partido político deve incluir, tácita ou expressamente, a preocupação da ordem
+                    no seu programa.</p>
+                <p rend="indent-first">Mediram bem os neo-monárquicos as consequências sociáis
+                    terriveis que resultariam de tal orientação?</p>
+                <p rend="indent-first">Repare-se em que iriamos cair. Um partido politico qualquer
+                    teria, além da preocupação das teorias politicas que o fazem tal, a preocupação
+                    da ordem. Tem de ter as duas preocupações com igual intensidade. Porque se está
+                    pronto a sacrificar a ordem á realização das suas teorias politicas, não tem,
+                    realmente, a preocupação da ordem. E se está pronto a sacrificar á ordem as suas
+                    teorias políticas, não é propriamente um partido politico; pois que, tendo tais
+                    teorias, teem-nas por certo por essenciais á Patria ou á Humanidade, e não vái
+                    sacrificar a Patria ou a Humanidade á Ordem, que, em qualquer hipótese, só pode
+                    ter valor secundariamente á Humanidade ou á Patria. – Mas, se um partido
+                    politico tem com igual intensidade determinadas teorias e a preocupação da
+                    ordem, ele, porque tem tais teorias e não outras, é fatalmente levado a crêr que
+                    a verdadeira realização da ordem só pode ser obtida pela verdadeira realização
+                    dessas teorias. Porque não é de supôr que um partido, que se preocupe com a
+                    ordem, julgue que os seus principios partidarios estão em desacordo com ela;
+                    nesse caso, ou não existia, ou seria um outro partido. – Segue que a preocupação
+                    da ordem dará a um partido político uma vontade de dominar e de se impor
+                    absolutamente violenta, visto que é sentido como impreterivelmente necessário,
+                    para a manutenção da ordem, o seu domínio, o dominio dos principios que
+                    representa. Donde se conclue que a preocupação da ordem, num partido politico,
+                    eleva ao rubro as suas paixões; e que, portanto, num paiz onde todos os partidos
+                    tenham a constante preocupação da ordem, se estará em constante desordem e
+                    anarquia. É este, mesmo, o unico modo de se chegar ao estado de anarquia social.
                     Esse estado provém da excessiva preocupação da ordem.</p>
-                <p rend="indent-first">Queda assim feito em farrapos o preconceito da ordem, rôto por todos os lados o papel em que 
-                    os neo-monarquicos embrulham as suas teorias de contrabando. Mas isto, com certeza, embora oriente, não satisfará 
-                    o leitor. Ele quererá saber, sem duvida, qual seja, sobre este ponto, a verdadeira noção sociologica. É facil 
-                    fazer-lh’a vêr.</p>
-                <p rend="indent-first">A ordem é nas sociedades o que a saúde é no individuo. Não é uma <hi>cousa</hi>: é um estado. 
-                    <hi>Resulta</hi> do bom funcionamento do organismo, mas não é esse bom funcionamento. O homem normal só pensa 
-                    na saúde quando está doente. Do mesmo modo, a sociedade normal só pensa na ordem quando nela aparece a desordem. 
-                    O homem normal quando adoece, procura, não simplesmente sentir-se outra vez de saúde, mas atacar a doença; 
-                    afastada ela, do seu afastamento resultará a saúde. De nada lhe serviria sentir-se de saúde, se essa sensação 
-                    não proviesse do afastamento definitivo da doença, mas apenas da sua intermitência ou de uma anestesía qualquer. 
-                    Na sociedade, semelhantemente: quando aparece a desordem, a sociedade sã procura logo, não manter a ordem, que 
-                    pode ser provisori[a] ou aparente, mas atacar o mal que produziu a desordem. A exclusiva preocupação da ordem é 
-                    um morfinismo social.</p>
-                <p rend="indent-first">Levemos até ao fim esta justíssima<!-- JU: Notar injustíssima na republicaçáo  --> analogia. No individuo, a constante preocupação da saúde 
-                    é um sintóma de neurastenía, ou de males psiquicos mais graves ainda. Na sociedade, paralelamente, a preocupação 
-                    da ordem, é uma doença de espirito coléctivo. Se os argumentos que acima expus não bastaram para insinuar esta 
-                    conclusão no animo do leitor, ele pode verificar de todo a hipótese, reportando-se ás circunstancias sociais em 
-                    que nasceu a moderna preocupação da ordem, e á especie de cérebro onde ela surgiu definidamente.</p>
-                <p rend="indent-first">Apareceu ela num periodo perturbado e anormal da politica franceza e em plena vigencia da 
-                    doença chamada romantismo. É, caracterizadamente, uma idéa romantica. </p>
-                <p rend="indent-first">O seu criador filosófico, o infelís chamado <rs type="name" key="525">Augusto Comte</rs>, 
-                    toda a vida sofreu de alienação mental.</p>
+                <p rend="indent-first">Queda assim feito em farrapos o preconceito da ordem, rôto
+                    por todos os lados o papel em que os neo-monarquicos embrulham as suas teorias
+                    de contrabando. Mas isto, com certeza, embora oriente, não satisfará o leitor.
+                    Ele quererá saber, sem duvida, qual seja, sobre este ponto, a verdadeira noção
+                    sociologica. É facil fazer-lh’a vêr.</p>
+                <p rend="indent-first">A ordem é nas sociedades o que a saúde é no individuo. Não é
+                    uma <hi>cousa</hi>: é um estado. <hi>Resulta</hi> do bom funcionamento do
+                    organismo, mas não é esse bom funcionamento. O homem normal só pensa na saúde
+                    quando está doente. Do mesmo modo, a sociedade normal só pensa na ordem quando
+                    nela aparece a desordem. O homem normal quando adoece, procura, não simplesmente
+                    sentir-se outra vez de saúde, mas atacar a doença; afastada ela, do seu
+                    afastamento resultará a saúde. De nada lhe serviria sentir-se de saúde, se essa
+                    sensação não proviesse do afastamento definitivo da doença, mas apenas da sua
+                    intermitência ou de uma anestesía qualquer. Na sociedade, semelhantemente:
+                    quando aparece a desordem, a sociedade sã procura logo, não manter a ordem, que
+                    pode ser provisori[a] ou aparente, mas atacar o mal que produziu a desordem. A
+                    exclusiva preocupação da ordem é um morfinismo social.</p>
+                <p rend="indent-first">Levemos até ao fim esta
+                    justíssima<!-- JU: Notar injustíssima na republicaçáo  --> analogia. No
+                    individuo, a constante preocupação da saúde é um sintóma de neurastenía, ou de
+                    males psiquicos mais graves ainda. Na sociedade, paralelamente, a preocupação da
+                    ordem, é uma doença de espirito coléctivo. Se os argumentos que acima expus não
+                    bastaram para insinuar esta conclusão no animo do leitor, ele pode verificar de
+                    todo a hipótese, reportando-se ás circunstancias sociais em que nasceu a moderna
+                    preocupação da ordem, e á especie de cérebro onde ela surgiu definidamente.</p>
+                <p rend="indent-first">Apareceu ela num periodo perturbado e anormal da politica
+                    franceza e em plena vigencia da doença chamada romantismo. É,
+                    caracterizadamente, uma idéa romantica. </p>
+                <p rend="indent-first">O seu criador filosófico, o infelís chamado <rs type="name"
+                        key="525">Augusto Comte</rs>, toda a vida sofreu de alienação mental.</p>
                 <signed rend="align-right">Fernando Pessoa.</signed>
             </div>
         </body>
