@@ -31,13 +31,28 @@
                 </availability>
                 <idno type="filename">Pessoa_Prece.xml</idno>
             </publicationStmt>
+            <notesStmt>
+                <note type="summary">
+                    <p>O poema “Prece“ foi incluído em <ref
+                            target="http://www.pessoadigital.pt/pt/pub/Pessoa_Mar Portuguez">“Mar
+                            Portuguez” (Contemporânea, Outubro de 1922; Leitura para todos, Junho de
+                            1926 e Revolução, 16 de Junho de 1933)</ref> e em <ref
+                            target="http://www.pessoadigital.pt/pt/pub/Pessoa_Do_livro_Mensagem">“Do
+                            livro Mensagem” (Diário de Lisboa, 14 de Dezembro de 1934, p. 5)</ref>,
+                        assim como no livro <hi rend="italic">Mensagem</hi> (Lisboa: Parceria
+                        António Maria Pereira, 1934), apresentando diferenças ortográficas e de
+                        pontuação face a qualquer das restantes publicações. </p></note>
+                <note type="genre">
+                    <rs type="genre" key="poesia">Poesia</rs>
+                </note>
+            </notesStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work">Prece</rs></item>
-                    <item><rs type="work">Mar Portuguez</rs></item>
-                    <item><rs type="work">Mensagem</rs></item>
+                    <item><rs type="work" key="W222">Prece</rs></item>
+                    <item><rs type="work" key="W211">Mar Portuguez</rs></item>
+                    <item><rs type="work" key="W223">Mensagem</rs></item>
                 </list>
-                <biblStruct xml:id="Pub1">
+                <biblStruct xml:id="Not_1929">
                     <analytic>
                         <title level="a">Prece</title>
                         <author>
@@ -46,35 +61,27 @@
                         <textLang mainLang="pt"/>
                     </analytic>
                     <monogr>
-                        <title level="j"><rs type="periodical" key="J11">O “Notícias” Ilustrado</rs></title>
+                        <title level="j"><rs type="periodical" key="J11">O “Notícias”
+                            Ilustrado</rs></title>
                         <imprint>
                             <date when="1929-01-20">20 de Janeiro de 1929</date>
                         </imprint>
                         <biblScope unit="page">7</biblScope>
                     </monogr>
-                    <note type="genre">
-                        <rs type="genre" key="poesia">Poesia</rs>
-                    </note>
-                    <note type="summary">
-                        <p>O poema “Prece“ foi incluído em <ref
-                            target="http://www.pessoadigital.pt/pt/pub/Pessoa_Mar Portuguez"
-                            >“Mar Portuguez” (Contemporânea, Outubro de 1922; Leitura para todos, Junho de 1926 e Revolução, 16 de Junho de 1933)</ref>
-                            e em  <ref target="http://www.pessoadigital.pt/pt/pub/Pessoa_Do_livro_Mensagem"
-                                >“Do livro Mensagem” (Diário de Lisboa, 14 de Dezembro de 1934, p. 5)</ref>, assim como no livro
-                            <hi rend="italic">Mensagem</hi> (Lisboa: Parceria António Maria Pereira, 1934), apresentando diferenças
-                            ortográficas e de pontuação face a qualquer das restantes publicações.
-                        </p></note>
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
     </teiHeader>
-    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/" corresp="#Not_1929">
         <graphic url="pub/prece.jpg"/>
     </facsimile>
     <text>
         <body>
             <div>
-                <div type="poem">
+                <div type="poem" corresp="#W222">
                     <head rend="indent">XII</head>
                     <head rend="indent">PRECE</head>
                     <lg>

@@ -37,15 +37,25 @@
                 <availability status="free">
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
-                <idno type="filename">Pessoa_O-Livro-da-Poesia.xml</idno>
+                <idno type="filename">Pessoa_O-Avo-e-o-Neto.xml</idno>
             </publicationStmt>
+            <notesStmt>
+                <note type="summary"><p>Poema republicado em <hi rend="italic">Tico-tico: Jornal das
+                            crianças</hi>, n.º 1329, Rio de Janeiro, 25 de março de 1931.
+                        Apresentamos aqui as imagens de ambas as publicações. Seguimos o título
+                        deste último testemunho publicado, que se encontra também no testemunho do
+                        espólio de Pessoa, em BNP 44-37r.</p></note>
+                <note type="genre">
+                    <rs type="genre" key="poesia">Poesia</rs>
+                </note>
+            </notesStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O1-28">O Avô e o Neto</rs></item>
+                    <item><rs type="work" key="W224">O Avô e o Neto</rs></item>
                 </list>
-                <biblStruct>
+                <biblStruct xml:id="Thes_1925-1928">
                     <analytic>
-                        <title level="a">O Avô e o Neto</title>
+                        <title level="a">Meditações do avô e brinquedos do neto</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
@@ -58,29 +68,52 @@
                             <pubPlace>Rio de Janeiro</pubPlace>
                             <date from="1925" to="1928">1925-1928</date>
                         </imprint>
-                        <biblScope/>
                     </monogr>
-                    <note type="genre">
-                        <rs type="genre" key="poesia">Poesia</rs>
-                    </note>
-                    <note type="summary"><p>Poema republicado em 
-                        <hi rend="italic">Tico-tico: Jornal das crianças</hi>, n.º 1329, Rio de Janeiro, 25 de março de 1931.
-                        Apresentamos aqui as imagens de ambas as publicações. Seguimos o título deste último testemunho
-                        publicado, que se encontra também no testemunho do espólio de Pessoa, em BNP 44-37r.</p></note>
+                </biblStruct>
+                <biblStruct xml:id="Tico_1931">
+                    <analytic>
+                        <title level="a">O Avô e o Neto</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J92">Tico-tico: Jornal das
+                                crianças</rs></title>
+                        <imprint>
+                            <pubPlace>Rio de Janeiro</pubPlace>
+                            <date when="1931-03-25">25 de março de 1931</date>
+                        </imprint>
+                        <biblScope unit="issue">1329</biblScope>
+                        <biblScope unit="page">23</biblScope>
+                    </monogr>
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
     </teiHeader>
-    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/" corresp="#Thes_1925-1928">
         <graphic url="pub/TJ-Meditacoes.jpg"/>
     </facsimile>
-    <text corresp="#O1-28">
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/" corresp="#Tico_1931">
+        <graphic url="pub/Avo_e_o_neto-Tico_Tico.jpg"/>
+    </facsimile>
+    <text corresp="#W224">
         <body>
             <div>
-                <head>O AVÔ E O NETO</head>
+                <head><app>
+                    <lem wit="#Tico_1931">O AVÔ E O NETO</lem>
+                    <rdg wit="#Thes_1925-1928">MEDITAÇÕES DO AVÔ E BRINQUEDOS DO NETO</rdg>
+                </app></head>
                 <lg>
                     <l>Ao ver o neto a brincar,</l>
-                    <l>Diz o avô, entristecido:</l>
+                    <l>Diz o avô, entristecido<app>
+                        <lem wit="#Tico_1931">:</lem>
+                        <rdg wit="#Thes_1925-1928">,</rdg>
+                    </app></l>
                     <l>“Ah, quem me dera voltar</l>
                     <l>A estar assim entretido!</l>
                 </lg>
@@ -114,7 +147,7 @@
                     <l>Diz, “Cahiu, mas não faz mal:</l>
                     <l>Torna-se já a arranjar.”</l>
                 </lg>
-                <signed rend="align-right"><hi rend="italic">Fernando Pessôa</hi>.</signed>
+                <signed rend="right"><hi rend="italic">Fernando Pessôa</hi>.</signed>
             </div>
         </body>
     </text>
