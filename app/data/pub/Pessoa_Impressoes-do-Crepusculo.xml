@@ -1,9 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?> 
-<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc>
-            <titleStmt>
+        <fileDesc><titleStmt>
                 <title>Impressões do Crepusculo</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -28,8 +25,7 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt>
-            <publicationStmt>
+            </titleStmt><publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -38,41 +34,30 @@
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_Impressoes-do-Crepusculo.xml</idno>
-            </publicationStmt>
-            <sourceDesc>
-                <list type="work-index">
+            </publicationStmt><notesStmt><note type="summary">O poema “Ó sino da minha aldeia”, aqui incluído em
+                        “Impressões do Crepusculo”, foi republicado em <ref target="http://www.pessoadigital.pt/pt/pub/Pessoa_Alguns-Poemas">“Alguns
+                            Poemas / De um Cancioneiro”, Athena 3, Dezembro de 1924, pp.
+                        82-88</ref>. A segunda publicação apresenta, para além de diferenças
+                        ortográficas, variantes no último verso da segunda estrofe e em três versos
+                        da terceira estrofe.</note><note type="genre">
+                        <rs type="genre" key="poesia">Poesia</rs>
+                    </note></notesStmt><sourceDesc><list type="work-index">
                     <item><rs type="work" key="O1-19">Impressões do Crepusculo</rs></item>
                     <item><rs type="work" key="O1-19-1">I</rs></item>
                     <item><rs type="work" key="O1-19-2">II</rs></item>
-                </list>
-                <biblStruct>
-                    <analytic>
+                </list><biblStruct><analytic>
                         <title level="a">Impressões do Crepusculo</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt"/>
-                    </analytic>
-                    <monogr>
+                    </analytic><monogr>
                         <title level="j"><rs type="periodical" key="J27">A Renascença</rs></title>
                         <imprint>
                             <date when="1914-02">Fevereiro de 1914</date>
                         </imprint>
                         <biblScope unit="page">11</biblScope>
-                    </monogr>
-                    <note type="genre">
-                        <rs type="genre" key="poesia">Poesia</rs>
-                    </note>
-                    <note type="summary">O poema “Ó sino da minha aldeia”, aqui incluído em
-                        “Impressões do Crepusculo”, foi republicado em <ref
-                            target="http://www.pessoadigital.pt/pt/pub/Pessoa_Alguns-Poemas">“Alguns
-                            Poemas / De um Cancioneiro”, Athena 3, Dezembro de 1924, pp.
-                        82-88</ref>. A segunda publicação apresenta, para além de diferenças
-                        ortográficas, variantes no último verso da segunda estrofe e em três versos
-                        da terceira estrofe.</note>
-                </biblStruct>
-            </sourceDesc>
-        </fileDesc>
+                    </monogr></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="pub/res-2749-v_0017_t0.jpg"/>

@@ -1,9 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc>
-            <titleStmt>
+        <fileDesc><titleStmt>
                 <title>3</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -20,8 +17,7 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt>
-            <publicationStmt>
+            </titleStmt><publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -30,20 +26,17 @@
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_3.xml</idno>
-            </publicationStmt>
-            <sourceDesc>
-                <list type="work-index">
+            </publicationStmt><notesStmt><note type="genre">
+                        <rs type="genre" key="prosa">Prosa</rs>
+                    </note></notesStmt><sourceDesc><list type="work-index">
                     <item><rs type="work" key="W192">3</rs></item>
-                </list>
-                <biblStruct>
-                    <analytic>
+                </list><biblStruct><analytic>
                         <title level="a">3</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                    </analytic>
-                    <monogr>
+                    </analytic><monogr>
                         <title level="j"><rs type="periodical" key="J7">Teatro - Revista de
                                 Critica</rs></title>
                         <imprint>
@@ -51,13 +44,7 @@
                         </imprint>
                         <biblScope unit="issue">3</biblScope>
                         <biblScope unit="page">2</biblScope>
-                    </monogr>
-                    <note type="genre">
-                        <rs type="genre" key="prosa">Prosa</rs>
-                    </note>
-                </biblStruct>
-            </sourceDesc>
-        </fileDesc>
+                    </monogr></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/Teatro_3.jpg"/>
@@ -68,10 +55,7 @@
                 <head rend="center">3</head>
                 <p rend="indent-first">Tres publicações, afóra a nossa, nasceram ha pouco para a
                     pretensão de serem lidas.</p>
-                <p rend="indent-first">Uma é a «revista de arte» <rs type="periodical" key="J81"
-                        >Teatralia</rs>, outra a de «literatura e arte» <rs type="periodical"
-                        key="J82">Gente Moça</rs>, e ha tambem um periodico <rs type="periodical"
-                        key="J83">O Talassa</rs>, semanario, ao que parece, e humoristico,
+                <p rend="indent-first">Uma é a «revista de arte» <rs type="periodical" key="J81">Teatralia</rs>, outra a de «literatura e arte» <rs type="periodical" key="J82">Gente Moça</rs>, e ha tambem um periodico <rs type="periodical" key="J83">O Talassa</rs>, semanario, ao que parece, e humoristico,
                     consoante, por analogia de aspecto com outras publicações do parece-que-mesmo
                     genero, feitas aí por 1880, sem grande dificuldade se conclue. A primeira e a
                     terceira destas consequencias de <rs type="name" key="P463">Gutemberg</rs>
@@ -85,8 +69,7 @@
                 <p rend="indent-first"> O conhecimento da revista é, porém, um pouco ensombrador
                     desta vantagem antevista. É talvez, e apezar de tudo, melhor que os alunos
                     representem.</p>
-                <p rend="indent-first">Não queremos dizer com isto que a <rs type="periodical"
-                        key="J81">Teatralia</rs> se imponha como má. Mas tem claras pretensões a
+                <p rend="indent-first">Não queremos dizer com isto que a <rs type="periodical" key="J81">Teatralia</rs> se imponha como má. Mas tem claras pretensões a
                     se-lo. Não ha duvida que temos de nos apear para a tolerancia. Revista de
                     pre-actores, não lhe podemos querer encontrar instinto literario ou intuição
                     artistica. Mas – que diabo! – eles não são actores ainda. Sempre se podìa
@@ -96,12 +79,10 @@
                     envelhecer para inteligente.</p>
                 <p rend="indent-first">O Aluno <rs type="name" key="P462">F. Adolfo Coelho</rs>, por
                     exemplo, oferece-nos um estudo que revela um grave conhecimiento pelo menos de
-                    algumas passagens dos tragicos gregos e de uns córos de <rs type="title"
-                        >Castro</rs> de <rs type="name" key="P464">Antonio Ferreira</rs>. Se é ainda
+                    algumas passagens dos tragicos gregos e de uns córos de <rs type="title">Castro</rs> de <rs type="name" key="P464">Antonio Ferreira</rs>. Se é ainda
                     muito novo, talvez venha a conseguir, com o deixar de ser muito novo, alguma
                     cousa em materia de exposição erudita. Por emquanto vê-se bem a sua
-                    inexperiencia nisto de transmitir erudição. Porque não é assim que se <hi
-                        rend="italic">ensina</hi>. É preciso mais leveza, mais cingir de perto a
+                    inexperiencia nisto de transmitir erudição. Porque não é assim que se <hi rend="italic">ensina</hi>. É preciso mais leveza, mais cingir de perto a
                     alma do assunto, mais poder vibrante de interessar e comunicar. E o
                     modo-de-expor do sr. <rs type="name" key="P462">F. A. Coelho</rs> dá-nos a
                     impressão de nos estarem esfregando nas costas <choice>
@@ -114,18 +95,15 @@
                     (cujo nome nos não sõa desconhecido) distribue uns raciocinios um pouco palidos
                     mas interessantes por paginas que sofrem duma lamentavel incompatibilidade
                     pessoal entre o gravador e o impressor.</p>
-                <p rend="indent-first">Ha um artigo sobre «marcação», do aluno <rs type="name"
-                        key="P466">Antonio Pinheiro</rs>. Incompetentes para saber se ele é bom ou
+                <p rend="indent-first">Ha um artigo sobre «marcação», do aluno <rs type="name" key="P466">Antonio Pinheiro</rs>. Incompetentes para saber se ele é bom ou
                     mau, limitamo-nos, para dar idéa do seu <choice>
                         <sic>iuteresse</sic>
                         <corr resp="#JU">interesse</corr>
                     </choice>, a transcrever lhe o paragrafo final:</p>
                 <p rend="indent-first"><hi rend="italic">As diferentes portas ou aposentos são
                         designados por letras, e algumas vezes, E – quer dizer esquerda</hi>, D –
-                        <hi rend="italic">direita</hi>, F <hi rend="italic">fundo</hi>, B – <hi
-                        rend="italic">baixa e </hi> A – <hi rend="italic">alta</hi>.</p>
-                <p rend="indent-first">Os alunos <rs type="name" key="P467">Julio Dantas</rs>, <rs
-                        type="name" key="P468">Luiz Barreto</rs> e <rs type="name" key="P469">Bento
+                        <hi rend="italic">direita</hi>, F <hi rend="italic">fundo</hi>, B – <hi rend="italic">baixa e </hi> A – <hi rend="italic">alta</hi>.</p>
+                <p rend="indent-first">Os alunos <rs type="name" key="P467">Julio Dantas</rs>, <rs type="name" key="P468">Luiz Barreto</rs> e <rs type="name" key="P469">Bento
                         Mantua</rs> tambem navegam nestas aguas. Os dois ultimos teem transbordo
                     para o numero seguinte.</p>
                 <p rend="indent-first">Uns cachos de uvas na capa da revista parecem-nos
@@ -153,15 +131,12 @@
                         <sic>politicamente</sic>
                         <corr resp="#JU">politicamente.</corr>
                     </choice> Recomedamol-a sem hesitação aos seus atacados e caricaturados.</p>
-                <p rend="indent-first">A cousa que tem de mais flagrantemente interessante é a <hi
-                        rend="italic">blague</hi> da dua confecção. É a de os desenhos serem feitos
-                    pelo sr. <rs type="name" key="P472">Crispim</rs> e a prosa pelo sr. <rs
-                        type="name" key="P471">Jorge Colaço</rs>, como sem custo se deduz dum exame
+                <p rend="indent-first">A cousa que tem de mais flagrantemente interessante é a <hi rend="italic">blague</hi> da dua confecção. É a de os desenhos serem feitos
+                    pelo sr. <rs type="name" key="P472">Crispim</rs> e a prosa pelo sr. <rs type="name" key="P471">Jorge Colaço</rs>, como sem custo se deduz dum exame
                     perspicaz deles e dela.</p>
                 <p rend="indent-first">Tem duas outras novidades interessantes, como seja a de
                     descobrir para assunto de piada que o sr. <rs type="name" key="P447">Brito
-                        Camacho</rs> é porco, e a de iniciar, com respetio ao sr. <rs type="name"
-                        key="P448">Antonio José d’Almeida</rs>, um novo genero de caricatura, que
+                        Camacho</rs> é porco, e a de iniciar, com respetio ao sr. <rs type="name" key="P448">Antonio José d’Almeida</rs>, um novo genero de caricatura, que
                     consiste em nos fazer crêr que aquele politico não é parecido consigo
                     proprio.</p>
                 <milestone rend="asterisks" unit="section"/>

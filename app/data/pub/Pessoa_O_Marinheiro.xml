@@ -1,9 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc>
-            <titleStmt>
+        <fileDesc><titleStmt>
                 <title>O Marinheiro. Drama Estático em um Quadro</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -20,8 +17,7 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt>
-            <publicationStmt>
+            </titleStmt><publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -30,34 +26,25 @@
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_O_Marinheiro.xml</idno>
-            </publicationStmt>
-            <sourceDesc>
-                <list type="work-index">
+            </publicationStmt><notesStmt><note type="genre">
+                        <rs type="genre" key="prosa">Prosa</rs>
+                    </note></notesStmt><sourceDesc><list type="work-index">
                     <item><rs type="work" key="W198">O Marinheiro. Drama Estático Em Um
                         Quadro</rs></item>
-                </list>
-                <biblStruct>
-                    <analytic>
+                </list><biblStruct><analytic>
                         <title level="a">O Marinheiro. Drama Estático em um Quadro</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                    </analytic>
-                    <monogr>
+                    </analytic><monogr>
                         <title level="j"><rs type="periodical" key="J12">Orpheu</rs></title>
                         <imprint>
                             <date when="1915-03">Março de 1915</date>
                         </imprint>
                         <biblScope unit="issue">1</biblScope>
                         <biblScope unit="page">28-39</biblScope>
-                    </monogr>
-                    <note type="genre">
-                        <rs type="genre" key="prosa">Prosa</rs>
-                    </note>
-                </biblStruct>
-            </sourceDesc>
-        </fileDesc>
+                    </monogr></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/O_Marinheiro_1.jpg"/>
@@ -452,8 +439,7 @@
                     irmã... Os homens que pensam cançam-se de tudo, porque tudo muda. Os homens que
                     passam provam-o, porque mudam com tudo... De eterno e bello ha apenas o sonho...
                     Porque estamos nós fallando ainda?...</p>
-                <p rend="indent-first"><hi rend="bold">Primeira.</hi> – Não sei... <hi rend="italic"
-                        > (olhando para o caixão, em voz mais baixa)</hi> — Porque é que se
+                <p rend="indent-first"><hi rend="bold">Primeira.</hi> – Não sei... <hi rend="italic"> (olhando para o caixão, em voz mais baixa)</hi> — Porque é que se
                     morre?</p>
                 <p rend="indent-first"><hi rend="bold">Segunda.</hi> – Talvez por não se sonhar
                     bastante...</p>

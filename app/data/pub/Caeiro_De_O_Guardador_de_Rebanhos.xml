@@ -1,9 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?> 
-<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc>
-            <titleStmt>
+        <fileDesc><titleStmt>
                 <title>De "O Guardador de Rebanhos"</title>
                 <author>
                     <rs type="name" key="AC">Alberto Caiero</rs>
@@ -28,8 +25,7 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt>
-            <publicationStmt>
+            </titleStmt><publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -38,9 +34,9 @@
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Caeiro_De_O_Guardador_de_Rebanhos.xml</idno>
-            </publicationStmt>
-            <sourceDesc>
-                <list type="work-index">
+            </publicationStmt><notesStmt><note type="genre">
+                        <rs type="genre" key="poesia">Poesia</rs>
+                    </note></notesStmt><sourceDesc><list type="work-index">
                     <item><rs type="work" key="W18">O Guardador de Rebanhos</rs></item>
                     <item><rs type="work" key="W147" n="1">I</rs></item>
                     <item><rs type="work" key="W148" n="5">V</rs></item>
@@ -65,29 +61,20 @@
                     <item><rs type="work" key="W167" n="47">XLVII</rs></item>
                     <item><rs type="work" key="W168" n="48">XLVIII</rs></item>
                     <item><rs type="work" key="W169" n="49">XLIX</rs></item>
-                </list>
-                <biblStruct>
-                    <analytic>
+                </list><biblStruct><analytic>
                         <title level="a">De "O Guardador de Rebanhos"</title>
                         <author>
                             <rs type="name" key="AC">Alberto Caeiro</rs>
                         </author>
                         <textLang mainLang="pt"/>
-                    </analytic>
-                    <monogr>
+                    </analytic><monogr>
                         <title level="j"><rs type="periodical" key="J2">Athena</rs></title>
                         <imprint>
                             <date when="1925-02">Fevereiro de 1925</date>
                         </imprint>
                         <biblScope unit="issue">4</biblScope>
                         <biblScope unit="page">145-156</biblScope>
-                    </monogr>
-                    <note type="genre">
-                        <rs type="genre" key="poesia">Poesia</rs>
-                    </note>
-                </biblStruct>
-            </sourceDesc>
-        </fileDesc>
+                    </monogr></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="pub/res-3319-v-1925-01_0241_145_t0.jpg"/>

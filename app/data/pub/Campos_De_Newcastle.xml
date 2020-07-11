@@ -1,9 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc>
-            <titleStmt>
+        <fileDesc><titleStmt>
                 <title>De Newcastle-On-Tyne - Alvaro de Campos escreve a "Contemporanea"</title>
                 <author>
                     <rs type="name" key="AdC">Álvaro de Campos</rs>
@@ -20,8 +17,7 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt>
-            <publicationStmt>
+            </titleStmt><publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -30,35 +26,26 @@
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Campos_De_Newcastle.xml</idno>
-            </publicationStmt>
-            <sourceDesc>
-                <list type="work-index">
+            </publicationStmt><notesStmt><note type="genre">
+                        <rs type="genre" key="prosa">Prosa</rs>
+                    </note></notesStmt><sourceDesc><list type="work-index">
                     <item><rs type="work" key="W203">De Newcastle-On-Tyne - Alvaro de Campos escreve
                             a "Contemporanea"</rs></item>
-                </list>
-                <biblStruct>
-                    <analytic>
+                </list><biblStruct><analytic>
                         <title level="a">De Newcastle-On-Tyne - Alvaro de Campos escreve a
                             "Contemporanea"</title>
                         <author>
                             <rs type="name" key="AdC">Álvaro de Campos</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                    </analytic>
-                    <monogr>
+                    </analytic><monogr>
                         <title level="j"><rs type="periodical" key="J11">Contemporânea</rs></title>
                         <imprint>
                             <date when="1922-10">Outubro de 1922</date>
                         </imprint>
                         <biblScope unit="issue">4</biblScope>
                         <biblScope unit="page">4</biblScope>
-                    </monogr>
-                    <note type="genre">
-                        <rs type="genre" key="prosa">Prosa</rs>
-                    </note>
-                </biblStruct>
-            </sourceDesc>
-        </fileDesc>
+                    </monogr></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/De_Newcastle_on_Tyne.jpg"/>
@@ -68,12 +55,10 @@
             <div>
                 <head>DE NEWCASTLE-ON-TYNE <lb/><rs type="name" key="AdC" style="a" role="author">Alvaro
                         de Campos</rs> <lb/>
-                    ESCREVE Á “<rs type="periodical" key="J11"
-                    >CONTEMPORANEA</rs>”</head>
+                    ESCREVE Á “<rs type="periodical" key="J11">CONTEMPORANEA</rs>”</head>
                 
                 <p rend="indent-first">Meu querido <rs type="name" key="P144">José Pacheco</rs>:</p>
-                <p rend="indent-first">Venho escrever-lhe para o felicitar pela sua <rs type="title"
-                            ><hi rend="italic">Contemporanea</hi></rs>, para lhe dizer que não tenho
+                <p rend="indent-first">Venho escrever-lhe para o felicitar pela sua <rs type="title"><hi rend="italic">Contemporanea</hi></rs>, para lhe dizer que não tenho
                     escripto nada, e para pôr alguns embargos ao <ref target="Pessoa_Antonio_Botto_e_o_ideal.xml">artigo
                     <!-- JU: Is there a way to create the link insted of the file, befor it is available in the site? --> do <rs type="name" key="FP">Fernando
                         Pessoa</rs></ref>.</p>
@@ -81,13 +66,11 @@
                     não escrevo. Fui em tempos poeta decadente; hoje creio que estou decadente, e já
                     o não sou.</p>
                 <p rend="indent-first">Isto de mim, que é quem mais proximo está de mim, apezar de
-                    tudo. De si e de sua revista, tenho saudades do nosso <rs type="periodical"
-                        key="J12"><hi rend="italic">Orpheu</hi></rs>. V. continúa subrepticiamente,
+                    tudo. De si e de sua revista, tenho saudades do nosso <rs type="periodical" key="J12"><hi rend="italic">Orpheu</hi></rs>. V. continúa subrepticiamente,
                     e ainda bem. Estamos, afinal, todos no mesmo logar. Parece que variamos só com a
                     oscillação de quem se equilibra. Repito-lhe que o felicito. Julgava difficil
                     fazer tanto bem aos olhos em Portugal com uma coisa impressa. Julgo bom que
-                    julgasse mal. Auguro á <rs type="periodical" key="J11"><hi rend="italic"
-                            >Contemporanea</hi></rs> o futuro que lhe desejo.</p>
+                    julgasse mal. Auguro á <rs type="periodical" key="J11"><hi rend="italic">Contemporanea</hi></rs> o futuro que lhe desejo.</p>
                 <p rend="indent-first">Agora o artigo do <rs type="name" key="#FP">Fernando</rs>.
                     Com o intervallo entre a primeira palavra d’esta carta e a primeira palavra
                     d’este paragrapho, já quasi me não lembra o que é que lhe queria dizer do
@@ -122,8 +105,7 @@
                     da tendencia sobre si-propria, força da força em não se desviar da sua direcção,
                     que é um elemento da sua força?</p>
                 <p rend="indent-first">O resto é o mytho das Danaides, ou outro qualquer mytho –
-                    porque todo o mytho é o das Danaides, e todo o pensamento (diga-o ao <rs
-                        type="name" key="#FP">Fernando</rs>) 
+                    porque todo o mytho é o das Danaides, e todo o pensamento (diga-o ao <rs type="name" key="#FP">Fernando</rs>) 
                     <!-- U: @key values are without the initial # -->
                     enche eternamente um tonel eternamente
                     vazio. </p>
@@ -134,24 +116,19 @@
                 <p rend="indent-first">E, àparte gostar, porque gosto? É sempre mau perguntar,
                     porque pode haver resposta. Mas pergunto – porque gosto? Ha força, ha equilibrio
                     de força, nas <rs type="title"><hi rend="italic">Canções</hi></rs>?</p>
-                <p rend="indent-first">Louvo nas <rs type="title"><hi rend="italic"
-                        >Canções</hi></rs> a força que lhes encontro. Essa força não vejo que tenha
+                <p rend="indent-first">Louvo nas <rs type="title"><hi rend="italic">Canções</hi></rs> a força que lhes encontro. Essa força não vejo que tenha
                     que ver com ideaes nem com estheticas. Tem que ver com immoralidade. É a
                     immoralidade absoluta, despida de duvidas. Assim ha direcção absoluta – força
-                    portanto; e ha harmonia em não admittir condições a essa immoralidade. O<rs
-                        type="name" key="P17">Botto</rs> tende com uma energia tenaz para todo o
+                    portanto; e ha harmonia em não admittir condições a essa immoralidade. O<rs type="name" key="P17">Botto</rs> tende com uma energia tenaz para todo o
                     immoral; e tem a harmonia de não tender para mais coisa alguma. Acho inutil
-                    metter os gregos no caso; grego se veria o <rs type="name" key="#FP"
-                        >Fernando</rs> 
+                    metter os gregos no caso; grego se veria o <rs type="name" key="#FP">Fernando</rs> 
                     <!-- U: @key values are without the initial # -->
                     com elles se elles lhe apparecessem a pedir-lhe contas do
                     sarilho de estheticas em que os metteu. Os gregos eram lá esthetas! Os gregos
                     existiram.</p>
                 <p rend="indent-first">A arte do <rs type="name" key="P17">Botto</rs> é
                     integralmente immoral. Não ha cellula nella que esteja decente. E isso é uma
-                    força porque é uma não-hypocrisia, uma não-complicação. <rs type="name"
-                        key="P32">Wilde</rs> tergiversava constantemente. <rs type="name" key="P479"
-                        >Baudelaire</rs> formulou uma these moral da immoralidade; disse que o mau
+                    força porque é uma não-hypocrisia, uma não-complicação. <rs type="name" key="P32">Wilde</rs> tergiversava constantemente. <rs type="name" key="P479">Baudelaire</rs> formulou uma these moral da immoralidade; disse que o mau
                     era bom por ser mau, e assim lhe chamou bom. O <rs type="name" key="P17">
                         Botto</rs> é mais forte: dá á sua immoralidade razões puramente immoraes,
                     porque lhe não dá nenhumas.</p>

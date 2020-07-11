@@ -1,9 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?> 
-<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc>
-            <titleStmt>
+        <fileDesc><titleStmt>
                 <title>Addiamento</title>
                 <author>
                     <rs type="name" key="AdC">Álvaro de Campos</rs>
@@ -28,8 +25,7 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt>
-            <publicationStmt>
+            </titleStmt><publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -38,20 +34,20 @@
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Addiamento.xml</idno>
-            </publicationStmt>
-            <sourceDesc>
-                <list type="work-index">
+            </publicationStmt><notesStmt><note type="summary">Poema republicado em <hi rend="italic">Cancioneiro do 1º
+                            Salão dos Independentes</hi>, 1930, pp. 12-13. O texto é idêntico ao da
+                        primeira publicação. Apresentamos aqui as imagens de ambas as
+                        publicações.</note><note type="genre">
+                        <rs type="genre" key="poesia">Poesia</rs>
+                    </note></notesStmt><sourceDesc><list type="work-index">
                     <item><rs type="work" key="O4-1">Addiamento</rs></item>
-                </list>
-                <biblStruct>
-                    <analytic>
+                </list><biblStruct><analytic>
                         <title level="a">Addiamento</title>
                         <author>
                             <rs type="name" key="AdC">Álvaro de Campos</rs>
                         </author>
                         <textLang mainLang="pt"/>
-                    </analytic>
-                    <monogr>
+                    </analytic><monogr>
                         <title level="j"><rs type="periodical" key="J4">Revista da Solução
                                 Editora</rs></title>
                         <imprint>
@@ -59,17 +55,7 @@
                         </imprint>
                         <biblScope unit="issue">1</biblScope>
                         <biblScope unit="page">4-5</biblScope>
-                    </monogr>
-                    <note type="genre">
-                        <rs type="genre" key="poesia">Poesia</rs>
-                    </note>
-                    <note type="summary">Poema republicado em <hi rend="italic">Cancioneiro do 1º
-                            Salão dos Independentes</hi>, 1930, pp. 12-13. O texto é idêntico ao da
-                        primeira publicação. Apresentamos aqui as imagens de ambas as
-                        publicações.</note>
-                </biblStruct>
-            </sourceDesc>
-        </fileDesc>
+                    </monogr></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="pub/j-2855-3-b_0006_t0.jpg"/>

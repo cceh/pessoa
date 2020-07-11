@@ -1,9 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc>         
-            <titleStmt>
+        <fileDesc><titleStmt>
                 <title>A Origem do Conto do Vigario</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -20,8 +17,7 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt>
-            <publicationStmt>
+            </titleStmt><publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -31,22 +27,18 @@
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_A_Origem_do_Conto_do_Vigario.xml</idno>               
-            </publicationStmt>
-            <sourceDesc>
-                <list type="work-index">
+            </publicationStmt><notesStmt><note type="genre">
+                        <rs type="genre" key="prosa">Prosa</rs>
+                    </note></notesStmt><sourceDesc><list type="work-index">
                     <item><rs type="work" key="O1-X">A Origem do Conto do Vigario</rs></item>
-                </list>
-                <biblStruct>
-                    <!-- here goes the bibliographical reference for the source publication -->
-                    <analytic>
+                </list><biblStruct><analytic>
                         <title level="a">A Origem do Conto do Vigario</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
                         <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
-                    </analytic>
-                    <monogr>
+                    </analytic><monogr>
                         <title level="j"><rs type="periodical" key="J9">O "Notícias" Ilustrado</rs></title>
                         <imprint>
                             <date when="1929-08-18">18 de Agosto de 1929</date>
@@ -55,13 +47,9 @@
                             there is just a year: when="1931" -->
                         </imprint>
                         <biblScope unit="pages">4-5 e 7</biblScope>
-                    </monogr>
-                    <note type="genre">
-                        <rs type="genre" key="prosa">Prosa</rs>
-                    </note>
-                </biblStruct>
-            </sourceDesc>
-        </fileDesc>
+                    </monogr><!-- here goes the bibliographical reference for the source publication --><!-- this can also have @otherLangs, e.g. otherLangs="en fr" --><!-- in case it is not a single date, but from-to, it 
+                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
+                            there is just a year: when="1931" --></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/A_origem_do_conto_do_viagario_1.jpg"/>

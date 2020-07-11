@@ -1,9 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc>
-            <titleStmt>
+        <fileDesc><titleStmt>
                 <title>Ultimatum</title>
                 <author>
                     <rs type="name" key="AdC">Álvaro de Campos</rs>
@@ -20,8 +17,7 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt>
-            <publicationStmt>
+            </titleStmt><publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -30,20 +26,19 @@
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Campos_Ultimatum.xml</idno>
-            </publicationStmt>
-            <sourceDesc>
-                <list type="work-index">
+            </publicationStmt><notesStmt><note type="summary">O texto também foi publicado em forma de Separata, datado
+                        de Outubro de 1917, e assinado «Alvaro de Campos | Sensacionista». Pode ser
+                        consultado em <ref target="http://purl.pt/17263">http://purl.pt/17263</ref>.</note><note type="genre">
+                        <rs type="genre" key="prosa">Prosa</rs>
+                    </note></notesStmt><sourceDesc><list type="work-index">
                     <item><rs type="work" key="W202">Ultimatum</rs></item>
-                </list>
-                <biblStruct>
-                    <analytic>
+                </list><biblStruct><analytic>
                         <title level="a">Ultimatum</title>
                         <author>
                             <rs type="name" key="AdC">Álvaro de Campos</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                    </analytic>
-                    <monogr>
+                    </analytic><monogr>
                         <title level="j"><rs type="periodical" key="J29">Portugal
                             Futurista</rs></title>
                         <imprint>
@@ -51,17 +46,7 @@
                         </imprint>
                         <biblScope unit="issue">1</biblScope>
                         <biblScope unit="page">30-34</biblScope>
-                    </monogr>
-                    <note type="genre">
-                        <rs type="genre" key="prosa">Prosa</rs>
-                    </note>
-                    <note type="summary">O texto também foi publicado em forma de Separata, datado
-                        de Outubro de 1917, e assinado «Alvaro de Campos | Sensacionista». Pode ser
-                        consultado em <ref target="http://purl.pt/17263"
-                        >http://purl.pt/17263</ref>.</note>
-                </biblStruct>
-            </sourceDesc>
-        </fileDesc>
+                    </monogr></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/Ultimatum_PF_1.jpg"/>
@@ -77,8 +62,7 @@
                 <head type="sub" rend="right">de <rs type="name" role="author" key="AdC">Alvaro de
                         Campos</rs></head>
                 <p rend="indent-first">Mandado de despejo aos mandarins da Europa! Fóra.</p>
-                <p rend="indent-first">Fóra tu, <rs type="name" key="P496">Anatole France</rs>, <rs
-                        type="name" key="P529">Epicuro</rs> de pharmacopeia homeopathica,
+                <p rend="indent-first">Fóra tu, <rs type="name" key="P496">Anatole France</rs>, <rs type="name" key="P529">Epicuro</rs> de pharmacopeia homeopathica,
                     tenia-Jaurès do Ancien Régime, salada de <rs type="name" key="P427">Renan</rs>-
                         <rs type="name" key="P530">Flaubert</rs> em louça do seculo dezesete,
                     falsificada!</p>
@@ -95,9 +79,7 @@
                 <p rend="indent-first">Fóra! Fóra!</p>
                 <p rend="indent-first">Fóra tu, <rs type="name" key="P9">George Bernard Shaw</rs>,
                     vegeteriano do paradoxo, charlatão da sinceridade, tumor frio do ibsenismo,
-                    arranjista da intellectualidade inesperada, Kilkenny-Cat de ti proprio, <hi
-                        rend="italic">Irish Melody</hi> calvinista com lettra da <hi rend="italic"
-                        >Origem das Especies!</hi></p>
+                    arranjista da intellectualidade inesperada, Kilkenny-Cat de ti proprio, <hi rend="italic">Irish Melody</hi> calvinista com lettra da <hi rend="italic">Origem das Especies!</hi></p>
                 <p rend="indent-first">Fóra tu, <rs type="name" key="P271">H. G. Wells</rs>,
                     ideativo de gesso, sacca-rolhas de papelão para a garrafa da Complexidade!</p>
                 <p rend="indent-first">Fóra tu, <rs type="name" key="P8">G. K. Chesterton</rs>,
@@ -114,8 +96,7 @@
                     Mysterio apagado!</p>
                 <p rend="indent-first">E tu, <rs type="name" key="P536">Loti</rs>, sopa salgada,
                     fria!</p>
-                <p rend="indent-first">E finalmente tu, <rs type="name" key="P537"
-                    >Rostand</rs>-tand-tand-tand-tand-tand-tand-tand!</p>
+                <p rend="indent-first">E finalmente tu, <rs type="name" key="P537">Rostand</rs>-tand-tand-tand-tand-tand-tand-tand!</p>
                 <p rend="indent-first">Fóra! Fóra! Fóra!</p>
                 <p rend="indent-first">E se houver outros que faltem, procurem-nos ahi pra um
                     canto!</p>
@@ -123,17 +104,11 @@
                 <p rend="indent-first">Fóra com isso tudo! Fóra!</p>
                 
                 <milestone rend="space" unit="section"/>
-                <p rend="indent-first">Ahi! Que fazes tu na celebridade, <rs type="name" key="P538"
-                        >Guilherme Segundo da Allemanha</rs>, canhoto maneta do braço esquerdo, <rs
-                        type="name" key="P539">Bismarck</rs> sem tampa a estorvar o lume?!</p>
-                <p rend="indent-first">Quem és tu, tu da juba socialista, <rs type="name" key="P540"
-                        >David Lloyd George</rs>, bobo de barrete phrygio feito de Union Jacks?!</p>
-                <p rend="indent-first">E tu, <rs type="name" key="P541">Venizelos</rs>, fatia de <rs
-                        type="name" key="P542">Pericles</rs> com manteiga, cahida no chão de
+                <p rend="indent-first">Ahi! Que fazes tu na celebridade, <rs type="name" key="P538">Guilherme Segundo da Allemanha</rs>, canhoto maneta do braço esquerdo, <rs type="name" key="P539">Bismarck</rs> sem tampa a estorvar o lume?!</p>
+                <p rend="indent-first">Quem és tu, tu da juba socialista, <rs type="name" key="P540">David Lloyd George</rs>, bobo de barrete phrygio feito de Union Jacks?!</p>
+                <p rend="indent-first">E tu, <rs type="name" key="P541">Venizelos</rs>, fatia de <rs type="name" key="P542">Pericles</rs> com manteiga, cahida no chão de
                     manteiga para baixo?!</p>
-                <p rend="indent-first">E tu, qualquer outro, todos os outros, assorda <rs
-                        type="name" key="P543">Briand</rs>- <rs type="name" key="P544">Dato</rs>-<rs
-                        type="name" key="P545">Boselli</rs> da incompetencia ante os factos, todos
+                <p rend="indent-first">E tu, qualquer outro, todos os outros, assorda <rs type="name" key="P543">Briand</rs>- <rs type="name" key="P544">Dato</rs>-<rs type="name" key="P545">Boselli</rs> da incompetencia ante os factos, todos
                     os estadistas pão-de-guerra que datam de muito antes da guerra! Todos! todos!
                     todos! Lixo, cisco, choldra provinciana, safardanagem intellectual!</p>
                 <p rend="indent-first">E todos os chefes de estado, incompetentes ao léu, barris de
@@ -150,12 +125,10 @@
                 <p rend="indent-first">Fallencia geral de todos por causa de tudo!</p>
                 <p rend="indent-first">Fallencia dos povos e dos destinos – fallencia total!</p>
                 <p rend="indent-first">Desfile das nações para o meu Desprezo!</p>
-                <p rend="indent-first">Tu, ambição italiana, cão de collo chamado <rs type="name"
-                        key="P546">Cesar</rs>!</p>
+                <p rend="indent-first">Tu, ambição italiana, cão de collo chamado <rs type="name" key="P546">Cesar</rs>!</p>
                 <p rend="indent-first">Tu, “esforço francez”, gallo depennado com a pelle pintada de
                     pennas! (Não lhe dêem muita corda senão parte-se!)</p>
-                <p rend="indent-first">Tu organização britannica, com <rs type="name" key="P547"
-                        >Kitchener</rs> no fundo do mar desde o principio da guerra!</p>
+                <p rend="indent-first">Tu organização britannica, com <rs type="name" key="P547">Kitchener</rs> no fundo do mar desde o principio da guerra!</p>
                 <p rend="indent-first">(It's a long, long way to Tipperary, and a jolly sight longer
                     way to Berlin!)</p>
                 <p rend="indent-first">Tu, cultura allemã, Sparta podre com azeite de christianismo
@@ -176,26 +149,21 @@
                 <p rend="indent-first">E tu, Portugal-centavos, resto de Monarchia a apodrecer
                     Republica, extrema-uncção-enxovalho da Desgraça, collaboração artificial na
                     guerra com vergonhas naturaes em Africa!</p>
-                <p rend="indent-first">E tu, Brazil, “republica irmã”, blague de <rs type="name"
-                        key="P548">Pedro Alvares Cabral</rs>, que nem te queria descobrir!</p>
+                <p rend="indent-first">E tu, Brazil, “republica irmã”, blague de <rs type="name" key="P548">Pedro Alvares Cabral</rs>, que nem te queria descobrir!</p>
                 <p rend="indent-first">Ponham-me um panno por cima de tudo isso!</p>
                 <p rend="indent-first">Fechem-me isso á chave e deitem a chave fóra!</p>
                 <p rend="indent-first">Onde estão os antigos, as fôrças, os homens, os guias, os
                     guardas?</p>
                 <p rend="indent-first">Vão aos cemiterios, que hoje são só nomes nas lapides!</p>
-                <p rend="indent-first">Agora a philosophia é o ter morrido <rs type="name"
-                        key="P549">Fouillée</rs>!</p>
-                <p rend="indent-first">Agora a arte é o ter ficado <rs type="name" key="P503"
-                        >Rodin</rs>!</p>
+                <p rend="indent-first">Agora a philosophia é o ter morrido <rs type="name" key="P549">Fouillée</rs>!</p>
+                <p rend="indent-first">Agora a arte é o ter ficado <rs type="name" key="P503">Rodin</rs>!</p>
                 <p rend="indent-first">Agora a litteratura é <rs type="name" key="P531">Barrès</rs>
                     significar!</p>
-                <p rend="indent-first">Agora a critica é haver bestas que não chamam besta ao <rs
-                        type="name" key="P532">Bourget</rs>!</p>
+                <p rend="indent-first">Agora a critica é haver bestas que não chamam besta ao <rs type="name" key="P532">Bourget</rs>!</p>
                 <p rend="indent-first">Agora a politica é a degeneração gordurosa da organização da
                     incompetencia!</p>
                 <p rend="indent-first">Agora a religião é o catholicismo militante dos taberneiros
-                    da fé, o enthusiasmo cosinha-franceza dos <rs type="name" key="P365"
-                        >Maurras</rs> de razão-descascada, é a espectaculite dos pragmatistas
+                    da fé, o enthusiasmo cosinha-franceza dos <rs type="name" key="P365">Maurras</rs> de razão-descascada, é a espectaculite dos pragmatistas
                     christãos, dos intuicionistas catholicos, dos ritualistas nirvanicos,
                     angariadores de annuncios para Deus!</p>
                 <p rend="indent-first">Agora é a guerra, jogo do empurra do lado de cá e jogo de
@@ -211,8 +179,7 @@
                 <p rend="indent-first">Nenhuma idéa de uma estrutura, nenhum senso do Edificio,
                     nenhuma ansia do Organico-Creado!</p>
                 <p rend="indent-first">Nem um pequeno <rs type="name" key="P550">Pitt</rs>, nem um
-                        <rs type="name" key="P198">Goethe</rs> de cartão, nem um <rs type="name"
-                        key="P12" style="b">Napoleão</rs> de Nürnberg!</p>
+                        <rs type="name" key="P198">Goethe</rs> de cartão, nem um <rs type="name" key="P12" style="b">Napoleão</rs> de Nürnberg!</p>
                 <p rend="indent-first">Nem uma corrente litteraria que seja sequer a sombra do
                     romantismo ao meio-dia!</p>
                 <p rend="indent-first">Nem um impulso militar que tenha sequer o vago cheiro de um
@@ -231,8 +198,7 @@
                 <p rend="indent-first">Homens-altos de Lilliput-Europa, passae por baixo do meu
                     Desprezo!</p>
                 <p rend="indent-first">Passae vós, ambiciosos do luxo quotidiano, anseios de
-                    costureiras dos dois sexos, vós cujo typo é o plebeu <rs type="name" key="P531"
-                        >Annunzio</rs>, aristocrata de tanga de ouro!</p>
+                    costureiras dos dois sexos, vós cujo typo é o plebeu <rs type="name" key="P531">Annunzio</rs>, aristocrata de tanga de ouro!</p>
                 <p rend="indent-first">Passae vós, que sois auctores de correntes artisticas, verso
                     da medalha da impotencia de crear!</p>
                 <p rend="indent-first">Passae, frouxos que tendes a necessidade de serdes os istas
@@ -251,9 +217,7 @@
                 <p rend="indent-first">Passae, bolor do Novo, mercadoria em mau estado desde o
                     cerebro de origem!</p>
                 <p rend="indent-first">Passae á esquerda do meu Desdém virado á direita, creadores
-                    de “systemas philosophicos”, <rs type="name" key="P553">Boutroux</rs>, <rs
-                        type="name" key="P552">Bergsons</rs>, <rs type="name" key="P554"
-                        >Euckens</rs>, hospitaes para religiosos incuraveis, pragmatistas do
+                    de “systemas philosophicos”, <rs type="name" key="P553">Boutroux</rs>, <rs type="name" key="P552">Bergsons</rs>, <rs type="name" key="P554">Euckens</rs>, hospitaes para religiosos incuraveis, pragmatistas do
                     jornalismo metaphysico, lazzaroni da construcção meditada!</p>
                 <p rend="indent-first">Passae e não volteis, burguezes da Europa-Total, parias da
                     ambição do parecer-grandes, provincianos de Paris!</p>
@@ -284,14 +248,11 @@
                     deveras sinceros, socialistas a invocar a sua qualidade de trabalhadores para
                     quererem deixar de trabalhar! Rotineiros da revolução, passae!</p>
                 <p rend="indent-first">Passae eugenistas, organizadores de uma vida de lata,
-                    prussianos da biologia applicada, neo-<rs type="name" key="P555"
-                        >mendelianos</rs> da incomprehensão sociologica!</p>
-                <p rend="indent-first">Passae, vegeterianos, teetotalers, <rs type="name" key="P556"
-                        >calvinistas</rs> dos outros, kill-joys do imperialismo de sobejo!</p>
+                    prussianos da biologia applicada, neo-<rs type="name" key="P555">mendelianos</rs> da incomprehensão sociologica!</p>
+                <p rend="indent-first">Passae, vegeterianos, teetotalers, <rs type="name" key="P556">calvinistas</rs> dos outros, kill-joys do imperialismo de sobejo!</p>
                 <p rend="indent-first">Passae, amanuenses do “vivre sa vie” de botequim extremamente
                     de esquina, <rs type="name" key="P557">ibsenoides</rs>
-                    <rs type="name" key="P558">Bernstein</rs>-<rs type="name" key="P559"
-                        >Bataille</rs> do homem forte de sala de palco!</p>
+                    <rs type="name" key="P558">Bernstein</rs>-<rs type="name" key="P559">Bataille</rs> do homem forte de sala de palco!</p>
                 <p rend="indent-first">Tango de pretos, fôsses tu ao menos minuete!</p>
                 <p rend="indent-first">Passae, absolutamente, passae!</p>
                 <milestone rend="space" unit="section"/>
@@ -316,8 +277,7 @@
                 <p rend="indent-first">Proclamem bem alto que ninguem combate pela Liberdade ou pelo
                     Direito! Todos combatem por medo dos outros ! Não tem mais metros que estes
                     millimetros a estatura das suas direcções!</p>
-                <p rend="indent-first">Lixo guerreiro-palavroso! Esterco <rs type="name" key="P564"
-                        >Joffre</rs>-Hindenburguesco! Sentina
+                <p rend="indent-first">Lixo guerreiro-palavroso! Esterco <rs type="name" key="P564">Joffre</rs>-Hindenburguesco! Sentina
                     europeia de Os Mesmos em scisão balofa!</p>
                 <p rend="indent-first">Quem acredita nelles?</p>
                 <p rend="indent-first">Quem acredita nos outros?</p>
@@ -409,8 +369,7 @@
                 <p rend="indent-first">Ora a sensibilidade, embora varie um pouco pela influencia
                     insistente do meio actual, é, nas suas linhas geraes, constante, e determinada
                     no mesmo individuo desde a sua nascença, funcção do temperamento que a
-                    hereditariedade lhe infixou. A sensibilidade, portanto, progride <hi
-                        rend="italic">por gerações</hi>.</p>
+                    hereditariedade lhe infixou. A sensibilidade, portanto, progride <hi rend="italic">por gerações</hi>.</p>
                 <p rend="indent-first">As creações da civilização, que constituem o “meio” da
                     sensibilidade, são a cultura, o progresso scientifico, a alteração nas condições
                     politicas (dando á expressão um sentido completo); ora estes – e sobretudo o
@@ -461,16 +420,13 @@
                     cirurgica, embora envolva uma mutilação.</p>
                 <p rend="indent-first">O que é que é preciso eliminar do psychismo
                     contemporaneo?</p>
-                <p rend="indent-first">Evidentemente que é aquillo que seja a <hi rend="italic"
-                        >acquisição fixa</hi> mais recente no espirito – isto é, aquella acquisição
+                <p rend="indent-first">Evidentemente que é aquillo que seja a <hi rend="italic">acquisição fixa</hi> mais recente no espirito – isto é, aquella acquisição
                     geral do espirito humano civilizado que seja anterior ao estabelecimento da
-                    nossa civilização, mas recentemente anterior; e isto por trez razões: <hi
-                        rend="italic">(a)</hi> porque, por ser a mais recente das fixações
+                    nossa civilização, mas recentemente anterior; e isto por trez razões: <hi rend="italic">(a)</hi> porque, por ser a mais recente das fixações
                     psychicas, é a menos difficil de eliminar; <hi rend="italic">(b)</hi> porque,
                     visto que cada civilização se fórma por uma reacção contra a anterior, são os
                     principios da anterior que são os mais antagonicos á actual e que mais impedem a
-                    sua adaptação ás condições especiaes que durante esta appareçam; <hi
-                        rend="italic">(c)</hi> porque, sendo a aquisição fixa mais recente, a sua
+                    sua adaptação ás condições especiaes que durante esta appareçam; <hi rend="italic">(c)</hi> porque, sendo a aquisição fixa mais recente, a sua
                     eliminação não ferirá tão fundo a sensibilidade geral como o faria a eliminação,
                     ou a pretensão de eliminar, qualquer fundo deposito psychico.</p>
                 <p rend="indent-first">Qual é a ultima <hi rend="italic">acquisição fixa</hi> do
@@ -513,10 +469,8 @@
                 <p rend="indent-first"><hi rend="italic">(a) Em politica</hi>: Abolição total do
                     conceito de democracia, conforme a Revolução Franceza, pelo qual dois homens
                     correm mais que um homem só, o que é falso, porque <hi rend="italic">um homem
-                        que vale por dois é que corre mais que um homem só! Um</hi> mais <hi
-                        rend="italic">um</hi> não são mais do que <hi rend="italic">um</hi>,
-                    enquanto <hi rend="italic">um</hi> e um não formam aquelle <hi rend="italic"
-                        >Um</hi> a que se chama <hi rend="italic">Dois</hi>. —Substituição,
+                        que vale por dois é que corre mais que um homem só! Um</hi> mais <hi rend="italic">um</hi> não são mais do que <hi rend="italic">um</hi>,
+                    enquanto <hi rend="italic">um</hi> e um não formam aquelle <hi rend="italic">Um</hi> a que se chama <hi rend="italic">Dois</hi>. —Substituição,
                     portanto, á Democracia, da Dictadura do Completo, do Homem que seja, em
                     si-proprio, o maior numero de Outros; que seja, portanto, A Maioria. Encontra-se
                     assim o Grande Sentido da Democracia, contrário em absoluto ao da actual, que,

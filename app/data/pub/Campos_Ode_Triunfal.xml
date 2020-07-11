@@ -1,9 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?> 
-<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc>
-            <titleStmt>
+        <fileDesc><titleStmt>
                 <title>Ode Triunfal</title>
                 <author>
                     <rs type="name" key="AdC">Álvaro de Campos</rs>
@@ -28,8 +25,7 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt>
-            <publicationStmt>
+            </titleStmt><publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -38,33 +34,24 @@
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Campos_Ode_Triunfal.xml</idno>
-            </publicationStmt>
-            <sourceDesc>
-                <list type="work-index">
+            </publicationStmt><notesStmt><note type="genre">
+                        <rs type="genre" key="poesia">Poesia</rs>
+                    </note></notesStmt><sourceDesc><list type="work-index">
                     <item><rs type="work" key="O4-12">Ode Triunfal</rs></item>
-                </list>
-                <biblStruct>
-                    <analytic>
+                </list><biblStruct><analytic>
                         <title level="a">Ode Triunfal</title>
                         <author>
                             <rs type="name" key="AdC">Álvaro de Campos</rs>
                         </author>
                         <textLang mainLang="pt"/>
-                    </analytic>
-                    <monogr>
+                    </analytic><monogr>
                         <title level="j"><rs type="periodical" key="J12">Orpheu</rs></title>
                         <imprint>
                             <date from="1915-01" to="1915-03">Janeiro – Março de 1915</date>
                         </imprint>
                         <biblScope unit="issue">1</biblScope>
                         <biblScope unit="page">77-83</biblScope>
-                    </monogr>
-                    <note type="genre">
-                        <rs type="genre" key="poesia">Poesia</rs>
-                    </note>
-                </biblStruct>
-            </sourceDesc>
-        </fileDesc>
+                    </monogr></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="pub/res-2750-v_1915-01_0083_69_t0.jpg"/>
@@ -144,8 +131,7 @@
                     <l>Novos entusiasmos de estatura do Momento!</l>
                     <l>Quilhas de chapas de ferro sorrindo encostadas às docas,</l>
                     <l>Ou a sêco, erguidas, nos planos-inclinados dos portos!</l>
-                    <l>Actividade internacional, transatlantica, <hi rend="italic"
-                            >Canadian-Pacific!</hi></l>
+                    <l>Actividade internacional, transatlantica, <hi rend="italic">Canadian-Pacific!</hi></l>
                     <l>Luzes e febrís pêrdas de tempo nos bares, nos hoteis,</l>
                     <l>Nos Longchamps e nos Derbies e nos Ascots,</l>
                     <l>E Piccadillies e Avenues de l’Opéra que entram</l>

@@ -1,9 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc>         
-            <titleStmt>
+        <fileDesc><titleStmt>
                 <title>As nossas entrevistas</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -20,8 +17,7 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt>
-            <publicationStmt>
+            </titleStmt><publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -31,22 +27,18 @@
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_Nossas_Entrevistas.xml</idno>               
-            </publicationStmt>
-            <sourceDesc>
-                <list type="work-index">
+            </publicationStmt><notesStmt><note type="genre">
+                        <rs type="genre" key="prosa">Prosa</rs>
+                    </note></notesStmt><sourceDesc><list type="work-index">
                     <item><rs type="work" key="O1-X">As nossas entrevistas</rs></item>
-                </list>
-                <biblStruct>
-                    <!-- here goes the bibliographical reference for the source publication -->
-                    <analytic>
+                </list><biblStruct><analytic>
                         <title level="a">As nossas entrevistas</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
                         <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
-                    </analytic>
-                    <monogr>
+                    </analytic><monogr>
                         <title level="j"><rs type="periodical" key="J36">Revista Portuguesa</rs></title>
                         <imprint>
                             <date when="1923-10-13">13 de Outubro de 1923</date>
@@ -56,13 +48,9 @@
                         </imprint>
                         <biblScope unit="issue">23-24</biblScope>
                         <biblScope unit="page">17-22</biblScope>
-                    </monogr>
-                    <note type="genre">
-                        <rs type="genre" key="prosa">Prosa</rs>
-                    </note>
-                </biblStruct>
-            </sourceDesc>
-        </fileDesc>
+                    </monogr><!-- here goes the bibliographical reference for the source publication --><!-- this can also have @otherLangs, e.g. otherLangs="en fr" --><!-- in case it is not a single date, but from-to, it 
+                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
+                            there is just a year: when="1931" --></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/As_Nossas_Entrevistas_1.jpg"/>
@@ -81,7 +69,7 @@
             <div>
                 <head rend="center"><hi rend="underline">As nossas entrevistas</hi></head>
                 
-                <head type= "sub">O escritor <rs type="name" key="#FP">Fernando Pessoa</rs> expõe-nos as suas ideias sobre os varios aspectos da arte e da literatura portuguesas</head>
+                <head type="sub">O escritor <rs type="name" key="#FP">Fernando Pessoa</rs> expõe-nos as suas ideias sobre os varios aspectos da arte e da literatura portuguesas</head>
                 
                 <p rend="indent-first">Entrevistar <rs type="name" key="#FP">Fernando Pessôa</rs> não é facil. Só é facil entrevistar os que não pensam, os que não se importam de jogar palavras, ao 
                     acaso, atirando-as impudicamente ao vento.</p>
@@ -165,7 +153,7 @@
                     eternamente Outros, os Outros de nascença, os europeus que não são europeus porque não são portuguezes. Ser tudo, de todas as maneiras, porque a verdade não pode estar em 
                     faltar ainda alguma cousa! Creemos assim o Paganismo Superior, o Polytheismo Supremo! Na eterna mentira de todos os deuses, só os deuses todos são verdade.</p>
                 
-                <signed >Alves Martins.</signed>
+                <signed>Alves Martins.</signed>
             </div>
         </body>
     </text>

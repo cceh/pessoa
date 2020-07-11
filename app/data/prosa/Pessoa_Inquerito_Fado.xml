@@ -1,9 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc>         
-            <titleStmt>
+        <fileDesc><titleStmt>
                 <title>O Nosso Inquérito Sobre o Fado</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -20,8 +17,7 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt>
-            <publicationStmt>
+            </titleStmt><publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -31,22 +27,18 @@
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_Inquerito_Fado.xml</idno>               
-            </publicationStmt>
-            <sourceDesc>
-                <list type="work-index">
+            </publicationStmt><notesStmt><note type="genre">
+                        <rs type="genre" key="prosa">Prosa</rs>
+                    </note></notesStmt><sourceDesc><list type="work-index">
                     <item><rs type="work" key="O1-X">O Nosso Inquérito Sobre o Fado</rs></item>
-                </list>
-                <biblStruct>
-                    <!-- here goes the bibliographical reference for the source publication -->
-                    <analytic>
+                </list><biblStruct><analytic>
                         <title level="a">O Nosso Inquérito Sobre o Fado</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
                         <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
-                    </analytic>
-                    <monogr>
+                    </analytic><monogr>
                         <title level="j"><rs type="periodical" key="J9">O "Notícias" Ilustrado</rs></title>
                         <!-- @key is to identify the periodical. You can find other periodicals IDs in the file 
                             lists.xml in the data folder. In that file, 
@@ -56,13 +48,10 @@
                             <date when="1929-04-14">14 de Abril de 1929</date>
                         </imprint>
                         <biblScope unit="page">14</biblScope>
-                    </monogr>
-                    <note type="genre">
-                        <rs type="genre" key="prosa">Prosa</rs>
-                    </note>
-                </biblStruct>
-            </sourceDesc>
-        </fileDesc>
+                    </monogr><!-- here goes the bibliographical reference for the source publication --><!-- this can also have @otherLangs, e.g. otherLangs="en fr" --><!-- @key is to identify the periodical. You can find other periodicals IDs in the file 
+                            lists.xml in the data folder. In that file, 
+                        look for the sublist <list type="periodical">, currently beginning at line 1450. You can also add
+                        new periodicals there --></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/Inquerito_Fado_10.jpg"/>
@@ -81,7 +70,7 @@
 <head>O NOSSO INQUERITO SOBRE 
     O FADO</head>
 
-<p rend="text-center" > O FADO SERÁ OU NÃO UMA CANÇÃO NACIONAL? – OS SEUS INTUITOS SÃO MORALISADORES, OU PELO CONTRARIO ANTINGIRÃO UMA FEIÇÃO 
+<p rend="text-center"> O FADO SERÁ OU NÃO UMA CANÇÃO NACIONAL? – OS SEUS INTUITOS SÃO MORALISADORES, OU PELO CONTRARIO ANTINGIRÃO UMA FEIÇÃO 
     DISSOLVENTE? – HA VANTAGEM EM DAR AO FADO O DESENVOLVIMENTO NECESSARIO A ELEGE-LO COMO UMA ESPECIALISAÇÃO ARTISTICA, ETNICA, OU 
     MUSICAL? – TURISTICO, POETICO, SAUDOSISTA, INVOCATIVO, REGIONAL, REPRESENTA O FADO UMA EXPRESSÃO DE BELEZA, DE PROPAGANDA, DE ATRAÇÃO 
     NACIONAL?</p>
@@ -107,4 +96,3 @@
         </body>
     </text>
 </TEI>
-

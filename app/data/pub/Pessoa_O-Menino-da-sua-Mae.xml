@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?> 
-<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -39,6 +38,18 @@
                 </availability>
                 <idno type="filename">Pessoa_O-Menino-da-sua-Mae.xml</idno>
             </publicationStmt>
+            <notesStmt>
+                <note type="summary">Poema republicado em <hi rend="italic">O “Notícias”
+                        Ilustrado</hi>, 11 de Novembro de 1928, p. 7 e em <hi rend="italic"
+                        >Cancioneiro do 1º Salão dos Independentes</hi>, 1930, p. 21. Na primeira
+                    republicação encontram-se diferenças de pontuação e ortografia, assim como uma
+                    variante do início do quarto verso da penúltima estrofe, “Do lenço...”. A
+                    segunda republicação apresenta apenas diferenças de ortografia face à primeira
+                    publicação. Apresentamos aqui as imagens das três publicações.</note>
+                <note type="genre">
+                    <rs type="genre" key="poesia">Poesia</rs>
+                </note>
+            </notesStmt>
             <sourceDesc>
                 <list type="work-index">
                     <item><rs type="work" key="O1-29">O Menino Da Sua Mãe</rs></item>
@@ -60,20 +71,12 @@
                         <biblScope unit="issue">1</biblScope>
                         <biblScope unit="page">47</biblScope>
                     </monogr>
-                    <note type="genre">
-                        <rs type="genre" key="poesia">Poesia</rs>
-                    </note>
-                    <note type="summary">Poema republicado em <hi rend="italic">O “Notícias”
-                            Ilustrado</hi>, 11 de Novembro de 1928, p. 7 e em <hi rend="italic"
-                            >Cancioneiro do 1º Salão dos Independentes</hi>, 1930, p. 21. Na
-                        primeira republicação encontram-se diferenças de pontuação e ortografia,
-                        assim como uma variante do início do quarto verso da penúltima estrofe, “Do
-                        lenço...”. A segunda republicação apresenta apenas diferenças de ortografia
-                        face à primeira publicação. Apresentamos aqui as imagens das três
-                        publicações.</note>
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="pub/178423_0860_47_t0.jpg"/>

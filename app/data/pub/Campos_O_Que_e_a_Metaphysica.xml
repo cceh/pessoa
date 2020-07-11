@@ -1,9 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc>         
-            <titleStmt>
+        <fileDesc><titleStmt>
                 <title>O Que é a Metaphysica?</title>
                 <author>
                     <rs type="name" key="AdC">Álvaro de Campos</rs>
@@ -20,8 +17,7 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt>
-            <publicationStmt>
+            </titleStmt><publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -30,33 +26,24 @@
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Campos_O_que_e_a_Metaphysica.xml</idno>               
-            </publicationStmt>
-            <sourceDesc>
-                <list type="work-index">
+            </publicationStmt><notesStmt><note type="genre">
+                        <rs type="genre" key="prosa">Prosa</rs>
+                    </note></notesStmt><sourceDesc><list type="work-index">
                     <item><rs type="work" key="W210">O Que é a Metaphysica?</rs></item>
-                </list>
-                <biblStruct>
-                    <analytic>
+                </list><biblStruct><analytic>
                         <title level="a">O Que é a Metaphysica?</title>
                         <author>
                             <rs type="name" key="AdC">Álvaro de Campos</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                    </analytic>
-                    <monogr>
+                    </analytic><monogr>
                         <title level="j"><rs type="periodical" key="J2">Athena</rs></title>
                         <imprint>
                             <date when="1924-11">Novembro de 1924</date>
                         </imprint>
                         <biblScope unit="issue">2</biblScope>
                         <biblScope unit="page">59-60</biblScope>
-                    </monogr>
-                    <note type="genre">
-                        <rs type="genre" key="prosa">Prosa</rs>
-                    </note>
-                </biblStruct>
-            </sourceDesc>
-        </fileDesc>
+                    </monogr></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/O_que_e_a_Metaphysica.jpg"/>
@@ -101,8 +88,7 @@
                     mathematica á medida que se aperfeiçôa, para reduzir tudo a formulas «abstractas», precisas, onde é maxima a libertação das «equações pessoaes», 
                     isto é, dos erros de observação 
                     e coordenação produzidos pela fallibilidade dos sentidos e do entendimento do observador
-                    <note n="*"><label>(<hi rend="superscript"
-                        >*</hi>)<!-- JU: I'm not sure if this is the correct way to do this kind of notes --></label>Convém que, para prevenção dos leigos, se faça uma observação, 
+                    <note n="*"><label>(<hi rend="superscript">*</hi>)<!-- JU: I'm not sure if this is the correct way to do this kind of notes --></label>Convém que, para prevenção dos leigos, se faça uma observação, 
                         embora digressiva, a este respeito. 
                         As sciencias, ao approximarem-se do estado «mathematico», 
                         tornam-se <hi rend="italic">mais precisas</hi>: é porém duvidoso que, 
@@ -182,5 +168,3 @@
         </body>
     </text>
 </TEI>
-                
-                

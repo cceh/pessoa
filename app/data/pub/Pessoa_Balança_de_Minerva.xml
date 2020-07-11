@@ -1,9 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc>
-            <titleStmt>
+        <fileDesc><titleStmt>
                 <title>Balança de Minerva - Aferição</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -20,8 +17,7 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt>
-            <publicationStmt>
+            </titleStmt><publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -30,20 +26,17 @@
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_Balança_de_Minerva.xml</idno>
-            </publicationStmt>
-            <sourceDesc>
-                <list type="work-index">
+            </publicationStmt><notesStmt><note type="genre">
+                        <rs type="genre" key="prosa">Prosa</rs>
+                    </note></notesStmt><sourceDesc><list type="work-index">
                     <item><rs type="work" key="W235">Balança de Minerva - Aferição</rs></item>
-                </list>
-                <biblStruct>
-                    <analytic>
+                </list><biblStruct><analytic>
                         <title level="a">Balança de Minerva - Aferição</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                    </analytic>
-                    <monogr>
+                    </analytic><monogr>
                         <title level="j"><rs type="periodical" key="J59">Teatro - Jornal
                             D'Arte</rs></title>
                         <imprint>
@@ -51,13 +44,7 @@
                         </imprint>
                         <biblScope unit="issue">1</biblScope>
                         <biblScope unit="page">X</biblScope>
-                    </monogr>
-                    <note type="genre">
-                        <rs type="genre" key="prosa">Prosa</rs>
-                    </note>
-                </biblStruct>
-            </sourceDesc>
-        </fileDesc>
+                    </monogr></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="XXX"/>
@@ -90,8 +77,7 @@
                     faz-lhe justiça; se é bom põe-o na evidencia que os livros bons merecem. E, no
                     fim de tudo, nada d’isto tem importancia, porque os livros bons leva-os a
                     Historia ao collo para casa. E quanto aos maus – criticar é apenas abrir-lhes a
-                    cova e resar-lhes em cima da ultima descida o latim que fallava <rs type="name"
-                        key="P460">Juvenal</rs>. Ás vezes é com sete pás de elogios que esta justiça
+                    cova e resar-lhes em cima da ultima descida o latim que fallava <rs type="name" key="P460">Juvenal</rs>. Ás vezes é com sete pás de elogios que esta justiça
                     mortal melhor se sella.</p>
                 <p rend="indent-first">A justificação ultima da critica assim bem entendida é o
                     satisfazer a função natural de desdenhar, função tão natural como a de comer e
