@@ -6,22 +6,27 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
 
 declare function pub:get-title($node as node(), $model as map(*), $id as xs:string) as node()* {
-   
-   let $xml := (pub:get-xml($id))//tei:sourceDesc/tei:biblStruct/tei:monogr
-    let $title := <h2>{(pub:get-xml($id))/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title/data(.)}</h2>
-    let $page := if( exists($xml/tei:biblScope[@unit="page"])) then (
-        let $pa := $xml/tei:biblScope[@unit="page"]/data(.)
-        let $se := if(contains($pa,"-")) then "pp." else "p."
-        return concat( ", ", $se,$pa)
-            )
-    else ()
-    let $author := <p class="titleline_additional" id="t_add_3"> {(pub:get-xml($id))//tei:sourceDesc/tei:biblStruct//tei:author/tei:rs/data(.)}</p>
-    let $titlemaText := ($xml/tei:title/data(.),$xml/tei:biblScope[@unit="issue"]/data(.))  
-    let $titlema := <p  class="titleline_additional" id="t_add_1"> {string-join($titlemaText," ")},</p>
-    (:    let $titlema := <p  class="titleline_additional" id="t_add_1"> {$xml/tei:title/data(.)}{concat(" "," ")}{$xml/tei:biblScope[@unit="issue"]/data(.)},</p>:)
-    let $datpa := <p class="titleline_additional" id="t_add_2"> {$xml/tei:imprint/tei:date/data(.)}{$page}.</p>
-    return ($title,$author,$titlema,$datpa)
-
+    let $xml := pub:get-xml($id)
+    (: get the xml, title and author of the publication :)
+    let $title := <h2>{$xml//tei:titleStmt/tei:title/data(.)}</h2>
+    let $author := <p class="titleline_additional" id="t_add_3"> {$xml//tei:titleStmt/tei:author/tei:rs/data(.)}</p>
+    return ($title, $author,
+    
+        (: get the details for each journal publication :)
+        let $monogr := $xml//tei:sourceDesc/tei:biblStruct/tei:monogr
+        return
+            for $journal_pub in $monogr
+                let $journal_title := $journal_pub/tei:title/data(.)
+                let $journal_issue := $journal_pub/tei:biblScope[@unit="issue"]/data(.)
+                let $date := $journal_pub/tei:imprint/tei:date/data(.)
+                let $pages := if(exists($journal_pub/tei:biblScope[@unit="page"])) 
+                             then let $pa := $journal_pub/tei:biblScope[@unit="page"]/data(.)
+                                  let $pa_label := if(contains($pa,"-")) then "pp." else "p."
+                                  return concat($pa_label,$pa)
+                             else ()
+                let $titleline := <p class="titleline_additional" id="t_add_1">{concat(string-join(($journal_title, $journal_issue)," "), ", ", string-join(($date, $pages), ", "), ".")}</p>
+                return $titleline
+    )
 };
 
 

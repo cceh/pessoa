@@ -28,8 +28,8 @@ declare function local:mkcol($collection, $path) {
 }; 
 
 declare function local:remove-old-data(){
-    xdb:remove("/db/apps/pessoa/data/doc"),
-    xdb:remove("/db/apps/pessoa/data/pub")
+    xdb:remove("/db/apps/pessoa/xslt"),
+    xdb:remove("/db/apps/pessoa/resources")
 };
 
 (: store the collection configuration 

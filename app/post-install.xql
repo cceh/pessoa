@@ -20,7 +20,7 @@ declare function local:move-index(){
 	let $conf-path := "/db/system/config/db/apps/pessoa/data"
 	return
     	(
-	xmldb:move($app-path, concat($conf-path, "/doc"), "collection_doc.xconf"),
+	 xmldb:move($app-path, concat($conf-path, "/doc"), "collection_doc.xconf"),
 	xmldb:move($app-path, concat($conf-path, "/pub"), "collection_pub.xconf"),
 	xmldb:rename(concat($conf-path, "/doc"), "collection_doc.xconf", "collection.xconf"),
 	xmldb:rename(concat($conf-path, "/pub"), "collection_pub.xconf", "collection.xconf"),

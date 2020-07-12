@@ -185,6 +185,15 @@
         <br/>
     </xsl:template>
     
+    <!-- apparatus -->
+    <xsl:template match="app">
+        <span class="app-lemma"><xsl:apply-templates select="lem"/><span class="app-text">
+            <strong><xsl:value-of select="lem/@wit"/>:</strong> <em><xsl:value-of select="lem"/></em><br/>
+            <xsl:for-each select="rdg">
+                <strong><xsl:value-of select="./@wit"/>:</strong> <em><xsl:value-of select="."/></em><xsl:if test="position() != last()"><br/></xsl:if>
+            </xsl:for-each>
+        </span></span>
+    </xsl:template>
     
     
 </xsl:stylesheet>

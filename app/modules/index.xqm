@@ -46,9 +46,9 @@ declare function index:collectGenre($node as node(), $model as map(*),$type as x
                                                                 else "?"
                                                                 )
                                                             else (
-                                                                if(exists($doc//tei:imprint/tei:date/@when)) then $doc//tei:imprint/tei:date/@when/data(.)
-                                                                else if(exists($doc//tei:imprint/tei:date/@notBefore)) then $doc//tei:imprint/tei:date/@notBefore/data(.)
-                                                                else if(exists($doc//tei:imprint/tei:date/@from)) then $doc//tei:imprint/tei:date/@from/data(.)
+                                                                if(exists($doc//tei:imprint/tei:date/@when)) then ($doc//tei:imprint)[1]/tei:date/@when/data(.)
+                                                                else if(exists($doc//tei:imprint/tei:date/@notBefore)) then ($doc//tei:imprint)[1]/tei:date/@notBefore/data(.)
+                                                                else if(exists($doc//tei:imprint/tei:date/@from)) then ($doc//tei:imprint)[1]/tei:date/@from/data(.)
                                                                 else "?"
                                                             )
                                         let $date :=    if($date eq "?") then "?"  

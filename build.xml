@@ -52,22 +52,36 @@
         <!-- Generating zip files from the data -->
         <!--<zip destfile="./app/data/pub.zip" basedir="./app/data/pub/" excludes="dont*.*"/>
         <zip destfile="./app/data/doc.zip" basedir="./app/data/doc/" excludes="dont*.*"/>-->
-        <!--<xdb:xquery uri="${uri}" queryfile="app/pre-install.xql" user="${user}" password="${password}"/>-->
+        <xdb:xquery uri="${uri}" queryfile="app/pre-install.xql" user="${user}" password="${password}"/>
         <xdb:store uri="${uri}" createcollection="true" createsubcollections="true" user="${user}" password="${password}">
             <fileset dir="./app/">
+                <include name="*.*"/>
+                <exclude name="*.xpr"/>
                 
+                <!-- data: -->
+                <include name="data/doc/*.*"/>
+                <include name="data/network/*.*"/>
                 <exclude name="data/pre1913/*.*"/>
-                <include name="**/*.*"/>
-                <exclude name="build/"/>
-                <exclude name="modules/admin.xqm"/>
+                <include name="data/prosa/*.*"/>
+                <!--<include name="data/pub/*.*"/>-->
+                <include name="data/pub/Pessoa_Prece.xml"/>
+                <include name="data/pub/Pessoa_Mar_Portuguez.xml"/>
+                <include name="data/pub/Pessoa/O-Avo-e-o-Neto.xml"/>
+                <include name="data/schema/*.*"/>
+                <include name="data/timelines/*.*"/>
+                <include name="data/*.*"/>
+                
+                <include name="modules/*.*"/>
+                <include name="page/*.*"/>
+                <include name="resources/**/*.*"/>
+                <include name="templates/*.*"/>
+                <include name="xslt/**/*.*"/>
+                
+                <!-- general excludes: -->
                 <exclude name="**/*.properties"/>
                 <exclude name="**/*.tmpl"/>
                 <exclude name="**/*.md"/>
-                <exclude name="*.xpr"/>
                 <exclude name="**/.gitignore"/>
-                
-                
-                
                 <!-- nur Daten:
                 <include name="data/**/*.*"/>
                 <include name="*.xconf"/>

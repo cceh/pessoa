@@ -965,10 +965,10 @@ input[type="checkbox"].lang_input-box, input[type="radio"].lang_input-box {
 #titleline{
      background-color:#990000;
      color: #fff;
-     max-width:400px;
+     max-width:600px;
      display:block;
      margin:15px auto 0 auto;
-     padding: 4px 0;
+     padding: 10px 15px 4px 15px;
  }
  
 #titleline h2 {
@@ -1461,7 +1461,7 @@ div.text > p {
 div.text > p.indent {
     margin-left: 2em;
 }
-div.text p.align-right, div#text-div p.align-right {
+div.text p.align-right, div#text-div p.align-right, div.text p.right, div#text-div p.right {
     text-align: right;
     padding-right: 2em;
 }
@@ -1781,6 +1781,28 @@ div.text table hr.sum, div.text table hr.end {
 /* STYLES FOR THE XSLT TRANSFORMATION OF PUBLICATIONS */
 div#text-div .signed.indent-13 {
     text-indent: 30%;
+}
+div#text-div .app-lemma {
+    color: #990000;
+    cursor: pointer;
+    position: relative;
+}
+div#text-div .app-text {
+    visibility: hidden;
+    width: auto;
+    background-color: #990000;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    font-size: small;
+    font-family: inherit;
+    min-width: 100px;
+}
+div#text-div .app-lemma:hover .app-text {
+    visibility: visible;
 }
 /* STYLES FOR PROSE PUBLICATIONS */
 div#text-div .text.prose .lg.center {
