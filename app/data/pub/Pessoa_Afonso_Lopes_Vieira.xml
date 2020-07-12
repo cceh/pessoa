@@ -23,63 +23,63 @@
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
                 <availability status="restricted">
-                    <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_Afonso_Lopes_Vieira.xml</idno>               
-            </publicationStmt><notesStmt><note type="genre">
+            </publicationStmt><notesStmt>
+                <note type="summary" resp="#JU">Texto recuperado por Manuela Parreira da Silva (Silva, 1996 p. 58). 
+                    A atribuição de autoria decorre do confronto com o manuscrito BNP 125A-26 a 29, praticamente 
+                    idêntico ao texto publicado.  O texto foi integrado em Sebastianismo e Quinto Império 
+                    (Pessoa, 2011B, pp. 156-158).<!-- JU: Not sure how to use the bibliography yet. --></note>
+                <note type="genre">
                         <rs type="genre" key="prosa">Prosa</rs>
                     </note></notesStmt><sourceDesc><list type="work-index">
-                    <item><rs type="work" key="O1-X">Afonso Lopes Vieira, O Poeta Nacionalista</rs></item>
+                    <item><rs type="work" key="W227">Afonso Lopes Vieira, O Poeta Nacionalista</rs></item>
                 </list><biblStruct><analytic>
                         <title level="a">Afonso Lopes Vieira, O Poeta Nacionalista</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic><monogr>
                         <title level="j"><rs type="periodical" key="J9">O "Notícias" Ilustrado</rs></title>
                         <imprint>
                             <date when="1928-12">3 de Junho de 1928</date>
-                            <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                         </imprint>
                         <biblScope unit="page">8</biblScope>
-                    </monogr><!-- here goes the bibliographical reference for the source publication --><!-- this can also have @otherLangs, e.g. otherLangs="en fr" --><!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" --></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
+                    </monogr></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/Afonso_Lopes_Vieira.jpg"/>
     </facsimile>
-    <text corresp="#O1-X">
-        <!-- @corresp: contains the index of this WORK. 
-        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
-        This can be left as is in the beginning.
-    -->
+    <text corresp="#W227">
         <body>
             <div>
-                <head><hi rend="bold"><rs type="name" key="P140">Afonso Lopes Vieira</rs>, O Poeta Nacionalista,</hi></head>
-                <head type="sub">É alvo de uma homenagem dos seus amigos: uma missa nos Jeronimos e um banquete abordo da fragata «Deus te 
+                <head rend="center"><rs type="name" key="P140">Afonso Lopes Vieira</rs>, O Poeta Nacionalista,</head>
+                <head type="sub" rend="center">É alvo de uma homenagem dos seus amigos: uma missa nos Jeronimos e um banquete 
+                    abordo da fragata «Deus te 
                     guie», no Tejo, em frente á Torre de Belem.</head>
                     
                     <p rend="indent-first">Vae partir para o Brasil, em uma alta e simbolica missão da Patria, o poeta 
                         <rs type="name" key="P140">Afonso Lopes Vieira</rs>. Vae levar ao Chefe do Portugal Novo, em nome do Chefe do Portugal 
                         Antigo, o sinal da esperança comum a tudo quanto é Portugal.</p>
-                    <p rend="indent-first">O livro, para cuja oferta se afasta de nós, é o de <rs type="name" key="P15">Luiz de Camões</rs>, 
-                        cantor de El-Rei <rs type="name" key="P21">D. Sebastião</rs>. O fim, para q[u]e olham todos os destinos do Povo, a que 
+                    <p rend="indent-first">O livro, para cuja oferta se afasta de nós, é o de <rs type="name" key="P15" style="b">Luiz de Camões</rs>, 
+                        cantor de El-Rei <rs type="name" key="P21">D. Sebastião</rs>. O fim, para 
+                        <choice><sic>qe</sic><corr resp="#JU">que</corr></choice> olham todos os destinos do Povo, a que 
                         pertence esse cantor, fechou-os o sapateiro <rs type="name" key="P259">Bandarra</rs> na evocação ante-póstuma do mesmo 
                         <rs type="name" key="P21">D. Sebastião</rs>.</p>
                     <p rend="indent-first"><rs type="name" key="P140">Afonso Lopes Vieira</rs> partindo-se, leva consigo, involuntariamente, o 
                         designio obscuro transcrito pelo <rs type="name" key="P259">Bandarra</rs>.</p>
                     <p rend="indent-first">O poeta <rs type="name" key="P140">Afonso Lopes Vieira</rs>, sebastianista quer o queira, quer não, vae 
                         levar ao Brasil um um poema claro que é uma carta escura – uma carta decifrada cuja decifração não haverá muitos que façam 
-                        – nem o que a envia, nem o que a recebe, [n]em porventura o que a transmite.</p>
+                        – nem o que a envia, nem o que a recebe, <choice><sic>em</sic><corr resp="#JU">nem</corr></choice>
+                        porventura o que a transmite.</p>
                     <p rend="indent-first">A hora da designação da mensagem, na conferencia publica com que a esclareceu, foi a de 29 de Maio de 
                         1928, designada na profecia menor da Pyramide como a do aviso Liminar, que uns entenderam mal e outros peior.</p>
-                    <p rend="indent-first">O interprete i[n]glez [David Davidson] das polegadas da Pyramide, regista, sem que a explique, a 
+                <p rend="indent-first"><quote><!-- JU: this is not a quote but a reference, should we make a diference? -->O interprete 
+                    <choice><sic>iglez</sic><corr resp="#JU">inglez</corr></choice><note type="comment" resp="#JU">
+                    <rs type="name" key="P566">David Davidson</rs>, <rs type="title">
+                        <hi rend="italic">The Great Pyramind: its divine message, CFP 1-36</hi></rs></note></quote> das polegadas da Pyramide, regista, sem que a explique, a 
                         data de 1557 como aviso Central da Historia. De este ano nada resa a Historia, senão que nele começou a reinar El-Rei 
                         <rs type="name" key="P21">D. Sebastião</rs>.</p>
                     <p rend="indent-first">O poeta <rs type="name" key="P140">Afonso Lopes-Vieira</rs> apresentou, na data antecipadamente 
