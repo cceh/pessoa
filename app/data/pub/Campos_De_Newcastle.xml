@@ -74,14 +74,18 @@
                 <head>DE NEWCASTLE-ON-TYNE <lb/><rs type="name" key="AdC" style="a" role="author"
                         >Alvaro de Campos</rs>
                     <lb/> ESCREVE Á “<rs type="periodical" key="J11">CONTEMPORANEA</rs>”</head>
-
                 <p rend="indent-first">Meu querido <rs type="name" key="P144">José Pacheco</rs>:</p>
                 <p rend="indent-first">Venho escrever-lhe para o felicitar pela sua <rs type="title"
                             ><hi rend="italic">Contemporanea</hi></rs>, para lhe dizer que não tenho
                     escripto nada, e para pôr alguns embargos ao <ref
                         target="http://www.pessoadigital.pt/pub/Pessoa_Antonio_Botto_e_o_ideal"
                         >artigo
-                        <!-- JU: Is there a way to create the link insted of the file, before it is available in the site? -->
+                        <!-- JU: Is there a way to create the link insted of the file, before it is available in the site?
+                        U: you can leave it as is, then when one clicks on it, it will just lead to the login page as long as the 
+                        file is not available freely.
+                        Or you use: <ref target="#">artigo ...</ref> as a placeholder, then nothing will happen but it will
+                        already look like a link.
+                        -->
                         do <rs type="name" key="FP">Fernando Pessoa</rs></ref>.</p>
                 <p rend="indent-first">Quereria mandar-lhe tambem collaboração. Mas, como lhe disse,
                     não escrevo. Fui em tempos poeta decadente; hoje creio que estou decadente, e já
@@ -170,11 +174,6 @@
                     muito tempo ahi a tem.</p>
                 <p rend="indent-first">Diga ao<rs type="name" key="FP">Fernando Pessoa</rs> que não
                     tenha razão.</p>
-                <!-- U: I changed this last part, I would not use <lg> and <l> because they are for poetry and verses.
-                    <lb/> (line break) on the other hand is a neutral element.
-                There is an element <salute> which would fit here. I still have to add it to the schema,
-                because we did not have such a case before. Also, you can use <dateline> for indications of date and place
-                at the end of texts JU: nice, I like it!-->
                 <salute>Um abraço do <lb/>camarada amigo</salute>
                 <signed>ALVARO DE CAMPOS</signed>
                 <dateline>Newcastle-on-Tyne, <lb/>17 Outubro 1922</dateline>

@@ -188,10 +188,58 @@
     <!-- apparatus -->
     <xsl:template match="app">
         <span class="app-lemma"><xsl:apply-templates select="lem"/><span class="app-text">
-            <strong><xsl:value-of select="lem/@wit"/>:</strong> <em><xsl:value-of select="lem"/></em><br/>
-            <xsl:for-each select="rdg">
-                <strong><xsl:value-of select="./@wit"/>:</strong> <em><xsl:value-of select="."/></em><xsl:if test="position() != last()"><br/></xsl:if>
-            </xsl:for-each>
+            <table>
+                <tr>
+                    <xsl:variable name="lem" select="lem"/>
+                    <td class="wit">
+                        <xsl:for-each select="$lem/@wit/tokenize(.,' ')">
+                            <!--<xsl:variable name="witness" select="$lem/ancestor::TEI//biblStruct[@xml:id=$lem/@wit/substring-after(.,'#')]"/>
+                            <xsl:variable name="witness_journal" select="$witness//rs[@type='periodical']"/>
+                            <xsl:variable name="witness_date" select="$witness//date"/>
+                            <xsl:variable name="witness_year">
+                                <xsl:choose>
+                                    <xsl:when test="$witness_date[@when]">
+                                        <xsl:value-of select="$witness_date/@when/substring(.,1,4)"/>
+                                    </xsl:when>
+                                    <xsl:when test="$witness_date[@from and @to]">
+                                        <xsl:value-of select="concat($witness_date/@from/substring(.,1,4),'-',$witness_date/@to/substring(.,1,4))"/>
+                                    </xsl:when>
+                                </xsl:choose>
+                            </xsl:variable>
+                            <xsl:value-of select="concat($witness_journal, ' ', $witness_year)"/>-->
+                            <xsl:value-of select="replace(substring-after(.,'#'),'_','. ')"/>
+                            <xsl:if test="position() != last()"><xsl:text>, </xsl:text></xsl:if>
+                        </xsl:for-each><xsl:text>:</xsl:text>
+                    </td>
+                    <td class="rdg"><xsl:value-of select="$lem"/></td>
+                </tr>
+                <xsl:for-each select="rdg">
+                    <tr>
+                        <xsl:variable name="rdg" select="."/>
+                        <td class="wit">
+                            <xsl:for-each select="$rdg/@wit/tokenize(.,' ')">
+                                <!--<xsl:variable name="witness" select="$rdg/ancestor::TEI//biblStruct[@xml:id=substring-after(current(),'#')]"/>
+                                <xsl:variable name="witness_journal" select="$witness//rs[@type='periodical']"/>
+                                <xsl:variable name="witness_date" select="$witness//date"/>
+                                <xsl:variable name="witness_year">
+                                    <xsl:choose>
+                                        <xsl:when test="$witness_date[@when]">
+                                            <xsl:value-of select="$witness_date/@when/substring(.,1,4)"/>
+                                        </xsl:when>
+                                        <xsl:when test="$witness_date[@from and @to]">
+                                            <xsl:value-of select="concat($witness_date/@from/substring(.,1,4),'-',$witness_date/@to/substring(.,1,4))"/>
+                                        </xsl:when>
+                                    </xsl:choose>
+                                </xsl:variable>
+                                <xsl:value-of select="concat($witness_journal, ' ', $witness_year)"/>-->
+                                <xsl:value-of select="replace(substring-after(.,'#'),'_','. ')"/>
+                                <xsl:if test="position() != last()"><xsl:text>, </xsl:text></xsl:if>
+                            </xsl:for-each><xsl:text>:</xsl:text>
+                        </td>
+                        <td class="rdg"><xsl:value-of select="$rdg"/></td>
+                    </tr>
+                </xsl:for-each>
+            </table>
         </span></span>
     </xsl:template>
     
