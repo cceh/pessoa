@@ -1,6 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc><titleStmt>
+        <fileDesc>
+            <titleStmt>
                 <title>Mário de Sá-Carneiro (1890-1916)</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -17,7 +20,8 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt><publicationStmt>
+            </titleStmt>
+            <publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -26,19 +30,27 @@
                     <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
-                <idno type="filename">Pessoa_Mario_de_Sa-Carneiro.xml</idno>               
-            </publicationStmt><notesStmt><note type="genre">
-                        <rs type="genre" key="prosa">Prosa</rs>
-                    </note></notesStmt><sourceDesc><list type="work-index">
+                <idno type="filename">Pessoa_Mario_de_Sa-Carneiro.xml</idno>
+            </publicationStmt>
+            <notesStmt>
+                <note type="genre">
+                    <rs type="genre" key="prosa">Prosa</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
                     <item><rs type="work" key="O4-X">Mário de Sá-Carneiro (1890-1916)</rs></item>
-                </list><biblStruct><analytic>
+                </list>
+                <biblStruct>
+                    <analytic>
                         <title level="a">Mário de Sá-Carneiro (1890-1916)</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
                         <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
-                    </analytic><monogr>
+                    </analytic>
+                    <monogr>
                         <title level="j"><rs type="periodical" key="J2">Athena</rs></title>
                         <imprint>
                             <date when="1924-11">Novembro de 1924</date>
@@ -48,9 +60,18 @@
                         </imprint>
                         <biblScope unit="issue">2</biblScope>
                         <biblScope unit="page">41-42</biblScope>
-                    </monogr><!-- here goes the bibliographical reference for the source publication --><!-- this can also have @otherLangs, e.g. otherLangs="en fr" --><!-- in case it is not a single date, but from-to, it 
+                    </monogr>
+                    <!-- here goes the bibliographical reference for the source publication -->
+                    <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
+                    <!-- in case it is not a single date, but from-to, it 
                             looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" --></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
+                            there is just a year: when="1931" -->
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/Mário_de_SaCarneiro.jpg"/>
@@ -65,41 +86,72 @@
             <div>
                 <head><rs type="name" key="P30">MARIO DE SÁ-CARNEIRO</rs></head>
                 <head type="sub">(1890-1916)</head>
-                <head type="sub" rend="right">Atque in perpetuum, frate, ave atque vale!</head> <!--Note quotation-->
-                <head type="sub" rend="right"><rs type="name" key="P499">CAT[ULO]</rs></head> <!--Note quotation-->
-                    
-                    <p rend="indent-first"><hi rend="italic">Morre jovem o que os Deuses amam</hi>, é um preceito da sabedoria antiga. E porcerto a imaginação, que figura novos mundos, e a arte, que em 
-                        obras os finge, são os signaes notaveis d’esse amor divino. Não concedem os Deuses esses dons para que sejamos felizes, senão para que sejamos seus pares. Quem ama ama só a 
-                        egual, porque o faz egual com amal-o. Como porém o homem não pode ser egual dos Deuses, pois o Destino os separou, não corre homem nem se alteia deus pelo amor divino: estagna 
-                        só deus fingido, doente da sua ficção.</p>
-                        
-                    <p rend="indent-first">Não morrem jovens todos a que os Deuses amam, senão entendendo-se per morte o acabamento do que constitue a vida. E como á vida, além da mesma vida, a 
-                        constitue o instincto natural com que se a vive, os Deuses, aos que amam, matam jovens ou na vida, ou no instincto natural com que vivel-a. Uns morrem; aos outros, tirado o 
-                        instincto com que vivam, pesa a vida como morte, vivem morte, morrem a vida em ella mesma. E é na juventude, quando nelles desabrocha a flor fatal e unica, que começam a sua 
-                        morte vivida.</p>
-                            
-                    <p rend="indent-first">No heroe, no sancto e no genio os Deuses se lembram dos homens. O heroe é um homem como todos, a quem coube por sorte o auxilio divino; não está nelle a luz 
-                        que lhe astreia a fronte, sol da gloria ou luar da morte, e lhe separa o rosto dos de seus pares. O sancto é um homem bom a que os Deuses, por misericordia, cegaram, para que 
-                        não soffresse; cego, pode crer no bem, em si, e em deuses melhores, pois não vê, na alma que cuida propria e nas cousas incertas que o cercam, a operação irremediavel do 
-                        capricho dos Deuses, o jugo superior do Destino. Os Deuses são amigos do heroe, compadecem-se do sancto; só ao genio, porém, é que verdadeiramente amam. Mas o amor dos Deuses, 
-                        como por destino não é humano, revela-se em aquillo em que humanamente se não revelára amor. Se só ao genio, amando-o, tornam seu egual, só ao genio dão, sem que queiram, a 
-                        maldição fatal do abraço de fogo com que tal o affagam. Se a quem deram a belleza, só seu attributo, castigam com a consciencia da mortalidade d’ella; se a quem deram a sciencia, 
-                        seu attributo tambem, punem com o conhecimento do que nella ha de eterna limitação; que angustias não farão pesar sobre aquelles, genios do pensamento ou da arte, a quem, 
-                        tornando-os creadores, deram a sua mesma essencia? Assim ao genio caberá, além da dor da morte da belleza alheia, e da magoa de conhecer a universal ignorancia, o soffrimento 
-                        proprio, de se sentir par dos Deuses sendo homem, par dos homens sendo deus, exul ao mesmo tempo em duas terras.</p>
-                               
-                <p rend="indent-first">Genio na arte, não teve <rs type="name" key="P30">Sá-Carneiro</rs> nem alegria nem felicidade nesta vida. Só a arte, que fez ou que sentiu, por 
-                        instantes o turbou de consolação. São assim os que os Deuses fadaram seus. Nem o amor os quer, nem a esperança os busca, nem a gloria os acolhe. Ou morrem jovens, ou a si 
-                        mesmos sobrevivem, incolas da incomprehensão ou da indifferença. Este morreu jovem, porque os Deuses lhe tiveram muito amor.</p>
-                                    
-                <p rend="indent-first">Mas para <rs type="name" key="P30">Sá-Carneiro</rs>, genio não só da arte mas da innovação nella, junctou-se, á indifferença que circumda os genios, 
-                        o escarneo que persegue os innovadores, prophetas, como Cassandra, de verdades que todos teem por mentira. <hi rend="italic">In quâ scribebat, barbara terra fuit</hi>. Mas, se a 
-                        terra fôra outra, não variára o destino. Hoje, mais que em outro tempo, qualquer privilegio é um castigo. Hoje, mais que nunca, se soffre a propria grandeza. As plebes de todas 
-                        as classes cobrem, como uma maré morta, as ruinas do que foi grande e os alicerces desertos do que poderia sel-o. O circo, mais que em Roma que morria, é hoje a vida de todos; 
-                        porém alargou os seus muros até os confins da terra. A gloria é dos gladiadores e dos mimos. Decide supremo qualquer soldado barbaro, que a guarda impoz imperador. Nada nasce de 
-                        grande que não nasça maldicto, nem cresce de nobre que se não definhe, crescendo. Se assim é, assim seja! Os Deuses o quizeram assim.</p>
-                                        
-                                        <signed rend="right">Fernando Pessoa</signed>
+                <head type="sub" rend="right">Atque in perpetuum, frate, ave atque vale!</head>
+                <!--Note quotation-->
+                <head type="sub" rend="right"><rs type="name" key="P499">CAT[ULO]</rs></head>
+                <!--Note quotation-->
+
+                <p rend="indent-first"><hi rend="italic">Morre jovem o que os Deuses amam</hi>, é um
+                    preceito da sabedoria antiga. E porcerto a imaginação, que figura novos mundos,
+                    e a arte, que em obras os finge, são os signaes notaveis d’esse amor divino. Não
+                    concedem os Deuses esses dons para que sejamos felizes, senão para que sejamos
+                    seus pares. Quem ama ama só a egual, porque o faz egual com amal-o. Como porém o
+                    homem não pode ser egual dos Deuses, pois o Destino os separou, não corre homem
+                    nem se alteia deus pelo amor divino: estagna só deus fingido, doente da sua
+                    ficção.</p>
+
+                <p rend="indent-first">Não morrem jovens todos a que os Deuses amam, senão
+                    entendendo-se per morte o acabamento do que constitue a vida. E como á vida,
+                    além da mesma vida, a constitue o instincto natural com que se a vive, os
+                    Deuses, aos que amam, matam jovens ou na vida, ou no instincto natural com que
+                    vivel-a. Uns morrem; aos outros, tirado o instincto com que vivam, pesa a vida
+                    como morte, vivem morte, morrem a vida em ella mesma. E é na juventude, quando
+                    nelles desabrocha a flor fatal e unica, que começam a sua morte vivida.</p>
+
+                <p rend="indent-first">No heroe, no sancto e no genio os Deuses se lembram dos
+                    homens. O heroe é um homem como todos, a quem coube por sorte o auxilio divino;
+                    não está nelle a luz que lhe astreia a fronte, sol da gloria ou luar da morte, e
+                    lhe separa o rosto dos de seus pares. O sancto é um homem bom a que os Deuses,
+                    por misericordia, cegaram, para que não soffresse; cego, pode crer no bem, em
+                    si, e em deuses melhores, pois não vê, na alma que cuida propria e nas cousas
+                    incertas que o cercam, a operação irremediavel do capricho dos Deuses, o jugo
+                    superior do Destino. Os Deuses são amigos do heroe, compadecem-se do sancto; só
+                    ao genio, porém, é que verdadeiramente amam. Mas o amor dos Deuses, como por
+                    destino não é humano, revela-se em aquillo em que humanamente se não revelára
+                    amor. Se só ao genio, amando-o, tornam seu egual, só ao genio dão, sem que
+                    queiram, a maldição fatal do abraço de fogo com que tal o affagam. Se a quem
+                    deram a belleza, só seu attributo, castigam com a consciencia da mortalidade
+                    d’ella; se a quem deram a sciencia, seu attributo tambem, punem com o
+                    conhecimento do que nella ha de eterna limitação; que angustias não farão pesar
+                    sobre aquelles, genios do pensamento ou da arte, a quem, tornando-os creadores,
+                    deram a sua mesma essencia? Assim ao genio caberá, além da dor da morte da
+                    belleza alheia, e da magoa de conhecer a universal ignorancia, o soffrimento
+                    proprio, de se sentir par dos Deuses sendo homem, par dos homens sendo deus,
+                    exul ao mesmo tempo em duas terras.</p>
+
+                <p rend="indent-first">Genio na arte, não teve <rs type="name" key="P30"
+                        >Sá-Carneiro</rs> nem alegria nem felicidade nesta vida. Só a arte, que fez
+                    ou que sentiu, por instantes o turbou de consolação. São assim os que os Deuses
+                    fadaram seus. Nem o amor os quer, nem a esperança os busca, nem a gloria os
+                    acolhe. Ou morrem jovens, ou a si mesmos sobrevivem, incolas da incomprehensão
+                    ou da indifferença. Este morreu jovem, porque os Deuses lhe tiveram muito
+                    amor.</p>
+
+                <p rend="indent-first">Mas para <rs type="name" key="P30">Sá-Carneiro</rs>, genio
+                    não só da arte mas da innovação nella, junctou-se, á indifferença que circumda
+                    os genios, o escarneo que persegue os innovadores, prophetas, como Cassandra, de
+                    verdades que todos teem por mentira. <hi rend="italic">In quâ scribebat, barbara
+                        terra fuit</hi>. Mas, se a terra fôra outra, não variára o destino. Hoje,
+                    mais que em outro tempo, qualquer privilegio é um castigo. Hoje, mais que nunca,
+                    se soffre a propria grandeza. As plebes de todas as classes cobrem, como uma
+                    maré morta, as ruinas do que foi grande e os alicerces desertos do que poderia
+                    sel-o. O circo, mais que em Roma que morria, é hoje a vida de todos; porém
+                    alargou os seus muros até os confins da terra. A gloria é dos gladiadores e dos
+                    mimos. Decide supremo qualquer soldado barbaro, que a guarda impoz imperador.
+                    Nada nasce de grande que não nasça maldicto, nem cresce de nobre que se não
+                    definhe, crescendo. Se assim é, assim seja! Os Deuses o quizeram assim.</p>
+
+                <signed rend="right">Fernando Pessoa</signed>
             </div>
         </body>
     </text>

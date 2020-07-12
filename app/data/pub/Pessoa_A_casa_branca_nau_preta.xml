@@ -1,6 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc><titleStmt>
+        <fileDesc>
+            <titleStmt>
                 <title>A casa branca nau preta</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -17,7 +20,8 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt><publicationStmt>
+            </titleStmt>
+            <publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -26,23 +30,37 @@
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_A_casa_branca_nau_preta.xml</idno>
-            </publicationStmt><notesStmt><note type="genre">
-                        <rs type="genre" key="poesia">Poesia</rs>
-                    </note></notesStmt><sourceDesc><list type="work-index">
+            </publicationStmt>
+            <notesStmt>
+                <note type="genre">
+                    <rs type="genre" key="poesia">Poesia</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
                     <item><rs type="work" key="O1-0">A casa branca nau preta</rs></item>
-                </list><biblStruct><analytic>
+                </list>
+                <biblStruct>
+                    <analytic>
                         <title level="a">A casa branca nau preta</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt"/>
-                    </analytic><monogr>
+                    </analytic>
+                    <monogr>
                         <title level="j"><rs type="periodical" key="J39">O Heraldo</rs></title>
                         <imprint>
                             <date when="1917-07-01">1 de Julho de 1917</date>
                         </imprint>
                         <biblScope unit="page">2</biblScope>
-                    </monogr></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="pub/a_casa_branca_nau_preta.jpg"/>
@@ -142,7 +160,8 @@
                     <l>Felicidade na Australia...</l>
                 </lg>
                 <dateline>11 de Outubro de 1916</dateline>
-                <signed rend="right">FERNANDO PESSOA <lb/> Director de <rs type="periodical" key="J12"><hi rend="bold">Orpheu</hi></rs></signed>
+                <signed rend="right">FERNANDO PESSOA <lb/> Director de <rs type="periodical"
+                        key="J12"><hi rend="bold">Orpheu</hi></rs></signed>
             </div>
         </body>
     </text>

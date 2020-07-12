@@ -1,6 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc><titleStmt>
+        <fileDesc>
+            <titleStmt>
                 <title>A Nova Poesia Portugueza Sociologicamente Considerada</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -17,7 +20,8 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt><publicationStmt>
+            </titleStmt>
+            <publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -25,27 +29,42 @@
                 <availability status="free">
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
-                <idno type="filename">Pessoa_A_Nova_Poesia_Portugueza_Sociologicamente_Considerada.xml</idno>
-            </publicationStmt><notesStmt><note type="genre">
-                        <rs type="genre" key="prosa">Prosa</rs>
-                    </note></notesStmt><sourceDesc><list type="work-index">
+                <idno type="filename"
+                    >Pessoa_A_Nova_Poesia_Portugueza_Sociologicamente_Considerada.xml</idno>
+            </publicationStmt>
+            <notesStmt>
+                <note type="genre">
+                    <rs type="genre" key="prosa">Prosa</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
                     <item><rs type="work" key="W187">A Nova Poesia Portugueza Sociologicamente
                             Considerada</rs></item>
-                </list><biblStruct><analytic>
+                </list>
+                <biblStruct>
+                    <analytic>
                         <title level="a">A Nova Poesia Portugueza Sociologicamente
                             Considerada</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                    </analytic><monogr>
+                    </analytic>
+                    <monogr>
                         <title level="j"><rs type="periodical" key="J5">A Águia</rs></title>
                         <imprint>
                             <date when="1912-04">Abril de 1912</date>
                         </imprint>
                         <biblScope unit="issue">4</biblScope>
                         <biblScope unit="page">101-107</biblScope>
-                    </monogr></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/A_Nova_Sociologicamente_101.jpg"/>
@@ -122,7 +141,8 @@
                         sua força militar, nem a sua prosperidade commercial, cousas secundarias e
                         por assim dizer physicas nas nações; tem de se entender a sua exuberancia
                             <hi rend="italic">de alma</hi>, isto é, a sua capacidade de crear, não
-                        já simples sciencia, o que é restricto e mecanico, mas <hi rend="italic">novos moldes</hi>, <hi rend="italic">novas idéas geraes</hi>, para o
+                        já simples sciencia, o que é restricto e mecanico, mas <hi rend="italic"
+                            >novos moldes</hi>, <hi rend="italic">novas idéas geraes</hi>, para o
                         movimento civilizacional a que pertence. É por isso que ninguem compara a
                         grandeza ruinosa de Roma á super-grandeza da Grecia. A Grecia creou uma
                         civilização, que Roma simplesmente espalhou, distribuiu. Temos ruinas
@@ -135,12 +155,15 @@
                         accentuada, o problema se limita simplesmente á analyse que desejamos fazer,
                         sem impôr, como imporia o estudo de qualquér nação ou mais complexa, ou mais
                         affastada no tempo, uma previa analyse differencial. A escassez do material,
-                        porém, importa apenas quando é superficial a analyse; porque, <quote><hi rend="italic">se pour expliquer un brin de paille il faut démonter
-                                tout le systéme de l'univers</hi>,
-                            <note type="comment" resp="#JU"><rs type="name" key="P217">Rémy de
-                                    Gourmont</rs>, <rs type="title">
-                                        <hi rend="italic">Le Chemin du Velours</hi></rs></note></quote> ao raciocinador ideal bastaria,
-                        visto que o systema do universo se acha logicamente contido no <hi rend="italic">brin de paille</hi>, analysal-o bem, a elle <hi rend="italic">brin de paille</hi>, para deduzir o systema do
+                        porém, importa apenas quando é superficial a analyse; porque, <quote><hi
+                                rend="italic">se pour expliquer un brin de paille il faut démonter
+                                tout le systéme de l'univers</hi>, <note type="comment" resp="#JU"
+                                    ><rs type="name" key="P217">Rémy de Gourmont</rs>, <rs
+                                    type="title">
+                                    <hi rend="italic">Le Chemin du Velours</hi></rs></note></quote>
+                        ao raciocinador ideal bastaria, visto que o systema do universo se acha
+                        logicamente contido no <hi rend="italic">brin de paille</hi>, analysal-o
+                        bem, a elle <hi rend="italic">brin de paille</hi>, para deduzir o systema do
                         universo.</p>
                     <p rend="indent-first">Tomaremos a Inglaterra e a França para material de
                         analyse. E tomaremos periodos nitidos, pois que o espaço não permitte a
@@ -156,11 +179,16 @@
                         approximadamente; e o moderno, que vem desde então até aos nossos dias.
                         D'estes tres periodos o primeiro impõe-se como por muito o maior, não só por
                         ser mais alto o tom poetico geral do periodo, mas tambem porque as suas
-                        culminancias poeticas - <rs type="name" key="P241">Spenser</rs>, <rs type="name" key="P65">Shakespeare</rs> e <rs type="name" key="P84">Milton</rs> - põem na sombra quantos nomes illustres os outros dois
-                        periodos apresentem. - O segundo periodo é inferior aos outros dois: o <hi rend="italic">tom</hi> poetico é aquelle, intoleravel, que a França do
+                        culminancias poeticas - <rs type="name" key="P241">Spenser</rs>, <rs
+                            type="name" key="P65">Shakespeare</rs> e <rs type="name" key="P84"
+                            >Milton</rs> - põem na sombra quantos nomes illustres os outros dois
+                        periodos apresentem. - O segundo periodo é inferior aos outros dois: o <hi
+                            rend="italic">tom</hi> poetico é aquelle, intoleravel, que a França do
                             <hi rend="italic">ancien régime</hi> derramou pela Europa de que tinha a
                         hegemonia social. - O terceiro periodo contém figuras que, sem serem
-                        supremas, são como <rs type="name" key="P163">Coleridge</rs>, <rs type="name" key="P175">Shelley</rs> ou <rs type="name" key="P267">Browning</rs>, grandes indiscutivelmente.</p>
+                        supremas, são como <rs type="name" key="P163">Coleridge</rs>, <rs
+                            type="name" key="P175">Shelley</rs> ou <rs type="name" key="P267"
+                            >Browning</rs>, grandes indiscutivelmente.</p>
                     <p rend="indent-first">Vejamos agora a que periodos politicos estas epocas
                         litterarias correspondem. A epoca isabelliana corresponde ao periodo da vida
                         inglesa cuja realisação foi feita pela Republica e na pessoa,
@@ -168,7 +196,8 @@
                         periodo <hi rend="italic">creador</hi>; n'elle deu a Inglaterra ao mundo
                         moderno um dos grandes principios civilizacionaes que lhe são peculiares - o
                         de <hi rend="italic">governo popular</hi>, principio que depois a Revolução
-                        Francesa, parcamente creadora, simplesmente transformou no de <hi rend="italic">democracia republicana</hi>. - O segundo periodo da vida
+                        Francesa, parcamente creadora, simplesmente transformou no de <hi
+                            rend="italic">democracia republicana</hi>. - O segundo periodo da vida
                         politica ingleza, o que vem desde a queda da Republica, culmina na
                         revolução, de mera substituição dynastica, de 1688, e vem morrer por 1780
                             <hi rend="italic">nas almas</hi>, e de facto com a reforma eleitoral de
@@ -192,10 +221,11 @@
                         1848 a 1870, approximada- mas incorrectamente. De então para cá, em seguida
                         ao periodo (de 1871 a 1881 pouco mais ou menos) de lenta consolidação
                         republicana, vem o terceiro periodo, aquelle a que caracterizam o realismo,
-                        o symbolismo e outros anti-romantismos <note n="1"><label>(<hi rend="superscript">1</hi>).</label> Uma analyse impossivel aqui,
+                        o symbolismo e outros anti-romantismos <note n="1"><label>(<hi
+                                    rend="superscript">1</hi>).</label> Uma analyse impossivel aqui,
                             por demorada, mostraria como é socilogicamente certa esta divisão, em
-                            apparencia anti-historica ao ponto de ser de todo absurda - esta
-                            divisão e a que, de periodos politicos, vae a seguir.</note></p>
+                            apparencia anti-historica ao ponto de ser de todo absurda - esta divisão
+                            e a que, de periodos politicos, vae a seguir.</note></p>
 
                     <p rend="indent-first">Vejamos agora como se nos mostram os correspondentes
                         periodos politicos. O primeiro, <hi rend="italic">ancien régime</hi>, foi um
@@ -233,19 +263,24 @@
                     <p rend="indent-first">Avançando na analyse, porém, revela-se-nos que a posição
                         chronologica das litteraturas se dá, relativamente aos correspondentes
                         movimentos sociaes, de modo diverso nos trez periodos. Assim, no primeiro
-                        periodo, o creador, da Inglaterra, o movimento litterario que culmina em <rs type="name" key="P65">Shakespeare</rs> (entre 1590 e 1610) <hi rend="italic">precede</hi> o movimento politico, que só começa ao
+                        periodo, o creador, da Inglaterra, o movimento litterario que culmina em <rs
+                            type="name" key="P65">Shakespeare</rs> (entre 1590 e 1610) <hi
+                            rend="italic">precede</hi> o movimento politico, que só começa ao
                         decahir elle. E, em França, o movimento romantico vae decahindo á medida que
                         se vae realisando nos espiritos o correspondente, e socialmente exuberante,
                         movimento politico. - No segundo periodo inglez e terceiro francez, analogos
                         como já vimos, a corrente litteraria vem depois da corrente politica que lhe
                         corresponde; como em França se vê pelo apparecimento dos movimentos
                         symbolista, realista e outros, claramente, nos annos que sucedem áquelles em
-                        que se consolidou a republica; e em Inglaterra pelo facto de <rs type="name" key="P423">Pope</rs>, em quem a corrente litteraria culmina (<rs type="name" key="P217">Dryden</rs>, talvez maior, é um poeta de
+                        que se consolidou a republica; e em Inglaterra pelo facto de <rs type="name"
+                            key="P423">Pope</rs>, em quem a corrente litteraria culmina (<rs
+                            type="name" key="P217">Dryden</rs>, talvez maior, é um poeta de
                         transição, pertencente em parte ainda ao periodo anterior) sêr da geração
                         seguinte á dos consolidadores da nova formula, caracteristica da época, a de
                         monarquia constitucional. - No terceiro periodo inglez e primeiro francez
                         temos a <hi rend="italic">coincidencia</hi> no tempo entre a corrente e
-                        culminancias litterarias e o movimento e culminancias politicos. É sob <rs type="name" key="P423">Luiz XIV</rs> que a vida litteraria é de mais
+                        culminancias litterarias e o movimento e culminancias politicos. É sob <rs
+                            type="name" key="P423">Luiz XIV</rs> que a vida litteraria é de mais
                         valor, e o movimento reformista inglez (de 1770 a 1832), que envolve em si
                         as causas da hegemonia ingleza moderna e inclue as guerras em que ella se
                         fixou, coincide com o romantismo britannico.</p>
@@ -266,11 +301,15 @@
                         allemã é patente mas não dominante no romantismo inglez e a influencia da
                         antiguidade tão importante como a do espirito nacional na litteratura dos
                         seculos dezesete e dezoito em França. - Finalmente, nos periodos creadores -
-                        o primeiro inglez e segundo francez - temos na litteratura o <hi rend="italic">espirito nacional patente e dominante</hi>, absorvendo e
+                        o primeiro inglez e segundo francez - temos na litteratura o <hi
+                            rend="italic">espirito nacional patente e dominante</hi>, absorvendo e
                         absolutamente eliminando qualquer influencia estrangeira que haja. Assim,
                         nada mais francez do que <rs type="name" key="P292">Victor Hugo</rs> com a
                         sua rhetorica, a sua pseudo-profundeza, a sua lucidez epigrammatica em pleno
-                        seio do lyrismo, onde não está bem. E <rs type="name" key="P241">Spenser</rs>, <rs type="name" key="P65">Shakespeare</rs> e <rs type="name" key="P65">Milton</rs> - mas <rs type="name" key="P241">Spenser</rs> e <rs type="name" key="P65">Shakespeare</rs> mais do que
+                        seio do lyrismo, onde não está bem. E <rs type="name" key="P241"
+                            >Spenser</rs>, <rs type="name" key="P65">Shakespeare</rs> e <rs
+                            type="name" key="P65">Milton</rs> - mas <rs type="name" key="P241"
+                            >Spenser</rs> e <rs type="name" key="P65">Shakespeare</rs> mais do que
                             <rs type="name" key="P65">Milton</rs> - são inglezes,
                         inconfundivelmente.</p>
                 </div>
@@ -281,14 +320,16 @@
                     <p rend="indent-first">O primeiro facto que se nota é que a actual corrente
                         litteraria portugueza é <hi rend="italic">absolutamente nacional</hi>, e não
                         só nacional com a inevitabilidade bruta de um canto popular, mas nacional
-                        com <hi rend="italic">idéas</hi> especiaes, <hi rend="italic">sentimentos</hi> especiaes, modos de expressão especiaes e distinctivos
+                        com <hi rend="italic">idéas</hi> especiaes, <hi rend="italic"
+                            >sentimentos</hi> especiaes, modos de expressão especiaes e distinctivos
                         de um movimento litterario completamente portuguez: e, de resto, se fosse
                         menos, não seria um <hi rend="italic">movimento litterario</hi>, mas uma
                         especie de traje psychico nacional, relegavel da categoria de movimento de
                         arte para a, para este caso sociologico nulla, de um mero costume
                         caracteristico.</p>
                     <p rend="indent-first">O segundo facto a notar é que o movimento poetico
-                        portuguez contém individualidades de vincado valor: não são <rs type="name" key="P65">Miltons</rs> nem <rs type="name" key="P65">Shakespeares</rs>,
+                        portuguez contém individualidades de vincado valor: não são <rs type="name"
+                            key="P65">Miltons</rs> nem <rs type="name" key="P65">Shakespeares</rs>,
                         mas são gente que se extrema, além de pelo <hi rend="italic">tom</hi>, que é
                         da corrente, pelo valor mesmo, d'entre os contemporaneos europeus, com
                         excepção de um ou dois italianos, e esses não integrados em movimento ou
@@ -302,8 +343,12 @@
                     <p rend="indent-first">Vistos estes elementos sociológicos do problema, salta
                         aos olhos a inevitavel conclusão. É ella a mais extraordinaria, a mais
                         consoladora, a mais estonteante que se pode ousar esperar. É ella de ordem a
-                        coincidir absolutamente com aquellas intuições propheticas do poeta <rs type="name" key="P52">Teixeira de Pascoaes</rs> sobre a <hi rend="italic">futura civilização lusitana</hi>, sobre o <hi rend="italic">futuro glorioso</hi> que espera a Patria Portugueza. Tudo
-                        isso, que a fé e a intuição dos mysticos deu a <rs type="name" key="P52">Teixeira de Pascoaes</rs>, vae o nosso raciocinio mathematicamente
+                        coincidir absolutamente com aquellas intuições propheticas do poeta <rs
+                            type="name" key="P52">Teixeira de Pascoaes</rs> sobre a <hi
+                            rend="italic">futura civilização lusitana</hi>, sobre o <hi
+                            rend="italic">futuro glorioso</hi> que espera a Patria Portugueza. Tudo
+                        isso, que a fé e a intuição dos mysticos deu a <rs type="name" key="P52"
+                            >Teixeira de Pascoaes</rs>, vae o nosso raciocinio mathematicamente
                         confirmar.</p>
                     <p rend="indent-first">É que os caracteristicos que acabamos de descobrir no
                         nosso actual movimento poetico indicam absolutamente a sua analogia com as
@@ -311,9 +356,11 @@
                         portanto, impõem que se conclua d'ahi a fatal analogia com as épocas de que
                         aquelas litteraturas são representativas.</p>
                     <p rend="indent-first">A analogia é absoluta. Temos, primeiro, a nota principal
-                        da completa <hi rend="italic">nacionalidade</hi> e <hi rend="italic">novidade</hi> do movimento. Temos, depois, o caso de se tratar de uma
+                        da completa <hi rend="italic">nacionalidade</hi> e <hi rend="italic"
+                            >novidade</hi> do movimento. Temos, depois, o caso de se tratar de uma
                         corrente litteraria contendo poetas de indiscutivel valor. E note-se - para
-                        o caso de se argumentar que nenhum <rs type="name" key="P65">Shakespeare</rs> nem <rs type="name" key="P292">Victor Hugo</rs>
+                        o caso de se argumentar que nenhum <rs type="name" key="P65"
+                            >Shakespeare</rs> nem <rs type="name" key="P292">Victor Hugo</rs>
                         appareceu ainda na corrente litteraria portugueza - que esta corrente vae
                         ainda no principio do seu principio, gradualmente porém tornando-se mais
                         firme, mais nitida, mais complexa. E isto leva a crêr que deve estar para
@@ -327,7 +374,8 @@
                         artigo que tem de não ser longo, que o actual momento politico não parece de
                         ordem a gerar genios poeticos supremos, de reles e mesquinho que é. Mas é
                             <hi rend="italic">precisamente por isso</hi> que mais concluivel se nos
-                        affigura o proximo apparecer de um supra-<rs type="name" key="P15" style="b">Camões</rs> na nossa terra. É precisamente este detalhe que marca a
+                        affigura o proximo apparecer de um supra-<rs type="name" key="P15" style="b"
+                            >Camões</rs> na nossa terra. É precisamente este detalhe que marca a
                         completa analogia da actual corrente litteraria portugueza com aquelas,
                         franceza e ingleza, onde o nosso raciocinio descobriu o acompanhamento
                         litterario das grandes épocas creadoras. Porque a corrente litteraria, como

@@ -1,6 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc><titleStmt>
+        <fileDesc>
+            <titleStmt>
                 <title>Canção de Outomno</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -21,7 +24,8 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt><publicationStmt>
+            </titleStmt>
+            <publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -30,27 +34,43 @@
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_Cancao_de_Outomno.xml</idno>
-            </publicationStmt><notesStmt><note type="summary">Poema republicado, sem título, em <ref target="http://www.pessoadigital.pt/pt/pub/Pessoa_Alguns-Poemas">“Alguns
-                            Poemas / De um Cancioneiro”, Athena 3, Dezembro de 1924, pp.
-                        82-88</ref>. Para além de diferenças ortográficas, na segunda publicação o
-                        terceiro verso da última estrofe é substituído por “E até do que hoje sou”.</note><note type="genre">
-                        <rs type="genre" key="poesia">Poesia</rs>
-                    </note></notesStmt><sourceDesc><list type="work-index">
+            </publicationStmt>
+            <notesStmt>
+                <note type="summary">Poema republicado, sem título, em <ref
+                        target="http://www.pessoadigital.pt/pt/pub/Pessoa_Alguns-Poemas">“Alguns
+                        Poemas / De um Cancioneiro”, Athena 3, Dezembro de 1924, pp. 82-88</ref>.
+                    Para além de diferenças ortográficas, na segunda publicação o terceiro verso da
+                    última estrofe é substituído por “E até do que hoje sou”.</note>
+                <note type="genre">
+                    <rs type="genre" key="poesia">Poesia</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
                     <item><rs type="work">Canção de Outomno</rs></item>
-                </list><biblStruct><analytic>
+                </list>
+                <biblStruct>
+                    <analytic>
                         <title level="a">Canção de Outomno</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt"/>
-                    </analytic><monogr>
+                    </analytic>
+                    <monogr>
                         <title level="j"><rs type="periodical" key="J31">Ilustração
                             Portuguesa</rs></title>
                         <imprint>
                             <date when="1922-01-28">28 de Janeiro de 1922</date>
                         </imprint>
                         <biblScope unit="page">86</biblScope>
-                    </monogr></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="pub/cancao_de_outomno.jpg"/>

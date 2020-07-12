@@ -1,6 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc><titleStmt>
+        <fileDesc>
+            <titleStmt>
                 <title>Tabacaria</title>
                 <author>
                     <rs type="name" key="AdC">Álvaro de Campos</rs>
@@ -25,7 +28,8 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt><publicationStmt>
+            </titleStmt>
+            <publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -34,24 +38,38 @@
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Campos_Tabacaria.xml</idno>
-            </publicationStmt><notesStmt><note type="genre">
-                        <rs type="genre" key="poesia">Poesia</rs>
-                    </note></notesStmt><sourceDesc><list type="work-index">
+            </publicationStmt>
+            <notesStmt>
+                <note type="genre">
+                    <rs type="genre" key="poesia">Poesia</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
                     <item><rs type="work" key="O4-16">Tabacaria</rs></item>
-                </list><biblStruct><analytic>
+                </list>
+                <biblStruct>
+                    <analytic>
                         <title level="a">Tabacaria</title>
                         <author>
                             <rs type="name" key="AdC">Álvaro de Campos</rs>
                         </author>
                         <textLang mainLang="pt"/>
-                    </analytic><monogr>
+                    </analytic>
+                    <monogr>
                         <title level="j"><rs type="periodical" key="J1">Presença</rs></title>
                         <imprint>
                             <date when="1923-07">Julho de 1933</date>
                         </imprint>
                         <biblScope unit="issue">39</biblScope>
                         <biblScope unit="page">1-2</biblScope>
-                    </monogr></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="pub/res-1900-a_1931-1934_1933_n39_0001.jpg"/>
@@ -123,9 +141,11 @@
                     <l>Nunca verão a luz do sol real nem acharão ouvidos de gente?</l>
                     <l>O mundo é para quem nasce para o conquistar</l>
                     <l>E não para quem sonha que pode conquistá-lo, ainda que tenha razão.</l>
-                    <l>Tenho sonhado mais que o que <rs type="name" key="P12" style="b">Napoleão</rs> fêz.</l>
+                    <l>Tenho sonhado mais que o que <rs type="name" key="P12" style="b"
+                            >Napoleão</rs> fêz.</l>
                     <l>Tenho apertado ao peito hipotético mais humanidades do que Cristo.</l>
-                    <l>Tenho feito filosofias em segrêdo que nenhum <rs type="name" key="P6">Kant</rs> escreveu.</l>
+                    <l>Tenho feito filosofias em segrêdo que nenhum <rs type="name" key="P6"
+                            >Kant</rs> escreveu.</l>
                     <l>Mas sou, e talvez serei sempre, o da mansarda,</l>
                     <l>Ainda que não more nela;</l>
                     <l>Serei sempre <hi rend="italic">o que não nasceu para isso;</hi></l>
@@ -247,7 +267,8 @@
                     <l>Sigo o fumo como a uma rota própria,</l>
                     <l>E gozo, num momento sensitivo e competente,</l>
                     <l>A libertação de tôdas as especulações</l>
-                    <l>E a consciência de que a metafísica é uma conseqüência de estar mal disposto.</l>
+                    <l>E a consciência de que a metafísica é uma conseqüência de estar mal
+                        disposto.</l>
                 </lg>
                 <lg>
                     <l>Depois deito-me para trás na cadeira</l>

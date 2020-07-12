@@ -1,6 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc><titleStmt>
+        <fileDesc>
+            <titleStmt>
                 <title>Do livro "Mensagem"</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -21,7 +24,8 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt><publicationStmt>
+            </titleStmt>
+            <publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -30,31 +34,51 @@
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_Do_livro_Mensagem.xml</idno>
-            </publicationStmt><notesStmt><note type="summary"><p>Estes poemas foram incluídos no conjunto <ref target="http://www.pessoadigital.pt/pt/pub/Pessoa_Mar Portuguez">“Mar Portuguez” (Contemporânea, Outubro de 1922; Leitura para todos, Junho de 1926 e Revolução, 16 de Junho de 1933)</ref>, nas posições
-                        I, IV e XII, com diferenças ortográficas e de pontuação e surgindo "O Mostrengo" sob o título "O Morcego".
-                        Foram também incluídos no livro <hi rend="italic">Mensagem</hi> (Lisboa: Parceria António Maria Pereira, 1934), com um texto idêntico
-                        ao da presente publicação mas ocupando as respetivas posições em "Mar Portuguez", título da segunda parte do livro "Mensagem".</p>
-                    </note><note type="genre">
-                        <rs type="genre" key="poesia">Poesia</rs>
-                    </note></notesStmt><sourceDesc><list type="work-index">
+            </publicationStmt>
+            <notesStmt>
+                <note type="summary"><p>Estes poemas foram incluídos no conjunto <ref
+                            target="http://www.pessoadigital.pt/pt/pub/Pessoa_Mar Portuguez">“Mar
+                            Portuguez” (Contemporânea, Outubro de 1922; Leitura para todos, Junho de
+                            1926 e Revolução, 16 de Junho de 1933)</ref>, nas posições I, IV e XII,
+                        com diferenças ortográficas e de pontuação e surgindo "O Mostrengo" sob o
+                        título "O Morcego". Foram também incluídos no livro <hi rend="italic"
+                            >Mensagem</hi> (Lisboa: Parceria António Maria Pereira, 1934), com um
+                        texto idêntico ao da presente publicação mas ocupando as respetivas posições
+                        em "Mar Portuguez", título da segunda parte do livro "Mensagem".</p>
+                </note>
+                <note type="genre">
+                    <rs type="genre" key="poesia">Poesia</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
                     <item><rs type="work">O Infante</rs></item>
                     <item><rs type="work">O Mostrengo</rs></item>
                     <item><rs type="work">Prece</rs></item>
                     <item><rs type="work">Mensagem</rs></item>
-                </list><biblStruct><analytic>
+                </list>
+                <biblStruct>
+                    <analytic>
                         <title level="a">Do livro "Mensagem"</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt"/>
-                    </analytic><monogr>
+                    </analytic>
+                    <monogr>
                         <title level="j"><rs type="periodical" key="J80">Diário de
                             Lisboa</rs></title>
                         <imprint>
                             <date when="1934-12-14">14 de Dezembro de 1934</date>
                         </imprint>
                         <biblScope unit="page">5</biblScope>
-                    </monogr></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="pub/do_livro_mensagem.jpg"/>

@@ -1,6 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc><titleStmt>
+        <fileDesc>
+            <titleStmt>
                 <title>Versos de Fernando Pessoa (Minuete invisivel, Névoa)</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -17,7 +20,8 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt><publicationStmt>
+            </titleStmt>
+            <publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -26,25 +30,44 @@
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_Nevoa.xml</idno>
-            </publicationStmt><notesStmt><note type="summary">O poema “Minuete Invisivel“ foi anteriormente incluído em <ref target="http://www.pessoadigital.pt/pt/pub/Pessoa_Episodios">“Ficções do Interludio”, parte do conjunto "Episódios",<hi rend="italic">Portugal Futurista</hi>, Novembro de 1917, pp. 21-23</ref>, 
-                        com algumas diferenças ortográficas.</note><note type="genre">
-                        <rs type="genre" key="poesia">Poesia</rs>
-                    </note></notesStmt><sourceDesc><list type="work-index">
+            </publicationStmt>
+            <notesStmt>
+                <note type="summary">O poema “Minuete Invisivel“ foi anteriormente incluído em <ref
+                        target="http://www.pessoadigital.pt/pt/pub/Pessoa_Episodios">“Ficções do
+                        Interludio”, parte do conjunto "Episódios",<hi rend="italic">Portugal
+                            Futurista</hi>, Novembro de 1917, pp. 21-23</ref>, com algumas
+                    diferenças ortográficas.</note>
+                <note type="genre">
+                    <rs type="genre" key="poesia">Poesia</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
                     <item><rs type="work" key="O1-26b">Névoa</rs></item>
-                </list><biblStruct><analytic>
-                        <title level="a">Versos de Fernando Pessoa (Minuete invisivel, Névoa)</title>
+                </list>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Versos de Fernando Pessoa (Minuete invisivel,
+                            Névoa)</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt"/>
-                    </analytic><monogr>
+                    </analytic>
+                    <monogr>
                         <title level="j"><rs type="periodical" key="J78">Diário dos
                             Açores</rs></title>
                         <imprint>
                             <date when="1930-07-17">17 de Julho de 1930</date>
                         </imprint>
                         <biblScope unit="page">1</biblScope>
-                    </monogr></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="pub/nevoa.jpg"/>
@@ -55,47 +78,47 @@
                 <head><hi rend="underline">Versos de Fernando Pessoa</hi></head>
             </div>
             <div type="poem">
-                    <head>Minuete invisivel</head>
-                    <lg>
-                        <l>Elas são vaporosas,</l>
-                        <l>Palidas sombras, as rosas</l>
-                        <l>Nadas da hora lunar..</l>
-                    </lg>
-                    <lg>
-                        <l>Veem, aereas, dançar</l>
-                        <l>Como perfumes soltos</l>
-                        <l>Entre os canteiros e os buxos...</l>
-                        <l>Chora no som dos repuxos</l>
-                        <l>O ritmo que ha nos seus vultos...</l>
-                    </lg>
-                    <lg>
-                        <l>Passam e agitam a brisa...</l>
-                        <l>Palida, a pompa indecisa</l>
-                        <l>Da sua flébil demora</l>
-                        <l>Paira em auréola á hóra...</l>
-                    </lg>
-                    <lg>
-                        <l>Passam nos ritmos da sombra...</l>
-                        <l>Ora é uma folha que tomba,</l>
-                        <l>Ora uma brisa que treme</l>
-                        <l>Sua leveza solene...</l>
-                    </lg>
-                    <lg>
-                        <l>E assim vão indo, delindo</l>
-                        <l>Seu perfil unico e lindo,</l>
-                        <l>Seu vulto feito de todas,</l>
-                        <l>Nas alamedas, em rodas,</l>
-                        <l>No jardim livido e frio...</l>
-                    </lg>
-                    <lg>
-                        <l>Passam sósinhas, a fio,</l>
-                        <l>Como um fumo indo, a rarear,</l>
-                        <l>Pelo ar longinquo e vazio,</l>
-                        <l>Sob o, disperso pelo ar,</l>
-                        <l>Palido palio lunar...</l>
-                    </lg>
-                </div>
-                <div type="poem">
+                <head>Minuete invisivel</head>
+                <lg>
+                    <l>Elas são vaporosas,</l>
+                    <l>Palidas sombras, as rosas</l>
+                    <l>Nadas da hora lunar..</l>
+                </lg>
+                <lg>
+                    <l>Veem, aereas, dançar</l>
+                    <l>Como perfumes soltos</l>
+                    <l>Entre os canteiros e os buxos...</l>
+                    <l>Chora no som dos repuxos</l>
+                    <l>O ritmo que ha nos seus vultos...</l>
+                </lg>
+                <lg>
+                    <l>Passam e agitam a brisa...</l>
+                    <l>Palida, a pompa indecisa</l>
+                    <l>Da sua flébil demora</l>
+                    <l>Paira em auréola á hóra...</l>
+                </lg>
+                <lg>
+                    <l>Passam nos ritmos da sombra...</l>
+                    <l>Ora é uma folha que tomba,</l>
+                    <l>Ora uma brisa que treme</l>
+                    <l>Sua leveza solene...</l>
+                </lg>
+                <lg>
+                    <l>E assim vão indo, delindo</l>
+                    <l>Seu perfil unico e lindo,</l>
+                    <l>Seu vulto feito de todas,</l>
+                    <l>Nas alamedas, em rodas,</l>
+                    <l>No jardim livido e frio...</l>
+                </lg>
+                <lg>
+                    <l>Passam sósinhas, a fio,</l>
+                    <l>Como um fumo indo, a rarear,</l>
+                    <l>Pelo ar longinquo e vazio,</l>
+                    <l>Sob o, disperso pelo ar,</l>
+                    <l>Palido palio lunar...</l>
+                </lg>
+            </div>
+            <div type="poem">
                 <head>Névoa</head>
                 <lg>
                     <l>A névoa involve a montanha,</l>

@@ -1,6 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc><titleStmt>
+        <fileDesc>
+            <titleStmt>
                 <title>Antonio Botto e o ideal esthetico em Portugal</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -17,7 +20,8 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt><publicationStmt>
+            </titleStmt>
+            <publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -26,25 +30,39 @@
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_Antonio_Botto_e_o_ideal.xml</idno>
-            </publicationStmt><notesStmt><note type="genre">
-                        <rs type="genre" key="prosa">Prosa</rs>
-                    </note></notesStmt><sourceDesc><list type="work-index">
+            </publicationStmt>
+            <notesStmt>
+                <note type="genre">
+                    <rs type="genre" key="prosa">Prosa</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
                     <item><rs type="work" key="W205">Antonio Botto e o ideal esthetico em
                             Portugal</rs></item>
-                </list><biblStruct><analytic>
+                </list>
+                <biblStruct>
+                    <analytic>
                         <title level="a">Antonio Botto e o ideal esthetico em Portugal</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                    </analytic><monogr>
+                    </analytic>
+                    <monogr>
                         <title level="j"><rs type="periodical" key="J11">Contemporânea</rs></title>
                         <imprint>
                             <date when="1922-07">Julho de 1922</date>
                         </imprint>
                         <biblScope unit="issue">3</biblScope>
                         <biblScope unit="page">121-126</biblScope>
-                    </monogr></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/Antonio_Botto_Ideal_1.jpg"/>
@@ -67,7 +85,8 @@
                     os ideaes gregos, como são intellectuaes, não podem ser seguidos
                     inconscientemente.</p>
                 <p rend="indent-first">A obra de <rs type="name" key="P17">Antonio Botto</rs>, no
-                    que realmente typica, resume-se, por ora, no seu ultimo livro, <rs type="title"><hi rend="italic">Canções</hi></rs>. Que essa obra se distingue com
+                    que realmente typica, resume-se, por ora, no seu ultimo livro, <rs type="title"
+                            ><hi rend="italic">Canções</hi></rs>. Que essa obra se distingue com
                     facilidade da obra de qualquer outro poeta, portuguez ou estrangeiro – todos,
                     que possam ver, o podem ver. Já não é tão facil explicar em que consiste,
                     distinctivamente, essa differença. Algum interesse haverá em determinal-o.</p>
@@ -162,7 +181,8 @@
                     vê que a vida é imperfeita, porque é imperfeita; porém não regeita a vida,
                     porque é na mesma vida que tem postos os olhos. Mesmo que veja no mundo dos
                     deuses aquella belleza suprema, pela qual anseia, anseia tambem por essa belleza
-                    nos homens. «A raça dos deuses e dos homens é uma só», disse <rs type="name" key="P481">Pindaro</rs>; a uns deve pertencer o que aos outros pertence.
+                    nos homens. «A raça dos deuses e dos homens é uma só», disse <rs type="name"
+                        key="P481">Pindaro</rs>; a uns deve pertencer o que aos outros pertence.
                     Porisso, dos trez idealistas, é o helleno o único que não pode rejeitar aquella
                     vida a que chama imperfeita. O seu ideal é, portanto, humanamente o mais tragico
                     e profundo.</p>
@@ -196,7 +216,8 @@
                     vida; e busca incluir em cada obra, para que a substituição seja perfeita, ou
                     toda a vida ou um aspecto supremo da vida. É esta a forma intellectual e
                     constructiva do ideal esthetico absoluto; <rs type="name" key="P218">Homero</rs>
-                    e <rs type="name" key="P219">Virgilio</rs> dos antigos, <rs type="name" key="P220">Dante</rs> e <rs type="name" key="P84">Milton</rs> dos modernos,
+                    e <rs type="name" key="P219">Virgilio</rs> dos antigos, <rs type="name"
+                        key="P220">Dante</rs> e <rs type="name" key="P84">Milton</rs> dos modernos,
                     são os representantes maximos d’ella. As obras d’estes poetas mostram a
                     preoccupação severa da perfeição absoluta, revelada tanto na estructuração
                     harmonica de um conjuncto pleno de significação, quanto na execução escrupulosa
@@ -245,7 +266,8 @@
                     moral, faz, na obra do estheta, as vezes das idéas moraes e metaphysicas. O
                     estheta substitue a idéa de belleza á idéa de verdade e á idéa de bem, porém dá,
                     por isso mesmo, a essa idéa de belleza um alcance metaphysico e moral. A celebre
-                    «Conclusão» da <rs type="title">Renascença</rs> de <rs type="name" key="P164">Pater</rs>, o maior dos esthetas europeus, é o exemplo culminante d’esta
+                    «Conclusão» da <rs type="title">Renascença</rs> de <rs type="name" key="P164"
+                        >Pater</rs>, o maior dos esthetas europeus, é o exemplo culminante d’esta
                     attitude.</p>
                 <p rend="indent-first">Nisto se distingue a obra do estheta da obra do artista
                     simples, em quem os elementos metaphysicos e moraes são ausentes, não por
@@ -256,7 +278,8 @@
                     nem sceptico nem immoral; o proposito de ser sceptico revela uma preoccupação
                     metaphysica, o de ser immoral uma preoccupação ethica, e o character negativo de
                     ambas as preoccupações não as torna menos preoccupações. Nisto claramente se
-                    distingue o estheta do mau christão decadente, como <rs type="name" key="P479">Baudelaire</rs> ou <rs type="name" key="P32">Wilde</rs>.</p>
+                    distingue o estheta do mau christão decadente, como <rs type="name" key="P479"
+                        >Baudelaire</rs> ou <rs type="name" key="P32">Wilde</rs>.</p>
                 <milestone rend="space" unit="section"/>
                 <p rend="indent-first">Se tivermos presentes estas considerações na analyse do livro
                     de <rs type="name" key="P17">Antonio Botto</rs>, não nos será difficil
@@ -270,10 +293,12 @@
                     nenhuma, nem explicita nem implicita, interesse nenhum pelas idéas como taes. É
                     uma intelligencia que dirige, porém não pensa; que comprehende, porém não
                     aprofunda; que guia, porém não se preoccupa. Nem positivamente, nem
-                    negativamente, <hi rend="italic">suggere</hi> o livro <rs type="title"><hi rend="italic">Canções</hi></rs> qualquer metaphysica. Duas idéas
+                    negativamente, <hi rend="italic">suggere</hi> o livro <rs type="title"><hi
+                            rend="italic">Canções</hi></rs> qualquer metaphysica. Duas idéas
                     centraes governam a inspiração do poeta, e lhe servem de metaphysica e de moral.
                     São as idéas de belleza physica e de prazer. A analyse do conteúdo d’essas duas
-                    idéas, taes quaes se nos apresentam nas <rs type="title"><hi rend="italic">Canções</hi></rs>, revelará o estheta inequivocamente. No modo como
+                    idéas, taes quaes se nos apresentam nas <rs type="title"><hi rend="italic"
+                            >Canções</hi></rs>, revelará o estheta inequivocamente. No modo como
                     apresenta a primeira d’ellas, o poeta afasta-se de toda a especie de moralidade;
                     no modo como apresenta a segunda, de toda a especie de immoralidade.</p>
                 <milestone rend="space" unit="section"/>
@@ -294,9 +319,12 @@
                     como a suggestão sexual, o façam procural-a. Como se guia, pois, só pela
                     belleza, o esteta canta de preferência o corpo masculino, por ser o corpo humano
                     que mais elementos de belleza, dos poucos que ha, pode acumular.</p>
-                <p rend="indent-first">Foi assim que pensaram os gregos; foi esse pensamento que <rs type="name" key="P480">Winckelmann</rs>, fundador do esthetismo na Europa,
-                    descobrindo-o nelles, reproduziu, como no passo célebre que <rs type="name" key="P164">Pater</rs> transcreveu, e que parece feito para servir de
-                    prefacio a um livro como <rs type="title"><hi rend="italic">Canções</hi></rs>:</p>
+                <p rend="indent-first">Foi assim que pensaram os gregos; foi esse pensamento que <rs
+                        type="name" key="P480">Winckelmann</rs>, fundador do esthetismo na Europa,
+                    descobrindo-o nelles, reproduziu, como no passo célebre que <rs type="name"
+                        key="P164">Pater</rs> transcreveu, e que parece feito para servir de
+                    prefacio a um livro como <rs type="title"><hi rend="italic"
+                    >Canções</hi></rs>:</p>
                 <p rend="indent-first">«Como é confessadamente a belleza do homem que tem que ser
                     concebida sob uma idéa geral, assim tenho notado que aquelles que observam a
                     belleza só nas mulheres, e pouco ou nada se commovem com a belleza dos homens,
@@ -328,9 +356,11 @@
                     absurdo da existencia. D’este conceito de prazer não se pode dizer que seja
                     moral nem immoral, logo que se não esqueça que se está considerando o prazer só,
                     isolando-o de qualquer outro elemento da vida.</p>
-                <p rend="indent-first">Quem leia com attenção normal o livro <rs type="title"><hi rend="italic">Canções</hi></rs>, não tardará que veja que é este ultimo
+                <p rend="indent-first">Quem leia com attenção normal o livro <rs type="title"><hi
+                            rend="italic">Canções</hi></rs>, não tardará que veja que é este ultimo
                     o conceito que <rs type="name" key="P17">Antonio Botto</rs> forma do prazer, que
-                    é neste sentido de comprehendel-o que elle o canta. <rs type="title"><hi rend="italic">Canções</hi></rs> é um hymno ao prazer, porém não ao
+                    é neste sentido de comprehendel-o que elle o canta. <rs type="title"><hi
+                            rend="italic">Canções</hi></rs> é um hymno ao prazer, porém não ao
                     prazer como alegria, nem como raiva, senão simplesmente como prazer. O prazer,
                     como o poeta o canta, nem serve de dispertar a alegria da vida, nem de ministrar
                     um antidoto a uma dôr substancial constante; serve apenas de encher um vacuo
@@ -340,12 +370,15 @@
                     tragica em si. Este prazer não tem a cor da alegria, nem a da dor. «A alegria»
                     disse <rs type="name" key="P367">Nietzsche</rs>, «quer eternidade, quer profunda
                     eternidade». Não é, nem nunca foi assim: a alegria não quer nada, e é por isso
-                    que é alegria. A dôr, essa, é o contrario da alegria, como a concebia <rs type="name" key="P367">Nietzsche</rs>: quer acabar, quer não ser. O prazer,
+                    que é alegria. A dôr, essa, é o contrario da alegria, como a concebia <rs
+                        type="name" key="P367">Nietzsche</rs>: quer acabar, quer não ser. O prazer,
                     porém, quando o concebemos fóra da relação essencial com a alegria ou com a dor,
                     como o concebe o author d’este livro, esse, sim, quer eternidade; porém quer a
                     eternidade num só momento.</p>
                 <p rend="indent-first">Resulta d’estas considerações, que me exforcei por fazer
-                    lucidas e concisas, a determinação exacta de que <rs type="name" key="P17">Antonio Botto</rs>, no seu livro <rs type="title"><hi rend="italic">Canções</hi></rs>, se revela um dos typos mais perfeitos e mais
+                    lucidas e concisas, a determinação exacta de que <rs type="name" key="P17"
+                        >Antonio Botto</rs>, no seu livro <rs type="title"><hi rend="italic"
+                            >Canções</hi></rs>, se revela um dos typos mais perfeitos e mais
                     integros do estheta, que se podem imaginar.</p>
                 <milestone rend="space" unit="section"/>
                 <p rend="indent-first">Que importancia tem este facto? A de representar uma
@@ -370,7 +403,8 @@
                     atmosphera hellenica, que lhe cria um perpetuo contacto, ainda que só
                     intellectual, com a Grecia antiga e os seus ideaes. Da acção d’este segundo
                     elemento sobre o primeiro o estheta desabrocha. São d’esta origem os esthetismos
-                    de <rs type="name" key="P480">Winckelmann</rs> e de <rs type="name" key="P164">Pater</rs>, quasi, em verdade, os unicos typos exactos do estheta que a
+                    de <rs type="name" key="P480">Winckelmann</rs> e de <rs type="name" key="P164"
+                        >Pater</rs>, quasi, em verdade, os unicos typos exactos do estheta que a
                     civilização europeia pode apresentar. Como, pórem, este esthetismo tem uma base
                     cultural, resulta que tem a plenitude e a largueza que distinguem todos os
                     productos culturaes, em contraposição aos naturaes seus similhantes, e porisso
@@ -392,11 +426,14 @@
                     </choice> genio quando é synthetico, talento quando é analytico; genio quando
                     resulta da fusão original de varios elementos, talento quando procede do
                     isolamento original de um só elemento.</p>
-                <p rend="indent-first">A dentro do ideal esthetico, os casos de <rs type="name" key="P480">Winckelmann</rs> e de <rs type="name" key="P164">Pater</rs>
+                <p rend="indent-first">A dentro do ideal esthetico, os casos de <rs type="name"
+                        key="P480">Winckelmann</rs> e de <rs type="name" key="P164">Pater</rs>
                     representam o genio, porque a tendencia para a realização cultural immanente no
-                    seu esthetismo ingenito é, por sua natureza, synthetica, o caso de <rs type="name" key="P17">Antonio Botto</rs> representa o talento, porque o
+                    seu esthetismo ingenito é, por sua natureza, synthetica, o caso de <rs
+                        type="name" key="P17">Antonio Botto</rs> representa o talento, porque o
                     ideal esthetico, dada a sua estreiteza e vacuidade, representa já o senso
-                    esthetico isolado de todos os outros elementos psychicos, e, no caso de <rs type="name" key="P17">Antonio Botto</rs>, estheta simples, esse isolamento
+                    esthetico isolado de todos os outros elementos psychicos, e, no caso de <rs
+                        type="name" key="P17">Antonio Botto</rs>, estheta simples, esse isolamento
                     não se modifica, como no esthetismo culto, pelo reflexo nelle da multiplicidade
                     dos objectos de cultura.</p>
                 <p rend="indent-first">Temos, pois, por demonstração severamente conduzida, que o
@@ -405,7 +442,8 @@
                     que eu saiba, na litteratura europeia, do isolamento espontaneo e absoluto do
                     ideal esthetico em toda a sua vazia integridade.</p>
                 <p rend="indent-first">Àparte este valor, que pertence áquella obra em absoluto,
-                    isto é, como obra e não como obra em portuguez, o livro <rs type="title"><hi rend="italic">Canções</hi></rs> tem, para nós em Portugal, um outro
+                    isto é, como obra e não como obra em portuguez, o livro <rs type="title"><hi
+                            rend="italic">Canções</hi></rs> tem, para nós em Portugal, um outro
                     aspecto de valor, já de ordem relativa. É que é o único exemplo em Portugal da
                     realização litteraria, de qualquer especie, do ideal esthetico. Facilmente o
                     verificará quem houver lido com attenção o que estabelecemos sobre os

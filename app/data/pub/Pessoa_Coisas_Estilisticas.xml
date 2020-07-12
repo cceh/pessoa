@@ -1,6 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc><titleStmt>
+        <fileDesc>
+            <titleStmt>
                 <title>Coisas estiliticas que aconteceram a um gomil cinzelado, que se dizia ter
                     sido batido no ceu, em tempos da velha fabula, por um deus amoroso</title>
                 <author>
@@ -18,7 +21,8 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt><publicationStmt>
+            </titleStmt>
+            <publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -27,13 +31,20 @@
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_Coisas_Estilisticas.xml</idno>
-            </publicationStmt><notesStmt><note type="genre">
-                        <rs type="genre" key="prosa">Prosa</rs>
-                    </note></notesStmt><sourceDesc><list type="work-index">
+            </publicationStmt>
+            <notesStmt>
+                <note type="genre">
+                    <rs type="genre" key="prosa">Prosa</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
                     <item><rs type="work" key="W231">Coisas estiliticas que aconteceram a um gomil
                             cinzelado, que se dizia ter sido batido no ceu, em tempos da velha
                             fabula, por um deus amoroso</rs></item>
-                </list><biblStruct><analytic>
+                </list>
+                <biblStruct>
+                    <analytic>
                         <title level="a">Coisas estiliticas que aconteceram a um gomil cinzelado,
                             que se dizia ter sido batido no ceu, em tempos da velha fabula, por um
                             deus amoroso</title>
@@ -41,7 +52,8 @@
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                    </analytic><monogr>
+                    </analytic>
+                    <monogr>
                         <title level="j"><rs type="periodical" key="J7">Teatro - Revista de
                                 Critica</rs></title>
                         <imprint>
@@ -49,7 +61,13 @@
                         </imprint>
                         <biblScope unit="issue">2</biblScope>
                         <biblScope unit="page">4</biblScope>
-                    </monogr></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/Teatro_Coisas.jpg"/>
@@ -63,7 +81,9 @@
                 <p rend="indent-first">Pegue-se num côrno, chame-se-lhe prosa, e ter-se-ha o estilo
                     do sr. <rs type="name" key="P465">Manuel de Sousa Pinto</rs>.</p>
                 <p rend="indent-first">E, comtudo, é um homem inteligente este critico de alguma
-                    arte. Não é, é certo, um homem de talento, por mais que no caso o sr. <rs type="name" key="P473">João de Barros</rs> tenha um <hi rend="italic">sim</hi> de ida-e-volta. Mas não nos leve esta critica de anzol a reagir
+                    arte. Não é, é certo, um homem de talento, por mais que no caso o sr. <rs
+                        type="name" key="P473">João de Barros</rs> tenha um <hi rend="italic"
+                        >sim</hi> de ida-e-volta. Mas não nos leve esta critica de anzol a reagir
                     excessivamente. É um homem inteligente o sr. <rs type="name" key="P465">Sousa
                         Pinto</rs>. A especie de inteligentes a que pertence é a dos criticos, e o
                     genero de criticos em que entra é o dos criticos de segunda ordem.</p>
@@ -76,7 +96,8 @@
                     cronica.</p>
                 <p rend="indent-first">Daqui se conclue que o critico de segunda ordem é um bom
                     critico que é um mau critico. Ha três ordens de maus criticos: estes, os de
-                    segunda ordem, porque não são de primeira; os sectarios (como <rs type="name" key="P474">Brunetière</rs>) porque são sectarios; e os que não são criticos
+                    segunda ordem, porque não são de primeira; os sectarios (como <rs type="name"
+                        key="P474">Brunetière</rs>) porque são sectarios; e os que não são criticos
                     porque não são criticos (como grande numero de poetas e artistas, e mesmo de
                     pensadores por outros caminhos). Destas três especies de herejes da apreciação,
                     os ultimos nunca devem cair em dar parecer, e os primeiros e segundos devem
@@ -90,10 +111,12 @@
                     por natureza, tanto poder de theorisar como uma tainha ou um caracol. Não deve
                     criticar novidades e complexidades porque não tem individualidade bastante para
                     se despegar naturalmente do usual e do simples, nem inteligencia que baste para
-                    se arrancar a elle á força. No primeiro deste erros tem o sr. <rs type="name" key="P465">Sousa Pinto</rs> caido um pouco, no segundo mais alguma coisa de
+                    se arrancar a elle á força. No primeiro deste erros tem o sr. <rs type="name"
+                        key="P465">Sousa Pinto</rs> caido um pouco, no segundo mais alguma coisa de
                     que um pouco. Mas o que nos importa é que, levado pelo que deve ser vaidade,
                     pelo seu imperfeito senso critico, e, sem duvida, tambem por elogios que varia
-                    gente inferior lhe tem videiramente e até sinceramente feito, o sr. <rs type="name" key="P465">Sousa Pinto</rs> se metteu, intelectualmente, no
+                    gente inferior lhe tem videiramente e até sinceramente feito, o sr. <rs
+                        type="name" key="P465">Sousa Pinto</rs> se metteu, intelectualmente, no
                     leito de Procrustes de romancear, donde saíu sem pés nem cabeça. Porque,
                     francamente, esta leria do <rs type="title">Gomil</rs> é impossível de gramar.
                     Uma pieguiçe corn ea, um amorudismo em espiral, uma artificialidade vêsga
@@ -121,7 +144,8 @@
                     d’entre-porta-e-porta da Livraria Ferreira.</p>
                 <p rend="indent-first">Isto é amavel e sincero. Não é o <hi rend="italic">Torna-te
                         ás terra que batatas criam</hi> de <rs type="name" key="P191">Castilho</rs>,
-                    nem o So back to the Shop, Mr. John! da! <rs type="periodical" key="J88">Quarterly Review</rs> a <rs type="name" key="P167">Keats</rs>. É a
+                    nem o So back to the Shop, Mr. John! da! <rs type="periodical" key="J88"
+                        >Quarterly Review</rs> a <rs type="name" key="P167">Keats</rs>. É a
                     traducção para explicado e extenso do comentario <hi rend="italic">arre!</hi>
                     que puz a lapis na ultima pagina do seu livro entre a palavra FIM e o bemdito
                     desaparecer para sempre do seu estuporadissimo gomil. Quem lhe mandou tocar

@@ -1,6 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc><titleStmt>
+        <fileDesc>
+            <titleStmt>
                 <title>CRÓNICA da vida que passa... Recentemente</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -17,7 +20,8 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt><publicationStmt>
+            </titleStmt>
+            <publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -26,19 +30,28 @@
                     <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
-                <idno type="filename">Pessoa_Cronica_da_Vida_que_Passa_Recentemente.xml</idno>               
-            </publicationStmt><notesStmt><note type="genre">
-                        <rs type="genre" key="prosa">Prosa</rs>
-                    </note></notesStmt><sourceDesc><list type="work-index">
-                    <item><rs type="work" key="O1-X">CRÓNICA da vida que passa... Recentemente</rs></item>
-                </list><biblStruct><analytic>
+                <idno type="filename">Pessoa_Cronica_da_Vida_que_Passa_Recentemente.xml</idno>
+            </publicationStmt>
+            <notesStmt>
+                <note type="genre">
+                    <rs type="genre" key="prosa">Prosa</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="O1-X">CRÓNICA da vida que passa...
+                        Recentemente</rs></item>
+                </list>
+                <biblStruct>
+                    <analytic>
                         <title level="a">CRÓNICA da vida que passa... Recentemente</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
                         <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
-                    </analytic><monogr>
+                    </analytic>
+                    <monogr>
                         <title level="j"><rs type="periodical" key="J45">O Jornal</rs></title>
                         <imprint>
                             <date when="1915-04-05">5 de Abril de 1915</date>
@@ -47,9 +60,18 @@
                             there is just a year: when="1931" -->
                         </imprint>
                         <biblScope unit="page">1</biblScope>
-                    </monogr><!-- here goes the bibliographical reference for the source publication --><!-- this can also have @otherLangs, e.g. otherLangs="en fr" --><!-- in case it is not a single date, but from-to, it 
+                    </monogr>
+                    <!-- here goes the bibliographical reference for the source publication -->
+                    <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
+                    <!-- in case it is not a single date, but from-to, it 
                             looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" --></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
+                            there is just a year: when="1931" -->
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/Cronica_da_Vida_Que_Passa_Recentemente.jpg"/>
@@ -57,49 +79,65 @@
     <text corresp="#O1-X">
         <body>
             <div>
-                <head>Crónica da vida que passa</head> 
-                
-           <p rend="indent-first">Recentemente, entre a poeira de algumas campanhas politicas, tomou de novo relevo aquele grosseiro 
-               habito de polemista que consiste em levar a mal a uma creatura que ela mude de partido, uma ou mais vezes, ou que se 
-               contradiga frequentemente. A gente inferior que usa opiniões continua a empregar esse argumento como se ele fosse 
-               depreciativo. Talvez não seja tarde para estabelecer, sobre tão delicado assunto do trato intelectual, a verdadeira 
-               atitude cientifica.</p> 
-                
-           <p rend="indent-first">Se ha facto estranho e inexplicavel é que uma creatura de inteligencia e sensibilidade se mantenha 
-               sempre sentado sobre a mesma opinião, sempre coerente comsigo proprio. A continua transformação de tudo dá-se tambem no 
-               nosso corpo, e dá-se no nosso cerebro consequentemente. Como então, senão por doença, cair e reincidir na anormalidade de 
-               querer pensar hoje a mesma coisa que se pensou hontem, quando não só o cerebro de hoje já não é o de hontem, mas nem 
-               sequer o dia de hoje é o de hontem? Ser coerente é uma doença, um atavismo, talvez; data de antepassados animaes em cujo 
-               estádio de evolução tal desgraça seria natural.</p> 
-                
-           <p rend="indent-first">A coerencia, a convicção, a certeza, são além disso, demonstrações evidentes — quantas vezes escusadas — 
-               de falta de educação. E´ uma falta de cortezia com os outros ser sempre o mesmo á vista deles; é maça-los, apoquental-os 
-               com a nossa falta de variedade.</p> 
-                
-           <p rend="indent-first">Uma creatura de nervos modernos, de inteligencia sem cortinas, de sensibilidade acordada, tem a 
-               obrigação cerebral de mudar de opinião e de certeza varias vezes no mesmo dia. Deve ter, não crenças religiosas, opiniões 
-               politicas, predilêções literarias, mas sensações religiosas, impressões politicas, impulsos de admiração literaria.</p> 
-                
-           <p rend="indent-first">Certos estados de alma da luz, certas atitudes da paisagem teem sobretudo quando excessivos, o direito 
-               de exigir a quem está deante deles determinadas opiniões politicas, religiosas e artisticas, aquelas que eles insinuem, e 
-               que variarão, como é de entender, consoante esse exterior varie. O homem disciplinado e culto faz da sua sensibilidade e 
-               da sua inteligencia espelhos do ambiente transitorio: é republicano de manhã e monárquico ao crepusculo; ateu sob um sol 
-               descoberto é catolico ultramontano a certas horas de sombra e de silencio; e não podendo admitir senão Mallarmé áqueles 
-               momentos do anoitecer citadino em que desabrocham as luzes, ele deve sentir todo o simbolismo uma invenção de louco quando, 
-               ante uma solidão de mar, ele não souber de mais do que da «Odisséia».</p>
-                
-                
-                
-           <p rend="indent-first">Convicções profundas, só as teem as creaturas superficiaes. Os que não reparam para as coisas quasi que 
-               as veem apenas para não esbarrar com elas, esses são sempre da mesma opinião, são os integros e os coerentes. A politica e 
-               a religião gastam d’essa lenha, e é por isso que ardem tão mal ante a Verdade e a Vida.</p> 
-                
-           <p rend="indent-first">Quando é que despertaremos para a justa noção de que a politica, religião e vida social são apenas 
-               graus inferiores e plebeus da estética — a estética dos que ainda a não podem ter? Só quando uma humanidade livre dos 
-               preconceitos de sinceridade e coerencia tiver acostumado as suas sensações a viverem independentemente, se poderá 
-               conseguir qualquer coisa de beleza, elegancia e serenidade na vida.</p> 
-                
-                <signed>Fernando Pessôa</signed> 
+                <head>Crónica da vida que passa</head>
+
+                <p rend="indent-first">Recentemente, entre a poeira de algumas campanhas politicas,
+                    tomou de novo relevo aquele grosseiro habito de polemista que consiste em levar
+                    a mal a uma creatura que ela mude de partido, uma ou mais vezes, ou que se
+                    contradiga frequentemente. A gente inferior que usa opiniões continua a empregar
+                    esse argumento como se ele fosse depreciativo. Talvez não seja tarde para
+                    estabelecer, sobre tão delicado assunto do trato intelectual, a verdadeira
+                    atitude cientifica.</p>
+
+                <p rend="indent-first">Se ha facto estranho e inexplicavel é que uma creatura de
+                    inteligencia e sensibilidade se mantenha sempre sentado sobre a mesma opinião,
+                    sempre coerente comsigo proprio. A continua transformação de tudo dá-se tambem
+                    no nosso corpo, e dá-se no nosso cerebro consequentemente. Como então, senão por
+                    doença, cair e reincidir na anormalidade de querer pensar hoje a mesma coisa que
+                    se pensou hontem, quando não só o cerebro de hoje já não é o de hontem, mas nem
+                    sequer o dia de hoje é o de hontem? Ser coerente é uma doença, um atavismo,
+                    talvez; data de antepassados animaes em cujo estádio de evolução tal desgraça
+                    seria natural.</p>
+
+                <p rend="indent-first">A coerencia, a convicção, a certeza, são além disso,
+                    demonstrações evidentes — quantas vezes escusadas — de falta de educação. E´ uma
+                    falta de cortezia com os outros ser sempre o mesmo á vista deles; é maça-los,
+                    apoquental-os com a nossa falta de variedade.</p>
+
+                <p rend="indent-first">Uma creatura de nervos modernos, de inteligencia sem
+                    cortinas, de sensibilidade acordada, tem a obrigação cerebral de mudar de
+                    opinião e de certeza varias vezes no mesmo dia. Deve ter, não crenças
+                    religiosas, opiniões politicas, predilêções literarias, mas sensações
+                    religiosas, impressões politicas, impulsos de admiração literaria.</p>
+
+                <p rend="indent-first">Certos estados de alma da luz, certas atitudes da paisagem
+                    teem sobretudo quando excessivos, o direito de exigir a quem está deante deles
+                    determinadas opiniões politicas, religiosas e artisticas, aquelas que eles
+                    insinuem, e que variarão, como é de entender, consoante esse exterior varie. O
+                    homem disciplinado e culto faz da sua sensibilidade e da sua inteligencia
+                    espelhos do ambiente transitorio: é republicano de manhã e monárquico ao
+                    crepusculo; ateu sob um sol descoberto é catolico ultramontano a certas horas de
+                    sombra e de silencio; e não podendo admitir senão Mallarmé áqueles momentos do
+                    anoitecer citadino em que desabrocham as luzes, ele deve sentir todo o
+                    simbolismo uma invenção de louco quando, ante uma solidão de mar, ele não souber
+                    de mais do que da «Odisséia».</p>
+
+
+
+                <p rend="indent-first">Convicções profundas, só as teem as creaturas superficiaes.
+                    Os que não reparam para as coisas quasi que as veem apenas para não esbarrar com
+                    elas, esses são sempre da mesma opinião, são os integros e os coerentes. A
+                    politica e a religião gastam d’essa lenha, e é por isso que ardem tão mal ante a
+                    Verdade e a Vida.</p>
+
+                <p rend="indent-first">Quando é que despertaremos para a justa noção de que a
+                    politica, religião e vida social são apenas graus inferiores e plebeus da
+                    estética — a estética dos que ainda a não podem ter? Só quando uma humanidade
+                    livre dos preconceitos de sinceridade e coerencia tiver acostumado as suas
+                    sensações a viverem independentemente, se poderá conseguir qualquer coisa de
+                    beleza, elegancia e serenidade na vida.</p>
+
+                <signed>Fernando Pessôa</signed>
             </div>
         </body>
     </text>

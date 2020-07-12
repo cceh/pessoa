@@ -1,6 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc><titleStmt>
+        <fileDesc>
+            <titleStmt>
                 <title>Naufragio de Bartholomeu</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -17,7 +20,8 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt><publicationStmt>
+            </titleStmt>
+            <publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -26,17 +30,25 @@
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_Naufragio_de_Bartholomeu.xml</idno>
-            </publicationStmt><notesStmt><note type="genre">
-                        <rs type="genre" key="prosa">Prosa</rs>
-                    </note></notesStmt><sourceDesc><list type="work-index">
+            </publicationStmt>
+            <notesStmt>
+                <note type="genre">
+                    <rs type="genre" key="prosa">Prosa</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
                     <item><rs type="work" key="W190">Naufragio de Bartholomeu</rs></item>
-                </list><biblStruct><analytic>
+                </list>
+                <biblStruct>
+                    <analytic>
                         <title level="a">Naufragio de Bartholomeu</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                    </analytic><monogr>
+                    </analytic>
+                    <monogr>
                         <title level="j"><rs type="periodical" key="J7">Teatro- Revista de
                                 Critica</rs></title>
                         <imprint>
@@ -44,7 +56,13 @@
                         </imprint>
                         <biblScope unit="issue">1</biblScope>
                         <biblScope unit="page">6</biblScope>
-                    </monogr></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/Teatro_Naufragio.jpg"/>
@@ -56,11 +74,11 @@
                 <p rend="indent-first">Nenhum livro para creanças deve ser escrito para creanças.
                     Escrever de cousas simples com simplicidade é quanto se exige d’aquela especie
                     de adido á pedagogia que o sr. <rs type="name" key="P140">Lopes-Vieira</rs> quer
-                    ser. Assim, <rs type="name" key="P190">João de Deus</rs> não escreveu a 
-                    <rs type="title">Engeitadinha</rs> senão com o escrupulo de ser simples. E
+                    ser. Assim, <rs type="name" key="P190">João de Deus</rs> não escreveu a <rs
+                        type="title">Engeitadinha</rs> senão com o escrupulo de ser simples. E
                     porque o assumpto era tambem simples, as creanças comprehendem-o. Se quizesse
-                    ser infantil, acontecia-lhe isto – seria infantil. O sr. 
-                    <rs type="name" key="P140">Lopes-Vieira</rs> quer escrever para creanças mediante intuição
+                    ser infantil, acontecia-lhe isto – seria infantil. O sr. <rs type="name"
+                        key="P140">Lopes-Vieira</rs> quer escrever para creanças mediante intuição
                     da alma infantil, como uma creança, escrevendo para creanças. Mesmo que se
                     saisse bem d’isto, não se sahia bem d’isto. Porque as creanças não escrevem.
                     Escrever como uma creança, é toleravel sendo creança, porque o ser creança o
@@ -69,8 +87,8 @@
                     pedagogica? Que interesse ha para adultos n’esta traducção para verso do estylo
                     do sr. <rs type="name" key="P527">Nunes da Matta</rs>? Que interesse fica, para
                     psycologos d’esta pobreza de senso-comum, obediencia aos elogios de parvos ou
-                    videiros e casta abstenção das voluptuosidades de pensar e crear-arte, do 
-                    <rs type="name" key="P515">S. Francisco de Assis</rs> da Livraria Ferreira?</p>
+                    videiros e casta abstenção das voluptuosidades de pensar e crear-arte, do <rs
+                        type="name" key="P515">S. Francisco de Assis</rs> da Livraria Ferreira?</p>
                 <p rend="indent-first">Salvo no caso d’um genio supremo, com chave para todas as
                     portas da expressão, o <hi rend="italic">querer</hi> ser simples dá com o
                     querente na visinhança de quem <hi rend="italic">quer</hi> ser sublime. Este dá
@@ -97,8 +115,8 @@
                     </choice> senso estetico de creanças, que, mesmo que sejam só duas, são
                     classificaveis de inumeras, ante o horror do crime. – Está tornando ridiculos
                     assumptos que conviria tratar com uma decencia que a estupidez mesmo quando
-                    involuntaria, nunca tem. Pobres cães nossos amigos tinhosos de 
-                    <rs type="name" key="P140">Lopes-Vieira</rs>!. Pobre <rs type="name" key="P477">Bartholomeu
+                    involuntaria, nunca tem. Pobres cães nossos amigos tinhosos de <rs type="name"
+                        key="P140">Lopes-Vieira</rs>!. Pobre <rs type="name" key="P477">Bartholomeu
                         Dias</rs>, tão embobecido de pedagogia! – E, por ultimo, para tudo de nocivo
                     ser, o sr. <rs type="name" key="P140">Lopes-Vieira</rs> é até antipedagogico,
                     porque quem escreve</p>
@@ -115,8 +133,8 @@
                     como que um quarto escuro é logicamente terrivel, os homens de Portugal de
                     amanhã (adoptados escolarmente, como tudo o que dizemos n´este artigo leva a
                     crer que sejam, os livros do sr. <rs type="name" key="P140">Lopes-Vieira</rs>)
-                    terão por <rs type="name" key="P65">Shakespeare</rs> o sr. 
-                    <rs type="name" key="P467">Julio Dantas</rs>, por <rs type="name" key="P175">Shelley</rs> o
+                    terão por <rs type="name" key="P65">Shakespeare</rs> o sr. <rs type="name"
+                        key="P467">Julio Dantas</rs>, por <rs type="name" key="P175">Shelley</rs> o
                     sr. <rs type="name" key="P140">Lopes-Vieira</rs>... e serão hespanhoes.</p>
                 <p rend="indent-first">Porque em que diabo pode vir a dar uma nação de parvos, de
                     anti-patriotas e de panofobicos senão em deixar de ser nação?</p>

@@ -1,6 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc><titleStmt>
+        <fileDesc>
+            <titleStmt>
                 <title>ANTIPATHICO FUTURISMO</title>
                 <author>
                     <rs type="name" key="AdC">Álvaro de Campos</rs>
@@ -17,7 +20,8 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt><publicationStmt>
+            </titleStmt>
+            <publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -26,19 +30,27 @@
                     <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
-                <idno type="filename">Campos_Antipathico_Futurismo.xml</idno>               
-            </publicationStmt><notesStmt><note type="genre">
-                        <rs type="genre" key="prosa">Prosa</rs>
-                    </note></notesStmt><sourceDesc><list type="work-index">
+                <idno type="filename">Campos_Antipathico_Futurismo.xml</idno>
+            </publicationStmt>
+            <notesStmt>
+                <note type="genre">
+                    <rs type="genre" key="prosa">Prosa</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
                     <item><rs type="work" key="O4-X">ANTIPATHICO FUTURISMO</rs></item>
-                </list><biblStruct><analytic>
+                </list>
+                <biblStruct>
+                    <analytic>
                         <title level="a">ANTIPATHICO FUTURISMO</title>
                         <author>
                             <rs type="name" key="AdC">Álvaro de Campos</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
                         <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
-                    </analytic><monogr>
+                    </analytic>
+                    <monogr>
                         <title level="j"><rs type="periodical" key="J86">A Capital</rs></title>
                         <imprint>
                             <date when="1915-07-06">6 de Julho de 1915</date>
@@ -47,9 +59,18 @@
                             there is just a year: when="1931" -->
                         </imprint>
                         <biblScope unit="page">1</biblScope>
-                    </monogr><!-- here goes the bibliographical reference for the source publication --><!-- this can also have @otherLangs, e.g. otherLangs="en fr" --><!-- in case it is not a single date, but from-to, it 
+                    </monogr>
+                    <!-- here goes the bibliographical reference for the source publication -->
+                    <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
+                    <!-- in case it is not a single date, but from-to, it 
                             looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" --></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
+                            there is just a year: when="1931" -->
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/Campos_Antipathico_Futurismo.jpg"/>
@@ -61,31 +82,39 @@
     -->
         <body>
             <div>
-                <head>ANTIPATHICO FUTURISMO</head> 
+                <head>ANTIPATHICO FUTURISMO</head>
 
-                <head type="sub">Os poetas do “<rs type="periodical" key="J12">Orpheu</rs>” não passam, afinal,  
-                    
-                    de creaturas de maus sentimentos.</head>  
-                
-                <p rend="indent-first">A nossa noticia do hontem ácerca de uma recita planeada pelos futuristas do <rs type="periodical" key="J12">Orpheu</rs> 
-                    parece que não agradou a esses 
-                    pobres maniacos. Pelo menos assim se desprehende de uma carta que hoje nos foi entregue, assignada pelo <hi rend="italic">engenheiro</hi> 
-                    e <hi rend="italic">poeta sensacionista </hi><rs type="name" key="#AdC">Alvaro de Campos</rs>, onde, a proposito, se insultam todos 
-                    quanto fazem parte do jornalismo portuguez.</p> 
-                
-                <p rend="indent-first">Não nos indigna a injuria, apenas porque não offende quem quer mas simplesmente quem pode. Os cerebros destrambelhados
-                    do <rs type="periodical" key="J12"><hi rend="italic">Orpheu</hi></rs> não podem injuriar ninguem. 
-                    Mas a carta contem uma repuguante allusão ao desastre de que foi victima o 
-                    sr. dr. <rs type="name" key="P364">Affonso Costa</rs>, e essa faz-nos modificar bastante o conceito em que tinhamos os sensacionistas. 
-                    Pobres maniacos? Não. Creaturas de vis e baixos sentimentos é que são todos quantos concordam com o irritante periodo final da referida 
-                    carta, que é textualmente o seguinte:</p> 
-                
-                <p rend="indent-first">De resto seria de mau gosto repudiar ligações com o futurismo <hi rend="italic">n’uma hora tão deliciosamente 
-                    mechanica em que a propria Providencia Divina se serve dos carros electricos para os seus altos ensinamentos</hi>.</p> 
-                
-                <p rend="indent-first">Isto sim, indigna e revolta. E de hoje em deante, podem os futuristas, até ha pouco simplesmente ridiculos, agora 
-                    ridiculos e maus, contar com uma nova forma do tratamento por parte dos jornalistas que estupidamente pretendem insultar.</p> 
-            </div> 
+                <head type="sub">Os poetas do “<rs type="periodical" key="J12">Orpheu</rs>” não
+                    passam, afinal, de creaturas de maus sentimentos.</head>
+
+                <p rend="indent-first">A nossa noticia do hontem ácerca de uma recita planeada pelos
+                    futuristas do <rs type="periodical" key="J12">Orpheu</rs> parece que não agradou
+                    a esses pobres maniacos. Pelo menos assim se desprehende de uma carta que hoje
+                    nos foi entregue, assignada pelo <hi rend="italic">engenheiro</hi> e <hi
+                        rend="italic">poeta sensacionista </hi><rs type="name" key="#AdC">Alvaro de
+                        Campos</rs>, onde, a proposito, se insultam todos quanto fazem parte do
+                    jornalismo portuguez.</p>
+
+                <p rend="indent-first">Não nos indigna a injuria, apenas porque não offende quem
+                    quer mas simplesmente quem pode. Os cerebros destrambelhados do <rs
+                        type="periodical" key="J12"><hi rend="italic">Orpheu</hi></rs> não podem
+                    injuriar ninguem. Mas a carta contem uma repuguante allusão ao desastre de que
+                    foi victima o sr. dr. <rs type="name" key="P364">Affonso Costa</rs>, e essa
+                    faz-nos modificar bastante o conceito em que tinhamos os sensacionistas. Pobres
+                    maniacos? Não. Creaturas de vis e baixos sentimentos é que são todos quantos
+                    concordam com o irritante periodo final da referida carta, que é textualmente o
+                    seguinte:</p>
+
+                <p rend="indent-first">De resto seria de mau gosto repudiar ligações com o futurismo
+                        <hi rend="italic">n’uma hora tão deliciosamente mechanica em que a propria
+                        Providencia Divina se serve dos carros electricos para os seus altos
+                        ensinamentos</hi>.</p>
+
+                <p rend="indent-first">Isto sim, indigna e revolta. E de hoje em deante, podem os
+                    futuristas, até ha pouco simplesmente ridiculos, agora ridiculos e maus, contar
+                    com uma nova forma do tratamento por parte dos jornalistas que estupidamente
+                    pretendem insultar.</p>
+            </div>
         </body>
     </text>
 </TEI>

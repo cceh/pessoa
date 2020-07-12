@@ -1,6 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc><titleStmt>
+        <fileDesc>
+            <titleStmt>
                 <title>As caricaturas de Almada Negreiros</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -17,7 +20,8 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt><publicationStmt>
+            </titleStmt>
+            <publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -26,24 +30,38 @@
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_As_caricaturas_de_Almada.xml</idno>
-            </publicationStmt><notesStmt><note type="genre">
-                        <rs type="genre" key="prosa">Prosa</rs>
-                    </note></notesStmt><sourceDesc><list type="work-index">
+            </publicationStmt>
+            <notesStmt>
+                <note type="genre">
+                    <rs type="genre" key="prosa">Prosa</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
                     <item><rs type="work" key="W193">As caricaturas de Almada Negreiros</rs></item>
-                </list><biblStruct><analytic>
+                </list>
+                <biblStruct>
+                    <analytic>
                         <title level="a">As caricaturas de Almada Negreiros</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                    </analytic><monogr>
+                    </analytic>
+                    <monogr>
                         <title level="j"><rs type="periodical" key="J5">A Águia</rs></title>
                         <imprint>
                             <date when="1913-04">Abril de 1913</date>
                         </imprint>
                         <biblScope unit="issue">16</biblScope>
                         <biblScope unit="page">134-135</biblScope>
-                    </monogr></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/As_caricaturas_1.jpg"/>
@@ -53,7 +71,7 @@
         <body>
             <div>
                 <head rend="center">As caricaturas de <rs type="name" key="P56">Almada
-                            Negreiros</rs></head>
+                        Negreiros</rs></head>
                 <p><hi rend="bold">A arte</hi> chamada satirica é aquella cujo intuito consiste em
                     traduzir um objecto, sem erro de traducção, para inferior a si-proprio.
                     Baseia-se porisso em um dos trez sentimentos d’onde essa intenção pode nascer –
@@ -68,7 +86,8 @@
                     visto que a via media não existe, porque (poisque a arte é essencialmente
                     interpretação) uma cousa é <hi rend="italic">egual</hi> a si-propria nunca na
                     arte, mas só na vida.</p>
-                <p rend="indent-first">Basta considerar um objecto futilmente, como meramente <hi rend="italic">interessante</hi>, para o inferiorisar, visto que cada Cousa
+                <p rend="indent-first">Basta considerar um objecto futilmente, como meramente <hi
+                        rend="italic">interessante</hi>, para o inferiorisar, visto que cada Cousa
                     ou Sensação, momento espacial ou psychico do Mysterio, ou, pelo menos, da Vida,
                     basta que seja considerada sem uma consciencia clara ou obscura de que é isso,
                     para ser <hi rend="italic">ipso facto</hi> traduzida para inferior a
@@ -81,7 +100,8 @@
                     arte creação, e sendo toda a creação, por sua natureza, affirmação, resulta que
                     a arte satirica, que é negativa, encerra em sua essencia o paradoxo de que é
                     grande na proporção em que sahe para fóra de ser satirica. Quanto mais satirica
-                    menos satirica. Ahi estão o <rs type="title">Dom Quixote</rs> e <rs type="title">A Tale of a Tub</rs> a pedirem que os citemos como exemplos.</p>
+                    menos satirica. Ahi estão o <rs type="title">Dom Quixote</rs> e <rs type="title"
+                        >A Tale of a Tub</rs> a pedirem que os citemos como exemplos.</p>
                 <p rend="indent-first">Não se julgue porém que isto – mera constatação – leva
                     escondido o puxar para despresivel a arte de satirizar. N’essa arte, como na
                     outra, pode haver, e em cada um dos seus trez generos, brilhantismo, talento e
@@ -91,9 +111,11 @@
                     nos leva para além da satira.</p>
                 <p rend="indent-first">Porque o <hi rend="italic">genio</hi> satirico é aquelle que,
                     quér faça satira pelo odio, quer pelo despreso, quér pelo interesse futil, nos
-                    dá o além odioso, o além ridiculo, o além futil. – O <hi rend="italic">talento</hi>, em qualquér dos trez generos, será aquelle que cegantemente,
+                    dá o além odioso, o além ridiculo, o além futil. – O <hi rend="italic"
+                        >talento</hi>, em qualquér dos trez generos, será aquelle que cegantemente,
                     multiformalmente, nos dér o futil como futil, o ridiculo como ridiculo o odioso
-                    como odioso. – O meramente <hi rend="italic">intelligente</hi> ou <hi rend="italic">brilhante</hi> será aquelle que, não sem <choice>
+                    como odioso. – O meramente <hi rend="italic">intelligente</hi> ou <hi
+                        rend="italic">brilhante</hi> será aquelle que, não sem <choice>
                         <sic>individuaidade</sic>
                         <corr resp="#JU">individualidade</corr>
                     </choice>, mas sem vincada fórma pessoal e accentuado polymorphismo, <choice>
@@ -137,7 +159,9 @@
                     criticamente só a elle? Será polyaptidão do artista, incerteza em encontrar-se,
                     ou uma assemelhavel imitação ou adaptação a varios generos? Creio na Synthese,
                     sempre, e aqui ella vem em meu auxilio. Porque me parece que de todos estes trez
-                    elementos se forma o multiformismo do artista. Ha qualquer cousa de <hi rend="italic">procurar</hi>; ha, infelizmente, tambem qualquer cousa de <hi rend="italic">achar</hi> (nos outros); – mas ha tambem, para quem sabe vêr,
+                    elementos se forma o multiformismo do artista. Ha qualquer cousa de <hi
+                        rend="italic">procurar</hi>; ha, infelizmente, tambem qualquer cousa de <hi
+                        rend="italic">achar</hi> (nos outros); – mas ha tambem, para quem sabe vêr,
                     nitidamente personalidade e originalidade atravez d’essas influenciações e
                     tentativas.</p>
                 <signed rend="right">Fernando Pessôa.</signed>

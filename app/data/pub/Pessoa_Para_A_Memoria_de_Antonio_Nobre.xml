@@ -1,6 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc><titleStmt>
+        <fileDesc>
+            <titleStmt>
                 <title>Para a memoria de Antonio Nobre</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -17,7 +20,8 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt><publicationStmt>
+            </titleStmt>
+            <publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -26,23 +30,37 @@
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_Para_A_Memoria_de_Antonio_Nobre.xml</idno>
-            </publicationStmt><notesStmt><note type="genre">
-                        <rs type="genre" key="prosa">Prosa</rs>
-                    </note></notesStmt><sourceDesc><list type="work-index">
+            </publicationStmt>
+            <notesStmt>
+                <note type="genre">
+                    <rs type="genre" key="prosa">Prosa</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
                     <item><rs type="work" key="W197">Para a Memoria de Antonio Nobre</rs></item>
-                </list><biblStruct><analytic>
+                </list>
+                <biblStruct>
+                    <analytic>
                         <title level="a">Para a memoria de Antonio Nobre</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                    </analytic><monogr>
+                    </analytic>
+                    <monogr>
                         <title level="j"><rs type="periodical" key="J46">A Galera</rs></title>
                         <imprint>
                             <date when="1915-02-05">5 de Fevereiro de 1915</date>
                         </imprint>
                         <biblScope unit="page">35</biblScope>
-                    </monogr></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/Para_A_Memoria_de_Antonio_Nobre.jpg"/>
@@ -55,8 +73,11 @@
                 <p rend="indent-first">QUANDO a hora do <hi rend="italic">ultimatum</hi> abriu em
                     Portugal, para não mais se fecharem, as portas do templo de Jano, o deus
                     bifronte revelou-se na litteratura nas duas maneiras correspondentes á dupla
-                    direcção do seu olhar. <hi rend="italic"><rs type="name" key="P25">Junqueiro</rs></hi> – o de <hi rend="italic"><rs type="title">Patria</rs></hi> e <hi rend="italic"><rs type="title">Finis
-                            Patriaem</rs></hi> – foi a face que olha para o Futuro e se exalta. <rs type="name" key="P53">Antonio Nobre</rs> foi a face que olha para o Passado,
+                    direcção do seu olhar. <hi rend="italic"><rs type="name" key="P25"
+                            >Junqueiro</rs></hi> – o de <hi rend="italic"><rs type="title"
+                            >Patria</rs></hi> e <hi rend="italic"><rs type="title">Finis
+                            Patriaem</rs></hi> – foi a face que olha para o Futuro e se exalta. <rs
+                        type="name" key="P53">Antonio Nobre</rs> foi a face que olha para o Passado,
                     e se entristece.</p>
                 <p rend="indent-first">De <rs type="name" key="P53">Antonio Nobre</rs> partem todas
                     as palavras com sentido lusitano que de então para cá teem sido pronunciadas.

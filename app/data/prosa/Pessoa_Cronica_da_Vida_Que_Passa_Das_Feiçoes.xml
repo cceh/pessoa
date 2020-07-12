@@ -1,6 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc><titleStmt>
+        <fileDesc>
+            <titleStmt>
                 <title>CRÓNICA da vida que passa... Das feições</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -17,7 +20,8 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt><publicationStmt>
+            </titleStmt>
+            <publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -26,19 +30,28 @@
                     <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
-                <idno type="filename">Pessoa_Cronica_da_Vida_que_Passa_Das_Feiçoes.xml</idno>               
-            </publicationStmt><notesStmt><note type="genre">
-                        <rs type="genre" key="prosa">Prosa</rs>
-                    </note></notesStmt><sourceDesc><list type="work-index">
-                    <item><rs type="work" key="O1-X">CRÓNICA da vida que passa... Das feições</rs></item>
-                </list><biblStruct><analytic>
+                <idno type="filename">Pessoa_Cronica_da_Vida_que_Passa_Das_Feiçoes.xml</idno>
+            </publicationStmt>
+            <notesStmt>
+                <note type="genre">
+                    <rs type="genre" key="prosa">Prosa</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="O1-X">CRÓNICA da vida que passa... Das
+                        feições</rs></item>
+                </list>
+                <biblStruct>
+                    <analytic>
                         <title level="a">CRÓNICA da vida que passa... Das feições</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
                         <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
-                    </analytic><monogr>
+                    </analytic>
+                    <monogr>
                         <title level="j"><rs type="periodical" key="J45">O Jornal</rs></title>
                         <imprint>
                             <date when="1915-04-08">8 de Abril de 1915</date>
@@ -47,9 +60,18 @@
                             there is just a year: when="1931" -->
                         </imprint>
                         <biblScope unit="page">1</biblScope>
-                    </monogr><!-- here goes the bibliographical reference for the source publication --><!-- this can also have @otherLangs, e.g. otherLangs="en fr" --><!-- in case it is not a single date, but from-to, it 
+                    </monogr>
+                    <!-- here goes the bibliographical reference for the source publication -->
+                    <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
+                    <!-- in case it is not a single date, but from-to, it 
                             looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" --></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
+                            there is just a year: when="1931" -->
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/Cronica_da_Vida_Que_Passa_Das_feiçoes.jpg"/>
@@ -57,56 +79,69 @@
     <text corresp="#O1-X">
         <body>
             <div>
-              
-                <head>CRÓNICA<!-- how to break the line here?-->   
-                    
-                    da vida que passa...</head>  
-                
-                <p rend="indent-first">Das feições de alma que caracterizam o povo portuguez, a mais irritante é, sem duvida, o seu 
-                    excesso de disciplina. Somos o povo disciplinado por excelencia. Levamos a disciplina social áquele ponto de excesso 
-                    em que cousa nenhuma, por boa que seja — e eu não creio que a disciplina seja boa — por força que há de ser 
-                    prejudicial.</p> 
-                
-                <p rend="indent-first">Tão regrada, regular e organizada é a vida social portuguesa que mais parece que somos um exército 
-                    do que uma nação de gente com existencias individuais. Nunca o português tem uma ação sua, quebrando com o meio, 
-                    virando as costas aos vizinhos. Age sempre em grupo, sente sempre em grupo, pensa sempre em grupo. Está sempre á 
-                    espera dos outros para tudo. E quando, por um milagre de desnacionalisação temporaria, pratica a traição á Pátria de 
-                    ter um gesto, um pensamento, ou um sentimento independente, a sua audacia nunca é completa, porque não tira os olhos 
-                    dos outros, nem a sua atenção da sua critica.</p> 
-                
-                <p rend="indent-first">Parecemo-nos muito com os alemães. Como eles, agimos sempre em grupo, e cada um do grupo porque os 
-                    outros agem. Por isso aqui, como na Alemanha, nunca é possivel determinar responsabilidades; elas são sempre da sexta 
-                    pessoa num caso onde só agiram cinco. Como os alemães, nós esperamos sempre pela voz de comando. Como eles, sofremos 
-                    da doença da Autoridade — acatar criaturas que ninguem sabe porque são acatadas, citar nomes que nenhuma valorização 
-                    objetiva autentica como citaveis, seguir chefes que nenhum gesto de competencia nomeou para as responsabilidades da 
-                    ação. Como os alemães, nós compensamos a nossa rigida disciplina fundamenta,l por uma indisciplina superficial, de 
-                    crianças que brincam á vida. Refilamos só de palavras. Dizemos mal só ás escondidas. E somos invejosos, grosseiros e 
-                    barbaros, de nosso verdadeiro feitio, porque taes são as qualidades de toda a criatura que a disciplina moeu, em quem 
-                    a individualidade se atrofiou.</p> 
-                
-                <p rend="indent-first">Diferimos dos alemães, é certo, em certos pontos evidentes das realizações da vida. Mas a 
-                    diferença é apenas aparente. Eles elevaram a disciplina social, temperamento neles como em nós, a um sistema de 
-                    estado e de governo; ao passo que nós, mais rigidamente disciplinados e coerentes, nunca infligimos a nossa rude 
-                    disciplina social, especializando-a para um estado ou uma administração. Deixamo-la coerentemente entregue ao proprio 
-                    vulto integro da sociedade. De ahi a nossa decadencia!</p> 
-                
-                <p rend="indent-first">Somos incapazes de revolta e de agitação. Quando fizemos uma «revolução» foi para implantar uma 
-                    cousa igual ao que já estava. Manchámos essa revolução com a brandura com que tratámos os vencidos. E não nos 
-                    resultou uma guerra civil, que nos despertasse; não nos resultou uma anarquia, uma perturbação das consciencias. 
-                    Ficámos miserandamente os mesmos disciplinados que eramos. Foi um gesto infantil, de superfície e fingimento.</p> 
-                
-                <p rend="indent-first">Portugal precisa dum indisciplinador. Todos os indisciplinadores que temos tido, ou que temos 
-                    querido ter, nos teem falhado. Como não acontecer assim, se é da nossa raça que eles saiem? As poucas figuras que de 
-                    vez em quando teem surgido na nossa vida politica com aproveitaveis qualidades de perturbadores fracassam logo, traem 
-                    logo a sua missão. Qual é a primeira cousa que fazem? Organizam um partido... Caiem na disciplina por uma fatalidade 
-                    ancestral.</p> 
-                
-                <p rend="indent-first">Trabalhemos ao menos — nós, os novos — por perturbar as almas, por desorientar os espiritos. 
-                   Cultivemos, em nós proprios, a desintegração mental como uma flor de preço. Construamos uma anarquia portuguêsa. 
-                   Escrupulisemos no doentio e no dissolvente. E a nossa missão, a par de ser a mais civilisada e a mais moderna, será 
-                   também a mais moral e a mais patriotica.</p> 
-                
-                <signed>Fernando Pessôa</signed> 
+
+                <head>CRÓNICA<!-- how to break the line here?--> da vida que passa...</head>
+
+                <p rend="indent-first">Das feições de alma que caracterizam o povo portuguez, a mais
+                    irritante é, sem duvida, o seu excesso de disciplina. Somos o povo disciplinado
+                    por excelencia. Levamos a disciplina social áquele ponto de excesso em que cousa
+                    nenhuma, por boa que seja — e eu não creio que a disciplina seja boa — por força
+                    que há de ser prejudicial.</p>
+
+                <p rend="indent-first">Tão regrada, regular e organizada é a vida social portuguesa
+                    que mais parece que somos um exército do que uma nação de gente com existencias
+                    individuais. Nunca o português tem uma ação sua, quebrando com o meio, virando
+                    as costas aos vizinhos. Age sempre em grupo, sente sempre em grupo, pensa sempre
+                    em grupo. Está sempre á espera dos outros para tudo. E quando, por um milagre de
+                    desnacionalisação temporaria, pratica a traição á Pátria de ter um gesto, um
+                    pensamento, ou um sentimento independente, a sua audacia nunca é completa,
+                    porque não tira os olhos dos outros, nem a sua atenção da sua critica.</p>
+
+                <p rend="indent-first">Parecemo-nos muito com os alemães. Como eles, agimos sempre
+                    em grupo, e cada um do grupo porque os outros agem. Por isso aqui, como na
+                    Alemanha, nunca é possivel determinar responsabilidades; elas são sempre da
+                    sexta pessoa num caso onde só agiram cinco. Como os alemães, nós esperamos
+                    sempre pela voz de comando. Como eles, sofremos da doença da Autoridade — acatar
+                    criaturas que ninguem sabe porque são acatadas, citar nomes que nenhuma
+                    valorização objetiva autentica como citaveis, seguir chefes que nenhum gesto de
+                    competencia nomeou para as responsabilidades da ação. Como os alemães, nós
+                    compensamos a nossa rigida disciplina fundamenta,l por uma indisciplina
+                    superficial, de crianças que brincam á vida. Refilamos só de palavras. Dizemos
+                    mal só ás escondidas. E somos invejosos, grosseiros e barbaros, de nosso
+                    verdadeiro feitio, porque taes são as qualidades de toda a criatura que a
+                    disciplina moeu, em quem a individualidade se atrofiou.</p>
+
+                <p rend="indent-first">Diferimos dos alemães, é certo, em certos pontos evidentes
+                    das realizações da vida. Mas a diferença é apenas aparente. Eles elevaram a
+                    disciplina social, temperamento neles como em nós, a um sistema de estado e de
+                    governo; ao passo que nós, mais rigidamente disciplinados e coerentes, nunca
+                    infligimos a nossa rude disciplina social, especializando-a para um estado ou
+                    uma administração. Deixamo-la coerentemente entregue ao proprio vulto integro da
+                    sociedade. De ahi a nossa decadencia!</p>
+
+                <p rend="indent-first">Somos incapazes de revolta e de agitação. Quando fizemos uma
+                    «revolução» foi para implantar uma cousa igual ao que já estava. Manchámos essa
+                    revolução com a brandura com que tratámos os vencidos. E não nos resultou uma
+                    guerra civil, que nos despertasse; não nos resultou uma anarquia, uma
+                    perturbação das consciencias. Ficámos miserandamente os mesmos disciplinados que
+                    eramos. Foi um gesto infantil, de superfície e fingimento.</p>
+
+                <p rend="indent-first">Portugal precisa dum indisciplinador. Todos os
+                    indisciplinadores que temos tido, ou que temos querido ter, nos teem falhado.
+                    Como não acontecer assim, se é da nossa raça que eles saiem? As poucas figuras
+                    que de vez em quando teem surgido na nossa vida politica com aproveitaveis
+                    qualidades de perturbadores fracassam logo, traem logo a sua missão. Qual é a
+                    primeira cousa que fazem? Organizam um partido... Caiem na disciplina por uma
+                    fatalidade ancestral.</p>
+
+                <p rend="indent-first">Trabalhemos ao menos — nós, os novos — por perturbar as
+                    almas, por desorientar os espiritos. Cultivemos, em nós proprios, a
+                    desintegração mental como uma flor de preço. Construamos uma anarquia
+                    portuguêsa. Escrupulisemos no doentio e no dissolvente. E a nossa missão, a par
+                    de ser a mais civilisada e a mais moderna, será também a mais moral e a mais
+                    patriotica.</p>
+
+                <signed>Fernando Pessôa</signed>
             </div>
         </body>
     </text>

@@ -1,8 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc><titleStmt>
-                <title>Tomamos a villa depois de um intenso
-                        bombardeamento</title>
+        <fileDesc>
+            <titleStmt>
+                <title>Tomamos a villa depois de um intenso bombardeamento</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
                 </author>
@@ -26,32 +28,49 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt><publicationStmt>
-                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição (IELT)</publisher>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2016</date>
                 <availability status="free">
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_Tomamos-a-Villa.xml</idno>
-            </publicationStmt><notesStmt><note type="genre">
-                        <rs type="genre" key="poesia">Poesia</rs>
-                    </note></notesStmt><sourceDesc><list type="work-index">
+            </publicationStmt>
+            <notesStmt>
+                <note type="genre">
+                    <rs type="genre" key="poesia">Poesia</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
                     <item><rs type="work" key="O1-35">Tomamos a villa depois de um intenso
-                        bombardeamento</rs></item>
-                </list><biblStruct><analytic>
+                            bombardeamento</rs></item>
+                </list>
+                <biblStruct>
+                    <analytic>
                         <title level="a">Tomamos a villa depois de um intenso bombardeamento</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt"/>
-                    </analytic><monogr>
-                        <title level="j"><rs type="periodical" key="J9">Notícias Ilustrado</rs></title>
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J9">Notícias
+                            Ilustrado</rs></title>
                         <imprint>
                             <date when="1929-07-14">14 de Julho de 1929</date>
                         </imprint>
                         <biblScope unit="page">18</biblScope>
-                    </monogr></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="pub/FP147_1929-07-14_0018_Tamamos_a_vila.jpg"/>

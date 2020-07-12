@@ -1,6 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc><titleStmt>
+        <fileDesc>
+            <titleStmt>
                 <title>CRÓNICA dos livros- O Varre Canelhas</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -17,7 +20,8 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt><publicationStmt>
+            </titleStmt>
+            <publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -26,10 +30,16 @@
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_O_Varre_Canelhas.xml</idno>
-            </publicationStmt><notesStmt><note type="genre">
-                        <rs type="genre" key="prosa">Prosa</rs>
-                    </note></notesStmt><sourceDesc><list type="work-index">
-                    <item><rs type="work" key="O1-37">CRÓNICA dos livros- O Varre Canelhas</rs></item>
+            </publicationStmt>
+            <notesStmt>
+                <note type="genre">
+                    <rs type="genre" key="prosa">Prosa</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="O1-37">CRÓNICA dos livros- O Varre
+                        Canelhas</rs></item>
                     <!-- 
                     UH: as we have a new structure for work identifers in lists.xml, you can add the work there
                     and use the corresponding key here. For this, please first add the title to <list type="titles">
@@ -48,19 +58,28 @@
                             Considerada</rs>
                     See also below in the @corresp attribute of the <text> element.
                     -->
-                </list><biblStruct><analytic>
+                </list>
+                <biblStruct>
+                    <analytic>
                         <title level="a">CRÓNICA dos livros- O Varre Canelhas</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                    </analytic><monogr>
+                    </analytic>
+                    <monogr>
                         <title level="j"><rs type="periodical" key="J45">O Jornal</rs></title>
                         <imprint>
                             <date when="1915-04-15">15 de Abril de 1915</date>
                         </imprint>
                         <biblScope unit="page">3</biblScope>
-                    </monogr></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/O_Varre_Canelhas.jpg"/>
@@ -74,32 +93,37 @@
         <body>
             <div>
                 <head>CRÓNICA dos livros- O Varre Canelhas</head>
-                
-                    <head type="sub" rend="right">Novelo Transmontano por 
-                        <rs type="name" key="P74">Joaquim Leitão</rs></head>
-                <p rend="indent-first">A obra, se fôrmos a aquilata-la por um criterio esthetico superior, 
-                    resultará por certo de pouco relêvo e importancia. Mas, se a considerarmos dentro das 
-                    fronteiras do trabalho meramente inteligente e honesto, e por uma bitola fornecida, não diremos 
-                    pela benevolancia, mas pela compreensão do que se pode normalmente esperar, não teremos impulso 
-                    critico senão de dirigir ao autor o elogio sincero – se bem que, nas circumstancias, relativo – que 
-                    a realisação da novela nos parece merecer.</p>
-                <p rend="indent-first">Novela, propriamente, não a ha, pois que falte o nexo construtivo, nem haja artificio 
-                    de sintese que torne unidade e estrutura a dispersão impressionista d’estas paginas. 
-                    Tampouco a obra se salienta pelo cuidado intuitivo ou cauto na engrenagem entrepenetrada da ação e do 
-                    dialogo. O certo, porém, é que da leitura fica uma noção forte e dura da paisagem e do homem de 
-                    Traz-os-Montes, e que em certos trechos – como no terceiro capitulo da primeira parte – ha mais alguma cousa, 
-                    talvez, do que apenas isto. O facto de nunca termos estado em Traz-os-Montes investe-nos da precisa 
-                    competencia extra-critica para poder séntir isto. Pode ser que, se houvessemos errado por tal provincia, 
-                    achassemos falsa a impressão do autor desta novela. E’ mesmo certo que achariamos falsa, Mas, nem n’essa 
-                    hipotese, nem agora, isso teria, ou tem, importancia. Todas as impressões são falsas. Por isso basta que 
-                    sejam belas.</p>
-                <p rend="indent-first">No que respeita a estilistica, a novéla do sr. <rs type="name" key="P74">Joaquim Leitão</rs> 
-                    está escrita com aquela facilidade 
-                    e comunicabilidade simpática que a reportagem superior frequentemente radica nos seus práticos. Não se vá 
-                    lêr nisto que colocamos a obra o nivel intelectual do alto jornalismo. Corre nas veias da novéla melhor sangue<!-- no original "sagne" --> 
-                    espiritual do que esse.</p>
+
+                <head type="sub" rend="right">Novelo Transmontano por <rs type="name" key="P74"
+                        >Joaquim Leitão</rs></head>
+                <p rend="indent-first">A obra, se fôrmos a aquilata-la por um criterio esthetico
+                    superior, resultará por certo de pouco relêvo e importancia. Mas, se a
+                    considerarmos dentro das fronteiras do trabalho meramente inteligente e honesto,
+                    e por uma bitola fornecida, não diremos pela benevolancia, mas pela compreensão
+                    do que se pode normalmente esperar, não teremos impulso critico senão de dirigir
+                    ao autor o elogio sincero – se bem que, nas circumstancias, relativo – que a
+                    realisação da novela nos parece merecer.</p>
+                <p rend="indent-first">Novela, propriamente, não a ha, pois que falte o nexo
+                    construtivo, nem haja artificio de sintese que torne unidade e estrutura a
+                    dispersão impressionista d’estas paginas. Tampouco a obra se salienta pelo
+                    cuidado intuitivo ou cauto na engrenagem entrepenetrada da ação e do dialogo. O
+                    certo, porém, é que da leitura fica uma noção forte e dura da paisagem e do
+                    homem de Traz-os-Montes, e que em certos trechos – como no terceiro capitulo da
+                    primeira parte – ha mais alguma cousa, talvez, do que apenas isto. O facto de
+                    nunca termos estado em Traz-os-Montes investe-nos da precisa competencia
+                    extra-critica para poder séntir isto. Pode ser que, se houvessemos errado por
+                    tal provincia, achassemos falsa a impressão do autor desta novela. E’ mesmo
+                    certo que achariamos falsa, Mas, nem n’essa hipotese, nem agora, isso teria, ou
+                    tem, importancia. Todas as impressões são falsas. Por isso basta que sejam
+                    belas.</p>
+                <p rend="indent-first">No que respeita a estilistica, a novéla do sr. <rs
+                        type="name" key="P74">Joaquim Leitão</rs> está escrita com aquela facilidade
+                    e comunicabilidade simpática que a reportagem superior frequentemente radica nos
+                    seus práticos. Não se vá lêr nisto que colocamos a obra o nivel intelectual do
+                    alto jornalismo. Corre nas veias da novéla melhor
+                    sangue<!-- no original "sagne" --> espiritual do que esse.</p>
                 <signed rend="right">Fernando Pessoa</signed>
-                </div>
+            </div>
         </body>
     </text>
 </TEI>

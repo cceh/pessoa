@@ -1,12 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc><titleStmt>
+        <fileDesc>
+            <titleStmt>
                 <title>As causas longiquas da homenagem a Al-Motamide</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
                 </author>
                 <author>
-                    <rs type="name" key="P109">Augusto Ferreira Gomes</rs> <!-- JU: This is a case where authorships is shared, would this work? -->
+                    <rs type="name" key="P109">Augusto Ferreira Gomes</rs>
+                    <!-- JU: This is a case where authorships is shared, would this work? -->
                 </author>
                 <respStmt>
                     <resp>Edição, Transcrição, Codificação</resp>
@@ -20,7 +24,8 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt><publicationStmt>
+            </titleStmt>
+            <publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -28,35 +33,52 @@
                 <availability status="restricted">
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
-                <idno type="filename">Pessoa_As_causas_longiquas.xml</idno>               
-            </publicationStmt><notesStmt>
-                <note type="summary">No espólio encontra-se uma versão datiloscrita do texto, BNP 125-1, 
-                    publicada em SP<!-- JU: check how to use Biblio --> Sobre Portugal,1979, p. 139, 
-                    com omissão das inicias «A.F.G,» que sugerem a autoria de Augusto Ferreira Gomes, 
-                    plausivelmente em conjunto com Pessoa. A edição ignorava ainda o facto de o texto ter sido 
-                    efetivamente publicado no jornal, informação recuperada em Sebastianismo e Quinto Império 
-                    (Pessoa, 2011B, p. 383-384). A hipótese de participação de Pessoa neste conjunto de textos sobre 
-                    Al-Motamide decorre, para além da presença de um testemunho no espólio, da ampla coincidência de 
-                    vocabulário e propósitos com muitos dos textos reunidos nessa edição e, ainda, com o texto pessoano 
-                    publicado como prefácio ao livro de Augusto Ferreira Gomes <hi rend="italic">Quinto Império</hi>, 
-                    Lisboa, Parceria António Maria Pereira, 1934.</note>
+                <idno type="filename">Pessoa_As_causas_longiquas.xml</idno>
+            </publicationStmt>
+            <notesStmt>
+                <note type="summary">No espólio encontra-se uma versão datiloscrita do texto, BNP
+                    125-1, publicada em SP<!-- JU: check how to use Biblio --> Sobre Portugal,1979,
+                    p. 139, com omissão das inicias «A.F.G,» que sugerem a autoria de Augusto
+                    Ferreira Gomes, plausivelmente em conjunto com Pessoa. A edição ignorava ainda o
+                    facto de o texto ter sido efetivamente publicado no jornal, informação
+                    recuperada em Sebastianismo e Quinto Império (Pessoa, 2011B, p. 383-384). A
+                    hipótese de participação de Pessoa neste conjunto de textos sobre Al-Motamide
+                    decorre, para além da presença de um testemunho no espólio, da ampla
+                    coincidência de vocabulário e propósitos com muitos dos textos reunidos nessa
+                    edição e, ainda, com o texto pessoano publicado como prefácio ao livro de
+                    Augusto Ferreira Gomes <hi rend="italic">Quinto Império</hi>, Lisboa, Parceria
+                    António Maria Pereira, 1934.</note>
                 <note type="genre">
-                        <rs type="genre" key="prosa">Prosa</rs>
-                    </note></notesStmt><sourceDesc><list type="work-index">
-                    <item><rs type="work" key="W228">As causas longiquas da homenagem a Al-Motamide</rs></item>
-                </list><biblStruct><analytic>
+                    <rs type="genre" key="prosa">Prosa</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="W228">As causas longiquas da homenagem a
+                            Al-Motamide</rs></item>
+                </list>
+                <biblStruct>
+                    <analytic>
                         <title level="a">As causas longiquas da homenagem a Al-Motamide</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                    </analytic><monogr>
-                        <title level="j"><rs type="periodical" key="J9">O "Notícias" Ilustrado</rs></title>
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J9">O "Notícias"
+                            Ilustrado</rs></title>
                         <imprint>
                             <date when="1928-12">22 de Julho de 1928</date>
                         </imprint>
                         <biblScope unit="page">15</biblScope>
-                    </monogr></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/As_causas_longinquas.jpg"/>
@@ -64,35 +86,58 @@
     <text corresp="#W228">
         <body>
             <div>
-                <head rend="center">As causas longiquas da homenagem a <rs type="name" key="P498">Al-Motamide</rs>
+                <head rend="center">As causas longiquas da homenagem a <rs type="name" key="P498"
+                        >Al-Motamide</rs>
                 </head>
-                <p rend="indent-first">A proposito da noticia por nos publicada o breve descerramento, em Silves, da lapide a 
-                    <rs type="name" key="P498">Al-Motamide</rs>, recebemos a seguinte nota:</p>
-                <p rend="indent-first">«Em principios de 1914, veio a Portugal o Emissario especial do Concilio Pagão, com o fim de tratar, 
-                    com os Mestres da Ordem Sebastianista, de um Acordo Supremo, a que efectivamente se chegou. Desse acordo advieram varios 
-                    episodios, nacionaes e internacionaes, de diversa e oculta importancia, aos quaes não é lícito que nos referamos. Mas, 
-                    dado tudo isto, era de esperar que, mais tarde ou mais cedo, houvesse de ser «feita» uma «animação» do espirito arabe, 
-                    naquilo que era propriamente a transmissão do espirito pagão, e não na sua parte religiosa, inutil para qualquer das 
-                    Direcções concordantes.</p>
-                <p rend="indent-first">«A homenagem, claramente pagã, á memória de <rs type="name" key="P498">Al-Motamide</rs>, wali de Silves, 
-                    dispertará, nos poucos que já estão dispertos, a recordação do Grande Acordo de Março de 1914. Aparentemente, a ideia da 
-                    homenagem nasceu em Espanha. Mas tanto os <choice>
+                <p rend="indent-first">A proposito da noticia por nos publicada o breve
+                    descerramento, em Silves, da lapide a <rs type="name" key="P498"
+                        >Al-Motamide</rs>, recebemos a seguinte nota:</p>
+                <p rend="indent-first">«Em principios de 1914, veio a Portugal o Emissario especial
+                    do Concilio Pagão, com o fim de tratar, com os Mestres da Ordem Sebastianista,
+                    de um Acordo Supremo, a que efectivamente se chegou. Desse acordo advieram
+                    varios episodios, nacionaes e internacionaes, de diversa e oculta importancia,
+                    aos quaes não é lícito que nos referamos. Mas, dado tudo isto, era de esperar
+                    que, mais tarde ou mais cedo, houvesse de ser «feita» uma «animação» do espirito
+                    arabe, naquilo que era propriamente a transmissão do espirito pagão, e não na
+                    sua parte religiosa, inutil para qualquer das Direcções concordantes.</p>
+                <p rend="indent-first">«A homenagem, claramente pagã, á memória de <rs type="name"
+                        key="P498">Al-Motamide</rs>, wali de Silves, dispertará, nos poucos que já
+                    estão dispertos, a recordação do Grande Acordo de Março de 1914. Aparentemente,
+                    a ideia da homenagem nasceu em Espanha. Mas tanto os <choice>
                         <sic>Dspotas</sic>
                         <corr resp="#JU">Despotas</corr>
-                    </choice> do Concillio Pagão, como os Mestres da Ordem do Encoberto, sabem os 
+                    </choice> do Concillio Pagão, como os Mestres da Ordem do Encoberto, sabem os
                     caminhos que seguirão, e os atalhos por onde hão-de conduzir os outros.</p>
-                <p rend="indent-first">«Os acontecimentos provocados, que foram «enfeixados» á meia-noite de 29 de Maio de 1928, terão em 
-                    breve o seu termo oculto e o seu principio visivel. – 
-                    <choice><abbr>O</abbr><expan resp="#JU">O<ex>rden</ex></expan></choice> 
-                    <choice><abbr>S</abbr><expan resp="#JU">S<ex>ebastianista</ex></expan></choice>»</p>
-                <p rend="indent-first">A nota recebida, que acima damos á estampa, está, de facto, em acôrdo com o nosso entendimento. Aos 
-                    pontos versados não nos referimos, porém, em a local <choice>
+                <p rend="indent-first">«Os acontecimentos provocados, que foram «enfeixados» á
+                    meia-noite de 29 de Maio de 1928, terão em breve o seu termo oculto e o seu
+                    principio visivel. – <choice>
+                        <abbr>O</abbr>
+                        <expan resp="#JU">O<ex>rden</ex></expan>
+                    </choice>
+                    <choice>
+                        <abbr>S</abbr>
+                        <expan resp="#JU">S<ex>ebastianista</ex></expan>
+                    </choice>»</p>
+                <p rend="indent-first">A nota recebida, que acima damos á estampa, está, de facto,
+                    em acôrdo com o nosso entendimento. Aos pontos versados não nos referimos,
+                    porém, em a local <choice>
                         <sic>qe</sic>
-                        <corr resp="#JU">que</corr></choice> publicamos, por não julgarmos que isso fôsse de interêsse para 
-                    o publico; mas, visto que tão espontaneamente os apresentam, eil-os publicados.</p>     
-                <signed rend="right"><choice><abbr>A</abbr><expan resp="#JU">A<ex>ugusto</ex></expan></choice>
-                    <choice><abbr>F</abbr><expan resp="#JU">F<ex>erreira</ex></expan></choice>
-                    <choice><abbr>G</abbr><expan resp="#JU">G<ex>omes</ex></expan></choice></signed>
+                        <corr resp="#JU">que</corr>
+                    </choice> publicamos, por não julgarmos que isso fôsse de interêsse para o
+                    publico; mas, visto que tão espontaneamente os apresentam, eil-os
+                    publicados.</p>
+                <signed rend="right"><choice>
+                        <abbr>A</abbr>
+                        <expan resp="#JU">A<ex>ugusto</ex></expan>
+                    </choice>
+                    <choice>
+                        <abbr>F</abbr>
+                        <expan resp="#JU">F<ex>erreira</ex></expan>
+                    </choice>
+                    <choice>
+                        <abbr>G</abbr>
+                        <expan resp="#JU">G<ex>omes</ex></expan>
+                    </choice></signed>
             </div>
         </body>
     </text>

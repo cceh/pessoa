@@ -1,6 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc><titleStmt>
+        <fileDesc>
+            <titleStmt>
                 <title>O Avô e o Neto</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -25,7 +28,8 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt><publicationStmt>
+            </titleStmt>
+            <publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -34,15 +38,22 @@
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_O-Avo-e-o-Neto.xml</idno>
-            </publicationStmt><notesStmt><note type="summary"><p>Poema republicado em <hi rend="italic">Tico-tico: Jornal das
+            </publicationStmt>
+            <notesStmt>
+                <note type="summary"><p>Poema republicado em <hi rend="italic">Tico-tico: Jornal das
                             crianças</hi>, n.º 1329, Rio de Janeiro, 25 de março de 1931.
                         Apresentamos aqui as imagens de ambas as publicações. Seguimos o título
                         deste último testemunho publicado, que se encontra também no testemunho do
-                        espólio de Pessoa, em BNP 44-37r.</p></note><note type="genre">
+                        espólio de Pessoa, em BNP 44-37r.</p></note>
+                <note type="genre">
                     <rs type="genre" key="poesia">Poesia</rs>
-                </note></notesStmt><sourceDesc><list type="work-index">
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
                     <item><rs type="work" key="W224">O Avô e o Neto</rs></item>
-                </list><biblStruct xml:id="Thes_1925-1928">
+                </list>
+                <biblStruct xml:id="Thes_1925-1928">
                     <analytic>
                         <title level="a">Meditações do avô e brinquedos do neto</title>
                         <author>
@@ -58,7 +69,8 @@
                             <date from="1925" to="1928">1925-1928</date>
                         </imprint>
                     </monogr>
-                </biblStruct><biblStruct xml:id="Tico_1931">
+                </biblStruct>
+                <biblStruct xml:id="Tico_1931">
                     <analytic>
                         <title level="a">O Avô e o Neto</title>
                         <author>
@@ -76,7 +88,9 @@
                         <biblScope unit="issue">1329</biblScope>
                         <biblScope unit="page">23</biblScope>
                     </monogr>
-                </biblStruct></sourceDesc></fileDesc>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
         <encodingDesc>
             <variantEncoding method="parallel-segmentation" location="internal"/>
         </encodingDesc>
@@ -91,15 +105,15 @@
         <body>
             <div>
                 <head><app>
-                    <lem wit="#Tico_1931">O AVÔ E O NETO</lem>
-                    <rdg wit="#Thes_1925-1928">MEDITAÇÕES DO AVÔ E BRINQUEDOS DO NETO</rdg>
-                </app></head>
+                        <lem wit="#Tico_1931">O AVÔ E O NETO</lem>
+                        <rdg wit="#Thes_1925-1928">MEDITAÇÕES DO AVÔ E BRINQUEDOS DO NETO</rdg>
+                    </app></head>
                 <lg>
                     <l>Ao ver o neto a brincar,</l>
                     <l>Diz o avô, entristecido<app>
-                        <lem wit="#Tico_1931">:</lem>
-                        <rdg wit="#Thes_1925-1928">,</rdg>
-                    </app></l>
+                            <lem wit="#Tico_1931">:</lem>
+                            <rdg wit="#Thes_1925-1928">,</rdg>
+                        </app></l>
                     <l>“Ah, quem me dera voltar</l>
                     <l>A estar assim entretido!</l>
                 </lg>

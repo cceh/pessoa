@@ -1,6 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc><titleStmt>
+        <fileDesc>
+            <titleStmt>
                 <title>Alguns Poemas (Sacadura Cabral, Gladio, De um Cancioneiro)</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -25,7 +28,8 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt><publicationStmt>
+            </titleStmt>
+            <publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -34,37 +38,59 @@
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_Alguns-Poemas.xml</idno>
-            </publicationStmt><notesStmt><note type="summary"><p>O poema “Gladio” foi republicado em <ref target="http://www.pessoadigital.pt/pt/pub/Pessoa_Gladio"><hi rend="italic">Cancioneiro do 1º Salão dos
-                            Independentes</hi>, 1930, pp. 21-22</ref>. Para além de diferenças
-                            ortográficas, a segunda publicação apresenta a correção de uma gralha da
-                            primeira, lendo-se no início do terceiro verso da segunda estrofe “E
-                            esta febre de além”. A transcrição aqui apresentada segue esta correção.</p>
-                        <p>Em “Alguns Poemas / De um Cancioneiro” Pessoa republica três poemas,
-                            anteriormente publicados sob os títulos <ref target="http://www.pessoadigital.pt/pt/pub/Pessoa_Impressoes-do-Crepusculo">“Impressões do Crepusculo” (A Renascença, Fevereiro de 1914)</ref>,
-                                <ref target="http://www.pessoadigital.pt/pt/pub/Pessoa_A_Ceifeira">“A Ceifeira” (Terra Nossa, Setembro de 1916, p. 46)</ref> e <ref target="http://www.pessoadigital.pt/pt/pub/Pessoa_Cancao_de_Outomno">“Canção de Outomno” (Ilustração Portuguesa, 28 Janeiro de 1922, p.
-                                86)</ref>, apresentando as diferentes versões destes poemas diferenças
-                            significativas.</p>
-                    </note><note type="genre">
-                        <rs type="genre" key="poesia">Poesia</rs>
-                    </note></notesStmt><sourceDesc><list type="work-index">
+            </publicationStmt>
+            <notesStmt>
+                <note type="summary"><p>O poema “Gladio” foi republicado em <ref
+                            target="http://www.pessoadigital.pt/pt/pub/Pessoa_Gladio"><hi
+                                rend="italic">Cancioneiro do 1º Salão dos Independentes</hi>, 1930,
+                            pp. 21-22</ref>. Para além de diferenças ortográficas, a segunda
+                        publicação apresenta a correção de uma gralha da primeira, lendo-se no
+                        início do terceiro verso da segunda estrofe “E esta febre de além”. A
+                        transcrição aqui apresentada segue esta correção.</p>
+                    <p>Em “Alguns Poemas / De um Cancioneiro” Pessoa republica três poemas,
+                        anteriormente publicados sob os títulos <ref
+                            target="http://www.pessoadigital.pt/pt/pub/Pessoa_Impressoes-do-Crepusculo"
+                            >“Impressões do Crepusculo” (A Renascença, Fevereiro de 1914)</ref>,
+                            <ref target="http://www.pessoadigital.pt/pt/pub/Pessoa_A_Ceifeira">“A
+                            Ceifeira” (Terra Nossa, Setembro de 1916, p. 46)</ref> e <ref
+                            target="http://www.pessoadigital.pt/pt/pub/Pessoa_Cancao_de_Outomno"
+                            >“Canção de Outomno” (Ilustração Portuguesa, 28 Janeiro de 1922, p.
+                            86)</ref>, apresentando as diferentes versões destes poemas diferenças
+                        significativas.</p>
+                </note>
+                <note type="genre">
+                    <rs type="genre" key="poesia">Poesia</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
                     <item><rs type="work" key="O1-3">Sacadura Cabral</rs></item>
                     <item><rs type="work" key="O1-2">Gladio</rs></item>
                     <item><rs type="work" key="O1-11">De um Cancioneiro</rs></item>
-                </list><biblStruct><analytic>
+                </list>
+                <biblStruct>
+                    <analytic>
                         <title level="a">Alguns Poemas</title>
                         <title level="a">De um Cancioneiro</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt"/>
-                    </analytic><monogr>
+                    </analytic>
+                    <monogr>
                         <title level="j"><rs type="periodical" key="J2">Athena</rs></title>
                         <imprint>
                             <date when="1924-12">Dezembro de 1924</date>
                         </imprint>
                         <biblScope unit="issue">3</biblScope>
                         <biblScope unit="page">81-88</biblScope>
-                    </monogr></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="pub/res-3319-v-1924-12_0147_81_t0.jpg"/>

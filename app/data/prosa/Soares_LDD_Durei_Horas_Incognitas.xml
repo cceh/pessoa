@@ -1,6 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
-        <fileDesc><titleStmt>
+        <fileDesc>
+            <titleStmt>
                 <title>Do "Livro do Desasocego" ("Durei horas incognitas")</title>
                 <author>
                     <rs type="name" key="BS">Bernardo Soares</rs>
@@ -17,7 +20,8 @@
                     <resp>Consultoria</resp>
                     <name>Institut für Dokumentologie und Editorik (IDE)</name>
                 </respStmt>
-            </titleStmt><publicationStmt>
+            </titleStmt>
+            <publicationStmt>
                 <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
@@ -26,19 +30,28 @@
                     <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
-                <idno type="filename">Soares_LDD_Durei_Horas_Incognitas.xml</idno>               
-            </publicationStmt><notesStmt><note type="genre">
-                        <rs type="genre" key="prosa">Prosa</rs>
-                    </note></notesStmt><sourceDesc><list type="work-index">
-                    <item><rs type="work" key="O5-X">Do "Livro do Desasocego" ("Durei horas incognitas")</rs></item>
-                </list><biblStruct><analytic>
+                <idno type="filename">Soares_LDD_Durei_Horas_Incognitas.xml</idno>
+            </publicationStmt>
+            <notesStmt>
+                <note type="genre">
+                    <rs type="genre" key="prosa">Prosa</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="O5-X">Do "Livro do Desasocego" ("Durei horas
+                            incognitas")</rs></item>
+                </list>
+                <biblStruct>
+                    <analytic>
                         <title level="a">Do "Livro do Desasocego" ("Durei horas incognitas")</title>
                         <author>
                             <rs type="name" key="BS">Bernardo Soares</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
                         <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
-                    </analytic><monogr>
+                    </analytic>
+                    <monogr>
                         <title level="j"><rs type="periodical" key="J1">Presença</rs></title>
                         <imprint>
                             <date from="1930-06" to="1930-07">Junho - Julho de 1930</date>
@@ -48,9 +61,18 @@
                         </imprint>
                         <biblScope unit="issue">27</biblScope>
                         <biblScope unit="page">9</biblScope>
-                    </monogr><!-- here goes the bibliographical reference for the source publication --><!-- this can also have @otherLangs, e.g. otherLangs="en fr" --><!-- in case it is not a single date, but from-to, it 
+                    </monogr>
+                    <!-- here goes the bibliographical reference for the source publication -->
+                    <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
+                    <!-- in case it is not a single date, but from-to, it 
                             looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" --></biblStruct></sourceDesc></fileDesc><encodingDesc><variantEncoding method="parallel-segmentation" location="internal"/></encodingDesc>
+                            there is just a year: when="1931" -->
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/LDD_Durei.jpg"/>
@@ -62,37 +84,58 @@
     -->
         <body>
             <div>
-                <head rend="center">TRECHO</head> 
-                    
-                 <head type="sub" rend="center">DE UM LIVRO DO DESASOCEGO COMPOSTO POR <rs type="name" role="topic" key="393">BERNARDO SOARES</rs>, AJUDANTE DE GUARDA-LIVROS NA CIDADE DE LISBOA</head>
-                        
-                 <p rend="indent-first"><hi rend="bold">D</hi>UREI horas incognitas, momentos successivos sem relação, no passeio em que fui, de noite, à beira sòsinha do mar. Todos os pensamentos, 
-                     que teem feito viver homens, todas as emoções, que os homens teem deixado de viver, passaram por minha mente, como um resumo escuro da história, nessa minha meditação andada á 
-                     beira-mar.</p>
-                            
-                 <p rend="indent-first">Soffri em mim, commigo, as aspirações de todas as eras, e commigo passearam, à beira ouvida do mar, os desasocegos de todos os tempos. O que os homens quizeram 
-                     e não fizeram, o que mataram fazendo-o, o que as almas foram e ninguem disse – de tudo isto se formou a alma sensivel com que passeei de noite à beira-mar. E o que os amantes 
-                     extranharam no outro amante, o que a mulher occultou, sempre ao marido de quem é, o que a mãe pensa do filho que não teve, o que teve fórma só num sorriso ou numa opportunidade, 
-                     num tempo que não foi esse ou numa emoção que falta – tudo isso, no meu passeio á beira-mar, foi commigo e voltou commigo, e as ondas estorciam magnamente o acompanhamento que 
-                     me fazia dormil-o.</p>
-                                
-                 <p rend="indent-first">Somos quem não somos, e a vida é prompta e triste. O som das ondas á noite é um som da noite; e quantos o ouviram na propria alma, como a esperança constante 
-                     que se desfaz no escuro com um som surdo de espuma funda! Que lagrimas choraram os que obtiveram, que lagrimas perderam os que conseguiram! E tudo isto, no passeio á beira-mar, 
-                     se me tornou o segredo da noite e a confidência do abysmo. Quantos somos! Quantos nos enganamos! Que mares soam em nós, na noite de sermos, pelas praias que nos sentimos nos 
-                     alagamentos da emoção!</p>
-                                    
-                 <p rend="indent-first">Aquillo que se perdeu, aquillo que se deveria ter querido, aquillo que se obteve e satisfez por erro, o que amámos e perdemos e, depois de perder, vimos, 
-                     amando-o por tel-o perdido, que o não haviamos amado; o que julgavamos que pensavamos quando sentiamos; o que era uma memória e criamos que era uma emoção; e o mar todo, vindo 
-                     lá, rumoroso e fresco, do grande fundo de toda a noite, a estuar fino na praia, no decurso nocturno do meu passeio á beira-mar...</p>
-                                        
-                 <p rend="indent-first">Quem sabe sequer o que pensa, ou o que deseja? Quem sabe o que é para si-mesmo? Quantas coisas a música suggere e nos sabe bem que não possam ser! Quantas a 
-                     noite recorda e choramos, e não foram nunca! Como uma voz solta da paz deitada ao comprido, a enrolação da onda estoira e esfria e há um salivar audivel pela praia invisivel 
-                     fóra.</p>
-                                        
-                 <p rend="indent-first">Quanto morro se sinto por tudo! Quanto sinto se assim vagueio, incorporeo e humano, com o coração parado como uma praia, e todo o mar de tudo, na noite em 
-                     que vivemos, batendo alto, chasco, e esfria-se, no meu eterno passeio nocturno á beira-mar!</p>
-                                            
-                             <signed rend="center">FERNANDO PESSOA</signed>
+                <head rend="center">TRECHO</head>
+
+                <head type="sub" rend="center">DE UM LIVRO DO DESASOCEGO COMPOSTO POR <rs
+                        type="name" role="topic" key="393">BERNARDO SOARES</rs>, AJUDANTE DE
+                    GUARDA-LIVROS NA CIDADE DE LISBOA</head>
+
+                <p rend="indent-first"><hi rend="bold">D</hi>UREI horas incognitas, momentos
+                    successivos sem relação, no passeio em que fui, de noite, à beira sòsinha do
+                    mar. Todos os pensamentos, que teem feito viver homens, todas as emoções, que os
+                    homens teem deixado de viver, passaram por minha mente, como um resumo escuro da
+                    história, nessa minha meditação andada á beira-mar.</p>
+
+                <p rend="indent-first">Soffri em mim, commigo, as aspirações de todas as eras, e
+                    commigo passearam, à beira ouvida do mar, os desasocegos de todos os tempos. O
+                    que os homens quizeram e não fizeram, o que mataram fazendo-o, o que as almas
+                    foram e ninguem disse – de tudo isto se formou a alma sensivel com que passeei
+                    de noite à beira-mar. E o que os amantes extranharam no outro amante, o que a
+                    mulher occultou, sempre ao marido de quem é, o que a mãe pensa do filho que não
+                    teve, o que teve fórma só num sorriso ou numa opportunidade, num tempo que não
+                    foi esse ou numa emoção que falta – tudo isso, no meu passeio á beira-mar, foi
+                    commigo e voltou commigo, e as ondas estorciam magnamente o acompanhamento que
+                    me fazia dormil-o.</p>
+
+                <p rend="indent-first">Somos quem não somos, e a vida é prompta e triste. O som das
+                    ondas á noite é um som da noite; e quantos o ouviram na propria alma, como a
+                    esperança constante que se desfaz no escuro com um som surdo de espuma funda!
+                    Que lagrimas choraram os que obtiveram, que lagrimas perderam os que
+                    conseguiram! E tudo isto, no passeio á beira-mar, se me tornou o segredo da
+                    noite e a confidência do abysmo. Quantos somos! Quantos nos enganamos! Que mares
+                    soam em nós, na noite de sermos, pelas praias que nos sentimos nos alagamentos
+                    da emoção!</p>
+
+                <p rend="indent-first">Aquillo que se perdeu, aquillo que se deveria ter querido,
+                    aquillo que se obteve e satisfez por erro, o que amámos e perdemos e, depois de
+                    perder, vimos, amando-o por tel-o perdido, que o não haviamos amado; o que
+                    julgavamos que pensavamos quando sentiamos; o que era uma memória e criamos que
+                    era uma emoção; e o mar todo, vindo lá, rumoroso e fresco, do grande fundo de
+                    toda a noite, a estuar fino na praia, no decurso nocturno do meu passeio á
+                    beira-mar...</p>
+
+                <p rend="indent-first">Quem sabe sequer o que pensa, ou o que deseja? Quem sabe o
+                    que é para si-mesmo? Quantas coisas a música suggere e nos sabe bem que não
+                    possam ser! Quantas a noite recorda e choramos, e não foram nunca! Como uma voz
+                    solta da paz deitada ao comprido, a enrolação da onda estoira e esfria e há um
+                    salivar audivel pela praia invisivel fóra.</p>
+
+                <p rend="indent-first">Quanto morro se sinto por tudo! Quanto sinto se assim
+                    vagueio, incorporeo e humano, com o coração parado como uma praia, e todo o mar
+                    de tudo, na noite em que vivemos, batendo alto, chasco, e esfria-se, no meu
+                    eterno passeio nocturno á beira-mar!</p>
+
+                <signed rend="center">FERNANDO PESSOA</signed>
             </div>
         </body>
     </text>
