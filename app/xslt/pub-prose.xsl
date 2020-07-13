@@ -80,16 +80,19 @@
     </xsl:template>
     
     <!-- milestones -->
-    <xsl:template match="milestone[@unit='section']">
+    <xsl:template match="milestone[@unit='section' or @unit='title']">
         <xsl:choose>
             <xsl:when test="@rend='asterisks'">
-                <p class="milestone section">* * *</p>
+                <p class="milestone {@unit}">* * *</p>
             </xsl:when>
             <xsl:when test="@rend='asterisk'">
-                <p class="milestone section">*</p>
+                <p class="milestone {@unit}">*</p>
             </xsl:when>
             <xsl:when test="@rend='space'">
-                <p class="milestone section">&#x00A0;</p>
+                <p class="milestone {@unit}">&#x00A0;</p>
+            </xsl:when>
+            <xsl:when test="@rend='line'">
+                <p class="milestone {@unit}">&#x2E3A;</p>
             </xsl:when>
         </xsl:choose>
     </xsl:template>

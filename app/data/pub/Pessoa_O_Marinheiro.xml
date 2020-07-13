@@ -79,16 +79,30 @@
         <graphic url="prosa/O_Marinheiro_12.jpg"/>
     </facsimile>
     <text corresp="#W198">
-        <body>
-            <div>
-                <head rend="center">O MARINHEIRO</head>
-                <milestone rend="line" unit="section"/>
-                <head rend="center" type="sub">DRAMA ESTÁTICO EM UM QUADRO</head>
-
-                <ab type="dedication" rend="right">a <rs type="name" key="P476">Carlos
-                    Franco.</rs></ab>
-            </div>
-            <div rend="right">
+        <!-- U: I added this new structure, because here there is not just a title that is part of the text body,
+        but a real separate title page. Such title pages are treated as "front matter" in the TEI, before the 
+        text body, so inside an element <front> before <body>. Also, there are special elements for title pages
+        which I used here. (maybe you know that already, but the TEI standard has around 500-600 different elements,
+        therefore I come up with some new ones in special cases of prose texts... without knowing how all the prose
+        texts look like its hard to anticipate would we need in each case) -->
+        <front>
+            <titlePage>
+                <docAuthor><hi rend="underline">FERNANDO PESSOA</hi></docAuthor>
+                <docTitle>
+                    <titlePart type="main" rend="center">O MARINHEIRO</titlePart>
+                    <milestone rend="line" unit="title"/>
+                    <!-- U: I think this line is not marking the division of a section, but rather the division 
+                between main title and subtitle, so I changed @unit to "title" -->
+                    <titlePart type="sub" rend="center">DRAMA ESTÁTICO EM UM QUADRO</titlePart>
+                </docTitle>
+                <note type="dedication" rend="right">a <rs type="name" key="P476">Carlos
+                    Franco.</rs></note>
+                <!-- U: <ab> would have been a good option, but is not allowed directly in <titlePage>, so I 
+                used <note> instead -->
+            </titlePage>
+            <!-- U: <set> is for a general description of the setting of a dramatic text and is also treated
+            as front matter by the TEI -->
+            <set rend="right">
                 <p rend="indent-first">Um quarto que é sem duvida num castello antigo. Do quarto
                     vê-se que é circular. Ao centro ergue-se, sobre uma eça, um caixão com uma
                     donzella, de branco. Quatro tochas aos cantos. Á direita, quasi em frente a quem
@@ -98,10 +112,18 @@
                     sentada em frente á janella, de costas contra a tocha de cima da direita. As
                     outras duas estão sentadas uma de cada lado da janella.</p>
                 <p rend="indent-first">É noite e ha como que um resto vago de luar.</p>
-            </div>
+            </set>
+        </front>
+        <body>
             <div>
-                <p rend="indent-first"><hi rend="bold">Primeira veladora.</hi>– Ainda não deu hora
-                    nenhuma.</p>
+                <!-- U: this is how dramatic speech is encoded, <sp> element for each intervention of a character,
+                <speaker> contains the name of the character and <p> the speech itself. -->
+                <sp rend="indent-first">
+                    <speaker><hi rend="bold">Primeira veladora.</hi></speaker>
+                    <p>– Ainda não deu hora nenhuma.</p>
+                </sp>
+                <!-- U: Jorge, please restructure the rest of the speeches according to this first example. 
+                Sorry that you have to encode this again. -->
                 <p rend="indent-first"><hi rend="bold">Segunda.</hi> – Não se podia ouvir. Não ha
                     relogio aqui perto. Dentro em pouco deve ser dia.</p>
                 <p rend="indent-first"><hi rend="bold">Terceira.</hi> – Não: o horizonte é
@@ -116,7 +138,10 @@
                     vela. Ás vezes treme, outras torna-se mais amarella, outras vezes empallidece.
                     Eu não sei porque é que isso se dá. Mas sabemos nós, minhas irmãs, porque se dá
                     qualquer cousa?...</p>
-                <p rend="position-center margin-vertical">(uma pausa)</p>
+                <!-- U: <stage> is for stage directions. Jorge, please change the encoding of the 
+                other stage directions in the same way (the vertical margin will be added
+                by default between the speech paragraphs and the stage directions): -->
+                <stage rend="center">(uma pausa)</stage>
                 <p rend="indent-first margin-vertical"><hi rend="bold">A mesma.</hi> – Fallar do
                     passado – isso deve ser bello, porque é inútil e faz tanta pena...</p>
                 <p rend="indent-first"><hi rend="bold">Segunda.</hi> – Fallemos, se quizerdes, de um
@@ -185,14 +210,20 @@
                     passa?... Ah, fallemos, minhas irmãs, fallemos alto, fallemos todas juntas... O
                     silencio começa a tomar corpo, começa a ser cousa... Sinto-o envolver-me como
                     uma nevoa... Ah, fallae, fallae!...</p>
-                <p rend="indent-first"><hi rend="bold">Segunda.</hi> – Para quê?... Fito-vos a ambas
-                    e não vos vejo logo... Parece-me que entre nós se augmentaram abysmos... Tenho
-                    que cançar a idéa de que vos posso ver para poder chegar a ver-vos... Este ar
-                    quente é frio por dentro, naquella parte que toca na alma... Eu devia agora
-                    sentir mãos impossiveis passarem-me pelos cabelos... As mãos pelos cabellos –é o
-                    gesto com que fallam das sereias... <hi rend="italic">(Cruza as mãos sobre os
-                        joelhos. Pausa.)</hi> Ainda ha pouco, quando eu não pensava em nada, estava
-                    pensando no meu passado...</p>
+                <!-- U: in the following speech, there is a stage direction inside of the speech. There 
+                you can also use <stage>: -->
+                <sp rend="indent-first">
+                    <speaker><hi rend="bold">Segunda.</hi></speaker>
+                    <p>– Para quê?... Fito-vos a ambas
+                        e não vos vejo logo... Parece-me que entre nós se augmentaram abysmos... Tenho
+                        que cançar a idéa de que vos posso ver para poder chegar a ver-vos... Este ar
+                        quente é frio por dentro, naquella parte que toca na alma... Eu devia agora
+                        sentir mãos impossiveis passarem-me pelos cabelos... As mãos pelos cabellos –é o
+                        gesto com que fallam das sereias... 
+                        <stage><hi rend="italic">(Cruza as mãos sobre os
+                            joelhos. Pausa.)</hi></stage> Ainda ha pouco, quando eu não pensava em nada, estava
+                        pensando no meu passado...</p>
+                </sp>
                 <p rend="indent-first"><hi rend="bold">Primeira.</hi> – Eu tambem devia ter estado a
                     pensar no meu...</p>
                 <p rend="indent-first"><hi rend="bold">Terceira.</hi> – Eu já não sei em que
@@ -370,23 +401,28 @@
                     depressa, contae outra vez... Não falleis em quantos podem ouvir... Nós nunca
                     sabemos quantas cousas realmente vivem e vêem e escutam... Voltae ao vosso
                     sonho... O marinheiro... O que sonhava o marinheiro?...</p>
-                <p rend="indent-first"><hi rend="bold">Segunda</hi> - <hi rend="italic"> (mais
-                        baixo, numa voz muito lenta).</hi> — Ao principio elle creou as paysagens;
-                    depois creou as cidades; creou depois as ruas e as travessas, uma a uma,
-                    cinzelando-as na materia da sua alma – uma a uma as ruas, bairro a bairro, até
-                    ás muralhas dos caes d’onde elle creou depois os portos... Uma a uma as ruas, e
-                    a gente que as percorria e que olhava sobre ellas das janellas... Passou a
-                    conhecer certa gente, como quem a reconhece apenas... Ia-lhes conhecendo as
-                    vidas passadas e as conversas, e tudo isto era como quem sonha apenas paysagens
-                    e as vae vendo... Depois viajava, recordando, atravez do paiz que creara... E
-                    assim foi construindo o seu passado... Breve tinha uma outra vida anterior...
-                    Tinha já, nessa nova patria, um logar onde nascera, os logares onde passara a
-                    juventude, os portos onde embarcara... Ia tendo tido os companheiros da infancia
-                    e depois os amigos e inimigos da sua edade viril... Tudo era differente de como
-                    elle o tivera – nem o paiz, nem a gente, nem o seu passado proprio se pareciam
-                    com o que haviam sido... Exigís que eu continue?... Causa-me tanta pena fallar
-                    d’isto!... Agora, porque vos fallo d’isto, aprazia-me mais estar-vos fallando de
-                    outros sonhos...</p>
+                <!-- U: in the following speech, you have a stage direction inside of the speaker information. 
+                There you can also use <stage> as in the following example: -->
+                <sp rend="indent-first">
+                    <speaker><hi rend="bold">Segunda</hi>– <stage><hi rend="italic">(mais
+                        baixo, numa voz muito lenta).</hi></stage></speaker>
+                    <p>— Ao principio elle creou as paysagens;
+                        depois creou as cidades; creou depois as ruas e as travessas, uma a uma,
+                        cinzelando-as na materia da sua alma – uma a uma as ruas, bairro a bairro, até
+                        ás muralhas dos caes d’onde elle creou depois os portos... Uma a uma as ruas, e
+                        a gente que as percorria e que olhava sobre ellas das janellas... Passou a
+                        conhecer certa gente, como quem a reconhece apenas... Ia-lhes conhecendo as
+                        vidas passadas e as conversas, e tudo isto era como quem sonha apenas paysagens
+                        e as vae vendo... Depois viajava, recordando, atravez do paiz que creara... E
+                        assim foi construindo o seu passado... Breve tinha uma outra vida anterior...
+                        Tinha já, nessa nova patria, um logar onde nascera, os logares onde passara a
+                        juventude, os portos onde embarcara... Ia tendo tido os companheiros da infancia
+                        e depois os amigos e inimigos da sua edade viril... Tudo era differente de como
+                        elle o tivera – nem o paiz, nem a gente, nem o seu passado proprio se pareciam
+                        com o que haviam sido... Exigís que eu continue?... Causa-me tanta pena fallar
+                        d’isto!... Agora, porque vos fallo d’isto, aprazia-me mais estar-vos fallando de
+                        outros sonhos...</p>
+                </sp>
                 <p rend="indent-first"><hi rend="bold">Terceira.</hi> – Continuae, ainda que não
                     saibaes porquê... Quanto mais vos ouço, mais me não pertenço...</p>
                 <p rend="indent-first"><hi rend="bold">Primeira.</hi> – Será bom realmente que
@@ -588,16 +624,22 @@
                 <p rend="indent-first"><hi rend="bold">Segunda.</hi> – Porque é que m’o perguntaes?
                     Porque eu o disse? Não, não acredito...</p>
                 <div rend="right">
-                    <p rend="indent-first">Um gallo canta. A luz, como que subitamente, augmenta. As
-                        trez veladoras quedam-se silenciosas e sem olharem umas para as outras.</p>
-                    <p rend="indent-first">Não muito longe, por uma estrada, um vago carro geme e
-                        chia.</p>
+                    
                 </div>
                 <div>
-                    <p rend="indent-first"><hi rend="italic">11/12 Outubro, 1913.</hi></p>
+                    <p rend="indent-first"></p>
                 </div>
                 <signed rend="right">Fernando Pessôa</signed>
             </div>
         </body>
+        <!-- U: I created a <back> element here, because again, <set> (the description of the setting) is not 
+        allowed in the main body in the TEI, only in front and back matter -->
+        <back>
+            <set rend="right"><p rend="indent-first">Um gallo canta. A luz, como que subitamente, augmenta. As
+                trez veladoras quedam-se silenciosas e sem olharem umas para as outras.</p>
+                <p rend="indent-first">Não muito longe, por uma estrada, um vago carro geme e
+                    chia.</p></set>
+            <dateline rend="indent"><hi rend="italic">11/12 Outubro, 1913.</hi></dateline>
+        </back>
     </text>
 </TEI>

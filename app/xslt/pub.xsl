@@ -128,6 +128,20 @@
         <p class="dateline"><xsl:apply-templates /></p>
     </xsl:template>
     
+    <xsl:template match="salute">
+        <p>
+            <xsl:choose>
+                <xsl:when test="@rend">
+                    <xsl:attribute name="class">salute <xsl:value-of select="@rend"/></xsl:attribute>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:attribute name="class">salute</xsl:attribute>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:apply-templates />
+        </p>
+    </xsl:template>
+    
     <xsl:template match="signed">
         <p>
             <xsl:choose>

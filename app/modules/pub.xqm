@@ -21,7 +21,7 @@ declare function pub:get-title($node as node(), $model as map(*), $id as xs:stri
                 let $date := $journal_pub/tei:imprint/tei:date/data(.)
                 let $pages := if(exists($journal_pub/tei:biblScope[@unit="page"])) 
                              then let $pa := $journal_pub/tei:biblScope[@unit="page"]/data(.)
-                                  let $pa_label := if(contains($pa,"-")) then "pp." else "p."
+                                  let $pa_label := if(contains($pa,"-")) then "pp. " else "p. "
                                   return concat($pa_label,$pa)
                              else ()
                 let $titleline := <p class="titleline_additional" id="t_add_1">{concat(string-join(($journal_title, $journal_issue)," "), ", ", string-join(($date, $pages), ", "), ".")}</p>

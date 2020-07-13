@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2020-07-12T19:06:42Z. 2017ff..
+Schema generated from ODD source 2020-07-13T09:56:45Z. 2017ff..
 TEI Edition: Version 4.0.0. Last updated on
 	13th February 2020, revision ccd19b0ba
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 4.0.0/
@@ -2890,6 +2890,8 @@ Elements]</a:documentation>
             <choice>
                <value>section</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>title</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
             </choice>
          </attribute>
          <empty/>
@@ -3940,6 +3942,20 @@ Sample values include: 1] issue; 2] page</a:documentation>
       <element name="salute">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(salutation) contains a salutation or greeting prefixed to a foreword, dedicatory epistle, or other division of a text, or the salutation in the closing of a letter, preface, etc. [4.2.2. Openers and Closers]</a:documentation>
          <ref name="tei_macro.paraContent"/>
+         <optional>
+            <attribute name="rend">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(rendition) indicates how the element in question was rendered or presented in the source text.</a:documentation>
+               <list>
+                  <oneOrMore>
+                     <choice>
+                        <value>indent</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                     </choice>
+                  </oneOrMore>
+               </list>
+            </attribute>
+         </optional>
+         <empty/>
       </element>
    </define>
    <define name="tei_signed">
@@ -3961,6 +3977,8 @@ Sample values include: 1] issue; 2] page</a:documentation>
                         <value>indent-13</value>
                         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                         <value>right</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                        <value>indent</value>
                         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                      </choice>
                   </oneOrMore>
