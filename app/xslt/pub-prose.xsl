@@ -98,7 +98,7 @@
     </xsl:template>
     
     <!-- blocks -->
-    <xsl:template match="ab">
+    <xsl:template match="ab[not(@type='formula')]">
         <p>
             <xsl:call-template name="rend" />
             <xsl:apply-templates />
@@ -118,18 +118,37 @@
         </span>
     </xsl:template>
     
-    <!-- bibl -->
-    <xsl:template match="bibl[preceding-sibling::p or following-sibling::p]">
+    <!-- formulas -->
+    <xsl:template match="ab[@type='formula']">
         <p>
-          <xsl:choose>
-              <xsl:when test="@rend">
-                  <xsl:attribute name="class">bibl <xsl:value-of select="@rend"/></xsl:attribute>
-              </xsl:when>
-              <xsl:otherwise>
-                  <xsl:attribute name="class">bibl</xsl:attribute>
-              </xsl:otherwise>
-          </xsl:choose>  
+            <xsl:choose>
+                <xsl:when test="@rend">
+                    <xsl:attribute name="class">formula <xsl:value-of select="@rend"/></xsl:attribute>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:attribute name="class">formula</xsl:attribute>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:apply-templates/>
         </p>
     </xsl:template>
     
+    <xsl:template match="seg[@type='division']">
+        <span class="division">
+            <xsl:apply-templates select="seg[@type='dividend' or @type='divisor']"/>
+        </span>
+    </xsl:template>
+
+    <xsl:template match="seg[@type='dividend']">
+        <span class="dividend">
+            <xsl:apply-templates/>
+        </span><br/>
+    </xsl:template>
+    
+    <xsl:template match="seg[@type='divisor']">
+        <span class="divisor">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+
 </xsl:stylesheet>

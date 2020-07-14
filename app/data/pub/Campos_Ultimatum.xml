@@ -307,8 +307,12 @@
                     que balas, de mais intelligencia que bombas!</p>
                 <p rend="indent-first">Que esta é a equação-lama da infamia do cosmopolitismo de
                     tiros:</p>
-                <ab type="formula"><rs type="name" key="P562">VON BISSING</rs>/BELGICA = <rs
-                        type="name" key="P563">JONNART</rs>/GRECIA</ab>
+                <ab type="formula" rend="center">
+                    <seg type="division"><seg type="dividend"><rs type="name" key="P562">VON
+                                BISSING</rs></seg>/<seg type="divisor">BELGICA</seg></seg> = <seg
+                        type="division"><seg type="dividend"><rs type="name" key="P563"
+                            >JONNART</rs></seg>/<seg type="divisor">GRECIA</seg></seg>
+                </ab>
                 <p rend="indent-first">Proclamem bem alto que ninguem combate pela Liberdade ou pelo
                     Direito! Todos combatem por medo dos outros ! Não tem mais metros que estes
                     millimetros a estatura das suas direcções!</p>
@@ -331,11 +335,13 @@
                 <p rend="indent-first">De um modo completo, de um modo total, de um modo
                     integral:</p>
 
-                <p rend="center"><hi rend="bold"><hi rend="big">MERDA!</hi></hi></p>
+                <ab rend="center"><hi rend="bold"><hi rend="big">MERDA!</hi></hi></ab>
                 <!-- JU: Not sure if is better <p rend="center" or <lg... This is not  a title but just a higlight, 
                     the first part of the text ends here, a second one goes 
                 up to <p rend="indent-first">Proclamo, em primeiro logar,</p> including Atenção! (another higlight) / 
-                "big seems a good solution -->
+                "big seems a good solution
+                U: maybe <ab> is best then (anonymous block), it is neutral, not saying what this is. So it is not 
+                interpreted as a paragraph. <lg> is for verse line groups -->
             </div>
             <div>
                 <p rend="indent-first">A Europa tem sêde de que se crie, tem fome de Futuro!</p>
@@ -387,7 +393,7 @@
                     anoitece em vós!</p>
                 <p rend="indent-first">Eu, ao menos, sou bastante para indicar o Caminho!</p>
                 <p rend="indent-first">Vou indicar o caminho!</p>
-                <p rend="center"><hi rend="bold"><hi rend="big">ATENÇÃO!</hi></hi></p>
+                <ab rend="center"><hi rend="bold"><hi rend="big">ATENÇÃO!</hi></hi></ab>
                 <p rend="indent-first">Proclamo, em primeiro logar,</p>
             </div>
             <div>
@@ -442,10 +448,8 @@
                     segundo lugar,</p>
             </div>
             <div>
-                <head rend="center"><hi rend="bold">A Necessidade da Adaptação
-                    Artificial</hi></head>
-                <!-- U: <p rend="center"><hi rend="bold"><hi rend="big">A Necessidade da Adaptação
-                    Artificial</hi></hi></p> ?JU: In this case "big" will not be needed -->
+                <head rend="center">A Necessidade da Adaptação Artificial</head>
+                <!-- U: I took out "bold" as well because headings are bold by default -->
                 <p rend="indent-first">O que é a adaptação artificial?</p>
                 <p rend="indent-first">É um acto de cirurgia sociológica. É a transformação violenta
                     da sensibilidade de modo a tornar-se apta a acompanhar pelo menos por algum
@@ -481,11 +485,13 @@
                 <p rend="indent-first">Proclamo, porisso, em terceiro logar,</p>
             </div>
             <div>
-                <head rend="center"><hi rend="bold">A intervenção cirúrgica anti-cristã</hi></head>
+                <head rend="center">A intervenção cirúrgica anti-cristã</head>
                 <!-- U: looking at the text, I am not entirely sure how to treat these... 
                 is it a heading of a subsection of the text after all? But then you would have to close the </div>
                 not here but after the section to which this heading refers... maybe we have to talk about this 
-                JU: Thats correct this are sub sections in the text with titles-->
+                JU: Thats correct this are sub sections in the text with titles
+                U: ok, now the structure looks very good to me. I took out "bold" as well because now it is 
+                a heading. -->
                 <p rend="indent-first">Resolve-se ella, como é de ver, na eliminação dos trez
                     preconceitos, dogmas, ou attitudes, que o christianismo fez que se infiltrassem
                     na propria substancia da psyque humana.</p>
@@ -571,19 +577,10 @@
                     subjectividades parciaes. Se uma sociedade fôr composta, por ex., de cinco
                     homens, <hi rend="italic">a, b, c, d,</hi> e <hi rend="italic">e,</hi> a
                     “verdade” ou “objectividade” para essa sociedade será representada por</p>
-
-                <!--(a+b+c+d+e)/5 JU: how should we represent this formula
-                U: see the comment above.
-                <p><formula>(a+b+c+d+e)/5</formula></p>
-                or 
-                <ab type="formula">(a+b+c+d+e)/5</formula>
-                It could make sense to introduce:
-                <ab type="formula"><seg type="dividend">a+b+c+d+e</seg>/<seg type="divisor">5</seg></formula>
-                so that it is clear that the parenthesis which mark the group are not there in the facsimile.
-                So maybe <ab> is more flexible for us because there can be child elements. 
-                JU: Following the previous example: option b
-                -->
-
+                <ab type="formula" rend="center">
+                    <seg type="division"><seg type="dividend">a+b+c+d+e</seg>/<seg type="divisor"
+                            >5</seg></seg>
+                </ab>
                 <p>No futuro cada individuo deve tender para realisar em si esta media. Tendencia,
                     portanto de cada individuo, ou, pelo menos, de cada individuo superior, a ser
                     uma harmonia entre as subjectividades alheias (das quaes a propria faz parte),
@@ -622,7 +619,8 @@
                     religioso (desde o christianismo ao humanitarismo revolucionario) por não
                     representarem uma Media.</p>
             </div>
-            <!-- JU: here ends previous subsection -->
+            <!-- JU: here ends previous subsection
+                U: ok -->
             <div>
                 <milestone rend="space" unit="section"/>
                 <p rend="indent-first">Mas qual o Methodo, o feitio da operação collectiva que ha de
@@ -648,7 +646,8 @@
                 <!-- U: the following three proclamas:
                 <p rend="center"><hi rend="bold"><hi rend="big">O Super-homem será, não o mais forte, mas o
                         mais completo!</hi></hi></p> ? JU: It's better to use Big only in "Merda" and "Atenção", 
-                        because those are tipographic "screams", these are just text higlights -->
+                        because those are tipographic "screams", these are just text higlights
+                U: ok. -->
                 <p rend="center"><hi rend="bold">O Super-homem será, não o mais forte, mas o mais
                         completo!</hi></p>
                 <p rend="indent-first">E proclamo tambem: Segundo:</p>
@@ -661,7 +660,6 @@
                     costas pra a Europa, braços erguidos, fitando o Atlantico e saudando
                     abstractamente o Infinito.</p>
                 <signed rend="right">Alvaro de Campos.</signed>
-
             </div>
         </body>
     </text>

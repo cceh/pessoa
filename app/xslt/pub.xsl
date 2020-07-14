@@ -157,7 +157,15 @@
     </xsl:template>
     
     <xsl:template match="bibl">
-        <p type="bibl">
+        <p>
+            <xsl:choose>
+                <xsl:when test="@rend">
+                    <xsl:attribute name="class">bibl <xsl:value-of select="@rend"/></xsl:attribute>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:attribute name="class">bibl</xsl:attribute>
+                </xsl:otherwise>
+            </xsl:choose>
             <xsl:apply-templates/>
         </p>
     </xsl:template>
@@ -187,6 +195,18 @@
         <strong>
             <xsl:apply-templates/>
         </strong>
+    </xsl:template>
+    
+    <xsl:template match="hi[@rend='big']">
+        <span class="big">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+    
+    <xsl:template match="hi[@rend='underline']">
+        <span class="underline">
+            <xsl:apply-templates/>
+        </span>
     </xsl:template>
     
     <xsl:template match="hi[@rend='superscript']">

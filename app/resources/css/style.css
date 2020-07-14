@@ -1815,6 +1815,22 @@ div#text-div .app-text .rdg {
     white-space: nowrap;
     vertical-align: top;
 }
+div#text-div span.underline {
+    text-decoration: underline;
+}
+div#text-div span.big {
+    font-size: 2em;
+}
+div#text-div p.formula {
+    vertical-align: middle;
+}
+div#text-div span.division {
+    display: inline-block;
+}
+div#text-div span.dividend {
+    border-bottom: 1px solid #000000;
+    padding-bottom: 5px;
+}
 /* STYLES FOR PROSE PUBLICATIONS */
 div#text-div .text.prose .milestone.line {
     text-align: center;
@@ -1873,6 +1889,14 @@ div#text-div .text.prose .milestone.section {
 }
 div#text-div .text.prose p.small {
     font-size: small;
+}
+/* STYLES FOR INDIVIDUAL PROSE PUBLICATIONS */
+div#text-div .text.prose#W202 .bibl.right.indent-second {
+    width: 70%;
+    text-align: left;
+    margin: 1em 0 1em auto;
+    padding-left: 2em;
+    text-indent: -2em;
 }
 
 /* STYLES FOR INDIVIDUAL LISTS */
