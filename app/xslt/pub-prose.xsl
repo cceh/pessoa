@@ -118,5 +118,18 @@
         </span>
     </xsl:template>
     
+    <!-- bibl -->
+    <xsl:template match="bibl[preceding-sibling::p or following-sibling::p]">
+        <p>
+          <xsl:choose>
+              <xsl:when test="@rend">
+                  <xsl:attribute name="class">bibl <xsl:value-of select="@rend"/></xsl:attribute>
+              </xsl:when>
+              <xsl:otherwise>
+                  <xsl:attribute name="class">bibl</xsl:attribute>
+              </xsl:otherwise>
+          </xsl:choose>  
+        </p>
+    </xsl:template>
     
 </xsl:stylesheet>

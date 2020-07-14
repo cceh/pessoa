@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2020-07-13T09:56:45Z. 2017ff..
+Schema generated from ODD source 2020-07-13T16:17:56Z. 2017ff..
 TEI Edition: Version 4.0.0. Last updated on
 	13th February 2020, revision ccd19b0ba
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 4.0.0/
@@ -63,6 +63,18 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 4.0.0/
             <ref name="tei_model.gLike"/>
          </choice>
       </zeroOrMore>
+   </define>
+   <define name="tei_att.ascribed.attribute.who">
+      <optional>
+         <attribute name="who">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the person, or group of people, to whom the element content is ascribed.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI"/>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
    </define>
    <define name="tei_att.canonical.attributes">
       <ref name="tei_att.canonical.attribute.key"/>
@@ -1670,22 +1682,32 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
       </oneOrMore>
    </define>
    <define name="tei_model.stageLike">
-      <notAllowed/>
+      <choice>
+         <ref name="tei_stage"/>
+      </choice>
    </define>
    <define name="tei_model.stageLike_alternation">
-      <notAllowed/>
+      <choice>
+         <ref name="tei_stage"/>
+      </choice>
    </define>
    <define name="tei_model.stageLike_sequence">
-      <empty/>
+      <ref name="tei_stage"/>
    </define>
    <define name="tei_model.stageLike_sequenceOptional">
-      <empty/>
+      <optional>
+         <ref name="tei_stage"/>
+      </optional>
    </define>
    <define name="tei_model.stageLike_sequenceOptionalRepeatable">
-      <empty/>
+      <zeroOrMore>
+         <ref name="tei_stage"/>
+      </zeroOrMore>
    </define>
    <define name="tei_model.stageLike_sequenceRepeatable">
-      <notAllowed/>
+      <oneOrMore>
+         <ref name="tei_stage"/>
+      </oneOrMore>
    </define>
    <define name="tei_model.entryPart">
       <notAllowed/>
@@ -1703,6 +1725,7 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
          <ref name="tei_model.lLike"/>
          <ref name="tei_model.pLike"/>
          <ref name="tei_lg"/>
+         <ref name="tei_sp"/>
       </choice>
    </define>
    <define name="tei_model.placeNamePart">
@@ -1857,6 +1880,7 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
          <ref name="tei_dateline"/>
          <ref name="tei_epigraph"/>
          <ref name="tei_salute"/>
+         <ref name="tei_docAuthor"/>
       </choice>
    </define>
    <define name="tei_model.divTopPart">
@@ -1871,6 +1895,21 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
          <ref name="tei_model.divTopPart"/>
       </choice>
    </define>
+   <define name="tei_model.frontPart.drama">
+      <choice>
+         <ref name="tei_set"/>
+      </choice>
+   </define>
+   <define name="tei_model.pLike.front">
+      <choice>
+         <ref name="tei_head"/>
+         <ref name="tei_dateline"/>
+         <ref name="tei_epigraph"/>
+         <ref name="tei_docTitle"/>
+         <ref name="tei_titlePart"/>
+         <ref name="tei_docAuthor"/>
+      </choice>
+   </define>
    <define name="tei_model.divBottomPart">
       <choice>
          <ref name="tei_trailer"/>
@@ -1881,6 +1920,15 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
       <choice>
          <ref name="tei_model.divWrapper"/>
          <ref name="tei_model.divBottomPart"/>
+      </choice>
+   </define>
+   <define name="tei_model.titlepagePart">
+      <choice>
+         <ref name="tei_graphic"/>
+         <ref name="tei_epigraph"/>
+         <ref name="tei_docTitle"/>
+         <ref name="tei_titlePart"/>
+         <ref name="tei_docAuthor"/>
       </choice>
    </define>
    <define name="tei_model.choicePart">
@@ -2014,6 +2062,12 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
          <ref name="tei_textLang"/>
          <ref name="tei_availability"/>
          <ref name="tei_msIdentifier"/>
+      </choice>
+   </define>
+   <define name="tei_model.frontPart">
+      <choice>
+         <ref name="tei_model.frontPart.drama"/>
+         <ref name="tei_titlePage"/>
       </choice>
    </define>
    <define name="tei_model.pPart.data">
@@ -2844,6 +2898,8 @@ Sample values include: 1] circled</a:documentation>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                   <value>summary</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>dedication</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                </choice>
             </attribute>
          </optional>
@@ -3165,6 +3221,21 @@ Sample values include: 1] issue; 2] page</a:documentation>
             </choice>
          </zeroOrMore>
          <ref name="tei_att.global.source.attribute.source"/>
+         <optional>
+            <attribute name="rend">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(rendition) indicates how the element in question was rendered or presented in the source text.</a:documentation>
+               <list>
+                  <oneOrMore>
+                     <choice>
+                        <value>right</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                        <value>indent-second</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                     </choice>
+                  </oneOrMore>
+               </list>
+            </attribute>
+         </optional>
          <empty/>
       </element>
    </define>
@@ -3298,6 +3369,79 @@ Sample values include: 1] issue; 2] page</a:documentation>
                         <value>center</value>
                         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                         <value>indent</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                     </choice>
+                  </oneOrMore>
+               </list>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_sp">
+      <element name="sp">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(speech) contains an individual speech in a performance text, or a passage presented as such in a prose or verse text. [3.12.2. Core Tags for Drama 3.12. Passages of Verse or Drama 7.2.2. Speeches and Speakers]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <ref name="tei_model.global"/>
+            </zeroOrMore>
+            <optional>
+               <group>
+                  <ref name="tei_speaker"/>
+                  <zeroOrMore>
+                     <ref name="tei_model.global"/>
+                  </zeroOrMore>
+               </group>
+            </optional>
+            <oneOrMore>
+               <group>
+                  <choice>
+                     <ref name="tei_lg"/>
+                     <ref name="tei_model.lLike"/>
+                     <ref name="tei_model.pLike"/>
+                     <ref name="tei_model.listLike"/>
+                     <ref name="tei_model.stageLike"/>
+                     <ref name="tei_model.qLike"/>
+                  </choice>
+                  <zeroOrMore>
+                     <ref name="tei_model.global"/>
+                  </zeroOrMore>
+               </group>
+            </oneOrMore>
+         </group>
+         <optional>
+            <attribute name="rend">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(rendition) indicates how the element in question was rendered or presented in the source text.</a:documentation>
+               <list>
+                  <oneOrMore>
+                     <choice>
+                        <value>indent-first</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                     </choice>
+                  </oneOrMore>
+               </list>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_speaker">
+      <element name="speaker">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a specialized form of heading or label, giving the name of one or more speakers in a dramatic text or fragment. [3.12.2. Core Tags for Drama]</a:documentation>
+         <ref name="tei_macro.phraseSeq"/>
+      </element>
+   </define>
+   <define name="tei_stage">
+      <element name="stage">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(stage direction) contains any kind of stage direction within a dramatic text or fragment. [3.12.2. Core Tags for Drama 3.12. Passages of Verse or Drama 7.2.4. Stage Directions]</a:documentation>
+         <ref name="tei_macro.specialPara"/>
+         <optional>
+            <attribute name="rend">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(rendition) indicates how the element in question was rendered or presented in the source text.</a:documentation>
+               <list>
+                  <oneOrMore>
+                     <choice>
+                        <value>center</value>
                         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                      </choice>
                   </oneOrMore>
@@ -3638,12 +3782,28 @@ Sample values include: 1] issue; 2] page</a:documentation>
             <zeroOrMore>
                <ref name="tei_model.global"/>
             </zeroOrMore>
+            <optional>
+               <group>
+                  <ref name="tei_front"/>
+                  <zeroOrMore>
+                     <ref name="tei_model.global"/>
+                  </zeroOrMore>
+               </group>
+            </optional>
             <choice>
                <ref name="tei_body"/>
             </choice>
             <zeroOrMore>
                <ref name="tei_model.global"/>
             </zeroOrMore>
+            <optional>
+               <group>
+                  <ref name="tei_back"/>
+                  <zeroOrMore>
+                     <ref name="tei_model.global"/>
+                  </zeroOrMore>
+               </group>
+            </optional>
          </group>
          <ref name="tei_att.global.linking.attribute.corresp"/>
          <ref name="tei_att.global.source.attribute.source"/>
@@ -3917,6 +4077,8 @@ Sample values include: 1] issue; 2] page</a:documentation>
                         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                         <value>right</value>
                         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                        <value>indent</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                      </choice>
                   </oneOrMore>
                </list>
@@ -3986,6 +4148,183 @@ Sample values include: 1] issue; 2] page</a:documentation>
             </attribute>
          </optional>
          <empty/>
+      </element>
+   </define>
+   <define name="tei_titlePage">
+      <element name="titlePage">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(title page) contains the title page of a text, appearing within the front or back matter. [4.6. Title Pages]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <ref name="tei_model.global"/>
+            </zeroOrMore>
+            <ref name="tei_model.titlepagePart"/>
+            <zeroOrMore>
+               <choice>
+                  <ref name="tei_model.titlepagePart"/>
+                  <ref name="tei_model.global"/>
+               </choice>
+            </zeroOrMore>
+         </group>
+      </element>
+   </define>
+   <define name="tei_docTitle">
+      <element name="docTitle">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(document title) contains the title of a document, including all its constituents, as given on a title page. [4.6. Title Pages]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <ref name="tei_model.global"/>
+            </zeroOrMore>
+            <oneOrMore>
+               <group>
+                  <ref name="tei_titlePart"/>
+                  <zeroOrMore>
+                     <ref name="tei_model.global"/>
+                  </zeroOrMore>
+               </group>
+            </oneOrMore>
+         </group>
+      </element>
+   </define>
+   <define name="tei_titlePart">
+      <element name="titlePart">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a subsection or division of the title of a work, as indicated on a title page. [4.6. Title Pages]</a:documentation>
+         <ref name="tei_macro.paraContent"/>
+         <optional>
+            <attribute name="rend">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(rendition) indicates how the element in question was rendered or presented in the source text.</a:documentation>
+               <list>
+                  <oneOrMore>
+                     <choice>
+                        <value>center</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                     </choice>
+                  </oneOrMore>
+               </list>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                       name="type"
+                       a:defaultValue="main">
+               <a:documentation>specifies the role of this subdivision of the title.</a:documentation>
+               <choice>
+                  <value>main</value>
+                  <a:documentation/>
+                  <value>sub</value>
+                  <a:documentation/>
+               </choice>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_docAuthor">
+      <element name="docAuthor">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(document author) contains the name of the author of the document, as given on the title page (often but not always contained in a byline). [4.6. Title Pages]</a:documentation>
+         <ref name="tei_macro.phraseSeq"/>
+      </element>
+   </define>
+   <define name="tei_front">
+      <element name="front">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(front matter) contains any prefatory matter (headers, abstracts, title page, prefaces, dedications, etc.) found at the start of a document, before the main body. [4.6. Title Pages 4. Default Text Structure]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <choice>
+                  <ref name="tei_model.frontPart"/>
+                  <ref name="tei_model.pLike"/>
+                  <ref name="tei_model.pLike.front"/>
+                  <ref name="tei_model.global"/>
+               </choice>
+            </zeroOrMore>
+            <optional>
+               <group>
+                  <choice>
+                     <group>
+                        <ref name="tei_model.div1Like"/>
+                        <zeroOrMore>
+                           <choice>
+                              <ref name="tei_model.div1Like"/>
+                              <ref name="tei_model.frontPart"/>
+                              <ref name="tei_model.global"/>
+                           </choice>
+                        </zeroOrMore>
+                     </group>
+                     <group>
+                        <ref name="tei_model.divLike"/>
+                        <zeroOrMore>
+                           <choice>
+                              <ref name="tei_model.divLike"/>
+                              <ref name="tei_model.frontPart"/>
+                              <ref name="tei_model.global"/>
+                           </choice>
+                        </zeroOrMore>
+                     </group>
+                  </choice>
+                  <optional>
+                     <group>
+                        <ref name="tei_model.divBottom"/>
+                        <zeroOrMore>
+                           <choice>
+                              <ref name="tei_model.divBottom"/>
+                              <ref name="tei_model.global"/>
+                           </choice>
+                        </zeroOrMore>
+                     </group>
+                  </optional>
+               </group>
+            </optional>
+         </group>
+      </element>
+   </define>
+   <define name="tei_back">
+      <element name="back">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(back matter) contains any appendixes, etc. following the main part of a text. [4.7. Back Matter 4. Default Text Structure]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <choice>
+                  <ref name="tei_model.frontPart"/>
+                  <ref name="tei_model.pLike.front"/>
+                  <ref name="tei_model.pLike"/>
+                  <ref name="tei_model.listLike"/>
+                  <ref name="tei_model.global"/>
+               </choice>
+            </zeroOrMore>
+            <optional>
+               <choice>
+                  <group>
+                     <ref name="tei_model.div1Like"/>
+                     <zeroOrMore>
+                        <choice>
+                           <ref name="tei_model.frontPart"/>
+                           <ref name="tei_model.div1Like"/>
+                           <ref name="tei_model.global"/>
+                        </choice>
+                     </zeroOrMore>
+                  </group>
+                  <group>
+                     <ref name="tei_model.divLike"/>
+                     <zeroOrMore>
+                        <choice>
+                           <ref name="tei_model.frontPart"/>
+                           <ref name="tei_model.divLike"/>
+                           <ref name="tei_model.global"/>
+                        </choice>
+                     </zeroOrMore>
+                  </group>
+               </choice>
+            </optional>
+            <optional>
+               <group>
+                  <ref name="tei_model.divBottomPart"/>
+                  <zeroOrMore>
+                     <choice>
+                        <ref name="tei_model.divBottomPart"/>
+                        <ref name="tei_model.global"/>
+                     </choice>
+                  </zeroOrMore>
+               </group>
+            </optional>
+         </group>
       </element>
    </define>
    <define name="tei_msDesc">
@@ -4104,6 +4443,9 @@ Sample values include: 1] issue; 2] page</a:documentation>
                </optional>
                <optional>
                   <ref name="tei_textLang"/>
+               </optional>
+               <optional>
+                  <ref name="tei_titlePage"/>
                </optional>
                <zeroOrMore>
                   <choice>
@@ -4225,7 +4567,9 @@ Sample values include: 1] issue; 2] page</a:documentation>
       <element name="facsimile">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a representation of some written source in the form of a set of images rather than as transcribed or encoded text. [11.1. Digital Facsimiles]</a:documentation>
          <group>
-      
+            <optional>
+               <ref name="tei_front"/>
+            </optional>
             <oneOrMore>
                <choice>
 	                 <ref name="tei_model.graphicLike"/>
@@ -4233,7 +4577,9 @@ Sample values include: 1] issue; 2] page</a:documentation>
 	
                </choice>
             </oneOrMore>
-      
+            <optional>
+               <ref name="tei_back"/>
+            </optional>
          </group>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.declaring.attributes"/>
@@ -5134,6 +5480,42 @@ Sample values include: 1] issue; 2] page</a:documentation>
               parallel-segmentation method of apparatus markup.</sch:assert>
             </sch:rule>
          </pattern>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_set">
+      <element name="set">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(setting) contains a description of the setting, time, locale, appearance, etc., of the action of a play, typically found in the front matter of a printed performance text (not a stage direction). [7.1. Front and Back Matter
+ ]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <choice>
+                  <ref name="tei_model.headLike"/>
+                  <ref name="tei_model.global"/>
+               </choice>
+            </zeroOrMore>
+            <zeroOrMore>
+               <group>
+                  <ref name="tei_model.common"/>
+                  <zeroOrMore>
+                     <ref name="tei_model.global"/>
+                  </zeroOrMore>
+               </group>
+            </zeroOrMore>
+         </group>
+         <optional>
+            <attribute name="rend">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(rendition) indicates how the element in question was rendered or presented in the source text.</a:documentation>
+               <list>
+                  <oneOrMore>
+                     <choice>
+                        <value>right</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                     </choice>
+                  </oneOrMore>
+               </list>
+            </attribute>
+         </optional>
          <empty/>
       </element>
    </define>

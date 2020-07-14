@@ -401,11 +401,11 @@
                     depressa, contae outra vez... Não falleis em quantos podem ouvir... Nós nunca
                     sabemos quantas cousas realmente vivem e vêem e escutam... Voltae ao vosso
                     sonho... O marinheiro... O que sonhava o marinheiro?...</p>
-                <!-- U: in the following speech, you have a stage direction inside of the speaker information. 
+                <!-- U: in the following speech, you have a stage direction right after the speaker information. 
                 There you can also use <stage> as in the following example: -->
                 <sp rend="indent-first">
-                    <speaker><hi rend="bold">Segunda</hi>– <stage><hi rend="italic">(mais
-                        baixo, numa voz muito lenta).</hi></stage></speaker>
+                    <speaker><hi rend="bold">Segunda</hi></speaker><stage>– <hi rend="italic">(mais
+                        baixo, numa voz muito lenta).</hi></stage>
                     <p>— Ao principio elle creou as paysagens;
                         depois creou as cidades; creou depois as ruas e as travessas, uma a uma,
                         cinzelando-as na materia da sua alma – uma a uma as ruas, bairro a bairro, até
@@ -623,13 +623,6 @@
                     porque acreditaes no sonho…</p>
                 <p rend="indent-first"><hi rend="bold">Segunda.</hi> – Porque é que m’o perguntaes?
                     Porque eu o disse? Não, não acredito...</p>
-                <div rend="right">
-                    
-                </div>
-                <div>
-                    <p rend="indent-first"></p>
-                </div>
-                <signed rend="right">Fernando Pessôa</signed>
             </div>
         </body>
         <!-- U: I created a <back> element here, because again, <set> (the description of the setting) is not 
@@ -639,7 +632,10 @@
                 trez veladoras quedam-se silenciosas e sem olharem umas para as outras.</p>
                 <p rend="indent-first">Não muito longe, por uma estrada, um vago carro geme e
                     chia.</p></set>
+            <!-- U: probably we should treat all signatures and datelines as "back matter"... We can 
+            talk about this tomorrow -->
             <dateline rend="indent"><hi rend="italic">11/12 Outubro, 1913.</hi></dateline>
+            <signed rend="right">Fernando Pessôa.</signed>
         </back>
     </text>
 </TEI>
