@@ -40,9 +40,10 @@
                 <idno type="filename">Addiamento.xml</idno>
             </publicationStmt>
             <notesStmt>
-                <note type="summary">Poema republicado em <hi rend="italic">Cancioneiro do 1º Salão
-                        dos Independentes</hi>, 1930, pp. 12-13. O texto é idêntico ao da primeira
-                    publicação. Apresentamos aqui as imagens de ambas as publicações.</note>
+                <note type="summary">Poema publicado em <hi rend="italic">Revista da Solução Editora</hi>,
+                    1929 e <hi rend="italic">Cancioneiro do 1º Salão
+                        dos Independentes</hi>, 1930. Apresentamos aqui as imagens de ambas as publicações, cujos
+                        textos são, em termos formais e de conteúdo, idênticos.</note>
                 <note type="genre">
                     <rs type="genre" key="poesia">Poesia</rs>
                 </note>
@@ -69,15 +70,35 @@
                         <biblScope unit="page">4-5</biblScope>
                     </monogr>
                 </biblStruct>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Addiamento</title>
+                        <author>
+                            <rs type="name" key="AdC">Álvaro de Campos</rs>
+                        </author>
+                        <textLang mainLang="pt"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j">Cancioneiro do 1º Salão
+                            dos Independentes</title>
+                        <imprint>
+                            <date when="1930">1930</date>
+                        </imprint>
+                        <biblScope unit="issue">1</biblScope>
+                        <biblScope unit="page">4-5</biblScope>
+                    </monogr>
+                </biblStruct>
             </sourceDesc>
         </fileDesc>
         <encodingDesc>
             <variantEncoding method="parallel-segmentation" location="internal"/>
         </encodingDesc>
     </teiHeader>
-    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/" corresp="#Solução_1929">
         <graphic url="pub/j-2855-3-b_0006_t0.jpg"/>
         <graphic url="pub/j-2855-3-b_0007_t0.jpg"/>
+    </facsimile>
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/" corresp="#Cancioneiro_1930">
         <graphic url="pub/addiamento.jpg"/>
         <graphic url="pub/addiamentoII.jpg"/>
     </facsimile>
@@ -95,7 +116,7 @@
                     <l>O cansaço anticipado e infinito,</l>
                     <l>Um cansaço de mundos para apanhar um electrico…</l>
                     <l>Esta especie de alma…</l>
-                    <l rend="indent">Só depois de àmanhã…</l>
+                    <l>Só depois de àmanhã…</l>
                     <l>Hoje quero preparar-me,</l>
                     <l>Quero preparar-me para pensar àmanhã no dia seguinte…</l>
                     <l>Elle é que é decisivo.</l>

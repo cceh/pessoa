@@ -40,12 +40,11 @@
                 <idno type="filename">Natal-Na-provincia-neva.xml</idno>
             </publicationStmt>
             <notesStmt>
-                <note type="summary">Poema republicado em <hi rend="italic">Diário de Lisboa</hi>,
-                    28 Dezembro de 1934, p. 5. Para além de diferenças ortográficas e de pontuação,
-                    esta segunda publicação inclui variantes em dois versos: no último verso da
-                    segunda estrofe lê-se “Porisso tenho saudade.” e no terceiro verso da última
-                    estrofe “Vista por trás da vidraça”. Apresentamos aqui as imagens de ambas as
-                    publicações.</note>
+                <note type="summary">Poema publicado em <hi rend="italic">O "Notícias" Ilustrado</hi>,
+                    30 de Dezembro de 1928, e <hi rend="italic">Diário de Lisboa</hi>,
+                    28 Dezembro de 1934. Para além de diferenças ortográficas e de pontuação,
+                    esta segunda publicação, privilegiada no texto aqui apresentado, inclui variantes em dois versos. 
+                    Apresentamos as imagens de ambas as publicações.</note>
                 <note type="genre">
                     <rs type="genre" key="poesia">Poesia</rs>
                 </note>
@@ -54,7 +53,7 @@
                 <list type="work-index">
                     <item><rs type="work" key="O1-26">Natal (“Natal. Na provincia neva”)</rs></item>
                 </list>
-                <biblStruct>
+                <biblStruct xml:id="Notícias_1928">
                     <analytic>
                         <title level="a">Natal (“Natal. Na provincia neva”)</title>
                         <author>
@@ -63,12 +62,28 @@
                         <textLang mainLang="pt"/>
                     </analytic>
                     <monogr>
-                        <title level="j"><rs type="periodical" key="J9">Notícias
-                            ilustrado</rs></title>
+                        <title level="j"><rs type="periodical" key="J9">O "Notícias"
+                            Ilustrado</rs></title>
                         <imprint>
                             <date when="1928-12-30">30 de Dezembro de 1928</date>
                         </imprint>
                         <biblScope unit="page">15</biblScope>
+                    </monogr>
+                </biblStruct>
+                <biblStruct xml:id="Diário_1934">
+                    <analytic>
+                        <title level="a">Natal (“Natal. Na provincia neva”)</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J80">Diário de Lisboa</rs></title>
+                        <imprint>
+                            <date when="1934-12-28">28 de Dezembro de 1934</date>
+                        </imprint>
+                        <biblScope unit="page">5</biblScope>
                     </monogr>
                 </biblStruct>
             </sourceDesc>
@@ -77,8 +92,10 @@
             <variantEncoding method="parallel-segmentation" location="internal"/>
         </encodingDesc>
     </teiHeader>
-    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/" corresp="#Notícias_1928">
         <graphic url="pub/FP147_1928-12-30_0015_Natal.jpg"/>
+    </facsimile>
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/" corresp="#Diário_1934">
         <graphic url="pub/natal.jpg"/>
     </facsimile>
     <text corresp="#O1-26">
@@ -94,16 +111,26 @@
                 <lg>
                     <l>Coração oposto ao mundo,</l>
                     <l>Como a familia é verdade!</l>
-                    <l>Meu pensamento é profundo,</l>
-                    <l>Porisso tenho saudade.</l>
+                    <l>Meu pensamento é profundo<app>
+                        <lem wit="#Diário_1934">:</lem>
+                        <rdg wit="#Notícias_1928">,</rdg>
+                    </app></l>
+                    <l><app>
+                        <lem wit="#Diário_1934">Porisso tenho</lem>
+                        <rdg wit="#Notícias_1928">Estou só, e sonho</rdg>
+                    </app> saudade.</l>
                 </lg>
                 <lg>
                     <l>E como é branca de graça</l>
                     <l>A paisagem que não sei,</l>
-                    <l>Vista por trás da vidraça</l>
+                    <l>Vista <app>
+                        <lem wit="#Diário_1934">por trás</lem>
+                        <rdg wit="#Notícias_1928">de traz</rdg>
+                    </app> da vidraça</l>
                     <l>Do lar que nunca terei!</l>
                 </lg>
-                <signed rend="right">FERNANDO PESSOA</signed>
+                <signed rend="right"><app><lem wit="#Diário_1934"><hi rend="italic">Fernando Pessoa</hi></lem>
+                    <rdg wit="#Notícias_1928">FERNANDO PESSOA</rdg></app></signed>
             </div>
         </body>
     </text>
