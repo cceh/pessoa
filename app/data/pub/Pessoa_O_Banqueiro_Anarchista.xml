@@ -27,7 +27,6 @@
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
                 <availability status="restricted">
-                    <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_O_Banqueiro_Anarquista.xml</idno>
@@ -39,7 +38,7 @@
             </notesStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O1-X">O Banqueiro Anarchista</rs></item>
+                    <item><rs type="work" key="W229">O Banqueiro Anarchista</rs></item>
                 </list>
                 <biblStruct>
                     <analytic>
@@ -48,32 +47,15 @@
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
                         <title level="j"><rs type="periodical" key="J11">Contemporânea</rs></title>
-                        <!-- @key is to identify the periodical. You can find other periodicals IDs in the file 
-                            lists.xml in the data folder. In that file, 
-                        look for the sublist <list type="periodical">, currently beginning at line 1450. You can also add
-                        new periodicals there -->
                         <imprint>
                             <date when="1922-05">Maio de 1922</date>
-                            <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                         </imprint>
                         <biblScope unit="issue">1</biblScope>
                         <biblScope unit="page">5-21</biblScope>
                     </monogr>
-                    <!-- here goes the bibliographical reference for the source publication -->
-                    <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
-                    <!-- @key is to identify the periodical. You can find other periodicals IDs in the file 
-                            lists.xml in the data folder. In that file, 
-                        look for the sublist <list type="periodical">, currently beginning at line 1450. You can also add
-                        new periodicals there -->
-                    <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
@@ -100,10 +82,7 @@
         <graphic url="prosa/Banqueiro_16.jpg"/>
         <graphic url="prosa/Banqueiro_17.jpg"/>
     </facsimile>
-    <text corresp="#O1-X">
-        <!-- @corresp: contains the index of this WORK. 
-        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
-        This can be left as is in the beginning.-->
+    <text corresp="#W229">
         <body>
             <div>
                 <head rend="center">O BANQUEIRO ANARCHISTA</head>
@@ -130,7 +109,7 @@
                     differença. Mas não é a que V. julga. V. duvida talvez que as minhas theorias
                     sociaes sejam eguais ás d’elles?...</p>
                 <p rend="indent-first">— Ah, já percebo! V., quanto ás theorias, é anarchista;
-                    quanto á práctica... </p>
+                    quanto á práctica...</p>
                 <p rend="indent-first">— Quanto á práctica sou tão anarchista como quanto ás
                     theorias. E quanto á práctica sou mais, sou muito mais, anarchista que esses
                     typos que V. citou. Toda a minha vida o mostra.</p>
@@ -150,7 +129,7 @@
                     anarchistas?</p>
                 <p rend="indent-first">— Não; não é isso. O que quero dizer é que entre as minhas
                     theorias e a práctica da minha vida não ha divergencia nenhuma, mas uma
-                    conformidade absoluta. Lá que não [FIM IMAGEM 1] tenho uma vida como a dos typos
+                    conformidade absoluta. Lá que não tenho uma vida como a dos typos
                     dos sindicatos e das bombas – isso é verdade. Mas é a vida d’eles que está fóra
                     do anarchismo, fóra dos ideaes d’elles. A minha não. Em mim – sim, em mim,
                     banqueiro, grande commerciante, açambarcador se v. quizer –, em mim a theoria e
@@ -209,7 +188,7 @@
                     consciente. Ora o que é um anarchista? É um revoltado contra a injustiça de
                     nascermos desiguaes <hi rend="italic">socialmente</hi> – no fundo é só isto. E
                     de ahi resulta, como é de ver, a revolta contra as convenções sociaes que tornam
-                    essa desegual <!--[FIM IMAGEM 1]--> dade possivel. O que lhe estou indicando
+                    essa desegualdade possivel. O que lhe estou indicando
                     agora é o caminho psychologico, isto é, como é que a gente se torna anarchista;
                     já vamos á parte theorica do assumpto. Por agora, comprehenda v. bem qual seria
                     a revolta de um typo intelligente nas minhas circunstancias. O que é que elle vê
@@ -266,7 +245,7 @@
                     uma d’ellas completamente, <hi rend="italic">é uma ficção tambem</hi>. Empregar
                     todo o nosso desejo, todo o nosso exforço, toda a nossa intelligencia para
                     implantar, ou contribuir para implantar, uma ficção social em vez de outra, é um
-                    absurdo, <!--[FIM IMAGEM 3]--> quando não seja mesmo um crime, <hi rend="italic"
+                    absurdo, quando não seja mesmo um crime, <hi rend="italic"
                         >porque é fazer uma perturbação social com o fim expresso de deixar tudo na
                         mesma</hi>. Se achamos injustas as ficções sociaes, porque esmagam e
                     opprimem o que é natural no homem, para que empregar o nosso exforço em
@@ -392,7 +371,6 @@
                 <p rend="indent-first">«Ora ahi tem v. porquê e como eu me tornei anarchista, e
                     porquê e como rejeitei, como falsas e anti-naturaes, as outras doutrinas sociaes
                     de menor ousadia.</p>
-                <!--[FIM IMAGEM 5]-->
                 <p rend="indent-first">«E prompto... Vamos lá a continuar a minha historia. Fez
                     explodir um phosphoro, e accendeu lentamente o charuto. Concentrou-se, e de ahi
                     a pouco prosseguiu.</p>
@@ -455,7 +433,6 @@
                     contribuisse para destruir as ficções sociaes sem, ao mesmo tempo, estorvar a
                     creação da liberdade futura; creando já mesmo, caso fôsse possivel, alguma coisa
                     da liberdade futura.</p>
-                <!-- [FIM IMAGEM 6]-->
                 <p rend="indent-first">«É claro que esta liberdade, que deve haver cuidado em não
                     estorvar, é <hi rend="italic">a liberdade futura</hi> e, no presente, <hi
                         rend="italic">a liberdade dos opprimidos pelas ficções sociaes</hi>. Claro
@@ -494,7 +471,6 @@
                     liberdade presente dos opprimidos; creando já, sendo possivel, qualquer coisa da
                     futura liberdade.</p>
                 <p rend="indent-first">Puxou fumo; fez uma leve pausa; recomeçou.</p>
-
                 <p rend="indent-first margin-vertical">— Ora aqui, meu amigo, puz eu a minha lucidez
                     em acção. Trabalhar para o futuro, está bem, pensei eu; trabalhar para os outros
                     terem liberdade, está certo. Mas então eu? eu não sou ninguém? Se eu fôsse
@@ -516,7 +492,7 @@
                     altruismo e o sacrifício pelos outros, ou pela humanidade, se o altruismo e o
                     sacrificio tambem não são naturaes? Sim, a mesma logica que me mostra que um
                     homem não nasce para ser casado, ou para ser portuguez, ou para ser rico ou
-                    pobre, mostra-me tambem que <!--[FIM IMAGEM 7]--> elle não nasce para ser <hi
+                    pobre, mostra-me tambem que elle não nasce para ser <hi
                         rend="italic">solidario</hi>, que elle não nasce senão para ser
                     elle-proprio, e portanto o contrario de altruista e solidario, e portanto
                     exclusivamente egoista.</p>
@@ -637,7 +613,7 @@
                     bem que isto se passava num grupo pequeno, num grupo sem influencia nem
                     importancia, num grupo a quem não estava confiada a solução de nenhuma questão
                     grave ou a decisão sobre qualquer assumpto de vulto. E repare que se passava num
-                    <!--[FIM IMAGEM 9]--> grupo de gente que se unira especialmente para fazer o que
+                    grupo de gente que se unira especialmente para fazer o que
                     pudesse para o fim anarchista – isto é, para combater, tanto quanto possivel, as
                     ficções sociaes, e crear, tanto quanto possivel, a liberdade futura. V. Reparou
                     bem nestes dois pontos?</p>
@@ -695,7 +671,6 @@
                     anarchismo.</p>
                 <p rend="indent-first">Olhou-me um momento sem me olhar. Depois continuou, no mesmo
                     tom.</p>
-                <!--[FIM IMAGEM 10]-->
                 <p rend="indent-first">— Pensei assim… Temos aqui uma tyrannia nova, uma tyrannia
                     que não é derivada das ficções sociaes. Então de onde é ella derivada? Será
                     derivada das qualidades naturaes? Se é, adeus sociedade livre! Se uma sociedade
@@ -711,7 +686,7 @@
                     contra nascer baixo quando se preferia ter nascido alto. Mesmo, eu já lhe provei
                     que, se por qualquer razão não é realizavel a sociedade anarchista, então deve
                     existir, por ser mais natural que qualquer outra salvo aquella, a sociedade
-                    burgueza. </p>
+                    burgueza.</p>
                 <p rend="indent-first">«Mas seria esta tyrannia, que nascia assim entre nós,
                     realmente derivada das qualidades naturaes? Ora o que são as qualidades
                     naturaes? São o grau de intelligencia, de imaginação, de vontade, etc., com que
@@ -720,7 +695,7 @@
                     das ficções sociaes, manda noutro, por força que o faz por lhe ser superior em
                     uma ou outra das qualidades naturaes. Domina-o pelo emprego das suas qualidades
                     naturaes. Mas ha uma coisa a ver: esse emprego das qualidades naturaes será
-                    legitimo, isto é, será <hi rend="italic"> natural</hi>?</p>
+                    legitimo, isto é, será <hi rend="italic">natural</hi>?</p>
                 <p rend="indent-first">«Ora qual é o emprego natural das nossas qualidades naturaes?
                     O servir os fins naturaes da nossa personalidade. Ora dominar alguem será um fim
                     natural da nossa personalidade? Pode sel-o; ha um caso em que pode sel-o: é
@@ -755,7 +730,7 @@
                     de tyrannia faça cada homem nascer já com as suas qualidades naturaes
                     pervertidas no sentido de tyrannizar espontaneamente, mesmo em quem não pretenda
                     tyrannizar, do que suppôr que qualidades naturaes podem ser naturalmente
-                    pervertidas, o <!--[FIM IMAGEM 11]--> que, de certo modo, representa uma
+                    pervertidas, o que, de certo modo, representa uma
                     contradicção. Porisso o pensador decide-se, como eu me decidi, com uma quasi
                     absoluta segurança, pela segunda hypothese.</p>
                 <p rend="indent-first">«Temos, pois, que uma coisa é evidente… No estado social
@@ -813,7 +788,7 @@
                     menos, tudo protestou!… Não era isso!… Isso não podia ser!… Mas ninguem dizia o
                     que era ou o que é que havia de ser. Argumentei e argumentei, e, em resposta aos
                     meus argumentos, não obtive senão phrases, lixo, coisas como essas que os
-                    ministros respondem nas camaras <!--[FIM IMAGEM 12]--> quando não teem resposta
+                    ministros respondem nas camaras quando não teem resposta
                     nenhuma… Então é que eu vi com que bestas e com que cobardões estava metido!
                     Desmascararam-se. Aquella corja tinha nascido para escravos. Queriam ser
                     anarchistas á custa alheia. Queriam a liberdade, logo que fôssem os outros que
@@ -873,7 +848,7 @@
                     envaidecer d’aquellas qualidades que não tenho. E, como lhe disse, nunca me deu
                     p’ra me julgar orador ou escriptor. Porisso abandonei a idéa da acção indirecta
                     como caminho a dar á minha actividade de anarchista. Por exclusão de partes, era
-                    <!--[FIM IMAGEM 13]--> forçado a escolher a acção directa, isto é, o esforço
+                    forçado a escolher a acção directa, isto é, o esforço
                     aplicado á prática da vida, á vida real. Não era a intelligencia, mas a acção.
                     Muito bem. Assim seria.</p>
                 <p rend="indent-first">«Tinha eu pois que applicar á vida practica o processo
@@ -934,7 +909,7 @@
                     pode ser «destruida» pela revolução social, arrastada com as outras na queda da
                     sociedade burgueza.</p>
                 <p rend="indent-first">«Como podia eu tornar-me superior á força do dinheiro? O
-                    processo mais simples era <!--[FIM IMAGEM 14]--> afastar-me da esphera da sua
+                    processo mais simples era afastar-me da esphera da sua
                     influencia, isto é, da civilização; ir para um campo comer raizes e beber agua
                     das nascentes; andar nu e viver como um animal. Mas isto, mesmo que não houvesse
                     difficuldade em fazel-o, não era combater uma ficção social; não era mesmo
@@ -994,7 +969,7 @@
                     anarchista estupido, que atira bombas e dá tiros, bem sabe que mata, e bem sabe
                     que as suas doutrinas não incluem a pena de morte. Ataca uma immoralidade com um
                     crime, porque acha que essa immoralidade vale um crime para se destruir. Elle é
-                    estupido quanto ao processo, porque, como já lhe mos<!---[FIM IMAGEM 15]-->trei,
+                    estupido quanto ao processo, porque, como já lhe mostrei,
                     esse processo é errado e contraproducente <hi rend="italic">como processo
                         anarchista</hi>; agora quanto á moral do processo elle é intelligente. Ora o
                     meu processo estava certo, e eu servia-me legitimamente, como anarchista, de
@@ -1040,7 +1015,7 @@
                         meios</hi> de que as ficções se servem para tyrannizar, como a faca é o meio
                     de que se pode servir o assassino. E v. decerto não julga que abolindo as facas
                     abole os assassinos… Olhe… Destrua v. <hi rend="italic">todos</hi> os
-                    capitalistas do mundo, mas <hi rend="italic"> sem destruir o capital</hi>… No
+                    capitalistas do mundo, mas <hi rend="italic">sem destruir o capital</hi>… No
                     dia seguinte o capital, já nas mãos de outros, continuará, por meio <hi
                         rend="italic">d’esses</hi>, a sua tyrannia. Destrua, não os capitalistas,
                     mas o capital; quantos capitalistas ficam?… Vê?…</p>
@@ -1059,7 +1034,7 @@
                 <p rend="indent-first">— Sem duvida. Mas eu já lhe disse que, pelo processo que
                     descobri que era o unico processo anarchista, cada um tem de libertar-se a
                     si-proprio. Eu libertei-me a mim; fiz o meu dever simultaneamente para commigo e
-                    para com a liberdade. Porque é que os outros, <!--[FIM IMAGEM 16]--> os meus
+                    para com a liberdade. Porque é que os outros, os meus
                     camaradas, não fizeram o mesmo? Eu não os impedi. Esse é que teria sido o crime,
                     se eu os tivesse impedido. Mas eu nem sequer os impedi occultando-lhes o
                     verdadeiro processo anarchista; logo que descobri o processo, disse-o claramente

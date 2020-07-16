@@ -40,13 +40,15 @@
                 <idno type="filename">Pessoa_O-Menino-da-sua-Mae.xml</idno>
             </publicationStmt>
             <notesStmt>
-                <note type="summary">Poema republicado em <hi rend="italic">O “Notícias”
-                        Ilustrado</hi>, 11 de Novembro de 1928, p. 7 e em <hi rend="italic"
-                        >Cancioneiro do 1º Salão dos Independentes</hi>, 1930, p. 21. Na primeira
+                <note type="summary">Poema publicado em <hi rend="italic">Contemporânea</hi>,
+                    Maio de 1926, <hi rend="italic">O “Notícias”
+                        Ilustrado</hi>, 11 de Novembro de 1928 e em <hi rend="italic"
+                        >Cancioneiro do 1º Salão dos Independentes</hi>, 1930. Na primeira
                     republicação encontram-se diferenças de pontuação e ortografia, assim como uma
-                    variante do início do quarto verso da penúltima estrofe, “Do lenço...”. A
-                    segunda republicação apresenta apenas diferenças de ortografia face à primeira
-                    publicação. Apresentamos aqui as imagens das três publicações.</note>
+                    variante do início do quarto verso da penúltima estrofe. A
+                    segunda republicação apresenta apenas diferenças de ortografia e pontuação face à primeira
+                    publicação. Apresentamos as imagens das três publicações. O texto fixado segue, em termos substantivos e de pontuação, 
+                    o da primeira publicação.</note>
                 <note type="genre">
                     <rs type="genre" key="poesia">Poesia</rs>
                 </note>
@@ -55,7 +57,7 @@
                 <list type="work-index">
                     <item><rs type="work" key="O1-29">O Menino Da Sua Mãe</rs></item>
                 </list>
-                <biblStruct>
+                <biblStruct xml:id="Contemp_1926">
                     <analytic>
                         <title level="a">O Menino Da Sua Mãe</title>
                         <author>
@@ -73,61 +75,127 @@
                         <biblScope unit="page">47</biblScope>
                     </monogr>
                 </biblStruct>
+                <biblStruct xml:id="Notícias_1928">
+                    <analytic>
+                        <title level="a">O Menino Da Sua Mãe</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J9">O "Notícias" Ilustrado</rs></title>
+                        <imprint>
+                            <date when="1928-11-11">11 de Novembro de 1928</date>
+                        </imprint>
+                        <biblScope unit="page">7</biblScope>
+                    </monogr>
+                </biblStruct>
+                <biblStruct xml:id="Cancioneiro_1930">
+                    <analytic>
+                        <title level="a">O Menino Da Sua Mãe</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j">Cancioneiro do 1º Salão dos Independentes</title>
+                        <imprint>
+                            <date when="1930">1930</date>
+                        </imprint>
+                        <biblScope unit="page">21</biblScope>
+                    </monogr>
+                </biblStruct>
             </sourceDesc>
         </fileDesc>
         <encodingDesc>
             <variantEncoding method="parallel-segmentation" location="internal"/>
         </encodingDesc>
     </teiHeader>
-    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/" corresp="#Contemp_1926">
         <graphic url="pub/178423_0860_47_t0.jpg"/>
+    </facsimile>
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/" corresp="#Notícias_1928">
         <graphic url="pub/o_menino_de_sua_mae.jpg"/>
+    </facsimile> 
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/" corresp="#Cancioneiro_1930">
         <graphic url="pub/o_menino_de_sua_maeII.jpg"/>
     </facsimile>
     <text corresp="#O1-29">
         <body>
             <div>
-                <head>O MENINO DA SUA<lb/> MÃE</head>
+                <head>O MENINO DA SUA MÃE</head>
                 <lg>
                     <l>No plaino abandonado</l>
                     <l>Que a morna brisa aquece,</l>
                     <l>De balas traspassado —</l>
-                    <l>Duas, de lado a lado —,</l>
+                    <l><app>
+                        <lem wit="#Contemp_1926 #Cancioneiro_1930">Duas,</lem>
+                        <rdg wit="#Notícias_1928">— Duas</rdg>
+                    </app> de lado a lado —<app>
+                        <lem wit="#Contemp_1926 #Cancioneiro_1930">,</lem>
+                        <rdg wit="#Notícias_1928"></rdg>
+                    </app></l>
                     <l>Jaz morto, e arrefece.</l>
                 </lg>
                 <lg>
                     <l>Raia-lhe a farda o sangue.</l>
-                    <l>De braços extendidos,</l>
+                    <l>De braços estendidos,</l>
                     <l>Alvo, louro, exangue,</l>
                     <l>Fita com olhar langue</l>
                     <l>E cego os céus perdidos.</l>
                 </lg>
                 <lg>
-                    <l>Tam jovem! que jovem era!</l>
-                    <l> (Agora que edade tem?)</l>
-                    <l>Filho unico, a mãe lhe dera </l>
-                    <l>Um nome e o mantivera:</l>
+                    <l>Tão jovem! que jovem era!</l>
+                    <l><app>
+                        <lem wit="#Contemp_1926 #Cancioneiro_1930">(Agora que idade tem?)</lem>
+                        <rdg wit="#Notícias_1928">Agora que edade tem?</rdg>
+                    </app></l>
+                    <l>Filho único, a mãe lhe dera </l>
+                    <l>Um nome e o mantivera<app>
+                        <lem wit="#Contemp_1926 #Cancioneiro_1930">:</lem>
+                        <rdg wit="#Notícias_1928"> —</rdg>
+                    </app>:</l>
                     <l>«O menino da sua mãe.»</l>
                 </lg>
                 <lg>
-                    <l>Cahiu-lhe da algibeira</l>
+                    <l>Caiu-lhe da algibeira</l>
                     <l>A cigarreira breve.</l>
-                    <l>Dera-lh’a a mãe. Está inteira</l>
+                    <l>Dera-<app>
+                        <lem wit="#Contemp_1926 #Notícias_1928">lh'a</lem>
+                        <rdg wit="#Cancioneiro_1930">lhe</rdg>
+                    </app> a mãe. Está inteira</l>
                     <l>E boa a cigarreira.</l>
-                    <l>Elle é que já não serve.</l>
+                    <l>Ele é que já não serve.</l>
                 </lg>
                 <lg>
                     <l>De outra algibeira, alada</l>
                     <l>Ponta a roçar o solo,</l>
                     <l>A brancura embainhada</l>
-                    <l>De um lenço... Deu-lh’o a creada</l>
-                    <l>Velha que o trouxe ao collo.</l>
+                    <l><app>
+                        <lem wit="#Contemp_1926 #Cancioneiro_1930">De um lenço</lem>
+                        <rdg wit="#Notícias_1928">Do lenço</rdg>
+                    </app>... Deu-lh’o a criada</l>
+                    <l>Velha<app>
+                        <lem wit="#Contemp_1926 #Cancioneiro_1930"></lem>
+                        <rdg wit="#Notícias_1928">,</rdg>
+                    </app> que o trouxe ao colo.</l>
                 </lg>
                 <lg>
-                    <l>Lá longe, em casa, ha a prece:</l>
-                    <l>«Que volte cedo, e bem!»</l>
-                    <l>(Malhas que o lmperio tece!)</l>
-                    <l>Jaz morto, e apodrece,</l>
+                    <l>Lá longe, em casa, há a prece:</l>
+                    <l><app>
+                        <lem wit="#Contemp_1926 #Notícias_1928">«Que volte cedo, e bem!»</lem>
+                        <rdg wit="#Cancioneiro_1930">Que volte cedo, e bem!</rdg>
+                    </app></l>
+                    <l>(Malhas que o lmpério tece!)</l>
+                    <l>Jaz morto<app>
+                        <lem wit="#Contemp_1926 #Notícias_1928">,</lem>
+                        <rdg wit="#Cancioneiro_1930"></rdg>
+                    </app> e apodrece<app>
+                        <lem wit="#Contemp_1926 #Notícias_1928">,</lem>
+                        <rdg wit="#Cancioneiro_1930"></rdg>
+                    </app></l>
                     <l>O menino da sua mãe.</l>
                 </lg>
                 <signed rend="right">FERNANDO PESSOA</signed>
