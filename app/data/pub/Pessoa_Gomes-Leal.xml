@@ -9,7 +9,7 @@
                     <rs type="name" key="FP">Fernando Pessoa</rs>
                 </author>
                 <respStmt>
-                    <resp>Edição, Transcrição</resp>
+                    <resp>Edição, Transcrição, Codificação</resp>
                     <name>Pedro Sepúlveda</name>
                 </respStmt>
                 <respStmt>
@@ -51,9 +51,9 @@
             </notesStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O1-16">Gomes Leal</rs></item>
+                    <item><rs type="work" key="W234">Gomes Leal</rs></item>
                 </list>
-                <biblStruct>
+                <biblStruct xml:id="Notícias_1928">
                     <analytic>
                         <title level="a">Gomes Leal</title>
                         <author>
@@ -70,7 +70,7 @@
                         <biblScope unit="page">7</biblScope>
                     </monogr>
                 </biblStruct>
-                <biblStruct>
+                <biblStruct xml:id="Cancioneiro_1930">
                     <analytic>
                         <title level="a">Gomes Leal</title>
                         <author>
@@ -99,9 +99,9 @@
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/" corresp="#Cancioneiro_1930">
         <graphic url="pub/gomes_leal.jpg"/>
     </facsimile>
-    <text corresp="#O1-16">
+    <text corresp="W234">
         <body>
-            <div>
+            <div rend="text-center">
                 <head>GOMES LEAL</head>
                 <lg>
                     <l>Sagra, sinistro, a alguns o astro baço.</l>
@@ -135,7 +135,7 @@
                         <rdg wit="#Notícias_1928">...</rdg></app></l>
                     <l>É a lua além de Deus, álgida e ignota.</l>
                 </lg>
-                <signed>FERNANDO PESSOA</signed>
+                <signed rend="right">FERNANDO PESSOA</signed>
             </div>
         </body>
     </text>
