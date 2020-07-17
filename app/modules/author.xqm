@@ -1,7 +1,7 @@
 xquery version "3.0";
 (:~
-: Modul zur Anzeige der Authoren
-: @author Ben Bigalke
+: Module to display author-related information
+: @author Ben Bigalke, Ulrike Henny-Krahmer
 : @version 1.0
 :)
 module namespace author="http://localhost:8080/exist/apps/pessoa/author";
@@ -44,78 +44,85 @@ declare function author:getTabs($node as node(), $model as map(*), $textType as 
 };
 
 (:~
-: Funktion zur erstellung der Liste welche dem Nutzer angezeigt wird.
-: Fragt den textTypen ab, welcher Aussagt ob die Resourcen entweder Dokumente oder Publikationen sind, bzw. ob alle Resourcen durchsucht werden sollen
+: Function to generate the list of documents / publications by author shown to the user
+: Checks if the resource is a document or publication or if all types of resources should be searched
 :
-: @param $textType Auswählter textType (all,doc,pub)
-: @param $author Name des Authoren
-: @param $orderBy Sortierungs form chronolgisch | alphabetisch
-: @return Wellformed HTML Content
+: @param $textType chosen type of resource (all,doc,pub)
+: @param $author name of the author
+: @param $orderBy order chronologically or alphabetically
+: @return wellformed HTML content
 :)
 declare function author:getTabContent($node as node(), $model as map(*), $textType, $author, $orderBy) {
     let $authorKey := author:getAuthorId($author)
     let $folders := if($textType eq "all") then ("doc","pub") else $textType
     let $items := for $fold in $folders                              
-                                let $name := if($fold eq "doc") then ("person","role") else "person"
-                                let $case := if($fold eq "doc") then ("eq","eq") else "eq"
-                                let $content := if($fold eq "doc") then ($authorKey,"author") else $authorKey
-                                let $db := search:Search-MultiStats(collection(concat("/db/apps/pessoa/data/",$fold,"/")),$name,$case,$content)
-                                 for $doc in $db 
-                                        let $date := if($fold ="doc") then (
-                                                                if(exists($doc//tei:origDate/@when)) then $doc//tei:origDate/@when/data(.)
-                                                                else if(exists($doc//tei:origDate/@notBefore)) then $doc//tei:origDate/@notBefore/data(.)
-                                                                else if(exists($doc//tei:origDate/@from)) then $doc//tei:origDate/@from/data(.)
-                                                                else "?"
-                                                                )
-                                                            else (
-                                                                if(exists($doc//tei:imprint/tei:date/@when)) then $doc//tei:imprint/tei:date/@when/data(.)
-                                                                else if(exists($doc//tei:imprint/tei:date/@notBefore)) then $doc//tei:imprint/tei:date/@notBefore/data(.)
-                                                                else if(exists($doc//tei:imprint/tei:date/@from)) then $doc//tei:imprint/tei:date/@from/data(.)
-                                                                else "?"
-                                                            )
-                                        let $date :=    if($date eq "?") then "?"  
-                                                                else ( if(contains($date,"-")) then substring-before($date,"-") else $date )                                                   
-                                        let $refer := substring-before(root($doc)/util:document-name(.),".xml") 
-                                        let $first := substring($doc//tei:titleStmt/tei:title/data(.),1,1)
-        (:)
-                                            if($fold eq "doc") then (
-                                                            if(substring($doc//tei:titleStmt/tei:title/data(.),1,1) eq "B") then "BNP"
-                                                            else "CP"
-                                                            )
-                                                            else substring($doc//tei:titleStmt/tei:title/data(.),1,1)
-                                                                          :)
-                                       let $crit := if ($orderBy = "alphab") then $first else $date
-                                      order by $crit
-                                      return <item folder="{$fold}" doc="{$refer}"  title="{replace($doc//tei:titleStmt/tei:title/data(.),"/E3","")}" crit="{$crit}"/>   
-                    let $criteria := for $item in $items return $item/@crit/data(.)                           
-                     let $criteria := distinct-values($criteria)
-                     
-                     let $navigation :=   <div class="navigation"> 
-                                                             {for $crit at $i in $criteria
-                                                                 return if ($i = count($criteria)) then
-                                                                     <a href="#{$crit}" class="authorlink">{$crit}</a>
-                                                                     else
-                                                                     (<a href="#{$crit}" class="authorlink">{$crit}</a>,<span>|</span>)
-                                                             }  
-                                                             <br/>
-                                                             <br/>
-                                                         </div>                         
-                     let $list :=   <div>
-                                            {for $crit in $criteria 
-                                                return (<div class="sub_Nav"><h2 id="{$crit}">{$crit}</h2></div>,
-                                                        for $item in $items where $item/@crit eq $crit
-                                                        order by $item/@title/data(.)
-                                                        return <div class="doctabelcontent">
-                                                             <a href="{$helpers:app-root}/{$item/@folder/data(.)}/{$item/@doc/data(.)}">
-                                                                 {$item/@title/data(.)}
-                                                             </a> 
-                                                              {if($item/@folder/data(.) eq "doc") then <i>{concat(" (",helpers:singleElementInList_xQuery("roles","mentioned-as"),": ",helpers:singleElementInList_xQuery("roles","author"),")")}</i> else ()}
-                                                                
-                                                       </div>
-                                                )
-                                            }       
-                                         </div>                         
-                    return ($navigation,$list)
+                    let $name := if($fold eq "doc") then ("person","role") else "person"
+                    let $case := if($fold eq "doc") then ("eq","eq") else "eq"
+                    let $content := if($fold eq "doc") then ($authorKey,"author") else $authorKey
+                    let $db := search:Search-MultiStats(collection(concat("/db/apps/pessoa/data/",$fold,"/")),$name,$case,$content)
+                    for $doc in $db
+                        let $refer := substring-before(root($doc)/util:document-name(.),".xml") 
+                        let $first := substring($doc//tei:titleStmt/tei:title/data(.),1,1)
+                        let $title := replace($doc//tei:titleStmt/tei:title/data(.),"/E3","")
+                        return
+                            (: return one item per resource for alphabetical order :)
+                            if ($orderBy = "alphab")
+                            then <item folder="{$fold}" doc="{$refer}"  title="{$title}" crit="{$first}"/>
+                            (: return one item per document one possibly several per publication for chronological order :)
+                            else
+                                (: for "doc" there is just one date :)
+                                if ($fold = "doc")
+                                then let $date := if(exists($doc//tei:origDate/@when)) then $doc//tei:origDate/@when/data(.)
+                                                  else if(exists($doc//tei:origDate/@notBefore)) then $doc//tei:origDate/@notBefore/data(.)
+                                                  else if(exists($doc//tei:origDate/@from)) then $doc//tei:origDate/@from/data(.)
+                                                  else "?"
+                                     let $date := if($date eq "?") then "?"  
+                                                  else (if(contains($date,"-")) then substring-before($date,"-") else $date)
+                                     return <item folder="{$fold}" doc="{$refer}"  title="{$title}" crit="{$date}"/>
+                                (: for publications: return one item per journal publication :)
+                                else for $pubdate in $doc//tei:imprint/tei:date
+                                    let $date := if(exists($pubdate/@when)) then $pubdate/@when/data(.)
+                                                 else if(exists($pubdate/@notBefore)) then $pubdate/@notBefore/data(.)
+                                                 else if(exists($pubdate/@from)) then $pubdate/@from/data(.)
+                                                 else "?"
+                                    let $date := if($date eq "?") then "?"  
+                                                 else (if(contains($date,"-")) then substring-before($date,"-") else $date)
+                                    return <item folder="{$fold}" doc="{$refer}"  title="{$title}" crit="{$date}"/>                               
+        
+    (: order all the items :)
+    let $items := for $it in $items
+                  let $crit := $it/@crit
+                  order by $crit
+                  return $it                                   
+    let $criteria := for $item in $items return $item/@crit/data(.)                           
+    let $criteria := distinct-values($criteria)
+     
+    let $navigation := <div class="navigation"> 
+                         {for $crit at $i in $criteria
+                             return if ($i = count($criteria)) then
+                                 <a href="#{$crit}" class="authorlink">{$crit}</a>
+                                 else
+                                 (<a href="#{$crit}" class="authorlink">{$crit}</a>,<span>|</span>)
+                         }  
+                         <br/>
+                         <br/>
+                     </div>                         
+    let $list :=   <div>
+                    {for $crit in $criteria 
+                        return (<div class="sub_Nav"><h2 id="{$crit}">{$crit}</h2></div>,
+                                for $item in $items where $item/@crit eq $crit
+                                order by $item/@title/data(.)
+                                return <div class="doctabelcontent">
+                                     <a href="{$helpers:app-root}/{$item/@folder/data(.)}/{$item/@doc/data(.)}">
+                                         {$item/@title/data(.)}
+                                     </a> 
+                                      {if($item/@folder/data(.) eq "doc") then <i>{concat(" (",helpers:singleElementInList_xQuery("roles","mentioned-as"),": ",helpers:singleElementInList_xQuery("roles","author"),")")}</i> else ()}
+                                        
+                               </div>
+                        )
+                    }       
+                 </div>                         
+    return ($navigation,$list)
 };
 
 

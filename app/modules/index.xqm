@@ -34,34 +34,58 @@ declare function index:printDocLinks($node as node(), $model as map(*),$ref) {
 
 (:### Genre Index ####:)
 
-declare function index:collectGenre($node as node(), $model as map(*),$type as xs:string,$orderBy as xs:string) {
-    let $type := $helpers:lists//tei:list[@type='genres']/tei:item[@xml:id= $type]/tei:note[@type='range']/data(.)
+declare function index:collectGenre($node as node(), $model as map(*), $type as xs:string, $orderBy as xs:string) {
+    (: retrieve the genre key from lists.xml :)
+    let $type := $helpers:lists//tei:list[@type='genres']/tei:item[@xml:id=$type]/tei:note[@type='range']/data(.)
+    (: get the items for that genre :)
     let $items := for $fold in ("doc","pub")                                 
-                                let $db := search:search_range_simple("genre",$type,collection(concat("/db/apps/pessoa/data/",$fold,"/")))
-                                 for $doc in $db 
-                                        let $date := if($fold ="doc") then (
-                                                                if(exists($doc//tei:origDate/@when)) then $doc//tei:origDate/@when/data(.)
-                                                                else if(exists($doc//tei:origDate/@notBefore)) then $doc//tei:origDate/@notBefore/data(.)
-                                                                else if(exists($doc//tei:origDate/@from)) then $doc//tei:origDate/@from/data(.)
-                                                                else "?"
-                                                                )
-                                                            else (
-                                                                if(exists($doc//tei:imprint/tei:date/@when)) then ($doc//tei:imprint)[1]/tei:date/@when/data(.)
-                                                                else if(exists($doc//tei:imprint/tei:date/@notBefore)) then ($doc//tei:imprint)[1]/tei:date/@notBefore/data(.)
-                                                                else if(exists($doc//tei:imprint/tei:date/@from)) then ($doc//tei:imprint)[1]/tei:date/@from/data(.)
-                                                                else "?"
-                                                            )
-                                        let $date :=    if($date eq "?") then "?"  
-                                                                else ( if(contains($date,"-")) then substring-before($date,"-") else $date )                                                   
-                                        let $refer := substring-before(root($doc)/util:document-name(.),".xml") 
-                                        let $first := if($fold eq "doc") then (
-                                                            if(substring($doc//tei:titleStmt/tei:title/data(.),1,1) eq "B") then "BNP"
-                                                            else "CP"
-                                                            )
-                                                            else substring($doc//tei:titleStmt/tei:title/data(.),1,1)                     
-                                       let $crit := if ($orderBy = "alphab") then $first else $date
-                                      order by $crit
-                                      return <item folder="{$fold}" doc="{$refer}"  title="{$doc//tei:titleStmt/tei:title/data(.)}" crit="{$crit}"/>   
+                    let $db := search:search_range_simple("genre",$type,collection(concat("/db/apps/pessoa/data/",$fold,"/")))
+                    for $doc in $db
+                        (: get the title :)
+                        let $title := $doc//tei:titleStmt/tei:title/data(.)
+                        (: get the link to the item :)
+                        let $refer := substring-before(root($doc)/util:document-name(.),".xml")
+                        (: what should it be ordered by alphabetically? (first letter, etc.) :)
+                        let $first := if ($fold = "doc")
+                                      then if(substring($doc//tei:titleStmt/tei:title/data(.),1,1) eq "B") then "BNP" else "CP"
+                                      else substring($doc//tei:titleStmt/tei:title/data(.),1,1)
+                        return
+                            (: return one item per resource for alphabetical order :)
+                            if ($orderBy = "alphab")
+                            then <item folder="{$fold}" doc="{$refer}" title="{$title}" crit="{$first}"/>
+                            (: return one item per document one possibly several per publication for chronological order :)
+                            else
+                                if ($fold="doc")
+                                then 
+                                    (: get the date for documents :)
+                                    let $date := if(exists($doc//tei:origDate/@when)) 
+                                               then $doc//tei:origDate/@when/data(.)
+                                               else if(exists($doc//tei:origDate/@notBefore)) then $doc//tei:origDate/@notBefore/data(.)
+                                               else if(exists($doc//tei:origDate/@from)) then $doc//tei:origDate/@from/data(.)
+                                               else "?"
+                                    (: get the year of the date :)
+                                    let $date := if($date eq "?") 
+                                                 then "?"  
+                                                 else (if(contains($date,"-")) then substring-before($date,"-") else $date)
+                                    return <item folder="{$fold}" doc="{$refer}" title="{$title}" crit="{$date}"/>
+                           (: for publications: return one item per journal publication :)
+                                else
+                                    for $pubdate in $doc//tei:imprint/tei:date
+                                    (: get the date for the journal publication :)
+                                    let $date := if(exists($pubdate/@when)) then $pubdate/@when/data(.)
+                                                else if(exists($pubdate/@notBefore)) then $pubdate/@notBefore/data(.)
+                                                else if(exists($pubdate/@from)) then $pubdate/@from/data(.)
+                                                else "?"
+                                    (: get the year of the date :)
+                                    let $date := if($date eq "?") 
+                                                then "?"  
+                                                else (if(contains($date,"-")) then substring-before($date,"-") else $date)
+                                    return <item folder="{$fold}" doc="{$refer}" title="{$title}" crit="{$date}"/>  
+     (: order all the items :)
+     let $items := for $it in $items
+                   let $crit := $it/@crit
+                   order by $crit
+                   return $it 
      let $criteria := for $item in $items return $item/@crit/data(.)                           
      let $criteria := distinct-values($criteria)
      
