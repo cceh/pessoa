@@ -48,7 +48,7 @@ declare function index:collectGenre($node as node(), $model as map(*), $type as 
                         (: what should it be ordered by alphabetically? (first letter, etc.) :)
                         let $first := if ($fold = "doc")
                                       then if(substring($doc//tei:titleStmt/tei:title/data(.),1,1) eq "B") then "BNP" else "CP"
-                                      else substring($doc//tei:titleStmt/tei:title/data(.),1,1)
+                                      else translate(substring($doc//tei:titleStmt/tei:title/data(.),1,1),"Á","A")
                         return
                             (: return one item per resource for alphabetical order :)
                             if ($orderBy = "alphab")
@@ -80,11 +80,13 @@ declare function index:collectGenre($node as node(), $model as map(*), $type as 
                                     let $date := if($date eq "?") 
                                                 then "?"  
                                                 else (if(contains($date,"-")) then substring-before($date,"-") else $date)
+                                    let $title := $pubdate/ancestor::tei:biblStruct//tei:title[@level="a"]/data(.)
                                     return <item folder="{$fold}" doc="{$refer}" title="{$title}" crit="{$date}"/>  
      (: order all the items :)
      let $items := for $it in $items
                    let $crit := $it/@crit
-                   order by $crit
+                   let $title := $it/@title
+                   order by $crit, $title
                    return $it 
      let $criteria := for $item in $items return $item/@crit/data(.)                           
      let $criteria := distinct-values($criteria)

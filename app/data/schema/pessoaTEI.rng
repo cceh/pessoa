@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2020-07-16T16:26:23Z. 2017ff..
+Schema generated from ODD source 2020-07-18T19:14:35Z. 2017ff..
 TEI Edition: Version 4.0.0. Last updated on
 	13th February 2020, revision ccd19b0ba
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 4.0.0/
@@ -1844,29 +1844,41 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
    <define name="tei_model.qLike">
       <choice>
          <ref name="tei_model.quoteLike"/>
+         <ref name="tei_said"/>
       </choice>
    </define>
    <define name="tei_model.qLike_alternation">
       <choice>
          <ref name="tei_model.quoteLike_alternation"/>
+         <ref name="tei_said"/>
       </choice>
    </define>
    <define name="tei_model.qLike_sequence">
       <ref name="tei_model.quoteLike_sequence"/>
+      <ref name="tei_said"/>
    </define>
    <define name="tei_model.qLike_sequenceOptional">
       <optional>
          <ref name="tei_model.quoteLike_sequenceOptional"/>
+      </optional>
+      <optional>
+         <ref name="tei_said"/>
       </optional>
    </define>
    <define name="tei_model.qLike_sequenceOptionalRepeatable">
       <zeroOrMore>
          <ref name="tei_model.quoteLike_sequenceOptionalRepeatable"/>
       </zeroOrMore>
+      <zeroOrMore>
+         <ref name="tei_said"/>
+      </zeroOrMore>
    </define>
    <define name="tei_model.qLike_sequenceRepeatable">
       <oneOrMore>
          <ref name="tei_model.quoteLike_sequenceRepeatable"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="tei_said"/>
       </oneOrMore>
    </define>
    <define name="tei_model.respLike">
@@ -2290,6 +2302,12 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
          <empty/>
       </element>
    </define>
+   <define name="tei_said">
+      <element name="said">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(speech or thought) indicates passages thought or spoken aloud, whether explicitly indicated in the source or not, whether directly or indirectly reported, whether by real people or fictional characters. [3.3.3. Quotation]</a:documentation>
+         <ref name="tei_macro.specialPara"/>
+      </element>
+   </define>
    <define name="tei_quote">
       <element name="quote">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(quotation) contains a phrase or passage attributed by the narrator or author to some agency external to the text. [3.3.3. Quotation 4.3.1. Grouped Texts]</a:documentation>
@@ -2423,6 +2441,8 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
                         <value>below</value>
                         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                         <value>after</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                        <value>margin-left</value>
                         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                      </choice>
                   </oneOrMore>
@@ -3446,6 +3466,8 @@ Sample values include: 1] issue; 2] page</a:documentation>
                   <oneOrMore>
                      <choice>
                         <value>center</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                        <value>right</value>
                         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                      </choice>
                   </oneOrMore>

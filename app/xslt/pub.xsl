@@ -125,7 +125,17 @@
     </xsl:template>
     
     <xsl:template match="dateline">
-        <p class="dateline"><xsl:apply-templates /></p>
+        <p>
+            <xsl:choose>
+                <xsl:when test="@rend">
+                    <xsl:attribute name="class">dateline <xsl:value-of select="@rend"/></xsl:attribute>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:attribute name="class">dateline</xsl:attribute>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:apply-templates />
+        </p>
     </xsl:template>
     
     <xsl:template match="salute">

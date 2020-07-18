@@ -9,7 +9,7 @@ declare function pub:get-title($node as node(), $model as map(*), $id as xs:stri
     let $xml := pub:get-xml($id)
     (: get the xml, title and author of the publication :)
     let $title := <h2>{$xml//tei:titleStmt/tei:title/data(.)}</h2>
-    let $author := <p class="titleline_additional" id="t_add_3"> {$xml//tei:titleStmt/tei:author/tei:rs/data(.)}</p>
+    let $author := <p class="titleline_additional" id="t_add_3"> {string-join($xml//tei:titleStmt/tei:author/tei:rs/data(.),', ')}</p>
     return ($title, $author,
     
         (: get the details for each journal publication :)
@@ -34,7 +34,7 @@ declare function pub:get-text($node as node(), $model as map(*), $id as xs:strin
     let $xml := pub:get-xml($id)
     let $genre := $xml//tei:note[@type='genre']/tei:rs[@type="genre"]/@key
     let $stylesheet := if ($genre = "prosa") then doc("/db/apps/pessoa/xslt/pub-prose.xsl") else doc("/db/apps/pessoa/xslt/pub.xsl")
-    return transform:transform($xml, $stylesheet, ())
+    return transform:transform($xml, $stylesheet, (<parameters><param name="lang" value="{$helpers:web-language}"/></parameters>))
 };
 
 declare function pub:get-xml($id){

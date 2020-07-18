@@ -1845,6 +1845,9 @@ div#text-div #W232 {
 }
 
 /* STYLES FOR PROSE PUBLICATIONS */
+div#text-div .text.prose h2 {
+    text-align: center;
+}
 div#text-div .text.prose .milestone.line {
     text-align: center;
     font-weight: bold;
@@ -1870,6 +1873,13 @@ div#text-div .text.prose .note .label {
 div#text-div .text.prose .quote.tooltip {
     display: block;
 }
+div#text-div .text.prose .rs.tooltip {
+    display: inline-block;
+}
+div#text-div .text.prose .addition {
+    color: #990000;
+    cursor: pointer;
+}
 div#text-div .text.prose .tooltip {
     position: relative;
     display: inline-block;
@@ -1894,16 +1904,28 @@ div#text-div .text.prose .tooltiptext {
     font-family: inherit;
     min-width: 100px;
 }
-div#text-div .text.prose .tooltip:hover .tooltiptext {
+div#text-div .text.prose .addition .tooltiptext {
+    min-width: 0;
+    text-indent: 0;
+}
+div#text-div .text.prose .tooltip:hover .tooltiptext, 
+div#text-div .text.prose .addition:hover .tooltiptext  {
     visibility: visible;
 }
-div#text-div .text.prose .milestone.section {
+div#text-div .text.prose .milestone.section, div#text-div .text.prose .milestone.title {
     text-align: center;
 }
 div#text-div .text.prose p.small {
     font-size: small;
 }
 /* STYLES FOR INDIVIDUAL PROSE PUBLICATIONS */
+div#text-div .text.prose#W198 .stage.right {
+    width: 70%;
+    margin: 0 0 0 auto;
+}
+div#text-div .text.prose#W227 .tooltiptext {
+    width: 200px;
+}
 div#text-div .text.prose#W202 .bibl.right.indent-second {
     width: 70%;
     text-align: left;

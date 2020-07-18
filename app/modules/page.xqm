@@ -79,7 +79,7 @@ declare function page:search_SwitchLang() as xs:string? {
 };
 
 (:~
-: Erstellt individuel die Maps die für die generierung der Navigation verantwortlich sind
+: Erstellt individuell die Maps, die für die Generierung der Navigation verantwortlich sind
 : Prüft welchen Type die node() aus der lists.xml hat und verlinkt innerhalb der Website die erforderlichen Daten
 :)
 declare function page:catchSub($list as node(),$item as node()) as map(*)* {
@@ -224,7 +224,9 @@ let $mapping := for $doc in $docs
                                 else if(contains($elem,"CP")) then replace($elem,"CP ","")
                                 else $elem
                             )
-                        else replace(replace(substring-before($name,".xml"),("Caeiro|Pessoa|Campos|Reis"),""),("-| |_")," ")
+                        (: publication titles :)
+                        (: else replace(replace(substring-before($name,".xml"),("Caeiro|Pessoa|Campos|Reis"),""),("-| |_")," ") :)
+                        else doc(concat("/db/apps/pessoa/data/pub/",$name))//tei:titleStmt/tei:title/data(.)
                     return map {
                     "site" := ($title,<span class="doc_superscript"/>),
                     "publ" := $doc/@availability,

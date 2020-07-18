@@ -72,7 +72,7 @@
     <text corresp="#W266">
         <body>
             <div>
-                <head rend="center">ATHENA</head>
+                <head>ATHENA</head>
                 <p rend="indent-first">Tem duas fórmas, ou modos, o que chamamos cultura. Não é a
                     cultura senão o aperfeiçoamento subjectivo da vida. Esse aperfeiçoamento é
                     directo ou indirecto; ao primeiro se chama arte, sciencia ao segundo. Pela arte
@@ -99,16 +99,19 @@
                 <milestone rend="asterisk" unit="section"/>
                 <p rend="indent-first">Se é lícito que acceitemos que a alma se divide em duas
                     partes – uma como material, a outra puro espirito –, diremos, de qualquer
-                    conjuncto ou homem hoje civilizado, que deve a primeira á nação <choice>
-                        <sic> </sic>
-                        <corr resp="#FP">de</corr>
-                    </choice><!-- JU: This is an interesting case where Pessoa corrected the publicaction 
+                    conjuncto ou homem hoje civilizado, que deve a primeira á nação <!-- JU: This is an interesting case where Pessoa corrected the publicaction 
                             by hand, as shown in the image.
-                        those this "resp" atibution works for this case?-->
-                    que é ou em que nasceu, a segunda á Grecia antiga. <hi rend="italic">Exceptas as
-                        forças cegas da Natureza</hi>, disse <rs type="name" key="P484">Sumner
-                        Maine</rs>, <hi rend="italic">tudo, quanto neste mundo se move, é grego em
-                        sua origem</hi>.</p>
+                        those this "resp" atibution works for this case?
+                    U: here you can use <add> and the attribute @place to say where the addition was made. 
+                    If it is by the author himself, @resp is not needed (the author is the 
+                    responsible person by default).
+                    The question is how to display that this was added. If we follow the model we have
+                    for the other phenomena, maybe mouseover again? Highlight the word in red and then 
+                    a box saying: addition ? (or something else) what would be the portuguese word, adição? -->
+                    <add place="margin-left">de</add> que é ou em que nasceu, a segunda á Grecia
+                    antiga. <hi rend="italic">Exceptas as forças cegas da Natureza</hi>, disse <rs
+                        type="name" key="P484">Sumner Maine</rs>, <hi rend="italic">tudo, quanto
+                        neste mundo se move, é grego em sua origem</hi>.</p>
                 <p rend="indent-first">Estes gregos, que ainda nos governam de além dos proprios
                     tumulos desfeitos, figuraram em dois deuses a producção da arte, cujas fórmas
                     todas lhes devemos e de que só não crearam a necessidade e a imperfeição.
@@ -204,7 +207,6 @@
                     tambem as inferiores e as concretas podem, em certo modo, alçar-se ao da
                     suprema. Assim é que toda arte, seja qual fôr seu lugar natural, deve tender
                     para a abstracção das artes maiores.</p>
-
                 <p rend="indent-first">Trez são os elementos abstractos que pode haver em qualquer
                     arte, e que podem portanto nella sobresahir: a ordenação logica do todo em suas
                     partes, o conhecimento objectivo da materia que ella informa, e a excedencia
@@ -212,13 +214,11 @@
                     grau, manifestarem-se estes elementos, ainda que só nas artes abstractas, e
                     sobretudo na litteratura, que é a mais completa, possam manifestar-se
                     inteiramente.</p>
-
                 <p rend="indent-first">A mesma abstracção é tambem o estádio supremo da sciencia.
                     Tende esta para ser mathematica, isto é, abstracta, á medida que se eleva e se
                     aperfeiçôa. É pois no nivel da abstracção que a arte e a sciencia, ambas se
                     alçando, se conjugam, como dois caminhos no pincaro para que ambos tendam. É
                     este o império de Athena, cuja acção é a harmonia.</p>
-
                 <p rend="indent-first">Como, porém, toda sciencia, se tende para a mathematica,
                     tende, com isso, para uma abstracção concreta, applicavel á realidade e
                     verificavel em seus movimentos physicos; assim toda arte, por mais que se eleve,
@@ -233,9 +233,7 @@
                     abstracto. Isto estabeleceu <rs type="name" key="P401">Aristoteles</rs>, uma vez
                     para sempre, naquella sua phrase que é toda a esthetica: <hi rend="italic">um
                         poema</hi>, disse, <hi rend="italic">é um animal</hi>.</p>
-
                 <milestone rend="asterisk" unit="section"/>
-
                 <p rend="indent-first">Existe ainda o preconceito, nascido ou de se attender só ás
                     fórmas inferiores da arte, ou de se attender inferiormente a qualquer d’ellas,
                     de que a arte deve dar prazer ou alegria. Ninguem cuide, esquecendo os grandes

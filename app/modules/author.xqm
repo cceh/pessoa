@@ -62,7 +62,7 @@ declare function author:getTabContent($node as node(), $model as map(*), $textTy
                     let $db := search:Search-MultiStats(collection(concat("/db/apps/pessoa/data/",$fold,"/")),$name,$case,$content)
                     for $doc in $db
                         let $refer := substring-before(root($doc)/util:document-name(.),".xml") 
-                        let $first := substring($doc//tei:titleStmt/tei:title/data(.),1,1)
+                        let $first := translate(substring($doc//tei:titleStmt/tei:title/data(.),1,1),"Á","A")
                         let $title := replace($doc//tei:titleStmt/tei:title/data(.),"/E3","")
                         return
                             (: return one item per resource for alphabetical order :)
@@ -87,12 +87,14 @@ declare function author:getTabContent($node as node(), $model as map(*), $textTy
                                                  else "?"
                                     let $date := if($date eq "?") then "?"  
                                                  else (if(contains($date,"-")) then substring-before($date,"-") else $date)
+                                    let $title := $pubdate/ancestor::tei:biblStruct//tei:title[@level="a"]/data(.)
                                     return <item folder="{$fold}" doc="{$refer}"  title="{$title}" crit="{$date}"/>                               
         
     (: order all the items :)
     let $items := for $it in $items
                   let $crit := $it/@crit
-                  order by $crit
+                  let $title := $it/@title
+                  order by $crit, $title
                   return $it                                   
     let $criteria := for $item in $items return $item/@crit/data(.)                           
     let $criteria := distinct-values($criteria)
