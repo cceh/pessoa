@@ -27,7 +27,6 @@
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
                 <availability status="restricted">
-                    <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_Mario_de_Sa-Carneiro.xml</idno>
@@ -39,7 +38,7 @@
             </notesStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O4-X">Mário de Sá-Carneiro (1890-1916)</rs></item>
+                    <item><rs type="work" key="W241">Mário de Sá-Carneiro (1890-1916)</rs></item>
                 </list>
                 <biblStruct>
                     <analytic>
@@ -48,24 +47,15 @@
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
                         <title level="j"><rs type="periodical" key="J2">Athena</rs></title>
                         <imprint>
                             <date when="1924-11">Novembro de 1924</date>
-                            <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                         </imprint>
                         <biblScope unit="issue">2</biblScope>
                         <biblScope unit="page">41-42</biblScope>
                     </monogr>
-                    <!-- here goes the bibliographical reference for the source publication -->
-                    <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
-                    <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
@@ -77,20 +67,17 @@
         <graphic url="prosa/Mário_de_SaCarneiro.jpg"/>
         <graphic url="prosa/Mário_de_SaCarneiro_2.jpg"/>
     </facsimile>
-    <text corresp="#O1-X">
-        <!-- @corresp: contains the index of this WORK. 
-        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
-        This can be left as is in the beginning.
-    -->
+    <text corresp="#W241">
         <body>
             <div>
                 <head><rs type="name" key="P30">MARIO DE SÁ-CARNEIRO</rs></head>
                 <head type="sub">(1890-1916)</head>
-                <head type="sub" rend="right">Atque in perpetuum, frate, ave atque vale!</head>
-                <!--Note quotation-->
-                <head type="sub" rend="right"><rs type="name" key="P499">CAT[ULO]</rs></head>
-                <!--Note quotation-->
-
+                <p rend="position-center"><!-- JU: I think this should go to the right, not sure if is a p --><quote>
+                    <hi rend="italic">Atque in perpetuum, frater, ave atque vale!
+                </hi><note type="comment" resp="#JU"
+                    ><hi rend="italic">Carmina</hi> 101, Catulo</note></quote>
+                <rs type="name" key="P499">
+                    <choice><abbr>CAT<expan>CAT<ex>CATULO</ex></expan></abbr></choice></rs></p>
                 <p rend="indent-first"><hi rend="italic">Morre jovem o que os Deuses amam</hi>, é um
                     preceito da sabedoria antiga. E porcerto a imaginação, que figura novos mundos,
                     e a arte, que em obras os finge, são os signaes notaveis d’esse amor divino. Não
@@ -99,7 +86,6 @@
                     homem não pode ser egual dos Deuses, pois o Destino os separou, não corre homem
                     nem se alteia deus pelo amor divino: estagna só deus fingido, doente da sua
                     ficção.</p>
-
                 <p rend="indent-first">Não morrem jovens todos a que os Deuses amam, senão
                     entendendo-se per morte o acabamento do que constitue a vida. E como á vida,
                     além da mesma vida, a constitue o instincto natural com que se a vive, os
@@ -107,7 +93,6 @@
                     vivel-a. Uns morrem; aos outros, tirado o instincto com que vivam, pesa a vida
                     como morte, vivem morte, morrem a vida em ella mesma. E é na juventude, quando
                     nelles desabrocha a flor fatal e unica, que começam a sua morte vivida.</p>
-
                 <p rend="indent-first">No heroe, no sancto e no genio os Deuses se lembram dos
                     homens. O heroe é um homem como todos, a quem coube por sorte o auxilio divino;
                     não está nelle a luz que lhe astreia a fronte, sol da gloria ou luar da morte, e
@@ -128,7 +113,6 @@
                     belleza alheia, e da magoa de conhecer a universal ignorancia, o soffrimento
                     proprio, de se sentir par dos Deuses sendo homem, par dos homens sendo deus,
                     exul ao mesmo tempo em duas terras.</p>
-
                 <p rend="indent-first">Genio na arte, não teve <rs type="name" key="P30"
                         >Sá-Carneiro</rs> nem alegria nem felicidade nesta vida. Só a arte, que fez
                     ou que sentiu, por instantes o turbou de consolação. São assim os que os Deuses
@@ -136,7 +120,6 @@
                     acolhe. Ou morrem jovens, ou a si mesmos sobrevivem, incolas da incomprehensão
                     ou da indifferença. Este morreu jovem, porque os Deuses lhe tiveram muito
                     amor.</p>
-
                 <p rend="indent-first">Mas para <rs type="name" key="P30">Sá-Carneiro</rs>, genio
                     não só da arte mas da innovação nella, junctou-se, á indifferença que circumda
                     os genios, o escarneo que persegue os innovadores, prophetas, como Cassandra, de
@@ -150,7 +133,6 @@
                     mimos. Decide supremo qualquer soldado barbaro, que a guarda impoz imperador.
                     Nada nasce de grande que não nasça maldicto, nem cresce de nobre que se não
                     definhe, crescendo. Se assim é, assim seja! Os Deuses o quizeram assim.</p>
-
                 <signed rend="right">Fernando Pessoa</signed>
             </div>
         </body>
