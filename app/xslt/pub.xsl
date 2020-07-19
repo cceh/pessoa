@@ -55,7 +55,14 @@
     </xsl:template>
     
     
-    <xsl:template match="head">
+    <xsl:template match="head[not(@type='sub')]">
+        <h1>
+            <xsl:call-template name="rend" />
+            <xsl:apply-templates />
+        </h1>
+    </xsl:template>
+    
+    <xsl:template match="head[@type='sub']">
         <h2>
             <xsl:call-template name="rend" />
             <xsl:apply-templates />

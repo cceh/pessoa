@@ -1845,6 +1845,10 @@ div#text-div #W232 {
 }
 
 /* STYLES FOR PROSE PUBLICATIONS */
+div#text-div .text.prose {
+    padding-left: 2em;
+    padding-right: 2em;
+}
 div#text-div .text.prose h2 {
     text-align: center;
 }
@@ -1876,7 +1880,7 @@ div#text-div .text.prose .quote.tooltip {
 div#text-div .text.prose .rs.tooltip {
     display: inline-block;
 }
-div#text-div .text.prose .addition {
+div#text-div .text.prose .addition, div#text-div .text.prose .abbreviation {
     color: #990000;
     cursor: pointer;
 }
@@ -1909,7 +1913,8 @@ div#text-div .text.prose .addition .tooltiptext {
     text-indent: 0;
 }
 div#text-div .text.prose .tooltip:hover .tooltiptext, 
-div#text-div .text.prose .addition:hover .tooltiptext  {
+div#text-div .text.prose .addition:hover .tooltiptext,
+div#text-div .text.prose .abbreviation:hover .tooltiptext{
     visibility: visible;
 }
 div#text-div .text.prose .milestone.section, div#text-div .text.prose .milestone.title {
@@ -1919,6 +1924,20 @@ div#text-div .text.prose p.small {
     font-size: small;
 }
 /* STYLES FOR INDIVIDUAL PROSE PUBLICATIONS */
+div#text-div .text.prose#W241 .citation.right {
+    width: 55%;
+    margin: 0 0 0 auto;
+}
+div#text-div .text.prose#W241 .citation.right p.bibl {
+    padding: 0;
+    margin: 0;
+}
+
+div#text-div .text.prose#W240 .argument.center {
+    text-align: justify;
+    width: 90%;
+    margin: 0 auto;
+}
 div#text-div .text.prose#W198 .stage.right {
     width: 70%;
     margin: 0 0 0 auto;

@@ -64,20 +64,29 @@
         </encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
-        <graphic url="prosa/Mário_de_SaCarneiro.jpg"/>
-        <graphic url="prosa/Mário_de_SaCarneiro_2.jpg"/>
+        <graphic url="prosa/Mario_de_SaCarneiro.jpg"/>
+        <graphic url="prosa/Mario_de_SaCarneiro_2.jpg"/>
     </facsimile>
     <text corresp="#W241">
         <body>
             <div>
                 <head><rs type="name" key="P30">MARIO DE SÁ-CARNEIRO</rs></head>
                 <head type="sub">(1890-1916)</head>
-                <p rend="position-center"><!-- JU: I think this should go to the right, not sure if is a p --><quote>
-                    <hi rend="italic">Atque in perpetuum, frater, ave atque vale!
-                </hi><note type="comment" resp="#JU"
-                    ><hi rend="italic">Carmina</hi> 101, Catulo</note></quote>
-                <rs type="name" key="P499">
-                    <choice><abbr>CAT<expan>CAT<ex>CATULO</ex></expan></abbr></choice></rs></p>
+                <!-- JU: I think this should go to the right, not sure if is a p
+                U: if you have both a quotation and an indication of its source as here, there is an 
+                element <cit> (citation of a quotation with bibliographic reference), which 
+                then contains both <quote> and <bibl>. -->
+                <cit rend="right">
+                    <quote>
+                        <hi rend="italic">Atque in perpetuum, frater, ave atque vale!</hi><note
+                            type="comment" resp="#JU"><hi rend="italic">Carmina</hi> 101,
+                            Catulo</note></quote>
+                    <bibl rend="center"><rs type="name" key="P499">
+                            <choice>
+                                <abbr>CAT<am>.</am></abbr>
+                                <expan>CAT<ex>ULO</ex></expan>
+                            </choice></rs></bibl>
+                </cit>
                 <p rend="indent-first"><hi rend="italic">Morre jovem o que os Deuses amam</hi>, é um
                     preceito da sabedoria antiga. E porcerto a imaginação, que figura novos mundos,
                     e a arte, que em obras os finge, são os signaes notaveis d’esse amor divino. Não

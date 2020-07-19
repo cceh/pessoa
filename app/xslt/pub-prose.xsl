@@ -21,7 +21,6 @@
                 h2.center {text-align: center;}
                 div.poem {margin: 20px 0;}
                 div.ab-right {text-align: right;}
-                div.prose {padding-right: 20px;}
             </style>
             <xsl:apply-templates />
             <xsl:apply-templates select="//note[@type='summary']"/>
@@ -63,6 +62,20 @@
             </xsl:choose>
             <xsl:apply-templates/>
         </p>
+    </xsl:template>
+    
+    <xsl:template match="argument">
+        <div>
+            <xsl:choose>
+                <xsl:when test="@rend">
+                    <xsl:attribute name="class">argument <xsl:value-of select="@rend"/></xsl:attribute>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:attribute name="class">argument</xsl:attribute>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:apply-templates/>
+        </div>
     </xsl:template>
     
     
@@ -147,6 +160,20 @@
         </p>
     </xsl:template>
     
+    <xsl:template match="cit[parent::div and preceding-sibling::head]">
+        <div>
+            <xsl:choose>
+                <xsl:when test="@rend">
+                    <xsl:attribute name="class">citation <xsl:value-of select="@rend"/></xsl:attribute>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:attribute name="class">citation</xsl:attribute>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:apply-templates/> 
+        </div>
+    </xsl:template>
+    
     <!-- choice, corr, sic -->
     <!--<xsl:template match="choice[sic and corr]">
         <span class="corr tooltip">
@@ -172,26 +199,35 @@
             <xsl:apply-templates/>
             <span class="tooltiptext">
                 <xsl:choose>
-                    <xsl:when test="$lang = 'pt'">adição</xsl:when>
-                    <xsl:when test="$lang = 'de'">Hinzufügung</xsl:when>
-                    <xsl:otherwise>addition</xsl:otherwise>
+                    <xsl:when test="$lang = 'pt'">acréscimo manuscrito</xsl:when>
+                    <xsl:when test="$lang = 'de'">handschriftliche Ergänzung</xsl:when>
+                    <xsl:otherwise>addition by hand</xsl:otherwise>
                 </xsl:choose>
             </span>
         </span>
     </xsl:template>
     
     <!-- abbreviation and expansion -->
-    <xsl:template match="choice[abbr and expan[ex]]">
-        <xsl:apply-templates select="expan/text() | expan/child::*"/>
+    <xsl:template match="choice[abbr and expan]">
+        <span class="abbreviation">
+            <xsl:apply-templates select="abbr"/>
+            <span class="tooltiptext">
+                <xsl:apply-templates select="expan"/>
+            </span>
+        </span>
     </xsl:template>
     
-    <xsl:template match="choice[abbr and expan[not(ex)]]">
-        <span class="expan">[<xsl:apply-templates select="expan/text() | expan/child::*"/>]</span>
+    <xsl:template match="expan">
+        <span class="expansion">
+            <xsl:apply-templates />
+        </span>
     </xsl:template>
     
     <xsl:template match="ex">
-        <span class="ex">[<xsl:apply-templates />]</span>
+        <xsl:text>[</xsl:text><xsl:apply-templates/><xsl:text>]</xsl:text>
     </xsl:template>
+    
+    
     
     <!-- formulas -->
     <xsl:template match="ab[@type='formula']">
