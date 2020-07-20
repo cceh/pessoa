@@ -4,7 +4,7 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>NÓS OS DE “ORPHEU”</title>
+                <title>Nós os de “ORPHEU”</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
                 </author>
@@ -26,8 +26,7 @@
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
-                <availability status="restricted">
-                    <!-- @status will be set to "free" once the document is ready to be published -->
+                <availability status="free">
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_Nós_Os_De_Orpheu.xml</idno>
@@ -39,42 +38,25 @@
             </notesStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O1-X">NÓS OS DE “ORPHEU”</rs></item>
+                    <item><rs type="work" key="W242">Nós os de “ORPHEU”</rs></item>
                 </list>
                 <biblStruct>
                     <analytic>
-                        <title level="a">NÓS OS DE “ORPHEU”</title>
+                        <title level="a">Nós os de “ORPHEU”</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
                         <title level="j"><rs type="periodical" key="J30">Sudoeste, Cadernos de
                                 Almada Negreiros</rs></title>
-                        <!-- @key is to identify the periodical. You can find other periodicals IDs in the file 
-                            lists.xml in the data folder. In that file, 
-                        look for the sublist <list type="periodical">, currently beginning at line 1450. You can also add
-                        new periodicals there -->
                         <imprint>
                             <date when="1935-11">Novembro de 1935</date>
-                            <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                         </imprint>
                         <biblScope unit="issue">3</biblScope>
                         <biblScope unit="page">3</biblScope>
                     </monogr>
-                    <!-- here goes the bibliographical reference for the source publication -->
-                    <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
-                    <!-- @key is to identify the periodical. You can find other periodicals IDs in the file 
-                            lists.xml in the data folder. In that file, 
-                        look for the sublist <list type="periodical">, currently beginning at line 1450. You can also add
-                        new periodicals there -->
-                    <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
@@ -85,39 +67,33 @@
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/Nós_os_de_orpheu.jpg"/>
     </facsimile>
-    <text corresp="#O1-X">
-        <!-- @corresp: contains the index of this WORK. 
-        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
-        This can be left as is in the beginning.-->
+    <text corresp="#W242">
         <body>
             <div>
-
                 <head>NÓS OS DE “<rs type="periodical" key="J12">ORPHEU</rs>”</head>
 
-                <p rend="indent-first">Anunciou Almada, no segundo número de «<rs type="periodical"
+                <p rend="indent-first">Anunciou <rs type="name" key="P56">Almada</rs>, 
+                    no segundo número de «<rs type="periodical"
                         key="J30">SW</rs>», que nêste terceiro se inseriria colaboração dos que
                     foram de  <rs type="periodical" key="J12"><hi rend="italic">Orpheu</hi></rs>.
                     Cumpre-se.</p>
-
-                <p rend="indent-first">Procurámos coordenar, Almada e eu, produções inéditas de
+                <p rend="indent-first">Procurámos coordenar, <rs type="name" key="P56">Almada</rs> e eu, produções inéditas de
                     quantos figuraram literàriamente na revista extinta e inextinguível a que ambos
                     pertencemos. Excluídos, por motivo de estreiteza de tempo e largueza de
                     distância, os dois colaboradores brasileiros – <rs type="name" key="P513">Ronald
                         de Carvalho</rs> e <rs type="name" key="P514">Eduardo Guimarães</rs> –
                     conseguimos que estivessem presentes todos os outros, com duas excepções, uma
                     delas atenuada com o sacrifício do ineditismo.</p>
-
                 <p rend="indent-first">De <rs type="name" key="P80">Ângelo de Lima</rs>, como nada
                     descobrissemos de inédito, decidimos publicar aquele extraordinário soneto – dos
                     maiores da língua portuguesa – em que o poeta descreve a sua entrada na loucura,
                     em que longos anos viveu e em que morreu. O soneto, se não é inédito, está
                     contudo esquecido. Publicando-o, não deixamos de, saüdosamente, fazer lembrar
                     quem, não sendo nosso, todavia se tornou nosso.</p>
-
                 <p rend="indent-first">Nada porém foi possível incluir de <rs type="name" key="P37"
                         >Côrtes-Rodrigues</rs>, que é directamente de <rs type="periodical"
                         key="J12"><hi rend="italic">Orpheu</hi></rs>, e os poemas de cuja
-                    personalidade inventada, Violante de <rs type="name" key="P58">Cysneiros</rs>,
+                    personalidade inventada, <rs type="name" key="P37" style="b">Violante de Cysneiros</rs>,
                     são uma maravilha subtil de criação dramática. Nêste caso a dificuldade foi,
                     como no dos brasileiros, geográfica: estas produções foram coordenadas à pressa,
                         <rs type="name" key="P37">Côrtes-Rodrigues</rs> vive nos Açores. Aqui lhe
@@ -128,20 +104,16 @@
                     se aumenta o número de vítimas literárias da pièguice fruste e asiática de <rs
                         type="name" key="P515">S. Francisco de Assis</rs>, um dos mais venenosos e
                     traiçoeiros inimigos da mentalidade ocidental.</p>
-
                 <p rend="indent-first">Quanto ao mais, nada mais. Cá estamos sempre.</p>
-
                 <p rend="indent-first"><rs type="periodical" key="J12"><hi rend="italic"
                         >Orpheu</hi></rs> acabou. <rs type="periodical" key="J12"><hi rend="italic"
                             >Orpheu</hi></rs> continua.</p>
-
-                <signed>FERNANDO PESSOA<lb/>
-                    <l>Na imposssibilidade de darmos colaboraçao de <rs type="name" key="P144">José
+                <signed>FERNANDO PESSOA</signed>
+                    <argument>Na imposssibilidade de darmos colaboraçao de <rs type="name" key="P144">José
                             Pacheco</rs> e de <rs type="name" key="P516">Santa-Rita Pintor</rs>,
                         aqui deixamos os seus nomes ligados aos de «<rs type="periodical" key="J12"
-                            >Orpheu</rs>»</l>
-                    <l><rs type="periodical" key="J30">SW</rs></l>
-                </signed>
+                            >Orpheu</rs>»</argument>
+                    <signed><rs type="periodical" key="J30">SW</rs></signed>
             </div>
         </body>
     </text>

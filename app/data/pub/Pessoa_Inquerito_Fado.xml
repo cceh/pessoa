@@ -74,15 +74,12 @@
         <body>
             <div>
                 <head>O NOSSO INQUERITO SOBRE O FADO</head>
-                <argument rend="center"><p>O FADO SERÁ OU NÃO UMA CANÇÃO NACIONAL? – OS SEUS INTUITOS
+                <argument hand="#Anonymous" rend="center"><p>O FADO SERÁ OU NÃO UMA CANÇÃO NACIONAL? – OS SEUS INTUITOS
                     SÃO MORALISADORES, OU PELO CONTRARIO ANTINGIRÃO UMA FEIÇÃO DISSOLVENTE? – HA
                     VANTAGEM EM DAR AO FADO O DESENVOLVIMENTO NECESSARIO A ELEGE-LO COMO UMA
                     ESPECIALISAÇÃO ARTISTICA, ETNICA, OU MUSICAL? – TURISTICO, POETICO, SAUDOSISTA,
                     INVOCATIVO, REGIONAL, REPRESENTA O FADO UMA EXPRESSÃO DE BELEZA, DE PROPAGANDA,
                     DE ATRAÇÃO NACIONAL?</p></argument>
-                <!-- U: There is a special element <argument> for introductory descriptions of the content
-                of following sections. As it can be used between headings, you do not need a second 
-                division here. -->
                 <head type="sub">TEEM A PALAVRA, ESCRIPTORES E ARTISTAS:</head>
                 <!-- JU: Should we mark in the TEI that this introduction was not written by Pessoa?
                 U: there is an attribute @hand which could be used to mark passages not written by Pessoa.
@@ -92,6 +89,10 @@
                 Then we could add this attribute and some necessary elements related to it in the TEI header.
                 Otherwise or also in addition, maybe it would be an option to describe such cases in the general 
                 note in the TEI header.
+                JU: I'm not sure I'm seing all the implications this has, we will have some text that 
+                have introductions not by Pessoa, I think in most cases we will not know who the 
+                author is.I Think it can be important to mark them as diferent kind of texts in the edition, 
+                if you think argument is the tool I think we should use it 
                 -->
                 <p rend="indent-first">Toda a poesia – e a canção é uma poesia ajudada – reflete o
                     que a alma não tem. Porisso a canção dos povos tristes é alegre, e a canção dos
