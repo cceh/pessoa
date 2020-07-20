@@ -12,39 +12,12 @@
 
 	<xsl:template match="/">
 		<html>
-			<!--<style type="text/css">
-				
-					h1{
-				    text-align:center;
-				    font-size:larger;
-				    padding-top:1em;
-				    padding-bottom:2em;
-				}
-				
-				h2{
-				    font-size:medium;
-				    margin-bottom:10px;
-				}
-				
-				p + h2{
-				    padding-top:1em;
-				}
-				
-				p.bibl{
-				    padding-left:20px;
-				    text-indent:-20px;
-				}</style>-->
-
 			<head>
 				<title>
 					<xsl:value-of select="$title"/>
 				</title>
 			</head>
-
 			<body>
-				<!--<h1>
-					<xsl:value-of select="$title"/>
-				</h1>-->
 				<xsl:apply-templates/>
 			</body>
 		</html>
@@ -65,7 +38,7 @@
 			<xsl:value-of select="head"/>
 		</h2>
 		<xsl:for-each select="bibl">
-			<p class="bibl">
+			<p class="bibl" id="{@xml:id}">
 				<xsl:apply-templates/>
 			</p>
 		</xsl:for-each>

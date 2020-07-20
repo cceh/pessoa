@@ -33,7 +33,7 @@
         </div>
     </xsl:template>
     
-    <xsl:template match="ref[@target]">
+    <xsl:template match="ref[@target[not(contains(.,' '))]]">
         <a class="link">
             <xsl:attribute name="href">
                 <xsl:choose>
@@ -45,6 +45,19 @@
             </xsl:attribute>
             <xsl:apply-templates/>
         </a>
+    </xsl:template>
+    
+    <!-- links with several destinations -->
+    <xsl:template match="ref[@target[contains(.,' ')]]">
+        <span class="links">
+            <xsl:apply-templates/>
+            <span class="tooltiptext">
+                <xsl:for-each select="tokenize(@target,'\s')">
+                    <a class="link" href="{.}"><xsl:value-of select="."/></a>
+                    <xsl:if test="position() != last()"><br/></xsl:if>
+                </xsl:for-each>
+            </span>
+        </span>
     </xsl:template>
     
     <xsl:template match="p">

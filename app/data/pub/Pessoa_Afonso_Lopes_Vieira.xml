@@ -35,7 +35,8 @@
                 <note type="summary" resp="#JU">Texto recuperado por Manuela Parreira da Silva
                     (Silva, 1996 p. 58). A atribuição de autoria decorre do confronto com o
                     manuscrito BNP 125A-26 a 29, praticamente idêntico ao texto publicado. O texto
-                    foi integrado em <hi rend="italic">Sebastianismo e Quinto Império</hi> (Pessoa, 2011, pp.
+                    foi integrado em <hi rend="italic">Sebastianismo e Quinto Império</hi> (Pessoa,
+                    2011, pp.
                     156-158).<!-- JU: Not sure how to use the bibliography yet.
                     U: do you mean the one on the website? That is a very good idea. You could set links
                     to it. The bibliography which is shown on the website is contained in a separate TEI file
@@ -45,7 +46,27 @@
                     I could add those. Then you can do links here, e.g. (just inventing for the moment, #B1 being the identifier):
                     (<ref target="http://www.pessoadigital.pt/pt/bibliography/Works_of_Fernando_Pessoa#B1">Pessoa, 2011B</ref>, pp. 156-158).
                     Ju: I think this will be a very good resource, but you will have to guide me thru, 
-                    can you do a first real example so I can follow?--></note>
+                    can you do a first real example so I can follow?
+                    U: ok, I take an arbitrary entry because I don't know what you refer to with Pessoa, 2011: -->
+                    See also <ref
+                        target="http://www.pessoadigital.pt/pt/bibliography/About_the_work_of_Fernando_Pessoa#Duarte_1988"
+                        >Duarte, 1988</ref>, p. 170. 
+                <!-- U: so I added identifiers to the bibl.xml. When you want to create a new entry there you just add a new 
+                <bibl> element with all the details as the others. Note that we have three different parts of the bibliography.
+                The link is different to them, which one you need is in the @xml:id of the listBibl. Here it is:
+                About_the_work_of_Fernando_Pessoa, so the link is: 
+                http://www.pessoadigital.pt/pt/bibliography/About_the_work_of_Fernando_Pessoa
+                The other two would be:
+                http://www.pessoadigital.pt/pt/bibliography/Works_of_Fernando_Pessoa
+                http://www.pessoadigital.pt/pt/bibliography/Other_sources_of_the_work_of_Fernando_Pessoa
+                This link goes to the @target in the <ref>. Inside of <ref> you put whatever text you want to describe
+                the bibliographic reference.
+                Finally, you need the exact ID of the bibliographic entry. You find it in the @xml:id of the <bibl> element
+                in the bibl.xml file. Here it is Duarte_1988, so you add that to the previous link with a #:
+                http://www.pessoadigital.pt/pt/bibliography/About_the_work_of_Fernando_Pessoa#Duarte_1988
+                You can test it on the website, now it jumps to this entry on the bibliography page.
+                -->
+                </note>
                 <note type="genre">
                     <rs type="genre" key="prosa">Prosa</rs>
                 </note>
@@ -114,18 +135,16 @@
                 <p rend="indent-first">A hora da designação da mensagem, na conferencia publica com
                     que a esclareceu, foi a de 29 de Maio de 1928, designada na profecia menor da
                     Pyramide como a do aviso Liminar, que uns entenderam mal e outros peior.</p>
-                <p rend="indent-first">O
-                        interprete <choice>
-                            <sic>iglez</sic>
-                            <corr resp="#JU">inglez</corr>
-                        </choice><note type="comment" resp="#JU">
-                            <rs type="name" key="P566">David Davidson</rs>, <rs type="title">
-                                <hi rend="italic">The Great Pyramind: its divine message</hi></rs>, CFP
-                                    1-36</note>
-                    das polegadas da Pyramide, regista,
-                    sem que a explique, a data de 1557 como aviso Central da Historia. De este ano
-                    nada resa a Historia, senão que nele começou a reinar El-Rei <rs type="name"
-                        key="P21">D. Sebastião</rs>.</p>
+                <p rend="indent-first">O interprete <choice>
+                        <sic>iglez</sic>
+                        <corr resp="#JU">inglez</corr>
+                    </choice><note type="comment" resp="#JU">
+                        <rs type="name" key="P566">David Davidson</rs>, <rs type="title">
+                            <hi rend="italic">The Great Pyramind: its divine message</hi></rs>, CFP
+                        1-36</note> das polegadas da Pyramide, regista, sem que a explique, a data
+                    de 1557 como aviso Central da Historia. De este ano nada resa a Historia, senão
+                    que nele começou a reinar El-Rei <rs type="name" key="P21">D.
+                    Sebastião</rs>.</p>
                 <p rend="indent-first">O poeta <rs type="name" key="P140">Afonso Lopes-Vieira</rs>
                     apresentou, na data antecipadamente designada, o sinal antecipadamente
                     designado.</p>

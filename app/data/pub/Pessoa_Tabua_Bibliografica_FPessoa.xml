@@ -38,7 +38,8 @@
             </notesStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="W230">Tábua Bibliográfica, Fernando Pessoa</rs></item>
+                    <item><rs type="work" key="W230">Tábua Bibliográfica, Fernando
+                        Pessoa</rs></item>
                 </list>
                 <biblStruct>
                     <analytic>
@@ -129,12 +130,13 @@
                     de diversa índole. O que d’elle por ellas anda espalhado é, na generalidade, de
                     ainda menor interesse público que os folhetos acima citados. Abrem-se, porém,
                     mas com reservas, as seguintes excepções: </p>
-                <p rend="indent-first">Quanto a obras orthónymas: o drama stático
-                    <ref target="http://www.pessoadigital.pt/pt/pub/Pessoa_O_Marinheiro">O MARINHEIRO</ref> in <rs type="periodical"
-                        key="J12">ORPHEU I</rs> (1915); O
-                    <ref target="http://www.pessoadigital.pt/pt/pub/Pessoa_O_Banqueiro_Anarchista">BANQUEIRO ANARCHISTA</ref> 
-                    in <rs type="periodical" key="J11">CONTEMPORANEA I</rs>
-                    (1922); os poemas <ref
+                <p rend="indent-first">Quanto a obras orthónymas: o drama stático <ref
+                        target="http://www.pessoadigital.pt/pt/pub/Pessoa_O_Marinheiro">O
+                        MARINHEIRO</ref> in <rs type="periodical" key="J12">ORPHEU I</rs> (1915); O
+                        <ref
+                        target="http://www.pessoadigital.pt/pt/pub/Pessoa_O_Banqueiro_Anarchista"
+                        >BANQUEIRO ANARCHISTA</ref> in <rs type="periodical" key="J11">CONTEMPORANEA
+                        I</rs> (1922); os poemas <ref
                         target="http://www.pessoadigital.pt/pt/pub/Pessoa_Mar_Portuguez">MAR
                         PORTUGUÊS</ref> in <rs type="periodical" key="J11">CONTEMPORANEA 4</rs>
                     (1922); uma pequena <ref
@@ -154,33 +156,36 @@
                         key="J29">PORTUGAL FUTURISTA</rs> (1917); o livro de <ref
                         target="http://www.pessoadigital.pt/pt/pub/Reis_Odes_Livro_Primeiro"
                         >ODES</ref>, de <rs type="name" key="RR">Ricardo Reis</rs>, em <rs
-                        type="periodical" key="J2">ATHENA 1</rs> (1924); e 
-                        <ref
+                        type="periodical" key="J2">ATHENA 1</rs> (1924); e <ref
+                        target="http://www.pessoadigital.pt/pt/pub/Caeiro_Dos_Poemas_Inconjunctos"
+                        >excerptos dos poemas</ref> de <rs type="name" key="AC">Alberto Caeiro</rs>
+                    in <rs type="periodical" key="J2"><ref
+                            target="http://www.pessoadigital.pt/pt/pub/Caeiro_De_O_Guardador_de_Rebanhos"
+                            >ATHENA 4</ref> e <ref
                             target="http://www.pessoadigital.pt/pt/pub/Caeiro_Dos_Poemas_Inconjunctos"
-                            >excerptos dos poemas</ref> de <rs type="name" key="AC">Alberto
-                                Caeiro</rs> in <rs type="periodical" key="J2"><ref
-                                    target="http://www.pessoadigital.pt/pt/pub/Caeiro_De_O_Guardador_de_Rebanhos">ATHENA 4</ref> e <ref
-                                        target="http://www.pessoadigital.pt/pt/pub/Caeiro_Dos_Poemas_Inconjunctos"
-                                        >5</ref></rs> (1925).</p>
+                            >5</ref></rs> (1925).</p>
                 <p rend="indent-first">O resto, orthónymo ou heterónymo, ou não tem interesse, ou o
                     não teve mais que passageiro, ou está por aperfeiçoar ou redefinir, ou são
                     pequenas composições, em prosa ou em verso, que seria difficil lembrar e
                     tediento enumerar, depois de lembradas. </p>
                 <p rend="indent-first">Do ponto de vista, por assim dizer, publicitário, vale,
                     contudo, a pena registrar <ref
-                        target="http://www.pessoadigital.pt/pt/pub/Pessoa_A_Nova_Poesia_Portugueza_Sociologicamente_Considerada">
-                        <ref
-                            target="http://www.pessoadigital.pt/pt/pub/Pessoa_A_Nova_Poesia_Portugueza_No_Seu_Aspecto_Psychologico">
-                            <ref target="http://www.pessoadigital.pt/pt/pub/Pessoa_Reincidindo">
-                                <!-- JU: There is a problem here, because it only shows the last target, but this same words are references to 3 articles that we have in the edition, what can we do? -->uns
-                                artigos</ref></ref></ref> em <rs type="periodical" key="J5">A
-                        ÁGUIA</rs>, no ano 1912, sobretudo pela irritação que causou o anúncio
-                    nelles feito do «próximo apparecimento do super-<rs type="name" key="P15"
-                        style="b">Camões</rs>». Com a mesma intenção se pode citar o conjuncto do
-                    que veio em <rs type="periodical" key="J12">ORPHEU</rs>, dado o escândalo
-                    desmedido que resultou d’esta publicação. São os dois únicos casos em que
-                    qualquer escripto de <rs type="name" key="FP">Fernando Pessoa</rs> chegasse até
-                    à attenção do público.</p>
+                        target="http://www.pessoadigital.pt/pt/pub/Pessoa_A_Nova_Poesia_Portugueza_Sociologicamente_Considerada
+                        http://www.pessoadigital.pt/pt/pub/Pessoa_A_Nova_Poesia_Portugueza_No_Seu_Aspecto_Psychologico
+                        http://www.pessoadigital.pt/pt/pub/Pessoa_Reincidindo">
+                        <!-- JU: There is a problem here, because it only shows the last target, but this same words are references to 3 articles that we have in the edition, what can we do? -->uns
+                        artigos</ref>
+                    <!-- U: This is an exciting question. In TEI, you may add several values separated by space to @target.
+                    But in HTML on the Web, it is not possible to have several destinations at once for one link. So we have to 
+                    invent a solution. My standard answer :-) create a mouse over box and put the three links there, so the user 
+                    can choose one. I'll give it a try so you can see if that looks ok. -->
+                    em <rs type="periodical" key="J5">A ÁGUIA</rs>, no ano 1912, sobretudo pela
+                    irritação que causou o anúncio nelles feito do «próximo apparecimento do
+                        super-<rs type="name" key="P15" style="b">Camões</rs>». Com a mesma intenção
+                    se pode citar o conjuncto do que veio em <rs type="periodical" key="J12"
+                        >ORPHEU</rs>, dado o escândalo desmedido que resultou d’esta publicação. São
+                    os dois únicos casos em que qualquer escripto de <rs type="name" key="FP"
+                        >Fernando Pessoa</rs> chegasse até à attenção do público.</p>
                 <p rend="indent-first"><rs type="name" key="FP">Fernando Pessoa</rs> não tenciona
                     publicar – pelo menos por um largo emquanto – livro nem folheto algum. Não tendo
                     público que os leia, julga-se dispensado de gastar inutilmente, em essa

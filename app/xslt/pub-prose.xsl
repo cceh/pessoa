@@ -199,9 +199,16 @@
             <xsl:apply-templates/>
             <span class="tooltiptext">
                 <xsl:choose>
-                    <xsl:when test="$lang = 'pt'">acréscimo manuscrito</xsl:when>
-                    <xsl:when test="$lang = 'de'">handschriftliche Ergänzung</xsl:when>
-                    <xsl:otherwise>addition by hand</xsl:otherwise>
+                    <xsl:when test="note[@type='comment'][@resp]">
+                        <xsl:apply-templates select="note"/>
+                    </xsl:when>
+                    <xsl:otherwise>                        
+                        <xsl:choose>
+                            <xsl:when test="$lang = 'pt'">acréscimo</xsl:when>
+                            <xsl:when test="$lang = 'de'">Ergänzung</xsl:when>
+                            <xsl:otherwise>addition</xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:otherwise>
                 </xsl:choose>
             </span>
         </span>
