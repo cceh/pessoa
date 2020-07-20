@@ -52,7 +52,7 @@
         <span class="links">
             <xsl:apply-templates/>
             <span class="tooltiptext">
-                <xsl:for-each select="tokenize(@target,'\s')">
+                <xsl:for-each select="tokenize(normalize-space(@target),'\s')">
                     <a class="link" href="{.}"><xsl:value-of select="."/></a>
                     <xsl:if test="position() != last()"><br/></xsl:if>
                 </xsl:for-each>
