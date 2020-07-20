@@ -27,7 +27,6 @@
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
                 <availability status="restricted">
-                    <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_O_Provincianismo_Portugues.xml</idno>
@@ -39,7 +38,7 @@
             </notesStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O1-X">O Provincianismo Português</rs></item>
+                    <item><rs type="work" key="W243">O Provincianismo Português</rs></item>
                 </list>
                 <biblStruct>
                     <analytic>
@@ -48,24 +47,15 @@
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
                         <title level="j"><rs type="periodical" key="J9">O "Notícias"
                             Ilustrado</rs></title>
                         <imprint>
                             <date when="1928-08-12">12 de Agosto de 1928</date>
-                            <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                         </imprint>
                         <biblScope unit="page">15</biblScope>
                     </monogr>
-                    <!-- here goes the bibliographical reference for the source publication -->
-                    <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
-                    <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
@@ -76,16 +66,12 @@
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/Provincianismo.jpg"/>
     </facsimile>
-    <text corresp="#O1-X">
-        <!-- @corresp: contains the index of this WORK. 
-        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
-        This can be left as is in the beginning.
-    -->
+    <text corresp="#W243">
         <body>
             <div>
                 <head>O PROVINCIANISMO PORTUGUÊS</head>
-                <head type="sub"> Por FERNANDO PESSOA</head>
-
+                <head type="sub">Por FERNANDO PESSOA</head>
+                
                 <p><hi rend="bold">SE</hi>, por um daquêles artifícios cómodos, pelos quais
                     simplificâmos a realidade com o fito de a compreender, quisermos resumir num
                     sindroma o mal superior português, diremos que êsse mal consiste no
@@ -103,7 +89,7 @@
                     provinciano, é a admiração pelos grandes meios. Um parisiense não admira Paris;
                     gosta de Paris. Como há-de admirar aquilo que é parte dele? Ninguém se admira a
                     si mesmo, salvo um paranoico com o delírio das grandezas. Recordo-me de que uma
-                    vez, nos tempos do «<rs type="periodical" key="J12"> Orpheu</rs>», disse a <rs
+                    vez, nos tempos do «<rs type="periodical" key="J12">Orpheu</rs>», disse a <rs
                         type="name" key="P30">Mário de Sá Carneiro</rs>: «V. é europeu e civilisado,
                     salvo em uma coisa, e nessa V. é vítima da educação portuguêsa. V. admira Paris,
                     admira as grandes cidades. Se v. tivesse sido educado no estrangeiro, e sob o
@@ -125,7 +111,7 @@
                         Comédia</rs>» superior à «<rs type="title">Eneida</rs>». O provinciano,
                     porém, pasma do que não fez, precisamente porque o não fez; e orgulha-se de
                     sentir êsse pasmo. Se assim não sentisse, não seria provinciano.</p>
-                <p rend="indent-first">&gt;É na incapacidade de ironia que reside o traço mais fundo
+                <p rend="indent-first">É na incapacidade de ironia que reside o traço mais fundo
                     do provincianismo mental. Por ironia entende-se, não o dizer piadas, como se crê
                     nos cafés e nas redacções, mas o dizer uma coisa para dizer o contrário. A
                     essência da ironia consiste em não se poder descobrir o segundo sentido do texto
@@ -144,7 +130,7 @@
                     absoluto da expressão, produto de uma cultura intensa; e aquilo a que os
                     ingleses chamam «detachment» – o poder de afastar-se de si mesmo, de dividir-se
                     em dois, produto daquele «desenvolvimento da largueza de consciência», em que,
-                    segundo o historiador alemão <rs type="name" key="PXX">Lamprecht</rs>, reside a
+                    segundo o historiador alemão <rs type="name" key="P567">Lamprecht</rs>, reside a
                     essência da civilisação. Para a sua realização exige-se, em outras palavras, o
                     não se ser provinciano.</p>
                 <p rend="indent-first">O exemplo mais flagrante do provincianismo português é <rs
@@ -157,8 +143,7 @@
                     estragadas por vários lapsos verbais, quebradores da imperturbabilidade que a
                     ironia exige, e arruinadas por inteiro na introdução do desgraçado episódio da
                     viúva de
-                    Pacheco<!-- JU: indirect referece to 
-                        a title A Correspondência de Fradique Mendes-->.
+                    Pacheco.
                     Compare-se <rs type="name" key="P295" style="b">Eça de Queirós</rs>, não direi
                     já com <rs type="name" key="P169">Swift</rs>, mas, por exemplo, com <rs
                         type="name" key="P496">Anatole France</rs>. Ver-se-á a diferença entre um
@@ -171,9 +156,7 @@
                     verdade no conhecimento do êrro. Quando um doido sabe que está doido, já não
                     está doido. Estamos perto de acordar, disse <rs type="name" key="P5"
                         >Novalis</rs>, quando sonhamos que sonhamos.</p>
-
                 <signed rend="right">FERNANDO PESSOA</signed>
-
             </div>
         </body>
     </text>
