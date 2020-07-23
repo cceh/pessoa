@@ -46,7 +46,6 @@ declare function local:createXML() {
                     let $date := $doc//tei:imprint/tei:date
                         return <doc from="{local:getDateDoc("from",$date)}" to="{local:getDateDoc("to",$date)}" availability="{$doc//tei:availability/@status}" pos="{$a}" indi="{$pub[$a]/@indi/data(.)}" id="{substring-before($pub[$a]/@label/data(.),".xml")}">{$pub[$a]/@label/data(.)}</doc>}
                 </docs>
-    
     let $input := <list>
                     <meta>
                         <sum id="doc">{$Sdocs}</sum>
@@ -84,6 +83,7 @@ declare function local:createPubXML() {
                         return <item label="{$item/@label/data(.)}"  indi="{local:getAuthorShort($item/@indi/data(.))}"/>
   return $items
 };
+
 
 declare function local:getAuthorShort($indi as xs:string) {
     switch($indi)

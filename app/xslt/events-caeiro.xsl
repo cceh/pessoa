@@ -44,27 +44,6 @@
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:variable>
-                    <xsl:variable name="title-names">
-                        <xsl:choose>
-                            <xsl:when test="$language = 'en'">name index</xsl:when>
-                            <xsl:when test="$language = 'de'">Index Namen</xsl:when>
-                            <xsl:otherwise>índice de nomes</xsl:otherwise>
-                        </xsl:choose>
-                    </xsl:variable>
-                    <xsl:variable name="title-titles">
-                        <xsl:choose>
-                            <xsl:when test="$language = 'en'">index of titles</xsl:when>
-                            <xsl:when test="$language = 'de'">Index Titel</xsl:when>
-                            <xsl:otherwise>índice de títulos</xsl:otherwise>
-                        </xsl:choose>
-                    </xsl:variable>
-                    <xsl:variable name="title-periodicals">
-                        <xsl:choose>
-                            <xsl:when test="$language = 'en'">index of periodicals</xsl:when>
-                            <xsl:when test="$language = 'de'">Index Zeitschriften</xsl:when>
-                            <xsl:otherwise>índice de periódicos</xsl:otherwise>
-                        </xsl:choose>
-                    </xsl:variable>
                     <events>
                         <xsl:attribute name="title">
                             <xsl:value-of select="$work-title"/>
@@ -155,6 +134,11 @@
                                                 select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'genres']/item[@xml:id = 'poetry']/term[@xml:lang = 'de']"
                                             />
                                         </xsl:when>
+                                        <xsl:when test="@key = 'prosa'">
+                                            <xsl:value-of
+                                                select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'genres']/item[@xml:id = 'prose']/term[@xml:lang = 'de']"
+                                            />
+                                        </xsl:when>
                                     </xsl:choose>
                                     <xsl:if test="position() != last()"
                                         ><xsl:text>, </xsl:text></xsl:if>
@@ -183,76 +167,18 @@
                                                 select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'genres']/item[@xml:id = 'poetry']/term[@xml:lang = 'en']"
                                             />
                                         </xsl:when>
+                                        <xsl:when test="@key = 'prosa'">
+                                            <xsl:value-of
+                                                select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'genres']/item[@xml:id = 'prose']/term[@xml:lang = 'en']"
+                                            />
+                                        </xsl:when>
                                     </xsl:choose>
                                     <xsl:if test="position() != last()"
                                         ><xsl:text>, </xsl:text></xsl:if>
                                 </xsl:for-each>
                             </xsl:when>
                             <xsl:otherwise> </xsl:otherwise>
-                        </xsl:choose><xsl:text>.</xsl:text> <!--&lt;br/&gt; <xsl:if
-                            test="ancestor::TEI//rs[@type = 'name']"> &lt;p&gt;<xsl:choose>
-                                <xsl:when test="$language = 'de'">Erwähnte Namen:</xsl:when>
-                                <xsl:when test="$language = 'en'">Mencioned names:</xsl:when>
-                                <xsl:otherwise>Nomes mencionados:</xsl:otherwise>
-                            </xsl:choose>&lt;/p&gt; &lt;ul&gt; <xsl:for-each-group
-                                select="ancestor::TEI/text//rs[@type = 'name']" group-by="@key">
-                                <xsl:sort
-                                    select="doc('/db/apps/pessoa/data/lists.xml')//listPerson/person[@xml:id = current-grouping-key()]/persName[1]"/>
-                                <xsl:variable name="key" select="current-grouping-key()"/>
-                                <xsl:choose>
-                                    <xsl:when test="@style">
-                                        <xsl:for-each-group select="current-group()"
-                                            group-by="@style">
-                                            <xsl:variable name="name"
-                                                select="doc('/db/apps/pessoa/data/lists.xml')//listPerson/person[@xml:id = $key or substring-after(@corresp, '#') = $key]/persName[@type = current-grouping-key()]"
-                                            /> &lt;li&gt;&lt;a href="../../index/names#<xsl:value-of
-                                                select="$name/text()"/>" title="<xsl:value-of
-                                                select="$title-names"/>"&gt;<xsl:value-of
-                                                select="$name/text()"/>&lt;/a&gt;&lt;/li&gt;
-                                        </xsl:for-each-group>
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                        <xsl:variable name="name"
-                                            select="doc('/db/apps/pessoa/data/lists.xml')//listPerson/person[@xml:id = $key]/persName"
-                                        /> &lt;li&gt;&lt;a href="../../index/names#<xsl:value-of
-                                            select="$name/text()"/>" title="<xsl:value-of
-                                            select="$title-names"/>"&gt;<xsl:value-of
-                                            select="$name/text()"/>&lt;/a&gt;&lt;/li&gt;
-                                    </xsl:otherwise>
-                                </xsl:choose>
-                            </xsl:for-each-group> &lt;/ul&gt; </xsl:if>
-                        <xsl:if test="ancestor::TEI//rs[@type = 'title']"> &lt;p&gt;<xsl:choose>
-                                <xsl:when test="$language = 'de'">Erwähnte Titel:</xsl:when>
-                                <xsl:when test="$language = 'en'">Mencioned titles:</xsl:when>
-                                <xsl:otherwise>Títulos mencionados:</xsl:otherwise>
-                            </xsl:choose>&lt;/p&gt; &lt;ul&gt; <xsl:for-each-group
-                                select="ancestor::TEI/text//rs[@type = 'title']" group-by="@key">
-                                <xsl:sort
-                                    select="doc('/db/apps/pessoa/data/lists.xml')//list[@type = 'titles']/item[@xml:id = current-grouping-key()]/title/text()"/>
-                                <xsl:variable name="key" select="current-grouping-key()"/>
-                                <xsl:variable name="title"
-                                    select="doc('/db/apps/pessoa/data/lists.xml')//list[@type = 'titles']/item[@xml:id = $key]/title/text()"
-                                /> &lt;li&gt;&lt;a href="../../index/titles#<xsl:value-of
-                                    select="$title"/>" title="<xsl:value-of select="$title-titles"
-                                    />"&gt;<xsl:value-of select="$title"/>&lt;/a&gt;&lt;/li&gt;
-                            </xsl:for-each-group> &lt;/ul&gt; </xsl:if>
-                        <xsl:if test="ancestor::TEI//rs[@type = 'periodical']"> &lt;p&gt;<xsl:choose>
-                                <xsl:when test="$language = 'de'">Erwähnte Zeitschriften:</xsl:when>
-                                <xsl:when test="$language = 'en'">Mencioned periodicals:</xsl:when>
-                                <xsl:otherwise>Periódicos mencionados:</xsl:otherwise>
-                            </xsl:choose>&lt;/p&gt; &lt;ul&gt; <xsl:for-each-group
-                                select="ancestor::TEI/text//rs[@type = 'periodical']"
-                                group-by="@key">
-                                <xsl:sort
-                                    select="doc('/db/apps/pessoa/data/lists.xml')//list[@type = 'periodical']/item[@xml:id = current-grouping-key()]/text()"/>
-                                <xsl:variable name="key" select="current-grouping-key()"/>
-                                <xsl:variable name="periodical"
-                                    select="doc('/db/apps/pessoa/data/lists.xml')//list[@type = 'periodical']/item[@xml:id = $key]/text()"
-                                /> &lt;li&gt;&lt;a href="../../index/names#<xsl:value-of
-                                    select="$periodical"/>" title="<xsl:value-of
-                                    select="$title-periodicals"/>"&gt;<xsl:value-of
-                                    select="$periodical"/>&lt;/a&gt;&lt;/li&gt;
-                            </xsl:for-each-group> &lt;/ul&gt; </xsl:if>-->
+                        </xsl:choose><xsl:text>.</xsl:text>
                     </events>
                 </xsl:if>
             </xsl:for-each>

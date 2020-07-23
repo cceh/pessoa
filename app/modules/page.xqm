@@ -207,12 +207,34 @@ declare function page:DATEmapping($indi as xs:string) {
 };
 
 declare function page:DATEDOCmapping($date as xs:integer) {
+let $date-to-compare := xs:integer(concat("19",$date))
 let $docs :=
-    for $doc in doc("/db/apps/pessoa/data/doclist.xml")//doc
-                for $d in (xs:integer($doc/@from) to xs:integer($doc/@to))
-                where  $d eq xs:integer(concat("19",$date))
-                return $doc
-let $mapping := for $doc in $docs
+    (: display the documents only for the earliest possible date :)
+    for $doc in doc("/db/apps/pessoa/data/doclist.xml")//docs[@dir="doc"]/doc
+    let $from := xs:integer($doc/@from)
+    where $from eq $date-to-compare
+    return $doc
+(: collect different journal publications of published texts :)
+let $pubs := for $TEI in collection("/db/apps/pessoa/data/pub")
+                for $pub in $TEI//tei:sourceDesc/tei:biblStruct
+                let $date := $pub//tei:date
+                let $year := if ($date/@when) 
+                             then substring($date/@when,1,4)
+                             else if ($date/@from)
+                             then substring($date/@from,1,4)
+                             else if ($date/@notBefore)
+                             then substring($date/@notBefore,1,4)
+                             else ()
+                where xs:integer($year) eq $date-to-compare
+                return
+                   let $avail := $TEI//tei:availability/@status/data(.)
+                   let $filename := $TEI//tei:idno[@type="filename"]/data(.)
+                   let $file_id := substring-before($filename,".xml")
+                   let $indi := ($TEI//tei:author//@key/data(.))[1]
+                   let $title := $pub//tei:title[@level="a"]/data(.)
+                   return
+                   <doc availability="{$avail}" indi="{$indi}" id="{$file_id}" title="{$title}">{$filename}</doc>
+let $mapping := for $doc in ($docs,$pubs)
                     let $name := $doc/data(.)
                     let $dir := if(contains($name,"BNP") or contains($name,"CP")) then "doc" else "pub"
                     let $title := if(contains($name,"BNP") or contains($name,"CP")) then
@@ -225,8 +247,7 @@ let $mapping := for $doc in $docs
                                 else $elem
                             )
                         (: publication titles :)
-                        (: else replace(replace(substring-before($name,".xml"),("Caeiro|Pessoa|Campos|Reis"),""),("-| |_")," ") :)
-                        else doc(concat("/db/apps/pessoa/data/pub/",$name))//tei:titleStmt/tei:title/data(.)
+                        else $doc/@title/data(.)
                     return map {
                     "site" := ($title,<span class="doc_superscript"/>),
                     "publ" := $doc/@availability,
