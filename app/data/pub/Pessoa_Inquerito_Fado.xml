@@ -62,19 +62,16 @@
         <encodingDesc>
             <variantEncoding method="parallel-segmentation" location="internal"/>
         </encodingDesc>
-        <!-- U: the following is added to the TEI header to describe the different authors ("hands"): -->
         <profileDesc>
             <handNotes>
-                <handNote xml:id="H_anonymous"
-                    ><!-- U: we need some note here to explain what this is 
-                about. It should probably be in Portuguese as the other notes -->Texto não redigido por Pessoa mas pelos jornalistas.</handNote>
+                <handNote xml:id="H_anonymous">Texto não redigido por Pessoa mas pelos
+                    jornalistas.</handNote>
+                <!-- U: maybe it would make sense to call it "H_Noticias"?
+                    Because it's known that it is written by journalists of that journal? (and not 
+                    completely anonymous) -->
                 <handNote xml:id="H_FP">Texto redigido por Pessoa.</handNote>
             </handNotes>
         </profileDesc>
-        <!-- U: just as with the variant encoding declaration, we can discuss if we add this to all the 
-        documents (so these features could be used as needed in any document) or if we just add it 
-        to the TEI files where they are actually used. (I'll think about that and ask colleagues what is more
-        common to do) -->
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/Inquerito_Fado_10.jpg"/>
@@ -96,39 +93,6 @@
                         ATRAÇÃO NACIONAL?</p>
                     <p>TEEM A PALAVRA, ESCRIPTORES E ARTISTAS:</p>
                 </argument>
-                <!-- JU: Should we mark in the TEI that this introduction was not written by Pessoa?
-                U: there is an attribute @hand which could be used to mark passages not written by Pessoa.
-                As value, it takes a pointer to a person identified elswhere, e.g. 
-                <argument hand="#Anonymous">
-                Do you think you will need this more often and that it is important to mark it in the TEI?
-                Then we could add this attribute and some necessary elements related to it in the TEI header.
-                Otherwise or also in addition, maybe it would be an option to describe such cases in the general 
-                note in the TEI header.
-                JU: I'm not sure I'm seing all the implications this has, we will have some text that 
-                have introductions not by Pessoa, I think in most cases we will not know who the 
-                author is.I Think it can be important to mark them as diferent kind of texts in the edition, 
-                if you think argument is the tool I think we should use it
-                
-                U: Ok, we can take this file as an example, I'll add what's necessary and put comments to it.
-                It was a misunderstanding about <argument>: that element is only for the introduction here (because 
-                it is an introductary part after the heading about what is going to follow). The different 
-                responsibilities of authorship are only encoded in the attribute @hand.
-                This attribute can be added to elements saying that this was written by another "hand". The value
-                of the attribute is a pointer to a note on the hand in the TEI header (see above).
-                I tried to add this to <head>s and <argument> above, but it is not allowed on <argument> by the TEI.
-                (I will try to request a change in the TEI Guidelines for that because I don't understand why it 
-                should not be allowed there). However, we need a working solution in the meanwhile. Another option
-                is to use <handShift> to say where the author changes. This is introduced as an empty 
-                element (it does not have any content itself and is closed right away: <handShift/>) at the points
-                where something changes. Following the TEI schema, it needs to be put inside of <head>, <p>, or similar,
-                directly in <div> is not possible. (I don't know why)
-                I am not very sure about these solutions, I will do some consultation.
-                
-                Another question is if these shifts should be marked in the HTML somehow or not at all.
-                JU: I think in the HTML we don't need any marks. I'll wait to see what you think is best for the formulation. 
-                I eliminated the extra head, because that last line is part of the argument
-                
-                -->
                 <p rend="indent-first"><handShift new="#H_FP"/>Toda a poesia – e a canção é uma
                     poesia ajudada – reflete o que a alma não tem. Porisso a canção dos povos
                     tristes é alegre, e a canção dos povos alegres é triste.</p>

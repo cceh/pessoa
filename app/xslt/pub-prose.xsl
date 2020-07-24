@@ -80,7 +80,7 @@
     
     
     <!-- notes that are comments on quotes or references, made by the editor -->
-    <xsl:template match="quote[note[@type='comment'][@resp]] | rs[note[@type='comment'][@resp]]" priority="2">
+    <xsl:template match="quote[note[@type='comment'][@resp]] | rs[note[@type='comment'][@resp]] | seg[note[@type='comment'][@resp]]" priority="2">
         <span class="{name()} tooltip">
             <xsl:apply-templates select="child::*[name() != 'note'] | text()"/>
             <span class="tooltiptext"><xsl:apply-templates select="note"/></span>
