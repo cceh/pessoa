@@ -27,7 +27,6 @@
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
                 <availability status="restricted">
-                    <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Soares_LDD_Na_Perfeição_Nítida.xml</idno>
@@ -39,7 +38,7 @@
             </notesStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="05-X">Do "Livro do Desasocego" ("Na perfeição nítida
+                    <item><rs type="work" key="W248">Do "Livro do Desasocego" ("Na perfeição nítida
                             do dia")</rs></item>
                 </list>
                 <biblStruct>
@@ -50,25 +49,16 @@
                             <rs type="name" key="BS">Bernardo Soares</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
                         <title level="j"><rs type="periodical" key="J4">Revista da Solução
                                 Editora</rs></title>
                         <imprint>
                             <date when="1932-11">Novembro de 1932</date>
-                            <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                         </imprint>
                         <biblScope unit="issue">1</biblScope>
                         <biblScope unit="page">8</biblScope>
                     </monogr>
-                    <!-- here goes the bibliographical reference for the source publication -->
-                    <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
-                    <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
@@ -79,17 +69,13 @@
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/LDD_Na_perfeiçao.jpg"/>
     </facsimile>
-    <text corresp="#05-X">
-        <!-- @corresp: contains the index of this WORK. 
-        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
-        This can be left as is in the beginning.
-    -->
+    <text corresp="#W248">
         <body>
             <div>
 
                 <head>Do "Livro do Desasocego"</head>
-                <head type="sub">COMPOSTO POR <rs type="name" key="#BS">BERNARDO SOARES</rs>
-                    <!--we need to create Soares as an author-->, AJUDANTE DE GUARDA LIVROS NA
+                <head type="sub">COMPOSTO POR <rs type="name" role="author" key="#BS">BERNARDO SOARES</rs>
+                    , AJUDANTE DE GUARDA LIVROS NA
                     CIDADE DE LISBOA</head>
 
                 <p rend="indent-first"><hi rend="italic">Na perfeição nítida do dia estagna contudo
