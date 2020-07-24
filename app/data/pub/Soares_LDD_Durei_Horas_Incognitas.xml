@@ -27,7 +27,6 @@
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
                 <availability status="restricted">
-                    <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Soares_LDD_Durei_Horas_Incognitas.xml</idno>
@@ -39,7 +38,7 @@
             </notesStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O5-X">Do "Livro do Desasocego" ("Durei horas
+                    <item><rs type="work" key="W246">Do "Livro do Desasocego" ("Durei horas
                             incognitas")</rs></item>
                 </list>
                 <biblStruct>
@@ -49,24 +48,15 @@
                             <rs type="name" key="BS">Bernardo Soares</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
                         <title level="j"><rs type="periodical" key="J1">Presença</rs></title>
                         <imprint>
                             <date from="1930-06" to="1930-07">Junho - Julho de 1930</date>
-                            <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                         </imprint>
                         <biblScope unit="issue">27</biblScope>
                         <biblScope unit="page">9</biblScope>
                     </monogr>
-                    <!-- here goes the bibliographical reference for the source publication -->
-                    <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
-                    <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
@@ -77,17 +67,13 @@
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/LDD_Durei.jpg"/>
     </facsimile>
-    <text corresp="#O5-X">
-        <!-- @corresp: contains the index of this WORK. 
-        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
-        This can be left as is in the beginning.
-    -->
+    <text corresp="#W246">
         <body>
             <div>
                 <head>TRECHO</head>
 
                 <head type="sub" rend="center">DE UM LIVRO DO DESASOCEGO COMPOSTO POR <rs
-                        type="name" role="topic" key="393">BERNARDO SOARES</rs>, AJUDANTE DE
+                        type="name" role="topic" key="BS">BERNARDO SOARES</rs><!-- JU: Please check if ok -->, AJUDANTE DE
                     GUARDA-LIVROS NA CIDADE DE LISBOA</head>
 
                 <p rend="indent-first"><hi rend="bold">D</hi>UREI horas incognitas, momentos

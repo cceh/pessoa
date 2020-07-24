@@ -67,10 +67,8 @@
             <handNotes>
                 <handNote xml:id="H_anonymous"
                     ><!-- U: we need some note here to explain what this is 
-                about. It should probably be in Portuguese as the other notes -->Text
-                    not authored by Pessoa, but by some other person that cannot be identified, is
-                    marked with this hand.</handNote>
-                <handNote xml:id="H_FP">Text authored by Fernando Pessoa.</handNote>
+                about. It should probably be in Portuguese as the other notes -->Texto não redigido por Pessoa mas pelos jornalistas.</handNote>
+                <handNote xml:id="H_FP">Texto redigido por Pessoa.</handNote>
             </handNotes>
         </profileDesc>
         <!-- U: just as with the variant encoding declaration, we can discuss if we add this to all the 
@@ -96,8 +94,8 @@
                         ARTISTICA, ETNICA, OU MUSICAL? – TURISTICO, POETICO, SAUDOSISTA, INVOCATIVO,
                         REGIONAL, REPRESENTA O FADO UMA EXPRESSÃO DE BELEZA, DE PROPAGANDA, DE
                         ATRAÇÃO NACIONAL?</p>
+                    <p>TEEM A PALAVRA, ESCRIPTORES E ARTISTAS:</p>
                 </argument>
-                <head type="sub">TEEM A PALAVRA, ESCRIPTORES E ARTISTAS:</head>
                 <!-- JU: Should we mark in the TEI that this introduction was not written by Pessoa?
                 U: there is an attribute @hand which could be used to mark passages not written by Pessoa.
                 As value, it takes a pointer to a person identified elswhere, e.g. 
@@ -127,6 +125,8 @@
                 I am not very sure about these solutions, I will do some consultation.
                 
                 Another question is if these shifts should be marked in the HTML somehow or not at all.
+                JU: I think in the HTML we don't need any marks. I'll wait to see what you think is best for the formulation. 
+                I eliminated the extra head, because that last line is part of the argument
                 
                 -->
                 <p rend="indent-first"><handShift new="#H_FP"/>Toda a poesia – e a canção é uma

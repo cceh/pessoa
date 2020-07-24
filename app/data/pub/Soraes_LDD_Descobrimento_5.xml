@@ -29,7 +29,6 @@
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
                 <availability status="restricted">
-                    <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Soares_LDD_Descobrimento_5.xml</idno>
@@ -41,7 +40,7 @@
             </notesStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="05-X">Do “Livro do Desasocego” ("Prefiro a
+                    <item><rs type="work" key="W249">Do “Livro do Desasocego” ("Prefiro a
                             prosa")("Nuvens... Hoje tenho consciência")("Gósto de dizer.") ("Sim, é
                             o poente.")("Assim como, quer o saibamos quer não")</rs></item>
                 </list>
@@ -54,24 +53,15 @@
                             <rs type="name" key="BS">Bernardo Soares</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
                         <title level="j"><rs type="periodical" key="J13">Descobrimento</rs></title>
                         <imprint>
-                            <date when="1931-01">X de 1931</date>
-                            <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
+                            <date when="1931-01">X<!-- JU: We are triying to find the month --> de 1931</date>
                         </imprint>
                         <biblScope unit="issue">3</biblScope>
                         <biblScope unit="page">404-415</biblScope>
                     </monogr>
-                    <!-- here goes the bibliographical reference for the source publication -->
-                    <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
-                    <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
@@ -81,7 +71,7 @@
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/LDD_Descobrimento_1"/>
-        <!-- This image is missing -->
+        <!-- JU: We have a missing image for the heading, I already told Pedro -->
         <graphic url="prosa/LDD_Descobrimento_2.jpg"/>
         <graphic url="prosa/LDD_Descobrimento_3.jpg"/>
         <graphic url="prosa/LDD_Descobrimento_4.jpg"/>
@@ -94,19 +84,15 @@
         <graphic url="prosa/LDD_Descobrimento_11.jpg"/>
         <graphic url="prosa/LDD_Descobrimento_12.jpg"/>
     </facsimile>
-    <text corresp="#05-X">
-        <!-- @corresp: contains the index of this WORK. 
-        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
-        This can be left as is in the beginning.
-    -->
+    <text corresp="#W249">
         <body>
 
             <div>
-                <head><l>Do "Livro do Desasocego"</l>
-                    <l>composto por <rs type="name" key="BS">Bernardo Soares</rs>, ajudante</l>
-                    <l>de guarda-livros na cidade de Lisboa</l>
-                    <l>por</l>
-                    <l><rs type="name" role="editor" key="FP">Fernando Pessoa</rs></l></head>
+                <head>Do "Livro do Desasocego"
+                    composto por <rs type="name" key="BS">Bernardo Soares</rs>, ajudante
+                    de guarda-livros na cidade de Lisboa
+                    por
+                    <rs type="name" role="editor" key="FP">Fernando Pessoa</rs></head>
             </div>
             <div>
                 <head>1</head>
@@ -128,7 +114,7 @@
                     e a forma, que a pintura não pode dar senão directamente, em elas mesmas, sem
                     dimensão íntima; o ritmo, que a música não pode dar senão directamente, nêle
                     mesmo, sem corpo formal, nem aquele segundo corpo que é a idea; a estrutura, que
-                    o arquiteto tem que formar <!--fin image 2--> de coisas duras, dadas, externas,
+                    o arquiteto tem que formar de coisas duras, dadas, externas,
                     e nós erguemos em ritmos, em indecisões, em decursos e fluidezas; a realidade,
                     que o escultor tem que deixar no mundo, sem aura nem transubstanciação; a
                     poesia, enfim, em que o poeta, como o iniciado em uma ordem oculta, é servo,
@@ -151,7 +137,6 @@
 
             <div>
                 <head>2</head>
-                <!--fin image 3-->
                 <p rend="indent-first">Nuvens... Hoje tenho consciência do céu, pois há dias em que
                     o não ólho mas sinto, vivendo na cidade e não na natureza que a inclui.
                     Nuvens... São elas hoje a principal realidade, e preocupamme como se o velar do
@@ -160,7 +145,7 @@
                     vezes, se vão esfarrapadas na vanguarda de não sei quê; meio-negro outras, se,
                     mais lentas, tardam em ser varridas pelo vento audível; negras de um branco
                     sujo, se, como se quizessem ficar, ennegrecem mais da vinda que da sombra o que
-                    as ruas abrem de falso espaço entre as linhas fechadoras da casaria. </p>
+                    as ruas abrem de falso espaço entre as linhas fechadoras da casaria.</p>
                 <p rend="indent-first">Nuvens... Existo sem que o saiba e morrerei sem que o queira.
                     Sou o intervalo entre o que sou e o que não sou, entre o que sonho e o que a
                     vida fez de mim, a média abstracta e carnal entre coisas que não são nada, sendo
@@ -169,7 +154,7 @@
                     parecendo, porque as casas não deixam vêr se são menos grandes que parecem, que
                     vão a tomar todo o céu; outras de tamanho incerto, podendo ser duas juntas ou
                     uma que se vai partir em duas, sem sentido no ar alto contra o céu fatigado;
-                    outras ainda, pequenas, parecendo brinquedos <!--fin image 4--> de poderosas
+                    outras ainda, pequenas, parecendo brinquedos de poderosas
                     coisas, bolas irregulares de um jôgo absurdo, só para um lado, num grande
                     isolamento, frias. </p>
                 <p rend="indent-first">Nuvens... Interrogo-me e desconheço-me. Nada tenho feito de
@@ -191,7 +176,6 @@
 
             <div>
                 <head>3</head>
-                <!--fin image 5-->
                 <p rend="indent-first">Gósto de dizer. Direi melhor; gósto de palavrar. As palavras
                     são para mim corpos tocáveis, sereias visíveis, sensualidades incorporadas.
                     Talvez porque a sensualidade real não tem para mim interêsse de nenhuma espécie
@@ -213,7 +197,7 @@
                 <p rend="indent-first">Não choro por nada que a vida traga ou leve. Há porém páginas
                     de prosa que me têm feito chorar. Lembro-me, como do que estou vendo, da noite
                     em que, ainda criança, li pela primeira vez, numa selecta, o passo célebre de
-                        <rs type="name" key="P300">Vieira</rs> sôbre o Rei <!--fin image 6--><rs
+                        <rs type="name" key="P300">Vieira</rs> sôbre o Rei <rs
                         type="name" key="P497">Salomão</rs>. "Fabricou <rs type="name" key="P497"
                         >Salomão</rs> um palácio..." E fui lendo até ao fim, trémulo, confuso;
                     depois rompi em lágrimas felizes, como nenhuma felicidade real me fará chorar,
@@ -243,7 +227,6 @@
 
             <div>
                 <head>4</head>
-                <!--fin image 7-->
                 <p rend="indent-first">Sim, é o poente. Chego à foz da Rua da Alfândega, vagaroso e
                     disperso, e, ao clarear-me o Terreiro do Paço, vejo nítido o sem sol do céu
                     ocidental. Êsse céu é de um azul esverdeado para cinzento branco, onde, do lado
@@ -263,7 +246,6 @@
                     mais se acaba, a luz extingue-se em branco lívido que se azula de esverdeado
                     frio. Há no ar um torpor do que se não consegue nunca. Cala alto a paisagem do
                     céu.</p>
-                <!--fin image 8-->
                 <p rend="indent-first">Nesta hora, em que sinto até transbordar, quizera ter a
                     malícia inteira de dizer, o capricho livre de um estilo por destino. Mas não, só
                     o céu alto é tudo, remoto, abolindo-se, e a emoção que tenho, e que é tantas,
@@ -289,7 +271,6 @@
 
             <div>
                 <head>5</head>
-                <!--fin image 9-->
                 <p rend="indent-first">Assim como, quer o saibamos quer não, temos todos uma
                     metafísica, assim também, quer o queiramos quer não, temos todos uma moral.
                     Tenho uma moral muito simples — não fazer a ninguém nem mal nem bem. Não fazer a
@@ -308,7 +289,7 @@
                 <p rend="indent-first">Se não faço o bem, por moral, também não exijo que mo façam.
                     Se adoeço, o que mais me pesa é que obrigo alguém a tratar-me, coisa que me
                     repugnaria de fazer a outrem. Nunca visitei um amigo doente. Sempre que, tendo
-                    eu adoecido, me <!--fin image 10-->visitaram, sofri cada visita como um
+                    eu adoecido, me visitaram, sofri cada visita como um
                     incomodo, um insulto, uma violação injustificável da minha intimidade decisiva.
                     Não gosto que me dêem coisas; parecem com isso obrigar-me a que as dê também —
                     aos mesmos ou a outros, seja a quem fôr.</p>
@@ -334,7 +315,7 @@
                     que é, fenómenos puramente visuais, que sinto com a atenção literária.
                     Enterneço-me, sim, mas não é porque lembro, mas porque vejo.</p>
                 <p rend="indent-first">Nunca amei ninguém. O mais que tenho amado são sensações
-                    <!--fin image 11-->minhas — estados da visualidade consciente, impressões da
+                    minhas — estados da visualidade consciente, impressões da
                     audição disperta, perfumes que são uma maneira de a humildade do mundo externo
                     falar comigo, dizer-me coisas do passado (tão fácil de lembrar pelos cheiros) —
                     isto é, de me darem mais realidade, mais emoção, que o simples pão a cozer lá
