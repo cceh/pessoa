@@ -62,6 +62,13 @@
         <encodingDesc>
             <variantEncoding method="parallel-segmentation" location="internal"/>
         </encodingDesc>
+        <profileDesc>
+            <handNotes>
+                <handNote xml:id="H_Diario_Lisboa">Texto não redigido por Pessoa mas pelos
+                    jornalistas.</handNote>
+                <handNote xml:id="H_FP">Texto redigido por Pessoa.</handNote>
+            </handNotes>
+        </profileDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/A_Romaria.jpg"/>
@@ -70,12 +77,12 @@
         <body>
             <div>
                 <head>«A ROMARIA»</head>
-                <head type="sub">Transcreve-se um trecho e os doís sonetos finais do auto lirico de
+                <head type="sub"><handShift new="#H_Diario_Lisboa"/>Transcreve-se um trecho e os doís sonetos finais do auto lirico de
                         <rs type="name" key="P512">VASCO REIS</rs>, que teve o PREMIO <rs
-                        type="name" key="P18">ANTERO DE QUENTAL</rs> 1934 e que <rs type="name"
+                        type="name" key="P18">ANTERO DE QUENTAL</rs> 1934 e que <rs type="name" role="topic"
                         key="FP">FERNANDO PESSOA</rs>, autor do livro «<rs type="title" key="T263"
                         >Mensagem</rs>», tambem, premiado, aprecia e comenta</head>
-                <p rend="indent-first">Pediu-me <rs type="name" key="P511">Antonio Lopes
+                <p rend="indent-first"><handShift new="#H_FP"/>Pediu-me <rs type="name" key="P511">Antonio Lopes
                         Ribeiro</rs> que escrevesse, para êste numero literario do <rs
                         type="periodical" key="J80"><hi rend="italic">Diario de Lisboa</hi></rs>, um
                     breve artigo sobre premios literarios. Em principio, poderia escrevê-lo – um

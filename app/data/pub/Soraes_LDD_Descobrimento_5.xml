@@ -28,7 +28,7 @@
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
-                <availability status="restricted">
+                <availability status="free">
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Soares_LDD_Descobrimento_5.xml</idno>
@@ -69,6 +69,12 @@
         <encodingDesc>
             <variantEncoding method="parallel-segmentation" location="internal"/>
         </encodingDesc>
+        <profileDesc>
+            <handNotes>
+                <handNote xml:id="H_Descobrimento">Texto não redigido por Pessoa mas pela redaçáo da revista.</handNote>
+                <handNote xml:id="H_FP">Texto redigido por Pessoa.</handNote>
+            </handNotes>
+        </profileDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <!--<graphic url="prosa/LDD_Descobrimento_1"/>-->
@@ -88,18 +94,10 @@
     <text corresp="#W249">
         <body>
             <div>
-                <head>Do "Livro do Desasocego" composto por <rs type="name" key="BS">Bernardo
+                <head>Do "Livro do Desasocego" composto por <rs type="name" role="author" key="BS">Bernardo
                         Soares</rs>,
-                    <!-- U: please add the @role attribute here. It should be there for the main heteronyms
-                    (now five: FP, AC, AdC, RR, BS) so that it can be evaluated in the website search and 
-                    indices. I didn't put any attention to this before when checking the prose files, I'll 
-                    run a script to see where it's missing and send you the results as an email.
-                    -->
                     ajudante de guarda-livros na cidade de Lisboa por <rs type="name" role="editor"
                         key="FP">Fernando Pessoa</rs></head>
-                <!-- U: here there was 
-                        a closing </div>. I moved that to the end, so that the following divisions are
-                        subchapters of this general one and are contained in it. -->
                 <div>
                     <head>1</head>
                     <p rend="indent-first">Prefiro a prosa ao verso, como modo de arte, por duas
@@ -230,9 +228,11 @@
                     <p rend="indent-first">Sim, porque a ortografia também é gente. A palavra é
                         completa vista e ouvida. E a gala da transliteração grecoromana veste-ma do
                         seu vero manto régio, pelo qual é senhora e rainha <note n="1"
-                                ><label>(1).</label> É involuntariamente que contrariamos o gosto do
+                            ><label>(1).</label> <handShift new="#H_Descobrimento"/>É involuntariamente que contrariamos o gosto do
                             autor, não respetando a sua ortografia. Sirva isto de desculpa a
-                            Fernando Pessoa, e de explicação aos leitores (N. da R.)</note></p>
+                            <rs type="name" role="topic" key="FP">Fernando Pessoa</rs>, e de explicação aos leitores 
+                            (<choice><abbr>N<am>.</am> da R<am>.</am></abbr>
+                                <expan>N<ex>ota</ex> da R<ex>edacçáo</ex></expan></choice>)</note></p>
                 </div>
                 <div>
                     <head>4</head>
