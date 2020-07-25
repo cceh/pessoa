@@ -30,19 +30,24 @@
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
                 <availability status="restricted">
-                    <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_O_Renascer_de_um_Simbolo.xml</idno>
             </publicationStmt>
             <notesStmt>
+                <note type="summary">Trata-se de um texto publicado com a assinatura «A. F. G.», isto é, Augusto Ferreira Gomes. 
+                    O texto foi recuperado em <hi rend="italic">Sebastianismo e Quinto Império</hi> ( <ref
+                        target="http://www.pessoadigital.pt/pt/bibliography/Works_of_Fernando_Pessoa#bibl_SQI"
+                        >Pessoa, 2011</ref> p. 295-296), e a participação de 
+                    Pessoa é conjeturada com base na leitura em conjunto com 
+                    “<ref target="http://www.pessoadigital.pt/pt/pub/Pessoa_As_causas_longinquas">As causas longinquas da homenagem a Al-Motamide</ref>”.</note>
                 <note type="genre">
                     <rs type="genre" key="prosa">Prosa</rs>
                 </note>
             </notesStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O1-X">O Renascer de um símbolo: Al-Motamide o
+                    <item><rs type="work" key="W250">O Renascer de um símbolo: Al-Motamide o
                             iniciador</rs></item>
                 </list>
                 <biblStruct>
@@ -52,24 +57,15 @@
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
                         <title level="j"><rs type="periodical" key="J9">O "Notícias"
                             Ilustrado</rs></title>
                         <imprint>
                             <date when="1928-07-15">15 de Julho de 1928</date>
-                            <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                         </imprint>
                         <biblScope unit="page">22</biblScope>
                     </monogr>
-                    <!-- here goes the bibliographical reference for the source publication -->
-                    <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
-                    <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
@@ -80,14 +76,10 @@
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/O_Renascer_de_um_simbolo.jpg"/>
     </facsimile>
-    <text corresp="#O1-X">
-        <!-- @corresp: contains the index of this WORK. 
-        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
-        This can be left as is in the beginning.
-    -->
+    <text corresp="#W250">
         <body>
             <div>
-                <head><hi rend="bold">O RENASCER DE UM SIMBOLO: Al-Motamide o iniciador</hi></head>
+                <head>O RENASCER DE UM SIMBOLO: Al-Motamide o iniciador</head>
                 <p><hi rend="bold">SILVES</hi> vae, dentro de breves dias, prestar homenagem ao seu
                     «wal», o poeta extraordinario que foi o moiro <rs type="name" key="P498"
                         >Al-Motamide</rs>! E essa homenagem, gravada com versos seus em pedra
@@ -115,8 +107,10 @@
                     Atlantico, em aroma, mares alem. E que nós, os portuguêses, vivamos essa
                     memoria, tambem, como um signal da Hora que os Deuses guardam para gloria dos
                     Poetas, dos Santos e dos Herois.</p>
-
-                <signed rend="right">A[ugusto] F[erreira] G[omes]</signed>
+                <signed rend="right"><choice>
+                    <abbr>A<am>.</am> F<am>.</am> G<am>.</am></abbr>
+                    <expan resp="#JU">A<ex>ugusto</ex> F<ex>erreira</ex> G<ex>omes</ex></expan>
+                </choice></signed>
             </div>
         </body>
     </text>
