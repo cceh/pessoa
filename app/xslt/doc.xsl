@@ -274,6 +274,9 @@
         mode="#default deletion addition">
         <span class="metamark line ditto">
             <xsl:choose>
+                <xsl:when test="@rend = 'line'">
+                    <hr class="line inline"/>
+                </xsl:when>
                 <xsl:when test="@rend = 'line-18'">
                     <hr class="line line-18 inline"/>
                 </xsl:when>

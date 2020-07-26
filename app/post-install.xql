@@ -78,7 +78,7 @@ declare function local:getDateDoc($set,$doc) {
 };
 
 declare function local:createPubXML() {
-  let $items := for $indikator in ("Pessoa","Caeiro","Campos","Reis") return local:pubItems($indikator)
+  let $items := for $indikator in ("Pessoa","Caeiro","Campos","Reis","Soares") return local:pubItems($indikator)
   let $items := for $item in $items order by local:anaIndi($item/@indi/data(.)),$item/@label/data(.)
                         return <item label="{$item/@label/data(.)}"  indi="{local:getAuthorShort($item/@indi/data(.))}"/>
   return $items
@@ -91,6 +91,7 @@ declare function local:getAuthorShort($indi as xs:string) {
         case "Caeiro" return "AC"
         case "Campos" return "AdC"
         case "Reis" return "RR"
+        case "Soares" return "BS"
         default return "UH"
 };
 
@@ -118,7 +119,7 @@ declare function local:anaIndi($indi) {
     else if($indi = "10" or $indi = "Caeiro" ) then 2
     else if($indi = "20" or $indi = "Campos") then 3
     else if($indi = "30" or $indi = "Reis") then 4
-    else if($indi = "40") then 5
+    else if($indi = "40" or $indi = "Soares") then 5
     else if($indi = "50") then 6
     else if($indi = "60") then 7
     else if($indi = "70") then 8
