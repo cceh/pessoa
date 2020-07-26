@@ -26,18 +26,20 @@
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
-                <availability status="restricted">
+                <availability status="free">
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_Afonso_Lopes_Vieira.xml</idno>
             </publicationStmt>
             <notesStmt>
                 <note type="summary" resp="#JU">Texto recuperado por Manuela Parreira da Silva
-                    (Silva, 1996 p. 58). A atribuição de autoria decorre do confronto com o
+                    (<ref
+                        target="http://www.pessoadigital.pt/pt/bibliography/Works_of_Fernando_Pessoa#bibl_Silva_2016"
+                        >Silva, 1996</ref> p. 58). A atribuição de autoria decorre do confronto com o
                     manuscrito BNP 125A-26 a 29, praticamente idêntico ao texto publicado. O texto
                     foi integrado em <hi rend="italic">Sebastianismo e Quinto Império</hi> ( <ref
                         target="http://www.pessoadigital.pt/pt/bibliography/Works_of_Fernando_Pessoa#bibl_SQI"
-                        >Pessoa, 2011</ref>, pp. 156-158). </note>
+                        >Pessoa, 2011</ref>, pp. 156-158).</note>
                 <note type="genre">
                     <rs type="genre" key="prosa">Prosa</rs>
                 </note>
@@ -69,6 +71,13 @@
         <encodingDesc>
             <variantEncoding method="parallel-segmentation" location="internal"/>
         </encodingDesc>
+        <profileDesc>
+            <handNotes>
+                <handNote xml:id="H_Noticias_Ilustrado">Texto não redigido por Pessoa mas pelos
+                    jornalistas.</handNote>
+                <handNote xml:id="H_FP">Texto redigido por Pessoa.</handNote>
+            </handNotes>
+        </profileDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/Afonso_Lopes_Vieira.jpg"/>
@@ -76,12 +85,12 @@
     <text corresp="#W227">
         <body>
             <div>
-                <head><rs type="name" key="P140">Afonso Lopes Vieira</rs>, O Poeta
+                <head><handShift new="#H_Noticias_Ilustrado"/><rs type="name" key="P140">Afonso Lopes Vieira</rs>, O Poeta
                     Nacionalista,</head>
                 <head type="sub">É alvo de uma homenagem dos seus amigos: uma missa nos Jeronimos e
                     um banquete abordo da fragata «Deus te guie», no Tejo, em frente á Torre de
                     Belem.</head>
-                <p rend="indent-first">Vae partir para o Brasil, em uma alta e simbolica missão da
+                <p rend="indent-first"><handShift new="#H_FP"/>Vae partir para o Brasil, em uma alta e simbolica missão da
                     Patria, o poeta <rs type="name" key="P140">Afonso Lopes Vieira</rs>. Vae levar
                     ao Chefe do Portugal Novo, em nome do Chefe do Portugal Antigo, o sinal da
                     esperança comum a tudo quanto é Portugal.</p>
@@ -111,12 +120,9 @@
                             <corr resp="#JU">inglez</corr>
                         </choice><note type="comment" resp="#JU">
                             <rs type="name" key="P566">David Davidson</rs>, <rs type="title">
-                                <hi rend="italic">The Great Pyramind: its divine message</hi></rs>,
+                                <hi rend="italic">The Great Pyramid: its divine message</hi></rs>,
                             CFP
-                    1-36</note></seg><!-- JU: Here I can't see the note in the page, maybe is because of the "choice"
-                    U: the note needs to refer to some element, so I added a <seg type="anchor"> here, so that 
-                    the note is then anchored on "O interprete inglez" (in other cases with notes, there was already some 
-                    element such as <quote>)-->
+                    1-36</note></seg>
                     das polegadas da Pyramide, regista, sem que a explique, a data de 1557 como
                     aviso Central da Historia. De este ano nada resa a Historia, senão que nele
                     começou a reinar El-Rei <rs type="name" key="P21">D. Sebastião</rs>.</p>
