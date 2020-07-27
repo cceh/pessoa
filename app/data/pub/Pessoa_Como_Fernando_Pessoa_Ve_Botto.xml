@@ -4,7 +4,7 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>COMO FERNANDO PESSOA VÊ ANTONIO BOTTO</title>
+                <title>Como Fernando Pessoa vê Antonio Botto</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
                 </author>
@@ -27,7 +27,6 @@
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
                 <availability status="restricted">
-                    <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_Como_Pessoa_Ve_Botto.xml</idno>
@@ -39,42 +38,24 @@
             </notesStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O1-X">COMO FERNANDO PESSOA VÊ ANTONIO
-                        BOTTO</rs></item>
+                    <item><rs type="work" key="W253">Como Fernando Pessoa vê Antonio Botto</rs></item>
                 </list>
                 <biblStruct>
                     <analytic>
-                        <title level="a">COMO FERNANDO PESSOA VÊ ANTONIO BOTTO</title>
+                        <title level="a">Como Fernando Pessoa vê Antonio Botto</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
                         <title level="j"><rs type="periodical" key="J85"
                                 >Suplemento Literário do Diário de Lisboa</rs></title>
-                        <!-- @key is to identify the periodical. You can find other periodicals IDs in the file 
-                            lists.xml in the data folder. In that file, 
-                        look for the sublist <list type="periodical">, currently beginning at line 1450. You can also add
-                        new periodicals there -->
                         <imprint>
                             <date when="1915-03-01">1 de Março de 1935</date>
-                            <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                         </imprint>
                         <biblScope unit="page">6</biblScope>
                     </monogr>
-                    <!-- here goes the bibliographical reference for the source publication -->
-                    <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
-                    <!-- @key is to identify the periodical. You can find other periodicals IDs in the file 
-                            lists.xml in the data folder. In that file, 
-                        look for the sublist <list type="periodical">, currently beginning at line 1450. You can also add
-                        new periodicals there -->
-                    <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
@@ -85,14 +66,11 @@
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="Como_Fernando_Pessoa_Ve_Antonio_Botto.jpg"/>
     </facsimile>
-    <text corresp="#O1-X">
-        <!-- @corresp: contains the index of this WORK. 
-        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
-        This can be left as is in the beginning.-->
+    <text corresp="#W253">
         <body>
             <div>
 
-                <head>COMO FERNANDO PESSOA VÊ ANTONIO BOTTO</head>
+                <head>COMO <rs type="name" role="author" key="FP">FERNANDO PESSOA</rs> VÊ <rs type="name" key="P17">ANTONIO BOTTO</rs></head>
 
                 <head type="sub">O seu lirismo e a sua paixão</head>
 

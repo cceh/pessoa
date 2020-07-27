@@ -27,7 +27,6 @@
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
                 <availability status="restricted">
-                    <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_Dez_minutos.xml</idno>
@@ -39,7 +38,7 @@
             </notesStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O1-X">Dez minutos com Fernando Pessoa</rs></item>
+                    <item><rs type="work" key="W255">Dez minutos com Fernando Pessoa</rs></item>
                 </list>
                 <biblStruct>
                     <analytic>
@@ -48,68 +47,62 @@
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
                         <title level="j"><rs type="periodical" key="J85"
                                 >Suplemento Literário do Diário de Lisboa</rs></title>
                         <imprint>
                             <date when="1934-12-14">14 de Dezembro de 1934</date>
-                            <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                         </imprint>
                         <biblScope unit="page">5</biblScope>
                     </monogr>
-                    <!-- here goes the bibliographical reference for the source publication -->
-                    <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
-                    <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
         <encodingDesc>
             <variantEncoding method="parallel-segmentation" location="internal"/>
         </encodingDesc>
+        <profileDesc>
+            <handNotes>
+                <handNote xml:id="H_Suplemento_Literario">Texto não redigido por Pessoa mas pelos
+                    jornalistas.</handNote>
+                <handNote xml:id="H_FP">Texto redigido por Pessoa.</handNote>
+            </handNotes>
+        </profileDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/Dez_minutos.jpg"/>
     </facsimile>
-    <text corresp="#O1-X">
-        <!-- @corresp: contains the index of this WORK. 
-        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
-        This can be left as is in the beginning.
-    -->
+    <text corresp="#W255">
         <body>
             <div>
-                <head><hi rend="italic">Dez minutos com <rs type="name" key="#FP">Fernando
-                            Pessoa</rs></hi></head>
-
+                <head><handShift new="#H_Suplemento_Literario"/>Dez minutos com <rs type="name" role="author" key="FP">Fernando
+                            Pessoa</rs></head>
+<argument>
                 <p rend="indent-first">A calva socratica, os olhos de corvo de <rs type="name"
                         key="P87">Edgar Poe</rs>, e um bigode rizivel, chplinesco – eis a traços tão
-                    forte como precizos a mascara de <rs type="name" key="#FP">Fernando Pessoa</rs>.
+                    forte como precizos a mascara de <rs type="name" role="topic" key="FP">Fernando Pessoa</rs>.
                     Encontramo-lo friorento e encharcado desta chuva cruel de dezembro a uma mesa do
                     Martinho da Arcada, ultima estampa romantica dos cafés do seculo XX. É ali que
                     vivem agora os derradeiros abencerragens do «<rs type="periodical" key="J12"
                         >Orfeu</rs>». A lira não se partiu. Ecôa ainda, mas menos barbara, trazida
                     da velha Grecia, no peito duma sereia. Até a foz romana do Tejo, <rs type="name"
-                        key="#FP">Fernando Pessoa</rs> tem três almas, baptizadas na pia lustral da
-                    estetica nova: <rs type="name" key="#AdC">Alvaro de Campos</rs>, o das odes,
-                    convulsivo de dinamismo, <rs type="name" key="#RR">Ricardo Reis</rs>, o
+                        key="FP">Fernando Pessoa</rs> tem três almas, baptizadas na pia lustral da
+                    estetica nova: <rs type="name" role="topic" key="AdC">Alvaro de Campos</rs>, o das odes,
+                    convulsivo de dinamismo, <rs type="name" role="topic" key="RR">Ricardo Reis</rs>, o
                     classico, que trabalha maravilhosamente a proza, descobrindo na cinza dos
-                    tumulos, tesouros de imagens, e <rs type="name" key="#AC">Alberto Caeiro</rs>, o
+                    tumulos, tesouros de imagens, e <rs type="name" role="topic" key="AC">Alberto Caeiro</rs>, o
                     super-clasico, magestoso como um principe. Mas desta vez fala <rs type="name"
-                        key="#FP">Fernando Pessoa</rs> – em «pessoa». O titulo da sua obra recente,
+                        key="FP">Fernando Pessoa</rs> – em «pessoa». O titulo da sua obra recente,
                     «Mensagem», está entre nós, como um hifen de amizade literaria. Porque o
                     titulo?</p>
-
-                <p rend="indent-first"> O poeta desce a escada de Jacob, lentramente, coberto de
+                <p rend="indent-first">O poeta desce a escada de Jacob, lentamente, coberto de
                     neblinas e de signos misteriosos. A sua inteligencia geometriza palavras, que
                     vai rectificando empóz. A sua confidencia é quasi soturna, tragica de inspiração
                     intima:</p>
+    </argument>
 
-                <p rend="indent-first"> – «<rs type="title" key="XXX">Mensagem</rs>» é um livro
+                <p rend="indent-first"><handShift new="#H_FP"/>– «<rs type="title">Mensagem</rs>» é um livro
                     nacionalista, e, portanto, na tradição cristã representada primeiro pela busca
                     do Santo Graal, e depois pela esperança do <rs type="name" key="P21"
                         >Encoberto</rs>.</p>
@@ -118,12 +111,12 @@
                     com boca de misterio. De resto os versos são oiro de lingua, fortes como
                     tempestades.</p>
 
-                <p rend="indent-first"> –E’ um livro novo?</p>
+                <p rend="indent-first">–E’ um livro novo?</p>
 
-                <p rend="indent-first"> –Escrito em mim ha muito tempo. Ha poemas que são de 1914,
+                <p rend="indent-first">–Escrito em mim ha muito tempo. Ha poemas que são de 1914,
                     quasi do tempo de «<rs type="periodical" key="J12">Orfeu</rs>».</p>
 
-                <p rend="indent-first"> –Mas estes são agora mais classicos, digamos. Versos de
+                <p rend="indent-first">–Mas estes são agora mais classicos, digamos. Versos de
                     almas tranquilas...</p>
 
                 <p rend="indent-first"> –Talvez? E’ que eu tenho varias maneiras de escrever–nunca
@@ -134,17 +127,17 @@
 
                 <p rend="indent-first">Pessoa, numa nuvem do opio:</p>
 
-                <p rend="indent-first"> –Por impulso, por intuição, que depois altero. O autor dá
+                <p rend="indent-first">–Por impulso, por intuição, que depois altero. O autor dá
                     lugar ao cristico, mas este sabe o que aquele quiz fazer...</p>
 
-                <p rend="indent-first"> –A sua «<rs type="title" key="XXX">Mensagem</rs>»...</p>
+                <p rend="indent-first">–A sua «<rs type="title">Mensagem</rs>»...</p>
 
-                <p rend="indent-first"> –Projectar no momento presente uma coisa que vem atravez de
+                <p rend="indent-first">–Projectar no momento presente uma coisa que vem atravez de
                     Portugal, desde os romances de cavalaria. Quiz marcar o destino imperial de
                     Portugal, esse imperio que perpassou através de <rs type="name" key="P21">D.
                         Sebastião</rs>, e que continua, «ha-de ser».</p>
 
-                <p rend="indent-first"><rs type="name" key="#FP">Fernando Pessoa</rs>, recolhe-se.
+                <p rend="indent-first"><rs type="name" key="FP">Fernando Pessoa</rs>, recolhe-se.
                     Disse tudo. Sobe a escada de Jacob .e desaparece á nossa vista, num ceu
                     constelado de enigmas e de belas imagens <rs type="name" key="P109">Ferreira
                         Gomes</rs> que está ao nosso lado olha-nos com misterio. Que é do poeta?</p>
