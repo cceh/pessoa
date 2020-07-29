@@ -344,7 +344,9 @@ display: inline-block;
     width:100%;
 }
 
-
+.NAVI_thirdNav {
+    padding-right: 5px;
+}
 .NAVI_thirdNavTab {
     text-align:center;
     min-width:18%;
@@ -352,6 +354,9 @@ display: inline-block;
 .NAVI_quadNavTab {
     min-width:18%;
 
+}
+.NAVI_thirdNavTab.link, .NAVI_quadNavTab.link {
+    max-width: 750px;
 }
 .NAVI_thirdNavTab > span , .NAVI_thirdNavTab > a > span {
     background: #222;
