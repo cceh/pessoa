@@ -196,7 +196,7 @@
     <!-- additions -->
     <xsl:template match="add">
         <span class="addition">
-            <xsl:apply-templates/>
+            <xsl:apply-templates select="text() | child::*[name() != 'note']"/>
             <span class="tooltiptext">
                 <xsl:choose>
                     <xsl:when test="note[@type='comment'][@resp]">

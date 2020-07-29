@@ -1837,6 +1837,20 @@ div#text-div .text.prose p.small {
     font-size: small;
 }
 /* STYLES FOR INDIVIDUAL PROSE PUBLICATIONS */
+div#text-div .text.prose#W251 .letter.center {
+    width: 90%;
+    margin: 0 auto;
+}
+div#text-div .text.prose#W251 .opener .salute,
+div#text-div .text.prose#W251 .opener .dateline,
+div#text-div .text.prose#W251 .closer .salute,
+div#text-div .text.prose#W251 .closer .signed {
+    display: inline-block;
+}
+div#text-div .text.prose#W251 .opener .dateline.right,
+div#text-div .text.prose#W251 .closer .signed.right {
+    float: right;
+}
 div#text-div .text.prose#W241 .citation.right {
     width: 55%;
     margin: 0 0 0 auto;

@@ -68,18 +68,65 @@
     </xsl:template>
     
     
-    <xsl:template match="head[not(@type='sub')]">
+    <xsl:template match="head[not(@type='sub')][not(ancestor::div[2])]">
         <h1>
             <xsl:call-template name="rend" />
             <xsl:apply-templates />
         </h1>
     </xsl:template>
     
-    <xsl:template match="head[@type='sub']">
+    <xsl:template match="head[@type='sub'][not(ancestor::div[2])]">
         <h2>
             <xsl:call-template name="rend" />
             <xsl:apply-templates />
         </h2>
+    </xsl:template>
+    
+    <xsl:template match="head[not(@type='sub')][ancestor::div[2]]">
+        <h2>
+            <xsl:call-template name="rend" />
+            <xsl:apply-templates />
+        </h2>
+    </xsl:template>
+    
+    <xsl:template match="head[@type='sub'][ancestor::div[2]]">
+        <h3>
+            <xsl:call-template name="rend" />
+            <xsl:apply-templates />
+        </h3>
+    </xsl:template>
+    
+    <xsl:template match="head[@type='sub'][ancestor::div[3]]">
+        <h4>
+            <xsl:call-template name="rend" />
+            <xsl:apply-templates />
+        </h4>
+    </xsl:template>
+    
+    <xsl:template match="floatingText[@type='letter']">
+        <div>
+            <xsl:choose>
+                <xsl:when test="@rend">
+                    <xsl:attribute name="class">letter <xsl:value-of select="@rend"/></xsl:attribute>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:attribute name="class">letter</xsl:attribute>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="opener">
+        <div class="opener">
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="closer">
+        <div class="closer">
+            <xsl:apply-templates/>
+        </div>
     </xsl:template>
     
     <xsl:template name="rend">
@@ -92,6 +139,9 @@
             </xsl:when>
             <xsl:when test="@rend='indent-first'">
                 <xsl:attribute name="class">indent-first</xsl:attribute>
+            </xsl:when>
+            <xsl:when test="@rend='indent-second'">
+                <xsl:attribute name="class">indent-second</xsl:attribute>
             </xsl:when>
             <xsl:when test="@rend='indent'">
                 <xsl:attribute name="class">indent</xsl:attribute>
@@ -111,6 +161,12 @@
             <xsl:if test="@corresp">
                 <xsl:attribute name="id" select="substring-after(@corresp,'#')"/>
             </xsl:if>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="div[not(@type)]">
+        <div>
             <xsl:apply-templates/>
         </div>
     </xsl:template>
