@@ -33,8 +33,9 @@
             </publicationStmt>
             <notesStmt>
                 <note type="summary" resp="#JU">O texto foi republicado em <rs type="periodical"
-                        key="J89">Portugal - Semanário Republicano</rs>, 12 de Dezembro de 1915, p.
-                    11, com algumas alteraçóes significativas, é possível que a republicaçáo corrija
+                        key="J89">Portugal: Semanário Republicano</rs>, a 12 de Dezembro de 1915, p.
+                    11, com alteraçóes ortográficas e com o que interpretamos ser um erro tipografico 
+                    que compromete o sentido do texto. 
                     Publicamos as respetivas imagens.</note>
                 <note type="genre">
                     <rs type="genre" key="prosa">Prosa</rs>
@@ -42,7 +43,7 @@
             </notesStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="W">O Preconceito da Ordem</rs></item>
+                    <item><rs type="work" key="W259">O Preconceito da Ordem</rs></item>
                 </list>
                 <biblStruct>
                     <analytic>
@@ -60,20 +61,38 @@
                         <biblScope unit="page">7-9</biblScope>
                     </monogr>
                 </biblStruct>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">O Preconceito da Ordem</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt" otherLangs="en"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J89">Portugal: Semanário Republicano</rs></title>
+                        <imprint>
+                            <date when="1915-12-12">12 de Dezembro de 1915</date>
+                        </imprint>
+                        <biblScope unit="page">11</biblScope>
+                    </monogr>
+                </biblStruct>
             </sourceDesc>
         </fileDesc>
         <encodingDesc>
             <variantEncoding method="parallel-segmentation" location="internal"/>
         </encodingDesc>
     </teiHeader>
-    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/" corresp="Eh_Real!">
         <graphic url="prosa/O_Preconceito_da_Ordem_1.jpg"/>
         <graphic url="prosa/O_Preconceito_da_Ordem_2.jpg"/>
         <graphic url="prosa/O_Preconceito_da_Ordem_3.jpg"/>
-        <graphic url="prosa/O_Preconceito_da_Ordem_Rep.jpg"/>
-        <!-- JU: I added this image to the same paste -->
     </facsimile>
-    <text corresp="#W200">
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/" corresp="Semanário">
+        <graphic url="prosa/O_Preconceito_da_Ordem_Rep.jpg"/>
+        <!-- JU: I added this image to the same paste, pelase check -->
+        </facsimile>
+    <text corresp="#W">
         <body>
             <div>
                 <head>O PRECONCEITO DA ORDEM</head>
@@ -161,7 +180,8 @@
                     pode ser provisori[a] ou aparente, mas atacar o mal que produziu a desordem. A
                     exclusiva preocupação da ordem é um morfinismo social.</p>
                 <p rend="indent-first">Levemos até ao fim esta
-                    justíssima<!-- JU: Notar injustíssima na republicaçáo  --> analogia. No
+                    <app> <lem wit="#Eh_Real!">justíssima</lem><rdg wit="Semanário">injustíssima</rdg></app>
+                    <!-- JU: Is this ok?  --> analogia. No
                     individuo, a constante preocupação da saúde é um sintóma de neurastenía, ou de
                     males psiquicos mais graves ainda. Na sociedade, paralelamente, a preocupação da
                     ordem, é uma doença de espirito coléctivo. Se os argumentos que acima expus não
@@ -170,7 +190,7 @@
                     preocupação da ordem, e á especie de cérebro onde ela surgiu definidamente.</p>
                 <p rend="indent-first">Apareceu ela num periodo perturbado e anormal da politica
                     franceza e em plena vigencia da doença chamada romantismo. É,
-                    caracterizadamente, uma idéa romantica. </p>
+                    caracterizadamente, uma idéa romantica.</p>
                 <p rend="indent-first">O seu criador filosófico, o infelís chamado <rs type="name"
                         key="525">Augusto Comte</rs>, toda a vida sofreu de alienação mental.</p>
                 <signed rend="right">Fernando Pessoa.</signed>
