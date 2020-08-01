@@ -4,7 +4,7 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Cronica literaria</title>
+                <title>Crónica literaria ("Orpheu")</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
                 </author>
@@ -27,7 +27,6 @@
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
                 <availability status="restricted">
-                    <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_Cronica_literaria_Orfeu.xml</idno>
@@ -39,32 +38,23 @@
             </notesStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O1-X">Cronica literaria</rs></item>
+                    <item><rs type="work" key="W267">Crónica literaria ("Orpheu")</rs></item>
                 </list>
                 <biblStruct>
                     <analytic>
-                        <title level="a">Cronica literaria</title>
+                        <title level="a">Crónica literaria ("Orpheu")</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
                         <title level="j"><rs type="periodical" key="J45">O Jornal</rs></title>
                         <imprint>
                             <date when="1915-04-06">6 de Abril de 1915</date>
-                            <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                         </imprint>
                         <biblScope unit="page">1</biblScope>
                     </monogr>
-                    <!-- here goes the bibliographical reference for the source publication -->
-                    <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
-                    <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
@@ -75,14 +65,15 @@
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/Cronica_literaria_Orfeu.jpg"/>
     </facsimile>
-    <text corresp="#O1-X">
+    <text corresp="#W267">
         <body>
             <div>
                 <head>Cronica literaria</head>
-                <head rend="right" type="sub"><rs type="periodical" key="J12">ORFEU</rs> – Revista
-                    Trímestral de Literatura. – No. 1 [Janeiro-fevereiro-março] – Depósitarios,
-                    Livraria Brazileira, de Monteiro <!-- "&" JU: How can we avoid this?--> C. e,
-                    Lisbôa. </head>
+                <bibl rend="right indent-second"><hi rend="bold"><hi rend="italic">
+                    <rs type="periodical" key="J12">ORFEU</rs> – Revista
+                    Trímestral de Literatura. – No. 1 (Janeiro-fevereiro-março) – Depósitarios,
+                    Livraria Brazileira, de Monteiro &amp; C.e,
+                    Lisbôa.</hi></hi></bibl>
                 <p rend="indent-first">Como se dê o caso de sermos colaborador desta revista, e
                     como, caso – não a querendo por isso criticar – preferissemos dar uma idéa da
                     sua orientação, fatalmente consumiriamos um impossivel numero de colunas,
@@ -90,17 +81,17 @@
                     explicação, mas que visam apenas a orientar no assunto os espiritos curiosos e
                     para quem meia palavra baste.</p>
                 <p rend="indent-first">Como o leitor não sabe, o movimento romantico inglês foi
-                    iniciado definidamente pela publicação, em 1798, das <rs type="title" key="XX"
+                    iniciado definidamente pela publicação, em 1798, das <rs type="title"
                             ><hi rend="italic">Lyrical Ballads</hi></rs> de <rs type="name"
                         key="P162">Wordsworth</rs> e <rs type="name" key="P163">Coleridge</rs>. Este
                     livro – que contém dois dos maiores poemas de todas as literaturas, o <rs
-                        type="title" key="XX"><hi rend="italic">Ancient Mariner</hi></rs> de <rs
-                        type="name" key="P163">Coleridge</rs> e a <rs type="title" key="XX"><hi
+                        type="title"><hi rend="italic">Ancient Mariner</hi></rs> de <rs
+                        type="name" key="P163">Coleridge</rs> e a <rs type="title"><hi
                             rend="italic">Tintern Abbey</hi></rs> de <rs type="name" key="P162"
                         >Wordsworth</rs> – teve por toda a Inglaterra um êxito de gargalhada. Entre
                     os que mais riram destacou-se <rs type="name" key="P248">Byron</rs>, que no <rs
-                        type="periodical" key="XXX">English Bards and Scotch Reviewers</rs>, deu a
-                    qualquer dos poetas das <rs type="title" key="XX"><hi rend="italic"
+                        type="periodical">English Bards and Scotch Reviewers</rs>, deu a
+                    qualquer dos poetas das <rs type="title"><hi rend="italic"
                         >Ballads</hi></rs> uma desagradavel preeminencia no ridiculo. Até ao fim da
                     vida <rs type="name" key="P248">Lord Byron</rs> teve sempre mais ou menos sob
                     satira esses dois poetas; mas acontece que a sua terceira faze, que é o seu
@@ -111,7 +102,7 @@
                     antes dêssa adaptação estar feita, resume tudo o que, de ensinamento, estes
                     factos possam sugerir.</p>
                 <p rend="indent-first">Nas sóbrias laudas do seu <hi rend="italic">Essay
-                        Suplementary</hi> a edição de 1815 das <rs type="title" key="XX"><hi
+                        Suplementary</hi> a edição de 1815 das <rs type="title"><hi
                             rend="italic">Lyrical Ballads</hi></rs>, <rs type="name" key="P162"
                         >Wordsworth</rs> escreveu estes periodos:</p>
                 <p rend="indent-first"> «Se ha conclusão que, mais do que qualquer outra, nos seja
@@ -127,7 +118,6 @@
                     não, que haja homens de genio entre os colabores de <rs type="periodical"
                         key="J12">Orfeu</rs>. Isso não o auxiliaria a compreender, nem alteraria a
                     decisão do futuro. </p>
-
             </div>
         </body>
     </text>
