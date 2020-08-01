@@ -4,7 +4,7 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>CRÓNICA dos livros- O Varre Canelhas</title>
+                <title>Crónica dos livros ("O Varre Canelhas")</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
                 </author>
@@ -38,30 +38,11 @@
             </notesStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O1-37">CRÓNICA dos livros- O Varre
-                        Canelhas</rs></item>
-                    <!-- 
-                    UH: as we have a new structure for work identifers in lists.xml, you can add the work there
-                    and use the corresponding key here. For this, please first add the title to <list type="titles">
-                    in lists.xml, e.g. (just use the next free ID number):
-                    <item xml:id="T227">
-                        <title>A Nova Poesia Portugueza Sociologicamente
-                            Considerada</title>
-                    </item>
-                    then you add a work to <list type="works"> in lists.xml and indicate #FP as author, e.g.:
-                    <item xml:id="W187">
-                        <ptr type="author" target="#FP"/>
-                        <ptr type="title" target="#T227"/>
-                    </item>
-                    then you can use the ID W187 here as a key:
-                    <rs type="work" key="W187">A Nova Poesia Portugueza Sociologicamente
-                            Considerada</rs>
-                    See also below in the @corresp attribute of the <text> element.
-                    -->
+                    <item><rs type="work" key="W268">Crónica dos livros ("O Varre Canelhas")</rs></item>
                 </list>
                 <biblStruct>
                     <analytic>
-                        <title level="a">CRÓNICA dos livros- O Varre Canelhas</title>
+                        <title level="a">Crónica dos livros ("O Varre Canelhas")</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
@@ -84,18 +65,13 @@
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/O_Varre_Canelhas.jpg"/>
     </facsimile>
-    <text corresp="#O1-X">
-        <!-- 
-        UH: you can use the ID W187 (or whatever ID you created for the work in lists.xml) here:
-        corresp="#W187"
-        please note that you need # here but not above because @corresp is for pointers and @key directly for IDs
-        -->
+    <text corresp="#W268">
         <body>
             <div>
-                <head>CRÓNICA dos livros- O Varre Canelhas</head>
+                <head>CRÓNICA dos livros</head>
 
-                <head type="sub" rend="right">Novelo Transmontano por <rs type="name" key="P74"
-                        >Joaquim Leitão</rs></head>
+               <bibl rend="right"><hi rend="bold">O VARRE CANELHAS <lb/>Novelo Transmontano, <lb/> por <rs type="name" key="P74"
+                        >Joaquim <lb/>Leitão</rs></hi></bibl>
                 <p rend="indent-first">A obra, se fôrmos a aquilata-la por um criterio esthetico
                     superior, resultará por certo de pouco relêvo e importancia. Mas, se a
                     considerarmos dentro das fronteiras do trabalho meramente inteligente e honesto,
@@ -121,8 +97,8 @@
                     e comunicabilidade simpática que a reportagem superior frequentemente radica nos
                     seus práticos. Não se vá lêr nisto que colocamos a obra o nivel intelectual do
                     alto jornalismo. Corre nas veias da novéla melhor
-                    sangue<!-- no original "sagne" --> espiritual do que esse.</p>
-                <signed rend="right">Fernando Pessoa</signed>
+                    sangue espiritual do que esse.</p>
+                <signed rend="right">Fernando Pessoa.</signed>
             </div>
         </body>
     </text>
