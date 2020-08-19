@@ -271,7 +271,7 @@ declare function local:collectTexts() {
    };
 
 declare function local:FindFirstLetter-new($text as xs:string, $pos as xs:integer) {
-    if(matches(substring($text,$pos,1),'[A-z]')) then substring($text,$pos,1)
+    if(matches(substring($text,$pos,1),'[A-z\d]')) then substring($text,$pos,1)
     else if ($pos > string-length($text)) then concat("Error/",$pos)
     else local:FindFirstLetter-new($text,$pos +1)
 };

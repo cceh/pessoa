@@ -34,9 +34,9 @@
             <notesStmt>
                 <note type="summary" resp="#JU">O texto foi republicado em <rs type="periodical"
                         key="J89">Portugal: Semanário Republicano</rs>, a 12 de Dezembro de 1915, p.
-                    11, com alteraçóes ortográficas e com o que interpretamos ser um erro tipografico 
-                    que compromete o sentido do texto. 
-                    Publicamos as respetivas imagens.</note>
+                    11, com alteraçóes ortográficas e com o que interpretamos ser um erro
+                    tipografico que compromete o sentido do texto. Publicamos as respetivas
+                    imagens.</note>
                 <note type="genre">
                     <rs type="genre" key="prosa">Prosa</rs>
                 </note>
@@ -45,7 +45,7 @@
                 <list type="work-index">
                     <item><rs type="work" key="W259">O Preconceito da Ordem</rs></item>
                 </list>
-                <biblStruct>
+                <biblStruct xml:id="Eh_Real">
                     <analytic>
                         <title level="a">O Preconceito da Ordem</title>
                         <author>
@@ -61,7 +61,7 @@
                         <biblScope unit="page">7-9</biblScope>
                     </monogr>
                 </biblStruct>
-                <biblStruct>
+                <biblStruct xml:id="Semanário">
                     <analytic>
                         <title level="a">O Preconceito da Ordem</title>
                         <author>
@@ -70,7 +70,8 @@
                         <textLang mainLang="pt" otherLangs="en"/>
                     </analytic>
                     <monogr>
-                        <title level="j"><rs type="periodical" key="J89">Portugal: Semanário Republicano</rs></title>
+                        <title level="j"><rs type="periodical" key="J89">Portugal: Semanário
+                                Republicano</rs></title>
                         <imprint>
                             <date when="1915-12-12">12 de Dezembro de 1915</date>
                         </imprint>
@@ -83,20 +84,18 @@
             <variantEncoding method="parallel-segmentation" location="internal"/>
         </encodingDesc>
     </teiHeader>
-    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/" corresp="Eh_Real!">
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/" corresp="Eh_Real">
         <graphic url="prosa/O_Preconceito_da_Ordem_1.jpg"/>
         <graphic url="prosa/O_Preconceito_da_Ordem_2.jpg"/>
         <graphic url="prosa/O_Preconceito_da_Ordem_3.jpg"/>
     </facsimile>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/" corresp="Semanário">
         <graphic url="prosa/O_Preconceito_da_Ordem_Rep.jpg"/>
-        <!-- JU: I added this image to the same paste, pelase check -->
-        </facsimile>
-    <text corresp="#W">
+    </facsimile>
+    <text corresp="#W259">
         <body>
             <div>
                 <head>O PRECONCEITO DA ORDEM</head>
-
                 <p rend="indent-first">Entre os vários preconceitos que salpicam as theses dos
                     neo-monarquicos, avulta, como grande mancha, o preconceito comtista da
                     Ordem.</p>
@@ -179,20 +178,21 @@
                     quando aparece a desordem, a sociedade sã procura logo, não manter a ordem, que
                     pode ser provisori[a] ou aparente, mas atacar o mal que produziu a desordem. A
                     exclusiva preocupação da ordem é um morfinismo social.</p>
-                <p rend="indent-first">Levemos até ao fim esta
-                    <app> <lem wit="#Eh_Real!">justíssima</lem><rdg wit="Semanário">injustíssima</rdg></app>
-                    <!-- JU: Is this ok?  --> analogia. No
-                    individuo, a constante preocupação da saúde é um sintóma de neurastenía, ou de
-                    males psiquicos mais graves ainda. Na sociedade, paralelamente, a preocupação da
-                    ordem, é uma doença de espirito coléctivo. Se os argumentos que acima expus não
-                    bastaram para insinuar esta conclusão no animo do leitor, ele pode verificar de
-                    todo a hipótese, reportando-se ás circunstancias sociais em que nasceu a moderna
-                    preocupação da ordem, e á especie de cérebro onde ela surgiu definidamente.</p>
+                <p rend="indent-first">Levemos até ao fim esta <app>
+                        <lem wit="#Eh_Real">justíssima</lem>
+                        <rdg wit="#Semanário">injustíssima</rdg>
+                    </app> analogia. No individuo, a constante preocupação da saúde é um sintóma de
+                    neurastenía, ou de males psiquicos mais graves ainda. Na sociedade,
+                    paralelamente, a preocupação da ordem, é uma doença de espirito coléctivo. Se os
+                    argumentos que acima expus não bastaram para insinuar esta conclusão no animo do
+                    leitor, ele pode verificar de todo a hipótese, reportando-se ás circunstancias
+                    sociais em que nasceu a moderna preocupação da ordem, e á especie de cérebro
+                    onde ela surgiu definidamente.</p>
                 <p rend="indent-first">Apareceu ela num periodo perturbado e anormal da politica
                     franceza e em plena vigencia da doença chamada romantismo. É,
                     caracterizadamente, uma idéa romantica.</p>
                 <p rend="indent-first">O seu criador filosófico, o infelís chamado <rs type="name"
-                        key="525">Augusto Comte</rs>, toda a vida sofreu de alienação mental.</p>
+                        key="P525">Augusto Comte</rs>, toda a vida sofreu de alienação mental.</p>
                 <signed rend="right">Fernando Pessoa.</signed>
             </div>
         </body>
