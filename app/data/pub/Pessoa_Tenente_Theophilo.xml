@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Tenente Theophilo Duarte</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="restricted">
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Pessoa_Tenente_Theophilo.xml</idno>
+            </publicationStmt>
+            <notesStmt>
+                <note type="summary" resp="JU">Seguimos a convicção de José Barreto (cf. Barreto, 2013, p. 179) 
+                    de que se trata de um artigo pessoano não assinado, 
+                    como o sugerem expressões caraterísticas, tais como: «Todos quando affirmen, no seu estado enthusiasta e mystico, as virtudes 
+                    militares, as virtudes de lealdade para com o Chefe eleito pelo Destino, ainda que a Morte o haja affastado de nós, são 
+                    ensinadores de nacionalismo, pontos de concentração de esperança, antemanhãs de resurgimento e de salvação».</note>
+                <note type="genre">
+                    <rs type="genre" key="prosa">Prosa</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="W273">Tenente Theophilo Duarte</rs></item>
+                </list>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Tenente Theophilo Duarte</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt" otherLangs="en"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J58">Acção</rs></title>
+                        <imprint>
+                            <date when="1919-08-04">4 Agosto de 1919</date>
+                        </imprint>
+                        <biblScope unit="page">6</biblScope>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
+    </teiHeader>
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+        <graphic url="prosa/Tenente_Theophilo_Duarte.jpg"/>
+    </facsimile>
+    <text corresp="#W273">
+        <body>
+            <div>
+                <head rend="center">Tenente Theophilo Duarte</head>
+                
+                <p rend="indent-first">Os jornaes diarios reproduziram ― o <rs type="periodical" key="J94"><hi rend="italic">Diario de Noticias</hi></rs> quasi na integra ― as palavras admiraveis que o 
+                    tenente <rs type="name" key="P581">Theophilo Duarte</rs> pronunciou: no seu julgamento. Dispensamo-nos, porisso, de as 
+                    reproduzir novamente; mas não podemos deixar de a ellas fazer uma, ainda que ligeira, referencia.</p>
+                <p rend="indent-first">Num momento da vida patria, em que todas as forças de dissolução e de desnacionalização se 
+                    agglomeram em torno ao estandarte que não teem, consola e orienta ver como a chamma antiga não está de todo extincta, 
+                    e que aquella <hi rend="italic">lealdade</hi> attribuida aos portuguezes não é de todo um mytho ou uma cousa que passou.</p>
+                <p rend="indent-first">Sem mysticismo nacional, sem o <hi rend="italic">instincto militar da Patria</hi>, 
+                    nenhuma nação vive, ou tende para a grandeza, que outro não é, para uma nação verdadeira, o sentido da mera palavra «viver». 
+                    «Viver uma vida honesta e honrada» de «nação livre e laboriosa», é, como ideal social, a ultima das abjecções. 
+                    A modestia, o apagamento, o não-querer-estorvar-os-outros, podendo ver virtudes na vida individual, são os vicios 
+                    ultimos na vida dos paizes. Toda a nação verdadeira é um imperio em tendencia; e todo o imperialismo é um mysticismo 
+                    militar e nacional.</p>
+                <p rend="indent-first">Todos quantos affirmem, no seu estado enthusiasta e mystico, as virtudes militares, as virtudes de 
+                    lealdade para com o Chefe eleito pelo Destino, ainda que a Morte o haja affastado de nós, são ensinadores de nacionalismo, 
+                    pontos de concentração de esperança, antemanhãs de resurgimento e de salvação.</p>
+                <p rend="indent-first">São estas as considerações que nos suggerem as palavras altivas, que, por occasião do seu julgamento, 
+                    o tenente <rs type="name" key="P581">Theophilo Duarte</rs> pronunciou. Que haja muitos que não comprehendam estes commentarios, é cousa que nos não importa; 
+                    esses tambem não comprehendem Portugal.</p>
+                <p rend="indent-first">O resto, dil-o-ha o futuro.</p>
+                </div>
+            </body>
+        </text>
+    </TEI>
+                
