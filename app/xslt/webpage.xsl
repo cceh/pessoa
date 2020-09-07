@@ -83,6 +83,38 @@
             <xsl:apply-templates/>
         </h3>
     </xsl:template>
+    
+    <xsl:template match="table">
+        <table>
+            <xsl:apply-templates/>
+            <xsl:if test="@type='doc-overview'">
+                <!-- if this is the overview table of available documents, count them and add the results as 
+                a row to the table -->
+                <tr>
+                    <!-- available documents -->
+                    <td><xsl:value-of select="count(collection('../data/doc')//availability[@status='free'])"/></td>
+                    <!-- documents work in progress -->
+                    <td><xsl:value-of select="count(collection('../data/doc')//availability[@status='restricted'])"/></td>
+                    <!-- available publications -->
+                    <td><xsl:value-of select="count(collection('../data/pub')//availability[@status='free'])"/></td>
+                    <!-- publications work in progress -->
+                    <td><xsl:value-of select="count(collection('../data/pub')//availability[@status='restricted'])"/></td>
+                </tr>
+            </xsl:if>
+        </table>
+    </xsl:template>
+    
+    <xsl:template match="row">
+        <tr>
+            <xsl:apply-templates/>
+        </tr>
+    </xsl:template>
+    
+    <xsl:template match="cell">
+        <td>
+            <xsl:apply-templates/>
+        </td>
+    </xsl:template>
 
     <xsl:template match="list[not(@type)]">
         <ul style="list-style:none;">
