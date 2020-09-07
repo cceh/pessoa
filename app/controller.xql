@@ -543,11 +543,10 @@ else if($exist:permission) then (
             <view>
                 <forward url="{$exist:controller}/modules/view.xql"/>
             </view>
-            <!--
             <error-handler>
                 <forward url="{$exist:controller}/error-page.html" method="get"/>
                 <forward url="{$exist:controller}/modules/view.xql"/>
-            </error-handler> -->
+            </error-handler>
         </dispatch>
      else if (contains($exist:path, "page/") and not(ends-with($exist:resource, ".html"))) then
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
@@ -555,22 +554,23 @@ else if($exist:permission) then (
             <view>
                 <forward url="{$exist:controller}/modules/view.xql"/>
             </view>
-            <!--
             <error-handler>
                 <forward url="{$exist:controller}/error-page.html" method="get"/>
                 <forward url="{$exist:controller}/modules/view.xql"/>
-            </error-handler> -->
+            </error-handler>
         </dispatch>
+    (: The following is for the About page, etc. :)
     else if (helpers:contains-any-of($exist:path, $exist:sites) and not(ends-with($exist:resource, ".html|/"))) then
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
             <forward url="{$exist:controller}/page/{$exist:resource}.html"/>
             <view>
                 <forward url="{$exist:controller}/modules/view.xql"/>
             </view>
+            <!--
             <error-handler>
                 <forward url="{$exist:controller}/error-page.html" method="get"/>
                 <forward url="{$exist:controller}/modules/view.xql"/>
-            </error-handler>
+            </error-handler> -->
         </dispatch>
     (: download :)
     else if(contains($exist:path, "download")) then

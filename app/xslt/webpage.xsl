@@ -9,6 +9,10 @@
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
 
     <xsl:param name="res"/>
+    <xsl:param name="docs-available"/>
+    <xsl:param name="docs-restricted"/>
+    <xsl:param name="pubs-available"/>
+    <xsl:param name="pubs-restricted"/>
 
 
     <xsl:template match="div">
@@ -86,19 +90,22 @@
     
     <xsl:template match="table">
         <table>
+            <xsl:if test="@type='doc-overview'">
+                <xsl:attribute name="class">doc-overview</xsl:attribute>
+            </xsl:if>
             <xsl:apply-templates/>
             <xsl:if test="@type='doc-overview'">
                 <!-- if this is the overview table of available documents, count them and add the results as 
                 a row to the table -->
                 <tr>
                     <!-- available documents -->
-                    <td><xsl:value-of select="count(collection('../data/doc')//availability[@status='free'])"/></td>
+                    <td><xsl:copy-of select="$docs-available"/></td>
                     <!-- documents work in progress -->
-                    <td><xsl:value-of select="count(collection('../data/doc')//availability[@status='restricted'])"/></td>
+                    <td><xsl:copy-of select="$docs-restricted"/></td>
                     <!-- available publications -->
-                    <td><xsl:value-of select="count(collection('../data/pub')//availability[@status='free'])"/></td>
+                    <td><xsl:copy-of select="$pubs-available"/></td>
                     <!-- publications work in progress -->
-                    <td><xsl:value-of select="count(collection('../data/pub')//availability[@status='restricted'])"/></td>
+                    <td><xsl:copy-of select="$pubs-restricted"/></td>
                 </tr>
             </xsl:if>
         </table>

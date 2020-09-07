@@ -455,6 +455,37 @@
                         </div>
                         <div xml:id="placeholder-lines">
                             <head>Lines as placeholders</head>
+                            <p>In the documents, sometimes Pessoa uses lines as placeholders for
+                                some text that he maybe wished to add later. In the following
+                                facsimile of the document BNP 87 68r, the third list item of he
+                                second list on the page begins with a line, followed by the text
+                                "(some new collaborator)".</p>
+                            <graphic
+                                url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-87-1-103_JPG_24-C-R0150/bn-acpc-e-e3-87-1-103_0149_68_t24-C-R0150.jpg"
+                                width="500px" height="auto"/>
+                            <p>Here, the line clearly stands for some name to be added later. This
+                                is encoded as follows:</p>
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                <item>
+                                    <label>3.</label>
+                                    <choice>
+                                        <abbr><metamark rend="line" function="placeholder"/></abbr>
+                                        <expan><supplied resp="PS" reason="omitted-in-original"
+                                            /></expan>
+                                    </choice> (some new collaborator) </item>
+                            </egXML>
+                            <p>The line is marked up with the element <gi>metamark</gi> and the
+                                attribute <att>rend</att> with the value <val>line</val>. It has
+                                another attribute <att>function</att> with the value
+                                    <val>placeholder</val>. In this example, the editor decided to
+                                explain that some text was omitted here, so the placeholder line is
+                                interpreted as an abbreviation standing for some other text. It is
+                                therefore enclosed in a construction of <gi>choice</gi> with the
+                                child elements <gi>abbr</gi> (containing the line mark) and
+                                    <gi>expan</gi> (containing the supposed expansion). But, as the
+                                text that the placeholder stands for is not known, <gi>expan</gi>
+                                contains an element <gi>supplied</gi> with <att>reason</att>
+                                <val>omitted-in-original</val>.</p>
                             <p>Lines can also serve as placeholders for text that was already
                                 mentioned before. In the following example, a line is used to signal
                                 that text from the preceding list item is repeated:</p>
@@ -616,6 +647,35 @@
                             <p>There are two kinds of substitutions. In the first case, something is
                                 deleted and replaced with something else. In the second case, an
                                 alternative is added without deleting the first option.</p>
+                            <p>An example of the first case can be seen in the following facsimile
+                                of the list BNP 143 6r:</p>
+                            <graphic
+                                url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-143-1-14_JPG_24-C-R0150/bn-acpc-e-e3-143-1-14_0011_6_t24-C-R0150.jpg"
+                                width="500px" height="auto"/>
+                            <p>In the fourth item of the list, the word "large" is overtyped and
+                                replaced with the word "big", which is put above the old word. This
+                                list item is encoded in the following way:</p>
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                <item>
+                                    <rs type="title">Biomancy</rs> (fairly <subst>
+                                        <del rend="overtyped" n="1">large</del>
+                                        <add place="above" n="2">big</add>
+                                    </subst> article)</item>
+                            </egXML>
+                            <p>The word that is deleted ("large") is marked up with the element
+                                    <gi>del</gi>. It has the attribute <att>rend</att> with the
+                                value <val>overtyped</val>, because the word is deleted by typing
+                                some "xxx" over it. The attribute <att>n</att> with the value
+                                    <val>1</val> says that the word "large" belongs to the first
+                                version of this document (before it was deleted). The word that is
+                                added instead ("big") is encoded with the element <gi>add</gi>.
+                                Where the new word is added is indicated in the attribute
+                                    <att>place</att>, which has the value <val>above</val> here.
+                                Also, the addition carries the attribute <att>n</att> with the value
+                                    <val>2</val>, saying that this addition belongs to the second,
+                                final version of the document. Both the deletion and the addition
+                                are surrounded by an element <gi>subst</gi>, indicating that this is
+                                a substitution.</p>
                             <p>An example of the second case can be seen in the following
                                 facsimile:</p>
                             <graphic
@@ -819,11 +879,41 @@
                         </div>
                         <div xml:id="gaps">
                             <head>Gaps</head>
-                            <!-- look for example for gap with reason illegible -->
-                            <p>The editor may wish to indicate that at some points in a document,
-                                some text is expected but is missing because the document was not
-                                finished or because the text was left out on purpose. An example of
-                                such a case is shown in the following:</p>
+                            <p>One sort of gaps is when some text in a document is present, but
+                                could not be read by the editor. See for example the following
+                                facsimile of the document 144D2 9r:</p>
+                            <graphic
+                                url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3_144d2_JPG_24-C-R0150/bn-acpc-e-e3_144d2_0031_9r_t24-C-R0150.jpg"
+                                width="500px" height="auto"/>
+                            <p>At the end of the fourth list item, there is some text in
+                                parenthesis, beginning with "Fraça, Barrès.", but the third word,
+                                which was struck through, could not be read. It is therefore marked
+                                as a gap and encoded as follows:</p>
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                <item><label>4.</label>
+                                    <rs type="title">O scepticismo energico</rs>. (<rs type="place"
+                                        >França</rs>, <rs type="name" key="P366">Barrès</rs>. <del
+                                        rend="overstrike">
+                                        <gap reason="illegible" extent="1" unit="word"
+                                    /></del>)</item>
+                            </egXML>
+                            <p>The word that could not be read is not transcribed. Instead an
+                                element <gi>gap</gi> is added at the position of the illegible word.
+                                The <gi>gap</gi> element gets an attribute <att>reason</att> stating
+                                why there is a gap, in this case because the word is
+                                    <val>illegible</val>. What and how much is illegible is
+                                indicated in the other two attributes: <att>unit</att> stating that
+                                it is a <val>word</val> and <att>extent</att> stating that just
+                                    <val>1</val> word could not be read. In this specific example,
+                                the illegible word is also struck through. This is marked up by
+                                adding a <gi>del</gi> element around the <gi>gap</gi> element, with
+                                an attribute <att>rend</att> with the value
+                                <val>overstrike</val>.</p>
+                            <p>Another kind of gap is, when the editor may wish to indicate that at
+                                some points in a document, some text is expected but is missing
+                                because the document was not finished or because the text was left
+                                out on purpose. An example of such a case is shown in the
+                                following:</p>
                             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                 <item>
                                     <rs type="periodical" key="J19">
@@ -837,14 +927,14 @@
                             </egXML>
                             <p>Here there is a list item containing the name of a periodical and a
                                 comment "ver se se obtem Santos-Vieira". An addition is made below
-                                this list item: "(pelo lado anti-clerical )". Because there is
-                                space between the last word of the addition and the closing
-                                parenthesis, the editor assumes that there should be more text. To
-                                mark this, the element <gi>supplied</gi> is used. It carries two
-                                attributes, the first one, <att>resp</att>, serves to indicate who
-                                made this intervention. As a value, it takes the initials of the
-                                responsible editor, in this case "PS" for "Pedro Sepúlveda". The
-                                second attribute is <att>reason</att>, explaining why something is
+                                this list item: "(pelo lado anti-clerical )". Because there is space
+                                between the last word of the addition and the closing parenthesis,
+                                the editor assumes that there should be more text. To mark this, the
+                                element <gi>supplied</gi> is used. It carries two attributes, the
+                                first one, <att>resp</att>, serves to indicate who made this
+                                intervention. As a value, it takes the initials of the responsible
+                                editor, in this case "PS" for "Pedro Sepúlveda". The second
+                                attribute is <att>reason</att>, explaining why something is
                                 supplied. Here it has the value <val>omitted-in-original</val>. In
                                 this example, the element <gi>supplied</gi> is empty because the
                                 editor does not know what the missing text is. In other cases, it is

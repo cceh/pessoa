@@ -62,11 +62,21 @@ declare function app:get-bibl($node as node(), $model as map(*), $type as xs:str
 : @param $xmlid Welche Eintrag innerhalb von webpage.xml verarbeitet werden
 : @return Wellformed HTML
 :)
-declare   function app:MultiPage($node as node(), $model as map(*),$xmlid as xs:string) {
+declare function app:MultiPage($node as node(), $model as map(*),$xmlid as xs:string) {
 let $doc := doc("/db/apps/pessoa/data/webpage.xml")
 let $stylesheet := doc("/db/apps/pessoa/xslt/webpage.xsl")
+let $docs-available := count(collection("/db/apps/pessoa/data/doc")//tei:availability[@status='free'])
+let $docs-restricted := count(collection("/db/apps/pessoa/data/doc")//tei:availability[@status='restricted'])
+let $pubs-available := count(collection("/db/apps/pessoa/data/pub")//tei:availability[@status='free'])
+let $pubs-restricted := count(collection("/db/apps/pessoa/data/pub")//tei:availability[@status='restricted'])
 let $text := $doc/tei:TEI/tei:text/tei:group/tei:text[@xml:id=$xmlid]/tei:group/tei:text[@xml:lang = $helpers:web-language]/tei:body
-return  transform:transform($text, $stylesheet, (<parameters><param name="res" value="{$helpers:app-root}"/></parameters>))
+return  transform:transform($text, $stylesheet, (<parameters>
+<param name="res" value="{$helpers:app-root}"/>
+<param name="docs-available" value="{$docs-available}"/>
+<param name="docs-restricted" value="{$docs-restricted}"/>
+<param name="pubs-available" value="{$pubs-available}"/>
+<param name="pubs-restricted" value="{$pubs-restricted}"/>
+</parameters>))
 };
 
 (:~ Collect all Documents from the folders "doc" and "pub":)
