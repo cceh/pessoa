@@ -1238,42 +1238,51 @@
                                         type="internal">About</ref>, details on the data model, TEI
                                     encoding and technical infrastructure are given here.</p>
                             </div>
-                            <!--<div>
-                                <head>Data model</head>
-                                <p>Different entities are defined to form ...</p>
-                            </div>-->
                             <div>
                                 <head>TEI encoding</head>
-                                <p>The XML encoding of the documents and publications follows the
-                                    standard of the Text Encoding Initiative (TEI). The project
-                                    specific TEI customization is described <ref target="/tei-odd"
-                                        type="external">here</ref>.</p>
+                                <p>The realization of the digital edition relies primarily on XML
+                                    standards and related technologies.</p>
+                                <p>The transcriptions of the documents, the publications, and the
+                                    corresponding metadata are encoded according to the standard of
+                                    the Text Encoding Initiative (in the version TEI-P5).</p>
+                                <p>The project specific TEI customization is described <ref
+                                        target="/tei-odd" type="external">here</ref>.</p>
                             </div>
                             <div>
                                 <head>Technical setup and workflow</head>
-                                <p>The realization of the digital edition relies primarily on
-                                    procedures and technologies coming from the X universe.
-                                    Transcriptions of the documents and metadata are encoded
-                                    according to the standard of the Text Encoding Initiative
-                                    (TEI-P5). The TEI documents are stored in an XML database
-                                    (eXist) hosted on a web server together with the digital
-                                    facsimiles. While the work on the documents is going on, a
-                                    GitHub repository reachable at <ref
-                                        target="https://github.com/cceh/pessoa" type="external"
-                                        >https://github.com/cceh/pessoa</ref> is used to hold
-                                    successive versions of both the TEI documents and the
-                                    application that is developed. Scripts written in XQuery and
-                                    XSLT control the transformation of the documents’ underlying
-                                    representation into the presentation layer. Some of the
-                                    components shipped with eXist are used: Bootstrap, JQuery and
-                                    eXist’s Templating Framework plus a SIMILE timeline and the
-                                    OpenSeadragon image viewer.</p>
+                                <p>The technical setup and workflow are sketched in the following
+                                    figure:</p>
                                 <figure>
                                     <graphic url="/resources/images/content/workflow.png"
                                         width="600px">
                                         <desc>Technical setup and workflow</desc>
                                     </graphic>
                                 </figure>
+                                <p>The workflow can be divided into four major steps: (1)
+                                    interpretation, (2) representation, (3) transformation, and (4)
+                                    presentation.</p>
+                                <p>First, the original documents were transcribed and encoded in
+                                    TEI.</p>
+                                <p>The TEI documents are fed into a GitHub repository reachable at
+                                        <ref target="https://github.com/cceh/pessoa" type="external"
+                                        >https://github.com/cceh/pessoa</ref>, so that their
+                                    versions can be controlled and to make it possible that the
+                                    members of the team work on the TEI files collaboratively.</p>
+                                <p>The facsimiles of the documents are stored separately on an image
+                                    server.</p>
+                                <p>The master files of the GitHub repository are stored in an XML
+                                    database (eXist-db), where they are embedded in an application
+                                    that generates the website of the edition. Also the image files
+                                    are included in this application through an image viewer
+                                    (OpenSeadragon).</p>
+                                <p>The application consists mainly XQuery and XSLT files which
+                                    produce the pages of the website and which serve to transform
+                                    the TEI documents into HTML documents. In addition, CSS
+                                    stylesheets are used to control the style of the website itself
+                                    and of the digitally edited documents.</p>
+                                <p>To create the website, some of the components shipped with eXist
+                                    are used: the CSS framework Bootstrap, the JavaScript library
+                                    JQuery and eXist’s Templating Framework.</p>
                             </div>
                         </body>
                     </text>
@@ -1281,6 +1290,61 @@
                         <body>
                             <div>
                                 <head>Dokumentation</head>
+                                <p>Informationen zu den editorischen Aspekten der digitalen Edition
+                                    sind auf der Seite <ref target="/pessoa/en/page/about"
+                                        type="internal">Über das Projekt</ref> enthalten. Details
+                                    zum Datenmodell, zur TEI-Codierung und zur technischen
+                                    Infrastruktur sind auf dieser Seite zu finden.</p>
+                            </div>
+                            <div>
+                                <head>TEI-Codierung</head>
+                                <p>Die Umsetzung der digitalen Edition basiert vor allem auf
+                                    XML-Standards und damit verbundenen Technologien.</p>
+                                <p>Die Transkriptionen der Dokumente, der Publikationen und die
+                                    zugehörigen Metadaten wurden nach dem Standard der Text Encoding
+                                    Initiative (in der Version TEI-P5) codiert.</p>
+                                <p>Die projektspezifische TEI-Anpassung ist <ref target="/tei-odd"
+                                        type="external">hier</ref> dokumentiert.</p>
+                            </div>
+                            <div>
+                                <head>Technisches Setup und Workflow</head>
+                                <p>Das technische Setup und der Arbeitsworkflow sind in der
+                                    folgenden Abbildung skizziert:</p>
+                                <figure>
+                                    <graphic url="/resources/images/content/workflow.png"
+                                        width="600px">
+                                        <desc>Technical setup and workflow</desc>
+                                    </graphic>
+                                </figure>
+                                <p>Der Workflow kann in vier Hauptschritte unterteilt werden: (1)
+                                    Interpretation, (2) Repräsentation, (3) Transformation und (4)
+                                    Präsentation.</p>
+                                <p>Zunächst wurden die Dokumente transkribiert und in TEI
+                                    codiert.</p>
+                                <p>Die TEI-Dokumente werden in einem GitHub-Repositorium verwaltet,
+                                    das unter <ref target="https://github.com/cceh/pessoa"
+                                        type="external">https://github.com/cceh/pessoa</ref> zu
+                                    erreichen ist. So wird ermöglicht, dass verschiedene Versionen
+                                    der TEI-Dateien kontrolliert werden und dass die
+                                    Projektmitarbeiter gemeinsam an den TEI-Dateien arbeiten
+                                    können.</p>
+                                <p>Die Faksimiles der Dokumente werden separat auf einem Bildserver
+                                    gespeichert.</p>
+                                <p>Die Master-Dateien aus dem GitHub-Repositorium werden in einer
+                                    XML-Datenbank (eXist-db) gespeichert und dort in eine Anwendung
+                                    eingebettet, welche die Webseite der Edition generiert. Auch die
+                                    Bilddateien sind über einen Image-Viewer (OpenSeadragon) in die
+                                    Anwendung integriert.</p>
+                                <p>Die Anwendung besteht hauptsächlich aus XQuery- und XSLT-Dateien,
+                                    mit denen die Seiten für das Web erstellt werden und die dazu
+                                    dienen, die TEI-Dokumente in HTML-Dokumente zu transformieren.
+                                    Mit Hilfe von CSS-Stylesheets wird sowohl das allgemeine
+                                    Aussehen der Webseite also auch der digital edierten Dokumente
+                                    gesteuert.</p>
+                                <p>Zur Erstellung der Webseite wurden einige Komponenten verwendet,
+                                    die Teil einer eXist-Datenbank sind: das CSS-Framework
+                                    Bootstrap, die JavaScript-Bibliothek JQuery und das Templating
+                                    Framework von eXist.</p>
                             </div>
                         </body>
                     </text>

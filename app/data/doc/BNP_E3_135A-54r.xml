@@ -52,7 +52,7 @@
                <msContents>
                   <summary>
                      <p> Lista manuscrita, publicada em <hi rend="italic">Sensacionismo e outros
-                        Ismos</hi> (2009, 101). </p>
+                           Ismos</hi> (2009, 101). </p>
                   </summary>
                   <msItemStruct>
                      <author>
@@ -86,33 +86,50 @@
          <div>
             <head><hi rend="underline">HACKWORK.</hi></head>
             <list>
-               <item><label>1.</label>
-                  Artigos em <rs type="periodical" key="J5">“A Aguia”</rs> –<lb/><metamark rend="space" function="placeholder"/>2 primeiros<lb/>
+               <item><!-- you can add @rend="indent-2" to this item element to say that text 
+               after line breaks should be indented -->
+                  <label>1.</label> Artigos em <rs type="periodical" key="J5">“A Aguia”</rs>
+                     –<lb/><!-- is this space really to be interpreted as a placeholder
+                     for some text that is missing? if yes, please wrap the placeholder metamark
+                     inside a choice element (see documentation "space as placeholder"). if not, please
+                     just delete these space metamarks --><metamark
+                     rend="space" function="placeholder"/>2 primeiros<lb/>
                   <metamark rend="space" function="placeholder"/><choice>
-                     <abbr> Art<am>.</am></abbr>
-                     <expan> Art<ex>igo</ex></expan>
+                     <abbr>
+                        <!-- the space here between the opening <abbr> and "Art" is too much -->Art<am>.</am></abbr>
+                     <expan>
+                        <!-- same here: there should be no space between the beginning of the element
+                     <expan> and the text "Art" -->Art<ex>igo</ex></expan>
                   </choice>
                   <choice>
                      <abbr>s<am>.</am></abbr>
                      <expan>s<ex>obre</ex></expan>
-                  </choice> <rs type="name" key="P56">Almada-Negreiros</rs>.</item>
-               <item><label>2.</label>
-                  Artigo em <rs type="periodical" key="J32">“Exilio”.</rs></item>
-               <item><label>3.</label>
-                  Os artigos em <rs type="periodical" key="J7">
-                     <hi rend="underline">O Theatro.</hi></rs></item>
-               <item><label>4.</label>
-                  Chronicas em <rs type="periodical"><hi rend="underline">“<rs type="periodical" key="J45">0
-                        Jornal</rs>”</hi>.</rs></item>
-               <item><label>5.</label>
-                  Resposta ao <choice>
+                  </choice>
+                  <rs type="name" key="P56">Almada-Negreiros</rs>. </item>
+               <item>
+                  <label>2.</label> Artigo em <rs type="periodical" key="J32">“Exilio”.</rs>
+               </item>
+               <item>
+                  <label>3.</label> Os artigos em <rs type="periodical" key="J7">
+                     <hi rend="underline">O Theatro.</hi></rs>
+               </item>
+               <item>
+                  <label>4.</label> Chronicas em <rs type="periodical"><hi rend="underline">“<rs
+                           type="periodical" key="J45">0 Jornal</rs>”</hi>.</rs>
+               </item>
+               <item>
+                  <label>5.</label> Resposta ao <choice>
                      <abbr>Inq<am>.</am></abbr>
                      <expan>Inq<ex/>uerito</expan>
-                  </choice> Literario.</item>
-               <item><label>6.</label>
-                  <rs type="title">Paues</rs> (“<rs type="periodical" key="J27">Renascença</rs>”)</item>
-               <item><label>7.</label>
-                  “<rs type="title">Como organizar <rs type="place">Portugal</rs>.”</rs></item>
+                  </choice> Literario. </item>
+               <item>
+                  <label>6.</label>
+                  <rs type="title">Paues</rs> (“<rs type="periodical" key="J27"
+                  >Renascença</rs>”)</item>
+               <item>
+                  <label>7.</label> “<rs type="title">Como organizar <rs type="place"
+                     >Portugal</rs>.”</rs>
+               </item>
             </list>
          </div>
       </body>

@@ -187,9 +187,11 @@
                             This heading introduces the first division of the document and is
                             therefore included inside a <gi>div</gi>. The facsimile of the whole
                             document is given in the following:</p>
-                        <graphic
-                            url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-5-1-85_JPG_24-C-R0150/bn-acpc-e-e3-5-1-85_0166_83_t24-C-R0150.jpg"
-                            width="500px" height="auto"/>
+                        <figure>
+                            <graphic
+                                url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-5-1-85_JPG_24-C-R0150/bn-acpc-e-e3-5-1-85_0166_83_t24-C-R0150.jpg"
+                                width="500px"/>
+                        </figure>
                         <p>Here it becomes visible that the document has three parts, each starting
                             with an own heading. Each of these parts is encoded in an own
                             division:</p>
@@ -292,9 +294,11 @@
                                     target="#margin-notes">Notes added on the margin</ref>). An
                                 example of simple notes added to the margin is shown in the
                                 following facsimile:</p>
-                            <graphic
-                                url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-12-1-1-100_JPG_24-C-R0150/bn-acpc-e-e3-12-1-1-100_0167_79_t24-C-R0150.jpg"
-                                width="500px" height="auto"/>
+                            <figure>
+                                <graphic
+                                    url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-12-1-1-100_JPG_24-C-R0150/bn-acpc-e-e3-12-1-1-100_0167_79_t24-C-R0150.jpg"
+                                    width="500px"/>
+                            </figure>
                             <p>Here Pessoa placed question marks to the left of some of the list
                                 items. This is encoded as follows:</p>
                             <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -391,9 +395,11 @@
                                 b using the <att>rend</att> with <val>indent-2</val>. To get an
                                 impression of how this looks like, see the facsimile of this <hi
                                     rend="italic">document</hi>:</p>
-                            <graphic
-                                url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-5-1-85_JPG_24-C-R0150/bn-acpc-e-e3-5-1-85_0166_83_t24-C-R0150.jpg"
-                                width="500px" height="auto"/>
+                            <figure>
+                                <graphic
+                                    url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-5-1-85_JPG_24-C-R0150/bn-acpc-e-e3-5-1-85_0166_83_t24-C-R0150.jpg"
+                                    width="500px"/>
+                            </figure>
                         </div>
                         <div xml:id="division-lines">
                             <head>Division lines</head>
@@ -433,9 +439,11 @@
                                 Móra consisting of three parts. The first part has three list items,
                                 then two other items follow separated by space from the first part
                                 of the list:</p>
-                            <graphic
-                                url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-12-1-1-100_JPG_24-C-R0150/bn-acpc-e-e3-12-1-1-100_0019_10_t24-C-R0150.jpg"
-                                width="500px" height="auto"/>
+                            <figure>
+                                <graphic
+                                    url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-12-1-1-100_JPG_24-C-R0150/bn-acpc-e-e3-12-1-1-100_0019_10_t24-C-R0150.jpg"
+                                    width="500px"/>
+                            </figure>
                             <p>To encode such spaces, the element <gi>metamark</gi> is used with the
                                 attribute <att>rend</att> having the value <val>space</val>. In the
                                 above example, the function of the space is to signal that the items
@@ -460,9 +468,11 @@
                                 facsimile of the document BNP 87 68r, the third list item of he
                                 second list on the page begins with a line, followed by the text
                                 "(some new collaborator)".</p>
-                            <graphic
-                                url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-87-1-103_JPG_24-C-R0150/bn-acpc-e-e3-87-1-103_0149_68_t24-C-R0150.jpg"
-                                width="500px" height="auto"/>
+                            <figure>
+                                <graphic
+                                    url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-87-1-103_JPG_24-C-R0150/bn-acpc-e-e3-87-1-103_0149_68_t24-C-R0150.jpg"
+                                    width="500px"/>
+                            </figure>
                             <p>Here, the line clearly stands for some name to be added later. This
                                 is encoded as follows:</p>
                             <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -507,6 +517,84 @@
                                 For more details about this example, see the section on <ref
                                     target="#abbreviations">abbreviations</ref> below.</p>
                         </div>
+                        <div xml:id="placeholder-space">
+                            <head>Space as placeholder</head>
+                            <p>Like lines, also space can serve as a placeholder either for some
+                                text that Pessoa wished to add later, or in the function of "ditto",
+                                repeating some text that was given earlier.</p>
+                            <p>An example of the first case is visible in the facsimile of the list
+                                BNP 87 40r:</p>
+                            <figure>
+                                <graphic
+                                    url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-87-1-103_JPG_24-C-R0150/bn-acpc-e-e3-87-1-103_0093_40_t24-C-R0150.jpg"
+                                    width="500px"/>
+                            </figure>
+                            <p>Here, the first three list items were entirely left blank and the
+                                fourth was left blank in the beginning. Such items are encoded as
+                                follows:</p>
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                <item>
+                                    <label>3.</label>
+                                    <choice>
+                                        <abbr><metamark rend="space" function="placeholder"/></abbr>
+                                        <expan><supplied resp="PS" reason="omitted-in-original"
+                                            /></expan>
+                                    </choice>
+                                </item>
+                                <item rend="indent-2">
+                                    <label>4.</label>
+                                    <choice>
+                                        <abbr><metamark rend="space" function="placeholder"/></abbr>
+                                        <expan><supplied resp="PS" reason="omitted-in-original"
+                                            /></expan>
+                                    </choice> — <rs type="name" key="P80">Angelo de Lima</rs>,<lb/>
+                                    <note>(in fine)</note>
+                                </item>
+                            </egXML>
+                            <p>The space is marked up with the element <gi>metamark</gi> and the
+                                attribute <att>rend</att> with the value <val>space</val>, as well
+                                as the attribute <att>function</att> with the value
+                                    <val>placeholder</val>. It is interpreted as an abbreviation for
+                                something else, so it is surrounded by an element <gi>abbr</gi>.
+                                This is expanded inside of an element <gi>expan</gi>, which
+                                containts an element <gi>supplied</gi>, saying with the attribute
+                                    <att>reason</att> and the value <val>omitted-in-original</val>,
+                                that the editor thinks that some text is missing here. The
+                                responsibility of this interpretation is given in the attribute
+                                    <att>resp</att> which takes the initials of the editor as value.
+                                Finally, both <gi>abbr</gi> and <gi>expan</gi> are contained inside
+                                of an element <gi>choice</gi>, indicating that these two encodings
+                                are alternative views on the document, a more documentary one
+                                marking the space and a more interpretive one saying that something
+                                was omitted.</p>
+                            <p>An example of the second case, space serving as "ditto", can be seen
+                                in the facsimile of the list BNP 48-56r:</p>
+                            <figure>
+                                <graphic
+                                    url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-48-1-56_JPG_24-C-R0150/bn-acpc-e-e3-48-1-56_0111_56_t24-C-R0150.jpg"
+                                    width="500px"/>
+                            </figure>
+                            <p>Here the names initiating list items are only given the first time,
+                                e. g. "Robert Browning : Eveln Hope." From the second time on, there
+                                is just a space, which is thought to be filled with the same name.
+                                This is encoded as follows:</p>
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                <choice>
+                                    <abbr><metamark rend="space" function="ditto"/></abbr>
+                                    <expan><rs type="name" key="P267">Robert Browning</rs></expan>
+                                </choice>
+                            </egXML>
+                            <p>The element <gi>choice</gi> is used to mark that either the blank
+                                space can be shown or the name that it stands for. The blank space
+                                is interpreted as an abbreviation and marked up with the element
+                                    <gi>abbr</gi>, inside of which <gi>metamark</gi> is used to mark
+                                the space itself. The <gi>metamark</gi> element here has the
+                                attribute <att>rend</att> with the value <val>space</val> and the
+                                attribute <att>function</att> with the value <val>ditto</val>. The
+                                expansion is then used to fill in the text that the space stands
+                                for, in this case the name "Robert Browning". This is encoded in the
+                                element <gi>expan</gi>.</p>
+                        </div>
                         <div xml:id="curly-brackets">
                             <head>Curly brackets</head>
                             <p>Curly brackets are often part of notes added to the margin by Pessoa.
@@ -533,9 +621,11 @@
                             <head>Additions</head>
                             <p>In general, additions are encoded using the element <gi>add</gi>. The
                                 following facsimile shows an example of an addition:</p>
-                            <graphic
-                                url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-7-1-50_JPG_24-C-R0150/bn-acpc-e-e3-7-1-50_0059_29_t24-C-R0150.jpg"
-                                width="500px" height="auto"/>
+                            <figure>
+                                <graphic
+                                    url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-7-1-50_JPG_24-C-R0150/bn-acpc-e-e3-7-1-50_0059_29_t24-C-R0150.jpg"
+                                    width="500px"/>
+                            </figure>
                             <p>In the second list item, a note is added below the word "Arist". This
                                 is encoded in the following way:</p>
                             <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -579,9 +669,11 @@
                                     items in a list and add a note to them. An example of this can
                                     be seen in the following facsimile taken from the document BNP
                                     12-1 10r:</p>
-                                <graphic
-                                    url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-12-1-1-100_JPG_24-C-R0150/bn-acpc-e-e3-12-1-1-100_0019_10_t24-C-R0150.jpg"
-                                    width="500px" height="auto"/>
+                                <figure>
+                                    <graphic
+                                        url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-12-1-1-100_JPG_24-C-R0150/bn-acpc-e-e3-12-1-1-100_0019_10_t24-C-R0150.jpg"
+                                        width="500px"/>
+                                </figure>
                                 <p>Here the first three items of the list have a note added on the
                                     right margin ("Tres Dissertações"). This note is encoded as
                                     follows:</p>
@@ -649,9 +741,11 @@
                                 alternative is added without deleting the first option.</p>
                             <p>An example of the first case can be seen in the following facsimile
                                 of the list BNP 143 6r:</p>
-                            <graphic
-                                url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-143-1-14_JPG_24-C-R0150/bn-acpc-e-e3-143-1-14_0011_6_t24-C-R0150.jpg"
-                                width="500px" height="auto"/>
+                            <figure>
+                                <graphic
+                                    url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-143-1-14_JPG_24-C-R0150/bn-acpc-e-e3-143-1-14_0011_6_t24-C-R0150.jpg"
+                                    width="500px"/>
+                            </figure>
                             <p>In the fourth item of the list, the word "large" is overtyped and
                                 replaced with the word "big", which is put above the old word. This
                                 list item is encoded in the following way:</p>
@@ -678,9 +772,11 @@
                                 a substitution.</p>
                             <p>An example of the second case can be seen in the following
                                 facsimile:</p>
-                            <graphic
-                                url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-8-1-13_JPG_24-C-R0150/bn-acpc-e-e3-8-1-13_0006_3v_t24-C-R0150.jpg"
-                                width="500px" height="auto"/>
+                            <figure>
+                                <graphic
+                                    url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-8-1-13_JPG_24-C-R0150/bn-acpc-e-e3-8-1-13_0006_3v_t24-C-R0150.jpg"
+                                    width="500px"/>
+                            </figure>
                             <p>Here, in the list item with the number 6, there is the title "Le
                                 Gardien des Troupeaux", to which an alternative is added resulting
                                 in "Le Gardien de Troupeaux". The encoding of this alternative is
@@ -723,9 +819,11 @@
                             <p>Deletions can be sections of text that are visibly struck through or
                                 typed over by Pessoa. The following facsimile contains an example of
                                 a deletion:</p>
-                            <graphic
-                                url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-14b-1-73_JPG_24-C-R0150/bn-acpc-e-e3-14b-1-73_0033_16-16a_t24-C-R0150.jpg"
-                                width="500px" height="auto"/>
+                            <figure>
+                                <graphic
+                                    url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-14b-1-73_JPG_24-C-R0150/bn-acpc-e-e3-14b-1-73_0033_16-16a_t24-C-R0150.jpg"
+                                    width="500px"/>
+                            </figure>
                             <p>On the right page, below the heading "Um grande poeta materialista
                                 (Alberto Caeiro)", there is a phrase "A enthusiastica all" which is
                                 struck through. This is encoded as follows:</p>
@@ -791,9 +889,11 @@
                                 marks as placeholders.</p>
                             <p>In the following facsimile, it can be seen that the sixth list item
                                 starts with a line:</p>
-                            <graphic
-                                url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-8-1-13_JPG_24-C-R0150/bn-acpc-e-e3-8-1-13_0006_3v_t24-C-R0150.jpg"
-                                width="500px" height="auto"/>
+                            <figure>
+                                <graphic
+                                    url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-8-1-13_JPG_24-C-R0150/bn-acpc-e-e3-8-1-13_0006_3v_t24-C-R0150.jpg"
+                                    width="500px"/>
+                            </figure>
                             <p>This line indicates that the beginning of this list item corresponds
                                 with the beginning of the previous item number 5, i. e. "Trad.
                                 de...". The line is therefore interpreted as an abbreviation, which
@@ -882,9 +982,11 @@
                             <p>One sort of gaps is when some text in a document is present, but
                                 could not be read by the editor. See for example the following
                                 facsimile of the document 144D2 9r:</p>
-                            <graphic
-                                url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3_144d2_JPG_24-C-R0150/bn-acpc-e-e3_144d2_0031_9r_t24-C-R0150.jpg"
-                                width="500px" height="auto"/>
+                            <figure>
+                                <graphic
+                                    url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3_144d2_JPG_24-C-R0150/bn-acpc-e-e3_144d2_0031_9r_t24-C-R0150.jpg"
+                                    width="500px"/>
+                            </figure>
                             <p>At the end of the fourth list item, there is some text in
                                 parenthesis, beginning with "Fraça, Barrès.", but the third word,
                                 which was struck through, could not be read. It is therefore marked
