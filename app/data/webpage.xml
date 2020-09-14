@@ -1212,20 +1212,43 @@
                         <body>
                             <div>
                                 <head>Documentação</head>
-                                <p>Os aspectos editoriais desta edição são documentadas na página
-                                        <ref target="/pessoa/pt/page/about" type="internal">Sobre o
-                                        projeto</ref>, enquanto as informações sobre o modelo de
-                                    dados, a codificação em TEI e a infra-estrutura técnica estão
-                                    recordados aqui.</p>
+                                <p>Considerações sobre aspetos editoriais desta edição digital encontram-se em 
+                                    <ref target="/pessoa/pt/page/about" type="internal">Sobre o
+                                        projeto</ref>, enquanto a informação detalhada sobre o modelo de dados, 
+                                    a codificação TEI e a infraestrutura técnica pode ser consultada aqui.</p>
                             </div>
                             <div>
-                                <head>Technical setup and workflow</head>
+                                <head>Codificação TEI</head>
+                                <p>A concretização da edição digital tem por base principalmente standards XML e tecnologias relacionadas.</p>
+                                <p>As transcrições dos documentos, das publicações e dos metadados correspondentes estão codificadas 
+                                    segundo os standards da Text Encoding Initiative (na versão TEI-P5).</p>
+                                <p>A adaptação das normas TEI específica do projeto é descrita <ref
+                                    target="/tei-odd" type="external">aqui</ref>.</p>
+                            </div>
+                            <div>
+                                <head>Setup técnico e workflow</head>
+                                <p>O setup técnico e o workflow são esboçados na seguinte figura:</p>
                                 <figure>
                                     <graphic url="/resources/images/content/workflow.png"
                                         width="600px">
-                                        <desc>Technical setup and workflow</desc>
+                                        <desc>Setup técnico e workflow</desc>
                                     </graphic>
                                 </figure>
+                                <p>O workflow pode ser dividido em quatro passos principais: (1) interpretação, (2) representação, (3) transformação e (4) apresentação.</p>
+                                <p>Os documentos são primeiro transcritos e codificados segundo as normas TEI.</p>
+                                <p>Os documentos TEI são administrados num repositório GitHub, situado em <ref target="https://github.com/cceh/pessoa" type="external"
+                                    >https://github.com/cceh/pessoa</ref>, de modo a que as suas versões possam ser verificadas e para tornar possível 
+                                    que membros da equipa trabalhem nos ficheiros TEI 
+                                    de forma colaborativa.</p>
+                                <p>Os facsímiles dos documentos podem ser guardados separadamente num servidor de imagens.</p>
+                                <p>Os ficheiros master do repositório GitHub são guardados numa base de dados XML (eXist-db), 
+                                    onde estão inseridos numa aplicação que gera o portal da edição. 
+                                    Estes ficheiros de imagem também estão incluídos nesta aplicação através de um visualizador de imagens (OpenSeadragon).</p>
+                                <p>A aplicação é principalmente baseada em ficheiros XQuery e XSLT, que produzem as páginas do portal 
+                                    e que servem para transformar os documentos TEI em documentos HTML. 
+                                    Para além disso, são usadas CSS stylesheets para orientar o estilo do portal e dos documentos editados digitalmente.</p>
+                                <p>Para a criação do portal foram usados alguns componentes integrados na base de dados eXist: o framework CSS Bootstrap, 
+                                    a biblioteca em JavaScript JQuery e o Templating Framework de eXist.</p>
                             </div>
                         </body>
                     </text>
