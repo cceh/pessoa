@@ -86,20 +86,12 @@
          <div>
             <head><hi rend="underline">HACKWORK.</hi></head>
             <list>
-               <item><!-- you can add @rend="indent-2" to this item element to say that text 
-               after line breaks should be indented -->
+               <item rend="indent-2">
                   <label>1.</label> Artigos em <rs type="periodical" key="J5">“A Aguia”</rs>
-                     –<lb/><!-- is this space really to be interpreted as a placeholder
-                     for some text that is missing? if yes, please wrap the placeholder metamark
-                     inside a choice element (see documentation "space as placeholder"). if not, please
-                     just delete these space metamarks --><metamark
-                     rend="space" function="placeholder"/>2 primeiros<lb/>
-                  <metamark rend="space" function="placeholder"/><choice>
-                     <abbr>
-                        <!-- the space here between the opening <abbr> and "Art" is too much -->Art<am>.</am></abbr>
-                     <expan>
-                        <!-- same here: there should be no space between the beginning of the element
-                     <expan> and the text "Art" -->Art<ex>igo</ex></expan>
+                  –<lb/>2 primeiros<lb/>
+                 <choice>
+                     <abbr>Art<am>.</am></abbr>
+                     <expan>Art<ex>igo</ex></expan>
                   </choice>
                   <choice>
                      <abbr>s<am>.</am></abbr>
