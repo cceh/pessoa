@@ -536,6 +536,42 @@
                                 section on <ref target="#margin-notes">Notes added on the
                                     margin</ref>.</p>
                         </div>
+                        <div xml:id="crosses">
+                            <head>Crosses</head>
+                            <p>Pessoa uses crosses to mark that he is uncertain or has doubts about
+                                a passage of text on a document. An example is shown in the
+                                following facsimile from the list BNP 48, 18 and 19:</p>
+                            <figure>
+                                <graphic
+                                    url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-48-1-56_JPG_24-C-R0150/bn-acpc-e-e3-48-1-56_0036_18v_t24-C-R0150.jpg"
+                                    width="500px"/>
+                            </figure>
+                            <p>After the name "Alfredo Guisado" (the fith list item from the bottom)
+                                there is text in parentheses which is marked with a cross to the
+                                right: "(baloiço que me baloiça ?)+" This cross is interpreted as
+                                marking that Pessoa is not sure about the text preceding it in
+                                parentheses. This is marked up as follows:</p>
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                <item>
+                                    <hi rend="underline"><rs type="name" key="P36" style="a">Alfredo
+                                            Guisado</rs>:</hi>
+                                    <seg type="certainty" cert="medium" resp="FP" rend="cross right"
+                                        >(baloiço que me baloiça ?)</seg>
+                                </item>
+                            </egXML>
+                            <p>To mark the uncertain passage, the element <gi>seg</gi> is used with
+                                the attribute <att>type</att> having the value <val>certainty</val>.
+                                The degree of certainty is indicated in the attribute
+                                    <att>cert</att> and can be <val>high</val>, <val>medium</val>,
+                                or <val>low</val>. That Pessoa was the one having doubts is
+                                indicated with the attribute <att>resp</att> with the value
+                                    <val>FP</val>. Here the cross is not included in the
+                                transcription anymore, because the uncertainty is indicated with the
+                                TEI element and the attribute <att>rend</att> is used to mark how it
+                                was rendered originally (here with the value <val>cross right</val>
+                                to say that the passage was marked with a cross on the right side;
+                                another possible value would be <val>cross left</val>).</p>
+                        </div>
                     </div>
                     <div xml:id="genetic">
                         <head>Genetic encoding (additions, substitutions, deletions, ...)</head>
@@ -858,6 +894,20 @@
                                 transcribed. Possible values for <att>unit</att> are
                                     <val>character</val>, <val>word</val>, and <val>line</val>.
                                 Possible values for <att>extent</att> are numbers.</p>
+                        </div>
+                        <div xml:id="conjectural">
+                            <head>Conjectural readings</head>
+                            <p>Sometimes the editor is not sure how a passage should be read, but
+                                still wants to make a suggestion. Such conjectural readings are
+                                marked with the element <gi>unclear</gi>, as in the following
+                                example:</p>
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                <item>- <rs type="name" key="P130">Bacon</rs>
+                                    <unclear reason="illegible">Books</unclear></item>
+                            </egXML>
+                            <p>Here the word "Books" could not be read with certainty. The attribute
+                                    <att>reason</att> serves to explain why something was unclear,
+                                in this case because the word was <val>illegible</val>.</p>
                         </div>
                         <div xml:id="gaps">
                             <head>Gaps</head>
