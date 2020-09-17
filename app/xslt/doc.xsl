@@ -196,7 +196,20 @@
         mode="#default deletion addition">
         <xsl:for-each select="1 to @n">- </xsl:for-each>
     </xsl:template>
-    <!-- Lines -->
+    
+    <!-- Lines, Dots, etc. new: -->
+    <xsl:template match="metamark[@rend = 'line'][@function = 'distinct']" mode="#default deletion addition">
+        <hr class="line {@function}"/>
+    </xsl:template>
+    <xsl:template match="metamark[@rend = 'line center'][@function = 'distinct']" mode="#default deletion addition">
+        <hr class="line center {@function}"/>
+    </xsl:template>
+    <xsl:template match="metamark[@rend = 'dots'][@function = 'placeholder']" mode="#default deletion addition">
+        <hr class="dots {@function} inline"/>
+    </xsl:template>
+    
+    
+    <!-- Lines, old: -->
     <xsl:template match="metamark[@rend = 'line-14'][@function = ('distinct', 'end', 'sum', 'assignment')]"
         mode="#default deletion addition">
         <hr class="line line-14 {@function}"/>

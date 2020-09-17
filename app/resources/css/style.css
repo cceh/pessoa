@@ -1666,6 +1666,16 @@ div.text hr.line {
     border-color: #000000; 
     text-align: left; 
     margin: 1em auto 1em 0;
+    width: 95%;
+}
+div.text hr.line.center {
+    margin: 0 auto;
+}
+div.text hr.dots {
+    border: 1px dotted black;
+}
+div.text div.item hr.placeholder {
+    vertical-align: top;
 }
 div.text hr.line-18 {
     width: 12.5%;
@@ -2221,6 +2231,13 @@ div.text#BNP_E3_144X-48v hr.line {
 }
 div.text#BNP_E3_144X-48v span.metamark.quotes.ditto {
     width: 5em;
+}
+/* BNP_E3_87-68r */
+div.text#BNP_E3_87-68r hr.line.center {
+    width: 6em;
+}
+div.text#BNP_E3_87-68r hr.dots.placeholder {
+    width: 8em;
 }
 
 /* ABOUT PAGE */
