@@ -307,26 +307,82 @@
                         </div>
                     </div>
                     <div xml:id="renditions">
-                        <head>Typographical renditions</head>
+                        <head>(Typo)graphical renditions</head>
                         <p>An important part of the encoding of the <hi rend="italic">documents</hi>
                             in the project is how certain aspects of them were rendered in the
                             sources. In general, indications about how something looked like (how it
-                            was typographically emphasized or organized) are made in the attribute
+                            was (typo)graphically emphasized or organized) are made in the attribute
                                 <att>rend</att>, which can be used on many different elements.</p>
-                        <div>
+                        <div xml:id="highlighted">
                             <head>Highlighted characters, words, or passages</head>
-                            <p>Often, Pessoa highlighted text by underlining it. This is encoded
-                                using the element <gi>hi</gi> in combination with <att>rend</att>.
-                                In the following example, the whole heading is underlined. It does
-                                therefore contain a child element <gi>hi</gi> with the attribute
-                                    <att>rend</att>, having the value <val>underline</val>:</p>
-                            <egXML xmlns="http://www.tei-c.org/ns/Examples"><head><hi
-                                        rend="underline"><rs type="collection" key="C16"><rs
-                                                type="title" key="T184">Na Casa de saude de
-                                                Cascaes</rs></rs></hi></head> [...] </egXML>
-                            <p>Also individual characters or words can be underlined. Then the
-                                    <gi>hi</gi> element is just wrapped around these parts.
-                                <!-- example? --></p>
+                            <div xml:id="underline">
+                                <head>Underlinings</head>
+                                <p>Often, Pessoa highlighted text by underlining it. This is encoded
+                                    using the element <gi>hi</gi> in combination with
+                                        <att>rend</att>. In the following example, the whole heading
+                                    is underlined. It does therefore contain a child element
+                                        <gi>hi</gi> with the attribute <att>rend</att>, having the
+                                    value <val>underline</val>:</p>
+                                <egXML xmlns="http://www.tei-c.org/ns/Examples"><head><hi
+                                            rend="underline"><rs type="collection" key="C16"><rs
+                                                  type="title" key="T184">Na Casa de saude de
+                                                  Cascaes</rs></rs></hi></head> [...] </egXML>
+                                <p>Also individual characters or words can be underlined. Then the
+                                        <gi>hi</gi> element is just wrapped around these parts.
+                                    <!-- example? --></p>
+                            </div>
+                            <div xml:id="superscript">
+                                <head>Superscripts</head>
+                                <p>If text (or individual letters) are added as a superscript,
+                                    meaning that they are attached as small letters to the top of a
+                                    preceding word, this is encoded as follows:</p>
+                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                    <item>
+                                        <label>5.</label>
+                                        <rs type="title">Carta do <rs type="name" key="P222">
+                                                <choice>
+                                                  <abbr>M<hi rend="superscript">z</hi></abbr>
+                                                  <expan>M<ex>arquez</ex></expan>
+                                                </choice> de Pombal</rs></rs>. </item>
+                                </egXML>
+                                <p>In the example, the list item contains the name "Marquez de
+                                    Pombal", which is abbreviated using just the letter "M" with a
+                                    small superscript "z" for "Marquez". The superscript is encoded
+                                    with the element <gi>hi</gi> and the attribute <att>rend</att>
+                                    with the value <val>superscript</val>.</p>
+                            </div>
+                            <div xml:id="framed">
+                                <head>Frames (square boxes)</head>
+                                <p>Sometimes, Pessoa highlights parts of a list by drawing a frame
+                                    around it. An example can be seen on the list 133M-30r:</p>
+                                <figure>
+                                    <graphic
+                                        url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-133m-1-100_JPG_24-C-R0150/bn-acpc-e-e3-133m-1-100_0059_30_t24-C-R0150.jpg"
+                                        width="500px"/>
+                                </figure>
+                                <p>Here, a box is drawn around the text "(Advertise for Cipher
+                                    Agency - America)". This is encoded as follows (this is at the
+                                    same time an example of a modification, see <ref
+                                        target="#modifications">Other modifications</ref>):</p>
+                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                    <item><mod rend="framed" n="2">(Advertise for Cipher Agency —
+                                            <lb/> America).</mod></item>
+                                </egXML>
+                                <p>The element <gi>mod</gi> surrounds the text to be framed. The
+                                    attribute <att>rend</att> indicates how it should be modified,
+                                    here by adding a frame (<val>framed</val>). The attribute
+                                        <att>n</att> with the value <val>2</val> indicates that the
+                                    modification was only done later and should be part of the
+                                    second edited version of the document.</p>
+                                <p>If the frame was not added later, but would have been part of the
+                                    original list, instead of <gi>mod</gi> the element <gi>hi</gi>
+                                    could be used to say that the passage is highlighted by framing
+                                    it:</p>
+                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                    <item><hi rend="framed">(Advertise for Cipher Agency — <lb/>
+                                            America).</hi></item>
+                                </egXML>
+                            </div>
                         </div>
                         <div xml:id="indentations">
                             <head>Indentations</head>
@@ -689,6 +745,89 @@
                                     there is an hyphen dividing the word "Disserta&#xE7;&#xF5;es",
                                     which is encoded with the element <gi>pc</gi> (for punctuation
                                     character).</p>
+                                <p>Another example of a note added to the margin is visible in the
+                                    following list BNP 133M-30r:</p>
+                                <figure>
+                                    <graphic
+                                        url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-133m-1-100_JPG_24-C-R0150/bn-acpc-e-e3-133m-1-100_0059_30_t24-C-R0150.jpg"
+                                        width="500px"/>
+                                </figure>
+                                <p>At the top of the document, two words are written on the right
+                                    side of the typed list. Both are struck through. This margin
+                                    note is encoded as follows:</p>
+                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                    <item>Commercial Code. <note place="margin-right" n="2">
+                                            <del rend="overstrike"><gap reason="illegible"
+                                                  extent="1" unit="word"/></del>
+                                            <lb/><del rend="overstrike"><gap reason="illegible"
+                                                  extent="1" unit="word"/></del>
+                                        </note>
+                                    </item>
+                                </egXML>
+                                <p>The note is interpreted as belonging to the first list item, so
+                                    an element <gi>note</gi> is added at the end of this first list
+                                    item. The <gi>note</gi> element carries the attribute
+                                        <att>place</att> to say that the note is added on the right
+                                    margin of the list (<val>margin-right</val>) and the attribute
+                                        <att>n</att> with the value <val>2</val> to say that the
+                                    note was added to the list later and is interpreted as belonging
+                                    to the second edited version of this document, but not to the
+                                    first one. The text of the note itself is transcribed and
+                                    encoded inside of the <gi>note</gi> element, just that in this
+                                    case, the words could not be read by the editor. They are
+                                    therefore marked up as two <gi>gap</gi>s, each with
+                                        <att>reason</att>
+                                    <val>illegible</val>, <att>unit</att>
+                                    <val>word</val>, and <att>extent</att>
+                                    <val>1</val>. The words are separated by a line break
+                                        (<gi>lb</gi>) and are both deleted, which is marked-up with
+                                    the element <gi>del</gi> and the attribute <att>rend</att> with
+                                    the value <val>overstrike</val>.</p>
+                            </div>
+                            <div xml:id="longer-passages">
+                                <head>Additions of longer passages of text</head>
+                                <p>In some cases it is not just one or several characters or words
+                                    that is added to a list, but more text, for example several new
+                                    list items or a whole list. In those cases, the element
+                                        <gi>add</gi> is impractical because it cannot contain
+                                    structures such as several list items or a whole list, so
+                                    another solution is needed for the mark-up of such additions. An
+                                    example can be seen in the following list BNP 133M-30r:</p>
+                                <figure>
+                                    <graphic
+                                        url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-133m-1-100_JPG_24-C-R0150/bn-acpc-e-e3-133m-1-100_0059_30_t24-C-R0150.jpg"
+                                        width="500px"/>
+                                </figure>
+                                <p>On this document, a handwritten list ("1. System of Shorthand. 2.
+                                    Look for door...") is added to a typed list which was present
+                                    first. This is encoded as follows:</p>
+                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                    <addSpan n="2" spanTo="#A1"/>
+                                    <list>
+                                        <item>
+                                            <label>1.</label> System of Shorthand. </item>
+                                        <item>
+                                            <label>2.</label> Look for door — in instead of out.
+                                        </item>
+                                    </list>
+                                    <anchor xml:id="A1"/>
+                                </egXML>
+                                <p>Before the list that is to be added, an element <gi>addSpan</gi>
+                                    is used. This is an empty element (it has no opening and closing
+                                    tag, but just one tag which closes directly with />). It is just
+                                    to mark the beginning of the text span to be added. The
+                                    attribute <att>n</att> with the value <val>2</val> says that the
+                                    text that follows is to be added to the second edited version of
+                                    this document, but is not present in the first version. The
+                                    other attribute <att>spanTo</att> serves to indicate where the
+                                    added text ends. The value of this attribute is a pointer to the
+                                    identifier of another element. The "#" means that this attribute
+                                    points to something else and the "A1" is the identifier pointed
+                                    to. This identifier is defined on the element <gi>anchor</gi>,
+                                    which is used to mark the end of the stretch of text to be
+                                    added. In this case, the <gi>anchor</gi> element occurs after
+                                    the list to be added. It carries the attribute <att>xml:id</att>
+                                    with the value <val>A1</val>.</p>
                             </div>
                         </div>
                         <div xml:id="substitutions">
@@ -696,8 +835,8 @@
                             <p>There are two kinds of substitutions. In the first case, something is
                                 deleted and replaced with something else. In the second case, an
                                 alternative is added without deleting the first option.</p>
-                            <p>An example of the first case can be seen in the following facsimile
-                                of the list BNP 143 6r:</p>
+                            <p>An example of the first case (something is deleted and replaced) can
+                                be seen in the following facsimile of the list BNP 143 6r:</p>
                             <figure>
                                 <graphic
                                     url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-143-1-14_JPG_24-C-R0150/bn-acpc-e-e3-143-1-14_0011_6_t24-C-R0150.jpg"
@@ -724,8 +863,47 @@
                                 final version of the document. Both the deletion and the addition
                                 are surrounded by an element <gi>subst</gi>, indicating that this is
                                 a substitution.</p>
-                            <p>An example of the second case can be seen in the following
-                                facsimile:</p>
+                            <p>Another example of substitutions can be seen in the facsimile of the
+                                list BNP 120-23r:</p>
+                            <figure>
+                                <graphic
+                                    url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-120-1-55_JPG_24-C-R0150/bn-acpc-e-e3-120-1-55_0045_23_t24-C-R0150.jpg"
+                                    width="500px"/>
+                            </figure>
+                            <p>In the fourth list item, there are two kinds of substitutions. The
+                                first one is that the letter "A" is overwritten with the letter "O",
+                                and the second one that the word "Agua" is struck through and the
+                                word "Segredo" added above it to replace it. This list item is
+                                encoded in the following way:</p>
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                <item>
+                                    <label>4.</label>
+                                    <rs type="title">
+                                        <subst>
+                                            <del rend="overwritten" n="1">A</del>
+                                            <add n="2">O</add>
+                                        </subst>
+                                        <subst>
+                                            <del rend="overstrike" n="1">Agua</del>
+                                            <add place="above" n="2">Segredo</add>
+                                        </subst> de Tse-i-la</rs>. </item>
+                            </egXML>
+                            <p>Both substitutions are marked up with the element <gi>subst</gi>
+                                containing an element <gi>del</gi> for the deleted part and and
+                                element <gi>add</gi> for the added part. In both cases, the deleted
+                                words are marked as belonging to the first edited version of the
+                                document (<att>n</att> with <val>1</val>) while the added words are
+                                part of the second version (<att>n</att> with <val>2</val>). The
+                                first deletion is rendered as <att>rend</att>
+                                <val>overwritten</val> and the second as <val>overstrike</val>. In
+                                the first substitution, the new letter is added directly on top of
+                                the deleted one, so the element <gi>add</gi> needs no additional
+                                attribute <att>place</att> saying where the addition was made. In
+                                the second substitution, the addition was made above the previous
+                                word, so <gi>add</gi> has an attribute <att>place</att> with the
+                                value <val>above</val>.</p>
+                            <p>An example of the second case (something is replaced without deleting
+                                the first option) can be seen in the following facsimile:</p>
                             <figure>
                                 <graphic
                                     url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-8-1-13_JPG_24-C-R0150/bn-acpc-e-e3-8-1-13_0006_3v_t24-C-R0150.jpg"
@@ -788,6 +966,33 @@
                                 the first version of the document. It does therefore not have an
                                 attribute <att>n</att> with a value <val>2</val>, which would mark
                                 that the deletion was made only for the final version of the
+                                document.</p>
+                        </div>
+                        <div xml:id="modifications">
+                            <head>Other modifications</head>
+                            <p>In some cases, it is not text that is added, but graphical elements.
+                                For example, words can be modified by underlining them or drawing a
+                                circle around them. An example is shown in the following facsimile
+                                of the list BNP 133M-30r:</p>
+                            <figure>
+                                <graphic
+                                    url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3-133m-1-100_JPG_24-C-R0150/bn-acpc-e-e3-133m-1-100_0059_30_t24-C-R0150.jpg"
+                                    width="500px"/>
+                            </figure>
+                            <p>On this list, the text "(Advertise for Cipher Agency - America)." is
+                                highlighted by a frame which Pessoa added later.</p>
+                            <p>The TEI element <gi>add</gi> is not suitable to encode such
+                                modifications. Instead, the more general element <gi>mod</gi> is
+                                used, as in the following code snippet:</p>
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                <item><mod rend="framed" n="2">(Advertise for Cipher Agency — <lb/>
+                                        America).</mod></item>
+                            </egXML>
+                            <p>The element <gi>mod</gi> surrounds the text to be framed. The
+                                attribute <att>rend</att> indicates how it should be modified, here
+                                by adding a frame (<val>framed</val>). The attribute <att>n</att>
+                                with the value <val>2</val> indicates that the modification was only
+                                done later and should be part of the second edited version of the
                                 document.</p>
                         </div>
                     </div>

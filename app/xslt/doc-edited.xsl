@@ -38,6 +38,11 @@
                         <span class="ditto">
                             <xsl:apply-templates select="expan/text() | expan/child::*"/>
                         </span>
+                    </xsl:when>     
+                    <xsl:when test="abbr/metamark[@function='placeholder']">
+                        <span class="placeholder">
+                            <xsl:apply-templates select="expan/text() | expan/child::*"/>
+                        </span>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:apply-templates select="expan/text() | expan/child::*"/> 
@@ -49,6 +54,11 @@
     
     <xsl:template match="choice[abbr and expan[not(ex)]]" mode="#default deletion addition">
         <span class="expan">[<xsl:apply-templates select="expan/text() | expan/child::*"/>]</span>
+    </xsl:template>
+    
+    <!-- don't show the expansion brackets for placeholders -->
+    <xsl:template match="choice[abbr/metamark[@function='placeholder'] and expan[not(ex) and supplied]]" mode="#default deletion addition" priority="2">
+        <xsl:apply-templates select="expan/text() | expan/child::*"/>
     </xsl:template>
     
     <xsl:template match="subst" mode="#default deletion addition">
