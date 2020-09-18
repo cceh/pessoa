@@ -1585,6 +1585,9 @@ div.text span.grouping-right.sum {
 div.text div.metamark {
     position: relative;
 }
+div.text span.space.ditto, div.text span.space.placeholder {
+    display: inline-block;
+}
 div.text span.metamark.quotes.ditto {
     display: inline-block;
     width: 8%;
@@ -2238,6 +2241,40 @@ div.text#BNP_E3_87-68r hr.line.center {
 }
 div.text#BNP_E3_87-68r hr.dots.placeholder {
     width: 8em;
+}
+/* BNP_E3_48-56r */
+div.text#BNP_E3_48-56r div.item:nth-child(2) span.space.ditto,
+div.text#BNP_E3_48-56r div.item:nth-child(3) span.space.ditto,
+div.text#BNP_E3_48-56r div.item:nth-child(4) span.space.ditto,
+div.text#BNP_E3_48-56r div.item:nth-child(5) span.space.ditto {
+    width: 8em;
+}
+
+div.text#BNP_E3_48-56r div.item:nth-child(7) span.space.ditto {
+    width: 7.5em;
+}
+
+div.text#BNP_E3_48-56r div.item:nth-child(9) span.space.ditto,
+div.text#BNP_E3_48-56r div.item:nth-child(10) span.space.ditto{
+    width: 5.5em;
+}
+/* BNP_E3_87-40r */
+div.text#BNP_E3_87-40r span.space.placeholder {
+    width: 8em;
+}
+/* BNP_E3_87-79r */
+div.text#BNP_E3_87-79r span.line.ditto hr {
+    width: 7em;
+}
+div.text#BNP_E3_87-79r span.space.ditto {
+    width: 12.5em;
+}
+div.text#BNP_E3_87-79r span.choice span.above {
+    left: 3em;
+}
+/* BNP_E3_144D2-9r */
+div.text#BNP_E3_144D2-9r span.space.ditto {
+    width: 8.5em;
 }
 
 /* ABOUT PAGE */

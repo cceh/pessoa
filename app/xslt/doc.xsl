@@ -207,6 +207,9 @@
     <xsl:template match="metamark[@rend = 'dots'][@function = 'placeholder']" mode="#default deletion addition">
         <hr class="dots {@function} inline"/>
     </xsl:template>
+    <xsl:template match="metamark[@rend = 'space'][@function = ('ditto','placeholder')]" mode="#default deletion addition">
+        <span class="space {@function}">&#x2003;</span>
+    </xsl:template>
     
     
     <!-- Lines, old: -->
