@@ -4,7 +4,7 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Justiça</title>
+                <title>O individuo é que é gente</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
                 </author>
@@ -26,35 +26,41 @@
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
-                <availability status="restricted">
+                <availability status="free">
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
-                <idno type="filename">Pessoa_Justiça.xml</idno>
+                <idno type="filename">Pessoa_O_individuo.xml</idno>
             </publicationStmt>
             <notesStmt>
                 <note type="genre">
                     <rs type="genre" key="prosa">Prosa</rs>
                 </note>
+                <note type="summary" resp="#JU">Neste caso é possível argumentar uma autoria pessoana deste breve reclame, 
+                    publicado no <hi rend="italic">Sol</hi>, 
+                    como assinalou José Barreto, afirmando tratar-se de «um texto caracteristicamente pessoano tanto na forma 
+                    como no conteúdo» (Barreto, 2012, p. 233). Como também assinala Barreto, são muitos os textos pessoanos que 
+                    têm como assunto o individualismo, como por exemplo BNP 55-59, de um teor semelhante ao do texto publicado 
+                    embora num outro contexto.
+                </note>
             </notesStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="W271">Justiça</rs></item>
+                    <item><rs type="work" key="W274">O individuo é que é gente</rs></item>
                 </list>
                 <biblStruct>
                     <analytic>
-                        <title level="a">Justiça</title>
+                        <title level="a">O individuo é que é gente</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
                     </analytic>
                     <monogr>
-                        <title level="j"><rs type="periodical" key="J93">O Mutilado da Guerra: Orgão da “Liga Portugueza dos Mutilados e Invalidos da Guerra”</rs></title>
+                        <title level="j"><rs type="periodical" key="J10">Sol: Bisemanário Republicano</rs></title>
                         <imprint>
-                            <date when="1925-02-03">3 Fevereiro de 1925</date>
+                            <date when="1926-08-04">4 de Agosto de 1926</date>
                         </imprint>
-                        <biblScope unit="issue">Número Extraordinário</biblScope>
-                        <biblScope unit="page">3</biblScope>
+                        <biblScope unit="page">2</biblScope>
                     </monogr>
                 </biblStruct>
             </sourceDesc>
@@ -64,14 +70,18 @@
         </encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
-        <graphic url="prosa/Justiça.jpg"/>
+        <graphic url="prosa/Balanca_de_Minerva-Afericao.jpg"/>
     </facsimile>
-    <text corresp="#W271">
+    <text corresp="#W274">
         <body>
             <div>
-                <head></head>
-                </div>
+                <head>SENHORES REFORMADORES! <lb/>O individuo é que é gente</head>
+                <p rend="indent-first">Para reformar um paiz o principal é reformar os individuos que compõem esse paiz. De 
+                    nada serve reformar a administração, as finanças, o magisterio se não se reformam, antes de mais nada, 
+                    as pessoas que hão de orientar a administração, dirigir as finanças e exercer o magisterio. Toda a reforma 
+                    é fútil se não atinge o individuo, unica verdadeira realidade social. Toda a reforma é inútil se não parte 
+                    do individuo que atinge. Fortalecer um Estado é crear homens que fortaleçam esse Estado.</p>
+            </div>
         </body>
     </text>
 </TEI>
-                    
