@@ -461,22 +461,19 @@
                                 <head>Circled text</head>
                                 <p>Sometimes Pessoa circles text to highlight it, meaning that he
                                     surrounds text with a circle. This is encoded as follows:</p>
-                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                                    <note place="margin-right" rend="circled" n="2">√</note>
-                                </egXML>
+                                <egXML xmlns="http://www.tei-c.org/ns/Examples"><note
+                                        place="margin-right" rend="circled" n="2"
+                                    >&#x221A;</note></egXML>
                                 <p>In the example, a note on the right margin is circled, which is
                                     just indicated by adding the attribute <att>rend</att> to the
                                     note and give it the value <val>circled</val>.</p>
                                 <p>Also, the element <gi>hi</gi> can be used, as in the following
                                     example:</p>
-                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                                    <p rend="center">
-                                        <anchor xml:id="A4"/>
-                                        <hi rend="circled">or</hi> Being an apology <subst>
-                                            <add n="2" place="above">for</add>
-                                            <del n="1">of</del>
-                                        </subst> all culture not genuine. </p>
-                                </egXML>
+                                <egXML xmlns="http://www.tei-c.org/ns/Examples"><p rend="center"
+                                            ><anchor xml:id="A4"/><hi rend="circled">or</hi> Being
+                                        an apology <subst><add n="2" place="above">for</add><del
+                                                n="1">of</del></subst> all culture not genuine.
+                                    </p></egXML>
                                 <p>Here, there is a part inside of a paragraph that is circled.
                                     Because this part has no element by itself to attach the
                                     attribute <att>rend</att> to, the element <gi>hi</gi> is used to
@@ -738,27 +735,19 @@
                             <p>The last part of this document contains an arrow pointing from the
                                 heading "The New Decadence" to "or Being an apology of all culture
                                 not genuine". This is encoded as follows:</p>
-                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                                <div>
-                                    <head rend="center">
-                                        <metamark rend="arrow-down" function="assignment"
-                                            target="#A3"/>
-                                        <hi rend="underline"><rs type="periodical" key="J55">The New
-                                                Decadence</rs></hi>
-                                    </head>
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples"><div>
+                                    <head rend="center"><metamark rend="arrow-down"
+                                            function="assignment" target="#A3"/><hi rend="underline"
+                                                ><rs type="periodical" key="J55">The New
+                                                Decadence</rs></hi></head>
                                     <p rend="center">An Introduction to the Study of
                                         <lb/>Indifference.</p>
-                                </div>
-                                <metamark rend="line center" function="distinct"/>
-                                <div>
-                                    <p rend="center">
-                                        <anchor xml:id="A3"/>
-                                        <hi rend="circled">or</hi> Being an apology <subst>
-                                            <add n="2" place="above">for</add>
-                                            <del n="1">of</del>
-                                        </subst> all culture not genuine. </p>
-                                </div>
-                            </egXML>
+                                </div><metamark rend="line center" function="distinct"/><div>
+                                    <p rend="center"><anchor xml:id="A3"/><hi rend="circled">or</hi>
+                                        Being an apology <subst><add n="2" place="above"
+                                                >for</add><del n="1">of</del></subst> all culture
+                                        not genuine. </p>
+                                </div></egXML>
                             <p>The arrow itself is encoded as an element <gi>metamark</gi> with the
                                 attribute <att>rend</att> having the value <val>arrow-down</val> and
                                 the attribute <att>function</att> having the value
@@ -3945,6 +3934,8 @@
                             </attDef>
                             <attDef ident="cert" mode="change">
                                 <valList type="closed" mode="replace">
+                                    <valItem ident="high"/>
+                                    <valItem ident="low"/>
                                     <valItem ident="medium"/>
                                 </valList>
                             </attDef>
