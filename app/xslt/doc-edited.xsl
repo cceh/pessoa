@@ -136,10 +136,11 @@
         <xsl:apply-templates/>
     </xsl:template>
     
-    <!-- Gaps -->
+    <!-- Gaps: selection
     <xsl:template match="gap[@reason='selection']" mode="#default deletion addition">
         <xsl:text>[...]</xsl:text>
     </xsl:template>
+    -->
     
 </xsl:stylesheet>
     

@@ -198,7 +198,7 @@
     </xsl:template>
     
     <!-- Lines, Dots, etc. new: -->
-    <xsl:template match="metamark[@rend = 'line'][@function = 'distinct']" mode="#default deletion addition">
+    <xsl:template match="metamark[@rend = 'line'][@function = ('distinct','end')]" mode="#default deletion addition">
         <hr class="line {@function}"/>
     </xsl:template>
     <xsl:template match="metamark[@rend = 'line center'][@function = 'distinct']" mode="#default deletion addition">
@@ -209,6 +209,9 @@
     </xsl:template>
     <xsl:template match="metamark[@rend = 'space'][@function = ('ditto','placeholder')]" mode="#default deletion addition">
         <span class="space {@function}">&#x2003;</span>
+    </xsl:template>
+    <xsl:template match="metamark[@rend = 'quotes'][@function = 'ditto']" mode="#default deletion addition">
+        <span class="metamark quotes ditto">"</span>
     </xsl:template>
     
     
@@ -278,10 +281,6 @@
     
 
     <!-- Quotes -->
-    <xsl:template match="metamark[@rend = 'quotes'][@function = 'ditto']"
-        mode="#default deletion addition">
-        <span class="metamark quotes ditto">"</span>
-    </xsl:template>
     <xsl:template match="metamark[@rend = 'quotes-14'][@function = 'ditto']"
         mode="#default deletion addition">
         <span class="metamark quotes-14 ditto">"</span>
@@ -613,6 +612,15 @@
     
     
     <!-- einzublendende Pfeile -->
+    <!-- neu: -->
+    <xsl:template match="metamark[@rend='arrow-down']" mode="#default deletion addition">
+        <span class="arrow-down">↓</span>
+    </xsl:template>
+    <xsl:template match="anchor[@xml:id=preceding::metamark[@rend='arrow-down']/@target/substring-after(.,'#') or @xml:id=following::metamark[@rend='arrow-down']/@target/substring-after(.,'#')]" mode="#default deletion addition" priority="1">
+        <span class="anchor-arrow-down">↓</span>
+    </xsl:template>
+    
+    <!-- alt: -->
     <xsl:template match="metamark[@rend='arrow-right-14']" mode="#default deletion addition">
         <span class="arrow-right-14">⟶</span>
     </xsl:template>
