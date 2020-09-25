@@ -55,7 +55,7 @@
                 <head>The TEI header</head>
                 <div>
                     <head>General information</head>
-                    <div>
+                    <div xml:id="title-statement">
                         <head>Title, author and responsibilities</head>
                         <p>In the title statement of the TEI header, information about the title and
                             author of a document or publication is gathered. In the case of the <hi
@@ -108,19 +108,134 @@
                                     f&#xFC;r Dokumentologie und Editorik
                             (IDE)</name></respStmt></egXML>
                     </div>
-                    <div>
+                    <div xml:id="publication">
                         <head>Publication</head>
+                        <p>The publication statement contains information about the published TEI
+                            file. An example of a publication statement is given in the
+                            following:</p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <publicationStmt>
+                                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de
+                                    Literatura e Tradição (IELT)</publisher>
+                                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                                <date>2017</date>
+                                <availability status="free">
+                                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                                </availability>
+                                <idno type="filename">BNP_E3_144D2-111r.xml</idno>
+                            </publicationStmt>
+                        </egXML>
+                        <p>It contains information about the publishing institutions (encoded in the
+                            element <gi>publisher</gi>) and about the publication date of the file
+                            (in an element <gi>date</gi>). Furthermore, a statement on the
+                            availability of the file is made and a licence information is given. The
+                            availability can be either "free", if the file is already published, or
+                            "restricted", if the work on the TEI file is still ongoing. All the TEI
+                            documents are published under a Creative Commons Attribution 3.0
+                            Unported license (CC BY 3.0). Finally, the filename is given as an
+                            identifier in an <gi>idno</gi> element.</p>
                     </div>
-                    <div>
+                    <div xml:id="source">
                         <head>Description of the source</head>
-                        <div>
-                            <head>Identification</head>
+                        <p>The sources of the <hi rend="italic">documents</hi> and <hi rend="italic"
+                                >publications</hi> are documented in the source description. Because
+                            the <hi rend="italic">documents</hi> are archival sources and the <hi
+                                rend="italic">publications</hi> published bibliographic items, the
+                            source description for these two types of resources is made in a
+                            different way, as outlined in the following subsections.</p>
+                        <div xml:id="source-documents">
+                            <head>Sources of documents</head>
+                            <p>The sources of the documents are encoded inside of an element
+                                    <gi>msDesc</gi> (manuscript description), which itself is a
+                                child element of the element <gi>sourceDesc</gi>:</p>
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                <sourceDesc>
+                                    <msDesc> [...] </msDesc>
+                                </sourceDesc>
+                            </egXML>
+                            <p>The manuscript description has three parts. The first part servers to
+                                identify the source, the second part to describe its contents, and
+                                the third part to encode details on the history of the source.</p>
+                            <div>
+                                <head>Identification</head>
+                                <p>The identification is done inside of the element
+                                        <gi>msIdentifier</gi>, which is the first child element of
+                                        <gi>msDesc</gi>:</p>
+                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                    <msIdentifier>
+                                        <institution>Biblioteca Nacional de Portugal</institution>
+                                        <idno>BNP/E3 144D2-111r</idno>
+                                    </msIdentifier>
+                                </egXML>
+                                <p>Inside of that element, the institution holding the source is
+                                    indicated in an element <gi>institution</gi>. Furthermore, the
+                                    identifier that the source has in the source institution as well
+                                    as in this project is listed in an element <gi>idno</gi>.</p>
+                            </div>
+                            <div>
+                                <head>Contents</head>
+                                <p>The contents of the source are described in an element
+                                        <gi>msContents</gi>, which follows after the element
+                                        <gi>msIdentifier</gi>, as in the following example:</p>
+                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                    <msContents>
+                                        <summary>
+                                            <p> Lista manuscrita no caderno 144D<hi
+                                                  rend="superscript">2</hi> (cf. <ref
+                                                  target="http://purl.pt/13880"
+                                                  >http://purl.pt/13880</ref>), publicada em <hi
+                                                  rend="italic">Sensacionismo e outros Ismos</hi>
+                                                (2009, 343). </p>
+                                        </summary>
+                                        <msItemStruct>
+                                            <author>
+                                                <rs type="name" key="FP">Fernando Pessoa</rs>
+                                            </author>
+                                            <note type="genre">
+                                                <rs type="genre" key="lista_editorial">Lista
+                                                  editorial</rs>
+                                                <rs type="genre" key="plano_editorial">Plano
+                                                  editorial</rs>
+                                            </note>
+                                            <textLang mainLang="pt"/>
+                                        </msItemStruct>
+                                    </msContents>
+                                </egXML>
+                                <p>The description of the contents has three parts. First, a general
+                                    note on the source document is given in an element
+                                        <gi>summary</gi>. The summary also indicates if and where a
+                                        <hi rend="italic">document</hi> has been published before,
+                                    outside of this edition project. The second part of the content
+                                    description is given in an element <gi>msItemStruct</gi>
+                                    (structured manuscript item). It contains information about the
+                                    author of the <hi rend="italic">document</hi> (which is always
+                                    Fernando Pessoa). Furthermore, it contains a note on the genre
+                                    or genres of the <hi rend="italic">document</hi>. This note is
+                                    encoded with the element <gi>note</gi>, which has the attribute
+                                        <att>type</att> and the value <val>genre</val>. Each genre
+                                    inside of the note is marked with an element <gi>rs</gi> of the
+                                        <att>type</att>
+                                    <val>genre</val>. The attribute <att>key</att> indicates the
+                                    identifier of the genre. Inside of the <gi>rs</gi> element, the
+                                    name of the genre is given in text form and in Portuguese
+                                    language. The following three genres of <hi rend="italic"
+                                        >documents</hi> occur: "Lista editorial"
+                                        (<val>lista_editorial</val>), "Plano editorial"
+                                        (<val>plano_editorial</val>), and "Nota editorial"
+                                        (<val>nota_editorial</val>). Finally, also the language or
+                                    languages of the text on the document are indicated, in the
+                                    element <gi>textLang</gi>. The main language of a document is
+                                    given in the attribute <att>mainLang</att> on that element. The
+                                    value of that attribute is a shortcut for a language, in this
+                                    case "pt" for Portuguese.</p>
+                                <!-- Kommen auch andere Hauptsprachen vor? Wie werden Subsprachen codiert? -->
+                            </div>
+                            <div>
+                                <head>History</head>
+                            </div>
                         </div>
-                        <div>
-                            <head>Contents</head>
-                        </div>
-                        <div>
-                            <head>History</head>
+                        <div xml:id="source-publications">
+                            <head>Sources of publications</head>
                         </div>
                     </div>
                 </div>
@@ -392,6 +507,17 @@
                             sources. In general, indications about how something looked like (how it
                             was (typo)graphically emphasized or organized) are made in the attribute
                                 <att>rend</att>, which can be used on many different elements.</p>
+                        <div xml:id="alignment">
+                            <head>Alignment of text</head>
+                            <p>By default, the text of different elements is shown on the left side
+                                of the page. It the text should instead be centered or appear on the
+                                right side, this can be indicated with the attribute <att>rend</att>
+                                and the values <val>center</val> or <val>right</val>. An example of
+                                a heading which is centered is given in the following:</p>
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                <head rend="center">Q.</head>
+                            </egXML>
+                        </div>
                         <div xml:id="highlighted">
                             <head>Highlighted characters, words, or passages</head>
                             <div xml:id="underline">
@@ -770,6 +896,51 @@
                                 paragraph begins. It is encoded with the element <gi>anchor</gi> and
                                 has the attribute <att>xml:id</att> to define the identifier
                                     <val>A3</val>.</p>
+                            <p>There can also be text on arrows, as in the following example:</p>
+                            <figure>
+                                <graphic
+                                    url="http://images.cceh.uni-koeln.de/pessoa/bn-acpc-e-e3_144g_JPG_24-C-R0150/bn-acpc-e-e3_144g_0103_38r_t24-C-R0150.jpg"
+                                    width="500px"/>
+                            </figure>
+                            <p>In the lower part of the list, there is a deleted item "(Antonio
+                                Mora)" that has two arrows at the end, one pointing to another item
+                                below it and the other pointing up. The arrow that points up has the
+                                text "F Pessoa" on it. This is encoded using an element
+                                    <gi>label</gi> inside the <gi>metamark</gi> for the arrow, as in
+                                the following example:</p>
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                <item>
+                                    <del rend="overstrike">(<rs type="name" key="P1">Antonio
+                                            Mora</rs>).</del>
+                                    <metamark rend="arrow-right-curved-up" function="assignment"
+                                        target="#A1" n="2">
+                                        <label>
+                                            <rs type="name" key="FP" style="b"><choice>
+                                                  <abbr>F</abbr>
+                                                  <expan>F<ex>ernando</ex></expan>
+                                                </choice> Pessoa</rs>
+                                        </label>
+                                    </metamark>
+                                    <metamark rend="arrow-right-curved-down" function="assignment"
+                                        target="#A2" n="2"/>
+                                </item>
+                            </egXML>
+                            <p>Each of the arrows is encoded with an element <gi>metamark</gi>. One
+                                arrow has the attribute <att>rend</att> with the value
+                                    <val>arrow-right-curved-down</val>, because it is an arrow that
+                                is curved and points downwards on the right side, and the other one
+                                has the value <val>arrow-right-curved-up</val>, as it is curved and
+                                points up on the right side. Both <gi>metamark</gi> elements have
+                                the attribute <att>function</att> with the value
+                                    <val>assignment</val> because the arrows assign a list item to
+                                other places in the document. In the attributes <att>target</att>,
+                                the identifiers of the elements marking the goal of the arrows ("A1"
+                                and "A2") are given, preceded by the "#". These <gi>anchor</gi>
+                                elements are defined elsewhere, as in the previous example. Inside
+                                of the first <gi>metamark</gi> element, the text on the error is
+                                encoded in the element <gi>label</gi>. Here, the text is the name "F
+                                Pessoa", so the label contains a reference to a name and an
+                                abbreviation which is expanded.</p>
                         </div>
                     </div>
                     <div xml:id="genetic">
