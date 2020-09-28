@@ -117,8 +117,7 @@
             <metamark rend="line" function="distinct"/>
             <metamark rend="line" function="distinct"/>
             <div rend="center">
-               <ab>Subsidios <lb/> para o estudo <lb/> do futuro</ab>
-               <metamark rend="arrow" target="#A2" function="assignment"/>
+               <ab>Subsidios <lb/> para o estudo <lb/> do futuro<metamark rend="arrow-right-down" target="#A2" function="assignment"/></ab>
             </div>
             <metamark rend="line" function="distinct"/>
             <metamark rend="line" function="distinct"/>
@@ -127,7 +126,7 @@
                <lb/>
                <gap reason="illegible" unit="word" extent="1"/>
                <metamark rend="line" function="distinct"/>
-               <seg xml:id="A2">(subtitulo)</seg>
+               <ab><anchor xml:id="A2"/>(subtitulo)</ab>
                <metamark rend="line" function="distinct"/>
             </div>
          </div>
@@ -152,8 +151,8 @@
                   <label>2.</label>
                   <rs type="title">Carro Eléctrico</rs>
                   <metamark rend="line" function="distinct"/>
-                  <ab rend="margin-right"> O incidente dado com <lb/> este castelhano de <lb/> casa?
-                  </ab>
+                  <note place="margin-right"> O incidente dado com <lb/> este castelhano de <lb/> casa?
+                  </note>
                </item>
                <note place="margin-left" target="range(I6,I7)">
                <metamark rend="curly-bracket" function="grouping">
@@ -178,10 +177,7 @@
                </item>
                <item>
                   <label>6.</label>
-                  <rs type="title">Prefacio(s) a nada</rs>. <metamark function="grouping"
-                     rend="curly-bracket" target="range(I8,I10)"/>
-                  <list rend="margin-right">
-                     <item xml:id="I8">
+                  <rs type="title">Prefacio(s) a nada</rs>. <note place="margin-right">
                         <label>1.</label>
                         <rs type="title">
                            <choice>
@@ -189,6 +185,7 @@
                               <expan>Pref<ex>acio</ex></expan>
                            </choice> a <rs type="name" key="AC" role="topic">Caeiro</rs>
                         </rs>
+                  </note>
                      </item>
                      <item xml:id="I9">
                         <label>2.</label>
@@ -202,6 +199,8 @@
                            </choice>
                         </rs>
                      </item>
+               <metamark function="grouping"
+                  rend="curly-bracket" target="range(I8,I10)"/>
                      <item xml:id="I10">
                         <label>3.</label>
                         <supplied resp="PS" reason="omitted-in-original"/>
