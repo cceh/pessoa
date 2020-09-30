@@ -26,6 +26,10 @@
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
+               <name>Inês Filipa Rebelo do Carmo</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
                <name>Isabel Figueiredo-Iken</name>
             </respStmt>
             <respStmt>
@@ -42,7 +46,7 @@
                (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2017</date>
-            <availability status="restricted">
+            <availability status="free">
                <licence target="http://creativecommons.org/licenses/by/3.0/"/>
             </availability>
             <idno type="filename">BNP_E3_189r.xml</idno>
@@ -96,7 +100,7 @@
             <list>
                <item>
                   <label>a)</label>
-                  <hi rend="underline">Folhetos</hi>: <list rend="inline">
+                  <hi rend="underline">Folhetos</hi>: <list>
                      <item>
                         <label>(em inglez):</label>
                         <list>
@@ -108,8 +112,8 @@
                               <rs type="title">English Poems (I-II)</rs>, 1922
                               (con<pc>-</pc><lb/>tém o <rs type="title">Antinous</rs>
                               <subst>
-                                 <del rend="overstrike">emendado</del>
-                                 <add place="above">corrigido</add>
+                                 <del rend="overstrike" n="1">emendado</del>
+                                 <add place="above" n="2">corrigido</add>
                               </subst> e<lb/>
                               <rs type="title">Inscriptions</rs>), </item>
                            <item rend="indent-2">
@@ -132,9 +136,9 @@
                   <label>b)</label>
                   <hi rend="underline">Collaboração em revistas,</hi>
                   <subst>
-                     <del rend="overstrike"><hi rend="underline">que sera publicada em livro<lb/>
-                           com ou sem correcções:</hi></del>
-                     <add place="above">salvo pequenos trechos ou<lb/> poemas</add>
+                     <del rend="overstrike" n="1"><hi rend="underline">que sera publicada em
+                           livro<lb/> com ou sem correcções:</hi></del>
+                     <add place="above" n="2">salvo pequenos trechos ou<lb/> poemas</add>
                   </subst>
                   <list>
                      <item rend="indent-2">
@@ -142,41 +146,14 @@
                         “Orpheu” 1 (1915,<lb/> Março) </item>
                      <item rend="indent-2" xml:id="I3">
                         <rs type="title">Chuva Obliqua</rs>, Poemas-Intersecções<lb/> In “Orpheu” 2
-                        (Junho, 1915) 
-                           <list>
-                              <item>
-                                 <rs type="periodical" key="J5">Aguia</rs>
-                              </item>
-                              <item>
-                                 <rs type="periodical" key="J12">Orpheu</rs>
-                              </item>
-                              <item>
-                                 <rs type="periodical" key="J29">Portugal Futurista</rs>
-                              </item>
-                              <item>
-                                 <rs type="periodical" key="J11">Contemporanea</rs>
-                              </item>
-                              <item>
-                                 <rs type="periodical" key="J2">Athena</rs>
-                              </item>
-                              <item>
-                                 <add n="2"><choice>
-                                       <abbr>Rev<am>.</am> de Com<am>.</am></abbr>
-                                       <expan>Rev<ex>ista</ex> de Com<ex>ercio</ex></expan>
-                                    </choice> e Contabilidade</add>
-                              </item>
-                              <item>
-                                 <rs type="periodical" key="J1">Presença</rs>
-                              </item>
-                           </list>
-                     </item>
+                        (Junho, 1915) </item>
                      <item rend="indent-2">
                         <rs type="title">O Banqueiro Anarchista</rs>. (Contempo<pc>-</pc><lb/>ranea
                         1, 1922). </item>
                      <item rend="indent-2">
                         <rs type="title">Antonio Botto e o Ideal Esthetico<lb/> em <rs type="place"
                               >Portugal</rs></rs> (<choice>
-                                 <abbr>C<hi rend="superscript">a</hi></abbr>
+                           <abbr>C<hi rend="superscript">a</hi></abbr>
                            <expan>C<ex>ontemporanea</ex></expan>
                         </choice>,3, 1922). </item>
                      <item>
@@ -185,97 +162,100 @@
                            <expan>C<ex>ontemporanea</ex></expan>
                         </choice> 4, 1922). </item>
                   </list>
-               </item>
-            </list>
-            <list>
-               <item>
-                  <rs type="periodical" key="J5">Aguia</rs>
-               </item>
-               <item>
-                  <rs type="periodical" key="J12">Orpheu</rs>
-               </item>
-               <item>
-                  <rs type="periodical" key="J29">Portugal Futurista</rs>
-               </item>
-               <item>
-                  <rs type="periodical" key="J11">Contemporanea</rs>
-               </item>
-               <item>
-                  <rs type="periodical" key="J2">Athena</rs>
-               </item>
-               <item>
-                  <add n="2"><choice>
-                     <abbr>Rev<am>.</am> de Com<am>.</am></abbr>
-                     <expan>Rev<ex>ista</ex> de Com<ex>ercio</ex></expan>
-                  </choice> e Contabilidade</add>
-               </item>
-               <item>
-                  <rs type="periodical" key="J1">Presença</rs>
-               </item>
-            </list>
-            <addSpan n="2" spanTo="#A1"/>
-            <list>
-               <item>
-                  <label><rs type="name" key="AC" role="author"><choice>
-                           <abbr>Alb<am>.</am></abbr>
-                           <expan>Alb<ex>erto</ex></expan>
-                        </choice> Caeiro</rs> —</label>
-                  <list rend="inline">
+                  <addSpan n="2" spanTo="#A1"/>
+                  <list>
                      <item>
-                        <rs type="work" key="W146"><rs type="title" key="T176">“Escolha de
-                              Poemas”</rs></rs> (<rs type="periodical" key="J2">Athena</rs> Nos. 4 e
-                        5) </item>
-                  </list>
-               </item>
-               <item>
-                  <label><rs type="name" key="RR" role="author">Ricardo Reis</rs> —</label>
-                  <list rend="inline">
+                        <rs type="periodical" key="J5">Aguia</rs>
+                     </item>
                      <item>
-                        <rs type="title">“Odes”, Livro 1</rs> (<rs type="periodical" key="J2"
-                           >Athena</rs>, No. 1) </item>
-                     <item> Varias <rs type="title">odes</rs> in <rs type="periodical" key="J1"
-                           >“Presença”</rs>
+                        <rs type="periodical" key="J12">Orpheu</rs>
+                     </item>
+                     <item>
+                        <rs type="periodical" key="J29">Portugal Futurista</rs>
+                     </item>
+                     <item>
+                        <rs type="periodical" key="J11">Contemporanea</rs>
+                     </item>
+                     <item>
+                        <rs type="periodical" key="J2">Athena</rs>
+                     </item>
+                     <item>
+                        <add n="2"><choice>
+                              <abbr>Rev<am>.</am> de Com<am>.</am></abbr>
+                              <expan>Rev<ex>ista</ex> de Com<ex>ercio</ex></expan>
+                           </choice> e Contabilidade</add>
+                     </item>
+                     <item>
+                        <rs type="periodical" key="J1">Presença</rs>
                      </item>
                   </list>
-               </item>
-               <item>
-                  <label><rs type="name" key="AdC" role="author">Alvaro de Campos</rs> —</label>
-                  <list rend="inline">
+                  <list>
                      <item>
-                        <rs type="title">“Opiario”</rs> e <rs type="title">“Ode Triumphal”</rs>
-                        (Orpheu 1) </item>
+                        <label><rs type="name" key="AC" role="author"><choice>
+                                 <abbr>Alb<am>.</am></abbr>
+                                 <expan>Alb<ex>erto</ex></expan>
+                              </choice> Caeiro</rs> —</label>
+                        <list rend="inline">
+                           <item>
+                              <rs type="work" key="W146"><rs type="title" key="T176">“Escolha de
+                                    Poemas”</rs></rs> (<rs type="periodical" key="J2">Athena</rs>
+                              Nos. 4 e 5) </item>
+                        </list>
+                     </item>
                      <item>
-                        <rs type="title">“Ode Maritima”</rs> (<rs type="periodical" key="J12">Orpheu</rs> 2) </item>
+                        <label><rs type="name" key="RR" role="author">Ricardo Reis</rs> —</label>
+                        <list rend="inline">
+                           <item>
+                              <rs type="title">“Odes”, Livro 1</rs> (<rs type="periodical" key="J2"
+                                 >Athena</rs>, No. 1) </item>
+                           <item> Varias <rs type="title">odes</rs> in <rs type="periodical"
+                                 key="J1">“Presença”</rs>
+                           </item>
+                        </list>
+                     </item>
                      <item>
-                        <rs type="title">Ultimatum</rs> (<rs type="periodical" key="J29">Portugal
-                           Futurista</rs>) </item>
-                     <item>
-                        <add n="2"><rs type="title">Aviso por causa da moral</rs>. 1923<lb/>
-                           (manifesto<lb/> †)</add>
+                        <label><rs type="name" key="AdC" role="author">Alvaro de Campos</rs>
+                           —</label>
+                        <list rend="inline">
+                           <item>
+                              <rs type="title">“Opiario”</rs> e <rs type="title">“Ode
+                                 Triumphal”</rs> (Orpheu 1) </item>
+                           <item>
+                              <rs type="title">“Ode Maritima”</rs> (<rs type="periodical" key="J12"
+                                 >Orpheu</rs> 2) </item>
+                           <item>
+                              <rs type="title">Ultimatum</rs> (<rs type="periodical" key="J29"
+                                 >Portugal Futurista</rs>) </item>
+                           <item>
+                              <add n="2"><rs type="title">Aviso por causa da moral</rs>. 1923<lb/>
+                                 (manifesto<lb/> qualquer)</add>
+                           </item>
+                        </list>
                      </item>
                   </list>
+                  <metamark rend="line" function="distinct"/>
+                  <list>
+                     <item>
+                        <rs type="title">Resposta ao Inquerito <hi rend="underline">Portugal, vasto
+                              Imperio</hi></rs> (<rs type="periodical" key="J72"><choice>
+                              <abbr>J<am>.</am> do C<am>.</am></abbr>
+                              <expan>J<ex>ornal</ex> do C<ex>omercio</ex></expan>
+                           </choice></rs> 28/5/26 – 29/5/26) </item>
+                     <item>
+                        <rs type="title"><choice>
+                              <abbr>Entrev<am>.</am></abbr>
+                              <expan>Entrev<ex>ista</ex></expan>
+                           </choice></rs> na <hi rend="underline"><rs type="periodical" key="J36"
+                              >Revista Portugueza</rs></hi>
+                     </item>
+                     <item>
+                        <rs type="name" key="P374"><abbr>J<am>.</am> B<am>.</am></abbr>
+                           Angioletti</rs>
+                     </item>
+                  </list>
+                  <anchor xml:id="A1"/>
                </item>
             </list>
-            <metamark rend="line" function="distinct"/>
-            <list>
-               <item>
-                  <rs type="title">Resposta ao Inquerito <hi rend="underline">Portugal, vasto
-                        Imperio</hi></rs> (<rs type="periodical" key="J72"><choice>
-                        <abbr>J<am>.</am> do C<am>.</am></abbr>
-                        <expan>J<ex>ornal</ex> do C<ex>omercio</ex></expan>
-                     </choice></rs> 28/5/26 – 29/5/26) </item>
-               <item>
-                  <rs type="title"><choice>
-                        <abbr>Entrev<am>.</am></abbr>
-                        <expan>Entrev<ex>ista</ex></expan>
-                     </choice></rs> na <hi rend="underline"><rs type="periodical" key="J36">Revista
-                        Portugueza</rs></hi>
-               </item>
-               <item>
-                  <rs type="name" key="P374">J. B. Angioletti</rs>
-               </item>
-            </list>
-            <anchor xml:id="A1"/>
          </div>
       </body>
    </text>

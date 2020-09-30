@@ -198,7 +198,7 @@
     </xsl:template>
     
     <!-- Lines, Dots, etc. new: -->
-    <xsl:template match="metamark[@rend = 'line'][@function = ('distinct','end')]" mode="#default deletion addition">
+    <xsl:template match="metamark[@rend = 'line'][@function = ('distinct','end','assignment')]" mode="#default deletion addition">
         <hr class="line {@function}"/>
     </xsl:template>
     <xsl:template match="metamark[@rend = 'line center'][@function = 'distinct']" mode="#default deletion addition">
@@ -591,7 +591,7 @@
         <xsl:apply-templates select="following-sibling::*[following::anchor[@xml:id=$anchorID]]" mode="addition" />
     </xsl:template>
 
-    <xsl:template match="del[@rend = 'overstrike'] | seg[@rend = 'overstrike']"
+    <xsl:template match="del[@rend = 'overstrike'] | del[@rend='overwritten'] | seg[@rend = 'overstrike']"
         mode="#default deletion addition">
         <span class="deletion overstrike">
             <xsl:apply-templates/>
@@ -615,69 +615,27 @@
     <!-- neu: -->
     <xsl:template match="metamark[@rend='arrow-down']" mode="#default deletion addition">
         <span class="arrow-down">↓</span>
+        <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="anchor[@xml:id=preceding::metamark[@rend='arrow-down']/@target/substring-after(.,'#') or @xml:id=following::metamark[@rend='arrow-down']/@target/substring-after(.,'#')]" mode="#default deletion addition" priority="1">
         <span class="anchor-arrow-down">↓</span>
     </xsl:template>
     
-    <!-- alt: -->
-    <xsl:template match="metamark[@rend='arrow-right-14']" mode="#default deletion addition">
-        <span class="arrow-right-14">⟶</span>
+    <xsl:template match="metamark[@rend='arrow-right-curved-up']" mode="#default deletion addition">
+        <span class="arrow-right-curved-up">↗</span>
+        <xsl:apply-templates/>
     </xsl:template>
-    <xsl:template match="metamark[@rend='arrow-left-14']" mode="#default deletion addition">
-        <span class="arrow-left-14">⟵</span>
-    </xsl:template>
-    
-    <xsl:template match="metamark[@rend = 'arrow-right-curved-up'][@n = '2']"
-        mode="#default deletion addition">
-        <span id="{@xml:id}" class="anchor invisible arrow-right-curved-up">x</span>
+    <xsl:template match="anchor[@xml:id=preceding::metamark[@rend='arrow-right-curved-up']/@target/substring-after(.,'#') or @xml:id=following::metamark[@rend='arrow-right-curved-up']/@target/substring-after(.,'#')]" mode="#default deletion addition" priority="1">
+        <span class="anchor-arrow-right-curved-up">↖</span>
     </xsl:template>
     
-    <xsl:template match="metamark[@rend = 'arrow-right-curved-down'][@n = '2']"
-        mode="#default deletion addition">
-        <span id="{@xml:id}" class="anchor invisible arrow-right-curved-down">x</span>
+    <xsl:template match="metamark[@rend='arrow-right-curved-down']" mode="#default deletion addition">
+        <span class="arrow-right-curved-down">↘</span>
+        <xsl:apply-templates/>
     </xsl:template>
-    
-    <xsl:template match="metamark[@rend = 'arrow-left-curved-up'][@n = '2']"
-        mode="#default deletion addition">
-        <span id="{@xml:id}" class="anchor invisible arrow-left-curved-up">x</span>
+    <xsl:template match="anchor[@xml:id=preceding::metamark[@rend='arrow-right-curved-down']/@target/substring-after(.,'#') or @xml:id=following::metamark[@rend='arrow-right-curved-down']/@target/substring-after(.,'#')]" mode="#default deletion addition" priority="1">
+        <span class="anchor-arrow-right-curved-down">↙</span>
     </xsl:template>
-    
-    <xsl:template match="metamark[@rend = 'arrow-left-curved-down'][@n = '2']"
-        mode="#default deletion addition">
-        <span id="{@xml:id}" class="anchor invisible arrow-left-curved-down">x</span>
-    </xsl:template>
-    
-    <xsl:template match="metamark[@rend = 'arrow-left-down'][@n = '2']"
-        mode="#default deletion addition">
-        <span id="{@xml:id}" class="anchor invisible arrow-left-down">x</span>
-    </xsl:template>
-    
-    <xsl:template match="metamark[@rend = 'arrow-left-up'][@n = '2']"
-        mode="#default deletion addition">
-        <span id="{@xml:id}" class="anchor invisible arrow-left-up">x</span>
-    </xsl:template>
-    
-    <xsl:template match="metamark[@rend = 'arrow-right-down'][@n = '2']"
-        mode="#default deletion addition">
-        <span id="{@xml:id}" class="anchor invisible arrow-right-down">x</span>
-    </xsl:template>
-    
-    <xsl:template match="metamark[@rend = 'arrow-right-up'][@n = '2']"
-        mode="#default deletion addition">
-        <span id="{@xml:id}" class="anchor invisible arrow-right-up">x</span>
-    </xsl:template>
-    
-    <xsl:template match="metamark[@rend = 'arrow-down'][@n = '2']"
-        mode="#default deletion addition">
-        <span id="{@xml:id}" class="anchor invisible arrow-down">x</span>
-    </xsl:template>
-    
-    <xsl:template match="metamark[@rend = 'arrow-up'][@n = '2']"
-        mode="#default deletion addition">
-        <span id="{@xml:id}" class="anchor invisible arrow-up">x</span>
-    </xsl:template>
-    
     
     
     

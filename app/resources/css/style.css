@@ -1310,7 +1310,7 @@ div.text {
     line-height: 1.8em;
     position: relative;
     padding-left: 4em;
-    padding-right: 0.5em;
+    padding-right: 1em;
 }
 div.text div.delSpan {
     background-image: url("../images/delSpan.svg");
@@ -1710,6 +1710,22 @@ div.text hr.line-14.inline, div.text hr.line-24.inline, div.text hr.line-34.inli
 div.text table hr.sum, div.text table hr.end {
     margin: 0;
 }
+div.text span.arrow-up,
+div.text span.arrow-down,
+div.text span.arrow-left,
+div.text span.arrow-right,
+div.text span.arrow-left-up,
+div.text span.arrow-right-up,
+div.text span.arrow-curved-up,
+div.text span.arrow-curved-down,
+div.text span.arrow-left-down,
+div.text span.arrow-right-down,
+div.text span.arrow-left-curved-up,
+div.text span.arrow-right-curved-up,
+div.text span.arrow-left-curved-down,
+div.text span.arrow-right-curved-down{
+    font-size: 15px;
+}
 /* STYLES FOR THE XSLT TRANSFORMATION OF PUBLICATIONS */
 div#text-div .signed.indent-13 {
     text-indent: 30%;
@@ -2030,18 +2046,6 @@ div.text#BNP_E3_133I-23r div.item#I4 .label {
     right: 0.2em;
 }
 
-/* BNP_E3_136-57v */
-div.text#BNP_E3_136-57v span.note.margin-right {
-    font-size: 1.5em;
-}
-div.text#BNP_E3_136-57v span.note.margin-right.circled {
-    margin: 0 1em;
-    padding: 0;
-    display: block;
-    width: 5%;
-    left: 80%;
-    bottom: 30%;
-}
 
 /* BNP_E3_137D-3 */
 div.text#BNP_E3_137D-3 span.note.margin-left.circled {
@@ -2210,12 +2214,16 @@ div.text#BNP_E3_181r .grouping-right {
 div.text#BNP_E3_181r .margin-left.circled {
     width: auto;
 }
+/* BNP_E3_144G-38r-e-39r */
 div.text#BNP_E3_144G-38r-e-39r .grouping-right {
     font-size: 6em;
     top: -0.5em;
 }
 div.text#BNP_E3_144G-38r-e-39r hr {
     display: inline-block;
+}
+div.text#BNP_E3_144G-38r-e-39r hr.line.assignment {
+    width: 3em;
 }
 /* BNP_E3_189r */
 div.text#BNP_E3_189r {
@@ -2308,7 +2316,7 @@ div.text#BNP_E3_133F-28v span.above {
     left: 3.5em;
 }
 div.text#BNP_E3_133F-28v div.delSpan {
-    background-size: 300px 250px;
+    background-size: 300px 320px;
 }
 /* BNP_E3_133M-96-a-98 */
 /* 23. Trad. Octavio */
@@ -2339,7 +2347,7 @@ div.text#BNP_E3_133M-96-a-98 div.item:nth-child(34) span.metamark.quotes.ditto {
 }
 /* 24. Contos genero... */
 div.text#BNP_E3_133M-96-a-98 div.item:nth-child(45) span.metamark.quotes.ditto {
-    width: 6em;
+    width: 3em;
     text-indent: 0;
 }
 /* BNP_E3_136-57v */
@@ -2347,6 +2355,36 @@ div.text#BNP_E3_136-57v p:nth-child(13) span.circled {
     left: 0;
     padding: 5px;
 }
+div.text#BNP_E3_136-57v span.note.margin-right {
+    font-size: 1.5em;
+}
+div.text#BNP_E3_136-57v span.note.margin-right.circled {
+    margin: 0 1em;
+    padding: 0;
+    display: block;
+    width: 5%;
+    left: 80%;
+    bottom: 30%;
+}
+div.text.last#BNP_E3_136-57v span.note.margin-right.circled {
+    left: 90%;
+    bottom: 35%;
+}
+/* BNP_E3_144G-58v */
+div.text#BNP_E3_144G-58v hr.line.distinct {
+    width: 12em;
+    margin: 0 auto;
+}
+div.text#BNP_E3_144G-58v span.grouping-left {
+    font-size: 4em;
+    top: -0.3em;
+}
+div.text#BNP_E3_144G-58v span.grouping-right {
+    font-size: 4.5em;
+    top: -0.8em;
+    left: 0.6em;
+}
+
 
 /* ABOUT PAGE */
 table.doc-overview, table.doc-overview td, table.doc-overview tr {
