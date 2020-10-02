@@ -31,6 +31,10 @@
                 </respStmt>
                 <respStmt>
                     <resp>Codificação</resp>
+                    <name>Inês Filipa Rebelo do Carmo</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
                     <name>Sviatoslav Drach</name>
                 </respStmt>
                 <respStmt>
@@ -94,7 +98,7 @@
                         <rs type="collection" key="C11"><rs type="title" key="T170"><hi
                                     rend="underline">Ficções do Interludio</hi></rs></rs>
                     </head>
-                    <note place="margin-right"><hi rend="framed">ou 1 a 5<lb/> num
+                    <note place="margin-right"><hi rend="framed">ou 1 a 5<lb/>num
                         volume</hi></note>
                     <item xml:id="I1" rend="indent-2">
                         <label>1.</label>
@@ -120,19 +124,21 @@
                                 <expan>rec<ex>ordação</ex>
                                 </expan>
                             </choice>
-                            <lb/> do meu mestre<lb/>
+                            <lb/>do meu mestre<lb/>
                             <rs type="name" key="AC" role="topic">Caeiro</rs>
                         </rs> (<rs type="name" key="AdC" role="author"><choice>
                                 <abbr>Alv<am>.</am></abbr>
                                 <expan>Alv<ex>aro</ex></expan>
                             </choice> de Campos</rs>) <note target="range(I2,I3)"
                             place="margin-right">
-                            <metamark rend="curly-bracket" function="grouping"/>
+                            <metamark rend="curly-bracket" function="grouping">
                             <label>Vol. II</label>
+                            </metamark>
                         </note>
                         <note target="range(I1,I4)" place="margin-left">
+                            <metamark rend="curly-bracket" function="grouping">
                             <label rend="rotate-left">1 vol. (I-III)</label>
-                            <metamark rend="curly-bracket" function="grouping"/>
+                            </metamark>
                         </note>
                     </item>
                     <item xml:id="I3" rend="indent-2">
@@ -153,8 +159,9 @@
                                 <expan>Alv<ex>aro</ex></expan>
                             </choice> de<lb/> Campos</rs>) <note target="range(I4,I5)"
                             place="margin-right">
-                            <metamark rend="curly-bracket" function="grouping"/>
+                            <metamark rend="curly-bracket" function="grouping">
                             <label>Vol. III</label>
+                            </metamark>
                         </note>
                     </item>
                     <item xml:id="I5" rend="indent-2">
@@ -173,16 +180,17 @@
                                     <expan>R<ex>icardo</ex></expan>
                                 </choice> Reis</rs>)</rs>
                         <note target="range(I4,I6)" place="margin-left">
+                            <metamark rend="curly-bracket" function="grouping">
                             <supplied resp="UH" reason="omitted-in-original">
                                 <label>1 vol. (IV-VI)</label>
                             </supplied>
-                            <metamark rend="curly-bracket" function="grouping"/>
+                            </metamark>
                         </note>
                     </item>
                     <item xml:id="I6" rend="indent-2">
                         <label>6.</label>
                         <seg type="anchor">
-                            <rs type="work" key="O4" style="d"><rs type="title">Trez Odes</rs></rs>
+                            <seg n="1"><rs type="work" key="O4" style="d"><rs type="title">Trez Odes</rs></rs></seg>
                             <add place="above" n="2"><rs type="work" key="O4" style="b"><rs
                                         type="title">Arco de Triumpho</rs></rs></add>
                         </seg> (<rs type="name" key="AdC" role="author"><choice>
@@ -193,8 +201,9 @@
                         <rs type="work" key="O4-11"><rs type="title">Maritima</rs></rs> — <supplied
                             resp="PS" reason="omitted-in-original"/>) <note target="I6"
                             place="margin-right">
-                            <metamark rend="bracket" function="grouping"/>
+                            <metamark rend="curly-bracket" function="grouping">
                             <label>Vol. IV</label>
+                            </metamark>
                         </note>
                     </item>
                 </list>
