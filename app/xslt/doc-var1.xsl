@@ -7,6 +7,12 @@
     <xsl:import href="doc-edited.xsl"/>
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
 
+    <xsl:template match="text" mode="#default deletion addition">
+        <div class="text first" id="{//idno[@type='filename']/substring-before(.,'.')}">
+            <xsl:apply-templates/>
+        </div>
+        <xsl:apply-templates select="//summary"/>
+    </xsl:template>
 
     <!-- Choices -->
     <!-- Alternativen von Pessoa selbst 
@@ -56,6 +62,11 @@
     (alternativ: nichts  - das Hinzugefügte)
     hier: das Hinzugefügte nicht anzeigen 
     <xsl:template match="seg/add[@n='2']"/> -->
+    
+    <!-- Tilgung von Pessoa selbst. Anzeigen des Gelöschten (wenn es mehrere Textstufen gibt) -->
+    <xsl:template match="del[not(parent::subst)][@n]" mode="#default deletion addition">
+        <xsl:apply-templates select="text() | child::*"/>
+    </xsl:template>
 
     <!-- Ersetzung von Pessoa selbst: etwas wird gelöscht, etwas anderes hinzugefügt
     hier: Anzeigen des Gelöschten (wenn es zwei Textstufen sind) -->

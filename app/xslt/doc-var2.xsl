@@ -58,6 +58,9 @@
     </xsl:template>
 
 
+    <!-- Gelöschtes, das nur in der ersten Version ist, hier nicht anzeigen -->
+    <xsl:template match="del[@n='1']" mode="#default deletion addition"/>
+
     <!-- Ersetzung von Pessoa selbst: etwas wird gelöscht, etwas anderes hinzugefügt
     hier: Anzeigen des Hinzugefügten -->
     <xsl:template match="subst[del and add/@n]" mode="#default deletion addition">

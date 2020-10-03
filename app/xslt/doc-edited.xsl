@@ -128,8 +128,8 @@
         </span>
     </xsl:template>
     
-    <!-- Gelöschtes nicht anzeigen -->
-    <xsl:template match="del[@n='2']|del" mode="#default deletion addition"/>
+    <!-- Gelöschtes, das nicht Teil der Versionen ist, nicht anzeigen -->
+    <xsl:template match="del[not(@n)]" mode="#default deletion addition"/>
     
     <!-- Certainty -->
     <xsl:template match="seg[@type='certainty']" mode="#default deletion addition">

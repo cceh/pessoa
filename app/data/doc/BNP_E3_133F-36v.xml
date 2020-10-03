@@ -22,6 +22,10 @@
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
+               <name>Inês Filipa Rebelo do Carmo</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
                <name>Isabel Figueiredo-Iken</name>
             </respStmt>
             <respStmt>
@@ -38,7 +42,7 @@
                (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2017</date>
-            <availability status="restricted">
+            <availability status="free">
                <licence target="http://creativecommons.org/licenses/by/3.0/"/>
             </availability>
             <idno type="filename">BNP_E3_133F-36v.xml</idno>
@@ -51,8 +55,8 @@
                </msIdentifier>
                <msContents>
                   <summary>
-                     <p> Lista manuscrita, publicada em <hi rend="italic">Prosa de Álvaro de Campos</hi>
-                        (2012, 293). </p>
+                     <p> Lista manuscrita, publicada em <hi rend="italic">Prosa de Álvaro de
+                           Campos</hi> (2012, 293). </p>
                   </summary>
                   <msItemStruct>
                      <author>
@@ -85,53 +89,46 @@
       <body>
          <div>
             <delSpan rend="overstrike" spanTo="#A1"/>
-            <div rend="left">
-               <list>
-                  <item xml:id="I1">
-                     <label>1.</label>
-                     <rs type="title">Ultimatum</rs>. </item>
-                  <item xml:id="I2">
-                     <label>2.</label>
-                     <rs type="title">Desnivelamento</rs>
-                  </item>
-                  <item xml:id="I3">
-                     <label>3.</label>
-                     <rs type="title">O que é a <choice>
-                           <abbr>met<am>.</am></abbr>
-                           <expan>met<ex>aphysica</ex></expan>
-                        </choice>?</rs>
-                  </item>
+            <list rend="rotate-left">
+               <item xml:id="I1">
+                  <label>1.</label>
+                  <rs type="title">Ultimatum</rs>. </item>
+               <item xml:id="I2">
+                  <label>2.</label>
+                  <rs type="title">Desnivelamento</rs>
+               </item>
+               <item xml:id="I3">
+                  <label>3.</label>
+                  <rs type="title">O que é a <choice>
+                        <abbr>met<am>.</am></abbr>
+                        <expan>met<ex>aphysica</ex></expan>
+                     </choice>?</rs>
                   <note place="margin-left" target="range(I1,I5)">
-                  <metamark rend="curly-bracket" function="grouping"/>
+                     <metamark rend="curly-bracket" function="grouping"/>
                   </note>
-                  <item xml:id="I4">
-                     <label>4.</label>
-                     <rs type="title">Apontamentos</rs>
-                  </item>
-                  <item xml:id="I5">
-                     <label>5.</label>
-                     <rs type="title">Inhelenismo</rs>
-                  </item>
-               </list>
-            </div>
+               </item>
+               <item xml:id="I4">
+                  <label>4.</label>
+                  <rs type="title">Apontamentos</rs>
+               </item>
+               <item xml:id="I5">
+                  <label>5.</label>
+                  <rs type="title">Inhelenismo</rs>
+               </item>
+            </list>
             <metamark rend="line" function="distinct"/>
+            <ab rend="center">Subsidios <lb/> para o estudo <lb/> do futuro <metamark
+                  rend="arrow-right-down" target="#A2" function="assignment"/></ab>
             <metamark rend="line" function="distinct"/>
-            <div rend="center">
-               <ab>Subsidios <lb/> para o estudo <lb/> do futuro<metamark rend="arrow-right-down" target="#A2" function="assignment"/></ab>
-            </div>
-            <metamark rend="line" function="distinct"/>
-            <metamark rend="line" function="distinct"/>
-            <div rend="right">
-               <gap reason="illegible" unit="word" extent="1"/>
+            <ab rend="right">
+               <del><gap reason="illegible" unit="word" extent="1"/></del>
                <lb/>
-               <gap reason="illegible" unit="word" extent="1"/>
-               <metamark rend="line" function="distinct"/>
-               <ab><anchor xml:id="A2"/>(subtitulo)</ab>
-               <metamark rend="line" function="distinct"/>
-            </div>
-         </div>
-         <div>
-            <ab>
+               <del><gap reason="illegible" unit="word" extent="1"/></del>
+            </ab>
+            <metamark rend="line" function="distinct"/>
+            <ab rend="right"><anchor xml:id="A2"/>(subtitulo)</ab>
+            <metamark rend="line" function="distinct"/>
+            <ab rend="center">
                <hi rend="underline">Desnivelamento</hi> (titulo da <lb/> carta a <rs type="name"
                   key="P144">
                   <choice>
@@ -150,15 +147,14 @@
                <item xml:id="I6">
                   <label>2.</label>
                   <rs type="title">Carro Eléctrico</rs>
-                  <metamark rend="line" function="distinct"/>
-                  <note place="margin-right"> O incidente dado com <lb/> este castelhano de <lb/> casa?
+                  <note place="margin-right"> O incidente dado com <lb/> este castelhano de <lb/>
+                     casa? </note>
+                  <note place="margin-left" target="range(I6,I7)">
+                     <metamark rend="curly-bracket" function="grouping">
+                        <label rend="rotate-left">quase-<lb/>Epistolario</label>
+                     </metamark>
                   </note>
                </item>
-               <note place="margin-left" target="range(I6,I7)">
-               <metamark rend="curly-bracket" function="grouping">
-               <label>quase-<lb/>Epistolario</label>
-               </metamark>
-               </note>
                <item xml:id="I7">
                   <label>3.</label>
                   <rs type="title">Desnivelamento</rs>
@@ -166,19 +162,16 @@
                <item>
                   <label>4.</label>
                   <subst>
-                     <del n="1" rend="overstrike"><gap extent="2" unit="word" reason="illegible"
-                        />......</del>
-                     <add n="2" place="above">O que é a Metaphysica?</add>
-                  </subst>
-               </item>
+                     <del rend="overstrike"><gap extent="2" unit="word" reason="illegible"/></del>
+                     <add place="above">O que é a Metaphysica?</add>
+                  </subst>...... </item>
                <item>
                   <label>5.</label>
                   <rs type="title">Apontamentos...</rs>
                </item>
                <item>
                   <label>6.</label>
-                  <rs type="title">Prefacio(s) a nada</rs>.
-                  <note place="margin-right">
+                  <rs type="title">Prefacio(s) a nada</rs>. <note place="margin-right">
                      <list>
                         <item xml:id="I8">
                            <label>1.</label>
@@ -201,7 +194,8 @@
                               </choice>
                            </rs>
                            <note place="margin-left">
-                              <metamark function="grouping" rend="curly-bracket" target="range(I8,I10)"/>
+                              <metamark function="grouping" rend="curly-bracket"
+                                 target="range(I8,I10)"/>
                            </note>
                         </item>
                         <item xml:id="I10">
