@@ -1359,6 +1359,7 @@ div.text table td.right {
 div.text table td {
     vertical-align: top;
     padding-right: 2em;
+    white-space: nowrap;
 }
 div.text div.list {
     margin: 2em 0;
@@ -2058,9 +2059,15 @@ div.text#BNP_E3_137D-3 span.note.margin-left.circled {
 }
 /* BNP_E3_188-1r */
 div.text#BNP_E3_188-1r span.note.margin-right span.grouping-right {
-    left: 1.5em;
-    top: -0.1em;
-    font-size: 9em;
+    left: 0.1em;
+    top: -0.65em;
+    font-size: 10em;
+}
+div.text#BNP_E3_188-1r span.above {
+    left: 2.5em;
+}
+div.text#BNP_E3_188-1r hr.line.center.end {
+    width: 25%;
 }
 /* BNP_E3_49B6-19v */
 div.text#BNP_E3_49B6-19v span.note.margin-right span.grouping-right {
@@ -2425,6 +2432,28 @@ div.text#BNP_E3_144E-2r-a-11r hr.line.distinct {
 div.text.first#BNP_E3_144E-2r-a-11r hr.line.distinct,
 div.text.last#BNP_E3_144E-2r-a-11r hr.line.distinct {
     width: 95%;
+}
+/* BNP_E3_144Q-34r */
+div.text#BNP_E3_144Q-34r span.note.margin-right span.grouping-right {
+    font-size: 11em;
+    top: -0.8em;
+    right: -1.2em;
+}
+div.text#BNP_E3_144Q-34r td.right {
+    padding-left: 4em;
+}
+/* BNP_E3_144X-54r */
+div.text#BNP_E3_144X-54r div.delSpan {
+    background-size: 400px;
+}
+/* BNP_E3_186r */
+div.text#BNP_E3_186r hr.line.center {
+    width: 10em;
+    margin: 0 auto 0 7%;
+}
+div.text.first#BNP_E3_186r hr.line.center, 
+div.text.last#BNP_E3_186r hr.line.center {
+    margin: 0 auto;
 }
 
 /* ABOUT PAGE */

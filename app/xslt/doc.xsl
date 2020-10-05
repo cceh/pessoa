@@ -201,7 +201,7 @@
     <xsl:template match="metamark[@rend = 'line'][@function = ('distinct','end','assignment')]" mode="#default deletion addition">
         <hr class="line {@function}"/>
     </xsl:template>
-    <xsl:template match="metamark[@rend = 'line center'][@function = 'distinct']" mode="#default deletion addition">
+    <xsl:template match="metamark[@rend = 'line center'][@function = ('distinct','end')]" mode="#default deletion addition">
         <hr class="line center {@function}"/>
     </xsl:template>
     <xsl:template match="metamark[@rend = 'dots'][@function = 'placeholder']" mode="#default deletion addition">
