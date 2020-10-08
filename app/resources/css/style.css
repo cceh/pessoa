@@ -1360,6 +1360,7 @@ div.text table td {
     vertical-align: top;
     padding-right: 2em;
     white-space: nowrap;
+    position: relative;
 }
 div.text div.list {
     margin: 2em 0;
@@ -1482,6 +1483,7 @@ div.text span.note circled, div.text span.circled {
     padding: 5px 10px;
     left: 10px;
     position: relative;
+    display: inline-block;
 }
 div.text span.note framed, div.text span.framed {
     border: 1px solid black;
@@ -1544,6 +1546,16 @@ div.text div.item span.note.margin-left {
     position: absolute;
     left: -3.5em;
     top: 5px;
+    line-height: normal;
+    white-space: nowrap;
+    text-align: right;
+    display: inline-block;
+    width: 3em;
+}
+div.text td span.note.margin-left {
+    position: absolute;
+    left: -3.5em;
+    top: 3px;
     line-height: normal;
     white-space: nowrap;
     text-align: right;
@@ -2138,25 +2150,44 @@ div.text#BNP_E3_48G-26r p.right {
 div.text#BNP_E3_48-18-e-19 #I2 .grouping-left {
     font-size: 8em;
     right: -0.2em;
-    top: -0.4em;
+    top: -0.55em;
+}
+div.text#BNP_E3_48-18-e-19 div.item:nth-child(12) span.above {
+    left: 3em;
 }
 div.text#BNP_E3_48-18-e-19 #I5 .grouping-left {
     font-size: 3em;
 }
 div.text#BNP_E3_48-18-e-19 #I9 .grouping-left {
-    font-size: 4em;
+    font-size: 6em;
+    top: -0.1em;
+    right: -0.5em;
+}
+div.text.first#BNP_E3_48-18-e-19 #I9 .grouping-left,
+div.text.last#BNP_E3_48-18-e-19 #I9 .grouping-left {
+    font-size: 3em;
+    top: -0.1em;
+    right: -1em;
 }
 div.text#BNP_E3_48-18-e-19 #I9 .grouping-right {
-    font-size: 4em;
-    right: 1.5em;
-    top: 0.1em;
+    font-size: 6em;
+    right: 0.9em;
+    top: -0.4em;
 }
-div.text#BNP_E3_48-18-e-19 #I11 .note.margin-right {
-    top: -2.5em;
+div.text.first#BNP_E3_48-18-e-19 #I9 .grouping-right,
+div.text.last#BNP_E3_48-18-e-19 #I9 .grouping-right {
+    font-size: 3em;
+    right: 2em;
+    top: 0;
 }
-div.text#BNP_E3_48-18-e-19 #I11 .note.margin-right .grouping-left {
-    left: 2em;
-    font-size: 2em;
+div.text#BNP_E3_48-18-e-19 #I11 div.list.inline div.item:nth-child(2) .note.margin-right:nth-child(6) {
+    top: 4em;
+}
+div.text.first#BNP_E3_48-18-e-19 #I11 div.list.inline .note.margin-right,
+div.text.last#BNP_E3_48-18-e-19 #I11 div.list.inline .note.margin-right {
+    right: 0;
+    position: relative;
+    margin-right: 1em;
 }
 div.text#BNP_E3_48-18-e-19 #I12 .list {
     font-size: small;
@@ -2167,31 +2198,98 @@ div.text#BNP_E3_180r div.list > .note.margin-right {
     top: -1em;
 }
 div.text#BNP_E3_180r #I1 .note.margin-right {
-    right: 15em;
+    right: 16em;
     top: 3em;
+    font-size: 1em;
 }
-div.text#BNP_E3_180r #I2 .note.margin-right, div.text#BNP_E3_180r #I4 .note.margin-right {
+div.text.first#BNP_E3_180r #I1 .note.margin-right,
+div.text.last#BNP_E3_180r #I1 .note.margin-right {
+    right: 0;
+    top: 0.2em;
+}
+div.text#BNP_E3_180r #I2 .note.margin-right, 
+div.text#BNP_E3_180r #I4 .note.margin-right,
+div.text#BNP_E3_180r #I6 .note.margin-right {
     right: 15em;
 }
-div.text#BNP_E3_180r #I2 .grouping-right, div.text#BNP_E3_180r #I4 .grouping-right {
-    right: 0.7em;
-    font-size: 5em;
+div.text.first#BNP_E3_180r #I2 .note.margin-right,
+div.text.last#BNP_E3_180r #I2 .note.margin-right,
+div.text.first#BNP_E3_180r #I4 .note.margin-right,
+div.text.last#BNP_E3_180r #I4 .note.margin-right,
+div.text.first#BNP_E3_180r #I6 .note.margin-right,
+div.text.last#BNP_E3_180r #I6 .note.margin-right {
+    right: -3.5em;
+}
+div.text#BNP_E3_180r #I2 .grouping-right {
+    font-size: 7em;
     top: -0.5em;
+    right: 0.5em;
+} 
+div.text#BNP_E3_180r #I4 .grouping-right {
+    font-size: 6em;
+    top: -0.2em;
+    right: 0.5em;
+}
+div.text#BNP_E3_180r #I6 .grouping-right {
+    right: 0.8em;
+    font-size: 4em;
+    top: -0.9em;
+}
+div.text.first#BNP_E3_180r #I2 .grouping-right,
+div.text.last#BNP_E3_180r #I2 .grouping-right {
+    font-size: 2em;
+    top: 0.5em;
+    right: 1.5em;
+}
+div.text.first#BNP_E3_180r #I4 .grouping-right,
+div.text.last#BNP_E3_180r #I4 .grouping-right {
+    font-size: 2em;
+    right: 1.5em;
+}
+div.text.first#BNP_E3_180r #I6 .grouping-right,
+div.text.last#BNP_E3_180r #I6 .grouping-right {
+    font-size: 2em;
+    top: -0.2em;
+    right: 1.5em;
+}
+div.text#BNP_E3_180r #I2 .grouping-left {
+    font-size: 12em;
+    top: -0.7em;
+    right: -0.3em;
+}
+div.text.first#BNP_E3_180r #I2 .grouping-left,
+div.text.last#BNP_E3_180r #I2 .grouping-left {
+    font-size: 5em;
+    top: -0.6em;
+    right: -0.5em;
+}
+div.text#BNP_E3_180r #I2 .grouping-left span.label.rotate-left {
+    top: 0;
+    left: 5em;
+}
+div.text.first#BNP_E3_180r #I2 .grouping-left span.label.rotate-left,
+div.text.last#BNP_E3_180r #I2 .grouping-left span.label.rotate-left {
+    left: 3em;
 }
 div.text#BNP_E3_180r #I4 .note.margin-right {
     right: 15em;
     top: 2em;
 }
 div.text#BNP_E3_180r #I5 .grouping-left {
-    font-size: 8em;
-    top: -0.8em;
-    right: -0.3em;
-}
-div.text#BNP_E3_180r #I2 .grouping-left {
     font-size: 10em;
-    top: -0.6em;
+    top: -0.9em;
     right: -0.3em;
 }
+div.text.first#BNP_E3_180r #I5 .grouping-left,
+div.text.last#BNP_E3_180r #I5 .grouping-left {
+    font-size: 5em;
+    top: -0.7em;
+    right: -0.5em;
+}
+div.text#BNP_E3_180r #I5 span.above, div.text#BNP_E3_180r #I6 span.above {
+    left: 3.7em;
+}
+
 /* CP246 */
 div.text#CP246 .grouping-right {
     top: -0.2em;
@@ -2220,6 +2318,9 @@ div.text#BNP_E3_181r .grouping-right {
 }
 div.text#BNP_E3_181r .margin-left.circled {
     width: auto;
+}
+div.text#BNP_E3_181r hr.line.center {
+    width: 40%;
 }
 /* BNP_E3_144G-38r-e-39r */
 div.text#BNP_E3_144G-38r-e-39r .grouping-right {
@@ -2454,6 +2555,15 @@ div.text#BNP_E3_186r hr.line.center {
 div.text.first#BNP_E3_186r hr.line.center, 
 div.text.last#BNP_E3_186r hr.line.center {
     margin: 0 auto;
+}
+/* BNP_E3_125A-52r */
+div.text#BNP_E3_125A-52r div.delSpan {
+    background-size: 400px 200px;
+    background-position: center;
+}
+/* BNP_E3_144X-48r */
+div.text#BNP_E3_144X-48r div.delSpan {
+    background-size: 300px 200px;
 }
 
 /* ABOUT PAGE */

@@ -613,6 +613,15 @@
     
     <!-- einzublendende Pfeile -->
     <!-- neu: -->
+    
+    <xsl:template match="metamark[@rend='arrow-right']" mode="#default deletion addition">
+        <span class="arrow-right">→</span>
+        <xsl:apply-templates/>
+    </xsl:template>
+    <xsl:template match="anchor[@xml:id=preceding::metamark[@rend='arrow-right']/@target/substring-after(.,'#') or @xml:id=following::metamark[@rend='arrow-right']/@target/substring-after(.,'#')]" mode="#default deletion addition" priority="1">
+        <span class="anchor-arrow-right">→</span>
+    </xsl:template>
+    
     <xsl:template match="metamark[@rend='arrow-down']" mode="#default deletion addition">
         <span class="arrow-down">↓</span>
         <xsl:apply-templates/>
@@ -627,6 +636,14 @@
     </xsl:template>
     <xsl:template match="anchor[@xml:id=preceding::metamark[@rend='arrow-right-down']/@target/substring-after(.,'#') or @xml:id=following::metamark[@rend='arrow-right-down']/@target/substring-after(.,'#')]" mode="#default deletion addition" priority="1">
         <span class="anchor-arrow-right-down">↘</span>
+    </xsl:template>
+    
+    <xsl:template match="metamark[@rend='arrow-left-down']" mode="#default deletion addition">
+        <span class="arrow-left-down">↙</span>
+        <xsl:apply-templates/>
+    </xsl:template>
+    <xsl:template match="anchor[@xml:id=preceding::metamark[@rend='arrow-left-down']/@target/substring-after(.,'#') or @xml:id=following::metamark[@rend='arrow-left-down']/@target/substring-after(.,'#')]" mode="#default deletion addition" priority="1">
+        <span class="anchor-arrow-left-down">↙</span>
     </xsl:template>
     
     <xsl:template match="metamark[@rend='arrow-right-curved-up']" mode="#default deletion addition">
