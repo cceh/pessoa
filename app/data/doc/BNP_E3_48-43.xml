@@ -83,10 +83,9 @@
                         <note place="margin-right" type="addition" n="2">
                             <note place="margin-left" target="range(I1,I2)">
                                 <metamark rend="curly-bracket" function="grouping"/>
-                            </note>
+                            </note> ou
                             <list>
-                                <item xml:id="I1">
-                                    <label>ou</label> - artigo de fundo</item>
+                                <item xml:id="I1"> - artigo de fundo</item>
                                 <item xml:id="I2" rend="indent-2"> - <choice>
                                         <abbr>art<am>.</am></abbr>
                                         <expan>art<ex>igos</ex></expan>
@@ -131,7 +130,7 @@
                             <item>Industria. <note n="2" type="addition">– Vida
                                 Industrial</note></item>
                             <item xml:id="I7">
-                                <note place="margin-left">(?) –</note> Cambios. </item>
+                                <seg type="certainty" cert="low" rend="question-mark" resp="FP">Cambios.</seg></item>
                             <note
                                 place="margin-right" type="addition" target="range(I7,I8)">
                                 <metamark rend="curly-bracket" function="grouping">
@@ -142,7 +141,7 @@
                                 </metamark>
                             </note>
                             <item xml:id="I8">
-                                <note place="margin-left">(?) –</note> Bolsa. 
+                                <seg type="certainty" cert="low" rend="question-mark" resp="FP">Bolsa.</seg> 
                             </item>
                         </list>
                     </item>
@@ -156,10 +155,13 @@
                     <metamark rend="line" function="distinct"/>
                     <item rend="indent-2">
                         <label>E.</label> – Indicações Commerciais Varias<lb/> (por paizes ?)
-                        Concursos<lb/> Firmas <choice>
+                        <list rend="inline">
+                            <item>Concursos</item>
+                            <item>Firmas <choice>
                             <abbr>q</abbr>
                             <expan>q<ex>ue</ex></expan>
-                        </choice> podem responder, etc. <note place="margin-right" type="addition"
+                            </choice> podem responder, etc.</item></list>
+                        <note place="margin-right" type="addition"
                             rend="rotate-left" n="2">
                             <metamark rend="line" function="distinct"/> D – Colonias<lb/> E –
                             Estrangeiro <metamark rend="line" function="distinct"/>
