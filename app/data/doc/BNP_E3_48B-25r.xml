@@ -26,6 +26,10 @@
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
+               <name>Inês Filipa Rebelo do Carmo</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
                <name>Sviatoslav Drach</name>
             </respStmt>
             <respStmt>
@@ -85,7 +89,6 @@
       <body>
          <div>
             <delSpan rend="overstrike" spanTo="#A1"/>
-            <div rend="left">
                <list>
                   <head>
                      <rs type="title">Cancioneiro</rs>
@@ -103,9 +106,7 @@
                      <label>4.</label>
                      <rs type="title">Transeunte</rs>. </item>
                </list>
-            </div>
             <anchor xml:id="A1"/>
-            <div rend="right">
                <list>
                   <item><rs type="title">Monarchic Idea</rs>.</item>
                   <item><rs type="title">Monarchic Idea</rs>.</item>
@@ -113,16 +114,18 @@
                <metamark rend="line" function="distinct"/>
                <list>
                   <head><hi rend="underline">Dictionary of Technology:</hi></head>
-                  <item>
+                  <item xml:id="I1">
                      <label>1.</label> English, French, German. </item>
-                  <item>
+                  <item xml:id="I2">
                      <label>2.</label>
                      <choice>
-                        <abbr><metamark rend="line" function="ditto"/></abbr>
+                        <abbr><metamark rend="quotes" function="ditto"/></abbr>
                         <expan>English</expan>
-                     </choice>, Spanish, Portuguese. <metamark rend="curly-bracket" place="right"
-                        target="#N1"/>
-                     <note xml:id="N1" rend="vertical" place="margin right">
+                     </choice>, Spanish, Portuguese. <note target="range(I1,I3)" rend="vertical" 
+                        place="margin-right" type="addition"><metamark rend="curly-bracket"
+                           function="grouping">
+                     <label>
+                        <addSpan spanTo="#N1"/>
                         <list>
                            <item>
                               <del rend="overstrike">E, F, G, S, P.</del>
@@ -134,33 +137,34 @@
                            <item> E, I, P <supplied resp="PS" reason="omitted-in-original"/>
                            </item>
                         </list>
+                        <anchor xml:id="N1"/>
+                     </label>
+                        </metamark>
                      </note>
                   </item>
-                  <item>
+                  <item xml:id="I3">
                      <label>3.</label>
                      <choice>
-                        <abbr><metamark rend="line" function="ditto"/></abbr>
+                        <abbr><metamark rend="quotes" function="ditto"/></abbr>
                         <expan>English</expan>
                      </choice>, Italian, Dutch. </item>
                   <item>
                      <label><del rend="overstrike">or: 4.</del></label>
                      <choice>
-                        <abbr><metamark rend="line" function="ditto"/></abbr>
+                        <abbr><metamark rend="quotes" function="ditto"/></abbr>
                         <expan>English</expan>
                      </choice>, Russian, (Scandinavian). </item>
                   <item>
                      <label><del rend="overstrike"><gap reason="illegible" unit="character"
                               extent="1"/></del></label>
                      <del rend="overstrike"><choice>
-                           <abbr><metamark rend="line" function="ditto"/></abbr>
+                        <abbr><metamark rend="quotes" function="ditto"/></abbr>
                            <expan>English</expan>
                         </choice></del>
                   </item>
                   <note>Or one volume: E, F, G, I, S, P. (D; R.) = 8.</note>
                </list>
-            </div>
             <metamark rend="line" function="distinct"/>
-            <div>
                <list>
                   <item>
                      <rs type="work" key="O1" style="b"><rs type="title"><hi rend="underline"
@@ -174,10 +178,7 @@
                      maiores – como “Agamemnon”, etc. <lb/> (ou este titulo como titulo geral, dos
                      outros livros <lb/> tambem). </item>
                </list>
-            </div>
             <metamark rend="line" function="distinct"/>
-            <div>
-               <div rend="left">
                   <list>
                      <head><hi rend="underline">Poemas Portuguezes</hi></head>
                      <item><label>1.</label>
@@ -210,15 +211,13 @@
                         Parma</rs></rs>. (example of drama).</item>
                      <item>= <rs type="title">Prometheus Revinctus</rs> (example of poem).</item>
                      <item>= <rs type="title">Antinous</rs>; <rs type="title">Epithalamium</rs>; <rs
-                           type="text">Spring 1917</rs>; <rs type="title">Elegy</rs>; <rs type="title"
+                           type="title">Spring 1917</rs>; <rs type="title">Elegy</rs>; <rs type="title"
                            >The Voyage</rs>; <lb/>
                         <rs type="title">Summer</rs>;</item>
                      <item>= <rs type="title">Books of Sonnets</rs>.</item>
                      <item>= <rs type="title">Books (?) of Poems</rs>.</item>
                   </list>
-               </div>
-               <metamark rend="vertical line" place="centre" function="distinct"/>
-               <div rend="right">
+               <metamark rend="vertical line" function="distinct"/>
                   <list>
                      <item>
                         <list>
@@ -264,8 +263,6 @@
                         <rs type="title"><hi rend="underline"><rs type="name" key="P21" style="b"
                                  >D. Sebastião</rs></hi></rs>. </item>
                   </list>
-               </div>
-            </div>
          </div>
       </body>
    </text>
