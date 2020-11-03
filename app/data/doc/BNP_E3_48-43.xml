@@ -83,10 +83,9 @@
                         <note place="margin-right" type="addition" n="2">
                             <note place="margin-left" target="range(I1,I2)">
                                 <metamark rend="curly-bracket" function="grouping"/>
-                            </note> ou
-                            <list>
-                                <item xml:id="I1"> - artigo de fundo</item>
-                                <item xml:id="I2" rend="indent-2"> - <choice>
+                            </note> ou <list rend="inline">
+                                <item xml:id="I1">- artigo de fundo</item>
+                                <item xml:id="I2" rend="indent-2">- <choice>
                                         <abbr>art<am>.</am></abbr>
                                         <expan>art<ex>igos</ex></expan>
                                     </choice> especiaes.</item>
@@ -106,22 +105,23 @@
                                         <add place="above">Vida do Estado</add>
                                         <del rend="overstrike">O Estado</del>
                                     </subst></note>.</item>
-                            <item><del rend="overstrike" n="2">Finanças Geraes.</del> <add place="after" n="2">Vida
-                                        Financeira.<anchor xml:id="A1"/></add></item>
-                            <item xml:id="I3">Commercio Interno.</item>
+                            <item><del rend="overstrike" n="2">Finanças Geraes.</del>
+                                <add place="after" n="2"><anchor xml:id="A1"/> Vida
+                                    Financeira.</add></item>
+                            <item xml:id="I3">Commercio Interno. <note place="margin-right"
+                                    type="addition" target="range(I3,I6)" n="2">
+                                    <metamark rend="curly-bracket" function="grouping">
+                                        <label>Vida<lb/>Commercial</label>
+                                    </metamark>
+                                </note>
+                            </item>
                             <item xml:id="I4">Commercio de Importação.</item>
-                            <note place="margin-right" type="addition" target="range(I3,I6)"
-                                n="2">
-                                <metamark rend="curly-bracket" function="grouping">
-                                    <label>Vida<lb/>Commercial</label>
-                                </metamark>
-                            </note>
                             <item xml:id="I5">Resumos e Commercio de Exportação. <note
                                     place="margin-left" type="addition" rend="rotate-right" n="2">
                                     <metamark rend="line" function="distinct"/> Resumos e <lb/>
                                     noticias sol<pc>-</pc><lb/>tas <metamark rend="line"
                                         function="distinct"/>
-                                </note> 
+                                </note>
                             </item>
                             <item xml:id="I6">Commercio de Reexportação.</item>
                             <item><note place="margin-left"><del rend="overstrike">(?)
@@ -130,18 +130,19 @@
                             <item>Industria. <note n="2" type="addition">– Vida
                                 Industrial</note></item>
                             <item xml:id="I7">
-                                <seg type="certainty" cert="low" rend="question-mark" resp="FP">Cambios.</seg></item>
-                            <note
-                                place="margin-right" type="addition" target="range(I7,I8)">
+                                <seg type="certainty" cert="low" rend="question-mark" resp="FP"
+                                    >Cambios.</seg></item>
+                            <note place="margin-right" type="addition" target="range(I7,I8)">
                                 <metamark rend="curly-bracket" function="grouping">
                                     <label>
-                                        <metamark xml:id="M1" rend="arrow-right-curved-up"
-                                            function="assignment" target="A1" n="2"/>
+                                        <metamark xml:id="M1" rend="arrow-right-up"
+                                            function="assignment" target="#A1" n="2"/>
                                     </label>
                                 </metamark>
                             </note>
                             <item xml:id="I8">
-                                <seg type="certainty" cert="low" rend="question-mark" resp="FP">Bolsa.</seg> 
+                                <seg type="certainty" cert="low" rend="question-mark" resp="FP"
+                                    >Bolsa.</seg>
                             </item>
                         </list>
                     </item>
@@ -154,15 +155,15 @@
                         paizes) </item>
                     <metamark rend="line" function="distinct"/>
                     <item rend="indent-2">
-                        <label>E.</label> – Indicações Commerciais Varias<lb/> (por paizes ?)
-                        <list rend="inline">
+                        <label>E.</label> – Indicações Commerciais Varias<lb/> (por paizes ?) <list
+                            rend="inline">
                             <item>Concursos</item>
                             <item>Firmas <choice>
-                            <abbr>q</abbr>
-                            <expan>q<ex>ue</ex></expan>
-                            </choice> podem responder, etc.</item></list>
-                        <note place="margin-right" type="addition"
-                            rend="rotate-left" n="2">
+                                    <abbr>q</abbr>
+                                    <expan>q<ex>ue</ex></expan>
+                                </choice> podem responder, etc.</item>
+                        </list>
+                        <note place="margin-right" type="addition" rend="rotate-left" n="2">
                             <metamark rend="line" function="distinct"/> D – Colonias<lb/> E –
                             Estrangeiro <metamark rend="line" function="distinct"/>
                         </note>
