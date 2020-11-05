@@ -26,6 +26,10 @@
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
+               <name>Inês Filipa Rebelo do Carmo</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
                <name>Sviatoslav Drach</name>
             </respStmt>
             <respStmt>
@@ -85,7 +89,7 @@
    <text>
       <body>
          <div>
-            <head rend="red">LIST OF PUBLICATIONS:</head>
+            <head>LIST OF PUBLICATIONS:</head>
             <list>
                <item>
                   <rs type="title">Sobre um Inquerito Literario</rs>. (Renascença Portugueza). <choice>
@@ -113,14 +117,20 @@
                <item><rs type="title"><rs type="place">Portugal</rs> e <rs type="place"
                      >Hespanha</rs>: o Problema Sociologico</rs>. (Folheto).</item>
                <item><rs type="title">A Nova Poesia Portuguesa</rs>. (Folheto). Renascença Portuguesa.</item>
-               <item><rs type="title">Voto aos Vertebrados</rs>.</item>
-               <item>
-                  <rs type="title">O Masculinismo</rs>. <hi rend="red">three pamplhets in <choice>
-                        <abbr>Port<am>.</am></abbr>
-                        <expan>Port<ex/>uguese</expan>
-                     </choice></hi>
+               <item xml:id="I1"><rs type="title">Voto aos Vertebrados</rs>.</item>
+               <item xml:id="I2">
+                  <rs type="title">O Masculinismo</rs>. <note target="range(I1,I3)"
+                     place="margin-right" type="addition">
+                     <metamark rend="space"
+                        function="grouping">
+                        <label>three pamphlets in <choice>
+                           <abbr>Port<am>.</am></abbr>
+                           <expan>Port<ex/>uguese</expan>
+                        </choice></label>
+                     </metamark>
+                  </note>
                </item>
-               <item><rs type="title"><choice>
+               <item xml:id="I3"><rs type="title"><choice>
                         <abbr>Lup<am>.</am></abbr>
                         <expan>Lup<ex>anares</ex></expan>
                      </choice> masculinos</rs>.</item>
