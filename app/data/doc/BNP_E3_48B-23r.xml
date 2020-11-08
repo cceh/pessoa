@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -22,11 +23,11 @@
                 </respStmt>
                 <respStmt>
                     <resp>Codificação</resp>
-                    <name>Isabel Figueiredo-Iken</name>
+                    <name>Inês Filipa Rebelo do Carmo</name>
                 </respStmt>
                 <respStmt>
                     <resp>Codificação</resp>
-                    <name>Inês Filipa Rebelo do Carmo</name>
+                    <name>Isabel Figueiredo-Iken</name>
                 </respStmt>
                 <respStmt>
                     <resp>Codificação</resp>
@@ -56,8 +57,8 @@
                     <msContents>
                         <summary>
                             <p> Lista manuscrita, publicada em Sepúlveda e Uribe, <hi rend="italic"
-                                >Planeamento editorial de uma obra em potência: o autor, crítico e
-                                tradutor Thomas Crosse</hi> (2013, 67). </p>
+                                    >Planeamento editorial de uma obra em potência: o autor, crítico
+                                    e tradutor Thomas Crosse</hi> (2013, 67). </p>
                         </summary>
                         <msItemStruct>
                             <author>
@@ -91,20 +92,21 @@
                     <head>
                         <hi rend="underline">Editions:</hi></head>
                     <item>
-                        <label>1.</label> <rs type="name" key="P65">Shakespeare</rs>: <rs
-                            type="title">“A Tormenta”</rs>. – <choice>
-                            <abbr>Trad<am>.</am>
-                            </abbr>
-                            <expan>Trad<ex>ucção</ex>
-                            </expan>
-                        </choice> <rs type="name" key="FP" role="translator" style="b"
-                            >Fernando Pessoa</rs>. </item>
+                        <label>1.</label>
+                        <rs type="name" key="P65">Shakespeare</rs>: <rs type="title">“A
+                            Tormenta”</rs>. – <choice>
+                            <abbr>Trad<am>.</am></abbr>
+                            <expan>Trad<ex>ucção</ex></expan>
+                        </choice>
+                        <rs type="name" key="FP" role="translator" style="b">Fernando Pessoa</rs>. </item>
                     <item>
-                        <label>2.</label> <rs type="name" key="P17">Antonio Botto</rs>: <rs
-                            type="title">“Canções”</rs> – 2ª edição.</item>
+                        <label>2.</label>
+                        <rs type="name" key="P17">Antonio Botto</rs>: <rs type="title"
+                            >“Canções”</rs> – 2ª edição.</item>
                     <item>
-                        <label>3.</label> <rs type="title">“English Poems – I + II (Antinous,
-                            Inscriptions)”</rs> – <rs type="name" key="FP" role="author" style="b">
+                        <label>3.</label>
+                        <rs type="title">“English Poems – I + II (Antinous, Inscriptions)”</rs> –
+                            <rs type="name" key="FP" role="author" style="b">
                             <choice>
                                 <abbr>F<am>.</am>
                                 </abbr>
@@ -112,13 +114,13 @@
                                 </expan>
                             </choice> Pessoa</rs>. </item>
                     <item>
-                        <label>4.</label> <rs type="title">“How <rs type="name" key="P12" style="a"
-                                >Napoleon</rs> Never Existed”</rs> – <choice>
-                            <abbr>transl<am>.</am>
-                            </abbr>
-                            <expan>transl<ex>ation</ex>
-                            </expan>
-                        </choice> <rs type="name" key="P16">
+                        <label>4.</label>
+                        <rs type="title">“How <rs type="name" key="P12" style="a">Napoleon</rs>
+                            Never Existed”</rs> – <choice>
+                            <abbr>transl<am>.</am></abbr>
+                            <expan>transl<ex>ation</ex></expan>
+                        </choice>
+                        <rs type="name" key="P16">
                             <choice>
                                 <abbr>T<am>.</am>
                                 </abbr>
@@ -126,37 +128,41 @@
                                 </expan>
                             </choice> Crosse</rs>. </item>
                     <item>
-                        <label>5.</label> <rs type="title">“Essay on Political Suffrage”</rs>
-                        – <rs type="name" key="FP" role="author" style="b">Fernando Pessoa</rs>. </item>
+                        <label>5.</label>
+                        <rs type="title">“Essay on Political Suffrage”</rs> – <rs type="name"
+                            key="FP" role="author" style="b">Fernando Pessoa</rs>. </item>
                     <item>
-                        <label>6.</label> Williams <choice><abbr>&amp;</abbr><expan>and</expan></choice> Norgate – Home University Library.</item>
+                        <label>6.</label> Williams <choice>
+                            <abbr>&amp;</abbr>
+                            <expan>and</expan>
+                        </choice> Norgate – Home University Library.</item>
                     <item>
-                        <label>7.</label> <rs type="title">“Protocols of the Learned Elders
-                            of Zion”</rs> – with commentaries. <metamark rend="arrow-down"
-                            function="addition" target="#A7">
-                            <label>x</label>
-                        </metamark>
+                        <label>7.</label>
+                        <rs type="title">“Protocols of the Learned Elders of Zion”</rs> – with
+                        commentaries. x <metamark rend="arrow-left-curved-down" function="addition"
+                            target="#A7"/>
                     </item>
                     <item>
-                        <label>8.</label> <rs type="title">Epigrammas
-                        Portugueses</rs>.</item>
+                        <label>8.</label>
+                        <rs type="title">Epigrammas Portugueses</rs>.</item>
                     <item>
-                        <label>9.</label> <rs type="title">“Introdução ao Problema
-                            Portuguez”</rs>.</item>
+                        <label>9.</label>
+                        <rs type="title">“Introdução ao Problema Portuguez”</rs>.</item>
                     <item>
-                        <label>10.</label> <rs type="title">“Epithalamium, Five
-                        Songs”</rs>.</item>
+                        <label>10.</label>
+                        <rs type="title">“Epithalamium, Five Songs”</rs>.</item>
                 </list>
-                <p xml:id="A7" rend="indent-1">
-                    <metamark function="addition-anchor">x</metamark> Reclames por annuncios,
-                    placards, circulares<lb/> (a padres e entidades analogas) — <metamark
-                        rend="arrow-down" function="addition" target="#A8"/>
+                <p rend="indent">
+                    <anchor xml:id="A7"/> x Reclames por annuncios, placards, circulares<lb/> (a
+                    padres e entidades analogas) — <metamark rend="arrow-left-curved-down"
+                        function="addition" target="#A8"/>
                 </p>
                 <p>
                     <rs type="name" key="P50">
                         <hi rend="underline">Homem Christo</hi>
                     </rs> (his printing office).</p>
-                <p xml:id="A8" rend="indent-1">Israel infandum <choice>
+                <p rend="indent">
+                    <anchor xml:id="A8"/> Israel infandum <choice>
                         <abbr>n<am>.</am>
                         </abbr>
                         <expan>n<ex>efas</ex>

@@ -1622,6 +1622,12 @@ div.text div.item span.note.margin-left.rotate-right {
     top: 30%;
     left: -20%;
 }
+div.text div.list.rotate-left {
+    transform: rotate(-90deg);
+    position: relative;
+    top: 30%;
+    left: 30%;
+}
 div.text span.label.rotate-left {
     transform: rotate(-90deg);
     position: relative;
@@ -2056,6 +2062,9 @@ div.text#BNP_E3_48A-48 p.right {
 }
 div.text#BNP_E3_48A-48 div.delSpan {
     background-size: 200px 100px;
+}
+div.text#BNP_E3_48A-48  span.anchor-arrow-down {
+    display: none;
 }
 
 /* BNP_E3_133I-23r */
@@ -2572,6 +2581,35 @@ div.text#BNP_E3_125A-52r div.delSpan {
 /* BNP_E3_144X-48r */
 div.text#BNP_E3_144X-48r div.delSpan {
     background-size: 300px 200px;
+}
+/* BNP_E3_144X-48r */
+div.text#BNP_E3_48B-25r div.delSpan {
+    background-size: 200px 200px;
+}
+div.text#BNP_E3_48B-25r span.note.margin-right span.grouping-right {
+    font-size: 5em;
+    top: -0.5em;
+}
+div.text#BNP_E3_48B-25r span.note.margin-right div.list {
+    font-size: small;
+    top: -8em;
+    left: 1em;
+}
+div.text#BNP_E3_48B-25r div#I6 span.note.margin-left span.grouping-left {
+    font-size: 8em;
+    right: -0.3em;
+    top: -0.7em;
+}
+div.text#BNP_E3_48B-25r div#I10 span.note.margin-left span.grouping-left {
+    font-size: 5em;
+    right: -0.4em;
+    top: -0.6em;
+}
+div.text#BNP_E3_48B-31r hr.line.placeholder {
+    width: 4em;
+    display: inline-block;
+    bottom: -0.2em;
+    position: relative;
 }
 
 /* ABOUT PAGE */

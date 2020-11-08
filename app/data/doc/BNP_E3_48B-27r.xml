@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -25,11 +26,11 @@
                 </respStmt>
                 <respStmt>
                     <resp>Codificação</resp>
-                    <name>Isabel Figueiredo-Iken</name>
+                    <name>Inês Filipa Rebelo do Carmo</name>
                 </respStmt>
                 <respStmt>
                     <resp>Codificação</resp>
-                    <name>Inês Filipa Rebelo do Carmo</name>
+                    <name>Isabel Figueiredo-Iken</name>
                 </respStmt>
                 <respStmt>
                     <resp>Codificação</resp>
@@ -45,7 +46,7 @@
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
-                <availability status="restricted">
+                <availability status="free">
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">BNP_E3_48B-27r.xml</idno>
@@ -58,8 +59,8 @@
                     </msIdentifier>
                     <msContents>
                         <summary>
-                            <p> Lista manuscrita, publicada em <hi rend="italic">Obras de António Mora</hi>
-                                (2002, 160). </p>
+                            <p> Lista manuscrita, publicada em <hi rend="italic">Obras de António
+                                    Mora</hi> (2002, 160). </p>
                         </summary>
                         <msItemStruct>
                             <author>
@@ -91,15 +92,16 @@
         <body>
             <div>
                 <list>
-                    <item>
+                    <item rend="indent-2">
                         <label>1.</label>
-                        <rs type="title"><hi rend="underline">O neo-romantismo reaccionario</hi></rs>
-                        —<lb/> Analyse e refutação do inte<pc>-</pc><lb/>gralismo monarchico. — <rs
-                            type="name" key="FP" role="author" style="a"><choice>
+                        <rs type="title"><hi rend="underline">O neo-romantismo
+                            reaccionario</hi></rs> —<lb/> Analyse e refutação do
+                        inte<pc>-</pc><lb/>gralismo monarchico. — <rs type="name" key="FP"
+                            role="author" style="a"><choice>
                                 <abbr>F<am>.</am></abbr>
                                 <expan>F<ex>ernando</ex></expan>
                             </choice> Pessôa</rs>. </item>
-                    <item>
+                    <item rend="indent-2">
                         <label>2.</label>
                         <rs type="title"><hi rend="underline">Introducção ao estudo do
                                 pro<pc>-</pc><lb/>blema nacional</hi></rs>. — <rs type="name"
@@ -107,26 +109,28 @@
                                 <abbr>F<am>.</am></abbr>
                                 <expan>F<ex>ernando</ex></expan>
                             </choice> Pessôa</rs>. </item>
-                    <item>
+                    <item rend="indent-2">
                         <label>3.</label>
                         <rs type="title"><hi rend="underline">A <rs type="place">Allemanha</rs> na
                                 guerra</hi></rs>— Defeza <lb/> e justificação da sua attitude. — <lb/>
                         <rs type="name" key="P1" style="a">Antonio Móra</rs>. </item>
-                    <item>
+                    <item rend="indent-2">
                         <label>4.</label>
-                        <rs type="title"><hi rend="underline">A Guerra</hi></rs> — Estudo Sociologico
-                        — <lb/>
+                        <rs type="title"><hi rend="underline">A Guerra</hi></rs> — Estudo
+                        Sociologico — <lb/>
                         <rs type="name" key="FP" role="author" style="a">Fernando Pessôa</rs>. </item>
-                    <item><label>5.</label>
-                        <rs type="title"><hi rend="underline">O caso de <rs type="periodical" key="J12"
-                                    >“Orpheu”</rs></hi></rs>. — <rs type="name" key="FP"
+                    <item>
+                        <label>5.</label>
+                        <rs type="title"><hi rend="underline">O caso de <rs type="periodical"
+                                    key="J12">“Orpheu”</rs></hi></rs>. — <rs type="name" key="FP"
                             role="author" style="a"><choice>
                                 <abbr>F<am>.</am></abbr>
                                 <expan>F<ex>ernando</ex></expan>
                             </choice> Pessôa</rs>. </item>
-                    <item><label>6.</label>
+                    <item rend="indent-2">
+                        <label>6.</label>
                         <rs type="title"><hi rend="underline">Prolegómenos a uma
-                                reconstruc<pc>-</pc><lb/>ção do paganismo</hi></rs> — <rs
+                                    reconstruc<pc>-</pc><lb/>ção do paganismo</hi></rs> — <rs
                             type="name" key="P1" style="a"><choice>
                                 <abbr>A<am>.</am></abbr>
                                 <expan>A<ex>ntonio</ex></expan>

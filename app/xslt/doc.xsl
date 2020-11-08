@@ -62,6 +62,9 @@
                 <xsl:when test="preceding-sibling::*[1][name() = 'label'] or @rend = 'inline'">
                     <xsl:attribute name="class">list inline</xsl:attribute>
                 </xsl:when>
+                <xsl:when test="@rend">
+                    <xsl:attribute name="class">list <xsl:value-of select="@rend"/></xsl:attribute>
+                </xsl:when>
                 <xsl:otherwise>
                     <xsl:attribute name="class">list</xsl:attribute>
                 </xsl:otherwise>
@@ -198,7 +201,7 @@
     </xsl:template>
     
     <!-- Lines, Dots, etc. new: -->
-    <xsl:template match="metamark[@rend = 'line'][@function = ('distinct','end','assignment')]" mode="#default deletion addition">
+    <xsl:template match="metamark[@rend = 'line'][@function = ('distinct','end','assignment','placeholder')]" mode="#default deletion addition">
         <hr class="line {@function}"/>
     </xsl:template>
     <xsl:template match="metamark[@rend = 'line center'][@function = ('distinct','end')]" mode="#default deletion addition">
@@ -666,8 +669,16 @@
         <span class="arrow-right-curved-down">↘</span>
         <xsl:apply-templates/>
     </xsl:template>
-    <xsl:template match="anchor[@xml:id=preceding::metamark[@rend='arrow-right-curved-down']/@target/substring-after(.,'#') or @xml:id=following::metamark[@rend='arrow-right-curved-down']/@target/substring-after(.,'#')]" mode="#default deletion addition" priority="1">
+    <xsl:template match="anchor[@xml:id=preceding::metamark[@rend='arrow-right-curved-down']/@target/substring-after(.,'#') or @xml:id=following::metamark[@rend='arrow-left-curved-down']/@target/substring-after(.,'#')]" mode="#default deletion addition" priority="1">
         <span class="anchor-arrow-right-curved-down">↙</span>
+    </xsl:template>
+    
+    <xsl:template match="metamark[@rend='arrow-left-curved-down']" mode="#default deletion addition">
+        <span class="arrow-right-curved-down">↙</span>
+        <xsl:apply-templates/>
+    </xsl:template>
+    <xsl:template match="anchor[@xml:id=preceding::metamark[@rend='arrow-left-curved-down']/@target/substring-after(.,'#') or @xml:id=following::metamark[@rend='arrow-left-curved-down']/@target/substring-after(.,'#')]" mode="#default deletion addition" priority="1">
+        <span class="anchor-arrow-right-curved-down">↘</span>
     </xsl:template>
     
     
