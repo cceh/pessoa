@@ -10,7 +10,7 @@
     
     <xsl:template match="teiHeader"/>
     <xsl:template match="text">
-        <div>
+        <div class="pub">
             <xsl:if test="@corresp">
                 <xsl:attribute name="id" select="substring-after(@corresp,'#')"/>
             </xsl:if>
