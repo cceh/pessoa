@@ -196,16 +196,16 @@
                         >Caranguejola ou Aquel’outro</hi></rs>.</item>
                <item><label>4.</label>
                   <rs type="name">Diniz da Silva</rs>: <rs type="title">Loucura</rs>.</item>
-               <item><seg type="doubt"><label>5.</label> Um Soneto Classico</seg></item>
-               <item><seg type="doubt"><label>6.</label>
+               <item><seg type="certainty" cert="low" rend="cross" resp="FP"><label>5.</label> Um Soneto Classico</seg></item>
+               <item><seg type="certainty" cert="low" rend="cross" resp="FP"><label>6.</label>
                      <rs type="title">O grande Soneto</rs> de <rs type="name" key="P80">Angelo de
                         Lima</rs>.</seg></item>
-               <item><seg type="doubt"><label>7.</label> Um Soneto Classico<rs type="title">O
+               <item><seg type="certainty" cert="low" rend="cross" resp="FP"><label>7.</label> Um Soneto Classico<rs type="title">O
                         Regresso dos Deuses</rs> – <rs type="name" key="P1">Antonio
                   Móra</rs>.</seg></item>
-               <item>?<label>8.</label>
+               <item><seg type="certainty" cert="low" rend="question-mark" resp="FP"><label>8.</label>
                   <rs type="name" key="P17">Antonio Botto</rs><rs type="title">Canções</rs><gap
-                     reason="illegible" unit="word" extent="1"/></item>
+                     reason="illegible" unit="word" extent="1"/></seg></item>
                <item><label>9.</label>
                   <rs type="name" key="P56">Almada</rs>: Prosa.</item>
                <item><label>10.</label>
@@ -260,7 +260,7 @@
                         </choice> Saa</rs> (poema)</item>
                   <item><label><subst>
                            <del rend="overtyped">2</del>
-                           <add place="superimposed">3</add>
+                           <add>3</add>
                         </subst>.</label>
                      <rs type="name" key="P1"><choice>
                            <abbr>A</abbr>
@@ -268,12 +268,12 @@
                         </choice> Mora</rs>.</item>
                   <item><label><subst>
                            <del rend="overtyped">3</del>
-                           <add place="superimposed">2</add>
+                           <add>2</add>
                         </subst>.</label>
                      <rs type="name" key="AC" role="author">Caeiro</rs>.</item>
                   <item><label><subst>
                            <del rend="overtyped">4</del>
-                           <add place="superimposed">5</add>
+                           <add>5</add>
                         </subst>.</label>
                      <rs type="name" key="FP" role="author"><choice>
                            <abbr>F<am>.</am></abbr>
@@ -282,7 +282,7 @@
                      />)</item>
                   <item><label><subst>
                            <del rend="overtyped">5</del>
-                           <add place="superimposed">4</add>
+                           <add>4</add>
                         </subst>.</label>
                      <rs type="name" key="RR" role="author"><choice>
                            <abbr>R<am>.</am></abbr>
@@ -312,7 +312,7 @@
                            <expan>M<ex>ario</ex></expan>
                         </choice> Saa</rs>.</item>
                   <item><label>5.</label><gap reason="illegible" unit="word" extent="3"/> ou <rs
-                        type="person" key="FP" role="author"><choice>
+                        type="name" key="FP" role="author"><choice>
                            <abbr>F</abbr>
                            <expan>F<ex>ernando</ex></expan>
                         </choice> Pessoa</rs></item>
@@ -377,7 +377,8 @@
                         </choice> de Campos</rs>.</item>
                   <metamark rend="line" function="end"/>
                </div>
-            </list>> </div>
+            </list>
+         </div>
          <div rend="left below">
             <list>
                <item>√ <label>1.</label>
