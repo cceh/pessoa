@@ -80,7 +80,9 @@ declare function index:collectGenre($node as node(), $model as map(*), $type as 
                                     let $date := if($date eq "?") 
                                                 then "?"  
                                                 else (if(contains($date,"-")) then substring-before($date,"-") else $date)
-                                    let $title := $pubdate/ancestor::tei:biblStruct//tei:title[@level="a"]/data(.)
+                                    let $title := if (count($doc//tei:imprint/tei:date) > 1) 
+                                                  then $pubdate/ancestor::tei:biblStruct//tei:title[@level="a"]/data(.)
+                                                  else $title
                                     return <item folder="{$fold}" doc="{$refer}" title="{$title}" crit="{$date}"/>  
      (: order all the items :)
      let $items := for $it in $items
