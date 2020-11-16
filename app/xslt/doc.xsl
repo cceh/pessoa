@@ -193,6 +193,16 @@
             <xsl:apply-templates/>
         </p>
     </xsl:template>
+    
+    <xsl:template match="lg">
+        <div class="lg">
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="l">
+        <xsl:apply-templates/><br/>
+    </xsl:template>
 
     <!-- Metamarks -->
     <xsl:template match="metamark[@rend = 'dashes']"

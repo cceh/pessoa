@@ -1435,7 +1435,7 @@ div.text div.item.indent-2-label {
     text-indent: -1em;
     padding-left: 2em;
 }
-div.text div.item.indent-2 {
+div.text div.item.indent-2, div.text table td.indent-2 {
     text-indent: -3em;
     padding-left: 3em;
 }
@@ -2613,6 +2613,20 @@ div.text#BNP_E3_48B-31r hr.line.placeholder {
     display: inline-block;
     bottom: -0.2em;
     position: relative;
+}
+div.text#BNP_E3_48B-29r div.item.framed {
+    border: 1px solid black;
+    width: 50%;
+}
+div.text#BNP_E3_48B-29r div.item.framed div.list {
+    margin: 0;
+}
+div.text#BNP_E3_48B-29r div.list div.item:nth-child(7) div.list {
+    margin-top: 0;
+}
+div.text#BNP_E3_48B-36r div.lg {
+    width: 40%;
+    margin: 0 auto;
 }
 
 /* ABOUT PAGE */
