@@ -38,7 +38,7 @@
                (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2017</date>
-            <availability status="restricted">
+            <availability status="free">
                <licence target="http://creativecommons.org/licenses/by/3.0/"/>
             </availability>
             <idno type="filename">BNP_E3_48B-109r.xml</idno>
@@ -90,26 +90,36 @@
                   <add place="above">0</add>
                </subst>
                <choice>
-                  <abbr> pag<am>.</am></abbr>
+                  <abbr>pag<am>.</am></abbr>
                   <expan>pag<ex>inas</ex></expan>
-               </choice></head>
-            <note place="margin-right"><hi rend="circled"><metamark rend="space" function="note"
-                  /></hi></note>
+               </choice>
+            </head>
             <list>
-               <item><label>1.</label><rs type="title">O Corvo</rs> – 4.</item>
-               <item><label>2.</label><rs type="name" key="P81"><choice>
+               <item>
+                  <label>1.</label>
+                  <rs type="title">O Corvo</rs> – 4.</item>
+               <item>
+                  <label>2.</label>
+                  <rs type="name" key="P81"><choice>
                         <abbr>M<am>.</am></abbr>
                         <expan>M<ex>anuel</ex></expan>
                      </choice> da Veiga</rs> – 2.</item>
-               <item><label>3.</label><rs type="title">Gladio</rs> – 1.</item>
-               <item><label>4.</label><rs type="name" key="P161">O’Shaughnessy</rs> – <subst>
+               <item>
+                  <label>3.</label>
+                  <rs type="title">Gladio</rs> – 1.</item>
+               <item>
+                  <label>4.</label>
+                  <rs type="name" key="P161">O’Shaughnessy</rs> – <subst>
                      <del rend="overstrike">2</del>
                      <add place="after">1.</add>
                   </subst>
                </item>
-               <item><label>5.</label><rs type="title"> O celebre soneto mystico. </rs>– 1 </item>
-               <item><seg type="certainty" cert="low" rend="question-mark" resp="FP"
-                        ><label>6.</label><subst>
+               <item>
+                  <label>5.</label>
+                  <rs type="title">O celebre soneto mystico</rs>. – 1 </item>
+               <item>
+                  <label>6.</label>
+                  <seg type="certainty" cert="low" rend="question-mark left" resp="FP"><subst>
                         <del rend="overstrike">Uma cousa do Frei <gap reason="illegible" extent="1"
                               unit="word"/> – 2</del>
                         <add place="above">
@@ -117,28 +127,39 @@
                               (Caranguejola)<metamark rend="arrow-down" function="assignment"
                               target="#A1"/></add>
                      </subst></seg></item>
-               <item><seg type="certainty" cert="low" rend="question-mark" resp="FP"
-                        ><label>7.</label>
-                     <rs type="name" key="RR" role="author">Ricardo Reis</rs> – 1.</seg></item>
+               <item>
+                  <label>7.</label>
+                  <seg type="certainty" cert="low" rend="question-mark left" resp="FP"><rs
+                        type="name" key="RR" role="author">Ricardo Reis</rs> – 1.</seg></item>
             </list>
             <ab rend="right">
-               <note><hi rend="framed">Apice</hi></note><anchor xml:id="A3"/>
+               <note><anchor xml:id="A1"/><hi rend="framed">Apice</hi></note>
             </ab>
             <metamark rend="line" function="distinct"/>
             <p>(6 <choice>
                   <abbr>pag<am>.</am></abbr>
                   <expan>pag<ex>inas</ex></expan>
-               </choice> 10 numeros from <lb/> volume.)</p>
+               </choice> 10 numeros from 1 <lb/> volume.)</p>
             <metamark rend="line" function="distinct"/>
             <p><subst>
                   <del rend="overstrike">6</del>
                   <add place="above">5</add>
-               </subst><choice>
+               </subst>
+               <choice>
                   <abbr>pag<am>.</am></abbr>
                   <expan>pag<ex>inas</ex></expan>
                </choice> assinadas – a 50$00 = 320$00 </p>
-            <p>1 <metamark rend="quotes" function="ditto"/><metamark rend="quotes" function="ditto"
-               /> – a 20$00</p>
+            <p>1 <choice>
+                  <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                  <expan><choice>
+                        <abbr>pag<am>.</am></abbr>
+                        <expan>pag<ex>inas</ex></expan>
+                     </choice></expan>
+               </choice>
+               <choice>
+                  <abbr><metamark rend="quotes" function="ditto"/></abbr>
+                  <expan>assinadas</expan>
+               </choice> – a 20$00</p>
          </div>
       </body>
    </text>
