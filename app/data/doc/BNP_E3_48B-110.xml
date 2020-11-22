@@ -38,7 +38,7 @@
                (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2017</date>
-            <availability status="restricted">
+            <availability status="free">
                <licence target="http://creativecommons.org/licenses/by/3.0/"/>
             </availability>
             <idno type="filename">BNP_E3_48B-110.xml</idno>
@@ -79,9 +79,8 @@
       <graphic
          url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0226_110_t24-C-R0150.jpg"/>
       <graphic
-         url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0227_110_t24-C-R0150.jpg"/>
-      <!--<graphic
-         url="bn-acpc-e-e3-48-1-56_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0227110_t24-C-R0150.jpg"/>-->
+         url="bn-acpc-e-e3-48b-1-158_JPG_24-C-R0150/bn-acpc-e-e3-48b-1-158_0227_110v_t24-C-R0150.jpg"
+      />
    </facsimile>
    <text>
       <body>
@@ -104,6 +103,7 @@
                   <label>3.</label>
                   <rs type="title">Ultimatum</rs>. <metamark rend="line"/>
                </item>
+               <metamark rend="line" function="distinct"/>
                <item>
                   <label>4.</label>
                   <rs type="title">Ideal Esthetico</rs>.</item>
@@ -143,48 +143,61 @@
                   <item><rs type="name" key="P11"><choice>
                            <abbr>F<am>.</am></abbr>
                            <expan>F<ex>rancisco</ex></expan>
-                        </choice><choice>
+                        </choice>
+                        <choice>
                            <abbr>F<am>.</am></abbr>
                            <expan>F<ex>ernandes</ex></expan>
                         </choice> Lopes</rs>.</item>
-                  <item><rs type="name" key="P299"><choice>
-                           <abbr>J<am>.</am></abbr>
-                        </choice><choice>
-                           <abbr>L<am>.</am></abbr>
-                        </choice> Supico</rs>.</item>
+                  <item><rs type="name" key="P299">
+                        <abbr>J<am>.</am></abbr>
+                        <abbr>L<am>.</am></abbr> Supico</rs>.</item>
                </list>
                <metamark rend="line" function="distinct"/>
-               <!-- continue to check from here ... -->
                <note place="center">Cogitanda</note>
                <note place="center">80$00</note>
                <note place="center">20$00 </note>
+               <pb n="2"/>
+               <table>
+                  <row>
+                     <cell>Papel</cell>
+                     <cell rend="right">100.00</cell>
+                  </row>
+                  <row>
+                     <cell>Papel capa etc.</cell>
+                     <cell rend="right">25.00</cell>
+                  </row>
+                  <row>
+                     <cell><choice>
+                           <abbr>Imp<am>.</am></abbr>
+                           <expan>Imp<ex>ressão</ex></expan>
+                        </choice></cell>
+                     <cell rend="right"><hi rend="underline">75.00</hi></cell>
+                  </row>
+                  <row>
+                     <cell cols="2" rend="right"><hi rend="underline">200.00</hi></cell>
+                  </row>
+                  <row>
+                     <cell cols="2" rend="right">350.00</cell>
+                  </row>
+               </table>
+               <metamark rend="line" function="distinct"/>
+               <gap reason="selection" unit="line" extent="3"/>
                <list>
-                  <item>Papel</item>
-                  <note><add place="below"><metamark rend="line" function="distinct"/></add></note>
-                  <item><note><add place="after"> 100.00</add></note></item>
-                  <item>Papel capa etc. </item>
-                  <item><note><add place="below">25.00</add></note>
-                  </item>
-                  <item><choice>
-                        <abbr>Imp<am>.</am></abbr>
-                        <expan>Imp<ex>ressão</ex></expan>
-                     </choice></item>
-                  <note><add place="below"><metamark rend="line" function="distinct"/></add></note>
-                  <item><note><add place="after">75.00</add></note></item>
-                  <note><add place="below"><metamark rend="line" function="distinct"/></add></note>
-                  <item><add place="after">200.00</add></item>
-                  <note><add place="below"><metamark rend="line" function="distinct"/></add></note>
-                  <item><note><add place="after">350.00</add></note></item>
+                  <item>
+                     <choice>
+                        <abbr>Trad<am>.</am></abbr>
+                        <expan>Trad<ex>ucção</ex></expan>
+                     </choice> de <rs type="name" key="P65">Shakespeare</rs>. </item>
+                  <item>
+                     <choice>
+                        <abbr><metamark function="ditto" rend="line"/></abbr>
+                        <expan><choice>
+                              <abbr>Trad<am>.</am></abbr>
+                              <expan>Trad<ex>ucção</ex></expan>
+                           </choice> de</expan>
+                     </choice>
+                     <rs type="name" key="P87">Edgar Poe</rs>. </item>
                </list>
-               <metamark rend="line" function="distinct"/>
-               <gap reason="selection" unit="line" extent="5"/>
-               <metamark rend="line" function="distinct"/>
-               <p><choice>
-                     <abbr>Trad<am>.</am></abbr>
-                     <expan>Trad<ex>ucção</ex></expan>
-                  </choice> de <rs type="name" key="P65">Shakespeare</rs>. </p>
-               <p><metamark rend="line" function="ditto"/>
-                  <rs type="name" key="P87">Edgar Poe</rs>.</p>
             </div>
          </div>
       </body>
