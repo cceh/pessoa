@@ -30,7 +30,7 @@
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
-                <availability status="restricted">
+                <availability status="free">
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">BNP_E3_48-43.xml</idno>
@@ -83,7 +83,9 @@
                         <note place="margin-right" type="addition" n="2">
                             <note place="margin-left" target="range(I1,I2)">
                                 <metamark rend="curly-bracket" function="grouping"/>
-                            </note> ou <list rend="inline">
+                            </note>
+                            <seg type="anchor">ou</seg>
+                            <list rend="inline">
                                 <item xml:id="I1">- artigo de fundo</item>
                                 <item xml:id="I2" rend="indent-2">- <choice>
                                         <abbr>art<am>.</am></abbr>
@@ -108,14 +110,14 @@
                             <item><del rend="overstrike" n="2">Finanças Geraes.</del>
                                 <add place="after" n="2"><anchor xml:id="A1"/> Vida
                                     Financeira.</add></item>
-                            <item xml:id="I3">Commercio Interno. <note place="margin-right"
+                            <item xml:id="I3">Commercio Interno.</item>
+                            <item xml:id="I4">Commercio de Importação. <note place="margin-right"
                                     type="addition" target="range(I3,I6)" n="2">
                                     <metamark rend="curly-bracket" function="grouping">
                                         <label>Vida<lb/>Commercial</label>
                                     </metamark>
                                 </note>
                             </item>
-                            <item xml:id="I4">Commercio de Importação.</item>
                             <item xml:id="I5">Resumos e Commercio de Exportação. <note
                                     place="margin-left" type="addition" rend="rotate-right" n="2">
                                     <metamark rend="line" function="distinct"/> Resumos e <lb/>
@@ -130,18 +132,19 @@
                             <item>Industria. <note n="2" type="addition">– Vida
                                 Industrial</note></item>
                             <item xml:id="I7">
-                                <seg type="certainty" cert="low" rend="question-mark" resp="FP"
-                                    >Cambios.</seg></item>
-                            <note place="margin-right" type="addition" target="range(I7,I8)">
-                                <metamark rend="curly-bracket" function="grouping">
-                                    <label>
-                                        <metamark xml:id="M1" rend="arrow-right-up"
-                                            function="assignment" target="#A1" n="2"/>
-                                    </label>
-                                </metamark>
-                            </note>
+                                <seg type="certainty" cert="low" rend="question-mark left" resp="FP"
+                                    >Cambios.</seg>
+                                <note place="margin-right" type="addition" target="range(I7,I8)">
+                                    <metamark rend="curly-bracket" function="grouping">
+                                        <label>
+                                            <metamark xml:id="M1" rend="arrow-right-up"
+                                                function="assignment" target="#A1" n="2"/>
+                                        </label>
+                                    </metamark>
+                                </note>
+                            </item>
                             <item xml:id="I8">
-                                <seg type="certainty" cert="low" rend="question-mark" resp="FP"
+                                <seg type="certainty" cert="low" rend="question-mark left" resp="FP"
                                     >Bolsa.</seg>
                             </item>
                         </list>
@@ -188,13 +191,13 @@
                             n="2">(tabellas)</note>
                     </item>
                     <metamark rend="line" function="distinct"/>
-                    <item>
+                    <item rend="indent-2">
                         <label><subst>
                                 <del rend="overstrike" n="2">I e J</del>
                                 <add place="after" n="2">G ?</add>
                             </subst></label> Dois artigos especiaes <note type="addition" n="2"
                             >(reclames)</note>
-                        <note type="addition" n="2">Publicidade em artigos</note>
+                        <note type="addition" n="2">Publicidade <lb/> em artigos</note>
                     </item>
                     <metamark rend="line" function="distinct"/>
                     <item>
