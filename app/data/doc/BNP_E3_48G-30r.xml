@@ -39,7 +39,7 @@
                (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2017</date>
-            <availability status="restricted">
+            <availability status="free">
                <licence target="http://creativecommons.org/licenses/by/3.0/"/>
             </availability>
             <idno type="filename">BNP_E3_48G-30r.xml</idno>
@@ -84,16 +84,18 @@
    <text>
       <body>
          <div>
-            <head>
-               <hi rend="underline"><rs type="periodical" key="J74">The Portuguese Review</rs></hi>
+            <head rend="center"><hi rend="underline"><rs type="periodical" key="J74">The Portuguese
+                     Review</rs></hi></head>
+            <head rend="center" type="sub">
+               <metamark function="assignment" rend="arrow-left-down" target="#A1"/>
+               <hi rend="underline">Quarterly</hi>
+               <note place="margin-right">type: <hi rend="underline"><rs type="periodical" key="J6"
+                        >Mercure de France</rs></hi>.</note>
             </head>
-            <ab><metamark function="assignment" rend="line" target="#I1"/><hi rend="underline"
-                  >Quarterly</hi></ab>
-            <note rend="right">type: <hi rend="underline"><rs type="periodical" key="J6">Mercure de
-                     France</rs></hi>.</note>
             <list>
-               <item xml:id="I1">
+               <item>
                   <label>1.</label>
+                  <anchor xml:id="A1"/>
                </item>
                <item>
                   <label>2.</label>
@@ -106,20 +108,20 @@
                   <hi rend="underline"><choice>
                         <abbr>N<am>o.</am></abbr>
                         <expan>N<ex>umber</ex></expan>
-                     </choice> of pages</hi>: <del rend="overstrike" n="2">least</del> Text: - least
-                  128; most 160. (at least, 1st. Volume).</item>
-               <item><choice>
-                     <abbr><metamark rend="line" function="ditto"/><expan><hi rend="underline"><choice>
-                                 <abbr>N<am>o.</am></abbr>
-                                 <expan>N<ex>umber</ex></expan>
-                              </choice> of pages</hi>:</expan></abbr>
-                  </choice>Adverts: - from 32 to 80. </item>
+                     </choice> of pages</hi>: <del rend="overstrike" n="2">least</del>
+                  <list rend="inline">
+                     <item>
+                        <label>Text:</label> - least 128; most 160. (at least, 1st. Volume). </item>
+                     <item>
+                        <label>Adverts:</label> - from 32 to 80. </item>
+                  </list>
+               </item>
                <item>
                   <label>4.</label>
                   <hi rend="underline">Issued in <rs type="place">Lisbon</rs>; printed in <rs
                         type="place">London</rs></hi> (with two <unclear reason="illegible"
-                     >water</unclear><supplied resp="PS" reason="omitted-in-original"
-                     >colours</supplied>). </item>
+                     >water</unclear>
+                  <supplied resp="PS" reason="omitted-in-original">colours</supplied>). </item>
                <item>
                   <label>5.</label>
                   <hi rend="underline">Prices to be adjusted afterwards</hi>. </item>
