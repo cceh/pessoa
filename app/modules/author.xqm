@@ -59,7 +59,15 @@ declare function author:getTabContent($node as node(), $model as map(*), $textTy
                     let $name := if($fold eq "doc") then ("person","role") else "person"
                     let $case := if($fold eq "doc") then ("eq","eq") else "eq"
                     let $content := if($fold eq "doc") then ($authorKey,"author") else $authorKey
-                    let $db := search:Search-MultiStats(collection(concat("/db/apps/pessoa/data/",$fold,"/")),$name,$case,$content)
+                    (: addition of mentions in prose publications :)
+                    let $name_b := ("person","role")
+                    let $case_b := ("eq","eq")
+                    let $content_b := ($authorKey,"author")
+                    let $db := (search:Search-MultiStats(collection(concat("/db/apps/pessoa/data/",$fold,"/")),$name,$case,$content),
+                                (: add mentions in publications :)
+                                if ($fold eq "pub")
+                                then (search:Search-MultiStats(collection(concat("/db/apps/pessoa/data/",$fold,"/")),$name_b,$case_b,$content_b))
+                                else ())
                     for $doc in $db
                         let $refer := substring-before(root($doc)/util:document-name(.),".xml") 
                         let $first := translate(substring($doc//tei:titleStmt/tei:title/data(.),1,1),"Á","A")
@@ -88,7 +96,14 @@ declare function author:getTabContent($node as node(), $model as map(*), $textTy
                                     let $date := if($date eq "?") then "?"  
                                                  else (if(contains($date,"-")) then substring-before($date,"-") else $date)
                                     let $title := $pubdate/ancestor::tei:biblStruct//tei:title[@level="a"]/data(.)
-                                    return <item folder="{$fold}" doc="{$refer}"  title="{$title}" crit="{$date}"/>                               
+                                    (: check: are there mentioned heteronyms? :)
+                                    let $authors_mentioned := if($doc//tei:body//tei:rs[@type='name'][@key=('FP','AC','AdC','BS')])
+                                                              then "yes"
+                                                              else ()
+                                    return
+                                        if ($authors_mentioned = "yes")
+                                        then <item folder="{$fold}" folder_sub="pub_prose" doc="{$refer}"  title="{$title}" crit="{$date}"/>
+                                        else <item folder="{$fold}" doc="{$refer}"  title="{$title}" crit="{$date}"/>
         
     (: order all the items :)
     let $items := for $it in $items
@@ -118,7 +133,7 @@ declare function author:getTabContent($node as node(), $model as map(*), $textTy
                                      <a href="{$helpers:app-root}/{$item/@folder/data(.)}/{$item/@doc/data(.)}">
                                          {$item/@title/data(.)}
                                      </a> 
-                                      {if($item/@folder/data(.) eq "doc") then <i>{concat(" (",helpers:singleElementInList_xQuery("roles","mentioned-as"),": ",helpers:singleElementInList_xQuery("roles","author"),")")}</i> else ()}
+                                      {if(($item/@folder/data(.) eq "doc") or ($item/@folder_sub/data(.) eq "pub_prose")) then <i>{concat(" (",helpers:singleElementInList_xQuery("roles","mentioned-as"),": ",helpers:singleElementInList_xQuery("roles","author"),")")}</i> else ()}
                                         
                                </div>
                         )

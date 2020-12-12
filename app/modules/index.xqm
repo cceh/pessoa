@@ -48,7 +48,7 @@ declare function index:collectGenre($node as node(), $model as map(*), $type as 
                         (: what should it be ordered by alphabetically? (first letter, etc.) :)
                         let $first := if ($fold = "doc")
                                       then if(substring($doc//tei:titleStmt/tei:title/data(.),1,1) eq "B") then "BNP" else "CP"
-                                      else translate(substring($doc//tei:titleStmt/tei:title/data(.),1,1),"Á","A")
+                                      else translate(substring($doc//tei:titleStmt/tei:title/data(.),1,1),"Á&quot;","AA")
                         return
                             (: return one item per resource for alphabetical order :)
                             if ($orderBy = "alphab")
@@ -147,6 +147,13 @@ declare function index:collectGenre($node as node(), $model as map(*), $type as 
                                                                 </span>}
                                                                 <div class="clear"/>
                                                             </div>
+                                                            else if($item/name/@type eq "pub_prose") then
+                                                            <div class="docList">
+                                                                {for $hit in $item/item return <span><a href="{concat($helpers:app-root,"/",$helpers:web-language,"/pub/",$hit/@ref/data(.))}" class="olink">{$hit/data(.)}</a>
+                                                                {if(index-of($item/item,$hit) < count($item/item)) then "," else ()}
+                                                                </span>}
+                                                                <div class="clear"/>
+                                                            </div>
                                                             
                                                             else ()
                                                             
@@ -189,7 +196,13 @@ declare function index:getPersonIndex($node as node(), $model as map(*)) {
                                                 let $title := $item//tei:titleStmt/tei:title[1]/data(.)
                                                 let $link := substring-before($item//tei:idno[@type="filename"]/data(.),".xml")
                                                 return <item title="{$title}" link="pub/{$link}" published="{$item//tei:availability/@status/data(.)}"/>
-                                            return for $se in ($a,$b) order by $se/@title/data(.) collation '?lang=pt' return $se
+                                            let $name-c := if($type != "none") then ("type","person_b","style") else ("type","person_b")
+                                            let $c :=
+                                                for $item in search:Search-MultiStats($pubs,$name-c,$case-a,$content-a)
+                                                let $title := $item//tei:titleStmt/tei:title[1]/data(.)
+                                                let $link := substring-before($item//tei:idno[@type="filename"]/data(.),".xml")
+                                                return <item title="{$title}" link="pub/{$link}" published="{$item//tei:availability/@status/data(.)}"/>
+                                            return for $se in ($a,$b,$c) order by $se/@title/data(.) collation '?lang=pt' return $se
                                             }
                                         </item>
     let $letters := for $let in $person return $let/@letter/data(.)
@@ -250,12 +263,21 @@ declare function index:collectJournals($node as node(), $model as map(*)) {
 };
 
 declare function index:FindJournalsEntrys($key as xs:string) {
-    ( for $item in search:search_range_simple("person",$key,collection("/db/apps/pessoa/data/doc/"))
+    ( (: journals mentioned in documents (weirdly, the index is called 'person' for all types of mentions...) :)
+      for $item in search:search_range_simple("person",$key,collection("/db/apps/pessoa/data/doc/"))
                         return <item title="{replace($item//tei:titleStmt/tei:title[1]/data(.),"/E3","")}" 
                                                date="{search:dateDoc($item)}" 
                                                ref="{concat("doc/",substring-before($item//tei:idno[@type="filename"]/data(.),".xml"))}"
                                                 published="{$item//tei:availability/@status/data(.)}"/>
       ,
+      (: journals mentioned in publications :)
+      for $item in search:search_range_simple("person_b",$key,collection("/db/apps/pessoa/data/pub/"))
+                        return <item title="{replace($item//tei:titleStmt/tei:title[1]/data(.),"/E3","")}" 
+                                               date="{search:dateDoc($item)}" 
+                                               ref="{concat("pub/",substring-before($item//tei:idno[@type="filename"]/data(.),".xml"))}"
+                                                published="{$item//tei:availability/@status/data(.)}"/>
+      ,
+      (: journals in which publications appeared :)
      for $item in search:search_range_simple("journal",$key,collection("/db/apps/pessoa/data/pub/"))
                         return <item title="{$item//tei:titleStmt/tei:title[1]/data(.)}"
                                                 date="{search:datePub($item)}"

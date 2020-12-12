@@ -236,6 +236,7 @@ declare function local:transformTitle($title as node()) {
 };
 
 declare function local:collectTexts() {
+    (: title mentions in documents :)
     let $texts  := local:search_range_simple("type","title",collection('/db/apps/pessoa/data/doc'))
      let $texts := functx:distinct-nodes($texts)
      let $texts := for $single in $texts
@@ -259,6 +260,31 @@ declare function local:collectTexts() {
                     return <item ref="{$item}">{replace(doc(concat('/db/apps/pessoa/data/doc/',$item,".xml"))//tei:title[1]/data(.),"/E3","")}</item>}
         
             </item>
+    (: addition of title mentions in prose texts (or poetry, if there are any) :)
+    let $texts_prose  := local:search_range_simple("type","title",collection('/db/apps/pessoa/data/pub'))
+     let $texts_prose := functx:distinct-nodes($texts_prose)
+     let $texts_prose := for $single in $texts_prose
+                    where $single//tei:availability/@status/data(.) eq "free"
+                    return
+                    for $title in $single//tei:rs[@type = 'title']
+                        let $well := fn:normalize-space(local:transformTitle($title))
+                        order by $well
+                        return <item
+                                    name="{$well}"
+                                    ref="{substring-before(root($single)/util:document-name(.),".xml")}"/>
+    let $names_prose := distinct-values($texts_prose/@name/data(.))
+
+    let $well_prose := for $name in $names_prose
+            return  <item letter="{local:highLetters(local:FindFirstLetter-new($name,1))}">
+                <name type="pub_prose">{$name}</name>
+                { let $ref :=   local:scanDocs($name,$texts_prose)
+                let $ref := distinct-values($ref)
+                return
+                    for $item in $ref
+                    return <item ref="{$item}">{replace(doc(concat('/db/apps/pessoa/data/pub/',$item,".xml"))//tei:titleStmt/tei:title[1]/data(.),"/E3","")}</item>}
+        
+            </item>
+    (: publication titles :)
     let $pubs := collection('/db/apps/pessoa/data/pub')
     let $pubs_title := for $hit in $pubs//tei:teiHeader/tei:fileDesc
                     let $title := $hit//tei:sourceDesc/tei:biblStruct/tei:analytic/tei:title[@level = "a"]
@@ -267,7 +293,7 @@ declare function local:collectTexts() {
                                     {$title/data(.)}
                                 </name>
                             </item>
-    return ($well,$pubs_title)
+    return ($well, $well_prose, $pubs_title)
    };
 
 declare function local:FindFirstLetter-new($text as xs:string, $pos as xs:integer) {

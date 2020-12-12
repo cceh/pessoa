@@ -19,7 +19,11 @@
         <field name="lang" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct/tei:analytic/tei:textLang/@mainLang" type="xs:string"/>
         <field name="genre" match="tei:teiHeader/tei:fileDesc/tei:notesStmt/tei:note/tei:rs/@key" type="xs:string"/>
         <field name="person" match="tei:teiHeader/tei:fileDesc//tei:titleStmt/tei:author/tei:rs/@key" type="xs:string" />
+        <field name="person_b" match="tei:text/tei:body/tei:div//tei:rs/@key" type="xs:string" />
+        <field name="type" match="tei:text/tei:body/tei:div//tei:rs/@type" type="xs:string"/>
         <field name="role" match="tei:teiHeader/tei:fileDesc//tei:titleStmt/tei:author/tei:rs/@type" type="xs:string" />
+        <field name="role_b" match="tei:text/tei:body/tei:div//tei:rs/@role" type="xs:string"/>
+        <field name="style" match="tei:text/tei:body/tei:div//tei:rs/@style" type="xs:string"/>
         <field name="date_when" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct/tei:monogr/tei:imprint/tei:date/@when" type="xs:string"/>
         <field name="date_from" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct/tei:monogr/tei:imprint/tei:date/@from" type="xs:string"/>
         <field name="date_to" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct/tei:monogr/tei:imprint/tei:date/@to" type="xs:string"/>
