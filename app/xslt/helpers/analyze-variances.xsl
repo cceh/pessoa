@@ -4,27 +4,107 @@
     exclude-result-prefixes="xs"
     version="2.0">
     
+    <!-- @author: Ulrike Henny-Krahmer
+    Created on 12 December 2020. 
+    Last updated 13 December 2020. -->
+    
     <xsl:variable name="docs" select="collection('../../data/doc')//TEI"/>
     <xsl:variable name="pubs" select="collection('../../data/pub')//TEI//imprint"/>
     
     <xsl:template match="/">
         
-        
-        
         <!--<xsl:call-template name="variances-1"/>-->
+        <!--<xsl:call-template name="variances-2"/>-->
+        <!--<xsl:call-template name="variances-3"/>-->
+        <xsl:call-template name="variances-4"/>
+        
+    </xsl:template>
+    
+    <xsl:template name="variances-4">
+        <!-- what kind of changes did Pessoa make? -->
+        <xsl:result-document href="/home/ulrike/Schreibtisch/archives/variances_4.html" method="html" encoding="UTF-8">
+            <head>
+                <!-- Load plotly.js into the DOM -->
+                <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+            </head>
+            <body>
+                <div id='myDiv' style="width: 600px; height: 400px;"><!-- Plotly chart will be drawn inside this DIV --></div>
+                <script>
+                    <xsl:variable name="count-additions" select="count($docs//add[not(parent::subst)])"/>
+                    <xsl:variable name="count-deletions" select="count($docs//del[not(parent::subst)])"/>
+                    <xsl:variable name="count-substitutions" select="count($docs//subst)"/>
+                    <xsl:variable name="count-addSpans" select="count($docs//addSpan)"/>
+                    <xsl:variable name="count-delSpans" select="count($docs//delSpan)"/>
+                    <xsl:variable name="count-notes" select="count($docs//note[@n='2'])"/>
+                    var data = [{
+                    values: [<xsl:value-of select="$count-additions + $count-addSpans + $count-notes"/>, <xsl:value-of select="$count-substitutions"/>, <xsl:value-of select="$count-deletions + $count-delSpans"/>],
+                    labels: ['acrescentos', 'substituições', 'eliminações'],
+                    type: 'pie',
+                    hole: 0.4
+                    }];
+                    
+                    
+                    Plotly.newPlot('myDiv', data);
+                </script>
+            </body>
+        </xsl:result-document>
+    </xsl:template>
+    
+    
+    <xsl:template name="variances-3">
+        <!-- how many changes are there per list? create a histogram -->
+        <xsl:result-document href="/home/ulrike/Schreibtisch/archives/variances_3.html" method="html" encoding="UTF-8">
+            <head>
+                <!-- Load plotly.js into the DOM -->
+                <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+            </head>
+            <body>
+                <div id='myDiv' style="width: 1000px; height: 500px;"><!-- Plotly chart will be drawn inside this DIV --></div>
+                <script>
+                    <xsl:variable name="changes-in-docs" as="xs:integer*">
+                        <xsl:for-each select="$docs">
+                            <xsl:variable name="count-additions" select="count(.//add[not(parent::subst)])"/>
+                            <xsl:variable name="count-deletions" select="count(.//del[not(parent::subst)])"/>
+                            <xsl:variable name="count-substitutions" select="count(.//subst)"/>
+                            <xsl:variable name="count-addSpans" select="count(.//addSpan)"/>
+                            <xsl:variable name="count-delSpans" select="count(.//delSpan)"/>
+                            <xsl:variable name="count-notes" select="count(.//note[@n='2'])"/>
+                            <xsl:value-of select="sum(($count-additions,$count-deletions,$count-substitutions,$count-addSpans,$count-delSpans,$count-notes))"/>
+                        </xsl:for-each>
+                    </xsl:variable>
+                    var trace = {
+                    x: [<xsl:value-of select="string-join($changes-in-docs,',')"/>],
+                    type: 'histogram',
+                    };
+                    var data = [trace];
+                    var layout = {
+                        xaxis: {title: "número de câmbios"},
+                        yaxis: {title: "número de listas editoriais"}
+                    };
+                    Plotly.newPlot('myDiv', data, layout);
+                </script>
+            </body>
+        </xsl:result-document>
+    </xsl:template>
+    
+    <xsl:template name="variances-2">
+        <!-- how many percent of the editorial lists have changes? -->
+        <xsl:variable name="num-docs" select="count($docs)"/>
+        <xsl:variable name="docs-with-changes" select="$docs[.//add or .//del or .//subst or .//addSpan or .//delSpan or .//note[@n='2']]"/>
+        <xsl:variable name="num-docs-with-changes" select="count($docs-with-changes)"/>
+        <xsl:value-of select="$num-docs-with-changes div $num-docs"/>
     </xsl:template>
     
     <xsl:template name="variances-1">
         <!-- Number of changes in documents and publications,
         divided by the number of documents/publications in the same year -->
-        <xsl:result-document href="/home/ulrike/Schreibtisch/archives/variances_2.html" method="html" encoding="UTF-8">
+        <xsl:result-document href="/home/ulrike/Schreibtisch/archives/variances_1.html" method="html" encoding="UTF-8">
             <!-- 1913 - 1935 -->
             <xsl:variable name="years" select="1912 to 1935"/>
             <head>
                 <!-- Load plotly.js into the DOM -->
                 <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
             </head>
-            
             <body>
                 <div id='myDiv' style="width: 1000px; height: 500px;"><!-- Plotly chart will be drawn inside this DIV --></div>
                 <script>
