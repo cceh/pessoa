@@ -8,11 +8,13 @@
     <xsl:variable name="pubs" select="collection('../../data/pub')//TEI//imprint"/>
     
     <xsl:template match="/">
+        
+        
+        
         <!--<xsl:call-template name="variances-1"/>-->
-        <xsl:call-template name="variances-2"/>
     </xsl:template>
     
-    <xsl:template name="variances-2">
+    <xsl:template name="variances-1">
         <!-- Number of changes in documents and publications,
         divided by the number of documents/publications in the same year -->
         <xsl:result-document href="/home/ulrike/Schreibtisch/archives/variances_2.html" method="html" encoding="UTF-8">
@@ -46,7 +48,7 @@
                         <xsl:if test="position()!=last()">,</xsl:if>
                     </xsl:for-each>],
                     type: 'bar',
-                    name: 'documents'
+                    name: 'listas editoriais'
                     };
                     var trace2 = {
                     x: [<xsl:value-of select="string-join($years,',')"/>],
@@ -74,7 +76,7 @@
                         <xsl:if test="position()!=last()">,</xsl:if>
                     </xsl:for-each>],
                     type: 'bar',
-                    name: 'publications'
+                    name: 'publiçaões'
                     };
                     
                     var trace3 = {
@@ -98,7 +100,7 @@
                     </xsl:for-each>],
                     type: 'line',
                     line: {shape: 'spline'},
-                    name: 'documents'
+                    name: 'listas editoriais'
                     };
                     var trace4 = {
                     x: [<xsl:value-of select="string-join($years,',')"/>],
@@ -127,7 +129,7 @@
                     </xsl:for-each>],
                     type: 'line',
                     line: {shape: 'spline'},
-                    name: 'publications'
+                    name: 'publiçaões'
                     };
                     
                     var data = [trace1, trace2, trace3, trace4];
@@ -138,83 +140,6 @@
         </xsl:result-document>
     </xsl:template>
     
-    <xsl:template name="variances-1">
-        <!-- Number of documents and publications -->
-        <xsl:result-document href="/home/ulrike/Schreibtisch/archives/variances_1.html" method="html" encoding="UTF-8">
-            <!-- 1913 - 1935 -->
-            <xsl:variable name="years" select="1912 to 1935"/>
-            <head>
-                <!-- Load plotly.js into the DOM -->
-                <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
-            </head>
-            
-            <body>
-                <div id='myDiv' style="width: 1000px; height: 500px;"><!-- Plotly chart will be drawn inside this DIV --></div>
-                <script>
-                    var trace1 = {
-                    x: [<xsl:value-of select="string-join($years,',')"/>],
-                    y: [<xsl:for-each select="$years">
-                        <xsl:variable name="docs-when" select="count($docs[.//origDate/@when/starts-with(.,xs:string(current()))])"/>
-                        <xsl:variable name="docs-notBefore" select="count($docs[.//origDate/@notBefore/starts-with(.,xs:string(current()))])"/>
-                        <xsl:variable name="docs-notAfter" select="count($docs[.//origDate/@notAfter/starts-with(.,xs:string(current()))])"/>
-                        <xsl:variable name="docs-from" select="count($docs[.//origDate/@from/starts-with(.,xs:string(current()))])"/>
-                        <xsl:value-of select="sum(($docs-when, $docs-notBefore, $docs-notAfter, $docs-from))"/>
-                        <xsl:if test="position()!=last()">,</xsl:if>
-                    </xsl:for-each>],
-                    type: 'bar',
-                    name: 'documents'
-                    };
-                    
-                    var trace2 = {
-                    x: [<xsl:value-of select="string-join($years,',')"/>],
-                    y: [<xsl:for-each select="$years">
-                        <xsl:variable name="pubs-when" select="count($pubs[date/@when/starts-with(.,xs:string(current()))])"/>
-                        <xsl:variable name="pubs-notBefore" select="count($pubs[date/@notBefore/starts-with(.,xs:string(current()))])"/>
-                        <xsl:variable name="pubs-notAfter" select="count($pubs[date/@notAfter/starts-with(.,xs:string(current()))])"/>
-                        <xsl:variable name="pubs-from" select="count($pubs[date/@from/starts-with(.,xs:string(current()))])"/>
-                        <xsl:value-of select="sum(($pubs-when, $pubs-notBefore, $pubs-notAfter, $pubs-from))"/>
-                        <xsl:if test="position()!=last()">,</xsl:if>
-                    </xsl:for-each>],
-                    type: 'bar',
-                    name: 'publications'
-                    };
-                    
-                    var trace3 = {
-                    x: [<xsl:value-of select="string-join($years,',')"/>],
-                    y: [<xsl:for-each select="$years">
-                        <xsl:variable name="docs-when" select="count($docs[.//origDate/@when/starts-with(.,xs:string(current()))])"/>
-                        <xsl:variable name="docs-notBefore" select="count($docs[.//origDate/@notBefore/starts-with(.,xs:string(current()))])"/>
-                        <xsl:variable name="docs-notAfter" select="count($docs[.//origDate/@notAfter/starts-with(.,xs:string(current()))])"/>
-                        <xsl:variable name="docs-from" select="count($docs[.//origDate/@from/starts-with(.,xs:string(current()))])"/>
-                        <xsl:value-of select="sum(($docs-when, $docs-notBefore, $docs-notAfter, $docs-from))"/>
-                        <xsl:if test="position()!=last()">,</xsl:if>
-                    </xsl:for-each>],
-                    type: 'line',
-                    line: {shape: 'spline'},
-                    name: 'documents'
-                    };
-                    
-                    var trace4 = {
-                    x: [<xsl:value-of select="string-join($years,',')"/>],
-                    y: [<xsl:for-each select="$years">
-                        <xsl:variable name="pubs-when" select="count($pubs[date/@when/starts-with(.,xs:string(current()))])"/>
-                        <xsl:variable name="pubs-notBefore" select="count($pubs[date/@notBefore/starts-with(.,xs:string(current()))])"/>
-                        <xsl:variable name="pubs-notAfter" select="count($pubs[date/@notAfter/starts-with(.,xs:string(current()))])"/>
-                        <xsl:variable name="pubs-from" select="count($pubs[date/@from/starts-with(.,xs:string(current()))])"/>
-                        <xsl:value-of select="sum(($pubs-when, $pubs-notBefore, $pubs-notAfter, $pubs-from))"/>
-                        <xsl:if test="position()!=last()">,</xsl:if>
-                    </xsl:for-each>],
-                    type: 'line',
-                    line: {shape: 'spline'},
-                    name: 'publications'
-                    };
-                    
-                    var data = [trace1, trace2, trace3, trace4];
-                    
-                    Plotly.newPlot('myDiv', data);
-                </script>
-            </body>
-        </xsl:result-document>
-    </xsl:template>
+    
     
 </xsl:stylesheet>
