@@ -15,8 +15,8 @@
         
         <!--<xsl:call-template name="variances-1"/>-->
         <!--<xsl:call-template name="variances-2"/>-->
-        <!--<xsl:call-template name="variances-3"/>-->
-        <xsl:call-template name="variances-4"/>
+        <xsl:call-template name="variances-3"/>
+        <!--<xsl:call-template name="variances-4"/>-->
         
     </xsl:template>
     
@@ -78,7 +78,7 @@
                     };
                     var data = [trace];
                     var layout = {
-                        xaxis: {title: "número de câmbios"},
+                        xaxis: {title: "número de intervenções"},
                         yaxis: {title: "número de listas editoriais"}
                     };
                     Plotly.newPlot('myDiv', data, layout);
