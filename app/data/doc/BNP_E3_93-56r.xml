@@ -22,6 +22,10 @@
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
+               <name>Inês Filipa Rebelo do Carmo</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
                <name>Sviatoslav Drach</name>
             </respStmt>
             <respStmt>
@@ -79,43 +83,42 @@
       <body>
          <div>
             <note><supplied resp="PS" reason="omitted-in-original"/></note>
-            <metamark rend="line-44" function="distinct"/>
+            <metamark rend="line" function="distinct"/>
             <list>
-               <item xml:id="I1"><label>1.</label><rs type="work"><rs type="name" key="P65"
+               <item><label>1.</label><rs type="work"><rs type="name" key="P65"
                         >Shakespeare</rs>,<rs type="title"> “A Tormenta”.</rs></rs></item>
-               <item xml:id="I2"><label>2.</label>um ou dois contos<lb/> os <subst>
+               <item><label>2.</label><list><item xml:id="I1">um ou dois contos</item>
+                  <item xml:id="I2">os <subst>
                      <del rend="overstrike">poemas bons</del>
-                     <add place="above">poemas</add>
+                     <add place="above">bons poemas</add>
                   </subst>
-                  <add/> de <rs type="name" key="P87">Edgar Poe</rs>
-                  <lb/>. <rs type="name">Synge</rs>—<rs type="title"><choice>
+                  <add/> de <rs type="name" key="P87">Edgar Poe</rs>.</item>
+                  <note target="range(I1,I3)"
+                     place="margin-right" type="addition" n="2">
+                     <metamark rend="curly-bracket"
+                        function="grouping"/>
+                  </note>
+                  <item xml:id="I3"><rs type="name">Synge</rs>—<rs type="title"><choice>
                         <abbr>Cav<am>.</am></abbr>
                         <expan>Cav<ex>algada</ex></expan>
-                     </choice>até o mar</rs></item>
-               <item xml:id="I3"><label>3.</label>Sonetos Unicos. Contos symbolicos de <rs
+                  </choice>até o mar</rs></item></list></item>
+               <item><label>3.</label><list><item xml:id="I4">Sonetos Unicos.</item>
+                  <item xml:id="I5">Contos symbolicos de <rs
                      type="name" key="P271"><choice>
-                        <abbr>H<am>.</am></abbr>
-                     </choice><choice>
-                        <abbr>G<am>.</am></abbr>
-                     </choice>Wells</rs>. O <rs type="title">Prometheu Preso</rs>, de <rs
-                     type="name" key="P193">Eschylo</rs>.</item>
-               <item xml:id="I4"><label>4.</label><rs type="work"><rs type="name" key="P65"
-                        >Shakespeare</rs>,<rs type="title"> Macbeth.</rs></rs> (?)</item>
-               <item xml:id="I5"><label>5.</label><supplied resp="PS" reason="omitted-in-original"
+                        <abbr>H<am>.</am> G<am>.</am></abbr><expan>H<ex>erbert</ex> G<ex>eorge</ex></expan>
+                     </choice> Wells</rs>.</item>
+                  <note target="range(I4,I6)"
+                     place="margin-right" type="addition" n="2">
+                     <metamark rend="curly-bracket"
+                        function="grouping"/>
+                  </note>
+                  <item xml:id="I6">O <rs type="title">Prometheu Preso</rs>, de <rs
+                     type="name" key="P193">Eschylo</rs>.</item></list></item>
+               <item><seg type="certainty" cert="low" rend="question-mark" resp="FP"><label>4.</label><rs type="work"><rs type="name" key="P65"
+                  >Shakespeare</rs>,<rs type="title"> Macbeth.</rs></rs></seg></item>
+               <item><label>5.</label><supplied resp="PS" reason="omitted-in-original"
                   /></item>
             </list>
-            <ab>
-               <note target="range(I1,I2,)" place="margin-left" type="addition"/>
-               <metamark rend="curly-bracket" function="grouping"/></ab>
-            <ab>
-               <note target="range(I3,I4,)" place="margin-left" type="addition"/>
-               <metamark rend="curly-bracket" function="grouping"/></ab>
-            <ab>
-               <note target="range(I2, #I2)" place="margin-right" type="addition"/>
-               <metamark rend="curly-bracket" function="grouping"/></ab>
-            <ab>
-               <note target="range(I3,I4,)" place="margin-right" type="addition"/>
-               <metamark rend="curly-bracket" function="grouping"/></ab>
          </div>
       </body>
    </text>
