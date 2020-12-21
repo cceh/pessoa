@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Crónica dos livros - O inquerito literario</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="restricted">
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Pessoa_Cronica_dos_livros.xml</idno>
+            </publicationStmt>
+            <notesStmt>
+                <note type="genre">
+                    <rs type="genre" key="prosa">Prosa</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="W280">Crónica dos livros - O inquerito literario</rs></item>
+                </list>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Crónica dos livros - O inquerito literario</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt" otherLangs="en"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J45">O Jornal</rs></title>
+                        <imprint>
+                            <date when="1915-04-04">4 de Abril de 1915</date>
+                        </imprint>
+                        <biblScope unit="page">3</biblScope>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
+    </teiHeader>
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+        <graphic url="prosa/Cronica_dos_livros.jpg"/>
+    </facsimile>
+    <text corresp="#W280">
+        <body>
+            <div>
+                <head>Crónica DOS LIVROS - O inquerito literario</head>
+                <bibl rend="right indent-second"><hi rend="bold"><hi rend="italic"><rs type="title"
+                    >O INQUERITO LITERARIO</rs>,</hi> - Por <rs type="name" key="P49">Boavida Portugal</rs> 
+                    Lisboa Literaria classica Editora.</hi></bibl>
+                <p>O livro de Boavida Portugal compila os <ref target="http://www.pessoadigital.pt/pt/pub/Pessoa_Uma_Replica_Ao_Adolfo">artigos
+                </ref> de resposta e discussão que apareceram no decurso do Inquerito 
+                    Literario por ele realisado no jornal <rs type="periodical" key="J20"></rs><hi rend="italic">Republica</hi>. 
+                    A estes artigos se juntou uma escolha representativa e 
+                    pitorêsca de comentarios, que outras folhas ao tempo imprimiran, versando o assunto fixado neste livro.</p>
+                <p>Merece elogio, sem duvida, a idéa de realizar este inquérito, e o volume que o arquiva resulta indispensavel a 
+                    quantos queiram inteirar-se, agora ou logo, da perturbada psícólogia dum estádio literário em que uma decadencia 
+                    e um resurgimento se misturam.</p> 
+                <p>Mas, se a idéa inicial foi boa, não merece tantos elogios a sua realisação, conforme se deu. Em parte
+                    pela ausencia de toda a especie de norma civilisada no nosso meio litersrio, e de qualquer, ainda 
+                    que falso, sentimento da responsabilidade intelectual, mas em parte tambem pela indieciplinada 
+                    orientação seguida pelo inquerente, o volume (se bem que, como foi dito, interessante pelo fixa d’um 
+                    momento da literatura) resulta frouxo como conjunto opinionativo e definidor. Em justiça se acentue, 
+                    novamente, que esse resultado é menos da responsabilidade de <rs type="name" key="P49">Boavida Portugal</rs>, 
+                    do que da dos 
+                    invdividuos que consultou.</p>
+                <p>Alguns esquivaram-se a responder. Outros, não se querendo esquivar, tiveram que arranjar á ultima 
+                    hora ae idéas que tinham sempre tido sobre letras. Outros ainda entregaram-se a abominaveis 
+                    deboches de obscuridade, chateza ou, como diz a Lei de Imprensa, «Linguagem despejado e 
+                    provocadora».</p>
+                <p>O que é da responsabilidade de <rs type="name" key="P49">Boavida Portugal</rs> 
+                    é não ter tido a intuição de como esta gente a 
+                    consultar havia de ser levada a dizer coisas em que se pudesee supôr nexo e geito. Devia haver um 
+                    meio qualquer de a fazer entender-se a si propria. Mas houve tambem erros manifestos – de pura 
+                    malicia, como creio – como o de ir consultar o dr. <rs type="name" key="P591">Julio de Matos</rs>, 
+                    incompetencia notavel n’estas 
+                    coisas que se não regram por Tanzi ou por Régis, e o de dar a creaturas como o sr. <rs type="name" key="P592">
+                        Augusto de Castro</rs> 
+                    ou o sr. <rs type="name" key="P592">Gonçalves Viana</rs> estatura de ter opiniões para emitir.</p>
+                <p>Isto foi o que se passou com os consagrados. Porque é com respostas dos novos, e as replicas e as 
+                    objeções dos inesperados, que a Inteligencia e a Lucidez entram no Inquerito. A segunda parte do 
+                    livro salva e intelectualisa tudo. Seria grave lacuna, e imperdoavel não salientar os dois artigos 
+                    do sr. <rs type="name" key="P63">Manuel Antonio de Almeida</rs>. Eles foram, tanto em idéa como em fórma, 
+                    uma lição á maioria dos 
+                    depoentes.</p>
+                    <signed rend="right">Fernando Pessôa</signed> 
+                </div>
+            </body>
+    </text>
+        </TEI>

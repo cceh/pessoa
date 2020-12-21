@@ -4,7 +4,7 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>"O Mais Belo Livro" - Um inqérito de intelectuais</title>
+                <title>"O Mais Belo Livro" - Um inquérito de intelectuais</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
                 </author>
@@ -27,7 +27,6 @@
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
                 <availability status="restricted">
-                    <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_O_Mais_Belo_Livro.xml</idno>
@@ -39,60 +38,62 @@
             </notesStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O1-X">"O Mais Belo Livro" - Um inqérito de
+                    <item><rs type="work" key="W278">"O Mais Belo Livro" - Um inquérito de
                             intelectuais</rs></item>
                 </list>
                 <biblStruct>
                     <analytic>
-                        <title level="a">"O Mais Belo Livro" - Um inqérito de intelectuais</title>
+                        <title level="a">"O Mais Belo Livro" - Um inquérito de intelectuais</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
                         <title level="j"><rs type="periodical" key="J20">A República</rs></title>
                         <imprint>
                             <date when="1914-04-07">7 de Abril de 1914</date>
-                            <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                         </imprint>
                         <biblScope unit="page">1</biblScope>
                     </monogr>
-                    <!-- here goes the bibliographical reference for the source publication -->
-                    <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
-                    <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
         <encodingDesc>
             <variantEncoding method="parallel-segmentation" location="internal"/>
         </encodingDesc>
+        <profileDesc>
+            <handNotes>
+                <handNote xml:id="H_Republica">Texto não redigido por Pessoa mas pelos
+                    jornalistas.</handNote>
+                <handNote xml:id="H_FP">Texto redigido por Pessoa.</handNote>
+            </handNotes>
+        </profileDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/O_Mais_Belo_Livro.jpg"/>
     </facsimile>
-    <text corresp="#O1-X">
-        <!-- @corresp: contains the index of this WORK. 
-        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
-        This can be left as is in the beginning.
-    -->
+    <text corresp="#W278">
         <body>
             <div>
-                <head>Fernando Pessoa Escritor, critico de arte</head>
-
-                <p rend="indent-first">--A grande desvantagem estética do seu inquérito é ser a
-                    resposta tão facil que nem podemos ter o prazer de duvidar da nossa sinceridade.
+                <head><handShift new="#H_Republica"/>"O Mais Belo Livro" - Um inquérito de intelectuais</head>
+                <argument rend="center">
+                    <p>OS ULTIMOS 30 ANOS FORMAM, BEM VISIVELMENTE, UMA »ÉTAPE» LITERÁRIA, E MARCAM, 
+                    PARA MA MENTALIDADE PORTUGUESA, UMA DAS SUAS FASES MAIS RICAS EM CRIAÇÕES DE GÉNIO. 
+                    POIS BEM: QUAL É, DE ENTRE AS OBRAS CRIADASNESSE BRILLHANTE APELO, A MAIS BELA?
+                TEEM A PALAVRA OS ESCRITORES, POETAS, JORNALISTAS, HOMENS DE LETRAS, TODOS QUANTOS, INTELECTUAIS DO LIVRO
+                OU DA GAZETA DA POLITICA OU DO TEATRO, CONSTITUEM ISSO QUE PODE CHAMARSE - O CEREBRO PORTUGUES.</p></argument>
+                <p>FERNANDO PESSOA<lb/><hi rend="italic">Escritor, critico de arte</hi></p>
+                <div>
+                    <p rend="indent-first"><handShift new="#H_FP"/>--A grande desvantagem estética do seu 
+                        inquérito é ser a resposta tão facil que nem podemos ter o prazer de duvidar da nossa 
+                        sinceridade.
                     Uma obra destaca-se tão afastadamente das outras que nem vale a pena fingir que
                     temos hesitação na escolha. Mais vale confessar sinceramente que achamos valor a
                     um contemporaneo.</p>
 
                 <p rend="indent-first">Posto isto, chamo a atenção das pessoas criticamente
-                    competentes (a sua existencia entre nós é uma hipotese da minha delicadeza) para
+                    competentes (a sua existencia entre nós é uma hipotese da minha delicadeza) para 
                     o facto evidente de que a  <hi rend="bold"><rs type="title">Pátria</rs> de <rs
                             type="name" key="P25">Junqueiro</rs>
                     </hi> é, não só a maior obra dos ultimos trinta anos, mas a obra capital do que
@@ -108,14 +109,15 @@
                         <rs type="title">Os Lusiadas</rs></hi> vencem na sobria solenidade da sua
                     linha estrutural, a  <hi rend="bold"><rs type="title"
                     >Pátria</rs></hi> compensa-o com a sua superioridade no que simples poesia e
-                    pura fórma. Posso mesmo acrescentar que, a meu vêr, a Pátria fórma, com o  <hi
-                        rend="bold"><rs type="title">Fausto</rs> de <rs type="name" key="P198"
-                        /></hi> e o  <hi rend="bold"><rs type="title">Prometeu Liberto</rs></hi> de
+                    pura fórma. Posso mesmo acrescentar que, a meu vêr, a 
+                    <rs type="title"><hi rend="italic">Pátria</hi></rs> fórma, com o  <hi
+                        rend="bold"><hi rend="italic"><rs type="title">Fausto</rs></hi> de <rs type="name" key="P198"
+                        />Goethe</hi>rs> e o  <hi rend="italic"><rs type="title">Prometeu Liberto</rs></hi> de
                         <rs type="name" key="P175">Shelley</rs>, a trilogia de grandesa da poesia
                     superlirica moderna.</p>
-
                 <signed>Fernando Pessoa</signed>
             </div>
+                </div>
         </body>
     </text>
 </TEI>
