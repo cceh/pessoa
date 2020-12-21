@@ -4,7 +4,7 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Uma réplica ao snr. dr. Adolfo Coelho</title>
+                <title>Inquérito á Vida Literária - Uma réplica ao snr. dr. Adolfo Coelho</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
                 </author>
@@ -27,7 +27,6 @@
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
                 <availability status="restricted">
-                    <!-- @status will be set to "free" once the document is ready to be published -->
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_Uma_Replica_ao_Adolfo.xml</idno>
@@ -39,65 +38,61 @@
             </notesStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="O1-X">Uma réplica ao snr. dr. Adolfo
-                        Coelho</rs></item>
+                    <item><rs type="work" key="W279">Inquérito á Vida Literária - Uma réplica ao snr. dr. Adolfo Coelho</rs></item>
                 </list>
                 <biblStruct>
                     <analytic>
-                        <title level="a">Uma réplica ao snr. dr. Adolfo Coelho</title>
+                        <title level="a">Inquérito á Vida Literária - Uma réplica ao snr. dr. Adolfo Coelho</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
                         <textLang mainLang="pt" otherLangs="en"/>
-                        <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
                     </analytic>
                     <monogr>
                         <title level="j"><rs type="periodical" key="J20">A República</rs></title>
                         <imprint>
                             <date when="1912-10-21">21 de Setembro de 1912</date>
-                            <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                         </imprint>
                         <biblScope unit="pages">1-2</biblScope>
                     </monogr>
-                    <!-- here goes the bibliographical reference for the source publication -->
-                    <!-- this can also have @otherLangs, e.g. otherLangs="en fr" -->
-                    <!-- in case it is not a single date, but from-to, it 
-                            looks like this: from="1931-01" to="1931-02". If there is also a day: when="1931-01-01", if 
-                            there is just a year: when="1931" -->
                 </biblStruct>
             </sourceDesc>
         </fileDesc>
         <encodingDesc>
             <variantEncoding method="parallel-segmentation" location="internal"/>
         </encodingDesc>
+        <profileDesc>
+            <handNotes>
+                <handNote xml:id="H_Republica">Texto não redigido por Pessoa mas pelos
+                    jornalistas.</handNote>
+                <handNote xml:id="H_FP">Texto redigido por Pessoa.</handNote>
+            </handNotes>
+        </profileDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
         <graphic url="prosa/Uma_replica_1.jpg"/>
         <graphic url="prosa/Uma_replica_2.jpg"/>
     </facsimile>
-    <text corresp="#O1-X">
-        <!-- @corresp: contains the index of this WORK. 
-        (to be defined in the central work index in lists.xml (<list type="works">), O4 = Campos, X -> will be a number)
-        This can be left as is in the beginning.
-    -->
+    <text corresp="#W279">
         <body>
             <div>
+                <div>
+                <head><handShift new="#H_Republica"/>Inquérito á Vida Literária</head>
+                <head type="sub">Uma réplica ao snr. dr. Adolfo Coelho</head>
 
-                <head>UMA RÉPLICA AO SNR. DR. ADOLFO COELHO</head>
+                <argument><p><hi rend="italic">Mais uma réplica corta a pacatez dos depoimentos
+                        desde o dia 3 do corrente veem sendo publicados na «República».</hi></p>
 
-                <head type="sub"><hi rend="italic">Mais uma réplica corta a pacatez dos depoimentos
-                        desde o dia 3 do corrente veem sendo publicados na «República».</hi></head>
-
-                <head type="sub"><hi rend="italic">Agora é o colaborador da «<rs type="periodical"
+                <p><hi rend="italic">Agora é o colaborador da «<rs type="periodical"
                             key="5">Aguia</rs>», snr. <rs type="name" key="FP">Fernando Pessoa</rs>,
                         que vem responder ao ilustre filólogo e lente da Faculdade de Letras da
                         Universidade de Lisboa, snr. dr <rs type="name" key="P462">Adolfo
                             Coelho</rs>, que não crê no super-<rs type="name" key="P15"
-                        >Camões</rs>.</hi></head>
-
-                <p rend="indent-first">Meu caro amigo — O convite geral feito na sua secção de
+                                >Camões</rs>.</hi></p></argument>
+                    </div>
+                <div>
+                <p rend="indent-first"><handShift new="#H_FP"/><hi rend="italic">Meu caro amigo</hi> — 
+                    O convite geral feito na sua secção de
                     inquérito literário, e aquele com que verbalmente honrou a obscuridade ou a
                     juventude do meu nome, foram, como sabe, de principio aceites por mim para, no
                     seu jornal, levantar a luva que inquiridos vários arremessaram à <hi
@@ -138,7 +133,7 @@
                     trabalho de lhe procurar o fio condutor de uma lógica, encontra-lhe uma intima
                     desconexão, desmentindo a sua fisionomia de ligado e conexo.</p>
 
-                <p rend="indent-first">Seja como fôr, preserutemos em que se baseia o Prof. <rs
+                <p rend="indent-first">Seja como fôr, prescrutemos em que se baseia o Prof. <rs
                         type="name" key="P462">Adolfo Coelho</rs> para descrer de uma renascença
                     literária em Portugal e de ser a nossa poesia novissima representativa dessa
                     renascença. Cinge-se a duas considerações, que era indispensavel que estivessem
@@ -420,6 +415,7 @@
 
                 <signed rend="right">Fernando Pessoa</signed>
             </div>
+                </div>
         </body>
     </text>
 </TEI>
