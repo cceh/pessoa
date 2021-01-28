@@ -88,10 +88,9 @@
                <item><label>1.</label><rs type="work"><rs type="name" key="P65"
                         >Shakespeare</rs>,<rs type="title"> “A Tormenta”.</rs></rs></item>
                <item><label>2.</label><list><item xml:id="I1">um ou dois contos</item>
-                  <item xml:id="I2">os <subst>
-                     <del rend="overstrike">poemas bons</del>
-                     <add place="above">bons poemas</add>
-                  </subst>
+                  <item xml:id="I2">os <seg xml:id="S1">poemas</seg>
+                     <seg xml:id="S2">bons</seg>
+                     <metamark rend="arrow" place="above" function="transposition" target="#S1 #S2"/>
                   <add/> de <rs type="name" key="P87">Edgar Poe</rs>.</item>
                   <note target="range(I1,I3)"
                      place="margin-right" type="addition" n="2">
