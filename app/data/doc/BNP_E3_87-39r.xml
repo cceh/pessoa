@@ -87,74 +87,77 @@
    <text>
       <body>
          <div>
-            <list>
-               <item xml:id="I1">
-                  <label>1.</label> Segunda Phase <note target="#I1" place="margin-right">
-                     <metamark rend="line" function="assignment"/>
-                     <choice>
+            <table>
+               <row>
+                  <cell><label>1.</label> Segunda Phase
+                     <metamark rend="line" function="assignment"/></cell>
+                     <cell><choice>
                         <abbr>p<am>.</am></abbr>
                         <expan>p<ex>agina</ex></expan>
-                     </choice> 1 </note>
-               </item>
-               <item rend="indent-2" xml:id="I2">
-                  <label>2.</label>
-                  <rs type="title">Apice</rs> — <rs type="name" key="P30">Sá-Carneiro</rs>
-                  <note target="#I2" place="margin-right">
-                     <metamark rend="curly-bracket" function="assignment"/>
-                     <choice>
-                        <abbr>p<am>.</am></abbr>
-                        <expan>p<ex>agina</ex></expan>
-                     </choice> 2 </note>
-                  <lb/> Ode — <rs type="name" key="P81"><choice>
+                     </choice> 1</cell>
+               </row>
+               <row>
+                  <cell rend="indent-2"><label>2.</label>
+                     <rs type="title">Apice</rs> — <rs type="name" key="P30">Sá-Carneiro</rs><lb/>Ode — <rs type="name" key="P81"><choice>
                         <abbr>M</abbr>
                         <expan>M<ex>anuel</ex></expan>
                      </choice> da Veiga</rs>
-               </item>
-               <item rend="indent-2" xml:id="I3">
-                  <label>3.</label>
+                     <metamark rend="curly-bracket" function="assignment"/></cell>
+                     <cell><choice>
+                        <abbr>p<am>.</am></abbr>
+                        <expan>p<ex>agina</ex></expan>
+                     </choice> 2 </cell>
+               </row>
+               <row>
+                  <cell rend="indent-2"><label>3.</label>
                   <rs type="title">O Inexito do “Theatro<lb/> Novo”</rs> — <rs type="name" key="FP"
                      role="author" style="b">
                      <choice>
                         <abbr>F</abbr>
                         <expan>F<ex>ernando</ex></expan>
                      </choice> Pessoa</rs>
-                  <note target="#I3" place="margin-right">
-                     <metamark rend="line" function="assignment"/>
-                     <choice>
+                     <metamark rend="line" function="assignment"/></cell>
+                     <cell><choice>
                         <abbr>pp<am>.</am></abbr>
                         <expan>p<ex>aginae</ex></expan>
                      </choice> 3 a <subst>
                         <del rend="overwritten">8</del>
                         <add>6</add>
                      </subst>
-                  </note>
-               </item>
-               <item rend="indent-2" xml:id="I4">
-                  <label>4.</label>
+                     </cell>
+               </row>
+               <row>
+                  <cell rend="indent-2"><label>4.</label>
                   <rs type="title">Exploradores e Explorados</rs>.<lb/> — <choice>
                      <abbr>Bach<am>.</am></abbr>
                      <expan>Bach<ex>arel</ex></expan>
                   </choice>
                   <rs type="name" key="P71">Raul Leal</rs><lb/> (ou <rs type="name" key="P82"
-                     >Carlos de Mousinho</rs>) <note target="#I4" place="margin-right">
-                     <metamark rend="line" function="assignment"/> 7 a 12 </note>
-               </item>
-               <item xml:id="I5">
-                  <label>5.</label> Versos <note target="#I5" place="margin-right">
-                     <metamark rend="line" function="assignment"/> 13 e 14 </note>
-               </item>
-               <item xml:id="I6">
-                  <label>6.</label><metamark rend="arrow-right-curved-double" target="#I6 #I8" function="switching"/>
+                     >Carlos de Mousinho</rs>)
+                        <metamark rend="line" function="assignment"/></cell>
+                  <cell>7 a 12</cell>
+               </row>
+               <row>
+                  <cell><label>5.</label> Versos
+                     <metamark rend="line" function="assignment"/></cell>
+                  <cell>13 e 14</cell>
+               </row>
+               <metamark rend="line" place="above"
+                  function="transposition" target="#S1 #S2" n="2"/>
+               <row>
+                  <cell><seg xml:id="S1">
+                  <label>6.</label> 
                   <rs type="name" key="P83">R. L. Stevenson</rs>
-                  <note target="#I6" place="margin-right">
-                     <metamark rend="line" function="assignment"/> 15 a 20 </note>
-               </item>
-               <item xml:id="I7">
-                  <label>7.</label> Selecta <note target="#I7" place="margin-right">
-                     <metamark rend="line" function="assignment"/> 21 a 24 </note>
-               </item>
-               <item xml:id="I8">
-                  <label>8.</label>
+                     <metamark rend="line" function="assignment"/></seg></cell>
+                  <cell>15 a 20</cell>
+               </row>
+               <row>
+                  <cell><label>7.</label> Selecta
+                     <metamark rend="line" function="assignment"/></cell> 
+                  <cell>21 a 24</cell>
+               </row>
+               <row>
+                  <cell><seg xml:id="S2"><label>8.</label>
                   <rs type="title"><choice>
                         <abbr>Chr<am>.</am></abbr>
                         <expan>Chr<ex>onica</ex></expan>
@@ -167,10 +170,10 @@
                         <abbr>F</abbr>
                         <expan>F<ex>ernando</ex></expan>
                      </choice> Pessoa</rs>
-                  <note target="#I8" place="margin-right">
-                     <metamark rend="line" function="assignment"/> 25 a 32 </note>
-               </item>
-            </list>
+                     <metamark rend="line" function="assignment"/></seg></cell>
+                  <cell>25 a 32</cell>
+               </row>
+            </table>
          </div>
          <metamark rend="line" function="distinct"/>
          <div rend="text-center">
