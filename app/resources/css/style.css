@@ -1628,8 +1628,8 @@ div.text div.item span.note.margin-left.rotate-right {
 div.text div.list.rotate-left {
     transform: rotate(-90deg);
     position: relative;
-    top: 30%;
-    left: 30%;
+    bottom: 30%;
+    left: -40%;
 }
 div.text span.label.rotate-left {
     transform: rotate(-90deg);
@@ -1747,6 +1747,11 @@ div.text span.arrow-right-curved-up,
 div.text span.arrow-left-curved-down,
 div.text span.arrow-right-curved-down{
     font-size: 15px;
+}
+
+div.text span.transposition.above {
+    position: absolute;
+    color: grey;
 }
 /* STYLES FOR THE XSLT TRANSFORMATION OF PUBLICATIONS */
 div.pub {
@@ -2086,6 +2091,10 @@ div.text#BNP_E3_144P-46v-a-48r div#I23 span.note.margin-left span.grouping-left 
 div.text#BNP_E3_144P-46v-a-48r div#I23 span.metamark.line.ditto hr.line.inline,
 div.text#BNP_E3_144P-46v-a-48r div#I24 span.metamark.line.ditto hr.line.inline {
     width: 3em;
+}
+div.text#BNP_E3_144P-46v-a-48r div#I24 span.above,
+div.text#BNP_E3_144P-46v-a-48r div#I24 span.below {
+    left: 3.6em;
 }
 div.text#BNP_E3_144P-46v-a-48r span.metamark.line.ditto hr.line.inline {
     width: 30%;
@@ -2453,6 +2462,12 @@ div.text#BNP_E3_87-79r span.choice span.above {
 /* BNP_E3_144D2-9r */
 div.text#BNP_E3_144D2-9r span.space.ditto {
     width: 8.5em;
+}
+div.text#BNP_E3_144D2-9r hr.line.placeholder {
+    width: 3em;
+    display: inline-block;
+    position: relative;
+    top: 4px;
 }
 /* BNP_E3_144D2-41v */
 div.text#BNP_E3_144D2-41v hr.dots.placeholder {
@@ -2854,6 +2869,20 @@ div.text#BNP_E3_48G-32r td {
 div.text#BNP_E3_48G-32r hr.line.distinct:nth-child(3) {
     width: 20%;
     margin: 0 auto;
+}
+div.text#BNP_E3_144D2-6 div.delSpan {
+    background-size: 500px 150px;
+}
+div.text#BNP_E3_93-56r span.transposition.above {
+    font-size: 2em;
+    top: -0.5em;
+    left: 1.9em;
+}
+div.text#BNP_E3_93-56r div#I2 span.grouping-right,
+div.text#BNP_E3_93-56r div#I5 span.grouping-right {
+    font-size: 5em;
+    left: -1em;
+    top: -0.5em;
 }
 
 /* ABOUT PAGE */

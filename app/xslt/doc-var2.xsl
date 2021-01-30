@@ -84,6 +84,18 @@
     <xsl:template match="note[@place = 'margin-left'][@n = '2']" mode="#default deletion addition">
         <xsl:call-template name="note-margin-left"/>
     </xsl:template>
-
+    
+    <!-- transpositions -->
+    <xsl:template match="metamark[@function='transposition'][@n='2']" mode="#default deletion addition">
+        <xsl:variable name="target" select="@target"/>
+        <xsl:variable name="target-1" select="following-sibling::*[@xml:id=substring-after(substring-before($target,' '),'#')]"/>
+        <xsl:variable name="target-2" select="following-sibling::*[@xml:id=substring-after(substring-after($target,' '),'#')]"/>
+        
+        <xsl:apply-templates select="$target-2" mode="addition"/>
+        <xsl:text> </xsl:text>
+        <xsl:apply-templates select="$target-1" mode="addition"/>
+    </xsl:template>
+    
+    <xsl:template match="*[concat('#',@xml:id)=preceding-sibling::metamark[@function='transposition']/@target/tokenize(.,'\s')]" mode="#default" priority="100"/>
 
 </xsl:stylesheet>

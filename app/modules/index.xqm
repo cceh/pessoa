@@ -175,7 +175,7 @@ declare function index:getPersonIndex($node as node(), $model as map(*)) {
                         let $id := $person/attribute()/data(.)
                         let $id := if(contains($id,"#")) then substring-after($id,"#") else $id
                             for $pers in $person/tei:persName
-                                let $type := if(exists($pers/@type)) then $pers/@type else "none"
+                                let $type := if(exists($pers/@style)) then $pers/@style else "none"
                                 let $name := $pers/data(.)
                                 order by $name collation '?lang=pt'
                                 return <item id="{$id}" letter="{translate(substring($name,1,1),'Á','A')}" name="{$name}">

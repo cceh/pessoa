@@ -624,8 +624,7 @@
     </xsl:template>
     
     
-    <!-- einzublendende Pfeile -->
-    <!-- neu: -->
+    <!-- arrows: -->
     
     <xsl:template match="metamark[@rend='arrow-right']" mode="#default deletion addition">
         <span class="arrow-right">→</span>
@@ -691,6 +690,10 @@
         <span class="anchor-arrow-right-curved-down">↘</span>
     </xsl:template>
     
+    <!-- transpositions: -->
+    <xsl:template match="metamark[@function='transposition']">
+        <span class="transposition {@place}">⟷</span>
+    </xsl:template>
     
     
     <xsl:template match="anchor[. = ''][@xml:id]" mode="#default deletion addition">

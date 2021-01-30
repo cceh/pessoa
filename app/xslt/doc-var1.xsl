@@ -83,6 +83,8 @@
     <!-- metamarks -->
     <xsl:template match="metamark[@n = '2']" mode="#default deletion addition"/>
     
+    
+    
     <!-- do not display anchors of arrows added in the 2nd version: -->
     <xsl:template match="anchor[@xml:id=preceding::metamark[@rend='arrow-down'][@n='2']/@target/substring-after(.,'#') or @xml:id=following::metamark[@rend='arrow-down'][@n='2']/@target/substring-after(.,'#')]" mode="#default deletion addition" priority="1"/>
         
