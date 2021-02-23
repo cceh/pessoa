@@ -6,7 +6,7 @@
 
     <!-- @author: Ulrike Henny-Krahmer
     Created on 12 December 2020. 
-    Last updated 13 December 2020. -->
+    Last updated 18 February 2021. -->
 
 
     <xsl:variable name="docs" select="collection('../../data/doc')//TEI"/>
@@ -50,7 +50,8 @@
                     type: 'bar',
                     name: 'listas editoriais (desde - até)',
                     width: 0.4,
-                    offset: -0.4
+                    offset: -0.4,
+                    marker: { line: { color: 'grey', width: 1}}
                     };
                     
                     var trace2 = {
@@ -90,7 +91,7 @@
                         <xsl:if test="position()!=last()">,</xsl:if>
                     </xsl:for-each>],
                     type: 'line',
-                    line: {shape: 'spline'},
+                    line: {shape: 'spline', dash: 'dashdot'},
                     name: 'listas editoriais (tendência)'
                     };
                     
@@ -105,7 +106,7 @@
                         <xsl:if test="position()!=last()">,</xsl:if>
                     </xsl:for-each>],
                     type: 'bar',
-                    name: 'publiçaões',
+                    name: 'publicações',
                     width: 0.4,
                     offset: 0
                     };
@@ -122,12 +123,12 @@
                     </xsl:for-each>],
                     type: 'line',
                     line: {shape: 'spline'},
-                    name: 'publiçaões (tendência)'
+                    name: 'publicações (tendência)'
                     };
                     
                     var data = [trace1, trace2, trace3, trace4, trace5];
                     var layout = {
-                    colorway: ['rgb(153, 204, 255)','rgb(31, 119, 180)','rgb(44, 160, 44)','rgb(255, 127, 14)','rgb(214, 39, 40)']
+                    colorway: ['white','grey','grey','black','black']
                     }
                     
                     Plotly.newPlot('myDiv', data, layout);
