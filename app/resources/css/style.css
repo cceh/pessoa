@@ -1312,6 +1312,55 @@ div.text {
     padding-left: 4em;
     padding-right: 1em;
 }
+/* tooltips for links */
+div#text-div .text .quote.tooltip {
+    display: block;
+}
+div#text-div .text .rs.tooltip, div#text-div .text .seg.tooltip {
+    display: inline-block;
+}
+div#text-div .text .links {
+    color: #990000;
+    cursor: pointer;
+}
+div#text-div .text .tooltip {
+    position: relative;
+    display: inline-block;
+    color: #990000;
+    opacity: 1;
+    text-indent: 0;
+    font-size: inherit;
+    cursor: pointer;
+    font-family: inherit;
+}
+div#text-div .text .tooltiptext {
+    visibility: hidden;
+    width: auto;
+    background-color: #990000;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    font-size: small;
+    font-family: inherit;
+    min-width: 100px;
+    text-indent: 0;
+}
+div#text-div .text .tooltiptext a.link {
+    color: #FFFFFF !important;
+}
+div#text-div .text .links .tooltiptext {
+    text-align: left;
+    white-space: nowrap;
+}
+div#text-div .text .tooltip:hover .tooltiptext, 
+div#text-div .text .links:hover .tooltiptext {
+    visibility: visible;
+}
+
+
 div.text div.delSpan {
     background-image: url("../images/delSpan.svg");
     background-repeat: no-repeat;
@@ -2888,6 +2937,9 @@ div.text#BNP_E3_48-2r span.metamark.line.ditto hr.line.inline {
     width: 3em;
     margin-left: 1em;
     margin-right: 1em;
+}
+div.text#BNP_E3_49A-34v hr.line.distinct:nth-child(4) {
+    width: 1em;
 }
 
 /* ABOUT PAGE */

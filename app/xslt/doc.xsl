@@ -27,7 +27,7 @@
             <xsl:apply-templates/>
         </div>
     </xsl:template>
-    <xsl:template match="ref[@target]" mode="#default deletion addition">
+    <xsl:template match="ref[@target[not(contains(.,' '))]]" mode="#default deletion addition">
         <a class="link">
             <xsl:attribute name="href">
                 <xsl:choose>
@@ -40,6 +40,19 @@
             <xsl:apply-templates/>
         </a>
     </xsl:template>
+    <!-- links with several destinations -->
+    <xsl:template match="ref[@target[contains(.,' ')]]" mode="#default deletion addition">
+        <span class="links">
+            <xsl:apply-templates/>
+            <span class="tooltiptext">
+                <xsl:for-each select="tokenize(normalize-space(@target),'\s')">
+                    <a class="link" href="{.}"><xsl:value-of select="."/></a>
+                    <xsl:if test="position() != last()"><br/></xsl:if>
+                </xsl:for-each>
+            </span>
+        </span>
+    </xsl:template>
+    
     <xsl:template match="supplied" mode="#default deletion addition"/>
 
     <!-- Structure of the text -->

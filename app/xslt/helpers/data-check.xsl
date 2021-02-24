@@ -4,11 +4,11 @@
     exclude-result-prefixes="xs" xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     version="2.0">
     
-    <xsl:variable name="lists" select="doc('../data/lists.xml')"/>
+    <xsl:variable name="lists" select="doc('../../data/lists.xml')"/>
     
     <xsl:template match="/">
         <pubs>
-            <xsl:for-each select="collection('../data/pub')//TEI">
+            <xsl:for-each select="collection('../../data/pub')//TEI">
                 <pub file="{.//idno[@type='filename']}">
                 <xsl:for-each select=".//rs[@type='name']">
                     <xsl:variable name="key" select="@key"/>
@@ -16,7 +16,7 @@
                     <xsl:variable name="lists-name">
                         <xsl:choose>
                             <xsl:when test="@key=('FP','AC','AdC','RR','BS')">
-                                <xsl:value-of select="$lists//person[substring-after(@corresp,'#')=$key]/normalize-space(.)"/>
+                                <xsl:value-of select="$lists//person[substring-after(@corresp,'#')=$key]/persName/normalize-space(.)"/>
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:value-of select="$lists//person[@xml:id=$key]/persName/normalize-space(.)"/>

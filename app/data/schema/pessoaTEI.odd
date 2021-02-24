@@ -1830,6 +1830,57 @@
                             is transcribed.</p>
                     </div>
                 </div>
+                <div xml:id="links">
+                    <head>Encoding of links</head>
+                    <p>Besides references to different kinds of defined entities (such as persons,
+                        journals, etc.) also general links can be added to the transcriptions of
+                        documents and publications. Such links can serve to interconnect different
+                        parts of the edition, without the necessity to explicitly define the kind of
+                        relationship between the source and the target(s) of the link. They can also
+                        be used to point to external resources. That way, the links are a means of
+                        interpretation and comment on the transcriptions made by the editors.</p>
+                    <p>Examples of the encoding of links are given below, taken from the editorial
+                        list BNP/E3 144X-48v:</p>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples"><item>
+                            <label>7.</label>
+                            <ref
+                                target="http://www.pessoadigital.pt/pt/pub/Pessoa_Para_A_Memoria_de_Antonio_Nobre"
+                                >Artigo em <rs type="periodical" key="J46"><hi rend="underline">A
+                                        Galera</hi></rs></ref>, <rs type="place">Coimbra</rs> (<rs
+                                type="name" key="P53">Antonio Nobre</rs>).</item></egXML>
+                    <p>In the seventh item of the list, an article to be published in the journal "A
+                        Galera" is mentioned. The mention of this article is linked to the text
+                        "Para a memoria de Antonio Nobre", which Pessoa published in "A Galera" in
+                        1915, and which is also part of the digital edition. That way, the link
+                        implies that the published text is a realization of the planned article that
+                        was mentioned in the editorial list. A link is encoded using the element
+                            <gi>ref</gi>, which surrounds the text that carries the link and the
+                        attribute <att>target</att> on the <gi>ref</gi> element, which contains the
+                        target of the link in the form of a URI. In the above example the link has
+                        only one target, but it is also possible that several targets are defined at
+                        the same time, as the following example shows:</p>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <item>
+                            <label>6.</label>
+                            <ref
+                                target="http://www.pessoadigital.pt/pt/pub/Pessoa_Cronica_da_vida_que_passa_Das_Fei%C3%A7oes 
+                                http://www.pessoadigital.pt/pt/pub/Pessoa_Cronica_da_vida_que_passa_Na_Russia
+                                http://www.pessoadigital.pt/pt/pub/Pessoa_Cronica_da_vida_que_passa_Nisto_De
+                                http://www.pessoadigital.pt/pt/pub/Pessoa_Cronica_da_vida_que_passa_Proletariado
+                                http://www.pessoadigital.pt/pt/pub/Pessoa_Cronica_da_vida_que_passa_Recentemente
+                                http://www.pessoadigital.pt/pt/pub/Pessoa_Cronica_da_vida_que_passa_Sempre_Que
+                                http://www.pessoadigital.pt/pt/pub/Pessoa_Cronica_literaria_Orfeu
+                                http://www.pessoadigital.pt/pt/pub/Pessoa_O_Varre_Canelhas"
+                                >Artigos em <rs type="periodical" key="J45"><hi rend="underline">O
+                                        Jornal</hi></rs></ref>. Abril 1915.</item>
+                    </egXML>
+                    <p>Here, the sixth item of the editorial list mentions articles ("artigos") to
+                        be published in "O Jornal". The link surrounding this mention has several
+                        targets that correspond to various articles published in the journal in
+                        question, which are included in the digital edition. Several targets are
+                        given as several URIs in the <att>target</att> attribute, separated by a
+                        space.</p>
+                </div>
             </div>
         </body>
         <back>
