@@ -263,37 +263,6 @@ else if($exist:permission) then (
                         <forward url="{$exist:controller}/modules/view.xql"/>
                     </error-handler>
                 </dispatch>)
-        (: document, customized version :)
-        else if (contains($exist:path,"customized-version") ) then
-            let $lb := request:get-parameter("lb", "yes")
-            let $abbr := request:get-parameter("abbr", "yes")
-            let $version := request:get-parameter("version","diplomatic")
-            let $id := substring-before(substring-after($exist:path,"doc/"),"/")
-            return 
-                if(request:get-parameter("case",'') eq "div") then
-                    doc:get-text-pessoal(<node />, map {"test" := "test"}, $id, $lb, $abbr, $version)
-                    else (
-                    session:set-attribute("id", $id),
-                    session:set-attribute("type", $exist:resource),
-                    session:set-attribute("lb", $lb),
-                    session:set-attribute("abbr", $abbr),
-                    session:set-attribute("version", $version),
-                    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-                        <forward url="{$exist:controller}/page/doc.html">
-                            <add-parameter name="id" value="{$id}" />
-                            <add-parameter name="type" value="{$exist:resource}" />
-                            <add-parameter name="lb" value="{$lb}" />
-                            <add-parameter name="abbr" value="{$abbr}" />
-                            <add-parameter name="version" value="{$version}" />
-                        </forward>
-                        <view>
-                            <forward url="{$exist:controller}/modules/view.xql"/>
-                        </view>
-                        <error-handler>
-                            <forward url="{$exist:controller}/error-page.html" method="get"/>
-                            <forward url="{$exist:controller}/modules/view.xql"/>
-                        </error-handler>
-                    </dispatch>)
         (: document, default: diplomatic transcription :)
         else
             (session:set-attribute("id", $exist:resource),

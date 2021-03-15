@@ -33,7 +33,7 @@ declare function doc:get-indexes($node as node(), $model as map(*), $id as xs:st
 };
 
 declare function doc:createLink($node as node(), $model as map(*),$id as xs:string, $type as xs:string) {
-    let $types := ("diplomatic-transcription","first-version","last-version","customized-version")
+    let $types := ("diplomatic-transcription","first-version","last-version")
     let $links := for $typ in $types 
                             return 
                            if($typ eq $type) then <li class="selected tabs"><span>{helpers:singleElementInList_xQuery("tabs",$typ)}</span></li>
@@ -42,25 +42,12 @@ declare function doc:createLink($node as node(), $model as map(*),$id as xs:stri
                             
 };
 
-declare function doc:catch-text($node as node(), $model as map(*),$id as xs:string, $type as xs:string,$lb as xs:string?, $abbr as xs:string?, $version as xs:string?) as item()+ {
+declare function doc:catch-text($node as node(), $model as map(*),$id as xs:string, $type as xs:string) as item()+ {
         let $xml := doc:get-xml($id)
         return switch($type) 
                 case "diplomatic-transcription" return doc:get-text($xml)
                 case "first-version" return doc:get-text-var1($xml)
                 case "last-version" return doc:get-text-var2($xml)
-                case "customized-version" return (<form method="get">
-                                <div id="DivPessoal-1" class="DivPessoal">
-                                    <input id ="lb" name="lb" type="checkbox" checked="checked" value="yes" onchange="versaoPessoal();"></input> <label for="lb">{helpers:singleElementInList_xQuery("personal-version","pv-line-breaks")}</label><br/>
-                                    <input id="abbr" name="abbr" type="checkbox" checked="checked" value="yes" onchange="versaoPessoal();"></input> <label for="abbr">{helpers:singleElementInList_xQuery("personal-version","pv-abbreviations")}</label><br/>
-                                </div>
-                                <div id="DivPessoal-2" class="DivPessoal">
-                                    <input id ="diplomatic" name="version" type="radio" checked="checked" value="yes" onchange="versaoPessoal();"></input> <label for="diplomatic">{helpers:singleElementInList_xQuery("personal-version","pv-diplomatic-version")}</label><br/>
-                                    <input id ="first" name="version" type="radio" value="yes" onchange="versaoPessoal();"></input> <label for="first">{helpers:singleElementInList_xQuery("personal-version","pv-first-version")}</label><br/>
-                                    <input id ="last" name="version" type="radio" value="yes" onchange="versaoPessoal();"></input> <label for="last">{helpers:singleElementInList_xQuery("personal-version","pv-last-version")}</label><br/>
-                                </div>
-                            </form>,
-                            <div class="clear"/>,                            
-                            <div id="DottedLine"></div>,<div id="versao-pessoal">{doc:get-text-pessoal(<node />, map {"test" := "test"}, $id, $lb, $abbr, $version)}</div>)
                 default return doc:get-text($xml)
 };
 
@@ -85,28 +72,7 @@ declare function doc:get-text-var2($xml) as item()+{
     return transform:transform($xml, $stylesheet, ())
 };
 
-declare function doc:get-text-pessoal($node as node(),$model as map(*),$id as xs:string, $lb as xs:string, $abbr as xs:string, $version as xs:string) as item()+{
-        let $xml := doc:get-xml($id)
 
-    let $stylesheet := 
-    if($version ="first") then doc("/db/apps/pessoa/xslt/doc-var1.xsl")
-    else if($version ="last") then
-       doc("/db/apps/pessoa/xslt/doc-var2.xsl")
-    else doc("/db/apps/pessoa/xslt/doc-pessoal.xsl")
-    let $text := 
-    if($lb="yes") then
-        if($abbr ="yes") then
-             transform:transform($xml, $stylesheet, (<parameters><param name="lb" value="yes"/><param name="abbr" value="no"/></parameters>))
-        else
-            transform:transform($xml, $stylesheet, (<parameters><param name="lb" value="yes"/><param name="abbr" value="yes"/></parameters>))
-           
-    else
-        if($abbr="yes") then
-            transform:transform($xml, $stylesheet, (<parameters><param name="lb" value="no"/><param name="abbr" value="yes"/></parameters>))
-        else
-            transform:transform($xml, $stylesheet, (<parameters><param name="lb" value="no"/><param name="abbr" value="no"/></parameters>))
-            return $text
-};
 
 
 declare function doc:get-image($node as node(), $model as map(*), $id as xs:string) as item()+{
@@ -255,57 +221,7 @@ declare function doc:get-genre_type($node as node(), $model as map(*),$type as x
     <h1>{ helpers:singleElementInList_xQuery("genres",$type)}</h1>
 };
 
-declare function doc:get-versaoPessoal($node as node(), $model as map(*), $id as xs:string) as node() {
-let $script := <script type="text/javascript">
 
-        function versaoPessoal(){{
-            var url = window.location.href;
-            var i = url.lastIndexOf("/");
-            var j = url.lastIndexOf("#");
-            var id = url.substring(i+1,j);
-            var toLoad = "{$helpers:app-root}/{$helpers:web-language}/doc/{$id}/customized-version?case=div";
-            if ($("#lb").is(":checked"))
-            {{
-               toLoad = toLoad.concat("&amp;lb=yes");
-            }}
-            else
-            {{
-            toLoad = toLoad.concat("&amp;lb=no");
-            }}
-            if ($("#abbr").is(":checked"))
-            {{
-               toLoad = toLoad.concat("&amp;abbr=yes");
-            }}
-            else
-            {{
-                toLoad = toLoad.concat("&amp;abbr=no");
-            }}
-            
-            if ($("#diplomatic").is(":checked"))
-            {{
-               toLoad = toLoad.concat("&amp;version=diplomatic");
-            }}
-            if ($("#first").is(":checked"))
-            {{
-               toLoad = toLoad.concat("&amp;version=first");
-            }}
-          
-            if ($("#last").is(":checked"))
-            {{
-               toLoad = toLoad.concat("&amp;version=last");
-            }}
-             $("#versao-pessoal").load(toLoad);
-             
-             
-             
-           
-        }}
-
-    </script>
-   
-        
-    return $script
-};
 declare function doc:notaButton($node as node(), $model as map(*)) {
     <script>
         DocHide("{helpers:singleElementInList_xQuery("buttons","note")}")
