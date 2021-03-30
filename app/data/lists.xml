@@ -2036,6 +2036,12 @@
                     <item xml:id="T328">
                         <title>“Portugal, Vasto Imperio”</title>
                     </item>
+                    <item xml:id="T329">
+                        <title>Luiz de Montalvôr</title>
+                    </item>
+                    <item xml:id="T330">
+                        <title>Toda a arte é uma forma de literatura...</title>
+                    </item>
                 </list>
                 <list type="collections">
                     <item xml:id="C1">
@@ -3256,6 +3262,14 @@
                         <ptr type="author" target="#FP"/>
                         <ptr type="title" target="#T328"/>
                     </item>
+                    <item xml:id="W290">
+                        <ptr type="author" target="#FP"/>
+                        <ptr type="title" target="#T329"/>
+                    </item>
+                    <item xml:id="W291">
+                        <ptr type="author" target="#FP"/>
+                        <ptr type="title" target="#T330"/>
+                    </item>
                 </list>
                 <!-- ####################### JOURNALS ############################ -->
                 <list type="periodical">
@@ -3304,7 +3318,7 @@
                     <item xml:id="J44">Nouvelles Littéraires</item>
                     <item xml:id="J45">O Jornal</item>
                     <item xml:id="J46">A Galera</item>
-                    <item xml:id="J47">Imparcial</item>
+                    <item xml:id="J47">O Imparcial</item>
                     <item xml:id="J48">The Durban High School Magazine</item>
                     <item xml:id="J49">The Natal Mercury</item>
                     <item xml:id="J50">Terra de Sol</item>
@@ -3349,6 +3363,7 @@
                     <item xml:id="J93">O Mutilado da Guerra: Orgão da “Liga Portugueza dos Mutilados e Invalidos da Guerra”</item>
                     <item xml:id="J94">Diário de Notícias</item>
                     <item xml:id="J95">Diário Nacional</item>
+                    <item xml:id="J96">Catálogo do I Salão dos Independientes</item><!-- Ju This is not a Journal...We will have to find the place -->
                 </list>
                 <!-- ####################### PERSONS ############################ -->
                 <listPerson type="all">
@@ -3786,8 +3801,10 @@
                         <sex>male</sex>
                     </person>
                     <person xml:id="P70">
-                        <persName>Luiz de Montalvor</persName>
+                        <persName style="a">Luiz de Montalvor</persName>
                         <persName type="main">Luís de Montalvor</persName>
+                        <persName style="b">Luiz de Montalvôr</persName>
+                        <persName style="c">Luiz da Silva Ramos</persName>
                         <idno type="viaf">75819211</idno>
                         <note type="ontological-status">real</note>
                         <sex>male</sex>
@@ -6672,6 +6689,18 @@
                         <note type="ontological-status">real</note>
                         <sex>male</sex>
                     </person>
+                    <person xml:id="P606">
+                        <persName style="a" type="main">António Sardinha</persName>
+                        <persName style="b">Antonio Sardinha</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                    <person xml:id="P607">
+                        <persName type="main">Olivieria Martins</persName>
+                        <note type="ontological-status">real</note>
+                        <sex>male</sex>
+                    </person>
+                  
                 </listPerson>
             </div>
         </body>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Toda a arte é uma forma de literatura...</title>
+                <author>
+                    <rs type="name" key="AdC">Álvaro de Campos</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="free">
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Campos_Toda_a_arte.xml</idno>
+            </publicationStmt>
+            <notesStmt>
+                <note type="genre">
+                    <rs type="genre" key="prosa">Prosa</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="W291">Toda a arte é uma forma de literatura...</rs></item>
+                </list>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Toda a arte é uma forma de literatura...</title>
+                        <author>
+                            <rs type="name" key="AdC">Álvaro de Campos</rs>
+                        </author>
+                        <textLang mainLang="pt" otherLangs="en"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J96">Catálogo do I Salão dos Independentes</rs></title>
+                        <imprint>
+                            <date when="1930-05">Maio de 1930</date>
+                        </imprint>
+                        <biblScope unit="page">22</biblScope>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
+    </teiHeader>
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+        <graphic url="prosa/Ambiente.jpg"/>
+    </facsimile>
+    <text corresp="#W291">
+        <body>
+            <div>
+                <p rend="indent-first">Toda a arte é uma forma de literatura, porque tôda a arte é dizer qualquer cousa. Ha duas fórmas de dizer – fallar 
+                    e estar calado. As artes que não são a literatura são as projecções de um silêncio expressivo. Há que procurar em tôda a arte que não 
+                    é a literatura a phrase silenciosa que ella contém, ou o poema, ou o romance, ou o drama. Quando se diz «poema sinphónico», fala-se, 
+                    exactamente, e não de um modo translato e fácil.</p>
+                <p rend="indent-first">O caso parece menos simples para as artes visuais, mas, se nos separarmos com a consideração de que linhas, planos, volumes, 
+                    côres juxtaposições e contraposições, são phenomenos verbais dados sem palavras, ou antes por hieroglyphos espirituais, comprehenderemos 
+                    como comprehender as artes visuais, e, ainda que as não cheguemos a comprehender ainda, teremos, ao menos, já em nosso poder o livro que 
+                    contém a cifra e a alma que póde conter a decifração.</p>
+                <p rend="indent-first">Tanto basta até chegar o resto.</p>
+                <signed>ALVARO DE CAMPOS</signed>
+            </div>
+        </body>
+    </text>
+</TEI>
