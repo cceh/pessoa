@@ -26,7 +26,7 @@
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
-                <availability status="restricted">
+                <availability status="free">
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_Cronica_dos_livros.xml</idno>
@@ -70,9 +70,15 @@
         <body>
             <div>
                 <head>Crónica DOS LIVROS — O inquerito literario</head>
-                <bibl rend="right indent-1"><hi rend="bold"><hi rend="italic"><rs type="title">O
-                                INQUERITO LITERARIO</rs>,</hi> - Por <rs type="name" key="P49"
-                            >Boavida Portugal</rs> Lisboa Literaria classica Editora.</hi></bibl>
+                <!-- UH: the second part of the heading "O inquerito literario" 
+                is not part of the original document. Can this be deleted here or is this 
+                added on purpose? -->
+                <bibl rend="right indent-first"><hi rend="bold"><hi rend="italic"><rs type="title">O
+                                INQUERITO LITERARIO</rs></hi> — Por <rs type="name" key="P49"
+                            >Boavida Portugal</rs> — Lisboa literaria classica Editora.</hi></bibl>
+                <!-- UH: you could add rend="indent-first" to those paragraphs, so that it 
+                corresponds to the identation visible in the facsimile. I think you 
+                added that in similar cases in other prose texts -->
                 <p>O livro de Boavida Portugal compila os <ref
                         target="http://www.pessoadigital.pt/pt/pub/Pessoa_Uma_Replica_Ao_Adolfo"
                         >artigos</ref> de resposta e discussão que apareceram no decurso do
