@@ -26,7 +26,7 @@
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
-                <availability status="restricted">
+                <availability status="free">
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Campos_O_Nosso.xml</idno>
@@ -77,8 +77,8 @@
         <body>
             <div>
                 <head><handShift new="#H_Ferreira_Gomes"/>O NOSSO INQUERITO</head>
-                <p rend="indent-first"><hi rend="italic">Exmo Sr. <rs type="name" key="AdC">Alvaro
-                            de Campos</rs></hi>:</p>
+                <p rend="right"><hi rend="italic">Exmo Sr. <rs type="name" key="AdC">Alvaro de
+                            Campos</rs></hi>:</p>
                 <p rend="indent-first">Recebi hoje inesperadamente, a resposta ao inquerito de <rs
                         type="periodical" key="J62"><hi rend="italic">A Informação</hi></rs>.</p>
                 <p rend="indent-first">Li-as com atenção. Tomei nota. Vou publica-las por este
@@ -90,9 +90,12 @@
                     obrigado a não conhecer mais, pessoalmente, a pessoa de V. Ex.a.</p>
                 <p rend="indent-first">Como o que me interessa são as suas personalidades lerei com
                     atenção os seus futuros livros ou poemas e isso ma bastará.</p>
-                <!--  <salute>De V. Exa.</salute> 
-                                <signed><rs type="name" key="P109">Augusto Ferreira Gomes</rs></signed>-->
-                <p rend="indent-first">Caro sr. <rs type="name" key="P109">Ferreira Gomes</rs>:</p>
+                <salute rend="right"><hi rend="italic">De V. Exa.</hi></salute>
+                <signed rend="right"><rs type="name" key="P109"><hi rend="italic">Augusto Ferreira
+                            Gomes</hi></rs></signed>
+            </div>
+            <div>
+                <p rend="right">Caro sr. <rs type="name" key="P109">Ferreira Gomes</rs>:</p>
                 <p rend="indent-first">Respondo, numerando, ás seis preguntas do inquerito que não
                     creio que seja seu.</p>
                 <p rend="indent-first">Elas são:</p>
@@ -167,9 +170,11 @@
                     penetra a rotação dos seres, quero ao menos ser uma consciencia audivel dela, um
                     brilho momentaneo no choque nocturno das coisas... O resto é delirio e
                     podridão.</p>
-                <salute>Creia-me cordealmente seu,</salute>
-                <signed><rs type="name" key="AdC">Alvaro de Campos</rs>.<lb/> Engenheiro naval e
-                    poeta do «<rs type="periodical" key="J12">Orpheu</rs>»</signed>
+                <salute rend="indent">Creia-me cordealmente seu,</salute>
+                <!-- UH: please add @role to the reference of Campos: -->
+                <signed rend="center"><rs type="name" key="AdC"><hi rend="italic">Alvaro de
+                            Campos</hi></rs>.<lb/> Engenheiro naval e poeta do «<rs
+                        type="periodical" key="J12">Orpheu</rs>»</signed>
 
             </div>
         </body>

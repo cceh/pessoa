@@ -65,20 +65,10 @@
                 </xsl:choose></h2>
                 <ul>
                     <xsl:for-each-group select=".//rs[@type='name']" group-by="@key">
-                        <xsl:sort select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//listPerson/person[@xml:id=current-grouping-key()]/persName[1]"/>
+                        <xsl:sort select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//listPerson/person[@xml:id=current-grouping-key()]/persName[@type='main']"/>
                         <xsl:variable name="key" select="current-grouping-key()"/>
-                        <xsl:choose>
-                            <xsl:when test="@style">
-                                <xsl:for-each-group select="current-group()" group-by="@style">
-                                    <xsl:variable name="name" select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//listPerson/person[@xml:id=$key or substring-after(@corresp,'#')=$key]/persName[@type=current-grouping-key()]"/>
-                                    <li onmouseenter="highlight('person {$key}');" onmouseleave="clearH('{$key}');"><xsl:value-of select="$name"/> <a href="../../index/names#{$key}" title="{$title}"><img class="indexImg" src="{string-join(($host,'resources/images/glyphicons-35-old-man.png'),'/')}"/></a></li>
-                                </xsl:for-each-group>
-                            </xsl:when>
-                            <xsl:otherwise>
-                                <xsl:variable name="name" select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//listPerson/person[@xml:id=$key]/persName"/>
-                                <li onmouseenter="highlight('person {$key}');" onmouseleave="clearH('{$key}');"><xsl:value-of select="$name"/> <a href="../../index/names#{$key}" title="{$title}"><img class="indexImg" src="{string-join(($host,'resources/images/glyphicons-35-old-man.png'),'/')}"/></a></li>
-                            </xsl:otherwise>
-                        </xsl:choose>
+                        <xsl:variable name="name" select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//listPerson/person[@xml:id=$key]/persName[@type='main']"/>
+                        <li onmouseenter="highlight('person {$key}');" onmouseleave="clearH('{$key}');"><xsl:value-of select="$name"/> <a href="../../index/names#{$key}" title="{$title}"><img class="indexImg" src="{string-join(($host,'resources/images/glyphicons-35-old-man.png'),'/')}"/></a></li>
                     </xsl:for-each-group>
                 </ul>
             </xsl:if>
