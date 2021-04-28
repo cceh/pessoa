@@ -171,44 +171,44 @@ declare function index:getPersonIndex($node as node(), $model as map(*)) {
     let $lists := doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson[@type = 'all']
     let $docs:= collection("/db/apps/pessoa/data/doc/")
     let $pubs:= collection("/db/apps/pessoa/data/pub/")
-    let $person := for $person in $lists/tei:person
+    let $persons := for $person in $lists/tei:person
                         let $id := $person/attribute()/data(.)
                         let $id := if(contains($id,"#")) then substring-after($id,"#") else $id
-                            for $pers in $person/tei:persName
-                                let $type := if(exists($pers/@style)) then $pers/@style else "none"
-                                let $name := $pers/data(.)
-                                order by $name collation '?lang=pt'
-                                return <item id="{$id}" letter="{translate(substring($name,1,1),'Á','A')}" name="{$name}">
-                                            {
-                                            let $name-a := if($type != "none") then ("type","person","style") else ("type","person")
-                                            let $case-a := if($type != "none") then ("eq","eq","eq") else ("eq","eq")
-                                            let $content-a := if($type != "none") then ("name",$id,$type) else ("name",$id)
-                                            let $a :=
-                                                for $item in search:Search-MultiStats($docs,$name-a,$case-a,$content-a)
-                                                let $title := $item//tei:titleStmt/tei:title[1]/data(.)
-                                                let $link := substring-before($item//tei:idno[@type="filename"]/data(.),".xml")
-                                                return <item title="{$title}" link="doc/{$link}" published="{$item//tei:availability/@status/data(.)}"/>
-                                            let $name-b := ("role","person")
-                                            let $case-b := ("eq","eq")
-                                            let $content-b := ("name",$id)
-                                            let $b :=
-                                                for $item in search:Search-MultiStats($pubs,$name-b,$case-b,$content-b)
-                                                let $title := $item//tei:titleStmt/tei:title[1]/data(.)
-                                                let $link := substring-before($item//tei:idno[@type="filename"]/data(.),".xml")
-                                                return <item title="{$title}" link="pub/{$link}" published="{$item//tei:availability/@status/data(.)}"/>
-                                            let $name-c := if($type != "none") then ("type","person_b","style") else ("type","person_b")
-                                            let $c :=
-                                                for $item in search:Search-MultiStats($pubs,$name-c,$case-a,$content-a)
-                                                let $title := $item//tei:titleStmt/tei:title[1]/data(.)
-                                                let $link := substring-before($item//tei:idno[@type="filename"]/data(.),".xml")
-                                                return <item title="{$title}" link="pub/{$link}" published="{$item//tei:availability/@status/data(.)}"/>
-                                            return for $se in ($a,$b,$c) order by $se/@title/data(.) collation '?lang=pt' return $se
-                                            }
-                                        </item>
-    let $letters := for $let in $person return $let/@letter/data(.)
+                        let $name := $person/tei:persName[@type="main"]
+                        let $viaf := $person/tei:idno[@type="viaf"][1]
+                        order by $name collation '?lang=pt'
+                        return <item id="{$id}" letter="{translate(substring($name,1,1),'ÁÂ','AA')}" name="{$name}">
+                                    {
+                                    (: get documents for the person; here only cases are retrieved, where person names
+                                    are mentioned in the text of the documents :)
+                                    let $name-a := ("type","person")
+                                    let $case-a := ("eq","eq")
+                                    let $content-a := ("name",$id)
+                                    let $a :=
+                                        for $item in search:Search-MultiStats($docs,$name-a,$case-a,$content-a)
+                                        let $title := $item//tei:titleStmt/tei:title[1]/data(.)
+                                        let $link := substring-before($item//tei:idno[@type="filename"]/data(.),".xml")
+                                        return <item title="{$title}" link="doc/{$link}" published="{$item//tei:availability/@status/data(.)}" viaf="{$viaf}"/>
+                                    (: get publications for the person; here the names can be of the authors of the publication
+                                    or they can be mentioned inside of the text of the publications :)
+                                    let $name-b := ("rs_type","rs_key")
+                                    let $case-b := ("eq","eq")
+                                    let $content-b := ("name",$id)
+                                    let $b :=
+                                        for $item in search:Search-MultiStats($pubs,$name-b,$case-b,$content-b)
+                                        let $title := $item//tei:titleStmt/tei:title[1]/data(.)
+                                        let $link := substring-before($item//tei:idno[@type="filename"]/data(.),".xml")
+                                        return <item title="{$title}" link="pub/{$link}" published="{$item//tei:availability/@status/data(.)}" viaf="{$viaf}"/>
+                                    return
+                                        for $se in $a union $b
+                                        order by $se/@title/data(.) collation '?lang=pt'
+                                        return $se
+                                    }
+                                </item>
+    let $letters := for $let in $persons return $let/@letter/data(.)
     let $letters := distinct-values($letters)
     return map {
-        "persons" := $person,
+        "persons" := $persons,
         "letters" := $letters
     }
 };
