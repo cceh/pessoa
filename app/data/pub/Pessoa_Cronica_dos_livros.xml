@@ -4,7 +4,7 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Crónica dos livros — O inquerito literario</title>
+                <title>Crónica dos livros</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
                 </author>
@@ -26,7 +26,7 @@
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
-                <availability status="free">
+                <availability status="restricted">
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_Cronica_dos_livros.xml</idno>
@@ -38,12 +38,11 @@
             </notesStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="W280">Crónica dos livros — O inquerito
-                        literario</rs></item>
+                    <item><rs type="work" key="W280">Crónica dos livros</rs></item>
                 </list>
                 <biblStruct>
                     <analytic>
-                        <title level="a">Crónica dos livros — O inquerito literario</title>
+                        <title level="a">Crónica dos livros</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
                         </author>
@@ -69,17 +68,11 @@
     <text corresp="#W280">
         <body>
             <div>
-                <head><hi rend="underline">Crónica DOS LIVROS</hi> — O INQUERITO LITERARIO</head>
-                <!-- UH: the second part of the heading "O inquerito literario" 
-                is not part of the original document. Can this be deleted here or is this 
-                added on purpose? -->
-                <bibl rend="right indent-first"><hi rend="bold"><hi rend="italic"><rs type="title">O
-                                INQUERITO LITERARIO</rs></hi> — Por <rs type="name" key="P49"
-                            >Boavida Portugal</rs> — Lisboa literaria classica Editora.</hi></bibl>
-                <!-- UH: you could add rend="indent-first" to those paragraphs, so that it 
-                corresponds to the identation visible in the facsimile. I think you 
-                added that in similar cases in other prose texts -->
-                <p>O livro de Boavida Portugal compila os <ref
+                <head><hi rend="underline">Crónica DOS LIVROS</hi></head>
+                <p rend="indent-first"><bibl rend="right indent-first"><hi rend="bold"><hi rend="italic"><rs type="title">O
+                    INQUERITO LITERARIO</rs></hi> Por <rs type="name" key="P49"
+                    >Boavida Portugal</rs> — Lisboa literaria classica Editora.</hi></bibl></p>
+                <p rend="indent-first">O livro de Boavida Portugal compila os <ref
                         target="http://www.pessoadigital.pt/pt/pub/Pessoa_Uma_Replica_Ao_Adolfo"
                         >artigos</ref> de resposta e discussão que apareceram no decurso do
                     Inquerito Literario por ele realisado no jornal <rs type="periodical" key="J20"

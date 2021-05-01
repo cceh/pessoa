@@ -4,7 +4,7 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Inquérito á vida literária — Uma Réplica ao snr. dr. Adolfo Coelho</title>
+                <title>Uma Réplica ao snr. dr. Adolfo Coelho</title>
                 <author>
                     <rs type="name" key="FP">Fernando Pessoa</rs>
                 </author>
@@ -29,7 +29,7 @@
                 <availability status="free">
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
-                <idno type="filename">Pessoa_Inquerito_A_Vida.xml</idno>
+                <idno type="filename">Pessoa_Uma_replica.xml</idno>
             </publicationStmt>
             <notesStmt>
                 <note type="genre">
@@ -38,12 +38,12 @@
             </notesStmt>
             <sourceDesc>
                 <list type="work-index">
-                    <item><rs type="work" key="W285">Inquérito á vida literária — Uma Réplica ao snr.
+                    <item><rs type="work" key="W285">Uma Réplica ao snr.
                             dr. Adolfo Coelho</rs></item>
                 </list>
                 <biblStruct>
                     <analytic>
-                        <title level="a">Inquérito á vida literária — Uma Réplica ao snr. dr. Adolfo
+                        <title level="a">Uma Réplica ao snr. dr. Adolfo
                             Coelho</title>
                         <author>
                             <rs type="name" key="FP">Fernando Pessoa</rs>
@@ -78,27 +78,26 @@
     <text corresp="#W285">
         <body>
             <div>
-                <head><handShift new="#H_Republica"/>Inquérito á vida literária</head>
-                <head type="sub">UMA RÉPLICA AO <choice>
+                <head><handShift new="#H_Republica"/>UMA RÉPLICA AO <choice>
                         <abbr>snr<am>.</am> dr<am>.</am></abbr>
                         <expan>s<ex>enho</ex>r d<ex>outo</ex>r</expan>
-                    </choice><!-- UH: I changed this to just one joint abbreviation for Snr. Dr. -->
+                    </choice>
                     <rs type="name" key="P462" style="b">Adolfo Coelho</rs></head>
                 <div>
                     <argument>
-                        <!-- UH: add @rend="indent-first" to these paragraphs? and italics? -->
-                        <p>Mais uma réplica corta a pacatez dos depoimentos desde o dia 3 do
+                        <p rend="indent-first"><hi rend="italic">Mais uma réplica corta a pacatez dos depoimentos desde o dia 3 do
                             corrente veem sendo publicados na «<rs type="periodical" key="J20"
-                                >República</rs>».
-                            <!-- UH: there is 
-                                a new paragraph here?-->
-                            Agora é o colaborador da « <rs type="periodical" key="J5">Aguia</rs>»,
-                            snr. <rs type="name" key="FP">Fernando
-                            Pessoa</rs>,<!-- UH: please add @role to mentions of the
-                                heteronyms -->
-                            que vem responder ao ilustre filólogo e lente da Faculdade de Letras da
-                            Universidade de Lisboa, snr. dr. <rs type="name" key="P462" style="b"
-                                >Adolfo Coelho</rs>, que não crê no super-Camões.</p>
+                                >República</rs>».</hi></p>
+                        <p rend="indent-first"><hi>Agora é o colaborador da « <rs type="periodical" key="J5">Aguia</rs>»,
+                            <choice>
+                                <abbr>snr<am>.</am></abbr><expan>s<ex>enho</ex>r</expan></choice> 
+                                    <rs type="name" key="FP" role="topic">Fernando
+                            Pessoa</rs>, que vem responder ao ilustre filólogo e lente da Faculdade de Letras da
+                            Universidade de Lisboa, <choice>
+                                <abbr>snr<am>.</am> dr<am>.</am></abbr>
+                                <expan>s<ex>enho</ex>r d<ex>outo</ex>r</expan>
+                            </choice> <rs type="name" key="P462" style="b"
+                                >Adolfo Coelho</rs>, que não crê no super-<rs type="name" key="P15">Camões</rs>.</hi></p>
                     </argument>
                 </div>
                 <div>
@@ -119,8 +118,8 @@
                         simulacros de objecções várias competencias nominais houvessem deixado cair
                         nas suas colunas. Preparo esse folhêto, que a <hi rend="italic">Renascença
                             Portuguesa</hi> editará.</p>
-                    <!-- UH: Nesta? -->
-                    <p rend="indent-first">Nessa atitude me conservaria, se o Prof. <rs type="name"
+                    <p rend="indent-first">Nesta atitude me conservaria, se o <choice>
+                        <abbr>Prof<am>.</am></abbr><expan>Prof<ex>essor</ex></expan></choice> <rs type="name"
                             key="P462" style="b">Adolfo Coelho</rs> não tivesse feito incidir uma
                         parte do seu depoimento sobre um artigo meu, publicado na <rs
                             type="periodical" key="J5"><hi rend="italic">Aguia</hi></rs>, e que visa
@@ -129,7 +128,8 @@
                         com o direito e o dever de abrir uma clareira na minha renuncia á
                         publicidade maior e a valer-me, na extensão de um artigo, do seu amável
                         convite.</p>
-                    <p rend="indent-first">Os argumentos que empregarei contra as objecções do Prof.
+                    <p rend="indent-first">Os argumentos que empregarei contra as objecções do <choice>
+                        <abbr>Prof<am>.</am></abbr><expan>Prof<ex>essor</ex></expan></choice>
                             <rs type="name" key="P462" style="b">Adolfo Coelho</rs> servir-me-hão,
                         ao mesmo tempo e de sumário modo, de resposta geral a outras adversas
                         referências feitas á <hi rend="italic">Renascença Portuguesa</hi> e á nossa
@@ -139,12 +139,14 @@
                         resume.</p>
                     <p rend="indent-first">Por ora, pois, responderei apenas ás vagas objecções
                         feitas contra o caracter renovador e grande da nossa novissima poesia pelo
-                        Prof. <rs type="name" key="P462" style="b">Adolfo Coelho</rs> no seu
+                        <choice>
+                        <abbr>Prof<am>.</am></abbr><expan>Prof<ex>essor</ex></expan></choice> <rs type="name" key="P462" style="b">Adolfo Coelho</rs> no seu
                         quasi-erudito artigo. Esse artigo é sereno e aparentemente lucido e
                         motivado; infelizmente, quem se dér ao trabalho de lhe procurar o fio
                         condutor de uma lógica, encontra-lhe uma intima desconexão, desmentindo a
                         sua fisionomia de ligado e conexo.</p>
-                    <p rend="indent-first">Seja como fôr, perscrutemos em que se baseia o Prof. <rs
+                    <p rend="indent-first">Seja como fôr, perscrutemos em que se baseia o <choice>
+                        <abbr>Prof<am>.</am></abbr><expan>Prof<ex>essor</ex></expan></choice> <rs
                             type="name" key="P462" style="b">Adolfo Coelho</rs> para descrer de uma
                         renascença literária em Portugal e de ser a nossa poesia novissima
                         representativa dessa renascença. Cinge-se a duas considerações, que era
@@ -157,7 +159,8 @@
                         qualquer outra corrente poetica — a romantica, suponha-se, consoante
                         exemplos indicados de <rs type="name" key="P248">Byron</rs> e <rs
                             type="name" key="P292">Victor Hugo</rs>. Concretizando mais: para o
-                        Prof. <rs type="name" key="P462" style="b">Adolfo Coelho</rs> a nossa
+                        <choice>
+                        <abbr>Prof<am>.</am></abbr><expan>Prof<ex>essor</ex></expan></choice> <rs type="name" key="P462" style="b">Adolfo Coelho</rs> a nossa
                         novissima poesia nem pela grandeza dos seus poetas, nem pela originalidade e
                         grandeza do seu caracter geral se impõe como poesia caracteristica de uma
                         renascença; ou mesmo de um grande periodo poetico. Isto é o essencial e o
