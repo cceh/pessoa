@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Régie, Monopolio, Liberdade</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="restricted">
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Pessoa_Regie.xml</idno>
+            </publicationStmt>
+            <notesStmt>
+                <note type="summary">Este texto foi republicado com o mesmo título, mas sem indicação de autoria, no jornal <rs
+                        type="periodical" key="J62"><hi rend="italic">A Informação</hi></rs> nos
+                    dias 31 de Julho e 1 de Agosto de 1926. Antes do texto encontra-se a seguinte nota:"Da interesante «Revista de Comercio
+                    e Contabilidade», transcrevemos hoje parte de um estudado trabalho sobre os três sistemas aplicaveis á economia publica, com
+                    o sem intervenção do estado". Reproduzimos o facsimile de ambas
+                    publicações</note>
+                <note type="genre">
+                    <rs type="genre" key="prosa">Prosa</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="W296">Régie, Monopolio, Liberdade</rs></item>
+                </list>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Régie, Monopolio, Liberdade</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt" otherLangs="en"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J101">Revista de Comércio e
+                                Contabilidade</rs></title>
+                        <imprint>
+                            <date when="1926-03-25">25 de Março de 1926</date>
+                        </imprint>
+                        <biblScope unit="issue">2</biblScope>
+                        <biblScope unit="page">61-64</biblScope>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
+    </teiHeader>
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+        <graphic url="prosa/Regie_Revista_1.jpg"/>
+        <graphic url="prosa/Regie_Revista_2.jpg"/>
+        <graphic url="prosa/Regie_Revista_3.jpg"/>
+        <graphic url="prosa/Regie_Revista_4.jpg"/>
+        <graphic url="prosa/Regie_Revista_5.jpg"/>
+        <graphic url="prosa/Regie_Revista_6.jpg"/>
+        <graphic url="prosa/Regie_Revista_7.jpg"/>
+        <graphic url="prosa/Regie_Revista_8.jpg"/>
+        <graphic url="prosa/Regie_Revista_9.jpg"/>
+        <graphic url="prosa/Regie_Informacao_1.jpg"/>
+        <graphic url="prosa/Regie_Informacao_2.jpg"/>
+    </facsimile>
+    <text corresp="#W296">
+        <body>
+            <div>
+                <head>RÉGIE, MONOPOLIO, LIBERDADE</head>
+                <p rend="indent-first">A questão chamada dos tabacos veio trazer de novo á
+                    superficie o problema batido e debatido de se se deve preferir o sistema de
+                    administração de Estado (que no caso particular dos tabacos é uso denominar <hi
+                        rend="italic">Régie</hi>), o sistema de monopolio privado, ou o sistema de
+                    concorrencia livre.</p>
+                <p rend="indent-first">Evidentemente, em qualquer desta ordem ha três pontos a
+                    considerar, ou três interesses – os do Estado, os do comercio ou industria, e os
+                    do consumidor. E todos os problemas particulares deste genero se apresentam de
+                    diverso modo no que respeita a cada um desses interesses.</p>
+                <p rend="indent-first">Não é, porêm, nosso intuito – nem, dada a indole desta
+                    Revista, poderia ser – o tratar particularmente do problema do regime dos
+                    tabacos em Portugal. O que pretendemos é servir-nos da oportunidade oferecida
+                    por ele ou, melhor, pelo estado agudo dele, para estudar a questão na sua
+                    absoluta generalidade.</p>
+                <p rend="indent-first">Limitar-nos-hemos pois, a estudar imparcialmente – ou tão
+                    imparcialmente quanto humanamente seja possivel – as vantagens e as desvantagens
+                    dos três sistemas de administração comercial e industrial. Nada mais.</p>
+                <p rend="indent-first">Considerada em si mesma, a administração de Estado é o pior
+                    de todos os sistemas imaginaveis para qualquer das três entidades com que essa
+                    administração implica.</p>
+                <p rend="indent-first">De todas as coisas «organisadas», é o Estado, em qualquer
+                    parte ou época, a mais mal-organisada de todas. E a razão é evidente. A
+                    sociologia é uma pseudo-sciencia, ou, pelo menos, uma proto-sciencia. Não ha
+                    sciencia social, ou, pelo menos, não a ha por enquanto. Em materia social ha só
+                    opiniões, tão pouco definitivas e scientificas como as que ha em materia
+                    artistica ou literaria. Desconhecemos por completo que leis regem as sociedades,
+                    ignoramos por inteiro o que seja, em sua essencia, uma sociedade, porquê e como
+                    nasce, segundo que leis se desenvolve, porquê e de que modo se definha e morre.
+                    Ninguem ainda sequer definiu satisfatoriamente «sociedade», «progresso» ou
+                    «civilização». A humanidade tem-se entretido – desde a formação, na Grecia
+                    antiga, do espirito critico – a idear sistemas politicos e sociais «definitivos»
+                    em materia tão flutuante e incerta como a vida, em assunto ainda tão fóra da
+                    sciencia como a sociedade.</p>
+                <p rend="indent-first">É preciso, contudo, que as sociedades, sejam o que fôrem, se
+                    governem; e forçoso que haja um Estado de qualquer espécie. E esse Estado é
+                    chamado a governar uma coisa que não sabe ao certo o que é, a legislar para uma
+                    entidade cuja essencia desconhece, a orientar um agrupamento que segue (sem
+                    duvida) uma orientação vital que se ignora, derivada de leis naturais que tambem
+                    se ignoram, e que póde, portanto, ser bem diferente daquela que o Estado
+                    pretende imprimir-lhe. Assim o mais honesto e desinteressado dos politicos e dos
+                    governantes nunca póde saber com certeza se não está arruinando um país ou uma
+                    sociedade com os principios e leis, que julga sãos, com que se propõe salvá-la
+                    ou conservá-la.</p>
+                <p rend="indent-first">A lei aparentemente mais justa, a lei mais de acôrdo com os
+                    nossos sentimentos de equidade, póde ser contraria a qualquer lei natural, pois
+                    póde bem ser que as leis naturais nada tenham com a nossa «justiça», e em nada
+                    se ajustem ás nossas ideias do que é bom e justo. Por o que conhecemos da
+                    operação de algumas dessas leis – por exemplo, a da hereditariedade – a Natureza
+                    parece frequentemente timbrar em ser injusta e tiranica. Ora não ha certeza que
+                    a Natureza seja mais terna para a vida social do que para a vida individual.
+                    Ninguem ainda provou, por exemplo, que a abolição da escravatura fôsse um bem
+                    social. Ninguem o provou, porque ninguem o pode provar. Quem nos diz que a
+                    escravatura não seja uma lei natural da vida das sociedades sãs? Ninguem o póde
+                    dizer, porque ninguem sabe quais são as leis naturais da vida das sociedades; e
+                    essa póde, portanto, ser uma delas. A velha afirmação de Aristoteles – aliás tão
+                    pouco propenso a soluções «tiranicas» – de que a escravatura é um dos
+                    fundamentos da vida social, póde dizer-se que ainda está de pé. E ainda está de
+                    pé porque não ha com que deitá-la abaixo. A essencia do que em politica se chama
+                    «conservantismo» nasce directamente desta nossa ignorancia, consiste no receio
+                    de infringir leis desconhecidas em materia onde todas as leis são
+                    desconhecidas.</p>
+                <p rend="indent-first">É, pois, evidente que quanto mais o Estado intervem na vida
+                    espontanea da sociedade, mais risco ha, se não positivamente mais certeza, de a
+                    estar prejudicando; mais risco ha, se não mais certeza, de estar entrando em
+                    conflito com leis naturais, com leis fundamentais da vida, que como ninguem as
+                    conhece, ninguem tem a certeza de não estar violando. E a violação das leis
+                    naturais tem sanções automaticas a que ninguem tem o poder de esquivar-se.
+                    Pretendendo corrigir a Natureza, pretendemos realmente substituí-la, o que é
+                    impossivel e resulta no nosso proprio aniquilamento e no do nosso esforço.</p>
+                <p rend="indent-first">Os riscos, e pois os prejuizos, da administração de Estado
+                    estão evidentemente na razão directa da extensão com que essa administração
+                    intervem na vida social espontanea. Maximos nos regimes reformadores, que
+                    pretendem organisar (organizar) de novo uma coisa chamada «sociedade», que não
+                    sabem o que é nem a que leis obedece, esses riscos e essa extensão baixam á
+                    medida que a administração de Estado se aproxima da estrita actividade fiscal e
+                    tributaria que só ao Estado compete, porque só ao Estado póde competir. Mas não
+                    é a esta actividade propria e restrita que nos referimos quando examinamos a
+                    questão de administração de Estado: referimo-nos a essa administração em geral,
+                    e, particularmente, á administração pelo Estado de comercios ou industrias que
+                    pódem não ser administrados por ele. Pelas razões já vistas, é evidente que, na
+                    proporção em que esses comercios ou industrias fôrem importantes, e implicarem
+                    com a vida da sociedade ou da nação, nessa mesma proporção será prejudicial a
+                    administração deles pelo Estado. E se essas industrias ou comercios não tiverem
+                    importancia nacional ou social, não ha rasão para que o Estado queira ocupar-se
+                    deles. Em qualquer dos casos, pois, a administração do Estado é um êrro: num
+                    caso é inevitavelmente nociva, no outro francamente desnecessaria.</p>
+                <p rend="indent-first">Viciosa, assim, em sua propria essencia, a administração de
+                    Estado sofre ainda a viciação proveniente de ser exercida por e através do tipo
+                    de individuo que em geral fórma o funcionario publico. Salvo para as carreiras
+                    militares – em que ha abertas especiais para a ambição e para a energia – nenhum
+                    homem de verdadeira energia e ambição entra para o serviço fixo do Estado. Não
+                    entra porque não ha ali caminho para a energia, e muito menos para a ambição. O
+                    novelista americano <rs type="name" key="P661">Nathaniel Hawthorne</rs> marca
+                    isto com extraordinario relevo no prefacio do seu romance <rs type="title">
+                        <hi rend="italic">A Letra Encarnada</hi></rs>. Formado, pois, de um conjunto
+                    de homens necessariamente inferiores nas suas qualidades de acção, o serviço
+                    publico civil resulta universalmente incompetente e desleixado, e,
+                    derivadamente, em sociedades eivadas de qualquer virus corruptor, mais corrupto
+                    que qualquer outro conjunto.</p>
+                <p rend="indent-first">Estes elementos fixos, assim tão pouco aptos para o
+                    desempenho competente de qualquer função administrativa, ainda que subordinada,
+                    são dirigidos, nos estados modernos, por politicos profissionais – isto é, por
+                    individuos que subiram ao poder por circunstancias varias, em que a competencia
+                    administrativa não entra, nem tem que entrar. Aliás, quem tem uma notavel
+                    competencia administrativa emprega hoje a sua actividade em campos mais
+                    apropriados que a governação dos países. E se em quasi todas as nações assim
+                    acontece, assim sobretudo sucede naquelas onde a instabilidade governativa é
+                    acentuada; nenhum administrador verdadeiro se sujeita a administrar com risco de
+                    descontinuidade e interrupção.</p>
+                <p rend="indent-first">A administração de Estado só é admissivel quando é
+                    inevitavel, e só é inevitavel num caso anormal, a guerra, e, ainda assim, só
+                    para certas industrias ou comercios. Como, porêm, nas sociedades chamadas
+                    civilizadas, as actividades normais são todas de ordem pacifica, e a guerra,
+                    motivando a suspensão de actividades pacificas, implica a suspensão da propria
+                    essencia do que constitui uma sociedade civilizada, o facto de que o Estado só
+                    póde utilmente administrar um comercio ou uma industria em tempo de guerra é
+                    mais um argumento contra o exercicio normal pelo estado desse comercio ou déssa
+                    industria.</p>
+                <p rend="indent-first">A administração pelo Estado de uma industria ou de um
+                    comercio é prejudicial ao Estado, porque todo o comercio ou industria mal
+                    administrado é prejudicial a si mesmo; e é prejudicial á industria ou ao
+                    comercio particular, que por ela fica proíbido. Só póde, em certos casos,
+                    beneficiar o consumidor; porque póde bem ser que o produto vendido o seja em
+                    condições anormalmente favoraveis. Ha serviços de Estado, em muitos países, que
+                    trabalham com «déficit» previsto para beneficiar o consumidor. Como, porêm, esse
+                    consumidor é ao mesmo tempo contribuinte, o que o Estado lhe dá com a mão
+                    direita, terá fatalmente que tirar-lho com a esquerda. O consumidor é, no fim,
+                    quem paga o que deixa de pagar.</p>
+                <p rend="indent-first">Seria ridiculo e indesculpavel que, depois destas
+                    considerações essenciais, gastassemos a paciencia do leitor com o exame da
+                    mitologia de argumentos que se têm apresentado em defeza da «nacionalização»,
+                    «socialização», ou administração de Estado. Nenhum desses argumentos, proprios
+                    em geral só para contos humoristicos ou discursos politicos, póde prevalecer
+                    contra as considerações <hi rend="italic">organicas</hi> que apresentámos.</p>
+                <p rend="indent-first">Sabemos bem, é certo, que a administração de Estado não causa
+                    hoje o horror que causava no seculo que passou. Sabemos bem que está hoje em
+                    curso o ataque ao individualismo economico do seculo dezanove. Mas tambem
+                    sabemos que, assim como ha modas no vestuario, assim as ha nas ideias. Onde não
+                    ha sciencia, nada leva de vantagem a ideia de hoje sobre a ideia de ontem,
+                    porque não representa um acrescimo de conhecimento. E em materia social ainda
+                    não ha sciencia.</p>
+                <p rend="indent-first">Os monopolios são de duas ordens – os monopolios artificiais
+                    e legais, isto é, concedidos pelo Estado, por lei ou contracto; e os monopolios
+                    naturais e espontaneos, isto é, formados, em liberdade de comercio ou industria,
+                    pela concentração de empresas, ou pela absorção de umas por outras ou de varias
+                    por uma só. Os chamados <hi rend="italic">trusts</hi> são um caso flagrante
+                    deste ultimo tipo de monopolio.</p>
+                <p rend="indent-first">Trataremos agora dos monopolios legais – dos que o Estado
+                    concede ou autorisa por contracto ou lei. Dos monopolios espontaneos, como são
+                    produtos especiais da liberdade de comercio e de industria, trataremos quando
+                    tratarmos desta.</p>
+                <p rend="indent-first">O monopolio legal é ao mesmo tempo, analogo á administração
+                    de Estado e diferente dela. Ha, evidentemente, varias especies e graus de
+                    monopolios legais, como, aliás, dos outros; e consoante essas especies e esses
+                    graus, se acentuam ou se esbatem as analogias e as diferenças entre eles e a
+                    administração de Estado. Trataremos, porém, do assunto com o maximo possivel de
+                    generalização. A administração de Estado tem caracteristicos proprios, por ser
+                    de Estado; são os que já delineámos. Mas, aparte, esses caracteristicos,
+                    apresenta ela os que são comuns a todas as emprezas que não têm que recear
+                    concorrencia: a artificialidade economica, porque vivem uma vida economica
+                    claustral, separada dos contactos e choques com os fenomenos economicos gerais;
+                    a incuria tecnica, porque estão economicamente garantidas; a tendencia para o
+                    abuso, porque para o abuso tende instintivamente todo o homem, ou toda a
+                    instituição humana, logo que não exista um travão facil, rapido e <hi
+                        rend="italic">natural</hi> para os seus actos. É evidentemente por estes
+                    caracteristicos que os monopolios – e sobretudo os legais, em que a garantia é
+                    absoluta – têm analogia com a administração de Estado.</p>
+                <p rend="indent-first">A par destas analogias com a administração de Estado,
+                    apresentam os monopolio s certas diferenças dela.</p>
+                <p rend="indent-first">A primeira diferença consiste na <hi rend="italic"
+                        >especialização</hi>. Um monopolio comercial ou industrial é exercido por
+                    uma empreza exclusivamente comercial ou industrial; e como em geral a materia de
+                    um monopolio é especial e importante, a empreza que o detem, não se dedica
+                    ordinariamente a qualquer outro comercio ou industria. O Estado, ao contrario,
+                    nem exerce <hi rend="italic">tipicamente</hi> as funções comerciais ou
+                    industriais, nem póde exercer <hi rend="italic">exclusivamente</hi> essas
+                    funções. Ora a especialisação tende a atenuar, nos monopolios, a incuria tecnica
+                    que a segurança economica neles estimula.</p>
+                <p rend="indent-first">A segunda diferença consiste na <hi rend="italic"
+                        >temporaridade</hi>. Salvo em casos especiais – e como tais, em geral,
+                    postos explicitamente, – as funções e actividades do Estado, e, sobretudo, as
+                    administrativas, têm um caracter de permanencia, de perpetuidade. Os monopolios,
+                    ao contrario, têm um praso; são concedidos por um certo, e determinado, tempo. A
+                    sua segurança economica sofre assim, porque a sofre no tempo, uma certa
+                    limitação; de absoluta torna-se relativa, e assim o seu principal efeito – a
+                    artificialidade economica – perde tambem o seu caracter absoluto, e em certo
+                    modo, e até certo ponto, se diminui e limita. Por outro lado, porêm, a
+                    temporaridade dos monopolios agrava aquela «tendencia para o abuso» a que já nos
+                    referimos. Todos tendem para abusar; e quem está em condições de poder fazê-lo,
+                    fá-lo-ha com mais certeza e violencia se tiver um praso marcado para a
+                    possibilidade desse abuso. Quanto menor fôr o praso, maior tenderá a ser o
+                    abuso. Acresce que as emprezas comerciais e industriais existem especialmente
+                    para auferir lucros, por meio de um serviço qualquer prestado ao publico; quanto
+                    menor fôr o praso que lhes é dado para auferir esses lucros, maiores lucros
+                    farão eles por auferir em cada ano desse praso. A tendencia humana para abusar
+                    atinge economicamente o seu máximo no regime de monopolio.</p>
+                <p rend="indent-first">A terceira diferença consiste na <hi rend="italic">separação
+                        das funções administrativas e fiscais</hi>. Na administração de Estado é o
+                    Estado o fiscal da sua propria administração. Ora, isto é duplamente mau. É mau,
+                    em primeiro lugar, porque a fiscalisação do Estado participa da imperfeição
+                    organica (já por nós claramente exposta) dessa instituição necessaria. É mau, em
+                    segundo lugar, porque ninguem – e sobretudo o Estado, entidade anonima e
+                    dispersa – é bom fiscal de si mesmo. Nos monopolios legais, porém, separam-se a
+                    administração e a fiscalisação: a primeira fica no monopolio, a segunda fica no
+                    Estado. Um dos males, portanto, desaparece imediatamente. E, se a fiscalisação
+                    do Estado não fôr de uma incompetencia extraordinaria, ou de uma corrupção
+                    extrema, de algum modo se poderá atenuar a tendencia para o abuso, que, como
+                    vimos, é absolutamente organica nos monopolios.</p>
+                <p rend="indent-first">Tratado assim, em sua essencia e generalidade, o regime do
+                    monopolio legal, passamos a ocupar-nos do da liberdade de comercio ou
+                    industria.</p>
+                <p rend="indent-first">O regime de liberdade apresenta, a nosso ver, cinco
+                    caracteristicos: três que são vantagens, dois que são desvantagens. É natural,
+                    estimula a proficiencia tecnica, e tende a manter os preços no minimo possivel:
+                    estas são as vantagens. É essencialmente incoordenado e instavel, e, quando
+                    degenera, torna-se uma tirania pior que a de qualquer outro sistema: estas são
+                    as desvantagens.</p>
+                <p rend="indent-first">O regime de liberdade é natural porque deixa as forças
+                    economicas – cuja natureza e leis desconhecemos – entregues a si mesmas; não as
+                    complicamos, pois como a nossa intervenção ignorante, dificilmente beneficia – a
+                    não ser por acaso –, como toda a intervenção ignorante. O regime de liberdade,
+                    determinando e estimulado a concorrencia, fórça cada concorrente, a aperfeiçoar
+                    os seus serviços comerciais ou industriais, para levar vantagem aos outros. Sob
+                    outro aspecto, essa mesma concorrencia conduz naturalmente cada concorrente a
+                    não elevar os seus preços para além dos outros, pois que seria o primeiro a
+                    perder com isso. Este aspecto da questão é trivial e conhecido.</p>
+                <p rend="indent-first">O regime de liberdade é incoordenado porque é
+                    individualisante, e é instavel porque é incoordenado. O regime de concorrencia
+                    põe cada concorrente em oposição, não só a <hi rend="italic">cada um</hi> dos
+                    outros, mas ao <hi rend="italic">conjunto de todos os outros</hi>. A congregação
+                    ou coordenação de esforços a dentro de cada industria ou de cada comercio
+                    torna-se dificil, e, na proporção em que se torna dificil, se torna dificil
+                    aquele especial aperfeiçoamento dessa industria ou desse comercio que nasce
+                    dele, ou dela, tomar consciencia plena de si mesmo, o que só pode fazer se os
+                    seus elementos componentes e representativos não se repelirem uns aos outros.
+                    Além disto, os problemas comerciais e industriais não surgem em abstrato, mas em
+                    relação a entidades sociais chamadas nações; e onde uma concorrencia nacional se
+                    sobreponha a uma concorrencia individual, a pulverisação oriunda do regime livre
+                    deixa desprevenida uma industria ou um comercio, e uma nação. Acresce, como
+                    indicámos, que o que é incoordenado é instavel. A certos incidentes ou
+                    contingentes economicos, que particularmente ou especialmente afectem um certo
+                    comercio ou uma certa industria, esse comercio, ou essa industria, só pode fazer
+                    face se tiver um conjunto, se puder formar um conjunto, com que lhe possa fazer
+                    face. E, como os incidentes e contingencias economicos, são, como todos
+                    fenomenos sociais, complexos e compostos de elementos varios, um conjunto
+                    inorganico é instabilisado imediatamente pelo embate deles, e os elementos
+                    incoordenados, que compõem esse conjunto, agitados em sentidos diferentes pelas
+                    forças diferentes de que cada incidente ou contingencia se compõe.</p>
+                <p rend="indent-first">Mas, se a incoordenação social da liberdade economica é um
+                    defeito, maior, socialmente, é o defeito que nasce de essa liberdade se
+                    coordenar. Como o regime de liberdade economica é essencialmente incoordenado, a
+                    coordenação só se fórma nele por uma degenerescencia do seu principio basilar.
+                    Essa coordenação, ou essa degenerescencia, dá-se de uma, de duas maneiras – a
+                    formação de monopolios espontaneos, ou a sindicação. Ambos estes sistemas nascem
+                    do regime da liberdade; ambos uma vez nascidos o passam a aluir nos seus
+                    fundamentos. Foi porisso que aludimos a estes sistemas como «a degenerescencia»
+                    do regime de liberdade. Quem não sai aos seus, degenera...</p>
+                <p rend="indent-first">O monopolio espontaneo, ou natural, de que os chamados <hi
+                        rend="italic">trust</hi>s são o exemplo tipico, forma-se por agrupamento de
+                    emprezas, ou por absorpção de umas por outras ou varias por uma só. O monopolio
+                    espontaneo apresenta os caracteristicos que já indicámos como os do monopolio
+                    legal, porém, com duas formidaveis excepções: como é <hi rend="italic"
+                        >natural</hi>, e nasce do proprio jogo das forças economicas, tem a força
+                    organica, a brutalidade intima, de qualquer força da natureza; como <hi
+                        rend="italic">não é legal</hi>, não está sujeito a fiscalisação, boa ou má,
+                    de especie alguma. Desaba sobre a sociedade como uma tempestade ou um
+                    cataclismo; e os governos, ou hão de deixá-lo esmagá-la, ou, se o quizerem
+                    combater, hão-de colocar-se em situação falsa, pois, não havendo nele nada de
+                    ilegal, terão, para o combater, que saír, eles, da legalidade.</p>
+                <p rend="indent-first">A sindicação, saída da liberdade como o monopolio espontaneo,
+                    é igualmente inimiga dela, e sobretudo das vantagens dela; é-o com menos
+                    brutalidade e evidente, e, por isso mesmo, com mais segurança. Um sindicato ou
+                    associação de classe – comercial, industrial, ou de outra qualquer especie –
+                    nasce aparentemente de uma congregação livre dos individuos que compõem essa
+                    classe; como, porém, quem não entrar para esse sindicato fica sujeito a
+                    desvantagens de diversa ordem, a sindicação é realmente obrigatoria. Uma vez
+                    constituido o sindicato, passam a dominar nele – parte minima que se substitui
+                    ao todo – não os profissionais (comerciantes, industriais, ou o que quer que
+                    sejam) mais habeis e representativos, mas os individuos simplesmente mais aptos
+                    e competentes para a vida sindical, isto é, para a politica leitoral dessas
+                    agremiações. Todo o sindicato é, social e profissionalmente, um mito. Mas
+                    incisivamente ainda: nenhuma associação de classe é uma associação de
+                    classe.</p>
+                <p rend="indent-first">No caso especial da sindicação na industria e no comercio, o
+                    resultado é desaparecerem todas as vantagens da concorrencia livre, sem se
+                    adquirir qualquer especie de coordenação util ou benefica. O caracter <hi
+                        rend="italic">natural</hi> do regime livre atenua-se, porque surge em meio
+                    dele este elemento estranho, e essencialmente oposto á liberdade. A vantagem
+                    publica da não-elevação desnecessaria de preços, desaparece por completo, pois,
+                    por haver sindicato, é facil a combinação e a «frente-unica» contra o publico,
+                    e, por esse sindicato ser tiranico, é facil compelir á aceitação de novas
+                    tabelas os profissionais pouco dispostos a aceitá-las. Quanto ao aperfeiçoamento
+                    dos serviços comerciais ou industriais, que a concorrencia estimula, o sindicato
+                    diminuiu na propria proporção em que diminue o espirito de concorrencia, e, como
+                    nunca é dirigido por grandes profissionais, mas por politicos de dentro da
+                    profissão, pouco póde animar directamente a tecnica da industria ou do comercio
+                    que representa. Nem resulta da acção do sindicato qualquer coordenação util, que
+                    compense estas desvantagens todas. Não tendo uma verdadeira base de liberdade, o
+                    sindicato não coordena a classe como individuos; não tendo nunca uma direcção
+                    profissionalmente superior, o sindicato não coordena a classe como
+                    profissionais; não tendo outro fim senão o profissional e o economico, o
+                    sindicato não coordena a classe como cidadãos.</p>
+                <p rend="indent-first">Expuzémos successivamente, analisando-os, o que são, em suas
+                    operações economicas e sociais, os regimes de administração de Estado, de
+                    monopolio, e de liberdade de comercio e industria. Fizémos o possivel para expôr
+                    imparcialmente as vantagens e desvantagens inerentes a cada um, ou ás fórmas que
+                    cada um póde assumir. Repetimos, porém, que essas vantagens e desvantagens são
+                    as que pertencem á propria essencia e generalidade de cada sistema. Quanto ás
+                    vantagens e desvantagens da aplicação de cada um a este ou áquele caso
+                    particular, depende do caso particular. E nós não nos dispuzémos a estudar caso
+                    particular nenhum.</p>
+            </div>
+        </body>
+    </text>
+</TEI>
