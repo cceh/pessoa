@@ -72,7 +72,6 @@
         </profileDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
-        <!-- UH: are these images still missing? -->
         <graphic url="prosa/O_Escritor_Fernando_Pessoa_1.jpg"/>
         <graphic url="prosa/O_Escritor_Fernando_Pessoa_2.jpg"/>
         <graphic url="prosa/O_Escritor_Fernando_Pessoa_3.jpg"/>
@@ -83,19 +82,17 @@
     <text corresp="#W284">
         <body>
             <div>
-                <head><handShift new="#H_Alves_Martins"/>O escritor <rs type="name" key="FP"
+                <head><handShift new="#H_Alves_Martins"/>O escritor <rs type="name" key="FP" role="topic"
                         >Fernando
-                    Pessoa</rs><!-- UH: 
-                        please add the @role (author, editor, etc.) attribute to all instances of mentions
-                        of the heteronyms -->
+                    Pessoa</rs>
                     expõe-nos as suas ideias sobre os varios aspectos da arte e da literatura
                     portuguesas</head>
-                <p rend="indent-first">Entrevistar <rs type="name" key="FP">Fernando Pessôa</rs> não
+                <p rend="indent-first">Entrevistar <rs type="name" key="FP" role="topic">Fernando Pessôa</rs> não
                     é facil. Só é facil entrevistar os que não pensam, os que não se importam de
                     jogar palavras, ao acaso, atirando-as impudicamente ao vento.</p>
-                <p rend="indent-first"><rs type="name" key="FP">Fernando Pessôa</rs>, quere como <rs
-                        type="name" key="FP">Fernando Pessôa</rs>, quere como <rs type="name"
-                        key="AdC">Alvaro de Campos</rs> ― o engenheiro alucinado que comporta o seu
+                <p rend="indent-first"><rs type="name" key="FP" role="topic">Fernando Pessôa</rs>, quere como <rs
+                        type="name" key="FP" role="topic">Fernando Pessôa</rs>, quere como <rs type="name"
+                        key="AdC" role="topic">Alvaro de Campos</rs> ― o engenheiro alucinado que comporta o seu
                     segundo eu, e que aparece em toda a parte, enchendo a voz de louvores e raios
                     para a Vida – <ref
                         target="http://www.pessoadigital.pt/pt/pub/Campos_Soneto_ja_Antigo">
@@ -104,11 +101,11 @@
                     creadôr duma nova Razão. Paradoxal? Sem duvida. Mas ha tantas maneiras de ser
                     paradoxal!</p>
                 <p rend="indent-first">A entrevista que se segue, toda escripta por <rs type="name"
-                        key="FP">Fernando Pessôa</rs> — nem podia deixar de ser visto <rs
-                        type="name" key="FP">Fernando Pessôa</rs> possuir uma sintaxe propria para a
+                        key="FP" role="topic">Fernando Pessôa</rs> — nem podia deixar de ser visto <rs
+                        type="name" key="FP" role="topic">Fernando Pessôa</rs> possuir uma sintaxe propria para a
                     logica propria dos seus pensamentos, mixto de seriedade e de ironia, vái decerto
                     prender o espirito dos leitores...</p>
-                <p rend="indent-first">Atenção! <rs type="name" key="FP">Fernando Pessôa</rs> vai
+                <p rend="indent-first">Atenção! <rs type="name" key="FP" role="topic">Fernando Pessôa</rs> vai
                     responder ás perguntas que lhe fizemos:</p>
                 <p rend="indent-first">– Que pensa da nossa crise? Dos seus aspectos – politico,
                     moral e intellectual?</p>
