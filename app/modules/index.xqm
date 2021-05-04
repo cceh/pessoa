@@ -124,8 +124,9 @@ declare function index:collectGenre($node as node(), $model as map(*), $type as 
     declare function index:collectTitleLetters($node as node(), $model as map(*)) {
         (: get the first letters of all the titles in alphabetical order :)
         let $titles := (collection('/db/apps/pessoa/data/doc')//tei:rs[@type="title"],
-        collection('/db/apps/pessoa/data/pub')(//tei:rs[@type="title"]|//tei:title[@level="a"]))
-        let $letters := for $t in distinct-values(($titles)[1]/substring(.,1,1))
+        collection('/db/apps/pessoa/data/pub')//tei:rs[@type="title"],
+        collection('/db/apps/pessoa/data/pub')//tei:title[@level="a"])
+        let $letters := for $t in distinct-values($titles/substring(.,1,1))
                         order by $t
                         return $t
         return map {
