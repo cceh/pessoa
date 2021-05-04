@@ -121,47 +121,63 @@ declare function index:collectGenre($node as node(), $model as map(*), $type as 
 
 
 (:####### TEXT INDEX #######:)
-    declare function index:collectTexts($node as node(), $model as map(*)) {
-        let $list := doc('/db/apps/pessoa/data/titlelist.xml')
-        let $letters := $list//list/@letter/data(.)     
+    declare function index:collectTitleLetters($node as node(), $model as map(*)) {
+        (: get the first letters of all the titles in alphabetical order :)
+        let $titles := (collection('/db/apps/pessoa/data/doc')//tei:rs[@type="title"],
+        collection('/db/apps/pessoa/data/pub')(//tei:rs[@type="title"]|//tei:title[@level="a"]))
+        let $letters := for $t in distinct-values(($titles)[1]/substring(.,1,1))
+                        order by $t
+                        return $t
         return map {
             "letters" := $letters 
        }
         
     };
 
-    declare function index:scanTexts($node as node(), $model as map(*)) {
-    let $list := doc('/db/apps/pessoa/data/titlelist.xml')//list[@letter = $model("letter")]
-      return    <div class="index-text">
-                                { for $item in $list/item
-                                    return  (<span class="index-title">{if($item/name/@type eq"pub") then 
-                                                            <a href="{concat($helpers:app-root,"/",$helpers:web-language,"/pub/",$item/name/@ref/data(.))}" class="tlink">
-                                                            {$item/name/data(.)}
-                                                            </a>
-                                                            else 
-                                                            $item/name/data(.) }</span>,
-                                                            if($item/name/@type eq "doc") then
-                                                            <div class="docList">
-                                                                {for $hit in $item/item return <span><a href="{concat($helpers:app-root,"/",$helpers:web-language,"/doc/",$hit/@ref/data(.))}" class="olink">{$hit/data(.)}</a>
-                                                                {if(index-of($item/item,$hit) < count($item/item)) then "," else ()}
-                                                                </span>}
-                                                                <div class="clear"/>
-                                                            </div>
-                                                            else if($item/name/@type eq "pub_prose") then
-                                                            <div class="docList">
-                                                                {for $hit in $item/item return <span><a href="{concat($helpers:app-root,"/",$helpers:web-language,"/pub/",$hit/@ref/data(.))}" class="olink">{$hit/data(.)}</a>
-                                                                {if(index-of($item/item,$hit) < count($item/item)) then "," else ()}
-                                                                </span>}
-                                                                <div class="clear"/>
-                                                            </div>
-                                                            
-                                                            else ()
-                                                            
-                                                    
-                                                    )
-                                }
+    declare function index:collectTitles($node as node(), $model as map(*)) {
+    (: return the titles and the list of documents/publications they occur in 
+    for a specific letter :)
+    let $titles := (collection('/db/apps/pessoa/data/doc')//tei:rs[@type="title"],
+        collection('/db/apps/pessoa/data/pub')(//tei:rs[@type="title"]|//tei:title[@level="a"]))
+    let $titles_selected := for $t in $titles
+                            let $first := $t/substring(.,1,1)
+                            where $first = $model("letter")
+                            return $t
+    return
+        <div class="index-text">
+        { for $t in $titles_selected
+          return
+            <span class="index-title">{$t/data(.)}</span>
+          
+          
+            (:return  (<span class="index-title">{if($item/name/@type eq"pub") then 
+            <a href="{concat($helpers:app-root,"/",$helpers:web-language,"/pub/",$item/name/@ref/data(.))}" class="tlink">
+            {$item/name/data(.)}
+            </a>
+            else 
+            $item/name/data(.) }</span>,
+            if($item/name/@type eq "doc") then
+            <div class="docList">
+                {for $hit in $item/item return <span><a href="{concat($helpers:app-root,"/",$helpers:web-language,"/doc/",$hit/@ref/data(.))}" class="olink">{$hit/data(.)}</a>
+                {if(index-of($item/item,$hit) < count($item/item)) then "," else ()}
+                </span>}
+                <div class="clear"/>
+            </div>
+            else if($item/name/@type eq "pub_prose") then
+            <div class="docList">
+                {for $hit in $item/item return <span><a href="{concat($helpers:app-root,"/",$helpers:web-language,"/pub/",$hit/@ref/data(.))}" class="olink">{$hit/data(.)}</a>
+                {if(index-of($item/item,$hit) < count($item/item)) then "," else ()}
+                </span>}
+                <div class="clear"/>
+            </div>
+            
+            else ()
                                     
-                            </div>
+                            
+                            ):)
+        }
+                                    
+        </div>
     };
 
 (:######## PERSON INDEX #######:)
@@ -270,18 +286,11 @@ declare function index:FindJournalsEntrys($key as xs:string) {
                                                ref="{concat("doc/",substring-before($item//tei:idno[@type="filename"]/data(.),".xml"))}"
                                                 published="{$item//tei:availability/@status/data(.)}"/>
       ,
-      (: journals mentioned in publications :)
-      for $item in search:search_range_simple("person_b",$key,collection("/db/apps/pessoa/data/pub/"))
-                        return <item title="{replace($item//tei:titleStmt/tei:title[1]/data(.),"/E3","")}" 
-                                               date="{search:dateDoc($item)}" 
+      (: journals mentioned in publications or in which publications appeared :)
+      for $item in search:search_range_simple("rs_key",$key,collection("/db/apps/pessoa/data/pub/"))
+                        return <item title="{$item//tei:titleStmt/tei:title[1]/data(.)}" 
+                                               date="{search:datePub($item)}" 
                                                ref="{concat("pub/",substring-before($item//tei:idno[@type="filename"]/data(.),".xml"))}"
-                                                published="{$item//tei:availability/@status/data(.)}"/>
-      ,
-      (: journals in which publications appeared :)
-     for $item in search:search_range_simple("journal",$key,collection("/db/apps/pessoa/data/pub/"))
-                        return <item title="{$item//tei:titleStmt/tei:title[1]/data(.)}"
-                                                date="{search:datePub($item)}"
-                                                ref="{concat("pub/",substring-before($item//tei:idno[@type="filename"]/data(.),".xml"))}"
                                                 published="{$item//tei:availability/@status/data(.)}"/>
    )
 };

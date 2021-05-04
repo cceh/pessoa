@@ -47,25 +47,11 @@
                 <h1 id="title-tool"> <get data-template="helpers:singleElementInList" data-template-ListType="index" data-template-ListId="titles"/>
                 </h1>
                 <div id="textsList" class="span6">                  
-                    <map data-template="index:collectTexts">
+                    <map data-template="index:collectTitleLetters">
                         <print data-template="index:printNavigation"/>
                         <each data-template="helpers:invisibleEach" data-template-from="letters" data-template-to="letter">
                             <div class="sub_Nav"><i class="index:printLetter"/></div>
-                            <map class="index:scanTexts">
-                                <!--<div class="index-text">
-                                <each data-template="helpers:invisibleEach" data-template-from="scTexts" data-template-to="text">
-                                    <span class="index-title"><i class="index:printDocOrPub"/></span>
-                                    <div class="docList">
-                                        <map class="index:mapDocs">
-                                            <div data-template="helpers:invisibleEach" data-template-from="refs" data-template-to="ref">
-                                                <get data-template="helpers:getValue" data-template-get="ref"/>
-                                                <span><i data-template="index:printDocLinks" data-template-ref="ref"/></span>     
-                                            </div>
-                                           <div class="clear"/>
-                                        </map>
-                                    </div>
-                                </each>
-                            </div>-->
+                            <map class="index:collectTitles">
                             </map>
                         </each>
                     </map>
