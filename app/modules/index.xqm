@@ -139,7 +139,8 @@ declare function index:collectGenre($node as node(), $model as map(*), $type as 
     (: return the titles and the list of documents/publications they occur in 
     for a specific letter :)
     let $titles := (collection('/db/apps/pessoa/data/doc')//tei:rs[@type="title"],
-        collection('/db/apps/pessoa/data/pub')(//tei:rs[@type="title"]|//tei:title[@level="a"]))
+        collection('/db/apps/pessoa/data/pub')//tei:rs[@type="title"],
+        collection('/db/apps/pessoa/data/pub')//tei:title[@level="a"])
     let $titles_selected := for $t in $titles
                             let $first := $t/substring(.,1,1)
                             where $first = $model("letter")
