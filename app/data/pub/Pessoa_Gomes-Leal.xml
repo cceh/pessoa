@@ -41,8 +41,8 @@
             </publicationStmt>
             <notesStmt>
                 <note type="summary">Poema publicado em <hi rend="italic">O "Notícias"
-                    Ilustrado</hi>, 28 de Outubro de 1928, e <hi rend="italic">Cancioneiro do 1º Salão
-                        dos Independentes</hi>, 1930, com algumas diferenças ortográficas, de
+                        Ilustrado</hi>, 28 de Outubro de 1928, e <hi rend="italic">Cancioneiro do 1º
+                        Salão dos Independentes</hi>, 1930, com algumas diferenças ortográficas, de
                     pontuação e conteúdo. Apresentamos as imagens de ambas as publicações. O texto
                     apresentado privilegia, em termos substantivos, a primeira publicação.</note>
                 <note type="genre">
@@ -79,8 +79,7 @@
                         <textLang mainLang="pt"/>
                     </analytic>
                     <monogr>
-                        <title level="j">Cancioneiro do 1º Salão dos
-                            Independentes</title>
+                        <title level="j">Cancioneiro do 1º Salão dos Independentes</title>
                         <imprint>
                             <date when="1930">1930</date>
                         </imprint>
@@ -99,7 +98,7 @@
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/" corresp="#Cancioneiro_1930">
         <graphic url="pub/gomes_leal.jpg"/>
     </facsimile>
-    <text corresp="W234">
+    <text corresp="W234" type="orig">
         <body>
             <div>
                 <head><rs type="name" key="P179">GOMES LEAL</rs></head>
@@ -107,14 +106,16 @@
                     <l>Sagra, sinistro, a alguns o astro baço.</l>
                     <l>Seus três aneis irreversiveis são</l>
                     <l>A desgraça, a <app>
-                        <lem wit="#Notícias_1928">amargura</lem>
-                        <rdg wit="#Cancioneiro_1930">tristeza</rdg>
-                    </app>, a solidão<app>
-                        <lem wit="#Cancioneiro_1930">.</lem>
-                        <rdg wit="#Notícias_1928">...</rdg>
-                    </app></l>
-                    <l>Oito luas fatais fitam <app><lem wit="#Notícias_1928">do</lem>
-                        <rdg wit="#Cancioneiro_1930">no</rdg></app> espaço.</l>
+                            <lem wit="#Notícias_1928">amargura</lem>
+                            <rdg wit="#Cancioneiro_1930">tristeza</rdg>
+                        </app>, a solidão<app>
+                            <lem wit="#Cancioneiro_1930">.</lem>
+                            <rdg wit="#Notícias_1928">...</rdg>
+                        </app></l>
+                    <l>Oito luas fatais fitam <app>
+                            <lem wit="#Notícias_1928">do</lem>
+                            <rdg wit="#Cancioneiro_1930">no</rdg>
+                        </app> espaço.</l>
                 </lg>
                 <lg>
                     <l>Este, poeta, <rs type="name" key="P604">Apollo</rs> em seu regaço</l>
@@ -125,17 +126,72 @@
                 <lg>
                     <l>Inuteis oito luas da loucura</l>
                     <l>Quando a cintura tríplice denota</l>
-                    <l>Solidão<app><lem wit="#Notícias_1928">,</lem>
-                        <rdg wit="#Cancioneiro_1930"></rdg></app> e desgraça<app><lem wit="#Notícias_1928">,</lem>
-                            <rdg wit="#Cancioneiro_1930"></rdg></app> e amargura!</l>
+                    <l>Solidão<app>
+                            <lem wit="#Notícias_1928">,</lem>
+                            <rdg wit="#Cancioneiro_1930"/>
+                        </app> e desgraça<app>
+                            <lem wit="#Notícias_1928">,</lem>
+                            <rdg wit="#Cancioneiro_1930"/>
+                        </app> e amargura!</l>
                 </lg>
                 <lg>
                     <l>Mas da noite sem fim um rastro brota,</l>
-                    <l>Vestígio de maligna formosura<app><lem wit="#Cancioneiro_1930">:</lem>
-                        <rdg wit="#Notícias_1928">...</rdg></app></l>
+                    <l>Vestígio de maligna formosura<app>
+                            <lem wit="#Cancioneiro_1930">:</lem>
+                            <rdg wit="#Notícias_1928">...</rdg>
+                        </app></l>
                     <l>É a lua além de <rs type="name" key="P573">Deus</rs>, álgida e ignota.</l>
                 </lg>
-                <signed rend="right"><rs type="name" key="FP" role="author" style="b">FERNANDO PESSOA</rs></signed>
+                <signed rend="right"><rs type="name" key="FP" role="author" style="b">FERNANDO
+                        PESSOA</rs></signed>
+            </div>
+        </body>
+    </text>
+    <text type="reg">
+        <body>
+            <div>
+                <head>GOMES LEAL</head>
+                <lg>
+                    <l>Sagra, sinistro, a alguns o astro baço.</l>
+                    <l>Seus três aneis irreversiveis são</l>
+                    <l>A desgraça, a <app>
+                            <lem wit="#Notícias_1928">amargura</lem>
+                            <rdg wit="#Cancioneiro_1930">tristeza</rdg>
+                        </app>, a solidão<app>
+                            <lem wit="#Cancioneiro_1930">.</lem>
+                            <rdg wit="#Notícias_1928">...</rdg>
+                        </app></l>
+                    <l>Oito luas fatais fitam <app>
+                            <lem wit="#Notícias_1928">do</lem>
+                            <rdg wit="#Cancioneiro_1930">no</rdg>
+                        </app> espaço.</l>
+                </lg>
+                <lg>
+                    <l>Este, poeta, Apollo em seu regaço</l>
+                    <l>A Saturno entregou. A plumbea mão</l>
+                    <l>Lhe ergueu ao alto o aflito coração,</l>
+                    <l>E, erguido, o apertou, sangrando lasso.</l>
+                </lg>
+                <lg>
+                    <l>Inuteis oito luas da loucura</l>
+                    <l>Quando a cintura tríplice denota</l>
+                    <l>Solidão<app>
+                            <lem wit="#Notícias_1928">,</lem>
+                            <rdg wit="#Cancioneiro_1930"/>
+                        </app> e desgraça<app>
+                            <lem wit="#Notícias_1928">,</lem>
+                            <rdg wit="#Cancioneiro_1930"/>
+                        </app> e amargura!</l>
+                </lg>
+                <lg>
+                    <l>Mas da noite sem fim um rastro brota,</l>
+                    <l>Vestígio de maligna formosura<app>
+                            <lem wit="#Cancioneiro_1930">:</lem>
+                            <rdg wit="#Notícias_1928">...</rdg>
+                        </app></l>
+                    <l>É a lua além de Deus, álgida e ignota.</l>
+                </lg>
+                <signed rend="right">FERNANDO PESSOA</signed>
             </div>
         </body>
     </text>
