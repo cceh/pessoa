@@ -50,6 +50,20 @@
         </xsl:choose>
     </xsl:template>
     
+    <xsl:template match="byline">
+        <p>
+            <xsl:choose>
+                <xsl:when test="@rend">
+                    <xsl:attribute name="class">byline <xsl:value-of select="@rend"/></xsl:attribute>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:attribute name="class">byline</xsl:attribute>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:apply-templates/>
+        </p>
+    </xsl:template>
+    
     <xsl:template match="note[parent::titlePage]">
         <p>
             <xsl:choose>
