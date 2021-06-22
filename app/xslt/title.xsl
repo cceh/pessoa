@@ -48,9 +48,10 @@
     </xsl:template>
     
     <xsl:template match="text()">
-        <xsl:variable name="str1" select="replace(.,'^[.“”]*(.+?)[.“”]*$','$1')" />
+        <!--<xsl:variable name="str1" select="replace(.,'^[.“”]*(.+?)[.“”]*$','$1')" />
         <xsl:variable name="str2" select="replace($str1, '[“”]', '')"/>
-        <xsl:value-of select="normalize-space($str2)" />
+        <xsl:value-of select="normalize-space($str2)" />-->
+        <xsl:value-of select="normalize-space(.)" />
     </xsl:template>
     
     

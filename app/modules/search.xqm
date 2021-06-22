@@ -501,7 +501,7 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
 
             <div class="selection" id="se_author">
                 <select name="person" class="selectsearch" size="5" multiple="multiple">
-                    {search:page_createOption_authors("authors",("FP","AC","AdC","RR"),$doc)}
+                    {search:page_createOption_authors("authors",("FP","AC","AdC","RR","BS"),$doc)}
                 </select>
                 <p class="small_text">{helpers:singleElementInList_xQuery("search","multiple_entries")}</p>
 
@@ -523,7 +523,7 @@ declare function search:search-page($node as node(), $model as map(*)) as node()
 
                     <div class="selection" id="se_genre">
                         <select class="selectsearch" name="genre" size="7" multiple="multiple">
-                        {helpers:createOption_new("genres",("editorial_list","editorial_note","editorial_plan","poetry"))}
+                        {helpers:createOption_new("genres",("editorial_list","editorial_note","editorial_plan","poetry","prose"))}
                         </select>
                         <p class="small_text">{helpers:singleElementInList_xQuery("search","multiple_entries")}</p>
                     </div>
