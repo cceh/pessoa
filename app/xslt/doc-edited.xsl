@@ -117,12 +117,12 @@
     </xsl:template>
     
     <!-- editorische Ergänzungen anzeigen -->
-    <xsl:template match="supplied" mode="#default deletion addition">
+    <xsl:template match="supplied[not(parent::add)]" mode="#default deletion addition">
         <span class="supplied" title="lacuna no original">
             <xsl:choose>
                 <xsl:when test="not(node()) or note">□</xsl:when>
                 <xsl:otherwise>
-                    &lt;<xsl:apply-templates />&gt;
+                    <xsl:text>[</xsl:text><xsl:apply-templates /><xsl:text>]</xsl:text>
                 </xsl:otherwise>
             </xsl:choose>
         </span>

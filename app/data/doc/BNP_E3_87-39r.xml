@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
@@ -21,11 +22,11 @@
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
-               <name>Isabel Figueiredo-Iken</name>
+               <name>Inês Filipa Rebelo do Carmo</name>
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
-               <name>Inês Filipa Rebelo do Carmo</name>
+               <name>Isabel Figueiredo-Iken</name>
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
@@ -41,7 +42,7 @@
                (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2017</date>
-            <availability status="restricted">
+            <availability status="free">
                <licence target="http://creativecommons.org/licenses/by/3.0/"/>
             </availability>
             <idno type="filename">BNP_E3_87-39r.xml</idno>
@@ -55,8 +56,8 @@
                <msContents>
                   <summary>
                      <p> Lista manuscrita no verso de uma folha impressa de «Sobre um manifesto de
-                        estudantes», panfleto publicado em 1923, publicada em <hi rend="italic">Prosa de
-                           Álvaro de Campos</hi> (2012, 295). </p>
+                        estudantes», panfleto publicado em 1923, publicada em <hi rend="italic"
+                           >Prosa de Álvaro de Campos</hi> (2012, 295). </p>
                   </summary>
                   <msItemStruct>
                      <author>
@@ -89,88 +90,86 @@
          <div>
             <table>
                <row>
-                  <cell><label>1.</label> Segunda Phase
-                     <metamark rend="line" function="assignment"/></cell>
-                     <cell><choice>
+                  <cell><label>1.</label></cell>
+                  <cell>Segunda Phase</cell>
+                  <cell><choice>
                         <abbr>p<am>.</am></abbr>
                         <expan>p<ex>agina</ex></expan>
                      </choice> 1</cell>
                </row>
                <row>
-                  <cell rend="indent-2"><label>2.</label>
-                     <rs type="title">Apice</rs> — <rs type="name" key="P30">Sá-Carneiro</rs><lb/>Ode — <rs type="name" key="P81"><choice>
-                        <abbr>M</abbr>
-                        <expan>M<ex>anuel</ex></expan>
-                     </choice> da Veiga</rs>
-                     <metamark rend="curly-bracket" function="assignment"/></cell>
-                     <cell><choice>
+                  <cell><label>2.</label></cell>
+                  <cell>
+                     <rs type="title">Apice</rs> — <rs type="name" key="P30"
+                     >Sá-Carneiro</rs><lb/>Ode — <rs type="name" key="P81"><choice>
+                           <abbr>M</abbr>
+                           <expan>M<ex>anuel</ex></expan>
+                        </choice> da Veiga</rs></cell>
+                  <cell><choice>
                         <abbr>p<am>.</am></abbr>
                         <expan>p<ex>agina</ex></expan>
-                     </choice> 2 </cell>
+                     </choice> 2</cell>
                </row>
                <row>
-                  <cell rend="indent-2"><label>3.</label>
-                  <rs type="title">O Inexito do “Theatro<lb/> Novo”</rs> — <rs type="name" key="FP"
-                     role="author" style="b">
-                     <choice>
-                        <abbr>F</abbr>
-                        <expan>F<ex>ernando</ex></expan>
-                     </choice> Pessoa</rs>
-                     <metamark rend="line" function="assignment"/></cell>
-                     <cell><choice>
+                  <cell><label>3.</label></cell>
+                  <cell>
+                     <rs type="title">O Inexito do “Theatro<lb/> Novo”</rs> — <rs type="name"
+                        key="FP" role="author" style="b">
+                        <choice>
+                           <abbr>F</abbr>
+                           <expan>F<ex>ernando</ex></expan>
+                        </choice> Pessoa</rs></cell>
+                  <cell><choice>
                         <abbr>pp<am>.</am></abbr>
-                        <expan>p<ex>aginae</ex></expan>
+                        <expan>p<ex>aginas</ex></expan>
                      </choice> 3 a <subst>
                         <del rend="overwritten">8</del>
                         <add>6</add>
                      </subst>
-                     </cell>
+                  </cell>
                </row>
                <row>
-                  <cell rend="indent-2"><label>4.</label>
-                  <rs type="title">Exploradores e Explorados</rs>.<lb/> — <choice>
-                     <abbr>Bach<am>.</am></abbr>
-                     <expan>Bach<ex>arel</ex></expan>
-                  </choice>
-                  <rs type="name" key="P71">Raul Leal</rs><lb/> (ou <rs type="name" key="P82"
-                     >Carlos de Mousinho</rs>)
-                        <metamark rend="line" function="assignment"/></cell>
+                  <cell><label>4.</label></cell>
+                  <cell>
+                     <rs type="title">Exploradores e Explorados</rs>.<lb/> — <choice>
+                        <abbr>Bach<am>.</am></abbr>
+                        <expan>Bach<ex>arel</ex></expan>
+                     </choice>
+                     <rs type="name" key="P71">Raul Leal</rs><lb/> (ou <rs type="name" key="P82"
+                        >Carlos de Mousinho</rs>)</cell>
                   <cell>7 a 12</cell>
                </row>
                <row>
-                  <cell><label>5.</label> Versos
-                     <metamark rend="line" function="assignment"/></cell>
+                  <cell><label>5.</label></cell>
+                  <cell>Versos</cell>
                   <cell>13 e 14</cell>
                </row>
-               <metamark rend="line" place="above"
-                  function="transposition" target="#S1 #S2" n="2"/>
-               <row>
-                  <cell><seg xml:id="S1">
-                  <label>6.</label> 
-                  <rs type="name" key="P83">R. L. Stevenson</rs>
-                     <metamark rend="line" function="assignment"/></seg></cell>
+               <metamark rend="arrow" place="left" function="transposition" target="#R1 #R2" n="2"/>
+               <row xml:id="R1">
+                  <cell><label>6.</label></cell>
+                  <cell><rs type="name" key="P83">R. L. Stevenson</rs></cell>
                   <cell>15 a 20</cell>
                </row>
                <row>
-                  <cell><label>7.</label> Selecta
-                     <metamark rend="line" function="assignment"/></cell> 
+                  <cell><label>7.</label></cell>
+                  <cell>Selecta</cell>
                   <cell>21 a 24</cell>
                </row>
-               <row>
-                  <cell><seg xml:id="S2"><label>8.</label>
-                  <rs type="title"><choice>
-                        <abbr>Chr<am>.</am></abbr>
-                        <expan>Chr<ex>onica</ex></expan>
-                     </choice>
-                     <choice>
-                        <abbr>Byz<am>.</am></abbr>
-                        <expan>Byz<ex>antina</ex></expan>
-                     </choice></rs> — <rs type="name" key="FP" role="author" style="b">
-                     <choice>
-                        <abbr>F</abbr>
-                        <expan>F<ex>ernando</ex></expan>
-                     </choice> Pessoa</rs>
-                     <metamark rend="line" function="assignment"/></seg></cell>
+               <row xml:id="R2">
+                  <cell><label>8.</label></cell>
+                  <cell>
+                     <rs type="title"><choice>
+                           <abbr>Chr<am>.</am></abbr>
+                           <expan>Chr<ex>onica</ex></expan>
+                        </choice>
+                        <choice>
+                           <abbr>Byz<am>.</am></abbr>
+                           <expan>Byz<ex>antina</ex></expan>
+                        </choice></rs> — <rs type="name" key="FP" role="author" style="b">
+                        <choice>
+                           <abbr>F</abbr>
+                           <expan>F<ex>ernando</ex></expan>
+                        </choice> Pessoa</rs></cell>
                   <cell>25 a 32</cell>
                </row>
             </table>

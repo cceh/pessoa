@@ -53,7 +53,10 @@
         </span>
     </xsl:template>
     
-    <xsl:template match="supplied" mode="#default deletion addition"/>
+    <xsl:template match="supplied[not(parent::add)]" mode="#default deletion addition"/>
+    <xsl:template match="supplied[parent::add]" mode="#default deletion addition">
+        <xsl:text>[</xsl:text><xsl:apply-templates/><xsl:text>]</xsl:text>
+    </xsl:template>
 
     <!-- Structure of the text -->
     <xsl:template match="head" mode="#default deletion addition">
@@ -655,6 +658,14 @@
         <span class="anchor-arrow-down">↓</span>
     </xsl:template>
     
+    <xsl:template match="metamark[@rend='arrow-up']" mode="#default deletion addition">
+        <span class="arrow-up">↑</span>
+        <xsl:apply-templates/>
+    </xsl:template>
+    <xsl:template match="anchor[@xml:id=preceding::metamark[@rend='arrow-up']/@target/substring-after(.,'#') or @xml:id=following::metamark[@rend='arrow-up']/@target/substring-after(.,'#')]" mode="#default deletion addition" priority="1">
+        <span class="anchor-arrow-up">↑</span>
+    </xsl:template>
+    
     <xsl:template match="metamark[@rend='arrow-right-down']" mode="#default deletion addition">
         <span class="arrow-right-down">↘</span>
         <xsl:apply-templates/>
@@ -705,7 +716,14 @@
     
     <!-- transpositions: -->
     <xsl:template match="metamark[@function='transposition']">
-        <span class="transposition {@place}">⟷</span>
+        <xsl:choose>
+            <xsl:when test="@place='above'">
+                <span class="transposition {@place}">⟷</span>
+            </xsl:when>
+            <xsl:when test="@place='left'">
+                <span class="transposition {@place}">↕</span>
+            </xsl:when>
+        </xsl:choose>
     </xsl:template>
     
     

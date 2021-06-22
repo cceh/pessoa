@@ -2235,6 +2235,18 @@ div.text#CP786 span.note.margin-right {
     right: 1em;
     top: 8em;
 }
+div.text#CP786 span.metamark.line.ditto {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 6.5em;
+}
+div.text#CP786 span.transposition.left {
+    color: gray;
+    top: 6.7em;
+    position: absolute;
+    left: 1.2em;
+    font-size: 2em;
+}
 /* CP908 */
 div.text#CP908 span.note.margin-left span.grouping-left {
     font-size: 5em;
@@ -2261,6 +2273,9 @@ div.text#BNP_E3_48-27r .item#I7 .label {
 /* BNP_E3_71A-2v */
 div.text#BNP_E3_71A-2v .metamark.quotes.ditto {
     width: 100px;
+}
+div.text#BNP_E3_71A-2v span.label span.below {
+    top: 1.5em;
 }
 /* BNP_E3_48G-26r */
 div.text#BNP_E3_48G-26r .framed {
@@ -2825,9 +2840,6 @@ div.text#BNP_E3_48I-3v span.circled {
     padding: 10px 25px 5px 5px;
     vertical-align: middle;
 }
-div.text#BNP_E3_48E-29 h2 span.deletion.overstrike {
-    text-decoration: line-through wavy 3px;
-}
 div.text#BNP_E3_48E-29 hr.line.distinct:nth-child(2) {
     width: 20%;
     margin-left: 30%;
@@ -2881,6 +2893,9 @@ div.text#BNP_E3_48B-26 > hr.line.distinct:nth-child(2) {
     width: 8em;
     margin-left: 30%;
 }
+div.text#BNP_E3_48B-26 div#I1 span.grouping-right {
+    font-size: 3em;
+}
 div.text#BNP_E3_48B-26 div.list:nth-child(5) hr.line.distinct,
 div.text#BNP_E3_48B-26 hr.line.distinct:nth-child(13),
 div.text#BNP_E3_48B-26 hr.line.distinct:nth-child(16),
@@ -2919,6 +2934,9 @@ div.text.last#BNP_E3_48G-32r {
 }
 div.text#BNP_E3_48G-32r td {
     white-space: normal;
+    vertical-align: top;
+}
+div.text#BNP_E3_48G-32r td + td {
     vertical-align: bottom;
 }
 div.text#BNP_E3_48G-32r hr.line.distinct:nth-child(3) {
@@ -2947,6 +2965,54 @@ div.text#BNP_E3_48-2r span.metamark.line.ditto hr.line.inline {
 div.text#BNP_E3_49A-34v hr.line.distinct:nth-child(4) {
     width: 1em;
 }
+div.text#BNP_E3_49C-47v hr.line.distinct:nth-child(3) {
+    width: 5em;
+    margin: 0 auto;
+}
+div.text#BNP_E3_60-7v span.below {
+    left: 4em;
+}
+div.text#BNP_E3_66C-30r hr.line.distinct {
+    width: 5em;
+    margin: 0 auto;
+}
+div.text#BNP_E3_68A-3v span.metamark.quotes.ditto {
+    width: 8em;
+}
+div.text#BNP_E3_76A-61v div.item:nth-child(2) div.list div.item:nth-child(2) span.text span.choice:nth-child(4) span.above {
+    left: -1.5em;
+}
+div.text#BNP_E3_76A-61v div.item:nth-child(1) span.above {
+    left: 4em;
+}
+/* BNP_E3_87-39r */
+div.text#BNP_E3_87-39r td + td + td {
+    vertical-align: bottom;
+}
+div.text#BNP_E3_87-39r span.transposition.left {
+    position: absolute;
+    top: 5.2em;
+    left: 1.2em;
+    font-size: 3.5em;
+    color: gray;
+}
+div.text.first#BNP_E3_87-39r table td,
+div.text.last#BNP_E3_87-39r table td{
+    white-space: normal;
+}
+div.text.first#BNP_E3_87-39r table td + td + td,
+div.text.last#BNP_E3_87-39r table td + td + td{
+    width: 9em;
+}
+
+div.text#BNP_E3_87-66r span.circled {
+    left: 0;
+    padding: 2px 5px;
+    position: relative;
+    text-align: right;
+    width: 2em;
+}
+
 
 /* ABOUT PAGE */
 table.doc-overview, table.doc-overview td, table.doc-overview tr {

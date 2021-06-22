@@ -90,12 +90,16 @@
         <xsl:variable name="target" select="@target"/>
         <xsl:variable name="target-1" select="following-sibling::*[@xml:id=substring-after(substring-before($target,' '),'#')]"/>
         <xsl:variable name="target-2" select="following-sibling::*[@xml:id=substring-after(substring-after($target,' '),'#')]"/>
+        <xsl:variable name="between-targets" select="$target-1/following-sibling::*[following-sibling::*[@xml:id=substring-after(substring-after($target,' '),'#')]]"/>
         
         <xsl:apply-templates select="$target-2" mode="addition"/>
+        <xsl:text> </xsl:text>
+        <xsl:apply-templates select="$between-targets" mode="addition"/>
         <xsl:text> </xsl:text>
         <xsl:apply-templates select="$target-1" mode="addition"/>
     </xsl:template>
     
     <xsl:template match="*[concat('#',@xml:id)=preceding-sibling::metamark[@function='transposition']/@target/tokenize(.,'\s')]" mode="#default" priority="100"/>
-
+    <xsl:template match="*[preceding-sibling::*[@xml:id=preceding-sibling::metamark[@function='transposition']/@target/substring-after(substring-before(.,' '),'#')]][following-sibling::*[@xml:id=preceding-sibling::metamark[@function='transposition']/@target/substring-after(substring-after(.,' '),'#')]]" mode="#default" priority="100"/>
+    
 </xsl:stylesheet>
