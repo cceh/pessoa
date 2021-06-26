@@ -145,7 +145,7 @@ return
     <div class="index-text">
     { for $t in $titles_selected
       let $title-text := $t/title/data(.)
-      order by $title-text
+      order by translate(lower-case($title-text),'“"','')
       return
         <span class="index-title">{$title-text}
             <div class="docList">

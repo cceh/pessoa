@@ -5,14 +5,7 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare namespace util="http://exist-db.org/xquery/util";
 declare namespace functx = "http://www.functx.com";
 
-declare function functx:distinct-nodes($nodes as node()*) as node()* {
-    for $seq in (1 to count($nodes))
-    return $nodes[$seq][not(functx:is-node-in-sequence(.,$nodes[position() < $seq]))]
-};
 
-declare function functx:is-node-in-sequence($node as node()?,$seq as node()*) as xs:boolean {
-    some $nodeInSeq in $seq satisfies $nodeInSeq is $node
-};
 
 (: move search index to system and reindex :)
 declare function local:move-index(){
@@ -201,100 +194,6 @@ declare function local:search_range_simple($para as xs:string,$hit as xs:string,
 };
 
 
-declare function local:saveTitleXML() {
-let $html := local:createTitleXML()
-return xmldb:store("/db/apps/pessoa/data","titlelist.xml",$html)
-};
-
-declare function local:createTitleXML() {
-    let $well := local:collectTexts()
-    return <titels>{
-        for $le in distinct-values($well/@letter)
-        order by $le
-        return
-            <list letter="{$le}">
-                {
-                    for $a in $well
-                    where $a/@letter eq $le
-                    order by $a/name
-                    return $a
-                }</list>
-    }</titels>
-};
-
-declare function local:titleTest() {
-    for $text in local:search_range_simple("type","title",collection('/db/apps/pessoa/data/doc'))
-        for $single in $text//tei:rs[@type = "title"]
-        order by $single
-        return  local:transformTitle($single)
-};
-
-declare function local:transformTitle($title as node()) {
-    let $stylesheet := doc("/db/apps/pessoa/xslt/title.xsl")
-    return transform:transform($title, $stylesheet, (<parameters/>))
-
-};
-
-declare function local:collectTexts() {
-    (: title mentions in documents :)
-    let $texts  := local:search_range_simple("type","title",collection('/db/apps/pessoa/data/doc'))
-     let $texts := functx:distinct-nodes($texts)
-     let $texts := for $single in $texts
-                    where $single//tei:availability/@status/data(.) eq "free"
-                    return
-                    for $title in $single//tei:rs[@type = 'title']
-                        let $well := fn:normalize-space(local:transformTitle($title))
-                        order by $well
-                        return <item
-                                    name="{$well}"
-                                    ref="{substring-before(root($single)/util:document-name(.),".xml")}"/>
-    let $names := distinct-values($texts/@name/data(.))
-
-    let $well := for $name in $names
-            return  <item letter="{local:highLetters(local:FindFirstLetter-new($name,1))}">
-                <name type="doc">{$name}</name>
-                { let $ref :=   local:scanDocs($name,$texts)
-                let $ref := distinct-values($ref)
-                return
-                    for $item in $ref
-                    return <item ref="{$item}">{replace(doc(concat('/db/apps/pessoa/data/doc/',$item,".xml"))//tei:title[1]/data(.),"/E3","")}</item>}
-        
-            </item>
-    (: addition of title mentions in prose texts (or poetry, if there are any) :)
-    let $texts_prose  := local:search_range_simple("type","title",collection('/db/apps/pessoa/data/pub'))
-     let $texts_prose := functx:distinct-nodes($texts_prose)
-     let $texts_prose := for $single in $texts_prose
-                    where $single//tei:availability/@status/data(.) eq "free"
-                    return
-                    for $title in $single//tei:rs[@type = 'title']
-                        let $well := fn:normalize-space(local:transformTitle($title))
-                        order by $well
-                        return <item
-                                    name="{$well}"
-                                    ref="{substring-before(root($single)/util:document-name(.),".xml")}"/>
-    let $names_prose := distinct-values($texts_prose/@name/data(.))
-
-    let $well_prose := for $name in $names_prose
-            return  <item letter="{local:highLetters(local:FindFirstLetter-new($name,1))}">
-                <name type="pub_prose">{$name}</name>
-                { let $ref :=   local:scanDocs($name,$texts_prose)
-                let $ref := distinct-values($ref)
-                return
-                    for $item in $ref
-                    return <item ref="{$item}">{replace(doc(concat('/db/apps/pessoa/data/pub/',$item,".xml"))//tei:titleStmt/tei:title[1]/data(.),"/E3","")}</item>}
-        
-            </item>
-    (: publication titles :)
-    let $pubs := collection('/db/apps/pessoa/data/pub')
-    let $pubs_title := for $hit in $pubs//tei:teiHeader/tei:fileDesc
-                    let $title := $hit//tei:sourceDesc/tei:biblStruct/tei:analytic/tei:title[@level = "a"]
-                    return <item letter="{local:highLetters(local:FindFirstLetter-new($title[1]/data(.),1))}">
-                                <name ref="{substring-before($hit//tei:publicationStmt/tei:idno[@type="filename"]/data(.),".xml")}" type="pub">
-                                    {$title/data(.)}
-                                </name>
-                            </item>
-    return ($well, $well_prose, $pubs_title)
-   };
 
 declare function local:FindFirstLetter-new($text as xs:string, $pos as xs:integer) {
     if(matches(substring($text,$pos,1),'[A-z\d]')) then substring($text,$pos,1)
@@ -309,40 +208,77 @@ declare function local:scanDocs($text, $aDocs) {
              for $doc in $aDocs where $doc/@name eq $text  return $doc/@ref/data(.)
 };
 
-declare function local:highLetters($letter) {
-    switch($letter)
-            case "A" case "a" return("A")
-            case "B" case "b" return("B")
-            case "C" case "c" return("C")
-            case "D" case "d" return("D")
-            case "E" case "e" return("E")
-            case "F" case "f" return("F")
-            case "G" case "g" return("G")
-            case "H" case "h" return("H")
-            case "I" case "i" return("I")
-            case "J" case "j" return("J")
-            case "K" case "k" return("K")
-            case "L" case "l" return("L")
-            case "M" case "m" return("M")
-            case "N" case "n" return("N")
-            case "O" case "o" return("O")
-            case "P" case "p" return("P")
-            case "Q" case "q" return("Q")
-            case "R" case "r" return("R")
-            case "S" case "s" return("S")
-            case "T" case "t" return("T")
-            case "U" case "u" return("U")
-            case "V" case "v" return ("V")
-            case "W" case "w" return("W")
-            case "X" case "x" return("X")
-            case "Y" case "y" return("Y")
-            case "Z" case "z" return("Z")
-            default return $letter
+
+declare function local:get-titles(){
+ (: all the titles of publications and titles mentioned in
+ : documents and publications are collected and saved as a list,
+ : which is used as a basis for the title index :)
+    (: get all the titles :)
+    let $titles-doc-rs := collection('/db/apps/pessoa/data/doc')//tei:rs[@type="title"]
+    let $titles-pub-rs := collection('/db/apps/pessoa/data/pub')//tei:rs[@type="title"]
+    let $titles-pub := collection('/db/apps/pessoa/data/pub')//tei:title[@level="a"]
+    (: create an XML file with a list of all the titles :)
+    let $title-xsl := doc("/db/apps/pessoa/xslt/title.xsl")
+    let $title-xml := <list>
+        {for $t in $titles-doc-rs
+        let $clean-t := transform:transform($t, $title-xsl, ())
+        return <entry>
+            <type>doc</type>
+            <title>{$clean-t/normalize-space(.)}</title>
+            <parentName>{$t/ancestor::tei:TEI//tei:titleStmt/tei:title/normalize-space(.)}</parentName>
+            <parentLink>{$t/ancestor::tei:TEI//tei:idno[@type="filename"]/data(.)}</parentLink>
+        </entry>}
+        {for $t in $titles-pub-rs
+        let $clean-t := transform:transform($t, $title-xsl, ())
+        return <entry>
+            <type>pub</type>
+            <title>{$clean-t/normalize-space(.)}</title>
+            <parentName>{$t/ancestor::tei:TEI//tei:titleStmt/tei:title/normalize-space(.)}</parentName>
+            <parentLink>{$t/ancestor::tei:TEI//tei:idno[@type="filename"]/data(.)}</parentLink>
+        </entry>}
+        {for $t in $titles-pub
+        let $clean-t := transform:transform($t, $title-xsl, ())
+        return <entry>
+            <type>pub</type>
+            <title>{$clean-t/normalize-space(.)}</title>
+            <parentName>{$t/ancestor::tei:TEI//tei:titleStmt/tei:title/normalize-space(.)}</parentName>
+            <parentLink>{$t/ancestor::tei:TEI//tei:idno[@type="filename"]/data(.)}</parentLink>
+        </entry>}
+    </list>
+    return xmldb:store("/db/apps/pessoa/data","titles-raw.xml",$title-xml)
+};
+
+declare function local:clean-titles(){
+    (: group the titles and sort alphabetically :)
+    let $titles-raw := doc("/db/apps/pessoa/data/titles-raw.xml")//entry
+    let $title-xml := <list>
+        {for $entry in $titles-raw
+        let $title := $entry/title/data(.)
+        group by $title
+        return <entry>
+            <letter>{translate(substring(replace(upper-case($title),'^[“”"(\.\s«‘]+',''),1,1),'ÁÀÓ','AAO')}</letter>
+            <title>{$title}</title>
+            <links>
+                {for $e in $entry
+                let $pl := $e/parentLink
+                group by $pl
+                order by $e[1]/parentName
+                return
+                    <link>
+                        <type>{$e[1]/type/data(.)}</type>
+                        <parentName>{$e[1]/parentName/data(.)}</parentName>
+                        <parentLink>{$e[1]/parentLink/data(.)}</parentLink>
+                    </link>}
+            </links>
+        </entry>}
+    </list>
+    return xmldb:store("/db/apps/pessoa/data","titles-raw-sorted.xml",$title-xml)
 };
 
 
 (
 local:move-index(),
 local:createXML(),
-local:saveTitleXML()
+local:get-titles(),
+local:clean-titles()
 )

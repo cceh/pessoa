@@ -5,6 +5,8 @@
     exclude-result-prefixes="xs"
     version="2.0">
     
+    <!-- @author: Ulrike Henny-Krahmer -->
+    
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
     
     <xsl:template match="rs[@type='title']">
@@ -12,15 +14,15 @@
     </xsl:template>
     
     <xsl:template match="choice[abbr][expan]">
-        <xsl:text> </xsl:text><xsl:apply-templates select="expan"/><xsl:text> </xsl:text>
+        <xsl:apply-templates select="expan"/>
     </xsl:template>
     
     <xsl:template match="ex">
-        <xsl:apply-templates/><xsl:text> </xsl:text>
+        <xsl:apply-templates/>
     </xsl:template>
     
     <xsl:template match="abbr[not(parent::choice)]">
-        <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text> </xsl:text>
+        <xsl:apply-templates/>
     </xsl:template>
     
     <xsl:template match="am[not(parent::choice)]">
@@ -35,6 +37,8 @@
         <xsl:apply-templates select="add"/>
     </xsl:template>
     
+    <xsl:template match="del[not(parent::subst)]"/>
+    
     <xsl:template match="lb[preceding-sibling::*[1][name()='pc']]"/>
     
     <xsl:template match="lb[not(preceding-sibling::*[1][name()='pc'])]">
@@ -43,16 +47,10 @@
     
     <xsl:template match="pc"/>
     
-    <xsl:template match="rs[@type=('place','work','name','periodical')]|hi|del|add|abbr|am|seg">
-        <xsl:text> </xsl:text><xsl:apply-templates/><xsl:text> </xsl:text>
+    <xsl:template match="rs[@type=('place','work','name','periodical')]|hi|add|abbr|am|seg">
+        <xsl:apply-templates/>
     </xsl:template>
     
-    <xsl:template match="text()">
-        <!--<xsl:variable name="str1" select="replace(.,'^[.“”]*(.+?)[.“”]*$','$1')" />
-        <xsl:variable name="str2" select="replace($str1, '[“”]', '')"/>
-        <xsl:value-of select="normalize-space($str2)" />-->
-        <xsl:value-of select="normalize-space(.)" />
-    </xsl:template>
     
     
 </xsl:stylesheet>
