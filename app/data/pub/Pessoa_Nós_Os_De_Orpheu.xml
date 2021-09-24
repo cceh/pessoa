@@ -1,104 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Nós os de “ORPHEU”</title>
-                <author>
-                    <rs type="name" key="FP">Fernando Pessoa</rs>
-                </author>
-                <respStmt>
-                    <resp>Edição, Transcrição, Codificação</resp>
-                    <name>Jorge Uribe</name>
-                </respStmt>
-                <respStmt>
-                    <resp>Modelagem de dados, Codificação</resp>
-                    <name>Ulrike Henny-Krahmer</name>
-                </respStmt>
-                <respStmt>
-                    <resp>Consultoria</resp>
-                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
-                </respStmt>
-            </titleStmt>
-            <publicationStmt>
-                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Nós os de “ORPHEU”</title>
+            <author>
+               <rs type="name" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Edição, Transcrição, Codificação</resp>
+               <name>Jorge Uribe</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny-Krahmer</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
-                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
-                <date>2017</date>
-                <availability status="free">
-                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
-                </availability>
-                <idno type="filename">Pessoa_Nós_Os_De_Orpheu.xml</idno>
-            </publicationStmt>
-            <notesStmt>
-                <note type="genre">
-                    <rs type="genre" key="prosa">Prosa</rs>
-                </note>
-            </notesStmt>
-            <sourceDesc>
-                <list type="work-index">
-                    <item><rs type="work" key="W242">Nós os de “ORPHEU”</rs></item>
-                </list>
-                <biblStruct>
-                    <analytic>
-                        <title level="a">Nós os de “ORPHEU”</title>
-                        <author>
-                            <rs type="name" key="FP">Fernando Pessoa</rs>
-                        </author>
-                        <textLang mainLang="pt" otherLangs="en"/>
-                    </analytic>
-                    <monogr>
-                        <title level="j"><rs type="periodical" key="J30">Sudoeste, Cadernos de
-                                Almada Negreiros</rs></title>
-                        <imprint>
-                            <date when="1935-11">novembro de 1935</date>
-                        </imprint>
-                        <biblScope unit="issue">3</biblScope>
-                        <biblScope unit="page">3</biblScope>
-                    </monogr>
-                </biblStruct>
-            </sourceDesc>
-        </fileDesc>
-        <encodingDesc>
-            <variantEncoding method="parallel-segmentation" location="internal"/>
-        </encodingDesc>
-        <profileDesc>
-            <handNotes>
-                <handNote xml:id="H_SW">Texto não redigido por Pessoa mas por Almada Negreiros,
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability status="free">
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">Pessoa_Nós_Os_De_Orpheu.xml</idno>
+         </publicationStmt>
+         <notesStmt>
+            <note type="genre">
+               <rs type="genre" key="prosa">Prosa</rs>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <list type="work-index">
+               <item>
+                  <rs type="work" key="W242">Nós os de “ORPHEU”</rs>
+               </item>
+            </list>
+            <biblStruct>
+               <analytic>
+                  <title level="a">Nós os de “ORPHEU”</title>
+                  <author>
+                     <rs type="name" key="FP">Fernando Pessoa</rs>
+                  </author>
+                  <textLang mainLang="pt" otherLangs="en"/>
+               </analytic>
+               <monogr>
+                  <title level="j">
+                     <rs type="periodical" key="J30">Sudoeste, Cadernos de
+                                Almada Negreiros</rs>
+                  </title>
+                  <imprint>
+                     <date when="1935-11">novembro de 1935</date>
+                  </imprint>
+                  <biblScope unit="issue">3</biblScope>
+                  <biblScope unit="page">3</biblScope>
+               </monogr>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <variantEncoding method="parallel-segmentation" location="internal"/>
+      </encodingDesc>
+      <profileDesc>
+         <handNotes>
+            <handNote xml:id="H_SW">Texto não redigido por Pessoa mas por Almada Negreiros,
                     assinando pela sudoeste.</handNote>
-                <handNote xml:id="H_FP">Texto redigido por Pessoa.</handNote>
-            </handNotes>
-        </profileDesc>
-    </teiHeader>
-    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
-        <graphic url="prosa/Nós_os_de_orpheu.jpg"/>
-    </facsimile>
-    <text corresp="#W242">
-        <body>
-            <div>
-                <head>NÓS OS DE “<rs type="periodical" key="J12">ORPHEU</rs>"</head>
-                <p rend="indent-first">Anunciou <rs type="name" key="P56">Almada</rs>, no segundo
+            <handNote xml:id="H_FP">Texto redigido por Pessoa.</handNote>
+         </handNotes>
+      </profileDesc>
+   </teiHeader>
+   <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+      <graphic url="prosa/Nós_os_de_orpheu.jpg"/>
+   </facsimile>
+   <text type="orig" corresp="#W242">
+      <body>
+         <div>
+            <head>NÓS OS DE “<rs type="periodical" key="J12">ORPHEU</rs>"</head>
+            <p rend="indent-first">Anunciou <rs type="name" key="P56">Almada</rs>, no segundo
                     número de «<rs type="periodical" key="J30">SW</rs>», que nêste terceiro se
-                    inseriria colaboração dos que foram de  <rs type="periodical" key="J12"><hi
-                            rend="italic">Orpheu</hi></rs>. Cumpre-se.</p>
-                <p rend="indent-first">Procurámos coordenar, <rs type="name" key="P56">Almada</rs> e
+                    inseriria colaboração dos que foram de  <rs type="periodical" key="J12">
+                  <hi rend="italic">Orpheu</hi>
+               </rs>. Cumpre-se.</p>
+            <p rend="indent-first">Procurámos coordenar, <rs type="name" key="P56">Almada</rs> e
                     eu, produções inéditas de quantos figuraram literàriamente na revista extinta e
                     inextinguível a que ambos pertencemos. Excluídos, por motivo de estreiteza de
-                    tempo e largueza de distância, os dois colaboradores brasileiros ― <rs
-                        type="name" key="P513">Ronald de Carvalho</rs> e <rs type="name" key="P514"
-                        >Eduardo Guimarães</rs> ― conseguimos que estivessem presentes todos os
+                    tempo e largueza de distância, os dois colaboradores brasileiros ― <rs type="name" key="P513">Ronald de Carvalho</rs> e <rs type="name" key="P514">Eduardo Guimarães</rs> ― conseguimos que estivessem presentes todos os
                     outros, com duas excepções, uma delas atenuada com o sacrifício do
                     ineditismo.</p>
-                <p rend="indent-first">De <rs type="name" key="P80">Ângelo de Lima</rs>, como nada
+            <p rend="indent-first">De <rs type="name" key="P80">Ângelo de Lima</rs>, como nada
                     descobrissemos de inédito, decidimos publicar aquele extraordinário soneto ― dos
                     maiores da língua portuguesa – em que o poeta descreve a sua entrada na loucura,
                     em que longos anos viveu e em que morreu. O soneto, se não é inédito, está
                     contudo esquecido. Publicando-o, não deixamos de, saüdosamente, fazer lembrar
                     quem, não sendo nosso, todavia se tornou nosso.</p>
-                <p rend="indent-first">Nada porém foi possível incluir de <rs type="name" key="P37"
-                        >Côrtes-Rodrigues</rs>, que é directamente de <rs type="periodical"
-                        key="J12"><hi rend="italic">Orpheu</hi></rs>, e os poemas de cuja
+            <p rend="indent-first">Nada porém foi possível incluir de <rs type="name" key="P37">Côrtes-Rodrigues</rs>, que é directamente de <rs type="periodical" key="J12">
+                  <hi rend="italic">Orpheu</hi>
+               </rs>, e os poemas de cuja
                     personalidade inventada, <rs type="name" key="P37" style="b">Violante de
                         Cysneiros</rs>, são uma maravilha subtil de criação dramática. Nêste caso a
                     dificuldade foi, como no dos brasileiros, geográfica: estas produções foram
@@ -110,17 +113,63 @@
                     qual fàcilmente se aumenta o número de vítimas literárias da pièguice fruste e
                     asiática de <rs type="name" key="P515">S. Francisco de Assis</rs>, um dos mais
                     venenosos e traiçoeiros inimigos da mentalidade ocidental.</p>
-                <p rend="indent-first">Quanto ao mais, nada mais. Cá estamos sempre.</p>
-                <p rend="indent-first"><rs type="periodical" key="J12"><hi rend="italic"
-                        >Orpheu</hi></rs> acabou. <rs type="periodical" key="J12"><hi rend="italic"
-                            >Orpheu</hi></rs> continua.</p>
-                <signed>FERNANDO PESSOA</signed>
-                <note><handShift new="#H_SW"/>Na imposssibilidade de darmos colaboraçao de <rs
-                        type="name" key="P144">José Pacheco</rs> e de <rs type="name" key="P516"
-                        style="b">Santa-Rita Pintor</rs>, aqui deixamos os seus nomes ligados aos de
+            <p rend="indent-first">Quanto ao mais, nada mais. Cá estamos sempre.</p>
+            <p rend="indent-first">
+               <rs type="periodical" key="J12">
+                  <hi rend="italic">Orpheu</hi>
+               </rs> acabou. <rs type="periodical" key="J12">
+                  <hi rend="italic">Orpheu</hi>
+               </rs> continua.</p>
+            <signed>FERNANDO PESSOA</signed>
+            <note>
+               <handShift new="#H_SW"/>Na imposssibilidade de darmos colaboraçao de <rs type="name" key="P144">José Pacheco</rs> e de <rs type="name" key="P516" style="b">Santa-Rita Pintor</rs>, aqui deixamos os seus nomes ligados aos de
                         «<rs type="periodical" key="J12">Orpheu</rs>»</note>
-                <signed><rs type="periodical" key="J30">SW</rs></signed>
-            </div>
-        </body>
-    </text>
+            <signed>
+               <rs type="periodical" key="J30">SW</rs>
+            </signed>
+         </div>
+      </body>
+   </text>
+   <text type="reg" corresp="#W242">
+      <body>
+         <div>
+            <head>NÓS OS DE “ORPHEU"</head>
+            <p rend="indent-first">Anunciou Almada, no segundo
+                    número de «SW», que nêste terceiro se
+                    inseriria colaboração dos que foram de  <hi rend="italic">Orpheu</hi>. Cumpre-se.</p>
+            <p rend="indent-first">Procurámos coordenar, Almada e
+                    eu, produções inéditas de quantos figuraram literàriamente na revista extinta e
+                    inextinguível a que ambos pertencemos. Excluídos, por motivo de estreiteza de
+                    tempo e largueza de distância, os dois colaboradores brasileiros ― Ronald de Carvalho e Eduardo Guimarães ― conseguimos que estivessem presentes todos os
+                    outros, com duas excepções, uma delas atenuada com o sacrifício do
+                    ineditismo.</p>
+            <p rend="indent-first">De Ângelo de Lima, como nada
+                    descobrissemos de inédito, decidimos publicar aquele extraordinário soneto ― dos
+                    maiores da língua portuguesa – em que o poeta descreve a sua entrada na loucura,
+                    em que longos anos viveu e em que morreu. O soneto, se não é inédito, está
+                    contudo esquecido. Publicando-o, não deixamos de, saüdosamente, fazer lembrar
+                    quem, não sendo nosso, todavia se tornou nosso.</p>
+            <p rend="indent-first">Nada porém foi possível incluir de Côrtes-Rodrigues, que é directamente de <hi rend="italic">Orpheu</hi>, e os poemas de cuja
+                    personalidade inventada, Violante de
+                        Cysneiros, são uma maravilha subtil de criação dramática. Nêste caso a
+                    dificuldade foi, como no dos brasileiros, geográfica: estas produções foram
+                    coordenadas à pressa, Côrtes-Rodrigues vive nos
+                    Açores. Aqui lhe deixamos, num abraço, a expressão da nossa camaradagem de
+                    sempre; e o perpetrador destas linhas, velho amigo seu, acrescenta a ela o
+                    desejo de que Côrtes-Rodrigues se não embrenhe
+                    demasiado, como de há tempos se vai embrenhando, no catolicismo campestre, pelo
+                    qual fàcilmente se aumenta o número de vítimas literárias da pièguice fruste e
+                    asiática de S. Francisco de Assis, um dos mais
+                    venenosos e traiçoeiros inimigos da mentalidade ocidental.</p>
+            <p rend="indent-first">Quanto ao mais, nada mais. Cá estamos sempre.</p>
+            <p rend="indent-first">
+               <hi rend="italic">Orpheu</hi> acabou. <hi rend="italic">Orpheu</hi> continua.</p>
+            <signed>FERNANDO PESSOA</signed>
+            <note>
+               <handShift new="#H_SW"/>Na imposssibilidade de darmos colaboraçao de José Pacheco e de Santa-Rita Pintor, aqui deixamos os seus nomes ligados aos de
+                        «Orpheu»</note>
+            <signed>SW</signed>
+         </div>
+      </body>
+   </text>
 </TEI>

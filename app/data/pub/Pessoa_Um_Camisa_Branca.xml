@@ -1,133 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Um ʺCamisa Brancaʺ</title>
-                <author>
-                    <rs type="name" key="FP">Fernando Pessoa</rs>
-                </author>
-                <respStmt>
-                    <resp>Edição, Transcrição, Codificação</resp>
-                    <name>Jorge Uribe</name>
-                </respStmt>
-                <respStmt>
-                    <resp>Modelagem de dados, Codificação</resp>
-                    <name>Ulrike Henny-Krahmer</name>
-                </respStmt>
-                <respStmt>
-                    <resp>Consultoria</resp>
-                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
-                </respStmt>
-            </titleStmt>
-            <publicationStmt>
-                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Um ʺCamisa Brancaʺ</title>
+            <author>
+               <rs type="name" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Edição, Transcrição, Codificação</resp>
+               <name>Jorge Uribe</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny-Krahmer</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
-                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
-                <date>2017</date>
-                <availability status="free">
-                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
-                </availability>
-                <idno type="filename">Pessoa_Um_Camisa_Branca.xml</idno>
-            </publicationStmt>
-            <notesStmt>
-                <note type="summary" resp="JU">Texto atribuído a Pessoa por José Barreto (<ref
-                        target="http://www.pessoadigital.pt/en/bibliography/About_the_work_of_Fernando_Pessoa#Barreto_2012"
-                        >Barreto, 2012</ref>, pp. 225-252), com base na lista de projetos <ref
-                        target="http://www.pessoadigital.pt/pt/doc/BNP_E3_189r">BNP 189</ref>, que
-                    por sua vez é material preparatório da <ref
-                        target="http://www.pessoadigital.pt/pt/pub/Pessoa_Tabua_Bibliografica_FPessoa"
-                        > ʺTábua Bibliográficaʺ</ref>, publicada na revista <hi rend="italic"
-                        >Presença</hi> em Dezembro de 1928.</note>
-                <note type="genre">
-                    <rs type="genre" key="prosa">Prosa</rs>
-                </note>
-            </notesStmt>
-            <sourceDesc>
-                <list type="work-index">
-                    <item><rs type="work" key="W298">Um ʺCamisa Brancaʺ</rs></item>
-                </list>
-                <biblStruct>
-                    <analytic>
-                        <title level="a">Um ʺCamisa Brancaʺ</title>
-                        <author>
-                            <rs type="name" key="FP">Fernando Pessoa</rs>
-                        </author>
-                        <textLang mainLang="pt" otherLangs="en"/>
-                    </analytic>
-                    <monogr>
-                        <title level="j"><rs type="periodical" key="J10">Sol</rs></title>
-                        <imprint>
-                            <date when="1926-11-20">20 de novembro de 1926</date>
-                        </imprint>
-                        <biblScope unit="page">1-2</biblScope>
-                    </monogr>
-                </biblStruct>
-            </sourceDesc>
-        </fileDesc>
-        <encodingDesc>
-            <variantEncoding method="parallel-segmentation" location="internal"/>
-        </encodingDesc>
-    </teiHeader>
-    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
-        <graphic url="prosa/Um_Camisa_Branca_1.jpg"/>
-        <graphic url="prosa/Um_Camisa_Branca_2.jpg"/>
-    </facsimile>
-    <text corresp="#W298">
-        <body>
-            <div>
-                <head>Um "Camisa Branca"</head>
-                <head type="sub">O “Duce" <rs type="name" key="P579">Mussolini</rs> é um louco...
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability status="free">
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">Pessoa_Um_Camisa_Branca.xml</idno>
+         </publicationStmt>
+         <notesStmt>
+            <note type="summary" resp="JU">Texto atribuído a Pessoa por José Barreto (<ref target="http://www.pessoadigital.pt/en/bibliography/About_the_work_of_Fernando_Pessoa#Barreto_2012">Barreto, 2012</ref>, pp. 225-252), com base na lista de projetos <ref target="http://www.pessoadigital.pt/pt/doc/BNP_E3_189r">BNP 189</ref>, que
+                    por sua vez é material preparatório da <ref target="http://www.pessoadigital.pt/pt/pub/Pessoa_Tabua_Bibliografica_FPessoa"> ʺTábua Bibliográficaʺ</ref>, publicada na revista <hi rend="italic">Presença</hi> em Dezembro de 1928.</note>
+            <note type="genre">
+               <rs type="genre" key="prosa">Prosa</rs>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <list type="work-index">
+               <item>
+                  <rs type="work" key="W298">Um ʺCamisa Brancaʺ</rs>
+               </item>
+            </list>
+            <biblStruct>
+               <analytic>
+                  <title level="a">Um ʺCamisa Brancaʺ</title>
+                  <author>
+                     <rs type="name" key="FP">Fernando Pessoa</rs>
+                  </author>
+                  <textLang mainLang="pt" otherLangs="en"/>
+               </analytic>
+               <monogr>
+                  <title level="j">
+                     <rs type="periodical" key="J10">Sol</rs>
+                  </title>
+                  <imprint>
+                     <date when="1926-11-20">20 de novembro de 1926</date>
+                  </imprint>
+                  <biblScope unit="page">1-2</biblScope>
+               </monogr>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <variantEncoding method="parallel-segmentation" location="internal"/>
+      </encodingDesc>
+   </teiHeader>
+   <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+      <graphic url="prosa/Um_Camisa_Branca_1.jpg"/>
+      <graphic url="prosa/Um_Camisa_Branca_2.jpg"/>
+   </facsimile>
+   <text type="orig" corresp="#W298">
+      <body>
+         <div>
+            <head>Um "Camisa Branca"</head>
+            <head type="sub">O “Duce" <rs type="name" key="P579">Mussolini</rs> é um louco...
                     <lb/>afirma-o ao “<rs type="periodical" key="J10">SOL</rs>" um italiano culto
                     que ama sinceramente a Italia</head>
-                <p rend="indent-first">A vinda do coronel <rs type="name" key="P578">Gray</rs>,
+            <p rend="indent-first">A vinda do coronel <rs type="name" key="P578">Gray</rs>,
                     delegado fascista, a Portugal, e os reparos, de varia ordem, que essa vinda
                     levantou, levaram-nos a investigar se haveria em Lisboa, entre a parte
                     extra-oficial (chamemos-lhe assim) da colonia italiana, algum representante dos
                     principios contrarios com autoridade moral, e, sobretudo, relevo intelectual,
                     para nos dizer sobre o fascismo duas palavras dignas de imprimir.</p>
-                <p rend="indent-first">Aquele caso propicio que está sempre, devemos crê-lo, á
+            <p rend="indent-first">Aquele caso propicio que está sempre, devemos crê-lo, á
                     espreita das pessoas bem intencionadas, trouxe inesperadamente ao nosso
                     conhecimento a existencia insuspeita, nesta capital atlantica, de uma das
                     maiores figuras da Italia, e um dos inimigos de mais estatura das teorias e da
-                    pratica (as teorias são varias e a pratica uma) do regime do Fascio, o sr.<rs
-                        type="name" key="P374">Giovanni B. Angioletti</rs>, o bem conhecido
+                    pratica (as teorias são varias e a pratica uma) do regime do Fascio, o sr.<rs type="name" key="P374">Giovanni B. Angioletti</rs>, o bem conhecido
                     colaborador do «<rs type="periodical" key="J6">Mercure de France</rs>» e ha anos
                     habita entre nós.</p>
-                <p rend="indent-first">Conseguimos que nos levassem á sua presença, e pudemos trocar
+            <p rend="indent-first">Conseguimos que nos levassem á sua presença, e pudemos trocar
                     com ele as palavras precisas para reconhecer, primeiro, que estavamos diante de
                     uma das inteligencias mais lucidas e mais precisas que nos tem sido dado
                     encontrar; segundo, que era esse, em verdade, o homem que procuravamos.</p>
-                <p rend="indent-first">Mal fizemos a pergunta. Não poderemos dizer ao certo se
+            <p rend="indent-first">Mal fizemos a pergunta. Não poderemos dizer ao certo se
                     chegámos a pronunciar o nome do coronel <rs type="name" key="P578">Gray</rs>. A
                     resposta surgiu, mais em relação com o muito que pensavamos que com o pouco que
                     chegámos a dizer.</p>
-                <p rend="indent-first"><hi rend="bold">Os italianos não são ridiculos...</hi></p>
-                <p rend="indent-first"><said who="H_Angioletti">Nós, os italianos, temos – permita-me que o diga – grandes
+            <p rend="indent-first">
+               <hi rend="bold">Os italianos não são ridiculos...</hi>
+            </p>
+            <p rend="indent-first">
+               <said who="H_Angioletti">Nós, os italianos, temos – permita-me que o diga – grandes
                     qualidades, mas o sentimento do ridiculo não se inclue entre elas, nem nenhum
                     dos numerosos amigos, que a Italia tem sempre tido no estrangeiro, alguma vez
                     nos atribuiu um humorismo de inglez ou uma graça de francez. Isto lhe explica,
                     sem mais nada, missões como esta, que o paranoico genial que hoje impera,
                     atravez de escravos audaciosos, na minha pobre Patria, arremessa, para uso de
                     caricaturistas sem assunto, sobre um mundo que, devo dizer-lhe, o admira por o
-                    que conhece dele, e porque não o conhece a ele, nem á Italia.</said></p>
-                <p rend="indent-first">–V. Ex.ᵃ disse «o paranoico genial»?</p>
-                <p rend="indent-first"><said who="H_Angioletti">–Sim – genial como paranoico. Isso não exclue que se lhe
+                    que conhece dele, e porque não o conhece a ele, nem á Italia.</said>
+            </p>
+            <p rend="indent-first">–V. Ex.ᵃ disse «o paranoico genial»?</p>
+            <p rend="indent-first">
+               <said who="H_Angioletti">–Sim – genial como paranoico. Isso não exclue que se lhe
                     possa chamar um grande homem. A toda a gente que destaca do rebanho humano se
-                    pode chamar grande, porisso mesmo que se destacou... <rs type="name" key="P579"
-                        >Mussolini</rs> é um louco – desafio qualquer psiquiatra a negá-lo – mas a
+                    pode chamar grande, porisso mesmo que se destacou... <rs type="name" key="P579">Mussolini</rs> é um louco – desafio qualquer psiquiatra a negá-lo – mas a
                     loucura, como muita gente não sabe, é contagiosa em muitas das suas formas, e
                     é-o precisamente naquelas formas de mais perigo pode haver em se contagiar. O
                     fascismo é um caso como o da loucura dansante da Idade Media, que atacou
                     colectividades. No meu livro... – aqui o nosso entrevistado equilibrou, rápida,
                     uma hesitação, e, ocultando o titulo da sua obra, reatou: – no meu proximo
-                    livro, eu explicarei...</said></p>
-                <p rend="indent-first">E aqui pairou outra vez um pequeno silencio...</p>
-                <p rend="indent-first"><hi rend="bold">O peior mal do fascismo</hi></p>
-                <p rend="indent-first">O anti-fascista continuou, respondendo, com uma intuição
+                    livro, eu explicarei...</said>
+            </p>
+            <p rend="indent-first">E aqui pairou outra vez um pequeno silencio...</p>
+            <p rend="indent-first">
+               <hi rend="bold">O peior mal do fascismo</hi>
+            </p>
+            <p rend="indent-first">O anti-fascista continuou, respondendo, com uma intuição
                     quasi de bruxedo, a qualquer coisa que não havíamos perguntado:</p>
-                <p rend="indent-first"><said who="H_Angioletti">–Tem-se dito muito contra o fascismo. Mas o que se tem dito
+            <p rend="indent-first">
+               <said who="H_Angioletti">–Tem-se dito muito contra o fascismo. Mas o que se tem dito
                     contra o fascismo é o que de menos importante se pode dizer contra ele.
                     Violencias? E’ o que ha de menos importancia real no fascismo. Todos os partidos
                     esforçadamente politicos as exercem desde que as circunstancias sociais lhes
@@ -135,19 +140,22 @@
                     Não: as violencias do fascismo não teem importancia verdadeira. Iguais
                     violencias, se não maiores, praticariam amanhã, se o Destino os bafejasse com a
                     ilusão chamada poder. O que ha de verdadeiramente grave no fascismo não está nas
-                    suas violencias...</said></p>
-                <p rend="indent-first">–Compreendo. Está nas suas doutrinas?...</p>
-                <p rend="indent-first">–<said who="H_Angioletti">Não, não está nas suas doutrinas. Está, essencialmente, na
-                    sua exaltação da Italia.</said></p>
-                <p rend="indent-first">–?</p>
-                <p rend="indent-first">–<said who="H_Angioletti">Não me compreendeu? Eu não esperava que me compreendesse...
+                    suas violencias...</said>
+            </p>
+            <p rend="indent-first">–Compreendo. Está nas suas doutrinas?...</p>
+            <p rend="indent-first">–<said who="H_Angioletti">Não, não está nas suas doutrinas. Está, essencialmente, na
+                    sua exaltação da Italia.</said>
+            </p>
+            <p rend="indent-first">–?</p>
+            <p rend="indent-first">–<said who="H_Angioletti">Não me compreendeu? Eu não esperava que me compreendesse...
                     Eu lhe explico, sem lhe tomar muito tempo; e, se quere saber o pior contra o
-                    regime fascista, vai agora ouvir o pior.</said></p>
-                <p rend="indent-first"><said who="H_Angioletti">«Da Renascença para cá o conceito das funções externas do
+                    regime fascista, vai agora ouvir o pior.</said>
+            </p>
+            <p rend="indent-first">
+               <said who="H_Angioletti">«Da Renascença para cá o conceito das funções externas do
                     Estado evoluiu, e essa evolução é o fenomeno mais caracteristicamente
                     determinante da evolução geral da humanidade. A Renascença, ao mesmo tempo que
-                    fechou a Idade Media, sintetisou a sua experiencia: e o nosso sublime <rs
-                        type="name" key="P220">Dante</rs> é o exemplo disso em carne, osso e alma...
+                    fechou a Idade Media, sintetisou a sua experiencia: e o nosso sublime <rs type="name" key="P220">Dante</rs> é o exemplo disso em carne, osso e alma...
                     Ora na Renascença, como na Idade Media, o conceito do Estado, barbaro e
                     primitivo, era de que o Estado, ou a Nação, existia simplesmente para criar e
                     manter a sua propria grandeza. O progresso humano – pensa-se o que se quizer
@@ -159,45 +167,52 @@
                     martir, dividida, mas grande. A Italia unificada tem falhado a esta missão.
                     Podemos até pensar que a unificação foi um erro... Que tem a Italia unificada
                     dado ao mundo? Nada. O que deu ao mundo a Italia dividida? Tudo. Ora o mal do
-                    fascismo é que é a ultima consequencia da Italia unificada. <rs type="name"
-                        key="P579">Mussolini</rs> é, como todos os loucos, um primitivo cerebral.
+                    fascismo é que é a ultima consequencia da Italia unificada. <rs type="name" key="P579">Mussolini</rs> é, como todos os loucos, um primitivo cerebral.
                     Reverte, por instinto nervoso, aos conceitos já extintos na humanidade
                     civilisada. Não consegue elevar-se acima do ideal morto da «grandeza nacional».
                     A Italia para ele é tudo, mas como Italia só, e não como mestra e aperfeiçoadora
                     do mundo. <rs type="name" key="P579">Mussolini</rs> traiu a Italia, e com isso
-                    traiu a civilisação, porque a Italia e a civilisação são sinónimos...</said></p>
-                <p rend="indent-first"><hi rend="bold">… O mundo é dirigido por forças
-                        especiaes...</hi></p>
-                <p rend="indent-first">Qualquer coisa no tom do nosso entrevistado – uma hesitação
+                    traiu a civilisação, porque a Italia e a civilisação são sinónimos...</said>
+            </p>
+            <p rend="indent-first">
+               <hi rend="bold">… O mundo é dirigido por forças
+                        especiaes...</hi>
+            </p>
+            <p rend="indent-first">Qualquer coisa no tom do nosso entrevistado – uma hesitação
                     subtil, uma vaga indecisão – prende-nos de repente. E de repente
                     perguntámos:</p>
-                <p rend="indent-first">–Mas <rs type="name" key="P579">Mussolini</rs> será tão louco
+            <p rend="indent-first">–Mas <rs type="name" key="P579">Mussolini</rs> será tão louco
                     como isso? <rs type="name" key="P579">Mussolini</rs> fará isso tudo por engano,
                     inconscientemente?</p>
-                <p rend="indent-first">Pela face do anti-fascista passa qualquer coisa que foi quasi
+            <p rend="indent-first">Pela face do anti-fascista passa qualquer coisa que foi quasi
                     um sorriso. Passa... e fica uma expressão que é mais de preocupação que de
                     tristeza. Ergue um pouco a cabeça, que descaira, e diz:</p>
-                <p rend="indent-first"><said who="H_Angioletti"><hi rend="italic">–O mundo é dirigido por forças especiais–
+            <p rend="indent-first">
+               <said who="H_Angioletti">
+                  <hi rend="italic">–O mundo é dirigido por forças especiais–
                         muito especiais mesmo</hi> – de que o fascismo é apenas uma manifestação
                     particular. Entre o que se passa hoje na China e o que se passa hoje na Italia
                     ha uma relação intima, que, no fundo, e nos elementos verdadeiramente dirigentes
                     – não me refiro agora ao pobre Duce – é perfeitamente consciente. Peço a sua
                     atenção para o que lhe estou dizendo, e a sua recordação, de aqui a dez anos, de
-                    que hoje lho disse... V. é novo; não poderá deixar de ser vivo nessa altura.</said></p>
-                <p rend="indent-first">–Não percebo…</p>
-                <p rend="indent-first">O anti-fascista abriu uma gaveta, tirou de lá uma pasta, e,
+                    que hoje lho disse... V. é novo; não poderá deixar de ser vivo nessa altura.</said>
+            </p>
+            <p rend="indent-first">–Não percebo…</p>
+            <p rend="indent-first">O anti-fascista abriu uma gaveta, tirou de lá uma pasta, e,
                     de entre os papeis que nela estavam, escolheu um recorte de jornal. Logo á
                     primeira vista nos pareceu que era um jornal português. A’ segunda vista vimos
                     que efetivamente era. O recorte era de <hi rend="italic">A Informação</hi>,
                     jornal do sr. <rs type="name" key="P662">Homem Cristo Filho</rs>, da secção
                     intitulada <hi rend="italic">Ecos</hi>, e é, textualmente, assim:</p>
-                <p rend="indent-first"><hi rend="bold">O grande livro de <rs type="name" key="P579"
-                            >Mussolini</rs></hi></p>
-                <p rend="indent-first"> A «Entente Internationale contre la 3.eme Internationale»,
+            <p rend="indent-first">
+               <hi rend="bold">O grande livro de <rs type="name" key="P579">Mussolini</rs>
+               </hi>
+            </p>
+            <p rend="indent-first"> A «Entente Internationale contre la 3.eme Internationale»,
                     prestimosa organização anti-bolchevista, expediu agora, do seu Secretariado
                     Espanhol – Calle de Gaztambyde, 20, Madrid – a curiosissima nota de que damos em
                     seguida uma tradução rigorosamente literal:</p>
-                <p rend="indent-first">«Está despertando uma grande curiosidade, na intimidade dos
+            <p rend="indent-first">«Está despertando uma grande curiosidade, na intimidade dos
                     circulos diplomaticos europeus o livro que, a par das suas memorias, se diz
                     estar escrevendo o sr. <rs type="name" key="P579">Benito Mussolini</rs>,
                     primeiro ministro da Italia, como uma nova especie de «Monita Secreta» para os
@@ -219,27 +234,222 @@
                     secretos estes principios, os publicasse francamente, abrindo assim uma nova era
                     na politica europeia, já tão cansada de formulas e de falsas
                     interpretações.»</p>
-                <p rend="indent-first"><hi rend="bold">Uma noticia que não foi
-                    desmentida...</hi></p>
-                <p rend="indent-first">–Mas, perguntámos nós, o que quere isto dizer? Esta noticia
+            <p rend="indent-first">
+               <hi rend="bold">Uma noticia que não foi
+                    desmentida...</hi>
+            </p>
+            <p rend="indent-first">–Mas, perguntámos nós, o que quere isto dizer? Esta noticia
                     foi desmentida?</p>
-                <p rend="indent-first">O anti-fascista encolheu os hombros</p>
-                <p rend="indent-first"><said who="H_Angioletti">–Não foi, nem poderia ser, desmentida. E não foi desmentida
-                    precisamente porque o não poderia ser...</said></p>
-                <p rend="indent-first">–Mas V. Ex.ᵃ diz que <rs type="name" key="P579"
-                        >Mussolini</rs>…</p>
-                <p rend="indent-first">–<said who="H_Angioletti">Faça de conta que eu não disse nada... Ou, melhor, faça de
+            <p rend="indent-first">O anti-fascista encolheu os hombros</p>
+            <p rend="indent-first">
+               <said who="H_Angioletti">–Não foi, nem poderia ser, desmentida. E não foi desmentida
+                    precisamente porque o não poderia ser...</said>
+            </p>
+            <p rend="indent-first">–Mas V. Ex.ᵃ diz que <rs type="name" key="P579">Mussolini</rs>…</p>
+            <p rend="indent-first">–<said who="H_Angioletti">Faça de conta que eu não disse nada... Ou, melhor, faça de
                     conta que lhe disse apenas aquilo que lhe vou repetir: o mundo é dirigido por
-                    forças especiais, de que o fascismo é apenas uma manifestação particular.</said></p>
-                <p rend="indent-first">–E a Italia?</p>
-                <p rend="indent-first">–<said who="H_Angioletti">A Italia é eterna. E’ a mãe sublime das artes e a
+                    forças especiais, de que o fascismo é apenas uma manifestação particular.</said>
+            </p>
+            <p rend="indent-first">–E a Italia?</p>
+            <p rend="indent-first">–<said who="H_Angioletti">A Italia é eterna. E’ a mãe sublime das artes e a
                     fecundadora das sciencias. O seu esforço arrancou a Europa da baixeza de si
                     mesma e ungiu-se com o oleo sacro que dá o conhecimento da beleza e a luxuria da
                     compreensão. A Italia está acima dos <rs type="name" key="P148">Cesares</rs> que
                     saem das alfurjas, dos <rs type="name" key="P662">
-                        <rs type="name" key="P663">Gracos</rs></rs> de pifaro e tambor... A Italia
-                    foi grande, e a Italia tornará a ser grande... Deixe acabar o intervalo...</said></p>
-            </div>
-        </body>
-    </text>
+                     <rs type="name" key="P663">Gracos</rs>
+                  </rs> de pifaro e tambor... A Italia
+                    foi grande, e a Italia tornará a ser grande... Deixe acabar o intervalo...</said>
+            </p>
+         </div>
+      </body>
+   </text>
+   <text type="reg" corresp="#W298">
+      <body>
+         <div>
+            <head>Um "Camisa Branca"</head>
+            <head type="sub">O “Duce" Mussolini é um louco...
+                    <lb/>afirma-o ao “SOL" um italiano culto
+                    que ama sinceramente a Italia</head>
+            <p rend="indent-first">A vinda do coronel Gray,
+                    delegado fascista, a Portugal, e os reparos, de varia ordem, que essa vinda
+                    levantou, levaram-nos a investigar se haveria em Lisboa, entre a parte
+                    extra-oficial (chamemos-lhe assim) da colonia italiana, algum representante dos
+                    principios contrarios com autoridade moral, e, sobretudo, relevo intelectual,
+                    para nos dizer sobre o fascismo duas palavras dignas de imprimir.</p>
+            <p rend="indent-first">Aquele caso propicio que está sempre, devemos crê-lo, á
+                    espreita das pessoas bem intencionadas, trouxe inesperadamente ao nosso
+                    conhecimento a existencia insuspeita, nesta capital atlantica, de uma das
+                    maiores figuras da Italia, e um dos inimigos de mais estatura das teorias e da
+                    pratica (as teorias são varias e a pratica uma) do regime do Fascio, o sr.Giovanni B. Angioletti, o bem conhecido
+                    colaborador do «Mercure de France» e ha anos
+                    habita entre nós.</p>
+            <p rend="indent-first">Conseguimos que nos levassem á sua presença, e pudemos trocar
+                    com ele as palavras precisas para reconhecer, primeiro, que estavamos diante de
+                    uma das inteligencias mais lucidas e mais precisas que nos tem sido dado
+                    encontrar; segundo, que era esse, em verdade, o homem que procuravamos.</p>
+            <p rend="indent-first">Mal fizemos a pergunta. Não poderemos dizer ao certo se
+                    chegámos a pronunciar o nome do coronel Gray. A
+                    resposta surgiu, mais em relação com o muito que pensavamos que com o pouco que
+                    chegámos a dizer.</p>
+            <p rend="indent-first">
+               <hi rend="bold">Os italianos não são ridiculos...</hi>
+            </p>
+            <p rend="indent-first">
+               <said who="H_Angioletti">Nós, os italianos, temos – permita-me que o diga – grandes
+                    qualidades, mas o sentimento do ridiculo não se inclue entre elas, nem nenhum
+                    dos numerosos amigos, que a Italia tem sempre tido no estrangeiro, alguma vez
+                    nos atribuiu um humorismo de inglez ou uma graça de francez. Isto lhe explica,
+                    sem mais nada, missões como esta, que o paranoico genial que hoje impera,
+                    atravez de escravos audaciosos, na minha pobre Patria, arremessa, para uso de
+                    caricaturistas sem assunto, sobre um mundo que, devo dizer-lhe, o admira por o
+                    que conhece dele, e porque não o conhece a ele, nem á Italia.</said>
+            </p>
+            <p rend="indent-first">–V. Ex.ᵃ disse «o paranoico genial»?</p>
+            <p rend="indent-first">
+               <said who="H_Angioletti">–Sim – genial como paranoico. Isso não exclue que se lhe
+                    possa chamar um grande homem. A toda a gente que destaca do rebanho humano se
+                    pode chamar grande, porisso mesmo que se destacou... Mussolini é um louco – desafio qualquer psiquiatra a negá-lo – mas a
+                    loucura, como muita gente não sabe, é contagiosa em muitas das suas formas, e
+                    é-o precisamente naquelas formas de mais perigo pode haver em se contagiar. O
+                    fascismo é um caso como o da loucura dansante da Idade Media, que atacou
+                    colectividades. No meu livro... – aqui o nosso entrevistado equilibrou, rápida,
+                    uma hesitação, e, ocultando o titulo da sua obra, reatou: – no meu proximo
+                    livro, eu explicarei...</said>
+            </p>
+            <p rend="indent-first">E aqui pairou outra vez um pequeno silencio...</p>
+            <p rend="indent-first">
+               <hi rend="bold">O peior mal do fascismo</hi>
+            </p>
+            <p rend="indent-first">O anti-fascista continuou, respondendo, com uma intuição
+                    quasi de bruxedo, a qualquer coisa que não havíamos perguntado:</p>
+            <p rend="indent-first">
+               <said who="H_Angioletti">–Tem-se dito muito contra o fascismo. Mas o que se tem dito
+                    contra o fascismo é o que de menos importante se pode dizer contra ele.
+                    Violencias? E’ o que ha de menos importancia real no fascismo. Todos os partidos
+                    esforçadamente politicos as exercem desde que as circunstancias sociais lhes
+                    garantam a facilidade de as exercer e a impunidade depois de as ter exercido.
+                    Não: as violencias do fascismo não teem importancia verdadeira. Iguais
+                    violencias, se não maiores, praticariam amanhã, se o Destino os bafejasse com a
+                    ilusão chamada poder. O que ha de verdadeiramente grave no fascismo não está nas
+                    suas violencias...</said>
+            </p>
+            <p rend="indent-first">–Compreendo. Está nas suas doutrinas?...</p>
+            <p rend="indent-first">–<said who="H_Angioletti">Não, não está nas suas doutrinas. Está, essencialmente, na
+                    sua exaltação da Italia.</said>
+            </p>
+            <p rend="indent-first">–?</p>
+            <p rend="indent-first">–<said who="H_Angioletti">Não me compreendeu? Eu não esperava que me compreendesse...
+                    Eu lhe explico, sem lhe tomar muito tempo; e, se quere saber o pior contra o
+                    regime fascista, vai agora ouvir o pior.</said>
+            </p>
+            <p rend="indent-first">
+               <said who="H_Angioletti">«Da Renascença para cá o conceito das funções externas do
+                    Estado evoluiu, e essa evolução é o fenomeno mais caracteristicamente
+                    determinante da evolução geral da humanidade. A Renascença, ao mesmo tempo que
+                    fechou a Idade Media, sintetisou a sua experiencia: e o nosso sublime Dante é o exemplo disso em carne, osso e alma...
+                    Ora na Renascença, como na Idade Media, o conceito do Estado, barbaro e
+                    primitivo, era de que o Estado, ou a Nação, existia simplesmente para criar e
+                    manter a sua propria grandeza. O progresso humano – pensa-se o que se quizer
+                    dele – destruiu este preconceito provinciano. Chegámos hoje a um novo conceito
+                    do Estado. Nenhuma nação tem direito a existir se não contribui qualquer coisa
+                    para o progresso geral da humanidade, se não é um Imperio no sentido mais alto
+                    do termo – um foco de expansão de ideias e de melhorias que beneficiem todo o
+                    mundo. E’ este o destino que a Renascença talhou para a Italia – a Italia
+                    martir, dividida, mas grande. A Italia unificada tem falhado a esta missão.
+                    Podemos até pensar que a unificação foi um erro... Que tem a Italia unificada
+                    dado ao mundo? Nada. O que deu ao mundo a Italia dividida? Tudo. Ora o mal do
+                    fascismo é que é a ultima consequencia da Italia unificada. Mussolini é, como todos os loucos, um primitivo cerebral.
+                    Reverte, por instinto nervoso, aos conceitos já extintos na humanidade
+                    civilisada. Não consegue elevar-se acima do ideal morto da «grandeza nacional».
+                    A Italia para ele é tudo, mas como Italia só, e não como mestra e aperfeiçoadora
+                    do mundo. Mussolini traiu a Italia, e com isso
+                    traiu a civilisação, porque a Italia e a civilisação são sinónimos...</said>
+            </p>
+            <p rend="indent-first">
+               <hi rend="bold">… O mundo é dirigido por forças
+                        especiaes...</hi>
+            </p>
+            <p rend="indent-first">Qualquer coisa no tom do nosso entrevistado – uma hesitação
+                    subtil, uma vaga indecisão – prende-nos de repente. E de repente
+                    perguntámos:</p>
+            <p rend="indent-first">–Mas Mussolini será tão louco
+                    como isso? Mussolini fará isso tudo por engano,
+                    inconscientemente?</p>
+            <p rend="indent-first">Pela face do anti-fascista passa qualquer coisa que foi quasi
+                    um sorriso. Passa... e fica uma expressão que é mais de preocupação que de
+                    tristeza. Ergue um pouco a cabeça, que descaira, e diz:</p>
+            <p rend="indent-first">
+               <said who="H_Angioletti">
+                  <hi rend="italic">–O mundo é dirigido por forças especiais–
+                        muito especiais mesmo</hi> – de que o fascismo é apenas uma manifestação
+                    particular. Entre o que se passa hoje na China e o que se passa hoje na Italia
+                    ha uma relação intima, que, no fundo, e nos elementos verdadeiramente dirigentes
+                    – não me refiro agora ao pobre Duce – é perfeitamente consciente. Peço a sua
+                    atenção para o que lhe estou dizendo, e a sua recordação, de aqui a dez anos, de
+                    que hoje lho disse... V. é novo; não poderá deixar de ser vivo nessa altura.</said>
+            </p>
+            <p rend="indent-first">–Não percebo…</p>
+            <p rend="indent-first">O anti-fascista abriu uma gaveta, tirou de lá uma pasta, e,
+                    de entre os papeis que nela estavam, escolheu um recorte de jornal. Logo á
+                    primeira vista nos pareceu que era um jornal português. A’ segunda vista vimos
+                    que efetivamente era. O recorte era de <hi rend="italic">A Informação</hi>,
+                    jornal do sr. Homem Cristo Filho, da secção
+                    intitulada <hi rend="italic">Ecos</hi>, e é, textualmente, assim:</p>
+            <p rend="indent-first">
+               <hi rend="bold">O grande livro de Mussolini</hi>
+            </p>
+            <p rend="indent-first"> A «Entente Internationale contre la 3.eme Internationale»,
+                    prestimosa organização anti-bolchevista, expediu agora, do seu Secretariado
+                    Espanhol – Calle de Gaztambyde, 20, Madrid – a curiosissima nota de que damos em
+                    seguida uma tradução rigorosamente literal:</p>
+            <p rend="indent-first">«Está despertando uma grande curiosidade, na intimidade dos
+                    circulos diplomaticos europeus o livro que, a par das suas memorias, se diz
+                    estar escrevendo o sr. Benito Mussolini,
+                    primeiro ministro da Italia, como uma nova especie de «Monita Secreta» para os
+                    sub-chefes do movimento fascista. Intitula-se esse livro, segundo as melhores
+                    informações, «O Futuro da Anarquia, e destina-se, ao que
+                    por elas consta, a provar que o Grande Ditador italiano não pretende, no fundo,
+                    senão criar uma sociedade nova em moldes que diferem dos sovieticos apenas em
+                    dois pontos: 1º, aquilo a que ele chama a «temporalidade do principio
+                    autoritario», que consiste em criar autoridade em qualquer coisa ficticia, para
+                    assim destacar a autoridade do organismo social; e 2º, o que ele designa «a
+                    dissociação do elemento coercitivo», isto é, a criação duma «força publica»
+                    distinta do exercito e da armada, de modo a estabelecer, segundo as palavras
+                    textuais, «uma dualidade na essencia coerciva do Estado». Estes espantosos e
+                    novissimos princípios, que, mesmo enunciados assim em resumo, mostram a altura e
+                    a originalidade do altissimo espirito do «Duce», são, ao que parece, os que têm
+                    norteado seguramente a notabilissima politica do maior chefe do nosso tempo.
+                    Pregunta-se apenas se não seria mais conveniente, e mais util para todos, que o
+                        sr.Mussolini, em vez de conservar quasi
+                    secretos estes principios, os publicasse francamente, abrindo assim uma nova era
+                    na politica europeia, já tão cansada de formulas e de falsas
+                    interpretações.»</p>
+            <p rend="indent-first">
+               <hi rend="bold">Uma noticia que não foi
+                    desmentida...</hi>
+            </p>
+            <p rend="indent-first">–Mas, perguntámos nós, o que quere isto dizer? Esta noticia
+                    foi desmentida?</p>
+            <p rend="indent-first">O anti-fascista encolheu os hombros</p>
+            <p rend="indent-first">
+               <said who="H_Angioletti">–Não foi, nem poderia ser, desmentida. E não foi desmentida
+                    precisamente porque o não poderia ser...</said>
+            </p>
+            <p rend="indent-first">–Mas V. Ex.ᵃ diz que Mussolini…</p>
+            <p rend="indent-first">–<said who="H_Angioletti">Faça de conta que eu não disse nada... Ou, melhor, faça de
+                    conta que lhe disse apenas aquilo que lhe vou repetir: o mundo é dirigido por
+                    forças especiais, de que o fascismo é apenas uma manifestação particular.</said>
+            </p>
+            <p rend="indent-first">–E a Italia?</p>
+            <p rend="indent-first">–<said who="H_Angioletti">A Italia é eterna. E’ a mãe sublime das artes e a
+                    fecundadora das sciencias. O seu esforço arrancou a Europa da baixeza de si
+                    mesma e ungiu-se com o oleo sacro que dá o conhecimento da beleza e a luxuria da
+                    compreensão. A Italia está acima dos Cesares que
+                    saem das alfurjas, dos 
+                        Gracos de pifaro e tambor... A Italia
+                    foi grande, e a Italia tornará a ser grande... Deixe acabar o intervalo...</said>
+            </p>
+         </div>
+      </body>
+   </text>
 </TEI>

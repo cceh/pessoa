@@ -1,86 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Silêncio por Edgar Poe</title>
-                <author>
-                    <rs type="name" key="FP">Fernando Pessoa</rs>
-                </author>
-                <respStmt>
-                    <resp>Edição, Transcrição, Codificação</resp>
-                    <name>Jorge Uribe</name>
-                </respStmt>
-                <respStmt>
-                    <resp>Modelagem de dados, Codificação</resp>
-                    <name>Ulrike Henny-Krahmer</name>
-                </respStmt>
-                <respStmt>
-                    <resp>Consultoria</resp>
-                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
-                </respStmt>
-            </titleStmt>
-            <publicationStmt>
-                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Silêncio por Edgar Poe</title>
+            <author>
+               <rs type="name" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Edição, Transcrição, Codificação</resp>
+               <name>Jorge Uribe</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny-Krahmer</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
-                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
-                <date>2017</date>
-                <availability status="free">
-                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
-                </availability>
-                <idno type="filename">Pessoa_Silencio.xml</idno>
-            </publicationStmt>
-            <notesStmt>
-                <note type="genre">
-                    <rs type="genre" key="prosa">Prosa</rs>
-                </note>
-            </notesStmt>
-            <sourceDesc>
-                <list type="work-index">
-                    <item><rs type="work" key="W260">Silêncio por Edgar Poe</rs></item>
-                </list>
-                <biblStruct>
-                    <analytic>
-                        <title level="a">Silêncio por Edgar Poe</title>
-                        <author>
-                            <rs type="name" key="FP">Fernando Pessoa</rs>
-                        </author>
-                        <textLang mainLang="pt" otherLangs="en"/>
-                    </analytic>
-                    <monogr>
-                        <title level="j"><rs type="periodical" key="J9">O ʺNotíciasʺ
-                            Ilustrado</rs></title>
-                        <imprint>
-                            <date when="1928-09-16">16 Setembro de 1928</date>
-                        </imprint>
-                        <biblScope unit="page">15</biblScope>
-                    </monogr>
-                </biblStruct>
-            </sourceDesc>
-        </fileDesc>
-        <encodingDesc>
-            <variantEncoding method="parallel-segmentation" location="internal"/>
-        </encodingDesc>
-    </teiHeader>
-    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
-        <graphic url="prosa/Silencio_por_Edgar_Poe.jpg"/>
-    </facsimile>
-    <text corresp="#W260">
-        <body>
-            <div>
-                <head>SILENCIO</head>
-                <head type="sub">por EDGAR POE</head>
-                <p rend="indent-first"><hi rend="bold">N</hi>ASCEU <rs type="name" key="P87">Edgar
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability status="free">
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">Pessoa_Silencio.xml</idno>
+         </publicationStmt>
+         <notesStmt>
+            <note type="genre">
+               <rs type="genre" key="prosa">Prosa</rs>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <list type="work-index">
+               <item>
+                  <rs type="work" key="W260">Silêncio por Edgar Poe</rs>
+               </item>
+            </list>
+            <biblStruct>
+               <analytic>
+                  <title level="a">Silêncio por Edgar Poe</title>
+                  <author>
+                     <rs type="name" key="FP">Fernando Pessoa</rs>
+                  </author>
+                  <textLang mainLang="pt" otherLangs="en"/>
+               </analytic>
+               <monogr>
+                  <title level="j">
+                     <rs type="periodical" key="J9">O ʺNotíciasʺ
+                            Ilustrado</rs>
+                  </title>
+                  <imprint>
+                     <date when="1928-09-16">16 Setembro de 1928</date>
+                  </imprint>
+                  <biblScope unit="page">15</biblScope>
+               </monogr>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <variantEncoding method="parallel-segmentation" location="internal"/>
+      </encodingDesc>
+   </teiHeader>
+   <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+      <graphic url="prosa/Silencio_por_Edgar_Poe.jpg"/>
+   </facsimile>
+   <text type="orig" corresp="#W260">
+      <body>
+         <div>
+            <head>SILENCIO</head>
+            <head type="sub">por EDGAR POE</head>
+            <p rend="indent-first">
+               <hi rend="bold">N</hi>ASCEU <rs type="name" key="P87">Edgar
                         Poe</rs> em Boston em 19 de Janeiro de 1809. Mortos seus pais, que eram
                     actores, foi adoptado por Mrs. <rs type="name" key="P518">John Allan</rs>,
                     mulher de um comerciante de Richmond (Virginia). Dessa adopção lhe veiu o
                     apelido de Allan, e ela valeu-lhe o ser educado na Manor House School, perto de
                     Londres, e depois na nova Universidade de Virginia.</p>
-                <p rend="indent-first">A desordem geral da sua vida, filha de uma predispocição
+            <p rend="indent-first">A desordem geral da sua vida, filha de uma predispocição
                     mórbida profunda, especialmente caracterisada pela tendencia alcoólica, começou
-                    cêdo, e sobretudo se acentuou desde que morta Mrs. <rs type="name" key="P518"
-                        >Allan</rs> e casado segunda vez seu pai adoptivo, se viu sósinho na vida,
+                    cêdo, e sobretudo se acentuou desde que morta Mrs. <rs type="name" key="P518">Allan</rs> e casado segunda vez seu pai adoptivo, se viu sósinho na vida,
                     para a qual fôra mal preparado por uma educação excessivamente carinhosa. Casou
                     cêdo, com uma rapariga de 13 anos, <rs type="name" key="P519">Virginia
                         Clemm</rs>. O seguimento da sua vida prática, quási exclusivamente
@@ -88,15 +92,14 @@
                     1847, agravou mais as já agravadas tendencias mórbidas. Morreu em 1849, vítima
                     de um acesso alcoólico, induzido, ao que parece, por circunstancias
                     interiramente acidentais.</p>
-                <p rend="indent-first"><rs type="name" key="P87">Edgar Poe</rs> é das figuras
+            <p rend="indent-first">
+               <rs type="name" key="P87">Edgar Poe</rs> é das figuras
                     literárias mais notáveis da América Inglesa. Foi poeta, novelista e critico.
-                    Como poeta procedeu um pouco, superficialmente e no começo, de <rs type="name"
-                        key="P248">Byron</rs>; muito e profundamente de <rs type="name" key="P163"
-                        >Coleridge</rs> e da corrente chamada «do maravilhoso» no movimento
+                    Como poeta procedeu um pouco, superficialmente e no começo, de <rs type="name" key="P248">Byron</rs>; muito e profundamente de <rs type="name" key="P163">Coleridge</rs> e da corrente chamada «do maravilhoso» no movimento
                     romantico. Como crítico tem freqùentes pormenores de subtileza, porém nada fez
                     nem de profundo, nem de notável. Como novelista deixou a par de varias obras
                     fouxas e sem imortalidade possível, alguns contos que não poderão esquecer.</p>
-                <p rend="indent-first">O que há de mais notável na sua personalidade complexa é a
+            <p rend="indent-first">O que há de mais notável na sua personalidade complexa é a
                     justaposição – mais que a fusão – de uma imaginação visinha da vesania com um
                     raciocínio frio e lucido. Na imaginação visionadora do estranho ninguem o
                     superou ainda, salvo, talvez, de <rs type="name" key="P30">Sá-Carneiro</rs>,
@@ -104,23 +107,80 @@
                     determinação alucinada de estado mórbidos – como no pavoroso feiticismo da « de
                         <rs type="title">Berenice</rs>» – poucos, se alguns, o terão igualado. Nos
                     contos «de raciocinio» não apareceu ainda seu igual.</p>
-                <p rend="indent-first">Os seus melhores poemas distinguem-se por uma sugestão
+            <p rend="indent-first">Os seus melhores poemas distinguem-se por uma sugestão
                     imaginativa profunda e uma mestria subtil do ritmo. Nos seus melhores contos
                     fundem-se, como em um outro mundo, o delírio da imaginação e a clareza da
                     fixação dêsse delírio.</p>
-                <p rend="indent-first">A sua influéncia principal procede da sua criação do conto
+            <p rend="indent-first">A sua influéncia principal procede da sua criação do conto
                     chamado «policial» e do romance pseudo-scientífico. Todos os romances «policias»
                     modernos descendem de «<rs type="title">O Escaravelho de Oiro</rs>» e dos três
                     contos em que figura como protagonista o célebre C. Augusto Dupin. Todos os
                     romances pseudos-sicentificos, género <rs type="name" key="P520">Verne</rs> e
-                        <rs type="name" key="P271">Wells</rs>, nascem da «<rs type="title"
-                        >Extraodinária Aventura de um tal Hans Pfall</rs>» e de outras narrativas
+                        <rs type="name" key="P271">Wells</rs>, nascem da «<rs type="title">Extraodinária Aventura de um tal Hans Pfall</rs>» e de outras narrativas
                     análogas.– <choice>
-                        <abbr>F<am>.</am> P<am>.</am></abbr>
-                        <expan>F<ex>ernando</ex> P<ex>essoa</ex></expan>
-                    </choice>
-                </p>
-            </div>
-        </body>
-    </text>
+                  <abbr>F<am>.</am> P<am>.</am>
+                  </abbr>
+                  <expan>F<ex>ernando</ex> P<ex>essoa</ex>
+                  </expan>
+               </choice>
+            </p>
+         </div>
+      </body>
+   </text>
+   <text type="reg" corresp="#W260">
+      <body>
+         <div>
+            <head>SILENCIO</head>
+            <head type="sub">por EDGAR POE</head>
+            <p rend="indent-first">
+               <hi rend="bold">N</hi>ASCEU Edgar
+                        Poe em Boston em 19 de Janeiro de 1809. Mortos seus pais, que eram
+                    actores, foi adoptado por Mrs. John Allan,
+                    mulher de um comerciante de Richmond (Virginia). Dessa adopção lhe veiu o
+                    apelido de Allan, e ela valeu-lhe o ser educado na Manor House School, perto de
+                    Londres, e depois na nova Universidade de Virginia.</p>
+            <p rend="indent-first">A desordem geral da sua vida, filha de uma predispocição
+                    mórbida profunda, especialmente caracterisada pela tendencia alcoólica, começou
+                    cêdo, e sobretudo se acentuou desde que morta Mrs. Allan e casado segunda vez seu pai adoptivo, se viu sósinho na vida,
+                    para a qual fôra mal preparado por uma educação excessivamente carinhosa. Casou
+                    cêdo, com uma rapariga de 13 anos, Virginia
+                        Clemm. O seguimento da sua vida prática, quási exclusivamente
+                    literária, se tem tristeza, não tem contudo interêsse. A morte de sua mulher, em
+                    1847, agravou mais as já agravadas tendencias mórbidas. Morreu em 1849, vítima
+                    de um acesso alcoólico, induzido, ao que parece, por circunstancias
+                    interiramente acidentais.</p>
+            <p rend="indent-first">Edgar Poe é das figuras
+                    literárias mais notáveis da América Inglesa. Foi poeta, novelista e critico.
+                    Como poeta procedeu um pouco, superficialmente e no começo, de Byron; muito e profundamente de Coleridge e da corrente chamada «do maravilhoso» no movimento
+                    romantico. Como crítico tem freqùentes pormenores de subtileza, porém nada fez
+                    nem de profundo, nem de notável. Como novelista deixou a par de varias obras
+                    fouxas e sem imortalidade possível, alguns contos que não poderão esquecer.</p>
+            <p rend="indent-first">O que há de mais notável na sua personalidade complexa é a
+                    justaposição – mais que a fusão – de uma imaginação visinha da vesania com um
+                    raciocínio frio e lucido. Na imaginação visionadora do estranho ninguem o
+                    superou ainda, salvo, talvez, de Sá-Carneiro,
+                    cuja intuição do Mistério era, talvez por uma razão de raça, mais completa. Na
+                    determinação alucinada de estado mórbidos – como no pavoroso feiticismo da « de
+                        Berenice» – poucos, se alguns, o terão igualado. Nos
+                    contos «de raciocinio» não apareceu ainda seu igual.</p>
+            <p rend="indent-first">Os seus melhores poemas distinguem-se por uma sugestão
+                    imaginativa profunda e uma mestria subtil do ritmo. Nos seus melhores contos
+                    fundem-se, como em um outro mundo, o delírio da imaginação e a clareza da
+                    fixação dêsse delírio.</p>
+            <p rend="indent-first">A sua influéncia principal procede da sua criação do conto
+                    chamado «policial» e do romance pseudo-scientífico. Todos os romances «policias»
+                    modernos descendem de «O Escaravelho de Oiro» e dos três
+                    contos em que figura como protagonista o célebre C. Augusto Dupin. Todos os
+                    romances pseudos-sicentificos, género Verne e
+                        Wells, nascem da «Extraodinária Aventura de um tal Hans Pfall» e de outras narrativas
+                    análogas.– <choice>
+                  <abbr>F<am>.</am> P<am>.</am>
+                  </abbr>
+                  <expan>F<ex>ernando</ex> P<ex>essoa</ex>
+                  </expan>
+               </choice>
+            </p>
+         </div>
+      </body>
+   </text>
 </TEI>

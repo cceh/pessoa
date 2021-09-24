@@ -1,108 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Luís de Camões glorificado pelos poetas da nossa terra</title>
-                <author>
-                    <rs type="name" key="FP">Fernando Pessoa</rs>
-                </author>
-                <respStmt>
-                    <resp>Edição, Transcrição, Codificação</resp>
-                    <name>Jorge Uribe</name>
-                </respStmt>
-                <respStmt>
-                    <resp>Modelagem de dados, Codificação</resp>
-                    <name>Ulrike Henny-Krahmer</name>
-                </respStmt>
-                <respStmt>
-                    <resp>Consultoria</resp>
-                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
-                </respStmt>
-            </titleStmt>
-            <publicationStmt>
-                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Luís de Camões glorificado pelos poetas da nossa terra</title>
+            <author>
+               <rs type="name" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Edição, Transcrição, Codificação</resp>
+               <name>Jorge Uribe</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny-Krahmer</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
-                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
-                <date>2017</date>
-                <availability status="free">
-                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
-                </availability>
-                <idno type="filename">Pessoa_Luiz_de_Camoes.xml</idno>
-            </publicationStmt>
-            <notesStmt>
-                <note type="genre">
-                    <rs type="genre" key="prosa">Prosa</rs>
-                </note>
-            </notesStmt>
-            <sourceDesc>
-                <list type="work-index">
-                    <item><rs type="work" key="W287">Luís de Camões glorificado pelos poetas da nossa terra</rs></item>
-                </list>
-                <biblStruct>
-                    <analytic>
-                        <title level="a">Luís de Camões glorificado pelos poetas da nossa terra</title>
-                        <author>
-                            <rs type="name" key="FP">Fernando Pessoa</rs>
-                        </author>
-                        <textLang mainLang="pt" otherLangs="en"/>
-                    </analytic>
-                    <monogr>
-                        <title level="j"><rs type="periodical" key="J80">Diário de
-                            Lisboa</rs></title>
-                        <imprint>
-                            <date when="1924-02-04">4 de fevereiro de 1924</date>
-                        </imprint>
-                        <biblScope unit="page">3</biblScope>
-                    </monogr>
-                </biblStruct>
-            </sourceDesc>
-        </fileDesc>
-        <encodingDesc>
-            <variantEncoding method="parallel-segmentation" location="internal"/>
-        </encodingDesc>
-    </teiHeader>
-    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
-        <graphic url="prosa/Luiz_de_Camoes.jpg"/>
-    </facsimile>
-    <text corresp="#W287">
-        <body>
-            <div>
-                <head><rs type="name" key="P15" style="b">LUIZ DE CAMÕES</rs> GLORIFICADO pelos
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability status="free">
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">Pessoa_Luiz_de_Camoes.xml</idno>
+         </publicationStmt>
+         <notesStmt>
+            <note type="genre">
+               <rs type="genre" key="prosa">Prosa</rs>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <list type="work-index">
+               <item>
+                  <rs type="work" key="W287">Luís de Camões glorificado pelos poetas da nossa terra</rs>
+               </item>
+            </list>
+            <biblStruct>
+               <analytic>
+                  <title level="a">Luís de Camões glorificado pelos poetas da nossa terra</title>
+                  <author>
+                     <rs type="name" key="FP">Fernando Pessoa</rs>
+                  </author>
+                  <textLang mainLang="pt" otherLangs="en"/>
+               </analytic>
+               <monogr>
+                  <title level="j">
+                     <rs type="periodical" key="J80">Diário de
+                            Lisboa</rs>
+                  </title>
+                  <imprint>
+                     <date when="1924-02-04">4 de fevereiro de 1924</date>
+                  </imprint>
+                  <biblScope unit="page">3</biblScope>
+               </monogr>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <variantEncoding method="parallel-segmentation" location="internal"/>
+      </encodingDesc>
+   </teiHeader>
+   <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+      <graphic url="prosa/Luiz_de_Camoes.jpg"/>
+   </facsimile>
+   <text type="orig" corresp="#W287">
+      <body>
+         <div>
+            <head>
+               <rs type="name" key="P15" style="b">LUIZ DE CAMÕES</rs> GLORIFICADO pelos
                     poetas da nossa terra</head>
-                <gap reason="selection"/>
-                <p rend="indent-first"><rs type="name" key="P15" style="b">Camões</rs> é <rs
-                        type="title"><hi rend="italic">Os Lusiadas</hi></rs>. O lírico, em quem os
+            <gap reason="selection"/>
+            <p rend="indent-first">
+               <rs type="name" key="P15" style="b">Camões</rs> é <rs type="title">
+                  <hi rend="italic">Os Lusiadas</hi>
+               </rs>. O lírico, em quem os
                     inferiores focam a admiração que os denota inferiores, era, como em outros
                     épicos de sensibilidade tambem notavel, apenas a excedencia inorganica do
                     épico.</p>
-                <p rend="indent-first">Não ocupa <rs type="title"><hi rend="italic">Os
-                        Lusiadas</hi></rs>, um logar entre as primeiras epopeias do mundo; só a <rs
-                        type="title"><hi rend="italic">Iliada</hi></rs>, a <rs type="title"><hi
-                            rend="italic">Divina Comedia</hi></rs> e o <rs type="title"><hi
-                            rend="italic">Paraiso perdido</hi></rs> ganharam essa elevação.
-                    Pertencendo, porém, á segunda ordem das epopeias, como a <rs type="title"><hi
-                            rend="italic">Jerusalem Libertada</hi></rs>, o <rs type="title"><hi
-                            rend="italic">Orlando furioso</hi></rs> , a <rs type="title"><hi
-                            rend="italic">Faerie Queenie</hi></rs> ― e, em certo modo, a <rs
-                        type="title"><hi rend="italic">Odysséa</hi></rs> e a <rs type="title"><hi
-                            rend="italic">Eneida</hi></rs>, que participam das duas ordens, ―
-                    distingue-se <rs type="title"><hi rend="italic">Os Lusiadas</hi></rs> não só
+            <p rend="indent-first">Não ocupa <rs type="title">
+                  <hi rend="italic">Os
+                        Lusiadas</hi>
+               </rs>, um logar entre as primeiras epopeias do mundo; só a <rs type="title">
+                  <hi rend="italic">Iliada</hi>
+               </rs>, a <rs type="title">
+                  <hi rend="italic">Divina Comedia</hi>
+               </rs> e o <rs type="title">
+                  <hi rend="italic">Paraiso perdido</hi>
+               </rs> ganharam essa elevação.
+                    Pertencendo, porém, á segunda ordem das epopeias, como a <rs type="title">
+                  <hi rend="italic">Jerusalem Libertada</hi>
+               </rs>, o <rs type="title">
+                  <hi rend="italic">Orlando furioso</hi>
+               </rs> , a <rs type="title">
+                  <hi rend="italic">Faerie Queenie</hi>
+               </rs> ― e, em certo modo, a <rs type="title">
+                  <hi rend="italic">Odysséa</hi>
+               </rs> e a <rs type="title">
+                  <hi rend="italic">Eneida</hi>
+               </rs>, que participam das duas ordens, ―
+                    distingue-se <rs type="title">
+                  <hi rend="italic">Os Lusiadas</hi>
+               </rs> não só
                     destas epopeias, suas pares, senão tambem daquelas, suas superiores, em que é
                     directamente uma épopeia historica.</p>
-                <p rend="indent-first">A vastidão impressiva de fabula, que uma épopeia requer,
+            <p rend="indent-first">A vastidão impressiva de fabula, que uma épopeia requer,
                     buscaram-a os antigos e os grandes modernos já na lenda ou na historia
-                    indirecta, já no Além. Em aquelas se fundamentam, de diverso modo, a <rs
-                        type="title"><hi rend="italic">Iliada</hi></rs> , a <rs type="title"><hi
-                            rend="italic">Odyssea</hi></rs>, a <rs type="title"><hi rend="italic"
-                            >Eneida</hi></rs>, a <rs type="title"><hi rend="italic"
-                        >Jerusalem</hi></rs> de <rs type="name" key="P240">Tasso</rs>; na lenda
+                    indirecta, já no Além. Em aquelas se fundamentam, de diverso modo, a <rs type="title">
+                  <hi rend="italic">Iliada</hi>
+               </rs> , a <rs type="title">
+                  <hi rend="italic">Odyssea</hi>
+               </rs>, a <rs type="title">
+                  <hi rend="italic">Eneida</hi>
+               </rs>, a <rs type="title">
+                  <hi rend="italic">Jerusalem</hi>
+               </rs> de <rs type="name" key="P240">Tasso</rs>; na lenda
                     absoluta, ou fantasia pura, o poema de <rs type="name" key="P241">Spenser</rs> e
-                    o <rs type="title"><hi rend="italic">Orlando</hi></rs>; no Além ― o Além pagão
-                    do Cristismo ― a epopeia de <rs type="name" key="P220">Dante</rs> e a de <rs
-                        type="name" key="P84">Milton</rs>.</p>
-                <p rend="indent-first">A <rs type="name" key="P15" style="b">Camões</rs> bastou a
+                    o <rs type="title">
+                  <hi rend="italic">Orlando</hi>
+               </rs>; no Além ― o Além pagão
+                    do Cristismo ― a epopeia de <rs type="name" key="P220">Dante</rs> e a de <rs type="name" key="P84">Milton</rs>.</p>
+            <p rend="indent-first">A <rs type="name" key="P15" style="b">Camões</rs> bastou a
                     historia proxima para lenda e Além. O povo, que cantou, fizera da ficção
                     certeza, da distancia colonia, da imaginação vontade. Sob os proprios olhos do
                     épico se desenrolou o inimaginavel e o impossivel se conseguiu. Sua épopeia não
@@ -114,16 +138,58 @@
                     modo viveu o que cantou, sendo, assim, o unico épico que foi lirico ao sel-o.
                     Essa sua singularidade, que é uma virtude, é, como todas as virtudes, origem de
                     varios defeitos.</p>
-                <p rend="indent-first">Resta dizer, de <rs type="name" key="P15" style="b"
-                        >Camões</rs>, que não chegou para o foi. Grande como é, não passou do esboço
-                    de si proprio. Os sobrehomens da nossa gloria constelada ― o <rs type="name"
-                        key="P487">Infante</rs> e <rs type="name" key="P488">Albuquerque</rs> mais
-                    que todos ― não cabem no que ele podia abarcar. A épopeia que <rs type="name"
-                        key="P15" style="b">Camões</rs> escreveu pede que aguardemos a epopeia que
+            <p rend="indent-first">Resta dizer, de <rs type="name" key="P15" style="b">Camões</rs>, que não chegou para o foi. Grande como é, não passou do esboço
+                    de si proprio. Os sobrehomens da nossa gloria constelada ― o <rs type="name" key="P487">Infante</rs> e <rs type="name" key="P488">Albuquerque</rs> mais
+                    que todos ― não cabem no que ele podia abarcar. A épopeia que <rs type="name" key="P15" style="b">Camões</rs> escreveu pede que aguardemos a epopeia que
                     ele não pôde escrever. A maior coisa nele é o não ser grande bastante para os
                     semi-deuses que celebrou.</p>
-                <signed rend="right"><rs type="name" key="FP" role="author" style="b">Fernando Pessoa</rs></signed>
-            </div>
-        </body>
-    </text>
+            <signed rend="right">
+               <rs type="name" key="FP" role="author" style="b">Fernando Pessoa</rs>
+            </signed>
+         </div>
+      </body>
+   </text>
+   <text type="reg" corresp="#W287">
+      <body>
+         <div>
+            <head>LUIZ DE CAMÕES GLORIFICADO pelos
+                    poetas da nossa terra</head>
+            <gap reason="selection"/>
+            <p rend="indent-first">Camões é <hi rend="italic">Os Lusiadas</hi>. O lírico, em quem os
+                    inferiores focam a admiração que os denota inferiores, era, como em outros
+                    épicos de sensibilidade tambem notavel, apenas a excedencia inorganica do
+                    épico.</p>
+            <p rend="indent-first">Não ocupa <hi rend="italic">Os
+                        Lusiadas</hi>, um logar entre as primeiras epopeias do mundo; só a <hi rend="italic">Iliada</hi>, a <hi rend="italic">Divina Comedia</hi> e o <hi rend="italic">Paraiso perdido</hi> ganharam essa elevação.
+                    Pertencendo, porém, á segunda ordem das epopeias, como a <hi rend="italic">Jerusalem Libertada</hi>, o <hi rend="italic">Orlando furioso</hi> , a <hi rend="italic">Faerie Queenie</hi> ― e, em certo modo, a <hi rend="italic">Odysséa</hi> e a <hi rend="italic">Eneida</hi>, que participam das duas ordens, ―
+                    distingue-se <hi rend="italic">Os Lusiadas</hi> não só
+                    destas epopeias, suas pares, senão tambem daquelas, suas superiores, em que é
+                    directamente uma épopeia historica.</p>
+            <p rend="indent-first">A vastidão impressiva de fabula, que uma épopeia requer,
+                    buscaram-a os antigos e os grandes modernos já na lenda ou na historia
+                    indirecta, já no Além. Em aquelas se fundamentam, de diverso modo, a <hi rend="italic">Iliada</hi> , a <hi rend="italic">Odyssea</hi>, a <hi rend="italic">Eneida</hi>, a <hi rend="italic">Jerusalem</hi> de Tasso; na lenda
+                    absoluta, ou fantasia pura, o poema de Spenser e
+                    o <hi rend="italic">Orlando</hi>; no Além ― o Além pagão
+                    do Cristismo ― a epopeia de Dante e a de Milton.</p>
+            <p rend="indent-first">A Camões bastou a
+                    historia proxima para lenda e Além. O povo, que cantou, fizera da ficção
+                    certeza, da distancia colonia, da imaginação vontade. Sob os proprios olhos do
+                    épico se desenrolou o inimaginavel e o impossivel se conseguiu. Sua épopeia não
+                    foi mais que uma reportagem transcendente, que o assunto obrigou a nascer épica.
+                    Este Apolonio podia ter falado com
+                    seus Argonautas, este Homero ter ouvido da boca
+                    dos companheiros de seus Ulysses os terrores da
+                    caverna do Cyclope e a noticia imediata do encantamento das sereias. Em certo
+                    modo viveu o que cantou, sendo, assim, o unico épico que foi lirico ao sel-o.
+                    Essa sua singularidade, que é uma virtude, é, como todas as virtudes, origem de
+                    varios defeitos.</p>
+            <p rend="indent-first">Resta dizer, de Camões, que não chegou para o foi. Grande como é, não passou do esboço
+                    de si proprio. Os sobrehomens da nossa gloria constelada ― o Infante e Albuquerque mais
+                    que todos ― não cabem no que ele podia abarcar. A épopeia que Camões escreveu pede que aguardemos a epopeia que
+                    ele não pôde escrever. A maior coisa nele é o não ser grande bastante para os
+                    semi-deuses que celebrou.</p>
+            <signed rend="right">Fernando Pessoa</signed>
+         </div>
+      </body>
+   </text>
 </TEI>

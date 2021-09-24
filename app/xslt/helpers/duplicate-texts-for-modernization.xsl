@@ -36,20 +36,20 @@
         
     </xsl:template>
     
-    <xsl:template match="node() | @* | comment() | processing-instruction()">
+    <xsl:template match="@* | node() | comment() | processing-instruction()">
         <xsl:copy>
-            <xsl:apply-templates select="node() | @* | comment() | processing-instruction()"/>
+            <xsl:apply-templates select="@* | node() | comment() | processing-instruction()"/>
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="node() | @* | comment() | processing-instruction()" mode="reg">
+    <xsl:template match="@* | node() | comment() | processing-instruction()" mode="reg">
         <xsl:copy>
-            <xsl:apply-templates select="node() | @* | comment() | processing-instruction()"/>
+            <xsl:apply-templates select="@* | node() | comment() | processing-instruction()" mode="reg"/>
         </xsl:copy>
     </xsl:template>
     
     <xsl:template match="rs" mode="reg">
-        <xsl:apply-templates select="node() | @* | comment() | processing-instruction()" mode="reg"/>
+        <xsl:apply-templates mode="reg"/>
     </xsl:template>
     
 </xsl:stylesheet>

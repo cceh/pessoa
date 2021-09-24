@@ -1,96 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Justiça</title>
-                <author>
-                    <rs type="name" key="FP">Fernando Pessoa</rs>
-                </author>
-                <respStmt>
-                    <resp>Edição, Transcrição, Codificação</resp>
-                    <name>Jorge Uribe</name>
-                </respStmt>
-                <respStmt>
-                    <resp>Modelagem de dados, Codificação</resp>
-                    <name>Ulrike Henny-Krahmer</name>
-                </respStmt>
-                <respStmt>
-                    <resp>Consultoria</resp>
-                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
-                </respStmt>
-            </titleStmt>
-            <publicationStmt>
-                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Justiça</title>
+            <author>
+               <rs type="name" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Edição, Transcrição, Codificação</resp>
+               <name>Jorge Uribe</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny-Krahmer</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
-                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
-                <date>2017</date>
-                <availability status="free">
-                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
-                </availability>
-                <idno type="filename">Pessoa_Justiça.xml</idno>
-            </publicationStmt>
-            <notesStmt>
-                <note type="summary">Texto recuperado e reproduzido por Paulo Samuel no jornal <hi
-                        rend="italic">Vila da Feira — Terra de Santa Maria</hi>, nº 35, Outubro de
-                    2013 (<ref
-                        target="http://www.pessoadigital.pt/pt/bibliography/About_the_work_of_Fernando_Pessoa#Samuel_2013"
-                        >Samuel 2013, pp. 12-19</ref>), e recentemente republicado pelo próprio na
-                    revista Pessoa Plural nº 17 (<ref
-                        target="http://www.pessoadigital.pt/pt/bibliography/About_the_work_of_Fernando_Pessoa#Samuel_2020"
-                        >Samuel, 2020</ref>). Agradecemos a Fernando Cabral Martins a indicação
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability status="free">
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">Pessoa_Justiça.xml</idno>
+         </publicationStmt>
+         <notesStmt>
+            <note type="summary">Texto recuperado e reproduzido por Paulo Samuel no jornal <hi rend="italic">Vila da Feira — Terra de Santa Maria</hi>, nº 35, Outubro de
+                    2013 (<ref target="http://www.pessoadigital.pt/pt/bibliography/About_the_work_of_Fernando_Pessoa#Samuel_2013">Samuel 2013, pp. 12-19</ref>), e recentemente republicado pelo próprio na
+                    revista Pessoa Plural nº 17 (<ref target="http://www.pessoadigital.pt/pt/bibliography/About_the_work_of_Fernando_Pessoa#Samuel_2020">Samuel, 2020</ref>). Agradecemos a Fernando Cabral Martins a indicação
                     deste texto. </note>
-                <note type="genre">
-                    <rs type="genre" key="prosa">Prosa</rs>
-                </note>
-            </notesStmt>
-            <sourceDesc>
-                <list type="work-index">
-                    <item><rs type="work" key="W271">Justiça</rs></item>
-                </list>
-                <biblStruct>
-                    <analytic>
-                        <title level="a">Justiça</title>
-                        <author>
-                            <rs type="name" key="FP">Fernando Pessoa</rs>
-                        </author>
-                        <textLang mainLang="pt" otherLangs="en"/>
-                    </analytic>
-                    <monogr>
-                        <title level="j"><rs type="periodical" key="J93">O Mutilado da
+            <note type="genre">
+               <rs type="genre" key="prosa">Prosa</rs>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <list type="work-index">
+               <item>
+                  <rs type="work" key="W271">Justiça</rs>
+               </item>
+            </list>
+            <biblStruct>
+               <analytic>
+                  <title level="a">Justiça</title>
+                  <author>
+                     <rs type="name" key="FP">Fernando Pessoa</rs>
+                  </author>
+                  <textLang mainLang="pt" otherLangs="en"/>
+               </analytic>
+               <monogr>
+                  <title level="j">
+                     <rs type="periodical" key="J93">O Mutilado da
                                 Guerra: Órgão da “Liga Portuguesa dos Mutilados e Inválidos da
-                                Guerra”</rs></title>
-                        <imprint>
-                            <date when="1925-02-03">3 de fevereiro de 1925</date>
-                        </imprint>
-                        <biblScope unit="issue">Número Extraordinário</biblScope>
-                        <biblScope unit="page">3</biblScope>
-                    </monogr>
-                </biblStruct>
-            </sourceDesc>
-        </fileDesc>
-        <encodingDesc>
-            <variantEncoding method="parallel-segmentation" location="internal"/>
-        </encodingDesc>
-    </teiHeader>
-    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
-        <graphic url="prosa/Justiça.jpg"/>
-    </facsimile>
-    <text corresp="#W271">
-        <body>
-            <div>
-                <head>JUSTIÇA</head>
-                <p rend="indent-first">De todos quantos directamente sofreram pela guerra, dos que
+                                Guerra”</rs>
+                  </title>
+                  <imprint>
+                     <date when="1925-02-03">3 de fevereiro de 1925</date>
+                  </imprint>
+                  <biblScope unit="issue">Número Extraordinário</biblScope>
+                  <biblScope unit="page">3</biblScope>
+               </monogr>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <variantEncoding method="parallel-segmentation" location="internal"/>
+      </encodingDesc>
+   </teiHeader>
+   <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+      <graphic url="prosa/Justiça.jpg"/>
+   </facsimile>
+   <text type="orig" corresp="#W271">
+      <body>
+         <div>
+            <head>JUSTIÇA</head>
+            <p rend="indent-first">De todos quantos directamente sofreram pela guerra, dos que
                     efetivamente sofreram a mesma guerra, são os mutilados os que mais
                     pungentemente, porque mais visivelmente, fazem preza nossa compaixão. Segurou-os
                     a Morte, na passagem; não os largou a Vida: seus corpos ficaram esfarrapados da
                     força egual e contraria dos supremos contendentes.</p>
-                <p rend="indent-first">Se alguem tem jus humano – que, se não é mais, não é tambem
+            <p rend="indent-first">Se alguem tem jus humano – que, se não é mais, não é tambem
                     menos, que o patriotico – ao carinho supremo dos que governam e administram os
                     Estados, são estes, que trazem nos corpos, de um modo sinistramente negativo, a
                     mais indiscutivel das condecorações.</p>
-                <p rend="indent-first">Não pergunto nunca se foi bom ou mau que entrassemos, se foi
+            <p rend="indent-first">Não pergunto nunca se foi bom ou mau que entrassemos, se foi
                     bem ou mal que entrámos, na guerra alemã; não o pergunto porque ninguem me
                     saberia responder, pois nisto, como em tudo, nem ha factos nem argumentos, mas
                     só testemunhas e argumentadores. Neste caso dos mutilados, menos ha mister que
@@ -103,15 +102,52 @@
                     humanamente licito que neles pense como em quem não mereça os extremos da acção
                     caritativa e justa, nos governos do paiz, que os exilou regularmente para as
                     fronteiras da Morte, tal indiferença tem a estatura de um crime.</p>
-                <p rend="indent-first">Urge extinguir essa indiferença, e, visto que em ela um crime
+            <p rend="indent-first">Urge extinguir essa indiferença, e, visto que em ela um crime
                     se tem cometido, fazer, ao menos, o unico acto proficuo de arrependimento
                     verdadeiro, que é a não reincidencia e a compensação.</p>
-                <p rend="indent-first">Duvido, porém, que esta justiça se consiga, por isso mesmo
+            <p rend="indent-first">Duvido, porém, que esta justiça se consiga, por isso mesmo
                     que é justiça. A surdez moral dos nossos governantes tem par só em sua cegueira
                     intelectual. E onde não ha sentimento que se mova, nem razão que se convença,
                     que esperança pode haver de justiça?</p>
-                <signed rend="right">Fernando Pessoa</signed>
-            </div>
-        </body>
-    </text>
+            <signed rend="right">Fernando Pessoa</signed>
+         </div>
+      </body>
+   </text>
+   <text type="reg" corresp="#W271">
+      <body>
+         <div>
+            <head>JUSTIÇA</head>
+            <p rend="indent-first">De todos quantos directamente sofreram pela guerra, dos que
+                    efetivamente sofreram a mesma guerra, são os mutilados os que mais
+                    pungentemente, porque mais visivelmente, fazem preza nossa compaixão. Segurou-os
+                    a Morte, na passagem; não os largou a Vida: seus corpos ficaram esfarrapados da
+                    força egual e contraria dos supremos contendentes.</p>
+            <p rend="indent-first">Se alguem tem jus humano – que, se não é mais, não é tambem
+                    menos, que o patriotico – ao carinho supremo dos que governam e administram os
+                    Estados, são estes, que trazem nos corpos, de um modo sinistramente negativo, a
+                    mais indiscutivel das condecorações.</p>
+            <p rend="indent-first">Não pergunto nunca se foi bom ou mau que entrassemos, se foi
+                    bem ou mal que entrámos, na guerra alemã; não o pergunto porque ninguem me
+                    saberia responder, pois nisto, como em tudo, nem ha factos nem argumentos, mas
+                    só testemunhas e argumentadores. Neste caso dos mutilados, menos ha mister que
+                    se pergunte. Fosse quem fosse o responsavel da guerra – supondo que ha
+                    verdadeiros responsaveis em estas, como em todas as coisas – não o foram eles
+                    por certo, que para o circo foram mandados como animais, na jaula inevitavel da
+                    politica dos que não partiram. Assim, não havendo um criterio de culpa propria
+                    que restrinja o direito que eles teem ao nosso carinho expontaneo, nada ha que
+                    desculpe em qualquer homem são a indiferença para eles. E, se já a ninguem é
+                    humanamente licito que neles pense como em quem não mereça os extremos da acção
+                    caritativa e justa, nos governos do paiz, que os exilou regularmente para as
+                    fronteiras da Morte, tal indiferença tem a estatura de um crime.</p>
+            <p rend="indent-first">Urge extinguir essa indiferença, e, visto que em ela um crime
+                    se tem cometido, fazer, ao menos, o unico acto proficuo de arrependimento
+                    verdadeiro, que é a não reincidencia e a compensação.</p>
+            <p rend="indent-first">Duvido, porém, que esta justiça se consiga, por isso mesmo
+                    que é justiça. A surdez moral dos nossos governantes tem par só em sua cegueira
+                    intelectual. E onde não ha sentimento que se mova, nem razão que se convença,
+                    que esperança pode haver de justiça?</p>
+            <signed rend="right">Fernando Pessoa</signed>
+         </div>
+      </body>
+   </text>
 </TEI>

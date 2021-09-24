@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Núcleo de Ação Nacional</title>
+            <author>
+               <rs type="name" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Edição, Transcrição, Codificação</resp>
+               <name>Jorge Uribe</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny-Krahmer</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability status="free">
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">Pessoa_Nucleo_de_Acçao_Nacional.xml</idno>
+         </publicationStmt>
+         <notesStmt>
+            <note type="summary" resp="JU">Texto recuperado por José Barreto em 2013, evidenciando 
+                    a relação da publicação no jornal com material do espólio,
+                    nomeadamente o documento BNP 92I-17, que é um dactiloscrito idêntico ao texto
+                    publicado (<bibl source="Barreto_2013">Barreto, 2013</bibl>, pp. 97-112).</note>
+            <note type="genre">
+               <rs type="genre" key="prosa">Prosa</rs>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <list type="work-index">
+               <item>
+                  <rs type="work" key="W275">Núcleo de Ação Nacional</rs>
+               </item>
+            </list>
+            <biblStruct>
+               <analytic>
+                  <title level="a">Núcleo de Ação Nacional</title>
+                  <author>
+                     <rs type="name" key="FP">Fernando Pessoa</rs>
+                  </author>
+                  <textLang mainLang="pt" otherLangs="en"/>
+               </analytic>
+               <monogr>
+                  <title level="j">
+                     <rs type="periodical" key="J58">Acção</rs>
+                  </title>
+                  <imprint>
+                     <date when="1919-05-19">19 de maio de 1919</date>
+                  </imprint>
+                  <biblScope unit="page">2</biblScope>
+               </monogr>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <variantEncoding method="parallel-segmentation" location="internal"/>
+      </encodingDesc>
+   </teiHeader>
+   <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+      <graphic url="prosa/Programa_Nucleo.jpg"/>
+   </facsimile>
+   <text type="orig" corresp="#W275">
+      <body>
+         <div>
+            <head>Nucleo de Acção Nacional</head>
+            <head type="sub">Os seus fins</head>
+            <p rend="indent-first">1. Promover em Portugal o estabelecimento de uma opinião publica de accordo com
+                    as necessidades primarias do paiz neste momento, e destinada, pela fôrça que
+                    adquira, a crear uma atmosphera pouco propicia á politica meramente
+                    partidaria.</p>
+            <p rend="indent-first">2. Crear essa opinião publica em volta da necessidade immediata da organização
+                    comercial e industrial do paiz, e da effectivação de planos definidos e
+                    concretos visando, acima de tudo, a nossa reconstrução economiaca e a nossa
+                    revitalização financeira.</p>
+            <p rend="indent-first">3. Promover a coordenação de competencias em todos os ramos da atividade nacional,
+                    fazendo com que uma constante intenção patriotica seja a força intima de que
+                    resulte essa coordenação.</p>
+            <p rend="indent-first">4. Promover a valorização profissional do individuo portuguez, e, ao mesmo tempo,
+                    a valorização patriotica das classes organizadas que resultem d’essa
+                    intensificação do valor practico do individuo.</p>
+            <p rend="indent-first">5. Pugnar por a effectivação de uma politica internacional que se coadune com o
+                    estado de cousas que uma reorganização assim feita realize, ou tenda a realizar,
+                    isto é, uma politica internacional que estude mais a nossa valorização externa
+                    como entidade comercial do que a nossa valorização puramente politica, que não
+                    pode ser senão a de subserviencia perante umas nações e de inutil antagonismo
+                    perante outras.</p>
+            <p rend="indent-first">Para a plena e intensa realização d’esta attitude, o NUCLEO entende não dever
+                    deixar que a sua actividade exceda os limites rigorosamente practicos que este
+                    programma impõe, não lhe cabendo, portanto, occupar-se d’estes problemas no seu
+                    sentido propriamente intellectual, nem de qualquer problema de tal modo que
+                    possa servir os interesses estreitos de determinado partido ou de determinada
+                    corrente politica.</p>
+         </div>
+      </body>
+   </text>
+   <text type="reg" corresp="#W275">
+      <body>
+         <div>
+            <head>Nucleo de Acção Nacional</head>
+            <head type="sub">Os seus fins</head>
+            <p rend="indent-first">1. Promover em Portugal o estabelecimento de uma opinião publica de accordo com
+                    as necessidades primarias do paiz neste momento, e destinada, pela fôrça que
+                    adquira, a crear uma atmosphera pouco propicia á politica meramente
+                    partidaria.</p>
+            <p rend="indent-first">2. Crear essa opinião publica em volta da necessidade immediata da organização
+                    comercial e industrial do paiz, e da effectivação de planos definidos e
+                    concretos visando, acima de tudo, a nossa reconstrução economiaca e a nossa
+                    revitalização financeira.</p>
+            <p rend="indent-first">3. Promover a coordenação de competencias em todos os ramos da atividade nacional,
+                    fazendo com que uma constante intenção patriotica seja a força intima de que
+                    resulte essa coordenação.</p>
+            <p rend="indent-first">4. Promover a valorização profissional do individuo portuguez, e, ao mesmo tempo,
+                    a valorização patriotica das classes organizadas que resultem d’essa
+                    intensificação do valor practico do individuo.</p>
+            <p rend="indent-first">5. Pugnar por a effectivação de uma politica internacional que se coadune com o
+                    estado de cousas que uma reorganização assim feita realize, ou tenda a realizar,
+                    isto é, uma politica internacional que estude mais a nossa valorização externa
+                    como entidade comercial do que a nossa valorização puramente politica, que não
+                    pode ser senão a de subserviencia perante umas nações e de inutil antagonismo
+                    perante outras.</p>
+            <p rend="indent-first">Para a plena e intensa realização d’esta attitude, o NUCLEO entende não dever
+                    deixar que a sua actividade exceda os limites rigorosamente practicos que este
+                    programma impõe, não lhe cabendo, portanto, occupar-se d’estes problemas no seu
+                    sentido propriamente intellectual, nem de qualquer problema de tal modo que
+                    possa servir os interesses estreitos de determinado partido ou de determinada
+                    corrente politica.</p>
+         </div>
+      </body>
+   </text>
+</TEI>
