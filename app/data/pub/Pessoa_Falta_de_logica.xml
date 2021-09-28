@@ -1,120 +1,173 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Falta de lógica... Passadista</title>
-                <author>
-                    <rs type="name" key="FP">Fernando Pessoa</rs>
-                </author>
-                <respStmt>
-                    <resp>Edição, Transcrição, Codificação</resp>
-                    <name>Jorge Uribe</name>
-                </respStmt>
-                <respStmt>
-                    <resp>Modelagem de dados, Codificação</resp>
-                    <name>Ulrike Henny-Krahmer</name>
-                </respStmt>
-                <respStmt>
-                    <resp>Consultoria</resp>
-                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
-                </respStmt>
-            </titleStmt>
-            <publicationStmt>
-                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Falta de lógica... Passadista</title>
+            <author>
+               <rs type="name" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Edição, Transcrição, Codificação</resp>
+               <name>Jorge Uribe</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny-Krahmer</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
-                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
-                <date>2017</date>
-                <availability status="free">
-                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
-                </availability>
-                <idno type="filename">Pessoa_Falta_de_logica.xml</idno>
-            </publicationStmt>
-            <notesStmt>
-                <note type="summary">Este texto foi recuperado em 2002 por Mário Matos Lemos, segundo
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability status="free">
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">Pessoa_Falta_de_logica.xml</idno>
+         </publicationStmt>
+         <notesStmt>
+            <note type="summary">Este texto foi recuperado em 2002 por Mário Matos Lemos, segundo
                     conta Richard Zenith, numa nota ao texto anterior, mas sem o reproduzir na sua
                     edição (Pessoa 2017, p. 476).</note>
-                <note type="genre">
-                    <rs type="genre" key="prosa">Prosa</rs>
-                </note>
-            </notesStmt>
-            <sourceDesc>
-                <list type="work-index">
-                    <item><rs type="work" key="W270">Falta de lógica... Passadista</rs></item>
-                </list>
-                <biblStruct>
-                    <analytic>
-                        <title level="a">Falta de lógica... Passadista</title>
-                        <author>
-                            <rs type="name" key="FP">Fernando Pessoa</rs>
-                        </author>
-                        <textLang mainLang="pt" otherLangs="en"/>
-                    </analytic>
-                    <monogr>
-                        <title level="j"><rs type="periodical" key="J60">O Tempo</rs></title>
-                        <imprint>
-                            <date when="1918-10-17">17 de outubro de 1918</date>
-                        </imprint>
-                        <biblScope unit="page">1</biblScope>
-                    </monogr>
-                </biblStruct>
-            </sourceDesc>
-        </fileDesc>
-        <encodingDesc>
-            <variantEncoding method="parallel-segmentation" location="internal"/>
-        </encodingDesc>
-    </teiHeader>
-    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
-        <graphic url="prosa/Falta_de_logica.jpg"/>
-    </facsimile>
-    <text corresp="#W270">
-        <body>
-            <div>
-                <head>Falta de logica... Passadista</head>
-                <p rend="indent-first">O meu artigo <ref
-                        target="http://www.pessoadigital.pt/pub/Pessoa_Falencia"><hi rend="italic"
-                            >Falencia?</hi></ref> aqui publicado, levou o 
-                    <rs type="periodical" key="J95"><hi rend="italic">Diario
-                        Nacional</hi></rs> a responder (?) com umas considerações intituladas <hi
-                        rend="italic">Logica... futurista</hi>.</p>
-                <p rend="indent-first">Razão tinha eu em me referir, ainda que como simples
+            <note type="genre">
+               <rs type="genre" key="prosa">Prosa</rs>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <list type="work-index">
+               <item>
+                  <rs type="work" key="W270">Falta de lógica... Passadista</rs>
+               </item>
+            </list>
+            <biblStruct>
+               <analytic>
+                  <title level="a">Falta de lógica... Passadista</title>
+                  <author>
+                     <rs type="name" key="FP">Fernando Pessoa</rs>
+                  </author>
+                  <textLang mainLang="pt" otherLangs="en"/>
+               </analytic>
+               <monogr>
+                  <title level="j">
+                     <rs type="periodical" key="J60">O Tempo</rs>
+                  </title>
+                  <imprint>
+                     <date when="1918-10-17">17 de outubro de 1918</date>
+                  </imprint>
+                  <biblScope unit="page">1</biblScope>
+               </monogr>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <variantEncoding method="parallel-segmentation" location="internal"/>
+      </encodingDesc>
+   </teiHeader>
+   <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+      <graphic url="prosa/Falta_de_logica.jpg"/>
+   </facsimile>
+   <text type="orig" corresp="#W270">
+      <body>
+         <div>
+            <head>Falta de logica... Passadista</head>
+            <p rend="indent-first">O meu artigo <ref target="http://www.pessoadigital.pt/pub/Pessoa_Falencia">
+                  <hi rend="italic">Falencia?</hi>
+               </ref> aqui publicado, levou o 
+                    <rs type="periodical" key="J95">
+                  <hi rend="italic">Diario
+                        Nacional</hi>
+               </rs> a responder (?) com umas considerações intituladas <hi rend="italic">Logica... futurista</hi>.</p>
+            <p rend="indent-first">Razão tinha eu em me referir, ainda que como simples
                     corolario da minha demonstração, á indisciplina mental dos monarquicos. A
                     resposta (?) de que se trata, seja ela da autoria de quem fôr, é prova bastante.
                     Seria dificil manifestar mais completamente, em tão curto espaço, a confusão do
                     espirito, a incapacidade de compreender e de discutir.</p>
-                <p rend="indent-first">Imagine-se que o diarista nacional não tem melhor argumento
+            <p rend="indent-first">Imagine-se que o diarista nacional não tem melhor argumento
                     contra a minha tese do que, dizendo que não compreendi o sentido que se dá á
                     fráse “A Republica faliu”, explicar essa frase... precisamente em termos que eu
                     tinha previsto, analisado e refutado! “Precisamente” é modo de dizer, e modo de
                     dizer erado. Imprecisamente é que é, porque o critico (?), expondo confusamente
                     o que já fora exposto com lucidez, julga estar dizendo outra coisa, quando a
                     unica novidade é a confusão, que parte delle.</p>
-                <p rend="indent-first">Outro argumento da mesma fonte... seca: a minha tese é falsa
-                    porque colaborei em <rs type="periodical" key="J12"><hi rend="italic"
-                        >Orfeu</hi></rs>.</p>
-                <p rend="indent-first">Terceiro y ultimo argumento: discutindo as teorias
+            <p rend="indent-first">Outro argumento da mesma fonte... seca: a minha tese é falsa
+                    porque colaborei em <rs type="periodical" key="J12">
+                  <hi rend="italic">Orfeu</hi>
+               </rs>.</p>
+            <p rend="indent-first">Terceiro y ultimo argumento: discutindo as teorias
                     monarquicas a respeito da Republica, agredi quem nunca me fez mal.</p>
-                <p rend="indent-first">É certo que nunca me fizeram mal, como é falso que haja no
+            <p rend="indent-first">É certo que nunca me fizeram mal, como é falso que haja no
                     artigo em questão qualquer coisa a que se possa chamar “agredir”. O melhor,
                     porém, é aquele achado do neo-<rs type="name" key="P577">João Felix</rs> de que
                     a gente tem obrigação de concordar com as teorias politicas das pessoas que
                     nunca nos fizeram mal.</p>
-                <p rend="indent-first">Mas onde o critico (?) revela o seu segredo psiquico é em duas
-                    afirmações casuaes: a de que o meu artigo não passa de <hi rend="italic"
-                        >galimatias</hi>, e a de que sofro a influencia de um tratado qualquer de
+            <p rend="indent-first">Mas onde o critico (?) revela o seu segredo psiquico é em duas
+                    afirmações casuaes: a de que o meu artigo não passa de <hi rend="italic">galimatias</hi>, e a de que sofro a influencia de um tratado qualquer de
                     logica.</p>
-                <p rend="indent-first">Esta gente que só tem cabeça porque a providencia não quer
+            <p rend="indent-first">Esta gente que só tem cabeça porque a providencia não quer
                     desamparar os chapeleiros, tem, ante um raciocino apertado e coerente, a noção
                     de que ele é confuso, porque, sendo incapaz de (pelo menos) segui-lo com
                     atenção, perde-lhe o fio e não compreende nada. E esta mesma gente tem sempre a
                     noção camponia de que se aprende a raciocinar nos tratados de logica; o que
                     equivale a supôr que se aprende a ouvir nos tratados de acustica.</p>
-                <p rend="indent-first">E querem eles que os tomem a serio!.. E criticam os
+            <p rend="indent-first">E querem eles que os tomem a serio!.. E criticam os
                     argumentos dos outros!.</p>
-                <p rend="indent-first">Ah, estes sucedaneos do cerebro nunca deram resultado!</p>
-                <signed rend="right"><rs type="name" key="FP" role="author" style="b">Fernando Pessoa.</rs></signed>
-            </div>
-        </body>
-    </text>
+            <p rend="indent-first">Ah, estes sucedaneos do cerebro nunca deram resultado!</p>
+            <signed rend="right">
+               <rs type="name" key="FP" role="author" style="b">Fernando Pessoa.</rs>
+            </signed>
+         </div>
+      </body>
+   </text>
+   <text type="reg" corresp="#W270">
+      <body>
+         <div>
+            <head>Falta de logica... Passadista</head>
+            <p rend="indent-first">O meu artigo <ref target="http://www.pessoadigital.pt/pub/Pessoa_Falencia">
+                  <hi rend="italic">Falencia?</hi>
+               </ref> aqui publicado, levou o 
+                    <hi rend="italic">Diario
+                        Nacional</hi> a responder (?) com umas considerações intituladas <hi rend="italic">Logica... futurista</hi>.</p>
+            <p rend="indent-first">Razão tinha eu em me referir, ainda que como simples
+                    corolario da minha demonstração, á indisciplina mental dos monarquicos. A
+                    resposta (?) de que se trata, seja ela da autoria de quem fôr, é prova bastante.
+                    Seria dificil manifestar mais completamente, em tão curto espaço, a confusão do
+                    espirito, a incapacidade de compreender e de discutir.</p>
+            <p rend="indent-first">Imagine-se que o diarista nacional não tem melhor argumento
+                    contra a minha tese do que, dizendo que não compreendi o sentido que se dá á
+                    fráse “A Republica faliu”, explicar essa frase... precisamente em termos que eu
+                    tinha previsto, analisado e refutado! “Precisamente” é modo de dizer, e modo de
+                    dizer erado. Imprecisamente é que é, porque o critico (?), expondo confusamente
+                    o que já fora exposto com lucidez, julga estar dizendo outra coisa, quando a
+                    unica novidade é a confusão, que parte delle.</p>
+            <p rend="indent-first">Outro argumento da mesma fonte... seca: a minha tese é falsa
+                    porque colaborei em <hi rend="italic">Orfeu</hi>.</p>
+            <p rend="indent-first">Terceiro y ultimo argumento: discutindo as teorias
+                    monarquicas a respeito da Republica, agredi quem nunca me fez mal.</p>
+            <p rend="indent-first">É certo que nunca me fizeram mal, como é falso que haja no
+                    artigo em questão qualquer coisa a que se possa chamar “agredir”. O melhor,
+                    porém, é aquele achado do neo-João Felix de que
+                    a gente tem obrigação de concordar com as teorias politicas das pessoas que
+                    nunca nos fizeram mal.</p>
+            <p rend="indent-first">Mas onde o critico (?) revela o seu segredo psiquico é em duas
+                    afirmações casuaes: a de que o meu artigo não passa de <hi rend="italic">galimatias</hi>, e a de que sofro a influencia de um tratado qualquer de
+                    logica.</p>
+            <p rend="indent-first">Esta gente que só tem cabeça porque a providencia não quer
+                    desamparar os chapeleiros, tem, ante um raciocino apertado e coerente, a noção
+                    de que ele é confuso, porque, sendo incapaz de (pelo menos) segui-lo com
+                    atenção, perde-lhe o fio e não compreende nada. E esta mesma gente tem sempre a
+                    noção camponia de que se aprende a raciocinar nos tratados de logica; o que
+                    equivale a supôr que se aprende a ouvir nos tratados de acustica.</p>
+            <p rend="indent-first">E querem eles que os tomem a serio!.. E criticam os
+                    argumentos dos outros!.</p>
+            <p rend="indent-first">Ah, estes sucedaneos do cerebro nunca deram resultado!</p>
+            <signed rend="right">Fernando Pessoa.</signed>
+         </div>
+      </body>
+   </text>
 </TEI>

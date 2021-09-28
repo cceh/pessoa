@@ -1,124 +1,173 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Tábua bibliográfica, Mário de Sá-Carneiro</title>
-                <author>
-                    <rs type="name" key="FP">Fernando Pessoa</rs>
-                </author>
-                <respStmt>
-                    <resp>Edição, Transcrição, Codificação</resp>
-                    <name>Jorge Uribe</name>
-                </respStmt>
-                <respStmt>
-                    <resp>Modelagem de dados, Codificação</resp>
-                    <name>Ulrike Henny-Krahmer</name>
-                </respStmt>
-                <respStmt>
-                    <resp>Consultoria</resp>
-                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
-                </respStmt>
-            </titleStmt>
-            <publicationStmt>
-                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Tábua bibliográfica, Mário de Sá-Carneiro</title>
+            <author>
+               <rs type="name" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Edição, Transcrição, Codificação</resp>
+               <name>Jorge Uribe</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny-Krahmer</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
-                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
-                <date>2017</date>
-                <availability status="free">
-                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
-                </availability>
-                <idno type="filename">Pessoa_Tabua_Bibliografica_SaCarneiro.xml</idno>
-            </publicationStmt>
-            <notesStmt>
-                <note type="genre">
-                    <rs type="genre" key="prosa">Prosa</rs>
-                </note>
-            </notesStmt>
-            <sourceDesc>
-                <list type="work-index">
-                    <item><rs type="work" key="W244">Tábua bibliográfica, Mário de
-                        Sá-Carneiro</rs></item>
-                </list>
-                <biblStruct>
-                    <analytic>
-                        <title level="a">Tábua bibliográfica, Mário de Sá-Carneiro</title>
-                        <author>
-                            <rs type="name" key="FP">Fernando Pessoa</rs>
-                        </author>
-                        <textLang mainLang="pt" otherLangs="en"/>
-                    </analytic>
-                    <monogr>
-                        <title level="j"><rs type="periodical" key="J1">Presença</rs></title>
-                        <imprint>
-                            <date when="1928-11">novembro de 1928</date>
-                        </imprint>
-                        <biblScope unit="issue">16</biblScope>
-                        <biblScope unit="page">3</biblScope>
-                    </monogr>
-                </biblStruct>
-            </sourceDesc>
-        </fileDesc>
-        <encodingDesc>
-            <variantEncoding method="parallel-segmentation" location="internal"/>
-        </encodingDesc>
-    </teiHeader>
-    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
-        <graphic url="prosa/Tabua_Mario_SC.jpg"/>
-    </facsimile>
-    <text corresp="#W244">
-        <body>
-            <div>
-                <head><rs type="name" key="P30" style="a">MÁRIO DE SÁ-CARNEIRO</rs></head>
-                <p rend="indent-first"><hi rend="bold">N</hi>asceu em Lisboa, em 19 de Maio de 1890;
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability status="free">
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">Pessoa_Tabua_Bibliografica_SaCarneiro.xml</idno>
+         </publicationStmt>
+         <notesStmt>
+            <note type="genre">
+               <rs type="genre" key="prosa">Prosa</rs>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <list type="work-index">
+               <item>
+                  <rs type="work" key="W244">Tábua bibliográfica, Mário de
+                        Sá-Carneiro</rs>
+               </item>
+            </list>
+            <biblStruct>
+               <analytic>
+                  <title level="a">Tábua bibliográfica, Mário de Sá-Carneiro</title>
+                  <author>
+                     <rs type="name" key="FP">Fernando Pessoa</rs>
+                  </author>
+                  <textLang mainLang="pt" otherLangs="en"/>
+               </analytic>
+               <monogr>
+                  <title level="j">
+                     <rs type="periodical" key="J1">Presença</rs>
+                  </title>
+                  <imprint>
+                     <date when="1928-11">novembro de 1928</date>
+                  </imprint>
+                  <biblScope unit="issue">16</biblScope>
+                  <biblScope unit="page">3</biblScope>
+               </monogr>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <variantEncoding method="parallel-segmentation" location="internal"/>
+      </encodingDesc>
+   </teiHeader>
+   <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+      <graphic url="prosa/Tabua_Mario_SC.jpg"/>
+   </facsimile>
+   <text type="orig" corresp="#W244">
+      <body>
+         <div>
+            <head>
+               <rs type="name" key="P30" style="a">MÁRIO DE SÁ-CARNEIRO</rs>
+            </head>
+            <p rend="indent-first">
+               <hi rend="bold">N</hi>asceu em Lisboa, em 19 de Maio de 1890;
                     suicidou-se em Paris, em 26 de Abril de 1916.</p>
-                <p rend="indent-first">Os appellidos, como é de vêr, não são ligados; mas, como elle
+            <p rend="indent-first">Os appellidos, como é de vêr, não são ligados; mas, como elle
                     assim os passou a escrever, assim devem ser mantidos no seu nome.</p>
-                <p rend="indent-first">Publicou os seguintes livros:</p>
-                <p rend="indent-first">
-                    <rs type="title">AMISADE</rs>, peça em 3 actos (com <rs type="name" key="P568"
-                        >Thomaz Cabreira Junior</rs>), 1912;</p>
-                <p rend="indent-first">
-                    <rs type="title">PRINCIPIO</rs>, novellas, 1912;</p>
-                <p rend="indent-first">
-                    <rs type="title">DISPERSÃO</rs>, 12 poemas, 1914;</p>
-                <p rend="indent-first">
-                    <rs type="title">A CONFISSÃO DE LUCIO</rs>, narrativa, 1914 (simultaneamente com
+            <p rend="indent-first">Publicou os seguintes livros:</p>
+            <p rend="indent-first">
+               <rs type="title">AMISADE</rs>, peça em 3 actos (com <rs type="name" key="P568">Thomaz Cabreira Junior</rs>), 1912;</p>
+            <p rend="indent-first">
+               <rs type="title">PRINCIPIO</rs>, novellas, 1912;</p>
+            <p rend="indent-first">
+               <rs type="title">DISPERSÃO</rs>, 12 poemas, 1914;</p>
+            <p rend="indent-first">
+               <rs type="title">A CONFISSÃO DE LUCIO</rs>, narrativa, 1914 (simultaneamente com
                         <rs type="title">DISPERSÃO</rs>);</p>
-                <p rend="indent-first">
-                    <rs type="title">CÉU EM FOGO</rs>, novellas, 1915.</p>
-                <p rend="indent-first">Deixou ineditos, mas publicaveis:</p>
-                <p rend="indent-first"><rs type="title">INDICIOS DE OURO</rs>, poemas; se o primeiro
+            <p rend="indent-first">
+               <rs type="title">CÉU EM FOGO</rs>, novellas, 1915.</p>
+            <p rend="indent-first">Deixou ineditos, mas publicaveis:</p>
+            <p rend="indent-first">
+               <rs type="title">INDICIOS DE OURO</rs>, poemas; se o primeiro
                     capitulo de uma novella intitulada <rs type="title">MUNDO INTERIOR</rs>. O
-                    manuscripto completo do primeiro está na posse de <rs type="name" role="topic"
-                        key="FP">Fernando Pessoa</rs>, a quem foi enviado uns dias antes do
+                    manuscripto completo do primeiro está na posse de <rs type="name" role="topic" key="FP">Fernando Pessoa</rs>, a quem foi enviado uns dias antes do
                     suicidio. O manuscripto do segundo, que ficára em Paris, desapareceu, não tendo
                     sido encontrado até agora.</p>
-                <p rend="indent-first">
-                    <rs type="name" key="P30" style="a">Mario de Sá-Carneiro</rs> collaborou
+            <p rend="indent-first">
+               <rs type="name" key="P30" style="a">Mario de Sá-Carneiro</rs> collaborou
                     bastante em jornaes e revistas, sobretudo anteriormente a 1912, mas d’essa
                     collaboração são aproveitaveis só: (1) o poema semi-futurista (feito com
-                    intenção de blague) <rs type="title">MANUCURE</rs>, in <rs type="periodical"
-                        key="J12">Orpheu</rs> 2, (2) um artigo <rs type="title">O THEATRO ARTE</rs>,
+                    intenção de blague) <rs type="title">MANUCURE</rs>, in <rs type="periodical" key="J12">Orpheu</rs> 2, (2) um artigo <rs type="title">O THEATRO ARTE</rs>,
                     no jornal de Lisboa <rs type="periodical" key="J84"> «O Debate»</rs>, e (3) uma
-                    opinião em resposta a um inquerito litterario do jornal <rs type="periodical"
-                        key="J20"> «Republica»</rs>, tambem de Lisboa.</p>
-                <p rend="indent-first">
-                    <rs type="name" key="P30" style="a">Mário de Sá-Carneiro</rs> deixou a <rs
-                        type="name" role="topic" key="FP">Fernando Pessoa</rs> a indicação de
+                    opinião em resposta a um inquerito litterario do jornal <rs type="periodical" key="J20"> «Republica»</rs>, tambem de Lisboa.</p>
+            <p rend="indent-first">
+               <rs type="name" key="P30" style="a">Mário de Sá-Carneiro</rs> deixou a <rs type="name" role="topic" key="FP">Fernando Pessoa</rs> a indicação de
                     publicar a obra, que d’elle houvesse, onde, quando e como lhe parecesse melhor.
                     Essa publicação definitiva não será feita por emquanto, pois não ha ainda
                     publico, propriamente dicto, para ella. Quando feita, constará dos livros (1) de
                     verso, <rs type="title">DISPERSÃO</rs>, <rs type="title">INDÍCIOS DE OURO</rs>,
-                    e o poema <rs type="title">MANUCURE</rs>, apesar de blague, (2) de prosa, <rs
-                        type="title">A CONFISSÃO DE LUCIO</rs> e <rs type="title">CEU EM FOGO</rs>,
+                    e o poema <rs type="title">MANUCURE</rs>, apesar de blague, (2) de prosa, <rs type="title">A CONFISSÃO DE LUCIO</rs> e <rs type="title">CEU EM FOGO</rs>,
                     assim como (a) o capitulo de <rs type="title">MUNDO INTERIOR</rs>, se apparecer,
                     e (b) o artigo do <rs type="periodical" key="J84">«Debate»</rs> e a opinião em
-                        <rs type="periodical" key="J20"> «Republica»</rs>. Os livros <rs
-                        type="title">AMISADE</rs> e <rs type="title">PRINCIPIO</rs> serão excluidos
+                        <rs type="periodical" key="J20"> «Republica»</rs>. Os livros <rs type="title">AMISADE</rs> e <rs type="title">PRINCIPIO</rs> serão excluidos
                     d’essa publicação.</p>
-            </div>
-        </body>
-    </text>
+         </div>
+      </body>
+   </text>
+   <text type="reg" corresp="#W244">
+      <body>
+         <div>
+            <head>MÁRIO DE SÁ-CARNEIRO</head>
+            <p rend="indent-first">
+               <hi rend="bold">N</hi>asceu em Lisboa, em 19 de Maio de 1890;
+                    suicidou-se em Paris, em 26 de Abril de 1916.</p>
+            <p rend="indent-first">Os appellidos, como é de vêr, não são ligados; mas, como elle
+                    assim os passou a escrever, assim devem ser mantidos no seu nome.</p>
+            <p rend="indent-first">Publicou os seguintes livros:</p>
+            <p rend="indent-first">
+                    AMISADE, peça em 3 actos (com Thomaz Cabreira Junior), 1912;</p>
+            <p rend="indent-first">
+                    PRINCIPIO, novellas, 1912;</p>
+            <p rend="indent-first">
+                    DISPERSÃO, 12 poemas, 1914;</p>
+            <p rend="indent-first">
+                    A CONFISSÃO DE LUCIO, narrativa, 1914 (simultaneamente com
+                        DISPERSÃO);</p>
+            <p rend="indent-first">
+                    CÉU EM FOGO, novellas, 1915.</p>
+            <p rend="indent-first">Deixou ineditos, mas publicaveis:</p>
+            <p rend="indent-first">INDICIOS DE OURO, poemas; se o primeiro
+                    capitulo de uma novella intitulada MUNDO INTERIOR. O
+                    manuscripto completo do primeiro está na posse de Fernando Pessoa, a quem foi enviado uns dias antes do
+                    suicidio. O manuscripto do segundo, que ficára em Paris, desapareceu, não tendo
+                    sido encontrado até agora.</p>
+            <p rend="indent-first">
+                    Mario de Sá-Carneiro collaborou
+                    bastante em jornaes e revistas, sobretudo anteriormente a 1912, mas d’essa
+                    collaboração são aproveitaveis só: (1) o poema semi-futurista (feito com
+                    intenção de blague) MANUCURE, in Orpheu 2, (2) um artigo O THEATRO ARTE,
+                    no jornal de Lisboa  «O Debate», e (3) uma
+                    opinião em resposta a um inquerito litterario do jornal  «Republica», tambem de Lisboa.</p>
+            <p rend="indent-first">
+                    Mário de Sá-Carneiro deixou a Fernando Pessoa a indicação de
+                    publicar a obra, que d’elle houvesse, onde, quando e como lhe parecesse melhor.
+                    Essa publicação definitiva não será feita por emquanto, pois não ha ainda
+                    publico, propriamente dicto, para ella. Quando feita, constará dos livros (1) de
+                    verso, DISPERSÃO, INDÍCIOS DE OURO,
+                    e o poema MANUCURE, apesar de blague, (2) de prosa, A CONFISSÃO DE LUCIO e CEU EM FOGO,
+                    assim como (a) o capitulo de MUNDO INTERIOR, se apparecer,
+                    e (b) o artigo do «Debate» e a opinião em
+                         «Republica». Os livros AMISADE e PRINCIPIO serão excluidos
+                    d’essa publicação.</p>
+         </div>
+      </body>
+   </text>
 </TEI>

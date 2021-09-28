@@ -1,137 +1,195 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Afonso Lopes Vieira, o poeta nacionalista</title>
-                <author>
-                    <rs type="name" key="FP">Fernando Pessoa</rs>
-                </author>
-                <respStmt>
-                    <resp>Edição, Transcrição, Codificação</resp>
-                    <name>Jorge Uribe</name>
-                </respStmt>
-                <respStmt>
-                    <resp>Modelagem de dados, Codificação</resp>
-                    <name>Ulrike Henny-Krahmer</name>
-                </respStmt>
-                <respStmt>
-                    <resp>Consultoria</resp>
-                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
-                </respStmt>
-            </titleStmt>
-            <publicationStmt>
-                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Afonso Lopes Vieira, o poeta nacionalista</title>
+            <author>
+               <rs type="name" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Edição, Transcrição, Codificação</resp>
+               <name>Jorge Uribe</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny-Krahmer</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
-                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
-                <date>2017</date>
-                <availability status="free">
-                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
-                </availability>
-                <idno type="filename">Pessoa_Afonso_Lopes_Vieira.xml</idno>
-            </publicationStmt>
-            <notesStmt>
-                <note type="summary" resp="#JU">Texto recuperado por Manuela Parreira da Silva (<ref
-                        target="http://www.pessoadigital.pt/pt/bibliography/Works_of_Fernando_Pessoa#bibl_Silva_2016"
-                        >Silva, 1996</ref> p. 58). A atribuição de autoria decorre do confronto com
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability status="free">
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">Pessoa_Afonso_Lopes_Vieira.xml</idno>
+         </publicationStmt>
+         <notesStmt>
+            <note type="summary" resp="#JU">Texto recuperado por Manuela Parreira da Silva (<ref target="http://www.pessoadigital.pt/pt/bibliography/Works_of_Fernando_Pessoa#bibl_Silva_2016">Silva, 1996</ref> p. 58). A atribuição de autoria decorre do confronto com
                     o manuscrito BNP 125A-26 a 29, praticamente idêntico ao texto publicado. O texto
-                    foi integrado em <hi rend="italic">Sebastianismo e Quinto Império</hi> ( <ref
-                        target="http://www.pessoadigital.pt/pt/bibliography/Works_of_Fernando_Pessoa#bibl_SQI"
-                        >Pessoa, 2011</ref>, pp. 156-158).</note>
-                <note type="genre">
-                    <rs type="genre" key="prosa">Prosa</rs>
-                </note>
-            </notesStmt>
-            <sourceDesc>
-                <list type="work-index">
-                    <item><rs type="work" key="W227">Afonso Lopes Vieira, o poeta
-                        nacionalista</rs></item>
-                </list>
-                <biblStruct>
-                    <analytic>
-                        <title level="a">Afonso Lopes Vieira, o poeta nacionalista</title>
-                        <author>
-                            <rs type="name" key="FP">Fernando Pessoa</rs>
-                        </author>
-                        <textLang mainLang="pt" otherLangs="en"/>
-                    </analytic>
-                    <monogr>
-                        <title level="j"><rs type="periodical" key="J9">O ʺNotíciasʺ
-                            Ilustrado</rs></title>
-                        <imprint>
-                            <date when="1928-12">3 de junho de 1928</date>
-                        </imprint>
-                        <biblScope unit="page">8</biblScope>
-                    </monogr>
-                </biblStruct>
-            </sourceDesc>
-        </fileDesc>
-        <encodingDesc>
-            <variantEncoding method="parallel-segmentation" location="internal"/>
-        </encodingDesc>
-        <profileDesc>
-            <handNotes>
-                <handNote xml:id="H_Noticias_Ilustrado">Texto não redigido por Pessoa mas pelos
+                    foi integrado em <hi rend="italic">Sebastianismo e Quinto Império</hi> ( <ref target="http://www.pessoadigital.pt/pt/bibliography/Works_of_Fernando_Pessoa#bibl_SQI">Pessoa, 2011</ref>, pp. 156-158).</note>
+            <note type="genre">
+               <rs type="genre" key="prosa">Prosa</rs>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <list type="work-index">
+               <item>
+                  <rs type="work" key="W227">Afonso Lopes Vieira, o poeta
+                        nacionalista</rs>
+               </item>
+            </list>
+            <biblStruct>
+               <analytic>
+                  <title level="a">Afonso Lopes Vieira, o poeta nacionalista</title>
+                  <author>
+                     <rs type="name" key="FP">Fernando Pessoa</rs>
+                  </author>
+                  <textLang mainLang="pt" otherLangs="en"/>
+               </analytic>
+               <monogr>
+                  <title level="j">
+                     <rs type="periodical" key="J9">O ʺNotíciasʺ
+                            Ilustrado</rs>
+                  </title>
+                  <imprint>
+                     <date when="1928-12">3 de junho de 1928</date>
+                  </imprint>
+                  <biblScope unit="page">8</biblScope>
+               </monogr>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <variantEncoding method="parallel-segmentation" location="internal"/>
+      </encodingDesc>
+      <profileDesc>
+         <handNotes>
+            <handNote xml:id="H_Noticias_Ilustrado">Texto não redigido por Pessoa mas pelos
                     jornalistas.</handNote>
-                <handNote xml:id="H_FP">Texto redigido por Pessoa.</handNote>
-            </handNotes>
-        </profileDesc>
-    </teiHeader>
-    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
-        <graphic url="prosa/Afonso_Lopes_Vieira.jpg"/>
-    </facsimile>
-    <text corresp="#W227">
-        <body>
-            <div>
-                <head><handShift new="#H_Noticias_Ilustrado"/><rs type="name" key="P140" style="b"
-                        >Afonso Lopes Vieira</rs>, O Poeta Nacionalista,</head>
-                <head type="sub">É alvo de uma homenagem dos seus amigos: uma missa nos Jeronimos e
+            <handNote xml:id="H_FP">Texto redigido por Pessoa.</handNote>
+         </handNotes>
+      </profileDesc>
+   </teiHeader>
+   <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+      <graphic url="prosa/Afonso_Lopes_Vieira.jpg"/>
+   </facsimile>
+   <text type="orig" corresp="#W227">
+      <body>
+         <div>
+            <head>
+               <handShift new="#H_Noticias_Ilustrado"/>
+               <rs type="name" key="P140" style="b">Afonso Lopes Vieira</rs>, O Poeta Nacionalista,</head>
+            <head type="sub">É alvo de uma homenagem dos seus amigos: uma missa nos Jeronimos e
                     um banquete a bordo da fragata, «<rs type="name" key="P573">Deus</rs> te guie»,
                     no Tejo, em frente á Torre de Belem.</head>
-                <p rend="indent-first"><handShift new="#H_FP"/>Vae partir para o Brasil, em uma alta
-                    e simbolica missão da Patria, o poeta <rs type="name" key="P140" style="b"
-                        >Afonso Lopes Vieira</rs>. Vae levar ao Chefe do Portugal Novo, em nome do
+            <p rend="indent-first">
+               <handShift new="#H_FP"/>Vae partir para o Brasil, em uma alta
+                    e simbolica missão da Patria, o poeta <rs type="name" key="P140" style="b">Afonso Lopes Vieira</rs>. Vae levar ao Chefe do Portugal Novo, em nome do
                     Chefe do Portugal Antigo, o sinal da esperança comum a tudo quanto é
                     Portugal.</p>
-                <p rend="indent-first">O livro, para cuja oferta se afasta de nós, é o de <rs
-                        type="name" key="P15" style="b">Luiz de Camões</rs>, cantor de El-Rei <rs
-                        type="name" key="P21">D. Sebastião</rs>. O fim, para <choice>
-                        <sic>qe</sic>
-                        <corr resp="#JU">que</corr>
-                    </choice> olham todos os destinos do Povo, a que pertence esse cantor, fechou-os
+            <p rend="indent-first">O livro, para cuja oferta se afasta de nós, é o de <rs type="name" key="P15" style="b">Luiz de Camões</rs>, cantor de El-Rei <rs type="name" key="P21">D. Sebastião</rs>. O fim, para <choice>
+                  <sic>qe</sic>
+                  <corr resp="#JU">que</corr>
+               </choice> olham todos os destinos do Povo, a que pertence esse cantor, fechou-os
                     o sapateiro <rs type="name" key="P259">Bandarra</rs> na evocação ante-póstuma do
                     mesmo <rs type="name" key="P21">D. Sebastião</rs>.</p>
-                <p rend="indent-first"><rs type="name" key="P140" style="b">Afonso Lopes Vieira</rs>
+            <p rend="indent-first">
+               <rs type="name" key="P140" style="b">Afonso Lopes Vieira</rs>
                     partindo-se, leva consigo, involuntariamente, o designio obscuro transcrito pelo
                         <rs type="name" key="P259">Bandarra</rs>.</p>
-                <p rend="indent-first">O poeta <rs type="name" key="P140" style="b">Afonso Lopes
+            <p rend="indent-first">O poeta <rs type="name" key="P140" style="b">Afonso Lopes
                         Vieira</rs>, sebastianista quer o queira, quer não, vae levar ao Brasil um
                     um poema claro que é uma carta escura – uma carta decifrada cuja decifração não
                     haverá muitos que façam – nem o que a envia, nem o que a recebe, <choice>
-                        <sic>em</sic>
-                        <corr resp="#JU">nem</corr>
-                    </choice> porventura o que a transmite.</p>
-                <p rend="indent-first">A hora da designação da mensagem, na conferencia publica com
+                  <sic>em</sic>
+                  <corr resp="#JU">nem</corr>
+               </choice> porventura o que a transmite.</p>
+            <p rend="indent-first">A hora da designação da mensagem, na conferencia publica com
                     que a esclareceu, foi a de 29 de Maio de 1928, designada na profecia menor da
                     Pyramide como a do aviso Liminar, que uns entenderam mal e outros peior.</p>
-                <p rend="indent-first"><seg type="anchor">O interprete <choice>
-                            <sic>iglez</sic>
-                            <corr resp="#JU">inglez</corr>
-                        </choice><note type="comment" resp="#JU">
-                            <rs type="name" key="P566">David Davidson</rs>, <rs type="title">
-                                <hi rend="italic">The Great Pyramid: its divine message</hi></rs>,
-                            CFP 1-36</note></seg> das polegadas da Pyramide, regista, sem que a
+            <p rend="indent-first">
+               <seg type="anchor">O interprete <choice>
+                     <sic>iglez</sic>
+                     <corr resp="#JU">inglez</corr>
+                  </choice>
+                  <note type="comment" resp="#JU">
+                     <rs type="name" key="P566">David Davidson</rs>, <rs type="title">
+                        <hi rend="italic">The Great Pyramid: its divine message</hi>
+                     </rs>,
+                            CFP 1-36</note>
+               </seg> das polegadas da Pyramide, regista, sem que a
                     explique, a data de 1557 como aviso Central da Historia. De este ano nada resa a
                     Historia, senão que nele começou a reinar El-Rei <rs type="name" key="P21">D.
                         Sebastião</rs>.</p>
-                <p rend="indent-first">O poeta <rs type="name" key="P140" style="b">Afonso Lopes
+            <p rend="indent-first">O poeta <rs type="name" key="P140" style="b">Afonso Lopes
                         Vieira</rs> apresentou, na data antecipadamente designada, o sinal
                     antecipadamente designado.</p>
-                <p rend="indent-first">Vae levar ao Portugal Novo, não a mensagem, mas a chamada, do
+            <p rend="indent-first">Vae levar ao Portugal Novo, não a mensagem, mas a chamada, do
                     Portugal Inteiro.</p>
-                <p rend="indent-first">O resto é com <rs type="name" key="P573">Deus</rs>…</p>
-            </div>
-        </body>
-    </text>
+            <p rend="indent-first">O resto é com <rs type="name" key="P573">Deus</rs>…</p>
+         </div>
+      </body>
+   </text>
+   <text type="reg" corresp="#W227">
+      <body>
+         <div>
+            <head>
+               <handShift new="#H_Noticias_Ilustrado"/>Afonso Lopes Vieira, O Poeta Nacionalista,</head>
+            <head type="sub">É alvo de uma homenagem dos seus amigos: uma missa nos Jeronimos e
+                    um banquete a bordo da fragata, «Deus te guie»,
+                    no Tejo, em frente á Torre de Belem.</head>
+            <p rend="indent-first">
+               <handShift new="#H_FP"/>Vae partir para o Brasil, em uma alta
+                    e simbolica missão da Patria, o poeta Afonso Lopes Vieira. Vae levar ao Chefe do Portugal Novo, em nome do
+                    Chefe do Portugal Antigo, o sinal da esperança comum a tudo quanto é
+                    Portugal.</p>
+            <p rend="indent-first">O livro, para cuja oferta se afasta de nós, é o de Luiz de Camões, cantor de El-Rei D. Sebastião. O fim, para <choice>
+                  <sic>qe</sic>
+                  <corr resp="#JU">que</corr>
+               </choice> olham todos os destinos do Povo, a que pertence esse cantor, fechou-os
+                    o sapateiro Bandarra na evocação ante-póstuma do
+                    mesmo D. Sebastião.</p>
+            <p rend="indent-first">Afonso Lopes Vieira
+                    partindo-se, leva consigo, involuntariamente, o designio obscuro transcrito pelo
+                        Bandarra.</p>
+            <p rend="indent-first">O poeta Afonso Lopes
+                        Vieira, sebastianista quer o queira, quer não, vae levar ao Brasil um
+                    um poema claro que é uma carta escura – uma carta decifrada cuja decifração não
+                    haverá muitos que façam – nem o que a envia, nem o que a recebe, <choice>
+                  <sic>em</sic>
+                  <corr resp="#JU">nem</corr>
+               </choice> porventura o que a transmite.</p>
+            <p rend="indent-first">A hora da designação da mensagem, na conferencia publica com
+                    que a esclareceu, foi a de 29 de Maio de 1928, designada na profecia menor da
+                    Pyramide como a do aviso Liminar, que uns entenderam mal e outros peior.</p>
+            <p rend="indent-first">
+               <seg type="anchor">O interprete <choice>
+                     <sic>iglez</sic>
+                     <corr resp="#JU">inglez</corr>
+                  </choice>
+                  <note type="comment" resp="#JU">
+                            David Davidson, 
+                                <hi rend="italic">The Great Pyramid: its divine message</hi>,
+                            CFP 1-36</note>
+               </seg> das polegadas da Pyramide, regista, sem que a
+                    explique, a data de 1557 como aviso Central da Historia. De este ano nada resa a
+                    Historia, senão que nele começou a reinar El-Rei D.
+                        Sebastião.</p>
+            <p rend="indent-first">O poeta Afonso Lopes
+                        Vieira apresentou, na data antecipadamente designada, o sinal
+                    antecipadamente designado.</p>
+            <p rend="indent-first">Vae levar ao Portugal Novo, não a mensagem, mas a chamada, do
+                    Portugal Inteiro.</p>
+            <p rend="indent-first">O resto é com Deus…</p>
+         </div>
+      </body>
+   </text>
 </TEI>

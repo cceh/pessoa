@@ -1,113 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Comentários</title>
-                <author>
-                    <rs type="name" key="FP">Fernando Pessoa</rs>
-                </author>
-                <respStmt>
-                    <resp>Edição, Transcrição, Codificação</resp>
-                    <name>Jorge Uribe</name>
-                </respStmt>
-                <respStmt>
-                    <resp>Modelagem de dados, Codificação</resp>
-                    <name>Ulrike Henny-Krahmer</name>
-                </respStmt>
-                <respStmt>
-                    <resp>Consultoria</resp>
-                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
-                </respStmt>
-            </titleStmt>
-            <publicationStmt>
-                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Comentários</title>
+            <author>
+               <rs type="name" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Edição, Transcrição, Codificação</resp>
+               <name>Jorge Uribe</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny-Krahmer</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
-                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
-                <date>2017</date>
-                <availability status="free">
-                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
-                </availability>
-                <idno type="filename">Pessoa_Comentarios.xml</idno>
-            </publicationStmt>
-            <notesStmt>
-                <note type="summary" resp="#JU">No final do número único da revista surge uma secção
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability status="free">
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">Pessoa_Comentarios.xml</idno>
+         </publicationStmt>
+         <notesStmt>
+            <note type="summary" resp="#JU">No final do número único da revista surge uma secção
                     intitulada «Comentarios», com quatro notas breves acerca da relação entre a
                     ditadura de <rs type="name" key="P561">Joaquim Pimenta de Castro</rs>, o
                     movimento conhecido como Integralismo Lusitano e o movimento monárquico, este
-                    último alvo do texto <ref
-                        target="http://www.pessoadigital.pt/pt/pub/Pessoa_O_Preconceito_da_Ordem">
-                        <hi rend="italic">O Preconceito da Ordem</hi></ref>. Na lista <ref
-                        target="http://www.pessoadigital.pt/en/doc/BNP_E3_48G-29r">BNP 48G-29</ref>,
+                    último alvo do texto <ref target="http://www.pessoadigital.pt/pt/pub/Pessoa_O_Preconceito_da_Ordem">
+                  <hi rend="italic">O Preconceito da Ordem</hi>
+               </ref>. Na lista <ref target="http://www.pessoadigital.pt/en/doc/BNP_E3_48G-29r">BNP 48G-29</ref>,
                     datável de c. 1918, Pessoa afirma a sua autoria das últimas duas notas com a
                     anotação: «Eh Real! = O Preconceito da Ordem, e os 2 ultimos sueltos.» Para além
                     disso, sublinhe-se que o livro de <rs type="name" key="P528">Dominique
                         Parodi</rs>: <hi rend="italic">Traditionalism et demócratie</hi>, que Pessoa
                     menciona na primeira das notas, faz parte da Biblioteca Particular sob a cota
-                        <ref
-                        target="http://bibliotecaparticular.casafernandopessoa.pt/index/aut/P/parodid.htm"
-                        > CFP 3-53</ref>. Richard Zenith refere este texto confirmando a autoria
-                    pessoana no artigo “Pessoa «Inédito», 1915” (<ref
-                        target="http://www.pessoadigital.pt/pt/bibliography/About_the_work_of_Fernando_Pessoa#Zenith_2011"
-                        > Zenith, 2011)</ref>. Utilizamos esta imagem por cortesia dos responsáveis
+                        <ref target="http://bibliotecaparticular.casafernandopessoa.pt/index/aut/P/parodid.htm"> CFP 3-53</ref>. Richard Zenith refere este texto confirmando a autoria
+                    pessoana no artigo “Pessoa «Inédito», 1915” (<ref target="http://www.pessoadigital.pt/pt/bibliography/About_the_work_of_Fernando_Pessoa#Zenith_2011"> Zenith, 2011)</ref>. Utilizamos esta imagem por cortesia dos responsáveis
                     pelo portal <ref target="http://ric.slhi.pt/">Revistas de Ideias e
                     Cultura</ref>.</note>
-                <note type="genre">
-                    <rs type="genre" key="prosa">Prosa</rs>
-                </note>
-            </notesStmt>
-            <sourceDesc>
-                <list type="work-index">
-                    <item><rs type="work" key="W201">Comentários</rs></item>
-                </list>
-                <biblStruct>
-                    <analytic>
-                        <title level="a">Comentários</title>
-                        <author>
-                            <rs type="name" key="FP">Fernando Pessoa</rs>
-                        </author>
-                        <textLang mainLang="pt" otherLangs="en"/>
-                    </analytic>
-                    <monogr>
-                        <title level="j"><rs type="periodical" key="J37">Eh Real!</rs></title>
-                        <imprint>
-                            <date when="1915-05-13">13 de maio de 1915</date>
-                        </imprint>
-                        <biblScope unit="page">16</biblScope>
-                    </monogr>
-                </biblStruct>
-            </sourceDesc>
-        </fileDesc>
-        <encodingDesc>
-            <variantEncoding method="parallel-segmentation" location="internal"/>
-        </encodingDesc>
-    </teiHeader>
-    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
-        <graphic url="prosa/Comentarios.jpg"/>
-    </facsimile>
-    <text corresp="#W201">
-        <body>
+            <note type="genre">
+               <rs type="genre" key="prosa">Prosa</rs>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <list type="work-index">
+               <item>
+                  <rs type="work" key="W201">Comentários</rs>
+               </item>
+            </list>
+            <biblStruct>
+               <analytic>
+                  <title level="a">Comentários</title>
+                  <author>
+                     <rs type="name" key="FP">Fernando Pessoa</rs>
+                  </author>
+                  <textLang mainLang="pt" otherLangs="en"/>
+               </analytic>
+               <monogr>
+                  <title level="j">
+                     <rs type="periodical" key="J37">Eh Real!</rs>
+                  </title>
+                  <imprint>
+                     <date when="1915-05-13">13 de maio de 1915</date>
+                  </imprint>
+                  <biblScope unit="page">16</biblScope>
+               </monogr>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <variantEncoding method="parallel-segmentation" location="internal"/>
+      </encodingDesc>
+   </teiHeader>
+   <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+      <graphic url="prosa/Comentarios.jpg"/>
+   </facsimile>
+   <text type="orig" corresp="#W201">
+      <body>
+         <div>
+            <head>Comentarios</head>
             <div>
-                <head>Comentarios</head>
-                <div>
-                    <milestone rend="asterisks" unit="section"/>
-                    <p rend="indent-first">Emquanto não incide sobre o nosso integralismo e as suas
+               <milestone rend="asterisks" unit="section"/>
+               <p rend="indent-first">Emquanto não incide sobre o nosso integralismo e as suas
                         origens uma critica mais apertada, póde o curioso ir entretendo os seus
-                        momentos com o livro de <rs type="name" key="P528"><choice>
-                                <abbr>D<am>.</am></abbr>
-                                <expan>D<ex>om</ex></expan>
-                            </choice> Parodi</rs>
-                        <ref
-                            target="http://bibliotecaparticular.casafernandopessoa.pt/index/aut/P/parodid.htm"
-                                ><hi rend="italic">Traditionalisme et démocratie</hi></ref> (Paris,
+                        momentos com o livro de <rs type="name" key="P528">
+                     <choice>
+                        <abbr>D<am>.</am>
+                        </abbr>
+                        <expan>D<ex>om</ex>
+                        </expan>
+                     </choice> Parodi</rs>
+                  <ref target="http://bibliotecaparticular.casafernandopessoa.pt/index/aut/P/parodid.htm">
+                     <hi rend="italic">Traditionalisme et démocratie</hi>
+                  </ref> (Paris,
                         Armand Colin, 1909). Aí as téses dos conservadores francezes (base, como se
                         sabe, das dos nossos integralistas), são rebatidas triunfantemente.</p>
-                    <milestone rend="asterisks" unit="section"/>
-                    <p rend="indent-first">... de modo que <rs type="name" key="P561">ele</rs>
+               <milestone rend="asterisks" unit="section"/>
+               <p rend="indent-first">... de modo que <rs type="name" key="P561">ele</rs>
                         acabará por implantar a Monarquia, para consolidar a Republica...</p>
-                </div>
             </div>
-        </body>
-    </text>
+         </div>
+      </body>
+   </text>
+   <text type="reg" corresp="#W201">
+      <body>
+         <div>
+            <head>Comentarios</head>
+            <div>
+               <milestone rend="asterisks" unit="section"/>
+               <p rend="indent-first">Emquanto não incide sobre o nosso integralismo e as suas
+                        origens uma critica mais apertada, póde o curioso ir entretendo os seus
+                        momentos com o livro de <choice>
+                     <abbr>D<am>.</am>
+                     </abbr>
+                     <expan>D<ex>om</ex>
+                     </expan>
+                  </choice> Parodi
+                        <ref target="http://bibliotecaparticular.casafernandopessoa.pt/index/aut/P/parodid.htm">
+                     <hi rend="italic">Traditionalisme et démocratie</hi>
+                  </ref> (Paris,
+                        Armand Colin, 1909). Aí as téses dos conservadores francezes (base, como se
+                        sabe, das dos nossos integralistas), são rebatidas triunfantemente.</p>
+               <milestone rend="asterisks" unit="section"/>
+               <p rend="indent-first">... de modo que ele
+                        acabará por implantar a Monarquia, para consolidar a Republica...</p>
+            </div>
+         </div>
+      </body>
+   </text>
 </TEI>

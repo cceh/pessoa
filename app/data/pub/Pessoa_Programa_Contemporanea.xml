@@ -1,117 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Programa — Contemporânea</title>
-                <author>
-                    <rs type="name" key="FP">Fernando Pessoa</rs>
-                </author>
-                <respStmt>
-                    <resp>Edição, Transcrição, Codificação</resp>
-                    <name>Jorge Uribe</name>
-                </respStmt>
-                <respStmt>
-                    <resp>Modelagem de dados, Codificação</resp>
-                    <name>Ulrike Henny-Krahmer</name>
-                </respStmt>
-                <respStmt>
-                    <resp>Consultoria</resp>
-                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
-                </respStmt>
-            </titleStmt>
-            <publicationStmt>
-                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Programa — Contemporânea</title>
+            <author>
+               <rs type="name" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Edição, Transcrição, Codificação</resp>
+               <name>Jorge Uribe</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny-Krahmer</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
-                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
-                <date>2017</date>
-                <availability status="free">
-                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
-                </availability>
-                <idno type="filename">Pessoa_Programa_Contemporanea.xml</idno>
-            </publicationStmt>
-            <notesStmt>
-                <note type="summary" resp="#JU">A atribuição do texto a Pessoa foi sugerida primeiro
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability status="free">
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">Pessoa_Programa_Contemporanea.xml</idno>
+         </publicationStmt>
+         <notesStmt>
+            <note type="summary" resp="#JU">A atribuição do texto a Pessoa foi sugerida primeiro
                     por Jerónimo Pizarro, com algumas ressalvas, em <hi rend="italic">Sensacionismo
-                        e outros ismos</hi> (<ref
-                        target="http://www.pessoadigital.pt/pt/bibliography/Works_of_Fernando_Pessoa#bibl_SOI"
-                        >SOI, p. 276</ref>) e confirmada por Richard Zenith no artigo ʺPessoa
-                    ʼInéditoʼ, 1915ʺ (<ref
-                        target="http://www.pessoadigital.pt/pt/bibliography/About_the_work_of_Fernando_Pessoa#Zenith_2011"
-                        >Zenith, 2011</ref>); posteriormente foi incluído em <hi rend="italic"
-                        >Proses I: 1912-1922</hi> (<ref
-                        target="http://www.pessoadigital.pt/pt/bibliography/About_the_work_of_Fernando_Pessoa#bible_PRI"
-                        >PRI, 2013</ref>). A atribuição baseia-se na leitura da lista de projetos
+                        e outros ismos</hi> (<ref target="http://www.pessoadigital.pt/pt/bibliography/Works_of_Fernando_Pessoa#bibl_SOI">SOI, p. 276</ref>) e confirmada por Richard Zenith no artigo ʺPessoa
+                    ʼInéditoʼ, 1915ʺ (<ref target="http://www.pessoadigital.pt/pt/bibliography/About_the_work_of_Fernando_Pessoa#Zenith_2011">Zenith, 2011</ref>); posteriormente foi incluído em <hi rend="italic">Proses I: 1912-1922</hi> (<ref target="http://www.pessoadigital.pt/pt/bibliography/About_the_work_of_Fernando_Pessoa#bible_PRI">PRI, 2013</ref>). A atribuição baseia-se na leitura da lista de projetos
                         <ref target="http://www.pessoadigital.pt/pt/doc/BNP_E3_144X-48v"> BNP
                         144X-48v</ref>.</note>
-                <note type="genre">
-                    <rs type="genre" key="prosa">Prosa</rs>
-                </note>
-            </notesStmt>
-            <sourceDesc>
-                <list type="work-index">
-                    <item><rs type="work" key="W199">Programa Contemporânea</rs></item>
-                </list>
-                <biblStruct>
-                    <analytic>
-                        <title level="a">Programa Contemporânea</title>
-                        <author>
-                            <rs type="name" key="FP">Fernando Pessoa</rs>
-                        </author>
-                        <textLang mainLang="pt" otherLangs="en"/>
-                    </analytic>
-                    <monogr>
-                        <title level="j"><rs type="periodical" key="J11">Contemporânea</rs></title>
-                        <imprint>
-                            <date when="1915">1915</date>
-                        </imprint>
-                        <biblScope unit="issue">Número Espécimen</biblScope>
-                        <biblScope unit="page">1-4</biblScope>
-                    </monogr>
-                </biblStruct>
-            </sourceDesc>
-        </fileDesc>
-        <encodingDesc>
-            <variantEncoding method="parallel-segmentation" location="internal"/>
-        </encodingDesc>
-    </teiHeader>
-    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
-        <graphic url="prosa/Programa_Contemporanea_1.jpg"/>
-        <graphic url="prosa/Programa_Contemporanea_2.jpg"/>
-        <graphic url="prosa/Programa_Contemporanea_3.jpg"/>
-        <graphic url="prosa/Programa_Contemporanea_4.jpg"/>
-        <graphic url="prosa/Programa_Contemporanea_5.jpg"/>
-        <graphic url="prosa/Programa_Contemporanea_6.jpg"/>
-    </facsimile>
-    <text corresp="#W199">
-        <body>
-            <div>
-                <p rend="indent-first"><hi rend="bold">A</hi> fundação de <rs type="periodical"><hi
-                            rend="italic">CONTEMPORANEA</hi></rs> pretende dar a quantos em Portugal
+            <note type="genre">
+               <rs type="genre" key="prosa">Prosa</rs>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <list type="work-index">
+               <item>
+                  <rs type="work" key="W199">Programa Contemporânea</rs>
+               </item>
+            </list>
+            <biblStruct>
+               <analytic>
+                  <title level="a">Programa Contemporânea</title>
+                  <author>
+                     <rs type="name" key="FP">Fernando Pessoa</rs>
+                  </author>
+                  <textLang mainLang="pt" otherLangs="en"/>
+               </analytic>
+               <monogr>
+                  <title level="j">
+                     <rs type="periodical" key="J11">Contemporânea</rs>
+                  </title>
+                  <imprint>
+                     <date when="1915">1915</date>
+                  </imprint>
+                  <biblScope unit="issue">Número Espécimen</biblScope>
+                  <biblScope unit="page">1-4</biblScope>
+               </monogr>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <variantEncoding method="parallel-segmentation" location="internal"/>
+      </encodingDesc>
+   </teiHeader>
+   <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+      <graphic url="prosa/Programa_Contemporanea_1.jpg"/>
+      <graphic url="prosa/Programa_Contemporanea_2.jpg"/>
+      <graphic url="prosa/Programa_Contemporanea_3.jpg"/>
+      <graphic url="prosa/Programa_Contemporanea_4.jpg"/>
+      <graphic url="prosa/Programa_Contemporanea_5.jpg"/>
+      <graphic url="prosa/Programa_Contemporanea_6.jpg"/>
+   </facsimile>
+   <text type="orig" corresp="#W199">
+      <body>
+         <div>
+            <p rend="indent-first">
+               <hi rend="bold">A</hi> fundação de <rs type="periodical">
+                  <hi rend="italic">CONTEMPORANEA</hi>
+               </rs> pretende dar a quantos em Portugal
                     se interessam pela elegancia na arte e na vida uma voz e como que uma
                     satisfação. Não ha entre nós cousa alguma – club, grupo ou periodico – na qual,
                     ou em torno á qual, se possam reunir, ainda que só em espirito, quantos não
                     viraram as costas á civilização moderna, nem se consideram vivendo na Europa se
                     de alguma maneira os não cerca qualquér evidencia d’isso.</p>
-                <p rend="indent-first">Temos gente culta – mais do que se crê; nem ha entre nós a
+            <p rend="indent-first">Temos gente culta – mais do que se crê; nem ha entre nós a
                     deficiencia, que se julga, de espiritos qualificaveis de elegantes. Mas não
                     formam sociedade, não se concentram. Não teem sequer uma revista que saibam que
                     é lida pelos seus pares com interesse, e em cujo manuseamento, portanto, se
                     saibam acompanhados por quantos consideram seus congéneres.</p>
-                <p rend="indent-first"><hi rend="bold">D</hi>e ahi o não terem os nossos artistas
+            <p rend="indent-first">
+               <hi rend="bold">D</hi>e ahi o não terem os nossos artistas
                     nem publico nem ao menos critica. O publico e a critica para as cousas de
                     cultura, não os cria o mero numero de gente culta num paiz, mas a facilidade com
                     que, reunindo-se, conjugando-se ou pensando expontaneamente em commum, formam,
                     não gente culta, mas propriamente <hi rend="italic">um meio culto</hi>.</p>
-                <p rend="indent-first">Essa grande deficiencia do nosso meio, vem emfim <rs
-                        type="periodical" key="J11"><hi rend="italic">CONTEMPORANEA</hi></rs>
+            <p rend="indent-first">Essa grande deficiencia do nosso meio, vem emfim <rs type="periodical" key="J11">
+                  <hi rend="italic">CONTEMPORANEA</hi>
+               </rs>
                     suppri-la. Foi nosso objectivo organisar uma revista que fosse rigorosamente o
                     ponto de reunião de quantos interesses cultos entre nós existam. Este passo será
                     o primeiro para a creação entre nós de um meio culto. Ninguem pode negar a
                     importancia do nosso intuito, o aproposito da nossa iniciativa e a opportunidade
                     da nossa vinda.</p>
-                <p rend="indent-first"><hi rend="bold">É</hi> estranho que isto nunca se tentasse,
+            <p rend="indent-first">
+               <hi rend="bold">É</hi> estranho que isto nunca se tentasse,
                     e, uma vez tentado, se fizesse, porquanto ha no paiz – hoje, sobretudo –
                     collaboradores para essa obra, competencias em todos os ramos da sciencia da
                     elegancia. O caso era procural-os e reuni-los. Foi isso que a nossa iniciativa
@@ -120,41 +122,116 @@
                     variadamente individuaes das nossas modernas correntes artisticas, desde as mais
                     simples ás mais complexas – todos quantos, desde o verso até á linha, sabem
                     servir as curiosidades cultas e os interesses aristocratisados.</p>
-                <p rend="indent-first">O que queremos realizar, realiza-lo-hemos á plena altura do
+            <p rend="indent-first">O que queremos realizar, realiza-lo-hemos á plena altura do
                     nosso proposito, e de tal maneira que, desde a apresentação typographica até á
-                    medulla intellectual e artistica, <rs type="periodical" key="J11"><hi
-                            rend="italic">CONTEMPORANEA</hi></rs> supporte triumphantemente a
+                    medulla intellectual e artistica, <rs type="periodical" key="J11">
+                  <hi rend="italic">CONTEMPORANEA</hi>
+               </rs> supporte triumphantemente a
                     comparação com <hi rend="italic">as melhores</hi> revistas congéneres dos mais
                     difficeis meios do Extrangeiro. Não se trata de as seguir, mas de as
                     egualar.</p>
-                <p rend="indent-first">Entenda-se bem. Não se pretende <hi rend="italic">tentar</hi>
+            <p rend="indent-first">Entenda-se bem. Não se pretende <hi rend="italic">tentar</hi>
                     uma obra artisticamente civilizada e moderna. Pretende-se, sem tentamens,
                     realiza-la logo, desde o principio. O numero-specimen, que brevemente sahirá,
                     tirará todas as duvidas a esse respeito. As artes da palavra e da linha, o
                     theatro, a elegancia feminina, o pormenor elegante dos acontecimentos – tudo
                     será detidamente versado e com uma interpretação condigna.</p>
-                <p rend="indent-first">
-                    <hi rend="italic"><rs type="periodical" key="J11">CONTEMPORANEA</rs> vae ser uma
+            <p rend="indent-first">
+               <hi rend="italic">
+                  <rs type="periodical" key="J11">CONTEMPORANEA</rs> vae ser uma
                         surpreza e uma revelação para toda a gente.</hi> Uma vez apparecida,
                     estranhar-se-ha que entre nós tão perfeita obra se realize. É pena que só agora
                     isto se faça, mas bom que emfim haja quem o vá fazer. Mal se calcula o que de
                     elegante, leve e requintado se pode produzir entre nós quando se sabe como as
                     cousas se fazem, e quando se conhece por dentro o sentido a todas as formas da
                     elegancia e a todas as modalidades da cultura.</p>
-                <p rend="indent-first">Em <rs type="periodical" key="J11"><hi rend="italic"
-                            >CONTEMPORANEA</hi></rs> encontrará o leitor tudo quanto possa
+            <p rend="indent-first">Em <rs type="periodical" key="J11">
+                  <hi rend="italic">CONTEMPORANEA</hi>
+               </rs> encontrará o leitor tudo quanto possa
                     interessar uma curiosidade elegante, desde a reportagem photographica
                     escrupulosamente attenta em colher apenas o instante feliz das occorrencias, até
                     a uma collaboração literaria e pictural que para sempre e deveras mostre que
                     nada temos a invejar aos outros paizes se nos decidirmos a conjugar os nossos
                     esforços e a disciplinar as nossas competencias.</p>
-                <p rend="indent-first">Criar um revista cuja leitura constitua, de per si, uma
+            <p rend="indent-first">Criar um revista cuja leitura constitua, de per si, uma
                     elegancia, um acto de expontaneo bom-gosto – estas palavras resumem
                     completamente a essencia do nosso intuito. Temos o direito de confiar em que
                     todos aquelles, cujos ideaes a nossa obra vae satisfazer, deem todas as formas
                     do seu interesse a essa obra.</p>
-                <signed rend="right">Contemporanea</signed>
-            </div>
-        </body>
-    </text>
+            <signed rend="right">Contemporanea</signed>
+         </div>
+      </body>
+   </text>
+   <text type="reg" corresp="#W199">
+      <body>
+         <div>
+            <p rend="indent-first">
+               <hi rend="bold">A</hi> fundação de <hi rend="italic">CONTEMPORANEA</hi> pretende dar a quantos em Portugal
+                    se interessam pela elegancia na arte e na vida uma voz e como que uma
+                    satisfação. Não ha entre nós cousa alguma – club, grupo ou periodico – na qual,
+                    ou em torno á qual, se possam reunir, ainda que só em espirito, quantos não
+                    viraram as costas á civilização moderna, nem se consideram vivendo na Europa se
+                    de alguma maneira os não cerca qualquér evidencia d’isso.</p>
+            <p rend="indent-first">Temos gente culta – mais do que se crê; nem ha entre nós a
+                    deficiencia, que se julga, de espiritos qualificaveis de elegantes. Mas não
+                    formam sociedade, não se concentram. Não teem sequer uma revista que saibam que
+                    é lida pelos seus pares com interesse, e em cujo manuseamento, portanto, se
+                    saibam acompanhados por quantos consideram seus congéneres.</p>
+            <p rend="indent-first">
+               <hi rend="bold">D</hi>e ahi o não terem os nossos artistas
+                    nem publico nem ao menos critica. O publico e a critica para as cousas de
+                    cultura, não os cria o mero numero de gente culta num paiz, mas a facilidade com
+                    que, reunindo-se, conjugando-se ou pensando expontaneamente em commum, formam,
+                    não gente culta, mas propriamente <hi rend="italic">um meio culto</hi>.</p>
+            <p rend="indent-first">Essa grande deficiencia do nosso meio, vem emfim <hi rend="italic">CONTEMPORANEA</hi>
+                    suppri-la. Foi nosso objectivo organisar uma revista que fosse rigorosamente o
+                    ponto de reunião de quantos interesses cultos entre nós existam. Este passo será
+                    o primeiro para a creação entre nós de um meio culto. Ninguem pode negar a
+                    importancia do nosso intuito, o aproposito da nossa iniciativa e a opportunidade
+                    da nossa vinda.</p>
+            <p rend="indent-first">
+               <hi rend="bold">É</hi> estranho que isto nunca se tentasse,
+                    e, uma vez tentado, se fizesse, porquanto ha no paiz – hoje, sobretudo –
+                    collaboradores para essa obra, competencias em todos os ramos da sciencia da
+                    elegancia. O caso era procural-os e reuni-los. Foi isso que a nossa iniciativa
+                    conseguiu. É, assim, pela primeira vez entre nós apparecerá uma revista digna de
+                    um meio culto. Os seus collaboradores serão as figuras mais brilhantes e
+                    variadamente individuaes das nossas modernas correntes artisticas, desde as mais
+                    simples ás mais complexas – todos quantos, desde o verso até á linha, sabem
+                    servir as curiosidades cultas e os interesses aristocratisados.</p>
+            <p rend="indent-first">O que queremos realizar, realiza-lo-hemos á plena altura do
+                    nosso proposito, e de tal maneira que, desde a apresentação typographica até á
+                    medulla intellectual e artistica, <hi rend="italic">CONTEMPORANEA</hi> supporte triumphantemente a
+                    comparação com <hi rend="italic">as melhores</hi> revistas congéneres dos mais
+                    difficeis meios do Extrangeiro. Não se trata de as seguir, mas de as
+                    egualar.</p>
+            <p rend="indent-first">Entenda-se bem. Não se pretende <hi rend="italic">tentar</hi>
+                    uma obra artisticamente civilizada e moderna. Pretende-se, sem tentamens,
+                    realiza-la logo, desde o principio. O numero-specimen, que brevemente sahirá,
+                    tirará todas as duvidas a esse respeito. As artes da palavra e da linha, o
+                    theatro, a elegancia feminina, o pormenor elegante dos acontecimentos – tudo
+                    será detidamente versado e com uma interpretação condigna.</p>
+            <p rend="indent-first">
+               <hi rend="italic">CONTEMPORANEA vae ser uma
+                        surpreza e uma revelação para toda a gente.</hi> Uma vez apparecida,
+                    estranhar-se-ha que entre nós tão perfeita obra se realize. É pena que só agora
+                    isto se faça, mas bom que emfim haja quem o vá fazer. Mal se calcula o que de
+                    elegante, leve e requintado se pode produzir entre nós quando se sabe como as
+                    cousas se fazem, e quando se conhece por dentro o sentido a todas as formas da
+                    elegancia e a todas as modalidades da cultura.</p>
+            <p rend="indent-first">Em <hi rend="italic">CONTEMPORANEA</hi> encontrará o leitor tudo quanto possa
+                    interessar uma curiosidade elegante, desde a reportagem photographica
+                    escrupulosamente attenta em colher apenas o instante feliz das occorrencias, até
+                    a uma collaboração literaria e pictural que para sempre e deveras mostre que
+                    nada temos a invejar aos outros paizes se nos decidirmos a conjugar os nossos
+                    esforços e a disciplinar as nossas competencias.</p>
+            <p rend="indent-first">Criar um revista cuja leitura constitua, de per si, uma
+                    elegancia, um acto de expontaneo bom-gosto – estas palavras resumem
+                    completamente a essencia do nosso intuito. Temos o direito de confiar em que
+                    todos aquelles, cujos ideaes a nossa obra vae satisfazer, deem todas as formas
+                    do seu interesse a essa obra.</p>
+            <signed rend="right">Contemporanea</signed>
+         </div>
+      </body>
+   </text>
 </TEI>

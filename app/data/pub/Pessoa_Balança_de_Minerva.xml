@@ -1,128 +1,182 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Balança de Minerva — aferição</title>
-                <author>
-                    <rs type="name" key="FP">Fernando Pessoa</rs>
-                </author>
-                <respStmt>
-                    <resp>Edição, Transcrição, Codificação</resp>
-                    <name>Jorge Uribe</name>
-                </respStmt>
-                <respStmt>
-                    <resp>Modelagem de dados, Codificação</resp>
-                    <name>Ulrike Henny-Krahmer</name>
-                </respStmt>
-                <respStmt>
-                    <resp>Consultoria</resp>
-                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
-                </respStmt>
-            </titleStmt>
-            <publicationStmt>
-                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Balança de Minerva — aferição</title>
+            <author>
+               <rs type="name" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Edição, Transcrição, Codificação</resp>
+               <name>Jorge Uribe</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny-Krahmer</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
                     Tradição (IELT)</publisher>
-                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
-                <date>2017</date>
-                <availability status="free">
-                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
-                </availability>
-                <idno type="filename">Pessoa_Balança_de_Minerva.xml</idno>
-            </publicationStmt>
-            <notesStmt>
-                <note type="genre">
-                    <rs type="genre" key="prosa">Prosa</rs>
-                </note>
-                <note type="summary" resp="#JU">A tiragem impressa de <hi rend="italic">Teatro -
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability status="free">
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">Pessoa_Balança_de_Minerva.xml</idno>
+         </publicationStmt>
+         <notesStmt>
+            <note type="genre">
+               <rs type="genre" key="prosa">Prosa</rs>
+            </note>
+            <note type="summary" resp="#JU">A tiragem impressa de <hi rend="italic">Teatro -
                         Jornal D'arte</hi> terá sido muito reduzida, pelo que se revelou até ao
                     momento impossível localizar os números da publicação. Por ese motivo, seguimos
-                    aqui a reprodução do texto no livro de João Rui de Sousa <hi rend="italic"
-                        >Fotobibliografia de Fernando Pessoa</hi> <ref
-                        target="http://www.pessoadigital.pt/pt/bibliography/About_the_works_of_Fernando_Pessoa#bibl_Sousa_1988"
-                        >(Sousa 1988, p. 40)</ref>.</note>
-            </notesStmt>
-            <sourceDesc>
-                <list type="work-index">
-                    <item><rs type="work" key="W235">Balança de Minerva — Aferição</rs></item>
-                </list>
-                <biblStruct>
-                    <analytic>
-                        <title level="a">Balança de Minerva — Aferição</title>
-                        <author>
-                            <rs type="name" key="FP">Fernando Pessoa</rs>
-                        </author>
-                        <textLang mainLang="pt" otherLangs="en"/>
-                    </analytic>
-                    <monogr>
-                        <title level="j"><rs type="periodical" key="J59">Teatro — Jornal
-                            D'Arte</rs></title>
-                        <imprint>
-                            <date when="1913-11-22">22 de novembro de 1913</date>
-                        </imprint>
-                        <biblScope unit="issue">1</biblScope>
-                    </monogr>
-                </biblStruct>
-            </sourceDesc>
-        </fileDesc>
-        <encodingDesc>
-            <variantEncoding method="parallel-segmentation" location="internal"/>
-        </encodingDesc>
-    </teiHeader>
-    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
-        <graphic url="prosa/Balanca_de_Minerva-Afericao.jpg"/>
-    </facsimile>
-    <text corresp="#W235">
-        <body>
-            <div>
-                <head>Balança de Minerva</head>
-                <head type="sub">AFERIÇÃO</head>
-                <p rend="indent-first">Destina-se esta secção á critica dos maus livros e
+                    aqui a reprodução do texto no livro de João Rui de Sousa <hi rend="italic">Fotobibliografia de Fernando Pessoa</hi>
+               <ref target="http://www.pessoadigital.pt/pt/bibliography/About_the_works_of_Fernando_Pessoa#bibl_Sousa_1988">(Sousa 1988, p. 40)</ref>.</note>
+         </notesStmt>
+         <sourceDesc>
+            <list type="work-index">
+               <item>
+                  <rs type="work" key="W235">Balança de Minerva — Aferição</rs>
+               </item>
+            </list>
+            <biblStruct>
+               <analytic>
+                  <title level="a">Balança de Minerva — Aferição</title>
+                  <author>
+                     <rs type="name" key="FP">Fernando Pessoa</rs>
+                  </author>
+                  <textLang mainLang="pt" otherLangs="en"/>
+               </analytic>
+               <monogr>
+                  <title level="j">
+                     <rs type="periodical" key="J59">Teatro — Jornal
+                            D'Arte</rs>
+                  </title>
+                  <imprint>
+                     <date when="1913-11-22">22 de novembro de 1913</date>
+                  </imprint>
+                  <biblScope unit="issue">1</biblScope>
+               </monogr>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <variantEncoding method="parallel-segmentation" location="internal"/>
+      </encodingDesc>
+   </teiHeader>
+   <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+      <graphic url="prosa/Balanca_de_Minerva-Afericao.jpg"/>
+   </facsimile>
+   <text type="orig" corresp="#W235">
+      <body>
+         <div>
+            <head>Balança de Minerva</head>
+            <head type="sub">AFERIÇÃO</head>
+            <p rend="indent-first">Destina-se esta secção á critica dos maus livros e
                     especialmente á critica d’aquelles maus livros que toda a gente considera bons.
                     O livro, consagrado por qualidades que não tem, do homem consagrado por
                     qualidades com que outros o pintaram; o livro d’aquelle que, tendo creado fama,
                     se deitou a fingir que dormia; o livro do que entrou no palacio das Musas pela
                     janella ou colheu a maçã da sabedoria com o auxilio d’um escadote – tudo isto se
                     pesará na Balança de Minerva.</p>
-                <p rend="indent-first">Claro que a razão do titulo <hi rend="italic">Balança de
+            <p rend="indent-first">Claro que a razão do titulo <hi rend="italic">Balança de
                         Minerva</hi> é a circunstância de Minerva não ter balança nenhuma. Vagamente
                     absurdo, leva este titulo em si a definição d’um modo-de-ver que escolhe o onde
                     oppor-se a todos para ter razão inutilmente. A consciencia do esforço inutil e
                     do trabalho perdido ainda é uma das grandes emoções estheticas que restam a quem
                     se preocupa com as cousas que ainda restam.</p>
-                <p rend="indent-first">A critica, de resto, é apenas a forma suprema e artistica da
+            <p rend="indent-first">A critica, de resto, é apenas a forma suprema e artistica da
                     maledicencia. É preferível que seja justa, mas não é absolutamente necessário
                     que o seja. A injustiça, aliás, é a justiça dos fortes. No fundo isto é tudo
                     bondade. Dizer mal d’um livro é o único modo de dizer bem d’elle. Se é mau,
                     faz-lhe justiça; se é bom põe-o na evidencia que os livros bons merecem. E, no
                     fim de tudo, nada d’isto tem importancia, porque os livros bons leva-os a
                     Historia ao collo para casa. E quanto aos maus – criticar é apenas abrir-lhes a
-                    cova e resar-lhes em cima da ultima descida o latim que fallava <rs type="name"
-                        key="P460">Juvenal</rs>. Ás vezes é com sete pás de elogios que esta justiça
+                    cova e resar-lhes em cima da ultima descida o latim que fallava <rs type="name" key="P460">Juvenal</rs>. Ás vezes é com sete pás de elogios que esta justiça
                     mortal melhor se sella.</p>
-                <p rend="indent-first">A justificação ultima da critica assim bem entendida é o
+            <p rend="indent-first">A justificação ultima da critica assim bem entendida é o
                     satisfazer a função natural de desdenhar, função tão natural como a de comer e
                     que é de boa hygiene de espirito satisfazer cuidadosamente. Quem sente vontade
                     de desdenhar não deve atar-se á cobardia de julgar isso feio, nem vender-se á
                     infamia de ir desdenhar o que os outros desdenham, abdicando assim da sua
                     individualidade, gregario.</p>
-                <p rend="indent-first">As horas passam devagar e pesa em tedio a consciencia
+            <p rend="indent-first">As horas passam devagar e pesa em tedio a consciencia
                     d’ellas. Buscar o conforto no desprezo é não só o nosso dever para com o
                     desprezo, mas tambem o nosso dever para com nós-proprios. Espetar alfinetes na
                     alma alheia, dispondo esses alfinetes em desenhos que aprazam á nossa atenção
                     futilmente concentrada, para que o nosso tédio se vá esvaindo – eis um
                     passatempo deliciosamente de critico, e ao qual juramos fidelidade.</p>
-                <p rend="indent-first">Traduzindo isto para a metaphora que dá cor a esta secção,
+            <p rend="indent-first">Traduzindo isto para a metaphora que dá cor a esta secção,
                     pretendemos dar a entender que o nosso uso da Balança de Minerva limitar-se-ha,
                     na maioria dos casos, a dar com ella – pesos e tudo – na cabeça do criticado.
                     Isso, de resto, não deve preocupar ninguem. Quem tiver de ser immortal pode
                     sel-o mesmo com a cabeça partida. O ser immortal é a unica das preocupações
                     anti-sociaes que não faz mal a ninguem. E visto que o futuro raras vezes dá por
                     ella, não é demais que o presente algumas vezes dê n’ella.</p>
-                <signed rend="right"><rs type="name" key="FP" role="author" style="b">Fernando
-                        Pessoa.</rs></signed>
-            </div>
-        </body>
-    </text>
+            <signed rend="right">
+               <rs type="name" key="FP" role="author" style="b">Fernando
+                        Pessoa.</rs>
+            </signed>
+         </div>
+      </body>
+   </text>
+   <text type="reg" corresp="#W235">
+      <body>
+         <div>
+            <head>Balança de Minerva</head>
+            <head type="sub">AFERIÇÃO</head>
+            <p rend="indent-first">Destina-se esta secção á critica dos maus livros e
+                    especialmente á critica d’aquelles maus livros que toda a gente considera bons.
+                    O livro, consagrado por qualidades que não tem, do homem consagrado por
+                    qualidades com que outros o pintaram; o livro d’aquelle que, tendo creado fama,
+                    se deitou a fingir que dormia; o livro do que entrou no palacio das Musas pela
+                    janella ou colheu a maçã da sabedoria com o auxilio d’um escadote – tudo isto se
+                    pesará na Balança de Minerva.</p>
+            <p rend="indent-first">Claro que a razão do titulo <hi rend="italic">Balança de
+                        Minerva</hi> é a circunstância de Minerva não ter balança nenhuma. Vagamente
+                    absurdo, leva este titulo em si a definição d’um modo-de-ver que escolhe o onde
+                    oppor-se a todos para ter razão inutilmente. A consciencia do esforço inutil e
+                    do trabalho perdido ainda é uma das grandes emoções estheticas que restam a quem
+                    se preocupa com as cousas que ainda restam.</p>
+            <p rend="indent-first">A critica, de resto, é apenas a forma suprema e artistica da
+                    maledicencia. É preferível que seja justa, mas não é absolutamente necessário
+                    que o seja. A injustiça, aliás, é a justiça dos fortes. No fundo isto é tudo
+                    bondade. Dizer mal d’um livro é o único modo de dizer bem d’elle. Se é mau,
+                    faz-lhe justiça; se é bom põe-o na evidencia que os livros bons merecem. E, no
+                    fim de tudo, nada d’isto tem importancia, porque os livros bons leva-os a
+                    Historia ao collo para casa. E quanto aos maus – criticar é apenas abrir-lhes a
+                    cova e resar-lhes em cima da ultima descida o latim que fallava Juvenal. Ás vezes é com sete pás de elogios que esta justiça
+                    mortal melhor se sella.</p>
+            <p rend="indent-first">A justificação ultima da critica assim bem entendida é o
+                    satisfazer a função natural de desdenhar, função tão natural como a de comer e
+                    que é de boa hygiene de espirito satisfazer cuidadosamente. Quem sente vontade
+                    de desdenhar não deve atar-se á cobardia de julgar isso feio, nem vender-se á
+                    infamia de ir desdenhar o que os outros desdenham, abdicando assim da sua
+                    individualidade, gregario.</p>
+            <p rend="indent-first">As horas passam devagar e pesa em tedio a consciencia
+                    d’ellas. Buscar o conforto no desprezo é não só o nosso dever para com o
+                    desprezo, mas tambem o nosso dever para com nós-proprios. Espetar alfinetes na
+                    alma alheia, dispondo esses alfinetes em desenhos que aprazam á nossa atenção
+                    futilmente concentrada, para que o nosso tédio se vá esvaindo – eis um
+                    passatempo deliciosamente de critico, e ao qual juramos fidelidade.</p>
+            <p rend="indent-first">Traduzindo isto para a metaphora que dá cor a esta secção,
+                    pretendemos dar a entender que o nosso uso da Balança de Minerva limitar-se-ha,
+                    na maioria dos casos, a dar com ella – pesos e tudo – na cabeça do criticado.
+                    Isso, de resto, não deve preocupar ninguem. Quem tiver de ser immortal pode
+                    sel-o mesmo com a cabeça partida. O ser immortal é a unica das preocupações
+                    anti-sociaes que não faz mal a ninguem. E visto que o futuro raras vezes dá por
+                    ella, não é demais que o presente algumas vezes dê n’ella.</p>
+            <signed rend="right">Fernando
+                        Pessoa.</signed>
+         </div>
+      </body>
+   </text>
 </TEI>

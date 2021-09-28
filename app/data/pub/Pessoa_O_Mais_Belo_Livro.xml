@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>ʺO Mais Belo Livroʺ — Um inquérito de intelectuais</title>
+            <author>
+               <rs type="name" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Edição, Transcrição, Codificação</resp>
+               <name>Jorge Uribe</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny-Krahmer</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability status="free">
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">Pessoa_O_Mais_Belo_Livro.xml</idno>
+         </publicationStmt>
+         <notesStmt>
+            <note type="genre">
+               <rs type="genre" key="prosa">Prosa</rs>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <list type="work-index">
+               <item>
+                  <rs type="work" key="W278">ʺO Mais Belo Livroʺ — Um inquérito de
+                            intelectuais</rs>
+               </item>
+            </list>
+            <biblStruct>
+               <analytic>
+                  <title level="a">ʺO Mais Belo Livroʺ — Um inquérito de intelectuais</title>
+                  <author>
+                     <rs type="name" key="FP">Fernando Pessoa</rs>
+                  </author>
+                  <textLang mainLang="pt" otherLangs="en"/>
+               </analytic>
+               <monogr>
+                  <title level="j">
+                     <rs type="periodical" key="J20">A República</rs>
+                  </title>
+                  <imprint>
+                     <date when="1914-04-07">7 de abril de 1914</date>
+                  </imprint>
+                  <biblScope unit="page">1</biblScope>
+               </monogr>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <variantEncoding method="parallel-segmentation" location="internal"/>
+      </encodingDesc>
+      <profileDesc>
+         <handNotes>
+            <handNote xml:id="H_Republica">Texto não redigido por Pessoa mas pelos
+                    jornalistas.</handNote>
+            <handNote xml:id="H_FP">Texto redigido por Pessoa.</handNote>
+         </handNotes>
+      </profileDesc>
+   </teiHeader>
+   <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+      <graphic url="prosa/O_Mais_Belo_Livro.jpg"/>
+   </facsimile>
+   <text type="orig" corresp="#W278">
+      <body>
+         <div>
+            <head>
+               <handShift new="#H_Republica"/>ʺO Mais Belo Livroʺ — Um inquérito de
+                    intelectuais</head>
+            <argument rend="center">
+               <p>OS ULTIMOS 30 ANOS FORMAM, BEM VISIVELMENTE, UMA »ÉTAPE» LITERÁRIA, E MARCAM,
+                        PARA A MENTALIDADE PORTUGUESA, UMA DAS SUAS FASES MAIS RICAS EM CRIAÇÕES DE
+                        GÉNIO. POIS BEM: QUAL É, DE ENTRE AS OBRAS CRIADAS NESSE BRILLHANTE APELO, A
+                        MAIS BELA? TEEM A PALAVRA OS ESCRITORES, POETAS, JORNALISTAS, HOMENS DE
+                        LETRAS, TODOS QUANTOS, INTELECTUAIS DO LIVRO OU DA GAZETA DA POLITICA OU DO
+                        TEATRO, CONSTITUEM ISSO QUE PODE CHAMAR-SE — O CEREBRO PORTUGUES.</p>
+            </argument>
+            <gap reason="selection"/>
+            <p>FERNANDO PESSOA<lb/>
+               <hi rend="italic">Escritor, critico de arte</hi>
+            </p>
+            <div>
+               <p rend="indent-first">
+                  <handShift new="#H_FP"/>— A grande desvantagem estética
+                        do seu inquérito é ser a resposta tão facil que nem podemos ter o prazer de
+                        duvidar da nossa sinceridade. Uma obra destaca-se tão afastadamente das
+                        outras que nem vale a pena fingir que temos hesitação na escolha. Mais vale
+                        confessar sinceramente que achamos valor a um contemporaneo.</p>
+               <p rend="indent-first">Posto isto, chamo a atenção das pessoas criticamente
+                        competentes (a sua existencia entre nós é uma hipotese da minha delicadeza)
+                        para o facto evidente de que a <rs type="title">
+                     <hi rend="italic">Pátria</hi>
+                  </rs> de <rs type="name" key="P25">Junqueiro</rs> é, não
+                        só a maior obra dos ultimos trinta anos, mas a obra capital do que há até
+                        agora de nossa literatura. <rs type="title">
+                     <hi rend="italic">Os
+                                Lusiadas</hi>
+                  </rs> ocupam honradamente o segundo lugar.</p>
+               <p rend="indent-first">Não há infelizmente dúvidas. — A <rs type="title">
+                     <hi rend="italic">Pátria</hi>
+                  </rs> sobreleva <rs type="title">
+                     <hi rend="italic">Os Lusiadas</hi>
+                  </rs>, 1.º, na perfeita organicidade e
+                        construção, na unificação e integralização dos complexissimos elementos
+                        componentes, 2.º, no poder puramente visionador e imaginativo, 3.º, na
+                        elevação, intensidade e complexidade do sentimento patriotico e religioso. E
+                        se  <rs type="title">
+                     <hi rend="italic">Os Lusiadas</hi>
+                  </rs> vencem na
+                        sobria solenidade da sua linha estrutural, a <rs type="title">
+                     <hi rend="italic">Pátria</hi>
+                  </rs> compensa-o com a sua superioridade no
+                        que simples poesia e pura fórma. Posso mesmo acrescentar que, a meu vêr, a 
+                            <rs type="title">
+                     <hi rend="italic">Pátria</hi>
+                  </rs> fórma, com o <rs type="title">
+                     <hi rend="italic">Fausto</hi>
+                  </rs> de <rs type="name" key="P198">Goethe</rs> e o <rs type="title">
+                     <hi rend="italic">Prometeu
+                                Liberto</hi>
+                  </rs> de <rs type="name" key="P175">Shelley</rs>, a
+                        trilogia de grandesa da poesia superlirica moderna.</p>
+            </div>
+         </div>
+      </body>
+   </text>
+   <text type="reg" corresp="#W278">
+      <body>
+         <div>
+            <head>
+               <handShift new="#H_Republica"/>ʺO Mais Belo Livroʺ — Um inquérito de
+                    intelectuais</head>
+            <argument rend="center">
+               <p>OS ULTIMOS 30 ANOS FORMAM, BEM VISIVELMENTE, UMA »ÉTAPE» LITERÁRIA, E MARCAM,
+                        PARA A MENTALIDADE PORTUGUESA, UMA DAS SUAS FASES MAIS RICAS EM CRIAÇÕES DE
+                        GÉNIO. POIS BEM: QUAL É, DE ENTRE AS OBRAS CRIADAS NESSE BRILLHANTE APELO, A
+                        MAIS BELA? TEEM A PALAVRA OS ESCRITORES, POETAS, JORNALISTAS, HOMENS DE
+                        LETRAS, TODOS QUANTOS, INTELECTUAIS DO LIVRO OU DA GAZETA DA POLITICA OU DO
+                        TEATRO, CONSTITUEM ISSO QUE PODE CHAMAR-SE — O CEREBRO PORTUGUES.</p>
+            </argument>
+            <gap reason="selection"/>
+            <p>FERNANDO PESSOA<lb/>
+               <hi rend="italic">Escritor, critico de arte</hi>
+            </p>
+            <div>
+               <p rend="indent-first">
+                  <handShift new="#H_FP"/>— A grande desvantagem estética
+                        do seu inquérito é ser a resposta tão facil que nem podemos ter o prazer de
+                        duvidar da nossa sinceridade. Uma obra destaca-se tão afastadamente das
+                        outras que nem vale a pena fingir que temos hesitação na escolha. Mais vale
+                        confessar sinceramente que achamos valor a um contemporaneo.</p>
+               <p rend="indent-first">Posto isto, chamo a atenção das pessoas criticamente
+                        competentes (a sua existencia entre nós é uma hipotese da minha delicadeza)
+                        para o facto evidente de que a <hi rend="italic">Pátria</hi> de Junqueiro é, não
+                        só a maior obra dos ultimos trinta anos, mas a obra capital do que há até
+                        agora de nossa literatura. <hi rend="italic">Os
+                                Lusiadas</hi> ocupam honradamente o segundo lugar.</p>
+               <p rend="indent-first">Não há infelizmente dúvidas. — A <hi rend="italic">Pátria</hi> sobreleva <hi rend="italic">Os Lusiadas</hi>, 1.º, na perfeita organicidade e
+                        construção, na unificação e integralização dos complexissimos elementos
+                        componentes, 2.º, no poder puramente visionador e imaginativo, 3.º, na
+                        elevação, intensidade e complexidade do sentimento patriotico e religioso. E
+                        se  <hi rend="italic">Os Lusiadas</hi> vencem na
+                        sobria solenidade da sua linha estrutural, a <hi rend="italic">Pátria</hi> compensa-o com a sua superioridade no
+                        que simples poesia e pura fórma. Posso mesmo acrescentar que, a meu vêr, a 
+                            <hi rend="italic">Pátria</hi> fórma, com o <hi rend="italic">Fausto</hi> de Goethe e o <hi rend="italic">Prometeu
+                                Liberto</hi> de Shelley, a
+                        trilogia de grandesa da poesia superlirica moderna.</p>
+            </div>
+         </div>
+      </body>
+   </text>
+</TEI>
