@@ -1,492 +1,530 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
-   <teiHeader>
-      <fileDesc>
-         <titleStmt>
-            <title>Notas para a recordação do meu mestre Caeiro</title>
-            <author>
-               <rs type="name" key="AdC">Álvaro de Campos</rs>
-            </author>
-            <respStmt>
-               <resp>Edição, Transcrição</resp>
-               <name>Pedro Sepúlveda</name>
-            </respStmt>
-            <respStmt>
-               <resp>Edição, Transcrição, Codificação</resp>
-               <name>Jorge Uribe</name>
-            </respStmt>
-            <respStmt>
-               <resp>Modelagem de dados, Codificação</resp>
-               <name>Ulrike Henny-Krahmer</name>
-            </respStmt>
-            <respStmt>
-               <resp>Consultoria</resp>
-               <name>Institut für Dokumentologie und Editorik (IDE)</name>
-            </respStmt>
-         </titleStmt>
-         <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
-                    Tradição (IELT)</publisher>
-<<<<<<< HEAD
-                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
-                <date>2017</date>
-                <availability status="free">
-                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
-                </availability>
-                <idno type="filename">Campos_Notas_para_a_recordacao.xml</idno>
-            </publicationStmt>
-            <notesStmt>
-                <note type="genre">
-                    <rs type="genre" key="prosa">Prosa</rs>
-                </note>
-            </notesStmt>
-            <sourceDesc>
-                <list type="work-index">
-                    <item><rs type="work" key="W208">Notas para a recordação do meu mestre
-                            Caeiro</rs></item>
-                </list>
-                <biblStruct>
-                    <analytic>
-                        <title level="a">Notas para a recordação do meu mestre Caeiro</title>
-                        <author>
-                            <rs type="name" key="AdC">Álvaro de Campos</rs>
-                        </author>
-                        <textLang mainLang="pt" otherLangs="en"/>
-                    </analytic>
-                    <monogr>
-                        <title level="j"><rs type="periodical" key="J1">Presença</rs></title>
-                        <imprint>
-                            <date when="1931-01">janeiro de 1931</date>
-                        </imprint>
-                        <biblScope unit="issue">30</biblScope>
-                        <biblScope unit="page">11-15</biblScope>
-                    </monogr>
-                </biblStruct>
-            </sourceDesc>
-        </fileDesc>
-        <encodingDesc>
-            <variantEncoding method="parallel-segmentation" location="internal"/>
-        </encodingDesc>
-    </teiHeader>
-    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
-        <graphic url="prosa/Notas_para_a_recordacao_1.jpg"/>
-        <graphic url="prosa/Notas_para_a_recordacao_2.jpg"/>
-    </facsimile>
-    <text corresp="#W208">
-        <body>
-            <div>
-                <head>notas para a recordação do meu mestre <rs type="name" role="topic" key="AC"
-                        >caeiro</rs></head>
-                <head type="sub">(algumas delas)</head>
-                <p rend="indent-first"><hi rend="bold">C</hi>onheci o meu mestre <rs type="name"
-                    role="topic" key="AC">Caeiro</rs> em circunstâncias excepcionais — como
-=======
-            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
-            <date>2017</date>
-            <availability status="free">
-               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
-            </availability>
-            <idno type="filename">Campos_Notas_para_a_recordacao.xml</idno>
-         </publicationStmt>
-         <notesStmt>
-            <note type="genre">
-               <rs type="genre" key="prosa">Prosa</rs>
-            </note>
-         </notesStmt>
-         <sourceDesc>
-            <list type="work-index">
-               <item>
-                  <rs type="work" key="W208">Notas para a recordação do meu mestre
-                            Caeiro</rs>
-               </item>
-            </list>
-            <biblStruct>
-               <analytic>
-                  <title level="a">Notas para a recordação do meu mestre Caeiro</title>
-                  <author>
-                     <rs type="name" key="AdC">Álvaro de Campos</rs>
-                  </author>
-                  <textLang mainLang="pt" otherLangs="en"/>
-               </analytic>
-               <monogr>
-                  <title level="j">
-                     <rs type="periodical" key="J1">Presença</rs>
-                  </title>
-                  <imprint>
-                     <date when="1931-01">janeiro de 1931</date>
-                  </imprint>
-                  <biblScope unit="issue">30</biblScope>
-                  <biblScope unit="page">11-15</biblScope>
-               </monogr>
-            </biblStruct>
-         </sourceDesc>
-      </fileDesc>
-      <encodingDesc>
-         <variantEncoding method="parallel-segmentation" location="internal"/>
-      </encodingDesc>
-   </teiHeader>
-   <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
-      <graphic url="prosa/Notas_para_a_recordacao_1.jpg"/>
-      <graphic url="prosa/Notas_para_a_recordacao_2.jpg"/>
-   </facsimile>
-   <text type="orig" corresp="#W208">
-      <body>
-         <div>
-            <head>notas para a recordação do meu mestre <rs type="name" role="topic" key="AC">caeiro</rs>
-            </head>
-            <head type="sub">(algumas delas)</head>
-            <p rend="indent-first">
-               <hi rend="bold">C</hi>onheci o meu mestre <rs type="name" role="topic" key="AC">Caeiro</rs> em circunstâncias excepcionais – como
->>>>>>> 4cb1ea5098d57dd369b4fb21b0f5e4c2d2c2ab11
-                    tôdas as circunstâncias da vida, e sobretudo as que, não sendo nada em si
-                    mesmas, hão de vir a ser tudo nos resultados.</p>
-            <p rend="indent-first">Deixei em quási três-quartos o meu curso escocês de
-                    engenharia naval; parti numa viagem ao Oriente; no regresso, desembarcando em
-                    Marselha, e sentindo um grande tédio de seguir, vim por terra até Lisboa. Um
-                    primo meu levou-me um dia de passeio ao Ribatejo; conhecia um primo de <rs type="name" role="topic" key="AC">Caeiro</rs>, e tinha com êle negócios;
-                    encontrei-me com o que havia de ser meu mestre em casa dêsse seu primo. Não ha
-                    mais que contar, porque isto é pequeno, como tôda a fecundação.</p>
-            <p rend="indent-first">Vejo ainda, com claridade da alma, que as lágrimas da
-                    lembrança não empanam, porque a visão não é externa... Vejo-o diante de mim, e
-                    vê-lo hei talvez eternamente como primeiro o vi. Primeiro, os olhos azuis de
-                    criança que não tem mêdo; depois, os malares já um pouco salientes, a côr um
-                    pouco pálida, e o estranho ar grego, que vinha de dentro e era uma calma, e não
-                    de fora, porque não era expressão nem feições. O cabelo, quási abundante, era
-                    louro, mas, se faltava luz, acastanhava-se. A estatura era média, tendendo para
-                    mais alta, mas curvada, sem ombros altos. O gesto era branco, o sorriso era como
-                    era, a voz era igual, lançada num tom de quem não procura senão dizer o que está
-                    dizendo — nem alta, nem baixa, clara, livre de intenções, de hesitações, de
-                    timidezas. O olhar azul não sabia deixar de fitar. Se a nossa observação
-                    estranhava qualquer cousa, encontrava-a: a testa, sem ser alta, era
-                    poderosamente branca. Repito: era pela sua brancura, que parecia maior que a da
-                    cara pálida, que tinha majestade. As mãos um pouco delgadas, mas não muito; a
-                    palma era larga. A expressão da bôca, a última cousa em que se reparava — como
-                    se falar fôsse, para êste homem, menos que existir —, era a de um sorriso como o
-                    que se atribui em verso às cousas inanimadas belas, só porque nos agradam —
-                    flores, campos largos, águas com sol —, um sorriso de existir, e não de nos
-                    falar.</p>
-            <p rend="indent-first">Meu mestre, meu mestre, perdido tão cêdo! Revejo-o na sombra
-                    que sou em mim, na memória que conservo do que sou de morto...</p>
-            <p rend="indent-first">Foi durante a nossa primeira conversa... Como foi não sei, e
-                    êle disse: «Está aqui um rapaz <rs type="name" role="topic" key="RR">Ricardo
-                        Reis</rs> que há de gostar de conhecer: êle é muito diferente de si». E
-                    depois acrescentou, «Tudo é diferente de nós, e por isso é que tudo existe».</p>
-            <p rend="indent-first">Esta frase, dita como se fôsse um axioma da terra, seduziu-me
-                    com um abalo, como o de tôdas as primeiras posses, que me entrou nos alicerces
-                    da alma. Mas, ao contrário da sedução material, o efeito em mim foi de receber
-                    de repente, em tôdas as minhas sensações, uma virgindade que não tinha tido.</p>
-            <milestone rend="square" unit="section"/>
-            <p rend="indent-first">Referindo-me, uma vez, ao conceito directo das coisas, que
-                    caracteriza a sensibilidade de <rs type="name" role="topic" key="AC">Caeiro</rs>, citei-lhe, com perversidade amiga, que <rs type="name" key="P162">Wordsworth</rs> designa um insensivel pela expressão:</p>
-            <lg rend="center">
-               <l>A primrose by the river’s brim</l>
-               <l>A yellow primrose was to him</l>
-               <l>And it was nothing more.</l>
-            </lg>
-            <p rend="indent-first">E traduzi (omitindo a tradução exacta de «primrose», pois não
-                    sei nomes de flores nem de plantas): «Uma flor à margem do rio para êle era uma
-                    flor amarela, e não era mais nada».</p>
-            <p rend="indent-first">O meu mestre <rs type="name" role="topic" key="AC">Caeiro</rs> riu. «Êsse simples via bem: uma flor amarela não é realmente
-                    senão uma flor amarela».</p>
-            <p rend="indent-first">Mas, de repente, pensou.</p>
-            <p rend="indent-first">«Há uma diferença», acrescentou. «Depende se se considera a
-                    flor amarela como uma das várias flores amarelas, ou como aquela flor amarela
-                    só».</p>
-            <p rend="indent-first">E depois disse:</p>
-            <p rend="indent-first">«O que êsse seu poeta inglês queria dizer é que para o tal
-                    homem essa flor amarela era uma experiência vulgar, ou coisa conhecida. Ora isso
-                    é que não está bem. Tôda a coisa que vemos, devemos vê-la sempre pela primeira
-                    vez, porque realmente é a primeira vez que a vemos. E então cada flor amarela é
-                    uma nova flor amarela, ainda que seja o que se chama a mesma de ontem. A gente
-                    não é já o mesmo nem a flor a mesma. O próprio amarelo não pode ser já o mesmo.
-                    É pena a gente não ter exactamente os olhos para saber isso, porque então 
-                    eramos todos felizes».</p>
-            <milestone rend="square" unit="section"/>
-            <p rend="indent-first">O meu mestre <rs type="name" role="topic" key="AC">Caeiro</rs> não era um pagão: era o paganismo. O <rs type="name" role="topic" key="RR">Ricardo Reis</rs> é um pagão, o <rs type="name" key="P1" style="a">António Móra</rs> é um pagão, eu sou um pagão; o próprio
-                        <rs type="name" role="topic" key="FP" style="b">Fernando Pessoa</rs> se não
-                    fôsse um novêlo embrulhado para o lado de dentro. Mas o <rs type="name" role="topic" key="RR">Ricardo Reis</rs> é um pagão por carácter, o <rs type="name" key="P1" style="a">António Móra</rs> é um pagão por
-                    inteligência, eu sou um pagão por revolta, isto é, por temperamento. Em <rs type="name" role="topic" key="AC">Caeiro</rs> não havia explicação para o
-                    paganismo; havia consubstanciação.</p>
-<<<<<<< HEAD
-                <p rend="indent-first">Vou definir isto da maneira em que se definem as coisas
-                    indefiníveis — pela cobardia do exemplo. Uma das coisas que mais nítidamente nos
-=======
-            <p rend="indent-first">Vou definir isto da maneira em que se definem as coisas
-                    indefiníveis – pela cobardia do exemplo. Uma das coisas que mais nítidamente nos
->>>>>>> 4cb1ea5098d57dd369b4fb21b0f5e4c2d2c2ab11
-                    sacodem na comparação de nós com os gregos é a ausência de conceito de infinito,
-                    a repugnância de infinito, entre os gregos. Ora o meu mestre <rs type="name" role="topic" key="AC">Caeiro</rs> tinha lá mesmo êsse mesmo inconceito. Vou
-                    contar, creio que com grande exactidão, a conversa assombrosa em que mo
-                    revelou.</p>
-            <p rend="indent-first">Referia-me êle, aliás desenvolvendo o que diz num dos poemas
-                    de <rs type="title">
-                  <hi rend="italic">O Guardador de Rebanhos</hi>
-               </rs>, que não
-                    sei quem lhe tinha chamado em tempos “poeta materialista”. Sem achar a frase
-                    justa, porque o meu mestre <rs type="name" role="topic" key="AC">Caeiro</rs> não
-                    é definível com qualquer frase justa, disse-lhe, contudo, que não era absurda de
-                    todo a atribuição. E expliquei-lhe, mais ou menos bem, o que é o materialismo
-                    clássico. <rs type="name" role="topic" key="AC">Caeiro</rs> ouviu-me com uma
-                    atenção de cara dolorosa, e depois disse-me bruscamente:</p>
-            <p rend="indent-first">«Mas isso o que é é muito estúpido. Isso é uma coisa de
-                    padres sem religião e portanto sem desculpa nenhuma».</p>
-            <p rend="indent-first">Fiquei atónito, e apontei-lhe várias semelhanças entre o
-                    materialismo e a doutrina dêle, salva a poesia desta última. Caeiro
-                    protestou.</p>
-            <p rend="indent-first">«Mas isso a que v. chama poesia é que é tudo. Nem é poesia: é
-                    ver. Essa gente materialista é cega. V. diz que êles dizem que o espaço é
-                    infinito. Onde é que êles viram isso no espaço?»</p>
-            <p rend="indent-first">E eu, desnorteado. «Mas v. não concebe o espaço como
-                    infinito? v. não pode conceber o espaço como infinito?»</p>
-            <p rend="indent-first">«Não concebo nada como infinito. Como é que eu hei de
-                    conceber qualquer coisa como infinito?»</p>
-            <p rend="indent-first">«Homem», disse eu, «suponha um espaço. Para além dêsse espaço
-                    há mais espaço, para além dêsse mais, e depois mais, e mais, e mais... Não
-                    acaba...»</p>
-            <p rend="indent-first">“Porquê?" disse o meu mestre <rs type="name" role="topic" key="AC">Caeiro</rs>.</p>
-            <p rend="indent-first">Fiquei num terramoto mental. «Suponha que acaba», gritei. «O
-                    que há depois?»</p>
-            <p rend="indent-first">«Se acaba, depois não há nada», respondeu.</p>
-            <p rend="indent-first">Este género de argumentação, cumulativamente infantil e
-                    feminina, e portanto irrespondivel atou-me o cérebro durante uns momentos.</p>
-            <p rend="indent-first">«Mas v. concebe isso?» deixei caír por fim.</p>
-            <p rend="indent-first">“Se concebo o quê? Uma coisa ter limites? Pudera! O que não
-                    tem limites não existe. Existir é haver outra coisa qualquer e portanto cada
-                    coisa ser limitada. O que é que custa conceber que uma coisa é uma coisa, e não
-                    está sempre a ser uma outra coisa que está mais adiante?»</p>
-<<<<<<< HEAD
-                <p rend="indent-first">Nessa altura senti carnalmente que estava discutíndo, não com
-                    outro homem, mas com outro universo. Fiz uma última tentativa, um desvio que me
-                    obriguei a sentir legítimo.</p>
-                <p rend="indent-first">«Olhe, <rs type="name" role="topic" key="AC">Caeiro</rs>...
-                    Considere os números... Onde é que acabam os números? Tomemos qualquer número —
-=======
-            <p rend="indent-first">Nessa altura senti carnalmente que estava discutíndo, não com
-                    outro homem, mas com outro universo. Fiz uma: última tentativa, um desvio que me
-                    obriguei a sentir legítimo.</p>
-            <p rend="indent-first">«Olhe, <rs type="name" role="topic" key="AC">Caeiro</rs>...
-                    Considere os números... Onde é que acabam os números? Tomemos qualquer número –
->>>>>>> 4cb1ea5098d57dd369b4fb21b0f5e4c2d2c2ab11
-                    34, por exemplo. Para além dêle temos 35, 36, 37, 38, e assim sem poder parar.
-                    Não há número grande que não haja um número maior...»</p>
-            <p rend="indent-first">«Mas isso são só números», protestou o meu mestre <rs type="name" role="topic" key="AC">Caeiro</rs>.</p>
-            <p rend="indent-first">E depois acrescentou, olhando-me com uma formidável
-                    infância:</p>
-            <p rend="indent-first">«O que é o 34 na Realidade?»</p>
-            <milestone rend="square" unit="section"/>
-            <p rend="indent-first">Há frases repentinas, profundas porque vêm do profundo, que
-                    definem um homem, ou, antes, com que um homem se define, sem definição. Não me
-                    esquece aquela em que <rs type="name" role="topic" key="RR">Ricardo Reis</rs>
-                    uma vez se me definiu. Falava-se de mentir, e êle disse: «Abomino a mentira,
-                    porque é uma inexactidão». Todo o <rs type="name" role="topic" key="RR">Ricardo
-<<<<<<< HEAD
-                        Reis</rs> — passado, presente e futuro — está nisto.</p>
-                <p rend="indent-first">O meu mestre <rs type="name" role="topic" key="AC"
-                        >Caeiro</rs>, como não dizia senão o que era, pode ser definido por qualquer
-=======
-                        Reis</rs> – passado, presente e futuro – está nisto.</p>
-            <p rend="indent-first">O meu mestre <rs type="name" role="topic" key="AC">Caeiro</rs>, como não dizia senão o que era, pode ser definido por qualquer
->>>>>>> 4cb1ea5098d57dd369b4fb21b0f5e4c2d2c2ab11
-                    frase sua, escrita ou falada, sobretudo depois do período que começa do meio em
-                    diante de <rs type="title">
-                  <hi rend="italic">O Guardador de Rebanhos</hi>
-               </rs>.
-                    Mas, entre tantas frases que escreveu e se imprimem, entre tantas que me disse e
-                    relato ou não relato, a que o contém com maior simplicidade é aquela que uma vez
-                    me disse em Lisboa. Falava-se de não sei quê que tinha que vêr com as relações
-                    de cada qual consigo mesmo. E eu perguntei de repente ao meu mestre <rs type="name" role="topic" key="AC">Caeiro</rs>, «Está contente consigo?» E
-                    êle respondeu: «Não: estou contente». Era como a voz da terra, que é tudo e
-                    ninguém.</p>
-            <milestone rend="square" unit="section"/>
-            <p rend="indent-first">Nunca vi triste o meu mestre <rs type="name" role="topic" key="AC">Caeiro</rs>. Não sei se estava triste quando morreu, ou nos dias
-                    antes. Seria possível sabê-lo, mas a verdade é que nunca ousei preguntar aos que
-                    assistiram à morte qualquer cousa da morte ou de como êle a teve.</p>
-<<<<<<< HEAD
-                <p rend="indent-first">Em todo o caso, foi uma das angústias da minha vida — das
-                    angústias reais em meio de tantas que têm sido fictícias — que <rs type="name"
-                        role="topic" key="AC">Caeiro</rs> morresse sem eu estar ao pé dêle. Isto é
-=======
-            <p rend="indent-first">Em todo o caso, foi uma das angústias da minha vida – das
-                    angústias reais em meio de tantas que têm sido fictícias – que <rs type="name" role="topic" key="AC">Caeiro</rs> morresse sem eu estar ao pé dêle. Isto é
->>>>>>> 4cb1ea5098d57dd369b4fb21b0f5e4c2d2c2ab11
-                    estúpido mas humano, e é assim.</p>
-            <p rend="indent-first">Eu estava em Inglaterra. O próprio <rs type="name" role="topic" key="RR">Ricardo Reis</rs> não estava em Lisboa; estava de
-                    volta no Brasil. Estava o <rs type="name" role="topic" key="FP" style="b">Fernando Pessoa</rs>, mas é como se não estivesse. <rs type="name" role="topic" key="FP" style="b">O Fernando Pessoa</rs> sente as cousas mas
-                    não se mexe, nem mesmo por dentro.</p>
-            <p rend="indent-first">Nada me consola de não ter estado em Lisboa nesse dia, a não
-                    ser aquela consolação que pensar no meu mestre <rs type="name" role="topic" key="AC">Caeiro</rs> espontâneamente me dá. Ninguém é inconsolável ao pé da
-                    memória de <rs type="name" role="topic" key="AC">Caeiro</rs>, ou dos seus
-                    versos; e a própria ideia do nada — a mais pavorosa de tôdas se se pensa com a
-                    sensibilidade — tem, na obra e na recordação do meu mestre querido, qualquer
-                    cousa de luminoso e de alto, como o sol sôbre as neves dos píncaros
-                    inatingíveis.</p>
-            <signed rend="center">ALVARO DE CAMPOS.</signed>
-         </div>
-      </body>
-   </text>
-   <text type="reg" corresp="#W208">
-      <body>
-         <div>
-            <head>notas para a recordação do meu mestre caeiro</head>
-            <head type="sub">(algumas delas)</head>
-            <p rend="indent-first">
-               <hi rend="bold">C</hi>onheci o meu mestre Caeiro em circunstâncias excepcionais – como
-                    tôdas as circunstâncias da vida, e sobretudo as que, não sendo nada em si
-                    mesmas, hão de vir a ser tudo nos resultados.</p>
-            <p rend="indent-first">Deixei em quási três-quartos o meu curso escocês de
-                    engenharia naval; parti numa viagem ao Oriente; no regresso, desembarcando em
-                    Marselha, e sentindo um grande tédio de seguir, vim por terra até Lisboa. Um
-                    primo meu levou-me um dia de passeio ao Ribatejo; conhecia um primo de Caeiro, e tinha com êle negócios;
-                    encontrei-me com o que havia de ser meu mestre em casa dêsse seu primo. Não ha
-                    mais que contar, porque isto é pequeno, como tôda a fecundação.</p>
-            <p rend="indent-first">Vejo ainda, com claridade da alma, que as lágrimas da
-                    lembrança não empanam, porque a visão não é externa... Vejo-o diante de mim, e
-                    vê-lo hei talvez eternamente como primeiro o vi. Primeiro, os olhos azuis de
-                    criança que não tem mêdo; depois, os malares já um pouco salientes, a côr um
-                    pouco pálida, e o estranho ar grego, que vinha de dentro e era uma calma, e não
-                    de fora, porque não era expressão nem feições. O cabelo, quási abundante, era
-                    louro, mas, se faltava luz, acastanhava-se. A estatura era média, tendendo para
-                    mais alta, mas curvada, sem ombros altos. O gesto era branco, o sorriso era como
-                    era, a voz era igual, lançada num tom de quem não procura senão dizer o que está
-                    dizendo – nem alta, nem baixa, clara, livre de intenções, de hesitações, de
-                    timidezas. O olhar azul não sabia deixar de fitar. Se a nossa observação
-                    estranhava qualquer cousa, encontrava-a: a testa, sem ser alta, era
-                    poderosamente branca. Repito: era pela sua brancura, que parecia maior que a da
-                    cara pálida, que tinha majestade. As mãos um pouco delgadas, mas não muito; a
-                    palma era larga. A expressão da bôca, a última cousa em que se reparava – como
-                    se falar fôsse, para êste homem, menos que existir –, era a de um sorriso como o
-                    que se atribui em verso às cousas inanimadas belas, só porque nos agradam –
-                    flores, campos largos, águas com sol –, um sorriso de existir, e não de nos
-                    falar.</p>
-            <p rend="indent-first">Meu mestre, meu mestre, perdido tão cêdo! Revejo-o na sombra
-                    que sou em mim, na memória que conservo do que sou de morto...</p>
-            <p rend="indent-first">Foi durante a nossa primeira conversa... Como foi não sei, e
-                    êle disse: «Está aqui um rapaz Ricardo
-                        Reis que há de gostar de conhecer: êle é muito diferente de si». E
-                    depois acrescentou, «Tudo é diferente de nós, e por isso é que tudo existe».</p>
-            <p rend="indent-first">Esta frase, dita como se fôsse um axioma da terra, seduziu-me
-                    com um abalo, como o de tôdas as primeiras posses, que me entrou nos alicerces
-                    da alma. Mas, ao contrário da sedução material, o efeito em mim foi de receber
-                    de repente, em tôdas as minhas sensações, uma virgindade que não tinha tido.</p>
-            <milestone rend="square" unit="section"/>
-            <p rend="indent-first">Referindo-me, uma vez, ao conceito directo das coisas, que
-                    caracteriza a sensibilidade de Caeiro, citei-lhe, com perversidade amiga, que Wordsworth designa um insensivel pela expressão:</p>
-            <lg rend="center">
-               <l>A primrose by the river’s brim</l>
-               <l>A yellow primrose was to him</l>
-               <l>And it was nothing more.</l>
-            </lg>
-            <p rend="indent-first">E traduzi (omitindo a tradução exacta de «primrose», pois não
-                    sei nomes de flores nem de plantas): «Uma flor à margem do rio para êle era uma
-                    flor amarela, e não era mais nada».</p>
-            <p rend="indent-first">O meu mestre Caeiro riu. «Êsse simples via bem: uma flor amarela não é realmente
-                    senão uma flor amarela».</p>
-            <p rend="indent-first">Mas, de repente, pensou.</p>
-            <p rend="indent-first">«Há uma diferença», acrescentou. «Depende se se considera a
-                    flor amarela como uma das várias flores amarelas, ou como aquela flor amarela
-                    só».</p>
-            <p rend="indent-first">E depois disse:</p>
-            <p rend="indent-first">«O que êsse seu poeta inglês queria dizer é que para o tal
-                    homem essa flor amarela era uma experiência vulgar, ou coisa conhecida. Ora isso
-                    é que não está bem. Tôda a coisa que vemos, devemos vê-la sempre pela primeira
-                    vez, porque realmente é a primeira vez que a vemos. E então cada flor amarela é
-                    uma nova flor amarela, ainda que seja o que se chama a mesma de ontem. A gente
-                    não é já o mesmo nem a flor a mesma. O próprio amarelo não pode ser já o mesmo.
-                    É pena a gente não ter exactamente os olhos para saber isso, porque então éramos
-                    eramos todos felizes».</p>
-            <milestone rend="square" unit="section"/>
-            <p rend="indent-first">O meu mestre Caeiro não era um pagão: era o paganismo. O Ricardo Reis é um pagão, o António Móra é um pagão, eu sou um pagão; o próprio
-                        Fernando Pessoa se não
-                    fôsse um novêlo embrulhado para o lado de dentro. Mas o Ricardo Reis é um pagão por carácter, o António Móra é um pagão por
-                    inteligência, eu sou um pagão por revolta, isto é, por temperamento. Em Caeiro não havia explicação para o
-                    paganismo; havia consubstanciação.</p>
-            <p rend="indent-first">Vou definir isto da maneira em que se definem as coisas
-                    indefiníveis – pela cobardia do exemplo. Uma das coisas que mais nítidamente nos
-                    sacodem na comparação de nós com os gregos é a ausência de conceito de infinito,
-                    a repugnância de infinito, entre os gregos. Ora o meu mestre Caeiro tinha lá mesmo êsse mesmo inconceito. Vou
-                    contar, creio que com grande exactidão, a conversa assombrosa em que mo
-                    revelou.</p>
-            <p rend="indent-first">Referia-me êle, aliás desenvolvendo o que diz num dos poemas
-                    de <hi rend="italic">O Guardador de Rebanhos</hi>, que não
-                    sei quem lhe tinha chamado em tempos “poeta materialista”. Sem achar a frase
-                    justa, porque o meu mestre Caeiro não
-                    é definível com qualquer frase justa, disse-lhe, contudo, que não era absurda de
-                    todo a atribuição. E expliquei-lhe, mais ou menos bem, o que é o materialismo
-                    clássico. Caeiro ouviu-me com uma
-                    atenção de cara dolorosa, e depois disse-me bruscamente:</p>
-            <p rend="indent-first">«Mas isso o que é é muito estúpido. Isso é uma coisa de
-                    padres sem religião e portanto sem desculpa nenhuma».</p>
-            <p rend="indent-first">Fiquei atónito, e apontei-lhe várias semelhanças entre o
-                    materialismo e a doutrina dêle, salva a poesia desta última. Caeiro
-                    protestou.</p>
-            <p rend="indent-first">«Mas isso a que v. chama poesia é que é tudo. Nem é poesia: é
-                    ver. Essa gente materialista é cega. V. diz que êles dizem que o espaço é
-                    infinito. Onde é que êles viram isso no espaço?»</p>
-            <p rend="indent-first">E eu, desnorteado. «Mas v. não concebe o espaço como
-                    infinito? v. não pode conceber o espaço como infinito?»</p>
-            <p rend="indent-first">«Não concebo nada como infinito. Como é que eu hei de
-                    conceber qualquer coisa como infinito?»</p>
-            <p rend="indent-first">«Homem», disse eu, «suponha um espaço. Para além dêsse espaço
-                    há mais espaço, para além dêsse mais, e depois mais, e mais, e mais... Não
-                    acaba...»</p>
-            <p rend="indent-first">“Porquê?" disse o meu mestre Caeiro.</p>
-            <p rend="indent-first">Fiquei num terramoto mental. «Suponha que acaba», gritei. «O
-                    que há depois?»</p>
-            <p rend="indent-first">«Se acaba, depois não há nada», respondeu.</p>
-            <p rend="indent-first">Este género de argumentação, cumulativamente infantil e
-                    feminina, e portanto irrespondivel atou-me o cérebro durante uns momentos.</p>
-            <p rend="indent-first">«Mas v. concebe isso?» deixei caír por fim.</p>
-            <p rend="indent-first">“Se concebo o quê? Uma coisa ter limites? Pudera! O que não
-                    tem limites não existe. Existir é haver outra coisa qualquer e portanto cada
-                    coisa ser limitada. O que é que custa conceber que uma coisa é uma coisa, e não
-                    está sempre a ser uma outra coisa que está mais adiante?»</p>
-            <p rend="indent-first">Nessa altura senti carnalmente que estava discutíndo, não com
-                    outro homem, mas com outro universo. Fiz uma: última tentativa, um desvio que me
-                    obriguei a sentir legítimo.</p>
-            <p rend="indent-first">«Olhe, Caeiro...
-                    Considere os números... Onde é que acabam os números? Tomemos qualquer número –
-                    34, por exemplo. Para além dêle temos 35, 36, 37, 38, e assim sem poder parar.
-                    Não há número grande que não haja um número maior...»</p>
-            <p rend="indent-first">«Mas isso são só números», protestou o meu mestre Caeiro.</p>
-            <p rend="indent-first">E depois acrescentou, olhando-me com uma formidável
-                    infância:</p>
-            <p rend="indent-first">«O que é o 34 na Realidade?»</p>
-            <milestone rend="square" unit="section"/>
-            <p rend="indent-first">Há frases repentinas, profundas porque vêm do profundo, que
-                    definem um homem, ou, antes, com que um homem se define, sem definição. Não me
-                    esquece aquela em que Ricardo Reis
-                    uma vez se me definiu. Falava-se de mentir, e êle disse: «Abomino a mentira,
-                    porque é uma inexactidão». Todo o Ricardo
-                        Reis – passado, presente e futuro – está nisto.</p>
-            <p rend="indent-first">O meu mestre Caeiro, como não dizia senão o que era, pode ser definido por qualquer
-                    frase sua, escrita ou falada, sobretudo depois do período que começa do meio em
-                    diante de <hi rend="italic">O Guardador de Rebanhos</hi>.
-                    Mas, entre tantas frases que escreveu e se imprimem, entre tantas que me disse e
-                    relato ou não relato, a que o contém com maior simplicidade é aquela que uma vez
-                    me disse em Lisboa. Falava-se de não sei quê que tinha que vêr com as relações
-                    de cada qual consigo mesmo. E eu perguntei de repente ao meu mestre Caeiro, «Está contente consigo?» E
-                    êle respondeu: «Não: estou contente». Era como a voz da terra, que é tudo e
-                    ninguém.</p>
-            <milestone rend="square" unit="section"/>
-            <p rend="indent-first">Nunca vi triste o meu mestre Caeiro. Não sei se estava triste quando morreu, ou nos dias
-                    antes. Seria possível sabê-lo, mas a verdade é que nunca ousei preguntar aos que
-                    assistiram à morte qualquer cousa da morte ou de como êle a teve.</p>
-            <p rend="indent-first">Em todo o caso, foi uma das angústias da minha vida – das
-                    angústias reais em meio de tantas que têm sido fictícias – que Caeiro morresse sem eu estar ao pé dêle. Isto é
-                    estúpido mas humano, e é assim.</p>
-            <p rend="indent-first">Eu estava em Inglaterra. O próprio Ricardo Reis não estava em Lisboa; estava de
-                    volta no Brasil. Estava o Fernando Pessoa, mas é como se não estivesse. O Fernando Pessoa sente as cousas mas
-                    não se mexe, nem mesmo por dentro.</p>
-            <p rend="indent-first">Nada me consola de não ter estado em Lisboa nesse dia, a não
-                    ser aquela consolação que pensar no meu mestre Caeiro espontâneamente me dá. Ninguém é inconsolável ao pé da
-                    memória de Caeiro, ou dos seus
-                    versos; e a própria ideia do nada – a mais pavorosa de tôdas se se pensa com a
-                    sensibilidade – tem, na obra e na recordação do meu mestre querido, qualquer
-                    cousa de luminoso e de alto, como o sol sôbre as neves dos píncaros
-                    inatingíveis.</p>
-            <signed rend="center">ALVARO DE CAMPOS.</signed>
-         </div>
-      </body>
-   </text>
+        <teiHeader>
+                <fileDesc>
+                        <titleStmt>
+                                <title>Notas para a recordação do meu mestre Caeiro</title>
+                                <author>
+                                        <rs type="name" key="AdC">Álvaro de Campos</rs>
+                                </author>
+                                <respStmt>
+                                        <resp>Edição, Transcrição</resp>
+                                        <name>Pedro Sepúlveda</name>
+                                </respStmt>
+                                <respStmt>
+                                        <resp>Edição, Transcrição, Codificação</resp>
+                                        <name>Jorge Uribe</name>
+                                </respStmt>
+                                <respStmt>
+                                        <resp>Modelagem de dados, Codificação</resp>
+                                        <name>Ulrike Henny-Krahmer</name>
+                                </respStmt>
+                                <respStmt>
+                                        <resp>Consultoria</resp>
+                                        <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                                </respStmt>
+                        </titleStmt>
+                        <publicationStmt>
+                                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de
+                                        Literatura e Tradição (IELT)</publisher>
+                                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                                <date>2017</date>
+                                <availability status="free">
+                                        <licence
+                                                target="http://creativecommons.org/licenses/by/3.0/"
+                                        />
+                                </availability>
+                                <idno type="filename">Campos_Notas_para_a_recordacao.xml</idno>
+                        </publicationStmt>
+                        <notesStmt>
+                                <note type="genre">
+                                        <rs type="genre" key="prosa">Prosa</rs>
+                                </note>
+                        </notesStmt>
+                        <sourceDesc>
+                                <list type="work-index">
+                                        <item><rs type="work" key="W208">Notas para a recordação do
+                                                  meu mestre Caeiro</rs></item>
+                                </list>
+                                <biblStruct>
+                                        <analytic>
+                                                <title level="a">Notas para a recordação do meu
+                                                  mestre Caeiro</title>
+                                                <author>
+                                                  <rs type="name" key="AdC">Álvaro de Campos</rs>
+                                                </author>
+                                                <textLang mainLang="pt" otherLangs="en"/>
+                                        </analytic>
+                                        <monogr>
+                                                <title level="j"><rs type="periodical" key="J1"
+                                                  >Presença</rs></title>
+                                                <imprint>
+                                                  <date when="1931-01">janeiro de 1931</date>
+                                                </imprint>
+                                                <biblScope unit="issue">30</biblScope>
+                                                <biblScope unit="page">11-15</biblScope>
+                                        </monogr>
+                                </biblStruct>
+                        </sourceDesc>
+                </fileDesc>
+                <encodingDesc>
+                        <variantEncoding method="parallel-segmentation" location="internal"/>
+                </encodingDesc>
+        </teiHeader>
+        <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+                <graphic url="prosa/Notas_para_a_recordacao_1.jpg"/>
+                <graphic url="prosa/Notas_para_a_recordacao_2.jpg"/>
+        </facsimile>
+        <text type="orig" corresp="#W208">
+                <body>
+                        <div>
+                                <head>notas para a recordação do meu mestre <rs type="name"
+                                                role="topic" key="AC">caeiro</rs></head>
+                                <head type="sub">(algumas delas)</head>
+                                <p rend="indent-first"><hi rend="bold">C</hi>onheci o meu mestre <rs
+                                                type="name" role="topic" key="AC">Caeiro</rs> em
+                                        circunstâncias excepcionais — como tôdas as circunstâncias
+                                        da vida, e sobretudo as que, não sendo nada em si mesmas,
+                                        hão de vir a ser tudo nos resultados.</p>
+                                <p rend="indent-first">Deixei em quási três-quartos o meu curso
+                                        escocês de engenharia naval; parti numa viagem ao Oriente;
+                                        no regresso, desembarcando em Marselha, e sentindo um grande
+                                        tédio de seguir, vim por terra até Lisboa. Um primo meu
+                                        levou-me um dia de passeio ao Ribatejo; conhecia um primo de
+                                                <rs type="name" role="topic" key="AC">Caeiro</rs>, e
+                                        tinha com êle negócios; encontrei-me com o que havia de ser
+                                        meu mestre em casa dêsse seu primo. Não ha mais que contar,
+                                        porque isto é pequeno, como tôda a fecundação.</p>
+                                <p rend="indent-first">Vejo ainda, com claridade da alma, que as
+                                        lágrimas da lembrança não empanam, porque a visão não é
+                                        externa... Vejo-o diante de mim, e vê-lo hei talvez
+                                        eternamente como primeiro o vi. Primeiro, os olhos azuis de
+                                        criança que não tem mêdo; depois, os malares já um pouco
+                                        salientes, a côr um pouco pálida, e o estranho ar grego, que
+                                        vinha de dentro e era uma calma, e não de fora, porque não
+                                        era expressão nem feições. O cabelo, quási abundante, era
+                                        louro, mas, se faltava luz, acastanhava-se. A estatura era
+                                        média, tendendo para mais alta, mas curvada, sem ombros
+                                        altos. O gesto era branco, o sorriso era como era, a voz era
+                                        igual, lançada num tom de quem não procura senão dizer o que
+                                        está dizendo — nem alta, nem baixa, clara, livre de
+                                        intenções, de hesitações, de timidezas. O olhar azul não
+                                        sabia deixar de fitar. Se a nossa observação estranhava
+                                        qualquer cousa, encontrava-a: a testa, sem ser alta, era
+                                        poderosamente branca. Repito: era pela sua brancura, que
+                                        parecia maior que a da cara pálida, que tinha majestade. As
+                                        mãos um pouco delgadas, mas não muito; a palma era larga. A
+                                        expressão da bôca, a última cousa em que se reparava — como
+                                        se falar fôsse, para êste homem, menos que existir —, era a
+                                        de um sorriso como o que se atribui em verso às cousas
+                                        inanimadas belas, só porque nos agradam — flores, campos
+                                        largos, águas com sol —, um sorriso de existir, e não de nos
+                                        falar.</p>
+                                <p rend="indent-first">Meu mestre, meu mestre, perdido tão cêdo!
+                                        Revejo-o na sombra que sou em mim, na memória que conservo
+                                        do que sou de morto...</p>
+                                <p rend="indent-first">Foi durante a nossa primeira conversa... Como
+                                        foi não sei, e êle disse: «Está aqui um rapaz <rs
+                                                type="name" role="topic" key="RR">Ricardo Reis</rs>
+                                        que há de gostar de conhecer: êle é muito diferente de si».
+                                        E depois acrescentou, «Tudo é diferente de nós, e por isso é
+                                        que tudo existe».</p>
+                                <p rend="indent-first">Esta frase, dita como se fôsse um axioma da
+                                        terra, seduziu-me com um abalo, como o de tôdas as primeiras
+                                        posses, que me entrou nos alicerces da alma. Mas, ao
+                                        contrário da sedução material, o efeito em mim foi de
+                                        receber de repente, em tôdas as minhas sensações, uma
+                                        virgindade que não tinha tido.</p>
+                                <milestone rend="square" unit="section"/>
+                                <p rend="indent-first">Referindo-me, uma vez, ao conceito directo
+                                        das coisas, que caracteriza a sensibilidade de <rs
+                                                type="name" role="topic" key="AC">Caeiro</rs>,
+                                        citei-lhe, com perversidade amiga, que <rs type="name"
+                                                key="P162">Wordsworth</rs> designa um insensivel
+                                        pela expressão:</p>
+                                <lg rend="center">
+                                        <l>A primrose by the river’s brim</l>
+                                        <l>A yellow primrose was to him</l>
+                                        <l>And it was nothing more.</l>
+                                </lg>
+                                <p rend="indent-first">E traduzi (omitindo a tradução exacta de
+                                        «primrose», pois não sei nomes de flores nem de plantas):
+                                        «Uma flor à margem do rio para êle era uma flor amarela, e
+                                        não era mais nada».</p>
+                                <p rend="indent-first">O meu mestre <rs type="name" role="topic"
+                                                key="AC">Caeiro</rs> riu. «Êsse simples via bem: uma
+                                        flor amarela não é realmente senão uma flor amarela».</p>
+                                <p rend="indent-first">Mas, de repente, pensou.</p>
+                                <p rend="indent-first">«Há uma diferença», acrescentou. «Depende se
+                                        se considera a flor amarela como uma das várias flores
+                                        amarelas, ou como aquela flor amarela só».</p>
+                                <p rend="indent-first">E depois disse:</p>
+                                <p rend="indent-first">«O que êsse seu poeta inglês queria dizer é
+                                        que para o tal homem essa flor amarela era uma experiência
+                                        vulgar, ou coisa conhecida. Ora isso é que não está bem.
+                                        Tôda a coisa que vemos, devemos vê-la sempre pela primeira
+                                        vez, porque realmente é a primeira vez que a vemos. E então
+                                        cada flor amarela é uma nova flor amarela, ainda que seja o
+                                        que se chama a mesma de ontem. A gente não é já o mesmo nem
+                                        a flor a mesma. O próprio amarelo não pode ser já o mesmo. É
+                                        pena a gente não ter exactamente os olhos para saber isso,
+                                        porque então eramos todos felizes».</p>
+                                <milestone rend="square" unit="section"/>
+                                <p rend="indent-first">O meu mestre <rs type="name" role="topic"
+                                                key="AC">Caeiro</rs> não era um pagão: era o
+                                        paganismo. O <rs type="name" role="topic" key="RR">Ricardo
+                                                Reis</rs> é um pagão, o <rs type="name" key="P1"
+                                                style="a">António Móra</rs> é um pagão, eu sou um
+                                        pagão; o próprio <rs type="name" role="topic" key="FP"
+                                                style="b">Fernando Pessoa</rs> se não fôsse um
+                                        novêlo embrulhado para o lado de dentro. Mas o <rs
+                                                type="name" role="topic" key="RR">Ricardo Reis</rs>
+                                        é um pagão por carácter, o <rs type="name" key="P1"
+                                                style="a">António Móra</rs> é um pagão por
+                                        inteligência, eu sou um pagão por revolta, isto é, por
+                                        temperamento. Em <rs type="name" role="topic" key="AC"
+                                                >Caeiro</rs> não havia explicação para o paganismo;
+                                        havia consubstanciação.</p>
+                                <p rend="indent-first">Vou definir isto da maneira em que se definem
+                                        as coisas indefiníveis — pela cobardia do exemplo. Uma das
+                                        coisas que mais nítidamente nos sacodem na comparação de nós
+                                        com os gregos é a ausência de conceito de infinito, a
+                                        repugnância de infinito, entre os gregos. Ora o meu mestre
+                                                <rs type="name" role="topic" key="AC">Caeiro</rs>
+                                        tinha lá mesmo êsse mesmo inconceito. Vou contar, creio que
+                                        com grande exactidão, a conversa assombrosa em que mo
+                                        revelou.</p>
+                                <p rend="indent-first">Referia-me êle, aliás desenvolvendo o que diz
+                                        num dos poemas de <rs type="title">
+                                                <hi rend="italic">O Guardador de Rebanhos</hi>
+                                        </rs>, que não sei quem lhe tinha chamado em tempos “poeta
+                                        materialista”. Sem achar a frase justa, porque o meu mestre
+                                                <rs type="name" role="topic" key="AC">Caeiro</rs>
+                                        não é definível com qualquer frase justa, disse-lhe,
+                                        contudo, que não era absurda de todo a atribuição. E
+                                        expliquei-lhe, mais ou menos bem, o que é o materialismo
+                                        clássico. <rs type="name" role="topic" key="AC">Caeiro</rs>
+                                        ouviu-me com uma atenção de cara dolorosa, e depois disse-me
+                                        bruscamente:</p>
+                                <p rend="indent-first">«Mas isso o que é é muito estúpido. Isso é
+                                        uma coisa de padres sem religião e portanto sem desculpa
+                                        nenhuma».</p>
+                                <p rend="indent-first">Fiquei atónito, e apontei-lhe várias
+                                        semelhanças entre o materialismo e a doutrina dêle, salva a
+                                        poesia desta última. Caeiro protestou.</p>
+                                <p rend="indent-first">«Mas isso a que v. chama poesia é que é tudo.
+                                        Nem é poesia: é ver. Essa gente materialista é cega. V. diz
+                                        que êles dizem que o espaço é infinito. Onde é que êles
+                                        viram isso no espaço?»</p>
+                                <p rend="indent-first">E eu, desnorteado. «Mas v. não concebe o
+                                        espaço como infinito? v. não pode conceber o espaço como
+                                        infinito?»</p>
+                                <p rend="indent-first">«Não concebo nada como infinito. Como é que
+                                        eu hei de conceber qualquer coisa como infinito?»</p>
+                                <p rend="indent-first">«Homem», disse eu, «suponha um espaço. Para
+                                        além dêsse espaço há mais espaço, para além dêsse mais, e
+                                        depois mais, e mais, e mais... Não acaba...»</p>
+                                <p rend="indent-first">“Porquê?" disse o meu mestre <rs type="name"
+                                                role="topic" key="AC">Caeiro</rs>.</p>
+                                <p rend="indent-first">Fiquei num terramoto mental. «Suponha que
+                                        acaba», gritei. «O que há depois?»</p>
+                                <p rend="indent-first">«Se acaba, depois não há nada»,
+                                        respondeu.</p>
+                                <p rend="indent-first">Este género de argumentação, cumulativamente
+                                        infantil e feminina, e portanto irrespondivel atou-me o
+                                        cérebro durante uns momentos.</p>
+                                <p rend="indent-first">«Mas v. concebe isso?» deixei caír por
+                                        fim.</p>
+                                <p rend="indent-first">“Se concebo o quê? Uma coisa ter limites?
+                                        Pudera! O que não tem limites não existe. Existir é haver
+                                        outra coisa qualquer e portanto cada coisa ser limitada. O
+                                        que é que custa conceber que uma coisa é uma coisa, e não
+                                        está sempre a ser uma outra coisa que está mais
+                                        adiante?»</p>
+                                <p rend="indent-first">Nessa altura senti carnalmente que estava
+                                        discutíndo, não com outro homem, mas com outro universo. Fiz
+                                        uma última tentativa, um desvio que me obriguei a sentir
+                                        legítimo.</p>
+                                <p rend="indent-first">«Olhe, <rs type="name" role="topic" key="AC"
+                                                >Caeiro</rs>... Considere os números... Onde é que
+                                        acabam os números? Tomemos qualquer número — 34, por
+                                        exemplo. Para além dêle temos 35, 36, 37, 38, e assim sem
+                                        poder parar. Não há número grande que não haja um número
+                                        maior...»</p>
+                                <p rend="indent-first">«Mas isso são só números», protestou o meu
+                                        mestre <rs type="name" role="topic" key="AC"
+                                        >Caeiro</rs>.</p>
+                                <p rend="indent-first">E depois acrescentou, olhando-me com uma
+                                        formidável infância:</p>
+                                <p rend="indent-first">«O que é o 34 na Realidade?»</p>
+                                <milestone rend="square" unit="section"/>
+                                <p rend="indent-first">Há frases repentinas, profundas porque vêm do
+                                        profundo, que definem um homem, ou, antes, com que um homem
+                                        se define, sem definição. Não me esquece aquela em que <rs
+                                                type="name" role="topic" key="RR">Ricardo Reis</rs>
+                                        uma vez se me definiu. Falava-se de mentir, e êle disse:
+                                        «Abomino a mentira, porque é uma inexactidão». Todo o <rs
+                                                type="name" role="topic" key="RR">Ricardo Reis</rs>
+                                        — passado, presente e futuro — está nisto.</p>
+                                <p rend="indent-first">O meu mestre <rs type="name" role="topic"
+                                                key="AC">Caeiro</rs>, como não dizia senão o que
+                                        era, pode ser definido por qualquer frase sua, escrita ou
+                                        falada, sobretudo depois do período que começa do meio em
+                                        diante de <rs type="title">
+                                                <hi rend="italic">O Guardador de Rebanhos</hi>
+                                        </rs>. Mas, entre tantas frases que escreveu e se imprimem,
+                                        entre tantas que me disse e relato ou não relato, a que o
+                                        contém com maior simplicidade é aquela que uma vez me disse
+                                        em Lisboa. Falava-se de não sei quê que tinha que vêr com as
+                                        relações de cada qual consigo mesmo. E eu perguntei de
+                                        repente ao meu mestre <rs type="name" role="topic" key="AC"
+                                                >Caeiro</rs>, «Está contente consigo?» E êle
+                                        respondeu: «Não: estou contente». Era como a voz da terra,
+                                        que é tudo e ninguém.</p>
+                                <milestone rend="square" unit="section"/>
+                                <p rend="indent-first">Nunca vi triste o meu mestre <rs type="name"
+                                                role="topic" key="AC">Caeiro</rs>. Não sei se estava
+                                        triste quando morreu, ou nos dias antes. Seria possível
+                                        sabê-lo, mas a verdade é que nunca ousei preguntar aos que
+                                        assistiram à morte qualquer cousa da morte ou de como êle a
+                                        teve.</p>
+                                <p rend="indent-first">Em todo o caso, foi uma das angústias da
+                                        minha vida — das angústias reais em meio de tantas que têm
+                                        sido fictícias — que <rs type="name" role="topic" key="AC"
+                                                >Caeiro</rs> morresse sem eu estar ao pé dêle. Isto
+                                        é estúpido mas humano, e é assim.</p>
+                                <p rend="indent-first">Eu estava em Inglaterra. O próprio <rs
+                                                type="name" role="topic" key="RR">Ricardo Reis</rs>
+                                        não estava em Lisboa; estava de volta no Brasil. Estava o
+                                                <rs type="name" role="topic" key="FP" style="b"
+                                                >Fernando Pessoa</rs>, mas é como se não estivesse.
+                                                <rs type="name" role="topic" key="FP" style="b">O
+                                                Fernando Pessoa</rs> sente as cousas mas não se
+                                        mexe, nem mesmo por dentro.</p>
+                                <p rend="indent-first">Nada me consola de não ter estado em Lisboa
+                                        nesse dia, a não ser aquela consolação que pensar no meu
+                                        mestre <rs type="name" role="topic" key="AC">Caeiro</rs>
+                                        espontâneamente me dá. Ninguém é inconsolável ao pé da
+                                        memória de <rs type="name" role="topic" key="AC"
+                                        >Caeiro</rs>, ou dos seus versos; e a própria ideia do nada
+                                        — a mais pavorosa de tôdas se se pensa com a sensibilidade —
+                                        tem, na obra e na recordação do meu mestre querido, qualquer
+                                        cousa de luminoso e de alto, como o sol sôbre as neves dos
+                                        píncaros inatingíveis.</p>
+                                <signed rend="center">ALVARO DE CAMPOS.</signed>
+                        </div>
+                </body>
+        </text>
+        <text type="reg" corresp="#W208">
+                <body>
+                        <div>
+                                <head>notas para a recordação do meu mestre caeiro</head>
+                                <head type="sub">(algumas delas)</head>
+                                <p rend="indent-first">
+                                        <hi rend="bold">C</hi>onheci o meu mestre Caeiro em
+                                        circunstâncias excepcionais – como tôdas as circunstâncias
+                                        da vida, e sobretudo as que, não sendo nada em si mesmas,
+                                        hão de vir a ser tudo nos resultados.</p>
+                                <p rend="indent-first">Deixei em quási três-quartos o meu curso
+                                        escocês de engenharia naval; parti numa viagem ao Oriente;
+                                        no regresso, desembarcando em Marselha, e sentindo um grande
+                                        tédio de seguir, vim por terra até Lisboa. Um primo meu
+                                        levou-me um dia de passeio ao Ribatejo; conhecia um primo de
+                                        Caeiro, e tinha com êle negócios; encontrei-me com o que
+                                        havia de ser meu mestre em casa dêsse seu primo. Não ha mais
+                                        que contar, porque isto é pequeno, como tôda a
+                                        fecundação.</p>
+                                <p rend="indent-first">Vejo ainda, com claridade da alma, que as
+                                        lágrimas da lembrança não empanam, porque a visão não é
+                                        externa... Vejo-o diante de mim, e vê-lo hei talvez
+                                        eternamente como primeiro o vi. Primeiro, os olhos azuis de
+                                        criança que não tem mêdo; depois, os malares já um pouco
+                                        salientes, a côr um pouco pálida, e o estranho ar grego, que
+                                        vinha de dentro e era uma calma, e não de fora, porque não
+                                        era expressão nem feições. O cabelo, quási abundante, era
+                                        louro, mas, se faltava luz, acastanhava-se. A estatura era
+                                        média, tendendo para mais alta, mas curvada, sem ombros
+                                        altos. O gesto era branco, o sorriso era como era, a voz era
+                                        igual, lançada num tom de quem não procura senão dizer o que
+                                        está dizendo – nem alta, nem baixa, clara, livre de
+                                        intenções, de hesitações, de timidezas. O olhar azul não
+                                        sabia deixar de fitar. Se a nossa observação estranhava
+                                        qualquer cousa, encontrava-a: a testa, sem ser alta, era
+                                        poderosamente branca. Repito: era pela sua brancura, que
+                                        parecia maior que a da cara pálida, que tinha majestade. As
+                                        mãos um pouco delgadas, mas não muito; a palma era larga. A
+                                        expressão da bôca, a última cousa em que se reparava – como
+                                        se falar fôsse, para êste homem, menos que existir –, era a
+                                        de um sorriso como o que se atribui em verso às cousas
+                                        inanimadas belas, só porque nos agradam – flores, campos
+                                        largos, águas com sol –, um sorriso de existir, e não de nos
+                                        falar.</p>
+                                <p rend="indent-first">Meu mestre, meu mestre, perdido tão cêdo!
+                                        Revejo-o na sombra que sou em mim, na memória que conservo
+                                        do que sou de morto...</p>
+                                <p rend="indent-first">Foi durante a nossa primeira conversa... Como
+                                        foi não sei, e êle disse: «Está aqui um rapaz Ricardo Reis
+                                        que há de gostar de conhecer: êle é muito diferente de si».
+                                        E depois acrescentou, «Tudo é diferente de nós, e por isso é
+                                        que tudo existe».</p>
+                                <p rend="indent-first">Esta frase, dita como se fôsse um axioma da
+                                        terra, seduziu-me com um abalo, como o de tôdas as primeiras
+                                        posses, que me entrou nos alicerces da alma. Mas, ao
+                                        contrário da sedução material, o efeito em mim foi de
+                                        receber de repente, em tôdas as minhas sensações, uma
+                                        virgindade que não tinha tido.</p>
+                                <milestone rend="square" unit="section"/>
+                                <p rend="indent-first">Referindo-me, uma vez, ao conceito directo
+                                        das coisas, que caracteriza a sensibilidade de Caeiro,
+                                        citei-lhe, com perversidade amiga, que Wordsworth designa um
+                                        insensivel pela expressão:</p>
+                                <lg rend="center">
+                                        <l>A primrose by the river’s brim</l>
+                                        <l>A yellow primrose was to him</l>
+                                        <l>And it was nothing more.</l>
+                                </lg>
+                                <p rend="indent-first">E traduzi (omitindo a tradução exacta de
+                                        «primrose», pois não sei nomes de flores nem de plantas):
+                                        «Uma flor à margem do rio para êle era uma flor amarela, e
+                                        não era mais nada».</p>
+                                <p rend="indent-first">O meu mestre Caeiro riu. «Êsse simples via
+                                        bem: uma flor amarela não é realmente senão uma flor
+                                        amarela».</p>
+                                <p rend="indent-first">Mas, de repente, pensou.</p>
+                                <p rend="indent-first">«Há uma diferença», acrescentou. «Depende se
+                                        se considera a flor amarela como uma das várias flores
+                                        amarelas, ou como aquela flor amarela só».</p>
+                                <p rend="indent-first">E depois disse:</p>
+                                <p rend="indent-first">«O que êsse seu poeta inglês queria dizer é
+                                        que para o tal homem essa flor amarela era uma experiência
+                                        vulgar, ou coisa conhecida. Ora isso é que não está bem.
+                                        Tôda a coisa que vemos, devemos vê-la sempre pela primeira
+                                        vez, porque realmente é a primeira vez que a vemos. E então
+                                        cada flor amarela é uma nova flor amarela, ainda que seja o
+                                        que se chama a mesma de ontem. A gente não é já o mesmo nem
+                                        a flor a mesma. O próprio amarelo não pode ser já o mesmo. É
+                                        pena a gente não ter exactamente os olhos para saber isso,
+                                        porque então éramos eramos todos felizes».</p>
+                                <milestone rend="square" unit="section"/>
+                                <p rend="indent-first">O meu mestre Caeiro não era um pagão: era o
+                                        paganismo. O Ricardo Reis é um pagão, o António Móra é um
+                                        pagão, eu sou um pagão; o próprio Fernando Pessoa se não
+                                        fôsse um novêlo embrulhado para o lado de dentro. Mas o
+                                        Ricardo Reis é um pagão por carácter, o António Móra é um
+                                        pagão por inteligência, eu sou um pagão por revolta, isto é,
+                                        por temperamento. Em Caeiro não havia explicação para o
+                                        paganismo; havia consubstanciação.</p>
+                                <p rend="indent-first">Vou definir isto da maneira em que se definem
+                                        as coisas indefiníveis – pela cobardia do exemplo. Uma das
+                                        coisas que mais nítidamente nos sacodem na comparação de nós
+                                        com os gregos é a ausência de conceito de infinito, a
+                                        repugnância de infinito, entre os gregos. Ora o meu mestre
+                                        Caeiro tinha lá mesmo êsse mesmo inconceito. Vou contar,
+                                        creio que com grande exactidão, a conversa assombrosa em que
+                                        mo revelou.</p>
+                                <p rend="indent-first">Referia-me êle, aliás desenvolvendo o que diz
+                                        num dos poemas de <hi rend="italic">O Guardador de
+                                                Rebanhos</hi>, que não sei quem lhe tinha chamado em
+                                        tempos “poeta materialista”. Sem achar a frase justa, porque
+                                        o meu mestre Caeiro não é definível com qualquer frase
+                                        justa, disse-lhe, contudo, que não era absurda de todo a
+                                        atribuição. E expliquei-lhe, mais ou menos bem, o que é o
+                                        materialismo clássico. Caeiro ouviu-me com uma atenção de
+                                        cara dolorosa, e depois disse-me bruscamente:</p>
+                                <p rend="indent-first">«Mas isso o que é é muito estúpido. Isso é
+                                        uma coisa de padres sem religião e portanto sem desculpa
+                                        nenhuma».</p>
+                                <p rend="indent-first">Fiquei atónito, e apontei-lhe várias
+                                        semelhanças entre o materialismo e a doutrina dêle, salva a
+                                        poesia desta última. Caeiro protestou.</p>
+                                <p rend="indent-first">«Mas isso a que v. chama poesia é que é tudo.
+                                        Nem é poesia: é ver. Essa gente materialista é cega. V. diz
+                                        que êles dizem que o espaço é infinito. Onde é que êles
+                                        viram isso no espaço?»</p>
+                                <p rend="indent-first">E eu, desnorteado. «Mas v. não concebe o
+                                        espaço como infinito? v. não pode conceber o espaço como
+                                        infinito?»</p>
+                                <p rend="indent-first">«Não concebo nada como infinito. Como é que
+                                        eu hei de conceber qualquer coisa como infinito?»</p>
+                                <p rend="indent-first">«Homem», disse eu, «suponha um espaço. Para
+                                        além dêsse espaço há mais espaço, para além dêsse mais, e
+                                        depois mais, e mais, e mais... Não acaba...»</p>
+                                <p rend="indent-first">“Porquê?" disse o meu mestre Caeiro.</p>
+                                <p rend="indent-first">Fiquei num terramoto mental. «Suponha que
+                                        acaba», gritei. «O que há depois?»</p>
+                                <p rend="indent-first">«Se acaba, depois não há nada»,
+                                        respondeu.</p>
+                                <p rend="indent-first">Este género de argumentação, cumulativamente
+                                        infantil e feminina, e portanto irrespondivel atou-me o
+                                        cérebro durante uns momentos.</p>
+                                <p rend="indent-first">«Mas v. concebe isso?» deixei caír por
+                                        fim.</p>
+                                <p rend="indent-first">“Se concebo o quê? Uma coisa ter limites?
+                                        Pudera! O que não tem limites não existe. Existir é haver
+                                        outra coisa qualquer e portanto cada coisa ser limitada. O
+                                        que é que custa conceber que uma coisa é uma coisa, e não
+                                        está sempre a ser uma outra coisa que está mais
+                                        adiante?»</p>
+                                <p rend="indent-first">Nessa altura senti carnalmente que estava
+                                        discutíndo, não com outro homem, mas com outro universo. Fiz
+                                        uma: última tentativa, um desvio que me obriguei a sentir
+                                        legítimo.</p>
+                                <p rend="indent-first">«Olhe, Caeiro... Considere os números... Onde
+                                        é que acabam os números? Tomemos qualquer número – 34, por
+                                        exemplo. Para além dêle temos 35, 36, 37, 38, e assim sem
+                                        poder parar. Não há número grande que não haja um número
+                                        maior...»</p>
+                                <p rend="indent-first">«Mas isso são só números», protestou o meu
+                                        mestre Caeiro.</p>
+                                <p rend="indent-first">E depois acrescentou, olhando-me com uma
+                                        formidável infância:</p>
+                                <p rend="indent-first">«O que é o 34 na Realidade?»</p>
+                                <milestone rend="square" unit="section"/>
+                                <p rend="indent-first">Há frases repentinas, profundas porque vêm do
+                                        profundo, que definem um homem, ou, antes, com que um homem
+                                        se define, sem definição. Não me esquece aquela em que
+                                        Ricardo Reis uma vez se me definiu. Falava-se de mentir, e
+                                        êle disse: «Abomino a mentira, porque é uma inexactidão».
+                                        Todo o Ricardo Reis – passado, presente e futuro – está
+                                        nisto.</p>
+                                <p rend="indent-first">O meu mestre Caeiro, como não dizia senão o
+                                        que era, pode ser definido por qualquer frase sua, escrita
+                                        ou falada, sobretudo depois do período que começa do meio em
+                                        diante de <hi rend="italic">O Guardador de Rebanhos</hi>.
+                                        Mas, entre tantas frases que escreveu e se imprimem, entre
+                                        tantas que me disse e relato ou não relato, a que o contém
+                                        com maior simplicidade é aquela que uma vez me disse em
+                                        Lisboa. Falava-se de não sei quê que tinha que vêr com as
+                                        relações de cada qual consigo mesmo. E eu perguntei de
+                                        repente ao meu mestre Caeiro, «Está contente consigo?» E êle
+                                        respondeu: «Não: estou contente». Era como a voz da terra,
+                                        que é tudo e ninguém.</p>
+                                <milestone rend="square" unit="section"/>
+                                <p rend="indent-first">Nunca vi triste o meu mestre Caeiro. Não sei
+                                        se estava triste quando morreu, ou nos dias antes. Seria
+                                        possível sabê-lo, mas a verdade é que nunca ousei preguntar
+                                        aos que assistiram à morte qualquer cousa da morte ou de
+                                        como êle a teve.</p>
+                                <p rend="indent-first">Em todo o caso, foi uma das angústias da
+                                        minha vida – das angústias reais em meio de tantas que têm
+                                        sido fictícias – que Caeiro morresse sem eu estar ao pé
+                                        dêle. Isto é estúpido mas humano, e é assim.</p>
+                                <p rend="indent-first">Eu estava em Inglaterra. O próprio Ricardo
+                                        Reis não estava em Lisboa; estava de volta no Brasil. Estava
+                                        o Fernando Pessoa, mas é como se não estivesse. O Fernando
+                                        Pessoa sente as cousas mas não se mexe, nem mesmo por
+                                        dentro.</p>
+                                <p rend="indent-first">Nada me consola de não ter estado em Lisboa
+                                        nesse dia, a não ser aquela consolação que pensar no meu
+                                        mestre Caeiro espontâneamente me dá. Ninguém é inconsolável
+                                        ao pé da memória de Caeiro, ou dos seus versos; e a própria
+                                        ideia do nada – a mais pavorosa de tôdas se se pensa com a
+                                        sensibilidade – tem, na obra e na recordação do meu mestre
+                                        querido, qualquer cousa de luminoso e de alto, como o sol
+                                        sôbre as neves dos píncaros inatingíveis.</p>
+                                <signed rend="center">ALVARO DE CAMPOS.</signed>
+                        </div>
+                </body>
+        </text>
 </TEI>
