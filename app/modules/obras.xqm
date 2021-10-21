@@ -1,4 +1,4 @@
-xquery version "3.0";
+xquery version "3.1";
 
 module namespace obras="http://localhost:8080/exist/apps/pessoa/obras";
 
@@ -105,16 +105,16 @@ declare function obras:SearchObras($node as node(), $model as map(*),$id as xs:s
     let $BDocs := $docs[$ref_amount]:)
     
     return map {
-        "MainTitle" := $list/tei:title[1]/data(.),
-        "AltTitle" := $AltTitle,
+        "MainTitle" : $list/tei:title[1]/data(.),
+        "AltTitle" : $AltTitle,
         
-        "listEntry" := $list,
-        "Works" := $Works,
-        "xmlid" := $xmlid        
+        "listEntry" : $list,
+        "Works" : $Works,
+        "xmlid" : $xmlid        
     }     
 (:
-        "FirstRef" := $ADocs,
-        "LastRef" := $BDocs, 
+        "FirstRef" : $ADocs,
+        "LastRef" : $BDocs, 
         {for $doc in $docs where $doc//tei:rs/@key = "work" and $doc//tei:rs/@key = @xmlid and $doc//tei:rs/@style=$entry/@subtype/data(.)
                                             return <item
                                                             doc="{$model("PR")/@doc/data(.)}"
@@ -130,13 +130,13 @@ declare function obras:AnalyticObras($node as node(), $model as map(*), $ref as 
     if($model($ref)/@type = "Title") then (
     let $data := $model($ref)
     return map {
-        "title" := $data/@title/data(.)
+        "title" : $data/@title/data(.)
     }
     )
     else (
     let $data := $model($ref)
         return map {
-            "title" := $data/@title/data(.)
+            "title" : $data/@title/data(.)
         }
     )
 };:)
@@ -162,9 +162,9 @@ if(exists($model($ref))) then (
         let $Arefs := for $a in (1 to (count($refs ) -1)) return $refs[$a]
         let $Brefs := $refs[count($refs)]
         return map {
-            "title" := $title,
-            "refs" := $Arefs,
-            "lastref" := $Brefs
+            "title" : $title,
+            "refs" : $Arefs,
+            "lastref" : $Brefs
             }
     )
     else if($model($ref)/@type/data(.) eq "Caiero") then 
@@ -189,10 +189,10 @@ if(exists($model($ref))) then (
                             )
                             else()
         return map {
-            "title" := $title,
-            "PR" := $PR,
-            "refs" := $Arefs,
-            "lastref" := $Brefs           
+            "title" : $title,
+            "PR" : $PR,
+            "refs" : $Arefs,
+            "lastref" : $Brefs           
             }
     )
     
@@ -218,11 +218,11 @@ if(exists($model($ref))) then (
                             )
                             else()
         return map {
-            "title" := $title,
-            "refs" := $Arefs,
-            "lastref" := $Brefs,
-            "subworks" := $subworks,
-            "PR" := $PR
+            "title" : $title,
+            "refs" : $Arefs,
+            "lastref" : $Brefs,
+            "subworks" : $subworks,
+            "PR" : $PR
             }
     )
     else
@@ -257,14 +257,14 @@ if(exists($model($ref))) then (
         
         let $Brefs := $sortAllRef[$ref_amount]
         return map {
-            "title" := $title,
-            "refs" := $Arefs,
-            "lastref" := $Brefs,
-            "subworks" := $subworks,
-            "XMLID" := $work/@xml:id/data(.),
-            "ref_amount" := $ref_amount,
-            "PR" := $PR,
-            "PRS" := $PRS
+            "title" : $title,
+            "refs" : $Arefs,
+            "lastref" : $Brefs,
+            "subworks" : $subworks,
+            "XMLID" : $work/@xml:id/data(.),
+            "ref_amount" : $ref_amount,
+            "PR" : $PR,
+            "PRS" : $PRS
         }
         )
     )

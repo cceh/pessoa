@@ -1,4 +1,4 @@
-xquery version "3.0";
+xquery version "3.1";
 (:~
 : Module to display author-related information
 : @author Ben Bigalke, Ulrike Henny-Krahmer

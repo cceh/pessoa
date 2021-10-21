@@ -1,4 +1,4 @@
-xquery version "3.0";
+xquery version "3.1";
 
 module namespace search="http://localhost:8080/exist/apps/pessoa/search";
 
@@ -57,10 +57,10 @@ declare %templates:wrap function search:profisearch($node as node(), $model as m
       (:  let $r_all := ($r_genre,$r_mention,$r_date) :)
        
         return map{
-            "r_union"   := search:result_union($dbase),
-            "r_count" := count(search:result_union($dbase)),
-            (:"r_dbase"   := $dbase,:)
-            "query"     := $term
+            "r_union"   : search:result_union($dbase),
+            "r_count" : count(search:result_union($dbase)),
+            (:"r_dbase"   : $dbase,:)
+            "query"     : $term
         }
         
 };
@@ -394,15 +394,15 @@ if($term and $file and $sel and $sel="text","head","lang")
 
 declare function search:mergeParameters_xquery_map () as map(*) {
     map {
-    "term":=    search:get-parameters("term"),
-    "from":=    search:get-parameters("SE_from"),
-    "to"  :=    search:get-parameters("SE_to"),
-    "lang":=    search:get-parameters("lang"),
-    "lang_ao":= search:get-parameters("lang_ao"),
-    "person" := search:get-parameters("person"),
-    "genre" :=  search:get-parameters("genre"),
-    "role" :=   search:get-parameters("role"),
-    "release":= search:get-parameters("release")
+    "term":    search:get-parameters("term"),
+    "from":    search:get-parameters("SE_from"),
+    "to"  :    search:get-parameters("SE_to"),
+    "lang":    search:get-parameters("lang"),
+    "lang_ao": search:get-parameters("lang_ao"),
+    "person" : search:get-parameters("person"),
+    "genre" :  search:get-parameters("genre"),
+    "role" :   search:get-parameters("role"),
+    "release": search:get-parameters("release")
     }
 };
 

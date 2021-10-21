@@ -1,4 +1,4 @@
-xquery version "3.0";
+xquery version "3.1";
 
 module namespace doc="http://localhost:8080/exist/apps/pessoa/doc";
 
@@ -168,8 +168,8 @@ declare %templates:wrap function doc:docControll($node as node(), $model as map(
 
 declare function doc:footerfilter($node as node(), $model as map(*), $id as xs:string,$dir as xs:string) {
              map {
-                "xmllink" := <a class="filter-a" href="{$helpers:app-root}/{$dir}/{$id}/xml" target="_blank">XML</a>,
-                "footercitar" := "test"
+                "xmllink" : <a class="filter-a" href="{$helpers:app-root}/{$dir}/{$id}/xml" target="_blank">XML</a>,
+                "footercitar" : "test"
                                             
                 
             }

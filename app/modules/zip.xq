@@ -1,4 +1,4 @@
-xquery version "3.0";
+xquery version "3.1";
 module namespace ownZip="http://localhost:8080/exist/apps/pessoa/zip";
 
 declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization";

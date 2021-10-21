@@ -1,4 +1,4 @@
-xquery version "3.0";
+xquery version "3.1";
 
 module namespace app="http://localhost:8080/exist/apps/pessoa/templates";
 import module namespace templates="http://exist-db.org/xquery/templates" at "templates.xql";
@@ -85,8 +85,8 @@ declare function app:collections($node as node(), $model as map(*)) {
     let $pubs := collection("/db/apps/pessoa/data/pub")
     let $all := ($docs,$pubs)
     return map { 
-        "documents" := $all,
-        "count" := count($all)
+        "documents" : $all,
+        "count" : count($all)
         }
 };
 
@@ -99,9 +99,9 @@ declare function app:checkDocuments($node as node(), $model as map(*)) {
     let $dateout := if(not(contains($date/@check, "false")) ) then <u style="color:green">{$date/@date/data(.)} | {$date/@att/data(.)}</u> else <u style="color:red">{$date/@date/data(.)} | {$date/@att/data(.)}</u>
     let $clear := validation:clear-grammar-cache()
     return map {
-        "name" := $doc,
-        "valid" := $valid,
-        "date" := $dateout
+        "name" : $doc,
+        "valid" : $valid,
+        "date" : $dateout
     }
 };
 
@@ -109,8 +109,8 @@ declare function app:countDocs($node as node(),$model as map(*)) {
     let $valid := for $doc in $model("documents") where app:validate($doc) return app:validate($doc)
     let $invalid := for $doc in $model("documents") where not(app:validate($doc)) return app:validate($doc)    
     return map {
-        "validDocs" := count($valid),
-        "invalidDocs" := count($invalid)
+        "validDocs" : count($valid),
+        "invalidDocs" : count($invalid)
         }
 };
 
@@ -136,10 +136,10 @@ declare function app:checkDateDoc($doc as node()*) {
     return <item check="{$check}" date="{$date/tei:origDate}" att="{$att}"/>
 };
 
-(:~ Document Validtion :)
+(:~ Document Validation :)
 declare function app:validate($doc as node()*) {    
     let $schema := "/db/apps/pessoa/data/schema/pessoaTEI.rng"
-    return validation:validate($doc,$schema)
+    return validation:jing($doc,$schema)
 };
 
 

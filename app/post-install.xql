@@ -1,4 +1,4 @@
-xquery version "3.0";
+xquery version "3.1";
 import module namespace xmldb="http://exist-db.org/xquery/xmldb";
 declare namespace transform="http://exist-db.org/xquery/transform";
 declare namespace tei="http://www.tei-c.org/ns/1.0";

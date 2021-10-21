@@ -2,11 +2,10 @@
 <project xmlns:xdb="http://exist-db.org/ant" default="deploy-local" name="pessoa">
     <property file="local.properties"/>
     <path id="classpath.core">
-        <fileset dir="${exist-home}/lib/core">
+        <fileset dir="${exist-home}/lib">
             <include name="*.jar"/>
         </fileset>
-        <pathelement path="${exist-home}/exist.jar"/>
-        <pathelement path="${exist-home}/exist-optional.jar"/>
+        <pathelement path="${exist-home}/exist-ant-5.3.0.jar"/>
     </path>
     <typedef resource="org/exist/ant/antlib.xml" uri="http://exist-db.org/ant">
         <classpath refid="classpath.core"/>
@@ -19,23 +18,37 @@
         <zip destfile="data/pub.zip" basedir="data/pub/" excludes="dont*.*"/>
         <zip destfile="data/doc.zip" basedir="data/doc/" excludes="dont*.*"/>
         -->
+        <!--<xdb:xquery uri="${uri}" queryfile="app/pre-install.xql" user="${user}" password="${password}"/>-->
         <xdb:store uri="${uri}" createcollection="true" createsubcollections="true" user="${user}" password="${password}">
             <fileset dir="./app/">
-                <include name="**/*.*"/>
-                <exclude name="build/"/>
-                <exclude name="modules/admin.xqm"/>
+                <include name="*.*"/>
+                <exclude name="*.xpr"/>
+                
+                <!-- data: -->
+                <include name="data/doc/*.*"/>
+                <include name="data/network/*.*"/>
+                <exclude name="data/pre1913/*.*"/>
+                <include name="data/prosa/*.*"/>
+                <include name="data/pub/*.*"/>
+                <include name="data/schema/*.*"/>
+                <include name="data/timelines/*.*"/>
+                <exclude name="data/todo/*.*"/>
+                <include name="data/*.*"/>
+                
+                <include name="modules/*.*"/>
+                <include name="page/*.*"/>
+                <include name="resources/**/*.*"/>
+                <include name="templates/*.*"/>
+                <include name="xslt/**/*.*"/>
+                
+                <!-- general excludes: -->
                 <exclude name="**/*.properties"/>
                 <exclude name="**/*.tmpl"/>
                 <exclude name="**/*.md"/>
-                <exclude name="*.xpr"/>
                 <exclude name="**/.gitignore"/>
-                <exclude name="data/**"/>
-                <exclude name="resources/js/chart/src/*"/>
-                <exclude name="**/bootstrap*.*"/>
-                <exclude name="**/jquery*.*"/>
-                <exclude name="resources/images/*"/>
             </fileset>
         </xdb:store>
+        <xdb:xquery uri="${uri}" queryfile="app/post-install.xql" user="${user}" password="${password}"/>
         <!--
         <delete file="data/pub.zip"/>
         <delete file="data/doc.zip"/>

@@ -1,4 +1,4 @@
-xquery version "3.0";
+xquery version "3.1";
 module namespace charts="http://localhost:8080/exist/apps/pessoa/charts";
 
 import module namespace templates="http://exist-db.org/xquery/templates" at "templates.xql";
@@ -23,10 +23,10 @@ import module namespace collector="http://localhost:8080/exist/apps/magicaldraw/
 
 
 declare function charts:magicaldraw($node as node(), $model as map(*)) {
-    let $data-path := "/db/apps/pessoa/data"
-    let $db := "doc"
-    let $name := "genre"
-    let $term :=( "lista_editorial", "nota_editorial","plano_editorial" )
+    let $data-path : "/db/apps/pessoa/data"
+    let $db : "doc"
+    let $name : "genre"
+    let $term : ( "lista_editorial", "nota_editorial","plano_editorial" )
     
     return collector:printResults($data-path,$db,$name,$term)
 

@@ -1,4 +1,4 @@
-xquery version "3.0";
+xquery version "3.1";
 module namespace index="http://localhost:8080/exist/apps/pessoa/index";
 import module namespace search="http://localhost:8080/exist/apps/pessoa/search" at "search.xqm";
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
@@ -129,7 +129,7 @@ declare function index:collectTitleLetters($node as node(), $model as map(*)) {
                     order by $l
                     return $l
     return map {
-        "letters" := $letters 
+        "letters" : $letters 
    }
     
 };
@@ -205,8 +205,8 @@ declare function index:getPersonIndex($node as node(), $model as map(*)) {
     let $letters := for $let in $persons return $let/@letter/data(.)
     let $letters := distinct-values($letters)
     return map {
-        "persons" := $persons,
-        "letters" := $letters
+        "persons" : $persons,
+        "letters" : $letters
     }
 };
 
@@ -216,7 +216,7 @@ declare function index:getPerson($node as node(), $model as map(*)) {
     let $persons := for $pers in $persons where $pers/@letter/data(.) eq $letter return $pers
 
     return map {
-    "sort" := $persons
+    "sort" : $persons
     }
 
 };
@@ -229,9 +229,9 @@ declare function index:createPerson($node as node(), $model as map(*)) {
             return <item title="{$doc/@title/data(.)}" link="{$doc/@link/data(.)}" coma="{$coma}" published="{$doc/@published/data(.)}"/>
     return
         map {
-        "name" := $pers/@name/data(.),
-        "id" := $pers/@id/data(.),
-        "docs" := $docs
+        "name" : $pers/@name/data(.),
+        "id" : $pers/@id/data(.),
+        "docs" : $docs
         }
 };
 
@@ -254,8 +254,8 @@ declare function index:collectJournals($node as node(), $model as map(*)) {
     let $nav := for $item in $journals return $item/@letter/data(.)
     let $nav := distinct-values($nav)
     return map {
-        "journals" := $journals,
-        "letters" := $nav
+        "journals" : $journals,
+        "letters" : $nav
     }
 };
 
@@ -280,7 +280,7 @@ declare function index:mapJournals($node as node(), $model as map(*)) {
     let $letter := $model("letter")
     let $journal := $model("journals")[@letter =$letter]    
     return map {
-        "journal" := $journal
+        "journal" : $journal
     }
 };
 
@@ -290,8 +290,8 @@ declare function index:mapSingleJournal($node as node(), $model as map(*)) {
                                     let $coma := if($a != count($mentoined)) then "yes" else "no"
                                     return <item title="{$mentoined[$a]/@title/data(.)}" date="{$mentoined[$a]/@date/data(.)}" ref="{$mentoined[$a]/@ref/data(.)}" coma="{$coma}" published="{$mentoined[$a]/@published/data(.)}"/>
    return map {
-   "journal" := $model("single"),
-    "mentioned" := $mentoined
+   "journal" : $model("single"),
+    "mentioned" : $mentoined
    }
 };
 

@@ -1,12 +1,10 @@
-xquery version "3.0";
+xquery version "3.1";
 
 (:~
  : A set of helper functions to access the application context from
  : within a module.
  :)
 module namespace config="http://localhost:8080/exist/apps/pessoa/config";
-
-import module namespace admin="http://projects.cceh.uni-koeln.de:8080/apps/pessoa/admin" at "admin.xqm";
 
 declare namespace templates="http://exist-db.org/xquery/templates";
 
@@ -15,6 +13,7 @@ declare namespace expath="http://expath.org/ns/pkg";
 
 declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization";
 declare namespace xmldb = "http://exist-db.org/xquery/xmldb";
+declare namespace sm = "http://exist-db.org/xquery/securitymanager";
 declare namespace request = "http://exist-db.org/xquery/request";
 
 declare variable $config:conf-file := doc("/db/apps/pessoa/conf.xml");
@@ -110,12 +109,12 @@ declare function config:app-info($node as node(), $model as map(*)) {
 };
 
 declare function config:showUser($node as node(), $model as map(*)) {
-    ( xmldb:get-current-user(),
+    ( sm:id()//sm:real/sm:username/string(),
     request:get-parameter("login","none")
     )
 
 };
 
 declare function config:logged-in() as xs:boolean {
-    if (xmldb:get-user-groups(xmldb:get-current-user()) = ("pessoa") ) then true() else false()
+    if (sm:get-user-groups(sm:id()//sm:real/sm:username/string()) = ("pessoa") ) then true() else false()
 };

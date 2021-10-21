@@ -1,4 +1,4 @@
-xquery version "3.0";
+xquery version "3.1";
 (:~
 : Hautpmodul zur Kontrolle der URL-Weiterleitung und der Zugriffskontrolle von vorhandenen Resourcen
 :
@@ -15,6 +15,7 @@ import module namespace index="http://localhost:8080/exist/apps/pessoa/index" at
 import module namespace ownZip="http://localhost:8080/exist/apps/pessoa/zip" at "modules/zip.xq";
 
 declare namespace tei="http://www.tei-c.org/ns/1.0";
+declare namespace sm = "http://exist-db.org/xquery/securitymanager";
 
 
 declare variable $exist:path external;
@@ -46,7 +47,7 @@ declare function local:login() as xs:boolean {
 };
 
 declare function local:logged-in() as xs:boolean {
-    if (xmldb:get-user-groups(xmldb:get-current-user()) = ("pessoa") ) then true() else false()
+    if (sm:get-user-groups(sm:id()//sm:real/sm:username/string()) = ("pessoa") ) then true() else false()
 };
 
 declare function local:Restriction() as xs:boolean{
@@ -331,7 +332,7 @@ else if($exist:permission) then (
             let $author := substring-before(substring-after($exist:path, '/authors/'), '/')
             let $textType := $exist:resource
             return
-                author:reorder(<node />, map {"test" := "test"},$orderBy, $textType, $author)
+                author:reorder(<node />, map {"test" : "test"},$orderBy, $textType, $author)
         else
             let $author := substring-before(substring-after($exist:path, '/authors/'), '/')
             let $textType := $exist:resource
@@ -354,7 +355,7 @@ else if($exist:permission) then (
             let $orderBy := request:get-parameter("orderBy", '')
             let $type := $exist:resource
             return
-                index:collectGenre(<node />, map {"test" := "test"}, $type, $orderBy)
+                index:collectGenre(<node />, map {"test" : "test"}, $type, $orderBy)
         else (
             session:set-attribute("type",$exist:resource),
             session:set-attribute("orderBy","date"),
@@ -471,7 +472,7 @@ else if($exist:permission) then (
         if(request:get-parameter("orderBy", '') != "" )
         then
          let $orderBy := request:get-parameter("orderBy", 'date')
-         return( search:profiresult(<node />, search:profisearch(<node />, map {"test" := "test"}, request:get-parameter("term",'')), "union",$orderBy))
+         return( search:profiresult(<node />, search:profisearch(<node />, map {"test" : "test"}, request:get-parameter("term",'')), "union",$orderBy))
         else
          <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
              <forward url="{$exist:controller}/page/search.html" />

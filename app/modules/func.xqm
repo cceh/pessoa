@@ -1,4 +1,4 @@
-xquery version "3.0";
+xquery version "3.1";
 
 module namespace func="http://localhost:8080/exist/apps/pessoa/func";
 

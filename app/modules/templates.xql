@@ -1,4 +1,4 @@
-xquery version "3.0";
+xquery version "3.1";
 
 (:~
  : HTML templating module
@@ -73,10 +73,10 @@ declare function templates:apply($content as node()+, $resolver as function(xs:s
 :)
 declare function templates:apply($content as node()+, $resolver as function(xs:string, xs:int) as item()?, $model as map(*)?,
     $configuration as map(*)?) {
-    let $model := if (exists($model)) then $model else map:new()
+    let $model := if (exists($model)) then $model else map{}
     let $configuration := 
         if (exists($configuration)) then
-            map:new((
+            map:merge((
                 $configuration, 
                 map:entry($templates:CONFIG_FN_RESOLVER, $resolver),
                 if (map:contains($configuration, $templates:CONFIG_PARAM_RESOLVER)) then
@@ -86,7 +86,7 @@ declare function templates:apply($content as node()+, $resolver as function(xs:s
             ))
         else
             templates:get-default-config($resolver)
-    let $model := map:new(($model, map:entry($templates:CONFIGURATION, $configuration)))
+    let $model := map:merge(($model, map:entry($templates:CONFIGURATION, $configuration)))
     for $root in $content
     return
         templates:process($root, $model)
@@ -94,8 +94,8 @@ declare function templates:apply($content as node()+, $resolver as function(xs:s
 
 declare %private function templates:get-default-config($resolver as function(xs:string, xs:int) as item()?) as map(*) {
     map {
-        $templates:CONFIG_FN_RESOLVER := $resolver,
-        $templates:CONFIG_PARAM_RESOLVER := templates:lookup-param-from-restserver#1
+        $templates:CONFIG_FN_RESOLVER : $resolver,
+        $templates:CONFIG_PARAM_RESOLVER : templates:lookup-param-from-restserver#1
     }
 };
 
@@ -278,7 +278,7 @@ declare %private function templates:process-output($node as element(), $model as
 declare %private function templates:process-output($node as element(), $model as map(*), $output as item()*) {
     typeswitch($output)
         case map(*) return
-            templates:process($node/node(), map:new(($model, $output)))
+            templates:process($node/node(), map:merge(($model, $output)))
         default return
             $output
 };
@@ -353,7 +353,7 @@ declare %private function templates:resolve($arity as xs:int, $func as xs:string
 };
 
 declare %private function templates:parameters-from-attr($node as node()) {
-    map:new(
+    map:merge(
         for $attr in $node/@*[starts-with(local-name(.), $templates:ATTR_DATA_TEMPLATE)]
         return
             map:entry(
@@ -364,7 +364,7 @@ declare %private function templates:parameters-from-attr($node as node()) {
 };
 
 declare %private function templates:parse-parameters($paramStr as xs:string?) as map(xs:string, xs:string) {
-    map:new(
+    map:merge(
         for $param in tokenize($paramStr, "&amp;")
         let $key := substring-before($param, "=")
         let $value := substring-after($param, "=")
@@ -401,7 +401,7 @@ declare %private function templates:cast($values as item()*, $targetType as xs:s
                 case "xs:time" return
                     xs:time($value)
                 case "element()" return
-                    util:parse($value)/*
+                    parse-xml($value)/*
                 case "text()" return
                     text { string($value) }
                 default return
@@ -468,7 +468,7 @@ declare function templates:surround($node as node(), $model as map(*), $with as 
 
 declare %private function templates:surround-options($model as map(*), $optionsStr as xs:string?) as map(*) {
     if (exists($optionsStr)) then
-        map:new((
+        map:merge((
             $model,
             for $option in tokenize($optionsStr, "\s*,\s*")
             let $keyValue := tokenize($option, "\s*=\s*")
@@ -508,7 +508,7 @@ function templates:each($node as node(), $model as map(*), $from as xs:string, $
     for $item in $model($from)
     return
         element { node-name($node) } {
-            $node/@*, templates:process($node/node(), map:new(($model, map:entry($to, $item))))
+            $node/@*, templates:process($node/node(), map:merge(($model, map:entry($to, $item))))
         }
 };
 
@@ -684,7 +684,7 @@ declare function templates:error-description($node as node(), $model as map(*)) 
         element { node-name($node) } {
             $node/@*,
             try {
-                util:parse($input)//message/string()
+                parse-xml($input)//message/string()
             } catch * {
                 $input
             }
@@ -706,7 +706,7 @@ declare function templates:getErrorPage($node as node(), $model as map(*)) {
             element { node-name($node) } {
                 $node/@*,
                 try {
-                    util:parse($input)//message/string()
+                    parse-xml($input)//message/string()
                 } catch * {
                     $input
                 }

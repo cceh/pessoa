@@ -1,4 +1,4 @@
-xquery version "3.0";
+xquery version "3.1";
 (:~
 : Modul zur generierung der Navigation
 ; Beinhaltet allgemeine Funktionen
@@ -30,14 +30,14 @@ declare function page:construct($node as node(), $model as map(*)){
                     let $sub := page:catchSub($list,$item)
                     let $publ := if(contains(string-join(distinct-values(for $s in $sub return $s("publ")),"-"),"true")) then "true" else "false"
                     return map {
-                                "site" := $item/tei:term[@xml:lang = $helpers:web-language]/data(.),
-                                "publ" := $publ,
-                                "type" := $item/@rend/data(.),
-                                "id" := $item/@xml:id/data(.),
-                                "sub" := $sub
+                                "site" : $item/tei:term[@xml:lang = $helpers:web-language]/data(.),
+                                "publ" : $publ,
+                                "type" : $item/@rend/data(.),
+                                "id" : $item/@xml:id/data(.),
+                                "sub" : $sub
                             }
     return map {
-            "sites" := $sites
+            "sites" : $sites
     }
 
 };
@@ -87,21 +87,21 @@ declare function page:catchSub($list as node(),$item as node()) as map(*)* {
         if($item/@corresp eq "authors") then
             for $per in $list//tei:listPerson[@type="authors"]/tei:person
                 return map {
-                            "site" := $per/tei:persName/data(.),
-                            "publ" := $item/tei:note[@type='published']/data(.),
-                            "type" := "link",
-                            "id" := $per/@xml:id/data(.),
-                            "link" := concat($item/tei:note[@type='directory']/data(.),"/",$per/tei:note[@type='link']/data(.),"/all")
+                            "site" : $per/tei:persName/data(.),
+                            "publ" : $item/tei:note[@type='published']/data(.),
+                            "type" : "link",
+                            "id" : $per/@xml:id/data(.),
+                            "link" : concat($item/tei:note[@type='directory']/data(.),"/",$per/tei:note[@type='link']/data(.),"/all")
                         }
         else if($item/@corresp eq "date") then page:DATEmapping($item/@xml:id/data(.))
         else
             for $el in $list//tei:list[@type=$item/@corresp]/tei:item
                         return map {
-                                    "site" := $el/tei:term[@xml:lang = $helpers:web-language]/data(.),
-                                    "publ" := $item/tei:note[@type='published']/data(.),
-                                    "type" := "link",
-                                    "id" := $el/@xml:id/data(.),
-                                    "link" := concat($item/tei:note[@type='directory']/data(.),"/",$el/@xml:id/data(.))
+                                    "site" : $el/tei:term[@xml:lang = $helpers:web-language]/data(.),
+                                    "publ" : $item/tei:note[@type='published']/data(.),
+                                    "type" : "link",
+                                    "id" : $el/@xml:id/data(.),
+                                    "link" : concat($item/tei:note[@type='directory']/data(.),"/",$el/@xml:id/data(.))
 
                                     }
     else if(exists($item/tei:note[@type='linked'])) then
@@ -114,21 +114,21 @@ declare function page:catchSub($list as node(),$item as node()) as map(*)* {
                             let $sub := page:DOCmapping($docs,$indi,$dir)
                             let $publ := if(contains(string-join(distinct-values(for $s in $sub return $s("publ")),"-"),"free")) then "true" else "false"
                                     return map {
-                                                    "site" := $site,
-                                                    "publ" := $publ,
-                                                    "type" := "button",
-                                                    "id" := $indi,
-                                                    "sub" := $sub
+                                                    "site" : $site,
+                                                    "publ" : $publ,
+                                                    "type" : "button",
+                                                    "id" : $indi,
+                                                    "sub" : $sub
                                                 }
 
             else if($item/tei:note[@type='linked'] eq "works") then
                 let $works := doc("/db/apps/pessoa/data/works.xml")//list[@type="works"]
                 return for $work in $works/item return map {
-                                "site" := $work/title[@type="main"]/data(.),
-                                "publ" := $item/tei:note[@type='published'],
-                                "type" := "link",
-                                "id" := $work/@xml:id,
-                                "link" := concat("works/",$work/title[@type="main"]/data(.))
+                                "site" : $work/title[@type="main"]/data(.),
+                                "publ" : $item/tei:note[@type='published'],
+                                "type" : "link",
+                                "id" : $work/@xml:id,
+                                "link" : concat("works/",$work/title[@type="main"]/data(.))
                 }
         else()
     else for $el in $item/tei:list/tei:item return page:mapping($el)
@@ -140,20 +140,20 @@ declare function page:catchSub($list as node(),$item as node()) as map(*)* {
 declare function page:mapping($item as node()) as map(*){
     let $return :=
                 map {
-                    "site" := $item/tei:term[@xml:lang = $helpers:web-language]/data(.),
-                    "publ" := $item/tei:note[@type='published']/data(.),
-                    "type" := $item/@rend/data(.),
-                    "id" := $item/@xml:id/data(.)
+                    "site" : $item/tei:term[@xml:lang = $helpers:web-language]/data(.),
+                    "publ" : $item/tei:note[@type='published']/data(.),
+                    "type" : $item/@rend/data(.),
+                    "id" : $item/@xml:id/data(.)
                 }
-    let $return := if(exists($item/tei:list) or exists($item/@corresp)) then map:new(($return,map {"sub" := page:catchSub(doc("/db/apps/pessoa/data/lists.xml"),$item)})) else $return
-    let $return := if(exists($item/tei:note[@type='directory'])) then map:new(($return,map {"link" := concat($item/tei:note[@type='directory']/data(.),"/",$item/@xml:id/data(.))})) else $return
-    let $return := if($item/@rend/data(.) = 'newlink') then map:new(($return,map {"link" := $item/@xml:id/data(.)})) else $return
+    let $return := if(exists($item/tei:list) or exists($item/@corresp)) then map:merge(($return,map {"sub" : page:catchSub(doc("/db/apps/pessoa/data/lists.xml"),$item)})) else $return
+    let $return := if(exists($item/tei:note[@type='directory'])) then map:merge(($return,map {"link" : concat($item/tei:note[@type='directory']/data(.),"/",$item/@xml:id/data(.))})) else $return
+    let $return := if($item/@rend/data(.) = 'newlink') then map:merge(($return,map {"link" : $item/@xml:id/data(.)})) else $return
 
     let $return := if(map:contains($return,"sub")) then
                         let $publ := if(contains(string-join(distinct-values(for $s in $return("sub") return $s("publ")),"-"),"true"))
                                         then "true" else "false"
                         let $new := map:remove($return,"publ")
-                        return map:new(($new,map {"publ":=$publ}))
+                        return map:merge(($new,map {"publ":$publ}))
                     else $return
     return $return
 };
@@ -181,11 +181,11 @@ declare function page:DOCmapping($docs as node(), $indi as xs:string,$dir as xs:
                     else doc(concat("/db/apps/pessoa/data/pub/",$name))//tei:fileDesc/tei:titleStmt/tei:title/data(.)
 
        return map {
-                "site" := $name,
-                "publ" := $doc/@availability,
-                "type" := "link",
-                "id" := $doc/@id,
-                "link" :=concat($dir,"/",$doc/@id)
+                "site" : $name,
+                "publ" : $doc/@availability,
+                "type" : "link",
+                "id" : $doc/@id,
+                "link" : concat($dir,"/",$doc/@id)
        }
 };
 
@@ -196,11 +196,11 @@ declare function page:DATEmapping($indi as xs:string) {
     let $sub := page:DATEDOCmapping($date)
     let $publ := if(contains(string-join(distinct-values(for $s in $sub return $s("publ")),"-"),"free")) then "true" else "false"
     return map {
-            "site" := concat("'",$date),
-            "publ" := $publ,
-            "type" := "button",
-            "id" := $date,
-            "sub" := $sub
+            "site" : concat("'",$date),
+            "publ" : $publ,
+            "type" : "button",
+            "id" : $date,
+            "sub" : $sub
 
     }
 
@@ -249,11 +249,11 @@ let $mapping := for $doc in ($docs,$pubs)
                         (: publication titles :)
                         else $doc/@title/data(.)
                     return map {
-                    "site" := ($title,<span class="doc_superscript"/>),
-                    "publ" := $doc/@availability,
-                    "type" := "link",
-                    "id" := $doc/@id,
-                    "link" :=concat($dir, "/", $doc/@id)
+                    "site" : ($title,<span class="doc_superscript"/>),
+                    "publ" : $doc/@availability,
+                    "type" : "link",
+                    "id" : $doc/@id,
+                    "link" : concat($dir, "/", $doc/@id)
                     }
 
 

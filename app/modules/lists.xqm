@@ -1,4 +1,4 @@
-xquery version "3.0";
+xquery version "3.1";
 
 module namespace lists="http://localhost:8080/exist/apps/pessoa/lists";
 declare namespace tei="http://www.tei-c.org/ns/1.0";

@@ -1,4 +1,4 @@
-xquery version "3.0";
+xquery version "3.1";
 
 (:~
  : Modul, das verschiedene einfache Hilfsfunktionen enthält,
@@ -77,14 +77,14 @@ declare function helpers:getValueMap($node as node(), $model as map(*),$containe
 
 declare function helpers:createValueMap($node as node(), $model as map(*), $container as xs:string, $key as xs:string,$name as xs:string) {
     if(exists($model($container)) and exists($model($container)($key))) then
-    map:new(($model, map:entry($name, $model($container)($key))))
+    map:merge(($model, map:entry($name, $model($container)($key))))
     else()
 };
 
 declare function helpers:createValueMapEach($node as node(), $model as map(*), $container as xs:string, $key as xs:string,$name as xs:string) {
     for $item in $model($container)($key)
     return
-        templates:process($node/node(),map:new(($model, map:entry($name, $item))))
+        templates:process($node/node(),map:merge(($model, map:entry($name, $item))))
 };
 (:~
  : Eine each Funktion zur Verwendung in views, identisch mit templates:each, 
@@ -95,7 +95,7 @@ declare function helpers:each($node as node(), $model as map(*), $from as xs:str
     for $item in $model($from)
     return
         element { node-name($node) } {
-            $node/@*, templates:process($node/node(), map:new(($model, map:entry($to, $item))))
+            $node/@*, templates:process($node/node(), map:merge(($model, map:entry($to, $item))))
         }
 };
 
@@ -105,7 +105,7 @@ declare function helpers:each($node as node(), $model as map(*), $from as xs:str
 declare function helpers:invisibleEach($node as node(), $model as map(*), $from as xs:string, $to as xs:string) {
     for $item in $model($from)
     return
-        templates:process($node/node(), map:new(($model, map:entry($to, $item))))
+        templates:process($node/node(), map:merge(($model, map:entry($to, $item))))
 };
 (:)
 declare function helpers:lettersOfTheAlphabet() {
