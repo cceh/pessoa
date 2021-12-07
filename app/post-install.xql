@@ -13,12 +13,19 @@ declare function local:move-index(){
 	let $conf-path := "/db/system/config/db/apps/pessoa/data"
 	return
     	(
-	 xmldb:move($app-path, concat($conf-path, "/doc"), "collection_doc.xconf"),
-	xmldb:move($app-path, concat($conf-path, "/pub"), "collection_pub.xconf"),
-	xmldb:rename(concat($conf-path, "/doc"), "collection_doc.xconf", "collection.xconf"),
-	xmldb:rename(concat($conf-path, "/pub"), "collection_pub.xconf", "collection.xconf"),
-	xmldb:reindex(concat($app-path, "/data/doc")),
-	xmldb:reindex(concat($app-path, "/data/pub"))
+        if (not(xmldb:collection-available("/db/system/config/db/apps/pessoa")))
+        then (xmldb:create-collection("/db/system/config/db/apps", "pessoa"),
+              xmldb:create-collection("/db/system/config/db/apps/pessoa", "data"),
+              xmldb:create-collection("/db/system/config/db/apps/pessoa/data", "doc"),
+              xmldb:create-collection("/db/system/config/db/apps/pessoa/data", "pub")
+        )
+        else (),
+    	xmldb:move($app-path, concat($conf-path, "/doc"), "collection_doc.xconf"),
+    	xmldb:move($app-path, concat($conf-path, "/pub"), "collection_pub.xconf"),
+    	xmldb:rename(concat($conf-path, "/doc"), "collection_doc.xconf", "collection.xconf"),
+    	xmldb:rename(concat($conf-path, "/pub"), "collection_pub.xconf", "collection.xconf"),
+    	xmldb:reindex(concat($app-path, "/data/doc")),
+    	xmldb:reindex(concat($app-path, "/data/pub"))
 	)
 };
 
@@ -276,9 +283,32 @@ declare function local:clean-titles(){
 };
 
 
+(: join elements of a path :)
+declare function local:path-join($path-elements as xs:string+) as xs:string{
+    string-join($path-elements, "/")
+};
+
+(: set the rights of xquery files correctly :)
+declare function local:set-rights($collection-uri as xs:string){
+    (: scan the app for xquery files :)
+    let $files := xmldb:get-child-resources($collection-uri)
+    let $xqueries := $files[ends-with(.,(".xq", ".xql", ".xqm"))]
+    let $child-collections := xmldb:get-child-collections($collection-uri)
+    return  (
+        for $qu in $xqueries
+        return sm:chmod(xs:anyURI(local:path-join(($collection-uri, $qu))), "rwxr-xr-x"),
+        if (not(empty($child-collections)))
+        then for $ch in $child-collections
+             return local:set-rights(local:path-join(($collection-uri, $ch)))
+        else()
+    )
+};
+
+
 (
 local:move-index(),
 local:createXML(),
 local:get-titles(),
-local:clean-titles()
+local:clean-titles(),
+local:set-rights("/db/apps/pessoa")
 )

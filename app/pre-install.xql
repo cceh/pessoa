@@ -1,4 +1,4 @@
-xquery version "1.0";
+xquery version "3.1";
 
 import module namespace xdb="http://exist-db.org/xquery/xmldb";
 
@@ -28,9 +28,12 @@ declare function local:mkcol($collection, $path) {
 }; 
 
 declare function local:remove-old-data(){
-    (:xdb:remove("/db/apps/pessoa/xslt"),:)
-    xdb:remove("/db/apps/pessoa/resources"),
-    xdb:remove("/db/apps/pessoa/data")
+    if (xdb:collection-available("/db/apps/pessoa/resources"))
+    then xdb:remove("/db/apps/pessoa/resources")
+    else (),
+    if (xdb:collection-available("/db/apps/pessoa/data"))
+    then xdb:remove("/db/apps/pessoa/data")
+    else ()
 };
 
 (: store the collection configuration 

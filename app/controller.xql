@@ -57,8 +57,8 @@ declare function local:Restriction() as xs:boolean{
             let $p := replace($s,'/','')
             where contains($exist:path,$s)
             return switch($p)
-                case "doc" return local:resRestritction()
-                case "pub" return local:resRestritction()
+                case "doc" return local:resRestriction()
+                case "pub" return local:resRestriction()
                 case "search" return true()
                 case "timeline" return true()
                 case "events" return true()
@@ -110,7 +110,7 @@ declare function local:pathi() {
 };
 
 
-declare function local:resRestritction() as xs:boolean {
+declare function local:resRestriction() as xs:boolean {
     let $path := if(contains($exist:path,concat($helpers:web-language,'/')))
                     then substring-before(substring-after($exist:path,concat($helpers:web-language,'/')),'/')
                 else if(helpers:contains-any-of($exist:path,('BNP','CP'))) then
