@@ -2,7 +2,7 @@ xquery version "3.1";
 (:~
 : Hautpmodul zur Kontrolle der URL-Weiterleitung und der Zugriffskontrolle von vorhandenen Resourcen
 :
-: @author Ben Bigalke
+: @author Ben Bigalke, Ulrike Henny-Krahmer
 : @version 1.0
 :)
 
@@ -141,6 +141,7 @@ declare function local:resRestriction() as xs:boolean {
 
 (:#### No login required for what follows :)
 
+session:create(),
 if ($exist:path eq "/") then
 (: forward root path to index.xql :)
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">

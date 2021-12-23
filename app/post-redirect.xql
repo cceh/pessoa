@@ -6,6 +6,7 @@ declare namespace util="http://exist-db.org/xquery/util";
 
 (: adapt config paths to remote system :)
 (: internal: http://projects2.cceh.uni-koeln.de:8083/exist/apps/pessoa :)
+(: external: http://www.pessoadigital.pt :)
 declare function local:adapt-conf(){
     let $conf-file := doc("/db/apps/pessoa/conf.xml")
     return
