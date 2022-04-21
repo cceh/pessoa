@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Antinous</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>María Camila Euse e Jorge Uribe</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modernização ortográfica</resp>
+                    <name>Inês Filipa Rebelo do Carmo</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="restricted">
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Pessoa_Antinous.xml</idno>
+            </publicationStmt>
+            <notesStmt>
+                <note type="genre">
+                    <rs type="genre" key="poesia">Poesia</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="XXX">Antinous</rs></item>
+                </list>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Antinous</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="en"/>
+                    </analytic>
+                    <monogr>
+                        <!--MJ: Revisar esta proposta de <biblStruct>-->
+                        <title>Antinous</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="en"/>
+                        <imprint>
+                            <date when="1918-07">c. Julho de 1918</date>
+                            <pubPlace>Lisboa</pubPlace>
+                            <publisher>Monteiro <choice><abbr>&amp;</abbr><expan>e</expan></choice> <choice><abbr>Co.</abbr><expan>Companhia</expan></choice>
+                            190, Rua do Ouro, 192 <!-- Printed by "Sociedade Typographica Editora" - 100, R. d'Alegria - Lisbon--></publisher>
+                            <biblScope unit="page">16pp</biblScope>
+                        </imprint>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
+    </teiHeader>
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+        <graphic url="Poesia/Antinous_1.jpg"/>
+    </facsimile>
+    <text type="orig">
+        
+<body>
+<div>
+<head>ANTINOUS</head>
+
+<!-- MC:Página 5-->
+<lg>
+<l>It rained outside right into <rs type="name" key="PXXX">Hadrian</rs>'s soul.</l>
+</lg>
+
+<lg>
+<l>The boy lay dead</l>
+<l>On the low couch, on whose denuded whole,</l>
+<l>To <rs type="name" key="PXXX">Hadrian</rs>'s eyes, that at their seeing bled,</l>
+<l>The shadowy light of <rs type="name" key="PXXX">Death</rs>'s eclipse was shed.</l>
+</lg>
+
+<lg>
+<l>The boy lay dead and the day seemed a night</l>
+<l>Outside. The rain fell like a sick affright</l>
+<l>Of <rs type="name" key="PXXX">Nature</rs> at her work in killing him.</l>
+<l>Through the mind's galleries of their past delight</l>
+<l>The very light of memory was dim.</l>
+</lg>
+
+<lg>
+<l>O hands that clasped erewhile <rs type="name" key="PXXX">Hadrian</rs>'s warm hands,</l>
+<l>That now found them but cold!</l>
+<l>O hair bound erstwhile with the pressing bands!</l>
+<l>O eyes too diffidently bold!</l>
+<l>O bare female male-body like</l>
+<l>A god that dawns into humanity!</l>
+<l>O lips whose opening redness erst could strike</l>
+<l>Lust's seats with a soiled art's variety!</l>
+</lg>
+
+<!-- MC:Página 6-->
+
+<lg>
+<l>O fingers skilled in things not to be named!</l>
+<l>O tongue which, counter-tongued, the throbbed brows flamed!</l>
+<l>O glory of a wrong lust pillowed on</l>
+<l>Raged conciousness's spilled suspension!</l>
+<l>These things are things that now must be no more.</l>
+<l>The rain is silent, and the <rs type="name" key="PXXX">Emperor</rs></l>
+<l>Sinks by the couch. His grief is like a rage,</l>
+<l>For the gods take away the life they give</l>
+<l>And spoil the beauty they made live.</l>
+<l>He weeps and knows that every future age</l>
+<l>Is staring at him out of the to-be.</l>
+<l>His love is on a universal stage.</l>
+<l>A thousand unborn eyes weep with his misery.</l>
+</lg>
+
+<lg>
+<l><rs type="name" key="PXXX">Antinous</rs> is dead, is dead forever,</l>
+<l>Is dead forever and the loves lament.</l>
+<l><rs type="name" key="PXXX">Venus</rs> herself, that was <rs type="name" key="PXXX">Adonis</rs>' lover,</l>
+<l>Seeing him again, having lived, dead again,</l>
+<l>Lends her great skyey grief now to be blent</l>
+<l>With <rs type="name" key="PXXX">Hadrian</rs>'s pain.</l>
+</lg>
+
+<lg>
+<l>Now is <rs type="name" key="PXXX">Apollo</rs> sad because the stealer</l>
+<l>Of his white body is forever cold.</l>
+<l>In vain shall kisses on that nippled point</l>
+<l>Covering his heart-beats' silent place implore</l>
+<l>His life again to ope his eyes and feel her</l>
+<l>Presence along his veins this fortress hold</l>
+<l>Of love. Now no caressing hands anoint</l>
+<l>With growing joy that body's lusting lore.</l>
+</lg>
+
+<lg>
+<l>The rain falls, and he lies like one who hath</l>
+<l>Forgotten all the gestures of his love</l>
+<l>And lies awake waiting their hot return.</l>
+<l>But all his vices' art is now with Death:</l>
+<l>He lies with her, whose sex cannot him move,</l>
+<l>Whose hand, were't not cold, still ne'er his could burn.</l>
+<!-- MC:Página 7-->
+<l>Lilies were on his cheeks and roses too.</l>
+<l>His eyes were sad in joy sometimes. He said</l>
+<l>Oft in his close abandonments, that woo</l>
+<l>Love to be more love than love can be, «Kiss</l>
+<l>My eyelids till my closed eyes seem to guess</l>
+<l>The kiss they feel laid in my heart's breast-bed.»</l>
+</lg>
+
+<lg>
+<l>O <rs type="name" key="PXXX">Hadrian</rs>, what shall now thy cold life be?</l>
+<l>What boots it to be emperor over all?</l>
+<l>His absence o'er thy visible empery</l>
+<l>Throws a dim pall.</l>
+<l>Now are thy nights widowed of love and kisses,</l>
+<l>Now are thy days robbed of the night's awaiting,</l>
+<l>Now are thy lips purposeless and thy blisses</l>
+<l>No longer of the size of thy life, mating</l>
+<l>Thy empire with thy love's bold tendernesses.</l>
+</lg>
+
+<lg>
+<l>Now are thy doors closed upon beauty and joy.</l>
+<l>Throw ashes on thy head!</l>
+<l>Lo, lift thine eyes and see the lovely boy!</l>
+<l>Naked he lies upon that memoried bed;</l>
+<l>By thine own hand he lies uncovered.</l>
+<l>There was he wont thy dangling sense to cloy,</l>
+<l>And uncloy with more cloying, and annoy</l>
+<l>With newer uncloying till thy senses bled.</l>
+</lg>
+
+<lg>
+<l>His hand and mouth knew gamuts musical</l>
+<l>Of vices thy worn spine was hurt to follow.</l>
+<l>Sometimes it seemed to thee that all was hollow</l>
+<l>In sense in each new straining of sucked lust.</l>
+<l>Then still new crimes of fancy would he call</l>
+<l>To thy shaken flesh, and thou wouldst tremble and fall</l>
+<l>Back on thy cushions with thy mind's sense hushed.</l>
+</lg>
+
+<lg>
+<l>«Beautiful was my love, yet melancholy.</l>
+<l>He had that art, of love's arts most unholy,</l>
+<l>Of being lithely sad among lust's rages.</l>
+<l>Now the Nile gave him up, the eternal Nile.</l>
+<!-- MC:Página 8-->
+<l>Under his wet locks Death's blue paleness wages</l>
+<l>Now war upon our pity with sad smile».</l>
+</lg>
+
+<lg>
+<l>Even as he thinks, the lust that is no more</l>
+<l>Than a memory of lust revives and takes</l>
+<l>His senses by the hand, and his flesh quakes</l>
+<l>Till all becomes again what 'twas before.</l>
+<l>The dead body on the bed gets up and lives</l>
+<l>Along his every nerve ripped up and twanged,</l>
+<l>And a love-o'er-wise and invisible hand</l>
+<l>At every body-entrance to his lust</l>
+<l>Utters caresses which flit off, yet just</l>
+<l>Remain enough to bleed his last nerve's strand,</l>
+<l>O sweet and cruel Parthian fugitives!</l>
+</lg>
+
+<lg>
+<l>He rises, mad, and looks upon his lover,</l>
+<l>That now can love nothing but what none know.</l>
+<l>Then his cold lips run all the body over—</l>
+<l>His lips that scarce remember their warmth, now</l>
+<l>So blent with feeling the death they behold;</l>
+<l>And so ice-senseless are his lips that, lo!,</l>
+<l>He scarce tastes death from the dead body's cold,</l>
+<l>But it seems both are dead or living both</l>
+<l>And love is still the Presence and the Mover.</l><!-- MC:No creo que sean nombres propios. Revisar.-->
+<l>Then his lips cease on the other lips' cold sloth.</l>
+</lg>
+
+<lg>
+<l>But there the wanting breath reminds his lips</l>
+<l>That between him and his boy-love the mist</l>
+<l>That comes out of the gods has crept. The tips</l>
+<l>Of his fingers, still idly tickling, list</l>
+<l>To some flesh-response to their purple mood.</l>
+<l>But their love-orison is not understood.</l>
+<l>The god is dead whose cult was to be kissed!</l>
+</lg>
+
+<lg>
+<l>He lifts his hand up to where heaven should be</l>
+<l>And cries on the mute gods to know his pain.</l>
+<l>Lo, list!, o divine watchers of our glee</l>
+<!-- MC:Página 9-->
+<l>And sorrow!, list!, he will yield up his reign.</l>
+<l>He will live in the deserts and be parched</l>
+<l>On the hot sands, he will be beggar and slave;</l>
+<l>But give again the boy to be arm-reached!</l>
+<l>Forego that space ye meant to be his grave!</l>
+</lg>
+
+<lg>
+<l>Take all the female beauties of the earth!</l>
+<l>Take all afar and rend them if ye will!</l>
+<l>But, by sweet <rs type="name" key="PXXX">Ganymede</rs>, that <rs type="name" key="PXXX">Jove</rs> found worth</l>
+<l>And above <rs type="name" key="PXXX">Hebe</rs> did elect to fill</l>
+<l>His cup at his high festivals, and spill</l>
+<l>His fairer vice wherefrom comes newer birth--,</l>
+<l>The clod of female embraces resolve</l>
+<l>To dust, o father of the gods!, but spare</l>
+<l>This boy and his white body and golden hair.</l>
+<l>Maybe thy newer <rs type="name" key="PXXX">Ganymede</rs> thou meanst</l>
+<l>That he should be, and out of jealous care</l>
+<l>From <rs type="name" key="PXXX">Hadrian</rs>'s arms to thine his beauty steal'st.</l>
+</lg>
+
+<lg>
+<l>He was a kitten playing with lust, playing</l>
+<l>With his own and with <rs type="name" key="PXXX">Hadrian</rs>'s, sometimes one</l>
+<l>And sometimes two, now splitting, now one grown,</l>
+<l>Now leaving lust, now lust's high lusts delaying,</l>
+<l>Now eyeing lust not wide, but from askance</l>
+<l>Jumping round on lust's half-unexpectance;</l>
+<l>Then softly gripping, then with fury holding,</l>
+<l>Now playfully playing, now seriously, now lying</l>
+<l>By the side of lust looking at it, now spying</l>
+<l>Which way to take lust in his lust's withholding.</l>
+</lg>
+
+<lg>
+<l>Thus did the hours slide from their tangled hands</l>
+<l>And from their mixed limbs the moments slip.</l>
+<l>Now were his arms dead leaves, now iron bands,</l>
+<l>Now were his lips cups, now the things that sip,</l>
+<l>Now were his eyes too closed, and now too open,</l>
+<l>Now were his ways such as none thought might happen,</l>
+<l>Now were his arts a feather and now a whip.</l>
+</lg>
+
+<!-- MC:Página 10-->
+
+<lg>
+<l>That love they lived as a religion</l>
+<l>Offered to gods that do to presence bend.</l>
+<l>Sometimes he was adorned and made to don</l>
+<l>Half-costumes, now a posing nudity</l>
+<l>That imitates some god's eternity</l>
+<l>Of body statue-known to craving men.</l>
+<l>Now was he <rs type="name" key="P574">Venus</rs>, risen from the seas;</l>
+<l>And now was he <rs type="name" key="P604">Apollo</rs>, white and golden;</l>
+<l>Now as <rs type="name" key="PXXX">Jove</rs> sate he in mock-judgment over</l>
+<l>The presence at his feet of his slaved lover;</l>
+<l>Now was he an acted rite, by one beholden,</l>
+<l>In ever-repositioned mysteries.</l>
+</lg>
+
+<lg>
+<l>Now he is something anyone can be.</l>
+<l>O white negation of the thing it is!</l>
+<l>O golden-haired moon-cold loveliness!</l>
+<l>Too cold! too cold! and love as cold as he.</l>
+<l>Love wanders through the memories of his vice</l>
+<l>As through a labyrinth, in sad madness glad,</l>
+<l>And now calls on his name and bids him rise,</l>
+<l>And now is smiling at his imaged coming</l>
+<l>That is i'th'heart like faces in the gloaming--</l>
+<l>Mere shining shadows of the forms they had.</l>
+</lg>
+
+<lg>
+<l>The rain again like a vague pain arose</l>
+<l>And put the sense of wetness in the air.</l>
+<l>Suddenly did the Emperor suppose</l>
+<l>He saw this room and all in it from far.</l>
+<l>He saw the couch, the boy and his own frame</l>
+<l>Cast down against the couch, and he became</l>
+<l>A clearer presence to himself, and said</l>
+<l>These words unuttered, save to his soul's dread:</l>
+</lg>
+
+<lg>
+<l>«I shall build thee a statue that will be</l>
+<l>To the astonished future evidence</l>
+<l>Of my love and thy beauty and the sense</l>
+<l>That beauty giveth of infinity,</l>
+<!-- MC:Página 11-->
+<l>Though death with subtle uncovering hands remove</l>
+<l>The apparel of life and empire from our love,</l>
+<l>Yet its nude statue-soul of lust made spirit</l>
+<l>All future times, whether they will't or not,</l>
+<l>Shall, like a curse-seeming god's boon earth-brought,</l>
+<l>Inevitably inherit.</l>
+</lg>
+
+<lg>
+<l>«Ay, this thy statue shall I build, and set</l>
+<l>Upon the pinnacle of being-thine. Let <rs type="name" key="PXXX">Time</rs></l>
+<l>By its subtle dim crime</l>
+<l>Eat it from life, or with men's violence fret</l>
+<l>To pieces out of unity and presence.</l>
+<l>Ay, let that be! Our love shall stand so great</l>
+<l>In thy statue of us, like a god's fate,</l>
+<l>Our love's incarnate and discarnate essence,</l>
+<l>That, like a trumpet reaching over seas</l>
+<l>And going from continent to continent,</l>
+<l>Our love shall speak its joy and woe, death-blent,</l>
+<l>Over infinities and eternities!</l>
+</lg>
+
+<lg>
+<l>«The memory of our love shall bridge the ages.</l>
+<l>It shall loom white out of the past and be</l>
+<l>Eternal, like a Grecian victory,</l>
+<l>In every heart the future shall give rages</l>
+<l>Of not being our love's contemporary.</l>
+</lg>
+
+<lg>
+<l>«Yet oh that this were needed not, and thou</l>
+<l>Wert the red flower perfuming my life,</l>
+<l>The garland on the brows of my delight,</l>
+<l>The living flame on altars of my soul!</l>
+<l>Would all this were a thing thou mightest now</l>
+<l>Smile at from under thy death-mocking lids</l>
+<l>And wonder that I should so put a strife</l>
+<l>Twixt me and gods for thy lost presence bright;</l>
+<l>Were there nought in this but my empty dole</l>
+<l>And thy awakening smile half to condole</l>
+<l>With what my dreaming pain to hope forbids».</l>
+</lg>
+
+<!-- MC:Página 12-->
+
+<lg>
+<l>Thus went he, like a lover who is waiting,</l>
+<l>From place to place in his dim doubting mind.</l>
+<l>Now was his hope a great bulk of will fating</l>
+<l>Its wish to being, now felt he he was blind</l>
+<l>In some point of his seen wish undefined.</l>
+</lg>
+
+<lg>
+<l>When love meets death we know not what to feel.</l>
+<l>When death foils love we know not what to know.</l>
+<l>Now did his doubt hope, now did his hope doubt.</l>
+<l>Now what his wish dreamed the dream's sense did flout</l>
+<l>And to a sullen emptiness congeal.</l>
+<l>Then again the gods fanned love's darkening glow.</l>
+</lg>
+
+<lg>
+<l>«Thy death has given me a newer lust--</l>
+<l>A flesh-lust raging for eternity.</l>
+<l>On my imperial will I put my trust</l>
+<l>That the high gods, that made me emperor be,</l>
+<l>Will not annul from a more real life</l>
+<l>My wish that thou shouldst live for e'er and stand</l>
+<l>A fleshly presence on their better land,</l>
+<l>More beautiful and as beautiful, for there</l>
+<l>No things impossible our wishes mar</l>
+<l>Nor pain our hearts with change and time and strife.</l>
+</lg>
+
+<lg>
+<l>«Love, love, my love! thou art already a god.</l>
+<l>This thought of mine, which I a wish believe,</l>
+<l>Is no wish, but a sight, to me allowed</l>
+<l>By the great gods, that love love and can give</l>
+<l>To mortal hearts, under the shape of wishes--</l>
+<l>Of wishes strong, having imperial reaches--</l>
+<l>A vision of the real things beyond</l>
+<l>Our life-imprisoned life, our sense-bound sense.</l>
+<l>Ay, what I will thee to be thou art now</l>
+<l>Already. Already on Olympic ground</l>
+<l>Thou walkest and art perfect, yet art thou,</l>
+<l>For thou needst no excess of thee to don</l>
+<l>To perfect be, being perfection.</l>
+</lg>
+
+<!-- MC:Página 13-->
+
+<lg>
+<l>«My heart is singing like a morning bird.</l>
+<l>A great hope from the gods comes down to me</l>
+<l>And bids my heart to subtler sense be stirred</l>
+<l>And think not that strange evil of thee</l>
+<l>That to think thee mortal would be.</l>
+</lg>
+
+<lg>
+<l>«My love, my love! My god-love! Let me kiss</l>
+<l>On thy cold lips thy hot lips now immortal,</l>
+<l>Greeting thee at Death's portal's happiness,</l>
+<l>For to the gods Death's portal is Life's portal.</l>
+</lg>
+
+<lg>
+<l>«Thus is the memory of thee a god</l>
+<l>Already, already a statue made of me--</l>
+<l>Of that part of me that, like a great sea,</l>
+<l>Girds in me a great red empire more broad</l>
+<l>Than all the lands and peoples that are in</l>
+<l>My power's reach. Thus art thou myself made</l>
+<l>In that great stretch Olympic that betrays</l>
+<l>The true-wholed gods present in river and glade</l>
+<l>And hours eternal in its different days.</l>
+</lg>
+
+<lg>
+<l>«So strong my love is that it is thyself,</l>
+<l>Thy body as it was ere death was it,</l>
+<l>Towering above the silence infinite</l>
+<l>That girds round life and its unduring pelf.</l>
+<l>Even as thou wert in life, thy corporal shade</l>
+<l>Is in the presence of the gods. My love</l>
+<l>Permits not that its carnal being fade</l>
+<l>Or one whit false to fleshly presence prove.</l>
+<l>Creeds may arise and pass, and passions change,</l>
+<l>Other ways may be born out of Time's dream,</l>
+<l>But this our love, made but thy body, 'll range</l>
+<l>On deathless meads from happy stream to stream.</l>
+</lg>
+
+<lg>
+<l>«Were there no Olympus for thee, my love</l>
+<l>Would make thee one, where thou sole god mightst prove,</l>
+<l>And I thy sole adorer, glad to be</l>
+<!-- MC:Página 14-->
+<l>Thy sole adorer through infinity.</l>
+<l>That were a divine universe enough</l>
+<l>For love and me and what to me thou art.</l>
+<l>To have thee is a thing made of gods' stuff</l>
+<l>And to look on thee eternity's best part.</l>
+</lg>
+
+<lg>
+<l>«O love, my love! Awake with my strong will</l>
+<l>Of loving to Olympus and be there</l>
+<l>The latest god, whose honey-coloured hair</l>
+<l>Takes divine eyes! As thou wert on earth, still</l>
+<l>In heaven bodifully be and roam,</l>
+<l>A prisoner of that happiness of home,</l>
+<l>With elder gods, while I on earth do make</l>
+<l>A statue for thy deathlessness' seen sake.</l>
+</lg>
+
+<lg>
+<l>«That deathless statue of thee I shall build</l>
+<l>Will be no stone thing, but my great regret</l>
+<l>By which our love's eternity is willed.</l>
+<l>My sorrow shall make thee its god, and set</l>
+<l>Thy naked presence on the parapet</l>
+<l>That looks over the seas of future times.</l>
+<l>Some shall say all our love was vice and crimes.</l>
+<l>Others against our names, as stones, shall whet</l>
+<l>The knife of their glad hate of beauty, and make</l>
+<l>Our name a pillory, a scaffold and a stake</l>
+<l>Whereon to burn our brothers yet unborn.</l>
+<l>Yet shall our presence, like eternal morn,</l>
+<l>Ever return at Beauty's hour, and shine</l>
+<l>Out of the East of Love, and be the shrine</l>
+<l>Of future gods that nothing human scorn.</l>
+</lg>
+
+<lg>
+<l>«My love for thee is part of what thou wert</l>
+<l>And shall be part of what thy statue will be.</l>
+<l>Our double presence unified in thee</l>
+<l>Shall make to beat many a future heart.</l>
+<l>Ay, were't a statue to be broken and missed,</l>
+<l>Yet its stone-perfect memory</l>
+<!-- MC:Página 15-->
+<l>Would, still more perfect, on Time's shoulders borne,</l>
+<l>Overlook the great Morn</l>
+<l>From an eternal East.</l>
+</lg>
+
+<lg>
+<l>«Thy statue is of thyself and of me.</l>
+<l>Our dual presence has its unity</l>
+<l>In that perfection of body, which my love,</l>
+<l>In loving it, did out of mortal life</l>
+<l>Raise into godness, set above the strife</l>
+<l>Of times and changing passions far above.</l>
+</lg>
+
+<lg>
+<l>«The end of days, when <rs type="name" key="PXXX">Jove</rs> is born again,</l>
+<l>And <rs type="name" key="PXXX">Ganymede</rs> again pour at his feast,</l>
+<l>Shall see our dual soul from death released</l>
+<l>And recreated unto love, joy, pain,</l>
+<l>Life--all the beauty and the vice and lust,</l>
+<l>All the diviner side of flesh, flesh-staged.</l>
+<l>And, if our very memory wore to dust,</l>
+<l>By the giant race of the end of ages must</l>
+<l>Our dual presence once again be raised.»</l>
+</lg>
+
+<lg>
+<l>It rained still. But slow-treading night came in</l>
+<l>Closing the weary eyelids of each sense.</l>
+<l>The very consciousness of self and soul</l>
+<l>Grew, like a landscape through dim raining, dim.</l>
+<l>The Emperor lay still, so still that now</l>
+<l>He half forgot where now he lay, or whence</l>
+<l>The sorrow that was still salt on his lips.</l>
+<l>All had been something very far, a scroll</l>
+<l>Rolled up. The things he felt were like the rim</l>
+<l>That haloes round the moon when the night weeps.</l>
+</lg>
+
+<lg>
+<l>His head was bowed into his arms, and they</l>
+<l>On the low couch, foreign to his sense, lay.</l>
+<l>His closed eyes seemed open to him and seeing</l>
+<l>The naked floor, dark, cold, sad and unmeaning.</l>
+<l>His hurting breath was all his sense could know.</l>
+<!-- MC:Página 16-->
+<l>Out of the falling darkness the wind rose</l>
+<l>And fell. A voice swooned in the courts below.</l>
+<l>And the Emperor slept.</l>
+</lg>
+
+<lg>
+<l rend="indent">The gods came now</l>
+<!-- MC: ¿Qué etiqueta se usa para alinear el texto a la derecha?-->
+<l>And bore something away, no sense knows how,</l>
+<l>On unseen arms of power and repose.</l>
+</lg>
+<lg>
+   <l>LISBON, 1915.</l>
+</lg>
+<!-- MC: Tampoco sé cuál etiqueta se debe usar aquí y si se deben marcar el año y el lugar de alguna manera especial.-->
+</div>
+</body>
+</text>
+</TEI>
+
