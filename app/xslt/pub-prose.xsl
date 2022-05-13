@@ -11,7 +11,8 @@
     
     <xsl:param name="lang">pt</xsl:param>
     
-    <xsl:template match="text">
+    <xsl:template match="text[@type='reg']"/>
+    <xsl:template match="text[not(@type)] | text[@type='orig']">
         <div class="text prose">
             <xsl:if test="@corresp">
                 <xsl:attribute name="id" select="substring-after(@corresp,'#')"/>
