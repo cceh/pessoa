@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Prefácio a Quinto Império, de Augusto Ferreira Gomes</title>
+            <author>
+               <rs type="name" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Edição, Transcrição, Codificação</resp>
+               <name>Jorge Uribe e Inês Filipa Rebelo do Carmo</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny-Krahmer</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+               Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2021</date>
+            <availability status="restricted">
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">Pessoa_Prefacio_Quinto_Imperio.xml</idno>
+         </publicationStmt>
+         <notesStmt>
+            <note type="genre">
+               <rs type="genre" key="poesia">Prosa</rs>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <list type="work-index">
+               <item>
+                  <rs type="work" key="W322">Prefácio a Quinto Império, de Augusto Ferreira Gomes</rs>
+               </item>
+            </list>
+            <biblStruct> 
+               <monogr>
+                  <!--MJ: Revisar esta proposta de <biblStruct>-->
+                  <title>Prefácio a Quinto Império, de Augusto Ferreira Gomes</title>
+                  <author>
+                     <rs type="name" key="FP">Fernando Pessoa</rs>
+                  </author>
+                  <textLang mainLang="pt"/>
+                  <imprint>
+                     <date when="1934">1934</date>
+                     <pubPlace>Lisboa</pubPlace>
+                     <publisher><!--IR: Confirmar editora--></publisher>
+                     <biblScope unit="page">9pp</biblScope>
+                  </imprint>
+               </monogr>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <variantEncoding method="parallel-segmentation" location="internal"/>
+      </encodingDesc>
+   </teiHeader>
+   <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+      <graphic url="Pessoa_Prefacio_Quinto_Imperio_1.jpg"/>
+      <graphic url="Pessoa_Prefacio_Quinto_Imperio_2.jpg"/>
+      <graphic url="Pessoa_Prefacio_Quinto_Imperio_3.jpg"/>
+      <graphic url="Pessoa_Prefacio_Quinto_Imperio_4.jpg"/>
+      <graphic url="Pessoa_Prefacio_Quinto_Imperio_5.jpg"/>
+      <graphic url="Pessoa_Prefacio_Quinto_Imperio_6.jpg"/>
+      <graphic url="Pessoa_Prefacio_Quinto_Imperio_7.jpg"/>
+      <graphic url="Pessoa_Prefacio_Quinto_Imperio_8.jpg"/>
+      <graphic url="Pessoa_Prefacio_Quinto_Imperio_9.jpg"/>
+   </facsimile>
+   <text type="orig" corresp="#W322">
+      <body>
+         <head>PREFACIO</head>
+         <p rend="indent">A esperança do Quinto Império, tal qual em Portugal a sonhamos e concebemos, não se
+            ajusta, por natureza, ao que a tradição figura como o sentido da interpretação dada por
+            <rs type="name" key="P698">Daniel</rs> ao sonho de <rs type="name" key="P699">Nebucadnezar</rs>.</p>
+         <p rend="indent">Nessa figuração tradicional, é êste o seguimento dos impérios: o Primeiro é o da Babilónia, o Segundo o Medo-Persa, o Terceiro o da Grécia e o quarto o de Roma, ficando o Quinto, como sempre, duvidoso. Nesse esquema, porém, que é de impérios materiais, o último é plausivelmente entendido como sendo o Império de Inglaterra. Dêsse modo se interpreta naquele país; e creio que, nesse nível, se interpreta bem.</p>
+         <p rend="indent">Não é assim no esquema português. Êste, sendo espiritual em vez de partir, como naquela tradição, do Império material de Babilónia, parte, antes, com a civilisação em que vivemos, do império espiritual da Grécia, origem do que espiritualmente somos. E, sendo êsse o Primeiro Império, o Segundo é o de Roma, o Terceiro o da Cristandade, e o Quarto o da Europa — isto é, da Europa laica de depois da Renascença. Aqui o Quinto Império terá que ser outro que o inglês, porque terá que ser de outra ordem. Nós o atribuímos a Portugal, para quem o esperamos.</p>
+         <milestone/>         
+         <p rend="indent">A chave está dada, clara e obscuramente, na primeira quadra do Terceiro Corpo das Profecias do <rs type="name" key="P259">Bandarra</rs>, entendendo-se que <rs type="name" key="P259">Bandarra</rs> é um nome colectivo, pelo qual se designa, não só o vidente de Trancoso, mas todos quantos viram, por seu exemplo, à mesma Luz. Êste Terceiro Corpo não é, nem poderia ser, do <rs type="name" key="P259">Bandarra</rs> de Trancoso. Dizemos, contudo, que é do <rs type="name" key="P259">Bandarra</rs>.</p>
+         <p rend="indent">A quadra é assim:</p>
+         <l rend="italic">Em vós que haveis de ser Quinto</l>
+         <l rend="italic">Depois de morto o Segundo,</l>
+         <l rend="italic">Minhas profecias fundo</l>
+         <l rend="italic">Nestas letras que VOS Pinto.</l>
+         <p rend="indent">A palavra VOS, no quarto verso, tem a variante AQUI em alguns textos. Mas, de qualquer dos modos, a interpretação vem a ser igual.</p>
+         <p rend="indent">Considerando, pelo lema da Tripeça, que tôdas as profecias teem três realisações diferentes, em três tempos distintos, esta será interpretada em relação a três tempos de Portugal, segundo as «letras» são «pintadas». Se as letras são as da palavra VOS, indicam, como se mandou que se soubesse, <hi rend="italic">Vis, Otium, Scientia</hi>. E se as letras são as da palavra AQUI, indicam, segundo a mesma ordem, <hi rend="italic">Arma, Quies, Intellectus, que logo se vê serem termos sinónimos dos outros.</hi></p>
+         <p rend="indent">Temos pois que a Nação Portuguesa percorre, em seu caminho imperial, três tempos — o primeiro caracterisado pela Fôrça (<hi rend="italic">Vis</hi>) ou as Armas (<hi rend="italic">Arma</hi>), o segundo pelo ócio (<hi rend="italic">Otium</hi>) ou o socego (<hi rend="italic">Quies</hi>), e o terceiro pela Ciência (<hi rend="italic">Scientia</hi>) ou a inteligencia (<hi rend="italic">Intellectus</hi>). E os tempos e os modos estão indicados nos primeiros dois versos da quadra:</p>
+         <l rend="italic">Em vós que haveis de ser Quinto</l>
+         <l rend="italic">Depois de morto o Segundo...</l>
+         <p rend="indent">No primeiro tempo — a Fôrça ou Armas — trata-se de el-rei <rs type="name" key="P700">D. Manuel o Primeiro</rs>, que é o <hi rend="italic">quinto</hi> rei da dinastia de Aviz, e sucede a <rs type="name" key="P594">D. João o <hi rend="italic">Segundo</hi></rs>, depois dêste morto. Foi então o auge do nosso período de Fôrça ou Armas, isto é, de poder temporal.</p>
+         <p rend="indent">No segundo tempo — Ocio ou Socêgo — trata-se de el-rei <rs type="name" key="P701">D. João o <hi rend="italic">Quinto</hi></rs>, que sucede a <rs type="name" key="P702">D. Pedro o <hi rend="italic">Segundo</hi></rs>, depois de êste morto. Foi então o auge do nosso período de esterilidade rica, do nosso repouso do poder — o ocio ou socêgo da profecia.</p>
+         <p rend="indent">No terceiro tempo — Ciência ou Inteligencia — trata-se do <hi rend="italic">Quinto</hi> Império, que sucederá ao <hi rend="italic">Segundo</hi>, que é o de Roma, depois de êste morto.</p>
+         <p rend="indent">Quanto ao que quere dizer esta Roma, a cujo fim ou morte se seguirá o Império Português, ou Quinto Império, ou o que seja a Ciência ou Inteligencia que definirá a êste — não direi se o sei ou o não sei, se o presumo ou o não presumo. Saber seria de mais; presumir seria de menos. Quem puder compreender que compreenda.</p>
+         <milestone/>  
+         <p rend="indent">As profecias são de duas ordens — as que, como a de <rs type="name" key="P698">Daniel</rs> e esta do falso <rs type="name" key="P259">Bandarra</rs>, teem em si uma grande luz; e as que, como as do vero <rs type="name" key="P259">Bandarra</rs> e as do livro presente, teem em si uma grande treva. Aquelas são o fio do labirinto, estas o mesmo labirinto. Umas e outras, porém, entre si se complementam. Por umas as outras se esclarecem, tanto quanto póde ser, porque a luz afasta as trevas, mas sem as trevas se não veria a luz. Tam certo é o que se diz em certo passo secreto — que a melhor luz que temos nêste mundo não é mais que treva visível...</p>
+         <signed rend="right"><hi rend="italic"><rs type="name" role="author" key="FP" style="b">FERNANDO PESSOA</rs></hi>.</signed>
+      </body>
+   </text>
+</TEI>
