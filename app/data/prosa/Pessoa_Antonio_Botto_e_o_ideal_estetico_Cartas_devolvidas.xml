@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>“António Botto e o ideal estético criador”, posfácio de "Cartas que me foram devolvidas", de António Botto</title>
+            <author>
+               <rs type="name" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Edição, Transcrição, Codificação</resp>
+               <name>Jorge Uribe e Inês Filipa Rebelo do Carmo</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny-Krahmer</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+               Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2021</date>
+            <availability status="restricted">
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">Pessoa_Antonio_Botto_e_o_ideal_estetico_Cartas_devolvidas.xml</idno>
+         </publicationStmt>
+         <notesStmt>
+            <note type="genre">
+               <rs type="genre" key="poesia">Prosa</rs>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <list type="work-index">
+               <item>
+                  <rs type="work" key="W320">“António Botto e o ideal estético criador”, posfácio de "Cartas que me foram devolvidas", de António Botto</rs>
+               </item>
+            </list>
+            <biblStruct> 
+               <monogr>
+                  <!--MJ: Revisar esta proposta de <biblStruct>-->
+                  <title>“António Botto e o ideal estético criador”, posfácio de "Cartas que me foram devolvidas", de António Botto</title>
+                  <author>
+                     <rs type="name" key="FP">Fernando Pessoa</rs>
+                  </author>
+                  <textLang mainLang="pt"/>
+                  <imprint>
+                     <date when="1932">1932</date>
+                     <pubPlace>Lisboa</pubPlace>
+                     <publisher><!--IR: Confirmar editora--></publisher>
+                     <biblScope unit="page">56pp</biblScope>
+                  </imprint>
+               </monogr>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <variantEncoding method="parallel-segmentation" location="internal"/>
+      </encodingDesc>
+   </teiHeader>
+   <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_1.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_2.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_3.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_4.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_5.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_6.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_7.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_8.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_9.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_10.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_11.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_12.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_13.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_14.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_15.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_16.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_17.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_18.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_19.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_20.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_21.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_22.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_23.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_24.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_25.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_26.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_27.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_28.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_29.jpg"/>
+      <graphic url="Pessoa_Antonio_Botto_Ideal_Carta_30.jpg"/>
+   </facsimile>
+   <text type="orig" corresp="#W320">
+      <body>
+         <milestone rend=""
+         <head rend="center"><rs type="name" key="P17" style="b">ANTÓNIO BOTTO</rs></head>
+         <head rend="center">E O IDEAL</head>
+         <head rend="center">ESTÉTICO</head>
+         <head rend="center">CREADOR</head>
+            <head rend="center">ESTUDO CRÍTICO DE <rs type="name" role="author" key="FP" style="b">FERNANDO PESSOA</rs></head>
+            <p rend="indent"><rs type="name" key="P17" style="b">ANTÓNIO BOTTO</rs> é o único poeta português, dos que sabemos que
+            existem, a quem a designação de esteta se póde aplicar distintivamente, isto é, como
+            definição bastante, sem acrescimo nem restrição. É êste o teorema; o dim dêste breve
+            estudo é demonstrá-lo.</p>
+         <p rend="indent">Todo poeta, porque todo artista, é forçosamente esteta, pois esteta
+            significa, primáriamente, cultor da beleza, e todo artista, e portanto todo poeta, é,
+            pelo menos, cultor da beleza pela criação dela. Ha, porém, poetas, e artistas, que criam
+            beleza por um movimento íntimo espontâneo, em que a idéa de beleza não figura como
+            elemento determinante: assim um <rs type="name" key="P248">Byron</rs> ou um <rs type="name" key="P175">Shelley</rs> olha menos à beleza possível do que
+            cria ao aliviar a alma do peso de uma emoção, e a criação da beleza é mais parte do
+            alivio que preocupação directa. Outros ha que, escravos embora da beleza, são todavia,
+            no mesmo tempo, subditos de outras preocupações, como a religiosa em <rs type="name" key="P220">Dante</rs> e <rs type="name" key="P84">Milton</rs>, e a
+            psicológica em Shakespeare. Os primeiros não são inteiramente estetas; os segundos não o
+            são exclusivamente. Em quási todos os casos, a palavra esteta é larga ou estreita de
+            mais para definir o poeta. Define, bem ou mal, sómente parte do seu espírito: só o
+            inconsciente no primeiro caso exemplificado; só parte do consciente no segundo.</p>
+         <p rend="indent">Designo por esteta, como é de sentir no que vai dito, o homem que
+            faz consistir na contemplação da beleza, distinta da criação dela, tôda aquela sua
+            atitude crítica da vida a que chamamos o ideal; e que, por nessa contemplação concentrar
+            o seu ideal todo, não admite nêste nem elementos intelectuais, nem elementos morais,
+            nem, enfim, elementos de qualquer ordem que não seja a contemplativa. Deduz-se disto
+            que, por natureza e definição, o esteta própriamente tal, não é artista, pois que não é
+            criador. Ora o caso de <rs type="name" key="P17" style="b">António Botto</rs> é que, sendo evidentemente criador, pois que é
+            artista, é também demonstravelmente o tipo do esteta. Consubstancia-se com o tipo de que
+            se afasta. Nisto, quando em mais não fosse, reside o interesse do caso e o da analise
+            dele.</p>
+         <p rend="indent">Nasce o ideal do nosso convencimento da imperfeição da vida:
+            consiste na idéa de perfeição que derivamos, por contraste, da maneira como concebemos
+            essa imperfeição. Ora é de trez maneiras que podemos ter qualquer coisa, e portanto a
+            vida, por imperfeita. Um exemplo, como sempre, dil-o-ha, primeiro, melhor que uma
+            definição.</p>
+         <p rend="indent">Suponha-se que tenho uma oficina, sem uso possível de energia
+            electrica, e que para ela preciso de um motor de determinada fôrça. Um fabricante
+            oferece-me um motor exactamente do tipo e da fôrça de que preciso, porém de estructura
+            defeituosa: rejeito êsse motor por <hi rend="italic">imperfeito</hi>. Outro fabricante
+            oferece-me um motor do tipo de que preciso e de bôa estructura, porém de metade da
+            fôrça; rejeito êsse motor por <hi rend="italic">insuficiente</hi>. Um terceiro
+            fabricante oferece-me um motor da fôrça de que preciso e de bôa estructura, porém
+            electrico: rejeito êsse motor por <hi rend="italic">errado</hi>. Cada um dos trez
+            motores é imperfeito para o fim a que eu o destinaria; cada um porém o é de sua maneira,
+            e em cada caso a imperfeição se nota por uma comparação. No primeiro caso, a noção de
+            imperfeição resulta de comparar o motor com êle mesmo, pois o mesmo motor serviria se
+            fosse perfeito; no segundo caso, de o comparar com um motor semelhante mas superior,
+            isto é, diferente dentro da semelhança; no terceiro caso, de o comparar com um motor
+            inteiramente diferente.</p>
+         <milestone/>
+         <p rend="indent-inline">Pelo primeiro dos trez
+            critérios, aplicando-o ao conjunto da vida, tel-a-hemos por imperfeita por comparação
+            com ela mesma: falece naquilo mesmo por que se define, não é aquilo mesmo que por
+            natureza deveria ser. Todo corpo é imperfeito porque, sendo corpo, não é perfeito como
+            corpo; tôda vida imperfeita porque, durando por essencia, não dura sempre, e
+            durar-sempre seria a perfeição de durar; tôda a compreensão imperfeita porque, quanto
+            mais se expande, em maiores fronteiras confina com o incompreensivel que a cerca. Desta
+            crítica do real, se a fizermos, tiraremos, por contraste, a nossa noção do ideal.
+            Quizeramos que aquele corpo, sem deixar de ser aquele corpo, fosse aquele corpo com
+            perfeição. Quizeramos que aquela mocidade, sem ser outra espécie de mocidade, durasse
+            assim tal qual é; que aquele prazer, sem parar nem ser outro, tivesse por eterno o
+            momento em que é um prazer que passa. Quizeramos que aquela compreensão, sem precisar de
+            mais vôo para compreender, abarcasse, num só grande abrir de asas, o espaço inteligivel
+            de tudo. Quizeramos, em suma, não uma vida perfeita, mas a perfeição da vida.</p>
+         <p rend="indent">Ora a perfeição de uma coisa em si mesma resulta da sua absoluta
+            identificação com a sua própria substancia — com a sua matéria, se a sua substancia é
+            material; com a sua fórma, se a sua substancia é formal; com o seu fim, se a sua
+            substancia é ter um fim. E como este perfeito ajustamento, que, quando externo, se chama
+            equilibrio, se chama, quando externo, harmonia, convém ao ideal, que nêle se funde, o
+            nome de ideal harmónico. Como, porém, foram os gregos os que não só criaram êste ideal,
+            mas mais intimamente o incarnaram, e como era o deus <rs type="name" key="P706">Febo</rs>, ou <rs type="name" key="P604" style="b">Apolo</rs>, quem para êles o
+            figurava na vida (pois na inteligencia o figurava <rs type="name" key="P96">Atena</rs>), chamaremos a êste ideal o <hi
+               rend="italic">ideal apolineo</hi>.</p>
+            <milestone/>
+         <p rend="indent">Pelo segundo dos três critérios, aplicando-o de igual modo, teremos
+            a vida por imperfeita por a compararmos com uma vida maior; por, sendo vida, não ser
+            contudo vida bastante. O conceito aqui é duplo: podemos querer mais vida em quantidade,
+            ou mais vida em qualidade — esta vida multiplicada, ou esta vida superada; esta
+            excedida, ou esta transcendida. No primeiro conceito a vida é pouca; no segundo conceito
+            a vida é pouco. Pelo primeiro conceito, ser-nos-á ideal a vida em qualquer expansão,
+            violenta ou desvairada, em que, sem se esquecer de si, se exceda. Pelo segundo conceito,
+            ser-nos-á ideal uma vida que transcenda esta em qualidade, e que, por isso mesmo, em
+            natureza se lhe oponha. Ao primeiro ideal, porque é da embriaguês da vida, chamaremos
+               <hi rend="italic">dionisiaco;</hi> ao segundo, porque é da transcendência dela,
+            chamaremos <hi rend="italic">cristão</hi>.</p>
+         <p rend="indent">Os dois ideais, que nascem dêstes dois conceitos, são em substância
+            o mesmo ideal: são produtos do mesmo critério, efeito da mesma causa. Um é quantitativo,
+            o outro qualitativo; mas qualidade e quantidade, na mesma matéria, são sòmente dois
+            aspectos dela, como os aspectos concavo e convexo da mesma superfície curva. Quando a
+            água passa, em temperatura, de 99 para 100 gráus centígrados, converte-se em vapor:
+            mudou de quantidade em temperatura, mudou de qualidade em estado, o fenómeno foi só um.
+            Mas estes dois ideais são idênticos, não só pela igual origem, senão também pelo modo
+            igual em que se diferençam do ideal apolineo. Aquele é harmónico e natural; estes
+            desarmónicos e misticos. Aquele assenta na aceitação da vida; estes, de um modo e de
+            outro, na comum negação dela. <rs type="name" key="P707">Baco</rs> e <rs type="name" key="P50" style="b">Cristo</rs> são, aliás, em certo grau do entendimento
+            oculto, duas formas do mesmo deus. «<rs type="name" key="P50" style="b">Cristo</rs> Baquico» diz a inscrição por baixo da figura
+            crucificada na joia antiga do Museu de Berlim.</p>
+         <p rend="indent">Idênticos na matéria, estes dois ideais são contudo, não só
+            diferentes, mas opostos, na forma: são, repetindo a imagem e o exemplo, como os aspectos
+            opostos, o concavo e o convexo, da mesma superfície curva; como <rs type="name" key="P707">Baco</rs> e <rs type="name" key="P50" style="b">Cristo</rs> na ordem
+            externa. Para o dionisiaco a vida é simplesmente estreita; para o cristão a vida é vil.
+            Para um é uma jaula, de onde há que fugir para os campos, que não são mais seus que a
+            jaula; para o outro uma estalagem, suja e alheia, onde espera ter que estar pouco,
+            voltando à casa que é sua.</p>
+         <p rend="indent">Para o dionisiaco, dissemos, a vida é simplesmente estreita. Todo
+            corpo é imperfeito porque é um só corpo, que não todos; tôda alma imperfeita porque é
+            uma só alma, que não o conjunto das almas ou a alma universal do mundo. Não podermos
+            pensar tudo, sentir tudo, ser tudo! Não haver uma emoção que possa ser todas as emoções,
+            ou que, ao menos, pela sua intensidade, a todas valha, ainda que nos endoideça! E assim
+            pensando, assim sentindo, o dionisiaco forma um de dois ideais, conforme o oriente a sua
+            índole; ou viver, com o máximo de intensidade, o máximo possível da vida; ou,
+            refugiando-se no sonho, vivê-la ali total, ainda que ficticia. Sim, porque o sonhador,
+            se faz a vida consistir no sonho, não é mais que um dionisiaco subjectivo. E esta forma
+            do ideal dionisiaco está já, pela subjectividade, a meio-caminho do ideal mistico, que é
+            o verdadeiro ideal cristão. Que é, aliás, a meditação do mistico ― visto que não é
+            raciocínio ― senão um sonho que esqueceu o nome?</p>
+         <p rend="indent">Para o cristão, dissemos, a vida é vil. O símbolo desta vida é o
+            corpo, visto que é aquilo em que somos desta vida. E que é o corpo? Uma coisa sujável,
+            retalhável, senescível; uma coisa que, quando, pela morte, fica a sós, assume logo o
+            máximo da vileza, que é a podridão. Tudo quanto nêle vale, como a beleza, vale só pela
+            alma que o anima; cessando esta nêle, tudo isso nêle cessa. Só a alma, pois, que, por
+            ser incorporea, podemos considerar um corpo infinito, e, por infinito, eterno e perfeito
+            — só essa, e <rs type="name" key="P573">Deus</rs> que a creou, e a quem ela se assemelha, são a verdade e a vida. A
+            essência dêste ideal é o ser espiritualista; devemo-lo, expresso, a <rs type="name" key="P472">Platão</rs>, em cuja
+            doutrina todo espiritualismo se filia. Como, porém, é aquele platonismo judaizado a que
+            chamamos cristianismo que com mais clara plenitude incarna, mistica e asceticamente, o
+            espiritualismo, chamámos a êste ideal o ideal cristão.</p>
+            <milestone/> 
+         <p rend="indent">Pelo último dos três critérios, aplicando-o como aplicámos os
+            outros, teremos a vida por imperfeita por a compararmos com uma vida, a verdadeira,
+            inteiramente, substâncialmente, diferente dela. Esta vida será um êrro; será vil, se
+            vil, não tanto com a vileza do que é vil, quanto com a vileza do que é falso. Como,
+            porém, o que há de inteiramente, de substâncialmente, diferente da vida é aquilo que
+            chamamos morte, temos que, por êste critério, ou não há senão morte, e a mesma vida é
+            morte, ou o que chamamos morte é a verdadeira vida.</p>
+         <p rend="indent">Se não há senão morte, a vida é vida só por aparência; não é senão
+            morte falsificada, fogo-fatuo pairando filho sôbre a podridão-nata do universo. Tudo é
+            nada, o Nada é tudo: só Caos é <rs type="name" key="P573">Deus</rs> e a Vida é o seu profeta. O ideal que de aqui
+            resulta é o não haver ideal possível, pois é o não haver nada possível. E porque o Caos
+            define bem a alma dêste critério, chamaremos ao ideal, ou negação de ideal, que dêle
+            resulta, o <hi rend="italic">ideal caotico</hi>.</p>
+         <p rend="indent">Se porém aquilo que chamamos morte, ou seja a negação da vida, é
+            que verdadeiramente é a vida, então teremos por ideal uma vida que é a negação desta ―
+            não, como no ideal cristão, ou no dionisiaco, por ser outra vida ou mais vida, mas por
+            não ser vida nenhuma. O erro, a imperfeição, é, não esta vida, mas a mesma vida. A
+            não-vida será pois o nosso ideal. A morte, o nada ― eis o ideal que teremos. Como,
+            porém, a morte ou o nada, tomados como negações da vida, são inconcebiveis, criaremos
+            uma morte viva, um nada que existe, como ideais. Como esta vida é matéria e consciencia,
+            essa outra — a mortal e verdadeira — será espírito e inconsciencia; como esta é formada
+            de coisas separadas ― corpos, formas, seres ―, aquela será formada de uma unidade sem
+            nada, onde tudo, anulando-se, se funde. E como isto é o que está tipicamente expresso no
+            Nirvana dos budistas, chamaremos a êste ideal o <hi rend="italic">ideal budico</hi>.</p>
+         <p rend="indent">Depreende-se de tudo quanto ficou dito que um ideal é simplesmente
+            uma filosofia da vida, tomando a palavra filosofia como abrangendo, pois que
+            naturalmente abrange, uma metafísica, uma ética e uma estética. Nem todos os homens,
+            porém, formam de igual modo a sua filosofia da vida.</p>
+         <p rend="indent">O homem é um animal incoerente, e é incoerente porque é duplo. Tem
+            uma vida de sentidos, que o liga, por processos que vão desde a percepção até à vida
+            social, ao mundo, inhumano e humano, que o cerca; tem uma vida de inteligencia, que o
+            fecha em si mesmo, e assim o separa dêsse mundo. No homem em quem a vida da inteligencia
+            é apagada, a filosogia da vida vem dos sentidos e dos influxos externos: o seu ideal
+            será aquele que uns e outros lhe impuzerem. Êsse homem, que é o homem vulgar,
+            aproxima-se dos animais pela unidade do seu ser, filha legítima da inconsciencia. Desde,
+            porém, que no homem disperta e vive o pensamento abstracto, formou-se nêle uma
+            dualidade. Não póde furtar-se à vida dos sentidos; não póde negar-se a vida da
+            razão.</p>
+         <p rend="indent">Se é dois em sua vida como homem, o homem é contudo um em seu ser
+            como animal. Quando, pois, como verdadeiro homem, sente a dualidade, a sua tendencia,
+            como verdadeiro animal, é anulal-a ou resolvel-a, isto é, estabelecer em si uma nova
+            unidade, que, visto que é homem, deverá ser uma unidade superior.</p>
+         <p rend="indent">Ou a estabelece, aparente ou realmente, ou a não consegue
+            estabelecer. Póde estabelecel-a, ou supôr que a estabelece, fazendo da sua vida
+            intelectual um simples reflexo ou interpretação da sua vida sensual, do seu ideal um
+            reflexo ou interpretação do seu temperamento, com tudo quanto, de sensual ou de social,
+            o forma e nêle se contém. Êste processo é o processo filosofico: uma filosofia não é
+            mais que a transmutação de um temperamento em interpretação do universo, a história
+            intlectual de uma predisposição. Póde estabelecel-a, ou supôr que a estabelece, fazendo
+            do seu temperamento um escravo do seu ideal, isto é, compelindo êsse temperamento a uma
+            regra da inteligencia. Êste processo é o processo religioso: uma religião não é mais que
+            uma subordinação dos sentidos a uma regra super-sensual, quer a simbolise o <rs type="name" key="P50" style="b">Cristo</rs>
+            Crucificado das Egrejas ou o Compasso e Esquadro da Maçonaria.</p>
+         <p rend="indent">O primeiro dêsses homens superiores, o filósofo, é o que
+            vulgarmente chamam o sábio, não no sentido de saber por saber, mas de saber por pensar.
+            O segundo dêsses homens superiores é o que vulgarmente chamam o santo, de que o chamado
+            heroi é o grau inferior, o estado animal, pois que o heroi é o santo inconsciente e
+            episódico, em que a aureola é do sol externo que ilumina, que não do sol interno que
+            vivifica. Ha, porém, um terceiro tipo de homem superior — o que não resolve a dualidade
+            que o constitui superior; êsse terceiro homem superior é o artista.</p>
+         <p rend="indent">Dissemos bem e mal. O artista não resolve a dualidade em unidade;
+            resolve-a, porém, em equilibrio. Ser artista provém de ter em igual desenvolvimento a
+            atenção que está virada para o mundo e a vida, e a atenção que está virada para a
+            inteligencia; de ser solicitado igualmente pela matéria e pelo espírito; de dar, do
+            fundo da vida e da razão, a <rs type="name" key="P148" style="c">Cesar</rs> o que é de <rs type="name" key="P148" style="c">Cesar</rs> e a <rs type="name" key="P573">Deus</rs> o que é de <rs type="name" key="P573">Deus</rs>.</p>
+         <p rend="indent">A igual atenção à matéria e ao espírito faz que, instintivamente,
+            cada coisa material seja pensada como espiritual, cada coisa espiritual como material:
+            sendo as duas atenções iguais em fôrça e existentes na mesma alma, os seus objectos
+            entrepenetram-se, confundem-se, e cada um assume a natureza do outro. Ora uma coisa
+            material pensada como espiritual é uma coisa material considerada na sua beleza, pois a
+            beleza é o que a matéria tem de imaterial em si mesma. E uma coisa espiritual pensada
+            como material é essa mesma coisa às avessas ― um produto do espírito entregue ao mundo
+            externo como beleza. A essa coisa chamamos obra de arte, e artista àquele que cria.</p>
+         <p rend="indent">O artista é a forma mais alta do homem superior. O santo é do tipo
+            dos Anjos, cujo mister é crer; o sábio é do tipo dos Arcanjos, cujo mister é
+            compreender; o artista, porém, é do tipo dos Deuses, cujo mister é crear.</p>
+            <milestone/>
+            <p rend="indent">Por sua mesma natureza é o ideal apolineo o ideal artístico,
+            isto é, o único ideal cuja natural manifestação é a obra de arte.</p>
+         <p rend="indent">Vimos que o artista é por natureza um espírito superior em quem a
+            solução da dualidade se faz pelo equilibrio, isto é, pela harmonia. O ideal apolineo é o
+            único ideal harmónico. Harmónico, aliás, lhe chamámos, antes que o alcunhassemos de
+            apolineo. Mas não é só por esta coincidência íntima que o ideal apolineo é o ideal
+            artístico; há outra e mais notável razão.</p>
+         <p rend="indent">Fazer arte é tornar o mundo mais belo, porque a obra de arte, uma
+            vez feita, constitue beleza objectiva, beleza acrescentada à que há no mundo. Fazer arte
+            é aumentar a vida, porque é aumentar a compreensão, ou a consciência, dela. Para que
+            esta actividade lembre e preocupe, é mister que quem a pratíca tenha, consciente ou
+            inconscientemente, um ideal baseado no mundo e na vida. O ideal apolineo é como vimos, o
+            único que se baseia no mundo e na vida, surgindo da comparação dêles com êles mesmos,
+            como se nada mais houvesse com que os comparar.</p>
+         <p rend="indent">Um dionisiaco, se o fôr deveras, quer viver ou sonhar, que não
+            fazer arte: tudo, quanto se der à arte, rouba-se à vida ou ao sonho. Um cristão, se o
+            fôr devéras, também não pensa em fazer arte: para que desviar da contemplação de <rs type="name" key="P573">Deus</rs> e
+            da salvação da alma um minuto que seja do tempo, para com o emprêgo dele ir aumentar as
+            hostes que o são da vileza e do pecado? O caotico, se o fôr devéras, fará uma só coisa —
+            suïcidar-se-á no momento em que conceba, em plenitude e sinceridade, o seu ideal
+            noturno. E ao budista, se o fôr devéras, nada importa senão o que seja repudio, mistico
+            e ascético, da vida, imersão do ser no abismo dívino, morte viva, que é a única
+            realidade. Que tem o caotico que acrescentar ao mundo, se o mundo é nada? Que quer o
+            budista acrescentar-lhe, se o mundo é ilusão?</p>
+         <p rend="indent">Todo artista é pois, como tal, um expositor involuntário do ideal
+            apolineo. É-o com aquela vida de sentidos de que se forma o seu temperamento; pode ser
+            outra coisa, seguir outro ideal, com a vida da sua inteligência. Pode servir-se da
+            poesia, como <rs type="name" key="P220">Dante</rs>, para expor um ideal cristão; como <rs type="name" key="P216">Whitman</rs>, para expor um ideal
+            dionisiaco; como <rs type="name" key="P103">Omar Khayyam</rs> ou <rs type="name" key="P296">Swinburne</rs> para expor um ideal caotico, exprimindo-o no
+            vinho, como o primeiro, no sono, como o segundo. A oferenda, qualquer que seja o deus a
+            que se destine, leva-a êle sempre, sonâmbulo, ao templo de Apolo. Os passos com que
+            queria ir, consciente, a Jerusalem ou ao Nada, conduzem-o, inconsciente, a Thymbra ou a
+            Delphos.</p>
+         <p rend="indent">Quer dizer, a dualidade, que aparentemente se resolvera pelo
+            equilibrio, nunca afinal, se resolveu. Resolver é inclinar-se, e o equilibrio é não
+            haver inclinação. O artista ficou entre o filósofo e o santo, fusão dos dois e negação
+            de ambos: como o filósofo, pena, mas não tem opiniões; como o santo, dedica-se, mas não
+            sabe a quê. Provam-o de dois modos opostos os dois maiores poetas do mundo: em Homero
+            não há filosofia nem crença; em Shakespeare há todas.</p>
+         <p rend="indent">Há, porém, um tipo de artista em quem a dualidade automàticamente
+            se resolve: existe em tal forma que a si mesma se nega. É o caso do artista que tenha,
+            como homem, o ideal apolineo, que é o mesmo que tem como artista. Como homem, faz tudo
+            consistir na objectividade; como artista, faz tudo consistir na creação de formas
+            objectivas. A harmonia nêle é pois perfeita; não é já, porém, a harmonia do equilibrio,
+            mas a da identificação.</p> 
+            <milestone/> 
+         <p rend="indent-inline">O ideal, dissemos, provém
+            do nosso convencimento da imperfeição da vida, consiste no critério de perfeição que
+            opomos a essa imperfeição. Para o dionisiaco, que acha a vida pouca, o ideal está em
+            mais-vida ou em tôda a vida; a perfeição para êle consistirá na intensidade, na fôrça,
+            se fôr objectivista; no sonho, se fôr subjectivista. Para o cristão, que acha a vida
+            pouco, o ideal está em vida mas outra vida; a perfeição para êle consistirá na
+            espiritualidade. Para o caotico, que acha a vida nada, o ideal está em não existir; a
+            perfeição para êle consistirá na inconsciência. Para o budista, que acha a vida ilusão,
+            o ideal está no abandono da vida; a perfeição para ele consistirá na renúncia.</p>
+         <p rend="indent">Para o apolineo, porém, que acha a vida simplesmente imperfeita, o
+            ideal está na mesma vida, mas perfeita. Mas, como a vida é por natureza imperfeita, êsse
+            ideal reduz-se a uma vida o menos imperfeita possível.</p>
+         <p rend="indent">A vida compõe-se de contemplação <hi rend="underlined">e acção. Em
+               todos</hi> os homens há um elemento contemplativo e um elemento activo: em uns,
+            porém, predomina o elemento activo, e são estes o maior número; em outros, o elemento
+            contemplativo, e são estes o menor; em outros ainda, os dois elementos equilibram-se, e
+            estes, que em número estão entre os outros dois, estão entre êles também em índole.</p>
+         <p rend="indent">Para o homem de tipo activo, uma vida o menos imperfeita possível
+            reduz-se a uma vída o menos imperfeita possível naquilo que é acção, visto que para êsse
+            homem a vida é essencialmente acção. A acção, humanamente entendida, consiste
+            principalmente nas relações entre os homens e na atitude de cada homem para com a vida.
+            A qualquer destas atitudes se chama «o dever». O ideal que nasce de aqui é pois o ideal
+            moral, entendendo-se por ideal moral um ideal de dever, ou de virtude, em que se não
+            inclue elemento algum que não seja desta vida, como seria, por exemplo, o de recompensa
+            ou castigo em uma vida subsequente. Se assim fôsse, estariamos fora do ideal apolineo. O
+            ideal moral preocupou extensamente os gregos antigos, que formaram dêle vários tipos,
+            incluindo alguns, como o hedonistico, a que nós hoje, dando à palavra <hi rend="italic"
+               >moral</hi> um sentido restrito e cristão, hesitariamos em aplicar essa palavra. Ao
+            ideal moral poderiamos, até, chamar o ideal socrático, em homenagem àquele grego sublime
+            que com êle mais, e mais profundamente, se preocupou.</p>
+         <p rend="indent">Para o homem de tipo mixto, a vida o menos imperfeita possível será
+            aquela que funda o que há de menos imperfeito na acção com o que há de menos imperfeito
+            na contemplação, servindo-se de cada um dêsses elementos para corrigir o outro. Do
+            primeiro elemento emerge como ideal, como vimos, o dever; do segundo emerge como ideal,
+            como veremos, a beleza. Qualquer coisa onde se fundam o dever e a beleza será pois o
+            ideal para êste tipo de apolineo. Essa coisa é a glória, conforme os gregos a entendiam
+            ― o cumprimento esplendoroso do dever. A êste ideal podemos bem chamar o ideal heróico.
+            Era o ideal de quási todos os gregos, pois era o ideal harmónico dentro do ideal
+            harmónico. Uma glória imoral seria, para um grego antigo, uma coisa contraditória e
+            incompreensível.</p>
+         <p rend="indent">Para o homem de tipo contemplativo, a vida o menos imperfeita
+            possível será aquela, simplesmente, que mais perfeita se nos apresente, que mais
+            perfeita vejamos; pois, excluido todo elemento de acção, tudo, desde a pedra ao homem,
+            passa a ser tão sómente «mundo externo». Mas a única coisa que, no mundo externo, lembra
+            a perfeição, ou se aproxima dela, é aquilo que chamamos beleza. Para o apolíneo
+            contemplativo o ideal consistirá, pois, não na contemplação em geral, mas na
+            contemplação particular da beleza. Nada importa a moral ou o dever, pois são acção;
+            pouco importa a glória, pois contém acção; a beleza basta. A êste ideal compete, pois,
+            naturalmente, o nome de ideal estético.</p> 
+         <milestone rend="space"/> 
+         <p rend="indent">Os antigos
+            gregos foram, pois que se revelaram, os naturais políneos; nêles incarnaram os três
+            ideais apolíneos em simplicidade e perfeição. Nunca, como entre êles, houve o amor ao
+            dever humano, sem outra preocupação que não a humana. Nunca, como entre êles, houve o
+            amor à gloria e ao heroismo, porém, ao heroismo por glória, que não ao heroismo por
+            martírio. Nunca, como entre êles, houve o amor à beleza, sem moral nem uso, só por ser
+            beleza.</p>
+         <p rend="indent">Um socrático, um heróico ou um esteta, tinha, nascido que fôsse na
+            Grécia antiga, o ambiente propício à realização do seu ideal — tanto, é claro, quanto um
+            ideal se pode realizar. O ideal íntimo ajustava-se ao ideal social. E assim o homem era
+            um indivíduo verdadeiro, que não, como a maioria de nós de hoje, um indivíduo amador.
+            Daí a extraordinária perfeição cívica e moral da vida grega, que só consideraremos
+            imoral, em certos aspectos, se a avaliarmos por critérios morais diferentes, isto é, se
+            a não soubermos avaliar. Daí a extraordinária plenitude heróica e gloriosa da Grécia ―
+            na guerra como nos ludos, na arte como na vida. Daí a extraordinária atenção dos gregos
+            à beleza, que exigiam, e porisso punham, não, como nós, aqui e alí e de vez em quando, e
+            como superfluïdade ou sobremesa, mas em tudo e sempre, e como necessidade ou
+            alimento.</p>
+         <p rend="indent">Assim um esteta, própriamente dito, nascido na Grécia antiga, abria
+            os olhos e via em tudo a beleza que desejava. Ficava quem era, quedava-se, contemplava e
+            assim vivia. Suponhamos, porém, um temperamento de esteta, nascido, por não sabemos que
+            mistérios da hereditaríedade ou da reincarnação, em um tempo como o nosso. Passaram
+            sôbre os tempos da Heldade dois mil anos de civilizações diferentes: o ideal apolíneo
+            deixou de existir, excepto nos artistas, em quem é nato; séculos e séculos de barbaríe,
+            de cristianismo e de universalidade fruste turvaram a clareza da vista, soterraram o
+            mundo externo, esconderam a beleza, como a Palavra do Mestre, sob o nono arco da ilusão.
+            Perante um mundo externo assim confuso e obscuro, o esteta, amante da luz que é de
+            Apolo, terá um sentimento — o da revolta. Reagirá, e a reacção é uma acção. Passará de
+            contemplativo a activo, de esteta a artista. Gritará o que calaria, cantará o que
+            preferiria ouvir.</p>
+            <p rend="indent">É êste o caso especial de <rs type="name" key="P17" style="b">António Botto</rs>.</p>
+         <p rend="indent">Para a demonstração completa do que nos propuzemos demonstrar falta
+            sòmente que provemos que <rs type="name" key="P17" style="b">António Botto</rs> é o tipo exacto do esteta, no sentido, cada vez
+            mais preciso, que viemos dar a esta palavra através dos raciocínios que nos levaram à
+            alma dela. Não temos que provar que <rs type="name" key="P17" style="b">António Botto</rs> nasceu em nosso tempo, pois êle aqui
+            está; nem que é artista, pois êle o é sem que o provemos. E há que notar que, para o
+            caso da nossa demonstração, nada importa o que êle valha como artista. Por nós, julgamos
+            que é um artista admirável, o que dizemos, porém, só para que se saiba que o pensamos.
+            Poderia não ser um artista admirável, que a linha da demonstração não sofreria desvio. É
+            um artista; nasceu em nosso tempo; falta provar que é o tipo exacto do esteta, tal qual
+            o definimos. É o que vamos provar.</p>
+         <p rend="indent">Vimos que o esteta é o homem que ama a beleza contemplativamente,
+            isto é, sem nela admitir elemento algum de acção; e isto quere dizer, como também vimos,
+            que o ideal estetico exclue o ideal moral, pois que o ideal moral é o que nasce da
+            acção. Ora o ideal moral compreende três graus, ou níveis: a moral instintiva ou animal;
+            a moral social; a moral intelectual. A moral animal fecha-se dentro de dois instintos ―
+            o instinto de conservação e o instinto de reprodução; o amor à vida, e o amor ao sexo
+            oposto. A moral social resume-se na noção do dever. A moral intelectual concentra-se na
+            ideia do Bem. Será esteta, pois, aquele cujo ideal de beleza se revele livre da atracção
+            da vida ou do sexo oposto, de qualquer noção do dever, de qualquer ideia do Bem. Livre,
+            porém, não quere dizer oposto, pois que o ideal estético, que é um ideal apolineo, não é
+            um ideal de negação, mas de harmonia. O esteta ama a beleza onde quer que a veja, sem
+            restricção moral: na vida como na não-vida, no sexo oposto como no próprio; no dever
+            como na falta a êle, se na falta a êle houver beleza; no Bem como no Mal, se o Mal fôr,
+            como <rs type="name" key="P708">Lucifer</rs>, a Estrêla da Manhã.</p>
+            <p rend="indent">A obra de <rs type="name" key="P17" style="b">António Botto</rs> ajusta-se geométricamente a tudo quanto
+            seria, por o que dissemos, de esperar da obra de um estéta. Canta a vida, mas tão
+            débilmente que, nas mesmas palavras em que a canta, a renega; o que sente nela de belo é
+            o que dela se perde, a sua fluïda e fútil inutilidade. Canta, indiferentemente, o corpo
+            feminino e o masculino; se qualquer dêles é belo, o que é que, para o estéta, os
+            distingue? Animam-no, como poeta e artista, os herois e os criminosos, desde que o mesmo
+            sol os doire belos. Para êle — como aliás, para o Evangelho — cai igual a beleza da
+            chuva sôbre o campo do justo e do injusto. Não citaremos um verso, nem faremos um
+            extrato, em apoio do que dizemos: citamos a obra inteira do artista, pois nem uma linha
+            dela nos desmente.</p>
+         <p rend="indent">Esta demonstração está completa. Antes, porém, que a fechemos, há
+            um ponto que desejamos, não demonstrar, mas esclarecer. A estupidêz psicológica elegeu,
+            de ha muito, para o escândalo postiço o modo como <rs type="name" key="P17" style="b">António Botto</rs> acentua o seu afecto à
+            beleza masculina. Quem tiver lido com atenção êste estudo não precisa de esclarecimento,
+            pois que a demonstração já o contém. Muitos, porém, precisam de que o explicado se lhes
+            explique. São para êsses estas ultimas linhas.</p>
+         <p rend="indent">O estéta que é artista é-o, conforme demonstrámos, em virtude de
+            uma reacção contra o ambiente hóstil que lhe não permite ser só estéta. Nessa reacção
+            sobresaem, como é natural, aquêles elementos do ideal estético que mais possam ferir
+            êsse ambiente. Tôda boa defeza é uma contra-ofensiva. A noção da beleza masculina é, de
+            todos os elementos do ideal estético, aquêle que mais pode servir de arma contra a
+            opressão do nosso ambiente; daí servir-se <rs type="name" key="P17" style="b">António Botto</rs> dela com uma constância e uma
+            persistência que há não só que compreender, mas que louvar.</p>
+            <p rend="indent"><rs type="name" key="P17" style="b">António Botto</rs> é um estéta grego nascido num exilio longinquo. Ama a
+            Pátria perdida com a devoção violenta de quem não poderá voltar a ela. Daí o que na sua
+            obra há de estrangeiro, de saüdoso e de triste. É como, nas noites sem lua, aquele
+            brilho ténue, vindo do céu, não se sabe de onde, que toca de prata negra a solidão
+            inquieta do mar.</p> 
+            <milestone/> 
+      </body>
+   </text>
+</TEI>
