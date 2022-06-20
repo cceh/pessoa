@@ -1,0 +1,838 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>35 Sonnets</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>María Camila Euse e Jorge Uribe</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer e </name>
+                </respStmt>
+                <respStmt>
+                    <resp>Codificação</resp>
+                    <name>Inês Filipa Rebelo do Carmo</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="restricted">
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Pessoa_35_Sonnets.xml</idno>
+            </publicationStmt>
+            <notesStmt>
+                <note type="genre">
+                    <rs type="genre" key="poesia">Poesia</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="324">35 Sonnets</rs></item>
+                </list>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">35 Sonnets</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="en"/>
+                    </analytic>
+                    <monogr>
+                        <!--MJ: Revisar esta proposta de <biblStruct>-->
+                        <title>35 Sonnets</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="en"/>
+                        <imprint>
+                            <date when="1918-07">c. Julho de 1918</date>
+                            <pubPlace>Lisboa</pubPlace>
+                            <publisher>Monteiro <choice>
+                                <abbr>&amp;</abbr>
+                                <expan>e</expan>
+                            </choice>
+                                <choice>
+                                    <abbr>Co<am>.</am></abbr>
+                                    <expan>Co<ex>mpanhia</ex></expan>
+                                </choice> 190, Rua do Ouro, 192
+                                <!-- Second publisher? Printed by Lamas, Motta <abbr>&amp;</abbr>
+                                <expan>e</expan>
+                            </choice>
+                                <choice>
+                                    <abbr>Ca.</abbr>
+                                    <expan>Companhia</expan>
+                                </choice> - 100, R. d'Alegria - Lisbon--></publisher>
+                            <biblScope unit="page">25 pp.</biblScope>
+                        </imprint>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
+    </teiHeader>
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+        <graphic url="Pessoa_35_Sonnets_1.jpg"/>
+        <graphic url="Pessoa_35_Sonnets_2.jpg"/>
+        <graphic url="Pessoa_35_Sonnets_3.jpg"/>
+        <graphic url="Pessoa_35_Sonnets_4.jpg"/>
+        <graphic url="Pessoa_35_Sonnets_5.jpg"/>
+        <graphic url="Pessoa_35_Sonnets_6.jpg"/>
+        <graphic url="Pessoa_35_Sonnets_7.jpg"/>
+        <graphic url="Pessoa_35_Sonnets_8.jpg"/>
+        <graphic url="Pessoa_35_Sonnets_9.jpg"/>
+        <graphic url="Pessoa_35_Sonnets_10.jpg"/>
+        <graphic url="Pessoa_35_Sonnets_11.jpg"/>
+        <graphic url="Pessoa_35_Sonnets_12.jpg"/>
+        <graphic url="Pessoa_35_Sonnets_13.jpg"/>
+        <graphic url="Pessoa_35_Sonnets_14.jpg"/>
+        <graphic url="Pessoa_35_Sonnets_15.jpg"/>
+        <graphic url="Pessoa_35_Sonnets_16.jpg"/>
+        <graphic url="Pessoa_35_Sonnets_17.jpg"/>
+        <graphic url="Pessoa_35_Sonnets_18.jpg"/>
+        <graphic url="Pessoa_35_Sonnets_19.jpg"/>
+        <graphic url="Pessoa_35_Sonnets_20.jpg"/>
+        <graphic url="Pessoa_35_Sonnets_21.jpg"/>
+        <graphic url="Pessoa_35_Sonnets_22.jpg"/>
+        <graphic url="Pessoa_35_Sonnets_23.jpg"/>
+        <graphic url="Pessoa_35_Sonnets_24.jpg"/>
+        <graphic url="Pessoa_35_Sonnets_25.jpg"/>
+    </facsimile>
+    <text type="orig" corresp="#W324">
+        <body>
+            <div>
+            <head>35 Sonnets</head>
+            <div type="poem" corresp="#W">
+                <head rend="indent">I.</head>
+<!-- MC:Página 9-->
+<lg>
+<l>Whether we write or speak or do but look</l>
+<l>We are ever unapparent. What we are</l>
+<l>Cannot be transfused into word or book.</l>
+<l>Our soul from us is infinitely far.</l>
+<l>However much we give our thoughts the will</l>
+<l>To be our soul and gesture it abroad,</l>
+<l>Our hearts are incommunicable still.</l>
+<l>In what we show ourselves we are ignored.</l>
+<l>The abyss from soul to soul cannot be bridged</l>
+<l>By any skill of thought or trick of seeming.</l>
+<l>Unto our very selves we are abridged</l>
+<l>When we would utter to our thought our being.</l>
+<l>We are our dreams of ourselves, souls by gleams,</l>
+<l>And each to each other dreams of others' dreams.</l>
+</lg>
+</div>
+            <div type="poem" corresp="#W">
+                <head rend="indent">II.</head>
+<lg>
+<l>If that apparent part of life's delight</l>
+<l>Our tingled flesh-sense circumscribes were seen</l>
+<l>By aught save reflex and co-carnal sight,</l>
+<l>Joy, flesh and life might prove but a gross screen.</l>
+<l>Haply Truth's body is no eyable being,</l>
+<l>Appearance even as appearance lies,</l>
+<l>Haply our close, dark, vague, warm sense of seeing</l>
+<l>Is the choked vision of blindfolded eyes.</l>
+<l>Wherefrom what comes to thought's sense of life? Nought.</l>
+<l>All is either the irrational world we see</l>
+<l>Or some aught-else whose being-unknown doth rot</l>
+<l>Its use for our thought's use. Whence taketh me</l>
+<l>A qualm-like ache of life, a body-deep</l>
+<l>Soul-hate of what we seek and what we weep.</l>
+</lg>
+    </div>
+
+<!-- MC:Página 10-->
+
+            <div type="poem" corresp="#W212">
+                <head rend="indent">III.</head>
+<lg>
+<l>When I do think my meanest line shall be</l>
+<l>More in Time's use than my creating whole,</l>
+<l>That future eyes more clearly shall feel me</l>
+<l>In this inked page than in my direct soul;</l>
+<l>When I conjecture put to make me seeing</l>
+<l>Good readers of me in some aftertime,</l>
+<l>Thankful to some idea of my being</l>
+<l>That doth not even my with gone true soul rime;</l>
+<l>An anger at the essence of the world,</l>
+<l>That makes this thus, or thinkable this-wise,</l>
+<l>Takes my soul by the throat and makes it hurled</l>
+<l>In nightly horrors of despaired surmise,</l>
+<l>And I become the mere sense of a rage</l>
+<l>That lacks the very words whose waste might 'suage.</l>
+</lg>
+</div>
+                <div type="poem" corresp="#W">
+                    <head rend="indent">IV.</head>
+<lg>
+<l>I could not think of thee as piecèd rot,</l>
+<l>Yet such thou wert, for thou hadst been long dead;</l>
+<l>Yet thou liv'dst entire in my seeing thought</l>
+<l>And what thou wert in me had never fled.</l>
+<l>Nay, I had fixed the moments of thy beauty —</l>
+<l>Thy ebbing smile, thy kiss's readiness,</l>
+<l>And memory had taught my heart the duty</l>
+<l>To know thee ever at that deathlessness.</l>
+<l>But when I came where thou wert laid, and saw</l>
+<l>The natural flowers ignoring thee sans blame,</l>
+<l>And the encroaching grass, with casual flaw,</l>
+<l>Framing the stone to age where was thy name,</l>
+<l>I knew not how to feel, nor what to be</l>
+<l>Towards thy fate's material secrecy.</l>
+</lg>
+</div>
+<!-- MC:Página 11-->
+
+                    <div type="poem" corresp="#W212">
+                        <head rend="indent">V.</head>
+<lg>
+<l>How can I think, or edge my thoughts to action,</l>
+<l>When the miserly press of each day's need</l>
+<l>Aches to a narrowness of spilled distraction</l>
+<l>My soul appalled at the world's work's time-greed?</l>
+<l>How can I pause my thoughts upon the task</l>
+<l>My soul was born to think that it must do</l>
+<l>When every moment has a thought to ask</l>
+<l>To fit the immediate craving of its cue?</l>
+<l>The coin I'd heap for marrying my Muse</l>
+<l>And build our home i'th' greater Time-to-be</l>
+<l>Becomes dissolved by needs of each day's use</l>
+<l>And I feel beggared of infinity,</l>
+<l>Like a true-Christian sinner, each day flesh-driven</l>
+<l>By his own act to forfeit his wished heaven.</l>
+</lg>
+                        </div>
+
+                    <div type="poem" corresp="#W">
+                        <head rend="indent">VI.</head>
+<lg>
+<l>As a bad orator, badly o'er-book-skilled,</l>
+<l>Doth overflow his purpose with made heat,</l>
+<l>And, like a clock, winds with withoutness willed</l>
+<l>What should have been an inner instinct's feat;</l>
+<l>Or as a prose-wit, harshly poet turned,</l>
+<l>Lacking the subtler music in his measure,</l>
+<l>With useless care labours but to be spurned,</l>
+<l>Courting in alien speech the Muse's pleasure;</l>
+<l>I study how to love or how to hate,</l>
+<l>Estranged by consciousness from sentiment,</l>
+<l>With a thought feeling forced to be sedate</l>
+<l>Even when the feeling's nature is violent;</l>
+<l>As who would learn to swim without the river,</l>
+<l>When nearest to the trick, as far as ever.</l>
+</lg>
+                    </div>
+
+<!-- MC:Página 12-->
+
+                    <div type="poem" corresp="#W">
+                        <head rend="indent">VII.</head>
+
+<lg>
+<l>Thy words are torture to me, that scarce grieve thee—</l>
+<l>That entire death shall null my entire thought;</l>
+<l>And I feel torture, not that I believe thee,</l>
+<l>But that I cannot disbelieve thee not.</l>
+<l>Shall that of me that now contains the stars</l>
+<l>Be by the very contained stars survived?</l>
+<l>Thus were Fate all unjust. Yet what truth bars</l>
+<l>An all unjust Fate's truth from being believed?</l>
+<l>Conjecture cannot fit to the seen world</l>
+<l>A garment of its thought untorn or covering,</l>
+<l>Or with its stuffed garb forge an otherworld</l>
+<l>Without itself its dead deceit discovering;</l>
+<l>So, all being possible, an idle thought may</l>
+<l>Less idle thoughts, self-known no truer, dismay.</l>
+</lg>
+</div>
+                    
+                    <div type="poem" corresp="#W">
+                        <head rend="indent">VIII.</head>
+<lg>
+<l>How many masks wear we, and undermasks,</l>
+<l>Upon our countenance of soul, and when,</l>
+<l>If for self-sport the soul itself unmasks,</l>
+<l>Knows it the last mask off and the face plain?</l>
+<l>The true mask feels no inside to the mask</l>
+<l>But looks out of the mask by co-masked eyes.</l>
+<l>Whatever consciousness begins the task</l>
+<l>The task's accepted use to sleepness ties.</l>
+<l>Like a child frighted by its mirrored faces,</l>
+<l>Our souls, that children are, being thought-losing,</l>
+<l>Foist otherness upon their seen grimaces</l>
+<l>And get a whole world on their forgot causing;</l>
+<l>And, when a thought would unmask our soul's masking,</l>
+<l>Itself goes not unmasked to the unmasking.</l>
+</lg>
+</div>
+<!-- MC:Página 13-->
+    <div type="poem" corresp="#W">
+        <head rend="indent">IX.</head>
+
+<lg>
+<l>Oh to be idle loving idleness!</l>
+<l>But I am idle all in hate of me;</l>
+<l>Ever in action's dream, in the false stress</l>
+<l>Of purposed action never act to be.</l>
+<l>Like a fierce beast self-penned in a bait-lair,</l>
+<l>My will to act binds with excess my action,</l>
+<l>Not-acting coils the thought with raged despair,</l>
+<l>And acting rage doth paint despair distraction.</l>
+<l>Like someone sinking in a treacherous sand,</l>
+<l>Each gesture to deliver sinks the more;</l>
+<l>The struggle avails not, and to raise no hand,</l>
+<l>Though but more slowly useless, we've no power.</l>
+<l>Hence live I the dead life each day doth bring,</l>
+<l>Repurposed for next day's repurposing.</l>
+</lg>
+    </div>
+    <div type="poem" corresp="#W">
+        <head rend="indent">X.</head>
+<lg>
+<l>As to a child, I talked my heart asleep</l>
+<l>With empty promise of the coming day,</l>
+<l>And it slept rather for my words made sleep</l>
+<l>Than from a thought of what their sense did say.</l>
+<l>For did it care for sense, would it not wake</l>
+<l>And question closer to the morrow’s pleasure?</l>
+<l>Would it not edge nearer my words, to take</l>
+<l>The promise in the meting of its measure?</l>
+<l>So, if it slept, 'twas that it cared but for</l>
+<l>The present sleepy use of promised joy,</l>
+<l>Thanking the fruit but for the forecome flower</l>
+<l>Which the less active senses best enjoy.</l>
+<l>Thus with deceit I detain the heart</l>
+<l>Of which deceit's self knows itself a part.</l>
+</lg>
+        </div>
+
+<!-- MC:Página 14-->
+
+    <div type="poem" corresp="#W">
+        <head rend="indent">XI.</head>
+<lg>
+<l>Like to a ship that storms urge on its course,</l>
+<l>By its own trials our soul is surer made.</l>
+<l>The very things that make the voyage worse</l>
+<l>Do make it better; its peril is its aid.</l>
+<l>And, as the storm drives from the storm, our heart</l>
+<l>Within the peril disimperilled grows;</l>
+<l>A port is near the more from port we part —</l>
+<l>The port whereto our driven direction goes.</l>
+<l>If we reap knowledge to cross-profit, this</l>
+<l>From storms we learn, when the storm's height doth drive —</l>
+<l>That the black presence of its violence is</l>
+<l>The pushing promise of near far blue skies.</l>
+<l>Learn we but how to have the pilot-skill,</l>
+<l>And the storm's very might shall mate our will.</l>
+</lg>
+        </div>
+
+    <div type="poem" corresp="#W">
+        <head rend="indent">XII.</head>
+<lg>
+<l>As the lone, frighted user of a night-road</l>
+<l>Suddenly turns round, nothing to detect,</l>
+<l>Yet on his fear's sense keepeth still the load</l>
+<l>Of that brink-nothing he doth but suspect;</l>
+<l>And the cold terror moves to him more near</l>
+<l>Of something that from nothing casts a spell,</l>
+<l>That, when he moves, to fright more is not there,</l>
+<l>And's only visible when invisible:</l>
+<l>So I upon the world turn round in thought,</l>
+<l>And nothing viewing do no courage take,</l>
+<l>But my more terror, from no seen cause got,</l>
+<l>To that felt corporate emptiness forsake,</l>
+<l>And draw my sense of mystery's horror from</l>
+<l>Seeing no mystery's mystery alone.</l>
+</lg>
+        </div>
+
+<!-- MC:Página 15-->
+    
+    <div type="poem" corresp="#W">
+        <head rend="indent">XIII.</head>
+<lg>
+<l>When I should be asleep to mine own voice</l>
+<l>In telling thee how much thy love's my dream,</l>
+<l>I find me listening to myself, the noise</l>
+<l>Of my words othered in my hearing them.</l>
+<l>Yet wonder not: this is the poet's soul.</l>
+<l>I could not tell thee well of how I love,</l>
+<l>Loved I not less by knowing it, were all</l>
+<l>My self my love and no thought love to prove.</l>
+<l>What consciousness makes more by consciousness,</l>
+<l>It makes less, for it makes it less itself.</l>
+<l>My sense of love could not my love rich-dress</l>
+<l>Did it not for it spend love's own love-pelf.</l>
+<l>Poet's love's this (as in these words I prove thee):</l>
+<l>I love my love for thee more than I love thee.</l>
+</lg>
+</div>
+    
+    <div type="poem" corresp="#W">
+        <head rend="indent">XIV.</head>
+<lg>
+<l>We are born at sunset and we die ere morn,</l>
+<l>And the whole darkness of the world we know,</l>
+<l>How can we guess its truth, to darkness born,</l>
+<l>The obscure consequence of absent glow?</l>
+<l>Only the stars do teach us light. We grasp</l>
+<l>Their scattered smallnesses with thoughts that stray,</l>
+<l>And, though their eyes look through night's complete mask,</l>
+<l>Yet they speak not the features of the day.</l>
+<l>Why should these small denials of the whole</l>
+<l>More than the black whole the pleased eyes attract?</l>
+<l>Why what it calls «worth» does the captive soul</l>
+<l>Add to the small and from the large detract?</l>
+<l>So, out of light's love wishing it night's stretch,</l>
+<l>A nightly thought of day we darkly reach.</l>
+</lg>
+    </div>
+<!-- MC:Página 16-->
+
+        <div type="poem" corresp="#W">
+            <head rend="indent">XV.</head>
+<lg>
+<l>Like a bad suitor desperate and trembling</l>
+<l>From the mixed sense of being not loved and loving,</l>
+<l>Who with feared longing half would know, dissembling</l>
+<l>With what he'd wish proved what he fears soon proving,</l>
+<l>I look with inner eyes afraid to look,</l>
+<l>Yet perplexed into looking, at the worth</l>
+<l>This verse may have and wonder, of my book,</l>
+<l>To what thoughts shall't in alien hearts give birth.</l>
+<l>But, as he who doth love, and, loving, hopes,</l>
+<l>Yet, hoping, fears, fears to put proof to proof,</l>
+<l>And in his mind for possible proofs gropes,</l>
+<l>Delaying tue true proof, lest the real thing scoff,</l>
+<l>I daily live, i'th' fame I dream to see,</l>
+<l>But by my thought of others' thought of me.</l>
+</lg>
+</div>
+        
+        <div type="poem" corresp="#W">
+            <head rend="indent">XVI.</head>
+<lg>
+<l>We never joy enjoy to that full point</l>
+<l>Regret doth wish joy had enjoyèd been,</l>
+<l>Nor have the strength regret to disappoint</l>
+<l>Recalling not past joy's thought, but its mien.</l>
+<l>Yet joy was joy when it enjoyèd was</l>
+<l>And after-enjoyed when as joy recalled,</l>
+<l>lt must have been joy ere its joy did pass</l>
+<l>And, recalled, joy still, since its being-past galled.</l>
+<l>Alas! All this is useless, for joy's in</l>
+<l>Enjoying, not in thinking of enjoying.</l>
+<l>Its mere thougth-mirroring gainst itself doth sin,</l>
+<l>By mere reflecting solid life destroying.</l>
+<l>Yet the more thought we take to thought to prove</l>
+<l>It must not think, doth further from joy move.</l>
+</lg>
+</div>
+<!-- MC:Página 17-->
+        <div type="poem" corresp="#W">
+            <head rend="indent">XVII.</head>
+<lg>
+<l>My love, and not I, is the egoist.</l>
+<l>My love for thee loves itself more than thee;</l>
+<l>Ay, more than me, in whom it doth exist,</l>
+<l>And makes me live that it may feed on me.</l>
+<l>In the country of bridges the bridge is</l>
+<l>More real than the shores it doth unsever;</l>
+<l>So in our world, all of Relation, this</l>
+<l>Is true — that truer is Love than either lover.</l>
+<l>This thought therefore comes lightly to Doubt's door —</l>
+<l>If we, seeing substance of this world, are not</l>
+<l>Mere Intervals, <rs type="name" key="P573">God</rs>'s Absence and no more,</l>
+<l>Hollows in real Consciousness and Thought.</l>
+<l>And if 'tis possible to Thought to bear this fruit,</l>
+<l>Why should it not be possible to Truth?</l>
+</lg>
+</div>
+
+        <div type="poem" corresp="#W">
+            <head rend="indent">XVIII.</head>
+<lg>
+<l>Indefinite space, which, by co-substance night,</l>
+<l>In one black mystery two void mysteries blends;</l>
+<l>The stray stars, whose innumerable light</l>
+<l>Repeats one mystery till conjecture ends;</l>
+<l>The stream of time, known by birth-bursting bubbles;</l>
+<l>The gulf of silence, empty even of nought;</l>
+<l>Thought's high-walled maze, which the outed owner troubles</l>
+<l>Because the string's lost and the plan forgot:</l>
+<l>When I think on this and that here I stand,</l>
+<l>The thinker of these thoughts, emptily wise,</l>
+<l>Holding up to my thinking my thing-hand</l>
+<l>And looking at it with thought-alien eyes,</l>
+<l>The prayer of my wonder looketh past</l>
+<l>The universal darkness lone and vast.</l>
+</lg>
+</div>
+<!-- MC:Página 18-->
+            <div type="poem" corresp="#W">
+                <head rend="indent">XIX.</head>
+<lg>
+<l>Beauty and love let no one separate,</l>
+<l>Whom exact Nature did to each ocher fit,</l>
+<l>Giving to Beauty love as finishing fate</l>
+<l>And to Love beauty as true colour of it.</l>
+<l>Let he but friend be who the soul finds fair,</l>
+<l>But let none love outside the body's thought,</l>
+<l>So the seen couple's togetherness shall bear</l>
+<l>Truth to the beauty each in the other sought.</l>
+<l>I could but love thee out of mockery</l>
+<l>Of love and thee and mine own ugliness;</l>
+<l>Therefore thy beauty I sing and wish not thee,</l>
+<l>Thanking the Gods I long not out of place</l>
+<l>Lest, like a slave that for kings' robes doth long,</l>
+<l>Obtained, shall with mere wearing do them wrong.</l>
+</lg>
+            </div>
+                <div type="poem" corresp="#W">
+                    <head rend="indent">XX.</head>
+
+<lg>
+<l>When in the widening circle of rebirth</l>
+<l>To a new flesh my travelled soul shall come,</l>
+<l>And try again the unremembered earth</l>
+<l>With the old sadness for the immortal home,</l>
+<l>Shall I revisit these same differing fields</l>
+<l>And cull the old new flowers with the same sense,</l>
+<l>That some small breath of foiled remembrance yields.</l>
+<l>Of more age than my days in this pretence?</l>
+<l>Shall I again regret strange faces lost</l>
+<l>Of which the present memory is forgot</l>
+<l>And but in unseen bulks of vagueness tossed</l>
+<l>Out of the closed sea and black night of Thought?</l>
+<l>Were thy face one, what sweetness will't not be.</l>
+<l>Though by blind feeling, to remember thee!</l>
+</lg>
+</div>
+<!-- MC:Página 19-->
+
+                <div type="poem" corresp="#W">
+                    <head rend="indent">XXI.</head>
+<lg>
+<l>Thought was born blind, but Thought knows what is seeing.</l>
+<l>Its careful touch, deciphering forms from shapes,</l>
+<l>Still suggests form as aught whose proper being</l>
+<l>Mere finding touch with erring darkness drapes.</l>
+<l>Yet whence, except from guessed sight, does touch teach</l>
+<l>That touch is but a close and empty sense?</l>
+<l>How does more touch, self-uncontented, reach</l>
+<l>For some truer sense's whole intelligence?</l>
+<l>The thing once touched, if touch be now omitted,</l>
+<l>Stands yet in memory real and outward known,</l>
+<l>So the untouching memory of touch is fitted</l>
+<l>With sense of a sense whereby far things are shown</l>
+<l>So, by touch of untouching, wrongly aright,</l>
+<l>Touch' thought of seeing sees not things but Sight.</l>
+</lg>
+</div>
+                <div type="poem" corresp="#W">
+                    <head rend="indent">XXII.</head>
+<lg>
+<l>My soul is a stiff pageant, man by man,</l>
+<l>Of some Egyptian art than Egypt older,</l>
+<l>Found in some tomb whose rite no guess can scan,</l>
+<l>Where all things else to coloured dust did moulder.</l>
+<l>Whate'er its sense may mean, its age is twin</l>
+<l>To that of priesthoods whose feet stood near <rs type="name" key="P573">God</rs>,</l>
+<l>When knowledge was so great that 'twas a sin</l>
+<l>And man's mere soul too man for its abode.</l>
+<l>But when I ask what means that pageant I</l>
+<l>And would look at it suddenly, I lose</l>
+<l>The sense I had of seeing it, nor can try</l>
+<l>Again to look, nor hath my memory a use</l>
+<l>That seems recalling, save that it recalls</l>
+<l>An emptiness of having seen those walls.</l>
+</lg>
+</div>
+<!-- MC:Página 20-->
+                <div type="poem" corresp="#W">
+                    <head rend="indent">XXIII.</head>
+<lg>
+<l>Even as upon a low and cloud-domed day,</l>
+<l>When clouds are one cloud till the horizon.</l>
+<l>Our thinking senses deem the sun away</l>
+<l>And say «'tis sunless» and «there is no sun»;</l>
+<l>And yet the very day they wrong truth by</l>
+<l>Is of the unseen sun's effluent essence,</l>
+<l>The very words do give themselves the lie,</l>
+<l>The very thought of absence comes from presence:</l>
+<l>Even so deem we through Good of what is evil.</l>
+<l>He speaks of light that speaks of absent light,</l>
+<l>And absent god, becoming present devil,</l>
+<l>Is still the absent god by essence' right.</l>
+<l>The withdrawn cause by being withdrawn doth get</l>
+<l>(Being thereby cause still) the denied effect.</l>
+</lg>
+                </div>
+                <div type="poem" corresp="#W">
+                    <head rend="indent">XXIV.</head>
+
+<lg>
+<l>Something in me was born before the stars</l>
+<l>And saw the sun begin from far away.</l>
+<l>Our yellow, local day on its wont jars,</l>
+<l>For it hath communed with an absolute day.</l>
+<l>Through my Thought's night, as a worn robe's heard trail</l>
+<l>That I have never seen, I drag this past</l>
+<l>That saw the Possible like a dawn grow pale</l>
+<l>On the lost night before it, mute and vast.</l>
+<l>It dates remoter than <rs type="name" key="P573">God</rs>'s birth can reach,</l>
+<l>That had no birth but the world's coming after.</l>
+<l>So the world's to me as, after whispered speech,</l>
+<l>The cause-ignored sudden echoing of laughter.</l>
+<l>That 't has a meaning my conjecture knows,</l>
+<l>But that 't has meaning's all its meaning shows.</l>
+</lg>
+</div>
+<!-- MC:Página 21-->
+
+                <div type="poem" corresp="#W">
+                    <head rend="indent">XXV.</head>
+<lg>
+<l>We are in Fate and Fate's and do but lack</l>
+<l>Outness from soul to know ourselves its dwelling,</l>
+<l>And do but compel Fate aside or back</l>
+<l>By Fate's own immanence in the compelling.</l>
+<l>We are too far in us from outward truth</l>
+<l>To know how much we are not what we are,</l>
+<l>And live but in the heat of error's youth,</l>
+<l>Yet young enough its acting youth to ignore.</l>
+<l>The doubleness of mind fails us, to glance</l>
+<l>At our exterior presence amid things,</l>
+<l>Sizing from otherness our countenance</l>
+<l>And seeing our puppet will's act-acting strings.</l>
+<l>An unknown language speaks in us, which we</l>
+<l>Are at the words of, fronted from reality.</l>
+</lg>
+                </div>
+                <div type="poem" corresp="#W">
+                    <head rend="indent">XXVI.</head>
+
+<lg>
+<l>The world is woven all of dream and error</l>
+<l>And but one sureness in our truth may lie —</l>
+<l>That when we hold to aught our thinking's mirror</l>
+<l>We know it not by knowing it thereby.</l>
+<l>For but one side of things the mirror knows,</l>
+<l>And knows it colded from its solidness.</l>
+<l>A double lie its truth is; what it shows</l>
+<l>By true show's false and nowhere by true place.</l>
+<l>Thought clouds our life's day-sense with strangeness, yet</l>
+<l>Never from strangeness more than that it's strange</l>
+<l>Doth buy our perplexed thinking, for we get</l>
+<l>But the words’ sense from words — knowledge, truth, change.</l>
+<l>We know the world is false, not what is true.</l>
+<l>Yet we think on, knowing we ne'er shall know.</l>
+</lg>
+</div>
+<!-- MC:Página 22-->
+
+                <div type="poem" corresp="#W">
+                    <head rend="indent">XXVII.</head>
+<lg>
+<l>How yesterday is long ago! The past</l>
+<l>Is a fixed infinite distance from to-day,</l>
+<l>And bygone things, the first-lived as the last,</l>
+<l>In irreparable sameness far away.</l>
+<l>How the to-be is infinitely ever</l>
+<l>Out of the place wherein it will be Now,</l>
+<l>Like the seen wave yet far up in the river,</l>
+<l>Which reaches not us, but the new-waved flow!</l>
+<l>This thing Time is, whose being is having none,</l>
+<l>The equable tyrant of our different fates,</l>
+<l>Who could not be bought off by a shattered sun</l>
+<l>Or tricked by new use of our careful dates.</l>
+<l>This thing Time is, that to the grave will bear</l>
+<l>My heart, sure but of it and of my fear.</l>
+</lg>
+</div>
+                
+                <div type="poem" corresp="#W">
+                    <head rend="indent">XXVIII.</head>
+<lg>
+<l>The edge of the green wave whitely doth hiss</l>
+<l>Upon the wetted sand. I look, yet dream.</l>
+<l>Surely reality cannot be this!</l>
+<l>Somehow, somewhere this surely doth but seem!</l>
+<l>The sky, the sea, this great extent disclosed</l>
+<l>Of outward joy, this bulk of life we feel,</l>
+<l>Is not something, but something interposed.</l>
+<l>Only what in this is not this is real.</l>
+<l>If this be to have sense, if to be awake</l>
+<l>Be but to see this bright, great sleep of things</l>
+<l>For the rarer potion mine own dreams I’ll take</l>
+<l>And for truth commune with imaginings,</l>
+<l>Holding a dream too bitter, a too fair curse,</l>
+<l>This common sleep of men, the universe.</l>
+</lg>
+</div>
+<!-- MC:Página 23-->
+
+                <div type="poem" corresp="#W">
+                    <head rend="indent">XXIX.</head>
+<lg>
+<l>My weary life, that lives unsatisfied</l>
+<l>On the foiled off-brink of being e'er but this,</l>
+<l>To whom the power to will hath been denied</l>
+<l>And the will to renounce doth also miss;</l>
+<l>My sated life, with having nothing sated,</l>
+<l>In the motion of moving poisèd aye,</l>
+<l>Within its dreams from its own dreams abated —</l>
+<l>This life let the Gods change or take away.</l>
+<l>For this endless succession of empty hours,</l>
+<l>Like deserts after deserts, voidly one,</l>
+<l>Doth undermine the very dreaming powers</l>
+<l>And dull even thought's active inaction,</l>
+<l>Tainting with fore-unwilled will the dreamed act</l>
+<l>Twice thus removed from the unobtained fact.</l>
+</lg>
+</div>
+                <div type="poem" corresp="#W">
+                    <head rend="indent">XXX.</head>
+<lg>
+<l>I do not know what truth the false untruth</l>
+<l>Of this sad sense of the seen world may own,</l>
+<l>Or if this flowered plant bears also a fruit</l>
+<l>Unto the true reality unknown.</l>
+<l>But as the rainbow, neither earth's nor sky's,</l>
+<l>Stands in the dripping freshness of lulled rain,</l>
+<l>A hope, not real yet not fancy's, lies</l>
+<l>Athwart the moment of our ceasing pain.</l>
+<l>Somehow, since pain is felt yet felt as ill,</l>
+<l>Hope hath a better warrant than being hoped;</l>
+<l>Since pain is felt as aught we should not feel</l>
+<l>Man hath a Nature's reason for having groped,</l>
+<l>Since Time was Time and age and grief his measures,</l>
+<l>Towards a better shelter than Time's pleasures.</l>
+</lg>
+                </div>
+
+<!-- MC:Página 24-->
+
+                <div type="poem" corresp="#W">
+                    <head rend="indent">XXXI.</head>
+<lg>
+<l>I am older than Nature and her Time</l>
+<l>By all the timeless age of Consciousness,</l>
+<l>And my adult oblivion of the clime</l>
+<l>Where I was born makes me not countryless.</l>
+<l>Ay, and dim through my daylight thoughts escape</l>
+<l>Yearnings for that land where my childhood dreamed,</l>
+<l>Which I cannot recall in colour or shape</l>
+<l>But haunts my hours like something that hath gleamed</l>
+<l>And yet is not as light remembered,</l>
+<l>Nor to the left or to the right conceived;</l>
+<l>And all round me tastes as if life were dead</l>
+<l>And the world made but to be disbelieved.</l>
+<l>Thus I my hope on unknown truth lay; yet</l>
+<l>How but by hope do I the unknown truth get?</l>
+</lg>
+                </div>
+
+                <div type="poem" corresp="#W">
+                    <head rend="indent">XXXII.</head>
+
+<lg>
+<l>When I have sense of what to sense appears,</l>
+<l>Sense is sense ere 'tis mine or mine in me is.</l>
+<l>When I hear, Hearing, ere I do hear, hears.</l>
+<l>When I see, before me abstract Seeing sees.</l>
+<l>I am part Soul part I in all I touch —</l>
+<l>Soul by that part I hold in common with all,</l>
+<l>And I the spoiled part, that doth make sense such</l>
+<l>As I can err by it and my sense mine call.</l>
+<l>The rest is wondering what these thoughts may mean,</l>
+<l>That come to explain and suddenly are gone,</l>
+<l>Like messengers that mock the message' mien,</l>
+<l>Explaining all but the explanation;</l>
+<l>As if we a ciphered letter's cipher hit</l>
+<l>And find it in an unknown language writ.</l>
+</lg>
+                </div>
+<!-- MC:Página 25-->
+
+                <div type="poem" corresp="#W">
+                    <head rend="indent">XXXIII.</head>
+<lg>
+<l>He that goes back does, since he goes, advance,</l>
+<l>Though he doth not advance who goeth back,</l>
+<l>And he that seeks, though he on nothing chance</l>
+<l>May still by words be said to find a lack.</l>
+<l>This paradox of having, that is nought</l>
+<l>In the world's meaning of the things it screens,</l>
+<l>Is yet true of the substance of pure thought</l>
+<l>And there means something by the nought it means.</l>
+<l>For thinking nought does on nought being confer,</l>
+<l>As giving not is acting not to give,</l>
+<l>And, to the same unbribed true thought, to err</l>
+<l>Is to find truth, though by its negative.</l>
+<l>So why call this world false, if false to be</l>
+<l>Be to be aught, and being aught Being to be?</l>
+</lg>
+</div>
+                <div type="poem" corresp="#W">
+                    <head rend="indent">XXXIV.</head>
+<lg>
+<l>Happy the maimed, the halt, the mad, the blind —</l>
+<l>All who, stamped separate by curtailing birth,</l>
+<l>Owe no duty's allegiance to mankind</l>
+<l>Nor stand a valuing in their scheme of worth!</l>
+<l>But I, whom Fate, not Nature, did curtail,</l>
+<l>By no exterior voidness being exempt,</l>
+<l>Must bear accusing glances where I fail,</l>
+<l>Fixed in the general orbit of contempt.</l>
+<l>Fate, less than Nature in being kind to lacking,</l>
+<l>Giving the ill, shows not as outer cause,</l>
+<l>Making our mock-free will the mirror's backing</l>
+<l>Which Fate's own acts as if in itself shows;</l>
+<l>And men, like children, seeing the image there,</l>
+<l>Take place for cause and make our will Fate bear.</l>
+</lg>
+                </div>
+<!-- MC:Página 26-->
+                <div type="poem" corresp="#W">
+                    <head rend="indent">XXXV.</head>
+<lg>
+<l>Good. I have done. My heart weighs. I am sad.</l>
+<l>The outer day, void statue of lit blue,</l>
+<l>Is altogether outward, other, glad</l>
+<l>At mere being not-I (so my aches construe).</l>
+<l>I, that have failed in everything, bewail</l>
+<l>Nothing this hour but that I have bewailed,</l>
+<l>For in the general fate what is't to fail?</l>
+<l>Why, fate being past for Fate, 'tis but to have failed.</l>
+<l>Whatever hap or stop, what matters it,</l>
+<l>Sith to the mattering our will bringeth nought?</l>
+<l>With the higher trifling let us world our wit,</l>
+<l>Conscious that, if we do't, that was the lot</l>
+<l>The regular stars bound us to, when they stood</l>
+<l>Godfathers to our birth and to our blood.</l>
+</lg>
+</div>
+                </div>
+</body>
+</text>
+</TEI>
