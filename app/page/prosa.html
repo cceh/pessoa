@@ -16,6 +16,17 @@
                 }
             });
             
+            $("li.otabs").click(function(e){
+                if (!$(this).hasClass("selected")) {
+                    var tabNum = $(this).attr("title");
+                    $("ul#orthotabs .selected").removeClass("selected");
+                    $(this).addClass("selected");
+                    $("ul#orthotab .selected").removeClass("selected");
+                    $("ul#orthotab li#"+tabNum).addClass("selected");
+                    $("ul#orthotab li#"+tabNum+" ul li").addClass("selected");
+                }
+            });
+            
             $(".note > .label").click(function(){
                     $(this).next().toggle();
                 }
@@ -29,7 +40,40 @@
         </div>
         <div id="article">
             <div class="doc:docControll" id="scrollline"></div>
-            <div id="text-div"><div class="pub:get-text"></div></div>
+            <div id="text-div">
+                <div id="ortholine">
+                    <ul id="orthotabs">
+                        <li class="otabs selected"  title="orig">
+                            <a href="#orig">
+                                <span>
+                                    <get data-template="helpers:singleElementInList" data-template-ListType="buttons" data-template-ListId="orig"/>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="otabs"  title="reg">
+                            <a href="#reg">
+                                <span>
+                                    <get data-template="helpers:singleElementInList" data-template-ListType="buttons" data-template-ListId="reg"/>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul id="orthotab">
+                        <li class="selected" id="orig">
+                            <div>
+                                <get data-template="pub:get-text" data-template-TextMode="orig">orig</get>
+                            </div>
+                        </li>
+                        <li id="reg">
+                            <div>
+                                <get data-template="pub:get-text" data-template-TextMode="reg">reg</get>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <div id="img-div">
                 <div id="indexline">
                     <ul id="indextabs">
@@ -52,7 +96,7 @@
                 <div>
                     <ul id="indextab">
                         <li class="selected" id="facsimile">
-                            <div >
+                            <div>
                                 <get data-template="pub:get-image">facsimile</get>
                             </div>
                         </li>

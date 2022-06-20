@@ -612,16 +612,16 @@ ul#tab{
         }
 
 /* Index / FacsimilieTabs*/
-ul#indextabs{
+ul#indextabs, ul#orthotabs{
     list-style-type: none;
     padding: 0;
     text-align: center;
     margin: 0 0 0 12px;
 }
-    ul#indextabs li{
+    ul#indextabs li, ul#orthotabs li{
         display: inline-block;
     }    
-    ul#indextabs span{
+    ul#indextabs span, ul#orthotabs span{
         display: inline-block;
         background-color: #5c5859;
         padding: 3px 12px;
@@ -629,25 +629,25 @@ ul#indextabs{
         cursor: pointer;
         color: #fff;
     }
-        ul#indextabs span:hover{
+        ul#indextabs span:hover, ul#orthotabs span:hover{
             background-color: #900;   
         }
-        ul#indextabs span.active{
+        ul#indextabs span.active, ul#orthotabs span.active{
           
         }
     
-ul#indextab{
+ul#indextab, ul#orthotab{
     list-style-type: none;
     padding: 5px;
     float: left;
 }
-    ul#indextab a{
+    ul#indextab a, ul#orthotab a{
         color: #222;
     }
-    ul#indextab li{
+    ul#indextab li, ul#orthotab li{
         display: none;
     }
-        ul#indextab li.selected{
+        ul#indextab li.selected, ul#orthotab li.selected{
             display: block;
         }
 
@@ -983,7 +983,7 @@ input[type="checkbox"].lang_input-box, input[type="radio"].lang_input-box {
 li.tabs.selected span{
            background-color: #990000  !important;
             }            
-li.itabs.selected span{
+li.itabs.selected span, li.otabs.selected span{
            background-color: #990000  !important;
             }
 

@@ -30,11 +30,11 @@ declare function pub:get-title($node as node(), $model as map(*), $id as xs:stri
 };
 
 
-declare function pub:get-text($node as node(), $model as map(*), $id as xs:string) as item()+{
+declare function pub:get-text($node as node(), $model as map(*), $id as xs:string, $TextMode as xs:string) as item()+{
     let $xml := pub:get-xml($id)
     let $genre := $xml//tei:note[@type='genre']/tei:rs[@type="genre"]/@key
     let $stylesheet := if ($genre = "prosa") then doc("/db/apps/pessoa/xslt/pub-prose.xsl") else doc("/db/apps/pessoa/xslt/pub.xsl")
-    return transform:transform($xml, $stylesheet, (<parameters><param name="lang" value="{$helpers:web-language}"/></parameters>))
+    return transform:transform($xml, $stylesheet, (<parameters><param name="lang" value="{$helpers:web-language}"/><param name="TextMode" value="{$TextMode}"/></parameters>))
 };
 
 declare function pub:get-xml($id){

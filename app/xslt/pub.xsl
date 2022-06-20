@@ -8,9 +8,11 @@
     
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
     
+    <xsl:param name="TextMode">orig</xsl:param>
+    
     <xsl:template match="teiHeader"/>
-    <xsl:template match="text[@type='reg']"/>
-    <xsl:template match="text[not(@type)] | text[@type='orig']">
+    <xsl:template match="text[@type!=$TextMode]"/>
+    <xsl:template match="text[not(@type)] | text[@type=$TextMode]">
         <div class="pub">
             <xsl:if test="@corresp">
                 <xsl:attribute name="id" select="substring-after(@corresp,'#')"/>
