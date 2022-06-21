@@ -29,6 +29,8 @@
         </div>
     </xsl:template>
     
+    
+    <!-- title pages -->
     <xsl:template match="titlePage">
         <div class="titlePage">
             <xsl:apply-templates/>
@@ -62,6 +64,12 @@
                     <xsl:attribute name="class">byline</xsl:attribute>
                 </xsl:otherwise>
             </xsl:choose>
+            <xsl:apply-templates/>
+        </p>
+    </xsl:template>
+    
+    <xsl:template match="docImprint/date  | docImprint/publisher | docImprint/pubPlace">
+        <p class="docImprint">
             <xsl:apply-templates/>
         </p>
     </xsl:template>
