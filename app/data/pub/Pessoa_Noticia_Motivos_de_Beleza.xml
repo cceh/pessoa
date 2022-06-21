@@ -10,7 +10,11 @@
             </author>
             <respStmt>
                <resp>Edição, Transcrição, Codificação</resp>
-               <name>Jorge Uribe e Inês Filipa Rebelo do Carmo</name>
+               <name>Jorge Uribe</name>
+            </respStmt>
+            <respStmt>
+               <resp>Edição, Transcrição, Codificação</resp>
+               <name>Inês Filipa Rebelo do Carmo</name>
             </respStmt>
             <respStmt>
                <resp>Modelagem de dados, Codificação</resp>
@@ -22,39 +26,49 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
-               Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2021</date>
-            <availability status="restricted">
+            <availability status="free">
                <licence target="http://creativecommons.org/licenses/by/3.0/"/>
             </availability>
-            <idno type="filename">Pessoa_Noticia_Motivos_de_Beleza</idno>
+            <idno type="filename">Pessoa_Noticia_Motivos_de_Beleza.xml</idno>
          </publicationStmt>
          <notesStmt>
             <note type="genre">
-               <rs type="genre" key="poesia">Prosa</rs>
+               <rs type="genre" key="prosa">Prosa</rs>
             </note>
          </notesStmt>
          <sourceDesc>
             <list type="work-index">
                <item>
-                  <rs type="work" key="W316">"Notícia", prefácio a Motivos de Beleza, de António Botto</rs>
+                  <rs type="work" key="W316">"Notícia", prefácio a Motivos de Beleza, de António
+                     Botto</rs>
                </item>
             </list>
-            <biblStruct> 
-               <monogr>
-                  <!--MJ: Revisar esta proposta de <biblStruct>-->
-                  <title>"Notícia", prefácio a Motivos de Beleza, de António Botto</title>
+            <biblStruct>
+               <analytic>
+                  <title level="a">Notícia</title>
+                  <!-- UH: the historically correct title should be used here -->
                   <author>
                      <rs type="name" key="FP">Fernando Pessoa</rs>
                   </author>
                   <textLang mainLang="pt"/>
+               </analytic>
+               <monogr>
+                  <title level="m">Motivos de Beleza</title>
+                  <!-- UH: which one is the title of the whole book in which the preface appears,
+                     Motivos de Beleza ? -->
+                  <author>António Botto</author>
+                  <!-- UH: who is the author of the whole book, António Botto?
+                  please add rs-element here -->
                   <imprint>
                      <date when="1923">1923</date>
                      <pubPlace>Lisboa</pubPlace>
-                     <publisher><!--IR: Confirmar editora--></publisher>
-                     <biblScope unit="page">3pp</biblScope>
+                     <publisher>Portugália</publisher>
+                     <biblScope unit="page">17-19</biblScope>
+                     <!-- UH: usually, not the amount of pages, but their range in terms of page numbers should be given here -->
                   </imprint>
                </monogr>
             </biblStruct>
@@ -65,40 +79,74 @@
       </encodingDesc>
    </teiHeader>
    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
-      <graphic url="Pessoa_Noticia_Motivos_1.jpg"/>
-      <graphic url="Pessoa_Noticia_Motivos_2.jpg"/>
-      <graphic url="Pessoa_Noticia_Motivos_3.jpg"/>
-      <graphic url="Pessoa_Noticia_Motivos_4.jpg"/>
-      <graphic url="Pessoa_Noticia_Motivos_5.jpg"/>
+      <graphic url="prosa/Pessoa_Noticia_Motivos_1.jpg"/>
+      <graphic url="prosa/Pessoa_Noticia_Motivos_2.jpg"/>
+      <graphic url="prosa/Pessoa_Noticia_Motivos_3.jpg"/>
+      <graphic url="prosa/Pessoa_Noticia_Motivos_4.jpg"/>
+      <graphic url="prosa/Pessoa_Noticia_Motivos_5.jpg"/>
    </facsimile>
-   <text type="orig" corresp="#W316">
+   <text type="orig" corresp="#W223">
       <body>
          <head>NOTICIA</head>
-         <p>Estes villancetes de <rs type="name" key="P17">Antonio Botto</rs> são representativos da phase de sua arte que precedeu
+         <p>Estes villancetes de Antonio Botto são representativos da phase de sua arte que precedeu
             a composição das CANÇÕES. São estas sem duvida melhores, tanto por novidade com em
             perfeição; são, talvez por isso mesmo, menos accessiveis ao maior publico. Em seus
-            villancetes <rs type="name" key="P17">Antonio Botto</rs> continúa galhardamente uma tradição portugueza que nasceu ― ao
+            villancetes Antonio Botto continúa galhardamente uma tradição portugueza que nasceu ― ao
             contrario de muitas tradições, ― se não com a propria nacionalidade, por certo com a
-            adolescencia d'ella. O villancete, que <rs type="name" key="P17">Antonio Botto</rs> escreve, não é porém o tradicional:
+            adolescencia d'ella. O villancete, que Antonio Botto escreve, não é porém o tradicional:
             o poeta, como todos espiritos interessantes, segue a tradição principalmente em
             afastar-se d'ella, que antes de começar tambem não existia.</p>
-         <p rend="indent">No trabalho do villancete, ao contrario de no da cantiga, requere-se uma sciencia
-            especial, subtil e astuciosa, elegante sem que seja dolente. O villancete de <rs type="name" key="P17">Antonio
-            Botto</rs> está mais proximo da cantiga. Não pode já dizer-se que nelle não haja dolencia, ou
-            que a subtileza se accrescente á astucia. Na feitura das suas cantigas em villancete
-            <rs type="name" key="P17">Antonio Botto</rs> dificilmente pode ser superado. A elegancia espontanea de seu pensamento,
-            a dolencia latente de sua emoção asseguram-lhe facilmente, conjugando-se, a mestria
-            nesta subespecie do lyrismo.</p>
-         <p rend="indent">Áparte isto, estes villancetes são um exemplo translato da arte de <rs type="name" key="P17">Antonio Botto</rs>.
-            Distingue-se esta pela simplicidade perversa e pela preoccupação ethetica destituida de
-            preoccupações. Foge da complicação com o mesmo ardor com que se esconde da intenção
-            directa. É em verdade singular que se seja simples para dizer exactamente outra cousa, e
-            se vá buscar as palavras mais naturaes para por meio d'ellas ter entendimentos
+         <p rend="indent-first">No trabalho do villancete, ao contrario de no da cantiga, requere-se
+            uma sciencia especial, subtil e astuciosa, elegante sem que seja dolente. O villancete
+            de Antonio Botto está mais proximo da cantiga. Não pode já dizer-se que nelle não haja
+            dolencia, ou que a subtileza se accrescente á astucia. Na feitura das suas cantigas em
+            villancete Antonio Botto dificilmente pode ser superado. A elegancia espontanea de seu
+            pensamento, a dolencia latente de sua emoção asseguram-lhe facilmente, conjugando-se, a
+            mestria nesta subespecie do lyrismo.</p>
+         <p rend="indent-first">Áparte isto, estes villancetes são um exemplo translato da arte de
+            Antonio Botto. Distingue-se esta pela simplicidade perversa e pela preoccupação ethetica
+            destituida de preoccupações. Foge da complicação com o mesmo ardor com que se esconde da
+            intenção directa. É em verdade singular que se seja simples para dizer exactamente outra
+            cousa, e se vá buscar as palavras mais naturaes para por meio d'ellas ter entendimentos
             secretos.</p>
-         <p rend="indent">Certo é que o que <rs type="name" key="P17">Antonio Botto</rs> escreve, em verso ou em prosa, ha que ser lido sempre
-            com a attenção posta em o que não está lá escripto. Pode tambem ser lido com a attenção
-            posta em o que está lá escripto. De qualquer das formas se é leitor.</p>
-         <signed rend="right"><rs type="name" role="author" key="FP" style="b">Fernando Pessoa</rs>.</signed>
+         <p rend="indent-first">Certo é que o que Antonio Botto escreve, em verso ou em prosa, ha
+            que ser lido sempre com a attenção posta em o que não está lá escripto. Pode tambem ser
+            lido com a attenção posta em o que está lá escripto. De qualquer das formas se é
+            leitor.</p>
+         <signed rend="right"><rs type="name" role="author" key="FP" style="b">Fernando
+            Pessoa</rs>.</signed>
+      </body>
+   </text>
+   <text type="reg" corresp="#W223">
+      <body>
+         <head>NOTICIA</head>
+         <p>Estes villancetes de Antonio Botto são representativos da phase de sua arte que precedeu
+            a composição das CANÇÕES. São estas sem duvida melhores, tanto por novidade com em
+            perfeição; são, talvez por isso mesmo, menos accessiveis ao maior publico. Em seus
+            villancetes Antonio Botto continúa galhardamente uma tradição portugueza que nasceu ― ao
+            contrario de muitas tradições, ― se não com a propria nacionalidade, por certo com a
+            adolescencia d'ella. O villancete, que Antonio Botto escreve, não é porém o tradicional:
+            o poeta, como todos espiritos interessantes, segue a tradição principalmente em
+            afastar-se d'ella, que antes de começar tambem não existia.</p>
+         <p rend="indent-first">No trabalho do villancete, ao contrario de no da cantiga, requere-se
+            uma sciencia especial, subtil e astuciosa, elegante sem que seja dolente. O villancete
+            de Antonio Botto está mais proximo da cantiga. Não pode já dizer-se que nelle não haja
+            dolencia, ou que a subtileza se accrescente á astucia. Na feitura das suas cantigas em
+            villancete Antonio Botto dificilmente pode ser superado. A elegancia espontanea de seu
+            pensamento, a dolencia latente de sua emoção asseguram-lhe facilmente, conjugando-se, a
+            mestria nesta subespecie do lyrismo.</p>
+         <p rend="indent-first">Áparte isto, estes villancetes são um exemplo translato da arte de
+            Antonio Botto. Distingue-se esta pela simplicidade perversa e pela preoccupação ethetica
+            destituida de preoccupações. Foge da complicação com o mesmo ardor com que se esconde da
+            intenção directa. É em verdade singular que se seja simples para dizer exactamente outra
+            cousa, e se vá buscar as palavras mais naturaes para por meio d'ellas ter entendimentos
+            secretos.</p>
+         <p rend="indent-first">Certo é que o que Antonio Botto escreve, em verso ou em prosa, ha
+            que ser lido sempre com a attenção posta em o que não está lá escripto. Pode tambem ser
+            lido com a attenção posta em o que está lá escripto. De qualquer das formas se é
+            leitor.</p>
+         <signed rend="right"><rs type="name" role="author" key="FP" style="b">Fernando
+            Pessoa</rs>.</signed>
       </body>
    </text>
 </TEI>

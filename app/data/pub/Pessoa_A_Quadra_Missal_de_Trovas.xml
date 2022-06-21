@@ -4,13 +4,18 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>"A quadra é o vaso de flores que o povo", prefácio a Missal de Trovas, de António Ferro e Augusto Cunha</title>
+            <title>"A quadra é o vaso de flores que o povo", prefácio a Missal de Trovas, de António
+               Ferro e Augusto Cunha</title>
             <author>
                <rs type="name" key="FP">Fernando Pessoa</rs>
             </author>
             <respStmt>
                <resp>Edição, Transcrição, Codificação</resp>
-               <name>Jorge Uribe e Inês Filipa Rebelo do Carmo</name>
+               <name>Jorge Uribe</name>
+            </respStmt>
+            <respStmt>
+               <resp>Edição, Transcrição, Codificação</resp>
+               <name>Inês Filipa Rebelo do Carmo</name>
             </respStmt>
             <respStmt>
                <resp>Modelagem de dados, Codificação</resp>
@@ -22,38 +27,48 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
-               Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2021</date>
-            <availability status="restricted">
+            <availability status="free">
                <licence target="http://creativecommons.org/licenses/by/3.0/"/>
             </availability>
             <idno type="filename">Pessoa_A_Quadra_Missal_de_Trovas.xml</idno>
          </publicationStmt>
          <notesStmt>
             <note type="genre">
-               <rs type="genre" key="poesia">Prosa</rs>
+               <rs type="genre" key="prosa">Prosa</rs>
             </note>
          </notesStmt>
          <sourceDesc>
             <list type="work-index">
                <item>
-                  <rs type="work" key="W317">"A quadra é o vaso de flores que o povo", prefácio a Missal de Trovas, de António Ferro e Augusto Cunha</rs>
+                  <rs type="work" key="W317">"A quadra é o vaso de flores que o povo", prefácio a
+                     Missal de Trovas, de António Ferro e Augusto Cunha</rs>
                </item>
             </list>
-            <biblStruct> 
-               <monogr>
-                  <!--MJ: Revisar esta proposta de <biblStruct>-->
-                  <title>"A quadra é o vaso de flores que o povo", prefácio a Missal de Trovas, de António Ferro e Augusto Cunha</title>
+            <biblStruct>
+               <analytic>
+                  <!-- UH: the analyic structure is needed for items which are not 
+               published independently (such as prefaces to books) -->
+                  <title level="a">"A quadra é o vaso de flores que o povo"</title>
                   <author>
                      <rs type="name" key="FP">Fernando Pessoa</rs>
                   </author>
                   <textLang mainLang="pt"/>
+               </analytic>
+               <monogr>
+                  <title level="m">Missal de Trovas</title>
+                  <!-- UH: which one is the title of the whole book in which the preface appears, 
+                     is Missal de Trovas correct? -->
+                  <author>António Ferro</author>
+                  <author>Augusto Cunha</author>
+                  <!-- UH: who are the authors of the whole book, António Ferro e Augusto Cunha?
+                  please add the rs-elements for them, as well -->
                   <imprint>
                      <date when="1914">1914</date>
                      <pubPlace>Lisboa</pubPlace>
-                     <publisher><!--IR: Confirmar editora--></publisher>
                      <biblScope unit="page">1p</biblScope>
                   </imprint>
                </monogr>
@@ -65,19 +80,34 @@
       </encodingDesc>
    </teiHeader>
    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
-      <graphic url="Pessoa_A_Quadra_Missal_de_Trovas.jpg"/>
+      <graphic url="prosa/Pessoa_A_Quadra_Missal_de_Trovas.jpg"/>
    </facsimile>
    <text type="orig" corresp="#W317">
       <body>
          <p>A quadra é o vaso de flores que o povo põe á janela da sua Alma.</p>
-         <p rend="indent">Da orbita triste do vaso obscuro a graça exilada das flôres atreve o seu olhar de
-            alegria.</p>
-         <p rend="indent">Quem faz quadras portuguezas comunga a alma do Povo, humildemente de nós todos e errante
-            dentro de si propria.</p>
-         <p rend="indent">Os autores d'este livro realizaram as suas quadras com destreza luzitana e fidelidade ao
-            instinctivo e desatado da alma pouplar.</p>
-         <p rend="indent">Elogial-os mais seria elogial-os menos.</p>
-         <p >17-IV-1914</p>
+         <p rend="indent-first">Da orbita triste do vaso obscuro a graça exilada das flôres atreve o
+            seu olhar de alegria.</p>
+         <p rend="indent-first">Quem faz quadras portuguezas comunga a alma do Povo, humildemente de
+            nós todos e errante dentro de si propria.</p>
+         <p rend="indent-first">Os autores d'este livro realizaram as suas quadras com destreza
+            luzitana e fidelidade ao instinctivo e desatado da alma pouplar.</p>
+         <p rend="indent-first">Elogial-os mais seria elogial-os menos.</p>
+         <p>17-IV-1914</p>
+         <signed rend="right"><rs type="name" role="author" key="FP" style="b">Fernando
+            Pessoa</rs>.</signed>
+      </body>
+   </text>
+   <text type="reg" corresp="#W317">
+      <body>
+         <p>A quadra é o vaso de flores que o povo põe á janela da sua Alma.</p>
+         <p rend="indent-first">Da orbita triste do vaso obscuro a graça exilada das flôres atreve o
+            seu olhar de alegria.</p>
+         <p rend="indent-first">Quem faz quadras portuguezas comunga a alma do Povo, humildemente de
+            nós todos e errante dentro de si propria.</p>
+         <p rend="indent-first">Os autores d'este livro realizaram as suas quadras com destreza
+            luzitana e fidelidade ao instinctivo e desatado da alma pouplar.</p>
+         <p rend="indent-first">Elogial-os mais seria elogial-os menos.</p>
+         <p>17-IV-1914</p>
          <signed rend="right"><rs type="name" role="author" key="FP" style="b">Fernando
             Pessoa</rs>.</signed>
       </body>

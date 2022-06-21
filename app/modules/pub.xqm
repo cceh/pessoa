@@ -34,8 +34,9 @@ declare function pub:get-title($node as node(), $model as map(*), $id as xs:stri
             return
                 let $date := $monogr/tei:imprint/tei:date/data(.)
                 let $place := $monogr/tei:imprint/tei:pubPlace/data(.)
+                let $publisher := $monogr/tei:imprint/tei:publisher/data(.)
                 let $pages := $monogr/tei:imprint/tei:biblScope[@unit='page']/data(.)
-                let $titleline := <p class="titleline_additional" id="t_add_1">{concat(string-join(($place,$date,$pages), ", "),".")}</p>
+                let $titleline := <p class="titleline_additional" id="t_add_1">{concat(string-join(($place,$publisher,$date,$pages), ", "),".")}</p>
                 return $titleline
     )
 };

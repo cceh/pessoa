@@ -74,6 +74,7 @@
         </p>
     </xsl:template>
     
+    
     <xsl:template match="note[parent::titlePage]">
         <p>
             <xsl:choose>
@@ -163,6 +164,9 @@
             </xsl:when>
             <xsl:when test="@rend='asterisk'">
                 <p class="milestone {@unit}">*</p>
+            </xsl:when>
+            <xsl:when test="@rend='tilde'">
+                <p class="milestone {@unit}">∼</p>
             </xsl:when>
             <xsl:when test="@rend='space'">
                 <p class="milestone {@unit}">&#x00A0;</p>
