@@ -26,8 +26,8 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
-                    Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2017</date>
             <availability status="free">
@@ -36,6 +36,11 @@
             <idno type="filename">Pessoa_Uma_replica.xml</idno>
          </publicationStmt>
          <notesStmt>
+            <note type="summary">Este texto foi publicado no jornal <rs type="periodical" key="J20">A República</rs>, a 21 de setembro de
+               1912, e reeditado mais tarde, em 1915, no livro Inquérito à vida literária, de
+               <rs type="name" key="P49">Boavida Portugal</rs>, pp. 138-150, com o acrescento de alguns itálicos, a subdivisão de
+               alguns parágrafos e a substituição de "indispensavel" por "dispensável". Reproduzimos
+               os facsímiles de ambas as publicações.</note>
             <note type="genre">
                <rs type="genre" key="prosa">Prosa</rs>
             </note>
@@ -46,7 +51,7 @@
                   <rs type="work" key="W285">Uma réplica ao snr. dr. Adolfo Coelho</rs>
                </item>
             </list>
-            <biblStruct xml:id="Republica_1912">
+            <biblStruct xml:id="República_1912">
                <analytic>
                   <title level="a">Uma réplica ao snr. dr. Adolfo Coelho</title>
                   <author>
@@ -64,7 +69,7 @@
                   <biblScope unit="page">1-2</biblScope>
                </monogr>
             </biblStruct>
-            <biblStruct xml:id="Classica_1915">
+            <biblStruct xml:id="Clássica_1915">
                <analytic>
                   <title level="a">Uma réplica ao Snr. Adolfo Coelho</title>
                   <author>
@@ -73,9 +78,8 @@
                   <textLang mainLang="pt" otherLangs="en"/>
                </analytic>
                <monogr>
-                  <title level="j">Inquérito à vida literária. 
-                  </title>
-                  <author>Boavida Portugal</author>
+                  <title level="j">Inquérito à vida literária. </title>
+                  <author><rs type="name" key="P49">Boavida Portugal</rs></author>
                   <imprint>
                      <date when="1915">1915</date>
                      <pubPlace>Lisboa</pubPlace>
@@ -92,7 +96,7 @@
       <profileDesc>
          <handNotes>
             <handNote xml:id="H_Republica">Texto não redigido por Pessoa mas pelo jornalista,
-                    provavelmente Boavida Portugal.</handNote>
+               provavelmente Boavida Portugal.</handNote>
             <handNote xml:id="H_FP">Texto redigido por Pessoa.</handNote>
          </handNotes>
       </profileDesc>
@@ -115,88 +119,101 @@
             <div>
                <argument>
                   <p rend="indent-first">
-                     <hi rend="italic">Mais uma réplica corta a pacatez dos depoimentos desde o dia 3 do
-                            corrente veem sendo publicados na «<rs type="periodical" key="J20">República</rs>».</hi>
+                     <app>
+                        <lem wit="República_1912"><hi rend="italic">Mais uma réplica corta a pacatez
+                              dos depoimentos desde o dia 3 do corrente veem sendo publicados na
+                                 «<rs type="periodical" key="J20">República</rs>».</hi></lem>
+                        <rdg wit="Clássica_1915"/>
+                     </app>
                   </p>
                   <p rend="indent-first">
-                     <hi>Agora é o colaborador da «<rs type="periodical" key="J5">Aguia</rs>»,
-                            <choice>
+                     <hi>Agora é o colaborador da «<rs type="periodical" key="J5">Aguia</rs>», <choice>
                            <abbr>snr<am>.</am>
                            </abbr>
                            <expan>s<ex>enho</ex>r</expan>
                         </choice>
-                        <rs type="name" key="FP" role="topic">Fernando
-                            Pessoa</rs>, que vem responder ao ilustre filólogo e lente da Faculdade de Letras da
-                            Universidade de Lisboa, <choice>
+                        <rs type="name" key="FP" role="topic">Fernando Pessoa</rs>, que vem
+                        responder ao ilustre filólogo e lente da Faculdade de Letras da Universidade
+                        de Lisboa, <choice>
                            <abbr>snr<am>.</am> dr<am>.</am>
                            </abbr>
                            <expan>s<ex>enho</ex>r d<ex>outo</ex>r</expan>
                         </choice>
-                        <rs type="name" key="P462" style="b">Adolfo Coelho</rs>, que não crê no super-<rs type="name" key="P15">Camões</rs>.</hi>
+                        <rs type="name" key="P462" style="b">Adolfo Coelho</rs>, que não crê no <app>
+                           <lem wit="República_1912">super-<rs type="name" key="P15"
+                              >Camões</rs></lem>
+                           <rdg wit="Clássica_1915">«super-<rs type="name" key="P15"
+                              >Camões</rs>»</rdg>
+                        </app>.</hi>
                   </p>
                </argument>
             </div>
             <div>
+               <p rend="indent-first"><app>
+                     <lem wit="República_1912"/>
+                     <rdg wit="Clássica_1915">Envia-nos a seguinte carta:</rdg>
+                  </app></p>
                <p rend="indent-first">
                   <handShift new="#H_FP"/>
-                  <hi rend="italic">Meu caro
-                            amigo</hi> — O convite geral feito na sua secção de inquérito literário,
-                        e aquele com que verbalmente honrou a obscuridade ou a juventude do meu
-                        nome, foram, como sabe, de principio aceites por mim para, no seu jornal,
-                        levantar a luva que inquiridos vários arremessaram à Renascença Portuguesa.
-                        Lançado, porém, que por mim fui no caminho da contra-argumentação, breve
-                        verifiquei que, tendo por dever meu responder a tudo quanto no seu inquérito
-                        se dissesse contra a <hi rend="italic">Renascença Portuguesa</hi>, as
-                        dimensões escritas da resposta excederiam, e de muito, as dimensões de um
-                        artigo de jornal; ao passo que a nulidade do meu nome, por mais que o meu
-                        raciocinio lhe fosse capa para o público, impedia-me de, sequer, pensar em
-                        pedir-lhe a inserção de artigos sobre artigos, discutindo, ponto por ponto a
-                        como que argumentação dos adversários da nossa novíssima poesia. Resolvi,
-                        por isso, guardar para folhêto a resposta extensa e completa a quantos
-                        simulacros de objecções várias competencias nominais houvessem deixado cair
-                        nas suas colunas. Preparo esse folhêto, que a <hi rend="italic">Renascença
-                            Portuguesa</hi> editará.</p>
+                  <hi rend="italic">Meu caro amigo</hi> — O convite geral feito na sua secção de
+                  inquérito literário, e aquele com que verbalmente honrou a obscuridade ou a
+                  juventude do meu nome, foram, como sabe, de principio aceites por mim para, no seu
+                  jornal, levantar a luva que inquiridos vários arremessaram à Renascença
+                  Portuguesa. Lançado, porém, que por mim fui no caminho da contra-argumentação,
+                  breve verifiquei que, tendo por dever meu responder a tudo quanto no seu inquérito
+                  se dissesse contra a <hi rend="italic">Renascença Portuguesa</hi>, as dimensões
+                  escritas da resposta excederiam, e de muito, as dimensões de um artigo de jornal;
+                  ao passo que a nulidade do meu nome, por mais que o meu raciocinio lhe fosse capa
+                  para o público, impedia-me de, sequer, pensar em pedir-lhe a inserção de artigos
+                  sobre artigos, discutindo, <app>
+                     <lem wit="República_1912">ponto por ponto</lem>
+                     <rdg wit="Clássica_1915">ponto por ponto,</rdg>
+                  </app> a como que argumentação dos adversários da nossa novíssima poesia. Resolvi,
+                  por isso, guardar para folhêto a resposta extensa e completa a quantos simulacros
+                  de objecções várias competencias nominais houvessem deixado cair nas suas colunas.
+                  Preparo esse folhêto, que a <hi rend="italic">Renascença Portuguesa</hi>
+                  editará.</p>
                <p rend="indent-first">Nesta atitude me conservaria, se o <choice>
                      <abbr>Prof<am>.</am>
                      </abbr>
                      <expan>Prof<ex>essor</ex>
                      </expan>
                   </choice>
-                  <rs type="name" key="P462" style="b">Adolfo Coelho</rs> não tivesse feito incidir uma
-                        parte do seu depoimento sobre um artigo meu, publicado na <rs type="periodical" key="J5">
-                     <hi rend="italic">Aguia</hi>
-                  </rs>, e que visa
-                        precisamente a explicar, na sua significação sociológica, a nossa novíssima
-                        poesia; chamado assim, como que por meu nome, á baila jornalística, sinto-me
-                        com o direito e o dever de abrir uma clareira na minha renuncia á
-                        publicidade maior e a valer-me, na extensão de um artigo, do seu amável
-                        convite.</p>
+                  <rs type="name" key="P462" style="b">Adolfo Coelho</rs> não tivesse feito incidir
+                  uma parte do seu depoimento sobre um artigo meu, publicado na <rs
+                     type="periodical" key="J5">
+                     <hi rend="italic"><app>
+                           <lem wit="República_1912">Aguia</lem>
+                           <rdg wit="Clássica_1915">A Aguia</rdg>
+                        </app></hi>
+                  </rs>, e que visa precisamente a explicar, na sua significação sociológica, a
+                  nossa novíssima poesia; chamado assim, como que por meu nome, á baila
+                  jornalística, sinto-me com o direito e o dever de abrir uma clareira na minha
+                  renuncia á publicidade maior e a valer-me, na extensão de um artigo, do seu amável
+                  convite.</p>
                <p rend="indent-first">Os argumentos que empregarei contra as objecções do <choice>
                      <abbr>Prof<am>.</am>
                      </abbr>
                      <expan>Prof<ex>essor</ex>
                      </expan>
                   </choice>
-                  <rs type="name" key="P462" style="b">Adolfo Coelho</rs> servir-me-hão,
-                        ao mesmo tempo e de sumário modo, de resposta geral a outras adversas
-                        referências feitas á <hi rend="italic">Renascença Portuguesa</hi> e á nossa
-                        nova poesia; porquanto, explicativos como são daquelas, implicita resposta
-                        levam a todos os seus inimigos. Isto não exclue — bom é que se note — a mais
-                        detalhada resposta no folhêto. Apenas a prepara e imperfeitamente a
-                        resume.</p>
-               <p rend="indent-first">Por ora, pois, responderei apenas ás vagas objecções
-                        feitas contra o caracter renovador e grande da nossa novissima poesia pelo
-                        <choice>
+                  <rs type="name" key="P462" style="b">Adolfo Coelho</rs> servir-me-hão, ao mesmo
+                  tempo e de sumário modo, de resposta geral a outras adversas referências feitas á
+                     <hi rend="italic">Renascença Portuguesa</hi> e á nossa nova poesia; porquanto,
+                  explicativos como são daquelas, implicita resposta levam a todos os seus inimigos.
+                  Isto não exclue — bom é que se note — a mais detalhada resposta no folhêto. Apenas
+                  a prepara e imperfeitamente a resume.</p>
+               <p rend="indent-first">Por ora, pois, responderei apenas ás vagas objecções feitas
+                  contra o caracter renovador e grande da nossa novissima poesia pelo <choice>
                      <abbr>Prof<am>.</am>
                      </abbr>
                      <expan>Prof<ex>essor</ex>
                      </expan>
                   </choice>
-                  <rs type="name" key="P462" style="b">Adolfo Coelho</rs> no seu
-                        quasi-erudito artigo. Esse artigo é sereno e aparentemente lucido e
-                        motivado; infelizmente, quem se dér ao trabalho de lhe procurar o fio
-                        condutor de uma lógica, encontra-lhe uma intima desconexão, desmentindo a
-                        sua fisionomia de ligado e conexo.</p>
+                  <rs type="name" key="P462" style="b">Adolfo Coelho</rs> no seu quasi-erudito
+                  artigo. Esse artigo é sereno e aparentemente lucido e motivado; infelizmente, quem
+                  se dér ao trabalho de lhe procurar o fio condutor de uma lógica, encontra-lhe uma
+                  intima desconexão, desmentindo a sua fisionomia de ligado e conexo.</p>
                <p rend="indent-first">Seja como fôr, perscrutemos em que se baseia o <choice>
                      <abbr>Prof<am>.</am>
                      </abbr>
@@ -204,241 +221,289 @@
                      </expan>
                   </choice>
                   <rs type="name" key="P462" style="b">Adolfo Coelho</rs> para descrer de uma
-                        renascença literária em Portugal e de ser a nossa poesia novissima
-                        representativa dessa renascença. Cinge-se a duas considerações, que era
-                        indispensavel que estivessem submersas em elementos acidentais e anedoticos.
-                        Essas duas objecções, que não pecam por explicitas nem por argumentadas se
-                        perdem, são: 1.° — que a nossa nova poesia não mostra avanço, especialmente
-                        no que diz respeito á grandeza individual dos seus representantes, sobre a
-                        poesia da geração de 1860 a 1870; 2.° — que não mostra avanço espiritual —
-                        isto é, em compreensão da Natureza, expressão de emoções, etc., — sobre
-                        qualquer outra corrente poetica — a romantica, suponha-se, consoante
-                        exemplos indicados de <rs type="name" key="P248">Byron</rs> e <rs type="name" key="P292">Victor Hugo</rs>. Concretizando mais: para o
-                        <choice>
+                  renascença literária em Portugal e de ser a nossa poesia novissima representativa
+                  dessa renascença. Cinge-se a duas considerações, que era <app>
+                     <lem wit="República_1912">indispensavel</lem>
+                     <rdg wit="Clássica_1915">dispensável</rdg>
+                  </app> que estivessem submersas em elementos acidentais e anedoticos. Essas duas
+                  objecções, que não pecam por explicitas nem por argumentadas se perdem, são: 1.° —
+                  que a nossa nova poesia não mostra avanço, especialmente no que diz respeito á
+                  grandeza individual dos seus representantes, sobre a poesia da geração de 1860 a
+                  1870; 2.° — que não mostra avanço espiritual — isto é, em compreensão da Natureza,
+                  expressão de emoções, etc., — sobre qualquer outra corrente poetica — a romantica,
+                  suponha-se, consoante exemplos indicados de <rs type="name" key="P248">Byron</rs>
+                  e <rs type="name" key="P292">Victor Hugo</rs>. Concretizando mais: para o <choice>
                      <abbr>Prof<am>.</am>
                      </abbr>
                      <expan>Prof<ex>essor</ex>
                      </expan>
                   </choice>
-                  <rs type="name" key="P462" style="b">Adolfo Coelho</rs> a nossa
-                        novissima poesia nem pela grandeza dos seus poetas, nem pela originalidade e
-                        grandeza do seu caracter geral se impõe como poesia caracteristica de uma
-                        renascença; ou mesmo de um grande periodo poetico. Isto é o essencial e o
-                        basilar do artigo; o resto ou provém disto ou não tem nada que vêr para o
-                        caso.</p>
+                  <rs type="name" key="P462" style="b">Adolfo Coelho</rs> a nossa novissima poesia
+                  nem pela grandeza dos seus poetas, nem pela originalidade e grandeza do seu
+                  caracter geral se impõe como poesia caracteristica de uma renascença; ou mesmo de
+                  um grande periodo poetico. Isto é o essencial e o basilar do artigo; o resto ou
+                  provém disto ou não tem nada que vêr para o caso.</p>
                <p rend="indent-first">As duas considerações citadas reduzem-se, para o
-                        contra-argumentador, a uma só. É que a grandeza dos poetas de uma corrente
-                        literaria está sempre em relação com a originalidade, o equilibrio e a
-                        nacionalidade (isto é, o caracter nacional) dessa corrente. Não se pode
-                        apontar em toda a historia literária movimento que tenha surgido com
-                        caracter de originalidade, equilibrio e nacionalidade que não tenha sido
-                        representado por, revelado atravez de, grandes figuras de poeta, e grandes
-                        na precisa proporção em que essa corrente é nacional, original e
-                        equilibrada.</p>
-               <p rend="indent-first">Assim, as duas poesias que mais se nos oferecem como
-                        brotando inesperadas e originais do seio dos seus povos, são a poesia grega
-                        e a poesia da Renascença — preeminentemente, a da Renascença inglesa. A
-                        primeira surge como que virgemente, anadiomenicamente, do oceano escuro do
-                        tempo; liga-se por episodios e elementos míticos á anterior poesia da India,
-                        mas a sua essencia, a sua <hi rend="italic">alma</hi>, a sua assombrosa alma
-                        lucida e profunda, é-lhe original e própria. De modo egualmente flagrante
-                        rompe da noite da idade chamada média a poesia que, começando em <rs type="name" key="P220">Dante</rs>, culmina em <rs type="name" key="P65">Shakespeare</rs> e acaba em <rs type="name" key="P84">Milton</rs>.</p>
-               <p rend="indent-first">Todas as outras épocas literárias são inferiores a estas
-                        duas em originalidade. Todas descendem muito mais evidentemente do passado
-                        do que estas. O proprio Romantismo não destaca da Renascença ou mesmo do
-                        século dezoito como a Renascença surge da idade-média e a poesia grega do
-                        que lhe é anterior. Isto é incontestavel.</p>
+                  contra-argumentador, a uma só. É que a grandeza dos poetas de uma corrente
+                  literaria está sempre em relação com a originalidade, o equilibrio e a <app>
+                     <lem wit="República_1912">nacionalidade</lem>
+                     <rdg wit="Clássica_1915"><hi rend="italic">nacionalidade</hi></rdg>
+                  </app> (isto é, o caracter nacional) dessa corrente. Não se pode apontar em toda a
+                  historia literária movimento que tenha surgido com caracter de originalidade,
+                  equilibrio e nacionalidade que não tenha sido representado por, revelado atravez <app>
+                     <lem wit="República_1912">de, grandes</lem>
+                     <rdg wit="Clássica_1915">de grandes</rdg>
+                  </app> figuras de poeta, e grandes na precisa proporção em que essa corrente é
+                  nacional, original e equilibrada.</p>
+               <p rend="indent-first">Assim, as duas poesias que mais se nos oferecem como brotando
+                  inesperadas e originais do seio dos seus povos, são a poesia grega e a poesia da
+                  Renascença — preeminentemente, a da Renascença inglesa. A primeira surge como que
+                  virgemente, anadiomenicamente, do oceano escuro do tempo; liga-se por episodios e
+                  elementos míticos á anterior poesia da India, mas a sua essencia, a sua <hi
+                     rend="italic">alma</hi>, a sua assombrosa alma lucida e profunda, é-lhe
+                  original e própria. De modo egualmente flagrante rompe da noite da idade chamada
+                  média a poesia que, começando em <rs type="name" key="P220">Dante</rs>, culmina em
+                     <rs type="name" key="P65">Shakespeare</rs> e acaba em <rs type="name" key="P84"
+                     >Milton</rs>.</p>
+               <p rend="indent-first">Todas as outras épocas literárias são inferiores a estas duas
+                  em originalidade. Todas descendem muito mais evidentemente do passado do que
+                  estas. O proprio Romantismo não destaca da Renascença ou mesmo do século dezoito
+                  como a Renascença surge da idade-média e a poesia grega do que lhe é anterior.
+                  Isto é incontestavel.</p>
                <p rend="indent-first">Ora é precisamente nos dois periodos verificados como os
-                        maiores da literatura em materia de originalidade que aparecem as maiores
-                        obras individuais, as maiores figuras individuais de poetas. Porque é fora
-                        de dúvida para quem tenha mais do que um vácuo de compreensão que as alturas
-                        máximas da poesia estão na <rs type="title">
+                  maiores da literatura em materia de originalidade que aparecem as maiores obras
+                  individuais, as maiores figuras individuais de poetas. Porque é fora de dúvida
+                  para quem tenha mais do que um vácuo de compreensão que as alturas máximas da
+                  poesia estão na <rs type="title">
                      <hi rend="italic">Iliada</hi>
-                  </rs> e em <rs type="name" key="P65">Shakespeare</rs>, e,
-                        logo abaixo, nos dramaturgos gregos e nos dois épicos supremos da
-                        Renascença, <rs type="name" key="P220">Dante</rs> e <rs type="name" key="P84">Milton</rs>. De modo que a questão se reduz simplesmente a
-                        procurar o grau de originalidade, equilibrio e nacionalidade no actual
-                        período poetico português; se essas forem constatadas grandes,
-                        inevitavelmente se terá de concluir ou que os novissimos poetas nossos são
-                        grandes poetas, ou caso seja impossivel considera-los como tais, que
-                        brevemente surgirão grandes poetas ou, pelo menos, um grande poeta da nossa
-                        nova poesia.</p>
+                  </rs> e em <rs type="name" key="P65">Shakespeare</rs>, e, logo abaixo, nos
+                  dramaturgos gregos e nos dois épicos supremos da Renascença, <rs type="name"
+                     key="P220">Dante</rs> e <rs type="name" key="P84">Milton</rs>. De modo que a
+                  questão se reduz simplesmente a procurar o grau de originalidade, equilibrio e
+                  nacionalidade no actual período poetico português; se essas forem constatadas
+                  grandes, inevitavelmente se terá de concluir ou que os novissimos poetas nossos
+                  são grandes poetas, ou caso seja impossivel considera-los como tais, que
+                  brevemente surgirão grandes poetas ou, pelo menos, um grande poeta <app>
+                     <lem wit="República_1912">da</lem>
+                     <rdg wit="Clássica_1915">na</rdg>
+                  </app> nossa nova poesia.</p>
                <p rend="indent-first">Mas a questão póde ser posta á prova mais restritamente
-                        analisando. Em primeiro logar, escusamos de prescrutar a  <hi rend="italic">nacionalidade</hi> de uma poesia: se se prova a sua plena e equilibrada
-                        originalidade, fica ipso facto, provado o seu caracter de absolutamente
-                        nacional. Porque se a poesia de uma nação é em certo periodo em absoluto
-                        original, de onde lhe poderá vir essa originalidade, esse poder de ser
-                        diversa e outra do que todas as outras poesias, senão de ser a genuina e
-                        suprema interpretação do que esse país tem de essencialmente diverso e outro
-                        do que outros países — e isso é ser tal país e não outro, é a <hi rend="italic">raça</hi>&gt;. Fica, portanto, restrita a nossa investigação
-                        a constatar a existência ou não-existência, na nossa nova poesia, de
-                        originalidade e equilibrio.</p>
-               <p rend="indent-first">Mas mesmo isto é escusado. O caso é <hi rend="italic">saber</hi> constatar originalidade: pois que perfeita e verdadeira
-                        originalidade não existe sem equilibrio perfeito. Vejamos porquê. Primeiro,
-                        em que consiste o equilibrio de um psiquismo qualquer, individual ou
-                        colectivo? Essencialmente no grau da sua atenção ao mundo exterior; a quanto
-                        mais éle é atento no mundo exterior, tanto maior seu equilibrio é. E em que
-                        consiste a originalidade? Em ter ideias inteiramente proprias e individuais;
-                        e «inteiramente individuais e proprias» quer dizer inteiramente subjectivas.
-                        Como, porém, o espirito elabora impressões vindas do exterior, a
-                        originalidade será tanto maior quanto maior fôr o numero de impressões do
-                        exterior que o espirito é capaz de acolher e elaborar para originalidade;
-                        isto é, quanto maior fôr a sua atenção ao mundo exterior; quer dizer, pois,
-                        quanto maior fôr o seu equilibrio. Portanto, originalidade verdadeira e
-                        perfeita envolve, equilibrio, nunca é senão originalidade equilibrada.</p>
-               <p rend="indent-first">Mas como é que se pode medir a originalidade de uma
-                        corrente literária? Em que é que consiste, propriamente, essa originalidade?
-                        Vejamos primeiro o que é uma corrente literária. É manifestamente uma
-                        comunidade de ideias ou instituições, caracteristica de poetas e literatos
-                        de uma época. Qual é a base de uma comunidade de ideias? Um fundamental
-                        conceito igual das coisas, uma igual atitude perante o universo e a
-                        vida.</p>
-               <p rend="indent-first">Que é um comum conceito do universo e da vida? Um comum
-                        conceito do que constitue a realidade. O ponto único, portanto, para onde
-                        tem de convergir a nossa atenção é êste — se a nova poesia portuguesa
-                        involve qualquer conceito novo do que é a realidade, se a sua atitude
-                        perante o universo e a vida é uma atitude inteiramente nova.</p>
-               <p rend="indent-first">Ora Portugal pertence à civilização europeia ocidental; a
-                        sua evolução, literária ou outra, tem vindo integrada, portanto, na evolução
-                        literária ou outra, dessa civilização. E visto que essa civilização tem, em
-                        literatura porque em tudo, uma linha evolutiva, se a nossa nova poesia traz
-                        qualquer coisa de original em si, essa originalidade deve ser o principio de
-                        um novo estadio na linha evolutiva da civilização em que Portugal está
-                        integrado — nova Renascença portanto que de Portugal se derramará para a
-                        Europa, como da Italia para a Europa se derramou a outra Renascença. Mas se
-                        essa originalidade, a ser verdadeira, representará um novo estadio na geral
-                        linha evolutiva literária da Europa, a sua natureza deve ser de certo modo
-                        deduzivel dos anteriores estadios da evolução literária europeia. O que
-                        temos portanto que fazer é analisar os estadios anteriores da evolução
-                        literária da Europa moderna, deduzir dessa análise quais devam ser os
-                        caracteristicos do estadio literário seguinte, e depois comparar êsses
-                        caracteristicos deduzidos com os caracteristicos da nossa novissima poesia.
-                        Se houver coincidência, teremos provado a nossa tése.</p>
-               <p rend="indent-first">Os dois estadios literários da civilização europeia
-                        moderna são a Renascença e o Romantismo. Analisemos os caracteristicos
-                        dêstes, deduzamos depois os provaveis caracteristicos do periodo literário
-                        que se lhes deve seguir e comparemos finalmente êsses caracteristicos com os
-                        da nova poesia portuguesa.</p>
-               <p rend="indent-first">Qual é a atitude da Renascença perante o universo e a
-                        vida? O que é que para ela constitue essencialmente a Realidade? É a alma e
-                        só a alma: a Renascença não tem o sentimento da Natureza. Vejamos. Quais são
-                        as formas poeticas da Renascença? São ou poemas de amôr (<rs type="name" key="P517" style="b">Petrarcha</rs>), ou poemas de acção humana (os
-                        poetas épicos) ou dramas (<rs type="name" key="P65">Shakespeare</rs> e os
-                        dramaturgos do seu tempo). São portanto tres formas de poesia de Alma, só de
-                        Alma — visto que tratam ou do sentimento que liga as almas — o amôr — ou de
-                        acção humana, acção de almas, portanto; ou, no seu poeta culminante, <rs type="name" key="P65">Shakespeare</rs>, mais completamente ainda de
-                        almas em acção. Quanto à Natureza, os poetas da Renascença não a sentem, por
-                        mais nitidamente que a vejam: assim, o mais observador de todos êles, <rs type="name" key="P65">Shakespeare</rs>, não é poeta perante a Natureza,
-                        é observador simplesmente. Descreve o que vê em maravilhosos versos; mas
-                        nenhuma simpatia o liga a essa Natureza que tão nitidamente vê.</p>
-               <p rend="indent-first">Dá-se com o Romantismo o caso inverso. Para os romanticos
-                        a unica verdadeira Realidade é a Natureza; da Alma conhecem só cada um a sua
-                        alma indívidual. Daí o caracter inteiramente diverso da poesia romantica em
-                        relação á da Renascença. A sua noção da acção humana é fraca e descontinua,
-                        de modo que são incapazes de elaborar uma epopeia. A sua fraquesa
-                        psicológica é conhecida: os únicos romanticos capazes de alguma intuição
-                        psicológica, <rs type="name" key="P198">Goethe</rs> e <rs type="name" key="P175">Shelley</rs>, apoiam-se ao passado, á tradição da Renascença,
-                        na figura de <rs type="name" key="P65">Shakespeare</rs>, para beber
-                        psicologia. E o resultado? Grande como é em outras coisas, <rs type="name" key="P198">Goethe</rs>-psicólogo não se pode medir, não digamos já com
-                            <rs type="name" key="P65">Shakespeare</rs>, mas mesmo com outros
-                        dramaturgos — <rs type="name" key="P120">Webster</rs>, por exemplo — da
-                        epoca shakespeareana. <rs type="name" key="P175">Shelley</rs>, para escrever
-                            <rs type="title">
+                  analisando. Em primeiro logar, escusamos de prescrutar a  <hi rend="italic"
+                     >nacionalidade</hi> de uma poesia: se se prova a sua plena e equilibrada
+                  originalidade, fica ipso facto, provado o seu caracter de absolutamente nacional.
+                  Porque se a poesia de uma nação é em certo periodo em absoluto original, de onde
+                  lhe poderá vir essa originalidade, esse poder de ser diversa e outra do que todas
+                  as outras poesias, senão de ser a genuina e suprema interpretação do que esse país
+                  tem de essencialmente diverso e outro do que outros países — e isso é ser tal país
+                  e não outro, é a <hi rend="italic">raça</hi>&gt;. Fica, portanto, restrita a nossa
+                  investigação a constatar a existência ou não-existência, na nossa nova poesia, de
+                  originalidade e equilibrio.</p>
+               <p rend="indent-first">Mas mesmo isto é escusado. O caso é <hi rend="italic"
+                     >saber</hi> constatar originalidade: pois que perfeita e verdadeira
+                  originalidade não existe sem equilibrio perfeito. Vejamos porquê. <app>
+                     <lem wit="República_1912">Primeiro,</lem>
+                     <rdg wit="Clássica_1915">Primeiro</rdg>
+                  </app> em que consiste o equilibrio de um psiquismo qualquer, individual ou
+                  colectivo? Essencialmente no grau da sua atenção ao mundo exterior; <app>
+                     <lem wit="República_1912">a</lem>
+                     <rdg wit="Clássica_1915">e</rdg>
+                  </app> quanto mais éle é atento no mundo exterior, tanto maior seu equilibrio é. E
+                  em que consiste a originalidade? Em ter ideias inteiramente proprias e
+                  individuais; e «inteiramente individuais e proprias» quer dizer inteiramente
+                  subjectivas. Como, porém, o espirito elabora impressões vindas do exterior, a
+                  originalidade será tanto maior quanto maior fôr o numero de impressões do exterior
+                  que o espirito é capaz de acolher e elaborar para originalidade; isto é, quanto
+                  maior fôr a sua atenção ao mundo exterior; quer dizer, pois, quanto maior fôr o
+                  seu equilibrio. Portanto, originalidade verdadeira e perfeita envolve, equilibrio,
+                  nunca é senão originalidade equilibrada.</p>
+               <p rend="indent-first">Mas como é que se pode medir a originalidade de uma corrente
+                  literária? Em que é que consiste, propriamente, essa originalidade? Vejamos
+                  primeiro o que é uma corrente literária. É manifestamente uma comunidade de ideias
+                  ou <app>
+                     <lem wit="República_1912">instituições,</lem>
+                     <rdg wit="Clássica_1915">intuições</rdg>
+                  </app> caracteristica de poetas e literatos de uma época. Qual é a base de uma
+                  comunidade de ideias? Um fundamental conceito igual das coisas, uma igual atitude
+                  perante o universo e a vida.</p>
+               <p rend="indent-first"><app>
+                     <lem wit="República_1912">Que</lem>
+                     <rdg wit="Clássica_1915">O que</rdg>
+                  </app> é um comum conceito do universo e da vida? Um comum conceito do que
+                  constitue a realidade. O ponto único, portanto, para onde tem de convergir a nossa
+                  atenção é êste — se a nova poesia portuguesa involve qualquer conceito novo do que
+                  é a realidade, se a sua atitude perante o universo e a vida é uma atitude
+                  inteiramente nova.</p>
+               <p rend="indent-first">Ora Portugal pertence à civilização europeia ocidental; a sua
+                  evolução, literária ou outra, tem vindo integrada, portanto, na evolução literária
+                  ou outra, dessa civilização. E visto que essa civilização tem, em literatura
+                  porque em tudo, uma linha evolutiva, se a nossa nova poesia traz qualquer coisa de
+                  original em si, essa originalidade deve ser o principio de um novo estadio na
+                  linha evolutiva da civilização em que Portugal está integrado — nova Renascença
+                  portanto que de Portugal se derramará para a Europa, como da Italia para a Europa
+                  se derramou a outra Renascença. Mas se essa originalidade, a ser verdadeira,
+                  representará um novo estadio na geral linha evolutiva literária da Europa, a sua
+                  natureza deve ser de certo modo deduzivel dos anteriores estadios da evolução
+                  literária europeia. O que temos portanto que fazer é analisar os estadios
+                  anteriores da evolução literária da Europa moderna, deduzir dessa análise quais
+                  devam ser os caracteristicos do estadio literário seguinte, e depois comparar
+                  êsses caracteristicos deduzidos com os caracteristicos da nossa novissima poesia.
+                  Se houver coincidência, teremos provado a nossa tése.</p>
+               <p rend="indent-first">Os dois estadios literários da civilização europeia moderna
+                  são a Renascença e o Romantismo. Analisemos os caracteristicos dêstes, deduzamos
+                  depois os provaveis caracteristicos do periodo literário que se lhes deve seguir e
+                  comparemos finalmente êsses caracteristicos com os da nova poesia portuguesa.</p>
+               <p rend="indent-first">Qual é a atitude da Renascença perante o <app>
+                     <lem wit="República_1912">universo</lem>
+                     <rdg wit="Clássica_1915">Universo</rdg>
+                  </app> e a vida? O que é que para ela constitue essencialmente a Realidade? É a
+                  alma e só a alma: a Renascença não tem o sentimento da Natureza. Vejamos. Quais
+                  são as formas poeticas da Renascença? São ou poemas de amôr (<rs type="name"
+                     key="P517" style="b">Petrarcha</rs>), ou poemas de acção humana (os poetas
+                  épicos) ou dramas (<rs type="name" key="P65">Shakespeare</rs> e os dramaturgos do
+                  seu tempo). São portanto tres formas de poesia de Alma, só de Alma — visto que
+                  tratam ou do sentimento que liga as almas — o amôr —<app>
+                     <lem wit="República_1912"/>
+                     <rdg wit="Clássica_1915">;</rdg>
+                  </app> ou de acção humana, acção de almas, portanto; ou, no seu poeta culminante,
+                     <rs type="name" key="P65">Shakespeare</rs>, mais completamente ainda de almas
+                  em acção. Quanto à Natureza, os poetas da Renascença não a <app>
+                     <lem wit="República_1912">sentem</lem>
+                     <rdg wit="Clássica_1915"><hi rend="italic">sentem</hi></rdg>
+                  </app>, por mais nitidamente que a <app>
+                     <lem wit="República_1912">vejam</lem>
+                     <rdg wit="Clássica_1915"><hi rend="italic">vejam</hi></rdg>
+                  </app>: assim, o mais observador de todos êles, <rs type="name" key="P65"
+                     >Shakespeare</rs>, não é poeta perante a Natureza, é observador simplesmente.
+                  Descreve o que vê em maravilhosos versos; mas nenhuma simpatia o liga a essa
+                  Natureza que tão nitidamente vê.</p>
+               <p rend="indent-first">Dá-se com o Romantismo o caso inverso. Para os romanticos a
+                  unica verdadeira Realidade é a Natureza; da Alma conhecem só cada um a sua alma
+                  indívidual. Daí o caracter inteiramente diverso da poesia romantica em relação á
+                  da Renascença. A sua noção da acção humana é fraca e descontinua, de modo que são
+                  incapazes de elaborar uma epopeia. A sua fraquesa psicológica é conhecida: os
+                  únicos romanticos capazes de alguma intuição psicológica, <rs type="name"
+                     key="P198">Goethe</rs> e <rs type="name" key="P175">Shelley</rs>, apoiam-se ao
+                  passado, á tradição da Renascença, na figura de <rs type="name" key="P65"
+                     >Shakespeare</rs>, para beber psicologia. E o resultado? Grande como é em
+                  outras coisas, <rs type="name" key="P198">Goethe</rs>-psicólogo não se pode medir,
+                  não digamos já com <rs type="name" key="P65">Shakespeare</rs>, mas mesmo com
+                  outros dramaturgos — <rs type="name" key="P120">Webster</rs>, por exemplo — da
+                  epoca shakespeareana. <rs type="name" key="P175">Shelley</rs>, para escrever <rs
+                     type="title">
                      <hi rend="italic">The Censi</hi>
-                  </rs>, estudou
-                        atentamente os processos shakespeareanos — e o que resultou, ainda que belo,
-                        não se pode comparar em intuição dramatica sequer com a obra de outros taes
-                        que <rs type="name" key="P120">Webster</rs>.</p>
+                  </rs>, estudou atentamente os processos shakespeareanos — e o que resultou, ainda
+                  que belo, não se pode comparar em intuição dramatica sequer com a obra de outros
+                  taes que <rs type="name" key="P120">Webster</rs>.</p>
                <p rend="indent-first">Esta diferença entre os poetas da Renascença e os do
-                        Romantismo colhe-se flagrantemente no modo como pensam. Os poetas da
-                        Renascença pensam por <hi rend="italic">ideias</hi> ou por abstracções: os
-                        romanticos pensam por <hi rend="italic">imagens</hi>. Isto é, os primeiros
-                        pensam em termos de Alma, os segundos em termos de Natureza. Nenhum
-                        romantico poderia escrever um soneto como o <hi rend="italic">Alma</hi>
-                        minha <hi rend="italic">gentil</hi>, tão despido de imagens, tão <hi rend="italic">directamente</hi>  exprimindo a alma.</p>
-               <p rend="indent-first">Ora, sendo estes os caracteristicos dos dois grandes
-                        periodos da poesia europeia moderna, será possível deduzir dêles os
-                        caracteristicos que deverá ter o grande periodo da poesia que se lhes
-                        seguirá? A dedução não é fácil; é facilima. Para a Renascença a Realidade é
-                        a Alma; para o Romantismo a Realidade é a Natureza. Ora, como o nosso
-                        conhecimento não tem outros objectos alem da Alma e da Natureza, a Nova
-                        Renascença (chamemos-lhe assim) não tem outra coisa que tomar para
-                        Realidade. A sua originalidade só poderá vir portanto de <hi rend="italic">uma fusão do psiquismo da Renascença com o psiquismo do
-                        Romantismo</hi>. Não há outra hipótese concebivel.</p>
-               <p rend="indent-first">Essa fusão, porém, produz um facto curioso — a
-                        coexistencia de dois sentimentos da Realidade, uma dupla noção de Realidade.
-                        Mas só póde haver noção de <hi rend="italic">uma</hi> Realidade; a Realidade
-                        é concebivel só como <hi rend="italic">uma</hi>. Resulta, portanto, que para
-                        a Nova Renascença a Realidade deverá ser <hi rend="italic">fusão de Natureza
-                            e Alma</hi>. A realidade será pois <hi rend="italic">Natureza-Alma</hi>.
-                        Isto é, pela Nova Renascença  a <hi rend="italic">Natureza será concebida
-                            como Alma</hi>.</p>
-               <p rend="indent-first">Ora eu creio que o professor <rs type="name" key="P462" style="b">Adolfo Coelho</rs> é suficientemente inteligente para perceber
-                        que estamos em plena descrição da nova poesia portuguesa. Os caracteristicos
-                        que deduzimos como devendo infalivelmente ser os da poesia da Nova
-                            Renascença <hi rend="italic">coincidem em absoluto com os
-                            caracteristicos patentes da nossa novissima poesia</hi>.</p>
-               <p rend="indent-first">Provas? Devem ser escusadas para qualquer criatura capaz
-                        de seguir um raciocinio e ler uma página. Leia o professor <rs type="name" key="P462" style="b">Adolfo Coelho</rs> as poesias caracteristicas dos
-                        nossos novissimos poetas; medite todos os artigos de <rs type="name" key="P52" style="b">Teixeira de Pascoais</rs> — cada verso tráe o
-                        conceito de Natureza-Alma, cada frase dêsses artigos o exprime.</p>
+                  Romantismo colhe-se flagrantemente no modo como pensam. Os poetas da Renascença
+                  pensam por <hi rend="italic">ideias</hi> ou por abstracções: os romanticos pensam
+                     por <hi rend="italic">imagens</hi>. Isto é, os primeiros pensam em termos de
+                  Alma, os segundos em termos de Natureza. Nenhum romantico poderia escrever um
+                  soneto como o <app>
+                     <lem wit="República_1912"><hi rend="italic">Alma</hi> minha <hi rend="italic"
+                           >gentil</hi></lem>
+                     <rdg wit="Clássica_1915"><hi rend="italic">Alma minha gentil</hi></rdg>
+                  </app>, tão despido de imagens, tão <hi rend="italic">directamente</hi> 
+                  exprimindo a alma.</p>
+               <p rend="indent-first">Ora, sendo estes os caracteristicos dos dois grandes periodos
+                  da poesia europeia moderna, será possível deduzir dêles os caracteristicos que
+                  deverá ter o grande periodo da poesia que se lhes seguirá? A dedução não é fácil;
+                  é facilima. Para a Renascença a Realidade é a Alma; para o Romantismo a Realidade
+                  é a Natureza. Ora, como o nosso conhecimento não tem outros objectos alem da Alma
+                  e da Natureza, a Nova Renascença (chamemos-lhe assim) não tem outra coisa que
+                  tomar para Realidade. A sua originalidade só poderá vir portanto <app>
+                     <lem wit="República_1912">de</lem>
+                     <rdg wit="Clássica_1915"><hi rend="italic">de</hi></rdg>
+                  </app>
+                  <hi rend="italic">uma fusão do psiquismo da Renascença com o psiquismo do
+                     Romantismo</hi>. Não há outra hipótese concebivel.</p>
+               <p rend="indent-first">Essa fusão, porém, produz um facto curioso — a coexistencia de
+                  dois sentimentos da Realidade, uma dupla noção de Realidade. Mas só póde haver
+                  noção de <hi rend="italic">uma</hi> Realidade; a Realidade é concebivel só como
+                     <hi rend="italic">uma</hi>. Resulta, portanto, que para a Nova Renascença a
+                  Realidade deverá ser <hi rend="italic">fusão de Natureza e Alma</hi>. A realidade
+                  será pois <hi rend="italic">Natureza-Alma</hi>. Isto é, pela Nova Renascença 
+                     a <hi rend="italic">Natureza será concebida como Alma</hi>.</p>
+               <p rend="indent-first">Ora eu creio que o professor <rs type="name" key="P462"
+                     style="b">Adolfo Coelho</rs> é suficientemente inteligente para perceber que
+                  estamos em plena descrição da nova poesia portuguesa. Os caracteristicos que
+                  deduzimos como devendo infalivelmente ser os da poesia da Nova Renascença <hi
+                     rend="italic">coincidem em absoluto com os caracteristicos patentes da nossa
+                     novissima poesia</hi>.</p>
+               <p rend="indent-first">Provas? Devem ser escusadas para qualquer criatura capaz de
+                  seguir um raciocinio e ler uma página. Leia o professor <rs type="name" key="P462"
+                     style="b">Adolfo Coelho</rs> as poesias caracteristicas dos nossos novissimos
+                  poetas; medite todos os artigos de <rs type="name" key="P52" style="b">Teixeira de
+                     Pascoais</rs> — cada verso tráe o conceito de Natureza-Alma, cada frase dêsses
+                  artigos o exprime.</p>
                <p rend="indent-first">Para não fugir, porém, ao exemplo directo e individual,
-                        examinemos aqueles dois trechos citados por mim e re-citados pelo professor
-                            <rs type="name" key="P462" style="b">Adolfo Coelho</rs>, cuja erudita
-                        incompreensão não encontrou diferença entre êles e uma estância, citada, de
-                            <rs type="name" key="P248">Byron</rs>, inteiramente diversa no seu
-                        sentimento, perfeitamente romantico, de Natureza como Natureza. O primeiro
-                        trecho é este, de <rs type="name" key="P135" style="b">Jaime
-                        Cortezão</rs>:</p>
+                  examinemos aqueles dois trechos citados por mim e re-citados pelo professor <rs
+                     type="name" key="P462" style="b">Adolfo Coelho</rs>, cuja erudita incompreensão
+                  não encontrou diferença entre êles e uma estância, citada, de <rs type="name"
+                     key="P248">Byron</rs>, inteiramente diversa no seu sentimento, perfeitamente
+                  romantico, de Natureza como Natureza. O primeiro trecho é este, de <rs type="name"
+                     key="P135" style="b">Jaime Cortezão</rs>:</p>
                <lg rend="center">
                   <l>E, mal o luar os molha,</l>
                   <l>Os choupos, na noite calma,</l>
                   <l>Já não têm ramos nem folha,</l>
                   <l>São apenas choupos de alma.</l>
                </lg>
-               <p rend="indent-first">Aqui temos, flagrantissimamente, o material concebido
-                        como espiritual — <hi rend="italic">choupos de alma</hi>. Vejamos o outro
-                        trecho: são os dois versos de <rs type="name" key="P52" style="b">Pascoais</rs>:</p>
+               <p rend="indent-first">Aqui temos, flagrantissimamente, o material concebido como
+                  espiritual — <hi rend="italic">choupos de alma</hi>. Vejamos o outro trecho: são
+                  os dois versos de <rs type="name" key="P52" style="b">Pascoais</rs>:</p>
                <lg>
-                        <!-- UH: also rend="center"? -->
+                  <!-- UH: also rend="center"? -->
                   <l>A folha que tombava</l>
                   <l>Era alma que subia.</l>
                </lg>
-               <p rend="indent-first">Aqui temos o acto material, que é a queda de uma folha,
-                        concebido como <hi rend="italic">acto espiritual</hi>; e repare o professor
-                            <rs type="name" key="P462" style="b">Adolfo Coelho</rs> que <rs type="name" key="P52" style="b">Pascoais</rs> não compára a queda da
-                        folha à ascensão da alma — a queda da folha, é, materialmente, a subida da
-                        alma.</p>
-               <p rend="indent-first">&gt;Comparando estes maravilhosos trechos a trechos de <rs type="name" key="P248">Byron</rs> e de <rs type="name" key="P292">Victor
-                            Hugo</rs>, mostrou o professor <rs type="name" key="P462" style="b">Adolfo Coelho</rs> que não sabe olhar para além das palavras, e da méra
-                        gramática das frases.</p>
-               <p rend="indent-first">Eu bem sei que o professor <rs type="name" key="P462" style="b">Adolfo Coelho</rs> <hi rend="italic">não pode sentir</hi> a
-                        nossa nova poesia; ouso esperar que possa compreendê-la de longe, através do
-                        meu raciocinio.</p>
+               <p rend="indent-first">Aqui temos o <app>
+                     <lem wit="República_1912">acto material</lem>
+                     <rdg wit="Clássica_1915"><hi rend="italic">acto material</hi></rdg>
+                  </app>, que é a queda de uma folha, concebido como <hi rend="italic">acto
+                     espiritual</hi>; e repare o professor <rs type="name" key="P462" style="b"
+                     >Adolfo Coelho</rs> que <rs type="name" key="P52" style="b">Pascoais</rs> não
+                  compára a queda da folha à ascensão da alma — a queda da folha, <app>
+                     <lem wit="República_1912">é, materialmente,</lem>
+                     <rdg wit="Clássica_1915">é materialmente,</rdg>
+                  </app> a subida da alma.</p>
+               <p rend="indent-first">&gt;Comparando estes maravilhosos trechos a trechos de <rs
+                     type="name" key="P248">Byron</rs> e de <rs type="name" key="P292">Victor
+                     Hugo</rs>, mostrou o professor <rs type="name" key="P462" style="b">Adolfo
+                     Coelho</rs> que não sabe olhar para além das palavras, e da méra gramática das
+                  frases.</p>
+               <p rend="indent-first">Eu bem sei que o professor <rs type="name" key="P462"
+                     style="b">Adolfo Coelho</rs> <hi rend="italic">não pode sentir</hi> a nossa
+                  nova poesia; ouso esperar que possa compreendê-la de longe, através do meu
+                  raciocinio.</p>
                <p rend="indent-first">Que provámos, pois?</p>
                <p rend="indent-first">Que a nossa nova poesia é a poesia auroral de uma Nova
-                        Renascença, que é uma poesia perfeita e plenamente original. Mas, como acima
-                        vimos, se é perfeitamente original, é equilibrada: erram portanto os que a
-                        consideram doentia e confusa, lançando sôbre ela a sombra da sua própria
-                        incompreensão. — Se é original e equilibrada resulta, como acima provámos,
-                        que <hi rend="italic">é inteiramente nacional</hi>: erram portanto quantos
-                        falam em estrangeirismo a proposito dela. — Se é original, equilibrada e
-                        nacional produz ou produzirá, como acima o mostrámos, grandes e máximas
-                        figuras de poeta: erra portanto o professor <rs type="name" key="P462" style="b">Adolfo Coelho</rs>, primeiro quando acha inferiores os nossos
-                        novissimos poetas, e depois quando considera <hi rend="italic">messianismo</hi> a ideia de um super-<rs type="name" key="P15" style="b">Camões</rs>, isto é, de um poeta máximo, inevitavelmente maior
-                        do que aquêle poeta verdadeiramente grande, mas longe de ser um <rs type="name" key="P220">Dante</rs> ou um <rs type="name" key="P65">Shakespeare</rs>.</p>
+                  Renascença, que é uma poesia perfeita e plenamente original. Mas, como acima
+                  vimos, se é perfeitamente original, é equilibrada: erram portanto os que a
+                  consideram doentia e confusa, lançando sôbre ela a sombra da sua própria
+                  incompreensão. — Se é original e equilibrada resulta, como acima provámos, que <hi
+                     rend="italic">é inteiramente nacional</hi>: erram portanto quantos falam em
+                  estrangeirismo a proposito dela. — Se é original, equilibrada e nacional produz ou
+                  produzirá, como acima o mostrámos, grandes e máximas figuras de poeta: erra
+                  portanto o professor <rs type="name" key="P462" style="b">Adolfo Coelho</rs>,
+                  primeiro quando acha inferiores os nossos novissimos poetas, e depois quando
+                     considera <hi rend="italic">messianismo</hi> a ideia de um super-<rs
+                     type="name" key="P15" style="b">Camões</rs>, isto é, de um poeta máximo,
+                  inevitavelmente maior do que aquêle poeta verdadeiramente grande, mas longe de ser
+                  um <rs type="name" key="P220">Dante</rs> ou um <rs type="name" key="P65"
+                     >Shakespeare</rs>.</p>
                <p rend="indent-first">São estas, meu caro amigo, as considerações que julgo
-                        indispensaveis como resposta ao professor <rs type="name" key="P462" style="b">Adolfo Coelho</rs>. Servem, ao mesmo tempo, como viu, para
-                        responder a outros adversários da <hi rend="italic">Renascença
-                            Portuguesa</hi>.</p>
-               <p rend="indent-first">Repliquei com perfeita serenidade, 1.° porque o
-                        professor <rs type="name" key="P462" style="b">Adolfo Coelho</rs> com
-                        isenção de dureza escreveu, e 2.° porque de outro modo não poderia escrever
-                        em atenção á sua pessoa e ao seu jornal. Para o folheto que preparo reservo
-                        o tratar no tom que julgar merecido alguns individuos pouco inteligentes ou
-                        menos correctos, que teem deposto no seu inquérito.</p>
-               <p rend="indent-first">Desculpe-me o espaço que lhe tomei e disponha sempre do
-                        seu amigo e admirador.—<hi rend="italic">Fernando Pessoa</hi>.</p>
+                  indispensaveis como resposta ao professor <rs type="name" key="P462" style="b"
+                     >Adolfo Coelho</rs>. Servem, ao mesmo tempo, como viu, para responder a outros
+                  adversários da <hi rend="italic">Renascença Portuguesa</hi>.</p>
+               <p rend="indent-first">Repliquei com perfeita serenidade, 1.° porque o professor <rs
+                     type="name" key="P462" style="b">Adolfo Coelho</rs> com isenção de dureza
+                  escreveu, e 2.° porque de outro modo não poderia escrever em atenção á sua pessoa
+                  e ao seu jornal. Para o folheto que preparo reservo o tratar no tom que julgar
+                  merecido alguns individuos pouco inteligentes ou menos correctos, que teem deposto
+                  no seu inquérito.</p>
+               <p rend="indent-first">Desculpe-me o espaço que lhe tomei e disponha sempre do seu
+                  amigo e admirador.—<hi rend="italic">Fernando Pessoa</hi>.</p>
             </div>
          </div>
       </body>
@@ -451,24 +516,20 @@
                   <abbr>snr<am>.</am> dr<am>.</am>
                   </abbr>
                   <expan>s<ex>enho</ex>r d<ex>outo</ex>r</expan>
-               </choice>
-                    Adolfo Coelho</head>
+               </choice> Adolfo Coelho</head>
             <div>
                <argument>
                   <p rend="indent-first">
-                     <hi rend="italic">Mais uma réplica corta a pacatez dos depoimentos desde o dia 3 do
-                            corrente vêm sendo publicados na «República».</hi>
+                     <hi rend="italic">Mais uma réplica corta a pacatez dos depoimentos desde o dia
+                        3 do corrente vêm sendo publicados na «República».</hi>
                   </p>
                   <p rend="indent-first">
-                     <hi>Agora é o colaborador da «Águia»,
-                            <choice>
+                     <hi>Agora é o colaborador da «Águia», <choice>
                            <abbr>snr<am>.</am>
                            </abbr>
                            <expan>s<ex>enho</ex>r</expan>
-                        </choice> 
-                                    Fernando
-                            Pessoa, que vem responder ao ilustre filólogo e lente da Faculdade de Letras da
-                            Universidade de Lisboa, <choice>
+                        </choice> Fernando Pessoa, que vem responder ao ilustre filólogo e lente da
+                        Faculdade de Letras da Universidade de Lisboa, <choice>
                            <abbr>snr<am>.</am> dr<am>.</am>
                            </abbr>
                            <expan>s<ex>enho</ex>r d<ex>outo</ex>r</expan>
@@ -479,296 +540,279 @@
             <div>
                <p rend="indent-first">
                   <handShift new="#H_FP"/>
-                  <hi rend="italic">Meu caro
-                            amigo</hi> — O convite geral feito na sua secção de inquérito literário,
-                        e aquele com que verbalmente honrou a obscuridade ou a juventude do meu
-                        nome, foram, como sabe, de princípio aceites por mim para, no seu jornal,
-                        levantar a luva que inquiridos vários arremessaram à Renascença Portuguesa.
-                        Lançado, porém, que por mim fui no caminho da contra-argumentação, breve
-                        verifiquei que, tendo por dever meu responder a tudo quanto no seu inquérito
-                        se dissesse contra a <hi rend="italic">Renascença Portuguesa</hi>, as
-                        dimensões escritas da resposta excederiam, e de muito, as dimensões de um
-                        artigo de jornal; ao passo que a nulidade do meu nome, por mais que o meu
-                        raciocínio lhe fosse capa para o público, impedia-me de, sequer, pensar em
-                        pedir-lhe a inserção de artigos sobre artigos, discutindo, ponto por ponto a
-                        como que argumentação dos adversários da nossa novíssima poesia. Resolvi,
-                        por isso, guardar para folheto a resposta extensa e completa a quantos
-                        simulacros de objeções várias competências nominais houvessem deixado cair
-                        nas suas colunas. Preparo esse folheto, que a <hi rend="italic">Renascença
-                            Portuguesa</hi> editará.</p>
+                  <hi rend="italic">Meu caro amigo</hi> — O convite geral feito na sua secção de
+                  inquérito literário, e aquele com que verbalmente honrou a obscuridade ou a
+                  juventude do meu nome, foram, como sabe, de princípio aceites por mim para, no seu
+                  jornal, levantar a luva que inquiridos vários arremessaram à Renascença
+                  Portuguesa. Lançado, porém, que por mim fui no caminho da contra-argumentação,
+                  breve verifiquei que, tendo por dever meu responder a tudo quanto no seu inquérito
+                  se dissesse contra a <hi rend="italic">Renascença Portuguesa</hi>, as dimensões
+                  escritas da resposta excederiam, e de muito, as dimensões de um artigo de jornal;
+                  ao passo que a nulidade do meu nome, por mais que o meu raciocínio lhe fosse capa
+                  para o público, impedia-me de, sequer, pensar em pedir-lhe a inserção de artigos
+                  sobre artigos, discutindo, ponto por ponto a como que argumentação dos adversários
+                  da nossa novíssima poesia. Resolvi, por isso, guardar para folheto a resposta
+                  extensa e completa a quantos simulacros de objeções várias competências nominais
+                  houvessem deixado cair nas suas colunas. Preparo esse folheto, que a <hi
+                     rend="italic">Renascença Portuguesa</hi> editará.</p>
                <p rend="indent-first">Nesta atitude me conservaria, se o <choice>
                      <abbr>Prof<am>.</am>
                      </abbr>
                      <expan>Prof<ex>essor</ex>
                      </expan>
-                  </choice> Adolfo Coelho não tivesse feito incidir uma
-                        parte do seu depoimento sobre um artigo meu, publicado na <hi rend="italic">Águia</hi>, e que visa
-                        precisamente a explicar, na sua significação sociológica, a nossa novíssima
-                        poesia; chamado assim, como que por meu nome, à baila jornalística, sinto-me
-                        com o direito e o dever de abrir uma clareira na minha renúncia à
-                        publicidade maior e a valer-me, na extensão de um artigo, do seu amável
-                        convite.</p>
+                  </choice> Adolfo Coelho não tivesse feito incidir uma parte do seu depoimento
+                  sobre um artigo meu, publicado na <hi rend="italic">Águia</hi>, e que visa
+                  precisamente a explicar, na sua significação sociológica, a nossa novíssima
+                  poesia; chamado assim, como que por meu nome, à baila jornalística, sinto-me com o
+                  direito e o dever de abrir uma clareira na minha renúncia à publicidade maior e a
+                  valer-me, na extensão de um artigo, do seu amável convite.</p>
                <p rend="indent-first">Os argumentos que empregarei contra as objeções do <choice>
                      <abbr>Prof<am>.</am>
                      </abbr>
                      <expan>Prof<ex>essor</ex>
                      </expan>
-                  </choice>
-                            Adolfo Coelho servir-me-ão,
-                        ao mesmo tempo e de sumário modo, de resposta geral a outras adversas
-                        referências feitas à <hi rend="italic">Renascença Portuguesa</hi> e à nossa
-                        nova poesia; porquanto, explicativos como são daquelas, implícita resposta
-                        levam a todos os seus inimigos. Isto não exclui — bom é que se note — a mais
-                        detalhada resposta no folheto. Apenas a prepara e imperfeitamente a
-                        resume.</p>
-               <p rend="indent-first">Por ora, pois, responderei apenas às vagas objeções
-                        feitas contra o carácter renovador e grande da nossa novíssima poesia pelo
-                        <choice>
+                  </choice> Adolfo Coelho servir-me-ão, ao mesmo tempo e de sumário modo, de
+                  resposta geral a outras adversas referências feitas à <hi rend="italic">Renascença
+                     Portuguesa</hi> e à nossa nova poesia; porquanto, explicativos como são
+                  daquelas, implícita resposta levam a todos os seus inimigos. Isto não exclui — bom
+                  é que se note — a mais detalhada resposta no folheto. Apenas a prepara e
+                  imperfeitamente a resume.</p>
+               <p rend="indent-first">Por ora, pois, responderei apenas às vagas objeções feitas
+                  contra o carácter renovador e grande da nossa novíssima poesia pelo <choice>
                      <abbr>Prof<am>.</am>
                      </abbr>
                      <expan>Prof<ex>essor</ex>
                      </expan>
-                  </choice> Adolfo Coelho no seu
-                        quase-erudito artigo. Esse artigo é sereno e aparentemente lúcido e
-                        motivado; infelizmente, quem se der ao trabalho de lhe procurar o fio
-                        condutor de uma lógica, encontra-lhe uma íntima desconexão, desmentindo a
-                        sua fisionomia de ligado e conexo.</p>
+                  </choice> Adolfo Coelho no seu quase-erudito artigo. Esse artigo é sereno e
+                  aparentemente lúcido e motivado; infelizmente, quem se der ao trabalho de lhe
+                  procurar o fio condutor de uma lógica, encontra-lhe uma íntima desconexão,
+                  desmentindo a sua fisionomia de ligado e conexo.</p>
                <p rend="indent-first">Seja como for, perscrutemos em que se baseia o <choice>
                      <abbr>Prof<am>.</am>
                      </abbr>
                      <expan>Prof<ex>essor</ex>
                      </expan>
-                  </choice> Adolfo Coelho para descrer de uma
-                        renascença literária em Portugal e de ser a nossa poesia novíssima
-                        representativa dessa renascença. Cinge-se a duas considerações, que era
-                        indispensável que estivessem submersas em elementos acidentais e anedóticos.
-                        Essas duas objeções, que não pecam por explícitas nem por argumentadas se
-                        perdem, são: 1.° — que a nossa nova poesia não mostra avanço, especialmente
-                        no que diz respeito à grandeza individual dos seus representantes, sobre a
-                        poesia da geração de 1860 a 1870; 2.° — que não mostra avanço espiritual —
-                        isto é, em compreensão da Natureza, expressão de emoções, etc., — sobre
-                        qualquer outra corrente poética — a romântica, suponha-se, consoante
-                        exemplos indicados de Byron e Victor Hugo. Concretizando mais: para o
-                        <choice>
+                  </choice> Adolfo Coelho para descrer de uma renascença literária em Portugal e de
+                  ser a nossa poesia novíssima representativa dessa renascença. Cinge-se a duas
+                  considerações, que era indispensável que estivessem submersas em elementos
+                  acidentais e anedóticos. Essas duas objeções, que não pecam por explícitas nem por
+                  argumentadas se perdem, são: 1.° — que a nossa nova poesia não mostra avanço,
+                  especialmente no que diz respeito à grandeza individual dos seus representantes,
+                  sobre a poesia da geração de 1860 a 1870; 2.° — que não mostra avanço espiritual —
+                  isto é, em compreensão da Natureza, expressão de emoções, etc., — sobre qualquer
+                  outra corrente poética — a romântica, suponha-se, consoante exemplos indicados de
+                  Byron e Victor Hugo. Concretizando mais: para o <choice>
                      <abbr>Prof<am>.</am>
                      </abbr>
                      <expan>Prof<ex>essor</ex>
                      </expan>
-                  </choice> Adolfo Coelho a nossa
-                        novíssima poesia nem pela grandeza dos seus poetas, nem pela originalidade e
-                        grandeza do seu carácter geral se impõe como poesia característica de uma
-                        renascença; ou mesmo de um grande período poético. Isto é o essencial e o
-                        basilar do artigo; o resto ou provém disto ou não tem nada que ver para o
-                        caso.</p>
+                  </choice> Adolfo Coelho a nossa novíssima poesia nem pela grandeza dos seus
+                  poetas, nem pela originalidade e grandeza do seu carácter geral se impõe como
+                  poesia característica de uma renascença; ou mesmo de um grande período poético.
+                  Isto é o essencial e o basilar do artigo; o resto ou provém disto ou não tem nada
+                  que ver para o caso.</p>
                <p rend="indent-first">As duas considerações citadas reduzem-se, para o
-                        contra-argumentador, a uma só. É que a grandeza dos poetas de uma corrente
-                        literária está sempre em relação com a originalidade, o equilíbrio e a
-                        nacionalidade (isto é, o carácter nacional) dessa corrente. Não se pode
-                        apontar em toda a história literária movimento que tenha surgido com
-                        carácter de originalidade, equilíbrio e nacionalidade que não tenha sido
-                        representado por, revelado através de, grandes figuras de poeta, e grandes
-                        na precisa proporção em que essa corrente é nacional, original e
-                        equilibrada.</p>
-               <p rend="indent-first">Assim, as duas poesias que mais se nos oferecem como
-                        brotando inesperadas e originais do seio dos seus povos, são a poesia grega
-                        e a poesia da Renascença — preeminentemente, a da Renascença inglesa. A
-                        primeira surge como que virgemente, anadiomenicamente, do oceano escuro do
-                        tempo; liga-se por episódios e elementos míticos à anterior poesia da Índia,
-                        mas a sua essência, a sua <hi rend="italic">alma</hi>, a sua assombrosa alma
-                        lúcida e profunda, é-lhe original e própria. De modo igualmente flagrante
-                        rompe da noite da idade chamada média a poesia que, começando em Dante, culmina em Shakespeare e acaba em Milton.</p>
-               <p rend="indent-first">Todas as outras épocas literárias são inferiores a estas
-                        duas em originalidade. Todas descendem muito mais evidentemente do passado
-                        do que estas. O próprio Romantismo não destaca da Renascença ou mesmo do
-                        século dezoito como a Renascença surge da idade-média e a poesia grega do
-                        que lhe é anterior. Isto é incontestável.</p>
+                  contra-argumentador, a uma só. É que a grandeza dos poetas de uma corrente
+                  literária está sempre em relação com a originalidade, o equilíbrio e a
+                  nacionalidade (isto é, o carácter nacional) dessa corrente. Não se pode apontar em
+                  toda a história literária movimento que tenha surgido com carácter de
+                  originalidade, equilíbrio e nacionalidade que não tenha sido representado por,
+                  revelado através de, grandes figuras de poeta, e grandes na precisa proporção em
+                  que essa corrente é nacional, original e equilibrada.</p>
+               <p rend="indent-first">Assim, as duas poesias que mais se nos oferecem como brotando
+                  inesperadas e originais do seio dos seus povos, são a poesia grega e a poesia da
+                  Renascença — preeminentemente, a da Renascença inglesa. A primeira surge como que
+                  virgemente, anadiomenicamente, do oceano escuro do tempo; liga-se por episódios e
+                  elementos míticos à anterior poesia da Índia, mas a sua essência, a sua <hi
+                     rend="italic">alma</hi>, a sua assombrosa alma lúcida e profunda, é-lhe
+                  original e própria. De modo igualmente flagrante rompe da noite da idade chamada
+                  média a poesia que, começando em Dante, culmina em Shakespeare e acaba em
+                  Milton.</p>
+               <p rend="indent-first">Todas as outras épocas literárias são inferiores a estas duas
+                  em originalidade. Todas descendem muito mais evidentemente do passado do que
+                  estas. O próprio Romantismo não destaca da Renascença ou mesmo do século dezoito
+                  como a Renascença surge da idade-média e a poesia grega do que lhe é anterior.
+                  Isto é incontestável.</p>
                <p rend="indent-first">Ora é precisamente nos dois períodos verificados como os
-                        maiores da literatura em matéria de originalidade que aparecem as maiores
-                        obras individuais, as maiores figuras individuais de poetas. Porque é fora
-                        de dúvida para quem tenha mais do que um vácuo de compreensão que as alturas
-                        máximas da poesia estão na <hi rend="italic">Ilíada</hi> e em Shakespeare, e,
-                        logo abaixo, nos dramaturgos gregos e nos dois épicos supremos da
-                        Renascença, Dante e Milton. De modo que a questão se reduz simplesmente a
-                        procurar o grau de originalidade, equilíbrio e nacionalidade no atual
-                        período poético português; se essas forem constatadas grandes,
-                        inevitavelmente se terá de concluir ou que os novíssimos poetas nossos são
-                        grandes poetas, ou caso seja impossível considerá-los como tais, que
-                        brevemente surgirão grandes poetas ou, pelo menos, um grande poeta da nossa
-                        nova poesia.</p>
+                  maiores da literatura em matéria de originalidade que aparecem as maiores obras
+                  individuais, as maiores figuras individuais de poetas. Porque é fora de dúvida
+                  para quem tenha mais do que um vácuo de compreensão que as alturas máximas da
+                  poesia estão na <hi rend="italic">Ilíada</hi> e em Shakespeare, e, logo abaixo,
+                  nos dramaturgos gregos e nos dois épicos supremos da Renascença, Dante e Milton.
+                  De modo que a questão se reduz simplesmente a procurar o grau de originalidade,
+                  equilíbrio e nacionalidade no atual período poético português; se essas forem
+                  constatadas grandes, inevitavelmente se terá de concluir ou que os novíssimos
+                  poetas nossos são grandes poetas, ou caso seja impossível considerá-los como tais,
+                  que brevemente surgirão grandes poetas ou, pelo menos, um grande poeta da nossa
+                  nova poesia.</p>
                <p rend="indent-first">Mas a questão pode ser posta à prova mais restritamente
-                        analisando. Em primeiro lugar, escusamos de prescrutar a  <hi rend="italic">nacionalidade</hi> de uma poesia: se se prova a sua plena e equilibrada
-                        originalidade, fica ipso facto, provado o seu carácter de absolutamente
-                        nacional. Porque se a poesia de uma nação é em certo período em absoluto
-                        original, de onde lhe poderá vir essa originalidade, esse poder de ser
-                        diversa e outra do que todas as outras poesias, senão de ser a genuína e
-                        suprema interpretação do que esse país tem de essencialmente diverso e outro
-                        do que outros países — e isso é ser tal país e não outro, é a <hi rend="italic">raça</hi>&gt;. Fica, portanto, restrita a nossa investigação
-                        a constatar a existência ou não-existência, na nossa nova poesia, de
-                        originalidade e equilíbrio.</p>
-               <p rend="indent-first">Mas mesmo isto é escusado. O caso é <hi rend="italic">saber</hi> constatar originalidade: pois que perfeita e verdadeira
-                        originalidade não existe sem equilíbrio perfeito. Vejamos porquê. Primeiro,
-                        em que consiste o equilíbrio de um psiquismo qualquer, individual ou
-                        coletivo? Essencialmente no grau da sua atenção ao mundo exterior; a quanto
-                        mais ele é atento no mundo exterior, tanto maior seu equilíbrio é. E em que
-                        consiste a originalidade? Em ter ideias inteiramente próprias e individuais;
-                        e «inteiramente individuais e próprias» quer dizer inteiramente subjetivas.
-                        Como, porém, o espírito elabora impressões vindas do exterior, a
-                        originalidade será tanto maior quanto maior for o número de impressões do
-                        exterior que o espírito é capaz de acolher e elaborar para originalidade;
-                        isto é, quanto maior for a sua atenção ao mundo exterior; quer dizer, pois,
-                        quanto maior for o seu equilíbrio. Portanto, originalidade verdadeira e
-                        perfeita envolve, equilíbrio, nunca é senão originalidade equilibrada.</p>
-               <p rend="indent-first">Mas como é que se pode medir a originalidade de uma
-                        corrente literária? Em que é que consiste, propriamente, essa originalidade?
-                        Vejamos primeiro o que é uma corrente literária. É manifestamente uma
-                        comunidade de ideias ou instituições, característica de poetas e literatos
-                        de uma época. Qual é a base de uma comunidade de ideias? Um fundamental
-                        conceito igual das coisas, uma igual atitude perante o universo e a
-                        vida.</p>
+                  analisando. Em primeiro lugar, escusamos de prescrutar a  <hi rend="italic"
+                     >nacionalidade</hi> de uma poesia: se se prova a sua plena e equilibrada
+                  originalidade, fica ipso facto, provado o seu carácter de absolutamente nacional.
+                  Porque se a poesia de uma nação é em certo período em absoluto original, de onde
+                  lhe poderá vir essa originalidade, esse poder de ser diversa e outra do que todas
+                  as outras poesias, senão de ser a genuína e suprema interpretação do que esse país
+                  tem de essencialmente diverso e outro do que outros países — e isso é ser tal país
+                  e não outro, é a <hi rend="italic">raça</hi>&gt;. Fica, portanto, restrita a nossa
+                  investigação a constatar a existência ou não-existência, na nossa nova poesia, de
+                  originalidade e equilíbrio.</p>
+               <p rend="indent-first">Mas mesmo isto é escusado. O caso é <hi rend="italic"
+                     >saber</hi> constatar originalidade: pois que perfeita e verdadeira
+                  originalidade não existe sem equilíbrio perfeito. Vejamos porquê. Primeiro, em que
+                  consiste o equilíbrio de um psiquismo qualquer, individual ou coletivo?
+                  Essencialmente no grau da sua atenção ao mundo exterior; a quanto mais ele é
+                  atento no mundo exterior, tanto maior seu equilíbrio é. E em que consiste a
+                  originalidade? Em ter ideias inteiramente próprias e individuais; e «inteiramente
+                  individuais e próprias» quer dizer inteiramente subjetivas. Como, porém, o
+                  espírito elabora impressões vindas do exterior, a originalidade será tanto maior
+                  quanto maior for o número de impressões do exterior que o espírito é capaz de
+                  acolher e elaborar para originalidade; isto é, quanto maior for a sua atenção ao
+                  mundo exterior; quer dizer, pois, quanto maior for o seu equilíbrio. Portanto,
+                  originalidade verdadeira e perfeita envolve, equilíbrio, nunca é senão
+                  originalidade equilibrada.</p>
+               <p rend="indent-first">Mas como é que se pode medir a originalidade de uma corrente
+                  literária? Em que é que consiste, propriamente, essa originalidade? Vejamos
+                  primeiro o que é uma corrente literária. É manifestamente uma comunidade de ideias
+                  ou instituições, característica de poetas e literatos de uma época. Qual é a base
+                  de uma comunidade de ideias? Um fundamental conceito igual das coisas, uma igual
+                  atitude perante o universo e a vida.</p>
                <p rend="indent-first">Que é um comum conceito do universo e da vida? Um comum
-                        conceito do que constitui a realidade. O ponto único, portanto, para onde
-                        tem de convergir a nossa atenção é este — se a nova poesia portuguesa
-                        envolve qualquer conceito novo do que é a realidade, se a sua atitude
-                        perante o universo e a vida é uma atitude inteiramente nova.</p>
-               <p rend="indent-first">Ora Portugal pertence à civilização europeia ocidental; a
-                        sua evolução, literária ou outra, tem vindo integrada, portanto, na evolução
-                        literária ou outra, dessa civilização. E visto que essa civilização tem, em
-                        literatura porque em tudo, uma linha evolutiva, se a nossa nova poesia traz
-                        qualquer coisa de original em si, essa originalidade deve ser o princípio de
-                        um novo estádio na linha evolutiva da civilização em que Portugal está
-                        integrado — nova Renascença portanto que de Portugal se derramará para a
-                        Europa, como da Itália para a Europa se derramou a outra Renascença. Mas se
-                        essa originalidade, a ser verdadeira, representará um novo estádio na geral
-                        linha evolutiva literária da Europa, a sua natureza deve ser de certo modo
-                        deduzível dos anteriores estádios da evolução literária europeia. O que
-                        temos portanto que fazer é analisar os estádios anteriores da evolução
-                        literária da Europa moderna, deduzir dessa análise quais devam ser os
-                        característicos do estádio literário seguinte, e depois comparar esses
-                        característicos deduzidos com os característicos da nossa novíssima poesia.
-                        Se houver coincidência, teremos provado a nossa tese.</p>
-               <p rend="indent-first">Os dois estádios literários da civilização europeia
-                        moderna são a Renascença e o Romantismo. Analisemos os característicos
-                        destes, deduzamos depois os prováveis característicos do período literário
-                        que se lhes deve seguir e comparemos finalmente esses característicos com os
-                        da nova poesia portuguesa.</p>
-               <p rend="indent-first">Qual é a atitude da Renascença perante o universo e a
-                        vida? O que é que para ela constitui essencialmente a Realidade? É a alma e
-                        só a alma: a Renascença não tem o sentimento da Natureza. Vejamos. Quais são
-                        as formas poéticas da Renascença? São ou poemas de amor (Petrarca), ou poemas de ação humana (os
-                        poetas épicos) ou dramas (Shakespeare e os
-                        dramaturgos do seu tempo). São portanto três formas de poesia de Alma, só de
-                        Alma — visto que tratam ou do sentimento que liga as almas — o amor — ou de
-                        ação humana, ação de almas, portanto; ou, no seu poeta culminante, Shakespeare, mais completamente ainda de
-                        almas em ação. Quanto à Natureza, os poetas da Renascença não a sentem, por
-                        mais nitidamente que a vejam: assim, o mais observador de todos eles, Shakespeare, não é poeta perante a Natureza,
-                        é observador simplesmente. Descreve o que vê em maravilhosos versos; mas
-                        nenhuma simpatia o liga a essa Natureza que tão nitidamente vê.</p>
-               <p rend="indent-first">Dá-se com o Romantismo o caso inverso. Para os românticos
-                        a única verdadeira Realidade é a Natureza; da Alma conhecem só cada um a sua
-                        alma individual. Daí o carácter inteiramente diverso da poesia romântica em
-                        relação à da Renascença. A sua noção da ação humana é fraca e descontínua,
-                        de modo que são incapazes de elaborar uma epopeia. A sua fraqueza
-                        psicológica é conhecida: os únicos românticos capazes de alguma intuição
-                        psicológica, Goethe e Shelley, apoiam-se ao passado, à tradição da Renascença,
-                        na figura de Shakespeare, para beber
-                        psicologia. E o resultado? Grande como é em outras coisas, Goethe-psicólogo não se pode medir, não digamos já com
-                            Shakespeare, mas mesmo com outros
-                        dramaturgos — Webster, por exemplo — da
-                        época shakespeareana. Shelley, para escrever
-                            <hi rend="italic">The Censi</hi>, estudou
-                        atentamente os processos shakespeareanos — e o que resultou, ainda que belo,
-                        não se pode comparar em intuição dramática sequer com a obra de outros tais
-                        que Webster.</p>
+                  conceito do que constitui a realidade. O ponto único, portanto, para onde tem de
+                  convergir a nossa atenção é este — se a nova poesia portuguesa envolve qualquer
+                  conceito novo do que é a realidade, se a sua atitude perante o universo e a vida é
+                  uma atitude inteiramente nova.</p>
+               <p rend="indent-first">Ora Portugal pertence à civilização europeia ocidental; a sua
+                  evolução, literária ou outra, tem vindo integrada, portanto, na evolução literária
+                  ou outra, dessa civilização. E visto que essa civilização tem, em literatura
+                  porque em tudo, uma linha evolutiva, se a nossa nova poesia traz qualquer coisa de
+                  original em si, essa originalidade deve ser o princípio de um novo estádio na
+                  linha evolutiva da civilização em que Portugal está integrado — nova Renascença
+                  portanto que de Portugal se derramará para a Europa, como da Itália para a Europa
+                  se derramou a outra Renascença. Mas se essa originalidade, a ser verdadeira,
+                  representará um novo estádio na geral linha evolutiva literária da Europa, a sua
+                  natureza deve ser de certo modo deduzível dos anteriores estádios da evolução
+                  literária europeia. O que temos portanto que fazer é analisar os estádios
+                  anteriores da evolução literária da Europa moderna, deduzir dessa análise quais
+                  devam ser os característicos do estádio literário seguinte, e depois comparar
+                  esses característicos deduzidos com os característicos da nossa novíssima poesia.
+                  Se houver coincidência, teremos provado a nossa tese.</p>
+               <p rend="indent-first">Os dois estádios literários da civilização europeia moderna
+                  são a Renascença e o Romantismo. Analisemos os característicos destes, deduzamos
+                  depois os prováveis característicos do período literário que se lhes deve seguir e
+                  comparemos finalmente esses característicos com os da nova poesia portuguesa.</p>
+               <p rend="indent-first">Qual é a atitude da Renascença perante o universo e a vida? O
+                  que é que para ela constitui essencialmente a Realidade? É a alma e só a alma: a
+                  Renascença não tem o sentimento da Natureza. Vejamos. Quais são as formas poéticas
+                  da Renascença? São ou poemas de amor (Petrarca), ou poemas de ação humana (os
+                  poetas épicos) ou dramas (Shakespeare e os dramaturgos do seu tempo). São portanto
+                  três formas de poesia de Alma, só de Alma — visto que tratam ou do sentimento que
+                  liga as almas — o amor — ou de ação humana, ação de almas, portanto; ou, no seu
+                  poeta culminante, Shakespeare, mais completamente ainda de almas em ação. Quanto à
+                  Natureza, os poetas da Renascença não a sentem, por mais nitidamente que a vejam:
+                  assim, o mais observador de todos eles, Shakespeare, não é poeta perante a
+                  Natureza, é observador simplesmente. Descreve o que vê em maravilhosos versos; mas
+                  nenhuma simpatia o liga a essa Natureza que tão nitidamente vê.</p>
+               <p rend="indent-first">Dá-se com o Romantismo o caso inverso. Para os românticos a
+                  única verdadeira Realidade é a Natureza; da Alma conhecem só cada um a sua alma
+                  individual. Daí o carácter inteiramente diverso da poesia romântica em relação à
+                  da Renascença. A sua noção da ação humana é fraca e descontínua, de modo que são
+                  incapazes de elaborar uma epopeia. A sua fraqueza psicológica é conhecida: os
+                  únicos românticos capazes de alguma intuição psicológica, Goethe e Shelley,
+                  apoiam-se ao passado, à tradição da Renascença, na figura de Shakespeare, para
+                  beber psicologia. E o resultado? Grande como é em outras coisas, Goethe-psicólogo
+                  não se pode medir, não digamos já com Shakespeare, mas mesmo com outros
+                  dramaturgos — Webster, por exemplo — da época shakespeareana. Shelley, para
+                  escrever <hi rend="italic">The Censi</hi>, estudou atentamente os processos
+                  shakespeareanos — e o que resultou, ainda que belo, não se pode comparar em
+                  intuição dramática sequer com a obra de outros tais que Webster.</p>
                <p rend="indent-first">Esta diferença entre os poetas da Renascença e os do
-                        Romantismo colhe-se flagrantemente no modo como pensam. Os poetas da
-                        Renascença pensam por <hi rend="italic">ideias</hi> ou por abstrações: os
-                        românticos pensam por <hi rend="italic">imagens</hi>. Isto é, os primeiros
-                        pensam em termos de Alma, os segundos em termos de Natureza. Nenhum
-                        romântico poderia escrever um soneto como o <hi rend="italic">Alma</hi>
-                        minha <hi rend="italic">gentil</hi>, tão despido de imagens, tão <hi rend="italic">diretamente</hi>  exprimindo a alma.</p>
-               <p rend="indent-first">Ora, sendo estes os característicos dos dois grandes
-                        períodos da poesia europeia moderna, será possível deduzir deles os
-                        característicos que deverá ter o grande período da poesia que se lhes
-                        seguirá? A dedução não é fácil; é facílima. Para a Renascença a Realidade é
-                        a Alma; para o Romantismo a Realidade é a Natureza. Ora, como o nosso
-                        conhecimento não tem outros objetos além da Alma e da Natureza, a Nova
-                        Renascença (chamemos-lhe assim) não tem outra coisa que tomar para
-                        Realidade. A sua originalidade só poderá vir portanto de <hi rend="italic">uma fusão do psiquismo da Renascença com o psiquismo do
-                        Romantismo</hi>. Não há outra hipótese concebível.</p>
-               <p rend="indent-first">Essa fusão, porém, produz um facto curioso — a
-                        coexistência de dois sentimentos da Realidade, uma dupla noção de Realidade.
-                        Mas só pode haver noção de <hi rend="italic">uma</hi> Realidade; a Realidade
-                        é concebível só como <hi rend="italic">uma</hi>. Resulta, portanto, que para
-                        a Nova Renascença a Realidade deverá ser <hi rend="italic">fusão de Natureza
-                            e Alma</hi>. A realidade será pois <hi rend="italic">Natureza-Alma</hi>.
-                        Isto é, pela Nova Renascença  a <hi rend="italic">Natureza será concebida
-                            como Alma</hi>.</p>
-               <p rend="indent-first">Ora eu creio que o professor Adolfo Coelho é suficientemente inteligente para perceber
-                        que estamos em plena descrição da nova poesia portuguesa. Os característicos
-                        que deduzimos como devendo infalivelmente ser os da poesia da Nova
-                            Renascença <hi rend="italic">coincidem em absoluto com os
-                            característicos patentes da nossa novíssima poesia</hi>.</p>
-               <p rend="indent-first">Provas? Devem ser escusadas para qualquer criatura capaz
-                        de seguir um raciocínio e ler uma página. Leia o professor Adolfo Coelho as poesias características dos
-                        nossos novíssimos poetas; medite todos os artigos de Teixeira de Pascoais — cada verso trai o
-                        conceito de Natureza-Alma, cada frase desses artigos o exprime.</p>
+                  Romantismo colhe-se flagrantemente no modo como pensam. Os poetas da Renascença
+                  pensam por <hi rend="italic">ideias</hi> ou por abstrações: os românticos pensam
+                     por <hi rend="italic">imagens</hi>. Isto é, os primeiros pensam em termos de
+                  Alma, os segundos em termos de Natureza. Nenhum romântico poderia escrever um
+                  soneto como o <hi rend="italic">Alma</hi> minha <hi rend="italic">gentil</hi>, tão
+                  despido de imagens, tão <hi rend="italic">diretamente</hi>  exprimindo a alma.</p>
+               <p rend="indent-first">Ora, sendo estes os característicos dos dois grandes períodos
+                  da poesia europeia moderna, será possível deduzir deles os característicos que
+                  deverá ter o grande período da poesia que se lhes seguirá? A dedução não é fácil;
+                  é facílima. Para a Renascença a Realidade é a Alma; para o Romantismo a Realidade
+                  é a Natureza. Ora, como o nosso conhecimento não tem outros objetos além da Alma e
+                  da Natureza, a Nova Renascença (chamemos-lhe assim) não tem outra coisa que tomar
+                  para Realidade. A sua originalidade só poderá vir portanto de <hi rend="italic"
+                     >uma fusão do psiquismo da Renascença com o psiquismo do Romantismo</hi>. Não
+                  há outra hipótese concebível.</p>
+               <p rend="indent-first">Essa fusão, porém, produz um facto curioso — a coexistência de
+                  dois sentimentos da Realidade, uma dupla noção de Realidade. Mas só pode haver
+                  noção de <hi rend="italic">uma</hi> Realidade; a Realidade é concebível só como
+                     <hi rend="italic">uma</hi>. Resulta, portanto, que para a Nova Renascença a
+                  Realidade deverá ser <hi rend="italic">fusão de Natureza e Alma</hi>. A realidade
+                  será pois <hi rend="italic">Natureza-Alma</hi>. Isto é, pela Nova Renascença 
+                     a <hi rend="italic">Natureza será concebida como Alma</hi>.</p>
+               <p rend="indent-first">Ora eu creio que o professor Adolfo Coelho é suficientemente
+                  inteligente para perceber que estamos em plena descrição da nova poesia
+                  portuguesa. Os característicos que deduzimos como devendo infalivelmente ser os da
+                  poesia da Nova Renascença <hi rend="italic">coincidem em absoluto com os
+                     característicos patentes da nossa novíssima poesia</hi>.</p>
+               <p rend="indent-first">Provas? Devem ser escusadas para qualquer criatura capaz de
+                  seguir um raciocínio e ler uma página. Leia o professor Adolfo Coelho as poesias
+                  características dos nossos novíssimos poetas; medite todos os artigos de Teixeira
+                  de Pascoais — cada verso trai o conceito de Natureza-Alma, cada frase desses
+                  artigos o exprime.</p>
                <p rend="indent-first">Para não fugir, porém, ao exemplo direto e individual,
-                        examinemos aqueles dois trechos citados por mim e recitados pelo professor
-                            Adolfo Coelho, cuja erudita
-                        incompreensão não encontrou diferença entre eles e uma estância, citada, de
-                            Byron, inteiramente diversa no seu
-                        sentimento, perfeitamente romântico, de Natureza como Natureza. O primeiro
-                        trecho é este, de Jaime
-                        Cortezão:</p>
+                  examinemos aqueles dois trechos citados por mim e recitados pelo professor Adolfo
+                  Coelho, cuja erudita incompreensão não encontrou diferença entre eles e uma
+                  estância, citada, de Byron, inteiramente diversa no seu sentimento, perfeitamente
+                  romântico, de Natureza como Natureza. O primeiro trecho é este, de Jaime
+                  Cortezão:</p>
                <lg rend="center">
                   <l>E, mal o luar os molha,</l>
                   <l>Os choupos, na noite calma,</l>
                   <l>Já não têm ramos nem folha,</l>
                   <l>São apenas choupos de alma.</l>
                </lg>
-               <p rend="indent-first">Aqui temos, flagrantissimamente, o material concebido
-                        como espiritual — <hi rend="italic">choupos de alma</hi>. Vejamos o outro
-                        trecho: são os dois versos de Pascoais:</p>
+               <p rend="indent-first">Aqui temos, flagrantissimamente, o material concebido como
+                  espiritual — <hi rend="italic">choupos de alma</hi>. Vejamos o outro trecho: são
+                  os dois versos de Pascoais:</p>
                <lg>
-                        <!-- UH: also rend="center"? -->
+                  <!-- UH: also rend="center"? -->
                   <l>A folha que tombava</l>
                   <l>Era alma que subia.</l>
                </lg>
                <p rend="indent-first">Aqui temos o ato material, que é a queda de uma folha,
-                        concebido como <hi rend="italic">ato espiritual</hi>; e repare o professor
-                            Adolfo Coelho que Pascoais não compara a queda da
-                        folha à ascensão da alma — a queda da folha, é, materialmente, a subida da
-                        alma.</p>
-               <p rend="indent-first">&gt;Comparando estes maravilhosos trechos a trechos de Byron e de Victor
-                            Hugo, mostrou o professor Adolfo Coelho que não sabe olhar para além das palavras, e da mera
-                        gramática das frases.</p>
-               <p rend="indent-first">Eu bem sei que o professor Adolfo Coelho <hi rend="italic">não pode sentir</hi> a
-                        nossa nova poesia; ouso esperar que possa compreendê-la de longe, através do
-                        meu raciocínio.</p>
+                  concebido como <hi rend="italic">ato espiritual</hi>; e repare o professor Adolfo
+                  Coelho que Pascoais não compara a queda da folha à ascensão da alma — a queda da
+                  folha, é, materialmente, a subida da alma.</p>
+               <p rend="indent-first">&gt;Comparando estes maravilhosos trechos a trechos de Byron e
+                  de Victor Hugo, mostrou o professor Adolfo Coelho que não sabe olhar para além das
+                  palavras, e da mera gramática das frases.</p>
+               <p rend="indent-first">Eu bem sei que o professor Adolfo Coelho <hi rend="italic">não
+                     pode sentir</hi> a nossa nova poesia; ouso esperar que possa compreendê-la de
+                  longe, através do meu raciocínio.</p>
                <p rend="indent-first">Que provámos, pois?</p>
                <p rend="indent-first">Que a nossa nova poesia é a poesia auroral de uma Nova
-                        Renascença, que é uma poesia perfeita e plenamente original. Mas, como acima
-                        vimos, se é perfeitamente original, é equilibrada: erram portanto os que a
-                        consideram doentia e confusa, lançando sobre ela a sombra da sua própria
-                        incompreensão. — Se é original e equilibrada resulta, como acima provámos,
-                        que <hi rend="italic">é inteiramente nacional</hi>: erram portanto quantos
-                        falam em estrangeirismo a propósito dela. — Se é original, equilibrada e
-                        nacional produz ou produzirá, como acima o mostrámos, grandes e máximas
-                        figuras de poeta: erra portanto o professor Adolfo Coelho, primeiro quando acha inferiores os nossos
-                        novíssimos poetas, e depois quando considera <hi rend="italic">messianismo</hi> a ideia de um super-Camões, isto é, de um poeta máximo, inevitavelmente maior
-                        do que aquele poeta verdadeiramente grande, mas longe de ser um Dante ou um Shakespeare.</p>
+                  Renascença, que é uma poesia perfeita e plenamente original. Mas, como acima
+                  vimos, se é perfeitamente original, é equilibrada: erram portanto os que a
+                  consideram doentia e confusa, lançando sobre ela a sombra da sua própria
+                  incompreensão. — Se é original e equilibrada resulta, como acima provámos, que <hi
+                     rend="italic">é inteiramente nacional</hi>: erram portanto quantos falam em
+                  estrangeirismo a propósito dela. — Se é original, equilibrada e nacional produz ou
+                  produzirá, como acima o mostrámos, grandes e máximas figuras de poeta: erra
+                  portanto o professor Adolfo Coelho, primeiro quando acha inferiores os nossos
+                  novíssimos poetas, e depois quando considera <hi rend="italic">messianismo</hi> a
+                  ideia de um super-Camões, isto é, de um poeta máximo, inevitavelmente maior do que
+                  aquele poeta verdadeiramente grande, mas longe de ser um Dante ou um
+                  Shakespeare.</p>
                <p rend="indent-first">São estas, meu caro amigo, as considerações que julgo
-                        indispensáveis como resposta ao professor Adolfo Coelho. Servem, ao mesmo tempo, como viu, para
-                        responder a outros adversários da <hi rend="italic">Renascença
-                            Portuguesa</hi>.</p>
-               <p rend="indent-first">Repliquei com perfeita serenidade, 1.° porque o
-                        professor Adolfo Coelho com
-                        isenção de dureza escreveu, e 2.° porque de outro modo não poderia escrever
-                        em atenção à sua pessoa e ao seu jornal. Para o folheto que preparo reservo
-                        o tratar no tom que julgar merecido alguns indivíduos pouco inteligentes ou
-                        menos corretos, que têm deposto no seu inquérito.</p>
-               <p rend="indent-first">Desculpe-me o espaço que lhe tomei e disponha sempre do
-                        seu amigo e admirador.—<hi rend="italic">Fernando Pessoa</hi>.</p>
+                  indispensáveis como resposta ao professor Adolfo Coelho. Servem, ao mesmo tempo,
+                  como viu, para responder a outros adversários da <hi rend="italic">Renascença
+                     Portuguesa</hi>.</p>
+               <p rend="indent-first">Repliquei com perfeita serenidade, 1.° porque o professor
+                  Adolfo Coelho com isenção de dureza escreveu, e 2.° porque de outro modo não
+                  poderia escrever em atenção à sua pessoa e ao seu jornal. Para o folheto que
+                  preparo reservo o tratar no tom que julgar merecido alguns indivíduos pouco
+                  inteligentes ou menos corretos, que têm deposto no seu inquérito.</p>
+               <p rend="indent-first">Desculpe-me o espaço que lhe tomei e disponha sempre do seu
+                  amigo e admirador.—<hi rend="italic">Fernando Pessoa</hi>.</p>
             </div>
          </div>
       </body>
