@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>"Prefácio" ― Alma errante, de António Botto</title>
+            <author>
+               <rs type="name" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Edição, Transcrição, Codificação</resp>
+               <name>Jorge Uribe</name>
+            </respStmt>
+            <respStmt>
+               <resp>Edição, Transcrição, Codificação, Atualização ortográfica</resp>
+               <name>Inês Filipa Rebelo do Carmo</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny-Krahmer</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2021</date>
+            <availability status="free">
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">Pessoa_Prefacio_Alma_errante.xml</idno>
+         </publicationStmt>
+         <notesStmt>
+            <note type="genre">
+               <rs type="genre" key="prosa">Prosa</rs>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <list type="work-index">
+               <item>
+                  <rs type="work" key="W360">"Prefácio" ― Alma errante, de António Botto</rs>
+               </item>
+            </list>
+            <biblStruct>
+               <analytic>
+                  <!-- UH: the analyic structure is needed for items which are not 
+               published independently (such as prefaces to books) -->
+                  <title level="a">"Prefácio"</title>
+                  <author>
+                     <rs type="name" key="FP">Fernando Pessoa</rs>
+                  </author>
+                  <textLang mainLang="pt"/>
+               </analytic>
+               <monogr>
+                  <title level="m">Alma errante</title>
+                  <author><rs type="name" key="P718" style="b">Eliezer Kamenezky</rs></author>
+                  <imprint>
+                     <date when="1914"><!-- IR: falta a data --></date>
+                     <pubPlace><!-- IR: falta o local --></pubPlace>
+                     <publisher><!-- IR: falta a editora --></publisher>
+                     <biblScope unit="page">5-21</biblScope>
+                  </imprint>
+               </monogr>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <variantEncoding method="parallel-segmentation" location="internal"/>
+      </encodingDesc>
+   </teiHeader>
+   <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+      <graphic url="prosa/Pessoa_Prefacio_Alma_errante_1.jpg"/>
+      <graphic url="prosa/Pessoa_Prefacio_Alma_errante_2.jpg"/>
+      <graphic url="prosa/Pessoa_Prefacio_Alma_errante_3.jpg"/>
+      <graphic url="prosa/Pessoa_Prefacio_Alma_errante_4.jpg"/>
+      <graphic url="prosa/Pessoa_Prefacio_Alma_errante_5.jpg"/>
+      <graphic url="prosa/Pessoa_Prefacio_Alma_errante_6.jpg"/>
+      <graphic url="prosa/Pessoa_Prefacio_Alma_errante_7.jpg"/>
+      <graphic url="prosa/Pessoa_Prefacio_Alma_errante_8.jpg"/>
+      <graphic url="prosa/Pessoa_Prefacio_Alma_errante_9.jpg"/>
+      <graphic url="prosa/Pessoa_Prefacio_Alma_errante_10.jpg"/>
+      <graphic url="prosa/Pessoa_Prefacio_Alma_errante_11.jpg"/>
+      <graphic url="prosa/Pessoa_Prefacio_Alma_errante_12.jpg"/>
+      <graphic url="prosa/Pessoa_Prefacio_Alma_errante_13.jpg"/>
+      <graphic url="prosa/Pessoa_Prefacio_Alma_errante_14.jpg"/>
+      <graphic url="prosa/Pessoa_Prefacio_Alma_errante_15.jpg"/>
+      <graphic url="prosa/Pessoa_Prefacio_Alma_errante_16.jpg"/>
+      <graphic url="prosa/Pessoa_Prefacio_Alma_errante_17.jpg"/>
+   </facsimile>
+   <text type="orig" corresp="#W360">
+      <body>
+         <head>PREFÁCIO</head>
+         <p rend="indent-first"><rs type="name" key="P718" style="a">ELIEZER KAMENESKY</rs> é judeu russo, vagamundo temporáriamente parado,
+            cultor teórico e prático do que chamam naturismo, e idealista e romantico como são todos
+            os judeus, quando não são o contrário.</p>
+         <p rend="indent-first">A sua personalidade como vagamundo não interessa para o entendimento
+            das suas composições: não se reflecte nelas. Se <rs type="name" key="P718">Eliezer</rs> nunca tivesse saído de Lugansk,
+            onde nasceu, essas composições poderiam nunca ter sido outras no sentido, embora,
+            evidentemente, o houvessem de ser na linguagem, que não seria a portuguesa.</p>
+         <p rend="indent-first">Tambem o seu culto do naturismo, ainda que deliberadamente expresso
+            em muitos passos do que escreve, não é ponto fundamental para a compreensão das suas
+            prosas ou versos. Êsse culto do natural é a forma ou expressão do seu misticismo de
+            judeu, e o seu misticismo de judeu é um misticismo de judeu russo.</p>
+         <p rend="indent-first">Para o caso, pois, de apresentar estas composições a leitores
+            portugueses, de sorte que êstes demasiadamente as não estranhem, basta qu consideremos
+            que <rs type="name" key="P718">Eliezer</rs> é judeu, judeu russo, e judeu místico. Uma análise, de onde venha a
+            explicação, terá pois que incidir sôbre a mentalidade mítica do judeu em geral, e do
+            judeu russo em particular.</p>
+         <milestone rend="space" unit="section"/>
+         <p rend="indent-first">Os pos equilibram-se, na sua vida psíquica, pela coexistencia
+            automática de qualidades opostas. Se soubermos, de qualquer povo, que êle é brutalmente
+            materialista, desde logo poderemos concluir que êle será brutalmente místico. Se
+            soubermos, de qualquer nação, que ha nêla típicamente um grande número de criminosos,
+            poderemos asseverar, sem investigação, que haverá nela, típicamente tambem, um grande
+            número de santos. A vida oscila como um pêndulo, e a oscilação num sentido requere, para
+            que a mesma vida não pare, uma igual oscilação no sentido inverso.</p>
+         <p rend="indent-first">Como, porém, na oscilação do pêndulo se mantém o ritmo do movimento,
+            sucede que tanto as qualidades que estão num limite da oscilação, como as que estão no
+            outro limite, participam da mesma oscilação essencial. Em outras palavras, e
+            servindo-nos do exemplo que citámos: um povo violentamente material é, ao mesmo tempo,
+            um povo violentamente místico; mas haverá um elemento — a violencia — de comum ao seu
+            materialismo e ao misticismo que se lhe contrapõe. Não pode existir um povo de brutais
+            na vida e delicados no sentimento dela: seriam ritmos diferentes, que o equilíbrio da
+            vida não consente.</p>
+         <p rend="indent-first">Onde quer que lancemos os olhos, na película ininterrupta da
+            história, encontramos disto exemplos. A Idade Média, bárbara e anciosa, era intensa e
+            brutal na sua vida de matéria e sentidos, e era intensa e brutal na vida do seu
+            misticismo maníaco. Não destôa da tése a subtileza delirante da especulação escolástica,
+            pois a subtileza, embora o não pareça, é a violencia do pensamento: a violencia é o
+            excesso da força, e, como a força do pensamento consiste na capacidade de distinção, a
+            volencia dêle consistirá na tendencia a distinguir de mais, e é isso que é a
+            subtileza.</p>
+         <p rend="indent-first">A Inglaterra ministra-nos outro exemplo, e noutra ordem. O povo
+            inglês foi sempre claramente activo e prático; é contudo o povo que deu ao mundo a
+            poesia lírica mais etérea e subtil. Mas o inglês, na mesma plena imersão prática, é
+            incoordenado e inconstrutivo: vai pela realidade fora aos apalpões, ainda que aos
+            apalpões segros. Um <rs type="name" key="P487">Infante D. Henrique</rs>, ou um <rs type="name" key="P539">Bismarck</rs>, é produto impossível em
+            Inglaterra. E, do mesmo modo, na mais alta poesia inglesa a inspiração sobreleva á
+            construção. Continúa a técnica de apalpões: nêsse nível, porém, tocam nos astros. Onde,
+            por desvio e excepção, a construção suba, como em <rs type="name" key="P84">Milton</rs>, desde logo a subtileza e a
+            eteridade descem. O <rs type="name" key="P719">Ariel</rs> do pagão <rs type="name" key="P65">Shakespeare</rs>, não sendo mais que um elemental do Ar, é
+            todavia mais angélico que os anjos do cristão <rs type="name" key="P84">Milton</rs> ― anjos da Cabala ou da Rosea Cruz,
+            ou, pelo menos, da Rosea cruz como <rs type="name" key="P720">Fludd</rs> a entendeu.</p>
+         <milestone rend="space" unit="section"/>
+         <p rend="indent-first">Esta existência necessária, nos povos, de elementos opostos, e
+            porisso complementares e equilibrantes, manifesta-se, em geral, atravez de indivíduos
+            diferentes. Quer dizer: não é no mesmo indivíduo que normalmente coincidem os dois
+            elementos complementares; aparece um em certos indivíduos, ouro em outros. O equilíbrio
+            dá-se na raça ou no povo em conjunto, não nos indivíduos separadamente.</p>
+         <p rend="indent-first">Algumas vezes, é certo, essa dupla mentalidade da raça se reflecte,
+            ou parece reflectir, no mesmo indivíduo. Tal foi, talvez, o caso de <rs type="name" key="P65">Shakespeare</rs> —
+            burguês banal, dirigindo atiladamente o seu teátro, emprestando dinheiro a juos a seus
+            conterrâneos, e, no mesmo tempo, escrevendo <hi rend="italic">A tormenta</hi>, que, para
+            tudo ter de etéreo e inspirado, é até simbólica e profética. Mas nem no caso de se citar
+            <rs type="name" key="P65">Shakespeare</rs> quer dizer que a coexistencia individual dos elementos opostos se dê sómente
+            em altos espíritos, nem o apontamos senão como a excepção, e para acentuar a regra. É na
+            raça ou nação, repita-se, que o equilíbrio essencial se dá.</p>
+         <p rend="indent-first">Isto vem, primeiro, para o fim geral de se compreender que, se nos
+            aparecer um indivíduo com característicos opostos aos que são vulgarmente distintivos da
+            sua raça, não é lícito que duvidemos que êle pertença a essa raça, ou que seja sincero
+            na presentação dêsses característicos: êle poderá ser tamsómente um depositário dos
+            característicos complementares da raça a que pertence. Isto vem, depois, para o fim
+            particular de se compreender que, sendo a raça judaíca universalmente conhecida pela sua
+            fechada e cautelosa materialidade, não havemos necessáriamente de desconfiar de
+            sinceridade de um judeu que se nos apresenta como um romantico e um idealista. E, para o
+            caso das composições de ELiezer — porque é delas, afinal, que se trata —, êste ponto da
+            sinceridade é importante: sem ela, como veremos, elas nada seriam.</p>
+         <milestone rend="space" unit="section"/>
+         <p rend="indent-first">O povo judeu é, essencialmente, e no sentido filosofico da palavra,
+            um povo materialista. E, como é essencialmente um povo materialista, é materialista na
+            sua materialidade e materialista na sua idealidade. Da sua materialidade não ha que
+            falar, pois todos falam dela e não é dela que aqui se trata. É à-cerca da sua idealidade
+            que convém e cabe a explicação.</p>
+         <p rend="indent-first">A idealidade judaica manifesta-se de três fórmas diferentes, todas
+            elas eivadas do materialismo central da raça, rítmo do pêndulo da vida que a anima. A
+            primeira fórma é o seu patriotismo tradicionalista; e o patriotismo tradicionalista,
+            seja de que nação fôr, é o modo mais material do sentimento da pátria ou da raça. A
+            segunda fórma é a especulação cabalistica, em que, embora se pretenda subtilizar, por
+            interpretações de três ordens, o conteúdo do Pentateuco, e e mais qe o Pentateuco, nunca
+            se atinge uma vera abstração ou uma espiritualidade verdadeira: material, considerando o
+            que pretende ser, é ainda o Nome Inefável, materiais os Sephiroth, os Arcanjos, os Anjos
+            e as Esferas Celestes, através de quem vem até nós a Sua emanação. A terceira fórma ―
+            não mais recente, mas mais recentemente sensível ― é o idealismo social em todos os seus
+            modos, desde o egualitarismo até ao naturismo; e essa é material por sua mesma
+            natureza.</p>
+         <p rend="indent-first">São estas as três fórmas da idealidade judaica, e, embora todas
+            manifestem o materialismo central da raça, não são materiais em seus intuitos; não ha
+            porisso que duvidar da sinceridade daquêles judeus em quem as vemos. Do tradicionalismo
+            racico, e certo, ninguém duvida ou duvidou; aliás, os antisemitas não têm nem tiveram
+            senão vantagem em acentuá-lo. As outras duas fórmas têm sido diversamente consideradas
+            pelos inimigos dos judeus: a primeira como sincera na origem mas não em certos modos do
+            seu uso, a segunda como insincera; e como ambas elas servindo — uma por utilisação,
+            outra por invenção — para desintegrar e dissolver a civilisação cristã, em a qual os
+            judeus adversariamente vivem.</p>
+         <p rend="indent-first">Acusam os cabalistas, de cuja sinceridade original se não duvida,
+            de, primeiro, através da Rósea Cruz, terem criado a Maçonaria, Ordem supostamente
+            anti-cristã, e de, mais tarde, por diversas vias, se terem infiltrad nela, para,
+            presumivelmente, contrariar e vencer as expansões cristã e templaria que se
+            manifestaram, depois da Oração de <rs type="name" key="P721">Ramsay</rs>, na creação dos Altos Graus e sobretudo da <hi
+               rend="italic">Stricta Observancia</hi> de von Hund ou dos seus Superiores Incognitos.
+            Acusam os idealistas sociais de, por meio de doutrinas egualitarias, para tal fim
+            inventadas, pretenderem mergulhar, e de facto estarem mergulhando, a sociedade
+            aristrocratica que é a de Europa na decadencia e na anarquia, para, evidentemente, sobre
+            os escombros construitem o Reino e o Reinado de Israel. E acusam a Maçonaria de ter
+            provocado a Revolução Francesa e os judeus de tere provocado a Revolução Russa.</p>
+         <milestone rend="space" unit="section"/>
+         <p rend="indent-first">Antes de mais, entendamo-nos bem sobre qual é a matéria de que se
+            está tratando. Trata-se do idealismo judaico e da sua sinceridade ou não sinceridade;
+            não se trata da acção política dos judeus. Essa é evidente e natural; tem-se
+            aproveitado, não so da Maçonaria e da ideologia egualitaria, mas de tudo quanto, de
+            origem judaica ou não judaica, possa de facto, devidamente utilizado, servir para
+            dissolver a civilisação tradicional, greco-romana e cristã, de Europa e do mundo
+            europeizado. E legitimamente se tem aproveitado, pois aos judeus assistem os mesmos
+            direitos que aos outros povos: o direito de defeza e o direito de império ― o primeiro
+            em absoluto, o segundo se o concedemos aos outros. Nem foram os judeus, ou a Maçonaria,
+            ou qualquer outra fôrça estranha, que provocou, ou poderia provocar, a Revolução
+            Francesa, ou a Revolução Russa, ou qualquer outra verdadeira Revolução. As revoluções
+            são provocadas pelo Poder tiranico que as torna, passado certo ponto, inevitáveis. Foi a
+            tirania do Antigo Regimen que fez a Revolução Francesa. Foi a tirania do Czarismo que
+            fez a Revolução Russa. As fôrças estranhas não fizeram mais que aproveitar-se, conforme
+            puderam, da matéria social incoordenada em que as tiranias, depois das revoluções que
+            provocaram, deixaram os povos que regiam.</p>
+         <milestone rend="space" unit="section"/>
+         <p rend="indent-first">O problema das origens da Maçonaria, e sobretudo do Grau de Mestre,
+            que é o seu fulcro, é confuso e obscuro ao ultimo ponto: ninguém, fóra ou dentro da
+            Ordem, se póde orgulhar de ter achado para ele uma solução, simples ou composta, que
+            satisfaça senão a quem a deu. Uma coisa, porém, se póde afirmar: a Maçonaria não é uma
+            Ordem judaica, e o conteúdo dos graus fundamentais, que vulgarmente chamam símbolicos,
+            não é judaico em espírito, mas só em figura. Se se quizer dar um nome de origem à
+            Maçonaria, o mais que poderá dizer-se é que ela é, quanto à composição dos graus
+            simbolicos, plausivelmente um produto do protestantismo liberal, e, quanto à redacção
+            dêles, certamente um produto do século dezoito inglês, em toda a sua chateza e
+            banalidade. O quadro judaico dos três graus e o cenário judaico do drama do Terceiro
+            podem ser considerados naturais em uma terra e um tempo protestantes. O protestantismo
+            foi, precisamente, a emergencia, a-dentro da religião cristã, dos elementos judaicos, em
+            desproveito dos greco-romanos; porisso se servíu ele sempre abundantemente de citações,
+            tipos e figuras extraídos do Velho Testamento. Ninguém crê, porém, ou diz que a Reforma,
+            pense-se dela o que se pensar, fôsse um movimento judaico.</p>
+         <p rend="indent-first">Áparte isto, os dois primeiros graus maçonicos, menos simbolicos que
+            emblematicos, não conduzem definitivamente a coisa nenhuma; e o grande mistério do Grau
+            de Mestre — que é, por assim dizer, a Rosa de toda a Cruz maçonica — é um símbolo vital
+            mas abstracto, que cada qual póde interpretar no sentido que entender. E assim de facto
+            se tem interpretado ― a êle e à parte simbolica dos outros dois ― através do vasto
+            esquêma divagativo dos Altos Graus e dos Graus Velados — estes, aliás, já fora e além da
+            Maçonaria. Tudo, desde o catolicismo ao ateísmo, se tem reflectido nêsses graus
+            interpretativos. Se ha Altos Graus que são nitida e materialmente cabalisticos, e até
+            anti-cristãos, tambem os ha que são espirituais ou cristãos, desde o sobregrau do Sacro
+            Rial Arco até àquele grau criptico em que <rs type="name" key="P722">Hiram</rs> é erquido como <rs type="name" key="P50" style="b">Cristo</rs>. Sucede, até, que
+            o mesmo grau do mesmo rito póde ter conteúdos diferentes sob diferentes Obediencias:
+            assim é que o Grau 18, propriamente Príncipe Rosa-Cruz, do Rito Escocês é «filosofico»
+            na America (depois da revisão de <rs type="name" key="P723">Pike</rs>), menos talvês que «filosofico» na Maçonaria
+            francêsa e suas congéneres, mas plenamente cristão (como aliás não poderia deixar de
+            ser) sob as Magnas Obediencias britanicas. Em resumo, nada e tudo se tem refletido na
+            Maçonaria: nada nos graus simbolicos, que de per si se não explicam; tudo nos Altos
+            Graus e nos Graus Velados, onde cada fabricante de ritos, de católico a ateu, deixou o
+            rastro dos seus preconceitos e das suas preocupações. Mais em resumo ainda: a Maçonaria
+            é, nas suas bases, insuficientemente dogmatica e definida para que do seu conteúdo se
+            possa afirmar isto ou aquilo, judaismo ou outra coisa qualquer.</p>
+         <p rend="indent-first">A presença de elementos cabalisticos nos graus simbolicos, tambem
+            não prova a origem judaica da Maçonaria. Quando a Maçonaria emergiu e se constituiu
+            declaradamente, em seus graus fundamentais, já de ha muito a Cabala tinha intérpreter
+            não-judeus e por êsses fôra cristianizada, para o que, aliás, eminentemente se prestava.
+            A presença de elementos cabalisticos na Maçonaria não prova, pois, uma origem judaica.
+            De resto, êsses elementos cabalisticos resumem-se em dois ― o sentido simbolico do
+            Templo de <rs type="name" key="P497">Salomão</rs> e a Palavra Perdida. O sentido simbolico do Primeito Templo, póde ser,
+            na Maçonaria, de origem templaria, e portanto cristã, pois a Ordem do Templo era-o «do
+            Templo de Salomão», e não se sabem ao certo os pormenores da iniciação secreta nessa
+            Ordem. Quanto à Palavra Perdida do Grau de Mestre, se de facto relembra o Nome Perdido
+            do cabalismo judaico, não é necessáriamente da mesma natureza. Sabe-se em que consiste a
+            essencia do Nome Perdido dos cabalistas; não se sabe que espécie de Palavra é que o
+            Mestre morreu para não revelar. A maior autoridade maçonica de hoje interpreta a Palavra
+            Perdida de um modo nitidamente não-judaico: <hi rend="italic">Verbum <rs type="name" key="P50" style="c">Christus</rs> est</hi>,
+            diz.</p>
+         <milestone rend="space" unit="section"/>
+         <p rend="indent-first">O que acaba de dizer-se da Maçonaria, com mais forte razão se pode
+            dizer dos Rosicrúcios, que, misturados com ela na antecâmara da sua vida emblemática,
+            bem poe ser que a houvessem fundado, ou contribuido para a sua fundação, como sistêma
+            especulativo. A grande Fraternidade é cristã no seu nome, cristã nos seus dois Magnos
+            Símbolos, cristã e católica (embora não-romana) nas suas dedicações. Os Rosicrúcios
+            eram, é certo, cabalistas, como eram, em dois sentidos, alquimístas; mas eram cabalistas
+            cristãos, como eram (sobretudo) alquimístas espirituais. Como vários outros,
+            aproveitaram-se da Cabala e lhe deram um sentido e um complemento cristãos; porisso com
+            mais razão se poderiam queixar os judeus de que os Irmãos se haviam servido da Cabala
+            para fins anti-judaicos, do que os cristãos de que êles tinham introduzido a Cabala na
+            substância do cristismo, onde, aliás, desde o Quarto Evangelho, já tôda a alma dela
+            existia. Acresce, quanto á Rosea Cruz, que os grandes expositores dela, desde antes do
+            seu aparecimento até nossos dias, teem sido declaradamente místicos cristãos, e, ainda,
+            que o voto de castidade absoluta, a que (por motivos que nada teem com virtude) a
+            Fraternidade obrigava o candidato, é a coisa menos judaica, embora «cabalística», que se
+            póde conceber.</p>
+         <milestone rend="space" unit="section"/>
+         <p rend="indent-first">Quanto ao idealismo social — isto é, aquêles princípios de
+            radicalismo social que habitualmente se manifestam pelo lema «Liberdade, Igualdade,
+            Fraternidade» do místico cristão <rs type="name" key="P724">Saint-Martin</rs> —, êle não é só judaico, nem, nas suas
+            origens europeias, precisou do judaismo para nascer. O radicalismo social europeu
+            nasceu, como doutrina, de remotas especulações gregas, transmitidas e reforçadas pelas
+            especulações (tam frequêntemente anti-monárquicas) dos escolásticos; nasceu, como facto,
+            da normal reacção humana contra as várias tiranías de Europa, auxiliada espiritualmente
+            pelos princípios sociais cristãos, tais como os Evangelhos os revelam. As doutrinas do
+            <rs type="name" key="P50" style="b">Cristo</rs>, se as não interpretarmos mística ou simbólicamente, são plenamente anarquistas.
+            Assim, o radicalismo social só pode dizer-se judeu no sentido em que o cristianísmo é
+            judeu.</p>
+         <p rend="indent-first">Existe, contudo, um radicalismo social puramente judaico e,
+            coincidindo êle com o radicalismo social de origem europeia, é evidente que um ao outro
+            se auxiliaram e auxiliam, se estimularam e estimulam. O radicalismo social judaico tem,
+            porém, uma origem diferente da do radicalismo social de Europa.</p>
+         <p rend="indent-first">O idealismo social dos judeus é, cumulativamente, uma saüdade e um
+            odio, ou, mais própriamente, um saüdosismo e uma defeza. A ância da pátria perdida
+            assume necessáriamente a fórma da ância pela presumivel fórma original, patriarcal e
+            simples, dessa mesma pátria; e o contraste, tanto entre a suposta liberdade dessa vida
+            primitiva e a sujeição constante do povo judeu pelos povos cristãos, como entre o
+            supôsto judaismo típico dessa vida e o supôsto cristianismo típico da presente, faz com
+            que, de dois modos, o idealismo judaico assuma um carácter egualitário, e esse
+            egualitarismo um carácter místico, pois procede de um sentimento e não de uma ideia. De
+            aí a sua intensidade intima e o seu formidável poder emissor.</p>
+         <p rend="indent-first">O que mais claramente prova isto é que êsse egualitarismo místico se
+            vê entre aquêles judeus que mais sofrem a opressão quotidiana, social ou política, da
+            civilisação estranha em que existem. São porisso os judeus orientais, e maximamente os
+            judeus russos, que albergam, nutrem e espalham o egualitarismo como doutrina. Fazem-no
+            sobretudo, como é natural, onde encontram para isso ambiente, e êsse ambiente é fácil
+            entre os povos meio selvagens como o russo, ou entre as camadas meio selvagens como são,
+            pela barbárie da semi-ignorancia, os operários de todo o mundo. O comunismo de hoje ―
+            que, como ideia, só os idiotas sabem o que é ― é o produto hibrido, e porisso esteril,
+            do misticismo judaico e da estupidês europeia. Não esqueçamos: e da estupidês
+            europeia.</p>
+         <milestone rend="space" unit="section"/>
+         <p rend="indent-first">Dado que o idealismo social dos judeus se constitui em tôrno da saüdade anciosa daquela primitiva vida paradisiaca que nunca houve em parte alguma, êsse idealismo necessáriamente agrega outras ideias, umas meio-sociais, outras não-sociais, que se ajustam ao sonho de tal vida. De aí o naturismo, o culto da simplicidade, o fraternitarismo directo e generalisado.</p>
+         <p rend="indent-first">Tal é, tipicamente, a mentalidade do judeu socialmente místico, e sobretudo do judeu russo, que é, pelas razões já expostas, o representante maximo dessa espécie do misticismo de Israel.</p>
+         <milestone rend="space" unit="section"/>
+         <p rend="indent-first">Nas composições de <rs type="name" key="P718" style="b">Eliezer Kamenezky</rs> tudo isso se revela e se expande ingenuamente. E, como tudo isso é sentido e sincero, essas composições, que não vivem, evidentemente, de uma intensa vida intelectual, nem do que nós europeus chamariamos uma intensa vida espiritual, ganham uma valia própria, que não é dificil sentir se nos desfizermos, ao lê-las, do que podemos chamar, sem nos insultarmos, os nossos preconceitos estéticos. Devemos reparar em que a sinceridade — e os poemas de <rs type="name" key="P718">Eliezer</rs> são infantilmente sinceros — tem uma poesia própria, independente da poesia que é própriamente poesia. Nisso, sim, devemos reparar sem Grecia, isto é, sem estética nem metafísica.</p>
+         <p rend="indent-first">Duas outras considerações, alheias à substância dos raciocínios formados no decurso dêste breve prefácio, nos completarão na disposição, se a tivermos, de sermos justos para com <rs type="name" key="P718">Eliezer</rs>, e portanto para com o entendimento emotivo dos seus versos.</p>
+         <p rend="indent-first">A primeira é que <rs type="name" key="P718">Eliezer</rs> não é português, nem se pode portanto esperar que maneje com qualquer intima destreza a que é uma das mais completas, subtis e opulentas línguas do mundo. A simplicidade do que tem a dizer-nos não exige, é certo, os contornos de Vieira ou as cambientes do <hi rend="italic"><rs type="periodical" key="J12">Orfeu</rs></hi>. Mas, assim como a ideia e a emoção se refletem no vocabulario e no jôgo sintático, assim também êstes reagem sôbre a emoção ou ideia, e, se por qualquer razão são simples, as compelem, em certo grau, a ser simples também.</p>
+         <p rend="indent-first">A segunda é que toda a literatura judaica, do melhor ao peor, ― direi, até, toda a literatura semitica ― é essencialmente incoordenada e difusa. Não ha construção no conjunto nem precisão na frase. Nenhum judeu, grande poeta que fôsse, seria capaz de escrever uma composição que contivesse, explicito ou implicito, o profundo movimento logico — strofe, antistrofe, épodo — da ode grega. Nenhum judeu, grande poeta que fôsse, seria capaz de escrever, como <rs type="name" key="P193" style="c">Esquilo</rs>, «riso inumero das ondas do mar». E, é claro, nenhum judeu seria capaz de escrever êste prefácio.</p>
+         <signed rend="right"><rs type="name" key="FP" role="author" style="b">Fernando Pessoa</rs>.</signed>
+      </body>
+   </text>
+</TEI>
