@@ -8,7 +8,7 @@
     
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
     
-    <xsl:param name="TextMode">orig</xsl:param>
+    <xsl:param name="TextMode">reg</xsl:param>
     
     <xsl:template match="teiHeader"/>
     <xsl:template match="text[@type!=$TextMode]"/>

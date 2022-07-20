@@ -10,7 +10,7 @@
     <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
     
     <xsl:param name="lang">pt</xsl:param>
-    <xsl:param name="TextMode">orig</xsl:param>
+    <xsl:param name="TextMode">reg</xsl:param>
     
     <xsl:template match="text[@type!=$TextMode]"/>
     <xsl:template match="text[not(@type)] | text[@type=$TextMode]">
