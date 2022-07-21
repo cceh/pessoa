@@ -19,7 +19,6 @@ import module namespace search="http://localhost:8080/exist/apps/pessoa/search" 
 import module namespace author="http://localhost:8080/exist/apps/pessoa/author" at "author.xqm";
 import module namespace page="http://localhost:8080/exist/apps/pessoa/page" at "page.xqm";
 import module namespace charts="http://localhost:8080/exist/apps/pessoa/charts" at "charts.xqm";
-import module namespace obras="http://localhost:8080/exist/apps/pessoa/obras" at "obras.xqm";
 import module namespace index="http://localhost:8080/exist/apps/pessoa/index" at "index.xqm";
 
 (:~import MagicalDraw :)

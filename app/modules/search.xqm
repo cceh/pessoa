@@ -136,10 +136,10 @@ declare function search:mergeParameters_xquery ($type as xs:string) as xs:string
     let $release := concat($code,"release=",search:get-parameters("release"))
     return ($term,$after,$before,$lang,$lang_ao,$person,$genre,$role,$release)
 };
-(: ODER FUNKTION : FIltert die Sprache, TERM :)
+(: ODER FUNKTION : Filtert die Sprache, TERM :)
 declare function search:lang_or_term($db as node()*) as node()* {
     for $hit in search:get-parameters("lang")
-        let $para := ("mainLang","otherLang","Lang")
+        let $para := ("doc_mainLang","doc_otherLangs","pub_mainLang","pub_otherLangs")
         for $match in $para
                 let $search_terms := concat('("',$match,'"),"',$hit,'"')
                 let $search_funk := concat("//range:field-contains(",$search_terms,")")
@@ -147,7 +147,7 @@ declare function search:lang_or_term($db as node()*) as node()* {
             return util:eval($search_build)
 };
 
-(: UND FUNKTION : Filtert die Sprache, TERM:)
+(: UND FUNKTION : Filtert die Sprache, TERM :)
 
 declare variable $search:lang_terms := if(search:get-parameters("lang") != "") then search:get-parameters("lang") else ("pt","en","fr");
 
@@ -159,10 +159,10 @@ declare function search:lang_and_term($db as node()*, $step as xs:string) as nod
                 let $build_search := concat("$db",$build_funk) 
                 return util:eval($build_search) 
         else if (search:get-parameters("release")="published" and $step = "published") then 
-            for $match in $search:lang_terms
-            let $build_funk := concat("//range:field-contains('lang','",$match,"')")
-            let $build_search := concat("$db",$build_funk)
-            return util:eval($build_search)  
+            for $match in search:lang_build_para_pub("lang")
+                let $build_funk := concat("//range:field-contains(",$match,")")
+                let $build_search := concat("$db",$build_funk) 
+                return util:eval($build_search)  
         else ()
 };
 (: ODER FUNTKION : Filtert die Sprache :) 
@@ -180,19 +180,21 @@ declare function search:lang_or ($db as xs:string+) as node()*{
 declare function search:lang_filter_or($db as xs:string, $step as xs:string?) as node()* {
     if(search:get-parameters("release")="unpublished" or $step = "unpublished") then
         for $hit in $search:lang_terms
-            let $para := ("mainLang","otherLang")
+            let $para := ("doc_mainLang","doc_otherLangs")
             for $match in $para
                 let $search_terms := concat('("',$match,'"),"',$hit,'"')
                 let $search_funk := concat("//range:field-contains(",$search_terms,")")
                 let $search_build := concat("collection($db)",$search_funk)
             return util:eval($search_build) 
-        else if (search:get-parameters("release")="published" or $step = "published") then 
-            for $hit in $search:lang_terms
-                let $search_terms := concat('("lang"),"',$hit,'"')
+    else if (search:get-parameters("release")="published" or $step = "published") then 
+        for $hit in $search:lang_terms
+            let $para := ("pub_mainLang","pub_otherLangs")
+            for $match in $para
+                let $search_terms := concat('("',$match,'"),"',$hit,'"')
                 let $search_funk := concat("//range:field-contains(",$search_terms,")")
                 let $search_build := concat("collection($db)",$search_funk)
-            return util:eval($search_build) 
-        else ()
+        return util:eval($search_build) 
+    else ()
 };
 
 (: START UND FUNKTION : Filtert die Sprache :)
@@ -205,7 +207,6 @@ declare function search:lang_and($db as xs:string+) as node()* {
                             else if ($match = "/db/apps/pessoa/data/pub") then search:lang_filter_and($match, "published")
                             else()
                        else ()
-                       (:(search:lang_filter_and($match,"non_public"),search:lang_filter_and($match, "public")):)
         return $result
 };
 
@@ -216,17 +217,24 @@ declare function search:lang_filter_and($db as xs:string, $step as xs:string?) a
                 let $build_search := concat("collection($db)",$build_funk) 
                 return util:eval($build_search) 
         else if (search:get-parameters("release")="published" or $step = "published") then 
-            for $match in search:get-parameters("lang")
-            let $build_funk := concat("//range:field-contains('lang','",$match,"')")
-            let $build_search := concat("collection($db)",$build_funk)
-            return util:eval($build_search)  
+            for $match in search:lang_build_para_pub("lang")
+                let $build_funk := concat("//range:field-contains(",$match,")")
+                let $build_search := concat("$db",$build_funk) 
+                return util:eval($build_search) 
         else ()
 };
 declare function search:lang_build_para_doc ($para as xs:string) as xs:string* {
     for $hit in search:get-parameters($para)
-     (: let $parameters :=  search:get-parameters($para):)
         let $result := concat('("',
         string-join(search:lang_build_para_doc_ex(search:get-parameters($para),$hit),
+        '","'),'"),"',
+        string-join($search:lang_terms,'","'),'"')
+        return $result
+};
+declare function search:lang_build_para_pub ($para as xs:string) as xs:string* {
+    for $hit in search:get-parameters($para)
+        let $result := concat('("',
+        string-join(search:lang_build_para_pub_ex(search:get-parameters($para),$hit),
         '","'),'"),"',
         string-join($search:lang_terms,'","'),'"')
         return $result
@@ -234,7 +242,12 @@ declare function search:lang_build_para_doc ($para as xs:string) as xs:string* {
 
 declare function search:lang_build_para_doc_ex($para as xs:string+, $hit as xs:string) as xs:string* {
         for $other in $para
-            let $result := if($other = $hit) then "mainLang" else "otherLang"
+            let $result := if($other = $hit) then "doc_mainLang" else "doc_otherLangs"
+            return $result
+};
+declare function search:lang_build_para_pub_ex($para as xs:string+, $hit as xs:string) as xs:string* {
+        for $other in $para
+            let $result := if($other = $hit) then "pub_mainLang" else "pub_otherLangs"
             return $result
 };
 (: Sprach Filter END:)
@@ -263,7 +276,7 @@ declare function search:author_build($db as node()*) as node()* {
                         
         for $person in search:get-parameters("person")
            for $role in $roles
-                let $merge := concat('("person","role"),','"',$person,'","',$role,'"')
+                let $merge := concat('("rs_key","rs_role"),','"',$person,'","',$role,'"')
                 let $build_range :=concat("//range:field-eq(",$merge,")")
                 let $build_search := concat("$db",$build_range)
            return util:eval($build_search)
@@ -273,7 +286,7 @@ declare function search:author_build($db as node()*) as node()* {
 declare function search:date_build($db as node()*) as node()* {
      let $start := if(search:get-parameters("SE_from") ="") then xs:integer("1900") else xs:integer(search:get-parameters("SE_from"))
      let $end := if( search:get-parameters("SE_to") = "") then xs:integer("1935") else xs:integer(search:get-parameters("SE_to"))
-     let $paras := ("date","date_when","date_notBefore","date_notAfter","date_from","date_to")
+     let $paras := ("doc_date_when","doc_date_notBefore","doc_date_notAfter","doc_date_from","doc_date_to", "pub_date_when", "pub_date_from", "pub_date_to")
      for $date in ($start to $end)
         for $para in $paras
          let $result := search:date_search($db,$para,$date)
@@ -581,8 +594,7 @@ declare function search:singleDocument($doc as xs:string) {
 
 (: Range Suche :)
 declare function search:search_range($para as xs:string, $db as node()*) as node()* {
-    for $hit in search:get-parameters($para)    
-     (:   let $para := if($para = "person")then  "author" else () :)
+    for $hit in search:get-parameters($para)
         let $search_terms := concat('("',$para,'"),"',$hit,'"')
         let $search_funk := concat("//range:field-eq(",$search_terms,")")
         let $search_build := concat("$db",$search_funk)
@@ -590,8 +602,6 @@ declare function search:search_range($para as xs:string, $db as node()*) as node
 };
 
 declare function search:search_range_simple($para as xs:string,$hit as xs:string, $db as node()*) as node()* {
- 
-     (:   let $para := if($para = "person")then  "author" else () :)
         let $search_terms := concat('("',$para,'"),"',$hit,'"')
         let $search_funk := concat("//range:field-eq(",$search_terms,")")
         let $search_build := concat("$db",$search_funk)
@@ -612,7 +622,7 @@ declare function search:Search_FieldStartsWith($type as xs:string, $letter as xs
         return util:eval($build)
 };
 
-declare function search:Search-MultiStats($db as node()*, $name as xs:string*, $case as xs:string*,$content as xs:string*) as node()* {
+declare function search:Search_MultiStats($db as node()*, $name as xs:string*, $case as xs:string*,$content as xs:string*) as node()* {
     let $name := concat('("',string-join($name,'","'),'")')
     let $case := concat('("',string-join($case,'","'),'")')
     let $content := concat('"',string-join($content,'","'),'"')

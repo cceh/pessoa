@@ -20,10 +20,13 @@ declare function local:move-index(){
               xmldb:create-collection("/db/system/config/db/apps/pessoa/data", "pub")
         )
         else (),
+    	xmldb:move($app-path, $conf-path, "collection_data.xconf"),
     	xmldb:move($app-path, concat($conf-path, "/doc"), "collection_doc.xconf"),
     	xmldb:move($app-path, concat($conf-path, "/pub"), "collection_pub.xconf"),
+    	xmldb:rename($conf-path, "collection_data.xconf", "collection.xconf"),
     	xmldb:rename(concat($conf-path, "/doc"), "collection_doc.xconf", "collection.xconf"),
     	xmldb:rename(concat($conf-path, "/pub"), "collection_pub.xconf", "collection.xconf"),
+    	xmldb:reindex(concat($app-path, "/data")),
     	xmldb:reindex(concat($app-path, "/data/doc")),
     	xmldb:reindex(concat($app-path, "/data/pub"))
 	)
@@ -190,17 +193,6 @@ declare function  local:getCorrectDoc_nummeric($label as xs:string, $pos as xs:i
     for $cut in (0 to 9)
     return if (contains(substring($label, $pos, 1),xs:string($cut))) then xs:boolean("true") else  ()
 };
-
-declare function local:search_range_simple($para as xs:string,$hit as xs:string, $db as node()*) as node()* {
- 
-     (:   let $para := if($para = "person")then  "author" else () :)
-        let $search_terms := concat('("',$para,'"),"',$hit,'"')
-        let $search_funk := concat("//range:field-eq(",$search_terms,")")
-        let $search_build := concat("$db",$search_funk)
-        return util:eval($search_build)
-};
-
-
 
 declare function local:FindFirstLetter-new($text as xs:string, $pos as xs:integer) {
     if(matches(substring($text,$pos,1),'[A-z\d]')) then substring($text,$pos,1)

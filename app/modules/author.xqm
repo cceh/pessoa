@@ -56,17 +56,17 @@ declare function author:getTabContent($node as node(), $model as map(*), $textTy
     let $authorKey := author:getAuthorId($author)
     let $folders := if($textType eq "all") then ("doc","pub") else $textType
     let $items := for $fold in $folders                              
-                    let $name := if($fold eq "doc") then ("person","role") else "person"
+                    let $name := if($fold eq "doc") then ("rs_key","rs_role") else "pub_author"
                     let $case := if($fold eq "doc") then ("eq","eq") else "eq"
                     let $content := if($fold eq "doc") then ($authorKey,"author") else $authorKey
                     (: addition of mentions in prose publications :)
-                    let $name_b := ("person","role")
+                    let $name_b := ("rs_key","rs_role")
                     let $case_b := ("eq","eq")
                     let $content_b := ($authorKey,"author")
-                    let $db := (search:Search-MultiStats(collection(concat("/db/apps/pessoa/data/",$fold,"/")),$name,$case,$content),
+                    let $db := (search:Search_MultiStats(collection(concat("/db/apps/pessoa/data/",$fold,"/")),$name,$case,$content),
                                 (: add mentions in publications :)
                                 if ($fold eq "pub")
-                                then (search:Search-MultiStats(collection(concat("/db/apps/pessoa/data/",$fold,"/")),$name_b,$case_b,$content_b))
+                                then (search:Search_MultiStats(collection(concat("/db/apps/pessoa/data/",$fold,"/")),$name_b,$case_b,$content_b))
                                 else ())
                     for $doc in $db
                         let $refer := substring-before(root($doc)/util:document-name(.),".xml") 

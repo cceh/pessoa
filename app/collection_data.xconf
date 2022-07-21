@@ -1,0 +1,23 @@
+<!-- Save to : /system/config/db/apps/pessoa/data -->
+<collection xmlns="http://exist-db.org/collection-config/1.0">
+  <index xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <!-- Disable the old full text index -->
+    <fulltext default="none" attributes="false"/>
+    <!-- Lucene index is configured below -->
+    <lucene>
+      <analyzer class="org.apache.lucene.analysis.standard.StandardAnalyzer"/>
+      <analyzer id="ws" class="org.apache.lucene.analysis.WhitespaceAnalyzer"/>
+      <text qname="tei:TEI"/>
+    </lucene>
+    <range>
+      <create qname="tei:TEI">
+        <field name="filename" match="tei:teiHeader/tei:fileDesc/tei:publicationStmt/tei:idno" type="xs:string"/>
+        <field name="rs_type" match="tei:text/tei:body/tei:div//tei:rs/@type" type="xs:string"/>
+        <field name="rs_role" match="tei:text/tei:body/tei:div//tei:rs/@role" type="xs:string"/>
+        <field name="rs_style" match="tei:text/tei:body/tei:div//tei:rs/@style" type="xs:string"/>
+        <field name="rs_key" match="tei:text/tei:body/tei:div//tei:rs/@key" type="xs:string"/>
+      </create>
+    </range>
+  </index>
+</collection>

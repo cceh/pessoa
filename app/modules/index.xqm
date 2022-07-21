@@ -2,7 +2,6 @@ xquery version "3.1";
 module namespace index="http://localhost:8080/exist/apps/pessoa/index";
 import module namespace search="http://localhost:8080/exist/apps/pessoa/search" at "search.xqm";
 import module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers" at "helpers.xqm";
-import module namespace obras="http://localhost:8080/exist/apps/pessoa/obras" at "obras.xqm";
 import module namespace doc="http://localhost:8080/exist/apps/pessoa/doc" at "doc.xqm";
 
 declare namespace request="http://exist-db.org/xquery/request";
@@ -39,8 +38,9 @@ declare function index:collectGenre($node as node(), $model as map(*), $type as 
     (: retrieve the genre key from lists.xml :)
     let $type := $helpers:lists//tei:list[@type='genres']/tei:item[@xml:id=$type]/tei:note[@type='range']/data(.)
     (: get the items for that genre :)
-    let $items := for $fold in ("doc","pub")                                 
-                    let $db := search:search_range_simple("genre",$type,collection(concat("/db/apps/pessoa/data/",$fold,"/")))
+    let $items := for $fold in ("doc","pub")
+                    let $para := if ($fold = "doc") then "doc_genre" else "pub_genre"
+                    let $db := search:search_range_simple($para,$type,collection(concat("/db/apps/pessoa/data/",$fold,"/")))
                     for $doc in $db
                         (: get the title :)
                         let $title := $doc//tei:titleStmt/tei:title/data(.)
@@ -178,21 +178,21 @@ declare function index:getPersonIndex($node as node(), $model as map(*)) {
                                     {
                                     (: get documents for the person; here only cases are retrieved, where person names
                                     are mentioned in the text of the documents :)
-                                    let $name-a := ("type","person")
+                                    let $name-a := ("rs_type","rs_key")
                                     let $case-a := ("eq","eq")
                                     let $content-a := ("name",$id)
                                     let $a :=
-                                        for $item in search:Search-MultiStats($docs,$name-a,$case-a,$content-a)
+                                        for $item in search:Search_MultiStats($docs,$name-a,$case-a,$content-a)
                                         let $title := $item//tei:titleStmt/tei:title[1]/data(.)
                                         let $link := substring-before($item//tei:idno[@type="filename"]/data(.),".xml")
                                         return <item title="{$title}" link="doc/{$link}" published="{$item//tei:availability/@status/data(.)}" viaf="{$viaf}"/>
                                     (: get publications for the person; here the names can be of the authors of the publication
                                     or they can be mentioned inside of the text of the publications :)
-                                    let $name-b := ("rs_type","rs_key")
-                                    let $case-b := ("eq","eq")
-                                    let $content-b := ("name",$id)
+                                    let $name-b := ("pub_author","rs_type","rs_key")
+                                    let $case-b := ("eq","eq","eq")
+                                    let $content-b := ($id,"name",$id)
                                     let $b :=
-                                        for $item in search:Search-MultiStats($pubs,$name-b,$case-b,$content-b)
+                                        for $item in search:Search_MultiStats($pubs,$name-b,$case-b,$content-b)
                                         let $title := $item//tei:titleStmt/tei:title[1]/data(.)
                                         let $link := substring-before($item//tei:idno[@type="filename"]/data(.),".xml")
                                         return <item title="{$title}" link="pub/{$link}" published="{$item//tei:availability/@status/data(.)}" viaf="{$viaf}"/>
@@ -260,8 +260,8 @@ declare function index:collectJournals($node as node(), $model as map(*)) {
 };
 
 declare function index:FindJournalsEntrys($key as xs:string) {
-    ( (: journals mentioned in documents (weirdly, the index is called 'person' for all types of mentions...) :)
-      for $item in search:search_range_simple("person",$key,collection("/db/apps/pessoa/data/doc/"))
+    ( (: journals mentioned in documents :)
+      for $item in search:search_range_simple("rs_key",$key,collection("/db/apps/pessoa/data/doc/"))
                         return <item title="{replace($item//tei:titleStmt/tei:title[1]/data(.),"/E3","")}" 
                                                date="{search:dateDoc($item)}" 
                                                ref="{concat("doc/",substring-before($item//tei:idno[@type="filename"]/data(.),".xml"))}"

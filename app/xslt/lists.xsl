@@ -13,7 +13,7 @@
     <xsl:param name="host">http://pessoadigital.pt</xsl:param>
     
     <xsl:template match="/">
-        <xsl:apply-templates select=".//text[@type='orig']/body"/>
+        <xsl:apply-templates select=".//text[@type='orig' or not(@type)]/body"/>
     </xsl:template>
     
     <xsl:template match="body">
