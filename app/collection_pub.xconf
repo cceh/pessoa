@@ -13,6 +13,13 @@
     </lucene>
     <range>           
       <create qname="tei:TEI">
+        <!-- the following fields are the same for docs and pubs: -->
+        <field name="filename" match="tei:teiHeader/tei:fileDesc/tei:publicationStmt/tei:idno" type="xs:string"/>
+        <field name="rs_type" match="tei:text/tei:body/tei:div//tei:rs/@type" type="xs:string"/>
+        <field name="rs_role" match="tei:text/tei:body/tei:div//tei:rs/@role" type="xs:string"/>
+        <field name="rs_style" match="tei:text/tei:body/tei:div//tei:rs/@style" type="xs:string"/>
+        <field name="rs_key" match="tei:text/tei:body/tei:div//tei:rs/@key" type="xs:string"/>
+        <!-- the following fields are specific for pubs: -->
         <field name="pub_author" match="tei:teiHeader/tei:fileDesc//tei:titleStmt/tei:author/tei:rs/@key" type="xs:string" />
         <field name="pub_genre" match="tei:teiHeader/tei:fileDesc/tei:notesStmt//tei:rs/@key" type="xs:string"/>
         <field name="pub_mainLang" match="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct/tei:analytic/tei:textLang/@mainLang" type="xs:string"/>

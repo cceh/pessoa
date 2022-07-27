@@ -20,13 +20,10 @@ declare function local:move-index(){
               xmldb:create-collection("/db/system/config/db/apps/pessoa/data", "pub")
         )
         else (),
-    	xmldb:move($app-path, $conf-path, "collection_data.xconf"),
     	xmldb:move($app-path, concat($conf-path, "/doc"), "collection_doc.xconf"),
     	xmldb:move($app-path, concat($conf-path, "/pub"), "collection_pub.xconf"),
-    	xmldb:rename($conf-path, "collection_data.xconf", "collection.xconf"),
     	xmldb:rename(concat($conf-path, "/doc"), "collection_doc.xconf", "collection.xconf"),
     	xmldb:rename(concat($conf-path, "/pub"), "collection_pub.xconf", "collection.xconf"),
-    	xmldb:reindex(concat($app-path, "/data")),
     	xmldb:reindex(concat($app-path, "/data/doc")),
     	xmldb:reindex(concat($app-path, "/data/pub"))
 	)
