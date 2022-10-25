@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>English Poems III</title>
+            <author>
+               <rs type="name" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Edição, Codificação</resp>
+               <name>Jorge Uribe</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny-Krahmer</name>
+            </respStmt>
+            <respStmt>
+               <resp>Transcrição, Codificação</resp>
+               <name>Inês Filipa Rebelo do Carmo</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+               Tradição (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability status="restricted">
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">Pessoa_English_Poems_III.xml</idno>
+         </publicationStmt>
+         <notesStmt>
+            <note type="genre">
+               <rs type="genre" key="poesia">Poesia</rs>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <list type="work-index">
+               <item><rs type="work" key="362">English Poems III</rs></item>
+            </list>
+            <biblStruct>
+               <analytic>
+                  <title level="a">English Poems III</title>
+                  <author>
+                     <rs type="name" key="FP">Fernando Pessoa</rs>
+                  </author>
+                  <textLang mainLang="en"/>
+               </analytic>
+               <monogr>
+                  <title>English Poems III</title>
+                  <author>
+                     <rs type="name" key="FP">Fernando Pessoa</rs>
+                  </author>
+                  <textLang mainLang="en"/>
+                  <imprint>
+                     <date when="1921">1921</date>
+                     <pubPlace>Lisboa</pubPlace>
+                     <publisher>Olisipo ― Apartado 145</publisher>
+                     <publisher>Printing Office of the Annuario Commercial ― 24, Restauradores, Lisboa</publisher>
+                     <biblScope unit="page">19 pp.</biblScope>
+                  </imprint>
+               </monogr>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <variantEncoding method="parallel-segmentation" location="internal"/>
+      </encodingDesc>
+   </teiHeader>
+   <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+      <graphic url="Pessoa_English_Poems_III_1.jpg"/>
+      <graphic url="Pessoa_English_Poems_III_2.jpg"/>
+      <graphic url="Pessoa_English_Poems_III_3.jpg"/>
+      <graphic url="Pessoa_English_Poems_III_4.jpg"/>
+      <graphic url="Pessoa_English_Poems_III_5.jpg"/>
+      <graphic url="Pessoa_English_Poems_III_6.jpg"/>
+      <graphic url="Pessoa_English_Poems_III_7.jpg"/>
+      <graphic url="Pessoa_English_Poems_III_8.jpg"/>
+      <graphic url="Pessoa_English_Poems_III_9.jpg"/>
+      <graphic url="Pessoa_English_Poems_III_10.jpg"/>
+      <graphic url="Pessoa_English_Poems_III_11.jpg"/>
+      <graphic url="Pessoa_English_Poems_III_12.jpg"/>
+      <graphic url="Pessoa_English_Poems_III_13.jpg"/>
+      <graphic url="Pessoa_English_Poems_III_14.jpg"/>
+      <graphic url="Pessoa_English_Poems_III_15.jpg"/>
+      <graphic url="Pessoa_English_Poems_III_16.jpg"/>
+      <graphic url="Pessoa_English_Poems_III_17.jpg"/>
+      <graphic url="Pessoa_English_Poems_III_18.jpg"/>
+   </facsimile>
+   <text type="orig" corresp="#W362">
+      <front>
+         <titlePage>
+            <docTitle>
+               <titlePart type="main" rend="center">English Poems</titlePart>
+               <titlePart type="sub" rend="center">BY<lb/><rs type="name" role="editor" key="FP"
+                  style="b">FERNANDO PESSOA</rs>
+               </titlePart>
+               <titlePart type="sub" rend="center">III<lb/>EPITHALAMIUM</titlePart>
+            </docTitle>
+            <byline rend="center">LISBON<lb/>1921</byline>
+         </titlePage>
+      </front>
+      <body>
+         <div>
+            <pb n="3"/>
+            <head>III</head>
+            <head>EPITHALAMIUM</head>
+            <div>
+               <head>I</head>
+               <lg>
+                  <l>Set ope all shutters, that the day come in</l>
+                  <l>Like a sea or a din!</l>
+                  <l>Let not a nook of useless shade compel</l>
+                  <l>Thoughts of the night, or tell</l>
+                  <l>The mind's comparing that some things are sad,</l>
+                  <l>For this day all are glad!</l>
+                  <l>'Tis morn, 'tis open morn, the full sun is</l>
+                  <l>Risen from out the abyss</l>
+                  <l>Where last nght lay beyond the unseen rim</l>
+                  <l>Of the horizon dim.</l>
+                  <l>Now is the bride awaking. Lo! she starts</l>
+                  <l>To feel the day is home</l>
+                  <l>Whose too-near night will put two different hearts</l>
+                  <l>To beat as near as flesh can let them come.</l>
+                  <l>Guess how she joys in her feared going, nor opes</l>
+                  <l>Her eyes for fear of fearing at her joy.</l>
+                  <l>Now is the pained arrival of all hopes.</l>
+                  <l>With the half-thought she scarce knows how to toy.</l>
+                  <pb n="4"/>
+                  <l>Oh, let her wait a moment or a day</l>
+                  <l>And prepare for the fray</l>
+                  <l>For which her thoughts not ever quite prepare!</l>
+                  <l>With the real day's arrival she's half wroth.</l>
+                  <l>Though she wish what she wants, she yet doth stay.</l>
+                  <l>Her dreams yet mergèd are</l>
+                  <l>In the slow verge of sleep, which idly doth</l>
+                  <l>The accurate hope of things remotely mar.</l>
+               </lg>
+            </div>
+            <div>
+               <head>II</head>
+               <lg>
+                  <l>Part from the windows the small curtains set</l>
+                  <l>Sight more than light to omit!</l>
+                  <l>Look on the general fields, how bright they lie</l>
+                  <l>Under the broad blue sky,</l>
+                  <l>Cloudless, and the beginning of the heat</l>
+                  <l>Does the sight half ill-treat!</l>
+                  <l>The bride hath wakenèd. Lo! she feels her shaking</l>
+                  <l>Heart better all her waking!</l>
+                  <l>Her breasts ar with fear's coldness inward clutched</l>
+                  <l>And more felt on her grown,</l>
+                  <l>That will by hands other than hers be touched</l>
+                  <l>And will find lips sucking their budded crown.</l>
+                  <l>Lo! the thought of the bridegroom's hands already</l>
+                  <l>Feels her about where even her hands are shy,</l>
+                  <l>And her thoughts shrink till they become unready.</l>
+                  <l>She gathers up her body and still doth lie.</l>
+                  <l>She vaguely lets her eyes feel opening.</l>
+                  <l>In a fringed mist each thing</l>
+                  <l>Looms, and the present day is truly clear</l>
+                  <l>But to her sense of fear.</l>
+                  <l>Like a hue, light lies on her lidded sight,</l>
+                  <l>And she half hates the inevitable light.</l>
+               </lg>
+            </div>
+               <pb n="5"/>
+               <div>
+                  <head>III</head>
+                  <lg>
+                     <l>Open the windows and the doors all wide</l>
+                     <l>Lest aught og night abide,</l>
+                     <l>Or, like a ship's trail in the sea, survive</l>
+                     <l>What made it there to live!</l>
+                     <l>She lies in bed half waiting that her wish</l>
+                     <l>Grow bolder or more rich</l>
+                     <l>To make her rise as a common day were here.</l>
+                     <l>That she would be a bride in bed with man</l>
+                     <l>The parts where she is woman do insist</l>
+                     <l>And send up messages that shame doth ban</l>
+                     <l>From being dreamed but in a shapeless mist.</l>
+                     <l>She opes her eyes, the ceiling sees above</l>
+                     <l>Shutting the small alcove,</l>
+                     <l>And thinks, till she must shut her eyes again,</l>
+                     <l>Another ceiling she this night will know,</l>
+                     <l>Another house, another bed, she lain</l>
+                     <l>In a way she half guesses; so</l>
+                     <l>She shuts her eyes to see not the room she</l>
+                     <l>Soon will no longer see.</l>
+                  </lg>
+            </div>
+            <div>
+               <head>IV</head>
+               <lg>
+                  <l>Let the wide light come through the whole house now</l>
+                  <l>Like a herald with brow</l>
+                  <l>Garlanded wound with roses and those leaves</l>
+                  <l>That love for its love weaves!</l>
+                  <l>Between her and the ceiling this day's ending</l>
+                  <l>A man's weight will be bending.</l>
+                  <l>Lo! with the thought her legs she twines, well knowing</l>
+                  <l>A hand will part them then;</l>
+                  <l>Fearing that entering in her, that allowing</l>
+                  <l>That will make softness begin rude at pain.</l>
+                  <pb n="6"/>
+                  <l>If ye, glad sunbeams, are inhabitèd</l>
+                  <l>By sprites or gnomes that dally with the day,</l>
+                  <l>Whisper her, if she shrink that she'll be bled,</l>
+                  <l>That love's large bower is doored in this small way.</l>
+               </lg>
+            </div>
+            <div>
+               <head>V</head>
+               <lg>
+                  <l>Now will her grave of untorn maidenhood</l>
+                  <l>Be dug in her small blood.</l>
+                  <l>Assemble ye at that glad funeral</l>
+                  <l>And weave her scarlet pall,</l>
+                  <l>O pinings for the flesh of man that often</l>
+                  <l>Did her secret hours soften</l>
+                  <l>And take her willing and unwilling hand</l>
+                  <l>Where pleasure starteth up.</l>
+                  <l>Come forth, ye moted gnomes, unruly band,</l>
+                  <l>That come so quick ye spill your brimming cup;</l>
+                  <l>Ye that make youth young and flesh nice</l>
+                  <l>And the glad spring and summer sun arise;</l>
+                  <l>Ye by whose secret presence the trees grow</l>
+                  <l>Green, and the flowers bud, and birds sing free,</l>
+                  <l>When with the fury of a trembling glow</l>
+                  <l>The bull climbs on the heifer mightily!</l>
+               </lg>
+            </div>
+            <div>
+               <head>VI</head>
+               <lg>
+                  <l>Sing at her window, ye heard early wings</l>
+                  <l>In whose song joy's selg sings!</l>
+                  <l>Buzz in her room along her loss of sleep,</l>
+                  <l>O small flies, tumble and creep</l>
+                  <l>Along the counterpane and on her fingers</l>
+                  <l>In mating pairs. She lingers.</l>
+                  <l>Along her joined-felt legs a prophecy</l>
+                  <l>Creeps like an inward hand.</l>
+                  <pb n="7"/>
+                  <l>Look how she tarries! Tell her: fear not glee!</l>
+                  <l>Come up! Awake! Dress for undressing! Stand!</l>
+                  <l>Look how the sun is altogether all!</l>
+                  <l>Life hums around her senses petalled close.</l>
+                  <l>Come up! Come up! Pleasure must thee befall!</l>
+                  <l>Joy to be plucked, O yet ungathered rose!</l>
+               </lg>
+            </div>
+            <div>
+               <head>VII</head>
+               <lg>
+                  <l>Now is she risen. Look how she looks down,</l>
+                  <l>After her slow down-slid night-gown,</l>
+                  <l>On her unspotted while of nakedness</l>
+                  <l>Save where the beast's difference from her white frame</l>
+                  <l>Hairily triangling black below doth shame</l>
+                  <l>Her to-day's sight of it, till the caress</l>
+                  <l>Of the chemise cover her body. Dress!</l>
+                  <l>Stop not, sitting upon the bed's hard edge,</l>
+                  <l>Stop not to wonder at by-and-bye, nor guess!</l>
+                  <l>List to the rapid birds i'th' window ledge!</l>
+                  <l>Up, up and washed! Lo! she is up half-gowned,</l>
+                  <l>For she lacks hands to have power to button fit</l>
+                  <l>The white symbolic wearing, and she's found</l>
+                  <l>By her maids thus, that come to perfect it.</l>
+               </lg>
+            </div>
+            <div>
+               <head>VIII</head>
+               <lg>
+                  <l>Look how over her seeing-them-not her maids</l>
+                  <l>Smile at each other their same thought of her!</l>
+                  <l>Already is she deflowered in others' thoughts.</l>
+                  <l>With curious carefulness of inlocked braids,</l>
+                  <l>With hands that in the sun minutely stir,</l>
+                  <l>One works her hair into concerted knots.</l>
+                  <l>Another buttons tight the gown; her hand,</l>
+                  <l>Touching the body's warmth of life, doth band</l>
+                  <pb n="8"/>
+                  <l>Her thoughts with the rude bridegroom's hand to be.</l>
+                  <l>The first then, on the veil placed mistily,</l>
+                  <l>Lays on her head, her own head sideways leaning,</l>
+                  <l>The garland soon to have no meaning.</l>
+                  <l>The other, at her knees, makes the white shoon</l>
+                  <l>Fit close the trembling feet, and her eyes see</l>
+                  <l>The stockinged leg, road upwards to that boon</l>
+                  <l>Where all this day centres it revelry.</l>
+               </lg>
+            </div>
+            <div>
+               <head>IX</head>
+               <lg>
+                  <l>Now is she gownded completely, her face won</l>
+                  <l>To a flush. Look how the sun</l>
+                  <l>Shines hot and hoe the creeper, loosed, doth strain</l>
+                  <l>To hit the heated pane!</l>
+                  <l>She is all white, all she's awaiting him.</l>
+                  <l>Her eyes are bright and dim.</l>
+                  <l>Her hands are cold, her lips are dry, her heart</l>
+                  <l>Pants like a pursued hart.</l>
+               </lg>
+            </div>
+            <div>
+               <head>X</head>
+               <lg>
+                  <l>Now is she issued. List how all speech pines</l>
+                  <l>Then bursts into a wave of speech again!</l>
+                  <l>Now is she issued out to where the guests</l>
+                  <l>Look on her daring not to look at them.</l>
+                  <l>The hot sun outside shines.</l>
+                  <l>A sweaty oiliness of hot like rests</l>
+                  <l>On the day's face this hour.</l>
+                  <l>A mad joy's pent in each warm thing's hushed power.</l>
+               </lg>
+            </div>
+            <pb n="9"/>
+            <div>
+               <head>XI</head>
+               <lg>
+                  <l>Hang with festoons and wreaths and coronals</l>
+                  <l>The corridors and halls!</l>
+                  <l>Be there all round the sound of gay bells ringing!</l>
+                  <l>Let there be echoing singing!</l>
+                  <l>Pour out like a libation all your joy!</l>
+                  <l>Shout, even ye children, little maid and boy</l>
+                  <l>Whose belly yet unfurred yet whitely decks</l>
+                  <l>A sexless thing of sex!</l>
+                  <l>Shout out as if ye knew what hoy this is</l>
+                  <l>You clap at in such bliss!</l>
+               </lg>
+            </div>
+            <div>
+               <head>XII</head>
+               <lg>
+                  <l>This is the month and this the day.</l>
+                  <l>Ye must not stay.</l>
+                  <l>Sally ye out and in warm clusters move</l>
+                  <l>To where beyond the trees the belfry's height</l>
+                  <l>Does in the blue wide heaven a message prove,</l>
+                  <l>Somewhat calm, of delight.</l>
+                  <l>Now flushed and whispering loud sally ye out</l>
+                  <l>To church! The sun pours on the ordered rout,</l>
+                  <l>And all their following eyes clasp round the bride:</l>
+                  <l>They feel like hands her bosom and her side;</l>
+                  <l>Like the inside of the vestment next her skin,</l>
+                  <l>They round her round and fold each crevice in;</l>
+                  <l>They lift her skirts up, as to tease or woo</l>
+                  <l>The cleft hid thing below;</l>
+                  <l>And this they think at her peeps in their ways</l>
+                  <l>And in their glances plays.</l>
+               </lg>
+            </div>
+            <pb n="10"/>
+            <div>
+               <head>XIII</head>
+               <lg>
+                  <l>No more, no more of church or feast, for these</l>
+                  <l>Are outward to the day, like the green trees</l>
+                  <l>That flank the road to church and the same road</l>
+                  <l>Back from the church, under a higher sun trod.</l>
+                  <l>These have no more part than a floor or wall</l>
+                  <l>In the great day's true ceremonial.</l>
+                  <l>The guests themselves, no less than they that wed,</l>
+                  <l>Hold these as nought but corridors to bed.</l>
+                  <l>So are all things, that between this and dark</l>
+                  <l>Will be passed, a dim work</l>
+                  <l>Of minutes, hours seen in a sleep, and dreamed</l>
+                  <l>Untimed and wrongly deemed.</l>
+                  <l>The bridal and the walk back and the feast</l>
+                  <l>Are all for each a mist</l>
+                  <l>Where he sees others through a blurred hot notion</l>
+                  <l>Of drunk and veined emotion,</l>
+                  <l>And a red race runs through his seeing and hearing,</l>
+                  <l>A great carouse of dreams seen each on each,</l>
+                  <l>Till their importunate careering</l>
+                  <l>A stopped, half-hurting point of mad joy reach.</l>
+               </lg>
+            </div>
+            <div>
+               <head>XIV</head>
+               <lg>
+                  <l>The bridegroom aches for the end of this and lusts</l>
+                  <l>To know those paps in sucking gusts,</l>
+                  <l>To put his first hand on that belly's hair</l>
+                  <l>And feel for the lipped lair,</l>
+                  <l>The fortress made but to be taken, for which</l>
+                  <l>He feels the battering ram grow large and itch.</l>
+                  <l>The trembling glad bride feels all the day hot</l>
+                  <l>On that still cloistered spot</l>
+                  <pb n="11"/>
+                  <l>Where only her nightly maiden hand did feign</l>
+                  <l>A pleasure's empty gain.</l>
+                  <l>And, of the others, most will whisper at this,</l>
+                  <l>Knowing the spurt it is;</l>
+                  <l>And children yet, that watch with looking eyes,</l>
+                  <l>Will now thrill to be wise</l>
+                  <l>In flesh, and with big men and women act</l>
+                  <l>The liquid tickling fact</l>
+                  <l>For whose taste they'll in secret corners try</l>
+                  <l>They scarce know what still dry.</l>
+               </lg>
+            </div>
+            <div>
+               <head>XV</head>
+               <lg>
+                  <l>Even ye, now old, that to this come as to</l>
+                  <l>Your past, your own joy throw</l>
+                  <l>Into the cup, and with the younger drink</l>
+                  <l>That which now makes you think</l>
+                  <l>Of what love was when love was. (For not now</l>
+                  <l>Your winter thoughts allow).</l>
+                  <l>Drink with the hot day, the bride's sad joy and</l>
+                  <l>The bridegroom's haste inreined,</l>
+                  <l>The memory of that day when ye were young</l>
+                  <l>And, with great paeans sung</l>
+                  <l>Along the surface of the depths of you,</l>
+                  <l>You paired and the night saw</l>
+                  <l>The day come in and you did still pant close,</l>
+                  <l>And still the half-fallen flesh distending rose.</l>
+               </lg>
+            </div>
+            <div>
+               <head>XVI</head>
+               <lg>
+                  <l>No matter now or past or future. Be</l>
+                  <l>Lovers' age in your glee!</l>
+                  <l>Give all your thoughts to this great muscled day</l>
+                  <l>That like a courser tears</l>
+                  <l>The bit of Time, to make night come and say</l>
+                  <l>The maiden mount now her first rider bears!</l>
+                  <pb n="12"/>
+                  <l>Flesh pinched, flesh bit, flesh sucked, flesh girt around,</l>
+                  <l>Flesh crushed and ground,</l>
+                  <l>These things inflame your thoughts and make ye dim</l>
+                  <l>In what ye say or seem!</l>
+                  <l>Rage out in naked glances till ye fright</l>
+                  <l>Your ague of delight,</l>
+                  <l>In glances seeming clothes and thoughts to hate</l>
+                  <l>That fleshes separate!</l>
+                  <l>Stretch out your limbs to the warm day outside.</l>
+                  <l>To feel it while it bide!</l>
+                  <l>For the strong sun, the hor ground, the green grass,</l>
+                  <l>Each far lake's dazzling glass,</l>
+                  <l>And each one's flushed thought of the night to be</l>
+                  <l>Are all one joy-hot unity.</l>
+               </lg>
+            </div>
+            <div>
+               <head>XVII</head>
+               <lg>
+                  <l>In a red bacchic surge of thoughts that beat</l>
+                  <l>On te mad temples like an ire's amaze,</l>
+                  <l>In a fury that hurts the eyes, and yet</l>
+                  <l>Doth make all things clear with a blur around,</l>
+                  <l>The whole group's soul like a glad drunkard sways</l>
+                  <l>And bounds up from the ground!</l>
+                  <l>Ay, though all these be common people heaping</l>
+                  <l>To church, from church, the bridal keeping,</l>
+                  <l>Yet all the satyrs and big pagan haunches</l>
+                  <l>That in taut flesh delight and teats and paunches,</l>
+                  <l>And whose course, trailing through the foliage, nears</l>
+                  <l>The crouched nymph that half fears,</l>
+                  <l>An invisible rush, behind, before</l>
+                  <l>This decent group move, and with hot thoughts store</l>
+                  <l>The passive souls round which their mesh thay wind,</l>
+                  <l>The while their rout, loud stumbling as if blind,</l>
+                  <l>Makes the hilled earth wake wchoing from her sleep</l>
+                  <l>To the lust in their leap.</l>
+               </lg>
+            </div>
+            <pb n="13"/>
+            <div>
+               <head>XVIII</head>
+               <lg>
+                  <l>Io! Io! There runs a juice of pleasure's rage</l>
+                  <l>Through these frames' mesh,</l>
+                  <l>That now do really ache to strip and wage</l>
+                  <l>Upon each others' flesh</l>
+                  <l>The war that fills the womb and puts milk in</l>
+                  <l>The teats a man did win,</l>
+                  <l>The battle fought with rage to join and fit</l>
+                  <l>And not to hurt or hit!</l>
+                  <l>Io! Io! Be drunken like the day and hour!</l>
+                  <l>Shout, laugh and overpower</l>
+                  <l>With clamour your own thoughts, lest they a breath</l>
+                  <l>Utter of age or death!</l>
+                  <l>Now is all absolute youth, and the small pains</l>
+                  <l>That thrill the fillèd veins</l>
+                  <l>Themselves are edged in a great tickling joy</l>
+                  <l>That halts ever ere it cloy.</l>
+                  <l>Put out of mind all things save flesh and giving</l>
+                  <l>The male milk that makes living!</l>
+                  <l>Rake out great peals of joy like grass from ground</l>
+                  <l>In your o'ergrown soul found!</l>
+                  <l>Make your great rut dispersedly rejoice</l>
+                  <l>With laugh or voice,</l>
+                  <l>As if all earth, hot sky and tremulous air</l>
+                  <l>A mighty cymbal were!</l>
+               </lg>
+            </div>
+            <div>
+               <head>XIX</head>
+               <lg>
+                  <l>Set the great Flemish hour aflame!</l>
+                  <l>Your senses of all leisure maim!</l>
+                  <l>Cast down with blows that joy even where they hurt</l>
+                  <l>The hands that mock to avert!</l>
+                  <l>All things pick up to bed that lead ye to</l>
+                  <l>Be naked that ye woo!</l>
+                  <pb n="14"/>
+                  <l>Tear up, pluck up, like earth who treasure seek,</l>
+                  <l>When the chest's rick doth peep,</l>
+                  <l>The thoughts that cover thoughts of the acts of heat</l>
+                  <l>This grat day does intreat!</l>
+                  <l>Now seem all hands pressing the paps as if</l>
+                  <l>They meant them juice to give!</l>
+                  <l>Now seem all things pairing on one another,</l>
+                  <l>Hard flesh soft flesh to smother,</l>
+                  <l>And hairy legs and buttocks balled to split</l>
+                  <l>White legs mid which they shift.</l>
+                  <l>Yet these mixed mere thoughts in each mins but speak</l>
+                  <l>The day's push love to wreak,</l>
+                  <l>The man's ache to have felt possession,</l>
+                  <l>The woman's man to have on,</l>
+                  <l>The abstract surge of life clearly to reach</l>
+                  <l>The bodies' concrete beach.</l>
+                  <l>Yet some work of this doth the real day don.</l>
+                  <l>Now are skirts lifted in the servants' hall,</l>
+                  <l>And the whored belly's stall</l>
+                  <l>Ope to the horse that enters in a rush,</l>
+                  <l>Half late, too near the gush.</l>
+                  <l>And even now doth an elder guest emmesh</l>
+                  <l>A flushed young girl in a dark nook apart,</l>
+                  <l>And leads her slow to move his produced flesh.</l>
+                  <l>Look how she likes with something in her heart</l>
+                  <l>To feel her hand work the protruded dart!</l>
+               </lg>
+            </div>
+            <div>
+               <head>XX</head>
+               <lg>
+                  <l>But these are thoughts or promises or but</l>
+                  <l>Half the purpose of rut,</l>
+                  <l>And this is lust thought-of or futureless</l>
+                  <l>Or used bus lust to ease.</l>
+                  <l>Do ye the circle true of love pretend,</l>
+                  <l>And, what Nature, intend!</l>
+                  <pb n="15"/>
+                  <l>Do ye actually ache</l>
+                  <l>The horse of lust by reins of life to bend</l>
+                  <l>And pair in love for love's creating sake!</l>
+                  <l>Bellow! Roar! Stallions be or bulls that fret</l>
+                  <l>On their seed's hole to get!</l>
+                  <l>Surge for that carnal complement that will</l>
+                  <l>Your flesh's young juice thrill</l>
+                  <l>To the wet mortised joints at which you meet</l>
+                  <l>The coming life to greet,</l>
+                  <l>In the tilled womb that will bulge till it do</l>
+                  <l>The plenteous curve of spheric earth renew!</l>
+               </lg>
+            </div>
+            <div>
+               <head>XXI</head>
+               <lg>
+                  <l>And ye, that wed to-day, guess these instincts</l>
+                  <l>Of the concerted group in hints</l>
+                  <l>Yourselves from Nature naturally have,</l>
+                  <l>And your good future brave!</l>
+                  <l>Close lips, nude arms, felt breasts and organ mighty,</l>
+                  <l>Do your joy's night work rightly!</l>
+                  <l>Teach them these things, O day of pomp of heat!</l>
+                  <l>Leave them in thoughts such as must make the feat</l>
+                  <l>Of flesh inevitable and natural as</l>
+                  <l>Pissing when wish doth press!</l>
+                  <l>Let them cling, kiss and fit</l>
+                  <l>Together with natural wit,</l>
+                  <l>And let the night, coming, teach them that use</l>
+                  <l>For youth is in abuse!</l>
+                  <l>Let them repeat the link, and pour and pour</l>
+                  <l>Their pleasure till they can no more!</l>
+                  <l>Ay, let the night watch over their repeated</l>
+                  <l>Coupling in darkness, till thought's self, o'erheated,</l>
+                  <l>Do fret and trouble, and sleep come on hurt frames,</l>
+                  <l>And, mouthing each one's names,</l>
+                  <l>They in each other's arms dream still of loce</l>
+                  <pb n="16"/>
+                  <l>And something of it prove!</l>
+                  <l>And, if they wake, teach them to recommence,</l>
+                  <l>For an hour was free hence;</l>
+                  <l>Till their contacted flesh, in heat o'erblent</l>
+                  <l>With joy, sleep sick, while, spent</l>
+                  <l>The starts, the sky pale in the East and shiver</l>
+                  <l>Where light the night doth sever,</l>
+                  <l>And with clamour of joy and life's young din</l>
+                  <l>The warm new day come in.</l>
+               </lg>
+            </div>
+         <div><p>LISBON, 1913.</p></div>
+         </div>
+      </body>
+  </text>
+</TEI>
