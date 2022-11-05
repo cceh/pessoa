@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BNP/E3 750</title>
+            <author>
+               <rs type="name" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Transcrição</resp>
+               <name>Pablo Javier Pérez López</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny-Krahmer</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Inês Filipa Rebelo do Carmo</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability status="free">
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">BNP_E3_750.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution/>
+                  <idno>BNP/E3 750</idno>
+               </msIdentifier>
+               <msContents>
+                  <summary>
+                     <p> Lista manuscrita, publicada em <hi rend="italic">Argumentos para
+                           Filmes</hi> (2011, 89). </p>
+                  </summary>
+                  <msItemStruct>
+                     <author>
+                        <rs type="name" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs></note>
+                     <textLang mainLang="pt"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate from="1919" to="1920" cert="medium">c. 1919-1920</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+      <graphic url="doc_BNP_E3_750r.jpg"/>
+      <graphic url="doc_BNP_E3_750v.jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <list>
+               <head><hi rend="underline">
+                     <choice>
+                        <abbr>GCP</abbr>
+                        <expan>G<ex>remio</ex>
+                           <ex>de</ex> C<ex>ultura</ex> P<ex>ortugueza</ex></expan>
+                     </choice>: —</hi></head>
+               <item rend="indent-2">
+                  <label>1.</label> Secção de informação com<pc>-</pc><lb/>mercial e de agencia
+                  util<lb/> ao commercio e industria. </item>
+               <item rend="indent-2">
+                  <label>2.</label> Secção de bases litterarias, in<pc>-</pc><lb/>vestigações, etc. </item>
+               <item rend="indent-2">
+                  <label>3.</label> Secção editorial, (ha relatorio <lb/>preparado). </item>
+               <item rend="indent-2">
+                  <label>4.</label> Secção cinematographica (ha relatorio <lb/>feito) </item>
+               <item>
+                  <label>5.</label> Secção Club e restaurant. </item>
+               <metamark rend="line" function="distinct"/>
+               <item rend="indent-2">
+                  <label>6.</label> Secção agencial — de compras <lb/>etc. (isto é commercio) </item>
+               <item>
+                  <label>7.</label>
+                  <supplied resp="PS" reason="omitted-in-original"/>
+               </item>
+            </list>
+            <pb n="2"/>
+            <list>
+               <item>
+                  <label>1.</label> Secção de informações. </item>
+               <item>
+                  <label>2.</label> Secção Auxiliar (Esthetica) </item>
+               <item>
+                  <label>3.</label> Secção Editorial. </item>
+               <item>
+                  <label>4.</label> Secção Cinematographica. </item>
+               <item>
+                  <label>5.</label> Secção <hi rend="underline">Club</hi>. </item>
+            </list>
+            <metamark rend="line" function="distinct"/>
+            <list>
+               <item>
+                  <label>1.</label> Club. </item>
+               <item>
+                  <label>2.</label> Cinematographia. </item>
+               <item>
+                  <label>3.</label> Editora e propaganda </item>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>
