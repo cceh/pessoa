@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?> 
+<?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>CP 909</title>
+            <title>BNP/E3 716<hi rend="superscript">r</hi></title>
             <author>
                <rs type="name" key="FP">Fernando Pessoa</rs>
             </author>
@@ -13,20 +13,12 @@
                <name>Pedro Sepúlveda</name>
             </respStmt>
             <respStmt>
-               <resp>Transcrição</resp>
-               <name>Pablo Javier Pérez López</name>
-            </respStmt>
-            <respStmt>
                <resp>Modelagem de dados, Codificação</resp>
                <name>Ulrike Henny-Krahmer</name>
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
                <name>Isabel Figueiredo-Iken</name>
-            </respStmt>
-            <respStmt>
-               <resp>Codificação</resp>
-               <name>Inês Filipa Rebelo do Carmo</name>
             </respStmt>
             <respStmt>
                <resp>Codificação</resp>
@@ -45,18 +37,19 @@
             <availability status="free">
                <licence target="http://creativecommons.org/licenses/by/3.0/"/>
             </availability>
-            <idno type="filename">CP909.xml</idno>
+            <idno type="filename">BNP_E3_716r.xml</idno>
          </publicationStmt>
          <sourceDesc>
             <msDesc>
                <msIdentifier>
-                  <institution/>
-                  <idno>CP 909</idno>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>BNP/E3 716r</idno>
                </msIdentifier>
                <msContents>
                   <summary>
-                     <p> Lista manuscrita, publicada em <hi rend="italic">Livro do Desasocego</hi>
-                        (2010, 537). </p>
+                     <p> Lista datilografada, com acrescentos manuscritos, no verso de papel
+                        impresso de «Aviso por causa da moral», texto publicado em nome de Campos,
+                        com data de 1923. </p>
                   </summary>
                   <msItemStruct>
                      <author>
@@ -65,13 +58,13 @@
                      <note type="genre">
                         <rs type="genre" key="lista_editorial">Lista editorial</rs>
                      </note>
-                     <textLang mainLang="pt" otherLangs="en"/>
+                     <textLang mainLang="pt"/>
                   </msItemStruct>
                </msContents>
                <history>
                   <origin>
                      <p>
-                        <origDate when="1932" cert="medium">c. 1932</origDate>
+                        <origDate notBefore="1923">post. 1923</origDate>
                      </p>
                   </origin>
                </history>
@@ -80,48 +73,49 @@
       </fileDesc>
    </teiHeader>
    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
-      <graphic url="Bilder MN 808_265_908_909 und 677-678/avulsos (909).jpg"/>
+      <graphic url="doc_BNP_E3_716r.jpg"/>
    </facsimile>
    <text>
       <body>
          <div>
+            <head>
+               <hi rend="underline">Trechos portuguezes<del n="2">
+                     <seg rend="overstrike">antigos</seg></del>.</hi>
+            </head>
             <list>
                <item>
-                  <rs type="title">Theoria do <choice>
-                        <abbr>Suffr<am>.</am></abbr>
-                        <expan>Suffr<ex>agio</ex></expan>
-                     </choice> Politico</rs>. </item>
+                  <rs type="title">MARIA MANUELA</rs>, de <rs type="name" key="P125">Antonio
+                     Molarinho</rs>. </item>
                <item>
-                  <rs type="title">Politica Economica</rs>. </item>
-            </list>
-            <metamark rend="line" function="distinct"/>
-            <list>
+                  <rs type="title">ODE</rs>, de <rs type="name" key="P81">Manuel da Veiga</rs>. </item>
                <item>
-                  <ref target="http://www.pessoadigital.pt/en/pub/Pessoa_O_Banqueiro_Anarchista"><rs type="title">Banqueiro Anarchista</rs></ref> (<choice>
-                     <abbr>ingl</abbr>
-                     <expan>ingl<ex>ez</ex></expan>
-                  </choice> e <choice>
-                     <abbr>fr</abbr>
-                     <expan>fr<ex>ancez</ex></expan>
-                  </choice>) </item>
-            </list>
-            <metamark rend="line" function="distinct"/>
-            <list>
+                  <rs type="title">SONETO MYSTICO ANONYMO</rs>. </item>
                <item>
-                  <rs type="title">Erostratus</rs>. </item>
+                  <rs type="title">dos CANCIONEIROS</rs> (varia). </item>
                <item>
-                  <rs type="title">Livro da Lili</rs>. </item>
-               <item rend="indent-2">
-                  <rs type="title"><rs type="name" key="P32">Oscar Wilde</rs></rs> (<rs type="title"
-                        ><rs type="name" key="P17"><choice>
-                           <abbr>AB</abbr>
-                           <expan>A<ex>ntonio</ex> B<ex>otto</ex></expan>
-                        </choice></rs> preface</rs> re<pc>-</pc><lb/>modelled) </item>
+                  <rs type="title">O PRIMEIRO POEMA</rs> de <rs type="name" key="P24">José Anastacio
+                     da Cunha</rs>. </item>
                <item>
-                  <rs type="title">Portugal</rs>. </item>
+                  <rs type="title">NO INTERVALLO DE UMA DOLOROSA DOENÇA</rs>, <rs type="name"
+                     key="P24">do mesmo</rs>. </item>
                <item>
-                  <rs type="work" key="O1" style="bc"><rs type="title">Cancioneiro</rs> (ou <rs
-                        type="title">Itinerario</rs>)</rs>. </item>
+                  <rs type="title">SONETO</rs>, de <rs type="name" key="P76">Bocage</rs>. </item>
+               <item>
+                  <rs type="title">A EXTRANHA MORTE DO PROFESSOR ANTENA</rs>, de <rs type="name"
+                     key="P30">Sá-Carneiro</rs>
+               </item>
+               <item>
+                  <rs type="title">VARIAS LYRICAS</rs>, de <rs type="name" key="P186">Garrett</rs>. </item>
+               <item>
+                  <rs type="title">PROPHECIAS</rs>, do <rs type="name" key="P259">Bandarra.</rs>
+               </item>
+               <addSpan spanTo="#a1" n="2"/>
+               <item>
+                  <rs type="title">O Homem dos Sonhos</rs> ― <rs type="name" key="P30"
+                     >Sá-Carneiro</rs>. </item>
+               <item>
+                  <rs type="title">Soneto</rs>, de <rs type="name" key="P80">Angelo de Lima</rs>. </item>
+               <anchor xml:id="a1"/>
             </list>
          </div>
       </body>
