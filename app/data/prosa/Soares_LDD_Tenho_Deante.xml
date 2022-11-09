@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Outro trecho do ʺLivro do Desassossegoʺ (ʺTenho diante de mimʺ)</title>
+                <author>
+                    <rs type="name" key="BS">Bernardo Soares</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Atualização ortográfica</resp>
+                    <name>Inês Filipa Rebelo do Carmo</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2017</date>
+                <availability status="restricted">
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Soares_LDD_Tenho_Deante.xml</idno>
+            </publicationStmt>
+            <notesStmt>
+                <note type="genre">
+                    <rs type="genre" key="prosa">Prosa</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item>
+                        <rs type="work" key="W363">Outro trecho do ʺLivro do Desassossegoʺ (ʺTenho
+                            diante de mimʺ)</rs>
+                    </item>
+                </list>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Outro trecho do ʺLivro do Desassossegoʺ (ʺTenho diante de
+                            mimʺ)</title>
+                        <author>
+                            <rs type="name" key="BS">Bernardo Soares</rs>
+                        </author>
+                        <textLang mainLang="pt" otherLangs="en"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j">
+                            <rs type="periodical" key="J4">A Revista da Solução Editora</rs>
+                        </title>
+                        <imprint>
+                            <date when="1929">1929</date>
+                        </imprint>
+                        <biblScope unit="issue">4</biblScope>
+                        <biblScope unit="page">42</biblScope>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
+    </teiHeader>
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+        <graphic url="prosa/LDD_Tenho_Deante.jpg"/>
+    </facsimile>
+    <text type="orig" corresp="#W363">
+        <body>
+            <div>
+                <head>OUTRO TRECHO</head>
+                <head type="sub">DO ʺLIVRO DO DESASOCEGOʺ, COMPOSTO POR <rs type="name" key="BS">BERNARDO SOARES</rs>, AJUDANTE DE GUARDA-LIVROS NA
+                    CIDADE DE LISBOA</head>
+                <p rend="indent-1">Tenho deante de mim as duas paginas grandes do livro pesado; ergo
+                    da sua inclinação na carteira velha, com os olhos cansados, uma alma mais
+                    cansada do que os olhos. Para além do nada que isto representa, o armazém, até á
+                    Rua dos Douradores, enfileira as prateleiras regulares, os empregados regulares,
+                    a ordem humana e o socego do vulgar. Na vidraça ha o ruído do diverso, e o
+                    ruído diverso é vulgar, como o socego que está ao pé das prateleiras.</p> 
+                    <p rend="indent-1">Baixo olhos novos sobre as duas paginas brancas, em que os meus numeros cuidadosos
+                    puzeram resultados da sociedade. E, com um sorriso que guardo para meu, lembro
+                    que a vida, que tem estas paginas com nomes de fazendas e dinheiro, com os seus
+                    brancos, e os seus traços á régua e de lettra, inclui também os grandes
+                    navegadores, os grandes santos, os poetas de todas as eras, todos elles sem
+                    escripta, a vasta prole expulsa dos que fazem a valia do mundo.</p> 
+                    <p rend="indent-1">No próprio registo de um tecido que não sei o que seja se me abrem as portas do Indo e de
+                    Samarcanda, e a poesia da Pérsia, que não é de um logar nem de outro, faz das
+                    suas quadras, desrimadas no terceiro verso, um apoio longínquo para o meu
+                    desasocego. Mas não me engano, escrevo, somo, e a escripta segue, feita
+                    normalmente por um empregado d'este escriptorio.</p>
+                <signed rend="right"><rs type="name" role="author" key="FP" style="b">Fernando
+                        Pessoa</rs></signed>
+            </div>
+        </body>
+    </text>
+    <text type="reg" corresp="#W363">
+        <body>
+            <div>
+                <head>OUTRO TRECHO</head>
+                <head type="sub">DO ʺLIVRO DO DESASSOSSEGOʺ, COMPOSTO POR BERNARDO SOARES, AJUDANTE DE GUARDA-LIVROS NA
+                    CIDADE DE LISBOA</head>
+                <p rend="indent-1">Tenho diante de mim as duas páginas grandes do livro pesado; ergo
+                    da sua inclinação na carteira velha, com os olhos cansados, uma alma mais
+                    cansada do que os olhos. Para além do nada que isto representa, o armazém, até à
+                    Rua dos Douradores, enfileira as prateleiras regulares, os empregados regulares,
+                    a ordem humana e o sossego do vulgar. Na vidraça há o ruído do diverso, e o
+                    ruído diverso é vulgar, como o sossego que está ao pé das prateleiras. Baixo
+                    olhos novos sobre as duas páginas brancas, em que os meus números cuidadosos
+                    puseram resultados da sociedade. E, com um sorriso que guardo para meu, lembro
+                    que a vida, que tem estas páginas com nomes de fazendas e dinheiro, com os seus
+                    brancos, e os seus traços à régua e de letra, inclui também os grandes
+                    navegadores, os grandes santos, os poetas de todas as eras, todos eles sem
+                    escrita, a vasta prole expulsa dos que fazem a valia do mundo. No próprio
+                    registo de um tecido que não sei o que seja se me abrem as portas do Indo e de
+                    Samarcanda, e a poesia da Pérsia, que não é de um lugar nem de outro, faz das
+                    suas quadras, desrimadas no terceiro verso, um apoio longínquo para o meu
+                    desassossego. Mas não me engano, escrevo, somo, e a escrita segue, feita
+                    normalmente por um empregado deste escritório.</p>
+                <signed rend="right"><rs type="name" role="author" key="FP" style="b">Fernando
+                    Pessoa</rs></signed>
+            </div>
+        </body>
+    </text>
+</TEI>
