@@ -1,6 +1,6 @@
 xquery version "3.1";
 (:~
-: Modul zur generierung der Navigation
+: Modul zur Generierung der Navigation
 ; Beinhaltet allgemeine Funktionen
 :
 : @author Ben Bigalke

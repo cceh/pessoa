@@ -102,7 +102,7 @@ declare function local:pubItems($indikator) {
 };
 
 declare function local:createDocXML() {
-let $items := for $indikator in ("1-9", "10","20","30","40","50","60","70","80","90","100","CP")  return local:docItems($indikator)
+let $items := for $indikator in ("1-9", "10","20","30","40","50","60","70","80","90","100","600","700","CP")  return local:docItems($indikator)
 let $items := for $item in $items 
                     let $title := substring-before(replace($item/@label,("BNP_E3_|CP"),""),".xml")
                      let $front := if(contains($title,"-")) then substring-before($title,"-") else $title
