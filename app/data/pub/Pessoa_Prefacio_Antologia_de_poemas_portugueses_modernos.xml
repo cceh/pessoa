@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>"Prefácio" a <hi rend="italic">Antologia de poemas portugueses modernos</hi>, de
+               António Botto e Fernando Pessoa</title>
+            <author>
+               <rs type="name" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Edição, Transcrição, Codificação</resp>
+               <name>Jorge Uribe</name>
+            </respStmt>
+            <respStmt>
+               <resp>Edição, Transcrição, Codificação, Atualização ortográfica</resp>
+               <name>Inês Filipa Rebelo do Carmo</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny-Krahmer</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2021</date>
+            <availability status="restricted">
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename"
+               >Pessoa_Prefacio_Antologia_de_poemas_portugueses_modernos.xml</idno>
+         </publicationStmt>
+         <notesStmt>
+            <note type="genre">
+               <rs type="genre" key="prosa">Prosa</rs>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <list type="work-index">
+               <item>
+                  <rs type="work" key="W360">"Prefácio" a <hi rend="italic">Antologia de poemas
+                        portugueses modernos</hi>, de António Botto e Fernando Pessoa</rs>
+               </item>
+            </list>
+            <biblStruct>
+               <analytic>
+                  <title level="a">"Prefácio"</title>
+                  <author>
+                     <rs type="name" key="FP">Fernando Pessoa</rs>
+                  </author>
+                  <textLang mainLang="pt"/>
+               </analytic>
+               <monogr>
+                  <title level="m">Antologia de poemas portugueses modernos</title>
+                  <author><rs type="name" key="FP">Fernando Pessoa</rs></author>
+                  <author><rs type="name" key="P17">António Botto</rs></author>
+                  <imprint>
+                     <date when="1929">1929</date>
+                     <pubPlace>Lisboa</pubPlace>
+                     <publisher>Centro Tip. Colonial</publisher>
+                     <biblScope unit="page">3-8</biblScope>
+                  </imprint>
+               </monogr>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <variantEncoding method="parallel-segmentation" location="internal"/>
+      </encodingDesc>
+   </teiHeader>
+   <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+      <graphic url="prosa/Pessoa_Antologia_de_poemas_1929_1.jpg"/>
+      <graphic url="prosa/Pessoa_Antologia_de_poemas_1929_2.jpg"/>
+      <graphic url="prosa/Pessoa_Antologia_de_poemas_1929_3.jpg"/>
+      <graphic url="prosa/Pessoa_Antologia_de_poemas_1929_4.jpg"/>
+      <graphic url="prosa/Pessoa_Antologia_de_poemas_1929_5.jpg"/>
+      <graphic url="prosa/Pessoa_Antologia_de_poemas_1929_6.jpg"/>
+      <graphic url="prosa/Pessoa_Antologia_de_poemas_1944_1.jpg"/>
+      <graphic url="prosa/Pessoa_Antologia_de_poemas_1944_2.jpg"/>
+      <graphic url="prosa/Pessoa_Antologia_de_poemas_1944_3.jpg"/>
+      <graphic url="prosa/Pessoa_Antologia_de_poemas_1944_4.jpg"/>
+      <graphic url="prosa/Pessoa_Antologia_de_poemas_1944_5.jpg"/>
+      <graphic url="prosa/Pessoa_Antologia_de_poemas_1944_6.jpg"/>
+      <graphic url="prosa/Pessoa_Antologia_de_poemas_1944_7.jpg"/>
+   </facsimile>
+   <text type="reg" corresp="#W366">
+      <front>
+         <pb/>
+         <titlePage>
+            <docTitle>
+               <titlePart type="main">ANTHOLOGIA DE POEMAS PORTUGUEZES MODERNOS POR ANTONIO BOTTO E
+                  FERNANDO PESSOA</titlePart>
+            </docTitle>
+            <byline rend="center">1929</byline>
+         </titlePage>
+         <pb/>
+         <titlePage>
+            <byline rend="center"><hi rend="underline">Composto e impresso no</hi><lb/><hi
+                  rend="underline">CENTRO TIP. COLONIAL</hi><lb/><hi rend="underline">L. da
+                  Abegoaria, 27 ― Lisboa</hi></byline>
+         </titlePage>
+         <pb/>
+         <titlePage>
+            <docTitle>
+               <titlePart type="main">ANTHOLOGIA DE POEMAS PORTUGUEZES MODERNOS</titlePart>
+            </docTitle>
+         </titlePage>
+         <pb/>
+         <ab rend="italic">
+            <lg>
+               <l>...Descansando no prado,</l>
+               <l>Uma após uma as ajunctando,</l>
+               <l>O spolio das flores colhia</l>
+               <l>Com a alegria na alma...</l>
+               <l rend="left">Euripides, frag. 754</l>
+            </lg>
+         </ab>
+      </front>
+      <body>
+         <pb n="7"/>
+         <p rend="italic">Esta selecta, ou anthologia, de poemas portuguezes modernos deve ser
+            entendida como a escolha d'aquelles que nos pareceram não só os melhores, senão tambem
+            os mais representativos, entre os que foram escriptos em certo periodo — em o periodo
+            litterario portuguez a que conviemos comnosco em chamar moderno.</p>
+         <p rend="italic">O termo «moderno» nada significa em si mesmo. É moderna toda a civilização
+            europeia em relação com o mundo greco-romano. É moderno tudo desde o romantísmo em
+            relação com tudo entre elle e a Edade Media, e com a mesma Edade Media. É moderno o que
+            veio depois da Guerra Allemã em relação com o que immediatamente a precedeu. No caso
+            presente, entendemos por poemas portuguezes modernos os dos poetas portuguezes que teem
+            data litteraria desde a Eschola de Coimbra, e incluindo essa Eschola.</p>
+         <p rend="italic">O tempo repugna as divisões, que a sua continuidade não conhece, como a
+            terra as fronteiras, que não são linhas nella. Mas a historia e a logica, ambas
+            productos litterarios, teem que estabelecer fronteiras, em homenagem á litteratura.
+            Estabelecemos a nossa, para os poemas portuguezes modernos,<pb n="8"/>na eclosão da Eschola de
+            Coimbra. Fizemol-o (pois no mesmo absurdo ha que haver razões) porque esta Eschola foi o
+            renascimento da poesia portugueza a dentro da poesia portugueza.</p>
+         <p rend="italic">Entre o fim da nossa poesia medieval, que era nossa, e o principio da
+            Eschola de Coimbra, em que de novo domos nossos em verso, a poesia portugueza decorreu
+            subdita de influencias extranhas. Portugal poetico, como nação independente, adormeceu
+            com Gil Vicente e metade de Camões, e dispertou só com Anthero. O intervallo foi alheio.
+            Em Anthero, porém, como em Cesario e outros poucos do tempo, se ha influencias
+            extranhas, ha uso proprio d'essas influencias. Uma cousa é a influencia, que só não
+            soffre quem não vive, outra cousa a subordinação. Anthero é discipulo da philosophia
+            allemã, porém a poesia de Anthero não é discipula de cousa alguma.</p>
+         <p rend="italic">Assim o ser poeta portuguez moderno, no sentido em que entendemos
+            «moderno», coincide ― excepto os nossos primitivos ― com o ser poeta portuguez. A
+            felicidade é dos tempos, que não da nossa escolha. Tal é, tal a acceitamos. Escolhemos
+            de accordo com ella.</p>
+      </body>
+   </text>
+</TEI>
