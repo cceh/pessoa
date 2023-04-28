@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Sobre um manifesto de estudantes</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe e Maria José Galeano</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+                    (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2021</date>
+                <availability status="restricted">
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Pessoa_Sobre_um_manifesto.xml</idno>
+            </publicationStmt>
+            <notesStmt>
+                <note type="genre">
+                    <rs type="genre" key="prosa">Prosa</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item>
+                        <rs type="work" key="W311">Sobre um manifesto de estudantes</rs>
+                    </item>
+                </list>
+                <biblStruct> 
+                    <monogr>
+                        <!--MJ: Revisar esta proposta de <biblStruct> pensar num possível publication type-->
+                        <title>Sobre um manifesto de estudantes</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt"/>
+                        <imprint>
+                            <date when="1923-05">Maio de 1923</date>
+                            <pubPlace>Lisboa</pubPlace>
+                            <biblScope unit="page">1p</biblScope>
+                        </imprint>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
+    </teiHeader>
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+        <graphic url="Prosa/Sobre_um_manifesto_1.jpg"/>
+        <graphic url="Prosa/Sobre_um_manifesto_2.jpg"/>
+    </facsimile>
+    <text type="orig" corresp="#W311">
+        <body>
+            <div>
+                <head>Sobre um manifesto de estudantes</head>
+                
+                <p rend="indent-first">Foi ha dias distribuida em Lisboa, com a fórma de um manifesto de
+                    estudantes, uma estupida, vil e entristecedora <hi rend="italic">blague</hi> contra o
+                    altissimo espirito, e o não menos alto caracter, do dr. <rs type="name" key="P71"
+                        >Raul Leal</rs>, auctor de <rs type="title"><hi rend="italic">Sodoma
+                            Divinizada</hi></rs> e de um manifesto recente, notavel documento de verdade e
+                    de nobreza, que, sendo dirigido aos estudantes de Lisboa, nenhuma offensa a elles
+                    contém, a não ser que dizer-lhes que estudem o seja.</p>
+                <p rend="indent-first">Consiste a <hi rend="italic">blague</hi> em dar por louco o dr.
+                    <rs type="name" key="P71">Raul Leal</rs>, servindo-se seus auctores do manifesto
+                    d’elle, e fazendo, por meio de phrases truncadas ou separadas aleivosamente do
+                    contexto que as remata, uma psychiatria de circo, facil a todos em quem o espirito
+                    scientifico seja nullo e a inconsciencia positiva.</p>
+                <p rend="indent-first">A sordida brincadeira não tem o merito, até certo ponto
+                    exculpador, da novidade. O processo do ataque psychiatrico ― sempre antipathico,
+                    quasi sempre facil, quasi nunca justificavel ― já fôra empregado entre nós pelo dr.
+                    <rs type="name" key="P681">Arthur Leitão</rs>, que escreveu em 1907, contra o
+                    conselheiro <rs type="name" key="P647">João Franco</rs>, então presidente do
+                    conselho, o seu opusculo <rs type="title"><hi rend="italic">Um caso de loucura
+                        epileptica</hi></rs>. O artificio, porém, era importado: deu-lhe origem, pelo
+                    menos notavel, o fallecido <rs type="name" key="P426">Max Nordau</rs> no seu livro
+                    celebre <rs type="title"><hi rend="italic">Degeneração</hi></rs>.</p>
+                <p rend="indent-first">Se a <hi rend="italic">blague</hi> dos estudantes não tivesse
+                    maior defeito que o não ser nova, não haveria mistér que se viesse fallar d’ella em
+                    publico. O peor é o mais que ella contém, ou, antes, denota. Disse eu que ella era
+                    estupida, vil e entristecedora. Repito-o, e vou proval-o. E’ nisso que está o seu
+                    mal.</p>
+                <p rend="indent-first">A <hi rend="italic">blague</hi> dos estudantes é estupida, não só
+                    porque são negativos o portuguez e o lógico da sua redacção, mas tambem porque o
+                    auctor d’ella nem sequer soube effectuar seu proprio intento. Nada ha mais facil que
+                    provar por alto que qualquer é louco: basta ter que fazel-o só para quem nada entende
+                    da materia. Ao mais leigo em psychiatria ― desde que nelle concorram a ausencia de
+                    escrupulos e a de espirito scientifico ― é facil simular um diagnostico, encaixando
+                    em qualquer individuo apenas dois ou trez dos varios symptomas, cujo conjuncto compõe
+                    o quadro clinico de qualquer psychose. Ha toda a apparencia, para os leigos, de se
+                    ter provado a existencia de psychose; em verdade, nada se provou, pelo menos do que
+                    se insinua. Tão estupido, porém, é o auctor do manifesto dos estudantes que, podendo
+                    fazer isso facilmente, e sem mais sophisma que o de origem, com o manifesto do dr.
+                    <rs type="name" key="P71">Raul Leal</rs> ― porque é facil fazel-o com todo
+                    documento singular e complexo ―, tem comtudo que servir-se de phrases truncadas, de
+                    citações portanto ficticias, para dar ao seu escripto um ar de verdade. Nem esqueça
+                    aquella attribuição ao dr. <rs type="name" key="P71">Raul Leal</rs> de «um curioso
+                    excesso de memoria», pormenor clinico transcripto sem que d’elle haja applicação
+                    possivel a qualquer ponto do manifesto; a não ser que haja «excesso de memoria» em
+                    alguem se não esquecer que passou quatro annos de miseria.</p>
+                <p rend="indent-first">Peor que a estupidez do manifesto, consubstanciada porém com
+                    ella, é a sua sordida vileza. O dr. <rs type="name" key="P681">Arthur Leitão</rs>, em
+                    seu opusculo, servia-se, ao menos, de phrases do conselheiro <rs type="name"
+                        key="P647">João Franco</rs>. Os estudantes servem-se de partes de phrases do dr.
+                    <rs type="name" key="P71">Raul Leal</rs>. Como as phrases inteiras lhes não
+                    servem, truncam-as, de modo que sirvam. E assim fazem a sua demonstração por meio de
+                    idéas que o dr. <rs type="name" key="P71">Raul Leal</rs> não manifestou, sendo que
+                    manifestou as contrarias. Exponho um exemplo. O dr. <rs type="name" key="P71">Raul
+                        Leal</rs> escreveu, em seu manifesto, este paragrapho:</p>
+                
+                <p rend="indent-first"><hi rend="italic">Antes d’esses quatro annos em que puz bem á
+                    prova o meu caracter, convivia gostosamente com amoraes, sendo em theoria d’uma
+                    condescendencia quasi absoluta e reconhecendo mesmo um certo valor transitorio em
+                    todo o amoralismo. Cheguei a defendel-o com emoção. Pois quando veiu a occasião de
+                    pôr em pratica as minhas «theorias», subiu-me pela alma um nojo tão grande, uma
+                    aversão tão poderosa a todos os abandalhamentos e crimes, que, podendo ter sido um
+                    bandido, um escroc e um souteneur para estar de accordo com o que pensava, preferi
+                    ser verdadeiramente um puro, um immaculado. E foi então que vi <rs type="name"
+                        key="P573">Deus</rs>...</hi></p>
+                <p rend="indent-first">Os estudantes transcrevem d’este modo, aos bocados:</p>
+                
+                <p rend="indent-first"><hi rend="italic">«Convivia gostosamente com amoraes, sendo em
+                    theoria d’uma condescendencia quasi absoluta e reconhecendo mesmo um certo valor
+                    transitorio em todo o amoralismo» ― «cheguei a defendel-o com emoção» ― «podendo
+                    ter sido um bandido, um escroc e um souteneur, para estar de accordo com o que
+                    pensava».</hi></p>
+                <p rend="indent-first">Na transcripção esphacelada desapparece, assim, todo o sentido do
+                    paragrapho em seu conjuncto. E o que é nobreza e sinceridade na ligação do paragrapho
+                    completo resulta vileza e impudor quando d’elle se excluem, na transcripção ficticia,
+                    os seus elementos vitaes, o seu unico sentido.</p>
+                <p rend="indent-first">Mais vil (se é possivel) que esta vileza, é a propria essencia do
+                    manifesto dos estudantes. Escreveram-o elles como <hi rend="italic">blague</hi>? Ha
+                    trez cousas com que um espirito nobre, de velho ou de jovem, nunca brinca, porque o
+                    brincar com ellas é um dos signaes distinctivos da baixeza da alma: são ellas os
+                    deuses, a morte e a loucura. Se, porém, o author do manifesto o escreveu a serio, ou
+                    crê louco o dr. <rs type="name" key="P71">Raul Leal</rs>, ou, não crendo, usa o
+                    parecer crel-o para o conspurcar. Só a ultima canalha das ruas insulta um louco, e em
+                    publico. Só qualquer canalha abaixo d'essa imita esse insulto, sabendo que mente.</p>
+                <p rend="indent-first">Ainda sobra vileza. O dr. <rs type="name" key="P681">Arthur
+                    Leitão</rs>, se escreveu um opusculo antipathico, escreveu-o comtudo contra o
+                    presidente do conselho, então dictador; atacou um homem que tinha comsigo toda a
+                    força das authoridades do Estado e da Tradição; um homem que, a ser louco, sem duvida
+                    exerceria, pelo logar que occupava, uma acção largamente nefasta.</p>
+                <p rend="indent-first">Os estudantes são de melhor calculo. Entrincheirados
+                    simultaneamente no Governo Civil e na <hi rend="italic">Epocha</hi> ― isto é, na
+                    republica e na monarchia ―, seguros porisso do appoio de toda a imprensa e da
+                    consequente difficultação de qualquer protesto, atacam e insultam confiadamente.
+                    Atacam e insultam a quem? A um homem que não os atacou, que está sosinho ou tão pouco
+                    acompanhado que é como se o estivesse, sem posição que o torne perigoso a quem o
+                    ataca, sem influencia que torne prejudicial a sua acção, suppondo que ella em sua
+                    essencia o seja. E por que foram movidos a esse insulto? Por aquillo mesmo que os
+                    devera demover, se o intentassem; por um manifesto em que sem duvida transparece uma
+                    alta intelligencia e se mostra uma altissima dignidade. Estupidos e sordidos, são
+                    porisso incapazes de conceder a possibilidade de um talento alheio que não
+                    comprehendam, ou senão de rebellar-se contra a alheia dignidade, como se a existencia
+                    d’ella os humilhasse.</p>
+                <p rend="indent-first">E’ por essa mesma estupidez, e esta mesma complexa vileza, que o
+                    manifesto dos estudantes, sendo que é de jovens, é entristecedor. Moços, cuja
+                    intelligencia deveria ser, não porcerto disciplinada, porém alacre e disperta,
+                    rastejam assim na imbecilidade. Jovens, cuja moral devia peccar só pelos defeitos do
+                    impulso e da precipitação, mostram-nos, no emprego da subtileza baixa, da
+                    deshonestidade da intelligencia e do calculo sordido, os vicios menos desculpaveis da
+                    decrepitude.</p>
+                <p rend="indent-first">De resto, terão elles culpa? Fortes, como estão, com a força
+                    alheia, cujo appoio os torna representantes e symbolos d’ella, esta vasa do
+                    liberalismo e da democracia é já o transbordar das forças desintegrantes, de cuja
+                    acção provém a nossa miseria nacional. Sim, elles não são elles-proprios: são o
+                    ambiente que os produziu. São bem o resultado da Monarchia dos Braganças e da
+                    Republica Portugueza. São bem o producto de uma sociedade em que varios seculos de
+                    educação fradesca e jesuitica prepararam, pela annullação do espirito critico e
+                    scientifico, o advento das idéas «liberaes»; em a qual, portanto, a estagnação da
+                    intelligencia se completou, como era logico, com a perversão do caracter e a ruina da
+                    ordem.</p>
+                <milestone rend="asterisk" unit="section"/>
+                <p rend="indent-first">É em parte por isto ― por serem estes estudantes, sobretudo na
+                    acção d’elles que apprecio, o symbolo vivo d’esta sociedade ― que de certo modo vale
+                    o exforço a publicação d’este protesto, cuja intenção os transcende. É isto um dever
+                    social. No que não é por isto, convém escrevel-o para que, d’aquella calumnia de que
+                    sempre fica alguma cousa, possa ficar um pouco menos que se elle se não escrevera. É
+                    isto um dever moral. Nem é descabido que se aproveite a opportunidade para protestar
+                    tambem ― o que em grande parte d’este escripto está implicito ― contra o complexo
+                    desrespeito pela sciencia que ha no emprego da psychiatria para fins de insulto. É
+                    isto um dever intellectual.</p>
+                <p rend="indent-first">E se houver alguem do publico a quem em algum grau convencesse o
+                    manifesto dos estudantes, com breves palavras se lhe tira essa illusão da
+                    ignorancia.</p>
+                <p rend="indent-first">Pretendem os estudantes provar que o dr. <rs type="name"
+                    key="P71">Raul Leal</rs> é um paranoico com delirio das grandezas; serve de unica
+                    razão comprehensivel d’esse «diagnostico» a presença, que allegam, no manifesto
+                    d’elle de uma exaltação morbida do orgulho e de idéas de perseguição. Veremos
+                    opportunamente o que pesam estas duas allegações. Conceda-se, por ora, que são
+                    justas. Com isso se simplificará o argumento.</p>
+                <p rend="indent-first">Nem as idéas doentias de grandeza, nem as idéas de perseguição
+                    bastam, de per si, separadas ou juntas, para provar a paranoia. Ha mister que se
+                    manifestem de certa maneira, que se desinvolvam de certo modo, e que nellas e em seu
+                    desenrolamento haja o que se chama systematização. E, provada que não seja a
+                    paranoia, pode a morbidez mental revelada descer facilmente ― e quasi sempre se verá
+                    que desce ― do nivel das psychoses para o das neuropsychoses, cuja gravidade é muito
+                    menor, como a sua natureza muito differente. Tenho notado ― leigo que sou ― em casos
+                    de simples hystero-epilepsia a eclosão episodica e irregular de taes idéas; nunca,
+                    porém, nellas se estabelece uma coordenação tal, que simulen de perto um delirio
+                    systematizado.</p>
+                <p rend="indent-first">No dr. <rs type="name" key="P71">Raul Leal</rs> não se revelam
+                    idéas de perseguição. No manifesto d’elle parece haver, em algumas referencias á
+                    Egreja Catholica, um esboço muito vago d’ellas. Como, porém, na sua conversação e nos
+                    actos da sua vida taes idéas <hi rend="italic">nunca</hi> surgem, nem mesmo vagas,
+                    podemos considerar o que no manifesto as simula como menos que episodico, pormenor
+                    antes da só imaginação exaltada, sobretudo litterariamente, que da inteligencia em
+                    desvio. A exaltação morbida do orgulho e da personalidade é que nelle é manifesta e
+                    frequente. Carece, porém, de linha morbida directriz, que a constitua em delirio. E
+                    tem, talvez, ainda que doentia na sua manifestação, uma razão-de-ser que de certo
+                    modo o não é, e que de todo a differença do delirio das grandezas.</p>
+                <p rend="indent-first">A presença ou ausencia de elementos justificativos de um orgulho
+                    excessivo é um facto primordial para se fazer juizo em casos d’estes. O orgulho
+                    desmedido, e, por desmedido, doentio, de um homem de genio não tem analogia, senão na
+                    fórma externa, com o delirio orgulhoso de um megalomano vulgar. Quando um homem de
+                    genio, cujo genio reconhecemos já, manifesta um orgulho doentio, desculpamos-lhe o
+                    excesso da affirmação pela razão, que lhe vemos, para fazel-a. Que diriamos, porém,
+                    se esse mesmo homem de genio manifestasse esse mesmo orgulho, do mesmo modo legitimo
+                    porque o homem é o mesmo, antes que o reconhecessemos como genio? Tel-o-hiamos,
+                    talvez, por louco. Assim, muitas vezes, o que nos parece a loucura dos outros não é
+                    mais que a nossa propria incomprehensão.</p>
+                <p rend="indent-first">Como sabem os estudantes, como sabe quem quer que seja, se o
+                    orgulho desmedido do sr. <rs type="name" key="P71">Raul Leal</rs> não é illegitimo
+                    hoje só para ter sido sempre legitimo ámanhã? Acham excessivo, mesmo como doença, o
+                    aspecto d’esse orgulho? Acham sophistica a demonstração de que não é louco quem diz
+                    que quer fundar uma nova religião, «o terceiro reino divino»?</p>
+                <p rend="indent-first">Por muitos que sejam os symptomas de desequilibrio que uma
+                    psychiatria justa possa encontrar no dr. <rs type="name" key="P71">Raul Leal</rs>,
+                    não são tantos quantos os symptomas de loucura, de degeneração, de perversão
+                    intellectual e moral que um psychiatra eminente, o dr. <rs type="name" key="P682"
+                        >Binet-Sanglé</rs>, encontrou na pessoa de <rs type="name" key="P50">Jesus
+                            Christo</rs>, o qual, comtudo, fundou uma religião, como mesmo os estudantes de
+                    Lisboa devem saber.</p>
+                <p rend="indent-first">Os trez volumes intitulados <rs type="title"><hi rend="italic">La
+                    Folie de Jésus</hi></rs> constituem, sem duvida, um exemplo de probidade
+                    clinica e de exposição psychiatrica. Nelles podem os estudantes apprender, lendo,
+                    como se demonstra um caso de loucura. Fechados elles, porém, podem apprender,
+                    reflectindo, que é a loucura que dirige o mundo. Loucos são os heroes, loucos os
+                    santos, loucos os genios, sem os quaes a humanidade é uma mera especie animal,
+                    cadaveres addiados que procriam.</p>
+                <milestone rend="asterisk" unit="section"/>
+                <p rend="indent-first">Disse o que tinha que dizer. Conclúo saudando, que assim manda a
+                    tradição.</p>
+                <p rend="indent-first">Aos estudantes de Lisboa não desejo mais ― porque não posso
+                    desejar melhor ― de que um dia possam ter uma vida tão digna, uma alma tão alta e
+                    nobre como as do homem que tão nesciamente insultaram. A <rs type="name" key="P71"
+                        >Raul Leal</rs>, não podendo prestar-lhe, nesta hora da plebe, melhor homenagem,
+                    presto-lhe esta, simples e clara, não só da minha amisade, que não tem limites, mas
+                    tambem da minha admiração pelo seu alto genio especulativo e metaphysico, lustre, que
+                    será, da nossa grande raça. Nem creio que em minha vida, como quer que decorra, maior
+                    honra me possa caber que a presente, que é a de tel-o por companheiro nesta aventura
+                    cultural em que coincidimos, differentes e sósinhos, sob o chasco e o insulto da
+                    canalha.</p>
+                <signed rend="right"><rs type="name" key="FP" style="b">Fernando Pessoa</rs></signed>
+            </div>
+        </body>
+    </text>
+</TEI>
+
+
+
+

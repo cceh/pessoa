@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>CP 970</title>
+            <author>
+               <rs type="name" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny-Krahmer</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Inês Filipa Rebelo do Carmo</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability status="free">
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">CP970.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>CP 970</idno>
+               </msIdentifier>
+               <msContents>
+                  <summary>
+                     <p>Lista manuscrita.</p>
+                  </summary>
+                  <msItemStruct>
+                     <author>
+                        <rs type="name" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="en fr"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate>?</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+      <graphic url="Espolio Manuela Nogueira (MN)/avulsos (970).jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <p>A series like the <abbr>R<am>.</am></abbr> <abbr>R<am>.</am></abbr>
+               <abbr>A<am>.</am></abbr>
+               <lb/> Cheap Reprints. <note place="margin-right"> (format <gap reason="illegible"
+                     unit="word" extent="1"/><lb/> indifferent)</note></p>
+            <metamark rend="line" function="distinct"/>
+            <div>
+               <list>
+                  <item rend="indent-2">
+                     <label><hi rend="underline"><rs type="name" key="P273"><choice><abbr>J<am>.</am> B<am>.</am></abbr>
+                        <expan>J<ex>ohn</ex> B<ex>agnell</ex></expan></choice> Bury</rs></hi>:</label>
+                     <rs type="title">History of Freedom <lb/>of Thought</rs>
+                  </item>
+                  <item>
+                     <label><hi rend="underline"><rs type="name" key="P274"><abbr>J<am>.</am></abbr>
+                              Melah</rs></hi>:</label>
+                     <gap reason="illegible" unit="word" extent="1"/> of <gap reason="illegible"
+                        unit="word" extent="1"/>
+                  </item>
+                  <item>
+                     <label><hi rend="underline"><rs type="name" key="P275"
+                        ><choice><abbr>A<am>.</am> W<am>.</am></abbr><expan>A<ex>alfred</ex> W<ex>illiam</ex></expan></choice>
+                        Benn</rs></hi>:</label>
+                     <list rend="inline">
+                        <item>— <rs type="title">Ancient Philosophy</rs>.</item>
+                        <item>— <rs type="title">Modern Philosophy</rs>.</item>
+                     </list>
+                  </item>
+               </list>
+            </div>
+            <metamark rend="line" function="distinct"/>
+            <div>
+               <head><hi rend="underline">Type of Book:</hi></head>
+               <list>
+                  <item> RPA reprints type, but larger,<lb/> smaller (one-sheet type <gap
+                        reason="illegible" unit="word" extent="1"/>
+                     <lb/> down) — about 32 to 48 pages. </item>
+                  <item>
+                     <abbr>Cf<am>.</am></abbr>
+                     <rs type="name" key="P276"><choice>
+                           <abbr>Ch<am>.</am></abbr>
+                           <expan>Ch<ex>arles</ex></expan>
+                        </choice> Nodier’s</rs> tale in two columms. </item>
+                  <item>
+                     <abbr>Cf<am>.</am></abbr>
+                     <rs type="title">“In Extenso”</rs> collection </item>
+               </list>
+            </div>
+         </div>
+      </body>
+   </text>
+</TEI>
