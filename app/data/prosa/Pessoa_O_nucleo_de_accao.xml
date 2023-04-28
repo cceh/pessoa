@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>O Núcleo de Ação Nacional dirige-se terminantemente à Nação</title>
+            <author>
+               <rs type="name" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Edição, Transcrição, Codificação</resp>
+               <name>Jorge Uribe e Maria José Galeano</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny-Krahmer</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2021</date>
+            <availability status="restricted">
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">Pessoa_O_nucleo_de_accao.xml</idno>
+         </publicationStmt>
+         <notesStmt>
+            <note type="genre">
+               <rs type="genre" key="prosa">Prosa</rs>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <list type="work-index">
+               <item>
+                  <rs type="work" key="W312">O Núcleo de Ação Nacional dirige-se terminantemente à Nação</rs>
+               </item>
+            </list>
+            <biblStruct> 
+               <monogr>
+                  <!--MJ: Revisar esta proposta de <biblStruct> pensar num possível publication type Pamphlet-->
+                  <title>O Núcleo de Ação Nacional dirige-se terminantemente à Nação</title>
+                  <author>
+                     <rs type="name" key="FP">Fernando Pessoa</rs>
+                  </author>
+                  <textLang mainLang="pt"/>
+                  <imprint>
+                     <date when="1927">1927?</date>
+                     <pubPlace>Lisboa</pubPlace>
+                     <biblScope unit="page">7pp</biblScope>
+                  </imprint>
+               </monogr>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <variantEncoding method="parallel-segmentation" location="internal"/>
+      </encodingDesc>
+   </teiHeader>
+   <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+      <graphic url="Prosa/O_nucleo_de_accao_1.jpg"/>
+       <graphic url="Prosa/O_nucleo_de_accao_2.jpg"/>
+       <graphic url="Prosa/O_nucleo_de_accao_3.jpg"/>
+       <graphic url="Prosa/O_nucleo_de_accao_4.jpg"/>
+       <graphic url="Prosa/O_nucleo_de_accao_5.jpg"/>
+       <graphic url="Prosa/O_nucleo_de_accao_6.jpg"/>
+       <graphic url="Prosa/O_nucleo_de_accao_7.jpg"/>
+   </facsimile>
+   <text type="orig" corresp="#W312">
+      <body>
+         <div>
+            <head><hi rend="bold">O NUCLEO DE ACÇÃO NACIONAL dirige-se terminantemente á
+               Nação</hi></head>
+            <!--____________-->
+
+            <head>PRIMEIRO MANIFESTO</head>
+
+            <head>O INTERREGNO</head>
+            <!--____________-->
+            <div>
+               <head>I — Prefacio decisivo</head>
+
+               <p rend="indent-first">O NUCLEO DE ACÇÃO NACIONAL, que em varias horas necessarias
+                  tem intervindo — suavemente, como é seu modo; obscuramente, como é seu mistér — na
+                  vida da Nação, julga ser chegado o momento de publicar as palavras que só a elle
+                  compete dizer, e que só elle tem condições para proferir.</p>
+               <p rend="indent-first">Escravos da mentalidade estrangeira, uns; escravos da falta de
+                  mentalidade propria, todos — nenhuns Portuguezes, politicos ou não politicos, teem
+                  podido fallar nacionalmente ou superiormente a este paiz. Fal-o hoje, pela
+                  primeira vez desde 1578, o NUCLEO DE ACÇÃO NACIONAL.</p>
+               <p rend="indent-first">O que vão ler, não todos os Portuguezes, mas todos os
+                  Portuguezes que souberem ler, é escripto sem obediencia a nenhuma tradição nossa,
+                  sem subserviencia a theoria nenhuma extranha, sem attenção a nenhuma corrente do
+                  chamado pensamento europeu; foi pensado por homens portuguezes, e não por macacos
+                  humanos que houvessem nascido em Portugal.</p>
+               <p rend="indent-first">Serão cinco os manifestos, até se chegar ao fim do
+                  desinvolvimento da doctrina. O manifesto presente é introductorio. O segundo
+                  tractará da Nação Portugueza; o terceiro do Estado Portuguez; o quarto da
+                  Sociedade chamada Portugal. Mais tarde se comprehenderá em que consiste esta
+                  distincção. O que ficar ainda por dizer formará o quinto manifesto.</p>
+               <p rend="indent-first">Partiremos da explicação do interregno politico presente,
+                  tornando-o a base práctica da estructura politica, e do plano nacional e social,
+                  propostos para o futuro. Faremos isto porque, se não fôsse o interregno politico
+                  presente, não teriam estes manifestos, taes quaes serão, razão de ser.</p>
+               <p rend="indent-first">Para o que vamos affirmar a propor não queremos a attenção dos
+                  sub-Portuguezes que constituem a maioria activa da Nação. Mas a attenção dos
+                  outros, dos que teem um cerebro que pode ainda vir a pertencer-lhes, não a
+                  queremos nem a pedimos — exigimol-a.</p>
+            </div>
+            <div>
+               <head>II — Primeira justificação da Dictadura Militar</head>
+
+               <p rend="indent-first">METADE do Paiz é monarchica, metade do Paiz é republicana. São
+                  estes os factos. Não fallamos do Paiz dividindo-o em Norte e Sul, ou em qualquer
+                  outra divisão de terras. Não fallamos do Paiz dividindo-o em classes cultas e
+                  incultas, ou em qualquer outra divisão de homens. Fallamos de Portugal na simples
+                  quantidade dos seus habitantes nacionaes. D'esses se pode dizer, com verdade
+                  pragmatica, que metade é monarchica, metade republicana; que são sensivelmente
+                  eguaes, que são eguaes para todos os effeitos practicos, o numero dos monarchicos
+                  e o numero dos republicanos. São estes os factos; o resto é falla politica: fica
+                  para os maioraes que d'ella usam e para as rezes que crêem nella.</p>
+               <p rend="indent-first">Da parte monarchica, uma pequena minoria é activa e fórma os
+                  partidos monarchicos que se manifestam. Da parte republicana, uma minoria maior é
+                  activa e fórma os partidos republicanos que se manifestam. O resto do Paiz, seja,
+                  virtualmente, monarchico ou republicano, é apathico e indifferente quanto á
+                  manifestação, ou até quanto á consciencia, das suas tendencias. Como a minoria
+                  republicana é maior, mais activa e mais cohesiva que a minoria monarchica, existe
+                  Republica, e não Monarchia, em Portugal. Não existe Republica por nenhuma outra
+                  razão.</p>
+               <p rend="indent-first">Esta condição politica do Paiz tem parallelo em um phenomeno
+                  que, como procede da mesma causa, que é o estado mental portuguez, pode servir de
+                  symbolo d'essa condição politica. Somos o paiz das duas orthographias. Da gente
+                  que entre nós sabe escrever, parte escreve em orthographia latina, a outra parte
+                  na orthographia do Governo Provisorio. A maioria, porém, não sabe ler nem
+                  escrever. Assim as lettras são a sombra dos factos, e lemos mais na leitura do que
+                  esperavamos.</p>
+               <p rend="indent-first">O facto essencial é este: Portugal é metade monarchico, metade
+                  republicano. Em Portugal presente, pois, o problema institucional é inteiramente
+                  irresoluvel. De direito, de qualquer especie de direito, não pode haver Republica,
+                  não pode haver Monarchia, em Portugal. Ha Republica pela razão já dicta, e porque
+                  tem que haver qualquer coisa. Mas essa Republica não é, nem pode ser, Republica,
+                  como a Monarchia, que a precedeu, já não era, nem podia ser, Monarchia. Estando a
+                  Nação dividida contra si mesma, como pode ella ter um regimen que defina a união
+                  que ella não tem? Repita-se, pois, para que se oiça: o problema institucional é
+                  hoje irresoluvel em Portugal.</p>
+               <p rend="indent-first">Porque razão, porém, está a Nação assim dividida contra si
+                  mesma? A razão é facil de ver, porque o caso é d'aquelles para que pode haver uma
+                  só razão. Estamos divididos porque não temos uma idéa portugueza, um ideal
+                  nacional, um conceito missional de nós mesmos. Tivemos — para bem ou para mal,
+                  porém com certeza não só para mal — um conceito de imperio, a que nos forçaram
+                  nossos Descobrimentos. Esse conceito cahiu em Alcacer-Kibir. Nem, no longo e
+                  triste curso das trez dynastias filippinas — a dos Filippes, a dos Braganças, e a
+                  Republica —, houve mais que a minguada e passiva estirpe dos Sebastianistas
+                  litteraes que em algum modo mantivesse viva e amada a memoria da alma de
+                  Portugal.</p>
+               <p rend="indent-first">Ora todo ideal nacional, claramente concebido ou claramente
+                  sentido, forçosamente tende para certa formula politica, para certo regimen, que
+                  lhe seja adequado, e atravez do qual se exprima. Por exemplo: um imperialismo como
+                  o inglez, de dominio e expansão ethnica, está necessariamente ligado, intrinseca-e
+                  extrinsecamente, á idéa monarchica. Outros ideaes nacionaes, nem altos como
+                  aquelle, nem sequer seus similhantes, podem tambem exprimir-se na idéa monarchica.
+                  Ideaes de typo diverso, e entre si tambem diversos, projectam-se naturalmente, e
+                  por diversas razões, na formula republicana. Só a ausencia de um ideal nacional,
+                  pela acção negativa da mesma causa, se exprime na divisão da nação, meiada entre
+                  um regimen em que não crê e uma opposição a elle em que não confia. E' esta a
+                  condição sem proveito em que emparceiramos com a França.</p>
+               <p rend="indent-first">Mas quando um paiz está assim organicamente dividido, metade
+                  opposta a metade, está creado um estado de Guerra Civil — de guerra civil pelo
+                  menos latente. Ora num estado de guerra, civil ou outra, é a Força Armada que
+                  assume a expressão do Poder. Assume-a, ordinariamente, em subordinação a um poder
+                  politico constituido, a um regimen. No nosso caso, porém, precisamente o que falta
+                  é um regimen. Tem pois a Força Armada que ser ella mesma o Regimen; tem que
+                  assumir por si só todo o Poder.</p>
+               <p rend="indent-first">E' esta a primeira Doctrina do Interregno, a primeira
+                  justificação da Dictadura Militar.</p>
+            </div>
+            <div>
+               <head>III — Segunda justificação da Dictadura Militar</head>
+
+               <p rend="indent-first">ALEM de não ter vida institucional legitima, não pode
+                  Portugal, tambem, ter vida constitucional alguma. A palavra «constituição» pode
+                  receber dois sentidos: (1) simples fórma constituida de governo, seja esse governo
+                  embora uma monarchia absoluta; (2) fórma de governo em imitação do espirito da
+                  constituição ingleza. O primeiro é o sentido abstracto, o segundo o sentido
+                  historico, da palavra. Portugal presente não pode ter constituição, no primeiro
+                  sentido da palavra, porque, como já se disse, não pode ter regimen politico, e a
+                  constituição, neste sentido, é sómente a definição do regimen. E Portugal presente
+                  não pode, nem deve, ter constituição, no segundo sentido da palavra, pela razão
+                  mais forte ainda, porém mais complexa, que se vae expor.</p>
+               <p rend="indent-first">Como na Europa semi-barbara — áparte certas republicas, mais
+                  ou menos do genero, porém não da especie, das cidades-estados dos antigos — não
+                  havia outro systema geral de governo senão a monarchia absoluta, é claro que não
+                  podia haver despotismo ou tyrannia senão atravez d'esse systema. Ora o espirito
+                  humano, como é essencialmente confuso e porisso simplista, não distingue
+                  habitualmente o particular do geral. Assim, mais ou menos claramente se formou a
+                  idéa de que despotismo e absolutismo eram a mesma coisa. Ainda hoje ha quem
+                  confunda a significação dos dois termos. Os factos, porém, olham para outro lado.
+                  Todo homem, ou grupo de homens, que manda, tende, em virtude do egoismo natural da
+                  alma humana, a abusar d'esse mando. Só não abusa se, ou quando, sente que não pode
+                  abusar, ou que perderá mais abusando do que não abusando. Ora ha só uma coisa que
+                  faz sentir ao governante que não pode abusar: é a presença sensivel, quasi
+                  corporea, de uma opinião publica directa, immediata, espontanea, cohesiva,
+                  organica, que todos os povos sãos possuem em virtude do instincto social que os
+                  torna povos, e cuja pressão occulta os seus governantes sentem sem que essa
+                  opinião publica tenha sequer que fallar, e muito menos que delegar ou eleger quem
+                  por ella obre ou falle. Por isso disse <rs type="name" key="P683">Hume</rs>, e
+                  disse bem, que não ha verdadeiro governo, ainda o mais autocratico, que se não
+                  appoie na opinião publica.</p>
+               <p rend="indent-first">Ora, pensando, por uma parte e por erro, que a monarchia
+                  absoluta era essencialmente má, e sentindo, por outra parte e com metade de razão,
+                  que a opinião publica é a essencia de toda vida governativa, foi o espirito
+                  europeu levado inevitavelmente a buscar uma formula pela qual essa opinião publica
+                  se coordenasse estructuralmente, se constituisse em orgão limitador ou
+                  substituidor do poder regio. Confusamente, incoherentemente, se esboçaram, desde a
+                  mesma Edade Media, doctrinas norteadas por este fito: umas eram derivadas do
+                  exemplo, em geral treslido, das cidades-estados dos antigos, outras surgiram
+                  espontaneamente da especulação medieval, muito mais espaçosa do que se suppõe
+                  nesta materia; e a algumas delas encorajou a Egreja, a quem convinha disseminar
+                  doctrinas antimonarchicas nas universidades, para hostilizar o poder dos reis,
+                  frequentemente em conflito com o d'ella.</p>
+               <p rend="indent-first">Estes phantasmas de doctrina tomaram subitamente corpo, como
+                  seria de suppor, no primeiro verdadeiro embate entre a monarchia absoluta e
+                  qualquer força que incarnasse definidamente esse impulso adverso. Deu-se o caso em
+                  Inglaterra, no conflicto, em grande parte nacional e especial, entre a monarchia
+                  dos Stuarts, conscientemente «de direito divino», e a opposição a ella, que
+                  assumiu episodicamente, e em contrario do sentimento da maioria, a fórma
+                  republicana. Nasceu por fim, depois de pesados annos de perturbações, o chamado
+                  constitucionalismo, formula de equilibrio espontaneo, provinda de antigas
+                  tradições nacionaes em que o fermento de todas as doctrinas antimonarchicas
+                  diversamente se infiltrara. O principal theorista do systema, tal qual finalmente
+                  veio a parecer, foi <rs type="name" key="P684">Locke</rs>, em seu <rs type="title"
+                        ><hi rend="italic">Ensaio sobre o Governo Civil.</hi></rs></p>
+               <p rend="indent-first">Ora o mesmo simplismo do espirito humano, que o leva a
+                  confundir o particular e o geral na theoria, o conduz a os não distinguir na
+                  práctica. Assim, sem considerar se a solução politica ingleza não seria
+                  particularmente ingleza, e portanto inapplicavel a outros povos, em outras
+                  circumstancias de passado e de presente, os pensadores politicos europeus erigiram
+                  em dogma a constituição de Inglaterra. A formula constitucional ingleza passou a
+                  ser, para elles, uma especie de descoberta scientifica, não só universalmente
+                  verdadeira, como o são os dados da sciencia, mas tambem absolutamente perfeita,
+                  como o são as expressões das leis naturaes. E, como o povo inglez rapidamente se
+                  distanciou, no goso de verdadeira liberdade e de uma vida social superior, de
+                  todos os outros povos de Europa, viram, apparentemente, a práctica a confirmar a
+                  theoria. De ahi a intoxicação constitucional que haveria de produzir, numa
+                  amplidão doctrinaria exaltada, a Revolução Franceza, pela qual as doctrinas, já
+                  metaphysicas, do constitucionalismo inglez se derramaram depois por todo o mundo.
+                  A ninguem occorreu, parece, que a liberdade, em qualquer povo, é a simples
+                  expressão da sua força espontaneamente cohesiva em resistir a qualquer tyrannia,
+                  nem que a liberdade e a superioridade social inglezas provinham, não de uma
+                  formula, que é uma abstracção, mas da saude social, da forte opinião publica
+                  directa, que estavam por traz d'essa formula e lhe davam a vida real, como a
+                  haveriam dado, no mesmo sentido, a qualquer outra.</p>
+               <p rend="indent-first">Assim, de uma intuição central justa, embrulhada em erros e
+                  por elles suffocada, nasceu em Europa, e alastrou a todo o mundo civilizado, a
+                  superstição constitucional. Consiste ella em crer que a formula constitucional
+                  ingleza é <hi rend="italic">universal</hi>, sendo pois applicavel a qualquer povo
+                  civilizado, em quaesquer circumstancias; e que é <hi rend="italic">perfeita</hi>,
+                  sendo que é a verdadeira formula de traduzir para uma norma politica aquillo a que
+                  se chama a opinião publica.</p>
+               <p rend="indent-first">Ambas as theses são demonstravelmente erroneas. A primeira a
+                  todos o deve parecer, ainda que por simples intuição. E' evidente, ou deveria
+                  sel-o, que o regimen que particularmente convém a um povo representa uma adaptação
+                  ás particularidades d'esse povo, e deve ser, portanto, inadaptavel em principio ás
+                  particularidades, forçosamente differentes, de outro povo qualquer. Áparte esta
+                  razão, porém, ha uma outra, de mais peso. Só pode ser universalmente applicavel o
+                  que é universalmente verdadeiro, isto é, um facto scientifico. Ora em materia
+                  social não ha factos scientificos. A unica coisa certa em «sciencia social» é que
+                  não ha sciencia social. Desconhecemos por completo o que seja uma sociedade; não
+                  sabemos como as sociedades se formam, nem como se manteem, nem como declinam. Não
+                  ha uma unica lei social até hoje descoberta; ha só theorias e especulações, que,
+                  por definição, não são sciencia. E onde não ha sciencia, não ha universalidade. O
+                  constitucionalismo inglez, ou outra theoria social qualquer, é portanto
+                  inapplicavel á generalidade dos povos, convindo só, porventura, ao povo onde
+                  appareceu e onde, portanto, é em certo modo natural. O que resta saber porém, é
+                  se, no proprio povo inglez, o constitucionalismo inglez dá bom resultado. Se não
+                  der, as duas theses ruem junctas, pois o que é mau onde é natural —embora viavel
+                  por ser natural— será duas vezes mau onde fôr artificial, pois ahi nem viavel
+                  será. Leva-nos isto, pois, ao exame da segunda crença da superstição
+                  constitucional —a de que o constitucionalismo inglez realmente representa a
+                  projecção politica da opinião publica.</p>
+               <p rend="indent-first">Essa crença, vae desmenti-la por nós, e melhor que o fariamos
+                  nós, um inglez moderno, homem culto e experimentado, politico por hereditariedade
+                  e por vocação. Diz assim Lord <rs type="name" key="P665">Hugh Cecil</rs>, filho do
+                     <rs type="name" key="P666">Marquez de Salisbury</rs>, a pag. 235 e seguintes do
+                  seu livro intitulado <rs type="title">«Conservantismo»</rs>:</p>
+
+               <p rend="indent-first">«Torna-se altamente interessante e importante inquirir onde
+                  está o centro do poder que domina, em ultima analyse, a Casa dos Communs e a
+                  auctoridade ilimitada que, pela Constituição, essa Casa exerce. E' interessante e
+                  importante, porém não é muito facil. Pode dizer-se que o poder está no Gabinete,
+                  isto é, nos quinze ou vinte homens predominantes do partido em maioria. Mas isso
+                  nem sempre será verdade. Pode ás vezes haver discordancias no Gabinete. Qual é a
+                  força que então determina que a decisão seja dada num sentido ou noutro? Ou,
+                  ainda, apparecerá ás vezes no Gabinete uma questão para decidir, e trará já uma
+                  solução tam fortemente appoiada pelo partido, que o Gabinete se veja constrangido
+                  a adoptar essa solução. Onde está o poder a que até o Gabinete tem que obedecer? A
+                  melhor resposta é que a auctoridade suprema num partido é em geral exercitada
+                  pelos mais activos e energicos dos organizadores partidarios sob o commando de um
+                  ou mais dos principaes chefes do partido. Ás vezes o chefe nominal do partido está
+                  entre estes homens; outras vezes não está. Mas elles derivam a sua força, não só
+                  da sua situação pessoal, mas de que, de um modo ou de outro, influem no que se
+                  pode chamar a Guarda Pretoriana do partido, isto é, os seus elementos mais activos
+                  e ardentes. Se isto é assim, temos graves razões de receio. A Casa dos Communs
+                  nomeia o Executivo e tem dominio absoluto sobre a legislação. O partido em maioria
+                  na Casa dos Communs domina absolutamente a Casa dos Communs. Esse partido é, por
+                  sua vez dominado pelos seus elementos mais ardentes e energicos, sob o commando
+                  dos politicos a quem esses são mais affectos. Quer isto dizer que a suprema
+                  auctoridade do Estado está nas mãos de partidarios extremos e nas mãos dos
+                  estadistas que mais admirados são por esses partidarios extremos. E' quasi
+                  impossivel conceber uma forma menos satisfactoria de governo. Isto, comtudo, é que
+                  é a realidade. A apparencia é que a Casa dos Communs representa o povo. Mas, de
+                  facto, o povo nem tem a voz dominante na escolha da Casa dos Communs, nem dominio
+                  real sobre ella, uma vez escolhida. O povo tem, na práctica, só a liberdade de
+                  escolher entre os candidatos partidarios que são submettidos á sua escolha. São os
+                  partidarios ardentes — a Guarda Pretoriana — quem escolhe os candidatos; os
+                  eleitores teem sómente que determinar se querem ser representados pelo nomeado dos
+                  Pretorianos Conservadores, ou pelo nomeado dos Pretorianos Liberaes, ou, em casos
+                  mais raros, podem escolher um candidato, não menos disciplinado, nomeado pelo
+                  Partido Laborista. Os independentes podem propor-se, e algumas vezes se propõem, á
+                  eleição. Mas as eleições, nas condições modernas, são a tal poncto materia de
+                  organização e mechanismo, que é com grande desegualdade que um independente se
+                  pode bater contra os candidatos nomeados pelos partidos. O triumpho de uma
+                  candidatura independente é a coisa mais rara d'este mundo. A unica verdadeira
+                  influencia que teem os independentes está no desejo dos chefes partidarios de lhes
+                  obter os votos. Mas até isto tem na práctica um alcance limitado. Ha assumptos
+                  controversos sobre os quaes os partidarios ardentes, de um lado e de outro, sentem
+                  tam fortemente que quasi nada se importam da opinião do publico não-partidario. E,
+                  quando a Casa está eleita, a influencia da opinião publica fica similhantemente
+                  limitada. Alguma coisa se fará para obter appoio na proxima eleição geral; mas,
+                  sempre que os homens do partido do governo realmente se empenhem num assumpto,
+                  correrão todos os riscos para fazer vingar a sua politica. Sobretudo o farão
+                  quando o assumpto, de que se tracte, involva o credito pessoal de um dos chefes da
+                  sua confiança. O facto formidavel é que a mais alta auctoridade do nosso Imperio
+                  immenso e unico se encontra alternadamente nas mãos de dois grupos de homens
+                  vehementes, intolerantes e desequilibrados.»</p>
+
+               <p rend="indent-first">Estas palavras teem já quinze anos, porém valem hoje como
+                  então; nada, salvo o augmento do Partido Laborista, existe de novo na situação que
+                  ellas descrevem, e esse augmento não pesa senão em converter em «trez» a palavra
+                  «dois» no fim do texto. E estas palavras são, não só do politico experiente, por
+                  herança e vocação, que dissemos ser seu auctor, mas de um homem que é elle mesmo
+                  politico partidario. É um dos casos em que, contra a norma juridica, a confissão
+                  do reo tem valia.</p>
+               <p rend="indent-first">O reo, porém, não confessou tudo. Uma polemica recente e
+                  episodica, entre chefes liberaes inglezes, trouxe á attenção publica um dos
+                  ponctos da vida partidaria em que ordinariamente se não reparava. E' o de que os
+                  fundos partidarios são secretos, secretos os nomes dos individuos que
+                  frequentemente entram com grandes sommas para os cofres dos partidos. Isto
+                  complica o assumpto e a Guarda Pretoriana. Quem entra com grandes sommas para um
+                  cofre partidario raras vezes o fará por theorismo. Fal-o, em geral, com outro
+                  fito. E, visto que deu, fará por que se faça aquillo para que deu. O partido, ou a
+                  sua Guarda Pretoriana, fará, visto que recebeu, por merecer o que recebeu. Assim,
+                  nesta noite moral, se podem subtilmente esboçar, e subtilmente se infiltrar na
+                  substancia da vida politica, orientações inteiramente antinacionaes; pois, como a
+                  este proposito se observou, não sabendo ninguem quem são os magnos financiadores
+                  dos partidos, ninguem tem a certeza que não estejam ligados a elementos
+                  extrangeiros, cuja politica secretamente imponham. Nem se allegue que este estado
+                  de coisas nada tem com o constitucionalismo, propriamente dicto. O
+                  constitucionalismo involve e motiva a existencia de partidos; estes partidos fazem
+                  uns aos outros uma guerra politica; e a guerra politica, como toda guerra, assenta
+                  em duas bases — dinheiro e segredo.</p>
+               <p rend="indent-first">E' assim, pois, que opera o constitucionalismo inglez no paiz
+                  onde é natural, e, portanto, em certo modo organico; onde é antigo, e, portanto,
+                  ainda mais natural; onde mais tem sido aperfeiçoado, e, portanto, onde deve estar
+                  mais livre de erros. E, se assim é neste paiz, como o não será nos outros, onde
+                  não é natural, nem antigo, nem, por não ser antigo, poderia ter soffrido o que
+                  propriamente se chama um aperfeiçoamento?</p>
+               <p rend="indent-first">Nos paizes onde, como em Inglaterra, existe um ideal nacional,
+                  e, em certo grau, uma opinião publica espontanea — aquella opinião publica
+                  natural, organica, não-eleitora, de que acima fallámos —, os maleficios essenciaes
+                  do constitucionalismo são diminuidos. São, porém, diminuidos por elementos
+                  externos, e não internos, a elle. A pressão de um ideal nacional, se é forte e
+                  constante, faz-se sentir no proprio Parlamento, nos proprios partidos, pois estes
+                  existem adentro da nação; a pressão de uma opinião publica espontanea, se é forte,
+                  do mesmo modo que a sentiam os reis absolutos, assim a sentem tambem o Parlamento
+                  e os partidos, que recuam, com faziam os reis, ante os seus impulsos mais
+                  evidentes. Parece, por isto, que, se o Parlamento e os partidos podem ser, como o
+                  eram os reis, sensiveis ás manifestações directas da opinião publica, tanto faz
+                  que haja reis como Parlamento e partidos; parece que basta que haja ideal
+                  nacional, e que haja opinião publica verdadeira, pois estes se farão sentir ao
+                  Parlamento e aos partidos, e assim os compellirão ao recto caminho. Infelizmente,
+                  a analogia é erronea. O rei absoluto podia (com grave risco proprio) contrariar o
+                  ideal da Nação. O rei absoluto podia (com certo risco proprio) contrariar a
+                  opinião do seu povo. Mas o rei absoluto não podia sophismar ou perverter esse
+                  ideal ou essa opinião, pois não tinha contacto interno com a opinião publica, que
+                  não representava e de quem não dependia; e o ideal nacional, emquanto activo, não
+                  se manifesta senão como uma parte da opinião publica. Os partidos, porém, como
+                  teem um ideal politico distincto do ideal nacional (sem o que não seriam
+                  partidos), ora sobrepõem aquelle a este, ora o infiltram neste, assim o
+                  pervertendo. Os partidos, ainda, como teem que ter a apparencia de se basear na
+                  opinião publica, buscam «oriental-a» no sentido que desejam, e assim a pervertem;
+                  e, para sua propria segurança, buscam servir-se d'ella, em vez de a servir a ella,
+                  e assim a sophismam.</p>
+               <p rend="indent-first">Em Portugal, porém, não ha (como se disse) ideal nacional, nem
+                  ha (como se dirá) opinião publica. Recebemos, assim, em sua plenitude os
+                  maleficios do constitucionalismo. Somos nós os perfeitos constitucionaes. Os
+                  problemas nacionaes suscitados pela presença do constitucionalismo, se são graves
+                  em qualquer outro paiz, são, pois, entre nós gravissimos. Temos que dar-lhes uma
+                  solução qualquer, permanente ou provisoria, mas certamente immediata.</p>
+               <p rend="indent-first">Ora como, segundo se viu na transcripção acima feita, o mal do
+                  constitucionalismo está na sua essencia, visto que é radicalmente nocivo até onde
+                  é natural, não ha outro remedio para elle, onde nem seja natural, senão a sua
+                  simples eliminação. Mas, se o eliminamos, o que poremos em seu lugar? Por que
+                  norma governativa o substituiremos? Onde houvesse um regimen, ou a possibilidade
+                  immediata de um regimen, tentariamos extrahir da substancia d'esse regimen uma
+                  norma governativa propria e especial. Mas onde, como em Portugal presente, não ha
+                  regimen, nem possibilidade immediata de o haver, a unica solução é, eliminando o
+                  constitucionalismo, o não substituir por coisa nenhuma, parecida ou differente
+                  d'elle. Em outras palavras, ha que crear, que estabelecer como coisa definida, o
+                  Estado de Transição.</p>
+               <p rend="indent-first">Sendo o Estado de Transição, em materia nacional, a condição
+                  de um paiz em que estão suspensas, por uma necessidade ou compulsão temporaria,
+                  todas as actividades superiores da Nação como conjuncto e elemento historico, o
+                  certo é que não está suspensa a propria Nação, que tem que continuar a viver e,
+                  dentro dos limites que esse estado lhe impõe, a orientar-se o melhor que pode. Os
+                  governantes de um paiz, em um periodo d'estes, teem pois que limitar a sua acção
+                  ao minimo, ao indispensavel. Ora o minimo, o indispensavel, social é a ordem
+                  publica, sem a qual as mais simples actividades sociaes, individuaes ou
+                  collectivas, nem sequer podem existir. Os governantes naturalmente indicados por
+                  um Estado de Transição são, pois, aquelles cuja funcção social seja
+                  particularmente a manutenção da ordem. Se uma nação fôsse uma aldeia, bastaria a
+                  policia; como é uma nação, tem que ser a Força Armada inteira.</p>
+               <p rend="indent-first">E' esta a segunda Doctrina do Interregno, a segunda
+                  justificação da Dictadura Militar.</p>
+            </div>
+            <div>
+               <head>IV — Terceira justificação da Dictadura Militar</head>
+
+               <p rend="indent-first">ALEM de Portugal presente não poder ter vida institucional,
+                  nem tambem vida constitucional, não pode elle, ainda, ter vida de opinião publica.
+                  Assim lhe falta tambem o que é, não só o fundamento interno de todo governo, mas,
+                  por uma fatalidade historica, o fundamento externo de todo governo de hoje.</p>
+               <p rend="indent-first">Ha só trez bases de governo — a força, a auctoridade, e a
+                  opinião. Qualquer forma de governo tem que participar, para ser governo, de todas
+                  ellas: sem força não se pode governar, sem opinião não se pode durar, sem
+                  auctoridade não se pode obter opinião. Embora, porém, qualquer governo de todas
+                  participe, uma d'ellas haverá em que mais particularmente, em que
+                  distinctivamente, se appoie.</p>
+               <p rend="indent-first">Europa, e nós com ella, seguiu este curso fatal. A todos nos
+                  confronta um problema politico: extrahir da opinião um sistema de governo. Não
+                  temos outro recurso. Não podemos recorrer á força, porque a força, numa sociedade
+                  formada, não é mais que um travão, applicavel só nos perigos e nas descidas; se a
+                  quizermos systematizar, pagaremos o preço por que são penhoradas as sociedades em
+                  que se pretende coordenar o occasional, isto é, realizar uma contradicção. Nem
+                  podemos recorrer á auctoridade, porque a auctoridade é increavel e indecretavel, e
+                  a tradição, que é a sua essencia, tem por substancia a continuidade, que, uma vez
+                  quebrada, se não reata mais. Temos pois que encarar, por necessidade historica, o
+                  problema de extrahir da opinião um sistema de governo. Se é este o problema, não
+                  cuidemos que é outro.</p>
+               <p rend="indent-first">Para nos nortearmos neste fito, temos, primeiro, que ver em
+                  que consiste a opinião. E' o que nunca fizeram nem os defensores nem os criticos
+                  dos systemas que assentam nella.</p>
+               <p rend="indent-first">Qualquer opinião é de uma de trez especies, conforme assente
+                  no instincto (ou na intuição), no habito, ou na intelligencia. Por instincto se
+                  entende aquele phenomeno psychico, innegavel, porém difficil de explicar, pelo
+                  qual, nos animaes chamados inferiores, a vida se conduz certa sem mostras de
+                  «intelligencia», ou, até, condições anatomo-physiologicas, para a existencia
+                  d'ella. Nos animaes chamados superiores os instinctos subsistem, mas são nelles
+                  perturbados pelo habito e pela intelligencia, que a elles, instinctos, são
+                  diversamente antagonicos. Nestes animaes superiores, e notavelmente em o homem,
+                  apparece, ainda, uma fórma superior do instincto, a que chamamos intuição; d'ella
+                  procedem os phenomenos, extranhos, porém reaes, a que por commodidade se chamou
+                  supernormaes — os palpites, a inspiração, o espirito prophetico. A intuição,
+                  operando como o instincto, porque é instincto, usurpa, e muitas vezes supera, as
+                  operações da intelligencia. Os phenomenos do instincto e da intuição teem
+                  preoccupado, mais que quaesquer outros, a sciencia psychologica moderna; assentou
+                  ella já na certeza de que o campo do que chamou subconsciente é vastamente maior
+                  que o da razão, e que o homem, verdadeiramente definido, é um animal irracional.
+                  Só por orgulho ou preconceito se pode não ver que a intelligencia é — como <rs
+                     type="name" key="P685">Huxley</rs> abusivamente suppunha que a simples
+                  consciencia era — o que chamou um epiphenomeno. Isto é, a intelligencia não faz
+                  mais que espelhar, esclarecendo-os para nós e, pela palavra, para outrem, os
+                  instinctos obscuros, as solicitações intuitivas, do nosso temperamento.</p>
+               <p rend="indent-first">Por habito entende-se aquella disposição da indole que é, em
+                  sua origem, e em contrario do instincto, extranha ao individuo, sendo derivada de
+                  um ambiente qualquer. Os preconceitos, as crenças, as tradições — tudo quanto, não
+                  procedendo da intelligencia, tambem não procede do instincto — se derivam do
+                  habito. E' muitas vezes difficil distinguir uma opinião vinda do instincto de uma
+                  opinião vinda do habito, porisso que o habito é um instincto imposto, ou
+                  artificial — uma «segunda natureza», como com razão se lhe chamou.</p>
+               <p rend="indent-first">As manifestações d'estas quatro ordens de opinião
+                  differençam-se entre si da seguinte maneira. O instincto simples é instantaneo e
+                  synthetico, é individual, e tem por objecto só coisas concretas; é centripeto, ou
+                  egoista, pois o será forçosamente o que fôr ao mesmo tempo individual e
+                  concretizante. O instincto superior, ou intuição, differe do instincto simples em
+                  que pode ter por objecto o abstracto e o indefinido, e em que, na proporção em que
+                  o tiver, deixará de ser centripeto ou egoista. O habito é egual ao instincto
+                  simples, salvo em não ser individual; como esse, porém, tem por objecto o concreto
+                  e o definido. A intelligencia é analytica, é individual, e tem por objecto o
+                  abstracto. Em toda opinião entra uma parte de cada um d'estes elementos, pois na
+                  vida é tudo fluido, mixturado, incerto, mau de analyzar summariamente e impossivel
+                  de analyzar até o fim.</p>
+               <p rend="indent-first">Passando agora de considerar a simples opinião, para attender
+                  ao que nos interessa, que é a opinião collectiva ou «publica», desde logo vemos
+                  que ella tem que assentar ou no habito ou na chamada intuição. No instincto
+                  simples não pode assentar, porque elle é só individual — da vida, que não da
+                  sociedade. Na intelligencia não pode tambem fundar-se, porque a intelligencia, por
+                  ser a expressão do temperamento, é, por isso mesmo, a expressão de instinctos, de
+                  habitos e de intuições, excusando nós pois de attender a ella, quando devemos
+                  attender áquillo de que é espelho. O conceito vulgar de democracia, o que pretende
+                  basear a opinião publica na somma das opiniões individuaes fornecidas pelas
+                  intelligencias; o que suppõe que uma sociedade numericamente mais culta (que não
+                  só mais culta em seus representantes superiores) se orienta e governa melhor que
+                  uma sociedade quantitativamente menos culta — este conceito é forçosamente
+                  erroneo. Accresce que, como não ha sciencia social, não pode haver cultura
+                  sociologica. Se a houvesse, como haveria, sobre os ponctos mais simples e
+                  essenciaes da vida social, divergencia de opiniões entre homens da maior cultura?
+                  Em que é que a cultura em geral, e a cultura sociologica em particular, orientam
+                  socialmente, se o prof. A., da Universidade de X , é conservador, o prof. B., da
+                  Universidade de Y, é liberal, e o prof. C., da Universidade de Z, é communista? De
+                  que lhes serve a cultura se entre si divergem num congresso do mesmo modo que trez
+                  operarios numa taberna? Longe de, como se disse, a «democracia sem luzes» ser um
+                  «flagello», é a democracia com luzes que o é. Quanto maior é o grau de cultura
+                  geral de uma sociedade, menos ella se sabe orientar, pois a cultura
+                  necessariamente se quer servir da intelligencia para fundar opiniões, e não ha
+                  opinião que se funde na intelligencia. Assenta ou funda-se no instincto, no
+                  habito, na intuição, e a intromissão abusiva da intelligencia, não alterando isso,
+                  apenas o perturba. A democracia moderna é a systematização da anarchia.</p>
+               <p rend="indent-first">Succede, ainda, quanto á intelligencia, que ella, como é
+                  analytica, é desintegrante; como é abstracta, e por isso fria, é incommunicativa;
+                  e como é a expressão de um temperamento, e o temperamento é individual, separa os
+                  homens em vez de os approximar. O habito, ao contrario, «pega-se»; sobretudo se
+                  «pega» um habito social. A intuição, tambem, transmitte-se — transmitte-se por uma
+                  emissão indefinivel, um «fluido», como já se lhe chamou, havendo quem creia,
+                  talvez com razão, que esse fluido é não só real, mas material. E' só no habito,
+                  pois, ou na intuição, que a opinião publica se pode fundamentar. E é num e noutra
+                  que, de facto, se fundamenta.</p>
+               <p rend="indent-first">No habito se baseia aquella opinião publica a que, com razão
+                  no termo, chamamos conservadora. A razão de se ser conservador é a mesma de se não
+                  poder deixar de fumar. Ha, porém, uma differença, que em certo modo justifica o
+                  receio do novo que constitue a essencia do conservantismo. Quem deixa de fumar, e
+                  se dá mal com fazel-o, pode tornar a fumar. Mas um habito social, isto é, uma
+                  tradição, uma vez quebrado, nunca mais se reata, porque é na continuidade que está
+                  a substancia da tradição. Além do que, não sabendo ninguem o que é a sociedade,
+                  nem quaes são as leis naturaes por que se rege, ninguem sabe se qualquer mudança
+                  não irá infringir essas leis. Em egual receio se fundamentam as superstições, que
+                  só os tolos não teem — no receio de infringir leis que desconhecemos, e que, como
+                  as não conhecemos, não sabemos se não operarão por vias apparentemente absurdas. A
+                  tradição é uma superstição.</p>
+
+               <p rend="indent-first">E' a opinião de habito que mantém e defende as sociedades;
+                  equivale á força que, no organismo physico, resiste á desintegração. A opinião de
+                  habito obra sempre d'este modo restrictivo; umas vezes é util porque entrava a
+                  decadencia, outras é nociva, porque entrava o progresso. Sem a opinião de habito
+                  não existiriam nações; uma nação, aliás, não é senão um habito. Mas só com a
+                  opinião de habito não existiriam nações progressivas; nem, até, existiriam nações,
+                  pois se não teria progredido até á fundação d'ellas. A mais antiga tradição de
+                  qualquer paiz é elle não existir.</p>
+
+               <p rend="indent-first">Na intuição — que, em contrario do simples instincto, vê, como
+                  a intelligencia, o futuro, que não só o passado — se funda aquella opinião com que
+                  se promove o progresso das sociedades, mas, se a do habito a não equilibrar,
+                  tambem a desintegração d'ellas. Toda formula social nova é elaborada e imposta
+                  pela intuição, se bem que a sobreposição da intelligencia lhe perturbe e corrompa
+                  a expressão. Por exclusão de partes se vê que é elaborada e imposta pela intuição.
+                  O instincto nada tem com ella. O habito oppõe-se-lhe. A intelligencia, por si só,
+                  nem tem sciencia social em que se funde para a suppôr boa ou viavel, nem
+                  experiencia social (visto que ella é nova) em que para tal se funde. Só a intuição
+                  — a fé, se se quizer — pode crer na virtude e na viabilidade do que ainda se não
+                  experimentou. Por isso, com razão se pode dizer que toda opinião anticonservadora
+                  é um phenomeno religioso; que todo partido anticonservador é uma aggremiação
+                  mystica.</p>
+               <p rend="indent-first">Toda vida consiste no equilibrio de duas forças, a de
+                  integração e a de desintegração — o anabolismo e o katabolismo dos physiologistas.
+                  A só integração não é vida; a só desintegração é morte. As duas forças assim
+                  oppostas vivem em perpetua lucta, e é essa perpetua lucta que produz o que
+                  chamamos vida. A guerra, disse <rs type="name" key="P669">Heraclito</rs>, é a mãe
+                  de todas as coisas. Mas, para que a vida subsista, é necessario que as duas forças
+                  oppostas sejam de intensidade practicamente egual; que se opponham, que se
+                  combatam, porém que nenhuma d'ellas sobreleve á outra. A vida é a unica batalha em
+                  que a victoria consiste em não haver nenhuma. E' isso o equilibrio; e a vida é uma
+                  media entre a força que a não quer deixar viver e a força que a quer matar — a
+                  diagonal de um parallelogrammo de forças, differente das duas e por ellas
+                  composta. Se assim é na vida individual, assim será na vida social, que é tambem
+                  vida. Consiste a vida social no equilibrio de duas forças oppostas, que já vimos
+                  quaes eram. Teem as duas forças que existir, para que haja equilibrio, e, embora
+                  haja equilibrio, que ser oppostas. Um paiz unanime numa opinião de habito não
+                  seria paiz — seria gado. Um paiz concorde numa opinião de intuição não seria paiz
+                  — seria sombras. O progresso consiste numa media entre o que a opinião de habito
+                  deseja e o que a opinião de intuição sonha. Figurou <rs type="name" key="P15"
+                     >Camões</rs>, nos <rs type="title"><hi rend="italic">Lusiadas</hi></rs>, em o
+                     <rs type="name" key="P686">Velho do Restello</rs> a opinião de habito, em o <rs
+                     type="name" key="P610">Gama</rs> a opinião de intuição. Mas o Imperio Portuguez
+                  nem foi a ausencia de imperio que o primeiro desejara, nem a plenitude de imperio
+                  que o segundo sonharia. Porisso, por mal ou por bem, o Imperio Portuguez pôde
+                  ser.</p>
+               <p rend="indent-first">O equilibrio das forças vitaes não procede, porém, só da sua
+                  egual intensidade, senão tambem da sua egual direcção, em que, em certo modo, essa
+                  igual intensidade se funda. As duas forças teem de commum o serem a mesma força,
+                  que é o organismo em que vivem, e que diversamente servem de manter. Todo logico
+                  sabe que, para haver contraste entre duas idéas, tem que haver identidade no
+                  fundamento d'ellas. Em melhores palavras — para que duas especies entre si se
+                  opponham, teem que ser especies do mesmo genero. Pode oppor-se o preto ao branco,
+                  porque ambos são cores. Não pode oppor-se o preto a um triangulo, porque um é
+                  especie do genero cor, e o outro é especie do genero fórma. Assim, para que nas
+                  forças vitaes se possa dar opposição com equilibrio, é mistér que, no fundo,
+                  pertençam ao mesmo genero, o que, em materia de forças, quer dizer que tendam para
+                  o mesmo fim. Esse fim, visto que existem no mesmo organismo, e teem, por assim
+                  dizer, uma identidade de localização, é a vida d'esse organismo. Se a força de
+                  integração, que é por natureza centripeta, se localizar em certos ponctos ou
+                  orgãos, soffrerá o organismo dissolução ou desvitalização, pois os ponctos livres
+                  ficarão entregues a uma desintegração completa. Se a força de desintegração, que
+                  por natureza é centrifuga, exceder o seu limite organico, ficará o organismo
+                  occupado pela força opposta, e do mesmo modo soffrerá a morte ou a desvitalização.
+                  Como no individual, assim no social. Se a opinião de habito tiver, em vez de um
+                  fito nacional, um intuito menos que nacional — provincia, classe, familia,... —
+                  involverá em ruina a sociedade, porque a deixará livre á opinião de intuição, que
+                  estabelecerá o chaos em todos os outros elementos sociaes. Se a opinião de
+                  intuição tiver um intuito mais que nacional — humanidade, civilização,
+                  progresso,... — do mesmo modo arruinará a sociedade, pois a deixará livre á
+                  opinião de habito, que se apoderará de todos os seus outros elementos. No fundo,
+                  como se tracta de um systema de forças, a uma acção corresponde sempre uma egual
+                  reacção. A uma acção excessiva corresponderá pois uma reacção egualmente
+                  excessiva, e, como um pendulo que oscille demasiadamente, o systema acabará por
+                  parar. Temos exemplo dos dois casos nos estados, parallelos porém inversos, da
+                  vida portugueza sob os Braganças, e da vida presente da Russia. Nesse nosso
+                  periodo, vivemos concentrados na tradição em nossa vida familial, provincial e
+                  religiosa; succedeu que nos desnacionalizámos completamente na nossa
+                  administração, na nossa politica e na nossa cultura. No periodo presente da
+                  Russia, tendo a opinião de intuição excedido por inteiro a nação em favor de uma
+                  entidade socialmente mythica chamada «humanidade», a opinião de habito estabeleceu
+                  uma reacção egualmente forte, recuou para traz da familia, da provincia, da
+                  religião tradicional, e fixou-se no ultimo elemento social, o individuo, que, como
+                  tal, é um animal sómente. Assim, em virtude da reacção excessiva que provoca, toda
+                  doctrina social extrema produz resultados diametralmente oppostos aos que pretende
+                  produzir. O tradicionalismo organico produz extrangeiros; o progressivismo
+                  organico produz animaes. E' na communidade do conceito de nação que está a base
+                  para a lucta proficua, porque para o intimo equilibrio, entre as forças sociaes
+                  oppostas. No caso notavel do inicio dos nossos Descobrimentos, a opinião de habito
+                  se oppunha á novidade d'elles, a de intuição a promovia; porém uma e outra não
+                  pensavam fóra do ideal de grandeza patria, ou seja, no fundo, do ideal de imperio.
+                  Assim pôde o Imperio Portuguez, quando, por mal ou por bem, veio a ser, ser
+                  informado por toda a alma de Portugal.</p>
+               <p rend="indent-first">Já acima esboçámos, em simples exemplo occasional, qual seja a
+                  situação presente de Portugal quanto á sua opinião publica. Concentrados, dos
+                  Filippes ao liberalismo, numa estreita tradição familial, provincial e religiosa;
+                  animalizados, nas classes medias, pela educação fradesca, e, nas classes baixas,
+                  bestializados pelo analphabetismo que distingue as nações catholicas, onde não é
+                  mister conhecer a Biblia para se ser christão; desinvolvemos, nas classes
+                  superiores, onde principalmente se fórma a opinião de intuição, a violenta reacção
+                  correspondente a esta acção violenta. Desnacionalizámos a nossa politica,
+                  desnacionalizámos a nossa administração, desnacionalizámos a nossa cultura. A
+                  desnacionalização explodiu no constitucionalismo, dadiva que, em reacção,
+                  recebemos da Egreja Catholica. Com o constitucionalismo deu-se a desnacionalização
+                  quasi total das espheras superiores da Nação. Produziu-se a reacção contraria, e,
+                  do mesmo modo que na Russia de hoje, se bem que em menor grau, a opinião de habito
+                  recuou para além da provincia, para além da religião, em muitos casos para além da
+                  familia. Surgiu a contra-reacção: veio a Republica e, com ella, o extrangeiramento
+                  completo. Tornou a haver o movimento contrario; estamos hoje sem vida provincial
+                  definida, com a religião convertida em superstição e em moda, com a familia em
+                  plena dissolução. Se dermos mais um passo neste jogo de acções e reacções,
+                  estaremos no communismo e em comer raizes — aliás o terminus natural d'esse
+                  systema humanitario. E' este o estado presente dos dois elementos componentes da
+                  opinião publica portugueza.</p>
+               <p rend="indent-first">Ora num paiz em que isto se dá, e em que todos sentem que se
+                  dá, num paiz onde, sobre não poder haver regimen legitimo, nem constituição de
+                  qualquer especie, não pode, ainda, haver opinião publica em que elles se fundem ou
+                  com que se regulem, nesse paiz todos os individuos, e todas as correntes de
+                  consenso, appellam instinctivamente ou para a fraude ou para a força, pois, onde
+                  não pode haver lei, tem a fraude, que é a substituição da lei, ou a força, que é a
+                  abolição d'ella, necessariamente que imperar. Nenhum partido assume o poder com o
+                  que se lhe reconheça como direito. Toda situação governante em Portugal, depois da
+                  queda da monarchia absoluta, é substancialmente uma fraude. A fraude, pune-a a
+                  lei; porém quando a fraude se apodera da lei, tem que punil-a a simples força, que
+                  é o fundamento da lei, porque é o fundamento do seu cumprimento. Nisto se funda o
+                  instincto que promove as nossas constantes revoluções. Teem-nos ellas tornado
+                  despreziveis perante a civilização, porque a civilização é uma bêsta. Nossas
+                  revoluções são, comtudo, e em certo modo, um bom symptoma. São o symptoma de que
+                  temos consciencia da fraude como fraude; e o principio da verdade está no
+                  conhecimento do erro. Se, porém, rejeitando a fraude como fundamento de qualquer
+                  coisa, temos que appellar para a força para governar o paiz, a solução está em
+                  appellar clara e definidamente para a força, em appellar para aquella força que
+                  possa ser consentanea com a tradição e a consecução da vida social. Temos que
+                  appellar para uma força que possua um caracter social, tradicional, e que porisso
+                  não seja occasional e desintegrante. Ha só uma força com esse character: é a Força
+                  Armada.</p>
+               <p rend="indent-first">E' esta a terceira Doctrina do Interregno, a terceira e ultima
+                  justificação da Dictadura Militar.</p>
+            </div>
+            <div>
+               <head>V — Chegada á Ponte</head>
+
+               <p rend="indent-first">CHEGADOS a este poncto os que leram este manifesto,
+                  parecer-lhes-ha que, para justificar a Dictadura Militar, não havia mistér que o
+                  fizessemos com mais que um só dos fundamentos expostos, nem que, em todos elles,
+                  empregassemos razões com tal desinvolvimento. Ha, porém, que explicar que o triplo
+                  caracter da justificação, assim como o pormenor de toda ella, teem um intuito mais
+                  largo que o de só justificar. Para o explicar e o definir, dividamos em trez
+                  razões o relato do que nos propuzemos.</p>
+               <p rend="indent-first">Em primeiro logar, vejamos claro quanto á natureza da coisa
+                  justificada. Este manifesto contém uma justificação completa da Dictadura Militar
+                  em Portugal presente. Com isso justificámos a Dictadura de hoje, em seus
+                  fundamentos. Não fallámos, porém, particularmente d'ella. Nenhuma consideração
+                  particular importava ao nosso argumento, que era geral. Provámos que é hoje
+                  legitima e necessaria uma Dictadura Militar em Portugal; triplamente o provámos.
+                  Se esta, que o é, é composta como convém que seja, ou se se orienta como convém
+                  que se oriente, ou se subsistirá como convem que subsista — tudo isso é extranho á
+                  nossa demonstração. Se amanhã a Dictadura Militar cahir, não cahirá com ella a
+                  justificação d'ella. O ser necessaria uma coisa não implica nem que exista, nem
+                  que, existindo, subsista; implica tamsómente que é necessaria, e que, por isso,
+                  convém que, emquanto fôr necessaria, não acabe.</p>
+               <p rend="indent-first">Em segundo logar, o fim principal d'este manifesto está, não
+                  em este, que é só introductorio, mas nos trez manifestos seguintes. Porém, como
+                  este é introductorio, nelle se deviam esboçar, não só as materias por cuja divisão
+                  ellas são trez, mas, mais particularmente, as bases d'essas materias. Da segunda
+                  secção d'este emergirá o segundo manifesto, da terceira o terceiro, da quarta o
+                  quarto; o quinto, já o dissemos, não será mais que a peroração. Nessa secção
+                  segunda assentámos na importancia do ideal nacional; d'elle, da sua natureza em
+                  Portugal, e da sua preparação aqui, tractará o segundo manifesto. Nessa secção
+                  terceira assentámos na inviabilidade do constitucionalismo inglez; do
+                  constitucionalismo viavel, que devemos crear para o substituir, tractará o
+                  terceiro manifesto. Nessa secção quarta assentámos na definição da opinião
+                  publica; de como a poderemos estabelecer e radicar em Portugal tractará o quarto
+                  manifesto. Assim, de secção a manifesto, tudo se liga, até numericamente.</p>
+               <p rend="indent-first">Em terceiro logar, tendo nós neste manifesto esboçado as
+                  materias dos trez seguintes, e definido as bases d'ella, em nenhuma secção,
+                  comtudo, definimos as mesmas materias, o que faremos só nas partes do livro que se
+                  lhes reportem. Não dissemos na secção segunda em que consistia um ideal nacional,
+                  nem em que deveria consistir o nosso; no segundo manifesto, que tracta da Nação
+                  Portugueza, o faremos. Não dissemos na secção terceira em que consistia a essencia
+                  do constitucionalismo inglez; no terceiro manifesto, que tracta do Estado
+                  Portuguez, o definiremos, para depois assentarmos na constituição propria d'esse
+                  Estado. Na secção quarta, se, de facto, definimos em que consiste a opinião
+                  publica, é que no quarto manifesto não teremos que definil-a a ella, mas ás
+                  condições sociaes necessarias á sua existencia; da Sociedade Portugueza tractará
+                  esse quarto manifesto. Nem dissemos na secção segunda como se extrahia um regimen
+                  do ideal nacional, nem a que ideaes convinha este ou aquelle regimen; tampouco
+                  dissemos, na secção quarta, qual a maneira de fazer entrar numa constituição
+                  politica, ou systema de governo, a opinião publica de uma sociedade: tudo isto
+                  fará parte, não do segundo ou do quarto, mas do terceiro manifesto. Como é elle
+                  que tracta do Estado, nelle se projectam as conclusões politicas corollarias do
+                  segundo, que tracta da Nação, e do quarto, que tracta da Sociedade; pois no
+                  Estado, que é a intelligencia do paiz, se projectam os seus instinctos, que formam
+                  a Sociedade, e os seus habitos, que constituem a Nação.</p>
+               <p rend="indent-first">São estes os fins, immediatos e mediatos, do presente
+                  manifesto, que neste ponto concluimos. O que nelle escrevemos (de menor monta,
+                  comtudo, que o que escreveremos nos manifestos seguintes) o distingue, na
+                  amplitude e precisão dos conceitos, na logica do desinvolvimento, e na
+                  concatenação dos propositos, de qualquer escripto politico até hoje conhecido. Nem
+                  ha hoje quem, no nosso paiz ou em outro, tenha alma e mente, ainda que
+                  combinando-se, para compor um manifesto como este. D'isto nos orgulhamos.</p>
+               <p rend="indent-first">E' este o Primeiro Signal, vindo, como foi promettido, na Hora
+                  que se promettera.</p>
+            </div>
+         </div>
+      </body>
+   </text>
+</TEI>
+
+

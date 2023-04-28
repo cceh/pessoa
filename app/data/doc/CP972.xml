@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>CP 972</title>
+            <author>
+               <rs type="name" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny-Krahmer</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Inês Filipa Rebelo do Carmo</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability status="free">
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">CP972.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>CP 972</idno>
+               </msIdentifier>
+               <msContents>
+                  <summary>
+                     <p>Lista manuscrita no verso de papel timbrado «F. A. Pessoa | R. do Ouro, 87,
+                        2.º | Lisboa».</p>
+                  </summary>
+                  <msItemStruct>
+                     <author>
+                        <rs type="name" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                        <rs type="genre" key="plano_editorial">Plano editorial</rs>
+                     </note>
+                     <textLang mainLang="en" otherLangs="pt fr"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate from="1918" to="1919" cert="medium">c. 1918-1919</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+      <graphic url="Espolio Manuela Nogueira (MN)/avulsos (972).jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <list>
+               <item>
+                  <hi rend="underline"><rs type="name" key="P184">Keats</rs>:</hi>
+                  <list rend="inline">
+                     <item><rs type="title">Ode to a Nightingale</rs>.</item>
+                     <item><rs type="title">Ode on a Grecian Urn</rs>.</item>
+                     <item><rs type="title">Ode to Psyche</rs>.</item>
+                     <item><rs type="title">To Melancholy</rs>.</item>
+                     <item><rs type="title">To Autumn</rs>.</item>
+                     <item><rs type="title">“La Belle Dame Sans Merci.”</rs></item>
+                     <item>(What Sonnets?)</item>
+                  </list>
+               </item>
+            </list>
+         </div>
+         <metamark rend="line" function="distinct"/>
+         <div>
+            <list>
+               <item>
+                  <hi rend="underline"><rs type="name" key="P175">Shelley</rs></hi>: <list
+                     rend="inline">
+                     <item><rs type="title">Adonais</rs>.</item>
+                     <item><rs type="title">Hymn to Intellectual Beauty</rs>.</item>
+                     <item><rs type="title">The Cloud</rs>.</item>
+                     <item><rs type="title">To a Skylark</rs>.</item>
+                  </list>
+               </item>
+            </list>
+         </div>
+         <metamark rend="line" function="distinct"/>
+         <div>
+            <div rend="left">
+               <list>
+                  <item>
+                     <hi rend="underline"><rs type="name" key="P146">Tennyson</rs></hi>: <list
+                        rend="inline">
+                        <item><rs type="title">Ulysses</rs>.</item>
+                        <item><rs type="title">Tithonus</rs>.</item>
+                        <item><rs type="title">Morte d’Arthur</rs>.</item>
+                     </list>
+                  </item>
+               </list>
+            </div>
+            <div rend="right">
+               <list>
+                  <item>Authors: <list rend="inline">
+                        <item><rs type="name" key="P146">Tennyson</rs></item>
+                        <item><rs type="name" key="P267">Browning</rs></item>
+                        <item><rs type="name" key="P185">
+                              <choice>
+                                 <abbr>M<am>.</am></abbr>
+                                 <expan>M<ex>atthew</ex></expan>
+                              </choice> Arnold</rs></item>
+                     </list>
+                  </item>
+               </list>
+            </div>
+         </div>
+         <metamark rend="line" function="distinct"/>
+         <div>
+            <list>
+               <item>
+                  <hi rend="underline"><rs type="name" key="P163">Coleridge</rs></hi>: <list
+                     rend="inline">
+                     <item><rs type="title">Ancient Mariner</rs>. (<choice>
+                           <abbr>p<am>.</am></abbr>
+                           <expan>p<ex>age</ex></expan>
+                        </choice> 92)</item>
+                     <item><rs type="title">Kubla Khan</rs>. (<choice>
+                           <abbr>p<am>.</am></abbr>
+                           <expan>p<ex>age</ex></expan>
+                        </choice> 219)</item>
+                     <item><choice>
+                           <abbr>p<am>.</am></abbr>
+                           <expan>p<ex>age</ex></expan>
+                        </choice> 75</item>
+                     <item>(<choice>
+                           <abbr>p<am>.</am></abbr>
+                           <expan>p<ex>age</ex></expan>
+                        </choice> 175) xx</item>
+                     <item><choice>
+                           <abbr>p<am>.</am></abbr>
+                           <expan>p<ex>age</ex></expan>
+                        </choice> 201</item>
+                     <item><choice>
+                           <abbr>p<am>.</am></abbr>
+                           <expan>p<ex>age</ex></expan>
+                        </choice> 222</item>
+                  </list>
+               </item>
+            </list>
+         </div>
+         <gap reason="selection" unit="line" extent="25-30"/>
+
+      </body>
+   </text>
+</TEI>

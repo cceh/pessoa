@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>CP 208</title>
+            <author>
+               <rs type="name" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny-Krahmer</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability status="free">
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">CP208.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>CP 208</idno>
+               </msIdentifier>
+               <msContents>
+                  <summary>
+                     <p>Lista datilografada, publicada em Sepúlveda e Uribe, <hi rend="italic">O
+                           planeamento editorial de Fernando Pessoa</hi> (2016, 106-107).</p>
+                  </summary>
+                  <msItemStruct>
+                     <author>
+                        <rs type="name" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                        <rs type="genre" key="plano_editorial">Plano editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="en de"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate when="1916" cert="medium">c. 1916</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+      <graphic url="Espolio Manuela Nogueira (MN)/avulsos (208).jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <head><hi rend="underline"><rs type="collection" key="C5"><rs type="title" key="T105">A
+                        Portuguese Anthology</rs></rs>.</hi></head>
+            <list>
+               <item>
+                  <label><hi rend="underline"><rs type="name" key="P53">Antonio
+                     Nobre</rs></hi></label>
+                  <list>
+                     <item>: <rs type="work" key="W84"><rs type="title" key="T106">Ó virgens que
+                              passaes...</rs></rs></item>
+                     <item>: <rs type="work" key="W85"><rs type="title" key="T107">Pudessem suas
+                              mãos cobrir meu rosto...</rs></rs></item>
+                     <item>: <rs type="work" key="W86"><rs type="title" key="T108">A
+                           Ceifeira</rs></rs>.</item>
+                  </list>
+               </item>
+               <item>
+                  <label><hi rend="underline"><rs type="name" key="P25">Guerra
+                     Junqueiro</rs></hi></label>
+                  <list>
+                     <item>: <rs type="title" key="T109">Aos Simples (<choice>
+                              <abbr>V<am>.</am></abbr>
+                              <expan>V<ex>elhice</ex></expan>
+                           </choice> do <choice>
+                              <abbr>P<am>.</am></abbr>
+                              <expan>P<ex>adre</ex></expan>
+                           </choice>
+                           <choice>
+                              <abbr>E<am>.</am></abbr>
+                              <expan>E<ex>terno</ex></expan>
+                           </choice>)</rs>
+                     </item>
+                     <item>: <rs type="work" key="W88"><rs type="title" key="T110">Canção Perdida
+                              (Os <choice>
+                                 <abbr>S<am>.</am></abbr>
+                                 <expan>S<ex>imples</ex></expan>
+                              </choice>)</rs></rs>
+                     </item>
+                     <item>: <rs type="work" key="W89"><rs type="title" key="T111">Regresso ao Lar
+                              (Os <choice>
+                                 <abbr>S<am>.</am></abbr>
+                                 <expan>S<ex>imples</ex></expan>
+                              </choice>)</rs></rs>
+                     </item>
+                     <item>: (fragments from “Patria”).</item>
+                     <item>: <del n="2"><seg rend="overstrike">Prayer</seg></del>
+                        <rs type="work" key="W90"><rs type="title" key="T112">Oração á
+                        Luz</rs></rs>. </item>
+                  </list>
+               </item>
+               <item>
+                  <label><hi rend="underline"><rs type="name" key="P125">Antonio
+                     Molarinho</rs></hi>:</label>
+                  <rs type="work" key="W91"><rs type="title" key="T113">Maria Manuela</rs></rs>. </item>
+               <item>
+                  <label><hi rend="underline"><rs type="name" key="P81">Manuel da
+                     Veiga</rs></hi>:</label>
+                  <rs type="work" key="W92"><rs type="title" key="T114">...perito o não livrou do
+                        stygio lago</rs></rs>. </item>
+               <item>
+                  <label><hi rend="underline"><rs type="name" key="P145">Camillo
+                     Pessanha</rs>:</hi></label>
+                  <list>
+                     <item><rs type="work" key="W93"><rs type="title" key="T115">Ao longe os barcos
+                              de flores</rs></rs>.</item>
+                     <item>: <rs type="work" key="W94"><rs type="title" key="T116"
+                           >Violoncellos</rs></rs>.</item>
+                     <item>: <rs type="work" key="W95"><rs type="title" key="T117">Passeia no
+                              jardim...</rs></rs></item>
+                     <item>: <rs type="work" key="W96"><rs type="title" key="T118">O
+                           Stylita</rs></rs> (2 sonetos).</item>
+                     <item>: <rs type="work" key="W97"><rs type="title" key="T119">Dia de
+                              sol...</rs></rs></item>
+                     <item>: <rs type="work" key="W98"><rs type="title" key="T120">Castello de
+                              Obidos</rs></rs>.</item>
+                     <item>: <rs type="work" key="W99"><rs type="title" key="T121">Regresso ao
+                              Lar</rs></rs>.</item>
+                  </list>
+               </item>
+               <item>
+                  <label><hi rend="underline"><rs type="name" key="P160">Soares dos
+                        Passos</rs>:</hi></label>
+                  <list>
+                     <item>
+                        <rs type="work" key="W100"><rs type="title" key="T122">O
+                           Firmamento</rs></rs>. </item>
+                     <item>: <rs type="work" key="W101"><rs type="title" key="T123">Elegia (Ai
+                              adeus...)</rs></rs></item>
+                     <item>: <rs type="work" key="W102"><rs type="title" key="T124">A
+                           Camões</rs></rs>. (?)</item>
+                  </list>
+               </item>
+               <item>
+                  <label><hi rend="underline"><rs type="name" key="P54">Eugenio de
+                     Castro</rs></hi></label>
+                  <list>
+                     <item>: <rs type="work" key="W103"><rs type="title" key="T125">Epigraphe (<choice>
+                                 <abbr>S<am>.</am></abbr>
+                                 <expan>S<ex>ombra</ex></expan>
+                              </choice> do <choice>
+                                 <abbr>Q<am>.</am></abbr>
+                                 <expan>Q<ex>uadrante</ex></expan>
+                              </choice>)</rs></rs>
+                     </item>
+                     <item>: <rs type="work" key="W104"><rs type="title" key="T126">Engrinalda-me
+                              com os teus braços</rs></rs> (?)</item>
+                     <item>: <rs type="work" key="W105"><rs type="title" key="T127">A
+                           messe...</rs></rs> (?)</item>
+                  </list>
+               </item>
+               <item>
+                  <label><hi rend="underline"><rs type="name" key="P70">Luiz de
+                     Montalvor</rs></hi>:</label>
+                  <rs type="work" key="W106"><rs type="title" key="T128">Narciso</rs></rs>. </item>
+               <item>
+                  <label><hi rend="underline"><rs type="name" key="P180">Alberto <choice>
+                              <abbr>Os<am>.</am></abbr>
+                              <expan>Os<ex>orio</ex></expan>
+                           </choice> de Castro</rs></hi></label>
+                  <list>
+                     <item>: <rs type="work" key="W107"><rs type="title" key="T129"
+                           >Estanças</rs></rs>. (<abbr>F<am>.</am></abbr> de
+                           <abbr>C<am>.</am></abbr>). </item>
+                     <item>: <rs type="work" key="W108"><rs type="title" key="T130"
+                           >Reisebilder</rs></rs>. (<abbr>F<am>.</am></abbr> de
+                           <abbr>C<am>.</am></abbr>).</item>
+                     <item>: <rs type="work" key="W109"><rs type="title" key="T131">Ode á
+                           Lucta</rs></rs>. (<abbr>F<am>.</am></abbr> de
+                        <abbr>C<am>.</am></abbr>).</item>
+                  </list>
+               </item>
+               <item>
+                  <label><hi rend="underline"><rs type="name" key="P26">Cesario
+                     Verde</rs></hi></label>
+                  <list>
+                     <item>: <rs type="work" key="W110"><rs type="title" key="T132">O Sentimento de
+                              um Occidental</rs></rs>.</item>
+                     <item>: <rs type="work" key="W111"><rs type="title" key="T133"
+                        >Nós</rs></rs>.</item>
+                     <item>: <rs type="work" key="W112"><rs type="title" key="T134"
+                           >Milady...</rs></rs></item>
+                  </list>
+               </item>
+               <item>
+                  <label><hi rend="underline"><rs type="name" role="author" key="AdC">Alvaro de
+                           Campos</rs>:</hi></label>
+                  <list>
+                     <item>: <ref target="http://www.pessoadigital.pt/en/pub/Campos_Ode_Triunfal"><rs type="work" key="W113"><rs type="title" key="T135">Ode
+                        Triumphal</rs></rs></ref>.</item>
+                     <item>: <ref target="http://www.pessoadigital.pt/en/pub/Campos_Opiario"><rs type="work" key="W114"><rs type="title" key="T136"
+                           >Opiario</rs></rs></ref>.</item>
+                     <item>: <rs type="work" key="W115"><rs type="title" key="T137">Saudação a Walt
+                              Whitman</rs></rs>.</item>
+                  </list>
+               </item>
+               <item>
+                  <label><hi rend="underline"><rs type="name" key="P56">José de
+                           Almada-Negreiros</rs></hi></label>
+                  <list>
+                     <item>: <rs type="work" key="W116"><rs type="title" key="T138">Poemas
+                              Portuguezes</rs></rs>.</item>
+                     <item>: <rs type="work" key="W117"><rs type="title" key="T139">Scena do
+                              Odio</rs></rs> (?)</item>
+                  </list>
+               </item>
+               <item>
+                  <label><hi rend="underline"><rs type="name" key="P52">Teixeira de
+                        Pascoaes</rs></hi>:</label>
+                  <rs type="work" key="W118"><rs type="title" key="T140">Elegia</rs></rs>. </item>
+               <item>
+                  <label><hi rend="underline"><rs type="name" key="P135">Jayme
+                     Cortezão</rs></hi></label>
+                  <list>
+                     <item>: <rs type="work" key="W119"><rs type="title" key="T141">Choupos na luz
+                              do luar</rs></rs>.</item>
+                     <item>: <rs type="work" key="W120"><rs type="title" key="T142">Symphonia da
+                              Tarde</rs></rs>.</item>
+                  </list>
+               </item>
+               <item>
+                  <label><hi rend="underline"><rs type="name" key="P262">Affonso
+                     Duarte</rs></hi>:</label>
+                  <rs type="work" key="W121"><rs type="title" key="T143">Tragedia do
+                     Sol-Posto</rs></rs>. </item>
+               <item>
+                  <label><hi rend="underline"><rs type="name" key="AC" role="author">Alberto
+                           Caeiro</rs></hi>:</label>
+                  (<rs type="work" key="W122"><rs type="title" key="T144">selections from the
+                        poems</rs></rs>.)
+               </item>
+               <item>
+                  <label><hi rend="underline"><rs type="name" key="RR" role="author">Ricardo
+                           Reis</rs>:</hi></label>
+                  (<rs type="work" key="W123"><rs type="title" key="T45">selections from the
+                        Odes</rs></rs>.)
+               </item>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>

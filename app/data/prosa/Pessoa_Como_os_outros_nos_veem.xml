@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Como os outros nos veem</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe e Maria José Galeano</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+                    (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2021</date>
+                <availability status="restricted">
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Pessoa_Como_os_outros_nos_veem.xml</idno>
+            </publicationStmt>
+            <notesStmt>
+                <note type="genre">
+                    <rs type="genre" key="prose">Prosa</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item><rs type="work" key="W305">Como os outros nos veem</rs></item>
+                </list>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Como os outros nos veem</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt" otherLangs="en"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j"><rs type="periodical" key="J101">Revista de Comércio e Contabilidade</rs></title>
+                        <imprint>
+                            <date when="1926-01-25">25 de janeiro de 1926</date>
+                        </imprint>
+                        <biblScope unit="issue">1</biblScope>
+                        <biblScope unit="page">21-23</biblScope>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
+    </teiHeader>
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+        <graphic url="Prosa/Como_os_outros_nos_veem_1.jpg"/>
+        <graphic url="Prosa/Como_os_outros_nos_veem_2.jpg"/>
+        <graphic url="Prosa/Como_os_outros_nos_veem_3.jpg"/>
+    </facsimile>
+    <text type="orig" corresp="#W305">
+        <body>
+            <div>
+                <head>COMO OS OUTROS NOS VÊEM</head>
+                
+                
+                <p rend="indent-first">A OPINIÃO dos estrangeiros ― quando não sejam daquêles que não
+                    nasceram para poder ter opiniões ― é sempre interessante, ainda que seja erronea,
+                    porque representa um ponto de vista que a nós, nacionais, não é possivel conseguir,
+                    por isso mesmo que somos nacionais. <hi rend="italic">Ah, se nos fôsse dado vermo-nos
+                        a nós como os outros nos vêem!</hi> diz o poeta escocês. Não que os outros vejam
+                    necessariamente mais certo que nós; mas vêem diferentemente. E é conjugando as
+                    impressões de quem vê de perto e de quem vê de longe que se pode conseguir qualquer
+                    coisa que se aproxime de uma opinião justa sôbre um conjunto e as suas partes
+                    componentes.</p>
+                <p rend="indent-first">Com êste fim, e a devida vénia, traduzimos da <rs
+                    type="periodical" key="J102"><hi rend="italic">British Export Gazette</hi></rs> o seguinte
+                    artigo sobre <hi rend="italic">A Situação Comercial em Portugal</hi>. Com êste
+                    título, e o subtítulo <hi rend="italic">A Expansão Tolhida e o Crédito Prejudicado
+                        por Constantes Mudanças Administrativas</hi>, diz aquêle mensário inglês:</p>
+                <p rend="indent-first">«Se em verdade se não póde dizer que a situação comercial em
+                    Portugal dê quaisquer indícios claros de melhoria, ha porêm, que notar, como elemento
+                    compensador, o esfôrço que por fim o Govêrno está fazendo para remediar a situação.
+                    Áquêles dos nossos leitores, que tratam com este mercado ou por êle exportam,
+                    interessará saber que se elaborou recentemente um plano de largo auxílio ao comercio
+                    e á industria pela expansão do ambito de operações do Banco de Desconto de Portugal.
+                    Esta, e outras propostas de melhoria, resultaram de uma discussão franca, abrangendo
+                    toda a situação, entre o Primeiro Ministro e os homens de negocio, representados no
+                    lance pela Camara de Comercio de Lisboa. O que, porêm, é urgentemente preciso, e mais
+                    que tudo preciso, é uma garantia de estabilidade administrativa, pois as mudanças
+                    frequentes de govêrno, motivadas em geral por questões minimas, se teem revelado
+                    extremamente desequilibradoras e altamente prejudiciais para o comercio. Continuam
+                    tambêm as transacções a ressentir-se gravemente da desvalorisação da moeda, e o
+                    crédito comercial do mercado tem sido sèriamente comprometido pela inabilidade, em
+                    muitos casos, de pagar-nos devidos prasos.</p>
+                <p rend="indent-first">«O vulto do comercio português importa, em números redondos, em
+                    entre 27 e 28 milhões esterlinos. No âno passado atingiu ₤ 28.039.124. Porêm mais de
+                    três-quartos désta soma representam importações, e menos de um-quarto significa
+                    exportações. A balança adversa é, pois, realmente de mais do dobro do dinheiro
+                    recebido pela República em paga dos produtos exportados. É duvidoso se há qualquer
+                    outro país do mundo que apresente uma balança comercial tão pouco satisfatoria. Este
+                    deploravel estado de coisas é devido, na maior parte, á mudança constante de
+                    critérios administrativos. Se não fôssem estas influencias estranhas e inibitivas,
+                    que em rápida sucessão intervêem, com proibições de importação e de exportação,
+                    mudanças pautais constantes, modificação de taxas marítimas, impostos sôbre
+                    transacções, etc., o comercio de Portugal estaria incontestavelmente em melhor pé e
+                    em condições de maior desenvolvimento. Apesar de desvantagens desta ordem, é
+                    realmente de pasmar que em um país nêste apêrto comercial e em constante desassocego
+                    não tenha quasi nenhums desempregados.</p>
+                <p rend="indent-first">«Portugal devia estar em situação de exportar infinitamente mais
+                    do que exporta. Mesmo a sua indústria básica, a agricultura, é conduzida pelos
+                    processos mais primitivos e com maquinismos e implementos não menos imperfeitos.
+                    Calculou-se já que, com a devida irrigação, o emprego de sistemas modernos, e um
+                    regime melhor de transportes, os resultados agrícolas subiriam, pelo menos, a mais
+                    100 por cento do que são. Quanto á industria mineira, o facto é que a exploração dos
+                    valiosos jazigos de carvão, de ferro, de pirites de cobre, etc., nunca recebeu coisa
+                    que se pareça com uma atenção sistemática, dada a falta de energia barata e de
+                    facilidades de transporte. O capital inglês figura predominantemente em varias das
+                    emprêsas mineiras, e, se êsse capital tivesse qualquer incentivo para as desenvolver,
+                    resultariam vantagens incalculaveis para o país e para o seu comercio. Presentemente
+                    apenas estão aproveitados 15.900 cavalos dos provaveis 500.000 que se calcula que as
+                    quedas de agua possam fornecer; e dos jazigos de ferro, cujo vulto se calcula em 75
+                    milhões de toneladas, só 30.000 se tiram anualmente.</p>
+                <p rend="indent-first">«Com estímulo proveniente de condições administrativas de maior
+                    estabilidade, não só aumentaria muito o interêsse do capital inglês por êste mercado,
+                    mas com êle aumentaria o interêsse dos importadores e comerciantes portuguêses pelos
+                    produtos do Reino Unido. A Inglaterra é, com grande avanço sôbre os outros países, o
+                    melhor cliente de Portugal, pois lhe compra quasi dois-terços do vinho que ele
+                    exporta, três-quartos do figo, amendoa e alfarroba, e uma parte consideravel da
+                    produção de cortiça, sardinhas, e minério. Portugal présa muito as suas longas, quasi
+                    vetustas, relações comerciais com a Grã-Bretanha, e, mesmo na situação presente, a
+                    maioria dos tecidos importados, toda a folha-de-Flandres para as latas de sardinhas,
+                    e uma grande percentagem das outras manufacturas compradas são de origem inglêsa. Mas
+                    as casas comerciais portuguêsas encontram grande dificuldade em fazer compenetrar os
+                    fabricantes e exportadores inglêses da exigentissima legislação que regula a
+                    importação de mercadorias nêste mercado, e, em especial, dos regulamentos asfixiantes
+                    que dizem respeito ás declarações de carga e aos certificados de origem... Que o
+                    intercambio anglo-português tenderá a desenvolver-se em condições de maior
+                    estabilidade e de melhoria financeira, é o que ha toda rasão para prevêr,
+                    considerando, sobretudo, os planos governamentais a que nos referimos. É porêm muito
+                    de desejar que os meios comerciais portuguêses continuem a exercer pressão sobre as
+                    instancias oficiais para que se efectuem mais reformas e se restabeleça a confiança
+                    dos carregadores britânicos na estabilidade de muitos dos negociantes que não fazem
+                    agora face aos seus compromissos com aquéla costumada prontidão que dêles era de
+                    esperar».</p>
+            </div>
+        </body>
+    </text>
+</TEI>
+
+

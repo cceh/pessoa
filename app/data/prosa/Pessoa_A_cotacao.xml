@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>A cotação C.I.F inclui as despesas com a fatura consular?</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe e Maria José Galeano</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2021</date>
+                <availability status="restricted">
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Pessoa_A_cotacao.xml</idno>
+            </publicationStmt>
+            <notesStmt>
+                <note type="genre">
+                    <rs type="genre" key="prosa">Prosa</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item>
+                        <rs type="work" key="W300">A cotação C.I.F inclui as despesas com a fatura consular?</rs>
+                    </item>
+                </list>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">A cotação C.I.F inclui as despesas com a fatura consular?</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt" otherLangs="en"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j">
+                            <rs type="periodical" key="J101">Revista de Comércio e Contabilidade</rs>
+                        </title>
+                        <imprint>
+                            <date when="1926-01-25">25 de janeiro de 1926</date>
+                        </imprint>
+                        <biblScope unit="issue">1</biblScope>
+                        <biblScope unit="pages">12-14</biblScope>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
+    </teiHeader>
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+        <graphic url="Prosa/A_cotacao_1.jpg"/>
+        <graphic url="Prosa/A_cotacao_2.jpg"/>
+        <graphic url="Prosa/A_cotacao_3.jpg"/>
+    </facsimile>
+    <text type="orig" corresp="#W300">
+        <body>
+            <div>
+                <head>A COTAÇÃO C.I.F. INCLUI AS DESPEZAS COM A FACTURA CONSULAR?</head>
+                <p rend="indent-first">COMO toda a gente sabe, é elemento necessário em todas as
+                    cotações comerciais a indicação do logar de entrega da mercadoria.</p>
+                <p rend="indent-first">São de facil compreensão as indicações usuais para
+                    transacções na mesma praça, ou dentro do país, não surgindo, em geral,
+                    mal-entendidos senão por lapso de redacção ou omissão involuntária ou
+                    propositada. Quando, porêm, se trata de importadores, e de cotações, para estes,
+                    de exportadores estrangeiros, é conveniente saber-se bem o que abrange o sentido
+                    das abreviaturas que em geral se empregam para esses fins.</p>
+                <p rend="indent-first">A mais simples, e a que menos se presta a complicações, é a
+                    vulgarissima F. O. B. (<hi rend="italic">free on board</hi>), que como toda a
+                    gente sabe, indica que a mercadoria é posta «livre a bordo», isto é, que todas
+                    as despezas desde que ela entra a bordo, começando pelo frete e pelo seguro, são
+                    de conta do comprador.</p>
+                <p rend="indent-first">Menos vulgar é a cotação F. A. S. (<hi rend="italic">free
+                    along side</hi>), que quer dizer «livre ao lado» do navio ― isto é, a
+                    mercadoria posta no cais, ou em batelão, junto do barco em que ha de ser
+                    carregada. São, em geral, os americanos que usam ― e, ainda assim, poucas vêses
+                    ― esta formula, que importa, em todo o caso, não ignorar.</p>
+
+                <p rend="indent-first">É porêm com a cotação C. I. F., que indica, como todos sabem,
+                    que a cotação inclui o custo da mercadoria, o seu frete, e o seu seguro, que
+                    póde surgir um ponto de dúvida; e tanto pode surgir que efectivamente surgiu,
+                    sendo assunto de uma consulta feita o âno passado á Associação Comercial de
+                    Lisbôa, e de uma opinião interessante e decisiva de um dos membros da sua Secção
+                    de Importação e Exportação ― opinião essa que a Direcção desta Camara de
+                    Comercio aceitou e fês sua unanimidade.</p>
+
+                <p rend="indent-first">Trata-se de saber se o certificado de origem e a factura
+                    consular ― no caso da consulta tratava-se especialmente da factura consular ― se
+                    devem considerar incluidos na cotação C. I. F. A solução seria indiferente se a
+                    factura consular não ascendesse por vêses a uma percentagem relativamente alta
+                    sobre o preço de factura da mercadoria. E, mesmo que assim não fôsse, nunca
+                    haveria mal em se compreender bem o assunto.</p>
+
+                <p rend="indent-first">Salvo entendimento em contrário, as casas exportadoras
+                    estrangeiras, e nomeadamente as americanas, facturam àparte ― isto é, fóra do
+                    preço C. I. F. ― as despezas com a factura consular ou com o certificado de
+                    origem. É bom saber-se que assim fazem. Mas tambem interessa saber se assim na
+                    verdade deve ser.</p>
+
+                <milestone rend="asterisk" unit="section"/>
+
+                <p rend="indent-first">Em Julho de 1924 uma firma importadora de Lisbôa formulou á
+                    Associação Comercial esta pergunta: «se a cotação C. I. F. (sem outra indicação)
+                    para qualquer mercadoria de um porto estrangeiro para Portugal compreende as
+                    despezas com a factura consular, ou devem essas despezas ficar a cargo do
+                    comprador»</p>
+
+                <p rend="indent-first">Consultada a Secção de Importação e Exportação sobre êste
+                    problema deu um dos membros dessa secção, o Sr. <rs type="name" key="P132">Carlos
+                        Moitinho d’Almeida</rs>, a seguinte resposta, que, devidamente autorisados,
+                    transcrevemos:</p>
+
+                <p rend="indent-first">«A indicação C. I. F. (<hi rend="italic">cost, insurance,
+                        freight,</hi> isto é, custo, seguro, frete) deve entender-se evidentemente
+                    como abrangendo apenas aquilo que explicitamente indica. O problema posto pelo
+                    nosso consocio consiste pois em determinar se a factura consular se pode
+                    presumir incluida em qualquer das designações componentes da formula C. I. F.
+                    Pondo de parte o «seguro» que nada pode ter para o caso, temos que considerar se
+                    a factura consular se pode ter por parte necessariamente componente, quer do
+                    «custo», quer do «frete», da mercadoria.</p>
+
+                <p rend="indent-first">«Ora a factura consular é proveniente de uma exigencia
+                    oficial do país importador, em cuja alfandega tem que ser apresentada; é natural
+                    pois que a consideremos, não como parte do «custo», ou mesmo do «frete», da
+                    mercadoria, mas como uma espécie de anticipação, ou primeiro documento, das
+                    despezas aduaneiras de importação.</p>
+
+                <p rend="indent-first">«Se assim é ― e assim parece deve ser, ― a factura consular
+                    deve ficar fóra da designação C.I.F, como ficam todas as despezas aduaneiras no
+                    paiz importador. E o uso abona em absoluto este critério: o normal é o vendedor
+                    pagar a factura consular por conta do comprador, lançando a débito dêste,
+                    ordinariamente na propria factura que lhe envia, a importancia dela.</p>
+
+                <p rend="indent-first">«A meu vêr, pois, e <hi rend="italic">salvo o caso de
+                        designação em contrário</hi>, a despeza com a factura consular não deve
+                    entender-se como incluida na designação C. I. F.»</p>
+
+                <p rend="indent-first">Foi este o parecer que a Direcção da Associação Comercial de
+                    Lisbôa adotou, e que parece realmente fixar, de um modo inequivoco, a verdadeira
+                    doutrina sobre o assunto.</p>
+
+                <p rend="indent-first">Cumpre porêm advertir que ha certos ramos do comercio ― o de
+                    carvão, por exemplo ― em que a «designação em contrário», a que a opinião
+                    transcrita se refere, é subentendida. São casos, contudo, de ramos especiais de
+                    comercio, que obedecem tradicionalmente a condições especiais; e esta é uma
+                    délas.</p>
+
+                <milestone rend="asterisk" unit="section"/>
+
+                <p rend="indent-first">O assunto do ambito da cotação C. I. F. ficará completamente
+                    esclarecido com a tradução seguinte (dos parágrafos que interessam) das
+                    «condições» impressas de uma grande firma industrial exportadora dos Estados
+                    Unidos:</p>
+
+                <p rend="indent-first">«Salvo especificação em contrario ao dar-se a cotação, o
+                    seguro nas vendas C. I. F. entende-se ser unicamente o seguro marítimo, e apenas
+                    para o destino a que o preço de venda se refere, livre de avaria particular...
+                    Outras fórmas de seguro, quando se desejem, terão que ser explicitamente
+                    designadas pelo comprador antes de fechado o negocio, e o custo adicional será
+                    de conta dêle.</p>
+
+                <p rend="indent-first">«Todas as despezas consulares para legalisar as facturas,
+                    selar os conhecimentos ou outros documentos exigidos pelas leis do país a que as
+                    mercadorias são destinadas, serão pagas pelo comprador, e não serão incluidas no
+                    preço de venda. Salvo combinação em contrário, subentende-se que o vendedor fica
+                    autorisado a pagar estas despezas por conta do comprador, adicionando-as ao
+                    custo da factura. O vendedor obterá os documentos consulares na qualidade de
+                    agente do comprador, tendo este préviamente explicado a forma pela qual as
+                    mercadorias devem ser declaradas; e, no caso que êste o não tenha feito, o
+                    vendedor fará as declarações conforme julgar melhor, não sendo em caso algum
+                    responsavel por multas ou outras despezas motivadas por qualquer êrro, em que a
+                    falta de instruções necessariamente o tenha induzido.»</p>
+
+                <p rend="indent-first">Estes parágrafos, considerados juntamente com o parecer do
+                    Sr. <rs type="name" key="P132">Moitinho d’Almeida</rs> (que não só estabelece, mas justifica, a doutrina sobre o
+                    assunto), envolvem, a nosso vêr uma explicação suficiente da matéria.</p>
+            </div>
+        </body>
+    </text>
+</TEI>

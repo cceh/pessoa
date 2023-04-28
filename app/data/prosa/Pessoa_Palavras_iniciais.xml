@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Palavras iniciais</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe e Maria José Galeano</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2021</date>
+                <availability status="restricted">
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Pessoa_Palavras_iniciais.xml</idno>
+            </publicationStmt>
+            <notesStmt>
+                <note type="genre">
+                    <rs type="genre" key="prosa">Prosa</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item>
+                        <rs type="work" key="W308">Palavras iniciais</rs>
+                    </item>
+                </list>
+                <biblStruct>
+                    <analytic>
+                        <title level="a">Palavras iniciais</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt" otherLangs="en"/>
+                    </analytic>
+                    <monogr>
+                        <title level="j">
+                            <rs type="periodical" key="J101">Revista de Comércio e Contabilidade</rs>
+                        </title>
+                        <imprint>
+                            <date when="1926-01-25">25 de janeiro de 1926</date>
+                        </imprint>
+                        <biblScope unit="issue">1</biblScope>
+                        <biblScope unit="pages">5-6</biblScope>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
+    </teiHeader>
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+        <graphic url="Prosa/Palavras_iniciais_1.jpg"/>
+        <graphic url="Prosa/Palavras_iniciais_2.jpg"/>
+    </facsimile>
+    <text type="orig" corresp="#W308">
+        <body>
+            <div>
+                <head>PALAVRAS INICIAIS</head>
+                <p rend="indent-first">DESTINA-SE esta Revista, conforme o seu título indica, ao
+                    estudo dos problemas fundamentais do comercio e da contabilidade. Propriamente
+                    falando, não ha em comercio, nem em contabilidade, problemas que não sejam
+                    fundamentais, pois é sabido que, tanto em uma coisa como em outra — em tudo que
+                    envolve método, — um lapso de detalhe pode acarretar consequencias desastrosas.
+                    Por isso os problemas que aqui se estudarão, embora uma ou outra vês pareçam, e
+                    só á primeira vista, ser de pouca importancia, serão sempre dos primaciais, ou
+                    por essencia ou por oportunidade, nas materias a cujo estudo esta Revista se
+                    dedica.</p>
+                <p rend="indent-first">Não é nosso intuito entrar demasiadamente no que se pode
+                    chamar a sociologia do comercio, nem carregar demasiado, e tecnicamente de mais,
+                    a nota juridica, ou outra qualquer nota especial, onde quer que tenha que ser
+                    ferida. Mas, se nos afastaremos da especialidade extrema, tambem nos não
+                    prenderemos á generalidade abstrusa. Seremos, quanto possa ser, concretos dentro
+                    da abstracção natural das teorias e das doutrinas.</p>
+                <milestone rend="asterisk" unit="section"/>
+                <p rend="indent-first">Toda a teoria deve ser feita para poder ser posta em prática,
+                    e toda a prática deve obedecer a uma teoria. Só os espiritos superficiais
+                    desligam a teoria da prática, não olhando a que a teoria não é senão uma teoría
+                    da prática, e a prática não é senão a prática de uma teoria. Quem não sabe nada
+                    dum assunto, e consegue alguma coisa nêle por sorte ou acaso, chama «teórico» a
+                    quem sabe mais, e, por igual acaso, consegue menos. Quem sabe, mas não sabe
+                    aplicar, — isto é, quem afinal não sabe, porque não saber aplicar é uma maneira
+                    de não saber — tem rancor a quem aplica por instinto, isto é, sem saber que
+                    realmente sabe. Mas, em ambos os casos, para o homem são de espirito e
+                    equilibrado de inteligencia, ha uma separação abusiva. Na vida superior a teoria
+                    e a prática completam-se. Fôram feitas uma para a outra.</p>
+                <p rend="indent-first">A indole desta Revista, tanto em materia de comercio, como em
+                    materia de contabilidade, é provar que a teoria e a prática fôram feitas uma
+                    para a outra.</p>
+                <milestone rend="asterisk" unit="section"/>
+                <p rend="indent-first">Cada problema que tratarmos, faremos por tratá-lo sempre
+                    aprofundamente, e em toda a sua extensão. Tratar um problema é isto. Mas, assim
+                    como variaremos o estudo dos problemas, não teremos só um estilo para descrever
+                    as soluções que lhes encontrarmos. Se em certo artigo formos solenes, em outro
+                    se-lo-hemos menos. Isso não importa. A maneira de tratar os assuntos é como o
+                    tom de voz em que se fala: tanto se pode dizer a verdade em voz baixa como em
+                    voz alta. Os americanos, que são quem mais profundamente estuda os problemas
+                    tecnicos, expõe-nos, muitas vêses, humoristicamente. Levam, até, esse genero de
+                    exposição, em alguns casos, a pontos quasi inconcebiveis para nós europeus,
+                    tantas vêses solenemente incompetentes.</p>
+                <p rend="indent-first">Isto é dito em previsão de que se estranhe que não ponhamos
+                    na exposição de todas as materias o ar grave de quem tem uma missão
+                    transcendente a cumprir. Não forçaremos, porêm, essa nota, como não forçaremos
+                    nenhuma outra. O nosso intuito é expôr de que nos possam lêr comerciantes feitos
+                    e comerciantes por fazer, contabilistas que o são e contabilistas que não o são.
+                    Uma ou outra afirmação será excusada para um comerciante ou para um
+                    contabilista; é que é para o estudante do comercio ou da contabilidade. Outras
+                    irão um pouco além do interêsse a supôr no principiante nestas materias: é que
+                    são para os que já não são principiantes nelas. Assim, doseando, procuraremos
+                    expôr num estilo e numa maneira que correspondam á media dos públicos vários a
+                    quem nos dirigimos. A êsses públicos pertence o decidir, apoiando-nos ou não, se
+                    atingimos ou errámos o alvo que nos propuzemos.</p>
+            </div>
+        </body>
+    </text>
+</TEI>
+
+

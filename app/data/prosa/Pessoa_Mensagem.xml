@@ -1,0 +1,1286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Mensagem</title>
+                <author>
+                    <rs type="name" key="FP">Fernando Pessoa</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe e Maria José Galeano</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
+                    Tradição (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2021</date>
+                <availability status="restricted">
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Pessoa_Mensagem.xml</idno>
+            </publicationStmt>
+           <notesStmt>
+              <note type="summary">Pessoa publicou vários dos poemas do livro em diferentes lugares, entre os quais estão
+                 "O dos castelos" e ""D. Afonso Henrique" sob o título "Mensagem" por Fernando Pessoa (Os Campos); "O infante D. Henrique", 
+                 "D. João o Segundo" e "Afonso de Albuquerque" sob o título "Tríptico"; e todos os poemas correspondentes à parte "Mar Português"
+                 sob o mesmo título. A maioria destes poemas têm diferenças ortográficas, de pontuação e de título, mas outros, como os poemas
+                 "O Mostrengo", "Occidente" e "Fernão de Magalhães" têm mudanças significativas em alguns versos. Além disso, está o poema 
+                 "Afonso de Albuquerque" que Pessoa rescreveu completamente para o livro, consevando só o título.</note>
+              <note type="genre">
+                 <rs type="genre" key="poesia">Poesia</rs>
+              </note>
+           </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item>
+                        <rs type="work" key="W223">Mensagem</rs>
+                    </item>
+                </list>
+               <biblStruct> 
+                  <monogr>
+                     <!--MJ: Revisar esta proposta de <biblStruct>-->
+                        <title>Mensagem</title>
+                        <author>
+                            <rs type="name" key="FP">Fernando Pessoa</rs>
+                        </author>
+                        <textLang mainLang="pt"/>
+                     <imprint>
+                        <date when="1934-12">Dezembro de 1934</date>
+                        <pubPlace>Lisboa</pubPlace>
+                        <publisher>Parceria António Maria Pereira, 44 Rua Augusta 54 / Editora Império</publisher>
+                     <biblScope unit="page">101pp</biblScope>
+                     </imprint>
+                  </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
+    </teiHeader>
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+        <graphic url="Poesia/Mensagem_1.jpg"/>
+        <graphic url="Poesia/Mensagem_2.jpg"/>
+        <graphic url="Poesia/Mensagem_3.jpg"/>
+        <graphic url="Poesia/Mensagem_4.jpg"/>
+        <graphic url="Poesia/Mensagem_5.jpg"/>
+        <graphic url="Poesia/Mensagem_6.jpg"/>
+        <graphic url="Poesia/Mensagem_7.jpg"/>
+        <graphic url="Poesia/Mensagem_8.jpg"/>
+        <graphic url="Poesia/Mensagem_9.jpg"/>
+        <graphic url="Poesia/Mensagem_10.jpg"/>
+        <graphic url="Poesia/Mensagem_11.jpg"/>
+        <graphic url="Poesia/Mensagem_12.jpg"/>
+        <graphic url="Poesia/Mensagem_13.jpg"/>
+        <graphic url="Poesia/Mensagem_14.jpg"/>
+        <graphic url="Poesia/Mensagem_15.jpg"/>
+        <graphic url="Poesia/Mensagem_16.jpg"/>
+        <graphic url="Poesia/Mensagem_17.jpg"/>
+        <graphic url="Poesia/Mensagem_18.jpg"/>
+        <graphic url="Poesia/Mensagem_19.jpg"/>
+        <graphic url="Poesia/Mensagem_20.jpg"/>
+        <graphic url="Poesia/Mensagem_21.jpg"/>
+        <graphic url="Poesia/Mensagem_22.jpg"/>
+        <graphic url="Poesia/Mensagem_23.jpg"/>
+        <graphic url="Poesia/Mensagem_24.jpg"/>
+        <graphic url="Poesia/Mensagem_25.jpg"/>
+        <graphic url="Poesia/Mensagem_26.jpg"/>
+        <graphic url="Poesia/Mensagem_27.jpg"/>
+        <graphic url="Poesia/Mensagem_28.jpg"/>
+        <graphic url="Poesia/Mensagem_29.jpg"/>
+        <graphic url="Poesia/Mensagem_30.jpg"/>
+        <graphic url="Poesia/Mensagem_31.jpg"/>
+        <graphic url="Poesia/Mensagem_32.jpg"/>
+        <graphic url="Poesia/Mensagem_33.jpg"/>
+        <graphic url="Poesia/Mensagem_34.jpg"/>
+        <graphic url="Poesia/Mensagem_35.jpg"/>
+        <graphic url="Poesia/Mensagem_36.jpg"/>
+        <graphic url="Poesia/Mensagem_37.jpg"/>
+        <graphic url="Poesia/Mensagem_38.jpg"/>
+        <graphic url="Poesia/Mensagem_39.jpg"/>
+        <graphic url="Poesia/Mensagem_40.jpg"/>
+        <graphic url="Poesia/Mensagem_41.jpg"/>
+        <graphic url="Poesia/Mensagem_42.jpg"/>
+        <graphic url="Poesia/Mensagem_43.jpg"/>
+        <graphic url="Poesia/Mensagem_44.jpg"/>
+        <graphic url="Poesia/Mensagem_45.jpg"/>
+        <graphic url="Poesia/Mensagem_46.jpg"/>
+        <graphic url="Poesia/Mensagem_47.jpg"/>
+        <graphic url="Poesia/Mensagem_48.jpg"/>
+        <graphic url="Poesia/Mensagem_49.jpg"/>
+        <graphic url="Poesia/Mensagem_50.jpg"/>
+        <graphic url="Poesia/Mensagem_51.jpg"/>
+        <graphic url="Poesia/Mensagem_52.jpg"/>
+        <graphic url="Poesia/Mensagem_53.jpg"/>
+        <graphic url="Poesia/Mensagem_54.jpg"/>
+        <graphic url="Poesia/Mensagem_55.jpg"/>
+        <graphic url="Poesia/Mensagem_56.jpg"/>
+        <graphic url="Poesia/Mensagem_57.jpg"/>
+        <graphic url="Poesia/Mensagem_58.jpg"/>
+        <graphic url="Poesia/Mensagem_59.jpg"/>
+        <graphic url="Poesia/Mensagem_60.jpg"/>
+        <graphic url="Poesia/Mensagem_61.jpg"/>
+        <graphic url="Poesia/Mensagem_62.jpg"/>
+        <graphic url="Poesia/Mensagem_63.jpg"/>
+        <graphic url="Poesia/Mensagem_64.jpg"/>
+        <graphic url="Poesia/Mensagem_65.jpg"/>
+        <graphic url="Poesia/Mensagem_66.jpg"/>
+        <graphic url="Poesia/Mensagem_67.jpg"/>
+        <graphic url="Poesia/Mensagem_68.jpg"/>
+        <graphic url="Poesia/Mensagem_69.jpg"/>
+        <graphic url="Poesia/Mensagem_70.jpg"/>
+        <graphic url="Poesia/Mensagem_71.jpg"/>
+    </facsimile>
+    <text type="orig" corresp="#W223">
+<body>
+               <div>
+                  <head>PRIMEIRA PARTE</head>
+                  <head>BRASÃO</head>
+                  <head>BELLUM SINE BELLO</head>   
+                  <head>I.</head>
+                  <head>OS CAMPOS</head>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><hi rend="italic">PRIMEIRO</hi></head>
+                     
+                     <head rend="indent">O DOS CASTELLOS <!--MJ: "Castelos" em "Mensagem" por Fernando Pessoa--></head>
+                     
+                     <lg>
+                        <l>A Europa jaz, posta nos cotovellos:</l>
+                        <l>De Oriente a Occidente jaz, fitando,</l>
+                        <l>E toldam-lhe romanticos cabellos</l> <!--MJ: "românticos" Mensagem" por Fernando Pessoa-->
+                        <l>Olhos gregos, lembrando.</l>
+                     </lg>
+                     <lg>
+                        <l>O cotovello esquerdo é recuado;</l>
+                        <l>O direito é em angulo disposto.</l>
+                        <l>Aquelle diz Italia onde é pousado;</l>
+                        <l>Este diz Inglaterra onde, afastado,</l>
+                        <l>A mão sustenta, em que se appoia o rosto.</l>
+                     </lg>
+                     <lg>
+                        <l>Fita, com olhar sphyngico e fatal,</l>
+                        <l>O Occidente, futuro do passado.</l>
+                     </lg>
+                     <lg>
+                        <l>O rosto com que fita é Portugal.</l>
+                     </lg>
+                  </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><hi rend="italic">SEGUNDO</hi></head>
+                     
+                     <head rend="indent">O DAS QUINAS</head>
+                     
+                     <lg>
+                        <l>Vendem os Deuses o que dão.</l>
+                        <l>A gloria compra-se a desgraça.</l>
+                        <l>Ai dos felizes, porque são</l>
+                           <l>Só o que passa!</l>
+                     </lg>
+                     <lg>
+                        <l>Baste a quem basta o que lhe basta</l>
+                        <l>O bastante de lhe bastar!</l>
+                        <l>A vida é breve, a alma é vasta:</l>
+                        <l>Ter é tardar.</l>
+                     </lg>
+                     <lg>
+                        <l>Foi com desgraça e com vileza</l>
+                        <l>Que <rs type="name" key="P573">Deus</rs> ao <rs type="name" key="P50">Christo</rs> definiu:</l>
+                        <l>Assím o oppoz à Natureza</l>
+                        <l>E Filho o ungiu</l>
+                     </lg>
+                  </div>
+                  <div>
+                  <head>II.</head>
+                  <head>OS CASTELLOS</head>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><hi rend="italic">PRIMEIRO</hi></head>
+                     
+                     <head rend="indent"><rs type="name" key="P598">ULYSSES</rs></head>
+                     
+                     <lg>
+                        <l>O mytho é o nada que é tudo.</l>
+                        <l>O mesmo sol que abre os céus</l>
+                        <l>É um mytho brilhante e mudo —</l>
+                        <l>O corpo morto de Deus,</l>
+                        <l>Vivo e desnudo.</l>
+                     </lg>
+                     <lg>
+                        <l>Este, que aqui aportou,</l>
+                        <l>Foi por não ser existindo.</l>
+                        <l>Sem existir nos bastou.</l>
+                        <l>Por não ter vindo foi vindo</l>
+                        <l>E nos creou.</l>
+                     </lg>
+                     <lg>
+                        <l>Assim a lenda se escorre</l>
+                        <l>A entrar na realidade,</l>
+                        <l>E a fecundal-a decorre.</l>
+                        <l>Em baixo, a vida, metade</l>
+                        <l>De nada, morre.</l>
+                     </lg>
+                  </div>
+                  </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><hi rend="italic">SEGUNDO</hi></head>
+                     <head rend="indent"><rs type="name" key="P672">VIRIATO</rs></head>
+                     <lg>
+                        <l>Se a alma que sente e faz conhece</l>
+                        <l>Só porque lembra o que esqueceu,</l>
+                        <l>Vivemos, raça, porque houvesse</l>
+                        <l>Memoria em nós do instincto teu.</l>
+                     </lg>
+                     <lg>
+                        <l>Nação porque reincarnaste,</l>
+                        <l>Povo porque resuscitou</l>
+                        <l>Ou tu, ou o de que eras a haste —</l>
+                        <l>Assim se Portugal formou.</l>
+                     </lg>
+                     <lg>
+                        <l>Teu ser é como aquella fria</l>
+                        <l>Luz que precede a madrugada,</l>
+                        <l>E é já o ir a haver o dia</l>
+                        <l>Na antemanhã, confuso nada.</l>
+                     </lg>
+                  </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><hi rend="italic">TERCEIRO</hi></head>
+                     <head rend="indent"><rs type="name" key="P487">O CONDE D. HENRIQUE</rs></head>
+                     <lg>
+                        <l>Todo começo é involuntario.</l>
+                        <l><rs type="name" key="P573">Deus</rs> é o agente.</l>
+                        <l>O heroe a si assiste, vario</l>
+                        <l>E inconsciente.</l>
+                     </lg>
+                     <lg>
+                        <l>À espada em tuas mãos achada</l>
+                        <l>Teu olhar desce.</l>
+                        <l>«Que farei eu com esta espada?»</l>
+                     </lg>
+                     <lg>
+                        <l>Ergueste-a, e fez-se.</l>
+                     </lg>
+                  </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><hi rend="italic">QUARTO</hi></head>
+                     
+                     <head rend="indent"><rs type="name" key="688">D. TAREJA</rs></head>
+                     
+                     <lg>
+                        <l>As nações todas são mysterios.</l>
+                        <l>Cada uma é todo o mundo a sós.</l>
+                        <l>Ó mãe de reis e avó de imperios.</l>
+                        <l>Vella por nós!</l>
+                     </lg>
+                     <lg>
+                        <l>Teu seio augusto amamentou</l>
+                        <l>Com bruta e natural certeza</l>
+                        <l>O que, imprevisto, <rs type="name" key="P573">Deus</rs> fadou.</l>
+                        <l>Por elle resa!</l>
+                     </lg>
+                     <lg>
+                        <l>Dê tua prece outro destino</l>
+                        <l>A quem fadou o instincto teu!</l>
+                        <l>O homem que foi o teu menino</l>
+                        <l>Envelheceu.</l>
+                     </lg>
+                     <lg>
+                        <l>Mas todo vivo é eterno infante</l>
+                        <l>Onde estás e não ha o dia.</l>
+                        <l>No antigo seio, vigilante,</l>
+                        <l>De novo o cria!</l>
+                     </lg>
+                  </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><hi rend="italic">QUINTO</hi></head>
+                     
+                     <head rend="indent"><rs type="name" key="P653">D. AFFONSO HENRIQUES</rs></head> <!--MJ: "Afonso" em "Mensagem" por Fernando Pessoa-->
+                     
+                     <lg>
+                        <l>Pae, foste cavalleiro.</l>
+                        <l>Hoje a vigilia é nossa.</l>
+                        <l>Dá-nos o exemplo inteiro</l>
+                        <l>E a tua inteira força!</l>
+                     </lg>
+                     <lg>
+                        <l>Dá, contra a hora em que, errada,</l>
+                        <l>Novos infieis vençam,</l>
+                        <l>A benção como espada,</l>
+                        <l>A espada como benção!</l>
+                     </lg>
+                  </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><hi rend="italic">SEXTO</hi></head>
+                     
+                     <head rend="indent"><rs type="name" key="689">D. DINIZ</rs></head>
+                     
+                     <lg>
+                        <l>Na noite escreve um seu Cantar de Amigo</l>
+                        <l>O plantador de naus a haver,</l>
+                        <l>E ouve um silencio murmuro comsigo:</l>
+                        <l>É o rumor dos pinhaes que, como um trigo</l>
+                        <l>De Imperio, ondulam sem se poder ver.</l>
+                     </lg>
+                     <lg>
+                        <l>Arroio, esse cantar, jovem e puro,</l>
+                        <l>Busca o oceano por achar;</l>
+                        <l>E a falla dos pinhaes, marulho obscuro,</l>
+                        <l>É o som presente d'esse mar futuro,</l>
+                        <l>É a voz da terra anciando pelo mar.</l>
+                     </lg>
+                  </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><hi rend="italic">SEPTIMO (I)</hi></head>
+                     
+                     <head rend="indent"><rs type="name" key="P102">D. JOÃO O PRIMEIRO</rs></head>
+                     
+                     <lg>
+                        <l>O homem e a hora são um só</l>
+                        <l>Quando <rs type="name" key="P573">Deus</rs> faz e a história é feita.</l>
+                        <l>O mais é carne, cujo pó</l>
+                        <l>A terra espreita.</l>
+                     </lg>
+                     <lg>
+                        <l>Mestre, sem o saber, do Templo</l>
+                        <l>Que Portugal foi feito ser,</l>
+                        <l>Que houveste a gloria e déste o exemplo</l>
+                        <l>De o defender,</l>
+                     </lg>
+                     <lg>
+                        <l>Teu nome, eleito em sua fama,</l>
+                        <l>É, na ara da nossa alma interna,</l>
+                        <l>A que repelle, eterna chamma,</l>
+                        <l>A sombra eterna.</l>
+                     </lg>
+                  </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><hi rend="italic">SEPTIMO (II)</hi></head>
+                     
+                     <head rend="indent"><rs type="name" key="690">D. PHILIPPA DE LENCASTRE</rs></head>
+                     
+                     <lg>
+                        <l>Que enigma havia em teu seio</l>
+                        <l>Que só genios concebia?</l>
+                        <l>Que archanjo teus sonhos veio</l>
+                        <l>Vellar, maternos, um dia?</l>
+                     </lg>
+                     <lg>
+                        <l>Volve a nós teu rosto serio,</l>
+                        <l>Princeza do Santo Gral,</l>
+                        <l>Humano ventre do Imperio,</l>
+                        <l>Madrinha de Portugal!</l>
+                     </lg>
+                  </div>
+                  <div>
+                  <head>III.</head>
+                  <head>AS QUINAS</head>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><hi rend="italic">PRIMEIRA</hi></head>
+                     
+                     <head rend="indent"><rs type="name" key="691">D. DUARTE</rs>, REI DE PORTUGAL</head>
+                     
+                     <lg>
+                        <l>Meu dever fez-me, como <rs type="name" key="P573">Deus</rs> ao mundo.</l>
+                        <l>A regra de ser Rei almou meu ser,</l>
+                        <l>Em dia e letra escrupuloso e fundo.</l>
+                     </lg>
+                     <lg>
+                        <l>Firme em minha tristeza, tal vivi.</l>
+                        <l>Cumpri contra o Destino o meu dever.</l>
+                        <l>Inutilmente? Não, porque o cumpri.</l>
+                     </lg>
+                  </div>
+                  </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><hi rend="italic">SEGUNDA</hi></head>
+                     <head rend="indent"><rs type="name" key="692">D. FERNANDO</rs>, INFANTE DE PORTUGAL</head>
+                     
+                     <lg>
+                        <l>Deu-me <rs type="name" key="P573">Deus</rs> o seu gladio porque eu faça</l>
+                        <l>A sua santa guerra.</l>
+                        <l>Sagrou-me seu em honra e em desgraça,</l>
+                        <l>Às horas em que um frio vento passa</l>
+                        <l>Por sobre a fria terra.</l>
+                     </lg>
+                     <lg>
+                        <l>Poz-me as mãos sobre os hombros e doirou-me</l> <!-- JU:cf. Errata na edição Impressa -->
+                        <l>A fronte com o olhar;</l>
+                        <l>E esta febre de Além, que me consome,</l>
+                        <l>E este querer grandeza são seu nome</l>
+                        <l>Dentro em mim a vibrar.</l>
+                     </lg>
+                     <lg>
+                        <l>E eu vou, e a luz do gladio erguido dá</l>
+                        <l>Em minha face calma.</l>
+                        <l>Cheio de <rs type="name" key="P573">Deus</rs>, não temo o que virá,</l>
+                        <l>Pois, venha o que vier, nunca será</l>
+                        <l>Maior do que a minha alma.</l>
+                     </lg>
+                  </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><hi rend="italic">TERCEIRA</hi></head>
+                     
+                     <head rend="indent"><rs type="name" key="693">D. PEDRO</rs>, REGENTE DE PORTUGAL</head>
+                     
+                     <lg>
+                        <l>Claro em pensar, e claro no sentir,</l>
+                        <l>E claro no querer;</l>
+                        <l>Indifferente ao que ha em conseguir</l>
+                        <l>Que seja só obter;</l>
+                        <l>Duplice dono, sem me dividir,</l>
+                        <l>De dever e de ser —</l>
+                     </lg>
+                     <lg>
+                        <l>Não me podia a Sorte dar guarida</l>
+                        <l>Por eu não ser dos seus.</l>
+                        <l>Assim vivi, assim morri, a vida,</l>
+                        <l>Calmo sob mudos céus,</l>
+                        <l>Fiel à palavra dada e à idéa tida.</l>
+                        <l>Tudo mais é com <rs type="name" key="P573">Deus</rs>!</l>
+                     </lg>
+                  </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><hi rend="italic">QUARTA</hi></head>
+                     
+                     <head rend="indent"><rs type="name" key="P102">D. JOÃO</rs>, INFANTE DE PORTUGAL</head>
+                     
+                     <lg>
+                        <l>Não fui alguem. Minha alma estava estreita</l>
+                        <l>Entre tam grandes almas minhas pares,</l>
+                        <l>Inutilmente eleita,</l>
+                        <l>Virgemmente parada;</l>
+                     </lg>
+                     <lg>
+                        <l>Porque é do portuguez, pae de amplos mares,</l>
+                        <l>Querer, poder só isto:</l>
+                        <l>O inteiro mar, ou a orla vã desfeita —</l>
+                        <l>O todo, ou o seu nada.</l>
+                     </lg>
+                  </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><hi rend="italic">QUINTA</hi></head>
+                     
+                     <head rend="indent"><rs type="name" key="P21">D. SEBASTIÃO</rs>, REI DE PORTUGAL</head>
+                     
+                     <lg> 
+                        <l>Louco, sim, louco, porque quiz grandeza</l>
+                        <l>Qual a Sorte a não dá.</l>
+                        <l>Não coube em mim minha certeza;</l>
+                        <l>Porisso onde o areal está</l>
+                        <l>Ficou meu ser que houve, não o que ha.</l>
+                     </lg>
+                     <lg>
+                        <l>Minha loucura, outros que me a tomem</l>
+                        <l>Com o que nella ia.</l>
+                        <l>Sem a loucura o que é o homem</l>
+                        <l>Mais que a besta sadia,</l>
+                        <l>Cadaver addiado que procria?</l>
+                     </lg>
+                  </div>
+                  <div>
+                  <head>IV.</head>
+                  
+                  <head>A COROA</head>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><rs type="name" key="694">NUNALVARES PEREIRA</rs></head>
+                     
+                     <lg>
+                        <l>Que aureola te cerca?</l>
+                        <l>É a espada que, volteando,</l>
+                        <l>Faz que o ar alto perca</l>
+                        <l>Seu azul negro e brando.</l>
+                     </lg>
+                     <lg>
+                        <l>Mas que espada é que, erguida,</l>
+                        <l>Faz esse halo no céu?</l>
+                        <l>É Excalibur, a ungida,</l>
+                        <l>Que o Rei <rs type="name" key="XXX">Arthur</rs> te deu.</l>
+                     </lg>
+                     <lg>
+                        <l>Sperança consummada,</l>
+                        <l>S. Portugal em ser,</l>
+                        <l>Ergue a luz da tua espada</l>
+                        <l>Para a estrada se ver!</l>
+                     </lg>
+                  </div>
+                  </div>
+                  <div>
+                  <head>V.</head>
+                  <head>O TIMBRE</head>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><hi rend="italic">A CABEÇA DO GRYPHO</hi></head> <!--MJ: "Tríptico" não tem este título -->
+                     
+                     <head rend="indent">O INFANTE <rs type="name" key="P487">D. HENRIQUE</rs></head>
+                     
+                     <lg>
+                        <l>Em seu throno entre o brilho das espheras,</l> <!--MJ: "trono" e "esferas" em "Tríptico"-->
+                        <l>Com seu manto de noite e solidão,</l>
+                        <l>Tem aos pés o mar novo e as mortas eras —</l>
+                        <l>O unico imperador que tem, deveras,</l> <!--MJ: "único" em "Tríptico"-->
+                        <l>O globo mundo em sua mão.</l>
+                     </lg>
+                  </div>
+                  </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><hi rend="italic">UMA ASA DO GRYPHO</hi></head> <!--MJ: em "Tríptico" não tem este título-->
+                     
+                     <head rend="indent"><rs type="name" key="P594">D. JOÃO O SEGUNDO</rs></head>
+                     
+                     <lg>
+                        <l>Braços cruzados, fita além do mar.</l>
+                        <l>Parece em promontorio uma alta serra —</l> <!--MJ: "promontório" em "Tríptico"-->
+                        <l>O limite da terra a dominar</l>
+                        <l>O mar que possa haver além da terra.</l>
+                     </lg>
+                     <lg>
+                        <l>Seu formidavel vulto solitario</l> <!--MJ: "formidável" em "Tríptico"-->
+                        <l>Enche de estar presente o mar e o céu.</l>
+                        <l>E parece temer o mundo vario</l> <!--MJ: "vário em "Tríptico"-->
+                        <l>Que elle abra os braços e lhe rasgue o véu.</l> <!--MJ: "êle" em "Tríptico"-->
+                     </lg>
+                  </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><hi rend="italic">A OUTRA ASA DO GRYPHO</hi></head>
+                     
+                     <head rend="indent"><rs type="name" key="P488">AFFONSO DE ALBUQUERQUE</rs></head> <!--MJ: "Afonso" em "Tríptico"-->
+                     
+                     <lg>
+                        <l>De pé, sobre os paizes conquistados</l>
+                        <l>Desce os olhos cansados</l>
+                        <l>De ver o mundo e a injustiça e a sorte.</l>
+                        <l>Não pensa em vida ou morte,</l>
+                        <l>Tam poderoso que não quer o quanto</l>
+                        <l>Póde, que o querer tanto</l>
+                        <l>Calcára mais do que o submisso mundo</l>
+                        <l>Sob o seu passo fundo.</l>
+                        <l>Trez imperios do chão lhe a Sorte apanha.</l>
+                        <l>Creou-os como quem desdenha.</l>
+                     </lg>
+                  </div>
+                  <div>
+                  <head>SEGUNDA PARTE</head>
+                  <head>MAR PORTUGUEZ</head>
+                  <head>POSSESSIO MARIS</head>
+                  <div type="poem" corresp="#W212">
+                     <head rend="indent">I.</head>
+                     
+                     <head rend="indent">O INFANTE</head>
+                     
+                     <lg>
+                        <l><rs type="name" key="P573">Deus</rs> quer, o homem sonha, a obra nasce.</l>
+                        <l><rs type="name" key="P573">Deus</rs> quiz que a terra fosse toda uma,</l>
+                        <l>Que o mar unisse, já não separasse.</l>
+                        <l>Sagrou-te, e foste desvendando a espuma,</l>
+                     </lg>
+                     <lg>
+                        <l>E a orla branca foi de ilha em continente,</l>
+                        <l>Clareou, correndo, até ao fim do mundo,</l>
+                        <l>E viu-se a terra inteira, de repente,</l>
+                        <l>Surgir, redonda, do azul profundo.</l>
+                     </lg>
+                     <lg>
+                        <l>Quem te sagrou creou-te portuguez.</l>
+                        <l>Do mar e nós em ti nos deu signal.</l>
+                        <l>Cumpriu-se o Mar, e o Imperio se desfez.</l>
+                        <l>Senhor, falta cumprir-se Portugal!</l>
+                     </lg>
+                  </div>
+                  </div>
+                  <div type="poem" corresp="#W213">
+                     <head rend="indent">II.</head>
+                     
+                     <head rend="indent">HORIZONTE</head>
+                     
+                     <lg>
+                        <l> O' mar anterior a nós, teus medos</l>
+                        <l>Tinham coral e praias e arvoredos.</l>
+                        <l>Desvendadas a noite e a cerração,</l>
+                        <l>As tormentas passadas e o mysterio,</l>
+                        <l>Abria em flor o Longe, e o Sul siderio</l>
+                        <l>Splendia sobre as naus da iniciação.</l>
+                     </lg>
+                     <lg>
+                        <l>Linha severa da longinqua costa —</l>
+                        <l>Quando a nau se approxima ergue-se a encosta</l>
+                        <l>Em arvores onde o Longe nada tinha;</l>
+                        <l>Mais perto, abre-se a terra em sons e cores:</l> <!--MJ: não tem ","  e "côres" em "Mar Portuguez"-->
+                        <l>E, no desembarcar, ha aves, flores,</l> <!-- não tem as primeiras duas vírgulas em "Mar Portuguez"-->
+                        <l>Onde era só, de longe a abstracta linha.</l>
+                     </lg>
+                     <lg>
+                        <l>O sonho é ver as fórmas invisiveis</l>
+                        <l>Da distancia imprecisa, e, com sensiveis</l>
+                        <l>Movimentos da esprança e da vontade,</l> <!--MJ: "esp'rança" em "Mar Portuguez"-->
+                        <l>Buscar na linha fria do horizonte</l>
+                        <l>A arvore, a praia, a flor, a ave, a fonte —</l>
+                        <l>Os beijos merecidos da Verdade.</l>
+                     </lg>
+                  </div>
+                  <div type="poem" corresp="#W214">
+                     <head rend="indent">III.</head>
+                     
+                     <head rend="indent">PADRÃO</head>
+                     
+                     <lg>
+                        <l>O exforço é grande e o homem é pequeno.</l>
+                        <l>Eu, <rs type="name" key="P608">Diogo Cão</rs>, navegador, deixei</l>
+                        <l>Este padrão ao pé do areal moreno</l>
+                        <l>E para deante naveguei.</l>
+                     </lg>
+                     <lg>
+                        <l>A alma é divina e a obra é imperfeita.</l>
+                        <l>Este padrão signala ao vento e aos céus</l> <!--MJ: "céos" em "Mar Portuguez"-->
+                        <l>Que, da obra ousada, é minha a parte feita:</l>
+                        <l>O por-fazer é só com <rs type="name" key="P573">Deus.</rs></l>
+                     </lg>
+                     <lg>
+                        <l>E ao immenso e possivel oceano</l>
+                        <l>Ensinam estas Quinas, que aqui vês,</l> <!--MJ: "quinas" em "Mar Portuguez"-->
+                        <l>Que o mar com fim será grego ou romano:</l>
+                        <l>O mar sem fim é portuguez.</l>
+                     </lg>
+                     <lg>
+                        <l>E a Cruz ao alto diz que o que me ha na alma</l> <!--MJ: "cruz" em "Mar Portuguez"-->
+                        <l>E faz a febre em mim de navegar</l>
+                        <l>Só encontrará de <rs type="name" key="P573">Deus</rs> na eterna calma</l>
+                        <l>O porto sempre por achar.</l>
+                     </lg>
+                  </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent">IV.</head>
+                     
+                     <head rend="indent">O MOSTRENGO</head> <!--MJ: "Morcego" em "Mar Portuguez"-->
+                     
+                     <lg>
+                        <l>O mostrengo que está no fim do mar</l>
+                        <l>Na noite de breu ergueu-se a voar;</l>
+                        <l>À roda da nau voou trez vezes,</l> <!--MJ: "Á" e "tres" em "Mar Portuguez"-->
+                        <l>Voou trez vezes a chiar,</l> <!--MJ: "tres em "Mar Prutugez"-->
+                        <l>E disse: «Quem é que ousou entrar</l>
+                        <l>Nas minhas cavernas que não desvendo,</l>
+                        <l>Meus tectos negros do fim do mundo?»</l>
+                        <l>E o homem do leme disse, tremendo:</l>
+                        <l>«El-Rei <rs type="name" key="P594">D. João Segundo</rs>!»</l>
+                     </lg>
+                     <lg>
+                        <l>«De quem são as velas onde me roço?</l> <!--MJ: "róço" em "Mar Portuguez"-->
+                        <l>De quem as quilhas que vejo e ouço?»</l>
+                        <l>Disse o mostrengo, e rodou trez vezes,</l> <!--MJ: "Morcego" e "tres" em "Mar Portuguez"-->
+                        <l>Trez vezes rodou immundo e grosso,</l> <!--MJ: "tres em "Mar Prutugez"-->
+                     </lg> <!--MJ: continua na mesma estrofa em "Mar Portuguez"-->
+                     <lg>
+                        <l>«Quem vem poder o que só eu posso,</l>
+                        <l>Que moro onde nunca ninguem me visse</l> <!--MJ: "móro" em "Mar Portuguez"-->
+                        <l>E escorro os medos do mar sem fundo?»</l>
+                        <l>E o homem do leme tremeu, e disse:</l>
+                        <l>«El-Rei <rs type="name" key="P594">D. João Segundo</rs>!»</l>
+                     </lg>
+                     <lg>
+                        <l>Trez vezes do leme as mãos ergueu.</l> <!--MJ: "tres em "Mar Prutugez" JU: cf. errata na edição impressa-->
+                        <l>Trez vezes ao leme as reprendeu,</l> <!--MJ: "tres em "Mar Prutugez"-->
+                        <l>E disse no fim de tremer trez vezes,</l> <!--MJ: "E ao monstro que volta disse tres vezes" em "Mar Portuguez"-->
+                        <l>«Aqui ao leme sou mais do que eu:</l>
+                        <l>Sou um Povo que quer o mar que é teu;</l>
+                        <l>E mais que o mostrengo, que me a alma teme</l>
+                        <l>E roda nas trevas do fim do mundo,</l>
+                        <l>Manda a vontade, que me ata ao leme,</l>
+                        <l>De El-Rei <rs type="name" key="P594">D. João Segundo</rs>!»</l> <!--MJ: "D'El-Rei Dom João Segundo" em "Mar Portuguez"-->
+                     </lg>
+                  </div>
+                  <div type="poem" corresp="#W216">
+                     <head rend="indent">V.</head>
+                     
+                     <head rend="indent">EPITAPHIO DE <rs type="name" key="P477">BARTHOLOMEU DIAS</rs></head>
+                     
+                     <lg>
+                        <l>Jaz aqui, na pequena praia extrema,</l>
+                        <l>O Capitão do Fim. Dobrado o Assombro,</l>
+                        <l>O mar é o mesmo: já ninguem o tema!</l>
+                        <l><rs type="name" key="P609">Atlas</rs>, mostra alto o mundo no seu hombro.</l>
+                     </lg>
+                  </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent">VI.</head>
+                     
+                     <head rend="indent">OS COLOMBOS</head> <!--MJ: em "Mar Portuguez" o título é "Ironia"-->
+                     
+                     <lg>
+                        <l>Outros haverão de ter</l>
+                        <l>O que houvermos de perder.</l>
+                        <l>Outros poderão achar</l>
+                        <l>O que, no nosso encontrar,</l>
+                        <l>Foi achado, ou não achado,</l>
+                        <l>Segundo o destino dado.</l>
+                     </lg>
+                     <lg>
+                        <l>Mas o que a elles não toca</l>
+                        <l>É a Magia que evoca</l>
+                        <l>O Longe e faz d'elle historia.</l>
+                        <l>E porisso a sua gloria</l>
+                        <l>É uma justa aureola dada</l>
+                        <l>Por uma luz emprestada.</l>
+                     </lg>
+                  </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent">VII.</head>
+                     
+                     <head rend="indent">OCCIDENTE</head> <!--MJ: em "Mar Portuguez" o título é "Os descobridores de occidente"-->
+                     
+                     <lg>
+                        <l>Com duas mãos — o Acto e o Destino —</l>
+                        <l>Desvendámos. No mesmo gesto, ao céu</l> <!--MJ: "céo" em "Mar Portuguez"-->
+                        <l>Uma ergue o facho trémulo e divino</l> <!--MJ: "tremulo" em "Mar Portuguez"-->
+                        <l>E a outra afasta o véu.</l> <!--MJ: "véo" em "Mar Portuguez"-->
+                     </lg>
+                     <lg>
+                        <l>Fosse a hora que haver ou a que havia</l> <!--MJ "a hora propicia ou a força fria" em "Mar Portuguez" e "acaso, ou vontade, ou temporal," na edição de 1926-->
+                        <l>A mão que ao Occidente o véu rasgou,</l> <!--MJ: "o Oeste a estes entregou" em "Mar Portuguez"-->
+                        <l>Foi alma a Sciencia e corpo a Ousadia</l>
+                        <l>Da mão que desvendou.</l> <!--MJ: "consummou" em "Mar Portuguez"-->
+                     </lg>
+                     <lg>
+                        <l>Fosse Acaso, ou Vontade, ou Temporal</l> <!--MJ: "a estes o Occidente abriu" em "Mar Portuguez"-->
+                        <l>A mão que ergueu o facho que luziu,</l>
+                        <l>Foi <rs type="name" key="P573">Deus</rs> a alma e o corpo Portugal</l>
+                        <l>Da mão que o conduziu.</l>
+                     </lg>
+                  </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent">VIII.</head>
+                     
+                     <head rend="indent"><rs type="name" key="695">FERNÃO DE MAGALHÃES</rs></head> <!--MJ: "Dança dos titans" em "Mar Portuguez"--> 
+                     
+                     <lg>
+                        <l>No valle clareia uma fogueira.</l>
+                        <l>Uma dança sacode a terra inteira.</l> <!--MJ: "dansa" em "Mar Portuguez"-->
+                        <l>E sombras disformes e descompostas</l>
+                        <l>Em clarões negros do valle vão</l>
+                        <l>Subitamente pelas encostas,</l>
+                        <l>Indo perder-se na escuridão.</l>
+                     </lg>
+                     <lg>
+                        <l>De quem é a dança que a noite aterra?</l> <!--MJ: "dansa" em "Mar Portuguez"-->
+                        <l>São os Titans, os filhos da Terra,</l>
+                        <l>Que dançam da morte do marinheiro</l>
+                        <l>Que quiz cingir o materno vulto —</l>
+                        <l>Cingil-o, dos homens, o primeiro —,</l> <!--MJ: "ser circumnavegador primeiro" em "Mar Portuguez"-->
+                        <l>Na praia ao longe por fim sepulto.</l>
+                     </lg>
+                     <lg>
+                        <l>Dançam, nem sabem que a alma ousada</l> <!--MJ: "dansam" em "Mar Portuguez"-->
+                        <l>Do morto ainda commanda a armada,</l>
+                        <l>Pulso sem corpo ao leme a guiar</l>
+                        <l>As naus no resto do fim do espaço:</l> <!--MJ: "náos" em "Mar Portuguez"-->
+                        <l>Que até ausente soube cercar</l> <!--MJ: "mesmo" em "Mar Portuguez"-->
+                        <l>A terra inteira com seu abraço.</l> <!--MJ: Termina com "!" em "Mar Portuguez"-->
+                     </lg>
+                     <lg>
+                        <l>Violou a Terra. Mas elles não</l>
+                        <l>O sabem, e dançam na solidão;</l> <!--MJ: "dansam" em "Mar Portuguez"-->
+                        <l>E sombras disformes e descompostas,</l>
+                        <l>Indo perder-se nos horizontes,</l>
+                        <l>Galgam do valle pelas encostas</l>
+                        <l>Dos mudos montes.</l>
+                     </lg>
+                  </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent">IX.</head>
+                     
+                     <head rend="indent">ASCENSÃO DE <rs type="name" key="P610">VASCO DA GAMA</rs></head>
+                     
+                     <lg>
+                     <l>Os Deuses da tormenta e os gigantes da terra</l>
+                     <l>Suspendem de repente o odio da sua guerra</l>
+                     <l>E pasmam. Pelo valle onde se ascende aos céus</l> <!--MJ: "céos" em "Mar Portuguez"-->
+                     <l>Surge um silencio, e vae, da nevoa ondeando</l>
+                     <l>os véus,</l> <!--MJ: "véos" em "Mar Portuguez"-->
+                     <l>Primeiro um movimento e depois um assombro.</l>
+                     <l>Ladeiam-o, ao durar, os medos, hombro a</l>
+                     <l>hombro,</l>
+                     <l>E ao longe o rastro ruge em nuvens e clarões</l>
+                     </lg> <!--MJ: continua na mesma estrofa em "Mar Portuguez"-->
+                     <lg>
+                        <l>Em baixo, onde a terra é, o pastor gela, e a</l>
+                        <l>flauta</l>
+                        <l>Cahe-lhe, e em extase vê, à luz de mil trovões,</l> <!--MJ: "cae-lhe" e "á" em "Mar Portuguez"-->
+                        <l>O céu abrir o abysmo à alma do Argonauta.</l> <!--MJ: "céo" e "á" em "Mar Portuguez"-->
+                     </lg>
+                  </div>
+                  <div type="poem" corresp="#W221">
+                     <head rend="indent">X.</head>
+                     
+                     <head rend="indent">MAR PORTUGUEZ</head> <!--MJ: "português" em "Mar Portuguez"-->
+                     
+                     <lg>
+                        <l>O' mar salgado, quanto do teu sal</l> <!--MJ: "Ó" em "Mar Portuguez"-->
+                        <l>São lagrimas de Portugal!</l>
+                        <l>Por te cruzarmos, quantas mães choraram,</l>
+                        <l>Quantos filhos em vão resaram!</l> <!--MJ: "rezaram" em "Mar Portuguez"-->
+                        <l>Quantas noivas ficaram por casar</l>
+                        <l>Para que fosses nosso, ó mar!</l>
+                     </lg>
+                     <lg>
+                        <l>Valeu a pena? Tudo vale a pena</l>
+                        <l>Se a alma não é pequena.</l>
+                        <l>Quem quer passar além do Bojador</l>
+                        <l>Tem que passar além da dor.</l>
+                        <l><rs type="name" key="P573">Deus</rs> ao mar o perigo e o abysmo deu,</l>
+                        <l>Mas nelle é que espelhou o céu.</l> <!--MJ: "céo" em "Mar Portuguez"-->
+                     </lg>
+                  </div>
+                  <div type="poem" corresp="#W222">
+                     <head rend="indent">XI.</head>
+                     
+                     <head rend="indent">A ULTIMA NAU</head> <!--MJ: "Nao" em "Mar Portuguez"-->
+                     
+                     <lg>
+                        <l>Levando a bordo <rs type="name" key="P21">El-Rei D. Sebastião,</rs></l> <!--MJ: "Dom" em "Mar Portuguez"-->
+                        <l>E erguendo, como um nome, alto o pendão</l> <!--MJ: vírgula depois de "alto" em "Mar Portuguez"-->
+                        <l>Do Imperio,</l>
+                        <l>Foi-se a ultima nau, ao sol aziago</l> <!--MJ: "nao" em "Mar Portuguez"-->
+                        <l>Erma, e entre choros de ancia e de presago</l> <!--MJ: "ansia" em "Mar Portuguez"-->
+                        <l>Mysterio.</l>
+                     </lg>
+                     <lg>
+                        <l>Não voltou mais. A que ilha indescoberta</l>
+                        <l>Aportou? Voltará da sorte incerta</l>
+                        <l>Que teve?</l>
+                        <l><rs type="name" key="P573">Deus</rs> guarda o corpo e a fórma do futuro,</l>
+                        <l>Mas Sua luz projecta-o, sonho escuro</l>
+                        <l>E breve.</l>
+                     </lg>
+                     <lg>
+                        <l>Ah, quanto mais ao povo a alma falta,</l>
+                        <l>Mais a minha alma atlantica se exalta</l> <!--MJ: "minh'alma" em "Mar Portuguez"-->
+                        <l>E entorna,</l>
+                           <l>E em mim, num mar que não tem tempo ou</l>
+                           <l>spaço,</l>
+                        <l>Vejo entre a cerração teu vulto baço</l> <!--MJ: inciso entre "entre a cerração" em "Mar Portuguez"-->
+                           <l>Que torna.</l>
+                     </lg>
+                     <lg>
+                        <l>Não sei a hora, mas sei que ha a hora,</l>
+                        <l>Demore-a <rs type="name" key="P573">Deus</rs>, chame-lhe a alma embora</l>
+                        <l>Mysterio.</l>
+                        <l>Surges ao sol em mim, e a nevoa finda:</l> <!--MJ: vírgula depois de "finda" em "Mar Portuguez"-->
+                        <l>A mesma, e trazes o pendão ainda</l>
+                        <l>Do Imperio.</l>
+                     </lg>
+                  </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent">XII.</head>
+                     
+                     <head rend="indent">PRECE</head>
+                     
+                     <lg>
+                        <l>Senhor, a noite veio e a alma é vil.</l> <!--MJ: "veiu" em "Mar Portuguez"-->
+                        <l>Tanta foi a tormenta e a vontade!</l>
+                        <l>Restam-nos hoje, no silencio hostil,</l>
+                        <l>O mar universal e a saüdade.</l> <!--MJ: "saudade" em "Mar Portuguez" e "Prece"-->
+                     </lg>
+                     <lg>
+                        <l>Mas a chamma, que a vida em nós creou,</l> <!--MJ: "chama" em "Mar Portuguez" e "Prece"-->
+                        <l>Se ainda ha vida ainda não é finda.</l>
+                        <l>O frio morto em cinzas a occultou:</l>
+                        <l>A mão do vento póde erguel-a ainda.</l>
+                     </lg>
+                     <lg>
+                        <l>Dá o sopro, a aragem — ou desgraça ou ancia —,</l> <!--MJ: "ansia" em "Mar Portuguez"--> <!--MJ: "ânsia" em "Prece"--> 
+                        <l>Com que a chamma do exforço se remoça,</l> <!--MJ: "chama", "esforço" e "remóça" em "Mar Portuguez" e "Prece"-->
+                        <l>E outra vez conquistemos a Distancia —</l>
+                        <l>Do mar ou outra, mas que seja nossa!</l>
+                     </lg>
+                  </div>
+                  <div>
+                     <head>TERCEIRA PARTE</head>
+                     <head>O ENCOBERTO</head>
+                     <head>PAX IN EXCELSIS</head>
+                     <head>I. </head>
+                     <head>OS SYMBOLOS</head>
+                     <div type="poem" corresp="XXX">
+                        <head rend="indent"><hi rend="italic">PRIMEIRO</hi></head>
+                        
+                        <head rend="indent"><rs type="name" key="P21">D. SEBASTIÃO</rs></head>
+                        
+                        <lg>
+                           <l>Sperae! Cahi no areal e na hora adversa</l>
+                           <l>Que <rs type="name" key="P573">Deus</rs> concede aos seus</l>
+                           <l>Para o intervallo em que esteja a alma immersa</l>
+                           <l>Em sonhos que são <rs type="name" key="P573">Deus.</rs></l>
+                        </lg>
+                        <lg>
+                           <l>Que importa o areal e a morte e a desventura</l>
+                           <l>Se com <rs type="name" key="P573">Deus</rs> me guardei?</l>
+                           <l>É O que eu me sonhei que eterno dura,</l>
+                           <l>É Esse que regressarei.</l>
+                        </lg>
+                     </div>
+                     </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><hi rend="italic">SEGUNDO</hi></head>
+                     
+                     <head rend="indent">O QUINTO IMPERIO</head>
+                     
+                     <lg>
+                        <l>Triste de quem vive em casa,</l>
+                        <l>Contente com o seu lar,</l>
+                        <l>Sem que um sonho, no erguer de asa,</l>
+                        <l>Faça até mais rubra a brasa</l>
+                        <l>Da lareira a abandonar!</l>
+                     </lg>
+                     <lg>
+                        <l>Triste de quem é feliz!</l>
+                        <l>Vive porque a vida dura.</l>
+                        <l>Nada na alma lhe diz</l>
+                        <l>Mais que a lição da raiz —</l>
+                        <l>Ter por vida a sepultura.</l>
+                     </lg>
+                     <lg>
+                        <l>Eras sobre eras se somem</l>
+                        <l>No tempo que em eras vem.</l>
+                        <l>Ser descontente é ser homem.</l>
+                     </lg>
+                     <lg>
+                        <l>Que as forças cegas se domem</l>
+                        <l>Pela visão que a alma tem!</l>
+                     </lg>
+                     <lg>
+                        <l>E assim, passados os quatro</l>
+                        <l>Tempos do ser que sonhou,</l>
+                        <l>A terra será theatro</l>
+                        <l>Do dia claro, que no atro</l>
+                        <l>Da erma noite começou.</l>
+                     </lg>
+                     <lg>
+                        <l>Grecia, Roma, Christandade,</l>
+                        <l>Europa — os quatro se vão</l>
+                        <l>Para onde vae toda edade.</l>
+                        <l>Quem vem viver a verdade</l>
+                        <l>Que morreu <rs type="name" key="P21">D. Sebastião</rs>?</l>
+                     </lg>
+                  </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><hi rend="italic">TERCEIRO</hi></head>
+                     
+                     <head rend="indent">O DESEJADO</head>
+                     
+                     <lg>
+                        <l>Onde quer que, entre sombras e dizeres,</l>
+                        <l>Jazas, remoto, sente-te sonhado,</l>
+                        <l>E ergue-te do fundo de não-seres</l>
+                        <l>Para teu novo fado!</l>
+                     </lg>
+                     <lg>
+                        <l>Vem, <rs type="name" key="687">Galaaz</rs> com pátria, erguer de novo,</l>
+                        <l>Mas já no auge da suprema prova,</l>
+                        <l>A alma penitente do teu povo</l>
+                        <l>À Eucharistia Nova.</l>
+                     </lg>
+                     <lg>
+                        <l>Mestre da Paz, ergue teu gladio ungido,</l>
+                        <l>Excalibur do Fim, em jeito tal</l>
+                        <l>Que sua Luz ao mundo dividido</l>
+                        <l>Revele o Santo Gral!</l>
+                     </lg>
+                  </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><hi rend="italic">QUARTO</hi></head>
+                     
+                     <head rend="indent">AS ILHAS AFORTUNADAS</head>
+                     
+                     <lg>
+                        <l>Que voz vem no som das ondas</l>
+                        <l>Que não é a voz do mar?</l>
+                        <l>É a voz de alguem que nos falla,</l>
+                        <l>Mas que, se escutamos, cala,</l>
+                        <l>Por ter havido escutar.</l>
+                     </lg>
+                     <lg>
+                        <l>E só se, meio dormindo,</l>
+                        <l>Sem saber de ouvir ouvimos,</l>
+                        <l>Que ella nos diz a esperança</l>
+                        <l>A que, como uma criança</l>
+                        <l>Dormente, a dormir sorrimos.</l>
+                     </lg>
+                     <lg>
+                        <l>São ilhas afortunadas,</l>
+                        <l>São terras sem ter logar,</l>
+                        <l>Onde o Rei mora esperando.</l>
+                        <l>Mas, se vamos dispertando,</l>
+                        <l>Cala a voz, e ha só o mar.</l>
+                     </lg>
+                  </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><hi rend="italic">QUINTO</hi></head>
+                     <head rend="indent">O ENCOBERTO</head>
+                     
+                     <lg>
+                        <l>Que symbolo fecundo</l>
+                        <l>Vem na aurora anciosa?</l>
+                        <l>Na Cruz Morta do Mundo</l>
+                        <l>A Vida, que é a Rosa.</l>
+                     </lg>
+                     <lg>
+                        <l>Que symbolo divino</l>
+                        <l>Traz o dia já visto?</l>
+                        <l>Na Cruz, que é o Destino,</l>
+                        <l>A Rosa, que é o <rs type="name" key="P50">Christo.</rs></l>
+                     </lg>
+                     <lg>
+                        <l>Que symbolo final</l>
+                        <l>Mostra o sol já desperto?</l>
+                        <l>Na Cruz morta e fatal</l>
+                        <l>A Rosa do Encoberto.</l>
+                     </lg>
+                  </div>
+                  <div>
+                     <head>II.</head>
+                     <head>OS AVISOS</head>
+                     
+                     <div type="poem" corresp="XXX">
+                        <head rend="indent"><hi rend="italic">PRIMEIRO</hi></head>
+                        <head rend="indent">O BANDARRA</head>
+                        
+                        <lg>
+                           <l>Sonhava, anonymo e disperso,</l>
+                           <l>O Imperio por <rs type="name" key="P573">Deus</rs> mesmo visto,</l>
+                           <l>Confuso como o Universo</l>
+                           <l>E plebeu como <rs type="name" key="P50">Jesus Christo.</rs></l>
+                        </lg>
+                        <lg>
+                           <l>Não foi nem santo nem heroe,</l>
+                           <l>Mas <rs type="name" key="P573">Deus</rs> sagrou com Seu signal</l>
+                              <l>Este, cujo coração foi</l>
+                              <l>Não portuguez mas Portugal.</l>
+                        </lg>
+                     </div>
+                     </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><hi rend="italic">SEGUNDO</hi></head>
+                     
+                     <head rend="indent"><rs type="name" key="P300">ANTONIO VIEIRA</rs></head>
+                     
+                     <lg>
+                        <l>O céu estrella o azul e tem grandeza.</l>
+                        <l>Este, que teve a fama e à gloria tem,</l>
+                        <l>Imperador da lingua portugueza,</l>
+                        <l>Foi-nos um céu tambem.</l>
+                     </lg>
+                     <lg>
+                        <l>No immenso espaço seu de meditar,</l>
+                        <l>Constellado de fórma e de visão,</l>
+                        <l>Surge, prenuncio claro do luar,</l>
+                        <l>El-Rei <rs type="name" key="P21">D. Sebastião.</rs></l>
+                     </lg>
+                     <lg>
+                        <l>Mas não, não é luar: é luz do ethereo.</l>
+                        <l>E' um dia; e, no céu amplo de desejo,</l>
+                        <l>A madrugada irreal do Quinto Imperio</l>
+                        <l>Doira as margens do Tejo.</l>
+                     </lg>
+                  </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><hi rend="italic">TERCEIRO</hi></head>
+                     
+                     <lg>
+                        <l>Screvo meu livro à beira-magua.</l>
+                        <l>Meu coração não tem que ter.</l>
+                        <l>Tenho meus olhos quentes de agua.</l>
+                        <l>Só tu, Senhor, me dás viver.</l>
+                     </lg>
+                     <lg>
+                        <l>Só te sentir e te pensar</l>
+                        <l>Meus dias vacuos enche e doura.</l>
+                        <l>Mas quando quererás voltar?</l>
+                        <l>Quando é o Rei? Quando é a Hora?</l>
+                     </lg>
+                     <lg>
+                        <l>Quando virás a ser o <rs type="name" key="P50">Cristo</rs></l>
+                        <l>De a quem morreu o falso <rs type="name" key="P573">Deus</rs>,</l>
+                        <l>E a dispertar do mal que existo</l>
+                        <l>A Nova Terra e os Novos Céus?</l>
+                     </lg>
+                     <lg>
+                        <l>Quando virás, ó Encoberto,</l>
+                        <l>Sonho das eras portuguez,</l>
+                        <l>Tornar-me mais que o sopro incerto</l>
+                        <l>De um grande anceio que <rs type="name" key="P573">Deus</rs> fez?</l>
+                     </lg>
+                     <lg>
+                        <l>Ah, quando quererás, voltando,</l>
+                        <l>Fazer minha esperança amor?</l>
+                        <l>Da nevoa e da saudade quando?</l>
+                        <l>Quando, meu Sonho e meu Senhor?</l>
+                     </lg>
+                  </div>
+                  <div>
+                     <head>III. </head>
+                     <head>OS TEMPOS</head>
+                     <div type="poem" corresp="XXX">
+                        <head rend="indent"><hi rend="italic">PRIMEIRO</hi></head>
+                        <head rend="indent">NOITE</head>
+                        
+                        <lg>
+                           <l>A nau de um d'elles tinha se perdido</l>
+                           <l>No mar indefinido.</l>
+                           <l>O segundo pediu licença ao Rei</l>
+                           <l>De, na fé e na lei</l>
+                           <l>Da descoberta, ir em procura</l>
+                           <l>Do irmão no mar sem fim e a nevoa escura.</l>
+                        </lg>
+                        <lg>
+                           <l>Tempo foi. Nem primeiro nem segundo</l>
+                           <l>Volveu do fim profundo</l>
+                           <l>Do mar ignoto à patria por quem dera</l>
+                           <l>O enigma que fizera.</l>
+                           <l>Então o terceiro a El-Rei rogou</l>
+                           <l>Licença de os buscar, e El-Rei negou.</l>
+                           <milestone rend="asterisk" unit="section"/>
+                           <l>Como a um captivo, o ouvem a passar</l>
+                           <l>Os servos do solar.</l>
+                           <l>E, quando o vêem, vêem a figura</l>
+                           <l>Da febre e da amargura,</l>
+                           <l>Com fixos olhos rasos de ancia</l>
+                           <l>Fitando a prohibida azul distancia.</l>
+                           <milestone rend="asterisk" unit="section"/>
+                           <l>Senhor, os dois irmãos do nosso Nome‒</l>
+                           <l>O Poder e o Renome —</l>
+                           <l>Ambos se foram pelo mar da edade</l>
+                           <l>À tua eternidade;</l>
+                           <l>E com elles de nós se foi</l>
+                           <l>O que faz a alma poder ser de heroe.</l>
+                        </lg>
+                        <lg>
+                           <l>Queremos ir buscal-os, d'esta vil</l>
+                           <l>Nossa prisão servil:</l>
+                           <l>É a busca de quem somos, na distancia</l>
+                           <l>De nós; e, em febre de ancia,</l>
+                           <l>A <rs type="name" key="P573">Deus</rs> as mãos alçamos.</l>
+                        </lg>
+                        <lg>
+                           <l>Mas <rs type="name" key="P573">Deus</rs> não dá licença que partamos.</l>
+                        </lg>
+                     </div>
+                     </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><hi rend="italic">SEGUNDO</hi></head>
+                     <head rend="indent">TORMENTA</head>
+                     
+                     <lg>
+                        <l>Que jaz no abysmo sob o mar que se ergue?</l>
+                        <l>Nós, Portugal, o poder ser.</l>
+                        <l>Que inquietação do fundo nos soergue?</l>
+                        <l>O desejar poder querer.</l>
+                     </lg>
+                     <lg>
+                        <l>Isto, e o mysterio de que a noite é o fausto...</l>
+                        <l>Mas súbito, onde o vento ruge,</l>
+                        <l>O relampago, farol de <rs type="name" key="P573">Deus</rs>, um hausto</l>
+                        <l>Brilha, e o mar scuro struge.</l>
+                     </lg>
+                  </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><hi rend="italic">TERCEIRO</hi></head>
+                     
+                     <head rend="indent">CALMA</head>
+                     
+                     <lg>
+                        <l>Que costa é que as ondas contam</l>
+                        <l>E se não póde encontrar</l>
+                        <l>Por mais naus que haja no mar?</l>
+                        <l>O que é que as ondas encontram</l>
+                        <l>E nunca se vê surgindo?</l>
+                        <l>Este som de o mar praiar</l>
+                        <l>Onde é que está existindo?</l>
+                     </lg>
+                     <lg>
+                        <l>Ilha proxima e remota,</l>
+                        <l>Que nos ouvidos persiste,</l>
+                        <l>Para a vista não existe.</l>
+                        <l>Que nau, que armada, que frota</l>
+                        <l>Póde encontrar o caminho</l>
+                        <l>À praia onde o mar insiste,</l>
+                        <l>Se à vista o mar é sósinho?</l>
+                     </lg>
+                     <lg>
+                        <l>Haverá rasgões no espaço</l>
+                        <l>Que dêem para outro lado,</l>
+                        <l>E que, um d'elles encontrado,</l>
+                        <l>Aqui, onde ha só sargaço,</l>
+                        <l>Surja uma ilha velada,</l>
+                        <l>O paiz afortunado</l>
+                        <l>Que guarda o Rei desterrado</l>
+                        <l>Em sua vida encantada?</l>
+                     </lg>
+                  </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><hi rend="italic">QUARTO</hi></head>
+                     
+                     <head rend="indent">ANTEMANHÃ</head>
+                     
+                     <lg>
+                        <l>O mostrengo que está no fim do mar</l>
+                        <l>Veio das trevas a procurar</l>
+                        <l>A madrugada do novo dia,</l>
+                        <l>Do novo dia sem acabar;</l>
+                        <l>E disse: «Quem é que dorme a lembrar</l>
+                        <l>Que desvendou o Segundo Mundo,</l>
+                        <l>Nem o Terceiro quer desvendar?»</l>
+                     </lg>
+                     <lg>
+                        <l>E o som na treva de elle rodar</l>
+                        <l>Faz mau o somno, triste o sonhar,</l>
+                        <l>Rodou e foi-se o mostrengo servo</l>
+                        <l>Que seu senhor veio aqui buscar.</l>
+                        <l>Que veio aqui seu senhor chamar —</l>
+                        <l>Chamar Aquelle que está dormindo</l>
+                        <l>E foi outrora Senhor do Mar.</l>
+                     </lg>
+                  </div>
+                  <div type="poem" corresp="XXX">
+                     <head rend="indent"><hi rend="italic">QUINTO</hi></head>
+                     
+                     <head rend="indent">NEVOEIRO</head>
+                     
+                     <lg>
+                        <l>Nem rei nem lei, nem paz nem guerra,</l>
+                        <l>Define com perfil e ser</l>
+                        <l>Este fulgor baço da terra</l>
+                        <l>Que é Portugal a entristecer —</l>
+                        <l>Brilho sem luz e sem arder</l>
+                        <l>Como o que o fogo-fatuo encerra.</l>
+                     </lg>
+                     <lg>
+                        <l>Ninguem sabe que coisa quer.</l>
+                        <l>Ninguem conhece que alma tem,</l>
+                        <l>Nem o que é mal nem o que é bem.</l>
+                        <l>(Que ancia distante perto chora?)</l>
+                        <l>Tudo é incerto e derradeiro.</l>
+                        <l>Tudo é disperso, nada é inteiro.</l>
+                        <l>Ó Portugal, hoje és nevoeiro...</l>
+                     </lg>
+                     <lg>
+                        <l>É a Hora!</l>
+                     </lg>
+                     <lg>
+                        <l><hi rend="italic">Valete, Fratres.</hi></l>
+                     </lg>
+                  </div>
+         </div>
+      </body>
+   </text>
+</TEI>
+
+
+

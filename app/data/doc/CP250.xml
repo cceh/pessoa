@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>CP 250</title>
+            <author>
+               <rs type="name" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny-Krahmer</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability status="free">
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">CP250.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>CP 250</idno>
+               </msIdentifier>
+               <msContents>
+                  <summary>
+                     <p> Lista datilografada, com acrescentos manuscritos, no verso de papel
+                        impresso de «Aviso por causa da moral», texto publicado em nome de Campos,
+                        com data de 1923. </p>
+                  </summary>
+                  <msItemStruct>
+                     <author>
+                        <rs type="name" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate notBefore="1923">post. 1923</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+      <graphic url="Espolio Manuela Nogueira (MN)/avulsos (250).jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <head>
+               <hi rend="underline">Trechos portuguezes<del n="2">
+                     <seg rend="overstrike">antigos</seg></del>.</hi>
+            </head>
+            <list>
+               <item>
+                  <rs type="title">MARIA MANUELA</rs>, de <rs type="name" key="P125">Antonio
+                     Molarinho</rs>. </item>
+               <item>
+                  <rs type="title">ODE</rs>, de <rs type="name" key="P81">Manuel da Veiga</rs>. </item>
+               <item>
+                  <rs type="title">SONETO MYSTICO ANONYMO</rs>. </item>
+               <item>
+                  <rs type="title">dos CANCIONEIROS</rs> (varia). </item>
+               <item>
+                  <rs type="title">O PRIMEIRO POEMA</rs> de <rs type="name" key="P24">José Anastacio
+                     da Cunha</rs>. </item>
+               <item>
+                  <rs type="title">NO INTERVALLO DE UMA DOLOROSA DOENÇA</rs>, <rs type="name"
+                     key="P24">do mesmo</rs>. </item>
+               <item>
+                  <rs type="title">SONETO</rs>, de <rs type="name" key="P76">Bocage</rs>. </item>
+               <item>
+                  <rs type="title">A EXTRANHA MORTE DO PROFESSOR ANTENA</rs>, de <rs type="name"
+                     key="P30">Sá-Carneiro</rs>
+               </item>
+               <item>
+                  <rs type="title">VARIAS LYRICAS</rs>, de <rs type="name" key="P186">Garrett</rs>. </item>
+               <item>
+                  <rs type="title">PROPHECIAS</rs>, do <rs type="name" key="P259">Bandarra.</rs>
+               </item>
+               <addSpan spanTo="#a1" n="2"/>
+               <item>
+                  <rs type="title">O Homem dos Sonhos</rs> ― <rs type="name" key="P30"
+                     >Sá-Carneiro</rs>. </item>
+               <item>
+                  <rs type="title">Soneto</rs>, de <rs type="name" key="P80">Angelo de Lima</rs>. </item>
+               <anchor xml:id="a1"/>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>
