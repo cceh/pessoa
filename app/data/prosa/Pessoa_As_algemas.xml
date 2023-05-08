@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>As algemas</title>
+            <author>
+               <rs type="name" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Edição, Transcrição, Codificação</resp>
+               <name>Jorge Uribe e Maria José Galeano</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny-Krahmer</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability status="restricted">
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">Pessoa_As_algemas.xml</idno>
+         </publicationStmt>
+         <notesStmt>
+            <note type="genre">
+               <rs type="genre" key="prose">Prosa</rs>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <list type="work-index">
+               <item><rs type="work" key="W306">As algemas</rs></item>
+            </list>
+            <biblStruct>
+               <analytic>
+                  <title level="a">As algemas</title>
+                  <author>
+                     <rs type="name" key="FP">Fernando Pessoa</rs>
+                  </author>
+                  <textLang mainLang="pt" otherLangs="en"/>
+               </analytic>
+               <monogr>
+                   <title level="j"><rs type="periodical" key="J101">Revista de Comércio e Contabilidade</rs></title>
+                  <imprint>
+                     <date when="1926-02-25">25 de fevereiro de 1926</date>
+                  </imprint>
+                  <biblScope unit="issue">2</biblScope>
+                  <biblScope unit="pages">33-41</biblScope>
+               </monogr>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <variantEncoding method="parallel-segmentation" location="internal"/>
+      </encodingDesc>
+   </teiHeader>
+   <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+      <graphic url="Prosa/As_algemas_1"/>
+      <graphic url="Prosa/As_algemas_2"/>
+      <graphic url="Prosa/As_algemas_3"/>
+      <graphic url="Prosa/As_algemas_4"/>
+      <graphic url="Prosa/As_algemas_5"/>
+      <graphic url="Prosa/As_algemas_6"/>
+      <graphic url="Prosa/As_algemas_7"/>
+      <graphic url="Prosa/As_algemas_8"/>
+      <graphic url="Prosa/As_algemas_9"/>
+   </facsimile>
+    <text type="orig" corresp="#W306">
+      <body>
+         <div>
+            <head>AS ALGEMAS</head>
+
+
+            <p rend="indent-first">SUPONHA o leitor que lhe diziamos:</p>
+            <p rend="indent-first">― Ha um paiz em que, depois das oito horas da noite, é crime
+               previsto e punido o comprar maçãs, bananas, uvas, ananazes e tamaras, sendo porêm
+               permitida a compra de damascos, figos, pecegos e passas. Depois das oito horas não se
+               pode ali legalmente comprar arenque, mas podem comprar-se salmão e linguado. Nêsse
+               paiz é crime comprar, depois das oito horas, um pastelão cosinhado, se estiver frio;
+               mas a lei permite a sua venda se, conforme os seus dizeres, «estiver quente ou
+               morno». A sopa em latas, que varios fabricantes fornecem, não pode ser comprada
+               depois das oito horas, a não ser que o mercieiro a aqueça. Chocolates, doces,
+               sorvêtes não podem ser comprados depois das nove e meia da noite, estando porêm
+               abertas as lojas que os fornecem. O camarão é, nessa terra, um problema juridico
+               tremendo, pois existe um camarão em latas que se não sabe se tecnicamente é camarão
+               ou conserva; e os jurisconsultos e legisladores dêsse paiz já uma vez reuniram em
+               conclave solene para determinar a categoria juridica do camarão nêsse estado. Tambem
+               nêsse paiz se não pode comprar aspirina, ou outro qualquer analgesico, depois das
+               oito horas da noite, a não ser, diz a lei, que o farmaceutico fique convencido que
+               «ha motivos razoaveis para supôr» que alguem tenha dores de cabeça. Não se pode,
+               ainda nêsse paiz, comprar, depois das oito horas da noite, um charuto ou um maço de
+               cigarros num bufete de caminho de ferro, salvo se se comprar tambem comida para
+               consumo no comboio. Na agencia de publicações, que ha ali em qualquer gare, não é
+               legal comprar, depois da mesma hora fatidica, um livro ou uma revista, ainda que a
+               agencia esteja, como em geral está, aberta. Nêsse paiz...</p>
+            <p rend="indent-first">Nesta altura o leitor, irritado, interrompe...</p>
+            <p rend="indent-first">―Não ha paiz nenhum onde isso aconteça!... A não ser que se chame
+               «paiz» a qualquer reino de revista de âno, ou a qualquer nação sonhada entre os
+               quatro muros de Rilhafoles...</p>
+            <p rend="indent-first">Enganar-se-ia o leitor que efectivamente fizesse esse reparo.
+               Existe, em verdade, o paiz onde se dão aquelas circunstancias legais. Esse paiz é a
+               Inglaterra ― a livre e prática Inglaterra. E a lei que prescreve aquilo tudo,
+               promulgada durante a Guerra e ainda em vigor, é a <hi rend="italic">Defence of the
+                  Realm Act</hi> (Lei de Defeza do Reino!), popularmente conhecida, das iniciais do
+               seu nome, pela designação de «Dora».</p>
+            <milestone rend="asterisk" unit="section"/>
+            <p rend="indent-first">Fixemo-nos um pouco nêste exemplo fantastico. Atentemos um
+               momento nêste caso espantoso. O que temos diante de nós é um sinal dos tempos. O
+               ter-se chegado a promulgar, e o continuar-se a manter, num paiz de que se diz, não
+               sem motivo, que está na vanguarda da civilização, uma lei da natureza delirante
+               daquela cujas prescripções citámos, revela flagrantemente a que ponto se chegou no
+               emprego legislativo da restricção do comercio e do consumo.</p>
+            <p rend="indent-first">A legislação restrictiva do comercio e do consumo, a
+               regulamentação pelo Estado da vida puramente individual, era corrente na civilização
+               monarquica da Edade Media, e no que dela permaneceu na subseqüente. O seculo XIX
+               considerou sempre seu titulo de gloria o ter libertado, ou ir libertando,
+               progressivamente o individuo, social e economicamente, das peias do Estado. No fundo,
+               a doutrina do seculo XIX ― representada em seu relevo maximo nas teorias sociais de
+               <rs type="name" key="P678">Spencer</rs> ― é uma reversão á politica da Grecia
+               Antiga, expressa ainda para nós na <rs type="title"><hi rend="italic"
+                  >Politica</hi></rs> de <rs type="name" key="P401">Aristóteles</rs> ― que o Estado
+               existe para o individuo, e não o individuo para o Estado, excepto quando um manifesto
+               de interêsse colectivo, como na guerra, compele o individuo a abdicar da sua
+               liberdade em proveito da defeza da sociedade, cuja existencia, aliás, é a garantia do
+               exercicio dessa sua mesma liberdade.</p>
+            <p rend="indent-first">Mas de ha um tempo para cá ― já desde antes da Guerra, mas
+               sobretudo depois da Guerra, que teve por conseqüencia acentuar certas tendencias, e
+               entre elas estas, esboçadas anteriormente ― a tendencia legislativa começou a ser
+               exactamente contrária á do seculo anterior na prática, e dos seculos anteriores na
+               teoria. Recomeçou-se a restringir, social e economicamente, a liberdade do individuo.
+               Começou a tolher-se, social e economicamente, a vida do comerciante.</p>
+            <p rend="indent-first">O problema divide-se, evidentemente, em dois problemas ― o social
+               e politico, e o comercial. O problema propriamente social resume-se nisto: que
+               utilidade, geral ou particular, para a sociedade ou para o individuo, tem o emprego
+               da legislação desta ordem? E o problema propriamente politico é o da questão das
+               funções legitimas do Estado, e dos seus naturais limites ― um dos problemas mais
+               graves, e porventura menos soluveis, da sociologia. Não pertence porêm á indole desta
+               Revista o tratar dêstes problemas, nem, portanto, sequer determinar as causas intimas
+               do fenomeno legislativo cuja evolução acabámos de sumariamente descrever.</p>
+            <p rend="indent-first">É o problema comercial que tem que preocupar-nos. E o problema
+               comercial é este: Quais são as consequencias comerciais, e economicas, da aplicação
+               da legislação restrictiva? E se as consequencias não são comercial e economicamente
+               beneficas, em proveito de quê, ou de quem, é que se julga legitimo, necessario, ou
+               conveniente produzir esse maleficio comercial e economico? E dar-se-há efectivamente
+               esse proveito?</p>
+            <p rend="indent-first">É o que vamos examinar.</p>
+            <milestone rend="asterisk" unit="section"/>
+            <p rend="indent-first">A legislação restrictiva assume cinco aspectos, consoante o
+               elemento social que pretende beneficiar. Ha, (1) a legislação restrictiva que
+               pretende beneficiar a colectividade, o paiz: é a que proíbe a importação de
+               determinados artigos, em geral os chamados «de luxo», com o fito de evitar um
+               desequilibrio cambial. Ha, (2), a legislação restrictiva que pretende beneficiar o
+               consumidor colectivo; é a que proíbe a exportação de determinados artigos, em geral
+               os chamados «de primeira necessidade», para que não escasseiem no mercado. Ha, (3), a
+               legislação restrictiva que pretende beneficiar o consumidor individual: é a que
+               proíbe ou cerceia a venda de determinados artigos ― desde a cocaina ás bebidas
+               alcoolicas ― por o seu uso, ou facil abuso, ser nocivo ao individuo; e aquela
+               legislação corrente que proíbe, por exemplo, o jogo de azar é exactamente da mesma
+               natureza. Ha, (4), a legislação restrictiva que pretende beneficiar o operario e o
+               empregado: é a que restringe as horas de trabalho, e as de abertura de
+               estabelecimentos, e põe limites e condições ao exercicio de determinados comercios e
+               de determinadas industrias. Ha, (5), a legislação restrictiva que pretende beneficiar
+               o industrial: é a legislação pautal na sua generalidade proteccionista.</p>
+            <p rend="indent-first">Fixemos, desde já, o primeiro ponto; tiremos, desde já, a
+               primeira conclusão, que é inevitavel. Todos estes tipos de legislação restrictiva ―
+               beneficiem ou não a quem pretendem beneficiar ― prejudicam aquela desgraçada entidade
+               chamada o comerciante. A 1ª especie de legislação restrictiva limita-lhe as
+               importações; a 2ª limita-lhe as exportações; a 3ª limita-lhe as vendas; a 4ª
+               limita-lhe as condições de produção, se é tambem industrial, e as horas de venda, se
+               é simples comerciante; a 5ª restringe-lhe a liberdade de concorrer. Não consideremos
+               agora se seria socialmente legitima ou ilegitima a liberdade que êle teria se essa
+               vária legislação lha não restringisse. Fixemos apenas este ponto: toda esta
+               legislação prejudica o comerciante, toda esta legislação tende a diminuir e afogar o
+               comercio dum paiz, e, na proporção em que o faz, a cercear a expansão da sua vida
+               economica. Este ponto fica assente, fica irrevogavelmente assente. Resta saber se ha
+               qualquer proveito social neste desproveito comercial, se qualquer dos elementos
+               sociais, que se procura beneficiar com este prejuizo ao comercio, efectivamente
+               beneficía com êsse prejuizo.</p>
+            <milestone rend="asterisk" unit="section"/>
+            <p rend="indent-first">A restricção das importações, e sobretudo a dos artigos «de
+               luxo», não ocorreu nunca a qualquer cerebro lucido como processo directo, ou
+               fundamental, para melhorar o cambio. Todos sabem que a melhoria cambial tem que
+               partir de origens mais vitais e mais profundas. Essa medida é tãosòmente um processo
+               acessorio, ou auxiliar, de tentar conseguir esta melhoria.</p>
+            <p rend="indent-first">Mas essas importações, que se restringem, de alguma parte hão de
+               vir. E não é de supôr que o paiz, ou paizes, de onde elas veem, aceitem de bom grado
+               essa limitação, por pequena que seja, da sua exportação. Exercerão represalias ― as
+               chamadas represalias economicas. Restringirão, por sua vez, a nossa exportação para
+               êles. E assim a limitação da nossa importação redundará numa limitação da nossa
+               exportação. O impedir que saia ouro dará em impedir tambem que êle entre. Resultado
+               final, pelo melhor: prejuizo para o comerciante importador; nenhuma influencia real
+               no cambio; prejuizo para o comerciante exportador; perturbação da vida economica
+               geral; irritação do consumidor. Resumo: prejuizo e nada.</p>
+            <milestone rend="asterisk" unit="section"/>
+            <p rend="indent-first">A restricção da exportação, para que o artigo não falte no
+               mercado, exerce-se evidentemente apenas quando se manifeste a tendencia de exportar
+               esses artigos, de preferencia a vendê-los no paiz. Ora essa tendencia só se
+               manifestará se a exportação fôr mais remuneradora. E, havendo realmente consumo no
+               paiz, a exportação será mais remuneradora só quando a moeda dêle estiver
+               desvalorisada. Ora num paiz de moeda desvalorisada um dos primeiros propositos dos
+               dirigentes deve ser o valorisá-la; provocar e estimular a exportação é um dos
+               processos mais directos de consegui-lo; mas proibir a exportação não é a maneira mais
+               recomendavel de a estimular. Isto, porêm, é o menos. Limitar a exportação é limitar a
+               produção. Obrigando o produtor, ou o comerciante seu agente, a vender abaixo do que
+               pode vender desconsola-se a produção e o comercio. Resulta que o produtor e o
+               comerciante ou procuram a porta falsa do contrabando, com o que se lesa o Estado, e
+               portanto a colectividade; ou baixam instintivamente a produção e a actividade de
+               venda por verem limitados os seus interêsses primarios. Ninguem exerce de graça uma
+               profissão, por generoso que seja fóra do exercicio déla. Depois, proíbir a exportação
+               é proíbir o comercio de exportação. Como, quando se exporta, se exporta para alguma
+               parte, e essa alguma parte, se não pode comprar a nós, comprará a outrem, segue que a
+               limitação da nossa exportação é, muitas vezes, não só a limitação da exportação
+               presente, mas tambem a da exportação futura, pois perdemos mercados, que, mais tarde,
+               quando a nossa exportação estiver reliberada, talvez já estejam conquistados por
+               outrem, e se nos não abram de novo com facilidade. Assim a legislação restrictiva
+               que visa a abastecer o mercado nacional tende, no fim, para desabastecê-lo, e, quando
+               visa a restringir temporariamente a exportação, consegue, muitas vezes, restringi-la
+               definitivamente.</p>
+            <milestone rend="asterisk" unit="section"/>
+            <p rend="indent-first">Chegámos ao ponto comico desta travessia legislativa. Chegámos ao
+               exame daquela legislação restrictiva que visa a beneficiar o individuo, impedindo que
+               êle faça mal á sua preciosa saude moral e fisica. É este o caso de legislação
+               restrictiva que se acha tipicamente exemplificado no diploma que é o exemplo máximo
+               de toda a legislação restrictiva, quer quanto á sua natureza, quer quanto aos seus
+               efeitos ― a famosa Lei Sêca dos Estados Unidos da America. Vejamos em que deu a
+               operação déssa lei.</p>
+            <p rend="indent-first">Não olhemos ao caso social; tratá-lo não está na indole désta
+               Revista, nem, portanto, na dêste artigo. Não consideremos o que ha de deprimente e de
+               ignobil na circunstancia de se prescrever a um adulto, a um homem, o que há de beber
+               e o que não há de beber; de lhe pôr açaimo, como a um cão, ou colête de fôrças, como
+               a um doido. Nem consideremos que, indo por êsse caminho, não ha logar certo onde
+               logicamente se deva parar: se o Estado nos indica o que havemos de beber, porque não
+               decretar o que havemos de comer, de vestir, de fazer? porque não prescrever onde
+               havemos de morar, com quem havemos de casar ou não casar, com quem havemos de dar-nos
+               ou não dar-nos? Todas estas coisas teem importancia para a nossa saúde fisica e
+               moral; e se o Estado se dispõe a ser medico, tutor e ama para uma délas, porque razão
+               se não disporá a sê-lo para todas?</p>
+            <p rend="indent-first">Não olhemos, tambem, a que êste interêsse paternal é exercido
+               pelo Estado, e que o Estado não é uma entidade abstrata, mas se manifesta atravez de
+               ministros, burocratas e fiscais ― homens, ao que parece, e nossos semelhantes, e
+               incompetentes portanto, do ponto de vista moral, senão de todos os pontos de vista,
+               para exercer sobre nós qualquer vigilancia ou tutéla em que sintamos uma autoridade
+               plausivel. Não olhemos a isto tudo, que indigna e repugna; olhemos só ás
+               conseqüencias rigorosamente materiais da Lei Sêca. Quais fôram elas? Fôram trez.</p>
+            <p rend="indent-first">(1) Dada a criação necessaria, para o «cumprimento» da Lei, de
+               vastas legiões de fiscais ― mal pagos, como quasi sempre são os funcionarios do
+               Estado, relativamente ao meio em que vivem ― a facil corruptibilidade dêsses
+               elementos, nêste caso tão solicitados, tornou a lei nula e inexistente para as
+               pessoas de dinheiro, ou para as dispostas a gastá-lo. Assim esta lei dum paiz
+               democratico é, na verdade, restrictiva apenas para as classes menos abastadas, e,
+               particularmente, para os mais poupados e mais sobrios dentro délas. Não ha lei
+               socialmente mais imoral que uma que produz êstes resultados. Temos, pois, como
+               primeira conseqüencia da Lei Sêca, o acrescimo de corruptibilidade dos funcionários
+               do Estado, e, ao mesmo tempo, o dos privilegios dos ricos sobre os pobres, e dos que
+               gastam facilmente sobre os que poupam.</p>
+            <p rend="indent-first">(2) Paralelamente a esta larga corrupção dos fiscais do Estado,
+               pagos, quando não para directamente fornecer bebidas alcoolicas, pelo menos para as
+               não vêr fornecer, estabeleceu-se, a dentro do Estado propriamente dito, um segundo
+               Estado, de contrabandistas, uma organização extensissima, coordenada e disciplinada,
+               com serviços complexos perfeitamente distribuidos, destinada á tecnica variada da
+               violação da Lei. Ficou definitivamente criado e organizado o comercio ilegal de
+               bebidas alcoolicas. E dá-se o caso, maravilhoso de ironia, de serem estes elementos
+               contrabandistas que energicamente se opõem á revogação da Lei Sêca, pois que é dela
+               que vivem. Afirma-se, mesmo, que, dada a poderosa influencia, eleitoral e social, do
+               Estado dos Contrabandistas, não poderá ser revogada com facilidade essa lei. Temos,
+               pois, como segunda conseqüencia da Lei Sêca, a substituição do comercio normal e
+               honesto por um comercio anormal e deshonesto, com a agravante de êste, por ter que
+               assumir uma organização poderosa para poder exercer-se, se tornar um Segundo Estado,
+               anti-social, dentro do proprio Estado. E, como derivante desta segunda conseqüencia,
+               temos, é claro, o prejuizo do Estado, pois não é de supôr que êle cobre impostos aos
+               contrabandistas.</p>
+            <p rend="indent-first">(3) Quais fôram, porêm, as conseqüencias da Lei Sêca quanto aos
+               fins que directamente visava? Já vimos que quem tem dinheiro, seja ou não alcoolico,
+               continúa a beber o que quizer. É igualmente evidente que quem tem pouco dinheiro, e é
+               alcoolico, bebe da mesma maneira e gasta mais ― isto é, prejudica-se fisicamente do
+               mesmo modo, e financeiramente mais. Ha ainda os casos, tragicamente numerosos, dos
+               alcoolicos que, não podendo por qualquer razão obter bebidas alcoolicas normais,
+               passaram a ingerir espantosos sucedaneos ― loções de cabelo, por exemplo ―, com
+               resultados pouco moralisadores para a propria saúde. Surgiram tambem no mercado
+               americano varias drogas não alcoolicas, mas ainda mais prejudiciais que o alcool;
+               essas são livremente vendidas, pois, se é certo que arruinam a saúde, arruinam-na
+               contudo a dentro da lei, e sem alcool. E o facto é que, segundo informação recente de
+               fonte boa e autorisada, se bebe mais nos Estados Unidos depois da Lei Sêca do que
+               anteriormente se bebia. Conceda-se, porêm, aos que votaram e defendem este magno
+               diploma que numa secção do publico ele produziu resultados beneficos ― aqueles
+               resultados que êles apontam no acrescimo de depositos nos bancos populares e caixas
+               economicas. Essa secção do publico, composta de individuos trabalhadores, poupados e
+               pouco alcoolicos, não podendo, com efeito, beber qualquer cousa alcoolica sem correr
+               varios riscos e pagar muito dinheiro, passou, visto não ser dada freneticamente ao
+               alcool, a abster-se dêle, poupando assim dinheiro. Isto, sim, conseguiram os
+               legisladores americanos ― «moralisar» quem não precisava ser moralisado. Temos, pois,
+               como ultima conseqüencia da Lei Sêca, um efeito excusado e inutil sobre uma parte da
+               população, um efeito nulo sobre outra, e um efeito daninho e prejudicial sobre uma
+               terceira.</p>
+            <p rend="indent-first">A Lei Sêca, é certo, é um caso extremo. Mas um caso extremo é
+               como que um caso tipico visto ao microscopio: revela flagrantemente as falhas e as
+               irregularidades dêle. O caso da Lei Sêca é extremo por duas razões ― porque a Lei
+               Sêca é uma lei absolutamente radical, e porque, principalmente em virtude disso, o
+               Estado se viu obrigado a esforçar-se para que ela efectivamente se cumprisse. As leis
+               menos radicais desta ordem ― como, entre nós, a que pretendeu restringir as horas de
+               consumo das bebidas alcoolicas ― naufragam na reacção surda e insistente do publico,
+               que as desdenha e despreza, e no desleixo de fiscalisação do proprio Estado. Nascem
+               mortas; e, como nos caso dos monstros, o melhor é que assim aconteça, pois, se vivem,
+               vivem a vida inutil de daninha da Lei Sêca dos Estados Unidos.</p>
+            <milestone rend="asterisk" unit="section"/>
+            <p rend="indent-first">A legislação que restringe as horas de trabalho dos operarios e
+               dos empregados, e que, derivadamente, limita, por exemplo, as horas de estarem
+               abertos os estabelecimentos comerciais e industriais, seria aceitavel se para a sua
+               promulgação se estudasse devidamente o equilibrio a estabelecer entre as concessões
+               legitimas a fazer aos operarios e empregados, e as necessidades, não menos legitimas,
+               da produção e do consumo. Em quasi nenhuma lei desta ordem se atende a este
+               equilibrio. O operario ou empregado é considerado como um ente à-parte, fóra do giro
+               economico da sociedade onde vive, misteriosamente desligado do industrial ou
+               comerciante que o emprega, e do consumidor a quem este serve. Legisla-se, em favor do
+               operario ou empregado, contra o comerciante e o industrial, e contra o consumidor; e
+               supõe-se que sobre êsse mesmo empregado ou operario não recairão nunca os efeitos
+               dessa legislação. Limita-se a producção com restricções sobre restricções das horas e
+               das condições de trabalho; irrita-se o consumidor com limitações sobre limitações das
+               horas e das condições de compra e de consumo. Quando, depois, a producção baixa, o
+               consumo se perturba e decresce, e a estructura social inteira (incluindo o operario e
+               o empregado) se sente variadamente disso, olha-se para essas conseqüencias como para
+               um ciclone ou um terremoto, uma coisa vinda de fóra e inteiramente imprevisivel.</p>
+            <p rend="indent-first">Expôr o assunto é, neste caso, já criticá-lo. A legislação
+               restrictiva desta especie é responsavel por grande parte das crises industriais e
+               comerciais com que o mundo inteiro hoje se vê a braços. E como a classe dos
+               empregados e operarios não é em geral composta de gente rica, é de supôr que seja
+               essa classe uma das que finalmente mais veem a sofrer com os resultados ultimos da
+               legislação que foi feita para seu exclusivo beneficio.</p>
+            <milestone rend="asterisk" unit="section"/>
+            <p rend="indent-first">A legislação pautal, que visa a proteger industrias nacionais,
+               enferma ordinariamente de um mal parecido com o de que sofre a legislação operária, a
+               que acabámos de referir-nos. Raras vezes se estuda devidamente o equilibrio a
+               estabelecer entre os interêsses dessas industrias e os interêsses do consumidor. Por
+               isso o proteccionismo é freqüentemente excessivo, e daí resulta, em uns casos, o
+               afastamento do consumidor, e um conseqüente prejuizo para a propria industria que se
+               pretendeu beneficiar; em outros casos, em que o consumo é «forçado» e a venda
+               portanto certa, o assumir a industria protegida um caracter parasitário, que a
+               desvitaliza e assim a desprepara para as contingencias economicas do futuro. A
+               legislação proteccionista, quando sábiamente orientada, consegue realmente proteger e
+               animar a industria nacional; mas o ser sábiamente orientada quer dizer que nela se
+               estudaram bem os interêsses diversos do consumidor e do comerciante importador. E se
+               estes interêsses se estudaram, e se equilibraram com os do industrial, não se trata
+               já de uma lei restrictiva, mas de uma simples medida economica sem caracter especial.
+               As leis proteccionistas só podem dizer-se restrictivas quando das pautas resulta um
+               proibicionismo evidente. São as leis desta ordem que cáem dentro do nosso estudo, e é
+               a elas que se aplicam as considerações acima feitas.</p>
+            <milestone rend="asterisk" unit="section"/>
+            <p rend="indent-first">Examinados, assim, todos os generos de legislação restrictiva,
+               chegámos á conclusão que todos êles teem de comum, (1) prejudicar o comerciante, (2)
+               produzir perturbações economicas, (3) nunca beneficiar, e as mais das vezes
+               prejudicar, as proprias classes em cujo proveito essas leis foram feitas. A
+               legislação restrictiva, em todos os seus ramos, resulta, portanto, inutil e
+               nociva.</p>
+            <p rend="indent-first">Nenhuma lei é benefica se ataca qualquer classe social, ou
+               restringe a sua liberdade. As classes sociais não vivem separadas, em compartimentos
+               estanques. Vivem em perpetua interdependencia, em constante entrepenetração. O que
+               lesa uma, lesa todas. A lei que ataca uma, é a todas que ataca. Todo este artigo é
+               uma demonstração dêsse facto.</p>
+            <p rend="indent-first">Não é pois só o comerciante, mas o publico em geral, que tem o
+               dever para consigo mesmo de reagir energica e constantemente contra a promulgação das
+               leis restrictivas, invariavelmente maleficas, como se demonstrou, por beneficas que
+               pareçam ou as intitulem.</p>
+         </div>
+      </body>
+   </text>
+</TEI>
+
+
