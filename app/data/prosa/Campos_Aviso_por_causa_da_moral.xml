@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Aviso por causa da moral</title>
+                <author>
+                    <rs type="name" key="AdC">Alvaro de Campos</rs>
+                </author>
+                <respStmt>
+                    <resp>Edição, Transcrição, Codificação</resp>
+                    <name>Jorge Uribe e Maria José Galeano</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Modelagem de dados, Codificação</resp>
+                    <name>Ulrike Henny-Krahmer</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Consultoria</resp>
+                    <name>Institut für Dokumentologie und Editorik (IDE)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+                    (IELT)</publisher>
+                <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+                <date>2021</date>
+                <availability status="restricted">
+                    <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+                </availability>
+                <idno type="filename">Campos_Aviso_por_causa_da_moral.xml</idno>
+            </publicationStmt>
+            <notesStmt>
+                <note type="genre">
+                    <rs type="genre" key="prosa">Prosa</rs>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <list type="work-index">
+                    <item>
+                        <rs type="work" key="W310">Aviso por causa da moral</rs>
+                    </item>
+                </list>
+                <biblStruct> 
+                    <monogr>
+                        <!--MJ: Revisar esta proposta de <biblStruct> pensar num possível publication type-->
+                        <title>Aviso por causa da moral</title>
+                        <author>
+                            <rs type="name" key="AdC">Álvaro de Campos</rs>
+                        </author>
+                        <textLang mainLang="pt"/>
+                        <imprint>
+                            <date from="1923-02" to="1923-03">Fevereiro/Março de 1923</date>
+                            <pubPlace>Lisboa</pubPlace>
+                            <biblScope unit="page">1p</biblScope>
+                        </imprint>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <variantEncoding method="parallel-segmentation" location="internal"/>
+        </encodingDesc>
+    </teiHeader>
+    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+        <graphic url="Prosa/Aviso_por_causa_da_moral.jpg"/>
+    </facsimile>
+    <text type="orig" corresp="#W310">
+        <body>
+            <div>
+                <head>AVISO POR CAUSA DA MORAL</head>
+                <p rend="indent-first">Quando o publico soube que os estudantes de Lisboa, nos
+                    intervallos de dizer obscenidades ás senhoras que passam, estavam empenhados em
+                    moralizar toda a gente, teve uma exclamação de impaciencia. Sim ‒ exactamente a
+                    exclamação que acaba de escapar ao leitor...</p>
+                <p rend="indent-first">Ser novo é não ser velho. Ser velho é ter opiniões. Ser novo é
+                    não querer saber de opiniões para nada. Ser novo é deixar os outros ir em paz para o
+                    Diabo com as opiniões que teem, boas ou más ‒ boas ou más, que a gente nunca sabe com
+                    quaes é que vae para o Diabo.</p>
+                <p rend="indent-first">Os moços da vida das escolas intromettem-se com os escriptores
+                    que não passam pela mesma razão porque se intromettem com as senhoras que passam. Se
+                    não sabem a razão antes de eu lh'a dizer, tambem a não saberiam depois. Se a pudessem
+                    saber, não se intrometteriam nem com as senhoras nem com os escriptores.</p>
+                <p rend="indent-first">Bolas para a gente ter que aturar isto! Ó meninos: estudem,
+                    divirtam-se e calem-se. Estudem sciencias, se estudam sciencias; estudem artes, se
+                    estudam artes; estudem lettras, se estudam lettras. Divirtam-se com mulheres, se
+                    gostam de mulheres; divirtam-se de outra maneira, se preferem outra. Tudo está certo,
+                    porque não passa do corpo de quem se diverte.</p>
+                <p rend="indent-first">Mas quanto ao resto, calem-se. Calem-se o mais silenciosamente
+                    possivel.</p>
+                <p rend="indent-first">Porque ha só duas maneiras de se ter razão. Uma é calar-se, e é a
+                    que convém aos novos. A outra é contradizer-se, mas só alguem de mais edade a pode
+                    commetter.</p>
+                <p rend="indent-first">Tudo mais é uma grande maçada para quem está presente por acaso.
+                    E a sociedade em que nascemos é o logar onde mais por acaso estamos presentes.</p>
+                
+                <p rend="indent-first">Europa, 1923</p>
+                
+                <signed rend="right"><rs type="name" key="AdC" style="b">ALVARO DE CAMPOS</rs></signed>
+                
+            </div>
+        </body>
+    </text>
+</TEI>
+
+

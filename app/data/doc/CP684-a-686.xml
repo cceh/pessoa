@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/pessoaTEI.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>CP 684 a 686</title>
+            <author>
+               <rs type="name" key="FP">Fernando Pessoa</rs>
+            </author>
+            <respStmt>
+               <resp>Transcrição, Edição</resp>
+               <name>Pedro Sepúlveda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Modelagem de dados, Codificação</resp>
+               <name>Ulrike Henny-Krahmer</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Isabel Figueiredo-Iken</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Inês Filipa Rebelo do Carmo</name>
+            </respStmt>
+            <respStmt>
+               <resp>Codificação</resp>
+               <name>Sviatoslav Drach</name>
+            </respStmt>
+            <respStmt>
+               <resp>Consultoria</resp>
+               <name>Institut für Dokumentologie und Editorik (IDE)</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
+            <publisher>Cologne Center for eHumanities (CCeH)</publisher>
+            <date>2017</date>
+            <availability status="free">
+               <licence target="http://creativecommons.org/licenses/by/3.0/"/>
+            </availability>
+            <idno type="filename">CP684-a-686.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>Biblioteca Nacional de Portugal</institution>
+                  <idno>CP 684 a 686</idno>
+               </msIdentifier>
+               <msContents>
+                  <summary>
+                     <p> Lista manuscrita. </p>
+                  </summary>
+                  <msItemStruct>
+                     <author>
+                        <rs type="name" key="FP">Fernando Pessoa</rs>
+                     </author>
+                     <note type="genre">
+                        <rs type="genre" key="lista_editorial">Lista editorial</rs>
+                     </note>
+                     <textLang mainLang="pt" otherLangs="en"/>
+                  </msItemStruct>
+               </msContents>
+               <history>
+                  <origin>
+                     <p>
+                        <origDate from="1919" to="1920" cert="medium">c. 1919-1920</origDate>
+                     </p>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+      <graphic url="Espolio Manuela Nogueira (MN)/avulsos (684).jpg"/>
+      <graphic url="Espolio Manuela Nogueira (MN)/avulsos (686).jpg"/>
+   </facsimile>
+   <text>
+      <body>
+         <div>
+            <head><hi rend="underline"><choice>
+                     <abbr>GCP</abbr>
+                     <expan>G<ex>remio</ex>
+                        <ex>de</ex> C<ex>ultura</ex> P<ex>ortugueza</ex></expan>
+                  </choice>.</hi></head>
+            <div>
+               <head><hi rend="underline">Bibliotheca:</hi></head>
+               <list>
+                  <item>Codigos telegraphicos.</item>
+                  <item>Annuarios commerciaes.</item>
+                  <item>Diccionarios technicos.</item>
+                  <item>Livros fundamentaes para o commercio.</item>
+                  <metamark rend="line" function="distinct"/>
+                  <item>Livros sobre a historia de <rs type="place">Portugal</rs>.</item>
+                  <item>Estatisticas annuais e outras.</item>
+                  <metamark rend="line" function="distinct"/>
+               </list>
+               <metamark rend="line" function="distinct"/>
+               <list>
+                  <item>Bibliotheca e archivo.</item>
+                  <item>Editoria.</item>
+                  <item>Propaganda e Informação.</item>
+               </list>
+            </div>
+            <pb n="2"/>
+            <pb n="3"/>
+            <div>
+               <head><hi rend="underline">Annuncios.</hi></head>
+               <list>
+                  <item xml:id="I1">“Displayed” — de casas portuguezas importantes</item>
+                  <item xml:id="I2" rend="indent-2">“Directory” — de um grande numero de <lb/> Casas
+                     de menor importancia. <note target="range(I1,I3)" place="margin-left" n="2"
+                        type="addition">
+                        <metamark rend="curly-bracket" function="grouping">
+                           <label rend="rotate-right">Portuguezes</label>
+                        </metamark>
+                     </note>
+                  </item>
+                  <item xml:id="I3">“Required” — <choice>
+                        <abbr/>
+                        <expan>de casas</expan>
+                     </choice> a que pudesse haver.</item>
+               </list>
+               <list>
+                  <item xml:id="I4" rend="indent-2">
+                     <label>1.</label> Das casas que annunciaram sempre e em todas<lb/>as magazines
+                     (ex. <gap reason="illegible" unit="word" extent="1"/>, <gap reason="illegible"
+                        unit="word" extent="1"/>
+                     <supplied resp="PS" reason="omitted-in-original"/>)</item>
+                  <item xml:id="I5" rend="indent-2">
+                     <label>2.</label> De casas que tivessem interesse em<lb/>annunciar numa
+                     revista que embora <lb/>escripta em Inglez, é lida tambem<lb/>em <rs
+                        type="place">Portugal</rs>. <note target="range(I4,I5)" place="margin-left"
+                        type="addition" n="2">
+                        <metamark rend="curly-bracket" function="grouping">
+                           <label rend="rotate-right">Estrangeiros</label>
+                        </metamark>
+                     </note>
+                  </item>
+               </list>
+            </div>
+         </div>
+      </body>
+   </text>
+</TEI>
