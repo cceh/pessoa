@@ -222,18 +222,18 @@
                         </div>
                         <div xml:id="source-publications">
                             <head>Sources of publications</head>
+                            <div xml:id="work-index">
+                                <head>Work index</head>
+                            </div>
                         </div>
-                        <div>
-                            <head>Work index</head>
-                        </div>
+                        
                         <div>
                             <head>Bibliographic description</head>
                             <p>The bibliographic information of the publications are described in an
                                 element <gi>biblStruct</gi>, in which only bibliographic
                                 sub-elements in a specific order appear, according to the
-                                conventional TEI guidelines:</p>
-                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                                <biblStruct>
+                                general TEI guidelines:</p>
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples"><biblStruct>
                                     <analytic>
                                         <title level="a">Reincidindo...</title>
                                         <author>
@@ -254,7 +254,7 @@
                                 </biblStruct>
                             </egXML>
                             <p>The description of the bibliographic information has two parts. The
-                                first part is given in the element <gi>analytic</gi>(analytic
+                                first part is given in the element <gi>analytic</gi> (analytic
                                 level):</p>
                             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                 <analytic>
@@ -268,16 +268,20 @@
                             <p>This part contains the bibliographic title of the item, such as an
                                 article or poem, that is published within a monograph or journal
                                 rather than as an independent publication. It also includes the
-                                attribute key value to indicate the author, which usually refers to
-                                Pessoa himself or, in some cases, to one of his heteronyms.
-                                Furthermore, the element <gi>analytic</gi> provides a value to
-                                indicate the primary language of the bibliographic work, as well as
+                                attribute <att>key</att> to indicate the author, which usually refers to
+                                Pessoa himself (with the identifier <val>FP</val>) or, in some cases,
+                                to one of his heteronyms (<val>AC</val>, <val>AcD</val>, <val>RR</val>, or
+                                <val>BS</val>).
+                                Furthermore, in the analytic part,
+                                the element <gi>textLang</gi> provides a value to
+                                indicate the primary language of the bibliographic work in the attribute
+                                <att>mainLang</att>, as well as
                                 one or more values to identify any other languages used in the
-                                published work.</p>
+                                published work in the <att>otherLangs</att>.</p>
                             <p>The element <gi>monogr</gi> (monographic level) provides the second
                                 part of the bibliographic description. It contains the bibliographic
                                 information about the item (e.g., a monograph or a journal) that was
-                                published as a separate physical object (i.e., a stand-alone part)
+                                published as an independent object (i.e., a stand-alone part)
                                 and which includes the work described in the <gi>analytic</gi>
                                 element:</p>
                             <egXML xmlns="http://www.tei-c.org/ns/Examples">
