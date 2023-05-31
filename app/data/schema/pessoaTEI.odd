@@ -142,7 +142,6 @@
                                 rend="italic">publications</hi> published bibliographic items, the
                             source description for these two types of resources is made in a
                             different way, as outlined in the following subsections.</p>
-
                         <div xml:id="source-documents">
                             <head>Sources of documents</head>
                             <p>The sources of the documents are encoded inside of an element
@@ -218,6 +217,72 @@
                             </div>
                             <div>
                                 <head>History</head>
+                                <p>The third part, which contains information about the history of
+                                    the source, is described in an element <gi>history</gi>. Inside
+                                        <gi>history</gi>, there is the element <gi>origDate</gi>
+                                    (origin date), which is enclosed by the elements <gi>origin</gi>
+                                    and <gi>p</gi>:</p>
+                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                    <history>
+                                        <origin>
+                                            <p>
+                                                <origDate>?</origDate>
+                                            </p>
+                                        </origin>
+                                    </history>
+                                </egXML>
+                                <p>The element <gi>origDate</gi> contains various forms to identify
+                                    the origin date of a source document. In general, a distinction
+                                    is made between certain and uncertain data. The indication of
+                                    uncertainty is done through the use of the attribute
+                                        <att>cert</att>, which, when used, always has the value
+                                        <val>medium</val>:</p>
+                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                    <p>
+                                        <origDate when="1913" cert="medium">c. 1913</origDate>
+                                    </p>
+                                </egXML>
+                                <p>As already indicated in the two examples above, the
+                                    representation of the temporal data itself may vary. The
+                                    following variations are possible:
+                                    <lg>
+                                        <l>(1) Only providing a year.</l>
+                                        <l>(2) Providing a year along with a month.</l>
+                                        <l>(3) Providing a year along with month and day.</l>
+                                        <l>(4) Not providing a date, indicated by a question mark.</l>
+                                    </lg>
+                                    To indicate the first three variations of possible origin
+                                    dates, there are also different options expressed through
+                                    different attributes. The attribute <att>when</att>, for
+                                    example, specifies a particular date:</p>
+                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                    <p>
+                                        <origDate when="1933-02-14" cert="medium">c. 14-2-1933</origDate>
+                                    </p>
+                                </egXML>
+                                <p>The attributes <att>from</att> and <att>to</att> indicate a
+                                    specific time period:</p>
+                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                    <p>
+                                        <origDate from="1916" to="1919">1916-1919</origDate>
+                                    </p>
+                                </egXML>
+                                <p>The attribute <att>notBefore</att> indicates that the occurrence
+                                    happened only after a certain point in time:</p>
+                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                    <p>
+                                        <origDate notBefore="1933">post. 1933</origDate>
+                                    </p>
+                                </egXML>
+                                <p>The attribute <att>notAfter</att> indicates that the occurrence
+                                    happened only before a certain point in time:</p>
+                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                    <p>
+                                        <origDate notAfter="1922-12">ant. Dezembro de 1922</origDate>
+                                    </p>
+                                </egXML>
+                                <p>Only when specifying a missing date, indicated by a question
+                                    mark, none of the mentioned attributes are used.</p>
                             </div>
                         </div>
                         <div xml:id="source-publications">
@@ -225,15 +290,36 @@
                             <div xml:id="work-index">
                                 <head>Work index</head>
                             </div>
-                        </div>
-                        
-                        <div>
-                            <head>Bibliographic description</head>
-                            <p>The bibliographic information of the publications are described in an
-                                element <gi>biblStruct</gi>, in which only bibliographic
-                                sub-elements in a specific order appear, according to the
-                                general TEI guidelines:</p>
-                            <egXML xmlns="http://www.tei-c.org/ns/Examples"><biblStruct>
+                            <div xml:id="bibliographic-description">
+                                <head>Bibliographic description</head>
+                                <p>The bibliographic information of the publications are described
+                                    in an element <gi>biblStruct</gi>, in which only bibliographic
+                                    sub-elements in a specific order appear, according to the
+                                    general TEI guidelines:</p>
+                                <egXML xmlns="http://www.tei-c.org/ns/Examples"><biblStruct>
+                                        <analytic>
+                                            <title level="a">Reincidindo...</title>
+                                            <author>
+                                                <rs type="name" key="FP">Fernando Pessoa</rs>
+                                            </author>
+                                            <textLang mainLang="pt" otherLangs="en"/>
+                                        </analytic>
+                                        <monogr>
+                                            <title level="j">
+                                                <rs type="periodical" key="J5">A Águia</rs>
+                                            </title>
+                                            <imprint>
+                                                <date when="1912-05">maio de 1912</date>
+                                            </imprint>
+                                            <biblScope unit="issue">5</biblScope>
+                                            <biblScope unit="page">137-144</biblScope>
+                                        </monogr>
+                                    </biblStruct>
+                                </egXML>
+                                <p>The description of the bibliographic information has two parts.
+                                    The first part is given in the element <gi>analytic</gi>
+                                    (analytic level):</p>
+                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                     <analytic>
                                         <title level="a">Reincidindo...</title>
                                         <author>
@@ -241,6 +327,27 @@
                                         </author>
                                         <textLang mainLang="pt" otherLangs="en"/>
                                     </analytic>
+                                </egXML>
+                                <p>This part contains the bibliographic title of the item, such as
+                                    an article or poem, that is published within a monograph or
+                                    journal rather than as an independent publication. It also
+                                    includes the attribute <att>key</att> to indicate the author,
+                                    which usually refers to Pessoa himself (with the identifier
+                                        <val>FP</val>) or, in some cases, to one of his heteronyms
+                                        (<val>AC</val>, <val>AcD</val>, <val>RR</val>, or
+                                        <val>BS</val>). Furthermore, in the analytic part, the
+                                    element <gi>textLang</gi> provides a value to indicate the
+                                    primary language of the bibliographic work in the attribute
+                                        <att>mainLang</att>, as well as one or more values to
+                                    identify any other languages used in the published work in the
+                                        <att>otherLangs</att>.</p>
+                                <p>The element <gi>monogr</gi> (monographic level) provides the
+                                    second part of the bibliographic description. It contains the
+                                    bibliographic information about the item (e.g., a monograph or a
+                                    journal) that was published as an independent object (i.e., a
+                                    stand-alone part) and which includes the work described in the
+                                        <gi>analytic</gi> element:</p>
+                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                     <monogr>
                                         <title level="j">
                                             <rs type="periodical" key="J5">A Águia</rs>
@@ -251,51 +358,76 @@
                                         <biblScope unit="issue">5</biblScope>
                                         <biblScope unit="page">137-144</biblScope>
                                     </monogr>
-                                </biblStruct>
-                            </egXML>
-                            <p>The description of the bibliographic information has two parts. The
-                                first part is given in the element <gi>analytic</gi> (analytic
-                                level):</p>
-                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                                <analytic>
-                                    <title level="a">Reincidindo...</title>
-                                    <author>
-                                        <rs type="name" key="FP">Fernando Pessoa</rs>
-                                    </author>
-                                    <textLang mainLang="pt" otherLangs="en"/>
-                                </analytic>
-                            </egXML>
-                            <p>This part contains the bibliographic title of the item, such as an
-                                article or poem, that is published within a monograph or journal
-                                rather than as an independent publication. It also includes the
-                                attribute <att>key</att> to indicate the author, which usually refers to
-                                Pessoa himself (with the identifier <val>FP</val>) or, in some cases,
-                                to one of his heteronyms (<val>AC</val>, <val>AcD</val>, <val>RR</val>, or
-                                <val>BS</val>).
-                                Furthermore, in the analytic part,
-                                the element <gi>textLang</gi> provides a value to
-                                indicate the primary language of the bibliographic work in the attribute
-                                <att>mainLang</att>, as well as
-                                one or more values to identify any other languages used in the
-                                published work in the <att>otherLangs</att>.</p>
-                            <p>The element <gi>monogr</gi> (monographic level) provides the second
-                                part of the bibliographic description. It contains the bibliographic
-                                information about the item (e.g., a monograph or a journal) that was
-                                published as an independent object (i.e., a stand-alone part)
-                                and which includes the work described in the <gi>analytic</gi>
-                                element:</p>
-                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                                <monogr>
-                                    <title level="j">
-                                        <rs type="periodical" key="J5">A Águia</rs>
-                                    </title>
-                                    <imprint>
-                                        <date when="1912-05">maio de 1912</date>
-                                    </imprint>
-                                    <biblScope unit="issue">5</biblScope>
-                                    <biblScope unit="page">137-144</biblScope>
-                                </monogr>
-                            </egXML>
+                                </egXML>
+                                <p>The element <gi>monogr</gi> always includes the element
+                                        <gi>biblScope</gi>, which defines the scope of the
+                                    bibliographic work mentioned in the first part. The scope may
+                                    encompass various details, such as page numbers or a named
+                                    subdivision within a larger work.</p>
+                                <p>In some cases, a work has been published more than once, which
+                                    necessitates the use of multiple <gi>biblStruct</gi>
+                                    elements:</p>
+                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                    <biblStruct xml:id="Contemporânea_1922">
+                                        <analytic>
+                                            <title level="a">Mar Português</title>
+                                            <author>
+                                                <rs type="name" key="FP">Fernando Pessoa</rs>
+                                            </author>
+                                            <textLang mainLang="pt"/>
+                                        </analytic>
+                                        <monogr>
+                                            <title level="j">
+                                                <rs type="periodical" key="J11">Contemporânea</rs>
+                                            </title>
+                                            <imprint>
+                                                <date when="1922-10">outubro de 1922</date>
+                                            </imprint>
+                                            <biblScope unit="issue">4</biblScope>
+                                            <biblScope unit="page">9-14</biblScope>
+                                        </monogr>
+                                    </biblStruct>
+                                    <biblStruct xml:id="Leitura_1926">
+                                        <analytic>
+                                            <title level="a">Mar Português</title>
+                                            <author>
+                                                <rs type="name" key="FP">Fernando Pessoa</rs>
+                                            </author>
+                                            <textLang mainLang="pt"/>
+                                        </analytic>
+                                        <monogr>
+                                            <title level="j">
+                                                <rs type="periodical" key="J91">Leitura para todos —
+                                                  Revista mensal ilustrada</rs>
+                                            </title>
+                                            <imprint>
+                                                <date when="1926-06">junho de 1926</date>
+                                                <pubPlace>Rio de Janeiro</pubPlace>
+                                            </imprint>
+                                            <biblScope unit="issue">83</biblScope>
+                                            <biblScope unit="page">22-26</biblScope>
+                                        </monogr>
+                                    </biblStruct>
+                                </egXML>
+                                <p>In order to formally address these multiple bibliographic
+                                    information, they require an identifier in the XML. Therefore,
+                                    each carries an attribute <att>xml:id</att> that has a unique
+                                    value. These identifiers consistently adhere to a specific
+                                    pattern: they begin with the abbreviated title of the journal or
+                                    monograph, followed by an underscore, and then the year of
+                                    publication. Accordingly, for the above example of the work
+                                    entitled "<val>Mar Português</val>", published once in 1922 in
+                                    the journal "<val>Contemporânea</val>" and again four years
+                                    later in the journal "<val>Leitura para todos - Revista mensal
+                                        ilustrada</val>", the following two IDs result:
+                                        "<val>Contemporânea_1922</val>" and
+                                    "<val>Leitura_1926</val>".</p>
+                                <p>The purpose of assigning the identifiers is to enable a reference
+                                    in the text to the specific place of publication as well as to
+                                    the respective facsimiles from the various issues. In this way,
+                                    variations within a text can be clearly assigned to a specific
+                                    source and formally linked to it.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
