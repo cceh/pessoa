@@ -244,20 +244,20 @@
                                 </egXML>
                                 <p>As already indicated in the two examples above, the
                                     representation of the temporal data itself may vary. The
-                                    following variations are possible:
-                                    <lg>
+                                    following variations are possible: <lg>
                                         <l>(1) Only providing a year.</l>
                                         <l>(2) Providing a year along with a month.</l>
                                         <l>(3) Providing a year along with month and day.</l>
-                                        <l>(4) Not providing a date, indicated by a question mark.</l>
-                                    </lg>
-                                    To indicate the first three variations of possible origin
+                                        <l>(4) Not providing a date, indicated by a question
+                                            mark.</l>
+                                    </lg> To indicate the first three variations of possible origin
                                     dates, there are also different options expressed through
                                     different attributes. The attribute <att>when</att>, for
                                     example, specifies a particular date:</p>
                                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                     <p>
-                                        <origDate when="1933-02-14" cert="medium">c. 14-2-1933</origDate>
+                                        <origDate when="1933-02-14" cert="medium">c.
+                                            14-2-1933</origDate>
                                     </p>
                                 </egXML>
                                 <p>The attributes <att>from</att> and <att>to</att> indicate a
@@ -287,8 +287,32 @@
                         </div>
                         <div xml:id="source-publications">
                             <head>Sources of publications</head>
+                            <!-- Hier muss noch ein Absatz geschrieben werden -->
                             <div xml:id="work-index">
                                 <head>Work index</head>
+                                <!-- Hier muss noch ein Absatz geschrieben werden -->
+                                <p>Within the element <gi>sourceDesc</gi>, there is a element
+                                        <gi>list</gi> with the attribute <att>type</att>, indicates
+                                    by the value <val>work-index</val> that it functions as a list
+                                    for indexing works. The element <gi>list</gi> can contain
+                                    multiple <gi>item</gi> elements, but there will always be at
+                                    least one <gi>item</gi> element representing a single entry in
+                                    the list. Each <gi>item</gi> element contains an element
+                                        <gi>rs</gi> (referencing string) with the attribute
+                                        <att>type</att> (in which the value <val>work</val> can
+                                    always be found) and the attribute <att>key</att>. The attribute
+                                        <att>key</att> holds a unique key-value that consistently
+                                    follows a specific pattern, as demonstrated in the example
+                                    below: It begins with the letter "W" followed by a consecutive
+                                    number.</p>
+                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                    <sourceDesc>
+                                        <list type="work-index">
+                                            <item>
+                                                <rs type="work" key="W321">“António” — António, de António Botto</rs>
+                                            </item>
+                                        </list> [...] </sourceDesc>
+                                </egXML>
                             </div>
                             <div xml:id="bibliographic-description">
                                 <head>Bibliographic description</head>
