@@ -119,7 +119,7 @@
     </xsl:template>
     
     <!-- notes that are part of the text (see the corresponding JavaScript in page/prosa.html) -->
-    <xsl:template match="note[not(@type)]">
+    <xsl:template match="note[not(@type)][@label]">
         <span class="note">
             <span class="label"><xsl:apply-templates select="label"/></span>
             <span class="text"><xsl:apply-templates select="child::*[name() != 'label'] | text()"/></span>
