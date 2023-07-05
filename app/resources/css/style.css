@@ -195,6 +195,9 @@ label{
 #title h1 {
     margin-top:10px;
 }
+h1.docTitle {
+    font-size: 3em;
+}
 .highlight {
     text-decoration:underline;
 }
@@ -1505,7 +1508,7 @@ div.text div.item span.label {
 div.text div.item sup {
     vertical-align: middle;
 }
-div.text p.center {
+div.text p.center, div.pub p.center {
     text-align: center;
 }
 div.text p.right {
@@ -1813,6 +1816,18 @@ div.text span.transposition.above {
 /* STYLES FOR THE XSLT TRANSFORMATION OF PUBLICATIONS */
 div.pub {
     padding-right: 1em;
+}
+div.poem {
+    position: relative;
+}
+div.epigraph {
+    margin: 5em 0;
+}
+p.docImprint {
+    margin-top: 10em;
+}
+p.docAuthor {
+    font-size: 1.5em;
 }
 div#text-div .signed.indent-13 {
     text-indent: 30%;

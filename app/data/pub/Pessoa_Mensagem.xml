@@ -82,9 +82,8 @@
          </notesStmt>
          <sourceDesc>
             <list type="work-index">
-               <item>
-                  <rs type="work" key="W223">Mensagem</rs>
-               </item>
+               <item><rs type="work" key="W223">Mensagem</rs></item>
+               <item></item>
             </list>
             <biblStruct>
                <monogr>
@@ -184,24 +183,29 @@
    <text type="orig" corresp="#W223">
       <front>
          <titlePage>
+            <pb/>
             <docAuthor>Fernando Pessoa</docAuthor><lb/>
             <docTitle>
                <titlePart>Mensagem</titlePart><lb/>
             </docTitle>
             <docImprint>Lisboa 1934<lb/>Parceria Antonio Maria Pereira 44 Rua Augusta 54</docImprint><lb/>
          </titlePage>
-         <titlePage>
+         <div>
+            <pb/>
             <epigraph>
-               <ab>Benedictus Dominus Deus<lb/> Noster Qui Dedit Nobis<lb/> Signum.</ab>
+               <ab rend="indent-2">Benedictus Dominus Deus<lb/> Noster Qui Dedit Nobis<lb/> Signum.</ab>
             </epigraph>
-         </titlePage>
+         </div>
       </front>
       <body>
-         <div>
+         <div type="part">
+            <pb/>
             <head>PRIMEIRA PARTE</head>
             <head>BRASÃO</head>
+            <pb/>
             <ab rend="right">BELLUM SINE BELLO.</ab>
-            <div>
+            <div type="subpart">
+               <pb/>
                <head>I.</head>
                <head>OS CAMPOS</head>
                <div type="poem" corresp="XXX"><!--JU: é preciso definir se fazemos um corresp com os títulos dos poemas, e ver como se faz coincidir isso

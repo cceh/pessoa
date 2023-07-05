@@ -34,7 +34,7 @@
                     Tradição (IELT)</publisher>
                 <publisher>Cologne Center for eHumanities (CCeH)</publisher>
                 <date>2017</date>
-                <availability status="restricted">
+                <availability status="free">
                     <licence target="http://creativecommons.org/licenses/by/3.0/"/>
                 </availability>
                 <idno type="filename">Pessoa_Antinous.xml</idno>
@@ -49,13 +49,6 @@
                     <item><rs type="work" key="323">Antinous</rs></item>
                 </list>
                 <biblStruct>
-                    <analytic>
-                        <title level="a">Antinous</title>
-                        <author>
-                            <rs type="name" key="FP">Fernando Pessoa</rs>
-                        </author>
-                        <textLang mainLang="en"/>
-                    </analytic>
                     <monogr>
                         <title>Antinous</title>
                         <author>
@@ -73,7 +66,8 @@
                                     <abbr>Co<am>.</am></abbr>
                                     <expan>Co<ex>mpanhia</ex></expan>
                                 </choice> 190, Rua do Ouro, 192</publisher>
-                            <publisher>Sociedade Typographica Editora ― 100, R. d'alegria, Lisboa</publisher>
+                            <publisher>Sociedade Typographica Editora ― 100, R. d'alegria,
+                                Lisboa</publisher>
                             <biblScope unit="page">16 pp.</biblScope>
                         </imprint>
                     </monogr>
@@ -85,10 +79,6 @@
         </encodingDesc>
     </teiHeader>
     <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
-        <graphic url="Pessoa_Antinous_1.jpg"/>
-        <graphic url="Pessoa_Antinous_2.jpg"/>
-        <graphic url="Pessoa_Antinous_3.jpg"/>
-        <graphic url="Pessoa_Antinous_4.jpg"/>
         <graphic url="Pessoa_Antinous_5.jpg"/>
         <graphic url="Pessoa_Antinous_6.jpg"/>
         <graphic url="Pessoa_Antinous_7.jpg"/>
@@ -110,34 +100,28 @@
     <text type="orig" corresp="#W323">
         <front>
             <titlePage>
+                <pb/>
                 <docTitle>
                     <titlePart type="main">ANTINOUS</titlePart>
-                    <titlePart type="sub">
-                        A POEM BY<lb/><rs type="name" role="author" key="FP" style="b">FERNANDO PESSOA</rs>
-                    </titlePart>
+                    <titlePart type="sub">A POEM</titlePart>
                 </docTitle>
-                <byline rend="right">LISBON
-                </byline>
-                <byline rend="left">1918
-                </byline>
+                <byline>BY <lb/><rs type="name" role="author" key="FP" style="b">FERNANDO
+                        PESSOA</rs></byline>
+                <docImprint>LISBON <lb/> MONTEIRO <choice>
+                        <abbr>&amp;</abbr>
+                        <expan>e</expan>
+                    </choice>
+                    <choice>
+                        <abbr>CO<am>.</am></abbr>
+                        <expan>CO<ex>MPANHIA</ex></expan>
+                    </choice>
+                    <lb/>190, Rua do Ouro, 192<lb/><metamark rend="dots" function="placeholder"
+                    />1918</docImprint>
             </titlePage>
-            <titlePage>
-                <docTitle>
-                    <titlePart type="main">ANTINOUS</titlePart>
-                    <titlePart type="sub">
-                        A POEM
-                    </titlePart>
-                </docTitle>
-            </titlePage>
-            <titlePage>
-                <docTitle>
-                    <titlePart type="main">ANTINOUS</titlePart>
-                    <titlePart type="sub">
-                        A POEM <lb/>BY <lb/><rs type="name" role="author" key="FP" style="b">FERNANDO PESSOA</rs>
-                    </titlePart>
-                </docTitle>
-                <byline>LISBON <lb/> MONTEIRO <choice><abbr>&amp;</abbr><expan>e</expan></choice> <choice><abbr>CO<am>.</am></abbr><expan>CO<ex>MPANHIA</ex></expan></choice> <lb/>190, Rua do Ouro, 192<lb/><metamark rend="dots" function="placeholder"/>1918</byline>
-            </titlePage>
+            <div>
+                <pb/>
+                <p>Printed by «Sociedade Typographica Editora»—100, R. d'Alegria - Lisbon</p>
+            </div>
         </front>
         <body>
             <head><rs type="name" key="P710">Antinous</rs></head>
@@ -152,10 +136,8 @@
                     <l>On the low couch, on whose denuded whole,</l>
                     <l>To <rs type="name" key="P709">Hadrian</rs>'s eyes, that at their seeing
                         bled,</l>
-                    <l>The shadowy light of Death's eclipse was
-                        shed.</l>
+                    <l>The shadowy light of Death's eclipse was shed.</l>
                 </lg>
-
                 <lg>
                     <l>The boy lay dead and the day seemed a night</l>
                     <l>Outside. The rain fell like a sick affright</l>
@@ -163,7 +145,6 @@
                     <l>Through the mind's galleries of their past delight</l>
                     <l>The very light of memory was dim.</l>
                 </lg>
-
                 <lg>
                     <l>O hands that clasped erewhile <rs type="name" key="P709">Hadrian</rs>'s warm
                         hands,</l>
@@ -191,19 +172,18 @@
                     <l>His love is on a universal stage.</l>
                     <l>A thousand unborn eyes weep with his misery.</l>
                 </lg>
-
                 <lg>
                     <l><rs type="name" key="P710">Antinous</rs> is dead, is dead forever,</l>
                     <l>Is dead forever and the loves lament.</l>
-                    <l><rs type="name" key="P574" style="b">Venus</rs> herself, that was <rs type="name"
-                            key="P612" style="b">Adonis</rs>' lover,</l>
+                    <l><rs type="name" key="P574" style="b">Venus</rs> herself, that was <rs
+                            type="name" key="P612" style="b">Adonis</rs>' lover,</l>
                     <l>Seeing him again, having lived, dead again,</l>
                     <l>Lends her great skyey grief now to be blent</l>
                     <l>With <rs type="name" key="P709">Hadrian</rs>'s pain.</l>
                 </lg>
-
                 <lg>
-                    <l>Now is <rs type="name" key="P604" style="c">Apollo</rs> sad because the stealer</l>
+                    <l>Now is <rs type="name" key="P604" style="c">Apollo</rs> sad because the
+                        stealer</l>
                     <l>Of his white body is forever cold.</l>
                     <l>In vain shall kisses on that nippled point</l>
                     <l>Covering his heart-beats' silent place implore</l>
@@ -212,7 +192,6 @@
                     <l>Of love. Now no caressing hands anoint</l>
                     <l>With growing joy that body's lusting lore.</l>
                 </lg>
-
                 <lg>
                     <l>The rain falls, and he lies like one who hath</l>
                     <l>Forgotten all the gestures of his love</l>
@@ -228,7 +207,6 @@
                     <l>My eyelids till my closed eyes seem to guess</l>
                     <l>The kiss they feel laid in my heart's breast-bed.»</l>
                 </lg>
-
                 <lg>
                     <l>O <rs type="name" key="P709">Hadrian</rs>, what shall now thy cold life
                         be?</l>
@@ -241,7 +219,6 @@
                     <l>No longer of the size of thy life, mating</l>
                     <l>Thy empire with thy love's bold tendernesses.</l>
                 </lg>
-
                 <lg>
                     <l>Now are thy doors closed upon beauty and joy.</l>
                     <l>Throw ashes on thy head!</l>
@@ -252,7 +229,6 @@
                     <l>And uncloy with more cloying, and annoy</l>
                     <l>With newer uncloying till thy senses bled.</l>
                 </lg>
-
                 <lg>
                     <l>His hand and mouth knew gamuts musical</l>
                     <l>Of vices thy worn spine was hurt to follow.</l>
@@ -262,7 +238,6 @@
                     <l>To thy shaken flesh, and thou wouldst tremble and fall</l>
                     <l>Back on thy cushions with thy mind's sense hushed.</l>
                 </lg>
-
                 <lg>
                     <l>«Beautiful was my love, yet melancholy.</l>
                     <l>He had that art, of love's arts most unholy,</l>
@@ -272,7 +247,6 @@
                     <l>Under his wet locks Death's blue paleness wages</l>
                     <l>Now war upon our pity with sad smile».</l>
                 </lg>
-
                 <lg>
                     <l>Even as he thinks, the lust that is no more</l>
                     <l>Than a memory of lust revives and takes</l>
@@ -286,7 +260,6 @@
                     <l>Remain enough to bleed his last nerve's strand,</l>
                     <l>O sweet and cruel Parthian fugitives!</l>
                 </lg>
-
                 <lg>
                     <l>He rises, mad, and looks upon his lover,</l>
                     <l>That now can love nothing but what none know.</l>
@@ -299,7 +272,6 @@
                     <l>And love is still the Presence and the Mover.</l>
                     <l>Then his lips cease on the other lips' cold sloth.</l>
                 </lg>
-
                 <lg>
                     <l>But there the wanting breath reminds his lips</l>
                     <l>That between him and his boy-love the mist</l>
@@ -309,7 +281,6 @@
                     <l>But their love-orison is not understood.</l>
                     <l>The god is dead whose cult was to be kissed!</l>
                 </lg>
-
                 <lg>
                     <l>He lifts his hand up to where heaven should be</l>
                     <l>And cries on the mute gods to know his pain.</l>
@@ -321,7 +292,6 @@
                     <l>But give again the boy to be arm-reached!</l>
                     <l>Forego that space ye meant to be his grave!</l>
                 </lg>
-
                 <lg>
                     <l>Take all the female beauties of the earth!</l>
                     <l>Take all afar and rend them if ye will!</l>
@@ -338,7 +308,6 @@
                     <l>From <rs type="name" key="P709">Hadrian</rs>'s arms to thine his beauty
                         steal'st.</l>
                 </lg>
-
                 <lg>
                     <l>He was a kitten playing with lust, playing</l>
                     <l>With his own and with <rs type="name" key="P709">Hadrian</rs>'s, sometimes
@@ -352,7 +321,6 @@
                     <l>By the side of lust looking at it, now spying</l>
                     <l>Which way to take lust in his lust's withholding.</l>
                 </lg>
-
                 <lg>
                     <l>Thus did the hours slide from their tangled hands</l>
                     <l>And from their mixed limbs the moments slip.</l>
@@ -370,14 +338,15 @@
                     <l>Half-costumes, now a posing nudity</l>
                     <l>That imitates some god's eternity</l>
                     <l>Of body statue-known to craving men.</l>
-                    <l>Now was he <rs type="name" key="P574" style="b">Venus</rs>, risen from the seas;</l>
-                    <l>And now was he <rs type="name" key="P604" style="c">Apollo</rs>, white and golden;</l>
+                    <l>Now was he <rs type="name" key="P574" style="b">Venus</rs>, risen from the
+                        seas;</l>
+                    <l>And now was he <rs type="name" key="P604" style="c">Apollo</rs>, white and
+                        golden;</l>
                     <l>Now as <rs type="name" key="P712">Jove</rs> sate he in mock-judgment over</l>
                     <l>The presence at his feet of his slaved lover;</l>
                     <l>Now was he an acted rite, by one beholden,</l>
                     <l>In ever-repositioned mysteries.</l>
                 </lg>
-
                 <lg>
                     <l>Now he is something anyone can be.</l>
                     <l>O white negation of the thing it is!</l>
@@ -390,7 +359,6 @@
                     <l>That is i'th'heart like faces in the gloaming--</l>
                     <l>Mere shining shadows of the forms they had.</l>
                 </lg>
-
                 <lg>
                     <l>The rain again like a vague pain arose</l>
                     <l>And put the sense of wetness in the air.</l>
@@ -401,7 +369,6 @@
                     <l>A clearer presence to himself, and said</l>
                     <l>These words unuttered, save to his soul's dread:</l>
                 </lg>
-
                 <lg>
                     <l>«I shall build thee a statue that will be</l>
                     <l>To the astonished future evidence</l>
@@ -415,7 +382,6 @@
                     <l>Shall, like a curse-seeming god's boon earth-brought,</l>
                     <l>Inevitably inherit.</l>
                 </lg>
-
                 <lg>
                     <l>«Ay, this thy statue shall I build, and set</l>
                     <l>Upon the pinnacle of being-thine. Let Time</l>
@@ -430,7 +396,6 @@
                     <l>Our love shall speak its joy and woe, death-blent,</l>
                     <l>Over infinities and eternities!</l>
                 </lg>
-
                 <lg>
                     <l>«The memory of our love shall bridge the ages.</l>
                     <l>It shall loom white out of the past and be</l>
@@ -438,7 +403,6 @@
                     <l>In every heart the future shall give rages</l>
                     <l>Of not being our love's contemporary.</l>
                 </lg>
-
                 <lg>
                     <l>«Yet oh that this were needed not, and thou</l>
                     <l>Wert the red flower perfuming my life,</l>
@@ -460,7 +424,6 @@
                     <l>Its wish to being, now felt he he was blind</l>
                     <l>In some point of his seen wish undefined.</l>
                 </lg>
-
                 <lg>
                     <l>When love meets death we know not what to feel.</l>
                     <l>When death foils love we know not what to know.</l>
@@ -469,7 +432,6 @@
                     <l>And to a sullen emptiness congeal.</l>
                     <l>Then again the gods fanned love's darkening glow.</l>
                 </lg>
-
                 <lg>
                     <l>«Thy death has given me a newer lust--</l>
                     <l>A flesh-lust raging for eternity.</l>
@@ -482,7 +444,6 @@
                     <l>No things impossible our wishes mar</l>
                     <l>Nor pain our hearts with change and time and strife.</l>
                 </lg>
-
                 <lg>
                     <l>«Love, love, my love! thou art already a god.</l>
                     <l>This thought of mine, which I a wish believe,</l>
@@ -506,14 +467,12 @@
                     <l>And think not that strange evil of thee</l>
                     <l>That to think thee mortal would be.</l>
                 </lg>
-
                 <lg>
                     <l>«My love, my love! My god-love! Let me kiss</l>
                     <l>On thy cold lips thy hot lips now immortal,</l>
                     <l>Greeting thee at Death's portal's happiness,</l>
                     <l>For to the gods Death's portal is Life's portal.</l>
                 </lg>
-
                 <lg>
                     <l>«Thus is the memory of thee a god</l>
                     <l>Already, already a statue made of me―</l>
@@ -525,7 +484,6 @@
                     <l>The true-wholed gods present in river and glade</l>
                     <l>And hours eternal in its different days.</l>
                 </lg>
-
                 <lg>
                     <l>«So strong my love is that it is thyself,</l>
                     <l>Thy body as it was ere death was it,</l>
@@ -540,7 +498,6 @@
                     <l>But this our love, made but thy body, 'll range</l>
                     <l>On deathless meads from happy stream to stream.</l>
                 </lg>
-
                 <lg>
                     <l>«Were there no Olympus for thee, my love</l>
                     <l>Would make thee one, where thou sole god mightst prove,</l>
@@ -552,7 +509,6 @@
                     <l>To have thee is a thing made of gods' stuff</l>
                     <l>And to look on thee eternity's best part.</l>
                 </lg>
-
                 <lg>
                     <l>«O love, my love! Awake with my strong will</l>
                     <l>Of loving to Olympus and be there</l>
@@ -563,7 +519,6 @@
                     <l>With elder gods, while I on earth do make</l>
                     <l>A statue for thy deathlessness' seen sake.</l>
                 </lg>
-
                 <lg>
                     <l>«That deathless statue of thee I shall build</l>
                     <l>Will be no stone thing, but my great regret</l>
@@ -581,7 +536,6 @@
                     <l>Out of the East of Love, and be the shrine</l>
                     <l>Of future gods that nothing human scorn.</l>
                 </lg>
-
                 <lg>
                     <l>«My love for thee is part of what thou wert</l>
                     <l>And shall be part of what thy statue will be.</l>
@@ -594,7 +548,6 @@
                     <l>Overlook the great Morn</l>
                     <l>From an eternal East.</l>
                 </lg>
-
                 <lg>
                     <l>«Thy statue is of thyself and of me.</l>
                     <l>Our dual presence has its unity</l>
@@ -603,9 +556,9 @@
                     <l>Raise into godness, set above the strife</l>
                     <l>Of times and changing passions far above.</l>
                 </lg>
-
                 <lg>
-                    <l>«The end of days, when <rs type="name" key="P712">Jove</rs> is born again,</l>
+                    <l>«The end of days, when <rs type="name" key="P712">Jove</rs> is born
+                        again,</l>
                     <l>And <rs type="name" key="P711">Ganymede</rs> again pour at his feast,</l>
                     <l>Shall see our dual soul from death released</l>
                     <l>And recreated unto love, joy, pain,</l>
@@ -615,7 +568,6 @@
                     <l>By the giant race of the end of ages must</l>
                     <l>Our dual presence once again be raised.»</l>
                 </lg>
-
                 <lg>
                     <l>It rained still. But slow-treading night came in</l>
                     <l>Closing the weary eyelids of each sense.</l>
@@ -628,7 +580,6 @@
                     <l>Rolled up. The things he felt were like the rim</l>
                     <l>That haloes round the moon when the night weeps.</l>
                 </lg>
-
                 <lg>
                     <l>His head was bowed into his arms, and they</l>
                     <l>On the low couch, foreign to his sense, lay.</l>
@@ -640,16 +591,12 @@
                     <l>And fell. A voice swooned in the courts below.</l>
                     <l>And the Emperor slept.</l>
                 </lg>
-
                 <lg>
                     <l rend="indent">The gods came now</l>
                     <l>And bore something away, no sense knows how,</l>
                     <l>On unseen arms of power and repose.</l>
                 </lg>
-                <lg>
-                    <l>LISBON, 1915.</l>
-                </lg>
-                <!-- MC: etiqueta para marcar el año y el lugar?-->
+                <ab>LISBON, 1915.</ab>
             </div>
         </body>
     </text>
