@@ -132,6 +132,16 @@
         </div>
     </xsl:template>
     
+    <xsl:template match="pb">
+        <span class="pb">
+            <xsl:text>[</xsl:text>
+            <xsl:value-of select="@n"/>
+            <xsl:text>]</xsl:text>
+        </span>
+    </xsl:template>
+    
+    <xsl:template match="pc"/>
+    
     <xsl:template name="rend">
         <xsl:choose>
             <xsl:when test="@rend='right'">
