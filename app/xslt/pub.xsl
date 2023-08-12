@@ -132,6 +132,53 @@
         </div>
     </xsl:template>
     
+    <xsl:template match="titlePage">
+        <div class="titlePage">
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="docAuthor">
+        <p class="center docAuthor">
+            <xsl:apply-templates/>
+        </p>
+    </xsl:template>
+    
+    <xsl:template match="docTitle">
+        <h1 class="docTitle">
+            <xsl:apply-templates/>
+        </h1>
+    </xsl:template>
+    
+    <xsl:template match="docImprint">
+        <p class="center docImprint">
+            <xsl:apply-templates/>
+        </p>
+    </xsl:template>
+    
+    <xsl:template match="epigraph">
+        <div class="epigraph">
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="pb">
+        <span class="pb">
+            <xsl:text>[</xsl:text>
+            <xsl:choose>
+                <xsl:when test="@n">
+                    <xsl:value-of select="@n"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>*</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:text>]</xsl:text>
+        </span>
+    </xsl:template>
+    
+    <xsl:template match="pc"/>
+    
     <xsl:template name="rend">
         <xsl:choose>
             <xsl:when test="@rend='right'">
@@ -263,6 +310,15 @@
         <div class="ab-right">
             <xsl:apply-templates/>
         </div>
+    </xsl:template>
+    
+    <xsl:template match="ab[@rend='indent-2']">
+        <p class="indent-2">
+            <xsl:attribute name="type">
+                <xsl:value-of select="@type"/>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+        </p>
     </xsl:template>
     
     <xsl:template match="ab[@rend='right'][@type]">

@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en"
+    xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <teiHeader>
         <fileDesc>
             <titleStmt>
@@ -281,7 +282,8 @@
                                     happened only before a certain point in time:</p>
                                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                     <p>
-                                        <origDate notAfter="1922-12">ant. Dezembro de 1922</origDate>
+                                        <origDate notAfter="1922-12">ant. Dezembro de
+                                            1922</origDate>
                                     </p>
                                 </egXML>
                                 <p>Only when specifying a missing date, indicated by a question
@@ -312,7 +314,8 @@
                                     <sourceDesc>
                                         <list type="work-index">
                                             <item>
-                                                <rs type="work" key="W321">“António” — António, de António Botto</rs>
+                                                <rs type="work" key="W321">“António” — António, de
+                                                  António Botto</rs>
                                             </item>
                                         </list> [...] </sourceDesc>
                                 </egXML>
@@ -2139,6 +2142,14 @@
                             <attDef ident="xml:lang" mode="delete"/>
                             <attDef ident="xml:space" mode="delete"/>
                             <attDef ident="key" mode="change">
+                                <constraintSpec ident="key_val" scheme="schematron">
+                                    <constraint>
+                                        <sch:rule context="@key">
+                                            <sch:let name="index" value="doc('../lists.xml')"/>
+                                            <sch:assert test=". = $index//@xml:id">ID is not available in Project Knowledge file</sch:assert>
+                                        </sch:rule>
+                                    </constraint>
+                                </constraintSpec>
                                 <valList type="open" mode="replace">
                                     <valItem ident="FP"/>
                                     <valItem ident="AC"/>
@@ -2149,6 +2160,7 @@
                                     <valItem ident="plano_editorial"/>
                                     <valItem ident="poesia"/>
                                 </valList>
+
                             </attDef>
                             <attDef ident="type" mode="change" usage="req">
                                 <valList type="closed" mode="replace">

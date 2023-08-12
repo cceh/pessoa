@@ -26,11 +26,11 @@
             </respStmt>
          </titleStmt>
          <publicationStmt>
-            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e
-               Tradição (IELT)</publisher>
+            <publisher>Universidade Nova de Lisboa, Instituto de Estudos de Literatura e Tradição
+               (IELT)</publisher>
             <publisher>Cologne Center for eHumanities (CCeH)</publisher>
             <date>2017</date>
-            <availability status="restricted">
+            <availability status="free">
                <licence target="http://creativecommons.org/licenses/by/3.0/"/>
             </availability>
             <idno type="filename">Pessoa_English_Poems_I_II.xml</idno>
@@ -45,13 +45,6 @@
                <item><rs type="work" key="361">English Poems I &amp; II</rs></item>
             </list>
             <biblStruct>
-               <analytic>
-                  <title level="a">English Poems I &amp; II</title>
-                  <author>
-                     <rs type="name" key="FP">Fernando Pessoa</rs>
-                  </author>
-                  <textLang mainLang="en"/>
-               </analytic>
                <monogr>
                   <title>English Poems I &amp; II</title>
                   <author>
@@ -62,7 +55,8 @@
                      <date when="1921">1921</date>
                      <pubPlace>Lisboa</pubPlace>
                      <publisher>Olisipo ― Apartado 145</publisher>
-                     <publisher>Printing Office of the Annuario Commercial ― 24, Restauradores, Lisboa</publisher>
+                     <publisher>Printing Office of the Annuario Commercial ― 24, Restauradores,
+                        Lisboa</publisher>
                      <biblScope unit="page">16 pp.</biblScope>
                   </imprint>
                </monogr>
@@ -75,9 +69,7 @@
    </teiHeader>
    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
       <graphic url="Pessoa_English_Poems_1.jpg"/>
-      <graphic url="Pessoa_English_Poems_2.jpg"/>
       <graphic url="Pessoa_English_Poems_3.jpg"/>
-      <graphic url="Pessoa_English_Poems_4.jpg"/>
       <graphic url="Pessoa_English_Poems_5.jpg"/>
       <graphic url="Pessoa_English_Poems_6.jpg"/>
       <graphic url="Pessoa_English_Poems_7.jpg"/>
@@ -97,40 +89,54 @@
       <graphic url="Pessoa_English_Poems_21.jpg"/>
       <graphic url="Pessoa_English_Poems_22.jpg"/>
       <graphic url="Pessoa_English_Poems_23.jpg"/>
-      <graphic url="Pessoa_English_Poems_24.jpg"/>
    </facsimile>
    <text type="orig" corresp="#W361">
       <front>
          <titlePage>
+            <pb/>
             <docTitle>
                <titlePart type="main" rend="center">ENGLISH POEMS</titlePart>
-               <titlePart type="sub" rend="center">BY<lb/><rs type="name" role="editor" key="FP"
-                     style="b">FERNANDO PESSOA</rs>
-               </titlePart>
+               <titlePart type="sub" rend="center">I ― II</titlePart>
             </docTitle>
-            <byline rend="center">BY <lb/>
-               <rs type="name" role="editor" key="FP" style="b">FERNANDO PESSOA</rs><lb/>LISBON
+            <byline rend="center">BY<lb/><rs type="name" role="editor" key="FP" style="b">FERNANDO
+                  PESSOA</rs>
             </byline>
          </titlePage>
+         <div>
+            <ab rend="right">OLISIPO</ab>
+         </div>
          <titlePage>
+            <pb/>
             <docTitle>
                <titlePart type="main" rend="center">ENGLISH POEMS</titlePart>
-               <titlePart type="sub" rend="center">I ― II </titlePart>
-               <titlePart type="sub" rend="center">I. ― <rs type="name" key="P710"
-                  >ANTINOUS</rs><lb/>II. ― INSCRIPTIONS </titlePart>
             </docTitle>
-            <byline rend="center">LISBON<lb/>1921 </byline>
+            <byline rend="center">BY<lb/><rs type="name" role="editor" key="FP" style="b">FERNANDO
+                  PESSOA</rs>
+            </byline>
+            <docTitle>
+               <titlePart type="sub" rend="center">I. ― <rs type="name" key="P710"
+                  >ANTINOUS</rs><lb/>II. ― INSCRIPTIONS</titlePart>
+            </docTitle>
+            <docImprint rend="center">«OLISIPO», APARTADO 145<lb/>1921</docImprint>
          </titlePage>
-         <ab>An early and very imperfect draft of <ref target="http://www.pessoadigital.pt/en/pub/Pessoa_Antinous"><rs type="work" key="W323"><rs type="title" key="T361"><rs type="name"
-                  key="P710">Antinous</rs></rs></rs></ref> was published in
-            1918. The present one is meant to annul and supersede that, from which it is essentially
-            different. ― Inscriptions is now first published. <lb/><metamark rend="line"/><lb/> All
-            rights reserved</ab>
+         <div>
+            <pb/>
+            <ab><hi rend="italic">An early and very imperfect draft of</hi>
+               <ref target="http://www.pessoadigital.pt/en/pub/Pessoa_Antinous"><rs type="work"
+                     key="W323"><rs type="title" key="T361"><rs type="name" key="P710"
+                        >Antinous</rs></rs></rs></ref>
+               <hi rend="italic">was published in 1918. The present one is meant to annul and
+                  supersede that, from which it is essentially different. ―</hi> Inscriptions <hi
+                  rend="italic">is now first published. <lb/><metamark rend="line"/><lb/> All rights
+                  reserved</hi></ab>
+            <ab>Printing Office of the Annuario Commercial<lb/><hi rend="italic">24, Restauradores,
+                  Lisbon</hi></ab>
+         </div>
       </front>
       <body>
          <div>
-            <div>
-               <pb n="5"/>
+            <div type="poem">
+               <pb/>
                <head>I</head>
                <head><rs type="name" key="P710">ANTINOUS</rs></head>
                <lg>
@@ -431,8 +437,7 @@
                   <l>Thus went he, like a lover who is waiting,</l>
                   <l>From place to place in his dim doubting mind.</l>
                   <l>Now was his hope a great intention fating</l>
-                  <l>Its wish to being, now felt he
-                     he<!-- IR: Verificar se é uma gralha ou se é intencional --> was blind</l>
+                  <l>Its wish to being, now felt he was blind</l>
                   <l>In some point of his seen wish undefined.</l>
                </lg>
                <lg>
@@ -617,152 +622,152 @@
                   <l>And the Emperor slept.</l>
                </lg>
                <lg>
-                  <l>The gods came now</l><!-- IR: verificar codificação desta indentação; verso no original está encostado à direita -->
+                  <l rend="indent">The gods came now</l>
                   <l>And bore something away, no sense knows how,</l>
                   <l>On unseen arms of power and repose.</l>
                </lg>
-            </div> 
-            <div><p>Lisbon, 1915.</p></div>
-                  <pb n="17"/>
-               <div>   
-                  <head>II</head>
-                  <head>INSCRIPTIONS</head>
-                  <div>
-                     <head>I</head>
-                     <lg>
-                        <l>We pass and dream. Earth smiles. Virtue is rare.</l>
-                        <l>Age, duty, gods weigh on our conscious bliss.</l>
-                        <l>Hope for the best and for the worst prepare.</l>
-                        <l>Tha sum of purposed wisdom speaks in this.</l>
-                     </lg>
-                  </div>
-                  <div>
-                     <head>II</head>
-                     <lg>
-                        <l>Me, Chloe, a maid, the mighty fates have given,</l>
-                        <l>Who was nought to them, to the people shades.</l>
-                        <l>Thus the gods will. My years were but twice seven.</l>
-                        <l>I am forgotten in my distant glades.</l>
-                     </lg>
+               <ab>Lisbon, 1915.</ab>
+            </div>
+            <div type="part">
+               <pb n="17"/>
+               <head>II</head>
+               <head>INSCRIPTIONS</head>
+               <div type="poem">
+                  <head>I</head>
+                  <lg>
+                     <l>We pass and dream. Earth smiles. Virtue is rare.</l>
+                     <l>Age, duty, gods weigh on our conscious bliss.</l>
+                     <l>Hope for the best and for the worst prepare.</l>
+                     <l>Tha sum of purposed wisdom speaks in this.</l>
+                  </lg>
                </div>
-                  <div>
-                     <head>III</head>
-                     <lg>
-                        <l>From my villa on the hill I long looked down</l>
-                        <l>Upon the muttering town;</l>
-                        <l>Then one day drew (life sight-sick, dull hope shed)</l>
-                        <l>My toga o'er my head</l>
-                        <l>(The simplest gesture being the greatest thing)</l>
-                        <l>Like a raised wing.</l>
-                     </lg>
-                  </div>
-                  <pb n="18"/>
-                  <div>
-                     <head>IV</head>
-                     <lg>
-                        <l>Not Cecrops kept my bees. My olives bore</l>
-                        <l>Oil like the sun. My several herd lowed far.</l>
-                        <l>The breathing traveller rested by my door.</l>
-                        <l>The wet earth smells still; dead my nostrils are.</l>
-                     </lg>
-                  </div>
-                  <div>
-                     <head>V</head>
-                     <lg>
-                        <l>I conquered. Far barbarians hear my name.</l>
-                        <l>Men were dice in my game,</l>
-                        <l>But to throw myself did lesser come:</l>
-                        <l>I threw dice, Fate the sum.</l>
-                     </lg>
-                  </div>
-                  <div>
-                     <head>VI</head>
-                     <lg>
-                        <l>Some were as loved loved, some as prizes prized.</l>
-                        <l>A natural wife to the fed man my mate,</l>
-                        <l>I was sufficient to whom I sufficed.</l>
-                        <l>I moved, slept, bore and aged without a fate.</l>
-                     </lg>
-                  </div>
-                  <div>
-                     <head>VII</head>
-                     <lg>
-                        <l>I put by pleasure like an alien bowl.</l>
-                        <l>Stern, separate, mine, I looked towards where gods seem.</l>
-                        <l>From behind me the common shadow stole.</l>
-                        <l>Dreaming that I slept not, I slept my dream.</l>
-                     </lg>
-                  </div>
-                  <div>
-                     <head>VIII</head>
-                     <lg>
-                        <l>Scarce five years passed ere I passed too.</l>
-                        <l>Death came and took the child he found.</l>
-                        <l>No god spared, or fate smiled at, so</l>
-                        <l>Small hands, clutching so little round.</l>
-                     </lg>
-                  </div>
-                  <pb n="19"/>
-                  <div>
-                     <head>IX</head>
-                     <lg>
-                        <l>There is a silence where the town was old.</l>
-                        <l>Grass grows shere not a memory lies below.</l>
-                        <l>We that dined loud are sand. The tale is told.</l>
-                        <l>The far hoofs hush. The inn's last light doth go.</l>
-                     </lg>
-                  </div>
-                  <div>
-                     <head>X</head>
-                     <lg>
-                        <l>We, that both lie here, loved. This denies us.</l>
-                        <l>My lost hand crumbles where her breasts' lack is</l>
-                        <l>Love's known, each lover is anonymous.</l>
-                        <l>We both felt fair. Kiss, for that was our kiss.</l>
-                     </lg>
-                  </div>
-                  <div>
-                     <head>XI</head>
-                     <lg>
-                        <l>I for my city's want far and fell.</l>
-                        <l>I could not tell</l>
-                        <l>What she did want, that knew she wanted me.</l>
-                        <l>Her walls be free,</l>
-                        <l>Her speech keep such as I spoke, and men die,</l>
-                        <l>That she die not, as I.</l>
-                     </lg>
-                  </div>
-                  <div>
-                     <head>XII</head>
-                     <lg>
-                        <l>Life lived us, not we life. We, as bees sip,</l>
-                        <l>Looked, talked and had. Trees grow as we did last.</l>
-                        <l>We loved the gods but as we see a ship.</l>
-                        <l>Never aware of being aware, we passed.</l>
-                     </lg>
-                  </div>
-                  <div>
-                     <head>XIII</head>
-                     <lg>
-                        <l>The work is done. The hammer is laid down.</l>
-                        <l>The artisans, that built the slow-grown town,</l>
-                        <l>Have been succeeded by those who still built.</l>
-                        <pb n="20"/>
-                        <l>All this is something lack-of-something screening.</l>
-                        <l>The thought whole has no meaning</l>
-                        <l>But lies by Time's wall like a pitcher spilt.</l>
-                     </lg>
-                  </div>
-                  <div>
-                     <head>XIV</head>
-                     <lg>
-                        <l>This covers, that erst had the blue sky.</l>
-                        <l>This soil treads me, that once I trod. My hand</l>
-                        <l>Put these inscriptions here, half knowing why;</l>
-                        <l>Last, and hence seeing all, of the passing band.</l>
-                     </lg>
-                  </div>
-                  <div><p>Lisbon, 1920.</p></div>
+               <div type="poem">
+                  <head>II</head>
+                  <lg>
+                     <l>Me, Chloe, a maid, the mighty fates have given,</l>
+                     <l>Who was nought to them, to the people shades.</l>
+                     <l>Thus the gods will. My years were but twice seven.</l>
+                     <l>I am forgotten in my distant glades.</l>
+                  </lg>
+               </div>
+               <div type="poem">
+                  <head>III</head>
+                  <lg>
+                     <l>From my villa on the hill I long looked down</l>
+                     <l>Upon the muttering town;</l>
+                     <l>Then one day drew (life sight-sick, dull hope shed)</l>
+                     <l>My toga o'er my head</l>
+                     <l>(The simplest gesture being the greatest thing)</l>
+                     <l>Like a raised wing.</l>
+                  </lg>
+               </div>
+               <pb n="18"/>
+               <div type="poem">
+                  <head>IV</head>
+                  <lg>
+                     <l>Not Cecrops kept my bees. My olives bore</l>
+                     <l>Oil like the sun. My several herd lowed far.</l>
+                     <l>The breathing traveller rested by my door.</l>
+                     <l>The wet earth smells still; dead my nostrils are.</l>
+                  </lg>
+               </div>
+               <div type="poem">
+                  <head>V</head>
+                  <lg>
+                     <l>I conquered. Far barbarians hear my name.</l>
+                     <l>Men were dice in my game,</l>
+                     <l>But to throw myself did lesser come:</l>
+                     <l>I threw dice, Fate the sum.</l>
+                  </lg>
+               </div>
+               <div type="poem">
+                  <head>VI</head>
+                  <lg>
+                     <l>Some were as loved loved, some as prizes prized.</l>
+                     <l>A natural wife to the fed man my mate,</l>
+                     <l>I was sufficient to whom I sufficed.</l>
+                     <l>I moved, slept, bore and aged without a fate.</l>
+                  </lg>
+               </div>
+               <div type="poem">
+                  <head>VII</head>
+                  <lg>
+                     <l>I put by pleasure like an alien bowl.</l>
+                     <l>Stern, separate, mine, I looked towards where gods seem.</l>
+                     <l>From behind me the common shadow stole.</l>
+                     <l>Dreaming that I slept not, I slept my dream.</l>
+                  </lg>
+               </div>
+               <div type="poem">
+                  <head>VIII</head>
+                  <lg>
+                     <l>Scarce five years passed ere I passed too.</l>
+                     <l>Death came and took the child he found.</l>
+                     <l>No god spared, or fate smiled at, so</l>
+                     <l>Small hands, clutching so little round.</l>
+                  </lg>
+               </div>
+               <pb n="19"/>
+               <div type="poem">
+                  <head>IX</head>
+                  <lg>
+                     <l>There is a silence where the town was old.</l>
+                     <l>Grass grows shere not a memory lies below.</l>
+                     <l>We that dined loud are sand. The tale is told.</l>
+                     <l>The far hoofs hush. The inn's last light doth go.</l>
+                  </lg>
+               </div>
+               <div type="poem">
+                  <head>X</head>
+                  <lg>
+                     <l>We, that both lie here, loved. This denies us.</l>
+                     <l>My lost hand crumbles where her breasts' lack is</l>
+                     <l>Love's known, each lover is anonymous.</l>
+                     <l>We both felt fair. Kiss, for that was our kiss.</l>
+                  </lg>
+               </div>
+               <div type="poem">
+                  <head>XI</head>
+                  <lg>
+                     <l>I for my city's want far and fell.</l>
+                     <l>I could not tell</l>
+                     <l>What she did want, that knew she wanted me.</l>
+                     <l>Her walls be free,</l>
+                     <l>Her speech keep such as I spoke, and men die,</l>
+                     <l>That she die not, as I.</l>
+                  </lg>
+               </div>
+               <div type="poem">
+                  <head>XII</head>
+                  <lg>
+                     <l>Life lived us, not we life. We, as bees sip,</l>
+                     <l>Looked, talked and had. Trees grow as we did last.</l>
+                     <l>We loved the gods but as we see a ship.</l>
+                     <l>Never aware of being aware, we passed.</l>
+                  </lg>
+               </div>
+               <div type="poem">
+                  <head>XIII</head>
+                  <lg>
+                     <l>The work is done. The hammer is laid down.</l>
+                     <l>The artisans, that built the slow-grown town,</l>
+                     <l>Have been succeeded by those who still built.</l>
+                     <pb n="20"/>
+                     <l>All this is something lack-of-something screening.</l>
+                     <l>The thought whole has no meaning</l>
+                     <l>But lies by Time's wall like a pitcher spilt.</l>
+                  </lg>
+               </div>
+               <div type="poem">
+                  <head>XIV</head>
+                  <lg>
+                     <l>This covers, that erst had the blue sky.</l>
+                     <l>This soil treads me, that once I trod. My hand</l>
+                     <l>Put these inscriptions here, half knowing why;</l>
+                     <l>Last, and hence seeing all, of the passing band.</l>
+                  </lg>
+                  <ab>Lisbon, 1920.</ab>
+               </div>
             </div>
          </div>
       </body>
