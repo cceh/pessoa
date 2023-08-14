@@ -291,10 +291,16 @@
                         </div>
                         <div xml:id="source-publications">
                             <head>Sources of publications</head>
-                            <!-- Hier muss noch ein Absatz geschrieben werden -->
+                            <p>The sources of the publications are encoded only within an element
+                                <gi>sourceDesc</gi>:</p>
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                <sourceDesc> [...] </sourceDesc>
+                            </egXML>
+                            <p>The description has two parts. The first part serves to identify the
+                                respective work(s) within the index of works, while the second part is used
+                                to describe the bibliographic information of the work(s).</p>
                             <div xml:id="work-index">
                                 <head>Work index</head>
-                                <!-- Hier muss noch ein Absatz geschrieben werden -->
                                 <p>Within the element <gi>sourceDesc</gi>, there is a element
                                         <gi>list</gi> with the attribute <att>type</att>, indicates
                                     by the value <val>work-index</val> that it functions as a list
@@ -330,7 +336,9 @@
                                             <rs type="work" key="W321">“António” — António, de António Botto</rs>
                                         </item>
                                     </egXML>
-                                <p>The unique key-value is determined not only by the title of a work but also by the authorship. The allocation of work identifiers takes place in the work register.</p>
+                                <p>The unique key-value is determined not only by the title of a work but also
+                                    by the authorship. The allocation of work identifiers takes place in the
+                                    work register.</p>
                             </div>
                             <div xml:id="bibliographic-description">
                                 <head>Bibliographic description</head>
