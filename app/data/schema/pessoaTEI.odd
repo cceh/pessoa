@@ -282,8 +282,7 @@
                                     happened only before a certain point in time:</p>
                                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                     <p>
-                                        <origDate notAfter="1922-12">ant. Dezembro de
-                                            1922</origDate>
+                                        <origDate notAfter="1922-12">ant. Dezembro de 1922</origDate>
                                     </p>
                                 </egXML>
                                 <p>Only when specifying a missing date, indicated by a question
@@ -299,26 +298,39 @@
                                 <p>Within the element <gi>sourceDesc</gi>, there is a element
                                         <gi>list</gi> with the attribute <att>type</att>, indicates
                                     by the value <val>work-index</val> that it functions as a list
-                                    for indexing works. The element <gi>list</gi> can contain
-                                    multiple <gi>item</gi> elements, but there will always be at
-                                    least one <gi>item</gi> element representing a single entry in
-                                    the list. Each <gi>item</gi> element contains an element
-                                        <gi>rs</gi> (referencing string) with the attribute
+                                    for indexing works.</p>
+                                    <egXML
+                                        xmlns="http://www.tei-c.org/ns/Examples">
+                                        <sourceDesc>
+                                            <list type="work-index">
+                                                <item>
+                                                    <rs type="work" key="W222">Prece</rs>
+                                                </item>
+                                                <item>
+                                                    <rs type="work" key="W211">Mar Português</rs>
+                                                </item>
+                                                <item>
+                                                    <rs type="work" key="W223">Mensagem</rs>
+                                                </item>
+                                            </list> [...] </sourceDesc>
+                                    </egXML>
+                                    <p>As seen in the example above, the element <gi>list</gi>
+                                    can contain multiple <gi>item</gi> elements, but there will
+                                    always be at least one <gi>item</gi> element representing a
+                                    single entry in the list. Each <gi>item</gi> element contains an
+                                    element <gi>rs</gi> (referencing string) with the attribute
                                         <att>type</att> (in which the value <val>work</val> can
                                     always be found) and the attribute <att>key</att>. The attribute
                                         <att>key</att> holds a unique key-value that consistently
                                     follows a specific pattern, as demonstrated in the example
                                     below: It begins with the letter "W" followed by a consecutive
                                     number.</p>
-                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                                    <sourceDesc>
-                                        <list type="work-index">
-                                            <item>
-                                                <rs type="work" key="W321">“António” — António, de
-                                                  António Botto</rs>
-                                            </item>
-                                        </list> [...] </sourceDesc>
-                                </egXML>
+                                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                        <item>
+                                            <rs type="work" key="W321">“António” — António, de António Botto</rs>
+                                        </item>
+                                    </egXML>
+                                <p>The unique key-value is determined not only by the title of a work but also by the authorship. The allocation of work identifiers takes place in the work register.</p>
                             </div>
                             <div xml:id="bibliographic-description">
                                 <head>Bibliographic description</head>
@@ -2146,7 +2158,8 @@
                                     <constraint>
                                         <sch:rule context="@key">
                                             <sch:let name="index" value="doc('../lists.xml')"/>
-                                            <sch:assert test=". = $index//@xml:id">ID is not available in Project Knowledge file</sch:assert>
+                                            <sch:assert test=". = $index//@xml:id">ID is not
+                                                available in Project Knowledge file</sch:assert>
                                         </sch:rule>
                                     </constraint>
                                 </constraintSpec>
