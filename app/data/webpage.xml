@@ -2864,9 +2864,9 @@
                                         <div>
                                             <head>Nachweise &amp; Verantwortlichkeiten</head>
                                             <p>Verantwortlich für die Transkription und Herausgabe
-                                                der Dokumente aus Fernando Pessoas Nachlass ist
-                                                Pedro Sepúlveda. Die JSON-Daten für das Netzwerk
-                                                sind von Ulrike Henny-Krahmer aus den
+                                                der Dokumente aus Fernando Pessoas Nachlass sind
+                                                Pedro Sepúlveda und Jorge Uribe. Die JSON-Daten für
+                                                das Netzwerk sind von Ulrike Henny-Krahmer aus den
                                                 TEI-Tranksriptionen der digitalen Edition generiert
                                                 worden. Die D3-Visualisierung basiert auf dem <ref
                                                   target="https://bl.ocks.org/mbostock/1212215"
@@ -2884,7 +2884,9 @@
                                                 Umsetzung sind im Team erarbeitet worden.</p>
                                         </div>
                                         <trailer><seg rend="bold">Köln / Lissabon / Würzburg
-                                                2017.</seg></trailer>
+                                                2017.</seg>
+                                            <seg rend="bold">Das Netz wurde im Jahr 2023
+                                                aktualisiert.</seg></trailer>
 
                                     </div>
                                 </div>
@@ -2894,339 +2896,316 @@
                     <text xml:lang="en">
                         <body>
                             <div>
-                                <head>Network of persons and figures in Fernando Pessoa's publication plans</head>
+                                <head>Network of persons and figures in Fernando Pessoa's
+                                    publication plans</head>
                                 <div>
                                     <head>Help</head>
                                     <div>
-                                        <head>A</head>
+                                        <head>D</head>
                                         <list>
-                                            <item xml:id="Anzeige-en">
-                                                <label><seg rend="bold">Anzeige.</seg></label>
-                                                <p>Über die Option "Anzeige" kann eingestellt
-                                                  werden, wie weit sich das Netzwerk über den
-                                                  Bildschirm verteilt. Bei der Option "sehr dicht"
-                                                  wird das Netzwerk in einem kleineren Bereich
-                                                  angezeigt, wodurch ein Gesamtüberblick leichter
-                                                  möglich ist. Allerdings sind dann einzelne Knoten
-                                                  und Verbindungen nicht so gut zu erkennen. Bei der
-                                                  Option "sehr weit" verteilt sich das Netzwerk so,
-                                                  dass es unter Umständen nicht mehr vollständig zu
-                                                  sehen ist, einzelne Bereiche aber besser
-                                                  betrachtet werden können. Dazwischen gibt es noch
-                                                  die mittleren Optionen "dicht" und "weit". Die
-                                                  Option "Anzeige" ist eine von mehreren <ref
-                                                  target="#Auswahloptionen-en">Auswahloptionen</ref>
-                                                  für die Darstellung des Netzwerks.</p>
-                                            </item>
-                                            <item xml:id="Auswahloptionen-en">
-                                                <label><seg rend="bold"
-                                                  >Auswahloptionen.</seg></label>
-                                                <p>Per Default wird das gesamte Netzwerk angezeigt.
-                                                  Über die Auswahloptionen am linken Fensterrand
-                                                  kann die Anzeige verändert werden. Folgende
-                                                  Optionen stehen zur Verfügung: <ref
-                                                  target="#Jahr-en" type="internal">Jahr</ref>, <ref
-                                                  target="#PeriodisierungA-en" type="internal"
-                                                  >Periodisierung A</ref>, <ref
-                                                  target="#PeriodisierungB-en" type="internal"
-                                                  >Periodisierung B</ref>, <ref target="#Anzeige-en"
-                                                  type="internal">Anzeige</ref>, <ref
-                                                  target="#Label-en" type="internal">Label
-                                                  anzeigen</ref>, <ref target="#Namen-ohne-en"
-                                                  type="internal">Namen ohne Verbindungen
-                                                  anzeigen</ref>. Die Anzeige des Bereichs mit den
-                                                  verschiedenen Auswahloptionen kann über den Button
-                                                  mit den drei Strichen oben links ein- oder
-                                                  ausgeschaltet werden. Scrollt man im Netzwerk nach
-                                                  unten, bewegt sich der Auswahloptionenbereich
-                                                  mit.</p>
+                                            <item xml:id="display-en">
+                                                <label><seg rend="bold">Display.</seg></label>
+                                                <p>The "Display" option can be used to set how far
+                                                  the network is spread across the screen. If the
+                                                  option "very dense" is selected, the network is
+                                                  displayed in a smaller area, which makes it easier
+                                                  to get an overall view. However, individual nodes
+                                                  and connections are then not as easy to recognize.
+                                                  With the "very wide" option, the network spreads
+                                                  out, potentially making it not fully visible, but
+                                                  individual areas can be viewed better.In between,
+                                                  there are the medium options "dense" and "wide."
+                                                  The "Display" option is one of several choices for
+                                                  representing the network.The "Display" option is
+                                                  one of several <ref target="#selection-options-en"
+                                                  >selection options</ref> for the display of the
+                                                  network.</p>
                                             </item>
                                         </list>
                                     </div>
                                     <div>
-                                        <head>B</head>
+                                        <head>E</head>
                                         <list>
-                                            <item xml:id="Bewegen-en">
-                                                <label><seg rend="bold">Bewegen im
-                                                  Netzwerk.</seg></label>
-                                                <p>Um den Bereich, in dem das Netzwerk sichtbar ist,
-                                                  zu verändern, kann im Browserfenster gescrollt
-                                                  werden. Ein Verschieben des ganzen Netzwerks mit
-                                                  der Maus ist derzeit noch nicht möglich.</p>
+                                            <item xml:id="edges-en">
+                                                <label><seg rend="bold">Edges.</seg></label>
+                                                <p>The edges of the network represent that
+                                                  individuals from Pessoa's lists of publication
+                                                  plans were mentioned together. For more details on
+                                                  how edges are displayed, see <ref
+                                                  target="#edge-thickness-en" type="internal">Edges,
+                                                  Thickness</ref>.</p>
                                             </item>
-                                        </list>
-                                    </div>
-                                    <div>
-                                        <head>J</head>
-                                        <list>
-                                            <item xml:id="Jahr-en">
-                                                <label><seg rend="bold">Jahr.</seg></label>
-                                                <p>Über die Jahresauswahl kann die Menge der im
-                                                  Netzwerk angezeigten Knoten (Personen) und Kanten
-                                                  (Beziehungen) eingeschränkt werden. Standardmäßig
-                                                  wird das gesamte Netzwerk angezeigt, also alle
-                                                  Personen, die zwischen 1913 und 1935 auf Pessoas
-                                                  Listen erwähnt werden sowie ihre Verbindungen,
-                                                  wenn sie gemeinsam auf den Listen vorkommen. Wird
-                                                  ein einzelnes Jahr ausgewählt, reduziert sich die
-                                                  Anzeige auf die Personenvorkommen im
-                                                  entsprechenden Jahr. Im Hintergrund werden
-                                                  weiterhin alle Personen angezeigt, allerdings ohne
-                                                  Verbindungen und ausgegraut. Die Option "Jahr" ist
-                                                  eine von mehreren <ref
-                                                  target="#Auswahloptionen-en">Auswahloptionen</ref>
-                                                  für die Darstellung des Netzwerks.</p>
-                                            </item>
-                                        </list>
-                                    </div>
-                                    <div>
-                                        <head>K</head>
-                                        <list>
-                                            <item xml:id="Kanten-en">
-                                                <label><seg rend="bold">Kanten.</seg></label>
-                                                <p>Die Kanten des Netzwerks bilden ab, dass Personen
-                                                  auf Pessoas Listen mit Publikationsplänen
-                                                  gemeinsam erwähnt wurden. Nähere Informationen zur
-                                                  Darstellung der Kanten gibt es unter <ref
-                                                  target="#Kantendicke-en" type="internal">Kanten,
-                                                  Dicke</ref>.</p>
-                                            </item>
-                                            <item xml:id="Kantendicke-en">
-                                                <label><seg rend="bold">Kanten, Dicke.</seg></label>
-                                                <p>Die Dicke der Kanten im Netzwerk zeigt an, wie
-                                                  häufig Personen gemeinsam auf den Dokumenten
-                                                  erwähnt wurden. Die minimale Kantendicke ist 1
-                                                  Pixel (bei einer gemeinsamen Erwähnung). Pro
-                                                  weiterer gemeinsamer Erwähnung nimmt die
-                                                  Kantendicke um 1 Pixel zu.</p>
-                                            </item>
-                                            <item xml:id="Knoten-en">
-                                                <label><seg rend="bold">Knoten.</seg></label>
-                                                <p>Die Knoten des Netzwerks repräsentieren Personen,
-                                                  die über ihre Namen identifiziert wurden. Jede
-                                                  Person, die zwischen 1913 und 1935 auf einer der
-                                                  editorischen Listen aus Pessoas Nachlass erwähnt
-                                                  wurde, ist Teil des Netzwerks. Nähere
-                                                  Informationen zur Darstellung der Knoten gibt es
-                                                  unter <ref target="#Knotengroesse-en"
-                                                  type="internal">Knoten, Größe</ref> und <ref
-                                                  target="#Knotenfarbe-en">Knoten, Farbe</ref>.</p>
-                                            </item>
-                                            <item xml:id="Knotenklick-en">
-                                                <label><seg rend="bold">Knoten,
-                                                  Doppelklick.</seg></label>
-                                                <p>Bei einem Doppelklick auf einen der Knoten
-                                                  reduziert sich die Darstellung des Netzwerks auf
-                                                  den ausgewählten Knoten und alle Verbindungen zu
-                                                  direkt benachbarten Knoten. Durch erneuten
-                                                  Doppelklick auf einen der Knoten kehrt man zurück
-                                                  zur normalen Ansicht des Netzwerks. Weitere
-                                                  Informationen zu den Knoten gibt es unter <ref
-                                                  target="#Knoten-en" type="internal">Knoten</ref>,
-                                                  <ref target="#Knotengroesse-en" type="internal"
-                                                  >Knoten, Größe</ref>, <ref
-                                                  target="#Knotenfarbe-en" type="internal">Knoten,
-                                                  Farbe</ref> und <ref target="#Knotenhover-en"
-                                                  type="internal">Knoten, Hover</ref>.</p>
-                                            </item>
-                                            <item xml:id="Knotenfarbe-en">
-                                                <label><seg rend="bold">Knoten, Farbe.</seg></label>
-                                                <p>Die Farbe der Knoten im Netzwerk zeigt an, ob
-                                                  eine Person real (dunkelblau) oder fiktiv (türkis)
-                                                  ist. Fiktiv sind einerseits literarische Figuren
-                                                  wie zum Beispiel "Hamlet", aber auch Pseudonyme
-                                                  von Pessoa, die er selbst erfunden hat. "Fernando
-                                                  Pessoa" selbst ist hier als real gekennzeichnet,
-                                                  obwohl er auch in Teilen von Pessoas Werk und
-                                                  Werkkonzeption auch als fiktive Figur aufgefasst
-                                                  werden kann. Für dieses Netzwerk ist in allen
-                                                  Fällen eine Entscheidung für den Status einer
-                                                  Person getroffen worden, auch wenn man in dieser
-                                                  Frage noch weiter differenzieren könnte.</p>
-                                            </item>
-                                            <item xml:id="Knotengroesse-en">
-                                                <label><seg rend="bold">Knoten, Größe.</seg></label>
-                                                <p>Die Größe der Knoten im Netzwerk ist mindestens 2
-                                                  Pixel, damit auch Namen von Personen angezeigt
-                                                  werden, die in einem bestimmten Jahr oder einer
-                                                  Periode nicht vorkommen, aber Teil des
-                                                  Gesamtnetzwerks sind. Diese werden dann im
-                                                  Hintergrund angezeigt. Für alle Namen von
-                                                  Personen, die mindestens einmal auf einem Dokument
-                                                  vorkommen, gilt die folgende Formel: 2 +
-                                                  log2(size). "Size" gibt die Häufigkeit des
-                                                  Vorkommens an: Wenn eine Person auf 5
-                                                  verschiedenen Dokumenten erwähnt wird, ist size=5.
-                                                  log2 bildet den Logarithmus zur Basis 2. Diese
-                                                  Berechnung ist angewandt worden, damit die Knoten
-                                                  im Netzwerk sich von der Größe her nicht zu stark
-                                                  unterscheiden. Das Netzwerk würde sonst sehr
-                                                  unübersichtlich werden.</p>
-                                            </item>
-                                            <item xml:id="Knotenhover-en">
-                                                <label><seg rend="bold">Knoten, Hover.</seg></label>
-                                                <p>Fährt man mit der Maus über einen Netzwerkknoten,
-                                                  dann werden der Knoten selbst sowie alle direkt
-                                                  von ihm ausgehenden Kanten rot hervorgehoben. So
-                                                  soll besser sichtbar werden, mit welchen anderen
-                                                  Personen die ausgewählte Person direkt verbunden
-                                                  ist. Weitere Informationen zu den Knoten gibt es
-                                                  unter <ref target="#Knoten-en" type="internal"
-                                                  >Knoten</ref>, <ref target="#Knotengroesse-en"
-                                                  type="internal">Knoten, Größe</ref>, <ref
-                                                  target="#Knotenfarbe-en" type="internal">Knoten,
-                                                  Farbe</ref> und <ref target="#Knotenklick-en"
-                                                  type="internal">Knoten, Doppelklick</ref>.</p>
-                                            </item>
-                                        </list>
-                                    </div>
-                                    <div>
-                                        <head>L</head>
-                                        <list>
-                                            <item xml:id="Label-en">
-                                                <label><seg rend="bold">Label
-                                                  anzeigen.</seg></label>
-                                                <p>Mit dem Schalter "Label anzeigen" kann
-                                                  eingestellt werden, ob die Namen als Beschriftung
-                                                  der Knoten zu sehen sein sollen oder nicht.
-                                                  Standardmäßig werden die Namen angezeigt. Die
-                                                  Option "Label anzeigen" ist eine von mehreren <ref
-                                                  target="#Auswahloptionen-en">Auswahloptionen</ref>
-                                                  für die Darstellung des Netzwerks.</p>
+                                            <item xml:id="edge-thickness-en">
+                                                <label><seg rend="bold">Edges,
+                                                  Thickness.</seg></label>
+                                                <p>The thickness of the edges in the network
+                                                  indicates how often individuals were mentioned
+                                                  together in the documents. The minimum edge
+                                                  thickness is 1 pixel (when mentioned together).
+                                                  For each additional mention together, the edge
+                                                  thickness increases by 1 pixel.</p>
                                             </item>
                                         </list>
                                     </div>
                                     <div>
                                         <head>N</head>
                                         <list>
-                                            <item xml:id="Namen-ohne-en">
-                                                <label><seg rend="bold">Namen ohne Verbindungen
-                                                  anzeigen.</seg></label>
-                                                <p>Mit dem Schalter "Namen ohne Verbindungen
-                                                  anzeigen" kann eingestellt werden, ob auch die
-                                                  Personen bzw. Namen angezeigt werden sollen, die
-                                                  ausschließlich allein auf einer Liste erwähnt
-                                                  werden und daher zwar als Knoten im Netzwerk
-                                                  vorhanden sind, aber keine Verbindungen zu anderen
-                                                  Personen/Namen haben. Ob eine Person für sich
-                                                  steht, kann sich je nach Auswahl der Periode oder
-                                                  des Jahres ändern. Standardmäßig werden alle Namen
-                                                  angezeigt. Die Option "Namen ohne Verbindungen
-                                                  anzeigen" ist eine von mehreren <ref
-                                                  target="#Auswahloptionen-en">Auswahloptionen</ref>
-                                                  für die Darstellung des Netzwerks.</p>
+                                            <item xml:id="navigation-en">
+                                                <label><seg rend="bold">Navigating within the
+                                                  network.</seg></label>
+                                                <p>To change the area in which the network is
+                                                  visible, you can scroll within the browser window.
+                                                  Moving the entire network with the mouse is not
+                                                  currently possible.</p>
+                                            </item>
+                                            <item xml:id="nodes-en">
+                                                <label><seg rend="bold">Nodes.</seg></label>
+                                                <p>The nodes in the network represent individuals
+                                                  identified by their names. Every person mentioned
+                                                  in Pessoa's estate's editorial lists between 1913
+                                                  and 1935 is part of the network. For more
+                                                  information on how nodes are represented, see <ref
+                                                  target="#nodes-size-en" type="internal">Nodes,
+                                                  Size</ref> und <ref target="#nodes-color-en"
+                                                  >Nodes, Color</ref>.</p>
+                                            </item>
+                                            <item xml:id="nodes-color-en">
+                                                <label><seg rend="bold">Nodes, Color.</seg></label>
+                                                <p>The color of nodes in the network indicates
+                                                  whether a person is real (dark blue) or fictional
+                                                  (turquoise). Fictional includes literary
+                                                  characters like "Hamlet" and also Pessoa's own
+                                                  pseudonyms. "Fernando Pessoa" himself is marked as
+                                                  real here, although parts of Pessoa's work and
+                                                  artistic conception also perceive him as a
+                                                  fictional character. For this network, a decision
+                                                  about a person's status has been made in all
+                                                  cases, even though further differentiation could
+                                                  be possible.</p>
+                                            </item>
+                                            <item xml:id="nodes-click-en">
+                                                <label><seg rend="bold">Nodes, Double
+                                                  Click.</seg></label>
+                                                <p>Double-clicking on a node reduces the network
+                                                  visualization to the selected node and all
+                                                  connections to directly adjacent nodes.
+                                                  Double-clicking on a node again returns to the
+                                                  normal view of the network. Further Information
+                                                  about the nodes is available at <ref
+                                                  target="#nodes-en" type="internal">Nodes</ref>,
+                                                  <ref target="#nodes-size-en" type="internal"
+                                                  >Nodes, Size</ref>, <ref target="#nodes-color-en"
+                                                  type="internal">Nodes, Color</ref> und <ref
+                                                  target="#nodes-hover-en" type="internal">Nodes,
+                                                  Hover</ref>.</p>
+                                            </item>
+                                            <item xml:id="nodes-hover-en">
+                                                <label><seg rend="bold">Knoten, Hover.</seg></label>
+                                                <p>When you hover the mouse over a network node, the
+                                                  node itself and all edges directly coming from it
+                                                  are highlighted in red. This makes it easier to
+                                                  see which other individuals the selected person is
+                                                  directly connected to. For more information about
+                                                  the nodes, see <ref target="#nodes-en"
+                                                  type="internal">Nodes</ref>, <ref
+                                                  target="#nodes-size-en" type="internal">Nodes,
+                                                  Size</ref>, <ref target="#nodes-color-en"
+                                                  type="internal">Nodes, Color</ref> and <ref
+                                                  target="#nodes-click-en" type="internal">Nodes,
+                                                  Double Click</ref>.</p>
+                                            </item>
+                                            <item xml:id="nodes-size-en">
+                                                <label><seg rend="bold">Nodes, Size.</seg></label>
+                                                <p>The size of nodes in the network is a minimum of
+                                                  2 pixels, so that names of individuals who don't
+                                                  appear in a particular year or period but are part
+                                                  of the overall network can still be displayed.
+                                                  These names are shown in the background. For all
+                                                  names of individuals mentioned at least once in a
+                                                  document, the following formula applies: 2 +
+                                                  log2(size). "Size" indicates the frequency of
+                                                  occurrence: if a person is mentioned in 5
+                                                  different documents, size=5. log2 represents the
+                                                  logarithm to base 2. This calculation is applied
+                                                  to prevent nodes in the network from differing too
+                                                  much in size, which could make the network very
+                                                  cluttered.</p>
                                             </item>
                                         </list>
                                     </div>
                                     <div>
                                         <head>P</head>
                                         <list>
-                                            <item xml:id="PeriodisierungA-en">
-                                                <label><seg rend="bold">Periodisierung
+                                            <item xml:id="PeriodizationA-en">
+                                                <label><seg rend="bold">Periodization
                                                   A.</seg></label>
-                                                <p>Über die Auswahl "Periodisierung A" kann die
-                                                  Menge der im Netzwerk angezeigten Knoten
-                                                  (Personen) und Kanten (Beziehungen) eingeschränkt
-                                                  werden. Standardmäßig wird das gesamte Netzwerk
-                                                  angezeigt, also alle Personen, die zwischen 1913
-                                                  und 1935 auf Pessoas Listen erwähnt werden sowie
-                                                  ihre Verbindungen, wenn sie gemeinsam auf den
-                                                  Listen vorkommen. Wird eine einzelne Periode
-                                                  ausgewählt, reduziert sich die Anzeige auf die
-                                                  Personenvorkommen in der entsprechenden Periode.
-                                                  Im Hintergrund werden weiterhin alle Personen
-                                                  angezeigt, allerdings ohne Verbindungen und
-                                                  ausgegraut. Die Option "Periodisierung A" ist eine
-                                                  von mehreren <ref target="#Auswahloptionen-en"
-                                                  >Auswahloptionen</ref> für die Darstellung des
-                                                  Netzwerks.</p>
-                                                <p>Die Periodisierung A deutet auf drei längere
-                                                  Zeitperioden hin, die insgesamt den Zeitraum von
-                                                  1913 bis 1935 umfassen. Im Jahr 1913 hat Pessoa
-                                                  die ersten wichtigen Veröffentlichungen seines
-                                                  literarischen Werkes realisiert. 1935 ist das Jahr
-                                                  seines Todes.</p>
-                                                <p>1913-1918: Zwischen 1913 und 1918 wurden
-                                                  entscheidende Werke der ersten Generation des
-                                                  portugiesischen Modernismus geschrieben und
-                                                  teilweise veröffentlicht, vor allem in
-                                                  Zeitschriften, wie <seg rend="italic">Orpheu</seg>
-                                                  (1915) oder <seg rend="italic">Portugal
+                                                <p>The selection "Periodization A" can be used to
+                                                  limit the set of nodes (individuals) and edges
+                                                  (relations) displayed in the network. By default,
+                                                  the entire network is displayed, including all
+                                                  individuals mentioned in Pessoas' lists between
+                                                  1913 and 1935, along with their connections if
+                                                  they appear together on the lists. If a single
+                                                  period is chosen, the display is reduced to the
+                                                  occurrences of individuals in the corresponding
+                                                  period. In the background, all individuals are
+                                                  still displayed, but without connections and
+                                                  grayed out.The option "Periodization A" is one of
+                                                  several <ref target="#selection-options-en"
+                                                  >selection options</ref> for the visualization of
+                                                  the network. </p>
+                                                <p>Periodization A refers to three extended time
+                                                  periods, which altogether cover the period from
+                                                  1913 to 1935. In 1913, Pessoa released his initial
+                                                  significant publications of his literary work.
+                                                  1935 is the year of his death.</p>
+                                                <p>1913-1918: Between 1913 and 1918, key works of
+                                                  the first generation of Portuguese Modernism were
+                                                  written and partially published, mainly in
+                                                  magazines such as <seg rend="italic">Orpheu</seg>
+                                                  (1915) or <seg rend="italic">Portugal
                                                   Futurista</seg> (1917).</p>
-                                                <p>1919-1927: Von 1919 bis 1927 widmet sich Pessoa
-                                                  einigen individuellen Publikationsprojekten,
-                                                  beispielsweise durch den von ihm gegruendeten
-                                                  Verlag <seg rend="italic">Olisipo</seg>
-                                                  (1921-1923) oder die von ihm herausgegebenen
-                                                  Zeitschrift <seg rend="italic">Athena</seg>
-                                                  (1924-1925).</p>
-                                                <p>1928-1935: 1928 ist das Jahr einer Zäsur in der
-                                                  Rezeption seines Werkes, die durch ein starkes
-                                                  Interesse von Seiten der zweiten modernistischen
-                                                  Generation, diejenige der Herausgeber der
-                                                  Zeitschrift <seg rend="italic">Presença</seg>,
-                                                  zustande kommt. Zwischen 1928 und 1935 hat Pessoa
-                                                  intensiver als in den Jahren zuvor an seinem
-                                                  poetischen Werk und an dem <seg rend="italic">Buch
-                                                  der Unruhe</seg> gearbeitet und diese Werke für
-                                                  eine nie zustande gekommenen Buchpublikation
-                                                  vorbereitet.</p>
-                                            </item>
-                                            <item xml:id="PeriodisierungB-en">
-                                                <label><seg rend="bold">Periodisierung
-                                                  B.</seg></label>
-                                                <p>Über die Auswahl "Periodisierung B" kann die
-                                                  Menge der im Netzwerk angezeigten Knoten
-                                                  (Personen) und Kanten (Beziehungen) eingeschränkt
-                                                  werden. Standardmäßig wird das gesamte Netzwerk
-                                                  angezeigt, also alle Personen, die zwischen 1913
-                                                  und 1935 auf Pessoas Listen erwähnt werden sowie
-                                                  ihre Verbindungen, wenn sie gemeinsam auf den
-                                                  Listen vorkommen. Wird eine einzelne Periode
-                                                  ausgewählt, reduziert sich die Anzeige auf die
-                                                  Personenvorkommen in der entsprechenden Periode.
-                                                  Im Hintergrund werden weiterhin alle Personen
-                                                  angezeigt, allerdings ohne Verbindungen und
-                                                  ausgegraut. Die Option "Periodisierung B" ist eine
-                                                  von mehreren <ref target="#Auswahloptionen-en"
-                                                  >Auswahloptionen</ref> für die Darstellung des
-                                                  Netzwerks.</p>
-                                                <p>Die Periodisierung B deutet auf vier Zeitperioden
-                                                  hin, die insgesamt den Zeitraum von 1913 bis 1935
-                                                  umfassen. Im Jahr 1913 hat Pessoa die ersten
-                                                  wichtigen Veröffentlichungen seines literarischen
-                                                  Werkes realisiert. 1935 ist das Jahr seines
-                                                  Todes.</p>
-                                                <p>1913-1915: Zwischen 1913 und 1915 wurden die
-                                                  ersten Werke der heteronymischen Poesie
-                                                  geschrieben und entscheidende Werke der ersten
-                                                  Generation des portugiesischen Modernismus in der
-                                                  literarischen Zeitschrift <seg rend="italic"
-                                                  >Orpheu</seg> (1915) veroeffentlicht.</p>
-                                                <p>1916-1919: Die Jahre von 1916 bis 1919 sind von
-                                                  einer wichtigen Entwicklung und Reifung des
-                                                  poetischen Werkes und des Prosawerkes Pessoas
-                                                  gekennzeichet, wobei auf der Ebene der Publikation
-                                                  weitere kollektive Zeitschriften wie <seg
-                                                  rend="italic">Portugal Futurista</seg> (1917) von
-                                                  entscheidender Bedeutung sind.</p>
-                                                <p>1920-1927: Von 1920 bis 1927 widmet sich Pessoa
-                                                  einigen individuellen Publikationsprojekten, bsw.
-                                                  durch den von ihm gegründeten Verlag <seg
-                                                  rend="italic">Olisipo</seg> (1921-1923) oder die
-                                                  von ihm herausgegebenen Zeitschrift <seg
+                                                <p>1919-1927: From 1919 to 1927, Pessoa devoted
+                                                  himself to several individual publication
+                                                  projects, for example through the publishing house
+                                                  he founded, <seg rend="italic">Olisipo</seg>
+                                                  (1921-1923), or the magazine he edited, <seg
                                                   rend="italic">Athena</seg> (1924-1925).</p>
-                                                <p>1928-1935: 1928 ist das Jahr einer Zäsur in der
-                                                  Rezeption seines Werkes, die durch ein starkes
-                                                  Interesse von Seiten der zweiten modernistischen
-                                                  Generation, diejenige der Herausgeber der
-                                                  Zeitschrift <seg rend="italic">Presença</seg>,
-                                                  zustande kommt. Zwischen 1928 und 1935 hat Pessoa
-                                                  intensiver als in den Jahren zuvor an seinem
-                                                  poetischen Werk und an dem <seg rend="italic">Buch
-                                                  der Unruhe</seg> gearbeitet und diese Werke für
-                                                  eine nie zustande gekommenen Buchpublikation
-                                                  vorbereitet.</p>
+                                                <p>1928-1935: In 1928, there's a turning point in
+                                                  how his work is received, marked by a strong
+                                                  interest from the second generation of modernists,
+                                                  particularly the editors of the magazine <seg
+                                                  rend="italic">Presença</seg>. Between 1928 and
+                                                  1935, Pessoa dedicates more effort than before to
+                                                  his poetic works and <seg rend="italic">The Book
+                                                  of Disquiet</seg>, preparing works for a book
+                                                  publication that never materialized.</p>
+                                            </item>
+                                            <item xml:id="PeriodizationB-en">
+                                                <label><seg rend="bold">Periodization
+                                                  B.</seg></label>
+                                                <p>The selection "Periodization B" can be used to
+                                                  limit the set of nodes (individuals) and edges
+                                                  (relations) displayed in the network. By default,
+                                                  the entire network is displayed, including all
+                                                  individuals mentioned in Pessoas' lists between
+                                                  1913 and 1935, along with their connections if
+                                                  they appear together on the lists. If a single
+                                                  period is chosen, the display is reduced to the
+                                                  occurrences of individuals in the corresponding
+                                                  period. In the background, all individuals are
+                                                  still displayed, but without connections and
+                                                  grayed out.The option "Periodization B" is one of
+                                                  several <ref target="#selection-options-en"
+                                                  >selection options</ref> for the visualization of
+                                                  the network.</p>
+                                                <p>Periodization B points to four time periods that
+                                                  together encompass the period from 1913 to 1935.
+                                                  In the year 1913, Pessoa released his initial
+                                                  significant publications of his literary work.
+                                                  1935 is the year of his death.</p>
+                                                <p>1913-1915: Between 1913 and 1915, the first works
+                                                  of heteronymous poetry were written, and
+                                                  significant works of the first generation of
+                                                  Portuguese Modernism were published in the
+                                                  literary magazine <seg rend="italic">Orpheu</seg>
+                                                  (1915).</p>
+                                                <p>1916-1919: The years from 1916 to 1919 are marked
+                                                  by a significant development and maturation of
+                                                  Pessoa's poetic and prose works, with further
+                                                  collective journals like <seg rend="italic"
+                                                  >Portugal Futurista</seg> (1917) being of crucial
+                                                  importance on the publication front.</p>
+                                                <p>1920-1927: From 1920 to 1927, Pessoa focuses on
+                                                  various individual publishing projects. For
+                                                  instance, he establishes the Olisipo publishing
+                                                  house <seg rend="italic">Olisipo</seg> (1921-1923)
+                                                  and edits the magazine <seg rend="italic"
+                                                  >Athena</seg> (1924-1925).</p>
+                                                <p>1928-1935: In 1928, there's a turning point in
+                                                  how his work is received, marked by a strong
+                                                  interest from the second generation of modernists,
+                                                  particularly the editors of the magazine <seg
+                                                  rend="italic">Presença</seg>. Between 1928 and
+                                                  1935, Pessoa dedicates more effort than before to
+                                                  his poetic works and <seg rend="italic">The Book
+                                                  of Disquiet</seg>, preparing works for a book
+                                                  publication that never materialized.</p>
+                                            </item>
+                                        </list>
+                                    </div>
+                                    <div>
+                                        <head>S</head>
+                                        <list>
+                                            <item xml:id="selection-options-en">
+                                                <label><seg rend="bold">Selection
+                                                  Options.</seg></label>
+                                                <p>By default, the entire network is displayed. The
+                                                  display can be modified using the selection
+                                                  options on the left edge of the window. The
+                                                  following options are available: <ref
+                                                  target="#year-en" type="internal">Year</ref>, <ref
+                                                  target="#PeriodizationA-en" type="internal"
+                                                  >Periodization A</ref>, <ref
+                                                  target="#PeriodizationB-en" type="internal"
+                                                  >Periodization B</ref>, <ref target="#display-en"
+                                                  type="internal">Display</ref>, <ref
+                                                  target="#show-labels-en" type="internal">Show
+                                                  Labels</ref>, <ref target="#names-without-en"
+                                                  type="internal">Show Names Without
+                                                  Connections</ref>. The display of the section with
+                                                  the different selection options can be turned on
+                                                  or off using the button with three lines in the
+                                                  upper left corner. If you scroll down the network,
+                                                  the selection options area moves with it.</p>
+                                            </item>
+                                            <item xml:id="show-labels-en">
+                                                <label><seg rend="bold">Show Labels.</seg></label>
+                                                <p>With the button "Show label" you can set whether
+                                                  the names should be shown as labels of the nodes
+                                                  or not. By default, the names are shown. The "Show
+                                                  Labels" option is one of several <ref
+                                                  target="#selection-options-en">selection
+                                                  options</ref> for visualizing the network.</p>
+                                            </item>
+                                            <item xml:id="names-without-en">
+                                                <label><seg rend="bold">Show names without
+                                                  connections.</seg></label>
+                                                <p>With the switch "Show names without connections"
+                                                  can be set, whether also the persons or names are
+                                                  to be shown, which are mentioned exclusively alone
+                                                  on a list and therefore exist as nodes in the
+                                                  network, but have no connections to other
+                                                  persons/names. Whether a individual stands alone
+                                                  can change depending on the selection of the
+                                                  period or year. By default, all names are
+                                                  displayed. The option "Show names without
+                                                  connections" is one of several <ref
+                                                  target="#selection-options-en">selection
+                                                  options</ref> for displaying the network.</p>
+                                            </item>
+                                        </list>
+                                    </div>
+                                    <div>
+                                        <head>Y</head>
+                                        <list>
+                                            <item xml:id="year-en">
+                                                <label><seg rend="bold">Year.</seg></label>
+                                                <p>Using the selection "Year", the number of nodes
+                                                  (individuals) and edges (relationships) displayed
+                                                  in the network can be restricted. By default, the
+                                                  entire network is displayed, including all
+                                                  individuals mentioned in Pessoas' lists between
+                                                  1913 and 1935, along with their connections when
+                                                  they appear together in the lists. When a specific
+                                                  year is chosen, the display is limited to the
+                                                  occurrences of individuals in that corresponding
+                                                  year. In the background, all individuals are still
+                                                  displayed, but without connections and grayed out.
+                                                  The option "Year" is one of several <ref
+                                                  target="#selection-options-en">selection
+                                                  options</ref> for the visualization of the
+                                                  network.</p>
                                             </item>
                                         </list>
                                     </div>
@@ -3259,10 +3238,10 @@
                                             Cologne.</p>
                                         <p>The documents are encoded in TEI, with occurrences of
                                             names being recorded and an identification of the
-                                            individuals and characters behind the names. The
-                                            following images depict an example facsimile as well as
-                                            the transcription of a list of planned publications
-                                            written by Fernando Pessoa:</p>
+                                            persons and figures behind the names. The following
+                                            images depict an example facsimile as well as the
+                                            transcription of a list of planned publications written
+                                            by Fernando Pessoa:</p>
                                         <figure>
                                             <graphic url="/resources/images/content/BNP-E3-8-3v.png"
                                                 width="300px">
@@ -3329,8 +3308,8 @@
                                                 Pessoa's work in research, two distinct period
                                                 divisions are provided for selection. This approach
                                                 enables a critical examination of the evolution of
-                                                Pessoa's realm of individuals and characters, as
-                                                presented in the publication lists and plans.</p>
+                                                Pessoa's realm of persons and figures, as presented
+                                                in the publication lists and plans.</p>
                                         </div>
                                         <div>
                                             <head>References &amp; Responsibilities</head>
@@ -3358,7 +3337,6 @@
                                                 2017.</seg>
                                             <seg rend="bold">The network has been updated in
                                                 2023.</seg></trailer>
-
                                     </div>
                                 </div>
                             </div>
@@ -3813,9 +3791,9 @@
                                         <div>
                                             <head>Nachweise &amp; Verantwortlichkeiten</head>
                                             <p>Verantwortlich für die Transkription und Herausgabe
-                                                der Dokumente aus Fernando Pessoas Nachlass ist
-                                                Pedro Sepúlveda. Die JSON-Daten für das Netzwerk
-                                                sind von Ulrike Henny-Krahmer aus den
+                                                der Dokumente aus Fernando Pessoas Nachlass sind
+                                                Pedro Sepúlveda und Jorge Uribe. Die JSON-Daten für
+                                                das Netzwerk sind von Ulrike Henny-Krahmer aus den
                                                 TEI-Tranksriptionen der digitalen Edition generiert
                                                 worden. Die D3-Visualisierung basiert auf dem <ref
                                                   target="https://bl.ocks.org/mbostock/1212215"
@@ -3833,7 +3811,9 @@
                                                 Umsetzung sind im Team erarbeitet worden.</p>
                                         </div>
                                         <trailer><seg rend="bold">Köln / Lissabon / Würzburg
-                                                2017.</seg></trailer>
+                                                2017.</seg>
+                                            <seg rend="bold">Das Netz wurde im Jahr 2023
+                                                aktualisiert.</seg></trailer>
 
                                     </div>
                                 </div>
