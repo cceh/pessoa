@@ -369,8 +369,7 @@
                                     the letter "W" followed by a consecutive number.</p>
                                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                     <item>
-                                        <rs type="work" key="W321">“António” — António, de António
-                                            Botto</rs>
+                                        <rs type="work" key="W321">“António” — António, de António Botto</rs>
                                     </item>
                                 </egXML>
                                 <p>The unique key-value is determined not only by the title of a
@@ -520,6 +519,27 @@
                     </div>
                     <div xml:id="encoding-description">
                         <head>Encoding description</head>
+                        <p>The relationship between the transcribed text and its source, the
+                            facsimiles from which it is derived, is documented using the element
+                                <gi>encodingDesc</gi> (encoding description), which only appears in
+                            the publication and not in the documents themselves.</p>
+                        <p>Within the element <gi>encodingDesc</gi>, there's always the element
+                            <gi>variantEncoding</gi> (variant encoding), which contains the
+                            attributes <att>method</att> and <att>location</att>:</p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <encodingDesc>
+                                <variantEncoding method="parallel-segmentation" location="internal"/>
+                            </encodingDesc>
+                        </egXML>
+                        <p>According to the general TEI guidelines, the attribute <att>method</att>
+                            indicates which method is used to encode the variants' apparatus. It
+                            always contains the value "<val>parallel-segmentation</val>", expressing
+                            that alternate readings of a passage are presented side by side in the
+                            text, without the need for a base text. In contrast, the attribute
+                                <att>location</att> indicates whether the apparatus appears within
+                            the text or outside it. It consistently holds the value
+                                "<val>internal</val>" signifying that the apparatus appears within the
+                            text.</p>
                     </div>
                 </div>
             </div>
