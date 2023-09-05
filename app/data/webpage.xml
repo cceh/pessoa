@@ -2425,6 +2425,23 @@
                                     <div>
                                         <head>A</head>
                                         <list>
+                                            <item xml:id="Alle-Namen">
+                                                <label><seg rend="bold">Alle Namen
+                                                  anzeigen.</seg></label>
+                                                <p>Mit dem Schalter "Alle Namen anzeigen" kann
+                                                  eingestellt werden, ob auch die Personen bzw.
+                                                  Namen angezeigt werden sollen, die ausschließlich
+                                                  allein auf einer Liste erwähnt werden und daher
+                                                  zwar als Knoten im Netzwerk vorhanden sind, aber
+                                                  keine Verbindungen zu anderen Personen/Namen
+                                                  haben. Ob eine Person für sich steht, kann sich je
+                                                  nach Auswahl der Periode oder des Jahres ändern.
+                                                  Standardmäßig werden alle Namen angezeigt. Die
+                                                  Option "Alle Namen anzeigen" ist eine von mehreren
+                                                  <ref target="#Auswahloptionen"
+                                                  >Auswahloptionen</ref> für die Darstellung des
+                                                  Netzwerks.</p>
+                                            </item>
                                             <item xml:id="Anzeige">
                                                 <label><seg rend="bold">Anzeige.</seg></label>
                                                 <p>Über die Option "Anzeige" kann eingestellt
@@ -2457,12 +2474,13 @@
                                                   >Periodisierung B</ref>, <ref target="#Anzeige"
                                                   type="internal">Anzeige</ref>, <ref
                                                   target="#Label" type="internal">Label
-                                                  anzeigen</ref>. Die Anzeige des Bereichs mit den
-                                                  verschiedenen Auswahloptionen kann über den Button
-                                                  mit den drei Strichen oben links ein- oder
-                                                  ausgeschaltet werden. Scrollt man im Netzwerk nach
-                                                  unten, bewegt sich der Auswahloptionenbereich
-                                                  mit.</p>
+                                                  anzeigen</ref>, <ref target="#Alle-Namen"
+                                                  type="internal">Alle Namen anzeigen</ref>. Die
+                                                  Anzeige des Bereichs mit den verschiedenen
+                                                  Auswahloptionen kann über den Button mit den drei
+                                                  Strichen oben links ein- oder ausgeschaltet
+                                                  werden. Scrollt man im Netzwerk nach unten, bewegt
+                                                  sich der Auswahloptionenbereich mit.</p>
                                             </item>
                                         </list>
                                     </div>
@@ -2860,7 +2878,6 @@
                                                 2017.</seg>
                                             <seg rend="bold">Das Netz wurde im Jahr 2023
                                                 aktualisiert.</seg></trailer>
-
                                     </div>
                                 </div>
                             </div>
@@ -3124,11 +3141,13 @@
                                                   >Periodization B</ref>, <ref target="#Anzeige-en"
                                                   type="internal">Display</ref>, <ref
                                                   target="#Label-en" type="internal">Show
-                                                  Labels</ref>. The display of the section with the
-                                                  different selection options can be turned on or
-                                                  off using the button with three lines in the upper
-                                                  left corner. If you scroll down the network, the
-                                                  selection options area moves with it.</p>
+                                                  Labels</ref>, <ref target="#Alle-Namen-en"
+                                                  type="internal">Show All Names</ref>. The display
+                                                  of the section with the different selection
+                                                  options can be turned on or off using the button
+                                                  with three lines in the upper left corner. If you
+                                                  scroll down the network, the selection options
+                                                  area moves with it.</p>
                                             </item>
                                             <item xml:id="Label-en">
                                                 <label><seg rend="bold">Show Labels.</seg></label>
@@ -3138,6 +3157,21 @@
                                                   Labels" option is one of several <ref
                                                   target="#Auswahloptionen-en">selection
                                                   options</ref> for visualizing the network.</p>
+                                            </item>
+                                            <item xml:id="Alle-Namen-en">
+                                                <label><seg rend="bold">Show All
+                                                  Names.</seg></label>
+                                                <p>With the switch "Show All Names" can be set,
+                                                  whether also the persons or names are to be shown,
+                                                  which are mentioned exclusively alone on a list
+                                                  and therefore exist as nodes in the network, but
+                                                  have no connections to other persons/names.
+                                                  Whether a individual stands alone can change
+                                                  depending on the selection of the period or year.
+                                                  By default, all names are displayed. The option
+                                                  "Show All Names" is one of several <ref
+                                                  target="#Auswahloptionen-en">selection
+                                                  options</ref> for displaying the network.</p>
                                             </item>
                                         </list>
                                     </div>
@@ -3439,6 +3473,21 @@
                                                   várias <ref target="#Auswahloptionen-pt">opções de
                                                   seleção</ref> para a visualização da rede.</p>
                                             </item>
+                                            <item xml:id="Alle-Namen-pt">
+                                                <label><seg rend="bold">Mostrar Todos os
+                                                  Nomes.</seg></label>
+                                                <p>Com a opção "Mostrar Todos os Nomes", é possível
+                                                  definir se também as pessoas ou nomes devem ser
+                                                  exibidos, que são mencionados exclusivamente
+                                                  sozinhos em uma lista e, portanto, existem como
+                                                  nós na rede, mas não têm conexões com outras
+                                                  pessoas/nomes. Se um indivíduo está sozinho pode
+                                                  mudar dependendo da seleção do período ou ano. Por
+                                                  padrão, todos os nomes são exibidos. A opção
+                                                  "Mostrar Todos os Nomes" é uma das várias <ref
+                                                  target="#Auswahloptionen-pt">opções de
+                                                  seleção</ref> para exibir a rede.</p>
+                                            </item>
                                             <item xml:id="Bewegen-pt">
                                                 <label><seg rend="bold">Movimentar-se na
                                                   rede.</seg></label>
@@ -3465,12 +3514,14 @@
                                                   Periodização B</ref>, <ref target="#Anzeige-pt"
                                                   type="internal"> Visualização</ref>, <ref
                                                   target="#Label-pt" type="internal">Mostrar
-                                                  Nomes</ref>, Mostrar Lista de Nomes. A
-                                                  visualização da área com as várias opções de
-                                                  seleção pode ser ligada ou desligada através do
-                                                  ícone com três traços no canto superior esquerdo.
-                                                  Se movimentar o cursor para baixo, a área das
-                                                  opções de seleção acompanha esse movimento.</p>
+                                                  Nomes</ref>, <ref target="#Alle-Namen"
+                                                  type="internal">Mostrar Todos os Nomes</ref>,
+                                                  Mostrar Lista de Nomes. A visualização da área com
+                                                  as várias opções de seleção pode ser ligada ou
+                                                  desligada através do ícone com três traços no
+                                                  canto superior esquerdo. Se movimentar o cursor
+                                                  para baixo, a área das opções de seleção acompanha
+                                                  esse movimento.</p>
                                             </item>
                                         </list>
                                     </div>
