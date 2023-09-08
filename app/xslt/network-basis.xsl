@@ -7,8 +7,8 @@
 
     <xsl:template match="/">
 
-        <xsl:call-template name="network-basis-all"/>
-        <!--<xsl:call-template name="network-basis-years"/>-->
+        <!--<xsl:call-template name="network-basis-all"/>-->
+        <xsl:call-template name="network-basis-years"/>
 
     </xsl:template>
 
@@ -16,10 +16,10 @@
     <xsl:template name="network-basis-years">
         <xsl:variable name="years"
             select="
-                for $i in 1921 to 1935
+                for $i in 1913 to 1935
                 return
                     string($i)"/>
-        <!-- 1913-1935 -->
+        <!-- 1921-1935 (?) -->
 
         <xsl:for-each select="$years">
             <xsl:result-document href="networks/network-basis-{.}.xml">
