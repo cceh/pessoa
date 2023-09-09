@@ -5,7 +5,7 @@
         <fileset dir="${exist-home}/lib">
             <include name="*.jar"/>
         </fileset>
-        <pathelement path="${exist-home}/exist-ant-6.2.0.jar"/>
+        <pathelement path="${exist-home}/exist-ant-5.3.1.jar"/>
     </path>
     <typedef resource="org/exist/ant/antlib.xml" uri="http://exist-db.org/ant">
         <classpath refid="classpath.core"/>
@@ -18,7 +18,7 @@
         <zip destfile="data/pub.zip" basedir="data/pub/" excludes="dont*.*"/>
         <zip destfile="data/doc.zip" basedir="data/doc/" excludes="dont*.*"/>
         -->
-        <!--<xdb:xquery uri="${uri}" queryfile="app/pre-install.xql" user="${user}" password="${password}"/>-->
+        <xdb:xquery uri="${uri}" queryfile="app/pre-install.xql" user="${user}" password="${password}"/>
         <xdb:store uri="${uri}" createcollection="true" createsubcollections="true" user="${user}" password="${password}">
             <fileset dir="./app/">
                 <include name="*.*"/>

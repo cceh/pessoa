@@ -2,7 +2,12 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">
     
-    <!-- written by Ulrike Henny-Krahmer, 2017 -->
+    <!-- written by Ulrike Henny-Krahmer, 2017
+    to generate the network data:
+    - start with the script network-basis.xsl
+    - then network-periods.xsl
+    - then this script network.xsl
+    -->
 
     <xsl:output method="text" encoding="UTF-8"/>
 
