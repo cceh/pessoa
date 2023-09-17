@@ -16,7 +16,7 @@
     <xsl:template name="network-basis-years">
         <xsl:variable name="years"
             select="
-                for $i in 1917 to 1935
+                for $i in 1929 to 1935
                 return
                     string($i)"/>
         <!-- 1913-1935 -->
