@@ -369,7 +369,8 @@
                                     the letter "W" followed by a consecutive number.</p>
                                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                     <item>
-                                        <rs type="work" key="W321">“António” — António, de António Botto</rs>
+                                        <rs type="work" key="W321">“António” — António, de António
+                                            Botto</rs>
                                     </item>
                                 </egXML>
                                 <p>The unique key-value is determined not only by the title of a
@@ -522,13 +523,14 @@
                         <p>The relationship between the transcribed text and its source, the
                             facsimiles from which it is derived, is documented using the element
                                 <gi>encodingDesc</gi> (encoding description), which only appears in
-                            the publication and not in the documents themselves.</p>
+                            the publications and not in the documents themselves.</p>
                         <p>Within the element <gi>encodingDesc</gi>, there's always the element
-                            <gi>variantEncoding</gi> (variant encoding), which contains the
+                                <gi>variantEncoding</gi> (variant encoding), which contains the
                             attributes <att>method</att> and <att>location</att>:</p>
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                             <encodingDesc>
-                                <variantEncoding method="parallel-segmentation" location="internal"/>
+                                <variantEncoding method="parallel-segmentation" location="internal"
+                                />
                             </encodingDesc>
                         </egXML>
                         <p>According to the general TEI guidelines, the attribute <att>method</att>
@@ -538,25 +540,60 @@
                             text, without the need for a base text. In contrast, the attribute
                                 <att>location</att> indicates whether the apparatus appears within
                             the text or outside it. It consistently holds the value
-                                "<val>internal</val>" signifying that the apparatus appears within the
-                            text.</p>
+                                "<val>internal</val>" signifying that the apparatus appears within
+                            the text.</p>
                     </div>
                 </div>
             </div>
             <div xml:id="facsimiles">
                 <head>Facsimiles</head>
                 <p>The <gi>facsimile</gi> element is used to hold information about the image files
-                    that represent a facsimile of the text transcribed in the TEI body. The image
-                    files for the Pessoa edition are stored on the image server of the Cologne
-                    Center for eHumanities (CCeH). The link to the image server is given in the
-                    attribute <att>xml:base</att> on <gi>facsimile</gi>. In all the TEI files,
-                        <gi>facsimile</gi> contains one or more <gi>graphic</gi> elements, each
-                    indicating the path to individual image files in <att>url</att>. These paths are
-                    relative to the base URI for the images, for example:</p>
-                <egXML xmlns="http://www.tei-c.org/ns/Examples"><facsimile
-                        xml:base="http://images.cceh.uni-koeln.de/pessoa/"><graphic
-                            url="prosa/Notas_para_a_recordacao_1.jpg"/><graphic
-                            url="prosa/Notas_para_a_recordacao_2.jpg"/></facsimile></egXML>
+                    representing a facsimile of the text transcribed in the TEI body. For the Pessoa
+                    edition, these image files are stored on the image server of the Cologne Center
+                    for eHumanities (CCeH). The link to this image server is specified in the
+                        <att>xml:base</att> attribute within the <gi>facsimile</gi> element.</p>
+                <p>Within all TEI files, the <gi>facsimile</gi> element contains one or more
+                        <gi>graphic</gi> elements, each indicating the path to individual image
+                    files in a <att>url</att>. These paths are relative to the base URI for the
+                    images. For example:</p>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/">
+                        <graphic url="prosa/Notas_para_a_recordacao_1.jpg"/>
+                        <graphic url="prosa/Notas_para_a_recordacao_2.jpg"/>
+                    </facsimile>
+                </egXML>
+                <p>As mentioned in the sections of the <ref target="#bibliographic-description">
+                        bibliographic description</ref>, there are instances where a work has been
+                    published more than once, which necessitates the use of multiple
+                        <gi>facsimile</gi> elements:</p>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/"
+                        corresp="#Contemporânea_1922">
+                        <graphic url="pub/mar_portuguez.jpg"/>
+                        <graphic url="pub/mar_portuguezII.jpg"/>
+                        <graphic url="pub/mar_portuguezIII.jpg"/>
+                        <graphic url="pub/mar_portuguezIV.jpg"/>
+                        <graphic url="pub/mar_portuguezV.jpg"/>
+                        <graphic url="pub/mar_portuguezVI.jpg"/>
+                    </facsimile>
+                    <facsimile xml:base="http://images.cceh.uni-koeln.de/pessoa/"
+                        corresp="#Leitura_1926">
+                        <graphic url="pub/Mar_Portuguez-Leitura_para_todos_RJ.jpg"/>
+                        <graphic url="pub/Mar_Portuguez-Leitura_para_todos_RJ_2.jpg"/>
+                        <graphic url="pub/Mar_Portuguez-Leitura_para_todos_RJ_3.jpg"/>
+                        <graphic url="pub/Mar_Portuguez-Leitura_para_todos_RJ_4.jpg"/>
+                        <graphic url="pub/Mar_Portuguez-Leitura_para_todos_RJ_5.jpg"/>
+                    </facsimile>
+                </egXML>
+                <p>As shown in the example above, there's an additional attribute <att>corresp</att>
+                    within the <gi>facsimile</gi> element, alongside the existing attribute
+                        <att>xml:base</att>. The value of the <att>corresp</att> attribute points to
+                    the identifier of a bibliographic source defined in the <ref target="#source"
+                        >source description</ref> in the TEI header, so that a specific source is
+                    linked to a specific set of facsimiles. This is relevant in cases in which there
+                    are several different sources of a published work and several corresponding sets
+                    of facsimiles. To refer to these identifiers, a preceding hash sign (#) is
+                    used.</p>
             </div>
             <div xml:id="transcriptions">
                 <head>Transcriptions</head>
