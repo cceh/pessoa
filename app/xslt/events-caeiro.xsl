@@ -22,7 +22,7 @@
                     <xsl:variable name="doc-title"
                         select="replace(ancestor::TEI//titleStmt/title/normalize-space(.), '/E3', '')"/>
                     <xsl:variable name="title-id"
-                        select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'works']/item[@xml:id = $work-id]/ptr[@type = 'title']/substring-after(@target, '#')"/>
+                        select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'works']/item[@xml:id = $work-id]/title/@key"/>
                     <xsl:variable name="work-title"
                         select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'titles']/item[@xml:id = $title-id]/title/text()"/>
                     <xsl:variable name="origDate" select="ancestor::TEI//origDate"/>
