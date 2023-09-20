@@ -18,7 +18,7 @@
                 
                 <!-- check if it is the right author -->
                 <xsl:if
-                    test="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'works']/item[@xml:id = $work-id]/ptr[@type = 'author'][@target = '#AC']">
+                    test="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'works']/item[@xml:id = $work-id]/name[@type = 'author'][@key = 'AC']">
                     <xsl:variable name="doc-title"
                         select="replace(ancestor::TEI//titleStmt/title/normalize-space(.), '/E3', '')"/>
                     <xsl:variable name="title-id"
@@ -26,7 +26,8 @@
                     <xsl:variable name="work-title"
                         select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'titles']/item[@xml:id = $title-id]/title/text()"/>
                     <xsl:variable name="origDate" select="ancestor::TEI//origDate"/>
-                    <xsl:variable name="imprintDate" select="ancestor::TEI//imprint/date"/>
+                    <!-- if there are several publication dates, take only the first one: -->
+                    <xsl:variable name="imprintDate" select="(ancestor::TEI//imprint)[1]/date"/>
                     <xsl:variable name="filename" select="ancestor::TEI//idno[@type = 'filename']"/>
                     <xsl:variable name="genre" select="ancestor::TEI//note[@type = 'genre']/rs"/>
                     <xsl:variable name="link">
