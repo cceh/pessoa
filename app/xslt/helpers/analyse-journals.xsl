@@ -7,9 +7,14 @@
     <!-- @author: Ulrike Henny-Krahmer
     Created on 6 December 2022. -->
     
+    <!-- The purpose of this stylesheet is to generate charts about the publications.
+        It was used in the context of an academic publication.
+        Usage note: adjust the path for the output documents in lines 38, 104, 150, 196, 243,
+        319, 395, 471, 548, 621, 694, 767, 840, 914, 988, 1059. -->
+    
     <xsl:variable name="docs" select="collection('../../data/doc')//TEI"/>
     <xsl:variable name="pubs" select="collection('../../data/pub')//TEI"/>
-    <xsl:variable name="lists" select="document('../../data/lists.xml')//TEI//list[@type='periodical']"/>
+    <xsl:variable name="lists" select="document('../../data/indices.xml')//TEI//list[@type='periodical']"/>
     <xsl:variable name="colors">
         <list xmlns="http://www.tei-c.org/ns/1.0">
             <item>#9BD770</item>
@@ -22,7 +27,7 @@
             <item>#236AB9</item>
         </list>
     </xsl:variable>
-    
+
     <xsl:template match="/">
         
         <xsl:call-template name="journals-6"/>
@@ -1052,7 +1057,7 @@
     
     <xsl:template name="journals-6">
         <!-- Create a bar chart: how many texts by which authors are published in which journals? -->
-        <xsl:result-document href="/home/ulrike/Schreibtisch/archives/journals_6.html" method="html" encoding="UTF-8">
+        <xsl:result-document href="/home/ulrike/Schreibtisch/archives/journals_6-20230927.html" method="html" encoding="UTF-8">
             <head>
                 <!-- Load plotly.js into the DOM -->
                 <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
