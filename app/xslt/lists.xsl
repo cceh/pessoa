@@ -65,9 +65,9 @@
                 </xsl:choose></h2>
                 <ul>
                     <xsl:for-each-group select=".//rs[@type='name']" group-by="@key">
-                        <xsl:sort select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//listPerson/person[@xml:id=current-grouping-key() or @corresp=concat('#',current-grouping-key())]/persName[@type='main']"/>
+                        <xsl:sort select="doc('xmldb:exist:///db/apps/pessoa/data/indices.xml')//listPerson/person[@xml:id=current-grouping-key() or @corresp=concat('#',current-grouping-key())]/persName[@type='main']"/>
                         <xsl:variable name="key" select="current-grouping-key()"/>
-                        <xsl:variable name="name" select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//listPerson/person[@xml:id=$key or @corresp=concat('#',$key)]/persName[@type='main']"/>
+                        <xsl:variable name="name" select="doc('xmldb:exist:///db/apps/pessoa/data/indices.xml')//listPerson/person[@xml:id=$key or @corresp=concat('#',$key)]/persName[@type='main']"/>
                         <li onmouseenter="highlight('person {$key}');" onmouseleave="clearH('{$key}');"><xsl:value-of select="$name"/> <a href="../../index/names#{$key}" title="{$title}"><img class="indexImg" src="{string-join(($host,'resources/images/glyphicons-35-old-man.png'),'/')}"/></a></li>
                     </xsl:for-each-group>
                 </ul>
@@ -108,8 +108,8 @@
                 </xsl:choose></h2>
                 <ul>
                     <xsl:for-each-group select=".//rs[@type='periodical']" group-by="@key">
-                        <xsl:sort select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type='periodical']/item[@xml:id=current-grouping-key()]"/>
-                        <xsl:variable name="name"  select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type='periodical']/item[@xml:id=current-grouping-key()]"/>
+                        <xsl:sort select="doc('xmldb:exist:///db/apps/pessoa/data/indices.xml')//list[@type='periodical']/item[@xml:id=current-grouping-key()]"/>
+                        <xsl:variable name="name"  select="doc('xmldb:exist:///db/apps/pessoa/data/indices.xml')//list[@type='periodical']/item[@xml:id=current-grouping-key()]"/>
                         <li onmouseenter="highlight('journal {current-grouping-key()}');" onmouseleave="clearH('{current-grouping-key()}');"><xsl:value-of select="$name"/> <a href="../../index/periodicals#{$name}" title="{$title}"><img class="indexImg" src="{string-join(($host,'resources/images/glyphicons-609-newspaper.png'),'/')}"/></a></li>
                     </xsl:for-each-group>
                 </ul>

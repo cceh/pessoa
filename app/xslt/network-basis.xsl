@@ -26,7 +26,7 @@
                 <xsl:variable name="year" select="."/>
                 <persons>
                     <!-- Alle Personen/Namen durchgehen -->
-                    <xsl:for-each select="doc('../data/lists.xml')//listPerson/person[@xml:id]">
+                    <xsl:for-each select="doc('../data/indices.xml')//listPerson/person[@xml:id]">
                         <xsl:variable name="person-id" select="@xml:id"/>
                         <person>
                             <id>
@@ -108,7 +108,7 @@
         <xsl:result-document href="network-basis.xml">
             <persons>
                 <!-- Alle Personen/Namen durchgehen -->
-                <xsl:for-each select="doc('../data/lists.xml')//listPerson/person[@xml:id]">
+                <xsl:for-each select="doc('../data/indices.xml')//listPerson/person[@xml:id]">
                     <xsl:variable name="person-id" select="@xml:id"/>
                     <person>
                         <id>

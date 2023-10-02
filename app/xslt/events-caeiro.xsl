@@ -18,13 +18,13 @@
                 
                 <!-- check if it is the right author -->
                 <xsl:if
-                    test="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'works']/item[@xml:id = $work-id]/ptr[@type = 'author'][@target = '#AC']">
+                    test="doc('xmldb:exist:///db/apps/pessoa/data/indices.xml')//list[@type = 'works']/item[@xml:id = $work-id]/ptr[@type = 'author'][@target = '#AC']">
                     <xsl:variable name="doc-title"
                         select="replace(ancestor::TEI//titleStmt/title/normalize-space(.), '/E3', '')"/>
                     <xsl:variable name="title-id"
-                        select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'works']/item[@xml:id = $work-id]/ptr[@type = 'title']/substring-after(@target, '#')"/>
+                        select="doc('xmldb:exist:///db/apps/pessoa/data/indices.xml')//list[@type = 'works']/item[@xml:id = $work-id]/ptr[@type = 'title']/substring-after(@target, '#')"/>
                     <xsl:variable name="work-title"
-                        select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'titles']/item[@xml:id = $title-id]/title/text()"/>
+                        select="doc('xmldb:exist:///db/apps/pessoa/data/indices.xml')//list[@type = 'titles']/item[@xml:id = $title-id]/title/text()"/>
                     <xsl:variable name="origDate" select="ancestor::TEI//origDate"/>
                     <xsl:variable name="imprintDate" select="ancestor::TEI//imprint/date"/>
                     <xsl:variable name="filename" select="ancestor::TEI//idno[@type = 'filename']"/>
