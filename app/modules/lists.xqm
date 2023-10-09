@@ -34,7 +34,7 @@ declare function lists:get-navi-list($node as node(), $model as map(*), $type as
         let $ref := concat($helpers:app-root, "/pub/", substring-before($res, ".xml"))  
         order by $label collation "?lang=pt" 
         return <item label="{$label}" ref="{$ref}?plang={$helpers:web-language}"></item>
-        (:for $item in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="works"][@n="2"]/tei:item
+        (:for $item in doc("/db/apps/pessoa/data/indices.xml")//tei:list[@type="works"][@n="2"]/tei:item
          let $ref := concat($helpers:app-root, "/pub/", lists:get-doc-uri($item))
          order by $item/tei:title
          return <item label="{$item/tei:title}" ref="{$ref}">

@@ -4,7 +4,11 @@
     exclude-result-prefixes="xs" xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     version="2.0">
     
-    <xsl:variable name="lists" select="doc('../../data/lists.xml')"/>
+    <!-- The purpose of this stylesheet is to create a list of person names as they appear in the 
+        publications and their corresponding associated ids in the indices.xml. The resulting list 
+        is used for quality control. -->
+    
+    <xsl:variable name="lists" select="doc('../../data/indices.xml')"/>
     
     <xsl:template match="/">
         <pubs>
@@ -26,7 +30,7 @@
                     <xsl:if test="not(contains($lists-name,$text))">
                         <error key="{$key}">
                             <name_in_pub><xsl:value-of select="$text"/></name_in_pub>
-                            <name_in_lists.xml><xsl:value-of select="$lists-name"/></name_in_lists.xml>
+                            <name_in_indices.xml><xsl:value-of select="$lists-name"/></name_in_indices.xml>
                         </error>
                     </xsl:if>
                 </xsl:for-each>
