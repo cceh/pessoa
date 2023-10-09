@@ -599,7 +599,7 @@
                 <head>Transcriptions</head>
                 <div xml:id="documents">
                     <head>Encoding of <hi rend="italic">documents</hi></head>
-                    <div xml:id="general">
+                    <div xml:id="general-documents">
                         <head>General structure</head>
                         <p>The transcription of <hi rend="italic">documents</hi> is encoded inside
                             of the TEI <gi>text</gi> and <gi>body</gi> elements. Each text body must
@@ -644,12 +644,12 @@
                         <p>Divisions can also be nested if there is a subpart inside of a general
                             part. <!-- example? --></p>
                     </div>
-                    <div xml:id="blocks-inline">
+                    <div xml:id="blocks-inline-documents">
                         <head>Structures inside of divisions: headings, paragraphs, lists, tables,
                             ...</head>
                         <p>Inside of the main divisions of a document, further structures are
                             encoded, such as headings, paragraphs, lists, or tables.</p>
-                        <div xml:id="headings">
+                        <div xml:id="headings-documents">
                             <head>Headings</head>
                             <p>Headings are included in a <gi>head</gi> element and should occur
                                 directly after the opening of a division or other main structure: </p>
@@ -658,7 +658,7 @@
                                                   type="title" key="T184">Na Casa de saude de
                                                   Cascaes</rs></rs></hi></head> [...] </div></egXML>
                         </div>
-                        <div xml:id="paragraphs">
+                        <div xml:id="paragraphs-documents">
                             <head>Paragraphs and other blocks</head>
                             <p>Paragraphs are encoded with a <gi>p</gi> element. A simple example is
                                 shown in the following:</p>
@@ -2063,19 +2063,102 @@
                     </div>
                 </div>
                 <div xml:id="publications">
-                    <head>Encoding of publications</head>
-                    <!-- Bild einfügen:
-                    <figure>
-            <graphic url="images/fezziPic.png" width="495px" height="640px"/>
-            <head><title>Mr Fezziwig's Ball</title>: illustration by George Cruikshank from Dickens'
-                <title>A Christmas Carol</title> (1843) </head>
-          </figure>
-                    -->
-                    <!-- include a definition: 
-                    <p><specList>
-                            <specDesc key="name"/>
-                        </specList> blub blub blub.  Siehe Kap. 22 Guidelines -->
-                    <p/>
+                    <head>Encoding of <hi rend="italic">publications</hi></head>
+                    <div xml:id="general-publications">
+                        <head>General structure</head>
+                        <p>The transcription of publications is encoded within the TEI elements
+                                <gi>text</gi> and <gi>body</gi>, each appearing twice. In the first
+                                <gi>text</gi> element, you'll find the attributes <att>corresp</att>
+                            and <att>type</att>. In the second <gi>text</gi>, only the attribute
+                                <att>type</att> is present:</p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <text corresp="#W211" type="orig">
+                                <body> [...] </body>
+                            </text>
+                            <text type="reg">
+                                <body> [...] </body>
+                            </text>
+                        </egXML>
+                        <p>The attribute <att>corresp</att> contains a unique key-value defined in
+                            an external central work register (see the section on <ref
+                                target="#work-index">Work index</ref> for more details). However, in
+                            the attribute <att>type</att>, you will consistently find the value
+                                "<val>orig</val>". This indicates that the first <gi>text</gi>
+                            element contains a transcription of the spelling and formatting that
+                            follows the source of the publication and has not been normalized or
+                            corrected. In contrast, the second <gi>text</gi> element contains the
+                            attribute <att>type</att>, but with the value "<val>reg</val>". This
+                            signifies that it represents the current spelling of the published
+                            text.</p>
+                    </div>
+                    <div>
+                        <head xml:id="blocks-inline-publications">Structures inside of divisions:
+                            headings, paragraphs, ...</head>
+                        <p>Similar to document encoding, there are other structures within the main
+                            sections of a puplication, such as headings, paragraphs, or verse lines
+                            of verse that are encoded.</p>
+                        <div xml:id="headings-publications">
+                            <head>Headings</head>
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                <div>
+                                    <pb n="9"/>
+                                    <head>MAR PORTUGUEZ</head>
+                                    <div type="poem" corresp="#W212">
+                                        <head rend="indent">I</head>
+                                        <head rend="indent">O INFANTE</head>
+                                        <lg> [...] </lg>
+                                        <lg> [...] </lg>
+                                        <lg> [...] </lg>
+                                    </div>
+                                </div>
+                            </egXML>
+                        </div>
+                        <div xml:id="paragraphs-publications">
+                            <head>Paragraphs and other blocks</head>
+                            <!-- Hier fehlt ein erläuternder Text -->
+                            <!-- Hier fehlt ein erläuternder Text -->
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                <body>
+                                    <p>A quadra é o vaso de flores que o povo põe á janela da sua
+                                        Alma.</p>
+                                    <p rend="indent-first">Da orbita triste do vaso obscuro a graça
+                                        exilada das flôres atreve o seu olhar de alegria.</p>
+                                    <p rend="indent-first">Quem faz quadras portuguezas comunga a
+                                        alma do Povo, humildemente de nós todos e errante dentro de
+                                        si propria.</p>
+                                    <p rend="indent-first">Os autores d'este livro realizaram as
+                                        suas quadras com destreza luzitana e fidelidade ao
+                                        instinctivo e desatado da alma popular.</p>
+                                    <p rend="indent-first">Elogial-os mais seria elogial-os
+                                        menos.</p>
+                                    <p>17-IV-1914</p> [...] </body>
+                            </egXML>
+                            <!-- Hier fehlt ein erläuternder Text -->
+                            <!-- Hier fehlt ein erläuternder Text -->
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                <lg>
+                                    <l>E a orla branca foi de ilha em continente,</l>
+                                    <l>Clareou, correndo, até ao fim do mundo,</l>
+                                    <l>E viu-se a terra inteira, de repente,</l>
+                                    <l>Surgir, redonda, do azul profundo.</l>
+                                </lg>
+                                <lg>
+                                    <l>Quem te sagrou creou-te portuguez.</l>
+                                    <l>Do mar e nós em ti nos deu signal.</l>
+                                    <l>Cumpriu-se o Mar, e o Imperio se desfez.</l>
+                                    <l>Senhor, falta cumprir-se Portugal!</l>
+                                </lg>
+                            </egXML>
+                            <!-- Hier fehlt ein erläuternder Text -->
+                            <!-- Hier fehlt ein erläuternder Text -->
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                <signed rend="right">
+                                    <rs type="name" role="author" key="FP" style="b">Fernando
+                                        Pessoa</rs> . </signed>
+                            </egXML>
+                            <!-- Hier fehlt ein erläuternder Text -->
+                        </div>
+                    </div>
                 </div>
                 <div xml:id="references">
                     <head>Encoding of references (names, titles, periodicals, works, ...)</head>
