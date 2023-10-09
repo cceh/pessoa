@@ -165,7 +165,7 @@ return
 
 
 declare function index:getPersonIndex($node as node(), $model as map(*)) {
-    let $lists := doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson[@type = 'all']
+    let $lists := doc('/db/apps/pessoa/data/indices.xml')//tei:listPerson[@type = 'all']
     let $docs:= collection("/db/apps/pessoa/data/doc/")
     let $pubs:= collection("/db/apps/pessoa/data/pub/")
     let $persons := for $person in $lists/tei:person
@@ -241,7 +241,7 @@ declare function index:printAuthor($node as node(), $model as map(*)) {
 (:#### Periodicals / Journals #### :)
 
 declare function index:collectJournals($node as node(), $model as map(*)) {
-    let $journals := for $journal in  doc('/db/apps/pessoa/data/lists.xml')//tei:list[@type = "periodical"]/tei:item
+    let $journals := for $journal in  doc('/db/apps/pessoa/data/indices.xml')//tei:list[@type = "periodical"]/tei:item
                                 let $key := $journal/@xml:id/data(.)
                                 order by $journal/data(.)                                
                                 return <item key="{$key}" name="{$journal/data(.)}" letter="{substring($journal/data(.),1,1)}">

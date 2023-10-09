@@ -16,11 +16,11 @@
                 <xsl:variable name="doc-title"
                     select="replace(ancestor::TEI//titleStmt/title/normalize-space(.), '/E3', '')"/>
                 <xsl:variable name="title-id"
-                    select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'collections']/item[@xml:id = $coll-id]/ptr[@type = 'title']/substring-after(@target, '#')"/>
+                    select="doc('xmldb:exist:///db/apps/pessoa/data/indices.xml')//list[@type = 'collections']/item[@xml:id = $coll-id]/ptr[@type = 'title']/substring-after(@target, '#')"/>
                 <xsl:variable name="coll-title"
-                    select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'titles']/item[@xml:id = $title-id]/title/text()"/>
-                <xsl:variable name="journal-id" select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'collections']/item[@xml:id = $coll-id]/ptr[@type = 'journal']/substring-after(@target, '#')"/>
-                <xsl:variable name="journal-title" select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'periodical']/item[@xml:id = $journal-id]"/>
+                    select="doc('xmldb:exist:///db/apps/pessoa/data/indices.xml')//list[@type = 'titles']/item[@xml:id = $title-id]/title/text()"/>
+                <xsl:variable name="journal-id" select="doc('xmldb:exist:///db/apps/pessoa/data/indices.xml')//list[@type = 'collections']/item[@xml:id = $coll-id]/ptr[@type = 'journal']/substring-after(@target, '#')"/>
+                <xsl:variable name="journal-title" select="doc('xmldb:exist:///db/apps/pessoa/data/indices.xml')//list[@type = 'periodical']/item[@xml:id = $journal-id]"/>
                 <xsl:variable name="origDate" select="ancestor::TEI//origDate"/>
                 <xsl:variable name="imprintDate" select="ancestor::TEI//imprint/date"/>
                 <xsl:variable name="filename" select="ancestor::TEI//idno[@type = 'filename']"/>
