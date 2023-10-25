@@ -24,7 +24,7 @@ declare variable $exist:controller external;
 declare variable $exist:prefix external;
 declare variable $exist:root external;
 
-declare variable $exist:lists := doc("/db/apps/pessoa/data/lists.xml");
+declare variable $exist:lists := doc("/db/apps/pessoa/resources/lists.xml");
 declare variable $exist:sites := (distinct-values($exist:lists//tei:list[@type="navigation"]//tei:item/tei:note[@type='directory']/data(.)));
 declare variable $exist:authors := $exist:lists//tei:listPerson[@type="authors"]/tei:person/tei:note[@type='link']/data(.);
 (:~

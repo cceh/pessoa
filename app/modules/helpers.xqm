@@ -21,7 +21,7 @@ declare variable $helpers:webfile-path := $config:webfile-path;
 declare variable $helpers:web-language := if(contains($config:request-path,"/pt/")) then "pt"
                                             else if(contains($config:request-path,"/de/")) then "de"
                                             else "en";
-declare variable $helpers:lists := doc('/db/apps/pessoa/data/lists.xml');
+declare variable $helpers:lists := doc('/db/apps/pessoa/resources/lists.xml');
 (:
 declare variable $helpers:web-language := ();
 
@@ -118,12 +118,12 @@ declare function helpers:lettersOfTheAlphabeHight() {
 :)
 (:)
 declare %templates:wrap function helpers:singleElement($node as node(), $model as map(*),$xmltype as xs:string,$xmlid as xs:string) as xs:string? {
-    let $doc := doc('/db/apps/pessoa/data/lists.xml')
+    let $doc := doc('/db/apps/pessoa/resources/lists.xml')
     return helpers:singleAttribute($doc,$xmltype,$xmlid)
 };
 
 declare function helpers:singleElementHidden($node as node(), $model as map(*),$xmltype as xs:string,$xmlid as xs:string) as xs:string? {
-    let $doc := doc('/db/apps/pessoa/data/lists.xml')
+    let $doc := doc('/db/apps/pessoa/resources/lists.xml')
     return helpers:singleAttribute($doc,$xmltype,$xmlid)
 };
 
@@ -139,7 +139,7 @@ declare function helpers:singleAttribute($doc as node(),$type as xs:string,$id a
 
 (:)
 declare function helpers:singleElement_xquery($type as xs:string,$id as xs:string) as xs:string? {
-    let $doc := doc('/db/apps/pessoa/data/lists.xml')   
+    let $doc := doc('/db/apps/pessoa/resources/lists.xml')   
     let $entry := if($helpers:web-language = "pt") 
                   then $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @xml:id=$id]
                   else $doc//tei:list[@type=$type]/tei:item/tei:term[@xml:lang=$helpers:web-language and @corresp=concat("#",$id)]

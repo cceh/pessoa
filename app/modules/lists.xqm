@@ -9,11 +9,11 @@ declare namespace ngram ="http://exist-db.org/xquery/ngram";
 
 declare function lists:get-navi-list($node as node(), $model as map(*), $type as text(), $indikator as xs:string?) as item()*{
     if ($type = "autores") 
-    then for $pers in doc("/db/apps/pessoa/data/lists.xml")//tei:listPerson[@type="authors"]/tei:person/tei:persName/data(.)
+    then for $pers in doc("/db/apps/pessoa/resources/lists.xml")//tei:listPerson[@type="authors"]/tei:person/tei:persName/data(.)
          order by $pers collation "?lang=pt"
          return <item label="{$pers}" ref="{$helpers:app-root}/author/{tokenize(lower-case($pers), '\s')[last()]}/all" /> 
     else if ($type = "genero") then
-     for $genre in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="genres"][@xml:lang=$helpers:web-language]/tei:item   
+     for $genre in doc("/db/apps/pessoa/resources/lists.xml")//tei:list[@type="genres"][@xml:lang=$helpers:web-language]/tei:item   
         let $label :=$genre/data(.)
         let $ref := $genre/attribute() 
          order by $genre collation "?lang=pt" 
@@ -43,13 +43,13 @@ declare function lists:get-navi-list($node as node(), $model as map(*), $type as
                     else ()}
                 </item> :)
     else if($type ="cronologia")
-    then for $years in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type="years"]/tei:item 
+    then for $years in doc("/db/apps/pessoa/resources/lists.xml")//tei:list[@type="years"]/tei:item 
          order by $years collation "?lang=pt"
         return if ( ends-with($years, $indikator)
         (:substring-before($years,concat("0",$indikator))!="" or substring-before($years,concat("1",$indikator))!="" or substring-before($years,concat("2",$indikator))!="" or substring-before($years,concat("3",$indikator))!="" :) )
             then <item label="{$years}" ref="{$helpers:app-root}/page/year_{$years}.html" id="{$years}"/>              
          else ()
-    else for $item in doc("/db/apps/pessoa/data/lists.xml")//tei:list[@type=$type]/tei:item/data(.)
+    else for $item in doc("/db/apps/pessoa/resources/lists.xml")//tei:list[@type=$type]/tei:item/data(.)
          order by $item collation "?lang=pt"         
          return <item label="{$item}" ref="#" />
 };
