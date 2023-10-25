@@ -20,7 +20,7 @@
         -->
         <xdb:xquery uri="${uri}" queryfile="app/pre-install.xql" user="${user}" password="${password}"/>
         <xdb:store uri="${uri}" createcollection="true" createsubcollections="true" user="${user}" password="${password}">
-            <fileset dir="Home/PessoaDigital/pessoa-corpus/app/">
+            <fileset dir="/home/fernanda/PessoaDigital/pessoa-corpus/app">
                 <include name="*.*"/>
                 <exclude name="*.xpr"/>
                 
@@ -42,12 +42,15 @@
                 <exclude name="**/*.md"/>
                 <exclude name="**/.gitignore"/>
             </fileset>
-            <fileset dir="./app/">
+            
+            <fileset dir="./app">
+                <include name="*.*"/>
                 <include name="modules/*.*"/>
                 <include name="page/*.*"/>
                 <include name="resources/**/*.*"/>
                 <include name="templates/*.*"/>
                 <include name="xslt/**/*.*"/>
+                <exclude name="**/.gitignore"/>
                 
             </fileset>
         </xdb:store>
