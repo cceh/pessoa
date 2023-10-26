@@ -25,27 +25,27 @@
                                 <xsl:choose>
                                     <xsl:when test="@key = 'lista_editorial'">
                                         <xsl:value-of
-                                            select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'genres']/item[@xml:id = 'editorial_list']/term[@xml:lang = 'de']"
+                                            select="doc('xmldb:exist:///db/apps/pessoa/resources/lists.xml')//list[@type = 'genres']/item[@xml:id = 'editorial_list']/term[@xml:lang = 'de']"
                                         />
                                     </xsl:when>
                                     <xsl:when test="@key = 'nota_editorial'">
                                         <xsl:value-of
-                                            select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'genres']/item[@xml:id = 'editorial_note']/term[@xml:lang = 'de']"
+                                            select="doc('xmldb:exist:///db/apps/pessoa/resources/lists.xml')//list[@type = 'genres']/item[@xml:id = 'editorial_note']/term[@xml:lang = 'de']"
                                         />
                                     </xsl:when>
                                     <xsl:when test="@key = 'plano_editorial'">
                                         <xsl:value-of
-                                            select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'genres']/item[@xml:id = 'editorial_plan']/term[@xml:lang = 'de']"
+                                            select="doc('xmldb:exist:///db/apps/pessoa/resources/lists.xml')//list[@type = 'genres']/item[@xml:id = 'editorial_plan']/term[@xml:lang = 'de']"
                                         />
                                     </xsl:when>
                                     <xsl:when test="@key = 'poesia'">
                                         <xsl:value-of
-                                            select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'genres']/item[@xml:id = 'poetry']/term[@xml:lang = 'de']"
+                                            select="doc('xmldb:exist:///db/apps/pessoa/resources/lists.xml')//list[@type = 'genres']/item[@xml:id = 'poetry']/term[@xml:lang = 'de']"
                                         />
                                     </xsl:when>
                                     <xsl:when test="@key = 'prosa'">
                                         <xsl:value-of
-                                            select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'genres']/item[@xml:id = 'prose']/term[@xml:lang = 'de']"
+                                            select="doc('xmldb:exist:///db/apps/pessoa/resources/lists.xml')//list[@type = 'genres']/item[@xml:id = 'prose']/term[@xml:lang = 'de']"
                                         />
                                     </xsl:when>
                                 </xsl:choose>
@@ -59,27 +59,27 @@
                                 <xsl:choose>
                                     <xsl:when test="@key = 'lista_editorial'">
                                         <xsl:value-of
-                                            select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'genres']/item[@xml:id = 'editorial_list']/term[@xml:lang = 'en']"
+                                            select="doc('xmldb:exist:///db/apps/pessoa/resources/lists.xml')//list[@type = 'genres']/item[@xml:id = 'editorial_list']/term[@xml:lang = 'en']"
                                         />
                                     </xsl:when>
                                     <xsl:when test="@key = 'nota_editorial'">
                                         <xsl:value-of
-                                            select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'genres']/item[@xml:id = 'editorial_note']/term[@xml:lang = 'en']"
+                                            select="doc('xmldb:exist:///db/apps/pessoa/resources/lists.xml')//list[@type = 'genres']/item[@xml:id = 'editorial_note']/term[@xml:lang = 'en']"
                                         />
                                     </xsl:when>
                                     <xsl:when test="@key = 'plano_editorial'">
                                         <xsl:value-of
-                                            select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'genres']/item[@xml:id = 'editorial_plan']/term[@xml:lang = 'en']"
+                                            select="doc('xmldb:exist:///db/apps/pessoa/resources/lists.xml')//list[@type = 'genres']/item[@xml:id = 'editorial_plan']/term[@xml:lang = 'en']"
                                         />
                                     </xsl:when>
                                     <xsl:when test="@key = 'poesia'">
                                         <xsl:value-of
-                                            select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'genres']/item[@xml:id = 'poetry']/term[@xml:lang = 'en']"
+                                            select="doc('xmldb:exist:///db/apps/pessoa/resources/lists.xml')//list[@type = 'genres']/item[@xml:id = 'poetry']/term[@xml:lang = 'en']"
                                         />
                                     </xsl:when>
                                     <xsl:when test="@key = 'prosa'">
                                         <xsl:value-of
-                                            select="doc('xmldb:exist:///db/apps/pessoa/data/lists.xml')//list[@type = 'genres']/item[@xml:id = 'prose']/term[@xml:lang = 'en']"
+                                            select="doc('xmldb:exist:///db/apps/pessoa/resources/lists.xml')//list[@type = 'genres']/item[@xml:id = 'prose']/term[@xml:lang = 'en']"
                                         />
                                     </xsl:when>
                                 </xsl:choose>

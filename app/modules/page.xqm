@@ -25,7 +25,7 @@ declare namespace request="http://exist-db.org/xquery/request";
  : @return Mehrdimensionale Map
 :)
 declare function page:construct($node as node(), $model as map(*)){
-    let $list := doc("/db/apps/pessoa/data/lists.xml")
+    let $list := doc("/db/apps/pessoa/resources/lists.xml")
     let $sites := for $item in $list//tei:list[@type="navigation"]/tei:item
                     let $sub := page:catchSub($list,$item)
                     let $publ := if(contains(string-join(distinct-values(for $s in $sub return $s("publ")),"-"),"true")) then "true" else "false"
@@ -145,7 +145,7 @@ declare function page:mapping($item as node()) as map(*){
                     "type" : $item/@rend/data(.),
                     "id" : $item/@xml:id/data(.)
                 }
-    let $return := if(exists($item/tei:list) or exists($item/@corresp)) then map:merge(($return,map {"sub" : page:catchSub(doc("/db/apps/pessoa/data/lists.xml"),$item)})) else $return
+    let $return := if(exists($item/tei:list) or exists($item/@corresp)) then map:merge(($return,map {"sub" : page:catchSub(doc("/db/apps/pessoa/resources/lists.xml"),$item)})) else $return
     let $return := if(exists($item/tei:note[@type='directory'])) then map:merge(($return,map {"link" : concat($item/tei:note[@type='directory']/data(.),"/",$item/@xml:id/data(.))})) else $return
     let $return := if($item/@rend/data(.) = 'newlink') then map:merge(($return,map {"link" : $item/@xml:id/data(.)})) else $return
 
@@ -316,7 +316,7 @@ declare %templates:wrap function page:createTimelineBody($node as node(), $model
 };
 
 declare function page:createTimelineHeader($node as node(), $model as map(*)) as node()* {
-    let $lists := doc('/db/apps/pessoa/data/lists.xml')
+    let $lists := doc('/db/apps/pessoa/resources/lists.xml')
 
         let $script1:=
         <script>
@@ -403,7 +403,7 @@ declare function page:createTimelineHeader($node as node(), $model as map(*)) as
 
 (: ########### Special timeline: Caeiro ##############:)
 declare function page:createTimelineHeader_Caeiro($node as node(), $model as map(*)) as node()* {
-    let $lists := doc('/db/apps/pessoa/data/lists.xml')
+    let $lists := doc('/db/apps/pessoa/resources/lists.xml')
 
         let $script1:=
         <script>

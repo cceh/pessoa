@@ -432,7 +432,7 @@ declare %templates:wrap function search:your_search($node as node(), $model as m
           case("lang_ao") return () (:if($param != "") then if(count(search:get-parameters("lang")) != 3) then (helpers:singleElementInList_xQuery("search","language"), helpers:singleElementInList_xQuery("search",$param)) else () else () :)
           case("role") return (helpers:singleElementInList_xQuery("roles","mentioned-as"),string-join(for $i in $param return helpers:singleElementInList_xQuery("roles",$i),", "))
           case("genre") return (helpers:singleElementInList_xQuery("search","genero") , string-join(for $i in $param return helpers:singleElementInList_xQuery("genres",search:encryptGenre($i)),", "))
-          case("person") return (helpers:singleElementInList_xQuery("search","autores") , string-join(for $i in $param return doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson[@type="authors"]/tei:person[@xml:id=$i]/tei:persName/data(.),", "))
+          case("person") return (helpers:singleElementInList_xQuery("search","autores") , string-join(for $i in $param return doc('/db/apps/pessoa/resources/lists.xml')//tei:listPerson[@type="authors"]/tei:person[@xml:id=$i]/tei:persName/data(.),", "))
           case("term") return (helpers:singleElementInList_xQuery("search","term"),$param)
           case("release") return if($param != "all") then (helpers:singleElementInList_xQuery("search","publicado"),  (if($param="all") then  helpers:singleElementInList_xQuery("search",$param)
           else if ($param="published")  then helpers:singleElementInList_xQuery("search","pub_yes")
@@ -452,7 +452,7 @@ declare %templates:wrap function search:your_search($node as node(), $model as m
                             (:) case("lang_ao") return if($param != "") then if(count(search:get-parameters("lang")) != 3) then (helpers:singleElementInList_xQuery("search","language"), helpers:singleElementInList_xQuery("search",$param)) else () else () :)
                             case("role") return (helpers:singleElementInList_xQuery("roles","mentioned-as"),helpers:singleElementInList_xQuery("roles",$param))
                             case("genre") return (helpers:singleElementInList_xQuery("search","genero") , helpers:singleElementInList_xQuery("genres",search:encryptGenre($param)))
-                            case("person") return (helpers:singleElementInList_xQuery("search","autores") ,doc('/db/apps/pessoa/data/lists.xml')//tei:listPerson[@type="authors"]/tei:person[@xml:id=$param]/tei:persName/data(.))
+                            case("person") return (helpers:singleElementInList_xQuery("search","autores") ,doc('/db/apps/pessoa/resources/lists.xml')//tei:listPerson[@type="authors"]/tei:person[@xml:id=$param]/tei:persName/data(.))
                             case("term") return if($param != "") then (helpers:singleElementInList_xQuery("search","term"),$param) else ()
                             case("release") return if($param != "") then (helpers:singleElementInList_xQuery("search","publicado"),  (if($param="all") then  helpers:singleElementInList_xQuery("search",$param)
                                                                                                                                                     else if ($param="published")  then helpers:singleElementInList_xQuery("search","pub_yes")
@@ -504,7 +504,7 @@ declare function search:recorder() as node() {
   return $code
 };
 declare function search:search-page($node as node(), $model as map(*)) as node()* {
-    let $doc := doc('/db/apps/pessoa/data/lists.xml')
+    let $doc := doc('/db/apps/pessoa/resources/lists.xml')
     let $filter :=
      <div class="search_filter">
                        <form class="" action="{$helpers:app-root}/{$helpers:web-language}/search" method="post" id="search">
