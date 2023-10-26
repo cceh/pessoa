@@ -20,7 +20,7 @@
         -->
         <xdb:xquery uri="${uri}" queryfile="app/pre-install.xql" user="${user}" password="${password}"/>
         <xdb:store uri="${uri}" createcollection="true" createsubcollections="true" user="${user}" password="${password}">
-            <fileset dir="/home/fernanda/PessoaDigital/pessoa-corpus/app">
+            <fileset dir="${corpuspath}">
                 <include name="*.*"/>
                 <exclude name="*.xpr"/>
                 
