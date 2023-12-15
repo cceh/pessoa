@@ -1,3 +1,9 @@
+(:~
+ : Disclaimer: Code adapted from eXistdb 2.2 - GNU-LGPL (the specific version of the 
+ : license is not available anymore, possibily 'Only'). A new version of this project 
+ : with an updated eXist implementation (along with specific licensing) will be 
+ : published soon.
+ :)
 xquery version "3.1";
 
 module namespace app="http://localhost:8080/exist/apps/pessoa/templates";

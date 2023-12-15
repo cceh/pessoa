@@ -1,4 +1,8 @@
 (:~
+ : Disclaimer: Code adapted from eXistdb 2.2 - GNU-LGPL (the specific version of the 
+ : license is not available anymore, possibily 'Only'). A new version of this project 
+ : with an updated eXist implementation (along with specific licensing) will be 
+ : published soon.
  : This is the main XQuery which will (by default) be called by controller.xql
  : to process any URI ending with ".html". It receives the HTML from
  : the controller and passes it to the templating system.
