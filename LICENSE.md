@@ -38,7 +38,7 @@ of the Digital Edition of Fernando Pessoa.
 |  Simile Ajax API | [modified BSD](https://github.com/zepheira/simile-ajax/blob/master/LICENSE.txt) |
 |  eXist-db * | L-GPL * | 
 
-* Code adapted from eXistdb 2.2 - GNU-LGPL (the specific version of the 
+\* Code adapted from eXistdb 2.2 - GNU-LGPL (the specific version of the 
 license is not available anymore, possibily 'Only'). A new version of 
 this project with an updated eXist implementation (along with specific 
 licensing) will be published soon.
