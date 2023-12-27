@@ -244,7 +244,7 @@ declare function index:collectJournals($node as node(), $model as map(*)) {
     let $journals := for $journal in  doc('/db/apps/pessoa/data/indices.xml')//tei:list[@type = "periodical"]/tei:item
                                 let $key := $journal/@xml:id/data(.)
                                 order by $journal/data(.)                                
-                                return <item key="{$key}" name="{$journal/data(.)}" letter="{substring($journal/data(.),1,1)}">
+                                return <item key="{$key}" name="{$journal/title/data(.)}" letter="{substring($journal/title/data(.),1,1)}">
                                                 {for $item in index:FindJournalsEntrys($key)
                                                     order by $item/@date/data(.)
                                                     return $item
