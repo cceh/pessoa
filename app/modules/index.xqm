@@ -243,8 +243,8 @@ declare function index:printAuthor($node as node(), $model as map(*)) {
 declare function index:collectJournals($node as node(), $model as map(*)) {
     let $journals := for $journal in  doc('/db/apps/pessoa/data/indices.xml')//tei:list[@type = "periodical"]/tei:item
                                 let $key := $journal/@xml:id/data(.)
-                                order by $journal/data(.)                                
-                                return <item key="{$key}" name="{$journal/title/data(.)}" letter="{substring($journal/title/data(.),1,1)}">
+                                order by $journal/tei:title/data(.)                                
+                                return <item key="{$key}" name="{$journal/tei:title/data(.)}" letter="{substring($journal/tei:title/data(.),1,1)}">
                                                 {for $item in index:FindJournalsEntrys($key)
                                                     order by $item/@date/data(.)
                                                     return $item

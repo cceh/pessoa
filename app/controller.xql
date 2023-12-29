@@ -161,6 +161,8 @@ else if (contains($exist:path, concat($helpers:web-language,"/index.html"))) the
         </view>
     </dispatch>
 
+
+
 else if ((contains($exist:resource, "network") or contains($exist:path,"network"))
             and not(helpers:contains-any-of($exist:resource,(".js",".css",".json")))) then
         (session:clear(),
@@ -189,6 +191,14 @@ else if ((contains($exist:resource, "network") or contains($exist:path,"network"
                 <forward url="{$exist:controller}/modules/view.xql"/>
             </error-handler>
         </dispatch>)
+        
+
+else if ((contains($exist:resource, "PD_BEACON.txt") or contains($exist:path,"PD_BEACON.txt"))) then
+    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <set-header name="Content-Type" value="text/plain"/>
+        <forward url="{$exist:controller}/modules/BEACON_gen.xqm"/>    
+    </dispatch>
+        
 else if (contains($exist:resource,".json")) then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <forward url="{$exist:controller}/data/network/{$exist:resource}"/>
