@@ -296,8 +296,15 @@ declare function index:mapSingleJournal($node as node(), $model as map(*)) {
 };
 
 
-declare function index:printJournal($node as node(), $model as map(*)) {
+(: declare function index:printJournal($node as node(), $model as map(*)) {
 $model("journal")/@name/data(.)
+};
+:)
+
+declare function index:printJournal($node as node(), $model as map(*)) {
+    <span id="{$model("journal")/@key/data()}">
+        {$model("journal")/@name/data(.)}
+    </span>
 };
 
 declare function index:printJournalLinks($node as node(), $model as map(*),$ref) {

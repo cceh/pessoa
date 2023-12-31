@@ -196,7 +196,7 @@ else if ((contains($exist:resource, "network") or contains($exist:path,"network"
 else if ((contains($exist:resource, "PD_BEACON.txt") or contains($exist:path,"PD_BEACON.txt"))) then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <set-header name="Content-Type" value="text/plain"/>
-        <forward url="{$exist:controller}/modules/BEACON_gen.xqm"/>    
+        <forward url="{$exist:controller}/modules/BEACON_gen.xql"/>    
     </dispatch>
         
 else if (contains($exist:resource,".json")) then

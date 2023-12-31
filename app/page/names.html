@@ -60,8 +60,8 @@
                                             <div class="person">
                                                 <get data-template="index:printAuthor"/>
                                                 <div class="docList">
-                                                    <each data-template="helpers:invisibleEach" data-template-from="docs" data-template-to="ref">
-                                                        <get data-template="index:printDocLinks" data-template-ref="ref"/>
+                                                    <each data-template="helpers:invisibleEach" data-template-from="mentioned" data-template-to="doc">
+                                                        <span><print data-template="index:printJournalLinks" data-template-ref="doc"/></span>
                                                     </each>
                                                 </div>
                                                 <div class="clear"/>

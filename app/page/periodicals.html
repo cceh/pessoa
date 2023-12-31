@@ -62,13 +62,15 @@
                             <map data-template="index:mapJournals">
                                 <each data-template="helpers:invisibleEach" data-template-from="journal" data-template-to="single">
                                     <map data-template="index:mapSingleJournal">
-                                        <span class="index-title"><i class="index:printJournal"/></span>
-                                        <div class="docList">
-                                            <each data-template="helpers:invisibleEach" data-template-from="mentioned" data-template-to="doc">
-                                                <span><print data-template="index:printJournalLinks" data-template-ref="doc"/></span>
-                                            </each>
+                                        <div class="periodical">
+                                            <get data-template="index:printJournal"/>
+                                            <div class="docList">
+                                                <each data-template="helpers:invisibleEach" data-template-from="mentioned" data-template-to="doc">
+                                                    <span><print data-template="index:printJournalLinks" data-template-ref="doc"/></span>
+                                                </each>
+                                            </div>	
+                                            <div class="clear"/>
                                         </div>
-                                        <div class="clear"/>
                                     </map>
                                 </each>
                             </map>
