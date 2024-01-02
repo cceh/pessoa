@@ -13,7 +13,7 @@ let $header :=
   concat(
       "#FORMAT: BEACON&#xA;",
       "#NAME: Digital Edition of Fernando Pessoa&#xA;",
-      "#TARGET: http://www.pessoadigital.pt/de/index/&#xA;",
+      "#TARGET: http://www.pessoadigital.pt/&#xA;",
       "#FEED: http://www.pessoadigital.pt/de/index/names/lod/PD_BEACON.txt&#xA;",
       "#CONTACT: Ulrike Henny-Krahmer  &lt;ulrike.henny-krahmer@uni-rostock.de&gt; &#xA;",
       "#MESSAGE: Mentions in the digital edition of Fernando Pessoa&#xA;",
@@ -32,11 +32,11 @@ return (
     let $person_id := $person/@xml:id
     return (
         for $viaf_id in $person/tei:idno[@type='viaf']
-        return if ($viaf_id) then concat('http://viaf.org/viaf/',$viaf_id, '||', 'names#',$person_id, '&#xA;') else (),
+        return if ($viaf_id) then concat('http://viaf.org/viaf/',$viaf_id, '||', 'index/names#',$person_id, '&#xA;') else (),
         for $gnd_id in $person/tei:idno[@type='gnd']
-        return if ($gnd_id) then concat('http://d-nb.info/gnd/',$gnd_id, '||', 'names#',$person_id, '&#xA;') else (),
+        return if ($gnd_id) then concat('http://d-nb.info/gnd/',$gnd_id, '||', 'index/names#',$person_id, '&#xA;') else (),
         for $wikidata_id in $person/tei:idno[@type='wikidata']
-        return if ($wikidata_id) then concat('https://www.wikidata.org/wiki/',$wikidata_id, '||', 'names#',$person_id, '&#xA;') else ()
+        return if ($wikidata_id) then concat('https://www.wikidata.org/wiki/',$wikidata_id, '||', 'index/names#',$person_id, '&#xA;') else ()
       )
   ),
   (
@@ -44,11 +44,11 @@ return (
     let $periodical_id := $periodical/@xml:id/data(.)
     return (
         for $viaf_id in $periodical/tei:idno[@type='viaf']
-        return if ($viaf_id) then concat('http://viaf.org/viaf/',$viaf_id, '||', 'periodicals#',$periodical_id, '&#xA;') else (),
+        return if ($viaf_id) then concat('http://viaf.org/viaf/',$viaf_id, '||', 'index/periodicals#',$periodical_id, '&#xA;') else (),
         for $gnd_id in $periodical/tei:idno[@type='gnd']
-        return if ($gnd_id) then concat('http://d-nb.info/gnd/',$gnd_id, '||', 'periodicals#',$periodical_id, '&#xA;') else (),
+        return if ($gnd_id) then concat('http://d-nb.info/gnd/',$gnd_id, '||', 'index/periodicals#',$periodical_id, '&#xA;') else (),
         for $wikidata_id in $periodical/tei:idno[@type='wikidata']
-        return if ($wikidata_id) then concat('https://www.wikidata.org/wiki/',$wikidata_id, '||', 'periodicals#',$periodical_id, '&#xA;') else ()
+        return if ($wikidata_id) then concat('https://www.wikidata.org/wiki/',$wikidata_id, '||', 'index/periodicals#',$periodical_id, '&#xA;') else ()
       )
    ),
      (
@@ -56,11 +56,11 @@ return (
     let $publication_id := $publication/@xml:id/data(.)
     return (
         for $viaf_id in $publication/tei:idno[@type='viaf']
-        return if ($viaf_id) then concat('http://viaf.org/viaf/',$viaf_id, '||', 'publications#',$publication_id, '&#xA;') else (),
+        return if ($viaf_id) then concat('http://viaf.org/viaf/',$viaf_id, '||', 'pub/',$publication_id, '&#xA;') else (),
         for $gnd_id in $publication/tei:idno[@type='gnd']
-        return if ($gnd_id) then concat('http://d-nb.info/gnd/',$gnd_id, '||', 'publications#',$publication_id, '&#xA;') else (),
+        return if ($gnd_id) then concat('http://d-nb.info/gnd/',$gnd_id, '||', 'pub/',$publication_id, '&#xA;') else (),
         for $wikidata_id in $publication/tei:idno[@type='wikidata']
-        return if ($wikidata_id) then concat('https://www.wikidata.org/wiki/',$wikidata_id, '||', 'publications#',$publication_id, '&#xA;') else ()
+        return if ($wikidata_id) then concat('https://www.wikidata.org/wiki/',$wikidata_id, '||', 'pub/',$publication_id, '&#xA;') else ()
       )
    )
 )
