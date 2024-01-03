@@ -198,6 +198,12 @@ else if ((contains($exist:resource, "PD_BEACON.txt") or contains($exist:path,"PD
         <set-header name="Content-Type" value="text/plain"/>
         <forward url="{$exist:controller}/modules/BEACON_gen.xql"/>    
     </dispatch>
+    
+else if ((contains($exist:resource, "PD_RDF.txt") or contains($exist:path,"PD_RDF.txt"))) then
+    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <set-header name="Content-Type" value="text/plain"/>
+        <forward url="{$exist:controller}/modules/RDF_gen.xql"/>    
+    </dispatch>
         
 else if (contains($exist:resource,".json")) then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">

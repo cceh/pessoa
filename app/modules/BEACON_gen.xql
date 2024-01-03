@@ -22,9 +22,6 @@ let $header :=
       "&#xA;"
   )
 
-let $message := 'periodicals here'
-
-
 return (
   $header,
   (
