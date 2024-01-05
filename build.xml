@@ -25,6 +25,7 @@
                 <exclude name="*.xpr"/>
                 
                 <!-- data: -->
+                
                 <include name="data/doc/*.*"/>
                 <include name="data/network/*.*"/>
                 <exclude name="data/pre1913/*.*"/>
@@ -35,7 +36,6 @@
                 <exclude name="data/todo/*.*"/>
                 <include name="data/*.*"/>
                 
-
                 <!-- general excludes: -->
                 <exclude name="**/*.properties"/>
                 <exclude name="**/*.tmpl"/>
@@ -44,6 +44,8 @@
             </fileset>
             
             <fileset dir="./app">
+                
+
                 <include name="*.*"/>
                 <include name="modules/*.*"/>
                 <include name="page/*.*"/>
