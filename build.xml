@@ -75,11 +75,12 @@
         <zip destfile="./app/data/doc.zip" basedir="./app/data/doc/" excludes="dont*.*"/>
         <xdb:xquery uri="${uri}" queryfile="app/pre-install.xql" user="${user}" password="${password}"/>
         <xdb:store uri="${uri}" createcollection="true" createsubcollections="true" user="${user}" password="${password}">
-            <fileset dir="./app/">
+            <fileset dir="${corpuspath}">
                 <include name="*.*"/>
                 <exclude name="*.xpr"/>
                 
                 <!-- data: -->
+                
                 <include name="data/doc/*.*"/>
                 <include name="data/network/*.*"/>
                 <exclude name="data/pre1913/*.*"/>
@@ -90,22 +91,24 @@
                 <exclude name="data/todo/*.*"/>
                 <include name="data/*.*"/>
                 
-                <!--<exclude name="modules/*.*"/>-->
-                <!--<include name="modules/author.xqm"/>-->
-                <include name="page/*.*"/>
-                <include name="resources/**/*.*"/>
-                <include name="templates/*.*"/>
-                <include name="xslt/**/*.*"/>
-                
                 <!-- general excludes: -->
                 <exclude name="**/*.properties"/>
                 <exclude name="**/*.tmpl"/>
                 <exclude name="**/*.md"/>
                 <exclude name="**/.gitignore"/>
-                <!-- nur Daten:
-                <include name="data/**/*.*"/>
-                <include name="*.xconf"/>
-                -->
+            </fileset>
+            
+            <fileset dir="./app">
+                
+                
+                <include name="*.*"/>
+                <include name="modules/*.*"/>
+                <include name="page/*.*"/>
+                <include name="resources/**/*.*"/>
+                <include name="templates/*.*"/>
+                <include name="xslt/**/*.*"/>
+                <exclude name="**/.gitignore"/>
+                
             </fileset>
         </xdb:store>
         <xdb:xquery uri="${uri}" queryfile="app/post-redirect.xql" user="${user}" password="${password}"/>
