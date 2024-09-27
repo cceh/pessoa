@@ -71,8 +71,8 @@
         <fail if="do.abort">Deployment aborted by user.</fail>-->
         <property file="deploy-remote.properties"/>
         <!-- Generating zip files from the data -->
-        <zip destfile="./app/data/pub.zip" basedir="./app/data/pub/" excludes="dont*.*"/>
-        <zip destfile="./app/data/doc.zip" basedir="./app/data/doc/" excludes="dont*.*"/>
+        <zip destfile="./app/data/pub.zip" basedir="${corpuspath}/data/pub/" excludes="dont*.*"/>
+        <zip destfile="./app/data/doc.zip" basedir="${corpuspath}/data/doc/" excludes="dont*.*"/>
         <xdb:xquery uri="${uri}" queryfile="app/pre-install.xql" user="${user}" password="${password}"/>
         <xdb:store uri="${uri}" createcollection="true" createsubcollections="true" user="${user}" password="${password}">
             <fileset dir="${corpuspath}">
@@ -102,7 +102,7 @@
                 
                 
                 <include name="*.*"/>
-                <include name="modules/*.*"/>
+                <exclude name="modules/*.*"/>
                 <include name="page/*.*"/>
                 <include name="resources/**/*.*"/>
                 <include name="templates/*.*"/>

@@ -2,6 +2,19 @@
 <div xmlns="http://www.w3.org/1999/xhtml" class="templates:surround?with=templates/page.html&amp;at=content">
     <script type="text/javascript">
         $(document).ready(function(){
+            $("li.itabs").click(function(e){
+                if (!$(this).hasClass("selected")) {
+                    var tabNum = $(this).attr("title");
+                    $("ul#indextabs .selected").removeClass("selected");
+                    $(this).addClass("selected");
+                    $("ul#indextab .selected").removeClass("selected");
+                    $("ul#indextab li#"+tabNum).addClass("selected");
+                    $("ul#indextab li#"+tabNum+" ul li").addClass("selected");
+                /*  $("ul#indextab :nth-child("+nthChild+")").addClass("active");
+                */
+        }
+        });
+            
             $("li.otabs").click(function(e){
                 if (!$(this).hasClass("selected")) {
                     var tabNum = $(this).attr("title");
@@ -56,9 +69,43 @@
                 </div>
             </div>
             <div id="img-div">
+                <div id="indexline">
+                    <ul id="indextabs">
+                        <li class="itabs selected"  title="facsimile">
+                            <a href="#facsimile">
+                                <span>
+                                    <get data-template="helpers:singleElementInList" data-template-ListType="buttons" data-template-ListId="facsimile"/>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="itabs"  title="index">
+                            <a href="#index">
+                                <span>
+                                    <get data-template="helpers:singleElementInList" data-template-ListType="buttons" data-template-ListId="bindex"/>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul id="indextab">
+                        <li class="selected" id="facsimile">
+                            <div>
+                                <get data-template="pub:get-image">facsimile</get>
+                            </div>
+                        </li>
+                        <li id="index">
+                            <div>
+                                <get data-template="pub:get-indexes">indexes</get>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--<div id="img-div">
                 <div id="indextab"/>
                 <div class="pub:get-image"></div>
-            </div>
+            </div>-->
             <map data-template="doc:footerfilter" data-template-dir="pub">
                 <div id="footerFilter">
 
