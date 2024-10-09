@@ -5,7 +5,19 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare namespace util="http://exist-db.org/xquery/util";
 declare namespace functx = "http://www.functx.com";
 
+declare function local:mkcol-recursive($base, $path) {
+  if (exists($base) and exists($path)) then (
+    if (not(xmldb:collection-available(concat($base, $path[1])))) then (
+      xmldb:create-collection($base, $path[1])
+    ) else (),
+    local:mkcol-recursive(concat($base, "/", $path[1]), subsequence($path, 2))
+  ) else ()
+};
 
+declare function local:mkcol($collection) {
+  let $path := tokenize($collection, "/")
+  return local:mkcol-recursive($path[1], subsequence($path, 2))
+};
 
 (: move search index to system and reindex :)
 declare function local:move-index(){
@@ -13,13 +25,11 @@ declare function local:move-index(){
 	let $conf-path := "/db/system/config/db/apps/pessoa/data"
 	return
     	(
-        if (not(xmldb:collection-available("/db/system/config/db/apps/pessoa")))
-        then (xmldb:create-collection("/db/system/config/db/apps", "pessoa"),
-              xmldb:create-collection("/db/system/config/db/apps/pessoa", "data"),
-              xmldb:create-collection("/db/system/config/db/apps/pessoa/data", "doc"),
-              xmldb:create-collection("/db/system/config/db/apps/pessoa/data", "pub")
-        )
-        else (),
+      local:mkcol(concat($app-path, "/data/doc")),
+      local:mkcol(concat($app-path, "/data/pub")),
+      local:mkcol(concat($conf-path, "/doc")),
+      local:mkcol(concat($conf-path, "/pub")),
+
     	xmldb:move($app-path, concat($conf-path, "/doc"), "collection_doc.xconf"),
     	xmldb:move($app-path, concat($conf-path, "/pub"), "collection_pub.xconf"),
     	xmldb:rename(concat($conf-path, "/doc"), "collection_doc.xconf", "collection.xconf"),
