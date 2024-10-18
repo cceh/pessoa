@@ -1,5 +1,6 @@
 xquery version "3.1";
 import module namespace xmldb="http://exist-db.org/xquery/xmldb";
+declare namespace file="http://exist-db.org/xquery/file";
 declare namespace transform="http://exist-db.org/xquery/transform";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare namespace util="http://exist-db.org/xquery/util";
@@ -25,15 +26,21 @@ declare function local:move-index(){
 	let $conf-path := "/db/system/config/db/apps/pessoa/data"
 	return
     	(
-      local:mkcol(concat($app-path, "/data/doc")),
-      local:mkcol(concat($app-path, "/data/pub")),
-      local:mkcol(concat($conf-path, "/doc")),
-      local:mkcol(concat($conf-path, "/pub")),
+    	local:mkcol(concat($app-path, "/data/doc")),
+    	local:mkcol(concat($app-path, "/data/pub")),
+    	local:mkcol(concat($conf-path, "/doc")),
+    	local:mkcol(concat($conf-path, "/pub")),
 
-    	xmldb:move($app-path, concat($conf-path, "/doc"), "collection_doc.xconf"),
-    	xmldb:move($app-path, concat($conf-path, "/pub"), "collection_pub.xconf"),
-    	xmldb:rename(concat($conf-path, "/doc"), "collection_doc.xconf", "collection.xconf"),
-    	xmldb:rename(concat($conf-path, "/pub"), "collection_pub.xconf", "collection.xconf"),
+    	if (file:exists(concat($app-path, "collection_doc.xconf"))) then (
+    		xmldb:move($app-path, concat($conf-path, "/doc"), "collection_doc.xconf"),
+    		xmldb:rename(concat($conf-path, "/doc"), "collection_doc.xconf", "collection.xconf")
+    	) else (),
+
+    	if (file:exists(concat($app-path, "collection_pub.xconf"))) then (
+    		xmldb:move($app-path, concat($conf-path, "/pub"), "collection_pub.xconf"),
+    		xmldb:rename(concat($conf-path, "/pub"), "collection_pub.xconf", "collection.xconf")
+    	) else (),
+
     	xmldb:reindex(concat($app-path, "/data/doc")),
     	xmldb:reindex(concat($app-path, "/data/pub"))
 	)
