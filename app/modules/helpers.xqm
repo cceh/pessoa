@@ -7,7 +7,7 @@ xquery version "3.1";
 
 module namespace helpers="http://localhost:8080/exist/apps/pessoa/helpers";
 
-import module namespace templates="http://exist-db.org/xquery/templates";
+import module namespace templates="http://exist-db.org/xquery/templates" at "templates.xqm";
 import module namespace config="http://localhost:8080/exist/apps/pessoa/config" at "config.xqm";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 
@@ -30,7 +30,7 @@ declare variable $helpers:web-language := ();
     ; :)
     
 declare function helpers:app-root($node as node(), $model as map(*)){
- let $elname := $node/node-name(.)
+ let $elname := $node/local-name(.)
  
  return if (xs:string($elname) = "link")
         then <link href="{$helpers:app-root}/{$node/@href}">

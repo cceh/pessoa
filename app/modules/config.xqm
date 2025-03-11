@@ -6,7 +6,7 @@ xquery version "3.1";
  :)
 module namespace config="http://localhost:8080/exist/apps/pessoa/config";
 
-declare namespace templates="http://exist-db.org/xquery/templates";
+import module namespace templates="http://exist-db.org/xquery/templates" at "templates.xqm";
 
 declare namespace repo="http://exist-db.org/xquery/repo";
 declare namespace expath="http://expath.org/ns/pkg";
