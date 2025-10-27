@@ -610,7 +610,7 @@ else if (contains($exist:path, "/$shared/")) then
             <set-header name="Cache-Control" value="max-age=3600, must-revalidate"/>
         </forward>
     </dispatch>
-else if(contains($exist:path,"resources") or contains($exist:path,'templates')) then
+else if($exist:path eq "/robots.txt" or contains($exist:path,"resources") or contains($exist:path,'templates')) then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <cache-control cache="yes"/>
     </dispatch>
